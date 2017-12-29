@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/post/netlify%E6%90%AD%E5%BB%BAblog%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2017-12-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%95%88%E5%BA%94%E5%80%BC-%E4%BE%8B%E5%A6%82%E8%82%B2%E7%A7%8D%E5%80%BC-%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7-accuracy/</loc>
     <lastmod>2017-10-01T00:00:00+00:00</lastmod>
   </url>
@@ -69,7 +74,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2017-10-01T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -116,6 +121,18 @@
   </url>
   
   <url>
+    <loc>/tags/notes/</loc>
+    <lastmod>2017-12-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/notes/</loc>
+    <lastmod>2017-12-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/page/</loc>
     <priority>0</priority>
   </url>
@@ -134,7 +151,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2017-10-01T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

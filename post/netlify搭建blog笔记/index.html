@@ -5,30 +5,41 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Tags</title>
-  <meta property="og:title" content="Tags" />
-  <meta name="twitter:title" content="Tags" />
+  <title>netlify搭建blog笔记</title>
+  <meta property="og:title" content="netlify搭建blog笔记" />
+  <meta name="twitter:title" content="netlify搭建blog笔记" />
+  <meta name="description" content=" 前言 开博客的主要目的是当做一个笔记本，把一些要紧的知识点、代码和流程等做个梳理和记录，方便下次使用时的查找。其实很早就有博客，只是不认为那就是，比如QQ空间和校内网。以前记笔记使用过网易产品一段时间，后来就转到博客上，例如新浪，不支持markdown。后来转到简书，但这家伙不支持公式。CSDN用过两天，支持公式编辑，但不及简书简便。GitHub支持个人博客，但模板很折腾，一直不理想，用了两天就不更新了。
+rmarkdown非常好用，帮助我输出R结果到pdf或者word。之前用过yihui开发的bookdown，用来转电子书的格式，也听说过他开发的blogdown，但并没有用过。有天栾生推荐了一下![]()
+正文 首先要感谢大鹏志给的中文教程用Rblogdown 搭建个人博客或科研网站。最难的一步出现在netlify与GitHub的关联上。按照netlify的要求，指定了public文件夹，但在打开博客网址时总是报错无法打开网页。最后还是从栾老师的GitHub里发现他只同步了public文件夹而非整个建站文件夹，然后就大功告成了。
+简略步骤如下： &#43; 安装blogdown，在Rstudio里直接安装也可以。
+if(!require(devtools)) install.packages(&#39;devtools&#39;) devtools::install_github(&#39;rstudio/blogdown&#39;)   建一个空文件夹，然后使用模板gcushen/hugo-academic建立建站文件。还有其他一些模板，见这里，每个点进去，选择喜欢的样式，替换这里的就行。 {r} setwd(&quot;D:/blogdown_default&quot;) blogdown::new_site(theme=&#39;gcushen/hugo-academic&#39;)   ">
+  <meta property="og:description" content=" 前言 开博客的主要目的是当做一个笔记本，把一些要紧的知识点、代码和流程等做个梳理和记录，方便下次使用时的查找。其实很早就有博客，只是不认为那就是，比如QQ空间和校内网。以前记笔记使用过网易产品一段时间，后来就转到博客上，例如新浪，不支持markdown。后来转到简书，但这家伙不支持公式。CSDN用过两天，支持公式编辑，但不及简书简便。GitHub支持个人博客，但模板很折腾，一直不理想，用了两天就不更新了。
+rmarkdown非常好用，帮助我输出R结果到pdf或者word。之前用过yihui开发的bookdown，用来转电子书的格式，也听说过他开发的blogdown，但并没有用过。有天栾生推荐了一下![]()
+正文 首先要感谢大鹏志给的中文教程用Rblogdown 搭建个人博客或科研网站。最难的一步出现在netlify与GitHub的关联上。按照netlify的要求，指定了public文件夹，但在打开博客网址时总是报错无法打开网页。最后还是从栾老师的GitHub里发现他只同步了public文件夹而非整个建站文件夹，然后就大功告成了。
+简略步骤如下： &#43; 安装blogdown，在Rstudio里直接安装也可以。
+if(!require(devtools)) install.packages(&#39;devtools&#39;) devtools::install_github(&#39;rstudio/blogdown&#39;)   建一个空文件夹，然后使用模板gcushen/hugo-academic建立建站文件。还有其他一些模板，见这里，每个点进去，选择喜欢的样式，替换这里的就行。 {r} setwd(&quot;D:/blogdown_default&quot;) blogdown::new_site(theme=&#39;gcushen/hugo-academic&#39;)   ">
+  <meta name="twitter:description" content=" 前言 开博客的主要目的是当做一个笔记本，把一些要紧的知识点、代码和流程等做个梳理和记录，方便下次使用时的查找。其实很早就有博客，只是不认为那就是，比如QQ空间和校内网。以前记笔记使用过网易产品一段时间，后来就转到博客上，例如新浪，不支持markdown。后来转到简书，但这家伙不支持公式。CSDN用过两天，支持公式编辑，但不及简书简便。GitHub支持个人博客，但模板很折腾，一直不理想，用了两天就 …">
   <meta name="author" content="Leiming Dong"/>
-  <link href='../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <link href='../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="/img/red-paint.jpg" />
   <meta name="twitter:image" content="/img/red-paint.jpg" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@username" />
   <meta name="twitter:creator" content="@username" />
-  <meta property="og:url" content="/tags/" />
+  <meta property="og:url" content="/post/netlify%E6%90%AD%E5%BB%BAblog%E7%AC%94%E8%AE%B0/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Dong&#39;s private blog" />
 
   <meta name="generator" content="Hugo 0.31.1" />
-  <link rel="canonical" href="../tags/" />
-  <link rel="alternate" href="../tags/index.xml" type="application/rss+xml" title="Dong&#39;s private blog">
+  <link rel="canonical" href="../../post/netlify%E6%90%AD%E5%BB%BAblog%E7%AC%94%E8%AE%B0/" />
+  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Dong&#39;s private blog">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
-  <link rel="stylesheet" href="../css/codeblock.css" />
-  <link rel="stylesheet" href="../css/highlight.min.css" />
+  <link rel="stylesheet" href="../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../css/highlight.min.css" />
 
 
 
@@ -94,7 +105,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../">Dong&#39;s private blog</a>
+      <a class="navbar-brand" href="../../">Dong&#39;s private blog</a>
     </div>
 
     <div class="collapse navbar-collapse" id="main-navbar">
@@ -102,7 +113,7 @@
         
           
             <li>
-              <a title="Blog" href="../">Blog</a>
+              <a title="Blog" href="../../">Blog</a>
             </li>
           
         
@@ -111,11 +122,11 @@
               <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
               <div class="navlinks-children">
                 
-                  <a href="../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                  <a href="../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
                 
-                  <a href="../post/2017-03-05-math-sample">Math Sample</a>
+                  <a href="../../post/2017-03-05-math-sample">Math Sample</a>
                 
-                  <a href="../post/2016-03-08-code-sample">Code Sample</a>
+                  <a href="../../post/2016-03-08-code-sample">Code Sample</a>
                 
               </div>
             </li>
@@ -123,13 +134,13 @@
         
           
             <li>
-              <a title="About" href="../page/about/">About</a>
+              <a title="About" href="../../page/about/">About</a>
             </li>
           
         
           
             <li>
-              <a title="Tags" href="../tags">Tags</a>
+              <a title="Tags" href="../../tags">Tags</a>
             </li>
           
         
@@ -143,8 +154,8 @@
     <div class="avatar-container">
       <div class="avatar-img-border">
         
-          <a title="Dong&#39;s private blog" href="../">
-            <img class="avatar-img" src="../img/red-paint.jpg" alt="Dong&#39;s private blog" />
+          <a title="Dong&#39;s private blog" href="../../">
+            <img class="avatar-img" src="../../img/red-paint.jpg" alt="Dong&#39;s private blog" />
           </a>
         
       </div>
@@ -173,9 +184,23 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="tags-heading">
-              <h1>Tags</h1>
+            <div class="post-heading">
+              <h1>netlify搭建blog笔记</h1>
                 
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on December 29, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (16 words)
+  
+  
+</span>
+
+
                 
             </div>
           </div>
@@ -186,44 +211,59 @@
 
 
     
-  
-  <div class="container" role="main">
-    <article class="post-preview">
-      <div class="list-group col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3">
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h1 id="前言">前言</h1>
+
+<p>开博客的主要目的是当做一个笔记本，把一些要紧的知识点、代码和流程等做个梳理和记录，方便下次使用时的查找。其实很早就有博客，只是不认为那就是，比如QQ空间和校内网。以前记笔记使用过网易产品一段时间，后来就转到博客上，例如<a href="http://blog.sina.com.cn/u/1696852495">新浪</a>，不支持<strong>markdown</strong>。后来转到<a href="https://www.jianshu.com/u/c7b1f5e71e92">简书</a>，但这家伙不支持公式。CSDN用过两天，支持公式编辑，但不及简书简便。<a href="https://github.com/">GitHub</a>支持<a href="https://dong87.github.io/">个人博客</a>，但模板很折腾，一直不理想，用了两天就不更新了。</p>
+
+<p><strong>rmarkdown</strong>非常好用，帮助我输出<code>R</code>结果到pdf或者word。之前用过<a href="https://yihui.name/">yihui</a>开发的<strong>bookdown</strong>，用来转电子书的格式，也听说过他开发的<strong>blogdown</strong>，但并没有用过。有天<a href="http://luansheng.netlify.com/">栾生</a>推荐了一下![]()</p>
+
+<h1 id="正文">正文</h1>
+
+<p>首先要感谢<a href="http://dapengde.com/">大鹏志</a>给的中文教程<a href="http://dapengde.com/archives/19304">用Rblogdown 搭建个人博客或科研网站</a>。最难的一步出现在<a href="https://www.netlify.com/">netlify</a>与<a href="https://github.com/">GitHub</a>的关联上。按照<code>netlify</code>的要求，指定了<code>public</code>文件夹，但在打开博客网址时总是报错无法打开网页。最后还是从栾老师的GitHub里发现他只同步了<code>public</code>文件夹而非整个建站文件夹，然后就大功告成了。</p>
+
+<p>简略步骤如下：
++ 安装<code>blogdown</code>，在<code>Rstudio</code>里直接安装也可以。</p>
+
+<pre><code class="language-r">if(!require(devtools)) install.packages('devtools')
+devtools::install_github('rstudio/blogdown')
+</code></pre>
+
+<ul>
+<li>建一个空文件夹，然后使用模板<code>gcushen/hugo-academic</code>建立建站文件。还有其他一些模板，见<a href="https://github.com/gohugoio/hugoThemes">这里</a>，每个点进去，选择喜欢的样式，替换这里的就行。
+<code>{r}
+setwd(&quot;D:/blogdown_default&quot;)
+blogdown::new_site(theme='gcushen/hugo-academic')
+</code></li>
+</ul>
+
+      </article>
+
       
-      <a href="../tags/example/" class="list-group-item">
-          example<span class="badge">5</span></a>
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../post/%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%95%88%E5%BA%94%E5%80%BC-%E4%BE%8B%E5%A6%82%E8%82%B2%E7%A7%8D%E5%80%BC-%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7-accuracy/" data-toggle="tooltip" data-placement="top" title="如何计算效应值（例如育种值）的准确性（accuracy）？">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
       
-      <a href="../tags/bigimg/" class="list-group-item">
-          bigimg<span class="badge">1</span></a>
+
+
       
-      <a href="../tags/code/" class="list-group-item">
-          code<span class="badge">1</span></a>
+        
+        
       
-      <a href="../tags/markdown/" class="list-group-item">
-          markdown<span class="badge">1</span></a>
-      
-      <a href="../tags/math/" class="list-group-item">
-          math<span class="badge">1</span></a>
-      
-      <a href="../tags/notes/" class="list-group-item">
-          notes<span class="badge">1</span></a>
-      
-      <a href="../tags/photoswipe/" class="list-group-item">
-          photoswipe<span class="badge">1</span></a>
-      
-      <a href="../tags/plot/" class="list-group-item">
-          plot<span class="badge">1</span></a>
-      
-      <a href="../tags/r-markdown/" class="list-group-item">
-          r-markdown<span class="badge">1</span></a>
-      
-      <a href="../tags/regression/" class="list-group-item">
-          regression<span class="badge">1</span></a>
-      
-      </div>
-    </article>
+
+    </div>
   </div>
+</div>
 
     <footer>
   <div class="container">
@@ -394,7 +434,7 @@
           
           <li>
             
-            <a href="../tags/index.xml" title="RSS">
+            <a href="../../index.xml" title="RSS">
             
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -416,7 +456,7 @@
 
           
             &nbsp;&bull;&nbsp;
-            <a href="../">Dong&#39;s private blog</a>
+            <a href="../../">Dong&#39;s private blog</a>
           
         </p>
         
@@ -433,12 +473,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="../js/main.js"></script>
-<script src="../js/highlight.min.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/highlight.min.js"></script>
 <script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
-<script src="../js/load-photoswipe.js"></script>
+<script src="../../js/load-photoswipe.js"></script>
 
 
 

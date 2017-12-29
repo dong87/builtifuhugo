@@ -180,6 +180,58 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="../post/netlify%E6%90%AD%E5%BB%BAblog%E7%AC%94%E8%AE%B0/">
+                <h2 class="post-title">netlify搭建blog笔记</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on December 29, 2017
+              </p>
+              <div class="post-entry">
+                
+                  
+
+<h1 id="前言">前言</h1>
+
+<p>开博客的主要目的是当做一个笔记本，把一些要紧的知识点、代码和流程等做个梳理和记录，方便下次使用时的查找。其实很早就有博客，只是不认为那就是，比如QQ空间和校内网。以前记笔记使用过网易产品一段时间，后来就转到博客上，例如<a href="http://blog.sina.com.cn/u/1696852495">新浪</a>，不支持<strong>markdown</strong>。后来转到<a href="https://www.jianshu.com/u/c7b1f5e71e92">简书</a>，但这家伙不支持公式。CSDN用过两天，支持公式编辑，但不及简书简便。<a href="https://github.com/">GitHub</a>支持<a href="https://dong87.github.io/">个人博客</a>，但模板很折腾，一直不理想，用了两天就不更新了。</p>
+
+<p><strong>rmarkdown</strong>非常好用，帮助我输出<code>R</code>结果到pdf或者word。之前用过<a href="https://yihui.name/">yihui</a>开发的<strong>bookdown</strong>，用来转电子书的格式，也听说过他开发的<strong>blogdown</strong>，但并没有用过。有天<a href="http://luansheng.netlify.com/">栾生</a>推荐了一下![]()</p>
+
+<h1 id="正文">正文</h1>
+
+<p>首先要感谢<a href="http://dapengde.com/">大鹏志</a>给的中文教程<a href="http://dapengde.com/archives/19304">用Rblogdown 搭建个人博客或科研网站</a>。最难的一步出现在<a href="https://www.netlify.com/">netlify</a>与<a href="https://github.com/">GitHub</a>的关联上。按照<code>netlify</code>的要求，指定了<code>public</code>文件夹，但在打开博客网址时总是报错无法打开网页。最后还是从栾老师的GitHub里发现他只同步了<code>public</code>文件夹而非整个建站文件夹，然后就大功告成了。</p>
+
+<p>简略步骤如下：
++ 安装<code>blogdown</code>，在<code>Rstudio</code>里直接安装也可以。</p>
+
+<pre><code class="language-r">if(!require(devtools)) install.packages('devtools')
+devtools::install_github('rstudio/blogdown')
+</code></pre>
+
+<ul>
+<li>建一个空文件夹，然后使用模板<code>gcushen/hugo-academic</code>建立建站文件。还有其他一些模板，见<a href="https://github.com/gohugoio/hugoThemes">这里</a>，每个点进去，选择喜欢的样式，替换这里的就行。
+<code>{r}
+setwd(&quot;D:/blogdown_default&quot;)
+blogdown::new_site(theme='gcushen/hugo-academic')
+</code></li>
+</ul>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../tags/notes/">notes</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="../post/%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%95%88%E5%BA%94%E5%80%BC-%E4%BE%8B%E5%A6%82%E8%82%B2%E7%A7%8D%E5%80%BC-%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7-accuracy/">
                 <h2 class="post-title">如何计算效应值（例如育种值）的准确性（accuracy）？</h2>
 
@@ -514,27 +566,6 @@ Here is a secondary heading Here&rsquo;s a useless table:
                 
                   To be, or not to be&ndash;that is the question: Whether &lsquo;tis nobler in the mind to suffer The slings and arrows of outrageous fortune Or to take arms against a sea of troubles And by opposing end them. To die, to sleep&ndash; No more&ndash;and by a sleep to say we end The heartache, and the thousand natural shocks That flesh is heir to. &lsquo;Tis a consummation Devoutly to be wished. To die, to sleep&ndash; To sleep&ndash;perchance to dream: ay, there&rsquo;s the rub, For in that sleep of death what dreams may come When we have shuffled off this mortal coil, Must give us pause.
                   <a href="../post/2015-02-13-hamlet-monologue/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../post/2015-01-27-dear-diary/">
-                <h2 class="post-title">Dear diary</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on January 27, 2015
-              </p>
-              <div class="post-entry">
-                
-                  What is it with that Mary girl? Dragging me to school every day. As if I had a choice. What you don&rsquo;t hear in those nursery rhymes is that she starves me if I don&rsquo;t go to school with her; it&rsquo;s the only way I can stay alive! I&rsquo;m thinking about being adopted by Little Bo Peep, sure I may get lost, but anything is better than being with Mary and those little brats at school (shudder, shudder).
-                  <a href="../post/2015-01-27-dear-diary/" class="post-read-more">[Read More]</a>
                 
               </div>
 
