@@ -26,7 +26,7 @@ $\sigma_a^2$是加性方差。
 预测差值的标准误（*SED*）是可以从Asreml中直接得到的，与*PEV*的关系是：
 $$ SED=\sqrt{\hat Var(BLUP.differences)}=\sqrt{\hat Var(\hat Yi-\hat Y{i^`})}=\sqrt{2\hat Var(\hat Y)_i}=\sqrt{2PEV} $$
 我不知道上面这个公式怎么推导的。 所以有
-$$PEV=(SED)^2&amp;frasl;2=\hat Var(BLUP.differences)/2$$
+$$PEV=(SED)^2 /2=\hat Var(BLUP.differences)/2$$
 在很长时间里我不知道（或者说模糊地知道）accuracy是怎么实现的。我知道公式，但在软件里分别和公式组分对应的部分是什么却不是很清楚，当然写这篇文字的时候是确定的。具体实现的途径有2：
  一是利用Asreml中的prediction直接得到*SED*后，再根据公式4得出PEV
 fm_pred &amp;lt;- predict(fm_asr, classify = &amp;quot;Fam&amp;quot;) #fm_asr是asreml()输出的对象， Fam是随机效应变量 SED &amp;lt;- fm_pred$predictions$avsed  二是逐步得到*PEV*，每个预测值都有一个*PEV*，是预测值*SE*平方的均值，所以从预测函数得到的对象中提取出*SE*平方后再平均即可
@@ -203,6 +203,15 @@ Association football, more commonly known as football or soccer,[2] is a sport p
       <author>youremail@domain.com (Leiming Dong)</author>
       <guid>/post/2015-01-04-first-post/</guid>
       <description>This is my first post, how exciting!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/post/2017-10-01-%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%95%88%E5%BA%94%E5%80%BC-%E4%BE%8B%E5%A6%82%E8%82%B2%E7%A7%8D%E5%80%BC-%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7-accuracy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/2017-10-01-%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%95%88%E5%BA%94%E5%80%BC-%E4%BE%8B%E5%A6%82%E8%82%B2%E7%A7%8D%E5%80%BC-%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7-accuracy/</guid>
+      <description>如何计算效应值（例如育种值）的准确性（accuracy）？code{white-space: pre;}pre:not([class]) {background-color: white;}if (window.hljs) {hljs.configure({languages: []});hljs.initHighlightingOnLoad();if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) {window.setTimeout(function() { hljs.initHighlighting(); }, 0);}}h1 {font-size: 34px;}h1.title {font-size: 38px;}h2 {font-size: 30px;}h3 {font-size: 24px;}h4 {font-size: 18px;}h5 {font-size: 16px;}h6 {font-size: 12px;}.</description>
     </item>
     
   </channel>
