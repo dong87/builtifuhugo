@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Dong&#39;s private blog: Enterprising &amp; Concentrating</title>
+    <title>Categories on Dong&#39;s private blog</title>
     <link>/categories/</link>
-    <description>Recent content in Categories on Dong&#39;s private blog: Enterprising &amp; Concentrating</description>
+    <description>Recent content in Categories on Dong&#39;s private blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>youremail@domain.com (Leiming Dong)</managingEditor>
     <webMaster>youremail@domain.com (Leiming Dong)</webMaster>
@@ -14,7 +14,7 @@
     <item>
       <title>R</title>
       <link>/categories/r/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
       <guid>/categories/r/</guid>
       <description></description>
