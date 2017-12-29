@@ -203,19 +203,20 @@
 
 <p>首先要感谢<a href="http://dapengde.com/">大鹏志</a>给的中文教程<a href="http://dapengde.com/archives/19304">用Rblogdown 搭建个人博客或科研网站</a>。最难的一步出现在<a href="https://www.netlify.com/">netlify</a>与<a href="https://github.com/">GitHub</a>的关联上。按照<code>netlify</code>的要求，指定了<code>public</code>文件夹，但在打开博客网址时总是报错无法打开网页。最后还是从栾老师的GitHub里发现他只同步了<code>public</code>文件夹而非整个建站文件夹，然后就大功告成了。</p>
 
-<p>简略步骤如下：
-+ 安装<code>blogdown</code>，在<code>Rstudio</code>里直接安装也可以。</p>
-
-<pre><code class="language-r">if(!require(devtools)) install.packages('devtools')
-devtools::install_github('rstudio/blogdown')
-</code></pre>
+<p>简略步骤如下：</p>
 
 <ul>
+<li>安装<code>blogdown</code>，在<code>Rstudio</code>里直接安装也可以。
+<code>{r}
+if(!require(devtools)) install.packages('devtools')
+devtools::install_github('rstudio/blogdown')
+</code></li>
 <li>建一个空文件夹，然后使用模板<code>gcushen/hugo-academic</code>建立建站文件。还有其他一些模板，见<a href="https://github.com/gohugoio/hugoThemes">这里</a>，每个点进去，选择喜欢的样式，替换这里的就行。
 <code>{r}
 setwd(&quot;D:/blogdown_default&quot;)
 blogdown::new_site(theme='gcushen/hugo-academic')
 </code></li>
+<li>待更</li>
 </ul>
 
                 
