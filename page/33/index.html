@@ -212,77 +212,6 @@
           
           
             <article class="post-preview">
-              <a href="../../post/bayesian/waldmann-2009%E8%B4%9D%E5%8F%B6%E6%96%AF-winbugs-/">
-                <h2 class="post-title">Waldmann-2009贝叶斯-WinBUGS-</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (35 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  <blockquote>
-<ol>
-<li>Waldmann P. Easy and flexible Bayesian inference of quantitative genetic parameters. Evolution (N. Y). 2009;63:1640–3.</li>
-</ol>
-</blockquote>
-
-<p>贝叶斯方法在数量遗传学和进化生物学中有了巨大的进步。然而，应用这种方法的出版物相对较少，可能是因为多用途和用户友好的软件的可用性有限。这里描述了如何只有几行代码的良好开发和非常灵活的贝叶斯软件<strong>WinBUGS（Lunn等人，2000）可以用于推断通用设计的系谱中的加性多基因方差和遗传性</strong>。所呈现的代码通过应用于早期公布的苏格兰松的数据集来说明。</p>
-
-<hr />
-
-<p>进化中感兴趣的大多数性状是多基因的并受遗传和环境因素的影响。数量遗传学为多基因性状的研究提供了一个完善的和强大的框架（Falconer和Mackay 1996）。<strong>数量遗传学背后的基本想法是观察具有不同程度的关系（coancestry）的个体（可能来自交配方案）的样本，并且基于关系系数估计该性状的遗传和环境方差分量</strong>。在历史上，或多或少复杂的交配设计已被用来产生个体之间的共祖差异（Lynch和Walsh 1998）。还有人建议，<strong>可以通过首先使用分子标记来重建看似无关的个体之间的共生来估计数量基因参数</strong>（Blouin 2003）。<strong>多基因性状的遗传变异通常被估计为加性遗传方差（和遗传力）。遗传力的估计是重要的，因为该参数确定了通过对群体应用自然和人工选择可以预期的响应</strong>。 <strong>Henderson（1976）介绍了计算一般家系的加性遗传相关矩阵的方法。这种方法通常被称为动物（或个体）模型。限制最大似然（REML）方法通常用于估计单个模型中的方差分量。众所周知，基于个体模型的统计技术在估计变异分量和预测育种值方面优于传统的基于家系的方法，因为它们使用来自谱系的所有信息，并且对选择引入的偏差较不敏感（Lynch和Walsh 1998）</strong>。<strong>贝叶斯统计方法在遗传学中变得越来越流行，因为它们在高度复杂的层次统计模型分析中以概率形式总结不确定性的能力（Sorensen和Gianola 2002; Beaumont和Rannala 2004; O&rsquo;Hara等人。2008）</strong>。<strong>数值模拟，通常是马尔可夫链蒙特卡罗（MCMC）方法，被用来执行贝叶斯推理所需的积分</strong>。<strong>吉布斯采样器是一种高效的MCMC方法，最初是由Geman和Geman（1984）开发的，用于分析Gibbs在物理场中的格子分布，后来由Gelfand和Smith（1990）引入统计学。吉布斯抽样基于从完全条件分布的抽样，并要求这些分布对于所有参数以封闭形式可用</strong>。 <strong>Metropolis-Hastings更新可用于完全条件分布不可用的模型（Gilks​​等人，1996）.WMC等人将MCMC方法引入数量遗传学。 （1993）和Sorensen et al。 （1994）</strong>。然而，鉴于贝叶斯量化遗传学中有前途的方法发展，仍然缺乏使用这些方法的出版物。主要原因可能是缺乏用户友好的软件，研究人员可以使用而没有深入的统计知识。<strong>单变量和多变量贝叶斯吉布斯抽样算法在两个动物育种软件中实现。 MT-GSAM（VanTassell和Van Vleck 1996）和GIBBSF90（Misztal等人，2002）是可以处理大家系的强大程序</strong>。然而，<strong>这些程序需要良好的动物模型知识以及贝叶斯推理的经验。即使这两个程序都能处理一系列不同的模型，但它们缺乏通用软件包的灵活性。例如，方差分量的先验次数受到限制，并且难以执行模型比较</strong>。 Damgaard（2007）展示了如何使用多目的MCMC程序WinBUGS（Lunn等人，2000）来适应动物模型，但是该方法需要事先将数据转换为使得模型在WinBUGS中拟合更容易的格式，并且代码不必要地复杂。在这里，我展示了一种在WinBUGS中实现单个模型的替代方法。使用早期公开的来自苏格兰松的数量遗传学研究的数据来说明该方法（Waldmann等人2008）。</p>
-
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/bayesian/waldmann-2016-%E5%8A%A0%E6%80%A7%E6%98%BE%E6%80%A7-%E8%B4%9D%E5%8F%B6%E6%96%AF/">
-                <h2 class="post-title">Waldmann-2016-加性显性-贝叶斯</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (185 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  Waldmann P, Hallander J, Hoti F, Sillanpää MJ. Efficient Markov chain Monte Carlo implementation of Bayesian analysis of additive and dominance genetic variances in noninbred pedigrees. Genetics [Internet]. 2008 [cited 2016 Nov 14];179:1101–12. Available from: http://sci-hub.cc/http://www.genetics.org/content/179/2/1101.short  准确和快速计算定量遗传方差参数在自然和繁殖群体中都非常重要。对于具有复杂关系结构的实验设计，在统计模型中包括加性和显性方差分量可能是重要的。在这项研究中，我们引入了贝叶斯吉布斯抽样方法，用于估计传统的无穷小模型中的加性和显性遗传变异。该方法可以在没有近亲的情况下处理一般家系。为了优化计算时间和马尔可夫链蒙特卡罗（MCMC）链的良好混合，我们使用混合Gibbs采样器，其结合单个位点和封闭的Gibbs采样器。通过使用预转换变量，进一步改善了混合取样器的速度和单位点取样器的混合。从先前公布的苏格兰松（Pinus sylvestris L.）的双列后代测试和具有不同显性方差水平的两个大模拟数据集分析了两个性状（高度和树干直径）。我们还在后验预测损失法的基础上进行贝叶斯模型比较。结果表明，具有加性和显性分量的模型对于高度和直径以及具有高显性的模拟数据具有最佳拟合。对于具有低显性的模拟数据，我们需要一个信息，以避免显性方差分量被高估。苏格兰松林数据中的狭义遗传力估计与较早的结果相比较低，这是不奇怪的，因为显性方差的水平相当高，尤其是直径。通常，混合采样器比阻塞采样器快得多，并显示出比单位点采样器更好的混合特性。
-前言 与自然适应相关的多数性状和育种改良受许多基因（多基因性状; Lynch和Walsh 1998）的影响。在定量遗传学中，多基因性状的遗传变异通常被估计为加性遗传方差（和遗传力）。遗传力的估计具有根本重要性，因为这个比率影响可以预期在所考虑的群体中的自然和人工选择的反应（Falconer和Mackay 1996）。因此，相当关注用于估计育种值和遗传力的统计方法的发展（Henderson 1984; Searle等1992; Lynch和Walsh 1998）。 遗传方差可以进一步分成加性遗传成分和非累加遗传成分。显性方差由同一基因座处等位基因之间的相互作用引起，而上位方差由不同基因座处等位基因的相互作用引起。传统上，已经进行了复杂的交叉设计以估计显性和上位性方差，例如北卡罗来纳（NC）II设计和三重测试跨线; Kearsey和Pooni 1996; Lynch和Walsh 1998？.Henderson（1985a，b）表明基于多基因成分和谱系信息（通常称为动物或个体模型）的混合效应模型如何可用于推导非加性遗传效应和方差设计。由于加性，显性和上位性遗传效应在未选择的、连锁平衡的非近交群体中是不相关的（Cockerham 1954），理论上应该可以通过加性和显性关系矩阵的各种组合的乘法来估计所有这些遗传效应，在混合模型方程中使用这些。例如，加性 - 加性上位关系矩阵将通过两个附加遗传关系矩阵的元素方式乘法获得。不幸的是，在实践中，上位关系矩阵将是彼此的倍数，这可能导致统计模型中的参数的可识别性的顶点（对于关于可识别性的讨论，参见Gelfand和Sahu1999）。此外，应该注意包括支配因素，因为考虑的谱系可能太小，不能导致可识别的结果（Misztal 1997）。非加性遗传方差分量的估计是至关重要的几个原因。首先，它将产生更准确的统计估计，因此可以实施更准确的选择策略（Du和Heschele 2000）。这在附带实验设计中特别重要（Henderson 1985b）。在这种情况下，标准加性模型（假设残差与恒定方差不相关）可以产生加性遗传值的有偏估计，因为简单残差方差结构是错误的（Lynch和Walsh 1998）。已经发现非加性遗传效应可以对育种值的排名具有相当大的影响（Wall等人，2005）。第二，显性本身是有意义的，因为它与预期的近交衰退水平耦合（Cockerham andWeir 1984）。因此，没有显性作用不会有近交衰退，避免近亲繁殖在育种设计和保护计划中不太重要。 最近，从理论的角度来看，显性作用和上位性可以转化为瓶颈和近交的加性遗传方差（例如，Willis and Orr 1993; Wang et al.
-                  <a href="../../post/bayesian/waldmann-2016-%E5%8A%A0%E6%80%A7%E6%98%BE%E6%80%A7-%E8%B4%9D%E5%8F%B6%E6%96%AF/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
               <a href="../../post/bayesian/waldmann2006-%E5%A4%9A%E6%80%A7%E7%8A%B6%E4%B8%AA%E4%BD%93%E6%A8%A1%E5%9E%8B-reml%E5%92%8Cgibbs%E7%9A%84%E6%AF%94%E8%BE%83/">
                 <h2 class="post-title">Waldmann2006-多性状个体模型-reml和gibbs的比较</h2>
                 
@@ -309,6 +238,12 @@
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/bayesian/">Bayesian</a>&nbsp;
+                
+                </span>
               
             </article>
           
@@ -342,6 +277,12 @@
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/">统计模型</a>&nbsp;
+                
+                </span>
               
             </article>
           
@@ -389,6 +330,12 @@
               </div>
 
               
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/">杂交优势</a>&nbsp;
+                
+                </span>
+              
             </article>
           
             <article class="post-preview">
@@ -423,6 +370,12 @@
               </div>
 
               
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E8%82%B2%E7%A7%8D/">育种</a>&nbsp;
+                
+                </span>
+              
             </article>
           
             <article class="post-preview">
@@ -454,6 +407,12 @@
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/">遗传参数</a>&nbsp;
+                
+                </span>
               
             </article>
           
@@ -504,6 +463,12 @@ Papadakis方法的许多理论讨论集中在固定模型上。我们认为这�
               </div>
 
               
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E7%A9%BA%E9%97%B4/">空间</a>&nbsp;
+                
+                </span>
+              
             </article>
           
             <article class="post-preview">
@@ -534,6 +499,12 @@ Use of selfing as a breeding tool for conifers is controversial; this topic is a
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/">杂交优势</a>&nbsp;
+                
+                </span>
               
             </article>
           
@@ -571,6 +542,94 @@ Use of selfing as a breeding tool for conifers is controversial; this topic is a
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/">标记谱系</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/gs/wolc2016-%E5%A4%A7%E6%95%88%E5%BA%94qtl-bayesb%E5%92%8Cbayesc%E4%BC%98%E4%BA%8Egblup%E6%A3%80%E6%B5%8B/">
+                <h2 class="post-title">Wolc2016-大效应QTL-BayesB和BayesC优于GBLUP检测</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (53 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Wolc A, Arango J, Settar P, et al (2016) Mixture models detect large effect QTL better than GBLUP and result in more accurate and persistent predictions. J Anim Sci Biotechnol 7:7. doi: 10.1186/s40104-016-0066-z</p>
+</blockquote>
+
+<p>背景：SNP效应的准确评估对于全基因组关联研究和基因组预测是重要的。数量性状的遗传结构差异很大，一些性状表现出很少的具有大效应的数量性状位点（QTL），而其他性状具有一个或几个容易检测的QTL，具有很大的作用。\ n \ nETHODS：肉鸡体重层中的蛋重是具有大效应的QTL的性状的两个实例。用于全基因组关联研究的常用方法是拟合混合物模型，例如BayesB，其假设一些已知比例的SNP效应为零。相比之下，最常用的基因组预测方法称为GBLUP，其涉及将动物模型拟合表型数据，动物中的方差 - 协方差或基因组关系矩阵通过基因组宽SNP基因型测定。<strong>在确定GBLUP的基因组关系矩阵时，通常对每个SNP的基因型进行等同加权</strong>。我们使用GBLUP的等效标记效应模型公式进行本研究。我们比较这两种类型的模型使用从2324动物基因型与42 K SNP面板8代收集的鸡蛋重量数据。\ n \ nRESULTS：使用来自前7代的数据，BayesB和GBLUP发现最大的QTL在类似公认的QTL区，但是该QTL估计占BayesB的遗传变异的24％，而GBLUP的遗传变异小于1％。当预测第8代表型时，BayesB占表型变异的36％，GBLUP占25％。当仅使用来自任何一代的数据时，在除一个世代之外的所有BayesB中鉴定了相同的QTL，但是不与GBLUP一起鉴定。基于仅来自第1代的295只动物的第2代至第7代表型的预测占BayesB的10％表型变异，但是仅有6％与GBLUP。仅使用在1 Mb区域中的标记效应的预测表型，其对来自第1代数据的卵重量的最大影响占据使用BayesB的近8％的变化，但是没有GBLUP的预测能力。结论：<strong>在大效应QTL存在的情况下，BayesB做了更好的QTL检测工作，其基因组预测比GBLUP更准确和持久。</strong></p>
+
+<p>在大效应QTL存在下精确评估SNP效应的方法的选择对于全基因组关联研究（GWAS）和基因组选择（GS）可能是关键的。混合模型，有时称为变量选择模型，假设一些SNP效应为零。一个这样的混合模型，<code>BayesB [1]，已被证明足以估计标记效应在模拟数据[2,3]</code>，但基于真实数据的比较，其中真实效应未知更不直接。在最近的一篇使用肉鸡体重数据的论文中，<code>Wang et al。 [4]得出结论，与单步GBLUP程序相比，“BayesB似乎过度收缩区域为零，而高估归因于剩余SNP效应的遗传变异的量”</code>。蛋重是一个层次的性状，多项研究报告在染色体4上的一致位置检测到具有大效应的QTL [5-8]。本研究的目的是证明在<code>存在这种大效应QTL ，混合模型像BayesB和BayesC [9,10]优于GBLUP检测和量化QTL的影响，混合模型提供更准确的基因组估计的育种价值（GEBV）</code>，更持久的代，使用棕色蛋层数据。</p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/gs/">GS</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E4%BD%9C%E5%9B%BE/wu-2004%E5%8F%91%E8%82%B2%E6%80%A7%E7%8A%B6%E9%81%97%E4%BC%A0%E7%BB%84%E6%88%90%E7%9A%84%E5%88%86%E6%9E%90/">
+                <h2 class="post-title">Wu-2004发育性状遗传组成的分析</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (93 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Wu R, Ma CX, Lin M, Casella G (2004) A General Framework for Analyzing the Genetic Architecture of Developmental Characteristics. Genetics 166:1541–1551. doi: 10.1534/genetics.166.3.1541
+ 生长性状的遗传结构在形成生物的生长，发育和进化中起着中心作用。虽然有限数量的模型被设计来估计对复杂表型的遗传效应，没有模型可用于检查基因行为和相互作用如何改变生物的本体发育，并将改变的个体发育转化为后代。在本文中，我们提出一个新的统计模型，用于定位数量性状基因位点（QTL）确定复杂性状的发育过程。我们的模型是在用EM算法实现的传统最大似然框架内构建的。我们采用生物有意义的生长曲线方程来建模时间特异性预期遗传值和AR（1）模型，以构造不同时间点之间的残差方差 - 协方差矩阵。由于估计参数的数量减少和生物学原理的并入，新模型显示增加的统计功效以检测QTL对个体发育生长和发育的形状产生影响。该模型允许对关于上位在确定生物生长，形式和形状以及解决与进化界面处的发育问题的作用的许多生物假设的测试。使用我们新开发的模型，我们已经成功地检测到显着的添加剂×添加上位性效应对茎高度生长轨迹在林木中。
+复杂生物（如动物和植物）的演化不仅仅是由成年祖先直接转化为成年后代的结果，而是涉及一系列发展过程，产生每一代的新特征。越来越多的进化研究已经发射，以确定在所述速率或必须发生从其祖先派生特定表型的发育过程的定时的遗传或发育变化（ř 冰 1997 ; ř AFF 2000 ; ř ougvie 2001）。一般的看法是，发展进程的演变是由环境和单独行动，并与对方（交互许多基因共同影响大号ynch和W alsh 1998）。然而，为了准确地预测性状进化的方向和速率，必须量化基因如何作用和相互作用以控制发育的各个阶段的详细遗传结构。
+倾向于表现个体之间连续变异的表型特征的基因称为数量性状基因座（QTL）。QTL的遗传效应或方差包括两个组件，添加剂，由于育种值的累积和非加性，由于等位基因（显性）或nonallelic（上位）相互作用。不同基因座之间的上位相互作用可以进一步分成不同类型：加性×加性，加性×显性（或显性×加性）和显性×显性。上位的存在意味着基因对表型的影响严重依赖于由其他基因提供的上下文。在过去，添加剂和数量性状的非加性遗传结构的估计是基于相关个体（表型大号ynch和W alsh 1998），虽然这有最小的功率，以检测非加性遗传变异，特别是上位方差因为上位贡献甚微亲属之间的相似（ç heverud和R 奥特曼 1995年）。
+基于DNA的遗传连锁图谱的出现打开用于精确估算发育性状的遗传结构的新颖的途径（V aughn 等人 1999年）。目前提出的检测QTL的主要和相互作用效应的统计方法是基于在有限组的标志性年龄下测量的数量性状的表型。最近，W ü 等。（2002年，2003年a，b）和M 一个 等。（2002）已经得到的强大功能映射方法用于通过普遍增长法律实施个体发育成长的过程中推定的QTL效应的动态变化（W¯¯ EST 等人 2001）和结构化残差（共）方差之间不同的矩阵的时间点（参见ķ irkpatrick和H 埃克曼 1989年 ; K- irkpatrick 等人 1990年，1994年 ; P 莱彻和G eyer 1999年）。这种方法已被证明是由于参数数量减少的统计上更强大和更精确的被估计并且是生物学更有意义，由于考虑的生物学原理基础性状开发（W¯¯ Û 等人 2002）。然而，这个模型没有纳入上位相互作用的估计过程，因此，不能检查整个遗传结构在发展轨迹中的作用。
+                  <a href="../../post/%E4%BD%9C%E5%9B%BE/wu-2004%E5%8F%91%E8%82%B2%E6%80%A7%E7%8A%B6%E9%81%97%E4%BC%A0%E7%BB%84%E6%88%90%E7%9A%84%E5%88%86%E6%9E%90/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E4%BD%9C%E5%9B%BE/">作图</a>&nbsp;
+                
+                </span>
               
             </article>
           

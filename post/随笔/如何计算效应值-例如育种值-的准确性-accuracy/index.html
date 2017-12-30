@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>如何计算效应值（例如育种值）的准确性（accuracy）？</title>
+  <meta property="og:title" content="如何计算效应值（例如育种值）的准确性（accuracy）？" />
+  <meta name="twitter:title" content="如何计算效应值（例如育种值）的准确性（accuracy）？" />
+  <meta name="description" content="准确性指的是预测效应值与真值之间的相关系数。有时还会遇见一个概念——可靠性（reliability）。可靠性是准确性的平方，也就是说这二者度量的是一个事情。reliability其实就是遗传力，这句很重要！！！。遗传力主要用来计算选择响应（response to selection）。advisor说我的文章短句子太多，不连贯，确实是这样LOL。 准确性的计算公式为：
+$$r=\sqrt{1-\frac{PEV}{\hat{\sigma}_a^2}}$$
+_PEV_是prediction error variances的缩写，意思是预测误差方差，预测误差是预测值与真值间的差，即：
+$$PEV=var(\hat g-g)=(1-r_{\hat g,g}^2)\sigma_a^2$$
+$\sigma_a^2$是加性方差。
+预测差值的标准误（_SED_）是可以从Asreml中直接得到的，与_PEV_的关系是：
+$$SED=\sqrt{\hat Var(BLUP.differences)}=\sqrt{\hat Var(\hat Yi-\hat Y{i^ \prime})}=\sqrt{2\hat Var(\hat Y)_i}=\sqrt{2PEV}$$
+我不知道上面这个公式怎么推导的。 所以有
+$$PEV=(SED)^{2}/2=\hat Var(BLUP.differences)/2$$
+在很长时间里我不知道（或者说模糊地知道）accuracy是怎么实现的。我知道公式，但在软件里分别和公式组分对应的部分是什么却不是很清楚，当然写这篇文字的时候是确定的。具体实现的途径有2：
+ 一是利用Asreml中的prediction直接得到_SED_后，再根据公式4得出PEV
+fm_pred &lt;- predict(fm_asr, classify = &quot;Fam&quot;) #fm_asr是asreml()输出的对象， Fam是随机效应变量 SED &lt;- fm_pred$predictions$avsed  二是逐步得到_PEV_，每个预测值都有一个_PEV_，是预测值_SE_平方的均值，所以从预测函数得到的对象中提取出_SE_平方后再平均即可
+fm_pred &lt;- predict(fm_asr, classify = &quot;Fam&quot;, present = &quot;Plot&quot;) #注意！这里预测的时候是要矫正掉其他的随机效应（如Plot） SE &lt;- fm_pred$predictions$pvals$standard.error PEV &lt;- SE^2 %&gt;% mean  这里的_PEV_是一个向量，对应到每个水平上。 所以，总体上，_PEV_、_SED_和_SE_的关系是 $$PEV=(SED)^{2}/2=ave(SE_i^2)$$
+  另外，在林元震老师的著作R与ASReml-R统计学中（P474）也涉及到accuracy的代码
+SE &lt;- fm_asr$vcoeff$random _ fm_asr$sigma2 #效应值se乘以sigma  结果是一样的，但不知道是否合理。">
+  <meta property="og:description" content="准确性指的是预测效应值与真值之间的相关系数。有时还会遇见一个概念——可靠性（reliability）。可靠性是准确性的平方，也就是说这二者度量的是一个事情。reliability其实就是遗传力，这句很重要！！！。遗传力主要用来计算选择响应（response to selection）。advisor说我的文章短句子太多，不连贯，确实是这样LOL。 准确性的计算公式为：
+$$r=\sqrt{1-\frac{PEV}{\hat{\sigma}_a^2}}$$
+_PEV_是prediction error variances的缩写，意思是预测误差方差，预测误差是预测值与真值间的差，即：
+$$PEV=var(\hat g-g)=(1-r_{\hat g,g}^2)\sigma_a^2$$
+$\sigma_a^2$是加性方差。
+预测差值的标准误（_SED_）是可以从Asreml中直接得到的，与_PEV_的关系是：
+$$SED=\sqrt{\hat Var(BLUP.differences)}=\sqrt{\hat Var(\hat Yi-\hat Y{i^ \prime})}=\sqrt{2\hat Var(\hat Y)_i}=\sqrt{2PEV}$$
+我不知道上面这个公式怎么推导的。 所以有
+$$PEV=(SED)^{2}/2=\hat Var(BLUP.differences)/2$$
+在很长时间里我不知道（或者说模糊地知道）accuracy是怎么实现的。我知道公式，但在软件里分别和公式组分对应的部分是什么却不是很清楚，当然写这篇文字的时候是确定的。具体实现的途径有2：
+ 一是利用Asreml中的prediction直接得到_SED_后，再根据公式4得出PEV
+fm_pred &lt;- predict(fm_asr, classify = &quot;Fam&quot;) #fm_asr是asreml()输出的对象， Fam是随机效应变量 SED &lt;- fm_pred$predictions$avsed  二是逐步得到_PEV_，每个预测值都有一个_PEV_，是预测值_SE_平方的均值，所以从预测函数得到的对象中提取出_SE_平方后再平均即可
+fm_pred &lt;- predict(fm_asr, classify = &quot;Fam&quot;, present = &quot;Plot&quot;) #注意！这里预测的时候是要矫正掉其他的随机效应（如Plot） SE &lt;- fm_pred$predictions$pvals$standard.error PEV &lt;- SE^2 %&gt;% mean  这里的_PEV_是一个向量，对应到每个水平上。 所以，总体上，_PEV_、_SED_和_SE_的关系是 $$PEV=(SED)^{2}/2=ave(SE_i^2)$$
+  另外，在林元震老师的著作R与ASReml-R统计学中（P474）也涉及到accuracy的代码
+SE &lt;- fm_asr$vcoeff$random _ fm_asr$sigma2 #效应值se乘以sigma  结果是一样的，但不知道是否合理。">
+  <meta name="twitter:description" content="准确性指的是预测效应值与真值之间的相关系数。有时还会遇见一个概念——可靠性（reliability）。可靠性是准确性的平方，也就是说这二者度量的是一个事情。reliability其实就是遗传力，这句很重要！！！。遗传力主要用来计算选择响应（response to selection）。advisor说我的文章短句子太多，不连贯，确实是这样LOL。 准确性的计算公式为： …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E9%9A%8F%E7%AC%94/%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%95%88%E5%BA%94%E5%80%BC-%E4%BE%8B%E5%A6%82%E8%82%B2%E7%A7%8D%E5%80%BC-%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7-accuracy/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E9%9A%8F%E7%AC%94/%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%95%88%E5%BA%94%E5%80%BC-%E4%BE%8B%E5%A6%82%E8%82%B2%E7%A7%8D%E5%80%BC-%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7-accuracy/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>如何计算效应值（例如育种值）的准确性（accuracy）？</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (78 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>如何计算效应值（例如育种值）的准确性（accuracy）？</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (78 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p><strong>准确性</strong>指的是<strong>预测效应值与真值之间的相关系数</strong>。有时还会遇见一个概念——<strong>可靠性</strong>（reliability）。可靠性是准确性的平方，也就是说这二者度量的是一个事情。<strong>reliability其实就是遗传力，这句很重要！！！</strong>。遗传力主要用来计算选择响应（response to selection）。advisor说我的文章<strong>短</strong>句子太多，不连贯，确实是这样LOL。
+准确性的计算公式为：</p>
+
+<p>$$r=\sqrt{1-\frac{PEV}{\hat{\sigma}_a^2}}$$</p>
+
+<p>_PEV_是prediction error variances的缩写，意思是预测误差方差，预测误差是预测值与真值间的差，即：</p>
+
+<p>$$PEV=var(\hat g-g)=(1-r_{\hat g,g}^2)\sigma_a^2$$</p>
+
+<p>$\sigma_a^2$是加性方差。</p>
+
+<p>预测差值的标准误（_SED_）是可以从<code>Asreml</code>中直接得到的，与_PEV_的关系是：</p>
+
+<p>$$SED=\sqrt{\hat Var(BLUP.differences)}=\sqrt{\hat Var(\hat Y<em>i-\hat Y</em>{i^ \prime})}=\sqrt{2\hat Var(\hat Y)_i}=\sqrt{2PEV}$$</p>
+
+<p><code>我不知道上面这个公式怎么推导的。</code>
+所以有</p>
+
+<p>$$PEV=(SED)^{2}/2=\hat Var(BLUP.differences)/2$$</p>
+
+<hr />
+
+<p>在很长时间里我不知道（或者说模糊地知道）accuracy是怎么实现的。我知道公式，但在软件里分别和公式组分对应的部分是什么却不是很清楚，当然写这篇文字的时候是确定的。具体实现的途径有2：</p>
+
+<ul>
+<li><p>一是利用Asreml中的<code>prediction</code>直接得到_SED_后，再根据公式4得出PEV</p>
+
+<pre><code>fm_pred &lt;- predict(fm_asr, classify = &quot;Fam&quot;) #fm_asr是asreml()输出的对象， Fam是随机效应变量
+SED &lt;- fm_pred$predictions$avsed
+</code></pre></li>
+
+<li><p>二是逐步得到_PEV_，每个预测值都有一个_PEV_，是预测值_SE_平方的均值，所以从预测函数得到的对象中提取出_SE_平方后再平均即可</p>
+
+<pre><code>fm_pred &lt;- predict(fm_asr, classify = &quot;Fam&quot;, present = &quot;Plot&quot;) #注意！这里预测的时候是要矫正掉其他的随机效应（如Plot）
+SE &lt;- fm_pred$predictions$pvals$standard.error
+PEV &lt;-  SE^2 %&gt;% mean
+</code></pre>
+
+<p>这里的_PEV_是一个向量，对应到每个水平上。
+所以，总体上，_PEV_、_SED_和_SE_的关系是
+$$PEV=(SED)^{2}/2=ave(SE_i^2)$$</p></li>
+</ul>
+
+<p>另外，在林元震老师的著作<strong>R与ASReml-R统计学</strong>中（P474）也涉及到accuracy的代码</p>
+
+<pre><code>SE &lt;- fm_asr$vcoeff$random _ fm_asr$sigma2 #效应值se乘以sigma
+</code></pre>
+
+<p>结果是一样的，但不知道是否合理。</p>
+
+<hr />
+
+<p>如果没有Asreml可能需要更底层的计算（比如手动），这时_PEV_的计算更直观些：
+$$PEV=Var(\hat u-u)=diag(C^{22})\sigma_e^2=d_i\sigma_e^2=(1-r^2)\sigma_u^2$$
+于是有
+$$r^2=1-diag(C^{22})\frac{\sigma_e^2}{\sigma_u^2}$$</p>
+
+<p>$C^{22}$是方程组关联矩阵的逆矩阵的右下角块，$d_i$是块中的对角线元素。具体可查看<a href="https://pan.baidu.com/s/1hrDRLeG">Pro. Isik编写的教材P84</a>和<a href="https://pan.baidu.com/s/1nvmT47n">Mrode, 2014的书P44</a>。</p>
+
+<p>从_PEV_就可以得到我们需要的准确性和可靠性值了。</p>
+
+<hr />
+
+<p>这个问题在群中还被讨论过
+<img src="http://upload-images.jianshu.io/upload_images/3289684-9908dc53ac300bbc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="accuracy_chat.jpg" /></p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%9A%8F%E7%AC%94/%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%95%88%E5%BA%94%E5%80%BC%E4%BE%8B%E5%A6%82%E8%82%B2%E7%A7%8D%E5%80%BC%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7accuracy/" data-toggle="tooltip" data-placement="top" title="如何计算效应值（例如育种值）的准确性（accuracy）？">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/bayesian/%E5%A4%9A%E5%8F%98%E9%87%8F%E9%98%88%E5%80%BC-%E5%88%86%E5%AD%90%E9%81%97%E4%BC%A0%E6%95%B0%E6%8D%AE-gibbs/" data-toggle="tooltip" data-placement="top" title="多变量阈值-分子遗传数据-Gibbs">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

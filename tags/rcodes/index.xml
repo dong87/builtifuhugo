@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rcodes on Dong&#39;s blog</title>
+    <link>/tags/rcodes/</link>
+    <description>Recent content in Rcodes on Dong&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>youremail@domain.com (Leiming Dong)</managingEditor>
+    <webMaster>youremail@domain.com (Leiming Dong)</webMaster>
+    <lastBuildDate>Sun, 01 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/rcodes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Clifford-Attractors</title>
+      <link>/post/rcodes/clifford-attractors/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/clifford-attractors/</guid>
+      <description>library(Rcpp) library(ggplot2) library(dplyr) opt = theme(legend.position = &amp;quot;none&amp;quot;, panel.background = element_rect(fill=&amp;quot;white&amp;quot;), axis.ticks = element_blank(), panel.grid = element_blank(), axis.title = element_blank(), axis.text = element_blank()) cppFunction(&#39;DataFrame createTrajectory(int n, double x0, double y0, double a, double b, double c, double d) { // create the columns NumericVector x(n); NumericVector y(n); x[0]=x0; y[0]=y0; for(int i = 1; i &amp;lt; n; ++i) { x[i] = sin(a*y[i-1])+c*cos(a*x[i-1]); y[i] = sin(b*x[i-1])+d*cos(b*y[i-1]); } // return a new data frame return DataFrame::create(_[&amp;quot;x&amp;quot;]= x, _[&amp;quot;y&amp;quot;]= y); } &#39;) a=-1.</description>
+    </item>
+    
+    <item>
+      <title>Codesido-SYNCHRO-SAS</title>
+      <link>/post/rcodes/codesido-synchro-sas/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/codesido-synchro-sas/</guid>
+      <description>/**********************************************************************************************/ /*********************** SYNCHRO1: Input data and checks ***************************************/ /**********************************************************************************************/ %macro SYNCHRO1(Message); options nonotes mautosource NOmerror nomprint noserror nosource nodate; %put SYNCHRO START; %let beta=0.02; %let ERR=;%let libname=;%let table=;%let block=;%let branch=; %do i=1 %to 8; %let m&amp;amp;i=0; %let f&amp;amp;i=0;%let ud=3; %end; %empieza: %window START color=gray irow=10 rows=23 icolumn=20 columns=32 #1 @2 &amp;quot;&amp;amp;Message&amp;quot; color=red attr=highlight #3 @2 &amp;quot;Table:&amp;quot; +1 libname 8 attr=underline color=blue &amp;quot;.&amp;quot; table 8 attr=underline required=yes color=blue #5 @2 &amp;quot;Start Day:&amp;quot; +1 inicio 3 attr=underline required=yes color=blue #5 @18 &amp;quot;End Day:&amp;quot; +1 fin 3 attr=underline required=yes color=blue #7 @2 &amp;quot;MALE STAGES&amp;quot; attr=underline +5 &amp;quot;FEMALE STAGES&amp;quot; attr=underline #8 @5 &amp;quot;1&amp;quot; +1 m1 3 color=blue attr=underline +12 &amp;quot;1&amp;quot; +1 f1 3 color=blue attr=underline #9 @5 &amp;quot;2&amp;quot; +1 m2 3 color=blue attr=underline +12 &amp;quot;2&amp;quot; +1 f2 3 color=blue attr=underline #10 @5 &amp;quot;3&amp;quot; +1 m3 3 color=blue attr=underline +12 &amp;quot;3&amp;quot; +1 f3 3 color=blue attr=underline #11 @5 &amp;quot;4&amp;quot; +1 m4 3 color=blue attr=underline +12 &amp;quot;4&amp;quot; +1 f4 3 color=blue attr=underline #12 @5 &amp;quot;5&amp;quot; +1 m5 3 color=blue attr=underline +12 &amp;quot;5&amp;quot; +1 f5 3 color=blue attr=underline #13 @5 &amp;quot;6&amp;quot; +1 m6 3 color=blue attr=underline +12 &amp;quot;6&amp;quot; +1 f6 3 color=blue attr=underline #14 @5 &amp;quot;7&amp;quot; +1 m7 3 color=blue attr=underline +12 &amp;quot;7&amp;quot; +1 f7 3 color=blue attr=underline #15 @5 &amp;quot;8&amp;quot; +1 m8 3 color=blue attr=underline +12 &amp;quot;8&amp;quot; +1 f8 3 color=blue attr=underline #17 @7 &amp;quot;Press&amp;quot; +1 &amp;quot;F3&amp;quot; attr=underline +1 &amp;quot;when ready&amp;quot;; %display START; %if &amp;amp;libname= %then %let libname=work; %let message=; /**************** Data verifications *********************************************************/ PROC contents data=&amp;amp;libname.</description>
+    </item>
+    
+    <item>
+      <title>DT--datatable(df)</title>
+      <link>/post/rcodes/dt--datatabledf/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/dt--datatabledf/</guid>
+      <description># datatable: Create an HTML table widget using the DataTables library DT::datatable(df)  </description>
+    </item>
+    
+    <item>
+      <title>LD的计算-#rstat#</title>
+      <link>/post/rcodes/ld%E7%9A%84%E8%AE%A1%E7%AE%97-#rstat%23/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/ld%E7%9A%84%E8%AE%A1%E7%AE%97-#rstat%23/</guid>
+      <description> LD是一个比较抽象的概念，不是概念本身，而是一些相关的遗传学原理。LD的计算公式也比较简单，D=基因型频率pAB-两个allele频率的积pA·pB。两个allele频率比较容易计算，数一数就能得到，而基因型频率怎么来的，尤其是天然群体中的个体？学习R的一个好处是可以查看源代码，这非常有助于对公式的理解和计算。通过查看包genetics中的LD函数，发现pAB是通过似然函数估计得来的，就比较容易理解了。挂一些代码：
+ # 似然函数 loglik &amp;lt;- function(pAB,...) { (2*n3x3[1,1]+n3x3[1,2]+n3x3[2,1])*log(pAB) + (2*n3x3[1,3]+n3x3[1,2]+n3x3[2,3])*log(pA-pAB) + (2*n3x3[3,1]+n3x3[2,1]+n3x3[3,2])*log(pB-pAB) + (2*n3x3[3,3]+n3x3[3,2]+n3x3[2,3])*log(1-pA-pB+pAB) + n3x3[2,2]*log(pAB*(1-pA-pB+pAB) + (pA-pAB)*(pB-pAB)) } # 解 solution &amp;lt;- optimize( loglik, lower=pmin+.Machine$double.eps, upper=pmax-.Machine$double.eps, maximum=TRUE )  </description>
+    </item>
+    
+    <item>
+      <title>M3M4模型比较_2016-10-21-11-22-10-CST_</title>
+      <link>/post/rcodes/m3m4%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83_2016-10-21-11-22-10-cst_/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/m3m4%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83_2016-10-21-11-22-10-cst_/</guid>
+      <description>&amp;ldquo;2016-10-21 11:22:10 CST&amp;rdquo; 上午对8801fs去掉hs的M3和M4做了模型比较，具体代码如下：
+ # -------- Sys.time() # [1] &amp;quot;2016-10-21 08:26:31 CST&amp;quot; setwd(&amp;quot;D:/Sync/Dlm_wk/8801M3M4/data&amp;quot;) library(asreml) pincalc&amp;lt;-dget(&amp;quot;D:/Sync/R/pin.R&amp;quot;) options(digits = 3) load(&amp;quot;D:/Sync/Dlm_wk/8801M3M4/data/dlm.8801.RData&amp;quot;) str(df.rm.self) # &#39;data.frame&#39;:	1251 obs. of 26 variables: # $ TreeId : int 3141 3142 3143 3144 3145 3146 3147 3148 3149 3150 ... # $ Mum : Factor w/ 12 levels &amp;quot;1&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;3&amp;quot;,&amp;quot;4&amp;quot;,..: 10 10 10 10 10 10 10 10 10 10 ... # $ Dad : Factor w/ 12 levels &amp;quot;1&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;3&amp;quot;,&amp;quot;4&amp;quot;,.</description>
+    </item>
+    
+    <item>
+      <title>PCA</title>
+      <link>/post/rcodes/pca/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/pca/</guid>
+      <description>title: &amp;ldquo;PCA&amp;rdquo; author: &amp;ldquo;Leiming Dong&amp;rdquo; date: &amp;ldquo;2016年12月14日&amp;rdquo; output: html_document: default
+pdf_document: default knitr::opts_chunk$set(echo = TRUE)  R Markdown # setwd(&amp;quot;C:/R/BB201608/pca&amp;quot;) # install.packages(&amp;quot;factoextra&amp;quot;,&amp;quot;rgl&amp;quot;) library(&amp;quot;factoextra&amp;quot;) library(&amp;quot;rgl&amp;quot;)  Dong.pca &amp;lt;- function(filename) { # read data df &amp;lt;- read.table(filename, header = T, sep = &amp;quot;,&amp;quot;, quote = &amp;quot;&amp;quot;) # rm variables of max == min df2 &amp;lt;- df[, !apply(df, MARGIN = 2, function(x) max(x, na.rm = TRUE) == min(x, na.rm = TRUE))] # pca df.</description>
+    </item>
+    
+    <item>
+      <title>R中如何快速地导出很大的character-#rstat#</title>
+      <link>/post/rcodes/r%E4%B8%AD%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%9C%B0%E5%AF%BC%E5%87%BA%E5%BE%88%E5%A4%A7%E7%9A%84character-#rstat%23/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/r%E4%B8%AD%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%9C%B0%E5%AF%BC%E5%87%BA%E5%BE%88%E5%A4%A7%E7%9A%84character-#rstat%23/</guid>
+      <description>今天要将句子库导出，方便用filelocator查询，但write.table实在低消，需要将character分割，而且分割得太大的话总是内存不够。data.table中的fwrite()能够苗存，太牛了。
+ # library(data.table) db &amp;lt;- list(db) setDT(db) fwrite(db, &amp;quot;./result/sent.txt&amp;quot;, quote = F, row.names= F)  from: https://stackoverflow.com/questions/37068537/exporting-large-character-vector-as-csv-file-in-r</description>
+    </item>
+    
+    <item>
+      <title>Truncate-highest-bar-in-ggplot</title>
+      <link>/post/rcodes/truncate-highest-bar-in-ggplot/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/truncate-highest-bar-in-ggplot/</guid>
+      <description>Truncate highest bar in ggplot If you want to fiddle with it, you can use the gridExtra package, and plot 2 (or more) trimmed out sections of the graph. I&amp;rsquo;ve tinkered with the margins to make it line up, but a better plan would probably be to format the axis labels to the same text width, require(ggplot2) require(gridExtra) data &amp;lt;- data.frame(qnt=c(10,20,22,12,14,9,1000),lbl=c(&amp;quot;A&amp;quot;,&amp;quot;B&amp;quot;,&amp;quot;C&amp;quot;,&amp;quot;D&amp;quot;,&amp;quot;E&amp;quot;,&amp;quot;F&amp;quot;,&amp;quot;G&amp;quot;)) g1&amp;lt;-ggplot(data=data, aes(x=lbl, y=qnt)) + geom_histogram(stat=&amp;quot;identity&amp;quot;)+ coord_cartesian(ylim=c(-10,50)) + labs(x=NULL, y=NULL)+ theme(plot.</description>
+    </item>
+    
+    <item>
+      <title>bivariate-model-using-bayesian-by-Luis-A--Apiolaza{RLM}-@zentree--14h</title>
+      <link>/post/rcodes/bivariate-model-using-bayesian-by-luis-a--apiolazarlm-zentree--14h/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/bivariate-model-using-bayesian-by-luis-a--apiolazarlm-zentree--14h/</guid>
+      <description>bi &amp;lt;- MCMCglmm(cbind(ht, su) ~ trait - 1, random = ~ idh(trait):plot + us(trait):genotype, rcov = ~ us(trait):units, data = trial, ginverse = list(genotype = Ainv), prior = bivar, family = c(&#39;gaussian&#39;, &#39;threshold&#39;), burnin = 10000, nitt = 110000, thin = 100)  </description>
+    </item>
+    
+    <item>
+      <title>from-DynamicWebPaige{RLM}-@DynamicWebPaige--</title>
+      <link>/post/rcodes/from-dynamicwebpaigerlm-dynamicwebpaige--/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/from-dynamicwebpaigerlm-dynamicwebpaige--/</guid>
+      <description>df &amp;lt;- expand.grid(x = 1:10, y=1:10) df$angle &amp;lt;- runif(100, 0, 2*pi) df$speed &amp;lt;- runif(100, 0, sqrt(0.1 * df$x)) ggplot(df, aes(x, y)) + geom_point() + geom_spoke(aes(angle = angle, radius = speed))  </description>
+    </item>
+    
+    <item>
+      <title>ggplot-density</title>
+      <link>/post/rcodes/ggplot-density/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/ggplot-density/</guid>
+      <description>theme_set(theme_classic()) g &amp;lt;- ggplot(mpg, aes(cty)) g + geom_density(aes(fill=factor(cyl)), alpha=0.8) + labs(title=&amp;quot;Density plot&amp;quot;, subtitle=&amp;quot;City Mileage Grouped by # of cylinders&amp;quot;, caption=&amp;quot;src: mpg&amp;quot;, x=&amp;quot;City Mileage&amp;quot;, fill=&amp;quot;# Cylinders&amp;quot;)  </description>
+    </item>
+    
+    <item>
+      <title>ggplot2-GCA-SCA-Recidual-variances</title>
+      <link>/post/rcodes/ggplot2-gca-sca-recidual-variances/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/ggplot2-gca-sca-recidual-variances/</guid>
+      <description>setwd(&amp;quot;D:/Sync/Dlm_wk/8801growth_para/data&amp;quot;) library(ggplot2) df.comp&amp;lt;-read.csv(&amp;quot;var_h2_compare.csv&amp;quot;) str(df.comp) library(reshape2) df.comp&amp;lt;-read.csv(&amp;quot;var_h2_compare.csv&amp;quot;) str(df.comp) md &amp;lt;- melt(df.comp, id=c(&amp;quot;X&amp;quot;)) names(md)[2]&amp;lt;-&amp;quot;Traits&amp;quot; names(md)[1]&amp;lt;-&amp;quot;Comp&amp;quot; str(md) # &#39;data.frame&#39;:	45 obs. of 3 variables: # $ X : Factor w/ 5 levels &amp;quot;Com!Com.var&amp;quot;,..: 4 1 5 2 3 4 1 5 2 3 ... # $ variable: Factor w/ 9 levels &amp;quot;H05&amp;quot;,&amp;quot;DBH05&amp;quot;,..: 1 1 1 1 1 2 2 2 2 2 ... # $ value : num -0.00176 -0.14608 0.17322 -0.00118 -0.11921 .</description>
+    </item>
+    
+    <item>
+      <title>heterosis-SCA-和gd-关系</title>
+      <link>/post/rcodes/heterosis-sca-%E5%92%8Cgd-%E5%85%B3%E7%B3%BB/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/heterosis-sca-%E5%92%8Cgd-%E5%85%B3%E7%B3%BB/</guid>
+      <description># ----- Com.ave.gd&amp;lt;-read.csv(&amp;quot;Com.SCA.gd.csv&amp;quot;) hete&amp;lt;-as.matrix(Com.ave.gd[,-c(1:3)]) a&amp;lt;-rcorr(hete, type=&amp;quot;pearson&amp;quot;) write.csv(a$r,&amp;quot;corr_SCA_gd.csv&amp;quot;) write.csv(a$P,&amp;quot;corr_SCA_gd_pvalue.csv&amp;quot;) # ----匹配heterosis SCA 和gd gd&amp;lt;-read.csv(&amp;quot;gd.nei between parents.csv&amp;quot;) gd$com1&amp;lt;-paste0(gd$p1,gd$p2) gd$com2&amp;lt;-paste0(gd$p2,gd$p1) # 1 heterosis 和gd hete&amp;lt;-read.csv(&amp;quot;heterosis_growth.csv&amp;quot;) names(hete) hete&amp;lt;-hete[,-11] for(i in 1:dim(hete)[1]){ for(j in 1:dim(gd)[1]){ if(hete$X[i]==gd$com1[j])(hete$GD[i]&amp;lt;-gd$GD[j]) } } for(i in 1:dim(hete)[1]){ for(j in 1:dim(gd)[1]){ if(hete$X[i]==gd$com2[j])(hete$GD[i]&amp;lt;-gd$GD[j]) } } # 2 SCA 和gd sca&amp;lt;-read.csv(&amp;quot;Com.SCA.gd.csv&amp;quot;) sca$com2&amp;lt;-paste0(sca$Mum,sca$Dad) for(i in 1:dim(sca)[1]){ for(j in 1:dim(gd)[1]){ if(sca$com2[i]==gd$com1[j])(sca$GD[i]&amp;lt;-gd$GD[j]) } } for(i in 1:dim(sca)[1]){ for(j in 1:dim(gd)[1]){ if(sca$com2[i]==gd$com2[j])(sca$GD[i]&amp;lt;-gd$GD[j]) } } # -----cor library(Hmisc) #相关显著性检验 # 1 heterosis 和gd hete.</description>
+    </item>
+    
+    <item>
+      <title>nei-dist-tree-</title>
+      <link>/post/rcodes/nei-dist-tree-/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/nei-dist-tree-/</guid>
+      <description>在R中计算Nei&#39;s遗传距离，并利用UPGMA获取聚类树的具体流程如下： 1. 在Excel中整理marker数据并用Genalex生成需要的格式后再在R中转成需要的“genind”对象类型。 1. 按照Genalex要求​准备好原始数据（C4） 2. Genalex自动生成格式并保存成.csv Parameters&amp;gt;All for Codom （这是共显性标记，显性标记不是这个，是loci？） 注意！第二列要加上群体的代号，如果不分群体就编码一致就可以。这里是共显性标记，对于显性标记也一样。缺失的条带用NA表示。然后需要处理缺失数据时可以用missingno {poppr}函数，可选方案有&amp;quot;ignore&amp;quot;, &amp;quot;zero&amp;quot;, &amp;quot;mean&amp;quot;, &amp;quot;loci&amp;quot;, or &amp;quot;geno&amp;quot;。位点的名字中不要有点.。 3. 读取
+# 加载包 library(poppr) library(phangorn) # upgma # 读取标记数据 dataset&amp;lt;-read.genalex(&amp;quot;name.csv&amp;quot;,genclone = F,ploidy = 2) # nei距离 nei.dis&amp;lt;-nei.dist(dataset,warning = T) # 需要的话可以保存下来 write.csv(as.matrix(nei.dis),&amp;quot;name.csv&amp;quot;)   制作树
+# 先写了一个生成图片的函数 # 声明包含上一步得到的距离对象，要保存pdf的名字，图片的宽和高 make.tree &amp;lt;- function(nei.dis, filename, width, height) { tr &amp;lt;- upgma(nei.dis) # 需要的话也可以把树文件保存下来用其他软件处理 write.tree(tr, paste0(filename,&amp;quot;.tree&amp;quot;)) pdf(paste0(filename, &amp;quot;.tree.pdf&amp;quot;), family = &amp;quot;serif&amp;quot;, width = width, height = height) par(mar = c(1, 1, .</description>
+    </item>
+    
+    <item>
+      <title>一个取代`cat`的函数</title>
+      <link>/post/rcodes/%E4%B8%80%E4%B8%AA%E5%8F%96%E4%BB%A3cat%E7%9A%84%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/%E4%B8%80%E4%B8%AA%E5%8F%96%E4%BB%A3cat%E7%9A%84%E5%87%BD%E6%95%B0/</guid>
+      <description>msg( cli::rule( center = paste0(crayon::bold(&amp;quot;Number &amp;quot;), crayon::red(length(sentList)), &amp;quot; --- &amp;quot;, crayon::bold(&amp;quot;Time &amp;quot;), crayon::green(round(elapsed_time[3],2), &amp;quot;s&amp;quot;)) ), startup = TRUE )  </description>
+    </item>
+    
+    <item>
+      <title>变量-重复</title>
+      <link>/post/rcodes/%E5%8F%98%E9%87%8F-%E9%87%8D%E5%A4%8D/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/%E5%8F%98%E9%87%8F-%E9%87%8D%E5%A4%8D/</guid>
+      <description> 有时，变量中含有重复的记录，阻碍分析，所以要查找出来。但目前只能对单个变量查找，对多个变量的查找方法尚未知晓。
+ 将df中var变量中的重复record找出并放在df.dupli中 df.dupli&amp;lt;-df[duplicated(df$var),]  </description>
+    </item>
+    
+    <item>
+      <title>含有asreml代码的文章中的代码</title>
+      <link>/post/rcodes/%E5%90%AB%E6%9C%89asreml%E4%BB%A3%E7%A0%81%E7%9A%84%E6%96%87%E7%AB%A0%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/%E5%90%AB%E6%9C%89asreml%E4%BB%A3%E7%A0%81%E7%9A%84%E6%96%87%E7%AB%A0%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%A0%81/</guid>
+      <description>Tobias J a, Cornwallis CK, Derryberry EP, et al (2013) Species coexistence and the dynamics of phenotypic evolution in adaptive radiation. Nature 506:359–363. doi: 10.1038/nature12874
+ Cowling W a, Stefanova KT, Beeck CP, et al (2015) Using the Animal Model to Accelerate Response to Selection in a Self-Pollinating Crop. G3 Genes|Genomes|Genetics 5:1419–1428. doi: 10.1534/g3.115.018838
+ Oakey H, Verbyla A, Pitchford W, Cullis B (2006) Joint modeling of additive and non-additive genetic line effects in single field trials.</description>
+    </item>
+    
+    <item>
+      <title>抓取一些网页的信息</title>
+      <link>/post/rcodes/%E6%8A%93%E5%8F%96%E4%B8%80%E4%BA%9B%E7%BD%91%E9%A1%B5%E7%9A%84%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/%E6%8A%93%E5%8F%96%E4%B8%80%E4%BA%9B%E7%BD%91%E9%A1%B5%E7%9A%84%E4%BF%A1%E6%81%AF/</guid>
+      <description>web&amp;lt;-readLines(&amp;quot;https://edu.hellobi.com/course/explore?page=1&amp;quot;,encoding = &#39;UTF-8&#39;) class&amp;lt;-web[grep(&amp;quot;class=\&amp;quot;caption\&amp;quot;&amp;quot;,web)+3] class class&amp;lt;-gsub(&amp;quot;&amp;quot;,&amp;quot;&amp;quot;,class) class length&amp;lt;-web[grep(&amp;quot;class=\&amp;quot;length\&amp;quot;&amp;quot;,web)] length length&amp;lt;-substr(length,regexpr(&amp;quot;i&amp;gt;&amp;quot;,length)+2,regexpr(&amp;quot;课&amp;quot;,length)-1) length result&amp;lt;-data.frame(课程=class,课时数=length) DT::datatable(df) install.packages(&amp;quot;DT&amp;quot;)  </description>
+    </item>
+    
+    <item>
+      <title>普通回归模型-预测</title>
+      <link>/post/rcodes/%E6%99%AE%E9%80%9A%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B-%E9%A2%84%E6%B5%8B/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/%E6%99%AE%E9%80%9A%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B-%E9%A2%84%E6%B5%8B/</guid>
+      <description> 利用已有数据拟合模型，并用于新测值的预测。
+ x&amp;lt;-c(0.1,0.11,0.12,0.13,0.14,0.15,0.16,0.17,0.18,0.20,0.21,0.23) y&amp;lt;-c(42,43.5,45,45.5,45,47.5,49,53,50,55,55,60) plot(y~x, xlab=&amp;quot;X&amp;quot;, ylab=&amp;quot;Y&amp;quot;) # model fitting lm.sol&amp;lt;-lm(y~x) summary(lm.sol) # plot(lm.sol$residuals) # predict new values new&amp;lt;-data.frame(x=0.16) lm.pred&amp;lt;-predict(lm.sol,new,interval = &amp;quot;prediction&amp;quot;,level = 0.95) lm.pred  </description>
+    </item>
+    
+    <item>
+      <title>构建正反交变量</title>
+      <link>/post/rcodes/%E6%9E%84%E5%BB%BA%E6%AD%A3%E5%8F%8D%E4%BA%A4%E5%8F%98%E9%87%8F/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/%E6%9E%84%E5%BB%BA%E6%AD%A3%E5%8F%8D%E4%BA%A4%E5%8F%98%E9%87%8F/</guid>
+      <description>full diallel需要估算正反交效应的方差及评价显著性，正常状态数据框中并不包含该变量，其需要构建相应的隐含变量，具体操作如下：
+ data(hayman.tobacco) dat1 &amp;lt;- subset(hayman.tobacco, year==1951) # Make a factor &#39;comb&#39; in which G1xG2 is the same cross as G2xG1 dat1 &amp;lt;- transform(dat1, comb = ifelse(as.character(male) &amp;lt; as.character(female), paste0(male,female), paste0(female,male))) # &#39;dr&#39; is the direction of the cross, 0 for self dat1$dr &amp;lt;- 1 dat1 &amp;lt;- transform(dat1, dr = ifelse(as.character(male) &amp;lt; as.character(female), -1, dr)) dat1 &amp;lt;- transform(dat1, dr = ifelse(as.character(male) == as.character(female), 0, dr)) m1 &amp;lt;- asreml(day~1, data=dat1, random = ~ male + and(female) + comb + comb:dr) summary(m1)$varcomp #--- setwd(&amp;quot;D:/Sync/R/Mohring_reml/&amp;quot;) df&amp;lt;-asreml.</description>
+    </item>
+    
+    <item>
+      <title>相关</title>
+      <link>/post/rcodes/%E7%9B%B8%E5%85%B3/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/%E7%9B%B8%E5%85%B3/</guid>
+      <description># corr heterosis&amp;lt;-read.csv(&amp;quot;heterosis_growth.csv&amp;quot;,stringsAsFactors = FALSE) names(heterosis) # plot(heterosis$Midd05~heterosis$GD) # plot(df.4$SCA_H05~df.4$GD) hete&amp;lt;-as.matrix(heterosis[,-1]) library(Hmisc) #相关显著性检验 a&amp;lt;-rcorr(hete, type=&amp;quot;pearson&amp;quot;) # a&amp;lt;-cor(hete,method = c(&amp;quot;pearson&amp;quot;), use = &amp;quot;complete.obs&amp;quot;) write.csv(a$r,&amp;quot;corr_hete_gd.csv&amp;quot;) write.csv(a$P,&amp;quot;corr_hete_gd_pvalue.csv&amp;quot;)  </description>
+    </item>
+    
+    <item>
+      <title>补充CF29自由授粉子代-并plot</title>
+      <link>/post/rcodes/%E8%A1%A5%E5%85%85cf29%E8%87%AA%E7%94%B1%E6%8E%88%E7%B2%89%E5%AD%90%E4%BB%A3-%E5%B9%B6plot/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/%E8%A1%A5%E5%85%85cf29%E8%87%AA%E7%94%B1%E6%8E%88%E7%B2%89%E5%AD%90%E4%BB%A3-%E5%B9%B6plot/</guid>
+      <description>source(&amp;quot;D:/Sync/R/rcodes/generate_label_df.r&amp;quot;) com&amp;lt;-unique(df$com) # here must be df not df.rm.self com&amp;lt;-as.character(com) com&amp;lt;-unique(df$com) # here must be df not df.rm.self com&amp;lt;-as.character(com) com comcom&amp;lt;-read.csv(&amp;quot;comcom.growth.csv&amp;quot;) setwd(&amp;quot;D:/Sync/R/8801/fullsib/160620&amp;quot;) comcom&amp;lt;-read.csv(&amp;quot;comcom.growth.csv&amp;quot;) comcom&amp;lt;-as.matrix(comcom) pdf(&amp;quot;grow.performance.1205.pdf&amp;quot;,paper=&amp;quot;a4&amp;quot;, width = 0, height = 9,family=&amp;quot;Times&amp;quot;,pointsize = 10) par(mfrow=c(3,3),mar = c(6, 4, .5, .5),las=2) for (i in 1:nrow(comcom)){ df.com&amp;lt;-df[df$com %in% com[comcom[i,]],] df.com$com&amp;lt;-factor(df.com$com) X&amp;lt;-names(df.com) for (j in 12:length(X)){ data.i&amp;lt;-df.com[, X[j]] model=lm(data.i ~ df.com$com ) ANOVA=aov(model) TUKEY &amp;lt;- TukeyHSD(x=ANOVA, &#39;df.com$com&#39;, conf.level=0.99) # a&amp;lt;-TUKEY$`df.com$com`[,c(1,4)] # colnames(a)&amp;lt;-c(paste(X[j],&amp;quot;diff&amp;quot;,sep = &amp;quot;_&amp;quot;),&amp;quot;p adj&amp;quot;) # write.</description>
+    </item>
+    
+    <item>
+      <title>重画boxplot去掉自交-_2016-10-20-22-14-09-CST_</title>
+      <link>/post/rcodes/%E9%87%8D%E7%94%BBboxplot%E5%8E%BB%E6%8E%89%E8%87%AA%E4%BA%A4-_2016-10-20-22-14-09-cst_/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/rcodes/%E9%87%8D%E7%94%BBboxplot%E5%8E%BB%E6%8E%89%E8%87%AA%E4%BA%A4-_2016-10-20-22-14-09-cst_/</guid>
+      <description>因为要去掉数据中的自交，所以之前画的boxplot需要重新做，代码如下：
+ setwd(&amp;quot;D:/Sync/R/8801/fullsib/160620&amp;quot;) Myfile&amp;lt;-c(&amp;quot;8801fs_05_14.csv&amp;quot;) df&amp;lt;-read.csv(Myfile) str(df) # &#39;data.frame&#39;:	2226 obs. of 20 variables: # $ TreeId : int 3141 3142 3143 3144 3145 3146 3147 3148 3149 3150 ... # $ Mum : Factor w/ 23 levels &amp;quot;CF29&amp;quot;,&amp;quot;R1&amp;quot;,&amp;quot;R1_OP&amp;quot;,..: 18 18 18 18 18 18 18 18 18 18 ... # $ Dad : Factor w/ 13 levels &amp;quot;&amp;quot;,&amp;quot;CF29&amp;quot;,&amp;quot;R1&amp;quot;,..: 8 8 8 8 8 8 8 8 8 8 ... # $ Com : Factor w/ 66 levels &amp;quot;CF29RC402&amp;quot;,&amp;quot;CF29Y11&amp;quot;,.</description>
+    </item>
+    
+  </channel>
+</rss>

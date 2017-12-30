@@ -212,117 +212,6 @@
           
           
             <article class="post-preview">
-              <a href="./post/%E9%9A%8F%E7%AC%94/%E6%89%B9%E9%87%8F%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9-%E6%89%B9%E9%87%8F%E6%8A%8A%E7%AE%80%E4%B9%A6%E5%AF%BC%E5%87%BA%E7%9A%84md%E6%96%87%E4%BB%B6%E5%8A%A0%E4%B8%8Ayaml/">
-                <h2 class="post-title">批量生成多个文件夹；批量把简书导出的md文件加上yaml</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on December 30, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (108 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  简书里有一些博客，能导出成md格式，但缺少抬头yaml。借用大鹏志的代码，把我的所有文件也都加上抬头。
- # 设置工作路径&amp;加载包 setwd(&quot;D:/R&quot;) library(tidyverse) # 生成新的分类文件夹（简书导出是有分类的） for (i in dir(&quot;jianshu&quot;)) { dir.create(paste0(&quot;./jianshunew/&quot;, i)) } # 逐个文件夹中逐个文件添加 for (i in dir(&quot;jianshu&quot;)) { ## i循环文件夹，subdir是第i个文件夹中全部文件的名字 subdir &lt;- paste0(&quot;jianshu/&quot;, i) %&gt;% list.files(full.names = T) for (j in 1:length(subdir)) { ## j循环每个文件夹中的文件，txt是第j个文件的内容 txt &lt;- readLines(subdir[j], encoding = &quot;UTF-8&quot;) ## header是抬头yaml，用的是blogdown的样例 header &lt;- readLines(&quot;header.txt&quot;) # categories是子文件夹的名字 categories &lt;- str_split(subdir[j], &quot;/&quot;) %&gt;% unlist %&gt;% .[2] ## startn是提取文件名字的位置 startn &lt;- 8 + nchar(categories) + 2 # title title &lt;- substr(subdir[j], startn, nchar(subdir[j]) - 3) ## header中第2和7个元素分别是题目和分类，把相应的值赋予 header[2] &lt;- title %&gt;% paste0(header[2], .
-                  <a href="./post/%E9%9A%8F%E7%AC%94/%E6%89%B9%E9%87%8F%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9-%E6%89%B9%E9%87%8F%E6%8A%8A%E7%AE%80%E4%B9%A6%E5%AF%BC%E5%87%BA%E7%9A%84md%E6%96%87%E4%BB%B6%E5%8A%A0%E4%B8%8Ayaml/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-                <span class="post-meta">
-                
-                  #<a href="./tags/code/">code</a>&nbsp;
-                
-                </span>
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="./post/netlify%E6%90%AD%E5%BB%BAblog%E7%AC%94%E8%AE%B0/">
-                <h2 class="post-title">netlify搭建blog笔记</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on December 29, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (21 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  
-
-<h1 id="前言">前言</h1>
-
-<p>开博客的主要目的是当做一个笔记本，把一些要紧的知识点、代码和流程等做个梳理和记录，方便下次使用时的查找。其实很早就有博客，只是不认为那就是，比如QQ空间和校内网。以前记笔记使用过网易产品一段时间，后来就转到博客上，例如<a href="http://blog.sina.com.cn/u/1696852495">新浪</a>，不支持<strong>markdown</strong>。后来转到<a href="https://www.jianshu.com/u/c7b1f5e71e92">简书</a>，但这家伙不支持公式。CSDN用过两天，支持公式编辑，但不及简书简便。<a href="https://github.com/">GitHub</a>支持<a href="https://dong87.github.io/">个人博客</a>，但模板很折腾，一直不理想，用了两天就不更新了。</p>
-
-<p><strong>rmarkdown</strong>非常好用，帮助我输出<code>R</code>结果到pdf或者word。之前用过<a href="https://yihui.name/">yihui</a>开发的<strong>bookdown</strong>，用来转电子书的格式，也听说过他开发的<strong>blogdown</strong>，但并没有用过。有天<a href="http://luansheng.netlify.com/">栾生老师</a>推荐了一下![]()</p>
-
-<h1 id="正文">正文</h1>
-
-<p>首先要感谢<a href="http://dapengde.com/">大鹏志</a>给的中文教程<a href="http://dapengde.com/archives/19304">用Rblogdown 搭建个人博客或科研网站</a>。最难的一步出现在<a href="https://www.netlify.com/">netlify</a>与<a href="https://github.com/">GitHub</a>的关联上。按照<code>netlify</code>的要求，指定了<code>public</code>文件夹，但在打开博客网址时总是报错无法打开网页。最后还是从栾老师的GitHub里发现他只同步了<code>public</code>文件夹而非整个建站文件夹，然后就大功告成了。</p>
-
-<p>简略步骤如下：</p>
-
-<ul>
-<li>安装<code>blogdown</code>，在<code>Rstudio</code>里直接安装也可以。</li>
-</ul>
-
-<pre><code>if(!require(devtools)) install.packages('devtools')
-devtools::install_github('rstudio/blogdown')
-</code></pre>
-
-<ul>
-<li>建一个空文件夹，然后使用模板<code>gcushen/hugo-academic</code>建立建站文件。还有其他一些模板，见<a href="https://github.com/gohugoio/hugoThemes">这里</a>，每个点进去，选择喜欢的样式，替换这里的就行。</li>
-</ul>
-
-<pre><code>setwd(&quot;D:/blogdown_default&quot;)
-blogdown::new_site(theme='gcushen/hugo-academic')
-</code></pre>
-
-<ul>
-<li><p>把<code>public</code>同步到GitHub上，要先安装软件<a href="https://desktop.github.com/">GitHub desktop</a>，注册并登陆账号。同步本地<code>public</code>，然后出现问题，它只是在public文件夹中生成一个新的public，而且GitHub中也只有隐藏的<strong>.git</strong>和<strong>.gitattributes</strong>，把这两个文件剪切到上一层的public去。GitHub desktop会报告说找不到repository了，这时要指定一下，再重新上传后就可以了。为何要同步public而非整个上一步所建的文件夹的原因上面说了，netlify关联GitHub那个repository后不能成功建网址，所以这样做。</p></li>
-
-<li><p>注册netlify并关联我们上传的这个包含建站需要文件的repository。</p></li>
-
-<li><p>更改模板成自己的信息，再重新从GitHub desktop就可以了。</p></li>
-</ul>
-
-<p>中间还有一些细节就不一一罗列了，记得在更新博客后<code>build_site()</code>。祝你也能成功！</p>
-
-                
-              </div>
-
-              
-                <span class="post-meta">
-                
-                  #<a href="./tags/notes/">notes</a>&nbsp;
-                
-                </span>
-              
-            </article>
-          
-            <article class="post-preview">
               <a href="./post/stat/aic%E6%98%AF%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%A0%87%E5%87%86%E5%90%97/">
                 <h2 class="post-title">AIC是正确的标准吗？</h2>
                 
@@ -349,6 +238,12 @@ blogdown::new_site(theme='gcushen/hugo-academic')
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="./tags/stat/">stat</a>&nbsp;
+                
+                </span>
               
             </article>
           
@@ -393,6 +288,12 @@ SCA计算如下：</p>
               </div>
 
               
+                <span class="post-meta">
+                
+                  #<a href="./tags/%E8%82%B2%E7%A7%8D/">育种</a>&nbsp;
+                
+                </span>
+              
             </article>
           
             <article class="post-preview">
@@ -424,6 +325,12 @@ SCA计算如下：</p>
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="./tags/%E8%82%B2%E7%A7%8D/">育种</a>&nbsp;
+                
+                </span>
               
             </article>
           
@@ -465,6 +372,12 @@ SCA计算如下：</p>
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="./tags/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/">杂交优势</a>&nbsp;
+                
+                </span>
               
             </article>
           
@@ -513,6 +426,12 @@ SCA计算如下：</p>
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="./tags/%E7%AB%9E%E4%BA%89/">竞争</a>&nbsp;
+                
+                </span>
               
             </article>
           
@@ -601,6 +520,12 @@ LOO-DINKINS的模拟工作表明，原始数据更准确地估计（已知的）
               </div>
 
               
+                <span class="post-meta">
+                
+                  #<a href="./tags/%E7%A9%BA%E9%97%B4/">空间</a>&nbsp;
+                
+                </span>
+              
             </article>
           
             <article class="post-preview">
@@ -631,6 +556,12 @@ LOO-DINKINS的模拟工作表明，原始数据更准确地估计（已知的）
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="./tags/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/">遗传参数</a>&nbsp;
+                
+                </span>
               
             </article>
           
@@ -663,6 +594,107 @@ LOO-DINKINS的模拟工作表明，原始数据更准确地估计（已知的）
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="./tags/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/">遗传参数</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="./post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/arcade-1996-larix-%E6%9D%82%E7%A7%8D%E8%A1%A8%E7%8E%B0-%E9%A2%84%E6%B5%8B-rapd-%E9%81%97%E4%BC%A0%E8%B7%9D%E7%A6%BB/">
+                <h2 class="post-title">Arcade-1996-larix-杂种表现-预测-RAPD-遗传距离</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (51 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>Arcade A, Faivre-Rampant P, Le Guerroué B, Pâques LE, Prat D. Heterozygosity and hybrid performance in larch. Theor. Appl. Genet. 1996;93:1274–81.</li>
+</ol>
+</blockquote>
+
+<p>摘要
+随机扩增多态性DNA（RAPD）用于估计12个欧洲落叶松（Larix decidua）和12个日本落叶松（L. kaempferi）之间的遗传距离，它们是因子交配设计中的亲本。基于亲本之间的Jaccard&rsquo;s系数，使用110个片段建立遗传距离。十三种植物区分落叶松类。同一物种的个体之间的<strong>遗传距离（日落落叶松中的Dj = 0.39</strong>，欧洲落叶松中的0.45）低于物种之间的遗传距离（Dj = 0.72）。基于遗传距离的UPGMA树状图清楚地聚集每个落叶松物种，证实了分子水平的物种形成。为各种数量性状建立了<strong>亲本（genetic distances of the parents）的遗传距离和杂交家系的表现之间的相关性。发现生长特征和分支插入角的显着值，这表明一般杂合性水平对杂交性状有影响。这些相关性也随树龄而演变：对于6岁树高度，发现了最大相关性。</strong>亲本遗传距离和其他数量性状的杂交表现之间缺乏相关性表明这些性状受到较少基因的控制（这个结论未必正确**。这项研究的结果表明，遗传距离较远的亲本之间的杂交产生具有优异生长表现的杂种;这代表了遗传者的潜在选择标准。</p>
+
+<hr />
+
+<p>许多观察和研究一直提供的证据表明，遗传不同亲本之间的杂交通常产生优良的后代。这种现象称为杂种优势（Shull 1914），与近交衰退形成对比，即有亲缘关系的个体之间的杂交倾向于产生表现较差的后代。虽然多年来已经研究了杂种优势的遗传基础，但它仍然没有解决的。提出解释这种现象的两个主要假设是显性假说和超显性假设。由于它们不是相互排斥的，它们的出现和相对重要性仍然是争论的。<strong>显性假说（Jones 1917）假定高度杂合个体活力的增加可归因于显性等位基因，即杂种优势是由于有害隐性等位基因的纯合性降低</strong>。实际上，<strong>许多隐性等位基因可以在杂合状态（遗传负荷）中保留并且通过近交在纯合状态中显露（Gallais 1989）</strong>。<strong>超显性假说（East 1936; Shull 1952）提出，单个位点的杂合子状态优于任一纯合子状态。</strong></p>
+
+<p>杂合优势现象中的杂合性的启示表明，基于亲本之间遗传距离的测量有预测杂种优势的潜力，特别是通过同工酶数据和分子标记[随机扩增多态性DNA（RAPD），限制性片段长度polymor （RFLP）]（Tsaftaris，1995）评价的遗传距离。</p>
+
+<p>杂交表现的预测是作物育种者和树种育种者的主要兴趣，因为现场测试昂贵且耗费劳力。此外，关于林木，在评估个体表现之前的延迟很长（Neale和WillIams 1991），并且在进行杂交之前预测杂种优势并由此减少待测试的组合的数量的策略将是特别期望的。</p>
+
+<p>Larix属具有许多有吸引力的特征，例如快速幼体生长，相对较短的轮伐期和高质量的木材，短期目标是供应用于再造林的杂种材料（P〜ques 1989）。法国落叶松的树木改良计划尤其关注欧洲和日本落叶松（Larix x eurolepis Henry）之间的杂种，该杂种被提倡其生长表现（Bastien和Keller 1980）。根据P〜，ques（1989），杂交的兴趣在三个主要领域：给定性状的杂种优势、有利的性状的组合导致更高程度的适应性，和转移对一个物种特异的有利特征。子代田间测定提供了关于遗传参数的可靠信息，但是是昂贵的，并且耗费时间和空间。因此，更好地了解杂种表现背后的遗传因素是一个有吸引力的目标，可以为参与交配方案的最佳父母的选择提供标准。</p>
+
+<p>我们在这里提出的研究目的是调查父母的遗传差异和后代表现之间的关系。我们选择RAPD标记，因为可以在短时间内获得大量标记，并且因为技术上它们易于使用。研究的不同步骤是（1）参与析因设计的欧洲和日本亲本树之间的遗传变异性的评估，（2）对各种数量性状的杂种的杂合性和表现之间的关系的研究和（3）评估基于标记的遗传距离在预测杂种落叶松的表现的潜力。</p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="./tags/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/">杂交优势</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="./post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/askew1994-%E8%87%AA%E7%94%B1%E6%8E%88%E7%B2%89%E5%AD%90%E4%BB%A3%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/">
+                <h2 class="post-title">Askew1994-自由授粉子代间的关系</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (22 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Askew GR, El-Kassaby YA (1994) Estimation of relationship coefficients among progeny derived from wind-pollinated orchard seeds. Theor Appl Genet 88:267–272. doi: 10.1007/BF00225908</p>
+</blockquote>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-4f485a0b058951d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="./tags/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/">标记谱系</a>&nbsp;
+                
+                </span>
               
             </article>
           

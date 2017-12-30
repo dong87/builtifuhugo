@@ -7,36 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>youremail@domain.com (Leiming Dong)</managingEditor>
     <webMaster>youremail@domain.com (Leiming Dong)</webMaster>
-    <lastBuildDate>Sat, 30 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>批量生成多个文件夹；批量把简书导出的md文件加上yaml</title>
-      <link>/post/%E9%9A%8F%E7%AC%94/%E6%89%B9%E9%87%8F%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9-%E6%89%B9%E9%87%8F%E6%8A%8A%E7%AE%80%E4%B9%A6%E5%AF%BC%E5%87%BA%E7%9A%84md%E6%96%87%E4%BB%B6%E5%8A%A0%E4%B8%8Ayaml/</link>
-      <pubDate>Sat, 30 Dec 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E9%9A%8F%E7%AC%94/%E6%89%B9%E9%87%8F%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9-%E6%89%B9%E9%87%8F%E6%8A%8A%E7%AE%80%E4%B9%A6%E5%AF%BC%E5%87%BA%E7%9A%84md%E6%96%87%E4%BB%B6%E5%8A%A0%E4%B8%8Ayaml/</guid>
-      <description>简书里有一些博客，能导出成md格式，但缺少抬头yaml。借用大鹏志的代码，把我的所有文件也都加上抬头。
- # 设置工作路径&amp;amp;加载包 setwd(&amp;quot;D:/R&amp;quot;) library(tidyverse) # 生成新的分类文件夹（简书导出是有分类的） for (i in dir(&amp;quot;jianshu&amp;quot;)) { dir.create(paste0(&amp;quot;./jianshunew/&amp;quot;, i)) } # 逐个文件夹中逐个文件添加 for (i in dir(&amp;quot;jianshu&amp;quot;)) { ## i循环文件夹，subdir是第i个文件夹中全部文件的名字 subdir &amp;lt;- paste0(&amp;quot;jianshu/&amp;quot;, i) %&amp;gt;% list.files(full.names = T) for (j in 1:length(subdir)) { ## j循环每个文件夹中的文件，txt是第j个文件的内容 txt &amp;lt;- readLines(subdir[j], encoding = &amp;quot;UTF-8&amp;quot;) ## header是抬头yaml，用的是blogdown的样例 header &amp;lt;- readLines(&amp;quot;header.txt&amp;quot;) # categories是子文件夹的名字 categories &amp;lt;- str_split(subdir[j], &amp;quot;/&amp;quot;) %&amp;gt;% unlist %&amp;gt;% .[2] ## startn是提取文件名字的位置 startn &amp;lt;- 8 + nchar(categories) + 2 # title title &amp;lt;- substr(subdir[j], startn, nchar(subdir[j]) - 3) ## header中第2和7个元素分别是题目和分类，把相应的值赋予 header[2] &amp;lt;- title %&amp;gt;% paste0(header[2], .</description>
-    </item>
-    
-    <item>
-      <title>netlify搭建blog笔记</title>
-      <link>/post/netlify%E6%90%AD%E5%BB%BAblog%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Fri, 29 Dec 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/netlify%E6%90%AD%E5%BB%BAblog%E7%AC%94%E8%AE%B0/</guid>
-      <description>前言 开博客的主要目的是当做一个笔记本，把一些要紧的知识点、代码和流程等做个梳理和记录，方便下次使用时的查找。其实很早就有博客，只是不认为那就是，比如QQ空间和校内网。以前记笔记使用过网易产品一段时间，后来就转到博客上，例如新浪，不支持markdown。后来转到简书，但这家伙不支持公式。CSDN用过两天，支持公式编辑，但不及简书简便。GitHub支持个人博客，但模板很折腾，一直不理想，用了两天就不更新了。
-rmarkdown非常好用，帮助我输出R结果到pdf或者word。之前用过yihui开发的bookdown，用来转电子书的格式，也听说过他开发的blogdown，但并没有用过。有天栾生老师推荐了一下![]()
-正文 首先要感谢大鹏志给的中文教程用Rblogdown 搭建个人博客或科研网站。最难的一步出现在netlify与GitHub的关联上。按照netlify的要求，指定了public文件夹，但在打开博客网址时总是报错无法打开网页。最后还是从栾老师的GitHub里发现他只同步了public文件夹而非整个建站文件夹，然后就大功告成了。
-简略步骤如下：
- 安装blogdown，在Rstudio里直接安装也可以。  if(!require(devtools)) install.packages(&#39;devtools&#39;) devtools::install_github(&#39;rstudio/blogdown&#39;)   建一个空文件夹，然后使用模板gcushen/hugo-academic建立建站文件。还有其他一些模板，见这里，每个点进去，选择喜欢的样式，替换这里的就行。  setwd(&amp;quot;D:/blogdown_default&amp;quot;) blogdown::new_site(theme=&#39;gcushen/hugo-academic&#39;)   把public同步到GitHub上，要先安装软件GitHub desktop，注册并登陆账号。同步本地public，然后出现问题，它只是在public文件夹中生成一个新的public，而且GitHub中也只有隐藏的.git和.gitattributes，把这两个文件剪切到上一层的public去。GitHub desktop会报告说找不到repository了，这时要指定一下，再重新上传后就可以了。为何要同步public而非整个上一步所建的文件夹的原因上面说了，netlify关联GitHub那个repository后不能成功建网址，所以这样做。
- 注册netlify并关联我们上传的这个包含建站需要文件的repository。
- 更改模板成自己的信息，再重新从GitHub desktop就可以了。
-  中间还有一些细节就不一一罗列了，记得在更新博客后build_site()。祝你也能成功！</description>
-    </item>
     
     <item>
       <title>AIC是正确的标准吗？</title>
@@ -3983,56 +3957,56 @@ Diallel交配设计是植物和动物育种计划中获得定量或复杂遗传�
     </item>
     
     <item>
-      <title>a-battery-of-一组，一系列</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/a-battery-of-%E4%B8%80%E7%BB%84%E4%B8%80%E7%B3%BB%E5%88%97/</link>
+      <title>a-battery-of-一组，一系列-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/a-battery-of-%E4%B8%80%E7%BB%84%E4%B8%80%E7%B3%BB%E5%88%97-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/a-battery-of-%E4%B8%80%E7%BB%84%E4%B8%80%E7%B3%BB%E5%88%97/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/a-battery-of-%E4%B8%80%E7%BB%84%E4%B8%80%E7%B3%BB%E5%88%97-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> Development of a battery of SSRs for maritime pine is therefore a priority. (Chagné et al., 2002) To achieve that, a sample of parts may be subject to a battery of quality test. (Yakir, 2011)  </description>
     </item>
     
     <item>
-      <title>a-malg-am-ate-合并，混合，混合物</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/a-malg-am-ate-%E5%90%88%E5%B9%B6%E6%B7%B7%E5%90%88%E6%B7%B7%E5%90%88%E7%89%A9/</link>
+      <title>a-malg-am-ate-合并，混合，混合物-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/a-malg-am-ate-%E5%90%88%E5%B9%B6%E6%B7%B7%E5%90%88%E6%B7%B7%E5%90%88%E7%89%A9-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/a-malg-am-ate-%E5%90%88%E5%B9%B6%E6%B7%B7%E5%90%88%E6%B7%B7%E5%90%88%E7%89%A9/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/a-malg-am-ate-%E5%90%88%E5%B9%B6%E6%B7%B7%E5%90%88%E6%B7%B7%E5%90%88%E7%89%A9-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>First we discuss these other entries and then a benefit criterion for the orchard where different components and entries are amalgamated. (Lindgren, Prescher, 2005) When there is a mixture of the two types, as is the case with our example, the models can be formulated as an amalgamation of those presented for the individual types and so for brevity are not detailed here. (Cullis et al., 2014) These site types are, however, amalgamated into a single harvest volume genetic value for selection for breeding and deployment.</description>
     </item>
     
     <item>
-      <title>a-melior-ate-melior-=better改善</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/a-melior-ate-melior-better%E6%94%B9%E5%96%84/</link>
+      <title>a-melior-ate-melior-=better改善-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/a-melior-ate-melior-better%E6%94%B9%E5%96%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/a-melior-ate-melior-better%E6%94%B9%E5%96%84/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/a-melior-ate-melior-better%E6%94%B9%E5%96%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> The addition of other easily measurable traits could not considerably ameliorate model fit for juvenile MFA. (Lenz et al., 2013) An alternative to full-sib crossing and testing can ameliorate all these constraints. (Lambeth et al., 2001)  </description>
     </item>
     
     <item>
-      <title>a-men-able-men-=pro-ject凸，引申为引导，恐吓-服从，经受-，接受，适应-与subject类似</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/a-men-able-men-pro-ject%E5%87%B8%E5%BC%95%E7%94%B3%E4%B8%BA%E5%BC%95%E5%AF%BC%E6%81%90%E5%90%93-%E6%9C%8D%E4%BB%8E%E7%BB%8F%E5%8F%97-%E6%8E%A5%E5%8F%97%E9%80%82%E5%BA%94-%E4%B8%8Esubject%E7%B1%BB%E4%BC%BC/</link>
+      <title>a-men-able-men-=pro-ject凸，引申为引导，恐吓-服从，经受-，接受，适应-与subject类似-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/a-men-able-men-pro-ject%E5%87%B8%E5%BC%95%E7%94%B3%E4%B8%BA%E5%BC%95%E5%AF%BC%E6%81%90%E5%90%93-%E6%9C%8D%E4%BB%8E%E7%BB%8F%E5%8F%97-%E6%8E%A5%E5%8F%97%E9%80%82%E5%BA%94-%E4%B8%8Esubject%E7%B1%BB%E4%BC%BC-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/a-men-able-men-pro-ject%E5%87%B8%E5%BC%95%E7%94%B3%E4%B8%BA%E5%BC%95%E5%AF%BC%E6%81%90%E5%90%93-%E6%9C%8D%E4%BB%8E%E7%BB%8F%E5%8F%97-%E6%8E%A5%E5%8F%97%E9%80%82%E5%BA%94-%E4%B8%8Esubject%E7%B1%BB%E4%BC%BC/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/a-men-able-men-pro-ject%E5%87%B8%E5%BC%95%E7%94%B3%E4%B8%BA%E5%BC%95%E5%AF%BC%E6%81%90%E5%90%93-%E6%9C%8D%E4%BB%8E%E7%BB%8F%E5%8F%97-%E6%8E%A5%E5%8F%97%E9%80%82%E5%BA%94-%E4%B8%8Esubject%E7%B1%BB%E4%BC%BC-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>They play a significant role in local and global economies because of their amenability to large-scale plantations to produce wood, their role in landscape management, their rapid growth potential with low input (Parent et al., 2015) Members of the genus Populus are used as a model forest species for diverse studies not only because of their amenability to experimental and genetic manipulation, but also because of their high economic and ecological importance as the most widely cultivated tree throughout the northern hemisphere3,4.</description>
     </item>
     
     <item>
-      <title>abate-减弱减轻~decrease-diminish</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/abate-%E5%87%8F%E5%BC%B1%E5%87%8F%E8%BD%BB~decrease-diminish/</link>
+      <title>abate-减弱减轻~decrease-diminish-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/abate-%E5%87%8F%E5%BC%B1%E5%87%8F%E8%BD%BB~decrease-diminish-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/abate-%E5%87%8F%E5%BC%B1%E5%87%8F%E8%BD%BB~decrease-diminish/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/abate-%E5%87%8F%E5%BC%B1%E5%87%8F%E8%BD%BB~decrease-diminish-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> After seven cycles, however, the loss of genetic variance was abated compared to remaining methods. (Neyhart et al., 2017) The trend of increasing coancestry was somewhat abated at the highest paternity confidence (BP95, Table 3) as selection was constrained by the fewer number of assigned paternities (59%, Table 1). (Doerksen, Herbinger, 2010)  </description>
     </item>
     
     <item>
-      <title>ana-log-ous-log-=speack类似于~similar</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/ana-log-ous-log-speack%E7%B1%BB%E4%BC%BC%E4%BA%8E~similar/</link>
+      <title>ana-log-ous-log-=speack类似于~similar-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/ana-log-ous-log-speack%E7%B1%BB%E4%BC%BC%E4%BA%8E~similar-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/ana-log-ous-log-speack%E7%B1%BB%E4%BC%BC%E4%BA%8E~similar/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/ana-log-ous-log-speack%E7%B1%BB%E4%BC%BC%E4%BA%8E~similar-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> The haplotype variance at a locus for the HAP_IBD models was calculated analogous to estimating the additive genetic variance in a polygenic model, relative to a base population of unrelated animals. (Calus et al., 2008) Definitions analogous to the inbreeding coefficient and the coancestry coefficient of individuals, in terms of the probability of genes being &amp;ldquo;identical by descent,&amp;rdquo; were developed for groups of individuals. (Cockerham, 1967)  </description>
     </item>
     
@@ -4046,47 +4020,47 @@ Diallel交配设计是植物和动物育种计划中获得定量或复杂遗传�
     </item>
     
     <item>
-      <title>array-of-大量、组</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/array-of-%E5%A4%A7%E9%87%8F%E7%BB%84/</link>
+      <title>array-of-大量、组-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/array-of-%E5%A4%A7%E9%87%8F%E7%BB%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/array-of-%E5%A4%A7%E9%87%8F%E7%BB%84/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/array-of-%E5%A4%A7%E9%87%8F%E7%BB%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> We focused on genes involved in a broad array of biochemical pathways. (Wheeler et al., 2005) All candidates were mapped using an array of 96 progeny. (Wheeler et al., 2005)  </description>
     </item>
     
     <item>
-      <title>as-cert-ain-cert-=sure,-separate确定，查明</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/as-cert-ain-cert-sure-separate%E7%A1%AE%E5%AE%9A%E6%9F%A5%E6%98%8E/</link>
+      <title>as-cert-ain-cert-=sure,-separate确定，查明-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/as-cert-ain-cert-sure-separate%E7%A1%AE%E5%AE%9A%E6%9F%A5%E6%98%8E-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/as-cert-ain-cert-sure-separate%E7%A1%AE%E5%AE%9A%E6%9F%A5%E6%98%8E/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/as-cert-ain-cert-sure-separate%E7%A1%AE%E5%AE%9A%E6%9F%A5%E6%98%8E-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> Adaptation potential is more complex to ascertain and is likely to vary significantly depending on several interacting factors (Aitken et al., 2008). (Parent et al., 2015) It then remains to ascertain which combination(s) of assessment ages would give the optimal value of t:. (Burdon, 1989) To ascertain GS&amp;rsquo;s impact on gains per unit time, Schaeffer (2006) suggested a plan for implementing GS into a dairy breeding program. (Heffner, Sorrells, Jannink, 2009)  </description>
     </item>
     
     <item>
-      <title>at-odds-with-不一致</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/at-odds-with-%E4%B8%8D%E4%B8%80%E8%87%B4/</link>
+      <title>at-odds-with-不一致-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/at-odds-with-%E4%B8%8D%E4%B8%80%E8%87%B4-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/at-odds-with-%E4%B8%8D%E4%B8%80%E8%87%B4/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/at-odds-with-%E4%B8%8D%E4%B8%80%E8%87%B4-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Our results are somewhat at odds with theirs. (Excoffier, Smouse, Quattro, 1992) However, these low estimates of dominance variance in the -O progeny are somewhat at odds with the inbreeding de pression evident in the S progeny (discussed later). (Griffin, Cotterill, 1988) Such a finding appears to be at odds with genome evolution theory as presented by authors such as Lynch (2007) but may be explained in part by the rather large number of pseudogenes; for example, Garca-Gil (2008) found that pseudogenes were much more numerous than intact coding genes in the case of the phytochrome gene family in Scots pine (Pinus sylvestris).</description>
     </item>
     
     <item>
-      <title>at-tenu-ate-tenu-=thin弄薄，-减少-基因表达、效应、辐射、响应~-reduce;-abate</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/at-tenu-ate-tenu-thin%E5%BC%84%E8%96%84-%E5%87%8F%E5%B0%91-%E5%9F%BA%E5%9B%A0%E8%A1%A8%E8%BE%BE%E6%95%88%E5%BA%94%E8%BE%90%E5%B0%84%E5%93%8D%E5%BA%94~-reduce-abate/</link>
+      <title>at-tenu-ate-tenu-=thin弄薄，-减少-基因表达、效应、辐射、响应~-reduce;-abate-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/at-tenu-ate-tenu-thin%E5%BC%84%E8%96%84-%E5%87%8F%E5%B0%91-%E5%9F%BA%E5%9B%A0%E8%A1%A8%E8%BE%BE%E6%95%88%E5%BA%94%E8%BE%90%E5%B0%84%E5%93%8D%E5%BA%94~-reduce-abate-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/at-tenu-ate-tenu-thin%E5%BC%84%E8%96%84-%E5%87%8F%E5%B0%91-%E5%9F%BA%E5%9B%A0%E8%A1%A8%E8%BE%BE%E6%95%88%E5%BA%94%E8%BE%90%E5%B0%84%E5%93%8D%E5%BA%94~-reduce-abate/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/at-tenu-ate-tenu-thin%E5%BC%84%E8%96%84-%E5%87%8F%E5%B0%91-%E5%9F%BA%E5%9B%A0%E8%A1%A8%E8%BE%BE%E6%95%88%E5%BA%94%E8%BE%90%E5%B0%84%E5%93%8D%E5%BA%94~-reduce-abate-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>More specifically, the intercept is driven toward lower values; the positive slope associated with visual acuity at baseline, visual0, is further increased; the negative slope associated with time is brought closer to zero; and the treatment effect is attenuated. Yet, these events were attenuated at age 6, in which case Squillace&amp;rsquo;s (1974) procedure was effective for reducing the bias in the h^ 2op. In this study, we have found that cold response in Arabidopsis is attenuated by the proteasome pathway.</description>
     </item>
     
     <item>
-      <title>be-brought-to-bear-on-纳入，引入，用于，一般跟proble</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/be-brought-to-bear-on-%E7%BA%B3%E5%85%A5%E5%BC%95%E5%85%A5%E7%94%A8%E4%BA%8E%E4%B8%80%E8%88%AC%E8%B7%9Fproble/</link>
+      <title>be-brought-to-bear-on-纳入，引入，用于，一般跟problem-#每日一词</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/be-brought-to-bear-on-%E7%BA%B3%E5%85%A5%E5%BC%95%E5%85%A5%E7%94%A8%E4%BA%8E%E4%B8%80%E8%88%AC%E8%B7%9Fproblem-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/be-brought-to-bear-on-%E7%BA%B3%E5%85%A5%E5%BC%95%E5%85%A5%E7%94%A8%E4%BA%8E%E4%B8%80%E8%88%AC%E8%B7%9Fproble/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/be-brought-to-bear-on-%E7%BA%B3%E5%85%A5%E5%BC%95%E5%85%A5%E7%94%A8%E4%BA%8E%E4%B8%80%E8%88%AC%E8%B7%9Fproblem-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/</guid>
       <description> This issue needs to be addressed if the full value of genomic technology and resources is to be brought to bear on crucial problems in forest management. (Neale, Kremer, 2011) Rational approaches can be used to recover missing values when there are redundancies in the data or when external information can be brought to bear on the problem. (Kabacoff, 2011)  </description>
     </item>
     
@@ -4126,29 +4100,29 @@ BreedR功能映射
     </item>
     
     <item>
-      <title>by-analogy-类推</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/by-analogy-%E7%B1%BB%E6%8E%A8/</link>
+      <title>by-analogy-类推-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/by-analogy-%E7%B1%BB%E6%8E%A8-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/by-analogy-%E7%B1%BB%E6%8E%A8/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/by-analogy-%E7%B1%BB%E6%8E%A8-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Estimates of covariance between traits were derived using vari- ance estimates of each pair of traits and of their sum by analogy with x ,y = 1 2 (x2+ y - x2 - y2 ). (Fries, Ericsson, 1998) Our model (Equation 1) does not assume that interaction among kin differs from that among non-kin, although the model extends by analogy to incorporate that phenomenon; see the discussion.] (Bijma, Muir, Van Arendonk, 2007) By analogy it was easily observed that the control of the number of factors was required for the control of the expected prediction error by the fitted model.</description>
     </item>
     
     <item>
-      <title>by-way-of-经由，当做</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/by-way-of-%E7%BB%8F%E7%94%B1%E5%BD%93%E5%81%9A/</link>
+      <title>by-way-of-经由，当做-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/by-way-of-%E7%BB%8F%E7%94%B1%E5%BD%93%E5%81%9A-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/by-way-of-%E7%BB%8F%E7%94%B1%E5%BD%93%E5%81%9A/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/by-way-of-%E7%BB%8F%E7%94%B1%E5%BD%93%E5%81%9A-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Given that both coastal and Guanaja provenances have important traits that could be infused into the MPR breeding population by way of inter-provenance hybridization, maintenance of these populations as separate sublines within the breeding population as suggested by Kanowski &amp;amp; Nikles (1989), still seems to be warranted. (Johnston et al., 2003) Second, we shall illustrate by way of a simple example, that use of a prediction that is conditional on the lack of fit term often suffers from the problem that it comprises a mixture of predictability status of the effects.</description>
     </item>
     
     <item>
-      <title>capitalize-on-利用（获取资本）</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/capitalize-on-%E5%88%A9%E7%94%A8%E8%8E%B7%E5%8F%96%E8%B5%84%E6%9C%AC/</link>
+      <title>capitalize-on-利用（获取资本）-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/capitalize-on-%E5%88%A9%E7%94%A8%E8%8E%B7%E5%8F%96%E8%B5%84%E6%9C%AC-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/capitalize-on-%E5%88%A9%E7%94%A8%E8%8E%B7%E5%8F%96%E8%B5%84%E6%9C%AC/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/capitalize-on-%E5%88%A9%E7%94%A8%E8%8E%B7%E5%8F%96%E8%B5%84%E6%9C%AC-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>In particular, functional mapping capitalizes on statistical modeling of the covariance structure based on autoregressive (AR) and structured antedependence (SAD) processes and, thus, makes a longitudinal high-dimensional problem computationally tractable. (Wu, Yang, Wu, 2007) Linkage disequilibrium mapping capitalizes on historical recombination and can be used both to determine whether candidate genes are associated with variation in a behaviour in a natural population and to identify polymorphisms that contribute to this variation24.</description>
     </item>
     
@@ -4175,110 +4149,101 @@ BreedR功能映射
     </item>
     
     <item>
-      <title>circum-vent-绕开~evade</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/circum-vent-%E7%BB%95%E5%BC%80~evade/</link>
+      <title>circum-vent-绕开~evade-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/circum-vent-%E7%BB%95%E5%BC%80~evade-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/circum-vent-%E7%BB%95%E5%BC%80~evade/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/circum-vent-%E7%BB%95%E5%BC%80~evade-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>To circumvent this issue, it has been proposed to reduce effective population size of the targeted populations in order to increase linkage disequilibrium between markers and QTLs and capture most of the QTLs, a strategy generally known as genomic selection [73-75]. (Prunier et al., 2013) To circumvent the difficulty in manipulating a large number of correlated traits, new attempts were made by Mangin et al. (1998) and Korol et al.</description>
     </item>
     
     <item>
-      <title>col-lat-ion-lat-=bring-out把两者放在一起=校对</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/col-lat-ion-lat-bring-out%E6%8A%8A%E4%B8%A4%E8%80%85%E6%94%BE%E5%9C%A8%E4%B8%80%E8%B5%B7%E6%A0%A1%E5%AF%B9/</link>
+      <title>col-lat-ion-lat-=bring-out把两者放在一起=校对-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/col-lat-ion-lat-bring-out%E6%8A%8A%E4%B8%A4%E8%80%85%E6%94%BE%E5%9C%A8%E4%B8%80%E8%B5%B7%E6%A0%A1%E5%AF%B9-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/col-lat-ion-lat-bring-out%E6%8A%8A%E4%B8%A4%E8%80%85%E6%94%BE%E5%9C%A8%E4%B8%80%E8%B5%B7%E6%A0%A1%E5%AF%B9/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/col-lat-ion-lat-bring-out%E6%8A%8A%E4%B8%A4%E8%80%85%E6%94%BE%E5%9C%A8%E4%B8%80%E8%B5%B7%E6%A0%A1%E5%AF%B9-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> This collation gives a more general view of genetic parameters than a single parameter estimate for a single trait from data for a specific population at a given point in time. (Kroon et al., 2011) We thank the BSES Limited Plant Improvement technicians who contributed to the production, collection and collation of the data used in this study. (Atkin, Dieters, Stringer, 2009)  </description>
     </item>
     
     <item>
-      <title>commence-开始，着手</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/commence-%E5%BC%80%E5%A7%8B%E7%9D%80%E6%89%8B/</link>
+      <title>commence-开始，着手-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/commence-%E5%BC%80%E5%A7%8B%E7%9D%80%E6%89%8B-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/commence-%E5%BC%80%E5%A7%8B%E7%9D%80%E6%89%8B/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/commence-%E5%BC%80%E5%A7%8B%E7%9D%80%E6%89%8B-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>After this period (i.e., 70 days), the temperature regime in the germination cabinet was changed to follow that recommended by the ISTA and germination commenced after five days for the majority of the clones (i.e., four days sooner than that observed for the previous test). (El-Kassaby, 1999) Each of these growth models has a common feature that the development of ontogenetic trajectory is regulated by a set of &amp;ldquo;control parameters&amp;rdquo; such as onset age of growth, offset signal for growth, growth rate during the period of growth, and initial size at the commencement of the growth period.</description>
     </item>
     
     <item>
-      <title>con-found-found-，fus-，fund-=pour流到一起，混淆</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-found-found-fus-fund-pour%E6%B5%81%E5%88%B0%E4%B8%80%E8%B5%B7%E6%B7%B7%E6%B7%86/</link>
+      <title>con-found-found-，fus-，fund-=pour流到一起，混淆-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-found-found-fus-fund-pour%E6%B5%81%E5%88%B0%E4%B8%80%E8%B5%B7%E6%B7%B7%E6%B7%86-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-found-found-fus-fund-pour%E6%B5%81%E5%88%B0%E4%B8%80%E8%B5%B7%E6%B7%B7%E6%B7%86/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-found-found-fus-fund-pour%E6%B5%81%E5%88%B0%E4%B8%80%E8%B5%B7%E6%B7%B7%E6%B7%86-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Such sampling errors and possible reciprocal effects Zeffects of using the strains as dams vs. using them as sires. will confound the estimates of non-additive genetic effects obtained from LSM of body weight at harvest according to model 1. (Bentsen et al., 1998) However, the relationship between stem straightness and harvest traits could partly confound a small effect of DBH, as there was a weak positive correlation between DBH and stem straightness (0.</description>
     </item>
     
     <item>
-      <title>con-ject-ure-推测，大家一起抛出来猜~hypothesis</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E6%AC%A1/con-ject-ure-%E6%8E%A8%E6%B5%8B%E5%A4%A7%E5%AE%B6%E4%B8%80%E8%B5%B7%E6%8A%9B%E5%87%BA%E6%9D%A5%E7%8C%9C~hypothesis/</link>
+      <title>con-ject-ure-推测，大家一起抛出来猜~hypothesis-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-ject-ure-%E6%8E%A8%E6%B5%8B%E5%A4%A7%E5%AE%B6%E4%B8%80%E8%B5%B7%E6%8A%9B%E5%87%BA%E6%9D%A5%E7%8C%9C~hypothesis-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E6%AC%A1/con-ject-ure-%E6%8E%A8%E6%B5%8B%E5%A4%A7%E5%AE%B6%E4%B8%80%E8%B5%B7%E6%8A%9B%E5%87%BA%E6%9D%A5%E7%8C%9C~hypothesis/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-ject-ure-%E6%8E%A8%E6%B5%8B%E5%A4%A7%E5%AE%B6%E4%B8%80%E8%B5%B7%E6%8A%9B%E5%87%BA%E6%9D%A5%E7%8C%9C~hypothesis-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> Heterosis, whether between crosses of varieties or inbred lines, is observed in maize, but the genetic basis of observed heterosis is still conjectural (Coors and Pandey, 1999). (Hallauer et al., 2010) Given this information, it is reasonable to conjecture that the resin yielding ability of loblolly pines can be drastically changed in both positive and negative directions through a program of selective breeding. (El-Kassaby, Lindgren, 2007)  </description>
     </item>
     
     <item>
-      <title>con-ject-ure-推测，大家一起抛出来猜~hypothesis</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-ject-ure-%E6%8E%A8%E6%B5%8B%E5%A4%A7%E5%AE%B6%E4%B8%80%E8%B5%B7%E6%8A%9B%E5%87%BA%E6%9D%A5%E7%8C%9C~hypothesis/</link>
+      <title>con-secut-ive-secut-=follow跟随→连续的-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-secut-ive-secut-follow%E8%B7%9F%E9%9A%8F%E8%BF%9E%E7%BB%AD%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-ject-ure-%E6%8E%A8%E6%B5%8B%E5%A4%A7%E5%AE%B6%E4%B8%80%E8%B5%B7%E6%8A%9B%E5%87%BA%E6%9D%A5%E7%8C%9C~hypothesis/</guid>
-      <description> Heterosis, whether between crosses of varieties or inbred lines, is observed in maize, but the genetic basis of observed heterosis is still conjectural (Coors and Pandey, 1999). (Hallauer et al., 2010) Given this information, it is reasonable to conjecture that the resin yielding ability of loblolly pines can be drastically changed in both positive and negative directions through a program of selective breeding. (El-Kassaby, Lindgren, 2007)  </description>
-    </item>
-    
-    <item>
-      <title>con-secut-ive-secut-=follow跟随→连续的</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-secut-ive-secut-follow%E8%B7%9F%E9%9A%8F%E8%BF%9E%E7%BB%AD%E7%9A%84/</link>
-      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-secut-ive-secut-follow%E8%B7%9F%E9%9A%8F%E8%BF%9E%E7%BB%AD%E7%9A%84/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-secut-ive-secut-follow%E8%B7%9F%E9%9A%8F%E8%BF%9E%E7%BB%AD%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Serial cutting propagation means that clones are produced in consecutive propagation cycles, where a new round of cuttings are taken from the previously rooted cuttings, etc. (Truta et al., 2010) An additional random term was introduced in trial 3 to model distinct jumps in plot yields between sets of consecutive plots within columns (described as &amp;lsquo;small blocks&amp;rsquo;). (Welham et al., 2010) Auinger et al. 4 recently found that aggregating data from several consecutive cycles connected by a sufficient number of common ancestors improves the accuracy of the predictions of candidate genotypes.</description>
     </item>
     
     <item>
-      <title>con-spic-uous-spic-=look一起看，显眼的</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-spic-uous-spic-look%E4%B8%80%E8%B5%B7%E7%9C%8B%E6%98%BE%E7%9C%BC%E7%9A%84/</link>
+      <title>con-spic-uous-spic-=look一起看，显眼的-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-spic-uous-spic-look%E4%B8%80%E8%B5%B7%E7%9C%8B%E6%98%BE%E7%9C%BC%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-spic-uous-spic-look%E4%B8%80%E8%B5%B7%E7%9C%8B%E6%98%BE%E7%9C%BC%E7%9A%84/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-spic-uous-spic-look%E4%B8%80%E8%B5%B7%E7%9C%8B%E6%98%BE%E7%9C%BC%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>The subgenus Archaeotityus presents several conspicuous diagnostic characters, and all of its species are morphologically very similar (Louren, 1999, 2006). (Ojanguren-Affilastro et al., 2017) Continuous phase transitions take place gradually with a less conspicuous change, but they may play a distinct role in assisting an organism to adjust its growth form in a precise quantitative way to best adapt to environmental perturbations (Huijser &amp;amp; Schmid, 2011). (Xu et al., 2016) A more conspicuous consequence of poorly adapted genotypes might be reduced growth rates of adult trees.</description>
     </item>
     
     <item>
-      <title>con-tent-ious-tent-=tend-=stretch一起伸展，争论</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-tent-ious-tent-tend-stretch%E4%B8%80%E8%B5%B7%E4%BC%B8%E5%B1%95%E4%BA%89%E8%AE%BA/</link>
+      <title>con-tent-ious-tent-=tend-=stretch一起伸展，争论-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-tent-ious-tent-tend-stretch%E4%B8%80%E8%B5%B7%E4%BC%B8%E5%B1%95%E4%BA%89%E8%AE%BA-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-tent-ious-tent-tend-stretch%E4%B8%80%E8%B5%B7%E4%BC%B8%E5%B1%95%E4%BA%89%E8%AE%BA/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-tent-ious-tent-tend-stretch%E4%B8%80%E8%B5%B7%E4%BC%B8%E5%B1%95%E4%BA%89%E8%AE%BA-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> One possibly contentious issue is the choice between fixed and random effects in the analysis. The choice of appropriate prior distributions is a contentious issue in Bayesian inference, especially when these priors are supposed to convey vague initial knowledge. (Sorensen et al., 1994) Historically, however, the most contentious question has concerned whether major genes play a major role in species differences. (SLATE, 2004)  </description>
     </item>
     
     <item>
-      <title>con-tract-ion;-in-tract-able-tract-=draw</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-tract-ion-in-tract-able-tract-draw/</link>
+      <title>con-tract-ion;-in-tract-able-tract-=draw-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-tract-ion-in-tract-able-tract-draw-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-tract-ion-in-tract-able-tract-draw/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/con-tract-ion-in-tract-able-tract-draw-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Mechanisms and rates of genome expansion and contraction in flowering plants. (Neale et al., 2017) Mechanisms and rates of genome expansion and contraction in flowering plants. (Neale et al., 2017) But in practical situations, the difficulties standing in the way of discovering the plausible fathers are enormous. (Aickin, 1984) Conventional log-linear regression models can also be used to test imprinting effects, but it would be time-consuming or even computationally intractable when a number of effects are tested simultaneously [16].</description>
     </item>
     
     <item>
-      <title>cor-robor-ate-robor-=strength证实</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/cor-robor-ate-robor-strength%E8%AF%81%E5%AE%9E/</link>
+      <title>cor-robor-ate-robor-=strength证实-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/cor-robor-ate-robor-strength%E8%AF%81%E5%AE%9E-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/cor-robor-ate-robor-strength%E8%AF%81%E5%AE%9E/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/cor-robor-ate-robor-strength%E8%AF%81%E5%AE%9E-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> Therefore, our results corroborate those of previous reports. (Goto, Miyahara, Ide, 2002) To test this, and to corroborate the above conjectures, family relationships were intentionally broken. (Long et al., 2011)  </description>
     </item>
     
     <item>
-      <title>coroll-ary-推论~inference</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/coroll-ary-%E6%8E%A8%E8%AE%BA~inference/</link>
+      <title>coroll-ary-推论~inference-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/coroll-ary-%E6%8E%A8%E8%AE%BA~inference-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/coroll-ary-%E6%8E%A8%E8%AE%BA~inference/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/coroll-ary-%E6%8E%A8%E8%AE%BA~inference-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>A corollary is that obtaining GS model accuracy beyond that of pedigree-based models would likely necessitate increasing genome coverage by a factor of at least 10X to 100X of that used herein, resulting in the use of a very large number of markers, likely in the hundreds of thousands. In parallel, inbreeding experiments have been conducted as a corollary with an interpretation as being the opposing effect of heterosis. A corollary of this problem is that lack of dynamic consistency makes any kind of individual differences analysis uninterpretable.</description>
     </item>
     
@@ -4295,128 +4260,128 @@ BreedR功能映射
     </item>
     
     <item>
-      <title>cur-tail-curt-=short-缩减~limit，circumscribe，confine，shorten</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/cur-tail-curt-short-%E7%BC%A9%E5%87%8F~limitcircumscribeconfineshorten/</link>
+      <title>cur-tail-curt-=short-缩减~limit，circumscribe，confine，shorten-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/cur-tail-curt-short-%E7%BC%A9%E5%87%8F~limitcircumscribeconfineshorten-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/cur-tail-curt-short-%E7%BC%A9%E5%87%8F~limitcircumscribeconfineshorten/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/cur-tail-curt-short-%E7%BC%A9%E5%87%8F~limitcircumscribeconfineshorten-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Adverse genetic correlations can curtail breeding progress as, for example, a negative genetic correlation between growth and wood density would make it more difficult to select concurrently for improvement in both traits. (Costa e Silva et al., 2008) The review effectively curtailed the breeding activities in the public sector, especially of the major crops. (Acquaah, 2012) While hybrids are less utilized in more temperate zones, eucalypt hybridization programs involving controlled crossing were undertaken early in countries such as Russia and France, but hybrid development was curtailed by extreme frosts.</description>
     </item>
     
     <item>
-      <title>curb-curv-,-prav-,-circ-弯曲，引申为变态、堕落；抑制depression</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/curb-curv--prav--circ-%E5%BC%AF%E6%9B%B2%E5%BC%95%E7%94%B3%E4%B8%BA%E5%8F%98%E6%80%81%E5%A0%95%E8%90%BD%E6%8A%91%E5%88%B6depression/</link>
+      <title>curb-curv-,-prav-,-circ-弯曲，引申为变态、堕落；抑制depression-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/curb-curv--prav--circ-%E5%BC%AF%E6%9B%B2%E5%BC%95%E7%94%B3%E4%B8%BA%E5%8F%98%E6%80%81%E5%A0%95%E8%90%BD%E6%8A%91%E5%88%B6depression-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/curb-curv--prav--circ-%E5%BC%AF%E6%9B%B2%E5%BC%95%E7%94%B3%E4%B8%BA%E5%8F%98%E6%80%81%E5%A0%95%E8%90%BD%E6%8A%91%E5%88%B6depression/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/curb-curv--prav--circ-%E5%BC%AF%E6%9B%B2%E5%BC%95%E7%94%B3%E4%B8%BA%E5%8F%98%E6%80%81%E5%A0%95%E8%90%BD%E6%8A%91%E5%88%B6depression-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Further development and application of genomic technology for conservation management purposes is urgently needed to help curb the accelerating extinction crisis. (Luikart et al., 2003) Finally, sterility will help curb genetic pollution. (Burley, Evans, Youngquist, 2004) In the coming week, Mr. Trump is also expected to sign a similar order directing Mr. Pruitt to begin the lengthy legal process of withdrawing and rewriting Mr. Obama&amp;rsquo;s signature 2015 climate change regulation, aimed at curbing emissions of planet-warming greenhouse gases from coal-fired power plants.</description>
     </item>
     
     <item>
-      <title>dampen,-damp-down-抑制、减退</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/dampen-damp-down-%E6%8A%91%E5%88%B6%E5%87%8F%E9%80%80/</link>
+      <title>dampen,-damp-down-抑制、减退-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/dampen-damp-down-%E6%8A%91%E5%88%B6%E5%87%8F%E9%80%80-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/dampen-damp-down-%E6%8A%91%E5%88%B6%E5%87%8F%E9%80%80/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/dampen-damp-down-%E6%8A%91%E5%88%B6%E5%87%8F%E9%80%80-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>However, diameter growth, and hence basal area growth, are subject to competitive influences, which can either dampen or accentuate provenance differences depending on plot sizes or presence-absence of surround plantings. (Burdon, Low, 1991) Mature tree hybrid experiment results were similar to those of the seedling experiment, but with a dampening of differences caused by low nutrient availability and possibly age effects. (El-Kassaby, Lindgren, 2007) Even if initial survival is poor in one year the effects are damped down by the fact that one year’s planting is not normally a discrete crop with respect to felling plans.</description>
     </item>
     
     <item>
-      <title>de-line-ate-描绘~de-scrib-e</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/de-line-ate-%E6%8F%8F%E7%BB%98~de-scrib-e/</link>
+      <title>de-line-ate-描绘~de-scrib-e-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/de-line-ate-%E6%8F%8F%E7%BB%98~de-scrib-e-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/de-line-ate-%E6%8F%8F%E7%BB%98~de-scrib-e/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/de-line-ate-%E6%8F%8F%E7%BB%98~de-scrib-e-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>It has been suggested that association studies aimed at delineating the genetic architecture of complex traits could gain in resolution and power by including fine-scale CNV information (Schlattl et al., 2011). (Parent et al., 2015) The information available from omics research can enable us to assess multiple features of complex systems at various levels of biological organization, from the cell to the whole organism within a defined and fully delineated framework.</description>
     </item>
     
     <item>
-      <title>de-tri-ment-tri-=rub转、摩擦【损害】to-the-detriment-of</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/de-tri-ment-tri-rub%E8%BD%AC%E6%91%A9%E6%93%A6%E6%8D%9F%E5%AE%B3to-the-detriment-of/</link>
+      <title>de-tri-ment-tri-=rub转、摩擦【损害】to-the-detriment-of-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/de-tri-ment-tri-rub%E8%BD%AC%E6%91%A9%E6%93%A6%E6%8D%9F%E5%AE%B3to-the-detriment-of-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/de-tri-ment-tri-rub%E8%BD%AC%E6%91%A9%E6%93%A6%E6%8D%9F%E5%AE%B3to-the-detriment-of/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/de-tri-ment-tri-rub%E8%BD%AC%E6%91%A9%E6%93%A6%E6%8D%9F%E5%AE%B3to-the-detriment-of-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Generally, adverse genetic correlations have been reported between growth and wood properties (Loo et al. 1984; Williams and Megraw 1994; Cumbie 2002; Hannrup et al.2004; Li et al. 2007), indicating that selecting parents for growth probably will be to the detriment of wood quality and vice versa. (Antony et al., 2014) Competition, a detrimental fitness effect from other individuals, is one such associative effect, where the contribution from conspecifics is to lower fitness.</description>
     </item>
     
     <item>
-      <title>deem-to-be-视为</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/deem-to-be-%E8%A7%86%E4%B8%BA/</link>
+      <title>deem-to-be-视为-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/deem-to-be-%E8%A7%86%E4%B8%BA-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/deem-to-be-%E8%A7%86%E4%B8%BA/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/deem-to-be-%E8%A7%86%E4%B8%BA-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Environments are deemed to be a random effect, as they were chosen to represent a roughly random sample of a population of environments. (Klisz et al., 2017) If GEI is deemed to be negligible, then selected genotypes could be used for plantations to produce uniform wood under different environmental conditions (e.g. (Gapare et al., 2010) The candidate models should include all covariance structures deemed to be scientifically plausible in the context of the data being analyzed.</description>
     </item>
     
     <item>
-      <title>di-vid-end-vid-=cut,-分红，益处</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/di-vid-end-vid-cut-%E5%88%86%E7%BA%A2%E7%9B%8A%E5%A4%84/</link>
+      <title>di-vid-end-vid-=cut,-分红，益处-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/di-vid-end-vid-cut-%E5%88%86%E7%BA%A2%E7%9B%8A%E5%A4%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/di-vid-end-vid-cut-%E5%88%86%E7%BA%A2%E7%9B%8A%E5%A4%84/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/di-vid-end-vid-cut-%E5%88%86%E7%BA%A2%E7%9B%8A%E5%A4%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> Since pedigree errors reduce rates of genetic gain, the ability to correct pedigree mistakes is a virtually zero cost dividend of genomic selection programs. (Weller, 2015) On the other hand, application of the additive genetic model in selective breeding of livestock has produced remarkable dividends, as shown in Dekkers and Hospital (2002). (Gianola, Fernando, Stella, 2006)  </description>
     </item>
     
     <item>
-      <title>difficult-with</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/difficult-with/</link>
+      <title>difficult-with-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/difficult-with-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/difficult-with/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/difficult-with-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Although diallel designs are difficult with forest trees, because of the problems of quickly completing all possible combinations of control crosses, they have been attempted by several workers (2, 3, 23, 107, 156). (Libby, Stettler, Seitz, 1969) Restriction fragment length polymorphism (RFLP) analysis and gene iso-lation are significantly more difficult with large genomes. (Neale et al., 1994) Accurate estimation of relatedness requires many marker loci and is, therefore, difficult with microsatellites.</description>
     </item>
     
     <item>
-      <title>dis-semin-ate-semin-=seed散布</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/dis-semin-ate-semin-seed%E6%95%A3%E5%B8%83/</link>
+      <title>dis-semin-ate-semin-=seed散布-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/dis-semin-ate-semin-seed%E6%95%A3%E5%B8%83-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/dis-semin-ate-semin-seed%E6%95%A3%E5%B8%83/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/dis-semin-ate-semin-seed%E6%95%A3%E5%B8%83-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific research documents, whether they are published or not. (Cappa, Yanchuk, Cartwright, 2012) A regular selection program based on additive genetic performance will normally result in a comparable genetic improvement after a short period of repeated selection, and may then continue beyond the results obtained in the present cross experiment without the complications caused by the laborious dissemination procedures required by a crossbreeding program and the problems caused by a possibly increased environmental sensitivity in the hybrids.</description>
     </item>
     
     <item>
-      <title>ef-fic-acy-功效~effectiveness-power</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/ef-fic-acy-%E5%8A%9F%E6%95%88~effectiveness-power/</link>
+      <title>ef-fic-acy-功效~effectiveness-power-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/ef-fic-acy-%E5%8A%9F%E6%95%88~effectiveness-power-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/ef-fic-acy-%E5%8A%9F%E6%95%88~effectiveness-power/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/ef-fic-acy-%E5%8A%9F%E6%95%88~effectiveness-power-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>We discuss these considerations and additionally emphasize the utility of supplemental nongenetic data for increasing the efficacy of pedigree analysis. (Wilson, Ferguson, 2002) This patch size is entirely dependent on the efficacy of the global trend model. (Dutkowski et al., 2006) Support is also provided by a selection experiment designed to assess the efficacy of directional selection as a means to improve resin production in P. elliottii. (Roberds et al.</description>
     </item>
     
     <item>
-      <title>entail-~-necessitate-需要，蕴含</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/entail-~-necessitate-%E9%9C%80%E8%A6%81%E8%95%B4%E5%90%AB/</link>
+      <title>entail-~-necessitate-需要，蕴含-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/entail-~-necessitate-%E9%9C%80%E8%A6%81%E8%95%B4%E5%90%AB-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/entail-~-necessitate-%E9%9C%80%E8%A6%81%E8%95%B4%E5%90%AB/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/entail-~-necessitate-%E9%9C%80%E8%A6%81%E8%95%B4%E5%90%AB-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> However, one should also be aware that QTL mapping studies for disease resistance traits frequently entail interspecies hybrid crosses. (Hall, Hallingback, Wu, 2016) At the other extreme, pedigree data also entail real challenges. (Cantor, Lange, Sinsheimer, 2010) Shifts in elevation also entail adaptation, which might occur more readily, because the proximity of populations facilitates gene migration. (Davis, Shaw, Tx, 2001)  </description>
     </item>
     
     <item>
-      <title>escal-ate-escal-=ladder逐步增强</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/escal-ate-escal-ladder%E9%80%90%E6%AD%A5%E5%A2%9E%E5%BC%BA/</link>
+      <title>escal-ate-escal-=ladder逐步增强-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/escal-ate-escal-ladder%E9%80%90%E6%AD%A5%E5%A2%9E%E5%BC%BA-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/escal-ate-escal-ladder%E9%80%90%E6%AD%A5%E5%A2%9E%E5%BC%BA/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/escal-ate-escal-ladder%E9%80%90%E6%AD%A5%E5%A2%9E%E5%BC%BA-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>This focus is expanding now to include more routine evaluations of physical and chemical wood components in light of the escalating interest in Populus biomass energy feedstock and the advent of increasingly affordable and reliable assessment methods. (Hidalgo et al., 2010) In addition, as climate change escalates, reduced methane emissions from cattle and sheep will be a critical goal. (Hayes, Lewin, Goddard, 2013) These concurrent escalations have resulted in the challenge of analyzing larger and larger data sets using more and more complex methods.</description>
     </item>
     
     <item>
-      <title>ex-pos-ition-pos-=put~interpretation解释阐述</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/ex-pos-ition-pos-put~interpretation%E8%A7%A3%E9%87%8A%E9%98%90%E8%BF%B0/</link>
+      <title>ex-pos-ition-pos-=put~interpretation解释阐述-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/ex-pos-ition-pos-put~interpretation%E8%A7%A3%E9%87%8A%E9%98%90%E8%BF%B0-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/ex-pos-ition-pos-put~interpretation%E8%A7%A3%E9%87%8A%E9%98%90%E8%BF%B0/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/ex-pos-ition-pos-put~interpretation%E8%A7%A3%E9%87%8A%E9%98%90%E8%BF%B0-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>For a more detailed exposition of the theory of LMMs, the reader is referred to the monographs by, e.g., Searle et al. (Casella, Fienberg, Olkin, 2013) For simplicity of exposition, some of our equations consider the case of a single block of plots, but extension to several blocks is straightforward and is, in fact, used in the examples. (Piepho, Richter, Williams, 2008) Nevertheless, we also explain all main results and techniques in verbal form, such that practitioners who do not want to study the mathematics in all detail can follow the exposition.</description>
     </item>
     
     <item>
-      <title>exposed-to-接触，暴露于，处于，受到</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/exposed-to-%E6%8E%A5%E8%A7%A6%E6%9A%B4%E9%9C%B2%E4%BA%8E%E5%A4%84%E4%BA%8E%E5%8F%97%E5%88%B0/</link>
+      <title>exposed-to-接触，暴露于，处于，受到-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/exposed-to-%E6%8E%A5%E8%A7%A6%E6%9A%B4%E9%9C%B2%E4%BA%8E%E5%A4%84%E4%BA%8E%E5%8F%97%E5%88%B0-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/exposed-to-%E6%8E%A5%E8%A7%A6%E6%9A%B4%E9%9C%B2%E4%BA%8E%E5%A4%84%E4%BA%8E%E5%8F%97%E5%88%B0/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/exposed-to-%E6%8E%A5%E8%A7%A6%E6%9A%B4%E9%9C%B2%E4%BA%8E%E5%A4%84%E4%BA%8E%E5%8F%97%E5%88%B0-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>As the vast majority of studies shows that deleterious recessive alleles, not overdominant alleles, are most important in causing ID (Crow 1993; Ritland 1996); selfing greatly increases the chance for these alleles to form homozygotes and, therefore, to be exposed to selection. (Wang, Hagqvist, Tigerstedt, 1999) An attempt was made in eqs. 8 and 9 to derive average relatedness of the gene pool of the seed crop when the orchard is exposed to pollen contamination.</description>
     </item>
     
@@ -4439,20 +4404,20 @@ BreedR功能映射
     </item>
     
     <item>
-      <title>far-reaching-深远的</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/far-reaching-%E6%B7%B1%E8%BF%9C%E7%9A%84/</link>
+      <title>far-reaching-深远的-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/far-reaching-%E6%B7%B1%E8%BF%9C%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/far-reaching-%E6%B7%B1%E8%BF%9C%E7%9A%84/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/far-reaching-%E6%B7%B1%E8%BF%9C%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> Genetic improvement of these traits will have far-reaching effects on the profitability and sustainability of US livestock production. (Taylor, Taylor, Decker, 2016) Knowledge about the genetic mechanisms for biological shape has far-reaching implications for a range spectrum of scientific disciplines including anthropology, agriculture, developmental biology, evolution and biomedicine. (Fu et al., 2010)  </description>
     </item>
     
     <item>
-      <title>feed-stock-原料</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/feed-stock-%E5%8E%9F%E6%96%99/</link>
+      <title>feed-stock-原料-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/feed-stock-%E5%8E%9F%E6%96%99-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/feed-stock-%E5%8E%9F%E6%96%99/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/feed-stock-%E5%8E%9F%E6%96%99-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>The extent of genetic diversity detected and core germplasm of CPT identified in this study could be selected and used for tree breeding, germplasm conservation and suitable feed stock for biofuel. (Sharma et al., 2017) Short-rotation tree crops such as eucalypt plantations, are the feed stocks not only of the pulp and paper industry (Clarke 2009; Cotterill and Brolin 1997; Paues 1999), but are also seen as the basis of new industries replacing the use of fossil hydrocarbons for energy and industrial organic chemicals (Bozell 2010).</description>
     </item>
     
@@ -4497,11 +4462,11 @@ BreedR功能映射
     </item>
     
     <item>
-      <title>gear-toward-朝向</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/gear-toward-%E6%9C%9D%E5%90%91/</link>
+      <title>gear-toward-朝向-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/gear-toward-%E6%9C%9D%E5%90%91-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/gear-toward-%E6%9C%9D%E5%90%91/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/gear-toward-%E6%9C%9D%E5%90%91-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Researchers interested in explaining the relationship may prefer a more manual variable selection approach that takes into account background information and is geared toward the substantive questions of interest. (Faraway, 2006) In addition, methods for estimating genomic relationships and predicting genetic values from SNP genotype data are for the most part geared toward the use of diplotypes, rather than haplotypes, although the use of haplotypic values has been proposed. (Isik, Holland, Maltecca, 2016) In agriculture, genetic risk prediction is mostly geared towards selection of breeding stock on the basis of estimates of additive genetic values (that is, estimated breeding values) in the parent generation; the aim is to elicit average changes in the phenotype of the offspring generation.</description>
     </item>
     
@@ -4524,29 +4489,29 @@ BreedR功能映射
     </item>
     
     <item>
-      <title>go-so-far-as-竟然，甚至</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/go-so-far-as-%E7%AB%9F%E7%84%B6%E7%94%9A%E8%87%B3/</link>
+      <title>go-so-far-as-竟然，甚至-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/go-so-far-as-%E7%AB%9F%E7%84%B6%E7%94%9A%E8%87%B3-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/go-so-far-as-%E7%AB%9F%E7%84%B6%E7%94%9A%E8%87%B3/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/go-so-far-as-%E7%AB%9F%E7%84%B6%E7%94%9A%E8%87%B3-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>I n fact, as we noted before, Fisher ( 1 930, 1 958) went so far as to suggest that sexual reproduction is perhaps the only trait that has evolved by intergroup competition. (Crow, Kimura, 2009) The government went so far as to try to arrest opposition leaders. 政府竟然企图逮捕反对党领导人。 But one cannot go so far as to say that, in general, there is no real difference between asserting that it is &amp;ldquo;practically proved&amp;rdquo; that a man is the father and asserting that it is &amp;ldquo;practically proved&amp;rdquo; that he has the same phenotype as the father.</description>
     </item>
     
     <item>
-      <title>groundbreaking-开创性的</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/groundbreaking-%E5%BC%80%E5%88%9B%E6%80%A7%E7%9A%84/</link>
+      <title>groundbreaking-开创性的-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/groundbreaking-%E5%BC%80%E5%88%9B%E6%80%A7%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/groundbreaking-%E5%BC%80%E5%88%9B%E6%80%A7%E7%9A%84/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/groundbreaking-%E5%BC%80%E5%88%9B%E6%80%A7%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> The groundbreaking advance of GS in dairy cattle is frequently used as an example of the economically successful use of this technology. (Resende et al., 2017) This study was also groundbreaking in other aspects. (Weller, 2015) Her groundbreaking solar reactor design, which includes an innovative camera-like aperture, is what makes this new hydrogen-producing process possible under any weather conditions. (Scientific American)  </description>
     </item>
     
     <item>
-      <title>herald-传令官，预示</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/herald-%E4%BC%A0%E4%BB%A4%E5%AE%98%E9%A2%84%E7%A4%BA/</link>
+      <title>herald-传令官，预示-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/herald-%E4%BC%A0%E4%BB%A4%E5%AE%98%E9%A2%84%E7%A4%BA-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/herald-%E4%BC%A0%E4%BB%A4%E5%AE%98%E9%A2%84%E7%A4%BA/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/herald-%E4%BC%A0%E4%BB%A4%E5%AE%98%E9%A2%84%E7%A4%BA-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>This knowledge will herald a new era of personalized medicine in which environment-specific risk factors for common diseases are assessed for individual genotypes (and hopefully avoided by the patient) and pharmaceutical treatment is genotype dependent. (Mackay, 2001) Scans and Simulation-Based Approaches As presented, the above tests for shifts in allele frequencies are performed one marker at a time, as they herald from the days of testing just one or a few unlinked candidate genes.</description>
     </item>
     
@@ -4560,101 +4525,101 @@ BreedR功能映射
     </item>
     
     <item>
-      <title>hol-istic-hol-,holo--整体的</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/hol-istic-hol-holo--%E6%95%B4%E4%BD%93%E7%9A%84/</link>
+      <title>hol-istic-hol-,holo--整体的-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/hol-istic-hol-holo--%E6%95%B4%E4%BD%93%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/hol-istic-hol-holo--%E6%95%B4%E4%BD%93%E7%9A%84/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/hol-istic-hol-holo--%E6%95%B4%E4%BD%93%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>These selected examples illustrate why a more holistic understanding of plant disease is needed to better understand beneficial interactions across the plant microbiome (Van der Putten et al., 2001). (Hacquard, Schadt, 2015) The most important innovation we need is holistic thinking about all of our resources. (Scientific American) The approach utilises a factor analytic (FA) model to capture the variance structure of the additive genotype-by-environment (A E) effects in a parsimonious and holistic manner and uses an approximate reduced animal model to overcome computational issues.</description>
     </item>
     
     <item>
-      <title>identified-</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/identified-/</link>
+      <title>identified--#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/identified--#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/identified-/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/identified--#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Genetic improvement, which is a key plank of domestication, is set for continued advances in several directions that have already been clearly identified. (Burdon, 2008) Based on experience, the limitations of polygenic trait improvement through QTL manipulation have been clearly identified. (Kang, 2002) Volume, basic density and pulp yield at rotation age have been identified as the most economically important breeding objective traits for kraft pulpwood production (Borralho et al.</description>
     </item>
     
     <item>
-      <title>improve-upon-改进</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/improve-upon-%E6%94%B9%E8%BF%9B/</link>
+      <title>improve-upon-改进-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/improve-upon-%E6%94%B9%E8%BF%9B-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/improve-upon-%E6%94%B9%E8%BF%9B/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/improve-upon-%E6%94%B9%E8%BF%9B-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>The model did not improve upon the standard analysis when no differential shrinkage was applied with the model matching the performance of the standard SNP analysis when 2 &amp;lt; 0.01 (models S3.83.11, supplementary Table S3). (Pereira et al., 2017) The chapter concludes with an assessment of the molecular tools being developed for an integrated translational genomics program to improve upon present breeding and selection methodologies. (Hidalgo et al., 2010) To further improve upon this scheme, we have considered a mixed greedy algorithm that sequentially employs two different objective functions.</description>
     </item>
     
     <item>
-      <title>in-ad-vert-ent-疏忽，无意</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-ad-vert-ent-%E7%96%8F%E5%BF%BD%E6%97%A0%E6%84%8F/</link>
+      <title>in-ad-vert-ent-疏忽，无意-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-ad-vert-ent-%E7%96%8F%E5%BF%BD%E6%97%A0%E6%84%8F-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-ad-vert-ent-%E7%96%8F%E5%BF%BD%E6%97%A0%E6%84%8F/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-ad-vert-ent-%E7%96%8F%E5%BF%BD%E6%97%A0%E6%84%8F-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>In either case, care must be taken to evaluate the total effect of infusion to ensure that gains in some traits are not made at the inadvertent expense of other traits. (White, 1987) To avoid inadvertent negative selection for growth when selecting for high WUE, it is important to know if 13C and growth are genetically linked. (Brendel et al., 2002) The breeder can then take steps to ensure that inadvertent selection will not cause unwanted genetic changes in traits not measured, or at least minimize unfavorable responses.</description>
     </item>
     
     <item>
-      <title>in-an-attempt-to-力图</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-an-attempt-to-%E5%8A%9B%E5%9B%BE/</link>
+      <title>in-an-attempt-to-力图-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-an-attempt-to-%E5%8A%9B%E5%9B%BE-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-an-attempt-to-%E5%8A%9B%E5%9B%BE/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-an-attempt-to-%E5%8A%9B%E5%9B%BE-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> These four divergent theories of the origin of maize have stimulated research in an attempt to resolve the issue. (Hallauer et al., 2010) We then screened birds from elsewhere in the colony in an attempt to find the true father. (Burke, Bruford, 1987) This is reasonable, as one can borrow information from other observations in an attempt to predict the missing observation. (Walsh, Lynch, 2015)  </description>
     </item>
     
     <item>
-      <title>in-ex-or-able-不可避免的</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-ex-or-able-%E4%B8%8D%E5%8F%AF%E9%81%BF%E5%85%8D%E7%9A%84/</link>
+      <title>in-ex-or-able-不可避免的-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-ex-or-able-%E4%B8%8D%E5%8F%AF%E9%81%BF%E5%85%8D%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-ex-or-able-%E4%B8%8D%E5%8F%AF%E9%81%BF%E5%85%8D%E7%9A%84/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-ex-or-able-%E4%B8%8D%E5%8F%AF%E9%81%BF%E5%85%8D%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>The inexorable tendency for a mathematical function to approach some particular value (or set of values) with increasing n. (Beaumont, Rannala, 2004) The inexorable increase of relatedness in advanced-generation breeding populations coupled with the near-universal importance of inbreeding depression in forest trees (Chapter 5) means that management of inbreeding is a key issue in the development and implementation of all advanced-generation breeding programs. (White, Adams, Neale, 2007) Gaming of cross-border tax rules has risen inexorably.</description>
     </item>
     
     <item>
-      <title>in-its-own-right-独立地</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-its-own-right-%E7%8B%AC%E7%AB%8B%E5%9C%B0/</link>
+      <title>in-its-own-right-独立地-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-its-own-right-%E7%8B%AC%E7%AB%8B%E5%9C%B0-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-its-own-right-%E7%8B%AC%E7%AB%8B%E5%9C%B0/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-its-own-right-%E7%8B%AC%E7%AB%8B%E5%9C%B0-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Such a model is useful in its own right for prediction of genotypic values in each generation. (Piepho et al., 2008) Because it is an important component of the breeder&amp;rsquo;s equation, a study of variation in the P matrix is also of importance in its own right, regardless of its possible use in place of G (Roff and Mousseau 2005). (Roff, 2007) In evolutionary biology, however, understanding the mechanisms causing the interactions is a research goal in its own right, which is facilitated by the trait-based approach.</description>
     </item>
     
     <item>
-      <title>in-the-interest-of-为了；为了…的利益</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-the-interest-of-%E4%B8%BA%E4%BA%86%E4%B8%BA%E4%BA%86%E7%9A%84%E5%88%A9%E7%9B%8A/</link>
+      <title>in-the-interest-of-为了；为了…的利益-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-the-interest-of-%E4%B8%BA%E4%BA%86%E4%B8%BA%E4%BA%86%E7%9A%84%E5%88%A9%E7%9B%8A-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-the-interest-of-%E4%B8%BA%E4%BA%86%E4%B8%BA%E4%BA%86%E7%9A%84%E5%88%A9%E7%9B%8A/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-the-interest-of-%E4%B8%BA%E4%BA%86%E4%B8%BA%E4%BA%86%E7%9A%84%E5%88%A9%E7%9B%8A-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> Selection in genetic tests frequently occurs at young ages in the interest of saving time (LAMBETH, 1980). (Doede, Adams, 1998) It is not shown here in the interest of space, but left as an exercise for the reader. (Stroup, 2012) It is rarely in the interest of those in the right to pretend that they are never wrong.  </description>
     </item>
     
     <item>
-      <title>in-the-magnitude-of-大小，程度</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-the-magnitude-of-%E5%A4%A7%E5%B0%8F%E7%A8%8B%E5%BA%A6/</link>
+      <title>in-the-magnitude-of-大小，程度-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-the-magnitude-of-%E5%A4%A7%E5%B0%8F%E7%A8%8B%E5%BA%A6-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-the-magnitude-of-%E5%A4%A7%E5%B0%8F%E7%A8%8B%E5%BA%A6/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-the-magnitude-of-%E5%A4%A7%E5%B0%8F%E7%A8%8B%E5%BA%A6-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>This was attributed to changes in the magnitude of the differences between subraces as well as changes in ranking at different sites. (Stackpole et al., 2010) For most scenarios, the genetic gain by the parent-balance strategy was in the magnitude of 65% of the grandparent-balance strategy with PGP at its optimum (Tabs. (Danusevicius, Lindgren, 2010) Increase in the magnitude of nongenetic variance components was also observed. (Soriano Viana et al.</description>
     </item>
     
     <item>
-      <title>in-tric-ate-tric-=petty-obstacle-小障碍；错综复杂的</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-tric-ate-tric-petty-obstacle-%E5%B0%8F%E9%9A%9C%E7%A2%8D%E9%94%99%E7%BB%BC%E5%A4%8D%E6%9D%82%E7%9A%84/</link>
+      <title>in-tric-ate-tric-=petty-obstacle-小障碍；错综复杂的-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-tric-ate-tric-petty-obstacle-%E5%B0%8F%E9%9A%9C%E7%A2%8D%E9%94%99%E7%BB%BC%E5%A4%8D%E6%9D%82%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-tric-ate-tric-petty-obstacle-%E5%B0%8F%E9%9A%9C%E7%A2%8D%E9%94%99%E7%BB%BC%E5%A4%8D%E6%9D%82%E7%9A%84/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/in-tric-ate-tric-petty-obstacle-%E5%B0%8F%E9%9A%9C%E7%A2%8D%E9%94%99%E7%BB%BC%E5%A4%8D%E6%9D%82%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>ABSTRACT Complex quantitative traits of plants as measured on collections of genotypes across multiple environments are the outcome of processes that depend in intricate ways on genotype and environment simultaneously. (Boer et al., 2007) However, its analysis is traditionally intricate, unforgiving of unplanned missing information, and highly sensitive to imbalance, making the diallel unapproachable to many geneticists. (Lenarcic et al., 2012) It will be tempting to infer intricate (and incorrect) biological mechanisms to explain patterns that emerge following data analyses.</description>
     </item>
     
     <item>
-      <title>instrumental-helpful有帮助的</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/instrumental-helpful%E6%9C%89%E5%B8%AE%E5%8A%A9%E7%9A%84/</link>
+      <title>instrumental-helpful有帮助的-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/instrumental-helpful%E6%9C%89%E5%B8%AE%E5%8A%A9%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/instrumental-helpful%E6%9C%89%E5%B8%AE%E5%8A%A9%E7%9A%84/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/instrumental-helpful%E6%9C%89%E5%B8%AE%E5%8A%A9%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> These studies were instrumental to an understanding of the importance of wood quality traits in radiata pine improvement. (Wu et al., 2007) We would like to acknowledge the present and former co-workers at SkogForsk who have been instrumental in establishing, maintaining and measuring the progeny trials in this investigation. (Andersson et al., 2003)  </description>
     </item>
     
@@ -4716,11 +4681,11 @@ library(modelr) set.seed(1) # Run to replicate this post folds &amp;lt;- crossv_
     </item>
     
     <item>
-      <title>lay-out-安排、布置（样地）</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/lay-out-%E5%AE%89%E6%8E%92%E5%B8%83%E7%BD%AE%E6%A0%B7%E5%9C%B0/</link>
+      <title>lay-out-安排、布置（样地）-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/lay-out-%E5%AE%89%E6%8E%92%E5%B8%83%E7%BD%AE%E6%A0%B7%E5%9C%B0-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/lay-out-%E5%AE%89%E6%8E%92%E5%B8%83%E7%BD%AE%E6%A0%B7%E5%9C%B0/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/lay-out-%E5%AE%89%E6%8E%92%E5%B8%83%E7%BD%AE%E6%A0%B7%E5%9C%B0-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Experiment including six parents, fifteen direct and fifteen reciprocal crosses were laid out in Randomized Complete Block Design with three replications in winter 2014e15. (Khan, 2016) It is assumed that trials have been laid out according to some kind of blocked design and that spatial adjustment is to be performed per block. (Piepho, Richter, Williams, 2008) To exemplify the type of routine application we advocate, consider the results from a yield trial with oats laid out as an a-design reported in John and Williams (1995).</description>
     </item>
     
@@ -4738,11 +4703,11 @@ typora的安装 # add Typora&#39;s repository sudo add-apt-repository &#39;deb h
     </item>
     
     <item>
-      <title>make-headway-取得进展</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/make-headway-%E5%8F%96%E5%BE%97%E8%BF%9B%E5%B1%95/</link>
+      <title>make-headway-取得进展-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/make-headway-%E5%8F%96%E5%BE%97%E8%BF%9B%E5%B1%95-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/make-headway-%E5%8F%96%E5%BE%97%E8%BF%9B%E5%B1%95/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/make-headway-%E5%8F%96%E5%BE%97%E8%BF%9B%E5%B1%95-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>And gene therapy, using modified bits of DNA, has made headway against hemophilia, hereditary blindness and other previously intractable diseases. (Scientific American) Pharmaceutical companies are finding it increasingly difficult to make headway in their search for novel products. (Economist) Mr Gardell is sceptical that boisterous American funds will be able to make much headway into Europe, but he welcomes more competition. (Economist) Turkey cannot make much more headway without additional troops, says Can Acun, a researcher at SETA, a pro-government think-tank.</description>
     </item>
     
@@ -4758,20 +4723,20 @@ typora的安装 # add Typora&#39;s repository sudo add-apt-repository &#39;deb h
     </item>
     
     <item>
-      <title>moot-待讨论，未决议的</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/moot-%E5%BE%85%E8%AE%A8%E8%AE%BA%E6%9C%AA%E5%86%B3%E8%AE%AE%E7%9A%84/</link>
+      <title>moot-待讨论，未决议的-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/moot-%E5%BE%85%E8%AE%A8%E8%AE%BA%E6%9C%AA%E5%86%B3%E8%AE%AE%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/moot-%E5%BE%85%E8%AE%A8%E8%AE%BA%E6%9C%AA%E5%86%B3%E8%AE%AE%E7%9A%84/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/moot-%E5%BE%85%E8%AE%A8%E8%AE%BA%E6%9C%AA%E5%86%B3%E8%AE%AE%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> Whether such complexes retain their adaptive advantage in an agricultural environment is, however, a moot point (Lawrence, Marshall and Davies, 1995a). (Hill, Becker, Tigerstedt, 1998) These are not isolated examples of studies whose findings are rendered moot by the use of models that have been developed for modern plants. (Levin, 2013) Whether this can be brought about by natural selection alone is a moot question. (Provine, 1986)  </description>
     </item>
     
     <item>
-      <title>mount-=ascend登上，支撑；增加、装配</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/mount-ascend%E7%99%BB%E4%B8%8A%E6%94%AF%E6%92%91%E5%A2%9E%E5%8A%A0%E8%A3%85%E9%85%8D/</link>
+      <title>mount-=ascend登上，支撑；增加、装配-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/mount-ascend%E7%99%BB%E4%B8%8A%E6%94%AF%E6%92%91%E5%A2%9E%E5%8A%A0%E8%A3%85%E9%85%8D-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/mount-ascend%E7%99%BB%E4%B8%8A%E6%94%AF%E6%92%91%E5%A2%9E%E5%8A%A0%E8%A3%85%E9%85%8D/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/mount-ascend%E7%99%BB%E4%B8%8A%E6%94%AF%E6%92%91%E5%A2%9E%E5%8A%A0%E8%A3%85%E9%85%8D-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> There is mounting evidence on the chemical basis of many important wood quality traits. (Apiolaza, Luis, 2009) But if only weeds are considered (2455 widely spread species), the proportion mounts to 35.6%. (Levin, 2013) Natural epigenetic variation abounds, and detailed and refined descriptions of this variation are likely to mount quickly as higher throughput epigenetic profiling methods are applied. (Richards, 2008)  </description>
     </item>
     
@@ -4796,128 +4761,128 @@ typora的安装 # add Typora&#39;s repository sudo add-apt-repository &#39;deb h
     </item>
     
     <item>
-      <title>obscure-掩盖，模糊的</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/obscure-%E6%8E%A9%E7%9B%96%E6%A8%A1%E7%B3%8A%E7%9A%84/</link>
+      <title>obscure-掩盖，模糊的-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/obscure-%E6%8E%A9%E7%9B%96%E6%A8%A1%E7%B3%8A%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/obscure-%E6%8E%A9%E7%9B%96%E6%A8%A1%E7%B3%8A%E7%9A%84/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/obscure-%E6%8E%A9%E7%9B%96%E6%A8%A1%E7%B3%8A%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> Ignoring IGEs on trait values may also obscure the mechanisms underlying the fitness effects of competition and cooperation among individuals. (Bijma, 2014) The nature of the corresponding varieties remained obscure until the advent of DNA genotyping. (Tuberosa, Graner, Frison, 2014)  </description>
     </item>
     
     <item>
-      <title>per-me-ate-me-=to-go-渗透过去</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/per-me-ate-me-to-go-%E6%B8%97%E9%80%8F%E8%BF%87%E5%8E%BB/</link>
+      <title>per-me-ate-me-=to-go-渗透过去-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/per-me-ate-me-to-go-%E6%B8%97%E9%80%8F%E8%BF%87%E5%8E%BB-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/per-me-ate-me-to-go-%E6%B8%97%E9%80%8F%E8%BF%87%E5%8E%BB/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/per-me-ate-me-to-go-%E6%B8%97%E9%80%8F%E8%BF%87%E5%8E%BB-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>In this way the less fertile stocks, having the social advantage, will gradually permeate the upper classes of society, and there cause the peculiar situation in which the more fortunate and successful of mankind have the smallest birth-rate. (Fisher, 1930) Although most of the results reviewed here are very old, they have not yet permeated the practice of covariance structure analysis. (Bentler, Dudgeon, 1996) His alarm about foreign competition, and his suspicion of trade deals, runs deep in his rhetoric, permeating his stump speeches.</description>
     </item>
     
     <item>
-      <title>per-vad-e-vad-=go全部走遍，蔓延，遍及，流行</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/per-vad-e-vad-go%E5%85%A8%E9%83%A8%E8%B5%B0%E9%81%8D%E8%94%93%E5%BB%B6%E9%81%8D%E5%8F%8A%E6%B5%81%E8%A1%8C/</link>
+      <title>per-vad-e-vad-=go全部走遍，蔓延，遍及，流行-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/per-vad-e-vad-go%E5%85%A8%E9%83%A8%E8%B5%B0%E9%81%8D%E8%94%93%E5%BB%B6%E9%81%8D%E5%8F%8A%E6%B5%81%E8%A1%8C-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/per-vad-e-vad-go%E5%85%A8%E9%83%A8%E8%B5%B0%E9%81%8D%E8%94%93%E5%BB%B6%E9%81%8D%E5%8F%8A%E6%B5%81%E8%A1%8C/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/per-vad-e-vad-go%E5%85%A8%E9%83%A8%E8%B5%B0%E9%81%8D%E8%94%93%E5%BB%B6%E9%81%8D%E5%8F%8A%E6%B5%81%E8%A1%8C-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>The 20th century has seen an enormous output of different phylogenetic schemes and the persistence of grades has pervaded the methods of ``evolutionary systematics.&amp;rdquo; (Levin, 2013) Propelled by the genome projects and their spinoff technologies, QTL analyses have pervaded all fields of biology and form the backbone for the recent explosion of studies tying specific alleles to human disease. (Rik Kooke Erik Wijnker, 2012) Along with those discontinuous phase changes during development, there are continuous patterns of developmental transitions that pervade every aspect of growth and development at a wide range of organizational levels from cells to organs to the whole organisms (Poethig, 2003).</description>
     </item>
     
     <item>
-      <title>plumm-et-plumb-=lead铅，铅密度大，所以有快速降低、跳水（plunge）、圆胖（plump重）的意思；过去管</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/plumm-et-plumb-lead%E9%93%85%E9%93%85%E5%AF%86%E5%BA%A6%E5%A4%A7%E6%89%80%E4%BB%A5%E6%9C%89%E5%BF%AB%E9%80%9F%E9%99%8D%E4%BD%8E%E8%B7%B3%E6%B0%B4plunge%E5%9C%86%E8%83%96plump%E9%87%8D%E7%9A%84%E6%84%8F%E6%80%9D%E8%BF%87%E5%8E%BB%E7%AE%A1/</link>
+      <title>plumm-et-plumb-=lead铅，铅密度大，所以有快速降低、跳水（plunge）、圆胖（plump重）的意思；过去管子主要是铅做的</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/plumm-et-plumb-lead%E9%93%85%E9%93%85%E5%AF%86%E5%BA%A6%E5%A4%A7%E6%89%80%E4%BB%A5%E6%9C%89%E5%BF%AB%E9%80%9F%E9%99%8D%E4%BD%8E%E8%B7%B3%E6%B0%B4plunge%E5%9C%86%E8%83%96plump%E9%87%8D%E7%9A%84%E6%84%8F%E6%80%9D%E8%BF%87%E5%8E%BB%E7%AE%A1%E5%AD%90%E4%B8%BB%E8%A6%81%E6%98%AF%E9%93%85%E5%81%9A%E7%9A%84/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/plumm-et-plumb-lead%E9%93%85%E9%93%85%E5%AF%86%E5%BA%A6%E5%A4%A7%E6%89%80%E4%BB%A5%E6%9C%89%E5%BF%AB%E9%80%9F%E9%99%8D%E4%BD%8E%E8%B7%B3%E6%B0%B4plunge%E5%9C%86%E8%83%96plump%E9%87%8D%E7%9A%84%E6%84%8F%E6%80%9D%E8%BF%87%E5%8E%BB%E7%AE%A1/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/plumm-et-plumb-lead%E9%93%85%E9%93%85%E5%AF%86%E5%BA%A6%E5%A4%A7%E6%89%80%E4%BB%A5%E6%9C%89%E5%BF%AB%E9%80%9F%E9%99%8D%E4%BD%8E%E8%B7%B3%E6%B0%B4plunge%E5%9C%86%E8%83%96plump%E9%87%8D%E7%9A%84%E6%84%8F%E6%80%9D%E8%BF%87%E5%8E%BB%E7%AE%A1%E5%AD%90%E4%B8%BB%E8%A6%81%E6%98%AF%E9%93%85%E5%81%9A%E7%9A%84/</guid>
       <description>When ungulate populations plummeted, populations of carnivores such as the lion (Panthera leo) crashed as well. (Levin, 2013) However, given the plummeting cost of NGS, in BOX 2 we consider when these methods, and perhaps genetic markers in general, might be superseded by whole-genome sequencing, and discuss the trade-offs between the two approaches for immediate projects. (Davey et al., 2011) The window around position 200-300 showed a relatively normal level of Ka (relative to the rest of the gene), while Ks plummeted dramatically, especially in the human-dog comparison.</description>
     </item>
     
     <item>
-      <title>pre-mis-e-mis-=send-前提</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pre-mis-e-mis-send-%E5%89%8D%E6%8F%90/</link>
+      <title>pre-mis-e-mis-=send-前提-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pre-mis-e-mis-send-%E5%89%8D%E6%8F%90-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pre-mis-e-mis-send-%E5%89%8D%E6%8F%90/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pre-mis-e-mis-send-%E5%89%8D%E6%8F%90-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>On the premise that many genes and the environment act and interact to determine the trait, founders recognized that it would be difficult if not impossible to determine the action of individual trait genes. Under this general premise, even the previous models of asynchrony of sexual maturity (section 7.1) and individual self-mating (chapter 5) can be conceived of as special cases of the present concept of mating predisposition. The premise behind these models is that environmental conditions are the primary determinant of realized species niches, and that the future preferred range distribution of species can be predicted by transferring the environmental parameters associated with the present distribution onto maps representing future climate scenarios (Pearson and Dawson 2003).</description>
     </item>
     
     <item>
-      <title>pre-scrib-e-scrib-=write提前写，规定</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pre-scrib-e-scrib-write%E6%8F%90%E5%89%8D%E5%86%99%E8%A7%84%E5%AE%9A/</link>
+      <title>pre-scrib-e-scrib-=write提前写，规定-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pre-scrib-e-scrib-write%E6%8F%90%E5%89%8D%E5%86%99%E8%A7%84%E5%AE%9A-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pre-scrib-e-scrib-write%E6%8F%90%E5%89%8D%E5%86%99%E8%A7%84%E5%AE%9A/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pre-scrib-e-scrib-write%E6%8F%90%E5%89%8D%E5%86%99%E8%A7%84%E5%AE%9A-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Also, in some large factorial or disconnected half-diallel experiments, there are always some prescribed crosses that cannot be made or are very difficult to make owing to unavailability of mature ramets, insufficient flowers, poor pollen viability or poor mating success. (Wu, Matheson, 2001) Classical theory does not give a procedure for modifying the type1 error as a function of sample size, and the probability of this error is prescribed arbitrarily.</description>
     </item>
     
     <item>
-      <title>prior-to-在……之前</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/prior-to-%E5%9C%A8%E4%B9%8B%E5%89%8D/</link>
+      <title>prior-to-在……之前-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/prior-to-%E5%9C%A8%E4%B9%8B%E5%89%8D-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/prior-to-%E5%9C%A8%E4%B9%8B%E5%89%8D/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/prior-to-%E5%9C%A8%E4%B9%8B%E5%89%8D-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>This is due to the fact that the flowers were not emasculated prior to crosspollination (Gan and Sim 1987). (Carron, Aken, 1992) It was concluded that besides other operational advantages which are discussed, the Rigidimeter is a valuable tool for breeders to routinely evaluate and rank genotypes for stiffness prior to further selection. (Paques, Rozenberg, 2009) Although pollen production prior to 1976 was very sparse, 41% of the ramets used had by then initiated some seed cones.</description>
     </item>
     
     <item>
-      <title>pro-fic-i-ent-向前&#43;做&#43;---人→做在别人前面→精通</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pro-fic-i-ent-%E5%90%91%E5%89%8D&#43;%E5%81%9A&#43;---%E4%BA%BA%E5%81%9A%E5%9C%A8%E5%88%AB%E4%BA%BA%E5%89%8D%E9%9D%A2%E7%B2%BE%E9%80%9A/</link>
+      <title>pro-fic-i-ent-向前&#43;做&#43;---人→做在别人前面→精通-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pro-fic-i-ent-%E5%90%91%E5%89%8D&#43;%E5%81%9A&#43;---%E4%BA%BA%E5%81%9A%E5%9C%A8%E5%88%AB%E4%BA%BA%E5%89%8D%E9%9D%A2%E7%B2%BE%E9%80%9A-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pro-fic-i-ent-%E5%90%91%E5%89%8D&#43;%E5%81%9A&#43;---%E4%BA%BA%E5%81%9A%E5%9C%A8%E5%88%AB%E4%BA%BA%E5%89%8D%E9%9D%A2%E7%B2%BE%E9%80%9A/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pro-fic-i-ent-%E5%90%91%E5%89%8D&#43;%E5%81%9A&#43;---%E4%BA%BA%E5%81%9A%E5%9C%A8%E5%88%AB%E4%BA%BA%E5%89%8D%E9%9D%A2%E7%B2%BE%E9%80%9A-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> She&amp;rsquo;s proficient in two languages. 她精通两种语言。 One who is highly proficient at shooting. | 殂击手：一个对射击高度熟练的人 Finally, once you become proficient at R you can contribute to it. (Zelterman, 2015)  </description>
     </item>
     
     <item>
-      <title>pro-mulg-ate-发布，传播</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pro-mulg-ate-%E5%8F%91%E5%B8%83%E4%BC%A0%E6%92%AD/</link>
+      <title>pro-mulg-ate-发布，传播-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pro-mulg-ate-%E5%8F%91%E5%B8%83%E4%BC%A0%E6%92%AD-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pro-mulg-ate-%E5%8F%91%E5%B8%83%E4%BC%A0%E6%92%AD/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pro-mulg-ate-%E5%8F%91%E5%B8%83%E4%BC%A0%E6%92%AD-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> In many poor countries the ability to assess action on climate change and promulgate effective adaptation is inadequate; it must be nurtured. (Economist) Two maj or hypotheses have been promulgated to explain heterosis (Crow 1952): the dominance hypothesis and the overdominance hypothesis. (Li, Wu, 1996) &amp;ldquo;It defines an alternative path forward for promulgating life on earth. (Scientific American)  </description>
     </item>
     
     <item>
-      <title>pro-vis-ion-al-临时的暂时暂定的</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pro-vis-ion-al-%E4%B8%B4%E6%97%B6%E7%9A%84%E6%9A%82%E6%97%B6%E6%9A%82%E5%AE%9A%E7%9A%84/</link>
+      <title>pro-vis-ion-al-临时的暂时暂定的-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pro-vis-ion-al-%E4%B8%B4%E6%97%B6%E7%9A%84%E6%9A%82%E6%97%B6%E6%9A%82%E5%AE%9A%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pro-vis-ion-al-%E4%B8%B4%E6%97%B6%E7%9A%84%E6%9A%82%E6%97%B6%E6%9A%82%E5%AE%9A%E7%9A%84/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pro-vis-ion-al-%E4%B8%B4%E6%97%B6%E7%9A%84%E6%9A%82%E6%97%B6%E6%9A%82%E5%AE%9A%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>However, it is also relevant in part to selection for seed orchards, which may entail &amp;ldquo;backward&amp;rdquo; selection (progeny testing) and involve provisional selection at an earlier age than is asso- ciated with optimal t (cf. eq. 1), to be followed by roguing on later information, or to clonal forestry where, in addition, nonadditive gene effects become relevant. (Burdon, 1989) A limitation of this system is that the initial list of provisional candidates may not include the highest value individuals in the test since male GCA is known only for the provisional candidate list.</description>
     </item>
     
     <item>
-      <title>proposed-</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/proposed-/</link>
+      <title>proposed--#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/proposed--#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/proposed-/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/proposed--#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>The variation in sensitivity during different phases has been in fact proposed as a breeding goal to increase the duration of critical phases for yield determination at the expense of the duration of earlier phases (section 5). (Sadras, Calderini, 2014) It has been proposed that inbreeding depression may not always be a consequence of inbreeding in endangered populations. (Hoglund, 2009) The best linear u nbiased prediction (BLUP) method and ridge regression approaches have been proposed to estimate individual marker effects (Meuwissen et al.</description>
     </item>
     
     <item>
-      <title>referred-to-称作，涉及，参考</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/referred-to-%E7%A7%B0%E4%BD%9C%E6%B6%89%E5%8F%8A%E5%8F%82%E8%80%83/</link>
+      <title>referred-to-称作，涉及，参考-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/referred-to-%E7%A7%B0%E4%BD%9C%E6%B6%89%E5%8F%8A%E5%8F%82%E8%80%83-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/referred-to-%E7%A7%B0%E4%BD%9C%E6%B6%89%E5%8F%8A%E5%8F%82%E8%80%83/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/referred-to-%E7%A7%B0%E4%BD%9C%E6%B6%89%E5%8F%8A%E5%8F%82%E8%80%83-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> For theoretical details the reader is referred to that paper. (Damesa et al., 2017) 参考那篇文献 The first occurrence of a possible hybrid between A. mangium and A. auriculiformis, hereafter referred to as &amp;lsquo;the hybrid&amp;rsquo;, was recognised in 1972 by Messrs Hepburn and Shim amongst the roadside planting in Sook. (Carron, Aken, 1992)  </description>
     </item>
     
     <item>
-      <title>rend-er-rend-=give-致使；提出；实施；着色；以…回报-给予补偿</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/rend-er-rend-give-%E8%87%B4%E4%BD%BF%E6%8F%90%E5%87%BA%E5%AE%9E%E6%96%BD%E7%9D%80%E8%89%B2%E4%BB%A5%E5%9B%9E%E6%8A%A5-%E7%BB%99%E4%BA%88%E8%A1%A5%E5%81%BF/</link>
+      <title>rend-er-rend-=give-致使；提出；实施；着色；以…回报-给予补偿-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/rend-er-rend-give-%E8%87%B4%E4%BD%BF%E6%8F%90%E5%87%BA%E5%AE%9E%E6%96%BD%E7%9D%80%E8%89%B2%E4%BB%A5%E5%9B%9E%E6%8A%A5-%E7%BB%99%E4%BA%88%E8%A1%A5%E5%81%BF-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/rend-er-rend-give-%E8%87%B4%E4%BD%BF%E6%8F%90%E5%87%BA%E5%AE%9E%E6%96%BD%E7%9D%80%E8%89%B2%E4%BB%A5%E5%9B%9E%E6%8A%A5-%E7%BB%99%E4%BA%88%E8%A1%A5%E5%81%BF/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/rend-er-rend-give-%E8%87%B4%E4%BD%BF%E6%8F%90%E5%87%BA%E5%AE%9E%E6%96%BD%E7%9D%80%E8%89%B2%E4%BB%A5%E5%9B%9E%E6%8A%A5-%E7%BB%99%E4%BA%88%E8%A1%A5%E5%81%BF-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Spatial distance was left in even when be was not significant, since its variance was positive and collinearity between relatedness and spatial distance rendered the standard error estimates unreliable unless further measures were taken (see below). This will help to render a seed harvest more in line with the objectives of the breeding program, and which more readily meets the demands from forestry. The latter method has an even bigger limitation because the amount of harvested seed-cones is set by the least fecund parent and thus substantial amounts of potential reforestation material may be abandoned, rendering this method inappropriate from a practical perspective [294].</description>
     </item>
     
     <item>
-      <title>report-on-就…作报告</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/report-on-%E5%B0%B1%E4%BD%9C%E6%8A%A5%E5%91%8A/</link>
+      <title>report-on-就…作报告-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/report-on-%E5%B0%B1%E4%BD%9C%E6%8A%A5%E5%91%8A-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/report-on-%E5%B0%B1%E4%BD%9C%E6%8A%A5%E5%91%8A/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/report-on-%E5%B0%B1%E4%BD%9C%E6%8A%A5%E5%91%8A-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Here, we report on the main gene families related to fruit development and ripening, sugar metabolism, and flavor, as well as those involved in the biosynthesis of specific components considered particularly healthy and beneficial (such as vitamin C). (Neale et al., 2017)
  In this article we report on the development of a novel statistical methodology for QTL mapping in bivalent polyploids that represent an important group of polyploids including alfalfa, potato, and wheat.</description>
     </item>
@@ -4932,56 +4897,56 @@ typora的安装 # add Typora&#39;s repository sudo add-apt-repository &#39;deb h
     </item>
     
     <item>
-      <title>rudimentary-rudi-=rude原始的，基础，未发育</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/rudimentary-rudi-rude%E5%8E%9F%E5%A7%8B%E7%9A%84%E5%9F%BA%E7%A1%80%E6%9C%AA%E5%8F%91%E8%82%B2/</link>
+      <title>rudimentary-rudi-=rude原始的，基础，未发育-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/rudimentary-rudi-rude%E5%8E%9F%E5%A7%8B%E7%9A%84%E5%9F%BA%E7%A1%80%E6%9C%AA%E5%8F%91%E8%82%B2-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/rudimentary-rudi-rude%E5%8E%9F%E5%A7%8B%E7%9A%84%E5%9F%BA%E7%A1%80%E6%9C%AA%E5%8F%91%E8%82%B2/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/rudimentary-rudi-rude%E5%8E%9F%E5%A7%8B%E7%9A%84%E5%9F%BA%E7%A1%80%E6%9C%AA%E5%8F%91%E8%82%B2-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>These are significant rudiments to implement successful reforestation programs. (Burley, Evans, Youngquist, 2004) Male flowers have a rudimentary pistil with inconspicuous style and stigma, but they may also develop to the point that ovules, style, and stigma are well formed, and abnormality is restricted to incomplete development of the embryo sac. (Tuberosa, Graner, Frison, 2014) This is obtained generally from a previous rudimentary non-Bayesian analysis for each trait and the maximum among the traits can be considered.</description>
     </item>
     
     <item>
-      <title>sen-esc-ent-sen-=old衰老的-adol-esc-ent</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/sen-esc-ent-sen-old%E8%A1%B0%E8%80%81%E7%9A%84-adol-esc-ent/</link>
+      <title>sen-esc-ent-sen-=old衰老的-adol-esc-ent-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/sen-esc-ent-sen-old%E8%A1%B0%E8%80%81%E7%9A%84-adol-esc-ent-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/sen-esc-ent-sen-old%E8%A1%B0%E8%80%81%E7%9A%84-adol-esc-ent/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/sen-esc-ent-sen-old%E8%A1%B0%E8%80%81%E7%9A%84-adol-esc-ent-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Older, senescent stands tend to exhibit a positive spatial dependence, which can be attributed to the weakening of competition after self-thinning, and the returning dominance of spatial micro-site effects. (Fox, Ades, Bi, 2001) In 2001 Campisi&amp;rsquo;s lab corroborated this idea with a groundbreaking study showing that senescent cells maintained in a culture dish can stimulate precancerous cells in the same culture to form unusually aggressive tumors when injected into mice.</description>
     </item>
     
     <item>
-      <title>stagnation-停滞</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/stagnation-%E5%81%9C%E6%BB%9E/</link>
+      <title>stagnation-停滞-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/stagnation-%E5%81%9C%E6%BB%9E-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/stagnation-%E5%81%9C%E6%BB%9E/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/stagnation-%E5%81%9C%E6%BB%9E-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Research in forestry is marked by large decreases in federal research capacity, stagnation of funding for research and extension, and the demise of industrial research following industrial divestment of timberlands. (El-Kassaby, Lindgren, 2007) This trend is termed yield stagnation or yield plateau, and has been observed in many of the crops that feed the world, especially cereals. (Acquaah, 2012) At a point where the trees are fully utilizing site resources, or a where there is a constraining factor (e.</description>
     </item>
     
     <item>
-      <title>state-of-the-art-最先进的</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/state-of-the-art-%E6%9C%80%E5%85%88%E8%BF%9B%E7%9A%84/</link>
+      <title>state-of-the-art-最先进的-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/state-of-the-art-%E6%9C%80%E5%85%88%E8%BF%9B%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/state-of-the-art-%E6%9C%80%E5%85%88%E8%BF%9B%E7%9A%84/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/state-of-the-art-%E6%9C%80%E5%85%88%E8%BF%9B%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Now state-of-the-art computer simulations can successfully model billions of particles in a volume approaching the size of the observable universe. (Scientific American) Many of the ethical and social challenges confronting MalariaGEN stem from the diversity inherent in a large scientific enterprise with partners in rich and poor countries that span multiple disciplines, from clinical research and community-based research to state-of-the-art genomics and bioinformatics. (Natureinsight, 2009) A state-of-the-art procedure is described to examine the control patterns of specific QTLs on the origin, properties and functions of biological shape.</description>
     </item>
     
     <item>
-      <title>stem-from-源于</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/stem-from-%E6%BA%90%E4%BA%8E/</link>
+      <title>stem-from-源于-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/stem-from-%E6%BA%90%E4%BA%8E-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/stem-from-%E6%BA%90%E4%BA%8E/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/stem-from-%E6%BA%90%E4%BA%8E-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Statistical issues stem from the choice of molecular marker type and marker set used, in addition to sampling strategy. (Wilson, Ferguson, 2002) For conifers, these limitations stem from the large, repetitive genomes that make gene cloning and chromosome walking very difficult (Neale and Williams 1991), and from the large physical distances between genetically mapped loci, probably exceeding 4000 kilobases per centimorgan (cf. (Strauss, Lande, Namkoong, 1992) Many of the applications and simplifications which stem from the definitions and concepts developed herein for groups or subdivisions of populations remain to be elaborated.</description>
     </item>
     
     <item>
-      <title>strenuous-exercise-剧烈运动</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/strenuous-exercise-%E5%89%A7%E7%83%88%E8%BF%90%E5%8A%A8/</link>
+      <title>strenuous-exercise-剧烈运动-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/strenuous-exercise-%E5%89%A7%E7%83%88%E8%BF%90%E5%8A%A8-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/strenuous-exercise-%E5%89%A7%E7%83%88%E8%BF%90%E5%8A%A8/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/strenuous-exercise-%E5%89%A7%E7%83%88%E8%BF%90%E5%8A%A8-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> And it did not examine why strenuous exercise might dampen libidos. (Times, 2017)  </description>
     </item>
     
@@ -4995,65 +4960,65 @@ typora的安装 # add Typora&#39;s repository sudo add-apt-repository &#39;deb h
     </item>
     
     <item>
-      <title>super-sed-e-sed-=sit取代~replace，substitute</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/super-sed-e-sed-sit%E5%8F%96%E4%BB%A3~replacesubstitute/</link>
+      <title>super-sed-e-sed-=sit取代~replace，substitute-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/super-sed-e-sed-sit%E5%8F%96%E4%BB%A3~replacesubstitute-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/super-sed-e-sed-sit%E5%8F%96%E4%BB%A3~replacesubstitute/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/super-sed-e-sed-sit%E5%8F%96%E4%BB%A3~replacesubstitute-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>They have been superseded by more sophisticated methods, often in the context of livestock data (Lynch &amp;amp; Walsh 1998; Sorensen &amp;amp; Gianola 2002), which have been further developed as computing power has increased. (Hill, 2010) Indeed, this finding suggests that a systematic gene-knockout programme could supersede association mapping strategies as a way of finding the genes that are involved in behaviour. (Natureinsight, 2009) However, given the plummeting cost of NGS, in BOX 2 we consider when these methods, and perhaps genetic markers in general, might be superseded by whole-genome sequencing, and discuss the trade-offs between the two approaches for immediate projects.</description>
     </item>
     
     <item>
-      <title>tang-ible-tact-,-tang-=tag-,-tig-,-ting--=touch-接触-</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/tang-ible-tact--tang-tag--tig--ting--touch-%E6%8E%A5%E8%A7%A6-/</link>
+      <title>tang-ible-tact-,-tang-=tag-,-tig-,-ting--=touch-接触-切实的，明显的</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/tang-ible-tact--tang-tag--tig--ting--touch-%E6%8E%A5%E8%A7%A6-%E5%88%87%E5%AE%9E%E7%9A%84%E6%98%8E%E6%98%BE%E7%9A%84/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/tang-ible-tact--tang-tag--tig--ting--touch-%E6%8E%A5%E8%A7%A6-/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/tang-ible-tact--tang-tag--tig--ting--touch-%E6%8E%A5%E8%A7%A6-%E5%88%87%E5%AE%9E%E7%9A%84%E6%98%8E%E6%98%BE%E7%9A%84/</guid>
       <description>While values of linkage disequilibrium, N and h2 can be proposed on relatively tangible grounds, the same cannot be said for the number of QTL controlling the traits under selection. (Grattapaglia, Resende, 2011) Studies on forest trees are able to follow successfully the methods applied in human, animal, and plant cytogenetic studies, but usually have not been pursued in depth, e.g., in an integrated long-term breeding and cytogenetic program with tangible objectives.</description>
     </item>
     
     <item>
-      <title>tant-amount-等同于~equi-val-ent</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/tant-amount-%E7%AD%89%E5%90%8C%E4%BA%8E~equi-val-ent/</link>
+      <title>tant-amount-等同于~equi-val-ent-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/tant-amount-%E7%AD%89%E5%90%8C%E4%BA%8E~equi-val-ent-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/tant-amount-%E7%AD%89%E5%90%8C%E4%BA%8E~equi-val-ent/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/tant-amount-%E7%AD%89%E5%90%8C%E4%BA%8E~equi-val-ent-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description> When this correlation is positive the model is tantamount to fitting random cage effects, as discussed by Bijma et al. (2007) and Allen et al. (Cantet, Cappa, 2008) Sexual selection, in the original Darwinian sense, is tantamount to random mating of all types in one sex of a dioecious population, where the natural mating references are chosen in accordance with the frequencies of the types in this population. (Gregorius, 1989)  </description>
     </item>
     
     <item>
-      <title>ten-able-站得住脚</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/ten-able-%E7%AB%99%E5%BE%97%E4%BD%8F%E8%84%9A/</link>
+      <title>ten-able-站得住脚-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/ten-able-%E7%AB%99%E5%BE%97%E4%BD%8F%E8%84%9A-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/ten-able-%E7%AB%99%E5%BE%97%E4%BD%8F%E8%84%9A/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/ten-able-%E7%AB%99%E5%BE%97%E4%BD%8F%E8%84%9A-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Most of the early studies have used the linear mixed model (LMM) to analyze this type of data, assuming a Gaussian distribution (Gwaze et al. 1997), which is seldom tenable. (Weng et al., 2017) Therefore, a mixed model approach with environmental effects and GEI effects as random and with genotype effects as fixed is more tenable to fit MET data. (Saxton, 2014) While this assumption is not tenable in animal breeding, it is used frequently in biostatistics (Laird and Ware, 1982).</description>
     </item>
     
     <item>
-      <title>tentative-试验性的，暂定的</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/tentative-%E8%AF%95%E9%AA%8C%E6%80%A7%E7%9A%84%E6%9A%82%E5%AE%9A%E7%9A%84/</link>
+      <title>tentative-试验性的，暂定的-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/tentative-%E8%AF%95%E9%AA%8C%E6%80%A7%E7%9A%84%E6%9A%82%E5%AE%9A%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/tentative-%E8%AF%95%E9%AA%8C%E6%80%A7%E7%9A%84%E6%9A%82%E5%AE%9A%E7%9A%84/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/tentative-%E8%AF%95%E9%AA%8C%E6%80%A7%E7%9A%84%E6%9A%82%E5%AE%9A%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Results of the Queensland work appear to enable the following tentative conclusions. (Carron, Aken, 1992) Thus, the data provide tentative support for recent claims that MLH is the preferred variable for detecting inbreeding depression under a wide variety of conditions (Slate et al. (Coltman, Slate, 2003) Finally, the tentative finding of a significant interaction between effects of genotype and site on MOE needs to be investigated further as this may profoundly influence models of wood quality for specific genotypes.</description>
     </item>
     
     <item>
-      <title>the-use-of-……用处、使用</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/the-use-of-%E7%94%A8%E5%A4%84%E4%BD%BF%E7%94%A8/</link>
+      <title>the-use-of-……用处、使用-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/the-use-of-%E7%94%A8%E5%A4%84%E4%BD%BF%E7%94%A8-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/the-use-of-%E7%94%A8%E5%A4%84%E4%BD%BF%E7%94%A8/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/the-use-of-%E7%94%A8%E5%A4%84%E4%BD%BF%E7%94%A8-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>When putative hybrid individuals were found in the field, the use of morphological traits deemed useful for artificial hybrids was not as definitive. (Kabrick et al., 2007) A less complicated method would be the use of morphological keys by which nursery staff could quickly differentiate the seedlings. (Carron, Aken, 1992) Genomic selection (GS) is the use of statistical methods to estimate the genetic merit of a genotyped animal based on prediction equations derived from large ancestral populations with both phenotypes and genotypes.</description>
     </item>
     
     <item>
-      <title>the-vast-majority-of-…的绝大部分</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/the-vast-majority-of-%E7%9A%84%E7%BB%9D%E5%A4%A7%E9%83%A8%E5%88%86/</link>
+      <title>the-vast-majority-of-…的绝大部分-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/the-vast-majority-of-%E7%9A%84%E7%BB%9D%E5%A4%A7%E9%83%A8%E5%88%86-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/the-vast-majority-of-%E7%9A%84%E7%BB%9D%E5%A4%A7%E9%83%A8%E5%88%86/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/the-vast-majority-of-%E7%9A%84%E7%BB%9D%E5%A4%A7%E9%83%A8%E5%88%86-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>However, the vast majority of seed orchards are clonal and on average consist of 30-50 different parents, each of which is represented by one or more vegetatively propagated units/copies, termed ramets. (Funda, El-Kassaby, 2012) As the vast majority of studies shows that deleterious recessive alleles, not overdominant alleles, are most important in causing ID (Crow 1993; Ritland 1996); selfing greatly increases the chance for these alleles to form homozygotes and, therefore, to be exposed to selection.</description>
     </item>
     
@@ -5068,47 +5033,47 @@ typora的安装 # add Typora&#39;s repository sudo add-apt-repository &#39;deb h
     </item>
     
     <item>
-      <title>to-some-extent-在某种程度上</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/to-some-extent-%E5%9C%A8%E6%9F%90%E7%A7%8D%E7%A8%8B%E5%BA%A6%E4%B8%8A/</link>
+      <title>to-some-extent-在某种程度上-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/to-some-extent-%E5%9C%A8%E6%9F%90%E7%A7%8D%E7%A8%8B%E5%BA%A6%E4%B8%8A-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/to-some-extent-%E5%9C%A8%E6%9F%90%E7%A7%8D%E7%A8%8B%E5%BA%A6%E4%B8%8A/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/to-some-extent-%E5%9C%A8%E6%9F%90%E7%A7%8D%E7%A8%8B%E5%BA%A6%E4%B8%8A-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>The parents transferring their genes to the next breeding generation are therefore determined, to some extent, at the time of selection, but not at the time of the cross. (Vidal et al., 2017) Pollination mechanisms, or the structure of the ovule tip and the process by which pollen is taken into the micropyle, have been described to some extent for most maintain conelets of uniform development within a bag and on a tree.</description>
     </item>
     
     <item>
-      <title>to-this-end-为了这个目的</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/to-this-end-%E4%B8%BA%E4%BA%86%E8%BF%99%E4%B8%AA%E7%9B%AE%E7%9A%84/</link>
+      <title>to-this-end-为了这个目的-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/to-this-end-%E4%B8%BA%E4%BA%86%E8%BF%99%E4%B8%AA%E7%9B%AE%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/to-this-end-%E4%B8%BA%E4%BA%86%E8%BF%99%E4%B8%AA%E7%9B%AE%E7%9A%84/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/to-this-end-%E4%B8%BA%E4%BA%86%E8%BF%99%E4%B8%AA%E7%9B%AE%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>To this end several statistical methods that belong to the class known as assignment tests have been developed (Paetkau et al. (Hoglund, 2009) To this end, Bayesian approaches may provide superior means of incorporating issues which have rather been swept under the carpet to date, such as assessments of uncertainty, more complex statistical distributions or impacts of selection (Hadfield 2008; Ovaskainen et al. (Kruuk, Hill, 2008) Currently, two wellestablished but inefficient routes to this end are based on mature and widely available technologies.</description>
     </item>
     
     <item>
-      <title>trace-amounts-微量</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/trace-amounts-%E5%BE%AE%E9%87%8F/</link>
+      <title>trace-amounts-微量-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/trace-amounts-%E5%BE%AE%E9%87%8F-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/trace-amounts-%E5%BE%AE%E9%87%8F/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/trace-amounts-%E5%BE%AE%E9%87%8F-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>Some micronutrients are required in only trace amounts; their presence in large quantities in the soil solution may be toxic to plants. (Acquaah, 2012) Resolving individuals contributing trace amounts of DNA to highly complex mixtures using high-density SNP genotyping microarrays. (Nielsen et al., 2010) In the ref8 mutant, total lignin content was reduced to 20-40% of wild-type levels and both G- and S-units were found only in trace amounts (Franke et al.</description>
     </item>
     
     <item>
-      <title>tractable-易处理的</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/tractable-%E6%98%93%E5%A4%84%E7%90%86%E7%9A%84/</link>
+      <title>tractable-易处理的-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/tractable-%E6%98%93%E5%A4%84%E7%90%86%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/tractable-%E6%98%93%E5%A4%84%E7%90%86%E7%9A%84/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/tractable-%E6%98%93%E5%A4%84%E7%90%86%E7%9A%84-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description>In particular, functional mapping capitalizes on statistical modeling of the covariance structure based on autoregressive (AR) and structured antedependence (SAD) processes and, thus, makes a longitudinal high-dimensional problem computationally tractable. (Wu, Yang, Wu, 2007) To date maternal effects have been the most widely studied form of IGE (McAdam et al., 2014), but rapid development of theory and statistically tractable models (Bijma et al., 2007; Bijma and Wade, 2008) means that the IGE framework will increasingly be used to model the quantitative genetics of social interactions.</description>
     </item>
     
     <item>
-      <title>trans-</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/trans-/</link>
+      <title>trans--#每日一次#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/trans--#%E6%AF%8F%E6%97%A5%E4%B8%80%E6%AC%A1%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/trans-/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/trans--#%E6%AF%8F%E6%97%A5%E4%B8%80%E6%AC%A1%23/</guid>
       <description></description>
     </item>
     
@@ -5197,11 +5162,11 @@ cor.test（d $ prediction，d $ actual） Pearson的乘积矩相关 data：d $ p
     </item>
     
     <item>
-      <title>代替</title>
-      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/%E4%BB%A3%E6%9B%BF/</link>
+      <title>代替-#每日一词#</title>
+      <link>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/%E4%BB%A3%E6%9B%BF-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/%E4%BB%A3%E6%9B%BF/</guid>
+      <guid>/post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/%E4%BB%A3%E6%9B%BF-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/</guid>
       <description></description>
     </item>
     
@@ -5279,16 +5244,6 @@ One possibly contentious issue is the choice between fixed and random effects in
   什么是协方差矩阵? 让我们从矩阵开始。矩阵是线性代数里的一个概念，强烈建议学习这门课程。你可以用矩阵处理很多非常复杂的、数学上的事情。但作为一个研究人员和数据分析人员，不需要用矩阵解决全部的复杂处理。你只需要知道矩阵是什么，理解概念，了解一些简单的矩阵处理，比如一个矩阵乘以一个常数。如果这还不行，你得知道矩阵就是一个表格。 和许多统计中利用的矩阵类似，协方差矩阵是对称的。举一个最简单的例子，相关矩阵。 如果这个写成矩阵的形式，你只能看到数字，而没有行列名。协方差矩阵与之相像，但也有不同。 协方差只是未标准化的相关——为了计算相关，我们用两个变量的标准差除协方差，消除测量单位。所以协方差只是用原始变量的单位测定的相关。协方差又不像相关，不被限制于-1~1之间，协方差=0和相关=0的意思是一样的——没有线性关系。由于协方差是带单位的，值越大，相应的变量分布就越广。对角元素是每个变量的方差。
  什么是协方差结构? 协方差结构是协方差矩阵的模式。有以下几类： 复合对称（Compound Symmetry），方差组分（Variance Components），非结构化（Unstructured）。它们只是模式的说明。比如复合对称结果仅仅是指所有方差相等，所有协方差也相等，对应于单变量方法。但是对于不同尺度的变量是无意义的。方差组分是指每个方差都不相同，并且全部协方差=0。如果变量完全独立，并且彼此测量尺度不同，才是有意义的模式。非结构化是指根本没有模式，每个方差和协方差完全不同，彼此间没有关系，对应于多变量方法。协方差结构有很多种，只有在特定的统计条件下才有意义。
   </description>
-    </item>
-    
-    <item>
-      <title>双列交配设计</title>
-      <link>/post/%E8%AE%BA%E6%96%87/%E5%8F%8C%E5%88%97%E4%BA%A4%E9%85%8D%E8%AE%BE%E8%AE%A1/</link>
-      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E8%AE%BA%E6%96%87/%E5%8F%8C%E5%88%97%E4%BA%A4%E9%85%8D%E8%AE%BE%E8%AE%A1/</guid>
-      <description>双列交配设计 尽管分子标记辅助选择以及“breeding without breeding”(El-Kassaby and Lstibůrek 2009)理论已被提出并应用于林木遗传改良，但常规的“测定-选择-测定”的轮回育种策略在过去乃至将来很长时间内仍然占据重要的地位。子代测定在常规林木遗传改良中起到至关重要的作用。获取子代材料的交配方法包括自由授粉和控制授粉。交配方法根据物种的特性还可以细分为许多设计类型(White et al. 2007)。其中，双列交配设计被广泛用于许多植物的遗传改良，其优点在于能同时提供用于选择的具有谱系的育种群体及亲本的子代测定，从而提供丰富而全面的遗传信息，比如能同时进行配合力分析（一般配合力和特殊配合力）、遗传参数估算以及杂种优势和自交衰退（包含自交的话）分析。这些信息是育种策略制定的必要条件。
-双列交配设计数据分析方法进展 Hayman (Hayman 1954a; b)和Jinks (Jinks 1954)开创了双列交配数据分析的先河。随后Griffing(Griffing 1956)提出了双列交配设计的4种方法（图 1）以及对应的统计模型，这些方法和统计模型在植物育种和遗传学研究中得到广泛应用(Evans et al. 1966; Borges 1987; Johnson and King 1998; Wu and Matheson 2001; Kumar and Wu 2003; Jansson and Li 2004; Kang et al. 2005; Huang et al. 2015; Zhang et al. 2016)。对于反交，Griffing(Griffing 1956)还定义了一个特殊的正反交效应。Cockerham(Cockerham 1963)建议将正反交均方分为母本和非母本均方。Cockerham和Weir(Cockerham and Weir 1977)（1977，模型c）及Keuls和Garretsen(Keuls and Garretsen 1977; Garretsen and Keuls 1978)又进一步通过定义反交GCA（RGCA）效应和反交SCA（RSCA）效应扩展了这种方法。在一些研究中已经提出了母本和非母本效应及其均方的估计((Evans et al. 1966; Stuthman et al.</description>
     </item>
     
     <item>
@@ -5409,29 +5364,6 @@ bias =（par est-par true）/ par true</description>
     
     <item>
       <title>如何计算效应值（例如育种值）的准确性（accuracy）？</title>
-      <link>/post/%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%95%88%E5%BA%94%E5%80%BC-%E4%BE%8B%E5%A6%82%E8%82%B2%E7%A7%8D%E5%80%BC-%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7-accuracy/</link>
-      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%95%88%E5%BA%94%E5%80%BC-%E4%BE%8B%E5%A6%82%E8%82%B2%E7%A7%8D%E5%80%BC-%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7-accuracy/</guid>
-      <description>准确性指的是预测效应值与真值之间的相关系数。有时还会遇见一个概念——可靠性（reliability）。可靠性是准确性的平方，也就是说这二者度量的是一个事情。reliability其实就是遗传力，这句很重要！！！。遗传力主要用来计算选择响应（response to selection）。advisor说我的文章短句子太多，不连贯，确实是这样LOL。 准确性的计算公式为：
-$$r=\sqrt{1-\frac{PEV}{\hat{\sigma}_a^2}}$$
-_PEV_是prediction error variances的缩写，意思是预测误差方差，预测误差是预测值与真值间的差，即：
-$$PEV=var(\hat g-g)=(1-r_{\hat g,g}^2)\sigma_a^2$$
-$\sigma_a^2$是加性方差。
-预测差值的标准误（_SED_）是可以从Asreml中直接得到的，与_PEV_的关系是：
-$$SED=\sqrt{\hat Var(BLUP.differences)}=\sqrt{\hat Var(\hat Yi-\hat Y{i^ \prime})}=\sqrt{2\hat Var(\hat Y)_i}=\sqrt{2PEV}$$
-我不知道上面这个公式怎么推导的。 所以有
-$$PEV=(SED)^{2}/2=\hat Var(BLUP.differences)/2$$
-在很长时间里我不知道（或者说模糊地知道）accuracy是怎么实现的。我知道公式，但在软件里分别和公式组分对应的部分是什么却不是很清楚，当然写这篇文字的时候是确定的。具体实现的途径有2：
- 一是利用Asreml中的prediction直接得到_SED_后，再根据公式4得出PEV
-fm_pred &amp;lt;- predict(fm_asr, classify = &amp;quot;Fam&amp;quot;) #fm_asr是asreml()输出的对象， Fam是随机效应变量 SED &amp;lt;- fm_pred$predictions$avsed  二是逐步得到_PEV_，每个预测值都有一个_PEV_，是预测值_SE_平方的均值，所以从预测函数得到的对象中提取出_SE_平方后再平均即可
-fm_pred &amp;lt;- predict(fm_asr, classify = &amp;quot;Fam&amp;quot;, present = &amp;quot;Plot&amp;quot;) #注意！这里预测的时候是要矫正掉其他的随机效应（如Plot） SE &amp;lt;- fm_pred$predictions$pvals$standard.error PEV &amp;lt;- SE^2 %&amp;gt;% mean  这里的_PEV_是一个向量，对应到每个水平上。 所以，总体上，_PEV_、_SED_和_SE_的关系是 $$PEV=(SED)^{2}/2=ave(SE_i^2)$$
-  另外，在林元震老师的著作R与ASReml-R统计学中（P474）也涉及到accuracy的代码
-SE &amp;lt;- fm_asr$vcoeff$random _ fm_asr$sigma2 #效应值se乘以sigma  结果是一样的，但不知道是否合理。</description>
-    </item>
-    
-    <item>
-      <title>如何计算效应值（例如育种值）的准确性（accuracy）？</title>
       <link>/post/%E9%9A%8F%E7%AC%94/%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%95%88%E5%BA%94%E5%80%BC%E4%BE%8B%E5%A6%82%E8%82%B2%E7%A7%8D%E5%80%BC%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7accuracy/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
@@ -5484,19 +5416,6 @@ We appreciate that you gave us a chance of major revision to improve our manuscr
       <author>youremail@domain.com (Leiming Dong)</author>
       <guid>/post/rcodes/%E6%8A%93%E5%8F%96%E4%B8%80%E4%BA%9B%E7%BD%91%E9%A1%B5%E7%9A%84%E4%BF%A1%E6%81%AF/</guid>
       <description>web&amp;lt;-readLines(&amp;quot;https://edu.hellobi.com/course/explore?page=1&amp;quot;,encoding = &#39;UTF-8&#39;) class&amp;lt;-web[grep(&amp;quot;class=\&amp;quot;caption\&amp;quot;&amp;quot;,web)+3] class class&amp;lt;-gsub(&amp;quot;&amp;quot;,&amp;quot;&amp;quot;,class) class length&amp;lt;-web[grep(&amp;quot;class=\&amp;quot;length\&amp;quot;&amp;quot;,web)] length length&amp;lt;-substr(length,regexpr(&amp;quot;i&amp;gt;&amp;quot;,length)+2,regexpr(&amp;quot;课&amp;quot;,length)-1) length result&amp;lt;-data.frame(课程=class,课时数=length) DT::datatable(df) install.packages(&amp;quot;DT&amp;quot;)  </description>
-    </item>
-    
-    <item>
-      <title>投稿</title>
-      <link>/post/%E8%AE%BA%E6%96%87/%E6%8A%95%E7%A8%BF/</link>
-      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E8%AE%BA%E6%96%87/%E6%8A%95%E7%A8%BF/</guid>
-      <description>New forests larch_rif@163.com larix9685
-the Forestry Industry Research Special Funds for Public Welfare Projects(201504104)
-Additional Information is Required for Submission. Please respond to the questions/statements below.
- Have you submitted this manuscript elsewhere? NO.   The authors declare that:  The submitted work has not been published before (neither in English or any other language) and that the work is not under consideration for publication elsewhere.
-All data presented in the manuscript represent original research by the authors.</description>
     </item>
     
     <item>
@@ -5834,15 +5753,6 @@ corrplot(M, type=&amp;quot;upper&amp;quot;)  但是这些热图有个问题是�
     </item>
     
     <item>
-      <title>空间分析在遗传测定中的应用</title>
-      <link>/post/%E8%AE%BA%E6%96%87/%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E5%9C%A8%E9%81%97%E4%BC%A0%E6%B5%8B%E5%AE%9A%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
-      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E8%AE%BA%E6%96%87/%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E5%9C%A8%E9%81%97%E4%BC%A0%E6%B5%8B%E5%AE%9A%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
-      <description>空间分析在遗传测定中的应用 概念与方法 在林木遗传改良计划中，需要尽可能精确地估计遗传参数和预测育种值，这取决于精心设计的子代（无性系）测定试验。与其他栽培植物相比，林木遗传试验林中易产生高度的环境异质性（(Libby et al. 1980)）。通常测定的家系个数及每个家系子代数目很大，比大多数栽培植物占据更多的空间，所以需要很大的面积（2-4公顷）才能满足需要。而试验林一般设置在丘陵地区和不规则地形上，原因是一方面低海拔平原地区不适宜像日本落叶松这样的树种生长，另一方面低坡度的土地主要用于耕地。丘陵等有坡度的地区必定存在空间环境异质性，比如坡上与坡下的土壤厚度、肥力、湿度等都有较大差异，甚至由于跨度较远同等坡位也存在明显的差异。 为了解决环境异质的问题，育种人员提出多种试验设计可能多地将林地内微环境变化进行分解（(Cochran and Cox 1957)）。最初在林业田间试验中使用了随机完全区组（RCB），但RCB设计的缺点是区组依然很大，控制效果较差（(Loo-Dinkins 1992; Magnussen 1993a)）。随后又引入包括不完全区组（IB）和行列设计以减小区组大小（(Patterson and Thompson 1971; Libby et al. 1980; Williams et al. 2002)）。但是不管何种设计都难以解释不断变化的环境因素Magnussen 1990，表型变异总有相当大比例的残差方差，这在很大程度上降低了测定的精度（(Loo-Dinkins 1992)）。空间分析则可以通过在测定林中模拟误差影响的空间分布，并分离空间相关的整体和局部变异与独立随机环境变化来改进遗传效应的估计。并且前人发现多数林木试验林中的环境整体上呈现连续和平滑变化适于进行空间分析（(Dutilleul and Sep 1993; Dutkowski et al. 2002; Ettema and Wardle 2002)）。因此空间分析正越来越多地被应用于林木遗传改良程序中。 试验林中的空间连续变异性有两个主要来源：小尺度的“局部趋势”，和大尺度的“整体趋势”。 在林木遗传试验中经常观察到这两个来源，或是单独存在，或是彼此组合（例如，(Fu et al. 1999; Costa e Silva et al. 2001; Dutkowski et al. 2002)。林木遗传试验中常用的空间分析方法如下： （1） 最近邻调整法（Nearest neighbor adjustment，NNA）。自从Papadakis的NNA开创性工作以来，该方法已经引起广泛关注(Bartlett 1978; Wilkinson et al. 1983)。其基本思想是通过从相邻小区中减去一些观测值的函数来调整小区值，基本上消除了局部趋势。Magnusse(Magnussen 1990)利用11个空间模型（包括NNA）对杰克松（Pinus banksiana）设置于3个地点50个全同胞家系的树高数据进行分析，多数模型会降低遗传效应和遗传力估计，认为仔细的林地规划和准备可以大大减少空间协方差和空间分析的需要，而林木遗传试验缺乏一个空间分析的因果关系不保证真正的处理效果。而在另外2个研究中，采用NNA则能够有效提升遗传力估计及选择效率，同时对育种值排名显示出相当大的影响(Anekonda and Libby 1996; Joyce et al. 2002)。 （2） Variography和Kriging。Kriging是NNA的延伸，它采用半变异函数对空间变异建模，并利用迭代的方法去除数据中的异质性(Zas 2006)。利用该方法，Hamann等(Hamann et al.</description>
-    </item>
-    
-    <item>
       <title>空间自相关</title>
       <link>/post/stat/%E7%A9%BA%E9%97%B4%E8%87%AA%E7%9B%B8%E5%85%B3/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
@@ -5852,17 +5762,6 @@ corrplot(M, type=&amp;quot;upper&amp;quot;)  但是这些热图有个问题是�
  概念 环境因素影响响应值，造成距离更近的个体之间比距离远的个体间更相似。它会影响估计值和估计精度。这是试验要随机到空间区组中去的原因。
 残差图 空间自相关的诊断（残差变异函数variograms of residuals）  Isotropic variogram： 不考虑方向The empirical isotropic variogram is built by aggregating all the pairs of points separated by (h),no matter the direction.  - Row/Column variogram: 行列The empirical row/col variogram is built by aggregating all the pairs of points separated by exactly (x) rows and (y) columns.
  Anisotropic variogram:方向相同 The empirical anisotropic variogram is built by aggregating all the pairs of points in the same direction separated by x.</description>
-    </item>
-    
-    <item>
-      <title>第一章</title>
-      <link>/post/%E8%AE%BA%E6%96%87/%E7%AC%AC%E4%B8%80%E7%AB%A0/</link>
-      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E8%AE%BA%E6%96%87/%E7%AC%AC%E4%B8%80%E7%AB%A0/</guid>
-      <description>2.2.材料与方法 2.2.1植物材料与试验设计 从初级种子园中选择12个无性系，开展双列交配试验（包含自交）。共获得55个组合，包括8个自交、34对正反交和13个单交（交配设计见表1 - 1）。此外，同年收集12个亲本自由授粉种子。在苗圃中将种子育苗，培育2年后移植到试验林地（1988年）。试验林位于中国辽宁省抚顺市清原县大孤家镇林场（42.72°N，124.88°E），林地海拔约460 m。试验设计采用随机完全区组设计，5个重复，其中重复2和重复4分别包含4个和5个亚重复，密度2 × 2 m。每个组合及自由授粉家系获得的子代个数不完全一致，由于要将全部子代个体布置到林地内，所以小区的大小是变化的，总体上服从每行5株多列(1-3)。试验林四周设有保护行以避免边缘效应。每年进行常规抚育管理。为维持林地的生产力，2009年对试验林进行隔株间伐。 采集12个亲本的新鲜针叶，硅胶干燥，用于后续基因组DNA提取和遗传分析。 表1 - 1全双列交配设计 Table 1 – 1 A full diallel mating design used for the present Japanese larch improvement program
-注：⊙-自交；×-异交。
-2.2.2数据收集与清洗 分别在2005年和2014年树木休眠期，调查测定试验林内单株的树高（m）、胸径（cm），用H05、H14、DBH05和DBH14表示。树高和胸径分别用测高仪(Vertex Ⅲ, Haglof Company Group, Sweden)和围尺测定。而后利用树高和胸径计算每木的带皮材积指数（m3），用V05、V14表示。材积指数公式为V = H × D2 (1)。 在家系水平和重复水平检查各性状的极端异常值。极端异常值的定义为≤下四分位数减去3倍IQR（interquartile range）的数值，或≥上四分位加上3倍IQR的数值。而后去除极端异常小的数值，因为这些数值的观测个体可能是受压木、遭受严重病虫害或是所处环境条件很差，未能反映真实的生长潜力。 2.2.3 统计分析 因为Yao等(2013)发现使用家系模型分析包含自交的全双列会高估SCA效应，认为不含自交全双列是用于估计GCA和SCA效应的最佳交配设计。因此，在去除自交数据后进行遗传参数估计及遗传效应值预测。混合模型如下： y=Xb+Z_1 gm+Z_2 gd+Z_3 s+Z_4 r+Z_5 p+e 这里，响应变量y是单株表型值列向量。b是固定的重复效应列向量，gm (gd)是随机的亲本GCA效应向量，s是随机的交配组合SCA效应向量，r、p、e分别是随机的正反交效应、小区效应和残差向量。X和Z(Z1-Z5) 分别是将观测值关联到各自固定和随机效应上的设计矩阵。模型（2）中的随机效应假定期望为0并服从正态分布： A亲缘关系矩阵，I是单位矩阵，σ ̂_g^2，σ ̂_s^2，σ ̂_r^2，σ ̂_p^2和σ ̂e^2分别是随机效应gm(gd)，s，r，p，和e的方差估计。 方差估计由限制性最大似然估计（Restricted maximum likelihood，REML）方法获得。各方差的标准误由1阶泰勒展开式决定。利用似然比检验检验（LRT）各方差组分的统计显著性(α = 0.05)。通过解Henderson混合模型方程组(Henderson 1975)求得模型的解，即为包括育种值在内的随机效应值。 为比较各生长性状的相对遗传方差，利用公式(&amp;ldquo;CV&amp;rdquo; ) ̂&amp;ldquo;g&amp;rdquo; &amp;ldquo;=&amp;rdquo; √(&amp;ldquo;σ&amp;rdquo; ̂&amp;ldquo;a&amp;rdquo; ^&amp;ldquo;2&amp;rdquo; +4&amp;rdquo;σ&amp;rdquo; ̂&amp;ldquo;s&amp;rdquo; ^&amp;ldquo;2&amp;rdquo; )/&amp;ldquo;x&amp;rdquo; ̅ &amp;ldquo;×100%&amp;rdquo; (3)和(&amp;ldquo;CV&amp;rdquo; ) ̂&amp;ldquo;p&amp;rdquo; &amp;ldquo;=&amp;rdquo; √(&amp;ldquo;σ&amp;rdquo; ̂&amp;ldquo;P&amp;rdquo; ^&amp;ldquo;2&amp;rdquo; )/&amp;ldquo;x&amp;rdquo; ̅ &amp;ldquo;×100%&amp;rdquo; (4)，分别估计了加性遗传变异系数((&amp;ldquo;CV&amp;rdquo; ) ̂&amp;ldquo;g&amp;rdquo; )和表型变异系数((&amp;ldquo;CV&amp;rdquo; ) ̂&amp;ldquo;p&amp;rdquo; )。 &amp;ldquo;σ&amp;rdquo; ̂&amp;ldquo;a&amp;rdquo; ^&amp;ldquo;2&amp;rdquo; 和&amp;rdquo;σ&amp;rdquo; ̂&amp;ldquo;s&amp;rdquo; ^&amp;ldquo;2&amp;rdquo; 如上描述，&amp;rdquo;σ&amp;rdquo; ̂_&amp;ldquo;P&amp;rdquo; ^&amp;ldquo;2&amp;rdquo; 是表型方差估计值。x ̅是性状的均值。 狭义遗传力(h2)和广义遗传力(H2)分别按以下2个公式估计： h^2=(4σ_a^2)/(〖2σ〗_a^2+σ_s^2+σ_r^2+σ_p^2+σ_e^2 ) (4) H^2=(4(σ_a^2+σ_s^2))/(〖2σ〗_a^2+σ_s^2+σ_r^2+σ_p^2+σ_e^2 ) (5) 两性状（x、y）遗传相关系数（&amp;rdquo;r&amp;rdquo; _&amp;ldquo;A&amp;rdquo; ）计算公式为： &amp;ldquo;r&amp;rdquo; &amp;ldquo;A&amp;rdquo; &amp;ldquo;=&amp;rdquo; &amp;ldquo;σ&amp;rdquo; ̂(&amp;ldquo;a&amp;rdquo; _&amp;ldquo;x&amp;rdquo; &amp;ldquo;a&amp;rdquo; &amp;ldquo;y&amp;rdquo; )/√(&amp;ldquo;σ&amp;rdquo; ̂(&amp;ldquo;a&amp;rdquo; &amp;ldquo;x&amp;rdquo; )^&amp;ldquo;2&amp;rdquo; &amp;ldquo;σ&amp;rdquo; ̂(&amp;ldquo;a&amp;rdquo; _&amp;ldquo;y&amp;rdquo; )^&amp;ldquo;2&amp;rdquo; ) (7) 以上提及的分析均由ASReml-R 软件包3.</description>
     </item>
     
     <item>
@@ -5877,15 +5776,6 @@ corrplot(M, type=&amp;quot;upper&amp;quot;)  但是这些热图有个问题是�
    Berger-Wolf T Y, Sheikh S I, DasGupta B, et al. 2007. Reconstructing sibling relationships in wild populations. Bioinformatics, 23(13).
  与显性标记如AFLP和ISSR不同，微卫星等位基因是共显性的，因此每个基因座的基因型和等位基因频率的推断是直接的。 对于不受大规模基因组计划影响的物种，SNPs的开发比微卫星开发更加困难和昂贵。 更重要的是，识别相关个体的能力主要取决于每个基因座的等位基因数及其杂合度，微卫星在两个方面明显优于其他标记，5-20等位基因和杂合度&amp;gt; 0.700是典型的，如 许多野生种群。
  Trong T Q, van Bers N, Crooijmans R, et al.</description>
-    </item>
-    
-    <item>
-      <title>系谱重建</title>
-      <link>/post/%E8%AE%BA%E6%96%87/%E7%B3%BB%E8%B0%B1%E9%87%8D%E5%BB%BA/</link>
-      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E8%AE%BA%E6%96%87/%E7%B3%BB%E8%B0%B1%E9%87%8D%E5%BB%BA/</guid>
-      <description>育种值的准确估计，能够提高植物遗传改良的效率，依赖于良好的交配设计和田间测定。自由授粉因其操作简便等特点，是林木育种中最常采用的交配设计，但与控制授粉相比，获得的育种值估计不够准确，原因有存在近交子代的可能，造成来自同一母本的子代不是真正意义上的半同胞。此外，种子园中的外源花粉污染也会造成育种值估计出现偏差（Squillace和Long 1981; Friedman and Adams 1985; Adams和Burczyk 2000）。</description>
     </item>
     
     <item>
@@ -6052,16 +5942,6 @@ corrplot(M, type=&amp;quot;upper&amp;quot;)  但是这些热图有个问题是�
       <guid>/post/%E7%A9%BA%E9%97%B4/%E9%87%8E%E7%94%9F%E7%BA%A2%E9%B9%BF-%E7%A9%BA%E9%97%B4/</guid>
       <description>Stopher K V., Walling CA, Morris A, Guinness FE, Clutton-Brock TH, Pemberton JM, et al. SHARED SPATIAL EFFECTS ON QUANTITATIVE GENETIC PARAMETERS: ACCOUNTING FOR SPATIAL AUTOCORRELATION AND HOME RANGE OVERLAP REDUCES ESTIMATES OF HERITABILITY IN WILD RED DEER. Evolution (N. Y). [Internet]. Blackwell Publishing Inc; 2012 [cited 2016 Dec 6];66:2411–26. Available from: http://doi.wiley.com/10.1111/j.1558-5646.2012.01620.x   对空间遗传参数的共享空间效应：考虑空间自相关和家庭范围重叠减少了野生红鹿的遗传力估计 抽象
 社会结构，有限的分散和资源的空间异质性在野生脊椎动物群体中是普遍存在的。结果，亲属共享环境以及基因，并且个体之间的相似性的环境和遗传来源可能被混淆。因此，野生动物中的数量遗传研究通常说明容易获得的共同环境影响（例如，亲本，巢或区域）。精细尺度的空间效应可能在野生脊椎动物中同样重要，但已被很大程度上忽略。我们使用来自野生红鹿的数据建立“动物模型”，以估计四个女性性状（春季和芸薹属家庭范围大小，后代出生体重和终生繁殖成功）中的加性遗传方差和遗传力。然后，我们分开地纳入空间自相关和归纳范围重叠的矩阵到这些模型中，以估计位置或共享栖息地对表型变化的影响。这些术语解释了所有性状的大量变化，并且它们的包含导致遗传力估计的降低，高达家庭范围大小的数量级。我们的研究结果突出了多个协方差矩阵的潜力解剖环境，社会和遗传贡献表型变异，以及考虑精细尺度空间过程在数量遗传研究的重要性。 加性遗传方差（VA）和遗传力（h2，遗传与表型方差的比率）是我们理解自然中的性状进化潜力和动力学的基本参数（Lande 1982; Houle 1992）。数量遗传模型依赖于亲缘之间的表型相似性来估计它们（Falconer和Mackay 1996; Lynch和Walsh 1998）。 “动物模型”的应用是一种混合效应模型，其中使用来自多代系谱的遗传相关矩阵（Lynch和Walsh 1998）在野生种群中估计VA，提高了我们对进化遗传学的理解自然（Ellegren和Sheldon 2008; Kruuk等人2008）。然而，野生种群的特征在于高水平的环境异质性，并且亲缘经常共享环境。有人认为，“动物模型”的多代方法估计遗传力减少偏差从环境相似性，因为模型使用近亲和更远的亲戚之间的表型相似，他们不太可能生活在相似的环境条件Postma和Charmantier 2007）。尽管如此，未能适当地考虑这种共同的环境影响已知偏倚来自“动物模型”的参数的估计（Kruuk和Hadfield 2007），并且已经成为常见的做法来解释某些种类的共享环境影响（例如，父母（例如，Kruuk等人2001; MacColl和Hatchwell 2003; Charmantier等人2004; Wilson等人2005; Kruuk等人2005），通过将这些模型结合到模型中作为固定或随机效应（例如， Hadfield 2007）。</description>
-    </item>
-    
-    <item>
-      <title>间接遗传效应及对林木育种中选择的影响</title>
-      <link>/post/%E8%AE%BA%E6%96%87/%E9%97%B4%E6%8E%A5%E9%81%97%E4%BC%A0%E6%95%88%E5%BA%94%E5%8F%8A%E5%AF%B9%E6%9E%97%E6%9C%A8%E8%82%B2%E7%A7%8D%E4%B8%AD%E9%80%89%E6%8B%A9%E7%9A%84%E5%BD%B1%E5%93%8D/</link>
-      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
-      <guid>/post/%E8%AE%BA%E6%96%87/%E9%97%B4%E6%8E%A5%E9%81%97%E4%BC%A0%E6%95%88%E5%BA%94%E5%8F%8A%E5%AF%B9%E6%9E%97%E6%9C%A8%E8%82%B2%E7%A7%8D%E4%B8%AD%E9%80%89%E6%8B%A9%E7%9A%84%E5%BD%B1%E5%93%8D/</guid>
-      <description>间接遗传效应及对林木育种中选择的影响 间接遗传效应 可遗传变异，即加性遗传方差，对选择精度和遗传增益有显著影响，在育种群体的遗传改良过程中至关重要（(Falconer and Mackay 1996)）。为避免在估计加性方差时产生偏差，分析采用的统计模型中应包括所有其他遗传变异来源以及所有可识别的环境因素。尽管经典的数量遗传模型已经使人们对遗传和选择响应有较为清晰的理解，但类似基因和基因型之间的差异以及环境的差异如何转化为表型变异的问题依旧充满挑战。随着统计模型及统计分析程序发展水平的逐渐提高，表型变异来源正被尽可能多的因素来解释，比如个体间的相互作用。个体间的相互作用又称为间接遗传效应，即个体的表型性状值可以取决于其他个体基因的表达(Griffing 1967; Wolf et al. 1998)。间接遗传效应广泛存在于自然界中，例如同种植物的相邻个体竞争相同的空间、光照或营养物质(Sakai 1955; Frank 2007; Karban 2008)。 林木个体捕获并利用有限资源的能力对其生长或繁殖极为重要（(Binkley et al. 2004)）。这种能力由林木自身和相邻树木的基因型以及空间排列决定（(Hinson and Hanson 1962)），因此林木间的竞争同样是由遗传和环境造成的（(Magnussen 1989)）。竞争可能引起个体间或邻近小区之间负向的协方差，进而造成个体育种值的估计不够准确（参见例如(Magnussen 1993; Foster et al. 1998; Radtke et al. 2003)）。尽管有许多报道证明竞争的存在(VONEULER et al. 1992; Magnussen 1993; Foster et al. 1998)，但通常在评估模型中没有包括遗传竞争效应。而林木又有世代较长及育种周期较长的特性，在育种中考虑竞争效应越发重要。因此关于林木育种群体中竞争的数量遗传学研究虽然较少，但正在引起育种工作者的重视。
-在林木遗传测定中的发展 在经典的数量遗传模型中，个体的表型是其遗传价值或育种值和残余不可遗传效应的总和。GRIFFING（(Griffing 1967, 1968a; 1968b)）引入间接遗传效应（IGE）的概念，并提出了包括个体或个体分组间竞争的遗传效应模型，而后分析了使用这些模型对选择响应的后果。在这些模型中，个体的表型是其遗传效应（“直接遗传效应”）加上其他基因型的遗传贡献（“间接遗传效应”）的线性组合。虽然直接遗传效应在个体的表型中表达，但是间接遗传效应仅在另一个个体的表型中表达。在这个意义上，对个体表型的遗传影响分为其基因的直接效应和属于个体间相互作用的个体基因的间接影响（(Moore et al. 1997; Wolf et al. 1998)）。已经提出了几种方法来调整林木遗传试验中的竞争效应：例如包括距离相关竞争指数（(Tuskan and McKinley 1984)）、高度差的角度法（(Magnussen 1989)）和迭代最近邻法（(Magnussen 1994)）。然而，这些方法只认为竞争存在于表型水平，但没有在单株水平上分离遗传和非遗传竞争效应的作用。VAN VLECK和CASSADY（(Van Vleck and Cassady 2005)）使用模拟和固定数量的竞争者来确定限制最大似然估计（REML，(PATTERSON H. D.; THOMPSON 1971)）能否解决直接和竞争遗传方差的协方差结构以及它们之间的协方差。这项研究的结果表明，竞争个体之间的加性关系在解释信息以估计（协）方差分量时可能是必要的。Muir（(Muir 2005)）在线性混合模型中包含了间接遗传效应IGE，并以林木育种为例，指出应根据将育种值与直接和间接（即竞争）效应相结合的指数来选择个体。虽然没有用实际林业数据验证，但是当使用来自日本鹌鹑的数据进行测试时，这些模型在某些情况下表明如果仅选择直接遗传效应可能会导致负选择反应。因此，林木中的人工选择方案可能是次优的，因为目前多数的性状改良的选择和育种策略中并没有考虑竞争能力的遗传基础。但他忽略了不同数量竞争者（例如邻近死亡或中心个体位于边缘）对估计竞争的加性遗传方差的影响。 较为完全的方法是在分析模型中对竞争和空间效应联合建模。同时考虑这2种因素的方法较早出现在农作物的研究中(Stringer and Cullis 2002)，随后Resende等（(Resende et al.</description>
     </item>
     
     <item>

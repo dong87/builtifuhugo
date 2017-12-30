@@ -212,120 +212,8 @@
           
           
             <article class="post-preview">
-              <a href="../../post/rcodes/%E4%B8%80%E4%B8%AA%E5%8F%96%E4%BB%A3cat%E7%9A%84%E5%87%BD%E6%95%B0/">
-                <h2 class="post-title">一个取代`cat`的函数</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (19 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  <pre><code>msg(
-    cli::rule(
-      center = paste0(crayon::bold(&quot;Number &quot;), crayon::red(length(sentList)), &quot; --- &quot;,
-                      crayon::bold(&quot;Time &quot;), crayon::green(round(elapsed_time[3],2), &quot;s&quot;))
-    ),
-    startup = TRUE
-  )
-</code></pre>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/3289684-abe7131ea4f95cef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tidyverse.png" /></p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/3289684-821371a6edb8e60a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="dword.png" /></p>
-
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/%E9%9A%8F%E7%AC%94/%E4%B8%8D%E5%AE%8C%E5%85%A8%E5%8C%BA%E7%BB%84%E8%AE%BE%E8%AE%A1/">
-                <h2 class="post-title">不完全区组设计</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (174 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  林木子代测定林田间试验较常采用随机完全区组设计（RCB）和不完全区组设计（IB）。在R中利用agricolae包能够实现RCB设计，对于后者则只能进行平衡不完全区组设计（BIB）。BIB要求bkvrλ全为整数，b是区组数、k是区组大小即小区数、v是处理数比如家系个数、r是重复次数，λ=r(k-1)/(v-1)，对于测定处理较多的材料不能满足λ为整数这个限制。ibd这个包开发者说能够实现不平衡IB设计，但同样在处理较多时给不出设计结果。最终在网页找到方法，函数的代码如下
-incomplete.block.design &lt;- function(number.alternatives, number.blocks, alternatives.per.block, n.repeats = 1000){ # Check that the parameters are appropriate # Sawtooth recommends that number.blocks &gt;= 3 * number.alternatives / alternatives.per.block if (number.blocks &lt; 3 * number.alternatives / alternatives.per.block) warning(&quot;It is recomended that number.blocks &gt;= 3 * number.alternatives / alternatives.per.block&quot;); library(AlgDesign) best.result = NULL best.D = -Inf for (i in 1:n.repeats){ alg.results &lt;- optBlock(~.,withinData=factor(1:number.alternatives),blocksizes=rep(alternatives.per.block,number.blocks), nRepeats=5000) #BIB if (alg.results$D &gt; best.D){ best.result = alg.results best.D = alg.
-                  <a href="../../post/%E9%9A%8F%E7%AC%94/%E4%B8%8D%E5%AE%8C%E5%85%A8%E5%8C%BA%E7%BB%84%E8%AE%BE%E8%AE%A1/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/stat/%E4%BB%94%E7%BB%86%E8%AF%84%E4%BC%B0%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/">
-                <h2 class="post-title">仔细评估模型预测</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 2 minutes (259 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  仔细评估模型预测 2016年12月2日 由约翰·摩
-（本文首次发表于的R -赢矢量博客 ，并亲切地促进了R-博客）
-有一件事我教的是：评估回归模型的性能时， 你不应该使用关联作为你的分数 。 这是因为相关性告诉你结果的重新缩放是否有用，但是你想知道手中的结果是否真的有用。 例如：火星气候轨道器软件在磅-秒为单位期待的命令发出推力命令，发动机是在牛顿秒为单位 。 这两个量通过1.4881639的常数比相关，因此以磅 - 秒为单位测量的任何值与以牛顿 - 秒为单位的相同测量值具有1.0的相关性。 然而，一个不是另一个，区别是为什么火星气候轨道器“遇到火星在低于预期的高度和由于大气压力分解。 需要毫无意外地引发了与计算相关相关的隐式重新缩放方便的直接F-测试是我们提供的原因之一SIGR [- R库。 然而，即使事情可能变得混乱。
-
-请阅读一个讨厌的小例子。
-考虑以下“无害数据帧”。
-d &lt;-data.frame（prediction = c（0,0，-1，-2,0,0，-1，-2）， actual = c（2,3,1,2,2,3,1,2））
-检查“的质量推荐的测试prediction 相关的”，“ actual ”是F-检验（这是测试stats::lm 使用）。 我们可以直接运行该测试sigr （假设我们已经安装包），如下所示：
-sigr :: formatFTest（d，&rsquo;prediction&rsquo;，&rsquo;actual&rsquo;，format =&lsquo;html&rsquo;）$ formatStr
-F测试总结*：（R 2  = -16，F（1,6）=* - *5.6，P* = NS）。 sigr 报告的R平方-16（请参阅这里的R平方的一些讨论）。 这可能是混乱的，但它正确传达我们没有模式，实际上是“ prediction ”是比只使用平均（一个非常传统的空模型）差。 然而， cor.test 似乎认为“ prediction ”是一个可用的模型：
-cor.test（d $ prediction，d $ actual） Pearson的乘积矩相关 data：d $ prediction和d $ actual t = 1.
-                  <a href="../../post/stat/%E4%BB%94%E7%BB%86%E8%AF%84%E4%BC%B0%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/%E4%BB%A3%E6%9B%BF/">
-                <h2 class="post-title">代替</h2>
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/%E4%BB%A3%E6%9B%BF-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/">
+                <h2 class="post-title">代替-#每日一词#</h2>
                 
                 
               </a>
@@ -350,6 +238,12 @@ cor.test（d $ prediction，d $ actual） Pearson的乘积矩相关 data：d $ p
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/">每日一词</a>&nbsp;
+                
+                </span>
               
             </article>
           
@@ -385,6 +279,12 @@ cor.test（d $ prediction，d $ actual） Pearson的乘积矩相关 data：d $ p
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
+                
+                </span>
               
             </article>
           
@@ -429,6 +329,12 @@ cor.test（d $ prediction，d $ actual） Pearson的乘积矩相关 data：d $ p
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/r%E8%AE%B0%E5%BD%95%E6%9C%AC/">R记录本</a>&nbsp;
+                
+                </span>
               
             </article>
           
@@ -506,6 +412,12 @@ cor.test（d $ prediction，d $ actual） Pearson的乘积矩相关 data：d $ p
               </div>
 
               
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
+                
+                </span>
+              
             </article>
           
             <article class="post-preview">
@@ -537,6 +449,12 @@ One possibly contentious issue is the choice between fixed and random effects in
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
+                
+                </span>
               
             </article>
           
@@ -587,6 +505,12 @@ Y = β&rsquo;Z + e
               </div>
 
               
+                <span class="post-meta">
+                
+                  #<a href="../../tags/stat/">stat</a>&nbsp;
+                
+                </span>
+              
             </article>
           
             <article class="post-preview">
@@ -626,6 +550,151 @@ Y = β&rsquo;Z + e
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E7%A9%BA%E9%97%B4/">空间</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/stat/%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%BB%93%E6%9E%84/">
+                <h2 class="post-title">协方差矩阵，协方差结构</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (14 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p><em>by </em><a href="http://www.theanalysisfactor.com/covariance-matrices/">KAREN GRACE-MARTIN</a></p>
+
+<p> 学习高水平统计学时，最难理解的概念是协方差矩阵和协方差结构。理解它们是学习一些统计分析尤其是混合模型和结构方程模型的基础。一旦了解它们，你会发现其实没那么可怕。</p>
+</blockquote>
+
+<ul>
+<li><p><strong>什么是协方差矩阵?</strong>
+让我们从矩阵开始。矩阵是线性代数里的一个概念，强烈建议学习这门课程。你可以用矩阵处理很多非常复杂的、数学上的事情。但作为一个研究人员和数据分析人员，不需要用矩阵解决全部的复杂处理。你只需要知道矩阵是什么，理解概念，了解一些简单的矩阵处理，比如一个矩阵乘以一个常数。如果这还不行，你得知道矩阵就是一个表格。
+和许多统计中利用的矩阵类似，协方差矩阵是对称的。举一个最简单的例子，相关矩阵。
+如果这个写成矩阵的形式，你只能看到数字，而没有行列名。协方差矩阵与之相像，但也有不同。
+协方差只是<strong>未标准化的相关</strong>——为了计算相关，我们用两个变量的标准差除协方差，消除测量单位。所以协方差只是用原始变量的单位测定的相关。协方差又不像相关，不被限制于-1~1之间，协方差=0和相关=0的意思是一样的——没有线性关系。由于协方差是带单位的，值越大，相应的变量分布就越广。对角元素是每个变量的方差。</p></li>
+
+<li><p><strong>什么是协方差结构?</strong>
+协方差结构是协方差矩阵的模式。有以下几类：
+复合对称（Compound Symmetry），方差组分（Variance Components），非结构化（Unstructured）。它们只是模式的说明。比如<strong>复合对称结果仅仅是指所有方差相等，所有协方差也相等</strong>，对应于单变量方法。但是对于不同尺度的变量是无意义的。<strong>方差组分是指每个方差都不相同，并且全部协方差=0</strong>。如果变量完全独立，并且彼此测量尺度不同，才是有意义的模式。<strong>非结构化是指根本没有模式，每个方差和协方差完全不同，彼此间没有关系</strong>，对应于多变量方法。协方差结构有很多种，只有在特定的统计条件下才有意义。</p></li>
+</ul>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-40fd273d18e28eac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="结构1.png" /></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-b2434f94f65396c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Zamudio2008.png" /></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-edf9f24d0f1ce09f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Wolfinger 1996 1.png" /></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-b733edb11abfb703.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Wolfinger 1996 2.png" /></p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/stat/">stat</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/%E5%8F%8D%E7%BF%BB/">
+                <h2 class="post-title">反翻</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 13 minutes (2670 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  ##0511 - 传统的树木改良方案是需要广泛资源的长期努力。 - traditional forest tree improvement programs are long-term endeavors该词是复数 need extensive resources - 表达需要的词：need, require - 他们需要建立交配设计，在多个地点安装后代测试，以评估父母及其在大地理区域的后代，长时间监测这些测试，并**最终*分析测量结果以评估经济特征。 - they require establishing mating designs, installing progeny tests on multiple sites, and evaluating parents and their offspring over large geographic areas, monitoring these tests over extended periods of time , and finally analyzing measured results to assess economic characters. - 在多个地点用on而非at - offspring是单复同行 - over用的很多
+0115  了解适应性和商业性状的复杂结构 以评估进化力在塑造遗传变异中的作用 并改善长期育种策略 是非常重要的。  it&rsquo;s very important to understand complex structure of adaptive and chametial in order to evaluate the role of evolutionary power in shaping genetic variation and improve long term breeding strategies.
+                  <a href="../../post/%E9%9A%8F%E7%AC%94/%E5%8F%8D%E7%BF%BB/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/rcodes/%E5%8F%98%E9%87%8F-%E9%87%8D%E5%A4%8D/">
+                <h2 class="post-title">变量-重复</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (3 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>有时，变量中含有重复的记录，阻碍分析，所以要查找出来。但目前只能对单个变量查找，对多个变量的查找方法尚未知晓。</p>
+</blockquote>
+
+<pre><code>将df中var变量中的重复record找出并放在df.dupli中
+df.dupli&lt;-df[duplicated(df$var),]
+</code></pre>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/rcodes/">Rcodes</a>&nbsp;
+                
+                </span>
               
             </article>
           

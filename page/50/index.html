@@ -212,250 +212,6 @@
           
           
             <article class="post-preview">
-              <a href="../../post/bayesian/%E5%A4%9A%E5%8F%98%E9%87%8F%E9%98%88%E5%80%BC-%E5%88%86%E5%AD%90%E9%81%97%E4%BC%A0%E6%95%B0%E6%8D%AE-gibbs/">
-                <h2 class="post-title">多变量阈值-分子遗传数据-Gibbs</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (71 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  Stock KF, Distl O, Hoeschele I. Bayesian estimation of genetic parameters for multivariate threshold and continuous phenotypes and molecular genetic data in simulated horse populations using Gibbs sampling. BMC Genet. [Internet]. 2007;8:19. Available from: http://dx.doi.org/10.1186/1471-2156-8-19   使用Gibbs采样的模拟马群中多变量阈值和连续表型和分子遗传数据的遗传参数的贝叶斯估计
-抽象
-背景 成功实施包括表型和基因型信息的多变量动物阈值模型的要求尚不清楚。这里使用模拟马数据来调查遗传参数的遗传参数的多变量估计器的性质在分类，连续和分子遗传数据在重要的放射性健康性状的背景下使用混合线性阈值动物模型通过Gibbs采样。模拟谱系包括7代和40000动物每代。模拟了四个二元性状的一个连续性状和负债liabilities的加性遗传值，残差​​和固定效应，类似于Warmblood马中遇到的情况。对一种负债模拟了数量性状基因座（QTL）效应和遗传标记信息。研究了遗传标记与QTL之间的重组率和遗传标记多态性信息含量的不同情况。对于每种情况，从模拟群体中抽取10个重复，并且在每个重复中产生具有性状记录和遗传标志信息可用性的动物的数量和分布不同的6个不同数据集。 （Co）方差分量使用​​贝叶斯混合线性阈值动物模型通过Gibbs采样进行估计。残差方差固定为零，适当的先验用于遗传协方差矩阵。
-结果 有效样本大小（ESS）和遗传参数的偏差在数据集之间显着不同。遗传力估计的偏差对于连续性状为-6％至+ 6％，对于中度遗传性的二元性状为-6％至+ 10％，对于低遗传力的二元性状为-21％至+ 25％。加性遗传相关性大多低估了低遗传力的连续性状和二元性状之间，在连续性状和中度遗传性的二元性状之间低估或高估，并且在两个二元性状之间高估。使用性状信息对后续两代动物增加了ESS和减少参数估计的偏差，而不仅仅是增加来自一代的信息性动物的数量。将基因型信息考虑为模型中的固定效应导致高估QTL性状的多基因遗传性，但增加QTL性状的加性遗传相关性的准确性**。
-结论 联合使用表型和基因型信息对父母和后代将有助于确定感兴趣的性状之间的激动和拮抗遗传相关性，促进有效的多特征选择方案的设计。
-背景
-使用线性模型估计分类性状的遗传参数违反了混合线性模型方法的基本假设。已经开发了算法以将线性模型估计转换为潜在的责任尺度，以补偿由线性模型中的非线性性状的分析所导致的估计偏差，但是变换的遗传参数估计可能仍然是显着偏差的[例如， 2，3，4]]。阈值模型用于估计遗传参数的使用直接说明了分类性状的非线性性质，并且阈值模型估计应当比线性模型估计或变换的线性模型估计更可靠[例如[5,6,7]]。
-马尔科夫链蒙特卡罗（MCMC）方法如吉布斯取样（GS）使得实现多变量阈值模型或多变量混合线性阈值模型成为可能。动物模型充分利用可用的谱系信息，但遗传方差和协方差估计的准确性以及GS链的收敛可能在低性状流行率和每个个体的少量观察的情况下是一个问题[例如[5,8,9,10] ]。因此，在实际情况下，多变量动物阈值模型的实现并不总是直接的。连续性状的包含，即使用多元线性阈值模型，预期增加遗传参数估计的可靠性[例如，[2,11,12,13]]。
-在动物育种中，健康数据通常使用离散类别记录，而大多数性能特征是连续的。在马中，二进制编码已经用于对马on的放射学检查的研究，并且在年轻马的肢体中已经确定了放射学可见的改变的高流行性，主要在10-25％的范围内。 [14，15，16，17]]。这促进了寻求预防而不是治疗措施。由于马运动系统的强度和健壮性在马业的所有部门都非常重要，因此已经提出在Warmblood骑乘马的当前育种计划中包括放射健康性状[18,19]。这些分类性状的可靠估计的遗传参数提供了这样做的基础。对于分析的射线照相健康数据，根据Dempster和Lerner [20]和Vinson等人的转换因子的适用性[21]通过残差最大似然（REML）获得的线性动物模型估计已经通过模拟证明[22]。然而，由线性模型中的二元性状的分析引起的并且必须通过变换进行补偿的过估计或低估速率取决于数据结构。因此，需要重新评估变换过程，以分析关于可用信息的分布和种类的不同结构的数据。用于（共）方差分量估计的贝叶斯多变量动物阈值或混合线性阈值模型的实现可以提供有价值的替代方案。
-已经为不同物种的生产和健康性状鉴定了定量性状基因座（QTL），即包括影响个体关于特定性状的表型的基因的基因组区域[23]。增加对遗传决定放射性健康特性的知识[24,25]意味着在马中改进遗传评价和选择计划的进一步机会。有效利用标记辅助选择的条件已经被描述[26]，但是结合使用表型和基因型数据对分类性状的遗传参数估计的准确性的影响还没有被研究。成功实施包括表型和基因型信息的多变量动物阈值模型的要求是未知的。
-本研究的目的是使用线性阈值动物模型和Gibbs采样来表征分类，连续和分子遗传数据的遗传参数的多变量估计的性质。在Warmblood马的重要放射健康性状的上下文中研究了数据结构和分子遗传数据的质量对遗传参数估计的准确性的影响。
-统计分析 使用用于动物模型的多特征Gibbs采样器（MTGSAM）的阈值版本的Gibbs采样来评估遗传参数[35]，该软件支持连续和分类性状的任何组合的多变量遗传分析。随机和残差效应被假定为正态分布，平均先验被用于固定效应。用户可以为加性遗传和残差（共）方差矩阵指定起始值和先验。对于我们的分析，为所有加性遗传变异选择起始值1，对所有加性遗传协方差选择起始值0，并且所有性状之间的残余协方差固定为零。在单变量和多变量二进制阈值模型中，通过将阈值和残差方差分别固定为零和一的值来确保模型的可识别性[36]。用于限制固定在一个的对角线元素的残余协方差矩阵的有效抽样的方法仍在开发中。然而，本研究的残差协方差的固定由以前的实际数据分析的结果证明[14]，并拟合我们的模拟数据。因为残差协方差在实际数据中可以忽略，因此在数据模拟中设置为零，进一步信息的可能增益似乎与残差协方差的采样的额外成本不成比例。因此，在本研究中，残余协方差被固定为零。对于遗传协方差矩阵，使用具有最小形状参数（即υIW= 7）的逆Wishart分布的适当的先验，以确保后验适当性。在所有分析中考虑了性别和当代组的固定效应。在仅对数据集C1和C2的分析中考虑标记基因型的固定效应，区分所有遗传标记的不利等位基因纯合阴性的个体，至少一个遗传标记的不利等位基因杂合的个体和纯合的个体对于四种遗传标记中的至少一种的不利等位基因。
-在所有分析中，吉布斯链的总长度设定为205000，并且保存5000轮的老化后的所有样品。通过样品图的目视检查来检查Gibbs链的收缩以及对要丢弃的加性轮次的老化的需要。通过在后Gibbs分析程序POSTGIBBSF90 [37]中实施的时间序列方法，以10的稀释率计算所有（共）方差估计值的有效样本大小（ESS）和蒙特卡罗误差（MCE）。未稀释的链用于计算加性遗传（共）方差，遗传性和加性遗传相关性估计的后验均值。选择后验手段而不是模式作为点估计，因为在初步分析中，手段在大多数情况下比模式更接近于真实的，即模拟的值，这与先前的研究一致[8,38]。遗传性和加性遗传相关性估计的偏差计算为估计值（parest）与真实（即模拟）值（partrue）的平均相对偏差。
-bias =（par est-par true）/ par true
-                  <a href="../../post/bayesian/%E5%A4%9A%E5%8F%98%E9%87%8F%E9%98%88%E5%80%BC-%E5%88%86%E5%AD%90%E9%81%97%E4%BC%A0%E6%95%B0%E6%8D%AE-gibbs/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%95%88%E5%BA%94%E5%80%BC-%E4%BE%8B%E5%A6%82%E8%82%B2%E7%A7%8D%E5%80%BC-%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7-accuracy/">
-                <h2 class="post-title">如何计算效应值（例如育种值）的准确性（accuracy）？</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (78 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  准确性指的是预测效应值与真值之间的相关系数。有时还会遇见一个概念——可靠性（reliability）。可靠性是准确性的平方，也就是说这二者度量的是一个事情。reliability其实就是遗传力，这句很重要！！！。遗传力主要用来计算选择响应（response to selection）。advisor说我的文章短句子太多，不连贯，确实是这样LOL。 准确性的计算公式为：
-$$r=\sqrt{1-\frac{PEV}{\hat{\sigma}_a^2}}$$
-_PEV_是prediction error variances的缩写，意思是预测误差方差，预测误差是预测值与真值间的差，即：
-$$PEV=var(\hat g-g)=(1-r_{\hat g,g}^2)\sigma_a^2$$
-$\sigma_a^2$是加性方差。
-预测差值的标准误（_SED_）是可以从Asreml中直接得到的，与_PEV_的关系是：
-$$SED=\sqrt{\hat Var(BLUP.differences)}=\sqrt{\hat Var(\hat Yi-\hat Y{i^ \prime})}=\sqrt{2\hat Var(\hat Y)_i}=\sqrt{2PEV}$$
-我不知道上面这个公式怎么推导的。 所以有
-$$PEV=(SED)^{2}/2=\hat Var(BLUP.differences)/2$$
-在很长时间里我不知道（或者说模糊地知道）accuracy是怎么实现的。我知道公式，但在软件里分别和公式组分对应的部分是什么却不是很清楚，当然写这篇文字的时候是确定的。具体实现的途径有2：
- 一是利用Asreml中的prediction直接得到_SED_后，再根据公式4得出PEV
-fm_pred &lt;- predict(fm_asr, classify = &quot;Fam&quot;) #fm_asr是asreml()输出的对象， Fam是随机效应变量 SED &lt;- fm_pred$predictions$avsed  二是逐步得到_PEV_，每个预测值都有一个_PEV_，是预测值_SE_平方的均值，所以从预测函数得到的对象中提取出_SE_平方后再平均即可
-fm_pred &lt;- predict(fm_asr, classify = &quot;Fam&quot;, present = &quot;Plot&quot;) #注意！这里预测的时候是要矫正掉其他的随机效应（如Plot） SE &lt;- fm_pred$predictions$pvals$standard.error PEV &lt;- SE^2 %&gt;% mean  这里的_PEV_是一个向量，对应到每个水平上。 所以，总体上，_PEV_、_SED_和_SE_的关系是 $$PEV=(SED)^{2}/2=ave(SE_i^2)$$
-  另外，在林元震老师的著作R与ASReml-R统计学中（P474）也涉及到accuracy的代码
-SE &lt;- fm_asr$vcoeff$random _ fm_asr$sigma2 #效应值se乘以sigma  结果是一样的，但不知道是否合理。
-                  <a href="../../post/%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%95%88%E5%BA%94%E5%80%BC-%E4%BE%8B%E5%A6%82%E8%82%B2%E7%A7%8D%E5%80%BC-%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7-accuracy/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/%E9%9A%8F%E7%AC%94/%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%95%88%E5%BA%94%E5%80%BC%E4%BE%8B%E5%A6%82%E8%82%B2%E7%A7%8D%E5%80%BC%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7accuracy/">
-                <h2 class="post-title">如何计算效应值（例如育种值）的准确性（accuracy）？</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (61 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  <p><strong>准确性</strong>指的是_预测效应值与真值之间的相关系数_。有时还会遇见一个概念——<strong>可靠性</strong>（reliability）。可靠性是准确性的平方，也就是说这二者度量的是一个事情。<strong>reliability其实就是遗传力，这句很重要！！！</strong>。遗传力主要用来计算选择响应（response to selection）。advisor说我的文章<strong>短</strong>句子太多，不连贯，确实是这样LOL。
-准确性的计算公式为：
-<img src="http://upload-images.jianshu.io/upload_images/3289684-df01d4346d0a920c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="公式1-accuracy.png" />
-*PEV*是prediction error variances的缩写，意思是预测误差方差，预测误差是预测值与真值间的差，即：
-<img src="http://upload-images.jianshu.io/upload_images/3289684-71c421143dcb27a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="公式2-pev.png" />
-<code>简书不支持公式真是淡疼！</code>
-*\sigma a^2*是加性方差。</p>
-
-<p>预测差值的标准误（*SED*）是可以从<code>Asreml</code>中直接得到的，与*PEV*的关系是：
-<img src="http://upload-images.jianshu.io/upload_images/3289684-203b10837faa6399.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="公式3-sed.png" />
-<code>我不知道上面这个公式怎么推导的。</code>
-所以有
-<img src="http://upload-images.jianshu.io/upload_images/3289684-1d6b8186eae7255a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="公式4-pev2.png" /></p>
-
-<hr />
-
-<p>在很长时间里我不知道（或者说模糊地知道）accuracy是怎么实现的。我知道公式，但在软件里分别和公式组分对应的部分是什么却不是很清楚，当然写这篇文字的时候是确定的。具体实现的途径有2：
-- 一是利用Asreml中的<code>prediction</code>直接得到*SED*后，再根据公式4得出PEV</p>
-
-<pre><code>fm_pred &lt;- predict(fm_asr, classify = &quot;Fam&quot;) #fm_asr是asreml()输出的对象， Fam是随机效应变量
-SED &lt;- fm_pred$predictions$avsed
-</code></pre>
-
-<ul>
-<li>二是逐步得到*PEV*，每个预测值都有一个*PEV*，是预测值*SE*平方的均值，所以从预测函数得到的对象中提取出*SE*平方后再平均即可
-<code>
-fm_pred &lt;- predict(fm_asr, classify = &quot;Fam&quot;, present = &quot;Plot&quot;) #注意！这里预测的时候是要矫正掉其他的随机效应（如Plot）
-SE &lt;- fm_pred$predictions$pvals$standard.error
-PEV &lt;-  SE^2 %&gt;% mean
-</code>
-这里的*PEV*是一个向量，对应到每个水平上。
-所以，总体上，*PEV*、*SED*和*SE*的关系是
-<img src="http://upload-images.jianshu.io/upload_images/3289684-085e91a277591ca0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="公式5-pev4.png" /></li>
-</ul>
-
-<p>另外，在林元震老师的著作<strong>R与ASReml-R统计学</strong>中（P474）也涉及到accuracy的代码</p>
-
-<pre><code>SE &lt;- fm_asr$vcoeff$random * fm_asr$sigma2 #效应值se乘以sigma
-</code></pre>
-
-<p>结果是一样的，但不知道是否合理。</p>
-
-<hr />
-
-<p>如果没有Asreml可能需要更底层的计算（比如手动），这时*PEV*的计算更直观些：<img src="http://upload-images.jianshu.io/upload_images/3289684-6aed173dad4f5946.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="公式6-pev3.png" />
-于是有<img src="http://upload-images.jianshu.io/upload_images/3289684-c9c67b6d1bffe6a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="公式7-reliability.png" />
-*C^{22}*是方程组关联矩阵的逆矩阵的右下角块，*d_i*是块中的对角线元素。具体可查看<a href="https://pan.baidu.com/s/1hrDRLeG">Pro. Isik编写的教材P84</a>和<a href="https://pan.baidu.com/s/1nvmT47n">Mrode, 2014的书P44</a>。</p>
-
-<p>从*PEV*就可以得到我们需要的准确性和可靠性值了。</p>
-
-<hr />
-
-<p>这个问题在群中还被讨论过
-<img src="http://upload-images.jianshu.io/upload_images/3289684-9908dc53ac300bbc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="accuracy_chat.jpg" /></p>
-
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/%E9%9A%8F%E7%AC%94/%E5%A6%82%E6%9E%9C%E5%B9%B3%E9%9D%A2%E4%B8%8A%E6%9C%89nn%E4%B8%BA%E5%A4%A7%E4%BA%8E%E6%88%96%E7%AD%89%E4%BA%8E3%E7%9A%84%E6%95%B4%E6%95%B0%E4%B8%AA%E7%82%B9%E4%B8%94%E6%AF%8F3%E4%B8%AA%E7%82%B9%E5%9D%87%E4%B8%8D%E5%9C%A8%E5%90%8C%E4%B8%80%E6%9D%A1%E7%9B%B4%E7%BA%BF%E4%B8%8A%E9%82%A3%E4%B9%88%E6%9C%80%E5%A4%9A%E5%8F%AF%E4%BB%A5%E7%94%BB_________%E6%9D%A1%E7%9B%B4%E7%BA%BF%E7%94%A8%E5%90%ABn%E7%9A%84%E5%BC%8F%E5%AD%90%E8%A1%A8%E7%A4%BA/">
-                <h2 class="post-title">如果平面上有n(n为大于或等于3的整数)个点，且每3个点均不在同一条直线上，那么最多可以画_________条直线(用含n的式子表示)</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (6 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  <blockquote>
-<p>如果平面上有n(n为大于或等于3的整数)个点，且每3个点均不在同一条直线上，那么最多可以画_________条直线(用含n的式子表示)？</p>
-</blockquote>
-
-<p>　第一感觉是画图，画图直观些，容易发现规律，于是有：<img src="http://upload-images.jianshu.io/upload_images/3289684-b9ad0da82458c77a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
-　但很难发现这2组数间的规律，所以这种方法对于多数初中生（包括我，数列学得不好）是找不出二者的关系式的。
-　请教Jane，她直接告诉了我答案（牛人就是牛）：n(n-1)/2。我告诉她我需要推导过程，她给我整排列组合，也不是很好理解。
-　当我看到这个答案时，我恍惚在哪里见过：
-<img src="http://upload-images.jianshu.io/upload_images/3289684-60f2a7d50c40adee.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="双列" /></p>
-
-<p>所以，这种题的背后的问题是：<strong>n个点，两两组合，一共有多少种组合？</strong>没有限制条件的话应该是*n^2*（n方）个（看上面那个图），但自己和自己的组合要去掉（*n*个，不用怀疑，对角线部分），剩余*n^2-n<em>个；因为正向和反向组合算是重复，还要再去掉一半，只剩对角线上（或下）的部分，所以答案是</em>(n^2-n)/2*。
-我想对于一个初中生而言，这种题目比较难，大部分人会死记这个答案，对于某些老师来说也未必能讲清楚。我觉得<strong>列矩阵（列表）的方法应该是最容易理解的</strong>，供参考。</p>
-
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/%E9%9A%8F%E7%AC%94/%E5%AE%89%E8%A3%85arb/">
-                <h2 class="post-title">安装ARB</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (174 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  下载ARB wget http://download.arb-home.de/build/latest/arb-6.0.6.ubuntu1404-amd64.tgz tar -xzvf arb-6.0.6.ubuntu1404-amd64.tgz
- 安装一些ARB需要的库 sudo apt-get install xfig libmotif4 libpng3 xloadimage gv libglew1.5 gnuplot  正在读取软件包列表... 完成 正在分析软件包的依赖关系树 正在读取状态信息... 完成 注意，根据正则表达式 'libglew1.5' 选中了 'libglew1.5-dev' 注意，选中 'libglew-dev' 而非 'libglew1.5-dev' 没有可用的软件包 libmotif4，但是它被其它的软件包引用了。 这可能意味着这个缺失的软件包可能已被废弃， 或者只能在其他发布源中找到 然而下列软件包会取代它： libxm4:i386 libuil4:i386 libmrm4:i386 libxm4 libuil4 libmrm4 libmotif-common E: 软件包 libmotif4 没有可安装候选
- 修改环境变量 sudo vim /etc/bash.bashrc （vim需要安装，如果没有安装，用gedit也可以）
-  软件包设置 ┌──────────────────────────┤ 正在设定 arb-common ├──────────────────────────┐ │ The default configuration of PT-server slots in /etc/arb/arb_tcp.
-                  <a href="../../post/%E9%9A%8F%E7%AC%94/%E5%AE%89%E8%A3%85arb/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
               <a href="../../post/%E6%8A%95%E7%A8%BF%E6%8A%80%E5%B7%A7/%E5%BB%B6%E6%9C%9F%E7%94%B3%E8%AF%B7/">
                 <h2 class="post-title">延期申请</h2>
                 
@@ -483,6 +239,12 @@ We appreciate that you gave us a chance of major revision to improve our manuscr
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E6%8A%95%E7%A8%BF%E6%8A%80%E5%B7%A7/">投稿技巧</a>&nbsp;
+                
+                </span>
               
             </article>
           
@@ -526,39 +288,11 @@ install.packages(&quot;DT&quot;)
               </div>
 
               
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/%E8%AE%BA%E6%96%87/%E6%8A%95%E7%A8%BF/">
-                <h2 class="post-title">投稿</h2>
+                <span class="post-meta">
                 
+                  #<a href="../../tags/rcodes/">Rcodes</a>&nbsp;
                 
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 10 minutes (2013 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  New forests larch_rif@163.com larix9685
-the Forestry Industry Research Special Funds for Public Welfare Projects(201504104)
-Additional Information is Required for Submission. Please respond to the questions/statements below.
- Have you submitted this manuscript elsewhere? NO.   The authors declare that:  The submitted work has not been published before (neither in English or any other language) and that the work is not under consideration for publication elsewhere.
-All data presented in the manuscript represent original research by the authors.
-                  <a href="../../post/%E8%AE%BA%E6%96%87/%E6%8A%95%E7%A8%BF/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
+                </span>
               
             </article>
           
@@ -606,6 +340,12 @@ All data presented in the manuscript represent original research by the authors.
               </div>
 
               
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
+                
+                </span>
+              
             </article>
           
             <article class="post-preview">
@@ -636,6 +376,311 @@ All data presented in the manuscript represent original research by the authors.
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E8%82%B2%E7%A7%8D/%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2%E4%B8%8E%E6%A0%87%E5%87%86%E5%8C%96/">
+                <h2 class="post-title">数据转换与标准化</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (36 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  
+
+<blockquote>
+<p>Forest genetics</p>
+</blockquote>
+
+<h2 id="数据转换与标准化">数据转换与标准化</h2>
+
+<p>一些类型的变量在分析之前经常被转换。例如，反正弦和逻辑变换通常用于二项数据，而对数变换有时被推荐用于增长变量（Snedecor and Cochran，1967; Anderson and McLean，1974）。然而，重要的是要记住，这些转换的理论和实际价值已经在固定效应模型（稍后描述）中得到证明，其中目标是比较处理手段。其中目标是随机育种值预测的MM分析转化的价值（参见本章中的线性统计模型）不太确定。
+例如，对于二项式数据，上述推荐的转换不能针对单独的树进行，而是必须应用于单元格或绘图方式。单个树木育种值不能通过转化的方法预测;所以转换二项式数据的价值是值得怀疑的。此外，有一些信息表明，在一些情况下，未转换的0,1二项数据的MM分析可能是合适的（Foulley和Im，1989; Mantysaari等，1991; Lopes等，2000）。对于连续变量，当对数转换回原始单位时，对数转换会产生偏倚。出于这些原因，所有转换的价值和理由应在使用前仔细考虑。很多时候，在MM分析中使用未转换的数据是合适的。
+一个例外是有时称为标准化的特殊转换，在MM分析之前，应该在许多情况下使用标准化，这有三个原因（Hill，1984; Visscher等，1991; Jarvis等，1995）：（1）在线性模型中的一个单一效应内跨水平汇集在一起​​; （2）为了消除仅由于尺度效应（与排名变化相反，第6章）的基因型x环境相互作用的统计显着交互作用; （3）促进简单，无偏倚的反向转换，以预测各种环境下的计量单位的遗传获益。关于第一点，许多转换的目标是在测试位置上的块之间以及跨越不同测试位置的块差异内均化。如果这些方差汇总在一个方差（例如方差）中，则效应（例如，线性模型中的块项）内的所有级别（例如，所有位置内的所有块）的均匀方差是分析的基本假设。由于块差异汇集在所有站点中，因此跨站点进行标准化非常重要。在块和位置级别的标准化会影响估计的所有差异，并消除基因型x环境交互的scaleeffect。
+在块和位置级别上进行标准化的一种有效方法是，通过以下方式标准化每个变量的所有树木测量值：（1）计算每个块的表型标准偏差（使用块中的所有数据计算的方差的平方根）特征）; （2）将每个树的测量结果除以该块的标准偏差。有时候，这种转换是应用在每个测试位置而不是块级（Jarvis et al。，1995）。
+在E. grandis病例研究（表15.1）的茎体积中，估计的总表型方差（o2P）在六个测试点之间存在较大的差异，范围从0.18到8.66（m3）2的50倍，这些差异是与整个场地大的平均茎体积差异正相关。通过将每棵树的体积测量值除以包含该树的块计算的表型标准差来进行标准化。每棵树的标准化体积是所有分析中使用的变量，这些分析结合了测试地点的数据。茎形态的表型变异（表15.1）在测试位点（0.43-1.02）中仅为2.5倍，这种变异与茎形态的位点均值无关。因此，所有随后的表格分析都使用原始的，非标准化的数据值。
+请注意，在标准化之后，每个块（因此每个测试点）的表型方差和标准偏差都是1：Var（y / yy）= Var（y）/ o2y = o2y / o2y = 1（White和Hodge，1989 ，第46页）。这确保了块和测试站点的测量的规模是相同的，并且消除了由于规模效应导致的相互作用（例如基因型x环境相互作用）的数据。然而，由于一个区块内的所有测量值都被相同的数字相除，所以基因型和治疗手段之间的相对比较不会改变。
+当使用标准化值预测育种值时，预测值以表型标准偏差为单位。因此，为了以绝对值表示育种值，有必要<strong>将预测的育种值重新标定回原始测量单位，方法是将它们乘以适当的表型标准偏差</strong>（例如，通过跨所有测试点的汇总标准偏差，或者当在特定目标环境中的表现最感兴趣时，由单个测试场地的标准偏差）。<strong>另一种方法不是重新缩放到原来的计量单位，而是以高于或低于变量标准化均值的百分比表示育种值。这产生了与第一次重新缩放相同的结果，然后将育种值表示为高于或低于非标准化平均值的百分比</strong>。</p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E8%82%B2%E7%A7%8D/">育种</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/stat/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/">
+                <h2 class="post-title">无标题文章</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (30 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p>线性模型是统计实践的核心。它们是任何应用统计学家所期望的核心知识的一部分。线性模型是广泛的统计方法的基础;这本书是从线性模型成长的技术的调查。我们的起点是回归模型，响应y和预测变量x1，&hellip; xp。该模型采用以下形式：y =β0+β1x1+ &hellip; +βpxp+ε
+其中ε是正态分布的。本书介绍了这个框架的三个扩展。第一个概括了y部分;第二，ε部分;第三，线性模型的x部分。
+<strong>广义线性模型GLM</strong>：<strong>标准线性模型不能处理非正态响应y</strong>，如计数或比例。这促进了可以表示分类，二进制和其他响应类型的广义线性模型的发展。
+<strong>混合效应模型 LMM</strong>：某些数据具有分组，嵌套或层次结构。<strong>重复的措施，纵向和多层数据包括对同一个人或群体进行的几个观察。这导致误差ε中的相关结构</strong>。混合效应模型允许这种数据的建模。
+<strong>非参数回归模型</strong>：在线性模型中，预测变量x以线性方式组合以模拟对响应的影响。有时，这种<strong>线性度不足以捕获数据的结构，需要更多的灵活性。诸如加性模型，树和神经网络的方法允许以非参数方式组合预测结果的响应的更灵活的回归建模</strong>。</p>
+
+<p>线性模型是统计实践的核心。它们是任何应用统计学家所期望的核心知识的一部分。线性模型是广泛的统计方法的基础;这本书是从线性模型成长的技术的调查。我们的起点是回归模型，响应y和预测变量x1，&hellip; xp。该模型采用以下形式：y =β0+β1x1+ &hellip; +βpxp+ε
+其中ε是正态分布的。本书介绍了这个框架的三个扩展。第一个概括了y部分;第二，ε部分;第三，线性模型的x部分。
+<strong>广义线性模型GLM</strong>：<strong>标准线性模型不能处理非正态响应y</strong>，如计数或比例。这促进了可以表示分类，二进制和其他响应类型的广义线性模型的发展。
+<strong>混合效应模型 LMM</strong>：某些数据具有分组，嵌套或层次结构。<strong>重复的措施，纵向和多层数据包括对同一个人或群体进行的几个观察。这导致误差ε中的相关结构</strong>。混合效应模型允许这种数据的建模。
+<strong>非参数回归模型</strong>：在线性模型中，预测变量x以线性方式组合以模拟对响应的影响。有时，这种<strong>线性度不足以捕获数据的结构，需要更多的灵活性。诸如加性模型，树和神经网络的方法允许以非参数方式组合预测结果的响应的更灵活的回归建模</strong>。</p>
+
+<p>线性模型是统计实践的核心。它们是任何应用统计学家所期望的核心知识的一部分。线性模型是广泛的统计方法的基础;这本书是从线性模型成长的技术的调查。我们的起点是回归模型，响应y和预测变量x1，&hellip; xp。该模型采用以下形式：y =β0+β1x1+ &hellip; +βpxp+ε
+其中ε是正态分布的。本书介绍了这个框架的三个扩展。第一个概括了y部分;第二，ε部分;第三，线性模型的x部分。
+<strong>广义线性模型GLM</strong>：<strong>标准线性模型不能处理非正态响应y</strong>，如计数或比例。这促进了可以表示分类，二进制和其他响应类型的广义线性模型的发展。
+<strong>混合效应模型 LMM</strong>：某些数据具有分组，嵌套或层次结构。<strong>重复的措施，纵向和多层数据包括对同一个人或群体进行的几个观察。这导致误差ε中的相关结构</strong>。混合效应模型允许这种数据的建模。
+<strong>非参数回归模型</strong>：在线性模型中，预测变量x以线性方式组合以模拟对响应的影响。有时，这种<strong>线性度不足以捕获数据的结构，需要更多的灵活性。诸如加性模型，树和神经网络的方法允许以非参数方式组合预测结果的响应的更灵活的回归建模</strong>。</p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/stat/">stat</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/">
+                <h2 class="post-title">无标题文章</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 0 minutes (0 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/">待读读文献</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%A9%BA%E9%97%B4/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/">
+                <h2 class="post-title">无标题文章</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (11 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p>摘要
+本文以1988年建造的由94个自由授粉家系和来自12×12全双列交配的55个全同胞家系组成的日本落叶松子代测定林为对象，利用全同胞材料研究开展经济性状（生长、材性）的配合力分析、遗传参数估计、杂种优势和自交衰退分析以及利用基于分子标记的亲本遗传距离预测杂种优势；利用全部子代材料和单株混合线性模型了解测定林中的环境变异趋势，并采用空间模型1阶自回归（AR）和3次B样条（Spline）解析这些变异从而提高育种效率；加入部分利用分子标记重建是系谱信息，研究其对遗传参数估计的影响和对育种的意义；利用19a生生长数据研究测定林内的竞争效应强度，以及竞争效应在育种值估计中起到的作用。旨在为日本落叶松遗传改良策略的制定和二代优树的选择奠定基础。主要研究结果如下：
+    一般配合力（GCA）和特殊配合力（SCA）效应对各生长性状有显著作用，SCA在19a生时起主导地位，28a生时其重要性有所下降，最佳育种策略是优良亲本种子园结合杂优组合中优良个体无性系。小区和残差方差占比很大，狭义和广义遗传力均较低（0.01-0.08, 0.04-0.14）。正反交效应只对28a生树高作用显著，交配设计中不含反交导致GCA、SCA方差和遗传力估计偏高，但对育种值排名影响不大，半双列交配设计即能满足遗传测定的需要。
+    部分组合表现出较高的杂种优势是后续理想的育种材料。75%亲本无显著自交衰退，且自交子代存活率与其它类型无显著差异，短期内无需顾虑近交衰退。基于17个EST-SSR的亲本遗传距离与SCA和杂种优势无显著的相关关系，该方法没有成功预测杂种优势。
+    生长性状存在明显的空间异质性，在只含试验设计的基础模型和空间模型中AR模型表现最好。对于多数性状从AR模型估计的加性遗传方差相对于基础模型略有下降，残差方差也均有减少，小区方差则减少了80%之多。AR模型给出的狭义遗传力最高，H19、H28、DBH28和V28分别增加了18.9%、26.9%、41.7%和17.6%。空间模型中的亲本和子代育种值精度略高于（28a生时）或近等于基础模型；AR模型中的生长性状亲本育种值精度变幅为0.52-0.59，略高于子代的0.50-0.54；材性性状的亲本和子代育种值精度分别约0.73和0.85，均高于生长性状。材性则受环境变异影响较小，空间效应多不显著，采用常规分析即可。
+    系谱重建对拟合模型的AIC（Akaike information criterion）值没有影响，对遗传参数估计和育种值精度的影响因性状而异。补充更多系谱信息后，材性性状的遗传力和遗传增益有显著提升；生长性状H28遗传力增加，而DBH19和V19的遗传力下降但育种值精度升高，对遗传增益无明显作用。建议将对自由授粉材料的系谱重建纳入常规遗传测定分析中。
+    竞争分析发现，19a生时试验林内个体间高生长呈协作关系，但胸径和材积则表现出显著的竞争效应。对于3个性状，竞争模型得到的直接加性遗传方差（σ_Ad^2）均高于基础模型，分别高出73%、205%和93%；胸径和材积的残差方差（σ_e^2）相对于基础模型的分别下降了8%和6%，但相反树高则增加了11%。在竞争模型中加入AR空间效应后，胸径和材积的σ_Ad^2和σ_e^2的差异进一步加大，σ_Ad^2比竞争模型分别增加了6%和27%，σ_e^2分别下降了5%和9%；直接竞争遗传方差（σ_Ac^2）分别增加了23%和4%。因此不考虑竞争效应的模型给出的方差估计有较大偏差。尽管来自基础模型和含有竞争效应的模型胸径的育种值之间显著正相关，但相关系数不高（0.50和0.38）；按照5%的强度选优时，基础模型与竞争模型和竞争空间联合中的共有个体的比例分别只有39.1%和24.7%，表明竞争与空间效应对选优有极大影响，从而影响遗传改良进程。
+关键词：落叶松；遗传改良；双列交配；杂种优势；系谱重建；空间分析；竞争分析</p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E7%A9%BA%E9%97%B4/">空间</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/">
+                <h2 class="post-title">无标题文章</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (48 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  
+
+<h2 id="抽象">抽象</h2>
+
+<p><strong><em>关键信息</em></strong>通过使用<strong>因子分析模型</strong>，建模加性基因型环境相互作用最好。通过多种环境和异种植物种类，使用减少的动物模型便于计算。<strong><em>摘要</em></strong><strong>有效的植物育种策略的发展需要了解基因型环境相互作用的规模和结构</strong>。该信息可以从多环境试验的表型数据的适当的线性混合模型分析中获得。已知使用因子分析模型进行基因型环境影响，为获得所有试验对之间遗传相关性的估计提供了可靠，简约和整体的方法。<strong>当对于异交物种进行育种时，重点是估计通过在分析中包括谱系信息而实现的附加遗传相关性和效应</strong>。在环境数量中等到大的情况下，在这种设置中使用因子分析模型可能是计算上禁止的。在本文中，我们<strong>提出了一种方法，使用近似的减少的动物模型来克服与因子分析模型相关的加性基因型环境影响相关的计算问题</strong>。该方法使用位于新西兰和澳大利亚东南部环境中的77个试验的马尾松辐射繁殖数据集，以及315,581棵树的谱系信息。使用这种方法，我们证明了在<strong>dbh的性状存在显着的添加基因型环境相互作用</strong>。<strong>这一发现对育种和部署策略有潜在的重大影响</strong>。虽然我们的方法已经开发用于林木育种计划，但它直接适用于其他异交植物，包括甘蔗，玉米和许多园艺作物。</p>
+
+<h2 id="介绍">介绍</h2>
+
+<p>植物改良计划遗传获益的关键决定因素之一是对个体遗传价值的准确预测。遗传价值在植物育种环境中的定义需要仔细考虑，因为它不仅取决于感兴趣的特征，而且还取决于目标环境。在林木育种计划中，精英种质的部署将发生在一个明确定义但异质的目标环境中。例如，Radiata Pine Breeding Company（RPBC）计划旨在培育和提供新西兰，新南威尔斯州和塔斯马尼亚州中南部地区部署的种质资源。知情的育种策略和精选种质的选择需要彻底检查基因型（GXE）相互作用的程度和性质。</p>
+
+<p>用于评估GXE的表型小组是所谓的多环境试验（MET）。 METs由多年生长的（遗传）试验和放置在目标环境中的位置组成。用于分析植物改良的全效（即一阶段）混合模式方法MET数据集在澳大利亚得到广泛应用（Cullis等，2010）。这些方法通常基于Smith等人的方法。 （2001），其适应试验设计的所有方面，并允许残差方差结构的复杂建模。史密斯等人的关键方面（2001）方法是使用因子分析（FA）模型来建模GXE效应的方差结构。史密斯等人（2001）最初只考虑模拟总体基因型环境影响，其中谱系信息不包括在分析中。 Burgueno等人（2011）展示了FA模型在土豆，玉米和小麦中使用六种METs建模GXE的效用。这些MET数据集中的每一个具有少量的基因型和相对较少的环境，但是当存在复杂的GXE时，它们能够证明FA模型与其他模型的优势。 Oakey等人（2006年，2007年）扩大了史密斯等人的方法。 （2001）将单一和多环境试验环境中的加法和非加性效应建模。 Cullis等人（2010年）将这些扩展应用于对一系列油菜育种试验的产量和油料数据的分析。
+在具有高度不平衡性的大型MET数据集的分析中使用FA模型的许多优点之一是能够在不使用过多数量的方差参数的情况下充分捕获经常复杂的方差结构（Kelly et al。 2007）。随着环境数量t的变大，非结构化方差模型（即t（t + 1）/ 2）的方差参数数量增加到不可接受的高水平，因此考虑拟合具有中等到大t和差连接性的MET数据集的非结构化方差模型。 Baltunis等人（2010），Raymond（2011），Apiolaza（2012）最近考虑了分析中度至低连通性和中等t = 8,26和18的树种MET数据集。使用t（t-1）/ 2对双变量非结构化方差模型建模添加基因型环境效应的方差结构。这种方法本质上是低效的，在很大程度上是不知情的，并且经常导致不可忽视的环境（即大于1或小于-1）之间的估计遗传相关性。
+使用FA模型的另一个优点是，如果实现了适当的估计算法，则可以适应GXE效应小于满秩方差结构的（并非不常见的）情况。在包含血统信息的情况下，如果没有谱系信息或剩余的GXE效应，在GXE效应的FA模型的情况下，Thompson等人的方法（2003）。 Kelly等人扩展了这种方法（2009）对于加法GXE效应的FA模型的情况。
+在分析树种MET数据集时，FA模型的采用有限。 Costa e Silva et al。 （2006）使用FA模型分析了在澳大利亚四个州建立的涉及15个桉树球根子代试验的MET数据集在胸部高度测量的茎直径（DBH）。他们分别使用1号和2号的FA模型，分别在环境影响的次种族和种族之内。这些模型提供了很好的适应方差结构，并证明了两组效应的实质GXE的存在，估计的遗传相关性分别为-0.23至1.00和0.25至1.00。
+Hardner等人（2010）也使用FA模型分析了一个MET数据集中的DBH分析，该数据包括澳大利亚21个盐水环境中播种的841个桉树杂种克隆。他们分别通过环境影响将家庭FA模型和家庭内基因型拟合。由于家庭数量少（8），尝试适应高阶FA方差模型失败。然而，家庭影响基因型的FA模型显示出显着的GXE，估计的遗传相关性在-0.53到0.99之间。
+Zapata-Valenzuela（2012）在具有16个环境和463个克隆的火炬松上的MET数据集的分析中，使用FA1模型进行环境效应的加性遗传变异结构。他们研究了另外两种方差模型，即复合对称和异方差共同相关模型。虽然没有正式的模型选择方法，FA模型与其他两个模型相比提供了一个合适的改进。
+FA模型的主要优点之一是其与多元回归和主成分分析的联系。 FA模型可以被形成为对（未知）环境协变量（即因子负荷）的遗传效应的随机遗传回归，每个基因型具有不同的斜率（因子得分）。这种回归被称为潜在回归模型，关于斜率分布的简单假设，剩余项导致环境遗传协方差矩阵的FA方差结构。环境协变量可以旋转为正交，导致所谓的主成分溶液。这样就可以使用图形化工具（例如，Kempton 1984），潜在回归图（Thompson et al。2003）以及环境遗传相关矩阵与列和列之间估计的热图进行有意义的检查。使用聚类或混合模型方法（Cullis等人，2010）。 Hardner等人（2010）用环境影响来研究家族内基因型的GXE，证明环境之间有明显的等级变化。
+本文的目的是提出一种方法，用于使用具有中等数量至大量试验的MET数据集来研究异交植物物种中的加性基因型 - 环境相互作用。我们用RPBC育种计划的例子说明了该方法，其中包括t = 77个关于315,581棵树的谱系信息的试验。 Cullis等人的方法（2010）对于这种尺寸的数据集将是计算上禁止的，因为它将涉及21e6级的混合模型方程组（MME）的集合。我们提出了一种基于Quass和Pollack的减少动物模型的方法（1980）。我们所谓的近似减少的动物模型导致了MME的维度的显着降低，并且用于估计方差参数，包括与FA模型相关联的方差参数，以及随机效应的预测，包括两者的育种值向后和向前选择。</p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/">遗传参数</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/">
+                <h2 class="post-title">无标题文章</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (35 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p>python scripts/run_BUSCO.py -i /home/larix/下载/myproject/Moelleriella_libera -o Moelleriella_libera_genome -l ascomycota_odb9 -m geno</p>
+
+<p>Grosmannia_clavigera_kw1407
+Ophiostoma_piceae_UAMH_11346
+Sporothrix_schenckii_1099-18
+Drechslerella_stenobrocha_248
+Arthrobotrys_oligospora_ATCC_24927</p>
+
+<p>Dactylellina<em>haptotyla</em>(Monacrosporium_haptotyla)
+Hirsutella_minnesotensis_3608
+Cordyceps_militaris_CM01
+Beauveria_bassiana_ARSEF_2860
+Metarhizium_anisopliae_ARSEF_549</p>
+
+<p>Fusarium_graminearum_PH-1
+Magnaporthe_oryzae_70-15
+Neurospora_crassa_OR74A
+Aspergillus_nidulans_FGSC_A4
+Saccharomyces_cerevisiae_S288c</p>
+
+<p>Tuber_melanosporum_Mel28未找到 用Tuber_melanosporum代替</p>
+
+<p>Sporothrix_insectorum
+Metarhizium_robertsii
+Moelleriella_libera
+Sporothrix_brasiliensis</p>
+
+<p>Verticillium_alfalfae
+Sclerotinia_sclerotiorum
+Botrytis_cinerea
+Zymoseptoria_tritici</p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
+                
+                </span>
               
             </article>
           

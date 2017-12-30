@@ -212,158 +212,6 @@
           
           
             <article class="post-preview">
-              <a href="../../post/stat/%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%BB%93%E6%9E%84/">
-                <h2 class="post-title">协方差矩阵，协方差结构</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (14 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  <blockquote>
-<p><em>by </em><a href="http://www.theanalysisfactor.com/covariance-matrices/">KAREN GRACE-MARTIN</a></p>
-
-<p> 学习高水平统计学时，最难理解的概念是协方差矩阵和协方差结构。理解它们是学习一些统计分析尤其是混合模型和结构方程模型的基础。一旦了解它们，你会发现其实没那么可怕。</p>
-</blockquote>
-
-<ul>
-<li><p><strong>什么是协方差矩阵?</strong>
-让我们从矩阵开始。矩阵是线性代数里的一个概念，强烈建议学习这门课程。你可以用矩阵处理很多非常复杂的、数学上的事情。但作为一个研究人员和数据分析人员，不需要用矩阵解决全部的复杂处理。你只需要知道矩阵是什么，理解概念，了解一些简单的矩阵处理，比如一个矩阵乘以一个常数。如果这还不行，你得知道矩阵就是一个表格。
-和许多统计中利用的矩阵类似，协方差矩阵是对称的。举一个最简单的例子，相关矩阵。
-如果这个写成矩阵的形式，你只能看到数字，而没有行列名。协方差矩阵与之相像，但也有不同。
-协方差只是<strong>未标准化的相关</strong>——为了计算相关，我们用两个变量的标准差除协方差，消除测量单位。所以协方差只是用原始变量的单位测定的相关。协方差又不像相关，不被限制于-1~1之间，协方差=0和相关=0的意思是一样的——没有线性关系。由于协方差是带单位的，值越大，相应的变量分布就越广。对角元素是每个变量的方差。</p></li>
-
-<li><p><strong>什么是协方差结构?</strong>
-协方差结构是协方差矩阵的模式。有以下几类：
-复合对称（Compound Symmetry），方差组分（Variance Components），非结构化（Unstructured）。它们只是模式的说明。比如<strong>复合对称结果仅仅是指所有方差相等，所有协方差也相等</strong>，对应于单变量方法。但是对于不同尺度的变量是无意义的。<strong>方差组分是指每个方差都不相同，并且全部协方差=0</strong>。如果变量完全独立，并且彼此测量尺度不同，才是有意义的模式。<strong>非结构化是指根本没有模式，每个方差和协方差完全不同，彼此间没有关系</strong>，对应于多变量方法。协方差结构有很多种，只有在特定的统计条件下才有意义。</p></li>
-</ul>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/3289684-40fd273d18e28eac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="结构1.png" /></p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/3289684-b2434f94f65396c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Zamudio2008.png" /></p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/3289684-edf9f24d0f1ce09f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Wolfinger 1996 1.png" /></p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/3289684-b733edb11abfb703.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Wolfinger 1996 2.png" /></p>
-
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/%E8%AE%BA%E6%96%87/%E5%8F%8C%E5%88%97%E4%BA%A4%E9%85%8D%E8%AE%BE%E8%AE%A1/">
-                <h2 class="post-title">双列交配设计</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 2 minutes (340 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  双列交配设计 尽管分子标记辅助选择以及“breeding without breeding”(El-Kassaby and Lstibůrek 2009)理论已被提出并应用于林木遗传改良，但常规的“测定-选择-测定”的轮回育种策略在过去乃至将来很长时间内仍然占据重要的地位。子代测定在常规林木遗传改良中起到至关重要的作用。获取子代材料的交配方法包括自由授粉和控制授粉。交配方法根据物种的特性还可以细分为许多设计类型(White et al. 2007)。其中，双列交配设计被广泛用于许多植物的遗传改良，其优点在于能同时提供用于选择的具有谱系的育种群体及亲本的子代测定，从而提供丰富而全面的遗传信息，比如能同时进行配合力分析（一般配合力和特殊配合力）、遗传参数估算以及杂种优势和自交衰退（包含自交的话）分析。这些信息是育种策略制定的必要条件。
-双列交配设计数据分析方法进展 Hayman (Hayman 1954a; b)和Jinks (Jinks 1954)开创了双列交配数据分析的先河。随后Griffing(Griffing 1956)提出了双列交配设计的4种方法（图 1）以及对应的统计模型，这些方法和统计模型在植物育种和遗传学研究中得到广泛应用(Evans et al. 1966; Borges 1987; Johnson and King 1998; Wu and Matheson 2001; Kumar and Wu 2003; Jansson and Li 2004; Kang et al. 2005; Huang et al. 2015; Zhang et al. 2016)。对于反交，Griffing(Griffing 1956)还定义了一个特殊的正反交效应。Cockerham(Cockerham 1963)建议将正反交均方分为母本和非母本均方。Cockerham和Weir(Cockerham and Weir 1977)（1977，模型c）及Keuls和Garretsen(Keuls and Garretsen 1977; Garretsen and Keuls 1978)又进一步通过定义反交GCA（RGCA）效应和反交SCA（RSCA）效应扩展了这种方法。在一些研究中已经提出了母本和非母本效应及其均方的估计((Evans et al. 1966; Stuthman et al.
-                  <a href="../../post/%E8%AE%BA%E6%96%87/%E5%8F%8C%E5%88%97%E4%BA%A4%E9%85%8D%E8%AE%BE%E8%AE%A1/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/%E9%9A%8F%E7%AC%94/%E5%8F%8D%E7%BF%BB/">
-                <h2 class="post-title">反翻</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 13 minutes (2670 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  ##0511 - 传统的树木改良方案是需要广泛资源的长期努力。 - traditional forest tree improvement programs are long-term endeavors该词是复数 need extensive resources - 表达需要的词：need, require - 他们需要建立交配设计，在多个地点安装后代测试，以评估父母及其在大地理区域的后代，长时间监测这些测试，并**最终*分析测量结果以评估经济特征。 - they require establishing mating designs, installing progeny tests on multiple sites, and evaluating parents and their offspring over large geographic areas, monitoring these tests over extended periods of time , and finally analyzing measured results to assess economic characters. - 在多个地点用on而非at - offspring是单复同行 - over用的很多
-0115  了解适应性和商业性状的复杂结构 以评估进化力在塑造遗传变异中的作用 并改善长期育种策略 是非常重要的。  it&rsquo;s very important to understand complex structure of adaptive and chametial in order to evaluate the role of evolutionary power in shaping genetic variation and improve long term breeding strategies.
-                  <a href="../../post/%E9%9A%8F%E7%AC%94/%E5%8F%8D%E7%BF%BB/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/rcodes/%E5%8F%98%E9%87%8F-%E9%87%8D%E5%A4%8D/">
-                <h2 class="post-title">变量-重复</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (3 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  <blockquote>
-<p>有时，变量中含有重复的记录，阻碍分析，所以要查找出来。但目前只能对单个变量查找，对多个变量的查找方法尚未知晓。</p>
-</blockquote>
-
-<pre><code>将df中var变量中的重复record找出并放在df.dupli中
-df.dupli&lt;-df[duplicated(df$var),]
-</code></pre>
-
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
               <a href="../../post/rcodes/%E5%90%AB%E6%9C%89asreml%E4%BB%A3%E7%A0%81%E7%9A%84%E6%96%87%E7%AB%A0%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%A0%81/">
                 <h2 class="post-title">含有asreml代码的文章中的代码</h2>
                 
@@ -392,6 +240,12 @@ df.dupli&lt;-df[duplicated(df$var),]
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/rcodes/">Rcodes</a>&nbsp;
+                
+                </span>
               
             </article>
           
@@ -437,6 +291,12 @@ df.dupli&lt;-df[duplicated(df$var),]
               </div>
 
               
+                <span class="post-meta">
+                
+                  #<a href="../../tags/diallel/">diallel</a>&nbsp;
+                
+                </span>
+              
             </article>
           
             <article class="post-preview">
@@ -467,6 +327,12 @@ df.dupli&lt;-df[duplicated(df$var),]
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/diallel/">diallel</a>&nbsp;
+                
+                </span>
               
             </article>
           
@@ -504,6 +370,12 @@ python scripts/run_BUSCO.py -i /home/larix/下载/myproject/zglk_fungi.
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
+                
+                </span>
               
             </article>
           
@@ -543,6 +415,12 @@ python scripts/run_BUSCO.py -i /home/larix/下载/myproject/zglk_fungi.
               </div>
 
               
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
+                
+                </span>
+              
             </article>
           
             <article class="post-preview">
@@ -577,6 +455,236 @@ python scripts/run_BUSCO.py -i /home/larix/下载/myproject/zglk_fungi.
                 
               </div>
 
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/bayesian/%E5%A4%9A%E5%8F%98%E9%87%8F%E9%98%88%E5%80%BC-%E5%88%86%E5%AD%90%E9%81%97%E4%BC%A0%E6%95%B0%E6%8D%AE-gibbs/">
+                <h2 class="post-title">多变量阈值-分子遗传数据-Gibbs</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (71 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Stock KF, Distl O, Hoeschele I. Bayesian estimation of genetic parameters for multivariate threshold and continuous phenotypes and molecular genetic data in simulated horse populations using Gibbs sampling. BMC Genet. [Internet]. 2007;8:19. Available from: http://dx.doi.org/10.1186/1471-2156-8-19   使用Gibbs采样的模拟马群中多变量阈值和连续表型和分子遗传数据的遗传参数的贝叶斯估计
+抽象
+背景 成功实施包括表型和基因型信息的多变量动物阈值模型的要求尚不清楚。这里使用模拟马数据来调查遗传参数的遗传参数的多变量估计器的性质在分类，连续和分子遗传数据在重要的放射性健康性状的背景下使用混合线性阈值动物模型通过Gibbs采样。模拟谱系包括7代和40000动物每代。模拟了四个二元性状的一个连续性状和负债liabilities的加性遗传值，残差​​和固定效应，类似于Warmblood马中遇到的情况。对一种负债模拟了数量性状基因座（QTL）效应和遗传标记信息。研究了遗传标记与QTL之间的重组率和遗传标记多态性信息含量的不同情况。对于每种情况，从模拟群体中抽取10个重复，并且在每个重复中产生具有性状记录和遗传标志信息可用性的动物的数量和分布不同的6个不同数据集。 （Co）方差分量使用​​贝叶斯混合线性阈值动物模型通过Gibbs采样进行估计。残差方差固定为零，适当的先验用于遗传协方差矩阵。
+结果 有效样本大小（ESS）和遗传参数的偏差在数据集之间显着不同。遗传力估计的偏差对于连续性状为-6％至+ 6％，对于中度遗传性的二元性状为-6％至+ 10％，对于低遗传力的二元性状为-21％至+ 25％。加性遗传相关性大多低估了低遗传力的连续性状和二元性状之间，在连续性状和中度遗传性的二元性状之间低估或高估，并且在两个二元性状之间高估。使用性状信息对后续两代动物增加了ESS和减少参数估计的偏差，而不仅仅是增加来自一代的信息性动物的数量。将基因型信息考虑为模型中的固定效应导致高估QTL性状的多基因遗传性，但增加QTL性状的加性遗传相关性的准确性**。
+结论 联合使用表型和基因型信息对父母和后代将有助于确定感兴趣的性状之间的激动和拮抗遗传相关性，促进有效的多特征选择方案的设计。
+背景
+使用线性模型估计分类性状的遗传参数违反了混合线性模型方法的基本假设。已经开发了算法以将线性模型估计转换为潜在的责任尺度，以补偿由线性模型中的非线性性状的分析所导致的估计偏差，但是变换的遗传参数估计可能仍然是显着偏差的[例如， 2，3，4]]。阈值模型用于估计遗传参数的使用直接说明了分类性状的非线性性质，并且阈值模型估计应当比线性模型估计或变换的线性模型估计更可靠[例如[5,6,7]]。
+马尔科夫链蒙特卡罗（MCMC）方法如吉布斯取样（GS）使得实现多变量阈值模型或多变量混合线性阈值模型成为可能。动物模型充分利用可用的谱系信息，但遗传方差和协方差估计的准确性以及GS链的收敛可能在低性状流行率和每个个体的少量观察的情况下是一个问题[例如[5,8,9,10] ]。因此，在实际情况下，多变量动物阈值模型的实现并不总是直接的。连续性状的包含，即使用多元线性阈值模型，预期增加遗传参数估计的可靠性[例如，[2,11,12,13]]。
+在动物育种中，健康数据通常使用离散类别记录，而大多数性能特征是连续的。在马中，二进制编码已经用于对马on的放射学检查的研究，并且在年轻马的肢体中已经确定了放射学可见的改变的高流行性，主要在10-25％的范围内。 [14，15，16，17]]。这促进了寻求预防而不是治疗措施。由于马运动系统的强度和健壮性在马业的所有部门都非常重要，因此已经提出在Warmblood骑乘马的当前育种计划中包括放射健康性状[18,19]。这些分类性状的可靠估计的遗传参数提供了这样做的基础。对于分析的射线照相健康数据，根据Dempster和Lerner [20]和Vinson等人的转换因子的适用性[21]通过残差最大似然（REML）获得的线性动物模型估计已经通过模拟证明[22]。然而，由线性模型中的二元性状的分析引起的并且必须通过变换进行补偿的过估计或低估速率取决于数据结构。因此，需要重新评估变换过程，以分析关于可用信息的分布和种类的不同结构的数据。用于（共）方差分量估计的贝叶斯多变量动物阈值或混合线性阈值模型的实现可以提供有价值的替代方案。
+已经为不同物种的生产和健康性状鉴定了定量性状基因座（QTL），即包括影响个体关于特定性状的表型的基因的基因组区域[23]。增加对遗传决定放射性健康特性的知识[24,25]意味着在马中改进遗传评价和选择计划的进一步机会。有效利用标记辅助选择的条件已经被描述[26]，但是结合使用表型和基因型数据对分类性状的遗传参数估计的准确性的影响还没有被研究。成功实施包括表型和基因型信息的多变量动物阈值模型的要求是未知的。
+本研究的目的是使用线性阈值动物模型和Gibbs采样来表征分类，连续和分子遗传数据的遗传参数的多变量估计的性质。在Warmblood马的重要放射健康性状的上下文中研究了数据结构和分子遗传数据的质量对遗传参数估计的准确性的影响。
+统计分析 使用用于动物模型的多特征Gibbs采样器（MTGSAM）的阈值版本的Gibbs采样来评估遗传参数[35]，该软件支持连续和分类性状的任何组合的多变量遗传分析。随机和残差效应被假定为正态分布，平均先验被用于固定效应。用户可以为加性遗传和残差（共）方差矩阵指定起始值和先验。对于我们的分析，为所有加性遗传变异选择起始值1，对所有加性遗传协方差选择起始值0，并且所有性状之间的残余协方差固定为零。在单变量和多变量二进制阈值模型中，通过将阈值和残差方差分别固定为零和一的值来确保模型的可识别性[36]。用于限制固定在一个的对角线元素的残余协方差矩阵的有效抽样的方法仍在开发中。然而，本研究的残差协方差的固定由以前的实际数据分析的结果证明[14]，并拟合我们的模拟数据。因为残差协方差在实际数据中可以忽略，因此在数据模拟中设置为零，进一步信息的可能增益似乎与残差协方差的采样的额外成本不成比例。因此，在本研究中，残余协方差被固定为零。对于遗传协方差矩阵，使用具有最小形状参数（即υIW= 7）的逆Wishart分布的适当的先验，以确保后验适当性。在所有分析中考虑了性别和当代组的固定效应。在仅对数据集C1和C2的分析中考虑标记基因型的固定效应，区分所有遗传标记的不利等位基因纯合阴性的个体，至少一个遗传标记的不利等位基因杂合的个体和纯合的个体对于四种遗传标记中的至少一种的不利等位基因。
+在所有分析中，吉布斯链的总长度设定为205000，并且保存5000轮的老化后的所有样品。通过样品图的目视检查来检查Gibbs链的收缩以及对要丢弃的加性轮次的老化的需要。通过在后Gibbs分析程序POSTGIBBSF90 [37]中实施的时间序列方法，以10的稀释率计算所有（共）方差估计值的有效样本大小（ESS）和蒙特卡罗误差（MCE）。未稀释的链用于计算加性遗传（共）方差，遗传性和加性遗传相关性估计的后验均值。选择后验手段而不是模式作为点估计，因为在初步分析中，手段在大多数情况下比模式更接近于真实的，即模拟的值，这与先前的研究一致[8,38]。遗传性和加性遗传相关性估计的偏差计算为估计值（parest）与真实（即模拟）值（partrue）的平均相对偏差。
+bias =（par est-par true）/ par true
+                  <a href="../../post/bayesian/%E5%A4%9A%E5%8F%98%E9%87%8F%E9%98%88%E5%80%BC-%E5%88%86%E5%AD%90%E9%81%97%E4%BC%A0%E6%95%B0%E6%8D%AE-gibbs/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/bayesian/">Bayesian</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%95%88%E5%BA%94%E5%80%BC%E4%BE%8B%E5%A6%82%E8%82%B2%E7%A7%8D%E5%80%BC%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7accuracy/">
+                <h2 class="post-title">如何计算效应值（例如育种值）的准确性（accuracy）？</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (61 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p><strong>准确性</strong>指的是_预测效应值与真值之间的相关系数_。有时还会遇见一个概念——<strong>可靠性</strong>（reliability）。可靠性是准确性的平方，也就是说这二者度量的是一个事情。<strong>reliability其实就是遗传力，这句很重要！！！</strong>。遗传力主要用来计算选择响应（response to selection）。advisor说我的文章<strong>短</strong>句子太多，不连贯，确实是这样LOL。
+准确性的计算公式为：
+<img src="http://upload-images.jianshu.io/upload_images/3289684-df01d4346d0a920c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="公式1-accuracy.png" />
+*PEV*是prediction error variances的缩写，意思是预测误差方差，预测误差是预测值与真值间的差，即：
+<img src="http://upload-images.jianshu.io/upload_images/3289684-71c421143dcb27a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="公式2-pev.png" />
+<code>简书不支持公式真是淡疼！</code>
+*\sigma a^2*是加性方差。</p>
+
+<p>预测差值的标准误（*SED*）是可以从<code>Asreml</code>中直接得到的，与*PEV*的关系是：
+<img src="http://upload-images.jianshu.io/upload_images/3289684-203b10837faa6399.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="公式3-sed.png" />
+<code>我不知道上面这个公式怎么推导的。</code>
+所以有
+<img src="http://upload-images.jianshu.io/upload_images/3289684-1d6b8186eae7255a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="公式4-pev2.png" /></p>
+
+<hr />
+
+<p>在很长时间里我不知道（或者说模糊地知道）accuracy是怎么实现的。我知道公式，但在软件里分别和公式组分对应的部分是什么却不是很清楚，当然写这篇文字的时候是确定的。具体实现的途径有2：
+- 一是利用Asreml中的<code>prediction</code>直接得到*SED*后，再根据公式4得出PEV</p>
+
+<pre><code>fm_pred &lt;- predict(fm_asr, classify = &quot;Fam&quot;) #fm_asr是asreml()输出的对象， Fam是随机效应变量
+SED &lt;- fm_pred$predictions$avsed
+</code></pre>
+
+<ul>
+<li>二是逐步得到*PEV*，每个预测值都有一个*PEV*，是预测值*SE*平方的均值，所以从预测函数得到的对象中提取出*SE*平方后再平均即可
+<code>
+fm_pred &lt;- predict(fm_asr, classify = &quot;Fam&quot;, present = &quot;Plot&quot;) #注意！这里预测的时候是要矫正掉其他的随机效应（如Plot）
+SE &lt;- fm_pred$predictions$pvals$standard.error
+PEV &lt;-  SE^2 %&gt;% mean
+</code>
+这里的*PEV*是一个向量，对应到每个水平上。
+所以，总体上，*PEV*、*SED*和*SE*的关系是
+<img src="http://upload-images.jianshu.io/upload_images/3289684-085e91a277591ca0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="公式5-pev4.png" /></li>
+</ul>
+
+<p>另外，在林元震老师的著作<strong>R与ASReml-R统计学</strong>中（P474）也涉及到accuracy的代码</p>
+
+<pre><code>SE &lt;- fm_asr$vcoeff$random * fm_asr$sigma2 #效应值se乘以sigma
+</code></pre>
+
+<p>结果是一样的，但不知道是否合理。</p>
+
+<hr />
+
+<p>如果没有Asreml可能需要更底层的计算（比如手动），这时*PEV*的计算更直观些：<img src="http://upload-images.jianshu.io/upload_images/3289684-6aed173dad4f5946.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="公式6-pev3.png" />
+于是有<img src="http://upload-images.jianshu.io/upload_images/3289684-c9c67b6d1bffe6a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="公式7-reliability.png" />
+*C^{22}*是方程组关联矩阵的逆矩阵的右下角块，*d_i*是块中的对角线元素。具体可查看<a href="https://pan.baidu.com/s/1hrDRLeG">Pro. Isik编写的教材P84</a>和<a href="https://pan.baidu.com/s/1nvmT47n">Mrode, 2014的书P44</a>。</p>
+
+<p>从*PEV*就可以得到我们需要的准确性和可靠性值了。</p>
+
+<hr />
+
+<p>这个问题在群中还被讨论过
+<img src="http://upload-images.jianshu.io/upload_images/3289684-9908dc53ac300bbc.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="accuracy_chat.jpg" /></p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/%E5%A6%82%E6%9E%9C%E5%B9%B3%E9%9D%A2%E4%B8%8A%E6%9C%89nn%E4%B8%BA%E5%A4%A7%E4%BA%8E%E6%88%96%E7%AD%89%E4%BA%8E3%E7%9A%84%E6%95%B4%E6%95%B0%E4%B8%AA%E7%82%B9%E4%B8%94%E6%AF%8F3%E4%B8%AA%E7%82%B9%E5%9D%87%E4%B8%8D%E5%9C%A8%E5%90%8C%E4%B8%80%E6%9D%A1%E7%9B%B4%E7%BA%BF%E4%B8%8A%E9%82%A3%E4%B9%88%E6%9C%80%E5%A4%9A%E5%8F%AF%E4%BB%A5%E7%94%BB_________%E6%9D%A1%E7%9B%B4%E7%BA%BF%E7%94%A8%E5%90%ABn%E7%9A%84%E5%BC%8F%E5%AD%90%E8%A1%A8%E7%A4%BA/">
+                <h2 class="post-title">如果平面上有n(n为大于或等于3的整数)个点，且每3个点均不在同一条直线上，那么最多可以画_________条直线(用含n的式子表示)</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (6 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>如果平面上有n(n为大于或等于3的整数)个点，且每3个点均不在同一条直线上，那么最多可以画_________条直线(用含n的式子表示)？</p>
+</blockquote>
+
+<p>　第一感觉是画图，画图直观些，容易发现规律，于是有：<img src="http://upload-images.jianshu.io/upload_images/3289684-b9ad0da82458c77a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+　但很难发现这2组数间的规律，所以这种方法对于多数初中生（包括我，数列学得不好）是找不出二者的关系式的。
+　请教Jane，她直接告诉了我答案（牛人就是牛）：n(n-1)/2。我告诉她我需要推导过程，她给我整排列组合，也不是很好理解。
+　当我看到这个答案时，我恍惚在哪里见过：
+<img src="http://upload-images.jianshu.io/upload_images/3289684-60f2a7d50c40adee.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="双列" /></p>
+
+<p>所以，这种题的背后的问题是：<strong>n个点，两两组合，一共有多少种组合？</strong>没有限制条件的话应该是*n^2*（n方）个（看上面那个图），但自己和自己的组合要去掉（*n*个，不用怀疑，对角线部分），剩余*n^2-n<em>个；因为正向和反向组合算是重复，还要再去掉一半，只剩对角线上（或下）的部分，所以答案是</em>(n^2-n)/2*。
+我想对于一个初中生而言，这种题目比较难，大部分人会死记这个答案，对于某些老师来说也未必能讲清楚。我觉得<strong>列矩阵（列表）的方法应该是最容易理解的</strong>，供参考。</p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/%E5%AE%89%E8%A3%85arb/">
+                <h2 class="post-title">安装ARB</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (174 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  下载ARB wget http://download.arb-home.de/build/latest/arb-6.0.6.ubuntu1404-amd64.tgz tar -xzvf arb-6.0.6.ubuntu1404-amd64.tgz
+ 安装一些ARB需要的库 sudo apt-get install xfig libmotif4 libpng3 xloadimage gv libglew1.5 gnuplot  正在读取软件包列表... 完成 正在分析软件包的依赖关系树 正在读取状态信息... 完成 注意，根据正则表达式 'libglew1.5' 选中了 'libglew1.5-dev' 注意，选中 'libglew-dev' 而非 'libglew1.5-dev' 没有可用的软件包 libmotif4，但是它被其它的软件包引用了。 这可能意味着这个缺失的软件包可能已被废弃， 或者只能在其他发布源中找到 然而下列软件包会取代它： libxm4:i386 libuil4:i386 libmrm4:i386 libxm4 libuil4 libmrm4 libmotif-common E: 软件包 libmotif4 没有可安装候选
+ 修改环境变量 sudo vim /etc/bash.bashrc （vim需要安装，如果没有安装，用gedit也可以）
+  软件包设置 ┌──────────────────────────┤ 正在设定 arb-common ├──────────────────────────┐ │ The default configuration of PT-server slots in /etc/arb/arb_tcp.
+                  <a href="../../post/%E9%9A%8F%E7%AC%94/%E5%AE%89%E8%A3%85arb/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
+                
+                </span>
               
             </article>
           

@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>随笔 on Dong&#39;s blog</title>
+    <link>/tags/%E9%9A%8F%E7%AC%94/</link>
+    <description>Recent content in 随笔 on Dong&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>youremail@domain.com (Leiming Dong)</managingEditor>
+    <webMaster>youremail@domain.com (Leiming Dong)</webMaster>
+    <lastBuildDate>Sun, 01 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BUSCO使用笔记</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/busco%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/busco%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+      <description>在ubuntu系统上跑 參考使用指南
+安裝BUSCO 下載 https://gitlab.com/ezlab/busco 安裝sudo python setup.py install
+怎麼都搞成繁體字了？
+安裝下面3個軟件，後2個需要安裝，安裝方法見各自的readme文件  NCBI BLAST+ [NB: please see release note 2.0.1 below] https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST这个包中包含各种比对需要的工具  HMMER (HMMER v3.1b2) http://hmmer.org/  Augustus (&amp;gt; 3.2.1) (only used for assessing genomes) http://bioinf.uni-greifswald.de/augustus/
+配置config.ini文件 BUSCO目錄下有config文件夾，將其中的config.ini.default拷貝並重命名爲config.ini，打開後修改，把所有的默認路徑如/home/osboxes/BUSCOVM/augustus/augustus-3.2.2/，都替換成實際的路徑，比如我的/home/larix/下载/augustus/
+export AUGUSTUS_CONFIG_PATH=&amp;quot;/path/to/AUGUSTUS/augustus-3.2.3/config/&amp;quot; 這裏的路徑替換成實際的，否則報錯 準備自己的數據和匹配數據庫 自己的數據指的是組裝好的fasta文件，數據庫要從http://busco.ezlab.org/ 下載對應的，放在電腦中的位置可以自定義，運行時給清楚就可以了。
+run 基因組據裝評估 先把路徑cd到BUSCO文件夾，然後輸入 python scripts/run_BUSCO.py -i SEQUENCE_FILE -o OUTPUT_NAME -l LINEAGE -m geno SEQUENCE_FILE-你組裝好的基因組文件 OUTPUT_NAME-給定一個輸出名 LINEAGE-要匹配的數據庫 geno-指定是基因組評估
+我的python scripts/run_BUSCO.py -i /home/larix/下载/myproject/zglk_fungi.genome_contigs.fasta -o ev_genome -l ascomycota_odb9 -m geno 我的匹配數據庫放在了BUSCO文件夾中。</description>
+    </item>
+    
+    <item>
+      <title>Isik书中的错误</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/isik%E4%B9%A6%E4%B8%AD%E7%9A%84%E9%94%99%E8%AF%AF/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/isik%E4%B9%A6%E4%B8%AD%E7%9A%84%E9%94%99%E8%AF%AF/</guid>
+      <description> p169 formula 6.16, the direct product result is wrong. p73 library(reshape2) here is useless and it will be great if you introduce the direct sum in R (e.g. matrixcalc::direct.sum(I, G)). p  </description>
+    </item>
+    
+    <item>
+      <title>Library-Genesis-(sci-hub-cc)</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/library-genesis-sci-hub-cc/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/library-genesis-sci-hub-cc/</guid>
+      <description>http://gen.lib.rus.ec http://www.libgen.io/ （以上两个是主链接，主链常常会死掉，随时替换） 点击title选择下载的mirrors： &amp;mdash;-暂时可用&amp;mdash;- Libgen http://libgen.net b-ok.org Ed2K和Magnet用迅雷等下载工具下载（速度慢） &amp;mdash;-暂不可用&amp;mdash;- http://en.bookfi.org/ http://libgen.info/ http://www.libgen.info http://vnuki.org/library/ http://noads.libgen.info/ 论文下载： http://sci-hub.cc/ http://www.toukey.com</description>
+    </item>
+    
+    <item>
+      <title>OpenNLP-Part-of-Speech-(POS)-Tags--Penn-English-Treebank</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/opennlp-part-of-speech-pos-tags--penn-english-treebank/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/opennlp-part-of-speech-pos-tags--penn-english-treebank/</guid>
+      <description>CC Coordinating conjunction
+CD Cardinal number
+DT Determiner EX Existential there FW Foreign word IN Preposition or subordinating conjunction JJ Adjective JJR Adjective, comparative JJS Adjective, superlative LS List item marker MD Modal NN Noun, singular or mass NNS Noun, plural NNP Proper noun, singular NNPS Proper noun, plural PDT Predeterminer POS Possessive ending PRP Personal pronoun PRP$ Possessive pronoun RB Adverb RBR Adverb, comparative RBS Adverb, superlative RP Particle SYM Symbol TO to UH Interjection VB Verb, base form VBD Verb, past tense VBG Verb, gerund or present participle VBN Verb, past participle VBP Verb, non­3rd person singular present VBZ Verb, 3rd person singular present WDT Wh­determiner WP Wh­pronoun WP$ Possessive wh­pronoun WRB Wh­adverb</description>
+    </item>
+    
+    <item>
+      <title>PDF文献文档引用插入管理学习&amp;mendeley</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/pdf%E6%96%87%E7%8C%AE%E6%96%87%E6%A1%A3%E5%BC%95%E7%94%A8%E6%8F%92%E5%85%A5%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B9%A0mendeley/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/pdf%E6%96%87%E7%8C%AE%E6%96%87%E6%A1%A3%E5%BC%95%E7%94%A8%E6%8F%92%E5%85%A5%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B9%A0mendeley/</guid>
+      <description>不念到大二，很少接触到PDF文档。能读到博士，过手或过眼的有大几千份。PDF文档多了，管理起来很麻烦。有些文档从网上下载的时候，很少能有个正常的名字，从新命名并服从管理也是一件麻烦的事。当然不写论文，这都能忍。我最开始接触这类软件也并不是要使用它们的管理功能，而是较为次要的论文文献引用插入。 我用的第一个是Endnote，一个非常伟大的收费软件，伴随了我几乎整个硕士阶段。能用它从谷歌学术里直接导入引用条目；Alt+2的快捷插入真的很快捷。当我长久不写论文，只看文献的时候，还是用手动的办法去命名，去分组。有一天，我想把谷歌学术里一个关键词的搜索结果全部导出来的时候，用endnote就比较费时。学习使用R的时间久了，就发现很多类似的事情可以用几个函数解决。不是说人变懒了，而是说聪明的人类总是能开发一些偷懒的办法。chrome类型的浏览器能够安装zotero的插件，能够把一整页的搜索结果导入到软件里，是不是非常称心？如果有PDF的链接还能把PDF导入进去，是不是很满意？但是zotero的管理和插入功能有些欠缺，不及mendeley。 我认为用mendeley的人比较牛，但是独用用不如分享方便更多的人。mendeley的第一个好处是免费，不像endnote，不过这个在中国不叫事儿。mendeley的word插入快捷键组合是Alt+m。你知道endnote里也很快捷，但是要先在endnote里选中，再切到word中Alt+2，这样你就得先在endnote里搜。mendeley是怎么干的？不用切换，快捷键会召唤一个条框，输入关键词比如作者，自动给出候选，这一方面就节省了不少时间。mendeley能导入endnote，能导入zotero，反过来endnote不行。就这一条就可以放弃endnote。mendeley的期刊模板更新非常及时，endnote有些杂志的要滞后好几年。 最重要的一部分，文献管理和学习。endnote能直接导入PDF，根据doi等信息识别出题目等。mendeley的识别效率更高，作者，时间和期刊一般都能给出来，年代久远的容易出错。开头提到一个文献命名的问题，mendeley里有非常好的解决方案，它能自动从新命名，可以自定义格式比如 作者+时间+title或者时间+期刊名+title，是不是很膜拜。不过mendeley的界面是英文的，一般人不知道怎么设置：Tools&amp;gt;Options&amp;gt;File organizer，3个都勾上，自己摸索吧。还有一个功能我个人非常欣赏，就是PDF文档内的全局搜索，唯有感谢那些想要“偷懒”而又有能力把懒偷到手的人，感谢。世事艰难，愿我们互相帮扶。</description>
+    </item>
+    
+    <item>
+      <title>R语言门外1公里到大门口</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/r%E8%AF%AD%E8%A8%80%E9%97%A8%E5%A4%961%E5%85%AC%E9%87%8C%E5%88%B0%E5%A4%A7%E9%97%A8%E5%8F%A3/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/r%E8%AF%AD%E8%A8%80%E9%97%A8%E5%A4%961%E5%85%AC%E9%87%8C%E5%88%B0%E5%A4%A7%E9%97%A8%E5%8F%A3/</guid>
+      <description>R是非常容易入门的一个统计软件或语言，它是辅助工具，不是主体，应该配合统计相关内容一起学习。
+ 我第一次听说这个软件还是在浙林的时候，邬荣岭老师的讲座或是培训会议上。真正开始接触是2014年，因为要利用asreml去计算遗传参数。最高效的学习往往发生在你急需这些知识或技巧的时候，所以最好是手上有需要使用R的任务，当然在这之前可以熟悉一下简单的操作比如+-*/、数据的导入。
+我主要用到的参考资料有 1. R语言实战（第2版）  R数据可视化手册——这是本工具书，查阅画图参数  华南农大林元震老师主编的r与asreml-r统计分析教程——主要是后边asreml-r部分，我觉得林老师参考了一些新西兰Canterbury大学Luis Apiolaza老师的ASReml Cookbook。Luis的个人网页也有一些有用的内容和Twitter。   林老师的这本书出到了第2版，比上一版厚了一倍，如果把程序输出结果拿掉能去掉一半的内容。这本书更像一本讲义或者是笔记，没有很多理论性的内容，通常只有一个简略的概念，一个样例和代码及太多的输出结果。所以这是本工具书，需要相关的代码直接翻书查找（高级代码还得去stackoverflow）。没有统计知识也是它的优点，你看不到容易恐惧的公式和推导，除了LMM那一丁点儿。另外一个优点是第7章——试验设计。《实战》没有这部分内容，也未见到有相关的R书籍。如果林老师下次能把试验设计交代得更细致一点，比如给个图就更好了。另一个特点还是遗传评估这一章，对于遗传育种专业并且需要进行参数估算的geneticist和breeder可以重点敲这一部分的代码。林老师还有一个非常重要的贡献在于他自己写了一部分批处理的函数AAfun，在处理数据时，尤其有较多的变量时会比较方便。除了这2章外，其余的内容在其他的R工具书中一般也都有涉及，所以拿这本书学习R也是合适的（但我首推的还是《实战》，无出其右者）。同样，这本书也事无巨细。达成一个目的途径很多，掌握自己最舒服的一个就可以了，其余的不感兴趣大可不必学习。
+所以，自认为一个入门者，以林老师的这本第2版，按照浓缩一下数据管理（导入、处理和导出）这一部分，给还未接触而又有必要学习的同仁铺点路，也给自己一个梳理复习的机会。
+21 July 2017 更新 第1章 R简介  简介不是重点，不用看。 Rstudio不是强烈建议要安装，而是必须安装！！！  ###第2章 基础语法 - 2.1 对象与变量 - 赋值符号&amp;lt;-在Rstudio中的快捷键是&amp;lsquo;Alt&amp;rsquo;+&amp;lsquo;-&amp;rsquo;。 - 2.1.1 变量创建 比如有树高和胸径要算材积指数，（当然在Excel中算好后导入也可以），学会方法一就够用了。给的例子是直接搬《实战》的，连数据都没改但书的架构为什么不借鉴一下？ - 2.1.2 变量命名用方法二names()，矩阵没有变量，行名和列名分别是rownames()和colnames()。 - 2.2 运算符为何不放在最前面？ - 2.3 表达式一看就会不是吗？有几个情况会用到表达式： 1. 写模型时 2. 画图涉及到公式时（需要在图上放拟合模型） 3. 构建关联矩阵时（model.matrix） - 2.4 NA是缺失值， NULL是空值。NULL在写函数时会很常用，比如要先建个空的向量或矩阵，然后循环把数值放进去。 - 2.5 控制结构 - 2.5.1 if/else写函数时比较常用，switch用的不多。 - 2.2.2 for循环是批量处理的关键函数，有人诟病因为它比较慢，但它的呈现非常直接，易读。当对象是list的时候用lapply则比for要好用很多。while也常用，比如迭代时。 - 2.6 自编函数是不是放在数据管理后面会更好？因为学习顺序是那样的，数据还不会导进去怎么会写函数？</description>
+    </item>
+    
+    <item>
+      <title>SRA上传基因组数据</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/sra%E4%B8%8A%E4%BC%A0%E5%9F%BA%E5%9B%A0%E7%BB%84%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/sra%E4%B8%8A%E4%BC%A0%E5%9F%BA%E5%9B%A0%E7%BB%84%E6%95%B0%E6%8D%AE/</guid>
+      <description> 打开ncbi并登陆。  点击数据库下拉选择SRA，并search。  在SRA页面，点击Trace Archive。  在submit下拉条目下选择tracking并点击。  能看到之前提交的项目，点击项目名称。在相应的experiment下建立new run就可以了。 *Alias*是本次run的名字，最好加入你要上传文件的部分名字便于区分。选好文件类型后，输入文件名和md号保存后，然后在filezilla中上传。  </description>
+    </item>
+    
+    <item>
+      <title>SRA提交快速入门</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/sra%E6%8F%90%E4%BA%A4%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/sra%E6%8F%90%E4%BA%A4%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</guid>
+      <description>SRA提交快速入门
+接受的数据 提交步骤 人类数据 宏基因组数据 用于存储和更新SRA数据的选项 提交门户（SP）与序列阅读存档（SRA） [开始提交
+](https://www.ncbi.nlm.nih.gov/sra/docs/submit/#ui-ncbiinpagenav-heading-9) [更新SRA数据（研究或提交）
+](https://www.ncbi.nlm.nih.gov/sra/docs/submit/#ui-ncbiinpagenav-heading-10) [联系SRA工作人员
+](https://www.ncbi.nlm.nih.gov/sra/docs/submit/#ui-ncbiinpagenav-heading-11)
+[去：
+](https://www.ncbi.nlm.nih.gov/sra/docs/submit/#) 接受的数据
+[图片上传中。。。（1）] 该SRA接受
+基因数据和相关的质量分数
+通过新一代测序技术生产。 请参考我们的
+[文件格式指南
+](https://www.ncbi.nlm.nih.gov/sra/docs/submitformats)。
+[去：
+](https://www.ncbi.nlm.nih.gov/sra/docs/submit/#) 提交步骤
+[登录或注册NCBI帐户
+](https://www.ncbi.nlm.nih.gov/account/) 注册您的项目和生物样品： [图片上传中。。。（2）]注册您的
+项目
+在
+[BioProject数据库
+](https://www.ncbi.nlm.nih.gov/bioproject/) [[图片上传中。。。（3）]](https://www.ncbi.nlm.nih.gov/sra/docs/submitbio) 注册您的
+生物样品
+的
+[生物标本数据库
+](https://www.ncbi.nlm.nih.gov/biosample/) [[图片上传中。。。（4）]](https://www.ncbi.nlm.nih.gov/sra/docs/submitbio)
+创建SRA数据提交并上传序列数据文件：
+提交
+SRA元数据
+ -这会将你的项目中，采样点/实验和文件名信息
+[图片上传中。。。（5）] 上传
+序列数据文件
+ [在提交门户
+[图片上传中。。。（6）]](https://www.ncbi.nlm.nih.gov/sra/docs/submitspfiles)（
+[基本FTP和Aspera的使用帮助
+[图片上传中。。。（7）]](https://www.ncbi.nlm.nih.gov/sra/docs/submitfiles)）
+[图片上传中。。。（8）] 如果您是通过dbGaP或GEO数据库在提出意见请参阅
+[dbGaP提交指南
+](https://www.ncbi.nlm.nih.gov/sra/docs/submitdbgap)和
+[GEO提交指南
+](https://www.ncbi.nlm.nih.gov/sra/docs/submitgeo)分别。
+[去：
+](https://www.ncbi.nlm.nih.gov/sra/docs/submit/#) 人类数据
+[图片上传中。。。（9）] 在将人员数据存入公共SRA数据库之前，请确保您已经同意捐赠个人，以便在不受保护的数据库中提供此数据。 不要将用于dbGaP提交的无用的人力数据传输到公共SRA数据库。 请参考我们的
+[dbGaP提交指南
+](https://www.ncbi.nlm.nih.gov/sra/docs/submitdbgap)。
+[去：</description>
+    </item>
+    
+    <item>
+      <title>java的系统环境配置</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/java%E7%9A%84%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/java%E7%9A%84%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+      <description>一定要把这些步骤认真地从头到尾运行一遍
+ 第二步：配置环境变量
+当我们安装好JDK后，就要配置环境变量了。一般来说，我们会配置这三个环境变量：
+JAVA_HOME 配置 JDK 安装路径 PATH 配置 JDK 命令文件的位置 CLASSPATH 配置类库文件的位置 步骤一：右击计算机，选择属性
+步骤二：打开高级系统设置
+步骤三：选择高级
+步骤四：选择环境变量
+步骤五：在系统变量里配置JAVA_HOME
+点击系统变量下的新建
+变量名填JAVA_HOME
+变量值填JDK的安装路径（若是默认安装路径，打开计算机-&amp;gt;C盘-&amp;gt;Program Files-&amp;gt;Java-&amp;gt;jdk1.7.0.13(或者其他版本)，拷贝路径就可以了）
+点击确定
+步骤六：在在系统变量里配置PATH变量
+系统变量默认里有Path变量，找到它，点击编辑
+在变量值最前面添加指定jdk命令文件的位置（jdk1.7.0.13-&amp;gt;bin目录，拷贝路径）
+将路径添加到Path变量值前面用;和后面的路径隔开
+步骤七:配置CLASSPATH变量
+点击系统变量下的新建
+变量名填CLASSPATH
+变量值填JDK的安装路径（若是默认安装路径，打开计算机-&amp;gt;C盘-&amp;gt;Program Files-&amp;gt;Java-&amp;gt;jdk1.7.0.13(或者其他版本)-&amp;gt;lib目录，拷贝路径就可以了）
+点击确定</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>foxit的安装 终端取得root权限后，cd到安装文件所在文件夹，./FoxitReader.enu.setup.2.4.1.0609\(r08f07f8\).x64.run
+Ubuntu 文件夹右小角有锁的问题解决 有锁，普通用户就不能操作该文件夹。 解决办法： sudo chmod -R 777 路径(文件夹或文件)
+typora的安装 # add Typora&#39;s repository sudo add-apt-repository &#39;deb https://typora.io ./linux/&#39; sudo apt-get update # install typora sudo apt-get install typora   ubuntu 14.04 软件中心闪退解决方案 sudo apt-get update sudo apt-get dist-upgrade sudo apt-get install &amp;ndash;reinstall software-center
+ 无法获得锁 /var/lib/apt/lists/lock - open (11 资源临时不可用) 方法二（亲测可以用）：sudo rm /var/lib/apt/lists/lock
+   df -hl 删除文件夹 rm -r myfolder rm -r ./genome/run_Beauveria_bassiana_genome/ 移动文件夹 mv .</description>
+    </item>
+    
+    <item>
+      <title>mendeley中style的修改</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/mendeley%E4%B8%ADstyle%E7%9A%84%E4%BF%AE%E6%94%B9/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/mendeley%E4%B8%ADstyle%E7%9A%84%E4%BF%AE%E6%94%B9/</guid>
+      <description>mendeley能够像endnote一样修改正文中的引用及参考文献格式即style。
+ 许多SCI收录期刊都有对应的style，但对于中文期刊或毕业论文目前没有，且有时找不到能正好套用的，需要对最近似的进行修改。
+修改后报错，无法保存的解决方法。</description>
+    </item>
+    
+    <item>
+      <title>notepad&#43;&#43;怎么同时在一个窗口中显示2个文档？</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/notepad&#43;&#43;%E6%80%8E%E4%B9%88%E5%90%8C%E6%97%B6%E5%9C%A8%E4%B8%80%E4%B8%AA%E7%AA%97%E5%8F%A3%E4%B8%AD%E6%98%BE%E7%A4%BA2%E4%B8%AA%E6%96%87%E6%A1%A3/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/notepad&#43;&#43;%E6%80%8E%E4%B9%88%E5%90%8C%E6%97%B6%E5%9C%A8%E4%B8%80%E4%B8%AA%E7%AA%97%E5%8F%A3%E4%B8%AD%E6%98%BE%E7%A4%BA2%E4%B8%AA%E6%96%87%E6%A1%A3/</guid>
+      <description>拖着页头，复制到另一视图。</description>
+    </item>
+    
+    <item>
+      <title>“最近使用的文档”灰色，不能设置</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E6%9C%80%E8%BF%91%E4%BD%BF%E7%94%A8%E7%9A%84%E6%96%87%E6%A1%A3%E7%81%B0%E8%89%B2%E4%B8%8D%E8%83%BD%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E6%9C%80%E8%BF%91%E4%BD%BF%E7%94%A8%E7%9A%84%E6%96%87%E6%A1%A3%E7%81%B0%E8%89%B2%E4%B8%8D%E8%83%BD%E8%AE%BE%E7%BD%AE/</guid>
+      <description>Q： 前面还用的好好的，这两天发现“最近使用的文档”全空了。 在excel选项—高级—显示下面，显示此数目的“最近使用的文档”整个一行居然是灰色，无法设置。 看了word里也是这样。看了帮助文件 在另一台的office2007不会
+看了帮助文件，没办法。请教解决办法。::Q ::Q
+A： 首先感谢楼上的各位,经过尝试,我发现最好的解决办法是
+首先从组策略里面禁用版主提到的以上两项,然后再选择未配置,就解决了
+我的是windows7的系统,是由于一次office的更新造成历史文件无法设置的,现在这样已经解决</description>
+    </item>
+    
+    <item>
+      <title>不完全区组设计</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E4%B8%8D%E5%AE%8C%E5%85%A8%E5%8C%BA%E7%BB%84%E8%AE%BE%E8%AE%A1/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E4%B8%8D%E5%AE%8C%E5%85%A8%E5%8C%BA%E7%BB%84%E8%AE%BE%E8%AE%A1/</guid>
+      <description>林木子代测定林田间试验较常采用随机完全区组设计（RCB）和不完全区组设计（IB）。在R中利用agricolae包能够实现RCB设计，对于后者则只能进行平衡不完全区组设计（BIB）。BIB要求bkvrλ全为整数，b是区组数、k是区组大小即小区数、v是处理数比如家系个数、r是重复次数，λ=r(k-1)/(v-1)，对于测定处理较多的材料不能满足λ为整数这个限制。ibd这个包开发者说能够实现不平衡IB设计，但同样在处理较多时给不出设计结果。最终在网页找到方法，函数的代码如下
+incomplete.block.design &amp;lt;- function(number.alternatives, number.blocks, alternatives.per.block, n.repeats = 1000){ # Check that the parameters are appropriate # Sawtooth recommends that number.blocks &amp;gt;= 3 * number.alternatives / alternatives.per.block if (number.blocks &amp;lt; 3 * number.alternatives / alternatives.per.block) warning(&amp;quot;It is recomended that number.blocks &amp;gt;= 3 * number.alternatives / alternatives.per.block&amp;quot;); library(AlgDesign) best.result = NULL best.D = -Inf for (i in 1:n.repeats){ alg.results &amp;lt;- optBlock(~.,withinData=factor(1:number.alternatives),blocksizes=rep(alternatives.per.block,number.blocks), nRepeats=5000) #BIB if (alg.results$D &amp;gt; best.D){ best.result = alg.results best.D = alg.</description>
+    </item>
+    
+    <item>
+      <title>共祖系数、相关系数和近交系数</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E5%85%B1%E7%A5%96%E7%B3%BB%E6%95%B0%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0%E5%92%8C%E8%BF%91%E4%BA%A4%E7%B3%BB%E6%95%B0/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E5%85%B1%E7%A5%96%E7%B3%BB%E6%95%B0%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0%E5%92%8C%E8%BF%91%E4%BA%A4%E7%B3%BB%E6%95%B0/</guid>
+      <description> Pemberton J . 2008. Wild pedigrees: the way forward. Proceedings of the Royal Society B: Biological Sciences, 275(1635): 613–621. 这三者能解决进化遗传学中的许多问题
+ </description>
+    </item>
+    
+    <item>
+      <title>几种常见针叶树的中英&amp;拉丁名</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E5%87%A0%E7%A7%8D%E5%B8%B8%E8%A7%81%E9%92%88%E5%8F%B6%E6%A0%91%E7%9A%84%E4%B8%AD%E8%8B%B1%E6%8B%89%E4%B8%81%E5%90%8D/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E5%87%A0%E7%A7%8D%E5%B8%B8%E8%A7%81%E9%92%88%E5%8F%B6%E6%A0%91%E7%9A%84%E4%B8%AD%E8%8B%B1%E6%8B%89%E4%B8%81%E5%90%8D/</guid>
+      <description>   英文名 拉丁名 直译 中文名     Scots pine Pinus sylvestris 苏格兰松 樟子松/欧洲赤松   Douglas fir Pseudotsuga menziesii 道格拉斯冷杉 花旗松   Norway spruce Picea abies 挪威云杉 欧洲云杉   Slash pine Pinus elliotii 沼泽松 湿地松   Loblolly pine Pinus taeda NA 火炬松    </description>
+    </item>
+    
+    <item>
+      <title>到底是固定还是随机？</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E5%88%B0%E5%BA%95%E6%98%AF%E5%9B%BA%E5%AE%9A%E8%BF%98%E6%98%AF%E9%9A%8F%E6%9C%BA/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E5%88%B0%E5%BA%95%E6%98%AF%E5%9B%BA%E5%AE%9A%E8%BF%98%E6%98%AF%E9%9A%8F%E6%9C%BA/</guid>
+      <description>一个效应到底应该当做固定还是随机通常令人困惑。如果已有惯例，例如父本、家系效应一般当做随机，而重复、性别当做固定，照搬就是。相反，对另外一些效应的处理如果没有多少文献支撑，就有点让人模棱两可。总不能没有规则地按照自己的喜好吧？Smith（2001）给了一个明确的信息，即在需要预测一个效应的未来表现时要随机，否则要固定，并举例说要预测品种（variety）的未来表现，而不希望预测环境效应。这样这个问题就很明确了。原文如下：
+ Smith A, Cullis B, Gilmour A. 2001. The Analysis of Crop Variety Evaluation Data in Australia. Australian &amp;amp; New Zealand Journal of Statistics, 43(2): 129–145.
+One possibly contentious issue is the choice between fixed and random effects in the analysis. The standard text-book notion of effects being random if they have been sampled from a population and fixed if attention is confined only to those effects in the model (see Searle, 1971, for example) is unhelpful and can lead to a circular argument.</description>
+    </item>
+    
+    <item>
+      <title>反翻</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E5%8F%8D%E7%BF%BB/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E5%8F%8D%E7%BF%BB/</guid>
+      <description>##0511 - 传统的树木改良方案是需要广泛资源的长期努力。 - traditional forest tree improvement programs are long-term endeavors该词是复数 need extensive resources - 表达需要的词：need, require - 他们需要建立交配设计，在多个地点安装后代测试，以评估父母及其在大地理区域的后代，长时间监测这些测试，并**最终*分析测量结果以评估经济特征。 - they require establishing mating designs, installing progeny tests on multiple sites, and evaluating parents and their offspring over large geographic areas, monitoring these tests over extended periods of time , and finally analyzing measured results to assess economic characters. - 在多个地点用on而非at - offspring是单复同行 - over用的很多
+0115  了解适应性和商业性状的复杂结构 以评估进化力在塑造遗传变异中的作用 并改善长期育种策略 是非常重要的。  it&amp;rsquo;s very important to understand complex structure of adaptive and chametial in order to evaluate the role of evolutionary power in shaping genetic variation and improve long term breeding strategies.</description>
+    </item>
+    
+    <item>
+      <title>基因组&amp;蛋白组组装质量检测</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E5%9F%BA%E5%9B%A0%E7%BB%84%E8%9B%8B%E7%99%BD%E7%BB%84%E7%BB%84%E8%A3%85%E8%B4%A8%E9%87%8F%E6%A3%80%E6%B5%8B/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E5%9F%BA%E5%9B%A0%E7%BB%84%E8%9B%8B%E7%99%BD%E7%BB%84%E7%BB%84%E8%A3%85%E8%B4%A8%E9%87%8F%E6%A3%80%E6%B5%8B/</guid>
+      <description>先粘贴这个 export AUGUSTUS_CONFIG_PATH=&amp;ldquo;/home/larix/下载/augustus/config/&amp;rdquo;
+ oct 25 geno python scripts/run_BUSCO.py -i /home/larix/Documents/myproject/data/geno/GCF_000240135.2_ASM24013v1_genomic.fna -o Fusarium_graminearum_geno -l /home/larix/Documents/myproject/library/ascomycota_odb9 -m geno
+Grosmannia_clavigera.genome.fasta GCF_000240135.2_ASM24013v1_genomic.fna
+prot python scripts/run_BUSCO.py -i /home/larix/Documents/myproject/data/prot/Grosmannia_clavigera.pep -o Grosmannia_clavigera_prot -l ascomycota_odb9 -m prot geno python scripts/run_BUSCO.py -i /home/larix/Documents/myproject/data/geno/Sporothrix_schenckii -o Sporothrix_schenckii_geno -l /home/larix/Documents/myproject/library/ascomycota_odb9 -m geno
+prot python scripts/run_BUSCO.py -i /home/larix/Documents/myproject/data/prot/ZGLK_fungus -o ZGLK_fungus_prot -l /home/larix/Documents/myproject/library/ascomycota_odb9 -m prot
+export AUGUSTUS_CONFIG_PATH=&amp;ldquo;/home/larix/下载/augustus/config/&amp;rdquo;
+genome ev python scripts/run_BUSCO.py -i /home/larix/下载/myproject/zglk_fungi.genome_contigs.fasta -o ev_genome -l ascomycota_odb9 -m geno
+python scripts/run_BUSCO.py -i /home/larix/下载/myproject/zglk_fungi.</description>
+    </item>
+    
+    <item>
+      <title>基因组和个性化医学</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%92%8C%E4%B8%AA%E6%80%A7%E5%8C%96%E5%8C%BB%E5%AD%A6/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%92%8C%E4%B8%AA%E6%80%A7%E5%8C%96%E5%8C%BB%E5%AD%A6/</guid>
+      <description>以下内容摘自或翻译自*MICHAEL SNYDER*的著作《GENOMICS AND PERSONALIZED MEDICINE》
+ 哪些个人因素会影响我们的健康？ 要了解个性化医学，需要了解有助于我们健康的因素（图1）。 一般来说，我们的健康取决于我们的DNA、我们的生活方式，以及我们所处的环境。 我们的DNA是继承自我们的父母。 我们的生活方式包括我们锻炼多少、是否吸烟以及我们选择的饮食。 我们大多数人知道，环境因素，例如我们呼吸的空气的质量、来自太阳的紫外线以及家庭用品中的某些化学品的存在等等等等会影响我们的健康。 病原体如病毒和细菌可以使我们在短期内生病，但也可能增加我们长期患某些慢性疾病的风险。** 生活压力和老龄化的自然过程**也影响健康。 子宫内的条件可以影响胎儿的发育并影响出生后的健康。 在许多情况下，我们对环境因素影响健康的机制的理解是不完全的。 尽管如此，这些信息对于理解如何管理健康至关重要。
+##什么是癌症，它是如何产生的？ 基因组测序成本的降低对医学产生了巨大的影响，并帮助开启了个人基因组学的新时代。影响最大的领域之一是癌症，癌症将在人的一生中的某个阶段击败40％的人。 我们身体中每个细胞的生长和分裂的能力受遗传因素的严格控制;我们身体中的大多数细胞在成年后或者很少分裂时停止分裂。癌症导致这些控制的丧失，导致细胞不可控地生长和分裂。当早期被发现时，癌症通常可以成功地被管理。然而，如果没有检测到和治疗癌症，它可能在称为转移的过程中扩散到体内的其他部位。如果发生这种情况，癌症通常变得更难治疗，并且通常是致命的。某些癌症，例如卵巢癌和胰腺癌因为症状不存在或轻度，通常发展到晚期才被发现，因此这些癌症具有更高的死亡率。 癌症的根本原因之一是影响细胞生长和分裂的遗传突变，也称为细胞增殖。 这些突变分为两大类：主动驱动细胞增殖的突变和消除细胞增殖限制的突变。刺激细胞增殖的突变通常是显性的并影响基因的一个拷贝;基因的另一正常拷贝的存在不抵消或掩盖突变的影响。这些显性突变将具有致癌潜力的正常基因（称为原癌基因）转化为称为癌基因的癌驱动基因。我们还有一些基因，编码的因素制动不受控制的细胞增殖。这些基因称为肿瘤抑制基因，并且通常基因的两个拷贝都必须突变以促进癌症的作用。 一般来说，癌症的发展需要在几种不同基因中的突变 - 癌症具有多基因的因果关系。这是因为在正常细胞中有多种机制在工作，以确保细胞生长和分裂发生在适当位置的适当时间。身体还具有防御机制，以消除某些异常细胞，在它们变得癌变之前。对于大多数癌症，通常认为突变在人的一生中逐渐累积（见下图）。人会保持健康，直到体内累积足够的突变擦除正常的补偿机制，从而导致肿瘤产生并不受控制的生长。随着肿瘤继续生长并且细胞快速分裂，可能发生另外的突变，使得肿瘤更具侵袭性，例如更强的转移能力。
+许多不同的突变类型可能有助于致癌。 DNA突变可能在出生时存在，或可能在我们的生命期间自发发生。我们从父母那里遗传的突变被称为“种系”突变，并且通常存在于我们身体中的所有细胞中。术语“种系”来自生殖细胞（精子或卵）中这些突变的起源。种系突变是导致癌症高度易发病的家族癌症的原因。 在生活中获得的突变称为“体细胞”突变。当在细胞分裂期间或DNA损伤（例如，由皮肤细胞中的DNA暴露于来自太阳的紫外线导致的损伤）时将错误引入DNA时，可能导致体细胞突变。体细胞突变不会从父母传给孩子。种系和体细胞突变可以是单碱基变化，插入缺失和/或大的结构变异。 在许多癌症中常见的一种类型的突变是基因融合。基因融合通常来自染色体重排，其将基因或其调节序列融合至原癌基因。这导致原癌基因的蛋白质产物的异常，连续表达或活性和含有基因融合的细胞的不可控增殖。参与癌症的第一个融合基因是BCR-ABL融合，其是慢性髓样白血病的标志，并发生在&amp;gt; 95％的病例中。几百种不同的基因融合体涉及多种癌症。
+##BRCA1和BRCA2基因如何导致癌症？ BRCA1和BRCA2已经受到很多关注，因为这些基因和乳腺癌和卵巢癌的有害突变之间有联系。 BRCA1和BRCA2编码肿瘤抑制蛋白。这些蛋白质的功能之一是帮助修复受损的DNA并维持基因组稳定性。女性若胎带有一个缺陷拷贝，通常在某个时间点会失去剩余拷贝的功能，然后导致染色体改变以及非常高的癌症发生率。在单个BRCA1和BRCA2胚系突变，会使女性在70岁之前发生乳腺癌或卵巢癌的频率超过80％。 一些在BRCA1或BRCA2中遗传有害突变的女性选择手术切除她们的乳房和/或卵巢，以降低其发展癌症的风险。可能存在种系BRCA1或BRCA2突变的可能存在怀疑与亲密家庭成员发展乳腺癌和/或卵巢癌在年轻的个体。这样的个体可以进行测试，以查看他们是否携带有害的BRCA1或BRCA2突变。遗传测试有帮助，但不总是决定性的（参见第8章的详细讨论）。测序可以揭示BRCA1或BRCA2中的突变，但可能不可能确定突变是否有害。此外，BRCA1和BRCA2突变不总是遗传的;有时它们自发地发生，即作为体细胞突变，因此，在用于遗传测试的血液或唾液样品中可能不会检测到，因为它们不存在于身体的每个细胞中。 虽然BRCA1和BRCA2突变是家族性乳腺癌的确定原因，但它们仍然只占这些病例的15％-20％（图10）。其他基因的突变也可能是家族性癌症的原因，但是以较低的频率存在。也有可能BRCA1和BRCA2的调节区中未发现的突变导致家族性癌症的另外的病例。最近对具有乳腺癌家族史，具有正常BRCA1和BRCA2的妇女的研究显示，10％在另外42个基因中具有突变。因此，超越BRCA1和BRCA2的基因组可能有助于确定个体对乳腺癌的遗传倾向。然而，需要做更多的工作，以阐明乳腺癌的遗传基础，特别是对于70％的家族性乳腺癌病例，没有确定候选基因。
+##涉及癌症的其他基因的例子 细胞生长和分裂的正常过程中的许多步骤可能由于遗传突变而变得失调，并且促成癌性生长（图11a）。有许多基因，当突变时，可以导致失去对细胞增殖的控制并有助于癌症。通常涉及癌症的一些基因的实例显示在表1中。
+##遗传信息如何帮助我们治疗癌症？ 遗传信息可用于使癌症治疗适应肿瘤的特定分子特征。虽然癌症传统上由其原始组织（例如，乳腺癌，肺癌或前列腺癌）描述，但是实际上相同组织的癌症可能看起来和行为非常不同，这取决于存在哪些突变和哪些基因表达。这被称为癌症的分子“特征”。例如，基于哪些蛋白质在肿瘤细胞的表面上表达，乳腺癌可以分类为各种类型。表达人表皮生长因子2（HER2），雌激素受体（ER）和孕酮受体（PR）或者是三阴性（不表达HER2，ER或PR）的乳腺肿瘤表现不同，具有不同的预后。 HER2阳性的肿瘤用结合HER2（曲妥珠单抗，拉帕替尼）并抑制其活性的药物治疗。 ER和PR是激素受体，ER / PR阳性肿瘤用抗激素治疗。三阴性肿瘤具有最差的预后，并且不可能响应HER2靶向治疗或抗体治疗。这种癌症通常用化疗治疗非常强烈。 随着对于各种癌症亚型的分子特征的更多了解，已经开发了针对那些特征的治疗。常规的治疗作用于所有快速分裂的细胞，并且不区分癌细胞和正常细胞。化学疗法可能引起实质性副作用，因为正常的快速分裂的细胞（例如，胃排列的细胞）与癌细胞一起被杀死。放射疗法是消除快速分裂细胞的另一种一般方法，并且具有可以特异性地指向肿瘤部位的优点;然而，周围正常细胞仍可能受到影响。幸存化疗和放射治疗的正常细胞有时可能获得有害突变，可能导致它们在将来变得癌症。新的靶向治疗以比常规化疗方法更高的精度和特异性攻击肿瘤细胞，因此，可以具有增强的抗肿瘤作用和减少相关的副作用。 靶向癌症治疗的力量的一个显着的例子是伊马替尼，其对于治疗慢性骨髓性白血病（CML）非常有效。伊马替尼特异性抑制在CML中组成性激活的BCR-ABL融合蛋白。另一种靶向治疗，厄洛替尼，抑制参与细胞生长控制的受体，表皮生长因子受体（EGFR）。 EGFR通常在许多类型的癌症中突变，并且厄洛替尼实际上更紧密地结合，并且因此对EGFR的那些突变形式比对正常EGFR更具抑制性。埃罗替尼在治疗携带EGFR的那些突变形式的肿瘤中是有效的。 在上述实施例中，测试肿瘤样品（例如活检）以确定分子特征。测试可以通过遗传序列测试（例如，对于BCR-ABL，突变的EGFR或HER2基因扩增）或组织蛋白染色（例如，对于ER / PR受体或HER2蛋白过表达的存在）。测试的结果将指导治疗的选择 - 它将为个人个性化。 基于肿瘤细胞的分子特征结果的定制治疗在肿瘤学中是相当常见的。然而，分子表征通常局限于通常与给定肿瘤类型相关的那些因子（异常蛋白质，突变基因）。此外，分子特征通常限于已知的预后因素和少数高频“药物靶标”，即在给定肿瘤类型中常见的并且存在靶向治疗的因素。罕见但可能“可药物”的变化可能存在，但被忽视。此外，由于肿瘤的分子特征限于已知的，良好特征的因素，所产生的信息对于促进我们对癌症生物学的整体理解具有有限的价值。
+4 基因和癌症治疗 从癌症的基因组测序学到了什么？ 具有对整个基因组和外显子进行测序的能力，注意力已经迅速转向试图了解作为癌症基础的全谱基因突变。现在，成千上万的癌症的基因组或外显子已经被测序，并且已经揭示了许多对于癌生物学的重要的新见解：
+ 每个肿瘤是不同的并且具有不同的基因组谱。 某些突变在特定癌症中是常见的。例如，许多癌症在肿瘤抑制基因TP53中具有突变;许多结肠和卵巢癌在RAS途径中具有突变;和40％-60％的黑素瘤在BRAF原癌基因中具有非常特异性的突变。尽管某些癌症的遗传基础在全基因组测序之前是已知的，但是我们对通常在许多不同类型的癌症中突变的基因和生物学途径的知识已经大大扩展。 不同类型的癌症可以在相同原癌基因中具有突变。例如，BRAF基因中的突变通常发生在黑素瘤中，但也出现在许多其它癌症例如结肠癌和甲状腺癌中。 虽然有许多不同类型的癌症，基础分子缺陷通常影响只有十几个过程或“途径”（图11b）。途径通常参与细胞生长和增殖或修复DNA损伤。例如，乳腺癌通常在pTEN途径和Rb途径中具有突变，其影响细胞生长以及影响DNA修复途径的BRCA基因。 DNA修复途径中的基因突变（例如，MLH和BRCA基因）可导致肿瘤抑制基因和致癌基因中的突变的积累，间接引起癌症。 总之，非常清楚的是，癌症不仅最好由起源组织（即，常规分类系统）分类，而且还由它们的潜在分子缺陷分类。  ##基因组测序如何推进癌症治疗？ 因为每个肿瘤是不同的，并有自己的基因组成，它是理想的适合基于基因组信息的个性化医疗管理。虽然还不是常规的护理部分，但是当进行基因组分析时，肿瘤基因组通常以超过80倍的覆盖度进行测序，即每个碱基平均测序80次（图12）。许多研究人员建议200倍甚至更高的覆盖率。从同一患者的血液或唾液分离的正常DNA也经常测序。测序可以是整个基因组，外显子组或涉及癌症的一大组基因（例如，基金会医学序列，一组315个基因）。后一种方法（外显子测序;基因面板测序）对于检测结构变体不是理想的，但是因为它们允许更深的测序，它们可以检测仅存在于肿瘤细胞亚群中的变体。变体可以仅存在于肿瘤细胞的一部分中，因为肿瘤是异质的。虽然肿瘤起源于单个异常细胞，由于肿瘤中的细胞快速分裂，通常出现新的突变，导致具有不同基因组谱的肿瘤细胞亚群。新的突变积累，因为肿瘤细胞经常携带不利地影响基因组完整性控制的突变。在肿瘤样品中存在大量正常组织的情况下，更深的测序还可以提供对变体的更灵敏的检测。 与正常DNA相比，通过鉴定肿瘤细胞中的变体（即，变化）来揭示肿瘤细胞独特的体细胞突变。最大的挑战是确定哪些变体最可能是“驱动突变”，即积极促进肿瘤生长的突变。当对来自晚期癌症的肿瘤细胞进行全基因组测序时，该任务可能是特别令人畏惧的，因为与来自同一个人的正常DNA相比，可以存在数千个体细胞突变。事实上，一些类型的癌症通常具有数以万计的变体！通常在已知原癌基因或肿瘤抑制基因中寻找突变，最感兴趣的是在临床试验中影响FDA批准的药物或药物的靶标的那些突变，即药物靶标。实例包括EGFR和PDGFR;这些分别被厄洛替尼和舒尼替尼抑制。作为实例，我们对转移性结肠癌患者的基因组进行测序，发现EGFR基因的拷贝增加（图13）。该患者用EGFR抑制剂作为其治疗的一部分进行治疗。常用于非小细胞肺癌的许多靶向药物治疗的实例显示于表2中。 除了通过对人的正常DNA进行测序来发现人的癌症中的体细胞变化，还研究了增加癌症风险的常见种系突变的存在。尽管这些种系突变通常不是“可药用的”，但是该信息可用于确定预后，并且对于患者的家庭成员确定其自身的癌症风险是有价值的。实际上，现在已经有许多例子，其中一个家庭成员的正常和癌症DNA的测序已经揭示了已经警告其他家庭成员他们自己增加的癌症风险的种系突变。 基因组分析可以揭示潜在的驱动突变的存在，其不是针对给定类型的癌症的标准治疗的靶标。可能是靶向该驱动突变效应的药物是可商购的，但仅由美国食品和药物管理局（FDA）批准用于另一种形式的癌症。或者，可能是靶向该驱动突变效应的药物不是商业上可获得的，但是通过临床试验可以被患者接近。肿瘤学家可能使用基因组分析的信息为患者选择非标准的个性化治疗。在这里描述的情况下，肿瘤学家可能使用驱动程序突变的证据治疗病人与非标签的目标治疗。 “标签外”是指使用FDA批准的处方信息以外的药物。医生有自由裁量处方的标签，但应该有一个科学的理由这样做。作为实例，靶向EGFR的突变形式并且仅被批准用于治疗肺癌的药物可以由肿瘤学家对结肠癌进行处方，如果测试显示结肠癌细胞携带突变的EGFR，并且临床医生感觉到患者将是该药物的合适候选者。根据科学证据支持这种使用的强度，医生在规定非标签使用时的责任风险可能更大。保险公司和其他第三方付款人（例如Medicare）可能需要医生的科学依据的文件，才能同意支付非标签使用费。在对这里描述的情况的另一种解决方案中，肿瘤学家可以使用驱动突变的证据来推荐患者参加临床试验，其中正在研究的药物靶向驱动突变的影响。 基因组分析帮助指导个性化治疗癌症的潜力正在产生相当大的兴奋。希望药物不再用于对抗那些具有极低的成功可能性的癌症的情况下，更重要的是，目标驱动程序的不受控制的生长存在于给定的肿瘤中及时的方式将是非常有效的减少副作用。然而，重要的是注意到，这些治疗中的大多数通常靶向晚期癌症患者。大多数患者遵循已经良好建立的正常治疗过程，并且许多使用的药物是新的并且具有不利的副作用。然而，随着药物变得更具特异性并且它们的功效更加已知，预期这些目标方法和疗法将被施用于早期阶段患者并且变得更常见。 主动研究的另一个领域是使用基因组和基因表达数据来确定何时开始抗癌治疗。所有抗癌治疗都有副作用的风险。</description>
+    </item>
+    
+    <item>
+      <title>基因组签名--和基因组指纹类似</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E5%9F%BA%E5%9B%A0%E7%BB%84%E7%AD%BE%E5%90%8D--%E5%92%8C%E5%9F%BA%E5%9B%A0%E7%BB%84%E6%8C%87%E7%BA%B9%E7%B1%BB%E4%BC%BC/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E5%9F%BA%E5%9B%A0%E7%BB%84%E7%AD%BE%E5%90%8D--%E5%92%8C%E5%9F%BA%E5%9B%A0%E7%BB%84%E6%8C%87%E7%BA%B9%E7%B1%BB%E4%BC%BC/</guid>
+      <description>Kariin S, Burge C. 1995. Dinucleotide relative abundance extremes: a genomic signature. Trends in Genetics, 11(7): 283–290. 二核苷酸相对丰度极值：基因组签名
+ 早期生物化学实验证实，二核苷酸优势比或“一般设计”的集合是生物体的DNA的显着稳定的性质，其在蛋白质编码的DNA，本体基因组DNA中以及不同的复性速率和密度基本相同许多生物体中基因组DNA的梯度分数。目前可获得的基因组序列数据的分析已经扩展了这些较早的结果，表明基因组的不相交样品的一般设计与其他生物体的序列基本上更相似，并且密切相关的生物具有相似的一般设计。从这个角度来看，二核苷酸优势比（相对丰度）值的组合构成了每个DNA基因组的标记，其可以区分来自不同生物体的序列。二核苷酸比值比值似乎不仅反映了二核苷酸堆积能的化学成分和碱基阶段构象偏好，而且反映了DNA修饰，复制和修复机制的物种特异性。</description>
+    </item>
+    
+    <item>
+      <title>如何计算效应值（例如育种值）的准确性（accuracy）？</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%95%88%E5%BA%94%E5%80%BC%E4%BE%8B%E5%A6%82%E8%82%B2%E7%A7%8D%E5%80%BC%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7accuracy/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%95%88%E5%BA%94%E5%80%BC%E4%BE%8B%E5%A6%82%E8%82%B2%E7%A7%8D%E5%80%BC%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7accuracy/</guid>
+      <description>准确性指的是_预测效应值与真值之间的相关系数_。有时还会遇见一个概念——可靠性（reliability）。可靠性是准确性的平方，也就是说这二者度量的是一个事情。reliability其实就是遗传力，这句很重要！！！。遗传力主要用来计算选择响应（response to selection）。advisor说我的文章短句子太多，不连贯，确实是这样LOL。 准确性的计算公式为： *PEV*是prediction error variances的缩写，意思是预测误差方差，预测误差是预测值与真值间的差，即： 简书不支持公式真是淡疼！ *\sigma a^2*是加性方差。
+预测差值的标准误（*SED*）是可以从Asreml中直接得到的，与*PEV*的关系是： 我不知道上面这个公式怎么推导的。 所以有 在很长时间里我不知道（或者说模糊地知道）accuracy是怎么实现的。我知道公式，但在软件里分别和公式组分对应的部分是什么却不是很清楚，当然写这篇文字的时候是确定的。具体实现的途径有2： - 一是利用Asreml中的prediction直接得到*SED*后，再根据公式4得出PEV
+fm_pred &amp;lt;- predict(fm_asr, classify = &amp;quot;Fam&amp;quot;) #fm_asr是asreml()输出的对象， Fam是随机效应变量 SED &amp;lt;- fm_pred$predictions$avsed   二是逐步得到*PEV*，每个预测值都有一个*PEV*，是预测值*SE*平方的均值，所以从预测函数得到的对象中提取出*SE*平方后再平均即可  fm_pred &amp;lt;- predict(fm_asr, classify = &amp;quot;Fam&amp;quot;, present = &amp;quot;Plot&amp;quot;) #注意！这里预测的时候是要矫正掉其他的随机效应（如Plot） SE &amp;lt;- fm_pred$predictions$pvals$standard.error PEV &amp;lt;- SE^2 %&amp;gt;% mean  这里的*PEV*是一个向量，对应到每个水平上。 所以，总体上，*PEV*、*SED*和*SE*的关系是   另外，在林元震老师的著作R与ASReml-R统计学中（P474）也涉及到accuracy的代码
+SE &amp;lt;- fm_asr$vcoeff$random * fm_asr$sigma2 #效应值se乘以sigma  结果是一样的，但不知道是否合理。
+如果没有Asreml可能需要更底层的计算（比如手动），这时*PEV*的计算更直观些：于是有*C^{22}*是方程组关联矩阵的逆矩阵的右下角块，*d_i*是块中的对角线元素。具体可查看Pro. Isik编写的教材P84和Mrode, 2014的书P44。
+从*PEV*就可以得到我们需要的准确性和可靠性值了。
+这个问题在群中还被讨论过 </description>
+    </item>
+    
+    <item>
+      <title>如果平面上有n(n为大于或等于3的整数)个点，且每3个点均不在同一条直线上，那么最多可以画_________条直线(用含n的式子表示)</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E5%A6%82%E6%9E%9C%E5%B9%B3%E9%9D%A2%E4%B8%8A%E6%9C%89nn%E4%B8%BA%E5%A4%A7%E4%BA%8E%E6%88%96%E7%AD%89%E4%BA%8E3%E7%9A%84%E6%95%B4%E6%95%B0%E4%B8%AA%E7%82%B9%E4%B8%94%E6%AF%8F3%E4%B8%AA%E7%82%B9%E5%9D%87%E4%B8%8D%E5%9C%A8%E5%90%8C%E4%B8%80%E6%9D%A1%E7%9B%B4%E7%BA%BF%E4%B8%8A%E9%82%A3%E4%B9%88%E6%9C%80%E5%A4%9A%E5%8F%AF%E4%BB%A5%E7%94%BB_________%E6%9D%A1%E7%9B%B4%E7%BA%BF%E7%94%A8%E5%90%ABn%E7%9A%84%E5%BC%8F%E5%AD%90%E8%A1%A8%E7%A4%BA/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E5%A6%82%E6%9E%9C%E5%B9%B3%E9%9D%A2%E4%B8%8A%E6%9C%89nn%E4%B8%BA%E5%A4%A7%E4%BA%8E%E6%88%96%E7%AD%89%E4%BA%8E3%E7%9A%84%E6%95%B4%E6%95%B0%E4%B8%AA%E7%82%B9%E4%B8%94%E6%AF%8F3%E4%B8%AA%E7%82%B9%E5%9D%87%E4%B8%8D%E5%9C%A8%E5%90%8C%E4%B8%80%E6%9D%A1%E7%9B%B4%E7%BA%BF%E4%B8%8A%E9%82%A3%E4%B9%88%E6%9C%80%E5%A4%9A%E5%8F%AF%E4%BB%A5%E7%94%BB_________%E6%9D%A1%E7%9B%B4%E7%BA%BF%E7%94%A8%E5%90%ABn%E7%9A%84%E5%BC%8F%E5%AD%90%E8%A1%A8%E7%A4%BA/</guid>
+      <description>如果平面上有n(n为大于或等于3的整数)个点，且每3个点均不在同一条直线上，那么最多可以画_________条直线(用含n的式子表示)？
+ 　第一感觉是画图，画图直观些，容易发现规律，于是有：但很难发现这2组数间的规律，所以这种方法对于多数初中生（包括我，数列学得不好）是找不出二者的关系式的。 请教Jane，她直接告诉了我答案（牛人就是牛）：n(n-1)/2。我告诉她我需要推导过程，她给我整排列组合，也不是很好理解。 当我看到这个答案时，我恍惚在哪里见过： 所以，这种题的背后的问题是：n个点，两两组合，一共有多少种组合？没有限制条件的话应该是*n^2*（n方）个（看上面那个图），但自己和自己的组合要去掉（*n*个，不用怀疑，对角线部分），剩余*n^2-n个；因为正向和反向组合算是重复，还要再去掉一半，只剩对角线上（或下）的部分，所以答案是(n^2-n)/2*。 我想对于一个初中生而言，这种题目比较难，大部分人会死记这个答案，对于某些老师来说也未必能讲清楚。我觉得列矩阵（列表）的方法应该是最容易理解的，供参考。</description>
+    </item>
+    
+    <item>
+      <title>安装ARB</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E5%AE%89%E8%A3%85arb/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E5%AE%89%E8%A3%85arb/</guid>
+      <description>下载ARB wget http://download.arb-home.de/build/latest/arb-6.0.6.ubuntu1404-amd64.tgz tar -xzvf arb-6.0.6.ubuntu1404-amd64.tgz
+ 安装一些ARB需要的库 sudo apt-get install xfig libmotif4 libpng3 xloadimage gv libglew1.5 gnuplot  正在读取软件包列表... 完成 正在分析软件包的依赖关系树 正在读取状态信息... 完成 注意，根据正则表达式 &#39;libglew1.5&#39; 选中了 &#39;libglew1.5-dev&#39; 注意，选中 &#39;libglew-dev&#39; 而非 &#39;libglew1.5-dev&#39; 没有可用的软件包 libmotif4，但是它被其它的软件包引用了。 这可能意味着这个缺失的软件包可能已被废弃， 或者只能在其他发布源中找到 然而下列软件包会取代它： libxm4:i386 libuil4:i386 libmrm4:i386 libxm4 libuil4 libmrm4 libmotif-common E: 软件包 libmotif4 没有可安装候选
+ 修改环境变量 sudo vim /etc/bash.bashrc （vim需要安装，如果没有安装，用gedit也可以）
+  软件包设置 ┌──────────────────────────┤ 正在设定 arb-common ├──────────────────────────┐ │ The default configuration of PT-server slots in /etc/arb/arb_tcp.</description>
+    </item>
+    
+    <item>
+      <title>按词性提取单词</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E6%8C%89%E8%AF%8D%E6%80%A7%E6%8F%90%E5%8F%96%E5%8D%95%E8%AF%8D/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E6%8C%89%E8%AF%8D%E6%80%A7%E6%8F%90%E5%8F%96%E5%8D%95%E8%AF%8D/</guid>
+      <description>一直关注这样一个问题，一段英文文字中用到了哪些词，尤其是动名形容词？这样可以有目的地提高词汇量从而有助于英文写作。
+ 几乎每届R语言会议上都有关于文本处理的分会场，文本处理在如今的社会中有非常重要的应用。但是对于自己而言并不需要这些繁杂的用处，而且英文的处理相对于中文要简单不少，在R中也有相应的包可以实现这些。一开始借助OpenNLP，但有几个缺点： - 2个包要用到rjava，安装时非常之繁琐且容易失败，解决方法。
+ 分词很慢。
+ 同一个单词不同词形比如复数、时态不能归一，造成冗余。
+  后来为了解决词形的问题时遇到一页博客提及对应的英文单词是lemmatization，通过google后找到koRpus利用TreeTagger能够实现。注意Windows下要下载English parameter file并解压到lib文件夹中，以及安装Perl。运行时可能会报错，koRpus的解决方法见这里。 分词（或句子）用quanteda::tokenize实现。
+提取的结果并不完美，例如会出现数字开头的错误单词，不要苛责。</description>
+    </item>
+    
+    <item>
+      <title>探针设计</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E6%8E%A2%E9%92%88%E8%AE%BE%E8%AE%A1/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E6%8E%A2%E9%92%88%E8%AE%BE%E8%AE%A1/</guid>
+      <description>要在root下才可以。</description>
+    </item>
+    
+    <item>
+      <title>无标题文章</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/</guid>
+      <description>python scripts/run_BUSCO.py -i /home/larix/下载/myproject/Moelleriella_libera -o Moelleriella_libera_genome -l ascomycota_odb9 -m geno
+Grosmannia_clavigera_kw1407 Ophiostoma_piceae_UAMH_11346 Sporothrix_schenckii_1099-18 Drechslerella_stenobrocha_248 Arthrobotrys_oligospora_ATCC_24927
+Dactylellinahaptotyla(Monacrosporium_haptotyla) Hirsutella_minnesotensis_3608 Cordyceps_militaris_CM01 Beauveria_bassiana_ARSEF_2860 Metarhizium_anisopliae_ARSEF_549
+Fusarium_graminearum_PH-1 Magnaporthe_oryzae_70-15 Neurospora_crassa_OR74A Aspergillus_nidulans_FGSC_A4 Saccharomyces_cerevisiae_S288c
+Tuber_melanosporum_Mel28未找到 用Tuber_melanosporum代替
+Sporothrix_insectorum Metarhizium_robertsii Moelleriella_libera Sporothrix_brasiliensis
+Verticillium_alfalfae Sclerotinia_sclerotiorum Botrytis_cinerea Zymoseptoria_tritici</description>
+    </item>
+    
+    <item>
+      <title>日本落叶松全双列家系遗传参数估计及杂种优势分析</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E6%97%A5%E6%9C%AC%E8%90%BD%E5%8F%B6%E6%9D%BE%E5%85%A8%E5%8F%8C%E5%88%97%E5%AE%B6%E7%B3%BB%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1%E5%8F%8A%E6%9D%82%E7%A7%8D%E4%BC%98%E5%8A%BF%E5%88%86%E6%9E%90/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E6%97%A5%E6%9C%AC%E8%90%BD%E5%8F%B6%E6%9D%BE%E5%85%A8%E5%8F%8C%E5%88%97%E5%AE%B6%E7%B3%BB%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1%E5%8F%8A%E6%9D%82%E7%A7%8D%E4%BC%98%E5%8A%BF%E5%88%86%E6%9E%90/</guid>
+      <description>双列交配设计能够提供全面的信息用于配合力分析、遗传参数估计、杂种优势度分析等研究，被广泛应用于植物育种项目。本研究利用12×12全双列交配设计共获得55个组合，包括8个自交、34个正反交和13个单交。分别在2005年和2014年调查测定单株的树高（m）、胸径（cm），并计算材积指数（m3）。利用家系模型估计各方差组分。计算遗传力并预测遗传效应值。将来自成对亲本的组合及亲本自交（有的话）和亲本半同胞划分成一组，利用Turkey检验考察组内的差异显著性。提取12基因组DNA并用12个EST-SSR分型。然后估计亲本群体的遗传多样性指数。结果表明：一般配合力(GCA)及特殊配合力(SCA)对生长性状均有显著的作用。SCA的方差分量高于GCA，说明研究性状主要受显性作用控制。由于存在较大的小区方差及不能解释的残差方差，狭义遗传力较低，为0.01-0.08。因为SCA方差的作用，广义遗传力略有上升，为0.04-0.14。正反交效应仅对H14有显著作用，进一步的分析发现，在交配设计中缺失反交会提高GCA、SCA方差及遗传力，但对BLUP育种值的排名影响很小。日本落叶松自交可育，且不存在严重的自交衰退，8个自交成功的亲本，只有2个表现出显著的衰退现象。多数异交交配组合的杂种优势度为负，但依旧有若干组合具有显著的杂种优势，如CF29×RC402, Y11×CF29, RC13×CF29, Y11×RC82, Y8×RF27。12个亲本具有中度的遗传多样性。17标记产生的等位位点数为2 (H339, HL215, QL322, H197, H177) 到9个 (QL386)，平均观测等位基因数和有效等位基因数分别为3.588 和2.598 。平均 I, Ho 和 uHe 分别为 0.957, 0.624, and 0.557。利用亲本分子标记遗传距离与杂种优势的相关关系能够预测杂种优势及杂种优势群的划分，但本研究没有发现杂种优势和遗传距离及杂种优势和SCA间存在显著的相关关系。本研究结果有助于选择表现最为优良的交配组合，以及为日本落叶松高效育种策略的制定奠定基础。</description>
+    </item>
+    
+    <item>
+      <title>最好的告别</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E6%9C%80%E5%A5%BD%E7%9A%84%E5%91%8A%E5%88%AB/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E6%9C%80%E5%A5%BD%E7%9A%84%E5%91%8A%E5%88%AB/</guid>
+      <description> 一次谈话并不能涉及所有问题。接受个人的必死性、清楚了解医学的局限性和可能性，这是一个过程而不是一种顿悟。 我希望事情不是这个样子 如果时间不多了，对我来说最重要的是什么 我们觉得预后会怎么样 对于前景，我们有哪些担忧 如果健康状况恶化，我们希望怎样利用余下的时间 如果我们自己不能做决定，希望谁来做决定 我需要了解为了博取一个活命的机会，你愿意承受多少，以及你可以忍受的生存水平 我的直觉是让她走，因为情况太糟糕了 但是之后我会痛打我自己，会不停之一自己是不是让他走得太早  </description>
+    </item>
+    
+    <item>
+      <title>有关rjava包相关包的安装-64-bit</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E6%9C%89%E5%85%B3rjava%E5%8C%85%E7%9B%B8%E5%85%B3%E5%8C%85%E7%9A%84%E5%AE%89%E8%A3%85-64-bit/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E6%9C%89%E5%85%B3rjava%E5%8C%85%E7%9B%B8%E5%85%B3%E5%8C%85%E7%9A%84%E5%AE%89%E8%A3%85-64-bit/</guid>
+      <description>文本挖掘需要用到一些包，比如rjava，Rwordseg，我自己写的包也需要Java。但在配置好Java后依然报错
+Error : .onLoad failed in loadNamespace() for &#39;rJava&#39;, details: call: inDL(x, as.logical(local), as.logical(now), ...) error: unable to load shared object &#39;D:/Program Files/R/R-3.3.2/library/rJava/libs/i386/rJava.dll&#39;: LoadLibrary failure: %1 不是有效的 Win32 应用程序。
+可以看到这里是找不到i386/rJava.dll，很明显，程序调用的是32 bit，而我的都是64 bit，怎么强制64位包的安装？
+在安装命令后加上INSTALL_opts=&amp;quot;--no-multiarch&amp;quot;就可以了。</description>
+    </item>
+    
+    <item>
+      <title>期刊影响因子</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E6%9C%9F%E5%88%8A%E5%BD%B1%E5%93%8D%E5%9B%A0%E5%AD%90/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E6%9C%9F%E5%88%8A%E5%BD%B1%E5%93%8D%E5%9B%A0%E5%AD%90/</guid>
+      <description>表1 林业不太相关  Journal | IF |分区 -|-|- CURRENT MICROBIOLOGY|1.423|4 EVOLUTION|4.426|2 GENETICS|5.158|2 HEREDITY|3.803|3 The Journal of heredity|2.044|3 The Plant Journal|6.085|1 The Plant Cell|9.150|1 Cell|31.36|1 Genome biology|10.86|1 MOLECULAR ECOLOGY|6.494|2 Ecology and Evolution|3.232| Nature Communications|11.18|1 Molecular Ecology Resources|3.712|2 Genetics Research|1.468|4 Tree physiology|3.549|1 Genetics Selection Evolution|2.964|3 Plant Cell and Environment|6.4|1
+ 表2 林业期刊  Journal | IF |分区 -|-|- Canadian jounal of forest research|1.67|3 European journal of forest research|1.94|2 Forestry|1.96|2 Journal of forestry|1.</description>
+    </item>
+    
+    <item>
+      <title>林木遗传&amp;育种领域的专家</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E6%9E%97%E6%9C%A8%E9%81%97%E4%BC%A0%E8%82%B2%E7%A7%8D%E9%A2%86%E5%9F%9F%E7%9A%84%E4%B8%93%E5%AE%B6/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E6%9E%97%E6%9C%A8%E9%81%97%E4%BC%A0%E8%82%B2%E7%A7%8D%E9%A2%86%E5%9F%9F%E7%9A%84%E4%B8%93%E5%AE%B6/</guid>
+      <description>North America  Name|Country/institution &amp;ndash;|&amp;ndash; Bailian Li|北卡 Steven E Mckeand| Funda Ogut| 吴夏明|瑞典 Gene Namkoong|UBC Alvin D. Yanchuk|UBC Chang-Yi Xie| Satish Kumar|New Zealand Fikret Isik |北卡 Yousry A El-Kassaby|UBC Jaroslav Klápště| Milan Lstibůrek| Ilga Porth| Cherdsak Liewlaksaneeyanawin| Eduardo Pablo Cappa| Christophe Plomion| Michael U. Stoehr| Yong-Bi Fu (符永碧)| David B Neale| Konstantin V Krutovsky| Salvador A. Gezan|
+ Sweden  Name|Country/institution &amp;ndash;|&amp;ndash; Dag Lindgren| Anders Fries| Tore Ericsson| Tim J Mullin|</description>
+    </item>
+    
+    <item>
+      <title>正则表达式学习笔记-#正则表达式#-#regex#</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%23-%23regex%23/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%23-%23regex%23/</guid>
+      <description>title: &amp;ldquo;正则表达式学习笔记&amp;rdquo; author: &amp;ldquo;Dong Lei-ming&amp;rdquo; date: &amp;ldquo;2017年10月28日&amp;rdquo;
+output: html_document  如果需要从文本文件中识别具有一定模式的字符串时，学一点正则表达式比一个个查找-复制粘贴效率要高得多。
+ 我常用的能够通过正则表达式进行检索的软件有：Notepad++和Filelocator。用Notepad的机会更多一些。转入正题： 比如我有一串字符：
+Aoli|XP_011119616.1,Aoli|XP_011122673.1,Aoli|XP_011128430.1,Bbas|XP_008594286.1,Bbas|XP_008594329.1,Bbas|XP_008595160.1, Bbas|XP_008596935.1,Bbas|XP_008597129.1,Bbas|XP_008597693.1,Bbas|XP_008598495.1,Bbas|XP_008600657.1,Bbas|XP_008600739.1, Bbas|XP_008601538.1,Bbas|XP_008603064.1,Bbas|XP_008603175.1,Bbas|XP_008603621.1,Chig|XP_018154735.1,Chig|XP_018155044.1, Chig|XP_018155047.1,Chig|XP_018153301.1,Chig|XP_018151759.1,Chig|XP_018164608.1,Chig|XP_018152642.1,Chig|XP_018152650.1, Chig|XP_018150745.1,Chig|XP_018151082.1,Chig|XP_018151207.1,Chig|XP_018151210.1,Chig|XP_018151211.1,Chig|XP_018151295.1, Chig|XP_018151323.1,Chig|XP_018151575.1,Chig|XP_018151609.1,Chig|XP_018151641.1,Chig|XP_018163482.1,Chig|XP_018150468.1  我需要把|连同之前的字符都去掉，如果手动删除或是用空值一组一组地替换是非常繁琐的，数据量非常大时成本很高。而如果采用正则表达式则是几秒钟的事：查找\w*\|，然后替换框里空着，全部替换就可以了（Fig 1），Amazing！
+匹配字符  .，句点代表除换行符外的所有字符。比如a..b能匹配类似a alb，A18|B，ATP-b。不区分大小写，当然也可以区分，下同。 [...]，代表字符集。a[rl_]b匹配arb，AlB，A_b。 \d， 代表数字。XP_\d匹配XP_0，XP_0，&amp;hellip;，XP_9。 \D， 代表非数字。 \s， 代表空白字符。a\sb匹配a b。 \S， 代表非空白字符。 \w， 代表字母和数字。[a-z0-9]。 \w， 代表非字母和数字。 \b， 代表边界，如\b love，不会匹配alove之类的单词。 \r\n，这是Notepad里替换换换行符的字符串，有时会用到，非常方便！比如(\r\n){2}能替换空行，类似Word里的^p^p。  匹配字符的次数  *，≥0次。 +，≥1次。 ?，匹配问号前一个字符前面的全部字符含有或不含问号前这个字符，比较难理解，试一下就知道了。kdheo?，问号前一个字符是o，o前面的全部字符是kdhe，kdheo?匹配kdheo（含o）或kdhe（不含o）。 {}，花括号里是匹配前一个字符的次数1-9，也可以是个范围{1,5}。  逻辑匹配 想要同时匹配多个字符串时用逻辑字符|，如blue|Blue，能忽略blue首字母的大小写。 以含有多个字符的字符串为单位进行处理时要用圆括号()括起来。
+一个例子 有这样一串字符：
+[1] &amp;quot;db&amp;quot; &amp;quot;G.clavigera&amp;quot; &amp;quot;F.graminearum&amp;quot; &amp;quot;M.oryzae&amp;quot; &amp;quot;Z.tritici&amp;quot; &amp;quot;C.higginsianum&amp;quot; [7] &amp;quot;V.dahliae&amp;quot; &amp;quot;C.militaris&amp;quot; &amp;quot;B.bassiana&amp;quot; &amp;quot;M.</description>
+    </item>
+    
+    <item>
+      <title>正向和反向遗传方法</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E6%AD%A3%E5%90%91%E5%92%8C%E5%8F%8D%E5%90%91%E9%81%97%E4%BC%A0%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E6%AD%A3%E5%90%91%E5%92%8C%E5%8F%8D%E5%90%91%E9%81%97%E4%BC%A0%E6%96%B9%E6%B3%95/</guid>
+      <description>正向和反向遗传方法 有两种了解基因功能的一般方法：正向遗传学和反向遗传学（图18.7）。正向遗传学开始于良好表征的表型，例如对疾病有抗性的树，然后用于鉴定负责表型的基因。反向遗传学起始于一个基因，例如蛋白激酶，并致力于确定其决定的表型。正向遗传学方法如T-DNA标签，转座子标签和基因或增强子陷阱需要将外来DNA插入宿主树基因组（即基因转化，参见第20章）。这些方法以某种方式改变目标基因的表达，从而揭示与通过插入外源基因而改变的特定表型的关系。在本章后面讨论的数量性状基因座（QTL）图谱和关联定位等遗传作图方法也是前向遗传方法，因为不需要基因转移，所以常常使用这种方法。 反向遗传方法如RNA干扰（RNAi）或反义RNA的基因沉默（参见第20章）是将某种外源DNA引入宿主基因组中的方法，并且单个基因的表达在某种程度上被破坏。在某些情况下，基因的破坏可能导致植物中可见的突变。这些反向遗传方法中的一些可以大规模应用，从而能够将许多基因分配到特定功能。然而，这些方法需要遗传转化宿主植物的能力（第20章），因此它们很可能仅用于少量树种，例如可以轻松转化的杨树。由于变形针叶树有困难，需要转化的逆转或转移遗传方法在不久的将来不太可能在针叶树中使用。</description>
+    </item>
+    
+    <item>
+      <title>混合模式与传统相比-方差分析</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E6%B7%B7%E5%90%88%E6%A8%A1%E5%BC%8F%E4%B8%8E%E4%BC%A0%E7%BB%9F%E7%9B%B8%E6%AF%94-%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E6%B7%B7%E5%90%88%E6%A8%A1%E5%BC%8F%E4%B8%8E%E4%BC%A0%E7%BB%9F%E7%9B%B8%E6%AF%94-%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90/</guid>
+      <description>混合模式与传统相比 方差分析 玉米重组近交系数据 通过测试来自近交玉米品系B73和Mo17之间的杂交的62个重组近交系（RIL）后代获得了实施例数据（玉米RILs.csv）。 RIL在20个植物的实验单位（图）中生长，每个使用随机化完全区组设计，在四个位置的每一个具有两个重复。 每个图中五个植物的平均高度是用于该实验的独立变量。 实际数据集中缺少一些数据，这些数据用模拟数据填充以创建用于演示的平衡数据集。</description>
+    </item>
+    
+    <item>
+      <title>演化、神创与Richard-Dawkins</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E6%BC%94%E5%8C%96%E7%A5%9E%E5%88%9B%E4%B8%8Erichard-dawkins/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E6%BC%94%E5%8C%96%E7%A5%9E%E5%88%9B%E4%B8%8Erichard-dawkins/</guid>
+      <description>先挖坑，谈谈自己对演化与神创的认识，另外一个目的是写一点Richard Dawkins著作的读后感，可能会持续很长时间。
+这里不考究相关的概念和理论，有很多想当然的成分。 演化最著名的著作非达尔文的《物种起源》莫属。这本书令人神往，又被许多老师推荐。本科期间曾找来阅读，中文英文中英文对照版本都有，但没能坚持读完。内容有点枯燥，而且主要是放在一个大生物的背景下，与我所涉及的林业有点远，这是题外话。 神创论是许多人的精神食粮。我们在解决一顿饭食后容易思考一些关于人的终极问题，如人是怎么来的以及我们的存在有何意义，只有圣经给出了解释，当然佛也做出了一定的分析但佛不是神创论。在一段时期内我倾向于神创论，因为相比之下我更难以接受人和类人猿甚至猴子有共同的祖先。有人说现在国内的基督教是新教的分枝（知乎某牛） 我私认为，演化在很大程度上动摇了神创论的根基，而且越来越多的证据在支持演化，相反神创论并没有太多的实例。尽管神迹不断被宣扬，不断被解释，但这中间掺杂多少人的想法不得而知，可以明确的一点是，偏客观的神迹在圣经编写完成以后就几乎不见了。
+Richard Dawkins的著作： - The God Delusion Jan 16, 2008
+ The Selfish Gene: 40th Anniversary Edition (Oxford Landmark Science) Aug 1, 2016  - The Blind Watchmaker: Why the Evidence of Evolution Reveals a Universe without Design (Reissued in 2006 and 1996) Sep 17, 1996
+- The Greatest Show on Earth: The Evidence for Evolution Aug 24, 2010</description>
+    </item>
+    
+    <item>
+      <title>相关分析-correlation-analysis-in-r-#rstat#</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E7%9B%B8%E5%85%B3%E5%88%86%E6%9E%90-correlation-analysis-in-r-#rstat%23/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E7%9B%B8%E5%85%B3%E5%88%86%E6%9E%90-correlation-analysis-in-r-#rstat%23/</guid>
+      <description> 皮尔森相关分析是最常用的一种适用于连续性变量的相关分析方法，在所有的具有统计分析功能的软件中都能处理。在R中处理不仅简便，利用rmarkdown还能以word的形式呈现结果。底层函数能够同时计算变量矩阵中变量间的相关系数（cor），但假设检验只能一对一对的进行（cor.test），而借助包psych中的core.test函数则能同时报告相关系数及相应的p-value。
+  加载用到的包  library(tidyverse) library(psych)  数据导入  options(digits = 3) df &amp;lt;- read.csv(&amp;quot;input/corr.csv&amp;quot;) %&amp;gt;% .[, c(3:9)] results &amp;lt;- corr.test(df)  相关系数 {r echo=FALSE} knitr::kable(results$r, caption = &amp;quot;表1 相关系数 Correlation matrix&amp;quot;)  p-value {r echo=FALSE} knitr::kable(results$p, caption = &amp;quot;表2 相关系数的p值 Probability values (Entries above the diagonal are adjusted for multiple tests.)&amp;quot;)   </description>
+    </item>
+    
+    <item>
+      <title>相关图</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E7%9B%B8%E5%85%B3%E5%9B%BE/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E7%9B%B8%E5%85%B3%E5%9B%BE/</guid>
+      <description>今天学习文献（Pagliarini2016），看到这样的相关系数图： 以往通常用表的形式： 或者用矩阵图的形式： 像Pagliarini2016中的热图头一次见于文献（有点炫，适合PPT用）。那怎么实现的呢？corrplot可以做这个事：
+## 构建相关矩阵 M&amp;lt;-cor(mtcars) ## 热图 corrplot(corr, method=&amp;quot;circle&amp;quot;)  因为上对角和下对角是一样的，也可以只有一半：
+corrplot(M, type=&amp;quot;upper&amp;quot;)  但是这些热图有个问题是，不知道显著性。corrplot也可以实现： 1. 获得显著性矩阵
+# mat : is a matrix of data # ... : further arguments to pass to the native R cor.test function cor.mtest &amp;lt;- function(mat, ...) { mat &amp;lt;- as.matrix(mat) n &amp;lt;- ncol(mat) p.mat&amp;lt;- matrix(NA, n, n) diag(p.mat) &amp;lt;- 0 for (i in 1:(n - 1)) { for (j in (i + 1):n) { tmp &amp;lt;- cor.</description>
+    </item>
+    
+    <item>
+      <title>系谱构建中微卫星和SNP的特点</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E7%B3%BB%E8%B0%B1%E6%9E%84%E5%BB%BA%E4%B8%AD%E5%BE%AE%E5%8D%AB%E6%98%9F%E5%92%8Csnp%E7%9A%84%E7%89%B9%E7%82%B9/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E7%B3%BB%E8%B0%B1%E6%9E%84%E5%BB%BA%E4%B8%AD%E5%BE%AE%E5%8D%AB%E6%98%9F%E5%92%8Csnp%E7%9A%84%E7%89%B9%E7%82%B9/</guid>
+      <description>Pemberton J . 2008. Wild pedigrees: the way forward. Proceedings of the Royal Society B: Biological Sciences, 275(1635): 613–621.
+  SSR 微卫星是多年来推断亲缘关系常用的标记（Parker et al。1998; Jones＆Ardren 2003）。它具有其他标记类型不具备的特点：单座位信息，共显性，由于低频下的许多等位基因导致的高变异性，通过自动化的高通量潜力和适于对从野生种群获得的法医样品的分析的短DNA片段。识别新物种的微卫星标记是通过从头发现或利用其跨物种效用。现在通常获得用于亲本分析的基因型只是时间和金钱的问题。 【缺点】有时，微卫星很难找到或者多态性差。基因分型易于发生突变（分型错误），且有明显比例的基因座具有分离无效等位基因（Dakin＆Avise 2004），所有这些都可能引起假亲本排除。影响长期研究的技术问题是微卫星等位基因大小在检测平台之间变化。
+ SNP 未来，单核苷酸多态性（SNPs）可能常用于自然种群的谱系重建。 虽然与微型卫星相比信息量少得多，但它们存在大量数据，并且与微型卫星相比潜在的误差更小。 因此，识别个体和亲本的能力可能非常高（Anderson＆Garza 2006）。 目前已经为动物和人类开发了单核苷酸多态性的panel，并且研究证实了它们与标准微卫星相比的有用性（例如Phillips等人2007; Rohrer等人2007）。
+   Berger-Wolf T Y, Sheikh S I, DasGupta B, et al. 2007. Reconstructing sibling relationships in wild populations. Bioinformatics, 23(13).
+ 与显性标记如AFLP和ISSR不同，微卫星等位基因是共显性的，因此每个基因座的基因型和等位基因频率的推断是直接的。 对于不受大规模基因组计划影响的物种，SNPs的开发比微卫星开发更加困难和昂贵。 更重要的是，识别相关个体的能力主要取决于每个基因座的等位基因数及其杂合度，微卫星在两个方面明显优于其他标记，5-20等位基因和杂合度&amp;gt; 0.700是典型的，如 许多野生种群。
+ Trong T Q, van Bers N, Crooijmans R, et al.</description>
+    </item>
+    
+    <item>
+      <title>纸牌屋-英文字幕-剧本-S1-S5-txt-下载</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E7%BA%B8%E7%89%8C%E5%B1%8B-%E8%8B%B1%E6%96%87%E5%AD%97%E5%B9%95-%E5%89%A7%E6%9C%AC-s1-s5-txt-%E4%B8%8B%E8%BD%BD/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E7%BA%B8%E7%89%8C%E5%B1%8B-%E8%8B%B1%E6%96%87%E5%AD%97%E5%B9%95-%E5%89%A7%E6%9C%AC-s1-s5-txt-%E4%B8%8B%E8%BD%BD/</guid>
+      <description>纸牌屋是部好剧，是很好的英文学习素材。网上只能找到字幕，但并没有现成的纯文本可供下载，因此从字幕文件中抓取出来，并在这里分享。希望对你有用。
+ 度盘下载链接 密码: gwf9</description>
+    </item>
+    
+    <item>
+      <title>线性混合模型LMM</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E7%BA%BF%E6%80%A7%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8Blmm/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E7%BA%BF%E6%80%A7%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8Blmm/</guid>
+      <description> 线性混合模型基础 线性混合模型（LMM）是遗传评估中必用的统计模型，用以将群体中每个个体的观测值按照潜在影响因素进行分解。决定观测值的大小和幅度受2个参数（均值和方差）控制，反过来说也可以。一般我们更关注方差，围绕方差的运算与处理也更为复杂，所以能够将LMM中涉及的方差们的关系搞明白，就大体能理解这些没什么亲和力的模型们了。通常在介绍这一部分内容时，很容易让人发蒙，因为太抽象了，全是符号，所以前提是必须对数学这门外语有一定了解，就是一门外语啊。比如告诉我一个矩阵的维度是4×5，我头脑里有概念，这是小学的数学知识学得好，但你告诉我它的维度是n×p，我的CPU和GPU就不太够用了，所以得像学习英语一样，方法+重复才是硬道理。
+如果知道了这些方差们的具体数值，求算各个因素的系数（我们最终要的是这个）就相对容易多了。但这些方差是怎么计算的？一般会告诉采用了什么方法（REML用的多），但这又是什么我想很多人想知道但没人教，所以一直糊涂着，只停留在会用的地步，当然会处理数据也够用。我很有兴趣，但到今天我也不全会，也没有能力在R中实现，原因是没那个功底，不会矩阵求导，盼望有一天谁来引领一下，但这不是刚需，因此参数求解就停在这里了。下面就我了解的知识对LMM做2部分的介绍，主要目的是自我梳理，学识有限，错误难免。
+1. LMM的形式 这是基本形式，更复杂的都是在其基础上演变出来的。
+式子里一共有6个字母，4个小写，2个大写。小写是向量（1维矩阵），大写是矩阵。这几个字母的意思分别是：
+   字母 名称 维度     y 观测值 n×1   b 固定效应（p个水平） p×1   a 随机效应（q个水平） q×1   e 随机残差 n×1   X 固定效应设计矩阵 n×p   Z 随机效应设计矩阵 n×q    有几个假设
+意思是a和e这2个向量的参数（均值和方差），均值都是0，方差分别是G和R，协方差是0（彼此独立，没有线性关系）。G和R具体又是什么？ ， 。*A*是随机效应中q个水平之间的关系矩阵（分子关系矩阵），如果水平间不相关（独立），那么就等同于单位矩阵*I*。这里只假设a是1个效应，a也可以是含有多个效应的列向量；同样，在某些情况下，也可以继续分解R。此外，观测值的期望是E(y)=Xb，方差（marginal）var(y)=V=ZGZ^T+R。期望比较容易理解，方差为何是这个形式？G左右为何乘以Z？很多材料没有给详细的推导式子。Mrode（2013，p35）中：
+总之，一个普通LMM中的元素就这么多，了解了这些内容，才有可能看懂后续的似然函数以及参数具体的ML或REML过程。
+2. REML过程（待更） </description>
+    </item>
+    
+    <item>
+      <title>般若波罗蜜多心经</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E8%88%AC%E8%8B%A5%E6%B3%A2%E7%BD%97%E8%9C%9C%E5%A4%9A%E5%BF%83%E7%BB%8F/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E8%88%AC%E8%8B%A5%E6%B3%A2%E7%BD%97%E8%9C%9C%E5%A4%9A%E5%BF%83%E7%BB%8F/</guid>
+      <description>观自在菩萨，行深般若波罗蜜多时，照见五蕴皆空，度一切苦厄。 舍利子，色不异空，空不异色，色即是空，空即是色，受想行识，亦复如是。 舍利子，是诸法空相，不生不灭，不垢不净，不增不减。 是故空中无色，无受想行识，无眼耳鼻舍身意，无色声香味触法。无眼界，乃至无意识界；无无明，亦无无明尽；乃至无老死，亦无老死尽。无苦集灭道，无智亦无得。以无所得故，菩提萨埵。依般若波罗蜜多故，心无挂碍，无挂碍故，无有恐惧。远离颠倒梦想，究竟涅槃。三世诸佛，依般若波罗蜜多故，得阿诺多罗三藐三菩提。故知般若波罗蜜多，是大神咒，是大明咒，是无上咒，是无等等咒，能除一切苦，真实不虚。故说般若波罗蜜多咒，即说咒曰：揭谛揭谛，波罗揭谛，波罗僧揭谛，菩提萨摩耶。
+观自在菩萨，行深般若波罗蜜多时，照见五蕴皆空，度一切苦厄。 舍利子，色不异空，空不异色，色即是空，空即是色。受想行识，亦复如是。 舍利子，是诸法空相，不生不灭，不垢不净，不增不减。 是故空中无色，无受想行识，无眼耳鼻舍身意，无色声香味触法。无眼界，乃至无意识界；无无明，亦无无明尽；乃至无老死，亦无老死尽。无苦集灭道，无智亦无得，以无所得故，菩提萨埵。依般若波罗蜜多故，心无挂碍，无挂碍故，无有恐惧。远离颠倒梦想，究竟涅槃。三世诸佛，依般若波罗蜜多故，得阿诺多罗三藐三菩提。故知般若波罗蜜多，是大神咒，是大明咒，是无上咒，是无等等咒。能除一切苦，真实不虚。故说般若波罗蜜多咒，即说咒曰：揭谛揭谛，波罗揭谛，波罗僧揭谛，菩提萨摩耶。
+观自在菩萨，行深般若波罗蜜多时，照见五蕴皆空，度一切苦厄。 舍利子，色不异空，空不异色，色即是空，空即是色，受想行识，亦复如是。 舍利子，是诸法空相，不生不灭，不垢不净，不增不减。 是故空中无色，无受想行识，无眼耳鼻舍身意，无色声香味触法。无眼界，乃至无意识界；无无明，亦无无明尽；乃至无老死，亦无老死尽。无苦集灭道，无智亦无得，以无所得故，菩提萨埵。依般若波罗蜜多故，心无挂碍，无挂碍故，无有恐惧。远离颠倒梦想，究竟涅槃。三世诸佛，依般若波罗蜜多故，得阿诺多罗三藐三菩提。故知般若波罗蜜多，是大神咒，是大明咒，是无上咒，是无等等咒。能除一切苦，真实不虚。故说般若波罗蜜多咒，即说咒曰：揭谛揭谛，波罗揭谛，波罗僧揭谛，菩提萨摩耶。
+觀自在菩薩，行深般若波羅蜜多時，照見五蘊皆空，度一切苦厄。 舍利子，色不異空，空不異色，色即是空，空即是色，受想行識，亦復如是。 舍利子，是諸法空相，不生不滅，不垢不淨，不增不減。 是故空中無色，無受想行識，無眼耳鼻舌身意，無色聲香味觸法。無眼界，乃至無意識界，無無明，亦無無明盡，乃至無老死，亦無老死盡。無恐集滅道，無智亦無得，以無所得故，菩提薩埵。依般若波羅蜜多故，心無掛礙，無掛礙故，無有恐懼。遠離顛倒夢想，究竟涅槃。三世諸佛，依般若波羅蜜多故，得阿諾多羅三藐三菩提。故知般若波羅蜜多，是大神咒，是大明咒，是無上咒，是無等等咒。能除一切苦，真實不虛。故說般若波羅蜜多咒，即說咒曰：揭諦揭諦，波羅揭諦，波羅僧揭諦，菩提薩摩耶。
+觀自在菩薩，行深般若波羅蜜多時，照見五蘊皆空，度一切苦厄。 舍利子，色不異空，空不異色，色即是空，空即是色，受想行識，亦復如是。 舍利子，是諸法空相，不生不滅，不垢不淨，不增不減。 是故空中無色，無受想行識，無眼耳鼻舌身意，無色聲香味觸法。無眼界，乃至無意識界，無無明，亦無無明盡，乃至無老死，亦無老死盡。無恐集滅道，無智亦無得，以無所得故，菩提薩埵。依般若波羅蜜多故，心無掛礙，無掛礙故，無有恐懼。遠離顛倒夢想，究竟涅槃。三世諸佛，依般若波羅蜜多故，得阿諾多羅三藐三菩提。故知般若波羅蜜多，是大神咒，是大明咒，是無上咒，是無等等咒，能除一切苦，真實不虛。故說般若波羅蜜多咒，即說咒曰：揭諦揭諦，波羅揭諦，波羅僧揭諦，菩提薩摩耶。
+觀自在菩薩，行深般若波羅蜜多時，照見五蘊皆空，度一切苦厄。 舍利子，色不異空，空不異色，色即是空，空即是色，受想行識，亦復如是。 舍利子，是諸法空相，不生不滅，不垢不淨，不增不減。 是故空中無色，無受想行識，無眼耳鼻舌身意，無色聲香味觸法。無眼界，乃至無意識界，無無明，亦無無明盡，乃至無老死，亦無老死盡。無恐集滅道，無智亦無得，以無所得故，菩提薩埵。依般若波羅蜜多故，心無掛礙，無掛礙故，無有恐懼。遠離顛倒夢想，究竟涅槃。三世諸佛，依般若波羅蜜多故，得阿諾多羅三藐三菩提。故知般若波羅蜜多，是大神咒，是大明咒，是無上咒，是無等等咒，能除一切苦，真實不虛。故說般若波羅蜜多咒，即說咒曰：揭諦揭諦，波羅揭諦，波羅僧揭諦，菩提薩摩耶。</description>
+    </item>
+    
+    <item>
+      <title>表型adjustment</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E8%A1%A8%E5%9E%8Badjustment/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E8%A1%A8%E5%9E%8Badjustment/</guid>
+      <description>Cappa, E.P., El-Kassaby, Y.A., Garcia, M.N., Acuña, C., Borralho, N.M.G., Grattapaglia, D., and Marcucci Poltri, S.N. 2013. Impacts of Population Structure and Analytical Models in Genome-Wide Association Studies of Complex Traits in Forest Trees: A Case Study in Eucalyptus globulus. PLoS One 8(11): e81267. doi:10.1371/journal.pone.0081267.
+ The association mapping tests were carried out using two steps. In the first, data were standardized within each site and trait by subtracting each individual measurement from the mean trait value at that site and dividing the adjusted measurement by the site’s standard deviation.</description>
+    </item>
+    
+    <item>
+      <title>调和小区株树的计算</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E8%B0%83%E5%92%8C%E5%B0%8F%E5%8C%BA%E6%A0%AA%E6%A0%91%E7%9A%84%E8%AE%A1%E7%AE%97/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E8%B0%83%E5%92%8C%E5%B0%8F%E5%8C%BA%E6%A0%AA%E6%A0%91%E7%9A%84%E8%AE%A1%E7%AE%97/</guid>
+      <description>计算家系平均遗传力时，如果数据不平衡（小区株树不一致）需要用到调和小区株树（*nk*）。
+*nk*的计算在黄少伟的论文中（黄少伟; 钟伟华 用小区平均值估算单株遗传力的方法. 华南农业大学学报 1998, 19, 76–81.）有介绍，计算公式为：
+关键点是得到具体方法每个小区的株树，加起来然后用地点数、区组数和家系数的积除一下即可得。每个小区的株树可以在SPSS中得到，用general linear model中的univariate分析，响应变量选择一个最好没有缺失值的变量，单点时自变量选择family和block，多点则把site也选上。当然我们并不真的要做回归或ANOVA，所以要在options中勾选描述性统计，这个才是我们需要的。出来的结果是这样的：
+我们需要最右列*N*，复制到Excel中，注意把所有Total的行去掉，按照公式计算就可以了。</description>
+    </item>
+    
+    <item>
+      <title>转--发邮件向国外作者索要论文原文</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E8%BD%AC--%E5%8F%91%E9%82%AE%E4%BB%B6%E5%90%91%E5%9B%BD%E5%A4%96%E4%BD%9C%E8%80%85%E7%B4%A2%E8%A6%81%E8%AE%BA%E6%96%87%E5%8E%9F%E6%96%87/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E8%BD%AC--%E5%8F%91%E9%82%AE%E4%BB%B6%E5%90%91%E5%9B%BD%E5%A4%96%E4%BD%9C%E8%80%85%E7%B4%A2%E8%A6%81%E8%AE%BA%E6%96%87%E5%8E%9F%E6%96%87/</guid>
+      <description>有时，想找的文献在论文数据库里面找不到，或者受制于权限，无法下载全文，可以向原作者索要，只要态度诚恳，大多数作者都会愿意发过来。前提是找到作者的有效联系方式，尤其是发表时间较早的论文，想找到电子邮箱等联系方式可能要花费一些功夫。可以先检索该作者的近些年发的文章，一般会有收获。 上周，看到一期Nature上的文章，但在网上检索不到该期杂志的下载，加之宿舍网络无法登陆Nature数据库下全文，就尝试联系了文章作者，耶鲁大学地质和地球物理学院的一位研究人员。上周五晚上发的邮件，本周二晚上得到的回复。寄来的全文，除了见之于杂志上的6页文章外，还有几页是未在杂志上刊出的相关图表。 网上有一些相关的邮件模板，重要的是态度诚恳，简洁： Dear Prof. (Dr.) XXX (作者名）， I am XXXX, a graduate (doctoral) student in XXXX University in China. My major is XXX (你的专业）. I am very interested in your recently publication: XXXXX (文章名), published in xXXXX （杂志名）， XXX年。But I have no access to this paper, so would you please mail me a PDF file of this paper? My e-mail address is :XX@XXXXXX. if you have no PDF file of this paper, would you please mail me a copy via air mail.</description>
+    </item>
+    
+    <item>
+      <title>转-给想要联系学者的一些建议</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E8%BD%AC-%E7%BB%99%E6%83%B3%E8%A6%81%E8%81%94%E7%B3%BB%E5%AD%A6%E8%80%85%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BB%BA%E8%AE%AE/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E8%BD%AC-%E7%BB%99%E6%83%B3%E8%A6%81%E8%81%94%E7%B3%BB%E5%AD%A6%E8%80%85%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BB%BA%E8%AE%AE/</guid>
+      <description>这是一位学者发表在Twitter上的一些关于如何联系学术人物申请学习或是工作的一些建议。未经作者同意，转发于此：
+ Advice for students wishing to contact academics One of the great things about being a tenured academic is that people not only start to know who you are but would like to work with you. This is very flattering, but of course, research funding is not abundant and time is always in short supply. I have been asked at an increasing frequency for any vacancies / internships / studentships / jobs and I imagine most often I would be very lucky to be able to take the folk on who write to me.</description>
+    </item>
+    
+    <item>
+      <title>转‖如何使用python根据关键词抓取微博？.h</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E8%BD%AC%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8python%E6%A0%B9%E6%8D%AE%E5%85%B3%E9%94%AE%E8%AF%8D%E6%8A%93%E5%8F%96%E5%BE%AE%E5%8D%9A.h/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E8%BD%AC%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8python%E6%A0%B9%E6%8D%AE%E5%85%B3%E9%94%AE%E8%AF%8D%E6%8A%93%E5%8F%96%E5%BE%AE%E5%8D%9A.h/</guid>
+      <description>&amp;lt;!DOCTYPE html&amp;gt;  转‖如何使用python根据关键词抓取微博？ body { margin: 0; font-family: &amp;ldquo;Helvetica Neue&amp;rdquo;, Helvetica, Arial, &amp;ldquo;Hiragino Sans GB&amp;rdquo;, sans-serif; font-size: 14px; line-height: 20px; color: #777; background-color: white; } .container { width: 700px; margin-right: auto; margin-left: auto; }
+ .post { font-family: Georgia, &amp;quot;Times New Roman&amp;quot;, Times, &amp;quot;SimSun&amp;quot;, serif; position: relative; padding: 70px; bottom: 0; overflow-y: auto; font-size: 16px; font-weight: normal; line-height: 25px; color: #515151; } .post h1{ font-size: 50px; font-weight: 500; line-height: 60px; margin-bottom: 40px; color: inherit; } .</description>
+    </item>
+    
+    <item>
+      <title>转载：网上阅读也许并不是阅读</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E8%BD%AC%E8%BD%BD%E7%BD%91%E4%B8%8A%E9%98%85%E8%AF%BB%E4%B9%9F%E8%AE%B8%E5%B9%B6%E4%B8%8D%E6%98%AF%E9%98%85%E8%AF%BB/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E8%BD%AC%E8%BD%BD%E7%BD%91%E4%B8%8A%E9%98%85%E8%AF%BB%E4%B9%9F%E8%AE%B8%E5%B9%B6%E4%B8%8D%E6%98%AF%E9%98%85%E8%AF%BB/</guid>
+      <description>转载：网上阅读也许并不是阅读 作者/Susan M. Weinschenk 宾夕法尼亚州立大学心理学博士，行为心理学家，研究心理学在设计中的应用30余年。现为咨询和培训公司Weinschenk Institute的总负责人，威斯康星大学斯蒂文斯波恩特分校网络和数字媒体发展专业兼职教授，管理咨询公司The Team W的共同所有人。她还经营着超人气博客whatmakesthemclick.net，并出版了多本著作，如《设计师要懂心理学》《说服人要懂心理学》《网页设计心理学》《抓住听众心理：演讲者要知道的100件事》。
+ 我在发表主旨演讲时，经常讲到的内容就是科技变化日新月异，但是人的变化却没有那么快。人的眼睛、耳朵、身体和大脑的绝大部分工作方式是在亿万年的进化过程中形成的，那可不是说变就变的。 我说的是绝大部分。阅读就是一个例外。这是因为阅读并不是人天生固有的能力。每个人都要学习如何阅读。 美国塔夫茨大学阅读与语言研究中心主任 Maryanne Wolf 写了一本书，叫《普鲁斯特与乌贼：阅读如何改变我们的思维》（*Proust and the Squid: The Story and Science of the Reading Brain*，2008）。在这本书里，Wolf 解释说人们的大脑并非天生就有阅读的能力。与直立行走和说话不一样，阅读并不是天生的能力，而是后天习得的能力。有趣的是，大脑阅读的方式也不止一种。 神经可塑性与阅读 人的大脑一生都在变化。描述这种变化的专业术语就是神经可塑性（neuroplasticity）。大脑自身会进行重组，形成新的神经连接。有时候，特定功能在大脑中出现的地方也会发生变化。这是对环境和人们日常行为的一种反射。学习阅读同样也会导致大脑的变化。 不管人们使用什么语言，他们在学习阅读时大脑都会以某种可预测的方式发生变化。Kimihiro Nakamura（2012）使用 fMRI 扫描技术绘出了学习法语阅读和学习汉语阅读的人群的大脑活动图。他发现有两个回路：一个是眼睛用来识别形状的，另一个是手势识别系统用来识别手势的。这两个回路在阅读的过程中都会被激活，而且在阅读法语和汉语的过程中呈现出了相同的活动形态。 当然，语言不同，大脑的活动形态也有差异。比如说，与阅读法语的人群相比，阅读汉语的人群大脑中负责识别手势的区域更加活跃。然而，不管人们阅读的语言是什么，他们在学习阅读时，大脑都会发生改变。正如 Wolf 指出的那样，大脑中本来负责其他任务的区域——例如，负责形状识别、语言和手势的区域——在人们学习阅读时会形成新的回路和神经连接。 略读、寻读与阅读 人们坐下来专心致志地阅读一本书（不管是在电子书阅读器还是纸张上，不管是小说还是非小说）和人们在网上浏览信息有着很大的差异。这两种阅读方式使用的大脑区域也不一样。 在专心致志地阅读时，人们的思维活动是不一样的。善于阅读的人进行的阅读活动的是Wolf所说的“深度阅读”。他们边读边思考，将读到的内容和自己的经历联系在一起。他们会提出一些新的想法，理解和分析的范围超越了作者写作的内容。他们的阅读过程同时也是内心体验的过程。 略读和寻读（skimming and scanning）是完全不同的一种体验——并不是说这种体验不好，只是说这种体验和阅读的体验不一样。人们略读和寻读时会更多地使用视觉注意。他们内化的信息较少，是一种外部体验。在深度阅读和略读与寻读之间的这些差异会在大脑扫描图像上呈现出来。 纸书阅读的多种感官体验 研究人为因素的科学家在谈论触觉时，谈到了触觉体验。针对触觉体验的设计叫“触觉论”（haptics），这个术语专指触觉体验在人机互动过程中的应用。 阅读纸质图书的触觉体验和目前在电子阅读器或平板电脑上阅读图书的触觉体验有着很大的差别。虽然页面上的墨迹可能相似，但是纸质图书还有其他触觉特征。这些特征（至少在我写这本书的时候）是电子阅读器的触摸屏所没有的。 纸质图书有重量感，而且书不同，这种重量感也不同。纸质图书的重量感影响人们对作品重要性的感知。关于具身认知（embodied cognition）的研究表明，人们拿着重物时，会认为这个物体更加重要。在使用电子阅读器的情况下，所有的书都是一样的重量。同样，纸质图书有厚薄之分，但是使用电子阅读器时，所有的图书都是一样的厚度。书的页数和厚度构成了人们对图书的部分体验。 阅读纸质图书，你可以感觉到纸张的质感。纸质图书的翻页过程和电子图书的翻页过程是两种完全不同的动作体验。纸质图书的翻页过程会发出声响。而且，合上一本精装大部头图书也会发出声响。 有些纸质图书甚至给人以嗅觉体验。我很小的时候就喜欢读书。那些旧书的书香现在依然能够让我回想起小时候和母亲一起在公共图书馆看书的岁月，想起当时自己手抚书脊时，对书中内容的无限期待。 阅读纸质图书是一种包括触觉、嗅觉、视觉和听觉等多种感官在内的体验过程。电子阅读器会用到视觉和触觉，但是，这种视觉和触觉体验对于所有的电子书都是一样的。使用电子阅读器有时也会用到听觉，但是与纸质图书不同，不会用到嗅觉。为了让人们在使用电子阅读器时有与阅读纸质图书一样的体验，设计师还需要进行很多有趣的设计。 请不要误会，我可不是像勒德分子一样害怕和厌恶科技的人。我很喜欢我的电子阅读器。但是，我知道电子阅读器和纸质图书还是不一样的。 纸质图书的导航地图和印象地图 人们在纸质图书中的导航方式不能用于电子阅读器。一本纸质图书就像是一处风景，人们在阅读的过程中会形成一张印象地图。他们对图书某个部分的记忆和图书的形体紧紧联系在一起。如果我问你：“书中的哪一段写到 John 对 Adam 行医的能力提出了质疑？”你很有可能会翻到书的三分之一部分。你可能会说：“我记得在这几页中某一页结尾靠左的地方看到过。”你对这本书的记忆就是一种实体记忆。这种对阅读的实体性“地图式”记忆在使用电子阅读器时是不会出现的。 纸质图书有一种 Ferris Jabr（2013）称为“剖析图”（topography）的东西，这是电子阅读器所没有的。打开一本书，就有左边页和右边页，另外还有可以作为位置参考的八个页角。你可以看到自己相对于书的边缘和页角的位置，看到这一页已经看完多少内容，以及这本书已经看完多少内容。Jabr 称，这些线索不仅让你很容易就能找到自己在书中的位置，而且能在大脑中形成一个关于文本内容的印象地图。 在电子阅读器、智能手机、平板电脑或显示器上，找不到这些能够帮助你找到位置的线索，而且你也不会形成一个关于文本内容的印象地图。 有限的导航信息影响人们的理解 Anne Mangen（2013）在挪威做了一个实验。实验中，她让阅读能力相似的十年级学生阅读并学习了一篇记叙文（真实或虚构的故事）和一篇说明文（一篇非记叙性的，解释说明性的文章）。每篇文章的长度大约为 1500 个单词。参加实验的学生有一半阅读纸质版本的文章，另一半学生在 15 英寸的电脑显示屏上阅读 PDF 格式的文章。在读完这两篇文章后，他们接着完成了一个包括选择题和简答题两种题型的阅读理解测试。测试期间，他们可以查阅这两篇文章。结果是，与在纸张上阅读这两篇文章的学生相比，在电脑屏幕上阅读的学生的测试成绩较低。 在测试期间，Mangen 观察了学生们查阅文章来回答问题的过程。那些阅读电子版文章的学生在寻找信息的过程中遇到了更大的困难；而那些阅读纸质版文章的同学则将文章拿在手中，可以很快地翻页，从而可以很容易地找到文章的开头、中间、结尾以及在这三者之间的任何地方。 还有些研究表明，在长期来看，在电脑上阅读课本的学生记起信息的能力也没有使用纸质课本的学生那么好。“记起”（remembering）和“知道”（knowing）是不同的。“记起”是对某个信息的回忆，通常也包含与这个信息有关的情境——人们当时所处的地方，这个信息的来源，等等。“知道”则意味着人们感觉某件事是真实的，但是他们也许记不起来自己是如何认识到这一点的。莱斯特大学的研究人员 Kate Garland 提出一种推测，认为与“知道”相比，“记起”是记忆的一种弱势形态。记忆会渐渐淡忘，但是知道的知识却会留存下来。Garland 认为，学生在纸上阅读可以更加深入地把握学习内容，并由此将学习的内容转化为“知道”的知识。 屏幕会给眼睛带来更大压力 在纸上阅读文章，纸张会反射房间中的光线。这就是环境光（ambient light）。如果你的电子阅读器用的是电子墨水，它也会反射环境光。但是，如果你在电脑显示器、智能手机或平板电脑上阅读文章，你用的就不是环境光；至少在我写这本书的时候，用的还不是环境光。来自屏幕的光线使得阅读更困难并会导致眼睛疲劳。 有些研究人员提出假设：人们在屏幕上阅读文章时之所以学到或记得的信息较少，是因为人们在屏幕上阅读所需要的视觉精力要比在纸张上阅读所需要的视觉精力较多。 网上阅读不是阅读 根据针对深度阅读、略读和寻读的新研究，我建议不要再把人们进入网站之后的行为或阅读网络文章的行为看作阅读。（当然，人们使用在线阅读器阅读的行为除外。） 我建议对阅读作下述定义： &amp;gt; 阅读就是人们坐或者站在一个地方，在纸张或电子屏幕上阅读文本的过程；在此期间几乎没有其他动作，并且不受页面上或环境中任何其他事物的干扰；人们与阅读设备或纸张之间唯一的互动就是翻到下一页，或者偶尔返回已经看过的那一页；维持上述状态至少 5 分钟，并且不从事任何其他行为。这才是阅读。</description>
+    </item>
+    
+    <item>
+      <title>输出才能提高</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E8%BE%93%E5%87%BA%E6%89%8D%E8%83%BD%E6%8F%90%E9%AB%98/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E8%BE%93%E5%87%BA%E6%89%8D%E8%83%BD%E6%8F%90%E9%AB%98/</guid>
+      <description>时常因为英语学了这么多年，依然听不太懂、写作水平差、口语说不了。时常因为写论文时感觉内心干涸无比，只能参考别人的思想和文字再加工。总是感觉没有自己的东西，有的东西也表达不好。时间久了就知道问题的原因。每日阅读不少的英文文献，也听了一定量的音频节目，输入了很多的东西，但没有输出，获取的内容缺失流动性、没有活力，学习的知识就是僵化的概念。因此想要提高必需要有输出。 为了提高英文口语水平，准备抓取将来出去学习的机会，我们俩临睡前在宿舍讲一讲英语，各种话题。尽管现在是困难的，表达不了的，用词不准确的，但期望假以时日，不需要有突飞猛进，只要在有讲英语人在场需要交流时，能够比较流畅地表达自己的意思就够了。当有的词不知道如何表达时，手机词典应用里随即查找，这样的单词记得应该也比较牢靠。因此输出应用应该是唯一的方法，同理对于所有和学习相关的事宜都要用这个方法。写文章、写博客都是激活死知识的手段，所以要勤练、勤表达，才能有提高的可能，否则只是了解概念的半瓶水。 -end-</description>
+    </item>
+    
+  </channel>
+</rss>

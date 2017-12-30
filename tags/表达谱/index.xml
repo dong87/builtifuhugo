@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>表达谱 on Dong&#39;s blog</title>
+    <link>/tags/%E8%A1%A8%E8%BE%BE%E8%B0%B1/</link>
+    <description>Recent content in 表达谱 on Dong&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>youremail@domain.com (Leiming Dong)</managingEditor>
+    <webMaster>youremail@domain.com (Leiming Dong)</webMaster>
+    <lastBuildDate>Sun, 01 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/%E8%A1%A8%E8%BE%BE%E8%B0%B1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Macosko2015-单细胞表达谱</title>
+      <link>/post/%E8%A1%A8%E8%BE%BE%E8%B0%B1/macosko2015-%E5%8D%95%E7%BB%86%E8%83%9E%E8%A1%A8%E8%BE%BE%E8%B0%B1/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E8%A1%A8%E8%BE%BE%E8%B0%B1/macosko2015-%E5%8D%95%E7%BB%86%E8%83%9E%E8%A1%A8%E8%BE%BE%E8%B0%B1/</guid>
+      <description>Macosko EZ, et al. (2015) Highly parallel genome-wide expression profiling of individual cells using nanoliter droplets. Cell 161(5):1202–1214.   概要 细胞，生物结构和功能的基本单位在类型和状态上有广泛的变化。单细胞基因组学可以表征细胞识别和功能，但容易程度和量表的局限性已经消除了其广泛应用。在这里我们描述了Drop-seq，它是通过将数千个单个细胞分离成纳米尺寸的水滴，将不同的条形码与每个细胞的RNA相关联并将它们排列在一起的策略。 Drop-seq同时记录来自数千个单个细胞的mRNA转录，同时记住转录本的细胞。我们分析了44,808只小鼠视网膜细胞的转录组，并确定了39个转录不同的细胞群，为已知的视网膜细胞类型和新型候选细胞亚型创建了分子基因表达图谱。 Drop-seq将通过在单细胞分辨率下进行常规转录谱分析来加速生物发现。
+介绍 个体细胞是组织，器官和组织的组成部分。每个组织包含许多类型的细胞，每种类型的细胞可以在生物学状态之间切换。在大多数生物系统中，我们对细胞多样性的认识是不完整的;例如，脑的细胞类型复杂性是未知的，并且被广泛争议（Luo et al。，2008; Petilla Interneuron Nomencla Group，et al。，2008）。要了解复杂组织的工作原理，了解每种细胞类型的功能能力和反应是非常重要的。每个细胞功能的主要决定因素是其转录程序。最近的进展现在使单个细胞的mRNA-seq分析（Tang等人，2009）。然而，制备用于分析的细胞的方法在实践中已经适用于刚刚狩猎（Hashimshony等人，2012; Picelli等人，2013）或（自动化）几千个细胞（Jaitin等通常在通过流分选（Shalek等，2013）或微流体学（Shalek等人，2014）首先分离细胞之后，然后分别扩增每个细胞的转录组。在不同的条件和扰动下，需要快速，可扩展的方法来表征具有许多细胞类型和状态的复杂组织。在这里，我们描述了Drop-seq，一种通过将细胞封装在微小液滴中用于平行分析来分析数千个单个细胞中的mRNA表达的方法。通过在微流体装置（Thorsen等人，2001; Umbanhowar等人，2000）中精确地组合水和油流形成的液滴 - 纳升级水性隔室已被用作PCR的微小反应室（Hindson等人，2011; Vogelstein和Kinzler，1999）和逆转录（Beer等人，2008）。我们在这里寻求使用液滴将细胞分隔成纳米尺寸的反应室，以分析其所有RNA。使用液滴进行转录组学的一个基本挑战是保留每个mRNA转录本所分离的细胞同一性的分子记忆。为了实现这一点，我们开发了一种分子条形码策略来记住每个mRNA的起始细胞。我们批判性地评估Drop-seq，然后用它来细胞周期细胞状态。当将其应用于复合神经组织，小鼠视网膜，并从44,808个细胞谱鉴定了39个不同的群体，每个对应于一个或一组密切相关的细胞类型。我们的研究结果表明，大规模的单细胞分析可以帮助我们深入了解复杂组织和细胞群的生物学。</description>
+    </item>
+    
+  </channel>
+</rss>

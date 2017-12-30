@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R记录本 on Dong&#39;s blog</title>
+    <link>/tags/r%E8%AE%B0%E5%BD%95%E6%9C%AC/</link>
+    <description>Recent content in R记录本 on Dong&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>youremail@domain.com (Leiming Dong)</managingEditor>
+    <webMaster>youremail@domain.com (Leiming Dong)</webMaster>
+    <lastBuildDate>Sun, 01 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/r%E8%AE%B0%E5%BD%95%E6%9C%AC/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mantel测试</title>
+      <link>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/mantel%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/mantel%E6%B5%8B%E8%AF%95/</guid>
+      <description>概念  The Mantel test, named after Nathan Mantel, is a statistical test of the correlation between two matrices. The matrices must be of the same rank（2个相同满秩的方阵才可以）; in most applications, they are matrices of interrelations between the same vectors of objects. The test was first published by Nathan Mantel, a biostatistician at the National Institutes of Health, in 1967.[1] Accounts of it can be found in advanced statistics books (e.</description>
+    </item>
+    
+    <item>
+      <title>R-list-to-data-frame列表转数据框</title>
+      <link>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r-list-to-data-frame%E5%88%97%E8%A1%A8%E8%BD%AC%E6%95%B0%E6%8D%AE%E6%A1%86/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r-list-to-data-frame%E5%88%97%E8%A1%A8%E8%BD%AC%E6%95%B0%E6%8D%AE%E6%A1%86/</guid>
+      <description>Assuming your list of lists is called l:
+df &amp;lt;- data.frame(matrix(unlist(l), nrow=132, byrow=T))  The above will convert all character columns to factors, to avoid this you can add a parameter to the data.frame() call:
+df &amp;lt;- data.frame(matrix(unlist(l), nrow=132, byrow=T),stringsAsFactors=FALSE)  from R list to data frame.</description>
+    </item>
+    
+    <item>
+      <title>R1--设定工作路径</title>
+      <link>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r1--%E8%AE%BE%E5%AE%9A%E5%B7%A5%E4%BD%9C%E8%B7%AF%E5%BE%84/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r1--%E8%AE%BE%E5%AE%9A%E5%B7%A5%E4%BD%9C%E8%B7%AF%E5%BE%84/</guid>
+      <description>想要程序正常运行，通常得告诉电脑要执行的程序和文件在哪里，所以第一步是设定工作路径，在R中更是这样。
+ R有默认的工作路径，执行getwd()，默认工作路径可以在软件中更改。但一般我们的工作项目不止一个，不适合直接在默认路径下操作，而是建立不同的文件夹，然后分别调用。有2种方法： 1. 设定完全工作路径，比如setwd(&amp;quot;D:/Sync/R/&amp;quot;)； 2. 简化工作路径，比如setwd(&amp;quot;./group1&amp;quot;)，很明显，默认工作路径或已经设定好的工作路径用一个.表示，这样做也可以在上一级路径中调取这一路径下的文件。</description>
+    </item>
+    
+    <item>
+      <title>R2--读取一个文件夹下的--csv文件</title>
+      <link>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r2--%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E7%9A%84--csv%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r2--%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E7%9A%84--csv%E6%96%87%E4%BB%B6/</guid>
+      <description>当只有一两个数据集时，用read.csv是合乎逻辑的，相反有多个文件时，一个一个地read就显得有些繁琐，有没有批量读取的方法？见下文：
+  首先要建立工作路径 开始读取
+setwd(&amp;quot;./BB/Venn_13Oct&amp;quot;) ## setwd #filenames&amp;lt;-list.files(&amp;quot;./group1&amp;quot;,full.names=TRUE) ## if there were just several one type files like *.csv or something text; reversely if more than 1 type you can code like this: filenames&amp;lt;-list.files(&amp;quot;./group1&amp;quot;, pattern=&amp;quot;*.csv&amp;quot;,full.names=TRUE) ldf &amp;lt;- lapply(filenames, read.csv) ## we use &#39;lapply&#39; function to read all the files in filenames names(ldf) &amp;lt;- substr(filenames, 10, 14) ## names of &#39;ldf&#39; are empty, use &#39;substr&#39; can cut out the wanted names for all files each df1&amp;lt;-ldf[1] ## give the first element in &#39;ldf&#39; to &#39;df1&#39;, here use a loop is preferable  some examples</description>
+    </item>
+    
+    <item>
+      <title>R3--提取韦恩图（Venn-Diagram）中交集或并集的信息</title>
+      <link>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r3--%E6%8F%90%E5%8F%96%E9%9F%A6%E6%81%A9%E5%9B%BEvenn-diagram%E4%B8%AD%E4%BA%A4%E9%9B%86%E6%88%96%E5%B9%B6%E9%9B%86%E7%9A%84%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r3--%E6%8F%90%E5%8F%96%E9%9F%A6%E6%81%A9%E5%9B%BEvenn-diagram%E4%B8%AD%E4%BA%A4%E9%9B%86%E6%88%96%E5%B9%B6%E9%9B%86%E7%9A%84%E4%BF%A1%E6%81%AF/</guid>
+      <description> 当有多个分类，分类之间有相同又有差异的时候，常用的可视化方法是做韦恩图。有时我们想知道某个交集或其他部分比如独有的信息时，需要提取出来，前提是韦恩图的每个组分是知道的，也就是制作图画的软件能够提供才是可行的。在R中是知道的。 可以根据不同的类别来提取，我喜欢用每部分的个数。个数一般不同，但如果有相同的时候就要手动后期调整。
+ Example R中我用包VennDiagram（感谢开发者！） 1. 安装加载包
+## install &amp;amp; require the needed pacakge # install.packages(&amp;quot;VennDiagram&amp;quot;) library(VennDiagram)   建立工作路径 读取数据 使用函数get.venn.partitions能够获得每部分的信息  ldf$Aolig$ID&amp;lt;-as.character(ldf$Aolig$ID) ldf$Dhapt$ID&amp;lt;-as.character(ldf$Dhapt$ID) ldf$Dsten$ID&amp;lt;-as.character(ldf$Dsten$ID) ldf$Everm$ID&amp;lt;-as.character(ldf$Everm$ID) ldf$Hminn$ID&amp;lt;-as.character(ldf$Hminn$ID) ev.getven&amp;lt;-get.venn.partitions(x= list( &amp;quot;Aolig&amp;quot;=ldf$Aolig$ID, &amp;quot;Dhapt&amp;quot;=ldf$Dhapt$ID, &amp;quot;Dsten&amp;quot;=ldf$Dsten$ID, &amp;quot;Everm&amp;quot;=ldf$Everm$ID, &amp;quot;Hminn&amp;quot;=ldf$Hminn$ID) )  提取
+## write a function ## n-a number or numerical vector dlm.extract.bb &amp;lt;- function(n) { for(i in 1:length(n)){ aim&amp;lt;-ev.getven[ev.getven$..count..==n[i],] aim1&amp;lt;-aim$..values.. aim1&amp;lt;-as.data.frame(aim1) names(aim1)&amp;lt;-aim$..set.. filename&amp;lt;-paste0(substr(names(aim1[1]),2,6),&amp;quot;.csv&amp;quot;) write.csv(aim1,filename) } print(&amp;quot;Job done!&amp;quot;) } ## Example a&amp;lt;-c(208,244,1641,1239,17,2789) dlm.extract.bb(a)    </description>
+    </item>
+    
+    <item>
+      <title>R4--重命名一个数据集中的因子水平Renaming-levels-of-a-factor</title>
+      <link>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r4--%E9%87%8D%E5%91%BD%E5%90%8D%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%AD%E7%9A%84%E5%9B%A0%E5%AD%90%E6%B0%B4%E5%B9%B3renaming-levels-of-a-factor/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r4--%E9%87%8D%E5%91%BD%E5%90%8D%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%AD%E7%9A%84%E5%9B%A0%E5%AD%90%E6%B0%B4%E5%B9%B3renaming-levels-of-a-factor/</guid>
+      <description>Problem You want to rename the levels in a factor.
+Solution # A sample factor to work with. x&amp;lt;-factor(c(&amp;quot;alpha&amp;quot;,&amp;quot;beta&amp;quot;,&amp;quot;gamma&amp;quot;,&amp;quot;alpha&amp;quot;,&amp;quot;beta&amp;quot;)) x #&amp;gt; [1] alpha beta gamma alpha beta #&amp;gt; Levels: alpha beta gammalevels(x) #&amp;gt; [1] &amp;quot;alpha&amp;quot;&amp;quot;beta&amp;quot;&amp;quot;gamma&amp;quot;  The easiest way is to use revalue() or mapvalues() from the plyr package:
+library(plyr) revalue(x, c(&amp;quot;beta&amp;quot;=&amp;quot;two&amp;quot;, &amp;quot;gamma&amp;quot;=&amp;quot;three&amp;quot;)) #&amp;gt; [1] alpha two three alpha two #&amp;gt; Levels: alpha two threemapvalues(x, from = c(&amp;quot;beta&amp;quot;, &amp;quot;gamma&amp;quot;), to = c(&amp;quot;two&amp;quot;, &amp;quot;three&amp;quot;)) #&amp;gt; [1] alpha two three alpha two #&amp;gt; Levels: alpha two three  If you don’t want to rely on plyr, you can do the following with R’s built-in functions.</description>
+    </item>
+    
+    <item>
+      <title>R5--画图-字体设置</title>
+      <link>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r5--%E7%94%BB%E5%9B%BE-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r5--%E7%94%BB%E5%9B%BE-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/</guid>
+      <description> 函数pdf（或win.metafile）中加入famil=&amp;quot;...&amp;quot;可以设置字体。可用的字体​除了&amp;rdquo;sans&amp;rdquo;，&amp;rdquo;mono&amp;rdquo;，&amp;rdquo;serif&amp;rdquo;外还有 &amp;rdquo;AvantGarde&amp;rdquo;, &amp;ldquo;Bookman&amp;rdquo;, &amp;ldquo;Courier&amp;rdquo;, &amp;ldquo;Helvetica&amp;rdquo;, &amp;ldquo;Helvetica-Narrow&amp;rdquo;, &amp;ldquo;NewCenturySchoolbook&amp;rdquo;, &amp;ldquo;Palatino&amp;rdquo; or &amp;ldquo;Times&amp;rdquo;。但这个函数的设置是全局性的，如果包含多个分图而分图需要不同字体的话（这个情况极为少见，我是画着玩儿），还是得用par函数，依旧是family=&amp;quot;...&amp;quot;的声明。font主要用来更改加粗、斜体等，改变坐标轴标签的方向则是用las函数，比如las=2时，逆时针90°。
+ #example​
+pdf(&amp;quot;box.pdf&amp;quot;,6,4,family = &amp;quot;NewCenturySchoolbook&amp;quot;) par(mar = c(2, 2,2, .5),mfrow=c(2,2)) boxplot(mpg~cyl,data = mtcars,main=&amp;quot;NewCenturySchoolbook&amp;quot;) par(family=&amp;quot;sans&amp;quot;) boxplot(mpg~cyl,data = mtcars,main=&amp;quot;sans (Helvetica)&amp;quot;) par(family=&amp;quot;mono&amp;quot;) boxplot(mpg~cyl,data = mtcars,main=&amp;quot;mono (Courier)&amp;quot;) par(family=&amp;quot;serif&amp;quot;) boxplot(mpg~cyl,data = mtcars,main=&amp;quot;serif (Times)&amp;quot;) dev.off()  </description>
+    </item>
+    
+    <item>
+      <title>R6--报错Error-in-plot-new()---figure-margins-too-large</title>
+      <link>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r6--%E6%8A%A5%E9%94%99error-in-plot-new---figure-margins-too-large/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r6--%E6%8A%A5%E9%94%99error-in-plot-new---figure-margins-too-large/</guid>
+      <description>RStudio中报错Error in plot.new() : figure margins too large。 原因：图的边距太小，就是边距设置的太大。一个是确实小，par(&amp;quot;mar&amp;quot;)可以查看，可以通过par(mar=c(1,1,1,1))修改。但有时问题依然存在，这是第二个原因，RStudio的四分窗口中plot的窗口过小，解决办法就是用鼠标把窗口拖大点。</description>
+    </item>
+    
+    <item>
+      <title>R7--error-result-would-be-too-long-a-vector</title>
+      <link>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r7--error-result-would-be-too-long-a-vector/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r7--error-result-would-be-too-long-a-vector/</guid>
+      <description>result would be too long a vector
+内存不足</description>
+    </item>
+    
+    <item>
+      <title>R8--数据框中插入行在R中</title>
+      <link>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r8--%E6%95%B0%E6%8D%AE%E6%A1%86%E4%B8%AD%E6%8F%92%E5%85%A5%E8%A1%8C%E5%9C%A8r%E4%B8%AD/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r8--%E6%95%B0%E6%8D%AE%E6%A1%86%E4%B8%AD%E6%8F%92%E5%85%A5%E8%A1%8C%E5%9C%A8r%E4%B8%AD/</guid>
+      <description>我们都知道在Excel中插入行是件比较简单的事情，但是当数据量非常大，而我们又不知道缺失行的具体位置时，逐个添加是件耗时费力的事。相反，R中添加行并不容易，需要一行代码，和Excel类似，具体的运算不得而知，可能会非常复杂，但依赖于许多高手不齿的for循环，查找及插入就变得相对容易操作。 今天处理一个相对棘手的问题，耗时5h有余，但值得庆幸的是问题最终得到解决，问题描述及解决方法如下：
+ 问题 需要对一个本地下载的基因数据库数据进行分类汇总，数据库的格式如下：
+UniProtID:\tA1CIY4_ASPCL Gene Symbol:\tACLA_053130 DNA Info:\tEMBL:EAW10839.1 Protein Length:\t139 Organism:\tAspergillus clavatus Taxonomy ID:\t344612 Description:\tUnknown Pubmed:\t18404212 NCBI RefSeq:\tXP_001272265.1, XM_001272264.1 Pfam:\tID:PF09044; Description: Kp4 Disease-Host:\thumans,insects Disease-Hostkey:\tvertebrata Disease:\tallergic alveolitis DiseaseKey:\tAllergy Gene Ontology:\tID:0005576; Method: IEA:InterPro; Description: C:extracellular region; ID:0009405; Method: IEA:InterPro; Description: P:pathogenesis Protein Sequence:\tMLATTLIMVASALSANALGINCRGSAKCSALWGPSDAAKQLTNVIQGIDTNRWYLNGEHI 60; ACVGNDAGNGGGYCAFLQKTGGTNGGVIKNLAHYINDHGCKQCGSVPYYYPQGNNNVDDG 120; ELTYNYVDNPCVPAGAKLC  每个基因有如上的16个信息，但个别基因缺失部分信息，而且也没有用NA表示出来，具体哪些基因信息缺失也不得而知。我们需要做的是把这16个信息分类汇总，即转成一个有 16个变量和n个基因的数据框。可能在Perl中或Python中相对容易，无奈并不会，只懂一点R语言，就用这个来处理了。
+处理步骤 首先要读取数据。 这是类似文本的文件，每行只有Tab分隔符，我们不能使用read.的一类函数，这里选择用scan()。
+te &amp;lt;- scan(&amp;quot;database.txt&amp;quot;, what=&amp;quot;&amp;quot;, sep=&amp;quot;\n&amp;quot;)  注意！！！scan是逐行扫描的，这里的分隔符是\n。而文件中有些信息比如蛋白序列是在多行上的，这样的话就会当成多个元素来处理，因此要先将这些不想要的换行符去掉，直接在编辑器中替换即可。
+te.2 &amp;lt;- strsplit(te.2, &#39;\t&#39;) #按照tab分割信息条目 names(te.2) &amp;lt;- sapply(te.2, `[[`, 1) #按照条目标题（16个）汇总 te.</description>
+    </item>
+    
+    <item>
+      <title>Tips-for---pipe--</title>
+      <link>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/tips-for---pipe--/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/tips-for---pipe--/</guid>
+      <description>pipe is a very convinent tool in r. Here I notes some usage tips I met.
+  change names (row, col, list names) from how-to-set-the-row-names-of-a-data-frame-passed-on-with-the-pipe-operator
+%&amp;gt;% `names&amp;lt;-`(c(&amp;quot;x1&amp;quot;, &amp;quot;x2&amp;quot;)) #将要目标名字放在括号里 %&amp;gt;% `colnames&amp;lt;-`(c(&amp;quot;x1&amp;quot;, &amp;quot;x2&amp;quot;)) %&amp;gt;% `rownames&amp;lt;-`(c(&amp;quot;x1&amp;quot;, &amp;quot;x2&amp;quot;))  With pipe your data are passed as a first argument to the next function, so if you want to use it somewhere else you need to wrap the next line in {} and use .</description>
+    </item>
+    
+    <item>
+      <title>apply()-in-R-with-user-defined-function</title>
+      <link>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/apply-in-r-with-user-defined-function/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/apply-in-r-with-user-defined-function/</guid>
+      <description>getpos &amp;lt;- function(x, vorl=&amp;quot;v&amp;quot;){ vot &amp;lt;- x[grep( &amp;quot;v&amp;quot;, names(x) )] ; lab &amp;lt;- x[grep( &amp;quot;l&amp;quot;, names(x) )]; if (vorl==&amp;quot;v&amp;quot;) {vot[vot&amp;gt;0]} else {lab[vot&amp;gt;0]}; } &amp;gt; apply(dat, MARGIN=1, FUN=function(x2) getpos(x2, vorl=&amp;quot;l&amp;quot;) )  for(i in 1:length(mytxtfiles)){ lapply(mytxtfiles[i], FUN=function(txt_name) dlm_OpenNLR(txt_name)) }  </description>
+    </item>
+    
+    <item>
+      <title>tidyverse类似包修改指南</title>
+      <link>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/tidyverse%E7%B1%BB%E4%BC%BC%E5%8C%85%E4%BF%AE%E6%94%B9%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/tidyverse%E7%B1%BB%E4%BC%BC%E5%8C%85%E4%BF%AE%E6%94%B9%E6%8C%87%E5%8D%97/</guid>
+      <description> 要修改的函数：attach中core、
+ </description>
+    </item>
+    
+    <item>
+      <title>写好R代码</title>
+      <link>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/%E5%86%99%E5%A5%BDr%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/%E5%86%99%E5%A5%BDr%E4%BB%A3%E7%A0%81/</guid>
+      <description>写好R代码和写好  约瑟夫·里克特
+ 如果你渴望写出好的R代码，你可能会发现偶尔花一些时间阅读关于写作：阅读关于编写R代码，阅读关于写你写的R代码是有帮助的。 （如果你写了一些优秀的R代码，你很可能有机会写它。） 对于阅读关于编写好的R代码，一个开始的地方可能是许多R风格指南之一。 哈德利韦翰包括风格指南在他的预研书是短暂的甜蜜，并根据唯一略显不足简洁谷歌的ř风格指南 。 也看看格雷厄姆·威廉姆斯共享R代码里面-在风格 ，混合教程/风格指南这是他的一部分HandsOnDataScience工作正在进行中。 在他的优雅介绍中，Graham写道： &amp;gt; 数据科学家编写程序以多种方式摄取，管理，转移，可视化，分析和建模数据。 它是一种艺术，能够通过语言来传达我们的探索和理解，尽管是一种编程语言。 当然，我们的程序必须可以由计算机执行，但计算机不关心我们的程序，除了它们在语法上是正确的。 我们的重点应该是让他人阅读和理解我们通过我们的计划提出的叙述。
+沿着这些线路，洛朗·加托提供在他二十页教程“，在清洁，优雅的语法方面更好- [R编程&amp;hellip;&amp;hellip;”他的想法写出更好的R代码里面 。 如果你是刚开始写R功能，你可能会发现Slawa Rokicki的岗位上如何编写和调试R函数或卡斯马Shalizi的写了写作r函数很有帮助。 如果你这样做不厌其烦通过这些风格指南之一工作，请坚持至少老程序员季奥米季斯Spinellis“的第一条规则15规则编写质量代码 。 最后，我要认真对待格雷厄姆威廉姆斯：编程是一种沟通的艺术，我相信，实践这个艺术也可能涉及偶尔写有吸引力的叙述关于程序。 这里有一些简短但有价值的指南，写得很好。 威廉·辛塞尔是解释清楚和不受影响的写作艺术的主人。他10写作技巧可能会导致您花一些时间与他的书。 另外值得一看是从写作技巧， 摩根Ostrowsky ， CS莱金 ，以及纽约时报“的阿曼达·克里斯蒂·布朗和Katherine舒尔滕。 这四个写作教练中的三个建议愿意的作家阅读，阅读广泛超出他们的专业领域，并阅读大师。 关于这个建议，我发现这个短小说由小说家雅各·马特尔鼓舞。</description>
+    </item>
+    
+  </channel>
+</rss>

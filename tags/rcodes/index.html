@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Rcodes</title>
+  <meta property="og:title" content="Rcodes" />
+  <meta name="twitter:title" content="Rcodes" />
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/tags/rcodes/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../tags/rcodes/" />
+  <link rel="alternate" href="../../tags/rcodes/index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../">
+            <img class="avatar-img" src="../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  <header class="header-section ">
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>#Rcodes</h1>
+              <hr class="small">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    
+  <div class="container" role="main">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="../../post/rcodes/clifford-attractors/">
+                <h2 class="post-title">Clifford-Attractors</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  library(Rcpp) library(ggplot2) library(dplyr) opt = theme(legend.position = &quot;none&quot;, panel.background = element_rect(fill=&quot;white&quot;), axis.ticks = element_blank(), panel.grid = element_blank(), axis.title = element_blank(), axis.text = element_blank()) cppFunction('DataFrame createTrajectory(int n, double x0, double y0, double a, double b, double c, double d) { // create the columns NumericVector x(n); NumericVector y(n); x[0]=x0; y[0]=y0; for(int i = 1; i &lt; n; ++i) { x[i] = sin(a*y[i-1])+c*cos(a*x[i-1]); y[i] = sin(b*x[i-1])+d*cos(b*y[i-1]); } // return a new data frame return DataFrame::create(_[&quot;x&quot;]= x, _[&quot;y&quot;]= y); } ') a=-1.
+                  <a href="../../post/rcodes/clifford-attractors/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/rcodes/">Rcodes</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/rcodes/codesido-synchro-sas/">
+                <h2 class="post-title">Codesido-SYNCHRO-SAS</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  /**********************************************************************************************/ /*********************** SYNCHRO1: Input data and checks ***************************************/ /**********************************************************************************************/ %macro SYNCHRO1(Message); options nonotes mautosource NOmerror nomprint noserror nosource nodate; %put SYNCHRO START; %let beta=0.02; %let ERR=;%let libname=;%let table=;%let block=;%let branch=; %do i=1 %to 8; %let m&amp;i=0; %let f&amp;i=0;%let ud=3; %end; %empieza: %window START color=gray irow=10 rows=23 icolumn=20 columns=32 #1 @2 &quot;&amp;Message&quot; color=red attr=highlight #3 @2 &quot;Table:&quot; +1 libname 8 attr=underline color=blue &quot;.&quot; table 8 attr=underline required=yes color=blue #5 @2 &quot;Start Day:&quot; +1 inicio 3 attr=underline required=yes color=blue #5 @18 &quot;End Day:&quot; +1 fin 3 attr=underline required=yes color=blue #7 @2 &quot;MALE STAGES&quot; attr=underline +5 &quot;FEMALE STAGES&quot; attr=underline #8 @5 &quot;1&quot; +1 m1 3 color=blue attr=underline +12 &quot;1&quot; +1 f1 3 color=blue attr=underline #9 @5 &quot;2&quot; +1 m2 3 color=blue attr=underline +12 &quot;2&quot; +1 f2 3 color=blue attr=underline #10 @5 &quot;3&quot; +1 m3 3 color=blue attr=underline +12 &quot;3&quot; +1 f3 3 color=blue attr=underline #11 @5 &quot;4&quot; +1 m4 3 color=blue attr=underline +12 &quot;4&quot; +1 f4 3 color=blue attr=underline #12 @5 &quot;5&quot; +1 m5 3 color=blue attr=underline +12 &quot;5&quot; +1 f5 3 color=blue attr=underline #13 @5 &quot;6&quot; +1 m6 3 color=blue attr=underline +12 &quot;6&quot; +1 f6 3 color=blue attr=underline #14 @5 &quot;7&quot; +1 m7 3 color=blue attr=underline +12 &quot;7&quot; +1 f7 3 color=blue attr=underline #15 @5 &quot;8&quot; +1 m8 3 color=blue attr=underline +12 &quot;8&quot; +1 f8 3 color=blue attr=underline #17 @7 &quot;Press&quot; +1 &quot;F3&quot; attr=underline +1 &quot;when ready&quot;; %display START; %if &amp;libname= %then %let libname=work; %let message=; /**************** Data verifications *********************************************************/ PROC contents data=&amp;libname.
+                  <a href="../../post/rcodes/codesido-synchro-sas/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/rcodes/">Rcodes</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/rcodes/dt--datatabledf/">
+                <h2 class="post-title">DT--datatable(df)</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <pre><code># datatable: Create an HTML table widget using the DataTables library
+DT::datatable(df)
+</code></pre>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/rcodes/">Rcodes</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/rcodes/ld%E7%9A%84%E8%AE%A1%E7%AE%97-#rstat%23/">
+                <h2 class="post-title">LD的计算-#rstat#</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>LD是一个比较抽象的概念，不是概念本身，而是一些相关的遗传学原理。LD的计算公式也比较简单，<code>D=基因型频率pAB-两个allele频率的积pA·pB</code>。两个allele频率比较容易计算，数一数就能得到，而基因型频率怎么来的，尤其是天然群体中的个体？学习<code>R</code>的一个好处是可以查看源代码，这非常有助于对公式的理解和计算。通过查看包<code>genetics</code>中的<code>LD</code>函数，发现pAB是通过似然函数估计得来的，就比较容易理解了。挂一些代码：</p>
+</blockquote>
+
+<pre><code># 似然函数
+loglik &lt;- function(pAB,...)
+{
+    (2*n3x3[1,1]+n3x3[1,2]+n3x3[2,1])*log(pAB) +
+    (2*n3x3[1,3]+n3x3[1,2]+n3x3[2,3])*log(pA-pAB) +
+    (2*n3x3[3,1]+n3x3[2,1]+n3x3[3,2])*log(pB-pAB) +
+    (2*n3x3[3,3]+n3x3[3,2]+n3x3[2,3])*log(1-pA-pB+pAB) + 
+    n3x3[2,2]*log(pAB*(1-pA-pB+pAB) + (pA-pAB)*(pB-pAB))
+}
+# 解
+solution &lt;- optimize(
+  loglik,
+  lower=pmin+.Machine$double.eps,
+  upper=pmax-.Machine$double.eps,
+  maximum=TRUE
+)
+</code></pre>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/rcodes/">Rcodes</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/rcodes/m3m4%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83_2016-10-21-11-22-10-cst_/">
+                <h2 class="post-title">M3M4模型比较_2016-10-21-11-22-10-CST_</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  &ldquo;2016-10-21 11:22:10 CST&rdquo; 上午对8801fs去掉hs的M3和M4做了模型比较，具体代码如下：
+ # -------- Sys.time() # [1] &quot;2016-10-21 08:26:31 CST&quot; setwd(&quot;D:/Sync/Dlm_wk/8801M3M4/data&quot;) library(asreml) pincalc&lt;-dget(&quot;D:/Sync/R/pin.R&quot;) options(digits = 3) load(&quot;D:/Sync/Dlm_wk/8801M3M4/data/dlm.8801.RData&quot;) str(df.rm.self) # 'data.frame':	1251 obs. of 26 variables: # $ TreeId : int 3141 3142 3143 3144 3145 3146 3147 3148 3149 3150 ... # $ Mum : Factor w/ 12 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,..: 10 10 10 10 10 10 10 10 10 10 ... # $ Dad : Factor w/ 12 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,.
+                  <a href="../../post/rcodes/m3m4%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83_2016-10-21-11-22-10-cst_/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/rcodes/">Rcodes</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/rcodes/pca/">
+                <h2 class="post-title">PCA</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  title: &ldquo;PCA&rdquo; author: &ldquo;Leiming Dong&rdquo; date: &ldquo;2016年12月14日&rdquo; output: html_document: default
+pdf_document: default knitr::opts_chunk$set(echo = TRUE)  R Markdown # setwd(&quot;C:/R/BB201608/pca&quot;) # install.packages(&quot;factoextra&quot;,&quot;rgl&quot;) library(&quot;factoextra&quot;) library(&quot;rgl&quot;)  Dong.pca &lt;- function(filename) { # read data df &lt;- read.table(filename, header = T, sep = &quot;,&quot;, quote = &quot;&quot;) # rm variables of max == min df2 &lt;- df[, !apply(df, MARGIN = 2, function(x) max(x, na.rm = TRUE) == min(x, na.rm = TRUE))] # pca df.
+                  <a href="../../post/rcodes/pca/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/rcodes/">Rcodes</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/rcodes/r%E4%B8%AD%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%9C%B0%E5%AF%BC%E5%87%BA%E5%BE%88%E5%A4%A7%E7%9A%84character-#rstat%23/">
+                <h2 class="post-title">R中如何快速地导出很大的character-#rstat#</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>今天要将句子库导出，方便用filelocator查询，但<code>write.table</code>实在低消，需要将character分割，而且分割得太大的话总是内存不够。<code>data.table</code>中的<code>fwrite()</code>能够苗存，太牛了。</p>
+</blockquote>
+
+<pre><code># library(data.table)
+db &lt;- list(db)
+setDT(db)
+fwrite(db, &quot;./result/sent.txt&quot;, quote = F, row.names= F)
+</code></pre>
+
+<p>from: <a href="https://stackoverflow.com/questions/37068537/exporting-large-character-vector-as-csv-file-in-r">https://stackoverflow.com/questions/37068537/exporting-large-character-vector-as-csv-file-in-r</a></p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/rcodes/">Rcodes</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/rcodes/truncate-highest-bar-in-ggplot/">
+                <h2 class="post-title">Truncate-highest-bar-in-ggplot</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  Truncate highest bar in ggplot If you want to fiddle with it, you can use the gridExtra package, and plot 2 (or more) trimmed out sections of the graph. I&rsquo;ve tinkered with the margins to make it line up, but a better plan would probably be to format the axis labels to the same text width, require(ggplot2) require(gridExtra) data &lt;- data.frame(qnt=c(10,20,22,12,14,9,1000),lbl=c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;,&quot;F&quot;,&quot;G&quot;)) g1&lt;-ggplot(data=data, aes(x=lbl, y=qnt)) + geom_histogram(stat=&quot;identity&quot;)+ coord_cartesian(ylim=c(-10,50)) + labs(x=NULL, y=NULL)+ theme(plot.
+                  <a href="../../post/rcodes/truncate-highest-bar-in-ggplot/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/rcodes/">Rcodes</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/rcodes/bivariate-model-using-bayesian-by-luis-a--apiolazarlm-zentree--14h/">
+                <h2 class="post-title">bivariate-model-using-bayesian-by-Luis-A--Apiolaza{RLM}-@zentree--14h</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <pre><code>bi &lt;- MCMCglmm(cbind(ht, su) ~ trait - 1,
+random = ~ idh(trait):plot + us(trait):genotype,
+rcov = ~ us(trait):units,
+data = trial,
+ginverse = list(genotype = Ainv),
+prior = bivar,
+family = c('gaussian', 'threshold'), burnin = 10000,
+nitt = 110000, 
+thin = 100)
+</code></pre>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/rcodes/">Rcodes</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/rcodes/from-dynamicwebpaigerlm-dynamicwebpaige--/">
+                <h2 class="post-title">from-DynamicWebPaige{RLM}-@DynamicWebPaige--</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <pre><code>df &lt;- expand.grid(x = 1:10, y=1:10)
+df$angle &lt;- runif(100, 0, 2*pi)
+df$speed &lt;- runif(100, 0, sqrt(0.1 * df$x))
+
+ggplot(df, aes(x, y)) +
+  geom_point() +
+  geom_spoke(aes(angle = angle, radius = speed))
+</code></pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-c0db22acd0c85c43.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="DOFHn4pUIAIfHyh.jpg" /></p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/rcodes/">Rcodes</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+        </div>
+        
+          <ul class="pager main-pager">
+            
+            
+              <li class="next">
+                <a href="../../tags/rcodes/page/2/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../tags/rcodes/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+
