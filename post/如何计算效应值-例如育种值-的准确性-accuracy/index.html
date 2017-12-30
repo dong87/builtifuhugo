@@ -20,7 +20,7 @@ $$PEV=(SED)^{2}/2=\hat Var(BLUP.differences)/2$$
 在很长时间里我不知道（或者说模糊地知道）accuracy是怎么实现的。我知道公式，但在软件里分别和公式组分对应的部分是什么却不是很清楚，当然写这篇文字的时候是确定的。具体实现的途径有2：
  一是利用Asreml中的prediction直接得到_SED_后，再根据公式4得出PEV
 fm_pred &lt;- predict(fm_asr, classify = &quot;Fam&quot;) #fm_asr是asreml()输出的对象， Fam是随机效应变量 SED &lt;- fm_pred$predictions$avsed  二是逐步得到_PEV_，每个预测值都有一个_PEV_，是预测值_SE_平方的均值，所以从预测函数得到的对象中提取出_SE_平方后再平均即可
-fm_pred &lt;- predict(fm_asr, classify = &quot;Fam&quot;, present = &quot;Plot&quot;) #注意！这里预测的时候是要矫正掉其他的随机效应（如Plot） SE &lt;- fm_pred$predictions$pvals$standard.error PEV &lt;- SE^2 %&gt;% mean  这里的_PEV_是一个向量，对应到每个水平上。 所以，总体上，_PEV_、_SED_和_SE_的关系是 $$PEV=(SED)^2&frasl;2=ave(SE_i^2)$$
+fm_pred &lt;- predict(fm_asr, classify = &quot;Fam&quot;, present = &quot;Plot&quot;) #注意！这里预测的时候是要矫正掉其他的随机效应（如Plot） SE &lt;- fm_pred$predictions$pvals$standard.error PEV &lt;- SE^2 %&gt;% mean  这里的_PEV_是一个向量，对应到每个水平上。 所以，总体上，_PEV_、_SED_和_SE_的关系是 $$PEV=(SED)^{2}/2=ave(SE_i^2)$$
   另外，在林元震老师的著作R与ASReml-R统计学中（P474）也涉及到accuracy的代码
 SE &lt;- fm_asr$vcoeff$random _ fm_asr$sigma2 #效应值se乘以sigma  结果是一样的，但不知道是否合理。">
   <meta property="og:description" content="准确性指的是预测效应值与真值之间的相关系数。有时还会遇见一个概念——可靠性（reliability）。可靠性是准确性的平方，也就是说这二者度量的是一个事情。reliability其实就是遗传力，这句很重要！！！。遗传力主要用来计算选择响应（response to selection）。advisor说我的文章短句子太多，不连贯，确实是这样LOL。 准确性的计算公式为：
@@ -35,7 +35,7 @@ $$PEV=(SED)^{2}/2=\hat Var(BLUP.differences)/2$$
 在很长时间里我不知道（或者说模糊地知道）accuracy是怎么实现的。我知道公式，但在软件里分别和公式组分对应的部分是什么却不是很清楚，当然写这篇文字的时候是确定的。具体实现的途径有2：
  一是利用Asreml中的prediction直接得到_SED_后，再根据公式4得出PEV
 fm_pred &lt;- predict(fm_asr, classify = &quot;Fam&quot;) #fm_asr是asreml()输出的对象， Fam是随机效应变量 SED &lt;- fm_pred$predictions$avsed  二是逐步得到_PEV_，每个预测值都有一个_PEV_，是预测值_SE_平方的均值，所以从预测函数得到的对象中提取出_SE_平方后再平均即可
-fm_pred &lt;- predict(fm_asr, classify = &quot;Fam&quot;, present = &quot;Plot&quot;) #注意！这里预测的时候是要矫正掉其他的随机效应（如Plot） SE &lt;- fm_pred$predictions$pvals$standard.error PEV &lt;- SE^2 %&gt;% mean  这里的_PEV_是一个向量，对应到每个水平上。 所以，总体上，_PEV_、_SED_和_SE_的关系是 $$PEV=(SED)^2&frasl;2=ave(SE_i^2)$$
+fm_pred &lt;- predict(fm_asr, classify = &quot;Fam&quot;, present = &quot;Plot&quot;) #注意！这里预测的时候是要矫正掉其他的随机效应（如Plot） SE &lt;- fm_pred$predictions$pvals$standard.error PEV &lt;- SE^2 %&gt;% mean  这里的_PEV_是一个向量，对应到每个水平上。 所以，总体上，_PEV_、_SED_和_SE_的关系是 $$PEV=(SED)^{2}/2=ave(SE_i^2)$$
   另外，在林元震老师的著作R与ASReml-R统计学中（P474）也涉及到accuracy的代码
 SE &lt;- fm_asr$vcoeff$random _ fm_asr$sigma2 #效应值se乘以sigma  结果是一样的，但不知道是否合理。">
   <meta name="twitter:description" content="准确性指的是预测效应值与真值之间的相关系数。有时还会遇见一个概念——可靠性（reliability）。可靠性是准确性的平方，也就是说这二者度量的是一个事情。reliability其实就是遗传力，这句很重要！！！。遗传力主要用来计算选择响应（response to selection）。advisor说我的文章短句子太多，不连贯，确实是这样LOL。 准确性的计算公式为： …">
@@ -307,7 +307,7 @@ PEV &lt;-  SE^2 %&gt;% mean
 
 <p>这里的_PEV_是一个向量，对应到每个水平上。
 所以，总体上，_PEV_、_SED_和_SE_的关系是
-$$PEV=(SED)^<sup>2</sup>&frasl;<sub>2</sub>=ave(SE_i^2)$$</p></li>
+$$PEV=(SED)^{2}/2=ave(SE_i^2)$$</p></li>
 </ul>
 
 <p>另外，在林元震老师的著作<strong>R与ASReml-R统计学</strong>中（P474）也涉及到accuracy的代码</p>
@@ -344,7 +344,7 @@ $$r^2=1-diag(C^{22})\frac{\sigma_e^2}{\sigma_u^2}$$</p>
           
           
             <li class="next">
-              <a href="../../post/netlify%E6%90%AD%E5%BB%BAblog%E7%AC%94%E8%AE%B0/" data-toggle="tooltip" data-placement="top" title="netlify搭建blog笔记">Next Post &rarr;</a>
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E6%AC%A1/con-ject-ure-%E6%8E%A8%E6%B5%8B%E5%A4%A7%E5%AE%B6%E4%B8%80%E8%B5%B7%E6%8A%9B%E5%87%BA%E6%9D%A5%E7%8C%9C~hypothesis-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/" data-toggle="tooltip" data-placement="top" title="con-ject-ure-推测，大家一起抛出来猜~hypothesis-#每日一词#">Next Post &rarr;</a>
             </li>
           
         </ul>

@@ -5,9 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>R</title>
-  <meta property="og:title" content="R" />
-  <meta name="twitter:title" content="R" />
+  <title>每日一词</title>
+  <meta property="og:title" content="每日一词" />
+  <meta name="twitter:title" content="每日一词" />
   <meta name="author" content="Leiming Dong"/>
   <link href='../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="/img/red-paint.jpg" />
@@ -15,13 +15,13 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@username" />
   <meta name="twitter:creator" content="@username" />
-  <meta property="og:url" content="/categories/r/" />
+  <meta property="og:url" content="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Dong&#39;s blog" />
 
   <meta name="generator" content="Hugo 0.31.1" />
-  <link rel="canonical" href="../../categories/r/" />
-  <link rel="alternate" href="../../categories/r/index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="canonical" href="../../categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/" />
+  <link rel="alternate" href="../../categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/index.xml" type="application/rss+xml" title="Dong&#39;s blog">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -163,7 +163,7 @@
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="page-heading">
-              <h1>#R</h1>
+              <h1>#每日一词</h1>
               <hr class="small">
             </div>
           </div>
@@ -180,8 +180,8 @@
         <div class="posts-list">
           
             <article class="post-preview">
-              <a href="../../post/%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%95%88%E5%BA%94%E5%80%BC-%E4%BE%8B%E5%A6%82%E8%82%B2%E7%A7%8D%E5%80%BC-%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7-accuracy/">
-                <h2 class="post-title">如何计算效应值（例如育种值）的准确性（accuracy）？</h2>
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E6%AC%A1/con-ject-ure-%E6%8E%A8%E6%B5%8B%E5%A4%A7%E5%AE%B6%E4%B8%80%E8%B5%B7%E6%8A%9B%E5%87%BA%E6%9D%A5%E7%8C%9C~hypothesis-#%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D%23/">
+                <h2 class="post-title">con-ject-ure-推测，大家一起抛出来猜~hypothesis-#每日一词#</h2>
 
                 
               </a>
@@ -191,58 +191,14 @@
               </p>
               <div class="post-entry">
                 
-                  准确性指的是预测效应值与真值之间的相关系数。有时还会遇见一个概念——可靠性（reliability）。可靠性是准确性的平方，也就是说这二者度量的是一个事情。reliability其实就是遗传力，这句很重要！！！。遗传力主要用来计算选择响应（response to selection）。advisor说我的文章短句子太多，不连贯，确实是这样LOL。 准确性的计算公式为：
-$$r=\sqrt{1-\frac{PEV}{\hat{\sigma}_a^2}}$$
-_PEV_是prediction error variances的缩写，意思是预测误差方差，预测误差是预测值与真值间的差，即：
-$$PEV=var(\hat g-g)=(1-r_{\hat g,g}^2)\sigma_a^2$$
-$\sigma_a^2$是加性方差。
-预测差值的标准误（_SED_）是可以从Asreml中直接得到的，与_PEV_的关系是：
-$$SED=\sqrt{\hat Var(BLUP.differences)}=\sqrt{\hat Var(\hat Yi-\hat Y{i^ \prime})}=\sqrt{2\hat Var(\hat Y)_i}=\sqrt{2PEV}$$
-我不知道上面这个公式怎么推导的。 所以有
-$$PEV=(SED)^{2}/2=\hat Var(BLUP.differences)/2$$
-在很长时间里我不知道（或者说模糊地知道）accuracy是怎么实现的。我知道公式，但在软件里分别和公式组分对应的部分是什么却不是很清楚，当然写这篇文字的时候是确定的。具体实现的途径有2：
- 一是利用Asreml中的prediction直接得到_SED_后，再根据公式4得出PEV
-fm_pred &lt;- predict(fm_asr, classify = &quot;Fam&quot;) #fm_asr是asreml()输出的对象， Fam是随机效应变量 SED &lt;- fm_pred$predictions$avsed  二是逐步得到_PEV_，每个预测值都有一个_PEV_，是预测值_SE_平方的均值，所以从预测函数得到的对象中提取出_SE_平方后再平均即可
-fm_pred &lt;- predict(fm_asr, classify = &quot;Fam&quot;, present = &quot;Plot&quot;) #注意！这里预测的时候是要矫正掉其他的随机效应（如Plot） SE &lt;- fm_pred$predictions$pvals$standard.error PEV &lt;- SE^2 %&gt;% mean  这里的_PEV_是一个向量，对应到每个水平上。 所以，总体上，_PEV_、_SED_和_SE_的关系是 $$PEV=(SED)^{2}/2=ave(SE_i^2)$$
-  另外，在林元震老师的著作R与ASReml-R统计学中（P474）也涉及到accuracy的代码
-SE &lt;- fm_asr$vcoeff$random _ fm_asr$sigma2 #效应值se乘以sigma  结果是一样的，但不知道是否合理。
-                  <a href="../../post/%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%95%88%E5%BA%94%E5%80%BC-%E4%BE%8B%E5%A6%82%E8%82%B2%E7%A7%8D%E5%80%BC-%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7-accuracy/" class="post-read-more">[Read More]</a>
+                  <ul>
+<li>Heterosis, whether between crosses of varieties or inbred lines, is observed in maize, but the genetic basis of observed heterosis is still <strong>conjectural</strong> (Coors and Pandey, 1999). (Hallauer et al., 2010)</li>
+<li>Given this information, it is reasonable to <strong>conjecture</strong> that the resin yielding ability of loblolly pines can be drastically changed in both positive and negative directions through a program of selective breeding. (El-Kassaby, Lindgren, 2007)</li>
+</ul>
+
                 
               </div>
 
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/2015-07-23-r-rmarkdown/">
-                <h2 class="post-title">Hello R Markdown</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on July 23, 2015
-              </p>
-              <div class="post-entry">
-                
-                  R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.
-                  <a href="../../post/2015-07-23-r-rmarkdown/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-                <span class="post-meta">
-                  
-                    #<a href="../../tags/r-markdown/">R Markdown</a>&nbsp;
-                  
-                    #<a href="../../tags/plot/">plot</a>&nbsp;
-                  
-                    #<a href="../../tags/regression/">regression</a>&nbsp;
-                  
-                </span>
               
 
             </article>
@@ -422,7 +378,7 @@ summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
           
           <li>
             
-            <a href="../../categories/r/index.xml" title="RSS">
+            <a href="../../categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/index.xml" title="RSS">
             
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
