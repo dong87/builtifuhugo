@@ -25,7 +25,7 @@ rmarkdown非常好用，帮助我输出R结果到pdf或者word。之前用过yih
  安装blogdown，在Rstudio里直接安装也可以。  if(!require(devtools)) install.packages(&#39;devtools&#39;) devtools::install_github(&#39;rstudio/blogdown&#39;)   建一个空文件夹，然后使用模板gcushen/hugo-academic建立建站文件。还有其他一些模板，见这里，每个点进去，选择喜欢的样式，替换这里的就行。  setwd(&amp;quot;D:/blogdown_default&amp;quot;) blogdown::new_site(theme=&#39;gcushen/hugo-academic&#39;)   把public同步到GitHub上，要先安装软件GitHub desktop，注册并登陆账号。同步本地public，然后出现问题，它只是在public文件夹中生成一个新的public，而且GitHub中也只有隐藏的.git和.gitattributes，把这两个文件剪切到上一层的public去。GitHub desktop会报告说找不到repository了，这时要指定一下，再重新上传后就可以了。为何要同步public而非整个上一步所建的文件夹的原因上面说了，netlify关联GitHub那个repository后不能成功建网址，所以这样做。
  注册netlify并关联我们上传的这个包含建站需要文件的repository。
  更改模板成自己的信息，再重新从GitHub desktop就可以了。
-  中间还有一些细节就不一一罗列了。祝你也能成功！</description>
+  中间还有一些细节就不一一罗列了，记得在更新博客后build_site()。祝你也能成功！</description>
     </item>
     
   </channel>
