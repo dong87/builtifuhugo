@@ -180,6 +180,70 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="../../../post/%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80/%E6%9D%B0%E5%85%8B%E6%9D%BE-%E8%87%AA%E4%BA%A4%E8%A1%B0%E9%80%80pinus-banksiana/">
+                <h2 class="post-title">杰克松-自交衰退Pinus-banksiana</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>OECD Environment, Health and Safety Publications
+Series on Harmonisation of Regulatory Oversight in Biotechnology
+No. 40
+Consensus Document on the Biology of Pinus banksiana (Jack Pine)</p>
+</blockquote>
+
+<p>B.近交繁殖抑制
+27.
+由自花传粉引起的近交繁殖抑制已经通过较低的种子集，死亡率，异常萌发，异常表型，叶绿素缺乏，较低的水使用效率，较低的生长速率，开花开始的延迟和较低的繁殖力（Fowler，1965a，1965b; Rudolph 1966a，1981b; Blake和Yeatman，1989）。鲁道夫（1981a）观察到在自交S2后代中18至24％的树高中的近交繁殖抑制。 Fowler（1965b）观察到种子果园树的上冠13％的自交和下冠26％的自交。然而，许多自交后代不会预期存活; Sittmann和Tyson（1971）估计由于Hardy-Weinberg平衡中的一个群体的每代自交5％的近亲繁殖率。由于千年松树保留其血清圆锥多年，可以在不同年份产生的同一树的种子之间进行比较（Teich，1970）。在最近的种子中发现更高的自交种子率（Cheliak等人，1985; Snyder等人，1985）;似乎对自交种子的选择以线性速率发生，自交种子的存活力丧失</p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../../tags/%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80/">近交衰退</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/rcodes/%E6%9E%84%E5%BB%BA%E6%AD%A3%E5%8F%8D%E4%BA%A4%E5%8F%98%E9%87%8F/">
+                <h2 class="post-title">构建正反交变量</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  full diallel需要估算正反交效应的方差及评价显著性，正常状态数据框中并不包含该变量，其需要构建相应的隐含变量，具体操作如下：
+ data(hayman.tobacco) dat1 &lt;- subset(hayman.tobacco, year==1951) # Make a factor 'comb' in which G1xG2 is the same cross as G2xG1 dat1 &lt;- transform(dat1, comb = ifelse(as.character(male) &lt; as.character(female), paste0(male,female), paste0(female,male))) # 'dr' is the direction of the cross, 0 for self dat1$dr &lt;- 1 dat1 &lt;- transform(dat1, dr = ifelse(as.character(male) &lt; as.character(female), -1, dr)) dat1 &lt;- transform(dat1, dr = ifelse(as.character(male) == as.character(female), 0, dr)) m1 &lt;- asreml(day~1, data=dat1, random = ~ male + and(female) + comb + comb:dr) summary(m1)$varcomp #--- setwd(&quot;D:/Sync/R/Mohring_reml/&quot;) df&lt;-asreml.
+                  <a href="../../../post/rcodes/%E6%9E%84%E5%BB%BA%E6%AD%A3%E5%8F%8D%E4%BA%A4%E5%8F%98%E9%87%8F/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../../tags/rcodes/">Rcodes</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="../../../post/%E9%9A%8F%E7%AC%94/%E6%9E%97%E6%9C%A8%E9%81%97%E4%BC%A0%E8%82%B2%E7%A7%8D%E9%A2%86%E5%9F%9F%E7%9A%84%E4%B8%93%E5%AE%B6/">
                 <h2 class="post-title">林木遗传&amp;育种领域的专家</h2>
 
@@ -424,99 +488,6 @@ Aoli|XP_011119616.1,Aoli|XP_011122673.1,Aoli|XP_011128430.1,Bbas|XP_008594286.1,
                 <span class="post-meta">
                   
                     #<a href="../../../tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
-                  
-                </span>
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../post/%E9%9A%8F%E7%AC%94/%E6%BC%94%E5%8C%96%E7%A5%9E%E5%88%9B%E4%B8%8Erichard-dawkins/">
-                <h2 class="post-title">演化、神创与Richard-Dawkins</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  <p>先挖坑，谈谈自己对演化与神创的认识，另外一个目的是写一点Richard Dawkins著作的读后感，可能会持续很长时间。</p>
-
-<hr />
-
-<p>这里不考究相关的概念和理论，有很多想当然的成分。
-演化最著名的著作非达尔文的《物种起源》莫属。这本书令人神往，又被许多老师推荐。本科期间曾找来阅读，中文英文中英文对照版本都有，但没能坚持读完。内容有点枯燥，而且主要是放在一个大生物的背景下，与我所涉及的林业有点远，这是题外话。
-神创论是许多人的精神食粮。我们在解决一顿饭食后容易思考一些关于人的终极问题，如人是怎么来的以及我们的存在有何意义，只有圣经给出了解释，当然佛也做出了一定的分析但佛不是神创论。在一段时期内我倾向于神创论，因为相比之下我更难以接受人和类人猿甚至猴子有共同的祖先。有人说现在国内的基督教是新教的分枝（知乎某牛）
-我私认为，演化在很大程度上动摇了神创论的根基，而且越来越多的证据在支持演化，相反神创论并没有太多的实例。尽管神迹不断被宣扬，不断被解释，但这中间掺杂多少人的想法不得而知，可以明确的一点是，偏客观的神迹在圣经编写完成以后就几乎不见了。</p>
-
-<p>Richard Dawkins的著作：
-- <a href="https://www.amazon.com/God-Delusion-Richard-Dawkins/dp/0618918248/ref=la_B000AQ3RBI_1_1?s=books&amp;ie=UTF8&amp;qid=1494811261&amp;sr=1-1">The God Delusion
-</a>Jan 16, 2008</p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/3289684-9ae976a385fb0a64.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
-
-<ul>
-<li><a href="https://www.amazon.com/Selfish-Gene-Anniversary-Landmark-Science/dp/0198788606/ref=la_B000AQ3RBI_1_2?s=books&amp;ie=UTF8&amp;qid=1494833716&amp;sr=1-2">The Selfish Gene: 40th Anniversary Edition (Oxford Landmark Science)
-</a>Aug 1, 2016</li>
-</ul>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/3289684-2aa526f78cc1e3c4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
-- <a href="https://www.amazon.com/Blind-Watchmaker-Evidence-Evolution-Universe/dp/0393315703/ref=la_B000AQ3RBI_1_9?s=books&amp;ie=UTF8&amp;qid=1494833807&amp;sr=1-9">The Blind Watchmaker: Why the Evidence of Evolution Reveals a Universe without Design (Reissued in 2006 and 1996)
-</a>Sep 17, 1996</p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/3289684-6d967f4571b06377.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
-- <a href="https://www.amazon.com/Greatest-Show-Earth-Evidence-Evolution/dp/1416594795/ref=la_B000AQ3RBI_1_4?s=books&amp;ie=UTF8&amp;qid=1494833807&amp;sr=1-4">The Greatest Show on Earth: The Evidence for Evolution
-</a>Aug 24, 2010</p>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/3289684-8b34710f80b93e35.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
-
-                
-              </div>
-
-              
-                <span class="post-meta">
-                  
-                    #<a href="../../../tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
-                  
-                </span>
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../post/rcodes/%E7%9B%B8%E5%85%B3/">
-                <h2 class="post-title">相关</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  <pre><code># corr
-heterosis&lt;-read.csv(&quot;heterosis_growth.csv&quot;,stringsAsFactors = FALSE)
-names(heterosis)
-# plot(heterosis$Midd05~heterosis$GD)
-# plot(df.4$SCA_H05~df.4$GD)
-hete&lt;-as.matrix(heterosis[,-1])
-library(Hmisc) #相关显著性检验
-a&lt;-rcorr(hete, type=&quot;pearson&quot;) 
-# a&lt;-cor(hete,method = c(&quot;pearson&quot;), use = &quot;complete.obs&quot;)
-write.csv(a$r,&quot;corr_hete_gd.csv&quot;)
-write.csv(a$P,&quot;corr_hete_gd_pvalue.csv&quot;)
-</code></pre>
-
-                
-              </div>
-
-              
-                <span class="post-meta">
-                  
-                    #<a href="../../../tags/rcodes/">Rcodes</a>&nbsp;
                   
                 </span>
               

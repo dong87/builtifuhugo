@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/post/%E6%89%B9%E9%87%8F%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9-%E6%89%B9%E9%87%8F%E6%8A%8A%E7%AE%80%E4%B9%A6%E5%AF%BC%E5%87%BA%E7%9A%84md%E6%96%87%E4%BB%B6%E5%8A%A0%E4%B8%8Ayaml/</loc>
+    <lastmod>2017-12-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/netlify%E6%90%AD%E5%BB%BAblog%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2017-12-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/stat/aic%E6%98%AF%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%A0%87%E5%87%86%E5%90%97/</loc>
     <lastmod>2017-10-01T00:00:00+00:00</lastmod>
   </url>
@@ -2744,7 +2754,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2017-10-01T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -2770,7 +2780,7 @@
   
   <url>
     <loc>/tags/code/</loc>
-    <lastmod>2016-03-08T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2811,6 +2821,12 @@
   </url>
   
   <url>
+    <loc>/tags/notes/</loc>
+    <lastmod>2017-12-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/page/</loc>
     <priority>0</priority>
   </url>
@@ -2829,7 +2845,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2017-10-01T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -2980,6 +2996,12 @@
   <url>
     <loc>/tags/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2017-10-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2017-12-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

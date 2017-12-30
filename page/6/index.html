@@ -212,6 +212,80 @@
           
           
             <article class="post-preview">
+              <a href="../../post/rcodes/codesido-synchro-sas/">
+                <h2 class="post-title">Codesido-SYNCHRO-SAS</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 12 minutes (2548 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  /**********************************************************************************************/ /*********************** SYNCHRO1: Input data and checks ***************************************/ /**********************************************************************************************/ %macro SYNCHRO1(Message); options nonotes mautosource NOmerror nomprint noserror nosource nodate; %put SYNCHRO START; %let beta=0.02; %let ERR=;%let libname=;%let table=;%let block=;%let branch=; %do i=1 %to 8; %let m&amp;i=0; %let f&amp;i=0;%let ud=3; %end; %empieza: %window START color=gray irow=10 rows=23 icolumn=20 columns=32 #1 @2 &quot;&amp;Message&quot; color=red attr=highlight #3 @2 &quot;Table:&quot; +1 libname 8 attr=underline color=blue &quot;.&quot; table 8 attr=underline required=yes color=blue #5 @2 &quot;Start Day:&quot; +1 inicio 3 attr=underline required=yes color=blue #5 @18 &quot;End Day:&quot; +1 fin 3 attr=underline required=yes color=blue #7 @2 &quot;MALE STAGES&quot; attr=underline +5 &quot;FEMALE STAGES&quot; attr=underline #8 @5 &quot;1&quot; +1 m1 3 color=blue attr=underline +12 &quot;1&quot; +1 f1 3 color=blue attr=underline #9 @5 &quot;2&quot; +1 m2 3 color=blue attr=underline +12 &quot;2&quot; +1 f2 3 color=blue attr=underline #10 @5 &quot;3&quot; +1 m3 3 color=blue attr=underline +12 &quot;3&quot; +1 f3 3 color=blue attr=underline #11 @5 &quot;4&quot; +1 m4 3 color=blue attr=underline +12 &quot;4&quot; +1 f4 3 color=blue attr=underline #12 @5 &quot;5&quot; +1 m5 3 color=blue attr=underline +12 &quot;5&quot; +1 f5 3 color=blue attr=underline #13 @5 &quot;6&quot; +1 m6 3 color=blue attr=underline +12 &quot;6&quot; +1 f6 3 color=blue attr=underline #14 @5 &quot;7&quot; +1 m7 3 color=blue attr=underline +12 &quot;7&quot; +1 f7 3 color=blue attr=underline #15 @5 &quot;8&quot; +1 m8 3 color=blue attr=underline +12 &quot;8&quot; +1 f8 3 color=blue attr=underline #17 @7 &quot;Press&quot; +1 &quot;F3&quot; attr=underline +1 &quot;when ready&quot;; %display START; %if &amp;libname= %then %let libname=work; %let message=; /**************** Data verifications *********************************************************/ PROC contents data=&amp;libname.
+                  <a href="../../post/rcodes/codesido-synchro-sas/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/rcodes/">Rcodes</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/codesido2008-%E8%BE%90%E5%B0%84%E6%9D%BE-%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0-%E4%B8%AA%E4%BD%93%E9%80%89%E6%8B%A9/">
+                <h2 class="post-title">Codesido2008-辐射松-遗传参数-个体选择</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (84 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Codesido, V., and Fernández-López, J. 2008. Juvenile genetic parameter estimates for vigour, stem form, branching habit and survival in three radiata pine (Pinus radiata D.Don) progeny tests in Galicia, NW Spain. Eur. J. For. Res. 127(4): 315–325. doi:10.1007/s10342-008-0207-9.
+ 在加利西亚（西北西北部）的三个不同地点的后代进行后代测试，在种植后2和3年估计个体和家庭遗传力，以及表型和遗传相关性。 。考虑以下因素：存活，生长（自由生长，高度，直径，体积，高/直径比），形式（分枝数，轮数，每轮分枝数，每株树高分枝数，最大分枝直径，节间长度，枝角，茎直径，茎弯曲度，枝数）和抗性（抗冻性和抗虫性）。每个种植园含有50名女性父母，这些父母在加利西亚遗传改良的种植园中被选为优良树种，以及从巴斯克地区（西班牙北部）的辐射松培育计划中选出的6名女性父母和加利西亚的两个商业批次的种子，作为控制。对于所研究的每个性状，个体遗传力从低到高不等。家庭遗传率对个体遗传率也有类似的趋势，但幅度更大。结果表明，除了每个轮虫和昆虫抗性的分枝数外，所有性状都可以根据个体表现对选择作出反应。后代测试可以改善可遗传性较差的特征。高与直径呈显着正相关，两者性状也与枝数，轮数和分枝直径相关。结果与以前公布的数据进行比较，并讨论了对育种活动的影响。 关键词青少年选择性状遗传力表型和遗传相关育种计划
+介绍 Radiata松（Pinus radiata D.Don）是在上个世纪中叶在加利西亚（西班牙北部）引进的，由于其生长速度快（旋转龄在25 - 35年之间，大约40立方米/公顷/年）。目前它是加利西亚第三大林业品种（占森林面积的12％; Anonymous MMA 2001），是当地木材产业最重要的商业品种之一，是当地木材产业中一个重要的经济部门。区。 1992年在加利西亚由加拿大调查研究中心（CINAM）发起的辐射松树改良计划在加利西亚种植园加树种选择，并且使用这种材料在无性种子中进行种子生产果园（Codesido和Merlo 2001）和收集的种子从所选择的加上树安装子代测试。在子代测试安装的时候，种子园还是非常年轻的，并且还没有产生种子，所以后代测试的目的可以是选择遗传上优越的家庭进行进一步的育种或在家庭内进行选择。树木育种目标主要集中在改善制造所需产品的重要特性，即家具，锯材和木杆。所需性状如下：大体积（高度和直径），树干直线度，良好的冠形态和健康的树木，没有疾病或昆虫攻击的迹象，因为辐射松经常出现若干问题，如没有良好自然修剪的大量枝条和对昆虫或霜冻的抵抗力低。 大多数树木改良计划的目标是将快速的茎生长量与高质量的茎结合起来，为木材生产优质的树木（Shelbourne 1970; Zobel and Talbert 1984）。关于选择方案中包括哪些特性的决定取决于特性的经济价值，测量成本，对选择的潜在响应以及由于选择另一个特性而发生的变化的方向和幅度Doede和Adams 1998）。对通过选择可能发生的反应和变化的预测需要估计一些遗传参数，包括表型变异水平，遗传力，环境相互作用的基因型以及选择性状间的遗传相关性（Birot and Christophe 1983）。基因检测的选择通常在青年时期进行，目的是节省育种时间（Lambeth 1980）。测量树苗的茎干形态和分枝特征与测量老树木相比具有其他优势：整个树干和树冠可以从地面轻松到达，从而减少了测量时间和成本;可以在随后的生长覆盖它们之前评估幼年树梢缺陷;并且在树间竞争和遮荫影响分支大小和角度之前可以评估分支特性（Doede和Adams 1998）。少数和成熟特征之间的相关性被确定在若干性状的几种树中（Matziris and Zobel 1973; Hodge and White 1992; Temel and Adams 2000）。澳大利亚的辐射松（Dean et al。2006）观察到在种植后3年的早期断面积或身高测量值与成熟年龄（13岁）的这些性状之间具有较强的加性遗传相关性（rA）。来自少年性状的数据对于包括一项或多项早期性状的回顾性研究中的信息是必要的，其具有该领域中的同胞的晚期性状，并且获得比仅基于晚期性状的选择更大的遗传获得（Wu等，2000）。尽管如此，早期和晚期的性状必须具有显着的遗传相关性。 本研究调查了生存，生长，分枝，茎直立性和对生物和非生物损害的抗性的遗传和环境变异，从而能够估计几种组合的特征之间的相互关系的大小，并且还解释了包括这些育种计划后续阶段的性状。估计数据基于来自三个测试地点的来自加利西亚选择的58个开放授粉后代的2年和3年后代测试。
+                  <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/codesido2008-%E8%BE%90%E5%B0%84%E6%9D%BE-%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0-%E4%B8%AA%E4%BD%93%E9%80%89%E6%8B%A9/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/">遗传参数</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="../../post/%E7%AB%9E%E4%BA%89/costa-2013-%E7%AB%9E%E4%BA%89-newphy/">
                 <h2 class="post-title">Costa-2013-竞争-NewPhy</h2>
                 
@@ -543,96 +617,6 @@ IGE在概念上改变了性状值的遗传和对选择的响应（Griffing，197
                 <span class="post-meta">
                 
                   #<a href="../../tags/gs/">GS</a>&nbsp;
-                
-                </span>
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/cullis2006-%E7%8E%B0%E5%AE%9E-%E9%81%97%E4%BC%A0%E5%8A%9B/">
-                <h2 class="post-title">Cullis2006-现实-遗传力</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (56 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  
-
-<blockquote>
-<p>Cullis BR, Smith a. B, Coombes NE (2006) On the design of early generation variety trials with correlated data. J Agric Biol Environ Stat 11:381–393. doi: 10.1198/108571106X154443</p>
-</blockquote>
-
-<p>本文考虑了具有预先规定的空间相关结构的早期一代多样性试验的设计，并且引入了称为P-rep设计的一类新的部分复制设计，其中标准品种的图被替换为测试线的附加图。 我们显示如何使用修改的Reactive TABU搜索算法可以轻松生成有效的p-rep设计。 在模拟研究中比较p-rep和网格图设计的预期和实现的遗传增益。</p>
-
-<hr />
-
-<p>早期种类试验（EGVT）是所有植物改良计划的一个组成部分。这些试验为育种者提供了选择关键数量性状例如谷物产量的第一个机会。在一篇优秀的评论文章中，Kempton（1984）提出，支持实验设计的常见范例，例如具有最小误差的治疗比较的估计和提供该误差的有效估计，可能与EGVT不相关。 EGVT的目的是使来自选择优良育种品系（以下称为测试品系）的遗传获得最大化。通常针对一系列性状进行选择。在本文中，我们关注粮食产量的关键特征。在EGVT中，可能没有足够的种子来复制所有测试线，因此最广泛采用的设计是所谓的网格设计。这些设计通过在未使用的测试线的图中插入包含标准（或几个标准）品种的图的（规则）网格而形成。历史上，在网格设计中，通过基于标准品种的产量减去“生育指数”来实现异质性的局部控制。 Cullis，Lill，Fisher和Read（1989）提出了一种用于EGVT的空间分析方法，其易于扩展到二维或者对外部变化建模（Gilmour，Cullis和Verbyla 1997）。</p>
-
-<p>当数据相关时，采用用于分析品种试验的空间方法已引起对实验设计的兴趣（参见例如Martin 1996）。有限的理论结果可用于具有较少数量处理的复制设计，尽管这些不适用于EGVT。这导致了用于这些试验的有效设计的构建的算法方法（Coombes 2002; Chan 1999; Martin和Eccleston 1997），其需要目标函数的数值优化。大多数方法使用A最优性标准作为目标函数。 Chan（1999）; Martin和Eccleston（1997）使用模拟退火（Kirkpatrick，Gelatt和Vecchi 1983）来获得一系列相关模型的最优或接近最优设计。 Coombes（2002）使用修改的TABU（Glover 1989,1990）搜索算法，发现它经常产生比模拟退火更好的设计，但需要更多的处理时间。 Chauhan（2000）和Chan（1999）考虑了具有预先规定的空间相关结构的未复制试验的设计。他们建议，使所有处理（即测试线和标准品种）之间的所有基本对比的平均方差最小化的总体A最优性可能不是EGVT的最相关标准。本文考虑了具有预先规定的相关结构的早期多样性试验的设计，其反映了Gilmour等人的空间分析模型。 （1997）。在开发这些设计时，我们考虑了一种新的设计类型，其中标准品种的图被替换为额外的测试线图，只要资源允许。人们早已认识到，<strong>使用系统定位的检查图不如使用适当的不完全块设计（Atiqullah和Cox 1962）有效</strong>。这个原理可以应用于EGVT的设计，因为使用附加的测试线代替标准品种的图将导致对选择的更大响应。该文章的结构如下。第2节描述了早期田间试验数据的分析方法。第3节讨论与生成试验设计相关的问题，包括选择最佳性标准。第4节介绍新设计。通过模拟研究来检查这些设计与网格设计相比的效率，方法和结果在第5节中给出和讨论。最后，第6节给出了一些结论。</p>
-
-<h2 id="2-早期生成变量试验的混合模型">2.早期生成变量试验的混合模型</h2>
-
-<p>我们考虑Gilmour等人提出的一般框架。 （1997），假设试验具有由场行（1，&hellip;，r）和列（1，&hellip;，c）索引的二维布局，使得观察的总数为n = rc。 我们的n×1向量的产量y（假定排列为列中的行）的模型由下式给出</p>
-
-                
-              </div>
-
-              
-                <span class="post-meta">
-                
-                  #<a href="../../tags/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/">遗传参数</a>&nbsp;
-                
-                </span>
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/rcodes/dt--datatabledf/">
-                <h2 class="post-title">DT--datatable(df)</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (12 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  <pre><code># datatable: Create an HTML table widget using the DataTables library
-DT::datatable(df)
-</code></pre>
-
-                
-              </div>
-
-              
-                <span class="post-meta">
-                
-                  #<a href="../../tags/rcodes/">Rcodes</a>&nbsp;
                 
                 </span>
               

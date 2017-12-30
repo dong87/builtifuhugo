@@ -180,6 +180,99 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="../../../post/%E9%9A%8F%E7%AC%94/%E6%BC%94%E5%8C%96%E7%A5%9E%E5%88%9B%E4%B8%8Erichard-dawkins/">
+                <h2 class="post-title">演化、神创与Richard-Dawkins</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <p>先挖坑，谈谈自己对演化与神创的认识，另外一个目的是写一点Richard Dawkins著作的读后感，可能会持续很长时间。</p>
+
+<hr />
+
+<p>这里不考究相关的概念和理论，有很多想当然的成分。
+演化最著名的著作非达尔文的《物种起源》莫属。这本书令人神往，又被许多老师推荐。本科期间曾找来阅读，中文英文中英文对照版本都有，但没能坚持读完。内容有点枯燥，而且主要是放在一个大生物的背景下，与我所涉及的林业有点远，这是题外话。
+神创论是许多人的精神食粮。我们在解决一顿饭食后容易思考一些关于人的终极问题，如人是怎么来的以及我们的存在有何意义，只有圣经给出了解释，当然佛也做出了一定的分析但佛不是神创论。在一段时期内我倾向于神创论，因为相比之下我更难以接受人和类人猿甚至猴子有共同的祖先。有人说现在国内的基督教是新教的分枝（知乎某牛）
+我私认为，演化在很大程度上动摇了神创论的根基，而且越来越多的证据在支持演化，相反神创论并没有太多的实例。尽管神迹不断被宣扬，不断被解释，但这中间掺杂多少人的想法不得而知，可以明确的一点是，偏客观的神迹在圣经编写完成以后就几乎不见了。</p>
+
+<p>Richard Dawkins的著作：
+- <a href="https://www.amazon.com/God-Delusion-Richard-Dawkins/dp/0618918248/ref=la_B000AQ3RBI_1_1?s=books&amp;ie=UTF8&amp;qid=1494811261&amp;sr=1-1">The God Delusion
+</a>Jan 16, 2008</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-9ae976a385fb0a64.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<ul>
+<li><a href="https://www.amazon.com/Selfish-Gene-Anniversary-Landmark-Science/dp/0198788606/ref=la_B000AQ3RBI_1_2?s=books&amp;ie=UTF8&amp;qid=1494833716&amp;sr=1-2">The Selfish Gene: 40th Anniversary Edition (Oxford Landmark Science)
+</a>Aug 1, 2016</li>
+</ul>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-2aa526f78cc1e3c4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+- <a href="https://www.amazon.com/Blind-Watchmaker-Evidence-Evolution-Universe/dp/0393315703/ref=la_B000AQ3RBI_1_9?s=books&amp;ie=UTF8&amp;qid=1494833807&amp;sr=1-9">The Blind Watchmaker: Why the Evidence of Evolution Reveals a Universe without Design (Reissued in 2006 and 1996)
+</a>Sep 17, 1996</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-6d967f4571b06377.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+- <a href="https://www.amazon.com/Greatest-Show-Earth-Evidence-Evolution/dp/1416594795/ref=la_B000AQ3RBI_1_4?s=books&amp;ie=UTF8&amp;qid=1494833807&amp;sr=1-4">The Greatest Show on Earth: The Evidence for Evolution
+</a>Aug 24, 2010</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-8b34710f80b93e35.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../../tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/rcodes/%E7%9B%B8%E5%85%B3/">
+                <h2 class="post-title">相关</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <pre><code># corr
+heterosis&lt;-read.csv(&quot;heterosis_growth.csv&quot;,stringsAsFactors = FALSE)
+names(heterosis)
+# plot(heterosis$Midd05~heterosis$GD)
+# plot(df.4$SCA_H05~df.4$GD)
+hete&lt;-as.matrix(heterosis[,-1])
+library(Hmisc) #相关显著性检验
+a&lt;-rcorr(hete, type=&quot;pearson&quot;) 
+# a&lt;-cor(hete,method = c(&quot;pearson&quot;), use = &quot;complete.obs&quot;)
+write.csv(a$r,&quot;corr_hete_gd.csv&quot;)
+write.csv(a$P,&quot;corr_hete_gd_pvalue.csv&quot;)
+</code></pre>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../../tags/rcodes/">Rcodes</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="../../../post/%E9%9A%8F%E7%AC%94/%E7%9B%B8%E5%85%B3%E5%88%86%E6%9E%90-correlation-analysis-in-r-#rstat%23/">
                 <h2 class="post-title">相关分析-correlation-analysis-in-r-#rstat#</h2>
 
@@ -542,60 +635,6 @@ corrplot(M, type=&quot;upper&quot;)  但是这些热图有个问题是，不知�
                 <span class="post-meta">
                   
                     #<a href="../../../tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
-                  
-                </span>
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/%E8%90%BD%E5%8F%B6%E6%9D%BE/">
-                <h2 class="post-title">落叶松</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  <p>Hybrid vigor is well documented for larch (Miller and Thulin 1967, Carter et al. 1981, Riemenschneider and Nienstaedt 1983, Einspahr et al. 1984, Carter and Selin 1987, Matyssek and Schulze 1987, Paques 1992).</p>
-
-                
-              </div>
-
-              
-                <span class="post-meta">
-                  
-                    #<a href="../../../tags/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/">杂交优势</a>&nbsp;
-                  
-                </span>
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../post/rcodes/%E8%A1%A5%E5%85%85cf29%E8%87%AA%E7%94%B1%E6%8E%88%E7%B2%89%E5%AD%90%E4%BB%A3-%E5%B9%B6plot/">
-                <h2 class="post-title">补充CF29自由授粉子代-并plot</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  source(&quot;D:/Sync/R/rcodes/generate_label_df.r&quot;) com&lt;-unique(df$com) # here must be df not df.rm.self com&lt;-as.character(com) com&lt;-unique(df$com) # here must be df not df.rm.self com&lt;-as.character(com) com comcom&lt;-read.csv(&quot;comcom.growth.csv&quot;) setwd(&quot;D:/Sync/R/8801/fullsib/160620&quot;) comcom&lt;-read.csv(&quot;comcom.growth.csv&quot;) comcom&lt;-as.matrix(comcom) pdf(&quot;grow.performance.1205.pdf&quot;,paper=&quot;a4&quot;, width = 0, height = 9,family=&quot;Times&quot;,pointsize = 10) par(mfrow=c(3,3),mar = c(6, 4, .5, .5),las=2) for (i in 1:nrow(comcom)){ df.com&lt;-df[df$com %in% com[comcom[i,]],] df.com$com&lt;-factor(df.com$com) X&lt;-names(df.com) for (j in 12:length(X)){ data.i&lt;-df.com[, X[j]] model=lm(data.i ~ df.com$com ) ANOVA=aov(model) TUKEY &lt;- TukeyHSD(x=ANOVA, 'df.com$com', conf.level=0.99) # a&lt;-TUKEY$`df.com$com`[,c(1,4)] # colnames(a)&lt;-c(paste(X[j],&quot;diff&quot;,sep = &quot;_&quot;),&quot;p adj&quot;) # write.
-                  <a href="../../../post/rcodes/%E8%A1%A5%E5%85%85cf29%E8%87%AA%E7%94%B1%E6%8E%88%E7%B2%89%E5%AD%90%E4%BB%A3-%E5%B9%B6plot/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-                <span class="post-meta">
-                  
-                    #<a href="../../../tags/rcodes/">Rcodes</a>&nbsp;
                   
                 </span>
               

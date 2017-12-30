@@ -180,6 +180,74 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="../../../post/%E9%9A%8F%E7%AC%94/%E5%A6%82%E6%9E%9C%E5%B9%B3%E9%9D%A2%E4%B8%8A%E6%9C%89nn%E4%B8%BA%E5%A4%A7%E4%BA%8E%E6%88%96%E7%AD%89%E4%BA%8E3%E7%9A%84%E6%95%B4%E6%95%B0%E4%B8%AA%E7%82%B9%E4%B8%94%E6%AF%8F3%E4%B8%AA%E7%82%B9%E5%9D%87%E4%B8%8D%E5%9C%A8%E5%90%8C%E4%B8%80%E6%9D%A1%E7%9B%B4%E7%BA%BF%E4%B8%8A%E9%82%A3%E4%B9%88%E6%9C%80%E5%A4%9A%E5%8F%AF%E4%BB%A5%E7%94%BB_________%E6%9D%A1%E7%9B%B4%E7%BA%BF%E7%94%A8%E5%90%ABn%E7%9A%84%E5%BC%8F%E5%AD%90%E8%A1%A8%E7%A4%BA/">
+                <h2 class="post-title">如果平面上有n(n为大于或等于3的整数)个点，且每3个点均不在同一条直线上，那么最多可以画_________条直线(用含n的式子表示)</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>如果平面上有n(n为大于或等于3的整数)个点，且每3个点均不在同一条直线上，那么最多可以画_________条直线(用含n的式子表示)？</p>
+</blockquote>
+
+<p>　第一感觉是画图，画图直观些，容易发现规律，于是有：<img src="http://upload-images.jianshu.io/upload_images/3289684-b9ad0da82458c77a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+　但很难发现这2组数间的规律，所以这种方法对于多数初中生（包括我，数列学得不好）是找不出二者的关系式的。
+　请教Jane，她直接告诉了我答案（牛人就是牛）：n(n-1)/2。我告诉她我需要推导过程，她给我整排列组合，也不是很好理解。
+　当我看到这个答案时，我恍惚在哪里见过：
+<img src="http://upload-images.jianshu.io/upload_images/3289684-60f2a7d50c40adee.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="双列" /></p>
+
+<p>所以，这种题的背后的问题是：<strong>n个点，两两组合，一共有多少种组合？</strong>没有限制条件的话应该是*n^2*（n方）个（看上面那个图），但自己和自己的组合要去掉（*n*个，不用怀疑，对角线部分），剩余*n^2-n<em>个；因为正向和反向组合算是重复，还要再去掉一半，只剩对角线上（或下）的部分，所以答案是</em>(n^2-n)/2*。
+我想对于一个初中生而言，这种题目比较难，大部分人会死记这个答案，对于某些老师来说也未必能讲清楚。我觉得<strong>列矩阵（列表）的方法应该是最容易理解的</strong>，供参考。</p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../../tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/%E9%9A%8F%E7%AC%94/%E5%AE%89%E8%A3%85arb/">
+                <h2 class="post-title">安装ARB</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  下载ARB wget http://download.arb-home.de/build/latest/arb-6.0.6.ubuntu1404-amd64.tgz tar -xzvf arb-6.0.6.ubuntu1404-amd64.tgz
+ 安装一些ARB需要的库 sudo apt-get install xfig libmotif4 libpng3 xloadimage gv libglew1.5 gnuplot  正在读取软件包列表... 完成 正在分析软件包的依赖关系树 正在读取状态信息... 完成 注意，根据正则表达式 'libglew1.5' 选中了 'libglew1.5-dev' 注意，选中 'libglew-dev' 而非 'libglew1.5-dev' 没有可用的软件包 libmotif4，但是它被其它的软件包引用了。 这可能意味着这个缺失的软件包可能已被废弃， 或者只能在其他发布源中找到 然而下列软件包会取代它： libxm4:i386 libuil4:i386 libmrm4:i386 libxm4 libuil4 libmrm4 libmotif-common E: 软件包 libmotif4 没有可安装候选
+ 修改环境变量 sudo vim /etc/bash.bashrc （vim需要安装，如果没有安装，用gedit也可以）
+  软件包设置 ┌──────────────────────────┤ 正在设定 arb-common ├──────────────────────────┐ │ The default configuration of PT-server slots in /etc/arb/arb_tcp.
+                  <a href="../../../post/%E9%9A%8F%E7%AC%94/%E5%AE%89%E8%A3%85arb/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../../tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="../../../post/%E6%8A%95%E7%A8%BF%E6%8A%80%E5%B7%A7/%E5%BB%B6%E6%9C%9F%E7%94%B3%E8%AF%B7/">
                 <h2 class="post-title">延期申请</h2>
 
@@ -455,107 +523,6 @@ install.packages(&quot;DT&quot;)
                 <span class="post-meta">
                   
                     #<a href="../../../tags/%E7%A9%BA%E9%97%B4/">空间</a>&nbsp;
-                  
-                </span>
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/">
-                <h2 class="post-title">无标题文章</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  
-
-<h2 id="抽象">抽象</h2>
-
-<p><strong><em>关键信息</em></strong>通过使用<strong>因子分析模型</strong>，建模加性基因型环境相互作用最好。通过多种环境和异种植物种类，使用减少的动物模型便于计算。<strong><em>摘要</em></strong><strong>有效的植物育种策略的发展需要了解基因型环境相互作用的规模和结构</strong>。该信息可以从多环境试验的表型数据的适当的线性混合模型分析中获得。已知使用因子分析模型进行基因型环境影响，为获得所有试验对之间遗传相关性的估计提供了可靠，简约和整体的方法。<strong>当对于异交物种进行育种时，重点是估计通过在分析中包括谱系信息而实现的附加遗传相关性和效应</strong>。在环境数量中等到大的情况下，在这种设置中使用因子分析模型可能是计算上禁止的。在本文中，我们<strong>提出了一种方法，使用近似的减少的动物模型来克服与因子分析模型相关的加性基因型环境影响相关的计算问题</strong>。该方法使用位于新西兰和澳大利亚东南部环境中的77个试验的马尾松辐射繁殖数据集，以及315,581棵树的谱系信息。使用这种方法，我们证明了在<strong>dbh的性状存在显着的添加基因型环境相互作用</strong>。<strong>这一发现对育种和部署策略有潜在的重大影响</strong>。虽然我们的方法已经开发用于林木育种计划，但它直接适用于其他异交植物，包括甘蔗，玉米和许多园艺作物。</p>
-
-<h2 id="介绍">介绍</h2>
-
-<p>植物改良计划遗传获益的关键决定因素之一是对个体遗传价值的准确预测。遗传价值在植物育种环境中的定义需要仔细考虑，因为它不仅取决于感兴趣的特征，而且还取决于目标环境。在林木育种计划中，精英种质的部署将发生在一个明确定义但异质的目标环境中。例如，Radiata Pine Breeding Company（RPBC）计划旨在培育和提供新西兰，新南威尔斯州和塔斯马尼亚州中南部地区部署的种质资源。知情的育种策略和精选种质的选择需要彻底检查基因型（GXE）相互作用的程度和性质。</p>
-
-<p>用于评估GXE的表型小组是所谓的多环境试验（MET）。 METs由多年生长的（遗传）试验和放置在目标环境中的位置组成。用于分析植物改良的全效（即一阶段）混合模式方法MET数据集在澳大利亚得到广泛应用（Cullis等，2010）。这些方法通常基于Smith等人的方法。 （2001），其适应试验设计的所有方面，并允许残差方差结构的复杂建模。史密斯等人的关键方面（2001）方法是使用因子分析（FA）模型来建模GXE效应的方差结构。史密斯等人（2001）最初只考虑模拟总体基因型环境影响，其中谱系信息不包括在分析中。 Burgueno等人（2011）展示了FA模型在土豆，玉米和小麦中使用六种METs建模GXE的效用。这些MET数据集中的每一个具有少量的基因型和相对较少的环境，但是当存在复杂的GXE时，它们能够证明FA模型与其他模型的优势。 Oakey等人（2006年，2007年）扩大了史密斯等人的方法。 （2001）将单一和多环境试验环境中的加法和非加性效应建模。 Cullis等人（2010年）将这些扩展应用于对一系列油菜育种试验的产量和油料数据的分析。
-在具有高度不平衡性的大型MET数据集的分析中使用FA模型的许多优点之一是能够在不使用过多数量的方差参数的情况下充分捕获经常复杂的方差结构（Kelly et al。 2007）。随着环境数量t的变大，非结构化方差模型（即t（t + 1）/ 2）的方差参数数量增加到不可接受的高水平，因此考虑拟合具有中等到大t和差连接性的MET数据集的非结构化方差模型。 Baltunis等人（2010），Raymond（2011），Apiolaza（2012）最近考虑了分析中度至低连通性和中等t = 8,26和18的树种MET数据集。使用t（t-1）/ 2对双变量非结构化方差模型建模添加基因型环境效应的方差结构。这种方法本质上是低效的，在很大程度上是不知情的，并且经常导致不可忽视的环境（即大于1或小于-1）之间的估计遗传相关性。
-使用FA模型的另一个优点是，如果实现了适当的估计算法，则可以适应GXE效应小于满秩方差结构的（并非不常见的）情况。在包含血统信息的情况下，如果没有谱系信息或剩余的GXE效应，在GXE效应的FA模型的情况下，Thompson等人的方法（2003）。 Kelly等人扩展了这种方法（2009）对于加法GXE效应的FA模型的情况。
-在分析树种MET数据集时，FA模型的采用有限。 Costa e Silva et al。 （2006）使用FA模型分析了在澳大利亚四个州建立的涉及15个桉树球根子代试验的MET数据集在胸部高度测量的茎直径（DBH）。他们分别使用1号和2号的FA模型，分别在环境影响的次种族和种族之内。这些模型提供了很好的适应方差结构，并证明了两组效应的实质GXE的存在，估计的遗传相关性分别为-0.23至1.00和0.25至1.00。
-Hardner等人（2010）也使用FA模型分析了一个MET数据集中的DBH分析，该数据包括澳大利亚21个盐水环境中播种的841个桉树杂种克隆。他们分别通过环境影响将家庭FA模型和家庭内基因型拟合。由于家庭数量少（8），尝试适应高阶FA方差模型失败。然而，家庭影响基因型的FA模型显示出显着的GXE，估计的遗传相关性在-0.53到0.99之间。
-Zapata-Valenzuela（2012）在具有16个环境和463个克隆的火炬松上的MET数据集的分析中，使用FA1模型进行环境效应的加性遗传变异结构。他们研究了另外两种方差模型，即复合对称和异方差共同相关模型。虽然没有正式的模型选择方法，FA模型与其他两个模型相比提供了一个合适的改进。
-FA模型的主要优点之一是其与多元回归和主成分分析的联系。 FA模型可以被形成为对（未知）环境协变量（即因子负荷）的遗传效应的随机遗传回归，每个基因型具有不同的斜率（因子得分）。这种回归被称为潜在回归模型，关于斜率分布的简单假设，剩余项导致环境遗传协方差矩阵的FA方差结构。环境协变量可以旋转为正交，导致所谓的主成分溶液。这样就可以使用图形化工具（例如，Kempton 1984），潜在回归图（Thompson et al。2003）以及环境遗传相关矩阵与列和列之间估计的热图进行有意义的检查。使用聚类或混合模型方法（Cullis等人，2010）。 Hardner等人（2010）用环境影响来研究家族内基因型的GXE，证明环境之间有明显的等级变化。
-本文的目的是提出一种方法，用于使用具有中等数量至大量试验的MET数据集来研究异交植物物种中的加性基因型 - 环境相互作用。我们用RPBC育种计划的例子说明了该方法，其中包括t = 77个关于315,581棵树的谱系信息的试验。 Cullis等人的方法（2010）对于这种尺寸的数据集将是计算上禁止的，因为它将涉及21e6级的混合模型方程组（MME）的集合。我们提出了一种基于Quass和Pollack的减少动物模型的方法（1980）。我们所谓的近似减少的动物模型导致了MME的维度的显着降低，并且用于估计方差参数，包括与FA模型相关联的方差参数，以及随机效应的预测，包括两者的育种值向后和向前选择。</p>
-
-                
-              </div>
-
-              
-                <span class="post-meta">
-                  
-                    #<a href="../../../tags/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/">遗传参数</a>&nbsp;
-                  
-                </span>
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../post/%E9%9A%8F%E7%AC%94/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/">
-                <h2 class="post-title">无标题文章</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  <p>python scripts/run_BUSCO.py -i /home/larix/下载/myproject/Moelleriella_libera -o Moelleriella_libera_genome -l ascomycota_odb9 -m geno</p>
-
-<p>Grosmannia_clavigera_kw1407
-Ophiostoma_piceae_UAMH_11346
-Sporothrix_schenckii_1099-18
-Drechslerella_stenobrocha_248
-Arthrobotrys_oligospora_ATCC_24927</p>
-
-<p>Dactylellina<em>haptotyla</em>(Monacrosporium_haptotyla)
-Hirsutella_minnesotensis_3608
-Cordyceps_militaris_CM01
-Beauveria_bassiana_ARSEF_2860
-Metarhizium_anisopliae_ARSEF_549</p>
-
-<p>Fusarium_graminearum_PH-1
-Magnaporthe_oryzae_70-15
-Neurospora_crassa_OR74A
-Aspergillus_nidulans_FGSC_A4
-Saccharomyces_cerevisiae_S288c</p>
-
-<p>Tuber_melanosporum_Mel28未找到 用Tuber_melanosporum代替</p>
-
-<p>Sporothrix_insectorum
-Metarhizium_robertsii
-Moelleriella_libera
-Sporothrix_brasiliensis</p>
-
-<p>Verticillium_alfalfae
-Sclerotinia_sclerotiorum
-Botrytis_cinerea
-Zymoseptoria_tritici</p>
-
-                
-              </div>
-
-              
-                <span class="post-meta">
-                  
-                    #<a href="../../../tags/%E9%9A%8F%E7%AC%94/">随笔</a>&nbsp;
                   
                 </span>
               

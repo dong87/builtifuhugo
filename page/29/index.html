@@ -212,6 +212,104 @@
           
           
             <article class="post-preview">
+              <a href="../../post/stat/s6--%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%AF%E5%B7%AE%E6%96%B9%E5%B7%AE%E4%B8%AD%E8%87%AA%E7%94%B1%E5%BA%A6%E6%98%AFn-2/">
+                <h2 class="post-title">S6--回归分析为什么误差方差中自由度是n-2？</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (24 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>Crawley MJ. Statistics: An Introduction Using R [Internet]. 2nd ed. Wiley; 2014. Available from: <a href="http://gen.lib.rus.ec/book/index.php?md5=7039b0c2dae409ebbd1cc9bdb44c10bd">http://gen.lib.rus.ec/book/index.php?md5=7039b0c2dae409ebbd1cc9bdb44c10bd</a> p118
+<img src="http://upload-images.jianshu.io/upload_images/3289684-d9edcfc5add18482.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></li>
+</ol>
+</blockquote>
+
+<p>当响应变量和解释变量都是连续变量时，我们通常使用的统计方法是回归分析。当想知道适不适合用回归分析时，最简单的方法是做散点图，对于方差分析则做箱线图或是条形图。
+回归分析的本质是利用样本数据估计参数值和它们的标准误。但是首先我们需要选择一个能够描述解释变量和响应变量间关系的模型。我们能选的模型有数百个。也许学习回归最重要的事情是模型选择。最简单的模型是线性回归y=a+bx。模型中有2个参数，a和b，a是截距b是斜率。b很重要，有必要弄清楚它涉及的内容。y的变化除以x的变化。
+估计出2个参数以后，我们还想知道它们的可靠性或不可靠性。我们最想要的是参数的最大似然估计，就是说，给定数据，选择一个线性模型，我们想找出使数据出现可能性最大的参数。
+<strong>回归斜率b的最小二乘估计</strong>：最佳拟合斜率是通过旋转直线直至找出残差平方和最小。
+<strong>自由度的估计</strong>：我们应当知道与每个均方和相应的自由度。最容易处理的是得到总均方和的，因为它的自由度总是有相同的公式。定义是
+<img src="http://upload-images.jianshu.io/upload_images/3289684-74da605e63a98e9b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+，你可以发现只有一个从数据中估计的参数——均值ybar。因为我们已经从数据中估计了一个参数，所以我们有n-1个自由度（n是观测值的总个数）。第二个比较容易得到的是误差均方和的自由度。 让我们看一下它的式子有多少个参数需要估计
+<img src="http://upload-images.jianshu.io/upload_images/3289684-3d873bdac6b6fb85.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />。我们需要知道a和b2个的数值才能计算SSE。它们是从数据中估计的，所以误差的自由度是n-2.这一点很重要，所以重读最后一句话如果你还没有看见它。3个中最困难的是回归的自由度，因为你需要用一个不同的方式去思考。问题是：在y的均值之外有多少个额外的参数？答案是1。那个额外要估计的参数是斜率b。所以这个只有一个解释变量的简单模型中，回归的自由度是1。</p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/stat/">stat</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/stat/s7--%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9/">
+                <h2 class="post-title">S7--模型选择</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (27 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>Crawley MJ. Statistics: An Introduction Using R [Internet]. 2nd ed. Wiley; 2014. Available from: <a href="http://gen.lib.rus.ec/book/index.php?md5=7039b0c2dae409ebbd1cc9bdb44c10bd">http://gen.lib.rus.ec/book/index.php?md5=7039b0c2dae409ebbd1cc9bdb44c10bd</a> p120</li>
+</ol>
+</blockquote>
+
+<p>模型选择有2个主要的方法：
+1. 基于选择工具比如<strong>AIC或BIC</strong>。AIC 和BIC 都包含2项，测定模型拟合和模型的复杂度。似然值用于定义拟合测定；参数的个数测定复杂度。log似然函数可以用于测定拟合，但是有2个似然函数，REML 和ML
+<img src="http://upload-images.jianshu.io/upload_images/3289684-3d12446be9b7c922.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+<img src="http://upload-images.jianshu.io/upload_images/3289684-4b9f58c01183534c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />。
+AIC和BIC的区别是，后者考虑了观测值的个数。对于ML，n<em>=n，对于RMEL，n</em>=n-p。这就意味着基于REML的AIC（BIC）和基于ML的AIC（BIC）是不可比的。
+2. <strong>假设检验</strong>。3中方法，t-统计量、F-统计量或似然比检验。
+<strong>模型选择的策略</strong>：从上至下。</p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                
+                  #<a href="../../tags/stat/">stat</a>&nbsp;
+                
+                </span>
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="../../post/%E9%9A%8F%E7%AC%94/sra%E4%B8%8A%E4%BC%A0%E5%9F%BA%E5%9B%A0%E7%BB%84%E6%95%B0%E6%8D%AE/">
                 <h2 class="post-title">SRA上传基因组数据</h2>
                 
@@ -588,83 +686,6 @@ SRA元数据
                 <span class="post-meta">
                 
                   #<a href="../../tags/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/">标记谱系</a>&nbsp;
-                
-                </span>
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/stat/smoothing-splines-%E5%B9%B3%E6%BB%91%E6%A0%B7%E6%9D%A1/">
-                <h2 class="post-title">Smoothing-Splines-平滑样条</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (102 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  Wang Y. Smoothing Splines: Methods and Applications (Chapman &amp; Hall CRC Monographs on Statistics &amp; Applied Probability) [Internet]. 1st ed. Chapman and Hall/CRC; 2011. Available from: http://gen.lib.rus.ec/book/index.php?md5=2EFF745DDEB91107DC1030287CB70BED   前言 统计分析通常涉及建立检查依赖变量和自变量之间的关系的数学模型。这本书是关于一般类的强大而灵活的建模技术，即样条平滑。平滑样条模型的研究近年来引起了人们的极大关注，并且该方法已经在许多领域得到广泛应用。本书提供了一些基本平滑样条线模型的介绍，包括多项式，周期，球面，薄板，L-和部分样条，以及更高级模型的概述，包括平滑样条线ANOVA，扩展和广义平滑样条ANOVA，矢量样条，非参数非线性回归，半参数回归和半参数混合效应模型。还介绍了模型选择和推理的方法。本书中非参数/半参数线性/非线性固定/混合平滑样条模型的一般形式为估计，推理和软件实现提供了统一的框架。本书借鉴了再现核Hilbert空间（RKHS）的理论，以统一的方式呈现各种平滑样条模型。另一方面，在RKHS和正则化的背景下的平滑样条的主题通常被认为是技术和困难的。我的主要目标之一是使基于RKHS的高级平滑样条法更易于从业者和学生访问。考虑到这一点，本书侧重于方法，计算，实现，软件和应用。它为RKHS提供了温和的介绍，将理论保持在最低水平，并提供了有关如何使用RKHS构建样条模型的细节。用户友好的软件是任何统计方法的常规使用的关键。 R中的辅助库实现本书中提出的用于拟合各种非参数/半参数线性/非线性固定/混合平滑样条模型的方法。辅助库可以在http://www.r-project.org获得。大部分的说明是基于对实例的分析。 这些示例不是形式分析，而是用于说明样条平滑方法的功能和多样性。所有数据分析在R中执行，其中大多数使用辅助库中的函数。与本书相关的所有示例和进一步发展的代码将公布在网页http://www.pstat.ucsb.edu/faculty/yuedong/book.html 本书面向那些想了解平滑样条曲线的人。它可以是需要先进和灵活的建模技术的统计学家和科学家的参考书。它也可以作为一个高级研究生课程的文本。事实上，第1章到第4章的主题在加州大学圣塔芭芭拉分校和中国科学技术大学的四分之一课程中讨论。我确实幸运地学到了平滑样条 GraceWahba，他的先驱工作为许多研究工作铺平了道路，使本书成为可能。我非常感谢我的前学生和合作者Chunlei Ke开发的辅助包。特别感谢刘安娜仔细阅读草稿，纠正了许多错误。几个人帮助我写了这本书的各个阶段：创业，郭文生，大卫恒克利，平马和温迪迈林。我必须感谢我的编辑David Grubbes的耐心和鼓励。最后，我要感谢几位研究人员分享他们的数据集以纳入本书;他们被引用到他们的数据被引入。
-第1章简介 1.1参数和非参数回归 回归分析构建检验因变量与一个或多个自变量的关系的数学模型。这些模型可以用于预测自变量的未观察值和/或未来值的响应。在简单情况下，从属变量y和独立变量x都是标量变量，给定对于i = 1，&hellip;的观察值（xi，yi）。 。 。 ，n，回归模型关联依赖和自变量如下： 其中f是回归函数，ei是具有共同方差σ2的零均值独立随机误差。回归分析的目的是构建f的模型，并基于噪声数据进行估计。 例如，对于黄石国家公园的老忠实喷泉，考虑使用先前喷发的长度预测下一次喷发的等待时间的问题。图1.1（a）显示了来自旧忠实喷泉的272次观测的等待时间到下一次喷发（y =等待）对先前喷发持续时间（x =持续时间）的散点图。目标是建立一个数学模型，将等待时间与先前喷发的持续时间相关联。第一次尝试可能是通过直线近似回归函数f 最小二乘直线拟合如图1.1（a）所示。没有明显的缺乏适应的迹象。此外，在图1.1（b）中的残差图中没有明显的可见趋势。通常f在x中是非线性的。处理非线性关系的常见方法是通过阶m的多项式近似f 图1.2显示了模拟摩托车碰撞实验对冲击头盔的功效的加速度（y =加速度）对冲击后时间（x =时间）的散点图。很明显，直线不能解释加速度和时间之间的关系。多元醇，m = 1，。 。 。 ，20被拟合到数据，并且图1.2示出了由Akaike的信息标准（AIC）选择的最佳拟合。在范围的两端的拟合曲线中存在波浪。即使考虑到高达20阶的多项式，拟合仍然不能完全令人满意。与线性回归模型（1.2）不同，除了小m，模型（1.3）中的系数不再有很好的解释。 一般来说，参数回归模型假定f的形式是已知的，除了有限多个未知参数。 f的具体形式可以来自科学理论和/或在一些简化假设下的力学近似。这些假设可能太限制，并且对于一些应用，近似可能太粗糙。不适当的模型可能导致系统偏差和误导性结论。在实践中，应该总是检查函数f的假设形式。 获得f的特定功能形式通常是困难的，即使不是不可能的。非参数回归模型不采用预定义形式。相反，它对f的定性性质做出假设。例如，可以愿意假设f是“平滑的”，其不会减少到具有有限数量的参数的特定形式。相反，它通常导致一些无限维函数集合。非参数回归的基本思想是让数据自己说话。这就是让数据决定哪个函数最适合，而不在f上强加任何特定的形式。因此，非参数方法通常更灵活。它们可以揭示数据中可能被遗漏的结构。 为了说明，我们将三次样条拟合到间歇数据。三次样条是一个特殊的非参数回归模型，将在1.2节中介绍。对来自线性模型（1.2）的残差的三次样条拟合显示出图1.3（a）中的非零趋势。这提出了一个简单的线性回归模型是否适合间歇泉数据的问题。对原始数据的三次样条拟合如图1.3（b）所示。它揭示了在自变量中有两个聚类，并且每个聚类可能需要不同的线性模型。第2.10,3.8和3.9节包含对间歇泉数据的更多分析。摩托车数据的三次样条拟合如图1.4所示。它比多项式模型更好地拟合数据。第2.10,3.8,5.4.1和6.4节包含了对摩托车数据的更多分析。 上述简单的说明表明，非参数回归技术可以应用于回归分析中的不同步骤：数据探索，建模，测试参数模型和诊断。事实上，如整个书中所示，样条平滑是用于建立统计模型以利用数据中的结构的强大且通用的工具。
-1.2多项式样条 多项式（1.3）是一个全局模型，使其对局部变化的适应性较差。个人观察可能对偏远地区的适应有不当影响。例如，在摩托车数据中，平均函数的行为从一个区域到另一个区域急剧变化。 这些局部变化导致在多项式拟合的范围的两端的振荡。克服这种限制的一个自然方法是使用分段多项式，多项式样条曲线的基本思想。令a &lt;t1 &lt;&hellip; &lt;tk &lt;b是称为节点的固定点。令t0 = a和tk + 1 = b。粗略地说，多项式样条是在结处平滑连接在一起的分段多项式。形式上，阶数r的多项式样条是[a，b]，f（t）上的实值函数，使得 （i）f是阶数r on [ti，ti + 1）的分段多项式，i = 0,1，&hellip;， 。 。 ，k; （ii）f具有r -2个连续导数，并且（r -1）st导数是具有节点跳跃的阶跃函数 现在考虑甚至表示为r = 2m的订单。如果除了（i）和（ii）之外，函数f是2m的自然多项式样条，其满足自然边界条件 （iii）f（j）（a）= f（j）（b）= 0，j = m。 。 。 ，2m-1。 自然边界条件意味着f是在两个外部子间隔[a，t1]和[tk，b]上的阶m的多项式。用节点t1，表示2m的自然多项式样条函数空间。 。 。 ，tk作为NS2m（t1，&hellip;，tk）。一种被称为回归样条的方法是使用多项式样条或自然多项式样条近似f。为了获得良好的效果，需要决定结的数量和位置。本书涵盖了一种称为平滑样条的不同方法。它从f的一个明确定义的模型空间开始，并引入一个惩罚，以防止过度拟合。我们现在描述这种多项式样条的方法。考虑回归模型（1.
-                  <a href="../../post/stat/smoothing-splines-%E5%B9%B3%E6%BB%91%E6%A0%B7%E6%9D%A1/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-                <span class="post-meta">
-                
-                  #<a href="../../tags/stat/">stat</a>&nbsp;
-                
-                </span>
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/stackpole2011-%E6%A1%89%E6%A0%91-%E5%8C%96%E5%AD%A6%E7%BB%84%E6%88%90-%E9%81%97%E4%BC%A0%E5%8F%98%E5%BC%82/">
-                <h2 class="post-title">Stackpole2011-桉树-化学组成-遗传变异</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (116 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  Stackpole DJ, Vaillancourt RE, Alves A, et al (2011) Genetic Variation in the Chemical Components of Eucalyptus globulus Wood. G3 (Bethesda) 1:151–9. doi: 10.1534/g3.111.000372
- 摘要 尽管木质素和其他木材化学成分具有生态和经济意义，但对植物物种内存在的自然遗传变异及其适应性意义的研究较少。我们使用近红外光谱研究的模型研究木质素含量和单体成分（丁香酰对愈生酸比例[S / G]）以及纤维素和提取物含量的自然遗传变异，使用16岁的田地试验澳大利亚树种，桉树。我们从该物种的本地地理范围中抽取了463棵本地树的2163个后代。木材化学性状的狭义遗传力（0.25-0.44）高于生长（0.15），但低于木材密度（0.51）。所有木材化学性状在品种范围内表现出显着的广泛的遗传分化（QST = 0.34-0.43）。这种差异超过了推测中性微卫星标记（FST = 0.09）检测到的分化，认为多样化选择已经塑造了木材化学中的群体分化。这些木材化学性状在种群和加性遗传水平上存在显着的遗传相关性。然而，木质素的S / G比例的群体分化特别与纬度（R2 = 76％）呈正相关，可能是由适应气候或相关生物因素驱动的。
-关键词树木改良木材化学品木质素纤维素提取物丁香酰愈创木片
-森林占世界陆地面积的30％（粮农组织2007年），是关键的陆地碳储存，其中大部分来自木材（Sedjo 1993）。来自天然林和人造林的木材也是木材和纸浆等可再生能源和工业生产系统的基础，价值超过3,720亿美元的年度贸易（FAO 2007）。木材是树皮下树木树干中的纤维材料，由混合的植物聚合物组成。最重要的是纤维素，其次是木质素，半纤维素，然后提取物（Walker 2006）。在木材形成过程中，纤维素纤维与木质素一起沉积在细胞壁上，随着细胞在形成层分化后细胞扩大（Walker 2006）。纤维素给细胞壁赋予力量（Turner and Somerville 1997）。木质素支持纤维素纤维，为水传导所必需的容器提供疏水性表面（Plomion et al。2001），并且还具有防御木材食用者和病原体的作用（Coleman et al。2008; Salmore and Hunter 2001）。 木质素生物合成的进化对于适应陆地环境是至关重要的（Weng和Chapple 2010），木材中木质素的比例在物种（15％〜36％）（Zobel和Van Buijtenen，1989）之间有明显差异。木质素由三种单螺旋单体，羟基苯基（H），愈创草酰（G）和丁香基（S）构成，不同单体的比例和位置在物种内和物种之间变化（Anterola和Lewis 2002）。这些单体在细胞质中合成，但是当它们在沉积位置聚合时形成木质素（Lewis和Yamamoto 1990）。连接到木质素单体的苯环上的甲氧基的存在增加了木质素对天然或人造脱木素的反应性（Pinto等人，2002）。由于S具有连接到苯环上的两个甲氧基，所以它具有比仅具有一个甲氧基的G更高的反应性。 H是没有甲氧基的反应最少的。裸子木质素几乎完全由G组成，只有较小比例的H和S（Alves等人2006; Campbell and Sederoff 1996; Godoy et al。2007; Walker 2006），而木本被子植物具有微量H（Rencoret et 2008）。在木本被子植物中，S至G单体的比例（S / G）在物种，来源以及树之间的细胞类型之间不同（Pinto等人2002; Rodrigues等人1999; Rodrigues等人2001）。木材还含有提取物，多种非结构化合物，主要涉及化学和物理防御生物和死木（Boddy 2001）。提取物存在于边材中，但优先沉积在心材中（Taylor等人2002）。在针叶树心材的提取物中树脂酸占主导地位，而在被子植物中存在广泛的化合物，尽管在任何一种物种中，范围都有所减少（Gutierrez等，1999）。 人造森林占世界森林的比例越来越大，现在提供近一半的全球木材生产（FAO 2007）。短叶轮作物如桉树种植园，不仅是纸浆和造纸工业的饲料（Clarke 2009; Cotterill和Brolin 1997; Paues 1999），但也被视为取代化石使用的新产业的基础能源和工业有机化学品的碳氢化合物（Bozell 2010）。在纸浆生产的情况下，通过使用强大的碱（牛皮纸工艺）的化学脱木质素生产出最强和最高质量的纸浆，使得纤维素纤维相对没有损坏以作为纸张重建（Clarke 2009）。具有高S / G的被子植物木材易于脱木质，因为干木材的单位重量消耗较少的化学和能量，并产生较高的纸浆产量（Rencoret等人，2007）。萃取物可能会干扰化学品脱木质素的效率（Wallis等1996），并且对于制浆过程积累在清洁成本高的工业管道中也会产生不利影响（Hillis和Sumimoto 1989）。 用于脱木质素的生物量作物的育种目标可以包括降低总木质素含量或增加的S / G（Bose等人，2009）。相反，其他工艺或产品可能需要更高的木质素含量或更低的S / G（Clarke 2009）。类似地，树木对非生物或生物环境胁迫的适应可能受到木质素含量或组成的变化的影响，并且处理目标可能与也可能不符合要适应当前或未来环境的种植园。育种者可以通过选择直接或间接改变木材化学成分的程度将取决于其定量遗传结构，包括群体中添加性遗传变异的水平，遗传力以及化学成分与其他性状之间的相关性（Falconer and Mackay 1996 ）。然而，尽管木质素和其他木材化学品的经济和生态重要性以及对特定基因型的几十年的生物技术研究（Coleman et al。2008; Weng and Chapple 2010），基因库中这些性状的基本定量遗传结构任何木本被子植物物种知之甚少。这主要是由于测量木质素的高成本，这阻碍了获得获得鲁棒和准确的遗传参数估计所需的大样本量（Falconer和Mackay 1996）。木材化学成分的量化是非常困难的，所使用的不同方法都有局限性（Anterola和Lewis 2002; Hatfield和Fukushima 2005）。然而，已经开发了快速和便宜的近红外（NIR）反射率化学计量学方法，其允许从NIR光谱预测化学成分（Schimleck等人2000; Workman 1992）。 NIR已被应用于针叶树种的大规模研究，以估计木质素含量和质量的遗传参数（Da Silva Perez等，2007），但尚未应用于木本被子植物遗传结构的大规模研究。
-                  <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/stackpole2011-%E6%A1%89%E6%A0%91-%E5%8C%96%E5%AD%A6%E7%BB%84%E6%88%90-%E9%81%97%E4%BC%A0%E5%8F%98%E5%BC%82/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-                <span class="post-meta">
-                
-                  #<a href="../../tags/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/">遗传参数</a>&nbsp;
                 
                 </span>
               

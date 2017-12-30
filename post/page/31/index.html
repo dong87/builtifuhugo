@@ -180,6 +180,92 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="../../../post/gs/tanaka2017-gs%E7%9A%84%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%BC%98%E5%8C%96/">
+                <h2 class="post-title">Tanaka2017-GS的贝叶斯优化</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  
+
+<blockquote>
+<p>Tanaka, R., and Iwata, H. 2017. Bayesian optimization for genomic selection: a method for discovering the best genotype among a large number of candidates. Theor. Appl. Genet. (123456789): 1–13. Springer Berlin Heidelberg. doi:10.1007/s00122-017-2988-z.</p>
+</blockquote>
+
+<h2 id="摘要">摘要</h2>
+
+<p>提出了一种基于优化算法的新的<strong>预育策略</strong>，并通过模拟进行了评估。<strong>这种策略可以找到更好的基因型与较少的表型分型努力。</strong>摘要：基因组预测是一种很有前途的方法，用于在基因库中保存的大量种质资源中搜索优良的基因型。当一些种质进行表型和基因分型时，可以建立预测模型，并且可以从其标记基因型预测剩余种质的基因型值。在这项研究中，我们<strong>着重于基因组预测在预培育中的应用</strong>，并提出了一种新的策略，可以<strong>降低发现更好种质所需的表型分型的成本</strong>。将基因组预测优良基因型的探索作为优化问题，引入贝叶斯优化方法进行求解。贝叶斯优化，根据预期的改善（EI）作为选择标准，抽样未观察到的投入，似乎是有利于prebreeding。 EI取决于基因型值的预测分布，而通常的选择仅取决于点估计。我们模拟了候选基因型中最佳基因型的搜索，并且显示基于EI的策略比通常的和随机选择策略需要更少的基因型来鉴定最佳基因型。因此，贝叶斯优化对于将基因组预测应用于预培育可能是有用的，并且会减少大量候选人中找到最佳加入所需的表型加入的数量。</p>
+
+<hr />
+
+<h2 id="介绍">介绍</h2>
+
+<p>为了在2050年之前为90多亿人口提供粮食，我们<strong>需要通过新的育种技术和利用种质资源中的遗传多样性来加速作物遗传改良</strong>（Tester和Langridge，2010）。由于精英繁殖种群和商业栽培种在其长期的驯化和选择历史中<strong>失去了遗传多样性</strong>，所以野生，外来或本地种质的丰富变异的进化对于促进植物育种是至关重要的（Tanksley and McCouch 1997; Jordan et al。 McCouch等，2013）。为了收集，保存，保存和分发代表作物品种遗传多样性的种子（如Sachs，2009），已做出了大量的国内和国际努力。
+鉴定特定育种目标的最佳种质是耗费时间和劳力的，因为它要求在植物基因库中保存大量种质的表型。为了便于筛选，已经在各种作物物种中开发了<strong>核心种质</strong>（少量代表性种质的部分集合; Brown 1989）。然而，<strong>核心收集战略可能会限制核心收集品之外的加入者的使用</strong>。例如，<strong>核心集合中可能缺少有价值的稀有等位基因</strong>。已经提出了替代的策略，例如<strong>种质策略的重点鉴定</strong>（例如，Khazaei等，2013），但<strong>缺点是图依赖于与目标性状有关的农业生态信息，并且不能使用遗传信息</strong>。
+基因组选择（GS; Meuwissen et al.2001）依靠基因组预测来发现种质资源中的优质种质。与表型分型相比，标记基因分型即使在标记数量较多的情况下也能实现高通量且更具成本效益。可以基于训练数据（表型和全基因组标记数据对）建立基因组预测模型，并基于其全基因组标记基因型预测没有表型数据的基因型的基因型值。<strong>基因组预测可用于鉴定种质资源中的优质材料，并将其应用于预育，目的是鉴定大量材料中的高潜力基因型</strong>（Pace等，2015; Chang等，2016; Gorjanc等，2016 ; Yu等，2016）。
+<strong>全局优化是一个数学问题，用于在输入空间中查找使函数最大化的输入值，而预先培育的目的是在候选基因型中找到最好（或更好）的基因型。</strong>为了有效实现全球最优化，我们需要平衡两个相互冲突的目标：探索和利用。通常，我们只是利用我们的预测模型来找到最好的基因型;选择具有较高预测基因型值的基因型。由于我们的预测模型并不总是正确的，所以这种纯粹的利用策略可能会发现与训练数据集密切相关的更好的基因型（局部最优），而不是所有候选基因型（全局最优）中的最佳基因型。<strong>为避免陷入局部最优，需要对输入空间进行广泛的探索，以确保选定的基因型和训练数据集的遗传多样性。</strong>探索-利用折衷是全球优化中的一个众所周知的问题，并且已经开发了几种算法来解决这个问题，包括贝叶斯优化（Mockus 1994; Jones等人1998; Shahriari等人2016），但是它从未适用于前期育种的情况。
+在这项研究中，我们介绍贝叶斯优化在与基因组预测育种的背景下，并提出了一种新的有效的策略，以<strong>发现集合中最好的基因型，同时尽量减少表型筛选步骤的数量</strong>。我们的新策略使用一个新的标准选择未经测试的基因型。<strong>我们的策略和通常的GS之间的差异在于选择取决于预测的分布或预测的基因型值的点估计。</strong>我们的策略建议选择不仅具有高预测值而且具有高后验方差（换言之，预测的“不确定性”）的基因型，而通常的GS选择仅具有高预测值的基因型。通过考虑预测的不确定性，勘探开发权衡将是平衡的。在GS中，与训练群体相关的基因型在预测中往往具有很大的不确定性。因此，不确定基因型的选择导致对遗传空间的广泛搜索。因此，我们的策略平衡了探索（通过基于“不确定性”搜索基因型进行的基因空间的广泛搜索）和开发（根据预测选择更好的基因型），而通常的GS是纯粹的开发。我们通过模拟来评估我们的策略的潜力，假设最好的基因型在基因型中具有最高的基因型值。</p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../../tags/gs/">GS</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/gs/taylor2014-gs%E7%B2%BE%E5%BA%A6/">
+                <h2 class="post-title">Taylor2014-GS精度</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  
+
+<blockquote>
+<p>Taylor JF (2014) Implementation and accuracy of genomic selection. Aquaculture 420–421:S8–S14. doi: 10.1016/j.aquaculture.2013.02.017</p>
+</blockquote>
+
+<h1 id="抽象">抽象</h1>
+
+<p>基因组选择正在成为估计植物和动物育种繁殖价值的有力工具。虽然已经提出了许多分析方法来联合估计高密度单核苷酸多态性（SNP）效应，但在最佳线性无偏估计的框架内，<strong>基因组选择等同于无表型个体的育种值的预测</strong>，其中理论解决方案于1974年首次出版。<strong>基因组选择简单地用基于标记的实现基因组关系矩阵替代了谱系派生的分子关系矩阵</strong>，这是1997年首次提出的方法。<strong>由高密度SNP基因型的可用性促进的进展是能够精确地估计个体之间实现的关系系数，而不管系统信息的可用性或已应用于人群的选择历史</strong>。然而，<strong>假设SNP基因型的独立性通常估计基因组关系系数，从而忽略连锁不平衡的影响，并且所使用的SNP被总是确定为物种基因组内的常见变异，导致关系系数的过高估计</strong>。产生的<strong>基因组估计育种值（GEBV）的准确性</strong>通常使用不同形式的验证群体进行评估，该验证群体包含不用于估计培训人群中SNP效应的基因型和表型的个体。然而，<strong>这里显示的GEBV精度是训练人口GEBV的准确性和训练和验证人群中个体之间基因组关系的大小的函数</strong>。因此，基因组选择理想地适用于高度准确的GEBV可用于训练群体个体的群体，并且其标记选择的后代继续产生表型并重新进入随后变得动态的训练群体。相反，<strong>基因组选择不太适合于鉴定家族中没有历史上对育种计划，静态培训人群或在遥远相关人群中进行培训和实施的精英个人。</strong>因此，为代价或难以测量表型（如饲料效率或疾病抗性）的基因组选择的实施将需要定期再生表型种群以重新进行GEBV预测方程或鉴定这些性状变异的因果变异。全基因组重新测序的指数降低成本可能很快允许鉴定至少大的效应变体。</p>
+
+<h1 id="介绍">介绍</h1>
+
+<p>基因组选择（GS）首先由Meuwissen等人提出。 （2001）作为预测没有表型的个体的育种值的方法，但已经用高密度标记物进行了基因分型。该方法基于使用应用于表型的线性或非线性贝叶斯模型或可用于包含训练人群的基因分型个体的估计育种值（EBV）来同时<strong>估计每个标记的等位基因替代效应</strong>（ASE），确定在独立验证群体中得到的预测方程的准确性以及应用预测方程以在实施群体内的选择候选者中产生基因组估计育种值（GEBV）。训练人口一词来自于某种形式的模型对基因型和表型进行“训练”以产生ASE和GEBV的估计。验证步骤的目的是使用在独立的一组基因型个体上可用的表型与训练人群中使用的表型，以产生将为选择候选产生的GEBV的准确性的估计。因此，采样以形成验证人群的个体应该代表选择候选人，因为为验证人群制定的GEBV的准确度应该反映在实施人群中为选择候选人所产生的GEBV的准确性。图1显示了每个群体的目的，并说明了静态和动态训练种群之间的差异。这也证明了当培训人口是静态时，验证人群估计GEBV准确性的有限效用，因为实施人群中的个人与训练人群中的个人的相关性随每个选择周期而减少。
+2007年12月，包含54,001个牛单核苷酸多态性（SNP）的BovineSNP50（Illumina，San Diego，CA; Matukumalli等，2009）测定已经可用，<strong>到2009年，GS已在美国乳制品行业实施</strong>（VanRaden et al。 ，2009）。此时，还认识到，<strong>从随机效应模型估计的ASE可用于基因组广泛关联研究（GWAS），用于检测数量性状基因座（QTL）</strong>（Cole等人，2009; Kang等，2010 ; Yang et al。，2011），<strong>并且使用基因组关系矩阵提供了保护，以抵抗基于谱系的分层对ASE估计的影响</strong>（Kang et al。，2010）。然而，<strong>当SNP ASE被联合估计为随机效应时，该方法提供了由标记物联合解释的变化比例的估计，而不是提供标记效应的单独测试</strong>。<strong>单个标记效应的测试可以通过将模型中的每个标记单独地包括为固定效应来产生（例如，Kang等人，2010; Schulman等人，2011）;然而，这高估了每种标记物的效果</strong>，然后不能将其结合起来产生GEBV。最近，Illumina已经发布了778 K SNP BovineHD，Affymetrix发布了640 K SNP Axiom BOS 1（Affymetrix，Santa Clara，CA）测定，这些测定可以提高精确定位QTL的精度，但令人惊讶的是<strong>只有小幅增长在基因组关系系数和GEBV的估计精度方面</strong>（Erbe et al。，2012）。<strong>在基因型SNP数量增加15倍的情况下，GEBV精确度的小幅增长表明，许多性状具有涉及罕见的QTL变体的潜在遗传结构，其不被商业基因分型测定中包含的常见SNP检测到</strong>。根据定义，<strong>这意味着使用这些测定法估计的基因组关系矩阵（VanRaden，2008）必须通过个体之间的血统对所实现的基因组特征产生有偏估计</strong>。
+最近的工作集中在理论（Goddard，2009）和经验评估（Hayes等人，2009; Luan等人，2009; Su等人，2010; VanRaden等人，2009年）估计的GEBV的准确性和Habier等人（2010）经验证明，<strong>随着培养和验证数据集的分离次数的增加，精度降低</strong>。然而，<strong>正式呈现GEBV在选拔候选人中与培训人口个人的相关性和培训人口GEBV的准确性之间关系的结果尚未呈现</strong>。在本文中，提出了在最佳线性无偏预测（BLUP）框架下实施GS的结果，包括在训练人群中评估GEBV和ASE的模型的等效性，以及选择候选者之间同时进行GEBV的训练和估计。还提出了可以推导选择候选人中ASE和GEBV的估计精度的采样方差和协方差。</p>
+
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../../tags/gs/">GS</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="../../../post/%E7%A9%BA%E9%97%B4/thomson1988-%E8%B6%8B%E5%8A%BF%E9%9D%A2-%E8%8A%B1%E6%97%97%E6%9D%BE/">
                 <h2 class="post-title">Thomson1988-趋势面-花旗松</h2>
 
@@ -458,81 +544,6 @@
                 <span class="post-meta">
                   
                     #<a href="../../../tags/%E8%82%B2%E7%A7%8D/">育种</a>&nbsp;
-                  
-                </span>
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/type-b/">
-                <h2 class="post-title">Type-B</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  
-
-<h1 id="berg-g-j-van-den-verryn-s-d-chirwa-p-w-deventer-f-van-2015-genetic-parameters-of-interspecific-hybrids-of-eucalyptus-grandis-and-e-urophylla-seedlings-and-cuttings-silvae-genetica-64-1-6-291-308-http-doi-org-10-1515-sg-2015-0027">Berg, G. J. van den, Verryn, S. D., Chirwa, P. W., &amp; Deventer, F. Van. (2015). Genetic Parameters of Interspecific Hybrids of Eucalyptus grandis and E. urophylla Seedlings and Cuttings. Silvae Genetica, 64(1–6), 291–308. <a href="http://doi.org/10.1515/sg-2015-0027">http://doi.org/10.1515/sg-2015-0027</a></h1>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/3289684-ebe2833345f4eb77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="type-b1.png" /></p>
-
-<h1 id="madhibha-t-murepa-r-musokonyi-c-gapare-w-2013-genetic-parameter-estimates-for-interspecific-eucalyptus-hybrids-and-implications-for-hybrid-breeding-strategy-new-forests-44-1-63-84-http-doi-org-10-1007-s11056-011-9302-8">Madhibha, T., Murepa, R., Musokonyi, C., &amp; Gapare, W. (2013). Genetic parameter estimates for interspecific Eucalyptus hybrids and implications for hybrid breeding strategy. New Forests, 44(1), 63–84. <a href="http://doi.org/10.1007/s11056-011-9302-8">http://doi.org/10.1007/s11056-011-9302-8</a></h1>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/3289684-8224daf0c44c5aa1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="type-b2.png" /></p>
-
-                
-              </div>
-
-              
-                <span class="post-meta">
-                  
-                    #<a href="../../../tags/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/">遗传参数</a>&nbsp;
-                  
-                </span>
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/varona1999%E9%A2%84%E6%B5%8B%E4%BA%B2%E6%9C%AC%E6%98%BE%E6%80%A7%E7%BB%84%E5%90%88/">
-                <h2 class="post-title">Varona1999预测亲本显性组合</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  
-
-<blockquote>
-<p>Varona, L., and Misztal, I. 1999. Prediction of Parental Dominance Combinations for Planned Matings, Methodology, and Simulation Results. J. Dairy Sci. 82(10): 2186–2191. Elsevier. doi:10.3168/jds.S0022-0302(99)75463-9.</p>
-</blockquote>
-
-<p>优势信息的最佳使用需要一个交配系统，并为每一组准父母预测具体的组合能力。目前的评估程序仅为有限的父母提供这样的预测。描述一个程序，预测任何父母的具体组合能力。在这个过程中，对于每一组父母及其祖先，加性关系矩阵被创建为一个密集矩阵。然后使用该矩阵以稀疏矩阵形式创建父母优势矩阵，其中矩阵的行对应于已经可用的预测的所有父母组合。每一个新的预测都需要方程组解的方程组，左边是父母优势矩阵。在一个模拟研究中评估了占优势的交配系统的效率。模拟的数据文件在所选择的男性和女性的比例，通过胚胎移植产生的牛的比例以及加性和显性方差中变化。父本和父母只是基于附加的优点而被预先选定的，但是基于组合的加和优势优势来安排具体的交配。考虑到优势的选择响应从一代添加剂选择的响应从3.8增加到16.6％。当加性方差较小时，显性方差较大，加性选择强度较低，全同胞比例较大。在交配系统中使用优势是可行的，并导致对选择的额外遗传响应。 （关键词：优势，遗传反应，交配系统）</p>
-
-<h2 id="介绍">介绍</h2>
-
-<p>数量性状的遗传变异可以分为加性和非加性效应（5）。在传统的选择方案中，加性的选择被用来改善家畜生产，选择的方法通常是基于BLUP（8）。在目前用于选择的模型中，非加性变异被忽略，因为在模型中包括这些效应的大计算需求，没有非加性遗传变异的证据，以及非加性关系的低发生率。
-优势可以在选择模型中考虑。 Hoeschele和​​VanRaden（10）开发了一个程序，以相对较低的成本直接创建优势关系矩阵的逆矩阵。 Misztal（12）制定了计算优势解决方案的程序，其费用低于附加遗传评估的两倍。该过程与方法R（14）一起允许估计大数据集中的优势变异。随后的研究估计，在奶牛（13），肉牛（6）和猪（3）的类型和生产性状的表型变异的4％到12％处存在显性差异。<strong>在模型中包含显性可以提供对模型加性效应评估的边际改善</strong>（1,15），并允许通过使用特定组合能力的预测来选择个体之间的交配（4）。
-组合能力的选择需要预测种群中所有可能父母的亲本组合。然而，根据目前的评估程序，只有与数据直接相关的父母组合是可用的（10,12）。这项研究的第一个目标是开发一个程序来预测以前计算的父母组合。
-<strong>选择组合能力的增益取决于优势和其他方差，群体结构和选择强度</strong>。这种收益已经用父系模型（4）进行了研究，但与动物模型无关。第二个目标是通过用动物模型进行模拟来评估遗传反应的潜在增益。</p>
-
-                
-              </div>
-
-              
-                <span class="post-meta">
-                  
-                    #<a href="../../../tags/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/">杂交优势</a>&nbsp;
                   
                 </span>
               

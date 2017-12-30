@@ -7,10 +7,36 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>youremail@domain.com (Leiming Dong)</managingEditor>
     <webMaster>youremail@domain.com (Leiming Dong)</webMaster>
-    <lastBuildDate>Sun, 01 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>批量生成多个文件夹；批量把简书导出的md文件加上yaml</title>
+      <link>/post/%E6%89%B9%E9%87%8F%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9-%E6%89%B9%E9%87%8F%E6%8A%8A%E7%AE%80%E4%B9%A6%E5%AF%BC%E5%87%BA%E7%9A%84md%E6%96%87%E4%BB%B6%E5%8A%A0%E4%B8%8Ayaml/</link>
+      <pubDate>Sat, 30 Dec 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E6%89%B9%E9%87%8F%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9-%E6%89%B9%E9%87%8F%E6%8A%8A%E7%AE%80%E4%B9%A6%E5%AF%BC%E5%87%BA%E7%9A%84md%E6%96%87%E4%BB%B6%E5%8A%A0%E4%B8%8Ayaml/</guid>
+      <description>简书里有一些博客，能导出成md格式，但缺少抬头yaml。借用大鹏志的代码，把我的所有文件也都加上抬头。
+ # 设置工作路径&amp;amp;加载包 setwd(&amp;quot;D:/R&amp;quot;) library(tidyverse) # 生成新的分类文件夹（简书导出是有分类的） for (i in dir(&amp;quot;jianshu&amp;quot;)) { dir.create(paste0(&amp;quot;./jianshunew/&amp;quot;, i)) } # 逐个文件夹中逐个文件添加 for (i in dir(&amp;quot;jianshu&amp;quot;)) { ## i循环文件夹，subdir是第i个文件夹中全部文件的名字 subdir &amp;lt;- paste0(&amp;quot;jianshu/&amp;quot;, i) %&amp;gt;% list.files(full.names = T) for (j in 1:length(subdir)) { ## j循环每个文件夹中的文件，txt是第j个文件的内容 txt &amp;lt;- readLines(subdir[j], encoding = &amp;quot;UTF-8&amp;quot;) ## header是抬头yaml，用的是blogdown的样例，**header**的格式一定要对 header &amp;lt;- readLines(&amp;quot;header.txt&amp;quot;) # categories是子文件夹的名字 categories &amp;lt;- str_split(subdir[j], &amp;quot;/&amp;quot;) %&amp;gt;% unlist %&amp;gt;% .[2] ## startn是提取文件名字的位置 startn &amp;lt;- 8 + nchar(categories) + 2 # title title &amp;lt;- substr(subdir[j], startn, nchar(subdir[j]) - 3) ## header中第2和7个元素分别是题目和分类，把相应的值赋予 header[2] &amp;lt;- title %&amp;gt;% paste0(header[2], .</description>
+    </item>
+    
+    <item>
+      <title>netlify搭建blog笔记</title>
+      <link>/post/netlify%E6%90%AD%E5%BB%BAblog%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 29 Dec 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/netlify%E6%90%AD%E5%BB%BAblog%E7%AC%94%E8%AE%B0/</guid>
+      <description>前言 开博客的主要目的是当做一个笔记本，把一些要紧的知识点、代码和流程等做个梳理和记录，方便下次使用时的查找。其实很早就有博客，只是不认为那就是，比如QQ空间和校内网。以前记笔记使用过网易产品一段时间，后来就转到博客上，例如新浪，不支持markdown。后来转到简书，但这家伙不支持公式。CSDN用过两天，支持公式编辑，但不及简书简便。GitHub支持个人博客，但模板很折腾，一直不理想，用了两天就不更新了。
+rmarkdown非常好用，帮助我输出R结果到pdf或者word。之前用过yihui开发的bookdown，用来转电子书的格式，也听说过他开发的blogdown，但并没有用过。有天栾生老师推荐了一下![]()
+正文 首先要感谢大鹏志给的中文教程用Rblogdown 搭建个人博客或科研网站。最难的一步出现在netlify与GitHub的关联上。按照netlify的要求，指定了public文件夹，但在打开博客网址时总是报错无法打开网页。最后还是从栾老师的GitHub里发现他只同步了public文件夹而非整个建站文件夹，然后就大功告成了。
+简略步骤如下：
+ 安装blogdown，在Rstudio里直接安装也可以。  if(!require(devtools)) install.packages(&#39;devtools&#39;) devtools::install_github(&#39;rstudio/blogdown&#39;)   建一个空文件夹，然后使用模板gcushen/hugo-academic建立建站文件。还有其他一些模板，见这里，每个点进去，选择喜欢的样式，替换这里的就行。  setwd(&amp;quot;D:/blogdown_default&amp;quot;) blogdown::new_site(theme=&#39;gcushen/hugo-academic&#39;)   把public同步到GitHub上，要先安装软件GitHub desktop，注册并登陆账号。同步本地public，然后出现问题，它只是在public文件夹中生成一个新的public，而且GitHub中也只有隐藏的.git和.gitattributes，把这两个文件剪切到上一层的public去。GitHub desktop会报告说找不到repository了，这时要指定一下，再重新上传后就可以了。为何要同步public而非整个上一步所建的文件夹的原因上面说了，netlify关联GitHub那个repository后不能成功建网址，所以这样做。
+ 注册netlify并关联我们上传的这个包含建站需要文件的repository。
+ 更改模板成自己的信息，再重新从GitHub desktop就可以了。
+  中间还有一些细节就不一一罗列了，记得在更新博客后build_site()。祝你也能成功！</description>
+    </item>
     
     <item>
       <title>AIC是正确的标准吗？</title>
