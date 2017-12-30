@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Dong&#39;s blog</title>
+  <meta property="og:title" content="Dong&#39;s blog" />
+  <meta name="twitter:title" content="Dong&#39;s blog" />
+  <meta name="description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta property="og:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="twitter:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../" />
+  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../">
+            <img class="avatar-img" src="../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Dong&#39;s blog</h1>
+                
+                  
+                    <hr class="small">
+                    <span class="page-subheading">Enterprising &amp; Concentrating欢迎光临！</span>
+                  
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div role="main" class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+          <div class="well">
+            
+
+<h2 id="front-page-content">Front Page Content</h2>
+
+<p><code>beautifulhugo</code> supports content on your front page. Edit <code>/content/_index.md</code> to change what appears here. Delete <code>/content/_index.md</code> if you don&rsquo;t want any content here.</p>
+
+          </div>
+        
+
+        <div class="posts-list">
+          
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r8--%E6%95%B0%E6%8D%AE%E6%A1%86%E4%B8%AD%E6%8F%92%E5%85%A5%E8%A1%8C%E5%9C%A8r%E4%B8%AD/">
+                <h2 class="post-title">R8--数据框中插入行在R中</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (161 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  我们都知道在Excel中插入行是件比较简单的事情，但是当数据量非常大，而我们又不知道缺失行的具体位置时，逐个添加是件耗时费力的事。相反，R中添加行并不容易，需要一行代码，和Excel类似，具体的运算不得而知，可能会非常复杂，但依赖于许多高手不齿的for循环，查找及插入就变得相对容易操作。 今天处理一个相对棘手的问题，耗时5h有余，但值得庆幸的是问题最终得到解决，问题描述及解决方法如下：
+ 问题 需要对一个本地下载的基因数据库数据进行分类汇总，数据库的格式如下：
+UniProtID:\tA1CIY4_ASPCL Gene Symbol:\tACLA_053130 DNA Info:\tEMBL:EAW10839.1 Protein Length:\t139 Organism:\tAspergillus clavatus Taxonomy ID:\t344612 Description:\tUnknown Pubmed:\t18404212 NCBI RefSeq:\tXP_001272265.1, XM_001272264.1 Pfam:\tID:PF09044; Description: Kp4 Disease-Host:\thumans,insects Disease-Hostkey:\tvertebrata Disease:\tallergic alveolitis DiseaseKey:\tAllergy Gene Ontology:\tID:0005576; Method: IEA:InterPro; Description: C:extracellular region; ID:0009405; Method: IEA:InterPro; Description: P:pathogenesis Protein Sequence:\tMLATTLIMVASALSANALGINCRGSAKCSALWGPSDAAKQLTNVIQGIDTNRWYLNGEHI 60; ACVGNDAGNGGGYCAFLQKTGGTNGGVIKNLAHYINDHGCKQCGSVPYYYPQGNNNVDDG 120; ELTYNYVDNPCVPAGAKLC  每个基因有如上的16个信息，但个别基因缺失部分信息，而且也没有用NA表示出来，具体哪些基因信息缺失也不得而知。我们需要做的是把这16个信息分类汇总，即转成一个有 16个变量和n个基因的数据框。可能在Perl中或Python中相对容易，无奈并不会，只懂一点R语言，就用这个来处理了。
+处理步骤 首先要读取数据。 这是类似文本的文件，每行只有Tab分隔符，我们不能使用read.的一类函数，这里选择用scan()。
+te &lt;- scan(&quot;database.txt&quot;, what=&quot;&quot;, sep=&quot;\n&quot;)  注意！！！scan是逐行扫描的，这里的分隔符是\n。而文件中有些信息比如蛋白序列是在多行上的，这样的话就会当成多个元素来处理，因此要先将这些不想要的换行符去掉，直接在编辑器中替换即可。
+te.2 &lt;- strsplit(te.2, '\t') #按照tab分割信息条目 names(te.2) &lt;- sapply(te.2, `[[`, 1) #按照条目标题（16个）汇总 te.
+                  <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r8--%E6%95%B0%E6%8D%AE%E6%A1%86%E4%B8%AD%E6%8F%92%E5%85%A5%E8%A1%8C%E5%9C%A8r%E4%B8%AD/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9/rakyan2011-%E8%A1%A8%E8%A7%82%E5%9F%BA%E5%9B%A0%E7%BB%84%E8%8C%83%E5%9B%B4%E7%9A%84%E5%85%B3%E8%81%94%E7%A0%94%E7%A9%B6/">
+                <h2 class="post-title">Rakyan2011-表观基因组范围的关联研究</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (132 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Rakyan VK, Down TA, Balding DJ, Beck S (2011) Epigenome-wide association studies for common human diseases. Nat Publ Gr 12:529–541. doi: 10.1038/nrg3000
+摘要| 尽管全基因组关联研究（GWAS）在鉴定与常见疾病相关的基因座方面的成功，但大部分的因果关系仍然不明。 基因组技术的最新进展使我们能够开始大规模研究人类疾病相关的表观遗传变异，特别是DNA甲基化的变异。 这种表观基因组范围的关联研究（EWAS）提供新的机会，但也产生在GWAS中未遇到的新挑战。 我们讨论EWAS设计，队列和样本选择，统计显着性和功效，混杂因素和随访研究。
+ 阐明人类复杂疾病（也可换成整个生物界所有有意义的性状）的遗传和非遗传决定因素是生物医学研究的主要挑战之一。近年来，全基因组关联研究（GWASs）已经为150多种疾病和其他性状发现了&gt; 800个SNP关联1。尽管对于任何人类复杂疾病还不知道完整的遗传基础，但是对外显子 - 并且最终完整的基因组 - 的确定有望识别大多数致病性遗传变异。然而，现在越来越感兴趣探索非遗传变异，包括表观遗传因素如何影响复杂的疾病病因2-4。 细胞的表观基因组是高度动态的，由遗传和环境因素的复杂相互作用控制5。正常细胞功能依赖于表观基因组稳态的维持，这进一步突出表现在表观基因组扰动和人类疾病，特别是癌症之间的许多报告的关联4。然而，迄今为止这种关联的大多数研究已经进行或者具有不足的基因组覆盖（例如，几十到几百个基因座），但是足够的样品量，或者具有更接近全基因组的覆盖度（数千个基因座）但样本量不足。因此，对于任何人类复杂疾病，我们仍然不知道可归因于个体间表观基因组变异的表型变异的比例。这个问题只能通过大规模，系统的表观基因组等价的GWAS-表观基因组范围的关联研究（EWASs）来阐明，如2008年首次提出的（参考文献6）。至少对于DNA甲基化（DNAm），现在可以获得在分辨率和通量上与高度成功的GWAS芯片直接相当的技术，其允许大约500,000（500K）SNP的基因分型。 但是，如何进行EWAS？除了GWAS和EWAS共有的考虑因素（例如，适当的技术和样品量），EWAS的设计在样品选择方面有特定的考虑。 DNAm模式对组织和发育阶段是特异性的，它们也随时间而变化。此外，EWAS关联可以是所涉及的表型的因果性和相应的 - 与GWAS的区别，提出了相当大的挑战。在这里，我们在设计和分析有效的EWAS的背景下讨论这些考虑，记住EWAS可能随着信息和经验的积累而演变，就像GWAS一样。
+表观遗传变异和复杂疾病 表观遗传信息的类型。哺乳动物中的表观遗传信息可以以多种形式传播，包括有丝分裂稳定的DNAm，组蛋白和非编码RNA（ncRNA）的翻译后修饰。对于DNAm，主要形式是在胞嘧啶 - 鸟嘌呤二核苷酸（CpG）的背景下胞嘧啶的甲基化。然而，最近的研究结果表明CpH甲基化（其中H = C / A / T）可能比以前更常见的7.8。由十一位易位（TET）甲基胞嘧啶双加氧酶催化，5-羟甲基化9,10胞嘧啶（hmC）是另一种形式的DNAm。虽然细节仍不清楚，越来越多的证据表明hmC在基因调控和分化中的作用11。组蛋白修饰包括（仅举几个）核心组蛋白的氨基末端尾中的一个或多个氨基酸的单 - ，二 - 或三甲基化，乙酰化和瓜氨酸化5。最近，已经发现ncRNA可以自我繁殖并且独立于下面的DNA而被传递;换句话说，他们可以“表观遗传”地传递监管信息12,13。这样的ncRNA包括短微小RNA（miRNA），PIWI相互作用RNA（piRNA）和大型基因间非编码RNA（lincRNA）等。 健康和疾病的表观遗传变异。考虑到二倍体人类表观基因组含有&gt; 108个Cs（其中&gt; 107个是CpG）和&gt; 108个组蛋白尾巴，所有潜在的变化，目前未知但是潜在的表观遗传标记的范围。最经研究的表观遗传标记是DNAm，BOX 1讨论DNAm变化的最常见的特征和背景。在单个CpG位点的DNAm变异被称为甲基化可变位置（MVP），其可以被认为是SNP14的表观遗传学等价物。很少，每个等位基因的仅两条DNA链之一上的CpG被甲基化。这被称为半甲基化，并且它可能反映在增殖细胞中DNAm维持中的复制后滞后。如果DNAm在多个相邻的CpG位点被改变，这被称为差异甲基化区（DMR）。 DMR在长度上变化相当大：它们通常&lt;1kb，但是它们可以超过1Mb15。 直到最近，MVP和DMR主要在核心启动子，CpG岛（CGI）和印迹差异甲基化区域（iDMR）的背景下进行研究;然而，越来越清楚的是DNAm是高度动态的，甚至在这些区域之外。例如，最近的一项研究发现，组织和癌症特异性DMRs优先发生在邻近CGI的区域 - 所谓的CGI海岸16。 DNAm还在沉默重复元件中具有关键作用，这也可能对疾病病因17,18造成影响。 DNAm变异在复杂疾病中的作用主要在癌症的背景中探讨，可以被认为是早期EWAS。这些研究的结果已被广泛讨论4,19，关键的一般结论是肿瘤发展与CGI的DNAm增加，重复元件的损失印迹和表观遗传重塑相关，特别是卫星DNA的DNAm损失20， 21。对于非恶性的，常见的复杂疾病，例如糖尿病或自身免疫，表观遗传组分仅刚刚开始研究。支持表观遗传组分参与这些疾病的观察包括以下。首先，对于任何复杂疾病的单卵双生子协调几乎从未100％。近来，对于系统性红斑狼疮22和自闭症谱系障碍23不一致的单性双胞胎的小规模EWAS已经在单卵型对中发现了疾病相关的表观遗传学差异。其次，几种复杂疾病（例如1型糖尿病）的发病率在一般人群中上升，并且在移民人口中经常改变，这表明非遗传因素的作用。第三，流行病学证据表明，在子宫或早期儿童环境中次优的可能对成年期的疾病结果（例如2型糖尿病）有影响，这种现象称为“发育重编程”（参考文献25）。目前，子宫环境的分子记忆的主要候选是表观遗传修饰，包括DNAm26-28。
+表观遗传变异作为疾病的结果或原因。如上所述，表观遗传变异可以是疾病的病因或可以作为疾病的结果而出现。作为疾病的结果，直接或间接可能出现表观遗传变异 - 其实例可包括自身免疫性疾病中免疫相关细胞的长期改变，2型糖尿病中改变的代谢调节或体细胞突变诱导的表观遗传改变癌症。然而，将其与导致疾病过程的表观遗传变异区分开并不是直截了当的（我们将在下面更详细地讨论），但是永远不是至关重要的;这是因为它将有助于阐明疾病相关变异的功能作用及其在诊断或治疗方面的潜在效用。实现这一目标的关键步骤是确定变异是否存在于任何明显的疾病迹象之前。在这方面，考虑如何在疾病之前出现这样的表观遗传变异是有用的。首先，它可以是遗传的，因此存在于所有组织中，包括胚系（即，跨代表观遗传），尽管这种现象的程度尚不完全清楚。第二，它可以随机出现，如果发生在早期（例如子宫内）发展中，则出现全身性[29,30]，或者可以局限于一个或几个组织31,32，如果它发生在出生后或在成人期间。第三，它可能是环境诱导，通过成人生活方式相关因素，如饮食或吸烟33，甚至在子宫内;即，发育重编程（如上所述）。 还有可能的是，潜在的基因型影响表观遗传变异，最近由几个研究表明34-39。含有影响甲基化状态的遗传变异的基因座被称为甲基化数量性状基因座（methQTLs）34。在大多数甲基喹唑啉酮中，与顺式基因型的相关性是最显着的。有一些证据表明遗传变异也可以影响反式的表观遗传状态，但这似乎不像顺式效应那样普遍。此外，重要的是要注意，在大多数这些以前的研究中，真正的致病性遗传变异没有明确地鉴定，并且大多数甲基化QTL在顺式基因型和表观基因型之间没有表现出严格的一对一关系;相反，指定的基因型产生增加的甲基化概率。 Feinberg和Irizarry2最近争论的小鼠和人类基因组中的遗传变异的存在，不改变平均表型，而是表型的变异性;这可以通过可变甲基化区域进行表观遗传学调节（VMR，参见框1）。 MetQTLs的存在为综合GWAS和EWAS揭示通过表观遗传变异发挥其功能的基因型提供了强有力的论证（稍后讨论）。 这些methQTLs也会影响等位基因特异性甲基化（ASM，参见BOX 1）。在这种情况下，稳态甲基化水平在同一细胞内的两个等位基因不同。然而，ASM也可以在没有任何特定基因型 - 表观遗传型相关性的情况下发生。例如，亲本印记，X染色体失活和一个等位基因的随机单等位基因甲基化都是ASM的实例，其不是由甲基化和非甲基化等位基因之间的基础基因型差异引起的。 最后，还值得考虑的是，在一些情况下，疾病相关的表观遗传变异可能在疾病发作之前出现，但可能不是疾病本身的原因。这种类型的epi现象可能是由于混杂，其中环境因素（如吸烟）或遗传变异诱导异常的表观遗传状态和疾病。 表观遗传变异和复杂疾病之间的这些潜在关系对EWAS的设计和分析有重要的影响。首先，它们将确定待采样的最相关的组织和细胞类型。第二，反向因果关系和混杂是EWAS设计的特殊问题。尽管有相当多的证据表明癌症中的表观遗传干扰4和其他非恶性疾病的新证据22,23,40-42，但是这些研究都没有能够最终区分因果性和后果性遗传变异：长期以来被认识的问题43 。虽然任何EWAS与疾病的关联都是潜在的进步，但是能够识别因果关系的方向将极大地帮助确定表观遗传变异的有用性，例如，疾病进展的标记，通过治疗逆转的目标与epi药物（即，对epi基因组有影响的药物），或通过监测药物诱导表观遗传变化的动力学的药物反应的措施。
+                  <a href="../../post/%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9/rakyan2011-%E8%A1%A8%E8%A7%82%E5%9F%BA%E5%9B%A0%E7%BB%84%E8%8C%83%E5%9B%B4%E7%9A%84%E5%85%B3%E8%81%94%E7%A0%94%E7%A9%B6/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/raley2003-%E6%A0%91%E9%AB%98%E6%98%AF%E9%80%89%E6%8B%A9%E6%A0%87%E5%87%86/">
+                <h2 class="post-title">Raley2003-树高是选择标准</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (50 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Raley, E.M., Gwaze, D.P., and Byram, T.D. 2003. An Evaluation of Height as an Early Selection Criterion for Volume and Predictor of Site Index Gain in the Western Gulf. Proc. 27th South. For. Tree Improv. Conf. 27: 45–55.</p>
+</blockquote>
+
+<p>早期选择对于任何树木改良计划的长期效率来说都是至关重要的。 在旋转时对体积的早期选择可以基于任何数量的生长性状，包括高度，直径或体积。 早期的<strong>树高已被推荐为旋转年龄的火炬松（Pinus taeda L.）体积的选择标准</strong>（McKeand 1988，Balocchi等，1993）。高度已被证明是旋转年龄体积的良好预测因子，<strong>比直径受竞争影响较小</strong> （Foster 1986，Lambeth等，1983），具有<strong>比直径更高的遗传力</strong>（Bridgwater等，1983，Foster 1986）。 此外，身高与P. radiata的树形特征（Burdon等，1992）和P. taeda（Bridgwater等，1983）的木质密度之间的相关性大于直径。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/gs/ratcliffe2017-%E5%8D%95%E6%AD%A5blup/">
+                <h2 class="post-title">Ratcliffe2017-单步blup</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (75 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Blaise Ratcliffe, 2017. Single-Step BLUP with Varying Genotyping Effort in Open-Pollinated Picea glauca. G3-Genes Genomes Genetics
+ 林木育种计划中遗传增益的最大化取决于预测的育种值的准确性和估计的遗传参数的精度。我们调查了当代谱系信息和基因组相关性估计结合使用的预测育种值的准确性和估计的遗传参数的精度以及使用单步基因组评价（HBLUP）的候选人排名的影响。在这项研究中，在不同水平的家庭基因分型努力（0，25，50，75，100％）从白云杉（白云杉）组成的1,694组成的群体中评估具有多样性遗传（树高度和木材密度）来自214个自花授粉家庭的树木，代表加拿大魁北克省的43个种源。结果表明，HBLUP双变量分析有效减少已知偏倚的遗传的人口的遗传力估计，因为它暴露隐藏的相关性，潜在的谱系错误和近亲繁殖。在分析中添加基因组信息显着提高了育种价值估计的准确性，因为孟德尔样本和历史共同祖先并没有被当代谱系单独捕获。增加的家族基因分型努力与模型拟合，遗传参数的精确性和育种值精确性的持续改进相关联。然而，即使在最小的基因分型努力观察到改善，指示即使适度的基因分型努力有效改善遗传评价。组合利用谱系和基因组信息可以是提高森林树育种程序中育种值的准确性的成本有效的方法，其中浅的家系和大的测试群体是规范。
+1.介绍 使树木育种程序中的遗传增益最大化取决于估计的遗传参数的可靠性。性状遗传及其遗传相关性是确定潜在遗传进展的最关键的遗传参数之一，因此它们的精确性是非常重要的。后代测试是估计这些遗传参数的载体，而个体树数据，家庭组成，谱系深度和连通性以及野外性能决定了它们的可靠性（Huber等人，1992）。开放授粉测试通常用于有效地筛选和评估大量候选树（Burdon和Shelbourne 1971; Jayawickrama等人2000）。然而，公认的是，由于在传统的基于谱系的分析中不容易解开的隐性相关性的影响，将开放授粉家族作为“半同胞”处理是不准确的，因此影响所得遗传参数和候选排名（Squillace 1974 ; Askew和El-Kassaby 1994; Namkoong等人2012）。
+分子标记的使用可以通过谱系重建和亲子分配揭示隐性传粉群体中隐藏的相关性和潜在的谱系误差（Wang 2004; Kalinowski等2007）。谱系重建已经被有效地用于确定相关个体的群体之间的谱系关系，导致以更高的精度估计遗传参数（El-Kassaby和Lstibuchrek 2009; Doerksen和Herbinger 2010; El-Kassaby等人2011;Koreckỳ等人2013 ;Klápště等人2014）。 Ritland（1996）提出了一种创新的方法，其中基于标记的关系估计可用于估计性状遗传力，并证明该方法在野生种群中的效用。利用密集的基因组标记集的可用性，VanRaden（2008）将个体对之间基于标记的关系的估计推导为基因组关系矩阵（G），其可以用作Henderson动物模型中传统的基于谱系的平均分子关系矩阵（A）的替代（Henderson 1984 ）（Frentiu等人2008; Habier等人2013;Klápště等人2014）。 使用基于标记的关系估计的优势是1）绕过生成结构化谱系所需的经典的交配设计（El-Kassaby等人2011;Klápště等人2014），2）适用于自然和实验种群（El-Kassaby et al。2012; Porth et al。2013;Klápštěet al。2014）; 3）通过考虑共同祖先（即历史谱系）的遗传相似性提高遗传参数估计的准确性（Powell等人，2010） 和孟德尔分离（Visscher等人2006;Ødegård和Meuwissen 2012）。 在单个遗传协方差矩阵*A*中结合基于标记的关系矩阵G（Legarra等人2009; Misztal等人2009）已被证明是改善关系系数的更好的遗传参数估计和跟踪的有效方法遗传多样性。这种方法被称为“HBLUP”，因为育种值的最佳线性无偏预测值（BLUP）来自于组合的遗传协方差矩阵。 HBLUP方法在林木后代测试评估中可能特别有用，因为对整个试验进行基因分型的成本和后勤是令人望而却步的，因此将来自少数站点的一些家族的树的子集的基于标记的关系与基于谱系关系估计器将是改善整个测试的衍生遗传参数精度的有效选择。 本研究的目的是通过比较遗传参数的精确性，育种值的准确性和使用可变比例的选择候选物的排名（0,25,50,75和100％）来比较传统的ABLUP方法与HBLUP方法。 ）的开放授粉家庭内的基因型个体。
+材料和方法 2.1白云杉开放授粉后代试验，表型数据和基因分型 本研究的数据来自（Beaulieu等人2014a），并从Dryad数字仓库下载：doi10.5061 / dryad.6rd6f（Beaulieu等人2014b）。简而言之，这项研究涉及一个白色的云杉（白云杉（Moench）Voss）原产地 - 后代试验地点，1979年在加拿大魁北克建立。试验地点包括来自43个魁北克原产地的214个开放传粉的家系，其种植在随机分配的5个树丛行地块中，行间距为2.4m，行间距为1.2m，以获得具有6个块的随机区组设计。从该地点采集了1,694棵树的子集，每个家族的树平均数为〜7.9，每块每个家族的平均树数为〜1.3。测试场地的完整细节可以在（Beaulieu等人2014a）。该研究的表型数据包括通过X射线光密度测定法获得的22年树高（cm）和木密度（kg / m 3）。使用Illumina Infinium HD iSelect珠芯片PgAS1（Illumina，San Diego，CA，USA）（Beaulieu等人2014a）对1,694棵树的单核苷酸多态性（SNP）进行基因分型。 SNP位于2,814个基因内，并以200个碱基对的最小距离分开。基因选自白色云杉基因目录“GCAT”（Rigault等人2011），并且是不同功能的基因（Pavy等人2013）。总共6,716个SNP可用于分析。
+                  <a href="../../post/gs/ratcliffe2017-%E5%8D%95%E6%AD%A5blup/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%AB%9E%E4%BA%89/resende-2005-%E7%A9%BA%E9%97%B4%E7%AB%9E%E4%BA%89%E8%81%94%E5%90%88%E5%BB%BA%E6%A8%A1/">
+                <h2 class="post-title">Resende-2005-空间&amp;竞争联合建模</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (36 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>Resende MDV, Stringer J, Cullis B, Thompson R. Joint Modelling of Competition and Spatial Variability in Forest Field Trials. Rev. Mat. Estat., São Paulo. 2005;23:7–22.</li>
+</ol>
+</blockquote>
+
+<p>植物田间实验的分析应该基于考虑与所评估的性状相关的生物过程以及环境影响的现实方法。在经典区组分析模型中至少有三个基本假设。首先，与区组中的小区相关联的环境是恒定的（或接近）。其次，由于特定处理对小区的反应不直接影响邻近小区的反应。第三，残差是独立的。第一个假设涉及环境影响，通常称为空间趋势，而第二个假设涉及处理效应，称为干扰。第三个假设是关于空间相关性。这三种效应的调整可能改善分析和减少偏差。本文旨在同时考虑林木田间试验的趋势，干扰和相关性。目标是比较和扩展替代模型，量化这些物种的竞争水平，并推断在这些作物的常规数据分析中需要更复杂的模型。包括传统区组，空间（自回归行和列效应），表型竞争，表型竞争+空间，基因型竞争+空间模型的几个模型应用于两个数据集，一个涉及桉树物种，另一个涉及松属。结果表明，基因型竞争+空间模型，包括遗传竞争效应和残余竞争效应和环境趋势之间的平衡明确考虑遗传竞争，并允许品种和竞争效应之间的协方差。它包括整个相关模式，往往比表型竞争模型更精确。结果显示，<strong>协变量方法对竞争和趋势同时建模的不一致性和不足性，这是一个众所周知的单独模拟竞争效应的结果</strong>。调整的REML方法提供表型竞争模型的精确拟合，并改进方差和竞争参数的估计。<strong>表型竞争与自回归参数大致相同的变异源</strong>。具有基因型竞争+空间术语的通用模型通常是通常的第一模型，以适合，因为这将指示更有限的模型是否合适。</p>
+
+<p>1简介
+植物田间实验的分析应该基于考虑与所评估的性状相关的生物过程以及环境影响的现实方法。实验设计在提供可靠的数据集进行分析方面发挥关键作用。然而，<strong>依赖于区组的局部控制方案在考虑所有环境梯度和趋势方面可能是低效的，并且甚至不完全区组不提供对环境影响的完整评价</strong>。由于生育率和其他环境影响，区组内的空间依赖性应通过适当的空间分析模型加以考虑。此外，相邻植物的竞争效应也可以导致处理比较的偏差，这是由于一种基因型对相邻植物或地块的表型响应的干扰。因此，也应该使用竞争模型，旨在评估干扰效应。在经典区组模型中存在至少三个基本假设。
+首先，与区组中的小区相关的生育力是恒定的（或接近）。其次，由于特定处理对小区的反应不直接影响邻近小区的反应。第三，残差是独立的。第一个假设涉及通常称为空间趋势的环境效应，而第二个假设涉及处理效应，被称为干扰。第三个假设是关于空间相关性。趋势效应是常见的发生和纠正，它可能增加遗传力和精度估计，因为它是一种环境效应。干扰可以取决于物种的生物学，并且其调整可能降低遗传力估计，因为其涉及处理效应。对这两种效应的调整可能会减少偏差。<strong>实验者应该知道感兴趣物种中的竞争效应，以帮助在具有或没有竞争效应的模型之间进行选择</strong>。在林木中，竞争效应主要取决于测量的年龄。<strong>在竞争效应下，最好的基因型倾向于显示出它们的优势的高估，这是由于对表现出竞争敏感性的最坏基因型的更大侵略性</strong>。植物干扰和空间趋势效应的一个重要特征是它们对拟合模型的影响。<strong>空间趋势在相邻植物或地块之间产生正自相关，由于竞争，植物干扰在它们之间产生负自相关</strong>。空间模型的拟合可以揭示竞争模型的需要。<strong>在空间分析中获得的高（假&gt; 0.3）正自相关系数估计揭示空间趋势优于竞争和负或接近零自相关系数估计揭示强大的竞争效应可能与空间趋势</strong>。此外，<strong>首先拟合竞争模型可以揭示这种效应的意义。在某些情况下，只建模一个效应，可能是不合适的。所以两个效应应该一起建模</strong>。<strong>空间相关性通过Cullis和Gleeson（1991）和Gilmour，Cullis和Verbyla（1997）的残差自回归模型很好地适应。用于在植物中竞争的模型已经由Pearce（1957），Mead（1967），Draper和Guttman（1980），Kempton（1982），Besag和Kempton（1986），Stringer和Cullis（2002）和Stringer，Cullis和Thompson （2005）</strong>。在空间变异性和干扰都很重要的情况下，需要一种联合建模方法。 <strong>Durban et al。 （2001）提出了一种将平滑样条与模型趋势与竞争的表型干扰模型相结合的方法</strong>。 Stringer，Cullis和Thompson（2005）开发了一种基于基因型和表型干扰模型的早期甘蔗试验的广泛方法，并允许随机品种效应和相关的错误结构。本文探讨了最初在Stringer，Cullis和Thompson（2005）中给出的模型，旨在同时考虑现场试验的趋势，干扰和相关性。<strong>我们概述了一些基本的考虑，并进一步测试树种的两个数据集的模型。目标是比较和扩展替代模型，量化这些物种的竞争水平，并推断这些作物数据分析常规中需要更复杂的模型</strong>。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/gs/resende2012/">
+                <h2 class="post-title">Resende2012</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (99 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Resende M F R, Muñoz P, Acosta J J, et al. 2012. Accelerating the domestication of trees using genomic selection: accuracy of prediction models across ages and environments. New Phytologist, 193(3): 617–624.
+ ##概要
+•基因组选择越来越被认为是加速遗传改良的关键。然而，当在各个环境和年龄段使用时，如何保持准确的基因组选择预测模型是未知的。这种知识对于育种者在遗传改良中应用这一策略至关重要。 •在这里，我们评估了基因组选择的效用火炬松的群体℃。800个个体在四个位点上克隆并生长，并对4825个单核苷酸多态性（SNP）标记进行基因分型。使用基因组随机回归最佳线性无偏估计（BLUP）估计多个年龄的直径和高度的预测模型。 •预测模型的准确度范围为直径0.65〜0.75，高度为0.63〜0.74。使用基因组选择与表型选择相比，每单位时间的选择效率估计高53-112％，假设育种周期减少50％。只要在相同的繁殖区内使用，准确度在环境中保持很高。然而，早期生成的模型在6岁时不能很好地预测表型。 •这些结果表明，只要在相关选择年龄和估计的繁殖区内使用模型，可以通过将基因组选择纳入育种计划中来实现。
+##介绍
+全球粮食和纤维需求的不断增长（粮农组织，2002年）和气候变化越来越多的证据（IPCC，2007年），迫切需要开发适应现有和新型生物和非生物胁迫来源的更有生产力的种质资源。已经提出了标记辅助选择（MAS）作为加速植物遗传改良的方法（Lande＆Thompson，1990 ; Paterson 等人，1991），并且预期对于具有较长产生次数的物种特别有价值，显示出低遗传性和选择在生命周期晚期表现的性状。早期识别MAS的标记物主要依赖于从少量分离群体的分析得出的数量性状基因座（QTL）研究。然而，跨越不同遗传背景的标记和性状之间的弱连锁不平衡和QTL研究中捕获的狭窄等位基因范围限制了其在家庭内部选择策略中的使用（Strauss 等人，1992 ; Dekkers，2004 ; Grattapaglia＆Kirst，2008）。QTL方法的许多限制正在通过关联遗传学来克服。然而，由于数量性状通常受许多小效应基因座的控制（Visscher，2008 ; Buckler 等，2009），需要大量群体才能获得足够的统计学功能来检测所有相关的标记 - 特征关联（Long＆Langley，1999） - 非模式作物中许多现有的关联研究的局限性。已经在玉米和拟南芥（Kover et al。，2009 ; Tian et al。，2011）中建立了旨在实现高分辨率和统计学功能的群体，同时捕获广泛的等位基因变异。然而，它们的发展对许多作物而言是不实际的，特别是那些需要几年才能达到育龄的作物。
+基因组选择（GS）最近被提出作为替代MAS作物改良（Bernardo＆Yu，2007 ; Heffner 等，2009），在广泛应用于动物育种之后（Hayes et al。，2009 ; Daetwyler et al 。，2010 ; 海斯＆戈达德，2010）。基因组选择依赖于目标育种群体的足够大且有代表性的样品的表型和高密度基因分型，使得调节数量性状的大多数基因座与一种或多种分子标记物连锁不平衡。与MAS相反，在GS中，所有可用的遗传标记的效应在训练人群中同时进行估计，并且开发模型以预测子代后代的基因组育种价值（Meuwissen 等，2001）。在植物物种中，模拟表明GS相对于传统育种和标记辅助反复选择提供了更高的效率（Bernardo＆Yu，2007 ; Heffner et al。，2009 ; Grattapaglia＆Resende，2010 ; Iwata et al。，2011）。模拟还表明，预测模型的准确性主要取决于训练群体中连锁不平衡（LD）的水平 - 较高的LD提高了标记与数量性状基因座之间的联系的可能性。较大的培训群体还可以更准确地估计标记对表型的影响。最后，性状的遗传力和调控其变异的QTL的数量也影响模型的准确性，因为相对于更复杂的性状，更容易捕获更简单的遗传结构（即调节较大部分表型方差的较少基因座）。虽然标记密度，培养群体规模和性状遗传结构的重要性已经很好地建立，但仍然很大程度上未知在不同环境中保持准确的预测模型。此外，对于长寿多年生物种，在多个时代应用一种预测模型的适用性尚不清楚。以前在农林科学研究中的QTL研究表明，年龄和基因型×环境相互作用的影响很大程度上影响了复杂性状的遗传控制（Paterson et al。， 1991，2003 ; Kaya et al。，1999）。
+                  <a href="../../post/gs/resende2012/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%AB%9E%E4%BA%89/resende2016-%E6%A1%89%E6%A0%91-%E6%97%A0%E6%80%A7%E7%B3%BB-%E7%AB%9E%E4%BA%89/">
+                <h2 class="post-title">Resende2016-桉树-无性系-竞争</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (168 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Resende RT, Marcatti GE, Pinto DS, Takahashi EK, Cruz CD, Resende MD V. Intra-genotypic competition of Eucalyptus clones generated by environmental heterogeneity can optimize productivity in forest stands. For. Ecol. Manage. [Internet]. Elsevier B.V.; 2016;380:50–8. Available from: http://dx.doi.org/10.1016/j.foreco.2016.08.041   桉树种植园的生长结构是地点环境，遗传材料和相邻植物之间不同类型的相互作用的结果。众所周知，更均匀的地点导致更高的森林生产力。然而，微环境中固有的另外的因素或者切屑的质量可以导致在旋转循环结束时的不同的克隆生物质。这项研究的桉树克隆的商业立地的生长模式有两个目的：（i）确定环境异质性是否导致遗传上相同的个体之间的竞争和（ii）验证基因内型竞争的发生，揭示与森林的潜在关系生产率。本研究是基于两个线性混合模型开发的：一个非遗传模型，它解释了空间自相关性，并用于估计邻近树之间的竞争对单个克隆图的影响;和遗传模型来推断克隆竞争的性质。评价了包含来自使用随机区组设计的八个实验的一百株植物的三百六个正方形地块，进行三次重复。通过组合两个不同的植物间距和两个高度海拔，将实验定位在不同的环境条件下。使用路径分析程序，我们验证了根据树的邻近度在图中的竞争的显着直接影响。此外，更远的树木通过附近的树木造成间接的竞争效果。具有均匀生长条件（通过残余自相关参数测量）实际上导致更高的生产率。基因内竞争和生产力的遗传相关性的结果显示，竞争性较低的克隆总是生产力较低，不管实验条件如何。更具竞争力的攻击性克隆可以在具有高残留水平的位点中优化它们的生产力，达到与均质立地相似的生产率。这表明，某些造林技术的实施，寻求增加网站的一致性，与这些克隆不太相关。这些克隆的选择和使用对大型公司可能是有用的，因为它们提供了实现高生产力的机会，以及对于没有获得大公司使用的造林质量的小生产者。
+1.介绍 基因型研究？环境相互作用（G？E）生成对特定基因型特征的知识，有助于确定更适应不同地方条件的优良克隆的推荐（Ogut等，2014）。即使位于单个位置，植物也可能​​受到不同的微环境胁迫，例如不同的光辐射率，周围树木的遮蔽，水分可用性，土壤肥力以及与土壤微生物的相互作用（Kim等人，2015; Schwinning和Weiner，1998; Stape等人，2010）。在这种情况下，由于在最佳生长条件下的竞争，可以自然地观察到植物之间的一些相互作用。在天然林中，利用现有资源的更好的生理能力（Boyden等人，2008; Donnelly等人，2016）以及冠和根在树被限制的受限空间中的最佳定位可以提供适应性相对于相邻树的优势，这种放置提供了优点，包括植物之间的竞争潜力。因此，以相同的方式，基因型可能在生长，抗病性和木材性质方面具有遗传差异，预期它们与其邻居具有不同的相互作用模式（Boyden等人，2008; Costa e Silva和Kerr，2013） 。从这一点，我们可以推断，不同的桉树克隆可能在种植园中具有不同水平的竞争。在实验地块内，植物显示各种形式的遗传行为，并根据与其邻居的遗传关系（或亲属关系）在它们的内部和内部相互作用中表达这些差异（Gurevitch等人，2010）。因此，由于与其邻居的竞争程度更大或更小，可以刺激或抑制树的性能，这可以直接影响如何进行遗传克隆选择。许多作者提出了方法和理论模型来量化植物之间的竞争。 Cappa和Cantet（2008），Cappa et al。 （2015），Costa e Silva和Kerr（2013）和Resende et al。 （2005）利用了实验梯度中包含的空间相关性与植物之间的竞争性相互作用。第一阶自回归模型（AR1）已被提出，既推断竞争作为变异的主要原因，并纠正环境梯度效应的趋势（Costa e Silva和Kerr，2013; Resende等人，2005）。 Oda-Souza et al。 （2008）和Vanclay（2006）使用系统设计来推断竞争;然而，他们的研究没有提供充分的随机性，并且具有高的植物死亡率水平，导致数据平衡中的严重问题，并且实验与用于商业森林种植园的立地非常不同，如原始作者所提到的。此外，树木之间竞争的基因内型潜力尚未得到广泛研究，尤其是与桉树克隆相关（Luu等，2013）。在森林复发选择计划的最后阶段，通常进行称为扩增克隆测试（ECT）的特定实验（Rezende et al。，2014）。这些是设计为与实际种植条件类似的大实验，并且基于这些测试，选择优异的克隆用于商业化的立地中。 ECT包含填充有单克隆复制的大方形曲线，其具有类似于商业立地的外观。在这些测试中观察到的任何生长变化，以及竞争的潜力，在理论上假定是随机性质的（Resende，2007）。在森林种植园中，均匀地点的生产力通常更高，这是由于自然均匀性或通过实施造林技术实现的（Almeida等人，2007; Campoe等人，2013年）。因此，可以接受的是，任何位点残留变异性源都需要较低的生产率。这意味着，说明克隆之间的相互作用是立地生产力优化中的负面因素的范例需要重新思考。当考虑克隆生长的同质性的平衡时，额外事件可能是引起图中残余方差的其他因素，例如克隆程序，克隆的本地衰老，切割质量，在田间的均匀实施和死亡率（Campoe等2013; Frampton and Foster，1993; Wendling et al。，2014）。此外，在共同的克隆生长中可能自然存在错配，可能导致未来的竞争性相互作用。基于以下假设：环境异质性可以在立地内产生优势树，并且这可能触发树木之间的基因型内竞争，本研究旨在验证该竞争对林分生产力的影响，以及评估克隆的遗传性质竞争。
+                  <a href="../../post/%E7%AB%9E%E4%BA%89/resende2016-%E6%A1%89%E6%A0%91-%E6%97%A0%E6%80%A7%E7%B3%BB-%E7%AB%9E%E4%BA%89/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/gs/rincent2017-%E4%BD%9C%E7%89%A9%E7%94%9F%E9%95%BF%E6%A8%A1%E5%9E%8B%E5%92%8C%E5%9F%BA%E5%9B%A0%E7%BB%84%E9%80%89%E6%8B%A9%E6%A8%A1%E5%9E%8B/">
+                <h2 class="post-title">Rincent2017-作物生长模型和基因组选择模型</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (131 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  
+
+<blockquote>
+<p>Rincent R, Kuhn E, Monod H, et al (2017) Optimization of multi-environment trials for genomic selection based on crop models. Theor Appl Genet 130:1735–1752. doi: 10.1007/s00122-017-2922-4</p>
+</blockquote>
+
+<h1 id="摘要">摘要</h1>
+
+<p><strong>关键信息</strong>通过结合<strong>作物生长模型和基因组选择模型</strong>，我们提出了一个统计标准，优化多环境试验，以更有效地预测基因型→环境相互作用。</p>
+
+<p><strong>摘要</strong>种类？环境相互作用（GEI）在植物多环境试验（METs）中很常见。在这种情况下，需要调整用于基因组选择（GS）的模型，这些模型是指使用全基因组信息来预测候选者的育种价值。在各种环境中提高预测准确度的一个有希望的方法是结合生物生态学和遗传建模，因为结合遗传参数的作物生长模型（CGM）。这种方法的效率取决于参数估计的质量，这取决于组成该MET用于校准的环境。这项研究的目的是确定一种方法来优化组合MET的环境，以估计遗传参数。为了达到这一目的，定义了一个称为OptiMET的标准，并以模拟和实际数据为例，以小麦物候学为例。用OptiMET定义的MET允许以较低误差估计遗传参数，导致更高的QTL检测功率和更高的预测精度。使用OptiMET定义的MET在参数估计的质量方面平均比使用两倍于环境的随机MET更有效。因此，OptiMET是确定最佳实验条件以有效利用MET和目前开发的表型工具的有价值的工具。</p>
+
+<h1 id="介绍">介绍</h1>
+
+<p>在植物育种中，表现最佳的品种往往与一个环境不同。这些现象称为基因型？环境相互作用（GEI）。为了应对它们，育种者在多环境试验（METs）中反复表现出相同的品种。然而，这种方法具有经济限制，并且在所有环境中筛选所有材料是不可行的。因此，开发能够预测这些相互作用的模型将是非常有意义的。实现这一目标的一个有希望的工具是基因组选择（GS），其是用于动物和植物育种的方法，以使用全基因组分子标记物来预测基因组育种值（Whittaker等人2000; Meuwissen等人2001）。在最近的一些研究中，<strong>提出通过将环境特异性效应归因于标记</strong>（Schulz-Streeck等人，2013; Crossa等人，2015），或<strong>通过建模环境协方差（Burgue）来将参考GS模型适应于GEI</strong>上下文駉等人2012）。在其他研究中，<strong>在GS模型中引入了环境协变量</strong>（Heslot et al。2014; Jarquani et al。2014; Malosetti et al。2016），可以在新的环境中进行预测。然而，<strong>这些模型获得的收益是有限的。一个可能的原因是，在大多数情况下，GEI将减少到品种与少数环境协变量之间的线性关系，这不能允许植物发育与环境条件之间的复杂相互作用。</strong>
+植物与环境的相互作用一直是生态学家进行精细分析的主题。<strong>他们的研究允许开发作物生长模型（CGM），其使用与生理参数和环境协变量的机械关系作为输入来描述植物发育。</strong>根据定义，<strong>生理参数独立于环境，但其中一些称为遗传参数可能取决于多样性</strong>。例如，对于任何环境，给定品种对光周期的敏感度是相同的。然而，由于其他品种可能具有不同的光周期敏感性，因此光周期可能因环境而异，产生GEI。 CGM可用于预测GEI，因为它们明确地整合了品种特征（遗传参数）和环境协变量（Chapman et al.2002; Hammer et al.2002; Bertin et al。2010; Bustos-Korts et al。2016）。<strong>一旦估计了遗传参数，就可以确定其遗传结构，并可以对GS模型进行校准</strong>。然后可以使用GS模型来预测其他品种的遗传参数。这些预测的遗传参数也可以用于通过运行CGM来预测新环境中这些新品种的综合性状，如产量（图1）。对玉米叶片延长率（Reymond et al。2003; Chenu et al。2008），水果质量（Quilot et al。2005; Prudent et al。2011），对CGM和遗传学的耦合方法的兴趣和可行性进行了验证，和各种物种的物候学（White and Hoogenboom 1996; Yin 2005; Nakagawa et al。2005; Messina et al。2006; White et al。2008; Uptmoor et al。2011; Zheng et al。2013; Bogard et al。 Onogi等人，2016）。最近，Technow等人（2015），Cooper et al。 （2016）和Messina等（2017）表明了CGM和GS模型的耦合关系，用于预测和选择高度综合性状如粮食产量。他们的方法的一个主要优点和Onogi等人的方法（2016）是<strong>遗传参数和标记效应联合估计</strong>，因此基因型数据可以在个人之间共享信息。
+偶联CGM和标记辅助选择（CGM-MAS）的方法也称为基于基因的建模或基于QTL的建模（参见图1）。在CGM-MAS中，遗传参数的全基因组关联研究（GWAS）和GS的效率取决于校准集的组成，作物模型的相关性以及参数估计的质量。考虑到作物模型中涉及的遗传参数的数量及其在复杂过程中的纠缠方式，很明显，需要大量的数据来估计参数，并且正在开发的高通量表型工具，如无人机（UAV）和表型平台将有很大的帮助。
+一些遗传参数可以通过测量表型平台上的简单性状几乎直接估计（Reymond等人2003; Yin 2005）。其他遗传参数通过调整CGM输出到更综合性状的观察来估计。在这种情况下，可以通过粗体算法（Bogard et al。2014），更复杂的探索算法（Wallach et al。2011; Klein et al。2012）或贝叶斯推理（Makowski et al。，2002 ; Van Oijen等人2005; Iizumi等人2009; Dumont等人，2014）。参数的质量通过误差方差估计高度QTL检测能力（Wang 2008; Teyss等人，2012; Rincent等，2014）和GS精度（Daetwyler et al。2008; VanRaden 2008）。
+数据收集和参数推理的一个基本问题是实验设计的选择。关于植物育种实验设计的大多数文献集中在试验中将品种分配给地块（Piepho和Williams 2006; Butler等人，2014）。然而，<strong>当设计METs来估计遗传参数时，主要的问题是确定哪些种植条件需要表型来提供最佳估计</strong>。例如，如果日长度在CGM行为中起主要作用，则可以预期，捕获日长度的重要变异性的实验设计将比其他估计相应遗传参数更有效。在一些研究中已经讨论了实验设计定义对估计模型参数的重要性（W鰄linget al。2013; Dumont等，2014）。因此，<strong>最佳MET设计的定义是一个关键点，必须基于可靠的统计方法</strong>。
+一些研究明确地处理了MET的设计（参见Talbot第10章关于Kempton和Fox 1997的选择系统的资源分配）。最近，提出了一个有趣的方法来优化实验设计来校准水文模型（Leube et al。2012）。在CGMMAS的背景下开发这样的新工具是目前最重要的需要。
+本研究的主要目的是制定统计标准，<strong>在CGM-MAS的上下文中收集数据之前优化组合MET的环境。采用此标准采样的设计应允许对整个品种集合的作物模型进行最有效的校准。用最佳实验设计获得的遗传参数估计的高质量应反过来增加CGM-MAS效率（QTL检测功率和预测精度）。</strong>使用模拟和实际数据集，对这些方法进行了测试，其中包括参考作物模型（Jamieson et al。1998b; Keating et al。2003）。这种特征受温度和日长度的影响，因此我们将重点放在<strong>定位和播种日期</strong>的最佳组合的定义上。使用贝叶斯推理方法估计使用综合表型的作物模型的遗传参数。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/roberds2003-%E7%81%AB%E7%82%AC%E6%9D%BE-%E6%B2%B9%E6%A0%91%E8%84%82/">
+                <h2 class="post-title">Roberds2003-火炬松-油树脂</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (72 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Roberds JH, et al. (2003) Estimates of genetic parameters for oleoresin and growth traits in juvenile loblolly pine. Can J For Res 33(2003):2469–2476.   在美国的南部松树中，抵抗南部松甲虫（Dendroctonus frontalis Zimmermann）的攻击主要涉及油树脂流入甲虫攻击地点。已知环境和遗传因素都影响了火炬松（Pinus taeda L.）中油树脂流动的数量，但对于该性状对表型变异的遗传贡献知之甚少。在这里，我们报告了这个种群的油树脂流动和生长性状遗传变异的估计。在佛罗里达州圣罗莎县的实验测试中，在10和11岁的树木上测量了油树脂产量，总高度和直径。根据不连续的部分拨线设计，通过配对48个父母产生的72个全同族家庭的树木。树脂产量由两次收集的乳房高度样品确定：1999年夏天，即将生产晚木（夏季树脂流动），一次在早期木材形成（春季树脂流动）期间的2000年春季。研究的所有性状被发现具有高度的遗传变异性，并且具有比优势差异更大的添加剂。对春季和夏季树脂流动的狭义遗传力的估计处于中等范围，并且与获得的生长性状的值相当。油树脂产量与生长性状之间的添加遗传相关性呈阳性和中等程度，表明改良火炬松生长的定向选择也将导致油树脂产量增加。
+引言 油树脂的流动被认为是松属中树木利用的主要手段，以抵抗树皮甲虫的攻击。在美国东南部的松树中，产生大量组成型含油树脂的树木，在没有外源刺激条件下形成的树脂，似乎最能预防或阻碍南部松甲虫（SPB），额叶正德齐墩果（Dendroctonus frontalis Zimmermann）是该地区松树林中最具破坏性的害虫（Hodges等，1979; Cook and Hain 1987; Reeve et al.1995; Strom et al.2002）。据信，丰富的树脂流动有两个主要方式阻止了SPB的入侵：（1）作为一种伤口清洁剂，用于排除或夹带攻击甲虫，从而阻止或阻止了画廊的形成（Cook and Hain 1987; Popp et al.1991），和（2）通过加强对有毒化合物的攻击地点（Coyne和Lott 1976）。此外，丰富的树脂流动也有助于基于化学成分的树木抗性（Strom等人，2002）。除树木防御外，高树脂流动也可以阻止甲虫繁殖成功（Reeve et al。，1995）。遗传和环境因素都是知晓的，它们是由松散松树（Pinus taeda L.）产生的组成型树脂的数量（Lorio 1986; Nebeker等人，1988,1992; Lorio等人，1990; Blanche et al。 1992; Wilkens等人1998; Lombardero等人2000）。然而，大多数关注确定与树脂生产有关的变量的注意力集中在旨在刺激树木生长的环境属性和文化实践。该研究的突出重点包括可能在生长季节期间改变树脂生产的潜在决定因素，包括可能导致碳资源转移到涉及含油树脂合成的次生代谢过程的主要因素有助于树木生长的主要过程。据认为，将光合作用分配到初级和次级循环过程中，可以在Loomis（1932）首先制定的植物生长分化原理之后产生生长和树脂形成之间的权衡，后来被修改以解释生长和树脂流动之间的关系在Lorio（1986）的松树中。
+相比之下，相对较小的努力已经致力于确定遗传效应如何影响火炬松树脂产量的表型变化。研究已经证明，在全同胞家系之间，组成型流量的大差异发生（Nebeker等，1992）。此外，由SPB严重感染的遗体中存活的树木的风花授粉后代已被证明具有比对照种群的可比树更强的树脂流动（Strom等人，2002）。然而，遗传变异尚未在P.taeda中估计和表征，尽管已经发现在海军商店物种的树脂生产能力中存在大量的遗传变异。 Squillace和Bengston（1961）的分析表明，斜坡松（Pinus elliottii Engelm var。elliottii）的胶树脂产量的狭义遗传率约为0.
+                  <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/roberds2003-%E7%81%AB%E7%82%AC%E6%9D%BE-%E6%B2%B9%E6%A0%91%E8%84%82/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9/rommens1989-%E9%80%9A%E8%BF%87%E6%9F%93%E8%89%B2%E4%BD%93%E6%AD%A5%E7%A7%BB%E7%A1%AE%E8%AE%A4%E5%9F%BA%E5%9B%A0/">
+                <h2 class="post-title">Rommens1989-通过染色体步移确认基因</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (27 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Rommens JM, Iannuzzi MC, Kerem B, et al (1989) Identification of the cystic fibrosis gene: chromosome walking and jumping. Science 245:1059–65. doi: 10.1126/science.2772657</p>
+</blockquote>
+
+<p>了解遗传性疾病囊性纤维化的基本缺陷需要克隆囊性纤维化基因并其定义蛋白质产物。 <strong>在没有直接功能信息的情况下，染色体图位置是定位基因的指南</strong>。 使用染色体步移和跳跃和互补DNA杂交从人染色体7的长臂上的囊性纤维化区域分离包含超过500,000个碱基对的DNA序列。在该克隆区域中鉴定了几个转录序列和保守区段。 这些中的一个对应于囊性纤维化基因并且跨越大约250,000个碱基对的基因组DNA。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+        </div>
+
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="../../page/26/">&larr; Newer Posts</a>
+              </li>
+            
+            
+              <li class="next">
+                <a href="../../page/28/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

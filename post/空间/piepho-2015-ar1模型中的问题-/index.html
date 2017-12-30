@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Piepho-2015-AR(1)模型中的问题-</title>
+  <meta property="og:title" content="Piepho-2015-AR(1)模型中的问题-" />
+  <meta name="twitter:title" content="Piepho-2015-AR(1)模型中的问题-" />
+  <meta name="description" content="Piepho H, Möhring J, Pflugfelder M, Hermann W, Williams ER. Problems in parameter estimation for power and AR (1) models of spatial correlation in designed field experiments. Commun. biometry Crop Sci. 2015;10:3–16.   AR（1）和空间相关的功率模型在现场试验数据的分析中是流行的。当自相关参数ρ倾向于为零或一致时，可能发生这些模型的估计和解释的数值困难。这里使用三个不同的示例来考虑这些问题。第一个例子是基于部分复制设计的模拟数据，其中真实的底层方差协方差结构是已知的。其他两个例子涉及来自精确农业试验和植物育种试验的真实数据。我们建议四个选项来处理观察到的数值问题，并说明它们与示例的使用。在示例中示出，AR（1）模型的空间坐标的重新缩放或重新参数化作为指数模型可以有助于模型收敛。我们得出结论，AR（1）模型的个别参数估计应仔细解释，特别是当自相关估计接近零或单位时。
+引言 在混合模型框架中嵌入的空间方差 - 协方差结构在现场试验的分析中已经变得流行（Gilmour等人1997，Piepho等人2008，Gonçalves等人2010）。最常见的空间模型假设与距离的空间相关性的非线性衰减。在每个图的单次观察的随机化实验中，可以在同一块中的图之间假定空间相关性（Williams 1986）。类似地，在具有大图的农场试验中，可以获得每个图的许多空间参考测量（即记录空间坐标的测量），以及相关的协变量信息。对这些试验的全面分析需要考虑同一地块重复测量之间的空间变化（Piepho et al。2011）。用于具有等间隔图的场试验的非常流行的非线性空间模型是一阶自回归AR（1）模型。该模型暗示与空间距离​​的相关性的指数衰减，根据图之间的滞后距离测量，等于间歇图的数量加1。模型也可以扩展到两个维度，最流行的变量是可分离的AR（1）⊗AR（1）模型（Gilmour等人，1997）。当对每个地块进行重复观测时，正如在精确农业实验中常见的情况，观测通常是不规则的间隔，而不是形成一个精确的矩形网格（Piepho et al。2011）。 AR（1）模型不适用于这种实验，因为它需要相等的间距。然而，AR（1）模型可以容易地扩展到不等间隔测量，如所谓的功率模型或指数模型（Gotway和Schabenberger 2004）。这两个模型是基本上相同模型的不同参数化（参见下文）。通常，当试图使用提供混合模型分析的各种统计包来基于残差最大似然（REML）将非线性空间模型拟合到现场试验数据时遇到数值问题。例如，REML算法可能无法收敛，或者最终的Hessian矩阵可能不是非正定的。在本文中，我们考虑AR（1）和功率模型的这些问题，并看看可能的补救措施，以实现收敛到一个正确的解决方案。还考虑参数估计的解释。使用三个不同的示例来说明在实践中遇到的典型问题，并且讨论可能的解决方案。第一个例子是基于部分复制（p-rep）设计的模拟数据（Cullis等人2006，Williams等人2011,2014），而其他两个例子涉及精确农业试验和植物的真实数据育种试验。 本文组织如下。首先我们介绍三个例子。接下来，我们描述空间模型。随后简要介绍尝试适合这些模型时的潜在问题，在收敛问题的情况下解决故障的可能措施以及这三个示例的应用。本文最后简要讨论和我们的建议。
+讨论和结论 我们调查了在随机试验中拟合功效和AR（1）模型时可能出现的一些数值问题。我们还考虑了一些选项，当默认设置失败时，实现收敛到基于REML的过程的正确解决方案。关键问题是，空间分量可能与熔核方差或对于实验单位例如块（在每个图的单次观察的随机化实验的情况下）和图的随机效应混淆（在随机化实验的情况下在同一图上进行的重复和空间参考测量）。我们表明，需要小心解释各个参数估计。通常，它们可以产生空间相关性显着的印象，而对于块和独立残留误差的基于随机化的效应很小。但是本文中阐明的混杂问题意味着在模型的不同参数的估计之间存在相互作用，并且大的自相关估计可能实际上是由于块效应的大变化，反之亦然。类似地，与大的空间方差相关联的小自相关估计实际上可能与块金方差混淆，并且与空间距离​​的相关性的衰减可能如此之快，使得块内的拟合的成对残差相关对于大多数对图。因此，仅仅查看空间方差估计可能是误导。也许最好避免单独对各个参数估计的强烈解释。相反，重点应放在数据的整个拟合方差 - 协方差结构上。在随机现场试验中，建议使用具有简单随机效应的基于随机化的模型（Nelder 1965）。这可以被视为涉及空间附加组件的更精细建模的出发点。当空间模型难以拟合或不提供改进时，这样的模型也可以作为后退选项（Piepho和Williams 2010）。我们建议反对在设计涉及阻塞时拟合纯空间模型而不影响块的常见做法。存在一些危险，即当实际上如果块被拟合以反映随机化布局时，空间相关性被错误地报告为高。可以通过用基于随机化的模型开始建模过程并且仅将空间协方差视为可选的附加组件来避免这样的问题。 在本文中，我们使用了一个特定的REML包（SAS的MIXED过程）。在某种程度上，统计程序的数值问题总是软件特有的。由于REML算法的迭代过程的实现的差异，其他软件可以产生不同的解决方案，特别是当难以实现收敛时。在这里我们不打算比较不同的混合模型包。然而，在我们的经验中，AR（1）和功率模型的问题与大多数包相似，尽管相同数据集的收敛行为有一些差异。这主要是由于当ρ→0或→1时的混杂问题，这是ρ是模型本身的固有性质而不是所使用的特定包装的固有性质。我们已经考虑过处理这些问题的选项，并用三个例子来说明。可以推荐重建AR（1）模型的空间坐标或重新参数化作为指数模型，以帮助模型收敛。在给定情况下，以下哪些选项可能工作很大程度取决于数据集。 LV模型是非线性空间模型（如AR（1））的可行替代方案，在我们的经验中，它通常具有良好的收敛行为。因此，我们建议在探索竞争空间附加组件到基于随机化的模型时定期考虑这个模型。">
+  <meta property="og:description" content="Piepho H, Möhring J, Pflugfelder M, Hermann W, Williams ER. Problems in parameter estimation for power and AR (1) models of spatial correlation in designed field experiments. Commun. biometry Crop Sci. 2015;10:3–16.   AR（1）和空间相关的功率模型在现场试验数据的分析中是流行的。当自相关参数ρ倾向于为零或一致时，可能发生这些模型的估计和解释的数值困难。这里使用三个不同的示例来考虑这些问题。第一个例子是基于部分复制设计的模拟数据，其中真实的底层方差协方差结构是已知的。其他两个例子涉及来自精确农业试验和植物育种试验的真实数据。我们建议四个选项来处理观察到的数值问题，并说明它们与示例的使用。在示例中示出，AR（1）模型的空间坐标的重新缩放或重新参数化作为指数模型可以有助于模型收敛。我们得出结论，AR（1）模型的个别参数估计应仔细解释，特别是当自相关估计接近零或单位时。
+引言 在混合模型框架中嵌入的空间方差 - 协方差结构在现场试验的分析中已经变得流行（Gilmour等人1997，Piepho等人2008，Gonçalves等人2010）。最常见的空间模型假设与距离的空间相关性的非线性衰减。在每个图的单次观察的随机化实验中，可以在同一块中的图之间假定空间相关性（Williams 1986）。类似地，在具有大图的农场试验中，可以获得每个图的许多空间参考测量（即记录空间坐标的测量），以及相关的协变量信息。对这些试验的全面分析需要考虑同一地块重复测量之间的空间变化（Piepho et al。2011）。用于具有等间隔图的场试验的非常流行的非线性空间模型是一阶自回归AR（1）模型。该模型暗示与空间距离​​的相关性的指数衰减，根据图之间的滞后距离测量，等于间歇图的数量加1。模型也可以扩展到两个维度，最流行的变量是可分离的AR（1）⊗AR（1）模型（Gilmour等人，1997）。当对每个地块进行重复观测时，正如在精确农业实验中常见的情况，观测通常是不规则的间隔，而不是形成一个精确的矩形网格（Piepho et al。2011）。 AR（1）模型不适用于这种实验，因为它需要相等的间距。然而，AR（1）模型可以容易地扩展到不等间隔测量，如所谓的功率模型或指数模型（Gotway和Schabenberger 2004）。这两个模型是基本上相同模型的不同参数化（参见下文）。通常，当试图使用提供混合模型分析的各种统计包来基于残差最大似然（REML）将非线性空间模型拟合到现场试验数据时遇到数值问题。例如，REML算法可能无法收敛，或者最终的Hessian矩阵可能不是非正定的。在本文中，我们考虑AR（1）和功率模型的这些问题，并看看可能的补救措施，以实现收敛到一个正确的解决方案。还考虑参数估计的解释。使用三个不同的示例来说明在实践中遇到的典型问题，并且讨论可能的解决方案。第一个例子是基于部分复制（p-rep）设计的模拟数据（Cullis等人2006，Williams等人2011,2014），而其他两个例子涉及精确农业试验和植物的真实数据育种试验。 本文组织如下。首先我们介绍三个例子。接下来，我们描述空间模型。随后简要介绍尝试适合这些模型时的潜在问题，在收敛问题的情况下解决故障的可能措施以及这三个示例的应用。本文最后简要讨论和我们的建议。
+讨论和结论 我们调查了在随机试验中拟合功效和AR（1）模型时可能出现的一些数值问题。我们还考虑了一些选项，当默认设置失败时，实现收敛到基于REML的过程的正确解决方案。关键问题是，空间分量可能与熔核方差或对于实验单位例如块（在每个图的单次观察的随机化实验的情况下）和图的随机效应混淆（在随机化实验的情况下在同一图上进行的重复和空间参考测量）。我们表明，需要小心解释各个参数估计。通常，它们可以产生空间相关性显着的印象，而对于块和独立残留误差的基于随机化的效应很小。但是本文中阐明的混杂问题意味着在模型的不同参数的估计之间存在相互作用，并且大的自相关估计可能实际上是由于块效应的大变化，反之亦然。类似地，与大的空间方差相关联的小自相关估计实际上可能与块金方差混淆，并且与空间距离​​的相关性的衰减可能如此之快，使得块内的拟合的成对残差相关对于大多数对图。因此，仅仅查看空间方差估计可能是误导。也许最好避免单独对各个参数估计的强烈解释。相反，重点应放在数据的整个拟合方差 - 协方差结构上。在随机现场试验中，建议使用具有简单随机效应的基于随机化的模型（Nelder 1965）。这可以被视为涉及空间附加组件的更精细建模的出发点。当空间模型难以拟合或不提供改进时，这样的模型也可以作为后退选项（Piepho和Williams 2010）。我们建议反对在设计涉及阻塞时拟合纯空间模型而不影响块的常见做法。存在一些危险，即当实际上如果块被拟合以反映随机化布局时，空间相关性被错误地报告为高。可以通过用基于随机化的模型开始建模过程并且仅将空间协方差视为可选的附加组件来避免这样的问题。 在本文中，我们使用了一个特定的REML包（SAS的MIXED过程）。在某种程度上，统计程序的数值问题总是软件特有的。由于REML算法的迭代过程的实现的差异，其他软件可以产生不同的解决方案，特别是当难以实现收敛时。在这里我们不打算比较不同的混合模型包。然而，在我们的经验中，AR（1）和功率模型的问题与大多数包相似，尽管相同数据集的收敛行为有一些差异。这主要是由于当ρ→0或→1时的混杂问题，这是ρ是模型本身的固有性质而不是所使用的特定包装的固有性质。我们已经考虑过处理这些问题的选项，并用三个例子来说明。可以推荐重建AR（1）模型的空间坐标或重新参数化作为指数模型，以帮助模型收敛。在给定情况下，以下哪些选项可能工作很大程度取决于数据集。 LV模型是非线性空间模型（如AR（1））的可行替代方案，在我们的经验中，它通常具有良好的收敛行为。因此，我们建议在探索竞争空间附加组件到基于随机化的模型时定期考虑这个模型。">
+  <meta name="twitter:description" content="Piepho H, Möhring J, Pflugfelder M, Hermann W, Williams ER. Problems in parameter estimation for power and AR (1) models of spatial correlation in designed field experiments. Commun. biometry Crop …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/piepho-2015-ar1%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98-/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/piepho-2015-ar1%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98-/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Piepho-2015-AR(1)模型中的问题-</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (53 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Piepho-2015-AR(1)模型中的问题-</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (53 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<ol>
+<li>Piepho H, Möhring J, Pflugfelder M, Hermann W, Williams ER. Problems in parameter estimation for power and AR (1) models of spatial correlation in designed field experiments. Commun. biometry Crop Sci. 2015;10:3–16.</li>
+</ol>
+</blockquote>
+
+<p>AR（1）和空间相关的功率模型在现场试验数据的分析中是流行的。当自相关参数ρ倾向于为零或一致时，可能发生这些模型的估计和解释的数值困难。这里使用三个不同的示例来考虑这些问题。第一个例子是基于部分复制设计的模拟数据，其中真实的底层方差协方差结构是已知的。其他两个例子涉及来自精确农业试验和植物育种试验的真实数据。我们建议四个选项来处理观察到的数值问题，并说明它们与示例的使用。在示例中示出，<strong>AR（1）模型的空间坐标的重新缩放或重新参数化作为指数模型可以有助于模型收敛。我们得出结论，AR（1）模型的个别参数估计应仔细解释，特别是当自相关估计接近零或单位时</strong>。</p>
+
+<hr />
+
+<h2 id="引言">引言</h2>
+
+<p>在混合模型框架中嵌入的空间方差 - 协方差结构在现场试验的分析中已经变得流行（Gilmour等人1997，Piepho等人2008，Gonçalves等人2010）。最常见的空间模型假设与距离的空间相关性的非线性衰减。在每个图的单次观察的随机化实验中，可以在同一块中的图之间假定空间相关性（Williams 1986）。类似地，在具有大图的农场试验中，可以获得每个图的许多空间参考测量（即记录空间坐标的测量），以及相关的协变量信息。对这些试验的全面分析需要考虑同一地块重复测量之间的空间变化（Piepho et al。2011）。用于具有等间隔图的场试验的非常流行的非线性空间模型是一阶自回归AR（1）模型。该模型暗示与空间距离​​的相关性的指数衰减，根据图之间的滞后距离测量，等于间歇图的数量加1。模型也可以扩展到两个维度，最流行的变量是可分离的AR（1）⊗AR（1）模型（Gilmour等人，1997）。当对每个地块进行重复观测时，正如在精确农业实验中常见的情况，观测通常是不规则的间隔，而不是形成一个精确的矩形网格（Piepho et al。2011）。 AR（1）模型不适用于这种实验，因为它需要相等的间距。然而，AR（1）模型可以容易地扩展到不等间隔测量，如所谓的功率模型或指数模型（Gotway和Schabenberger 2004）。这两个模型是基本上相同模型的不同参数化（参见下文）。通常，当试图使用提供混合模型分析的各种统计包来基于残差最大似然（REML）将非线性空间模型拟合到现场试验数据时遇到数值问题。例如，REML算法可能无法收敛，或者最终的Hessian矩阵可能不是非正定的。在本文中，我们考虑AR（1）和功率模型的这些问题，并看看可能的补救措施，以实现收敛到一个正确的解决方案。还考虑参数估计的解释。使用三个不同的示例来说明在实践中遇到的典型问题，并且讨论可能的解决方案。第一个例子是基于部分复制（p-rep）设计的模拟数据（Cullis等人2006，Williams等人2011,2014），而其他两个例子涉及精确农业试验和植物的真实数据育种试验。
+本文组织如下。首先我们介绍三个例子。接下来，我们描述空间模型。随后简要介绍尝试适合这些模型时的潜在问题，在收敛问题的情况下解决故障的可能措施以及这三个示例的应用。本文最后简要讨论和我们的建议。</p>
+
+<h2 id="讨论和结论">讨论和结论</h2>
+
+<p>我们调查了在随机试验中拟合功效和AR（1）模型时可能出现的一些数值问题。我们还考虑了一些选项，当默认设置失败时，实现收敛到基于REML的过程的正确解决方案。关键问题是，空间分量可能与熔核方差或对于实验单位例如块（在每个图的单次观察的随机化实验的情况下）和图的随机效应混淆（在随机化实验的情况下在同一图上进行的重复和空间参考测量）。我们表明，需要小心解释各个参数估计。通常，它们可以产生空间相关性显着的印象，而对于块和独立残留误差的基于随机化的效应很小。但是本文中阐明的混杂问题意味着在模型的不同参数的估计之间存在相互作用，并且大的自相关估计可能实际上是由于块效应的大变化，反之亦然。类似地，与大的空间方差相关联的小自相关估计实际上可能与块金方差混淆，并且与空间距离​​的相关性的衰减可能如此之快，使得块内的拟合的成对残差相关对于大多数对图。因此，仅仅查看空间方差估计可能是误导。也许最好避免单独对各个参数估计的强烈解释。相反，重点应放在数据的整个拟合方差 - 协方差结构上。在随机现场试验中，建议使用具有简单随机效应的基于随机化的模型（Nelder 1965）。这可以被视为涉及空间附加组件的更精细建模的出发点。当空间模型难以拟合或不提供改进时，这样的模型也可以作为后退选项（Piepho和Williams 2010）。我们建议反对在设计涉及阻塞时拟合纯空间模型而不影响块的常见做法。存在一些危险，即当实际上如果块被拟合以反映随机化布局时，空间相关性被错误地报告为高。可以通过用基于随机化的模型开始建模过程并且仅将空间协方差视为可选的附加组件来避免这样的问题。
+在本文中，我们使用了一个特定的REML包（SAS的MIXED过程）。在某种程度上，统计程序的数值问题总是软件特有的。由于REML算法的迭代过程的实现的差异，其他软件可以产生不同的解决方案，特别是当难以实现收敛时。在这里我们不打算比较不同的混合模型包。然而，在我们的经验中，AR（1）和功率模型的问题与大多数包相似，尽管相同数据集的收敛行为有一些差异。这主要是由于当ρ→0或→1时的混杂问题，这是ρ是模型本身的固有性质而不是所使用的特定包装的固有性质。我们已经考虑过处理这些问题的选项，并用三个例子来说明。可以推荐重建AR（1）模型的空间坐标或重新参数化作为指数模型，以帮助模型收敛。在给定情况下，以下哪些选项可能工作很大程度取决于数据集。 LV模型是非线性空间模型（如AR（1））的可行替代方案，在我们的经验中，它通常具有良好的收敛行为。因此，我们建议在探索竞争空间附加组件到基于随机化的模型时定期考虑这个模型。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/piepho2007-%E4%B8%8D%E5%B9%B3%E8%A1%A1-%E9%81%97%E4%BC%A0%E5%8A%9B%E5%92%8C%E9%80%89%E6%8B%A9%E5%93%8D%E5%BA%94/" data-toggle="tooltip" data-placement="top" title="Piepho2007-不平衡-遗传力和选择响应">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/piepho-2010-lv-%E6%A8%A1%E5%9E%8B/" data-toggle="tooltip" data-placement="top" title="Piepho-2010-LV-模型">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

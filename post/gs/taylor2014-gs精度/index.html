@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Taylor2014-GS精度</title>
+  <meta property="og:title" content="Taylor2014-GS精度" />
+  <meta name="twitter:title" content="Taylor2014-GS精度" />
+  <meta name="description" content="Taylor JF (2014) Implementation and accuracy of genomic selection. Aquaculture 420–421:S8–S14. doi: 10.1016/j.aquaculture.2013.02.017
+ 抽象 基因组选择正在成为估计植物和动物育种繁殖价值的有力工具。虽然已经提出了许多分析方法来联合估计高密度单核苷酸多态性（SNP）效应，但在最佳线性无偏估计的框架内，基因组选择等同于无表型个体的育种值的预测，其中理论解决方案于1974年首次出版。基因组选择简单地用基于标记的实现基因组关系矩阵替代了谱系派生的分子关系矩阵，这是1997年首次提出的方法。由高密度SNP基因型的可用性促进的进展是能够精确地估计个体之间实现的关系系数，而不管系统信息的可用性或已应用于人群的选择历史。然而，假设SNP基因型的独立性通常估计基因组关系系数，从而忽略连锁不平衡的影响，并且所使用的SNP被总是确定为物种基因组内的常见变异，导致关系系数的过高估计。产生的基因组估计育种值（GEBV）的准确性通常使用不同形式的验证群体进行评估，该验证群体包含不用于估计培训人群中SNP效应的基因型和表型的个体。然而，这里显示的GEBV精度是训练人口GEBV的准确性和训练和验证人群中个体之间基因组关系的大小的函数。因此，基因组选择理想地适用于高度准确的GEBV可用于训练群体个体的群体，并且其标记选择的后代继续产生表型并重新进入随后变得动态的训练群体。相反，基因组选择不太适合于鉴定家族中没有历史上对育种计划，静态培训人群或在遥远相关人群中进行培训和实施的精英个人。因此，为代价或难以测量表型（如饲料效率或疾病抗性）的基因组选择的实施将需要定期再生表型种群以重新进行GEBV预测方程或鉴定这些性状变异的因果变异。全基因组重新测序的指数降低成本可能很快允许鉴定至少大的效应变体。
+介绍 基因组选择（GS）首先由Meuwissen等人提出。 （2001）作为预测没有表型的个体的育种值的方法，但已经用高密度标记物进行了基因分型。该方法基于使用应用于表型的线性或非线性贝叶斯模型或可用于包含训练人群的基因分型个体的估计育种值（EBV）来同时估计每个标记的等位基因替代效应（ASE），确定在独立验证群体中得到的预测方程的准确性以及应用预测方程以在实施群体内的选择候选者中产生基因组估计育种值（GEBV）。训练人口一词来自于某种形式的模型对基因型和表型进行“训练”以产生ASE和GEBV的估计。验证步骤的目的是使用在独立的一组基因型个体上可用的表型与训练人群中使用的表型，以产生将为选择候选产生的GEBV的准确性的估计。因此，采样以形成验证人群的个体应该代表选择候选人，因为为验证人群制定的GEBV的准确度应该反映在实施人群中为选择候选人所产生的GEBV的准确性。图1显示了每个群体的目的，并说明了静态和动态训练种群之间的差异。这也证明了当培训人口是静态时，验证人群估计GEBV准确性的有限效用，因为实施人群中的个人与训练人群中的个人的相关性随每个选择周期而减少。 2007年12月，包含54,001个牛单核苷酸多态性（SNP）的BovineSNP50（Illumina，San Diego，CA; Matukumalli等，2009）测定已经可用，到2009年，GS已在美国乳制品行业实施（VanRaden et al。 ，2009）。此时，还认识到，从随机效应模型估计的ASE可用于基因组广泛关联研究（GWAS），用于检测数量性状基因座（QTL）（Cole等人，2009; Kang等，2010 ; Yang et al。，2011），并且使用基因组关系矩阵提供了保护，以抵抗基于谱系的分层对ASE估计的影响（Kang et al。，2010）。然而，当SNP ASE被联合估计为随机效应时，该方法提供了由标记物联合解释的变化比例的估计，而不是提供标记效应的单独测试。单个标记效应的测试可以通过将模型中的每个标记单独地包括为固定效应来产生（例如，Kang等人，2010; Schulman等人，2011）;然而，这高估了每种标记物的效果，然后不能将其结合起来产生GEBV。最近，Illumina已经发布了778 K SNP BovineHD，Affymetrix发布了640 K SNP Axiom BOS 1（Affymetrix，Santa Clara，CA）测定，这些测定可以提高精确定位QTL的精度，但令人惊讶的是只有小幅增长在基因组关系系数和GEBV的估计精度方面（Erbe et al。，2012）。在基因型SNP数量增加15倍的情况下，GEBV精确度的小幅增长表明，许多性状具有涉及罕见的QTL变体的潜在遗传结构，其不被商业基因分型测定中包含的常见SNP检测到。根据定义，这意味着使用这些测定法估计的基因组关系矩阵（VanRaden，2008）必须通过个体之间的血统对所实现的基因组特征产生有偏估计。 最近的工作集中在理论（Goddard，2009）和经验评估（Hayes等人，2009; Luan等人，2009; Su等人，2010; VanRaden等人，2009年）估计的GEBV的准确性和Habier等人（2010）经验证明，随着培养和验证数据集的分离次数的增加，精度降低。然而，正式呈现GEBV在选拔候选人中与培训人口个人的相关性和培训人口GEBV的准确性之间关系的结果尚未呈现。在本文中，提出了在最佳线性无偏预测（BLUP）框架下实施GS的结果，包括在训练人群中评估GEBV和ASE的模型的等效性，以及选择候选者之间同时进行GEBV的训练和估计。还提出了可以推导选择候选人中ASE和GEBV的估计精度的采样方差和协方差。">
+  <meta property="og:description" content="Taylor JF (2014) Implementation and accuracy of genomic selection. Aquaculture 420–421:S8–S14. doi: 10.1016/j.aquaculture.2013.02.017
+ 抽象 基因组选择正在成为估计植物和动物育种繁殖价值的有力工具。虽然已经提出了许多分析方法来联合估计高密度单核苷酸多态性（SNP）效应，但在最佳线性无偏估计的框架内，基因组选择等同于无表型个体的育种值的预测，其中理论解决方案于1974年首次出版。基因组选择简单地用基于标记的实现基因组关系矩阵替代了谱系派生的分子关系矩阵，这是1997年首次提出的方法。由高密度SNP基因型的可用性促进的进展是能够精确地估计个体之间实现的关系系数，而不管系统信息的可用性或已应用于人群的选择历史。然而，假设SNP基因型的独立性通常估计基因组关系系数，从而忽略连锁不平衡的影响，并且所使用的SNP被总是确定为物种基因组内的常见变异，导致关系系数的过高估计。产生的基因组估计育种值（GEBV）的准确性通常使用不同形式的验证群体进行评估，该验证群体包含不用于估计培训人群中SNP效应的基因型和表型的个体。然而，这里显示的GEBV精度是训练人口GEBV的准确性和训练和验证人群中个体之间基因组关系的大小的函数。因此，基因组选择理想地适用于高度准确的GEBV可用于训练群体个体的群体，并且其标记选择的后代继续产生表型并重新进入随后变得动态的训练群体。相反，基因组选择不太适合于鉴定家族中没有历史上对育种计划，静态培训人群或在遥远相关人群中进行培训和实施的精英个人。因此，为代价或难以测量表型（如饲料效率或疾病抗性）的基因组选择的实施将需要定期再生表型种群以重新进行GEBV预测方程或鉴定这些性状变异的因果变异。全基因组重新测序的指数降低成本可能很快允许鉴定至少大的效应变体。
+介绍 基因组选择（GS）首先由Meuwissen等人提出。 （2001）作为预测没有表型的个体的育种值的方法，但已经用高密度标记物进行了基因分型。该方法基于使用应用于表型的线性或非线性贝叶斯模型或可用于包含训练人群的基因分型个体的估计育种值（EBV）来同时估计每个标记的等位基因替代效应（ASE），确定在独立验证群体中得到的预测方程的准确性以及应用预测方程以在实施群体内的选择候选者中产生基因组估计育种值（GEBV）。训练人口一词来自于某种形式的模型对基因型和表型进行“训练”以产生ASE和GEBV的估计。验证步骤的目的是使用在独立的一组基因型个体上可用的表型与训练人群中使用的表型，以产生将为选择候选产生的GEBV的准确性的估计。因此，采样以形成验证人群的个体应该代表选择候选人，因为为验证人群制定的GEBV的准确度应该反映在实施人群中为选择候选人所产生的GEBV的准确性。图1显示了每个群体的目的，并说明了静态和动态训练种群之间的差异。这也证明了当培训人口是静态时，验证人群估计GEBV准确性的有限效用，因为实施人群中的个人与训练人群中的个人的相关性随每个选择周期而减少。 2007年12月，包含54,001个牛单核苷酸多态性（SNP）的BovineSNP50（Illumina，San Diego，CA; Matukumalli等，2009）测定已经可用，到2009年，GS已在美国乳制品行业实施（VanRaden et al。 ，2009）。此时，还认识到，从随机效应模型估计的ASE可用于基因组广泛关联研究（GWAS），用于检测数量性状基因座（QTL）（Cole等人，2009; Kang等，2010 ; Yang et al。，2011），并且使用基因组关系矩阵提供了保护，以抵抗基于谱系的分层对ASE估计的影响（Kang et al。，2010）。然而，当SNP ASE被联合估计为随机效应时，该方法提供了由标记物联合解释的变化比例的估计，而不是提供标记效应的单独测试。单个标记效应的测试可以通过将模型中的每个标记单独地包括为固定效应来产生（例如，Kang等人，2010; Schulman等人，2011）;然而，这高估了每种标记物的效果，然后不能将其结合起来产生GEBV。最近，Illumina已经发布了778 K SNP BovineHD，Affymetrix发布了640 K SNP Axiom BOS 1（Affymetrix，Santa Clara，CA）测定，这些测定可以提高精确定位QTL的精度，但令人惊讶的是只有小幅增长在基因组关系系数和GEBV的估计精度方面（Erbe et al。，2012）。在基因型SNP数量增加15倍的情况下，GEBV精确度的小幅增长表明，许多性状具有涉及罕见的QTL变体的潜在遗传结构，其不被商业基因分型测定中包含的常见SNP检测到。根据定义，这意味着使用这些测定法估计的基因组关系矩阵（VanRaden，2008）必须通过个体之间的血统对所实现的基因组特征产生有偏估计。 最近的工作集中在理论（Goddard，2009）和经验评估（Hayes等人，2009; Luan等人，2009; Su等人，2010; VanRaden等人，2009年）估计的GEBV的准确性和Habier等人（2010）经验证明，随着培养和验证数据集的分离次数的增加，精度降低。然而，正式呈现GEBV在选拔候选人中与培训人口个人的相关性和培训人口GEBV的准确性之间关系的结果尚未呈现。在本文中，提出了在最佳线性无偏预测（BLUP）框架下实施GS的结果，包括在训练人群中评估GEBV和ASE的模型的等效性，以及选择候选者之间同时进行GEBV的训练和估计。还提出了可以推导选择候选人中ASE和GEBV的估计精度的采样方差和协方差。">
+  <meta name="twitter:description" content="Taylor JF (2014) Implementation and accuracy of genomic selection. Aquaculture 420–421:S8–S14. doi: 10.1016/j.aquaculture.2013.02.017
+ 抽象 基因组选择正在成为估计植物和动物育种繁殖价值的有力工具。虽然已经提出了许多分析方法来联合估计高密度单核苷酸多态性（SNP）效 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/gs/taylor2014-gs%E7%B2%BE%E5%BA%A6/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/gs/taylor2014-gs%E7%B2%BE%E5%BA%A6/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Taylor2014-GS精度</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (48 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Taylor2014-GS精度</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (48 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Taylor JF (2014) Implementation and accuracy of genomic selection. Aquaculture 420–421:S8–S14. doi: 10.1016/j.aquaculture.2013.02.017</p>
+</blockquote>
+
+<h1 id="抽象">抽象</h1>
+
+<p>基因组选择正在成为估计植物和动物育种繁殖价值的有力工具。虽然已经提出了许多分析方法来联合估计高密度单核苷酸多态性（SNP）效应，但在最佳线性无偏估计的框架内，<strong>基因组选择等同于无表型个体的育种值的预测</strong>，其中理论解决方案于1974年首次出版。<strong>基因组选择简单地用基于标记的实现基因组关系矩阵替代了谱系派生的分子关系矩阵</strong>，这是1997年首次提出的方法。<strong>由高密度SNP基因型的可用性促进的进展是能够精确地估计个体之间实现的关系系数，而不管系统信息的可用性或已应用于人群的选择历史</strong>。然而，<strong>假设SNP基因型的独立性通常估计基因组关系系数，从而忽略连锁不平衡的影响，并且所使用的SNP被总是确定为物种基因组内的常见变异，导致关系系数的过高估计</strong>。产生的<strong>基因组估计育种值（GEBV）的准确性</strong>通常使用不同形式的验证群体进行评估，该验证群体包含不用于估计培训人群中SNP效应的基因型和表型的个体。然而，<strong>这里显示的GEBV精度是训练人口GEBV的准确性和训练和验证人群中个体之间基因组关系的大小的函数</strong>。因此，基因组选择理想地适用于高度准确的GEBV可用于训练群体个体的群体，并且其标记选择的后代继续产生表型并重新进入随后变得动态的训练群体。相反，<strong>基因组选择不太适合于鉴定家族中没有历史上对育种计划，静态培训人群或在遥远相关人群中进行培训和实施的精英个人。</strong>因此，为代价或难以测量表型（如饲料效率或疾病抗性）的基因组选择的实施将需要定期再生表型种群以重新进行GEBV预测方程或鉴定这些性状变异的因果变异。全基因组重新测序的指数降低成本可能很快允许鉴定至少大的效应变体。</p>
+
+<h1 id="介绍">介绍</h1>
+
+<p>基因组选择（GS）首先由Meuwissen等人提出。 （2001）作为预测没有表型的个体的育种值的方法，但已经用高密度标记物进行了基因分型。该方法基于使用应用于表型的线性或非线性贝叶斯模型或可用于包含训练人群的基因分型个体的估计育种值（EBV）来同时<strong>估计每个标记的等位基因替代效应</strong>（ASE），确定在独立验证群体中得到的预测方程的准确性以及应用预测方程以在实施群体内的选择候选者中产生基因组估计育种值（GEBV）。训练人口一词来自于某种形式的模型对基因型和表型进行“训练”以产生ASE和GEBV的估计。验证步骤的目的是使用在独立的一组基因型个体上可用的表型与训练人群中使用的表型，以产生将为选择候选产生的GEBV的准确性的估计。因此，采样以形成验证人群的个体应该代表选择候选人，因为为验证人群制定的GEBV的准确度应该反映在实施人群中为选择候选人所产生的GEBV的准确性。图1显示了每个群体的目的，并说明了静态和动态训练种群之间的差异。这也证明了当培训人口是静态时，验证人群估计GEBV准确性的有限效用，因为实施人群中的个人与训练人群中的个人的相关性随每个选择周期而减少。
+2007年12月，包含54,001个牛单核苷酸多态性（SNP）的BovineSNP50（Illumina，San Diego，CA; Matukumalli等，2009）测定已经可用，<strong>到2009年，GS已在美国乳制品行业实施</strong>（VanRaden et al。 ，2009）。此时，还认识到，<strong>从随机效应模型估计的ASE可用于基因组广泛关联研究（GWAS），用于检测数量性状基因座（QTL）</strong>（Cole等人，2009; Kang等，2010 ; Yang et al。，2011），<strong>并且使用基因组关系矩阵提供了保护，以抵抗基于谱系的分层对ASE估计的影响</strong>（Kang et al。，2010）。然而，<strong>当SNP ASE被联合估计为随机效应时，该方法提供了由标记物联合解释的变化比例的估计，而不是提供标记效应的单独测试</strong>。<strong>单个标记效应的测试可以通过将模型中的每个标记单独地包括为固定效应来产生（例如，Kang等人，2010; Schulman等人，2011）;然而，这高估了每种标记物的效果</strong>，然后不能将其结合起来产生GEBV。最近，Illumina已经发布了778 K SNP BovineHD，Affymetrix发布了640 K SNP Axiom BOS 1（Affymetrix，Santa Clara，CA）测定，这些测定可以提高精确定位QTL的精度，但令人惊讶的是<strong>只有小幅增长在基因组关系系数和GEBV的估计精度方面</strong>（Erbe et al。，2012）。<strong>在基因型SNP数量增加15倍的情况下，GEBV精确度的小幅增长表明，许多性状具有涉及罕见的QTL变体的潜在遗传结构，其不被商业基因分型测定中包含的常见SNP检测到</strong>。根据定义，<strong>这意味着使用这些测定法估计的基因组关系矩阵（VanRaden，2008）必须通过个体之间的血统对所实现的基因组特征产生有偏估计</strong>。
+最近的工作集中在理论（Goddard，2009）和经验评估（Hayes等人，2009; Luan等人，2009; Su等人，2010; VanRaden等人，2009年）估计的GEBV的准确性和Habier等人（2010）经验证明，<strong>随着培养和验证数据集的分离次数的增加，精度降低</strong>。然而，<strong>正式呈现GEBV在选拔候选人中与培训人口个人的相关性和培训人口GEBV的准确性之间关系的结果尚未呈现</strong>。在本文中，提出了在最佳线性无偏预测（BLUP）框架下实施GS的结果，包括在训练人群中评估GEBV和ASE的模型的等效性，以及选择候选者之间同时进行GEBV的训练和估计。还提出了可以推导选择候选人中ASE和GEBV的估计精度的采样方差和协方差。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/thomson1988-%E8%B6%8B%E5%8A%BF%E9%9D%A2-%E8%8A%B1%E6%97%97%E6%9D%BE/" data-toggle="tooltip" data-placement="top" title="Thomson1988-趋势面-花旗松">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/gs/tanaka2017-gs%E7%9A%84%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%BC%98%E5%8C%96/" data-toggle="tooltip" data-placement="top" title="Tanaka2017-GS的贝叶斯优化">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

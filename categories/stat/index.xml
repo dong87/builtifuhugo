@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stat on Dong&#39;s blog</title>
+    <link>/categories/stat/</link>
+    <description>Recent content in Stat on Dong&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>youremail@domain.com (Leiming Dong)</managingEditor>
+    <webMaster>youremail@domain.com (Leiming Dong)</webMaster>
+    <lastBuildDate>Sun, 01 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/stat/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AIC是正确的标准吗？</title>
+      <link>/post/stat/aic%E6%98%AF%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%A0%87%E5%87%86%E5%90%97/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/stat/aic%E6%98%AF%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%A0%87%E5%87%86%E5%90%97/</guid>
+      <description>Is AIC the right criterion?  For small data and frequentist inference, you should use AICc &amp;ndash; the small sample correction which provides greater penalty for each parameter but approaches AIC as *n* becomes large. If it makes a difference, you should use it. (I probably should have used it above.) For large data and frequentist inference , consider BIC, which is asymptotically consistent while AIC is not (see Hastie *et al.</description>
+    </item>
+    
+    <item>
+      <title>Data-Analysis-for-the-Life-Sciences-with-R</title>
+      <link>/post/stat/data-analysis-for-the-life-sciences-with-r/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/stat/data-analysis-for-the-life-sciences-with-r/</guid>
+      <description>##介绍 在20世纪下半叶，数字技术的前所未有的进步产生了一个转变科学的衡量革命。在生命科学中，数据分析现在是几乎每个研究项目的一部分。基因组学，特别是，正在由新的测量技术驱动，使我们第一次观察某些分子实体。这些观察结果导致类似于鉴定微生物和本发明显微镜允许的其它突破的发现。这些技术的选择实例是微阵列和下一代测序。传统上依赖于简单数据分析技术的科学领域已经被这些技术所吸引。在过去，例如，研究人员将测量感兴趣的单个基因的转录水平。今天，可以一次测量所有20,000+个人类基因。诸如这些的进步已经导致从假设向发现驱动的研究的转变。然而，解释从这些大量和复杂数据集提取的信息需要复杂的统计技能，因为人们可能容易被偶然发生的模式所愚弄。这大大提高了生命科学中统计和数据分析的重要性。 ###谁会发现这本书有用？ 这本书是由许多生命科学研究人员写的，他们正在成为数据分析师，因为对上述数据的依赖性增加。如果您正在执行自己的分析，您可能已计算p值，应用Bonferroni更正，执行主成分分析，制作热图或使用下一节中列出的一种或多种技术。如果你不太明白这些技术实际上是做什么，或者如果你不确定你是否正确使用它们，这本书是适合你的。 虽然本书的内容主要集中在高级统计概念，我们从覆盖基础知识开始，以确保所有读者都对所有数据分析所需的基本统计概念有很强的依据。我发现许多入门统计课程的教学方式很难将概念与数据分析联系起来。我们的方法确保你学习实践和理论之间的联系。因此，前两章，推理和探索性数据分析适用于介绍性的本科统计或数据科学课程。在这两个章节之后，统计复杂性的水平相对较快地上升。 虽然这本书的典型读者将有硕士或博士学位，我们努力保持数学内容在本科入门级。你不需要微积分来使用这本书。然而，我们引入和使用被认为比微积分更先进的线性代数。通过在数据分析的上下文中解释线性代数，我们相信你将能够学习基础知识而不知道微积分。更难的部分可能习惯符号和代号。更多关于这一点下面。 ###这本书封面是什么？ 本书将涵盖数据驱动生命科学研究成功所需的几个统计概念和数据分析技能。我们从与计算p值相关的相对基本概念到与分析高通量数据相关的高级主题。 我们从统计学和生命科学中最重要的主题之一开始：统计推断。推断是使用概率从数据中学习群体特征。一个典型的例子是解密两组（例如，病例与对照组）平均值不同。所涉及的具体主题包括t检验，置信区间，关联检验，蒙特卡罗方法，置换检验和统计功效。我们利用通过数学理论可能的近似，例如中心极限定理，以及通过现代计算可能的技术。我们将学习如何计算p值和置信区间，并实施基本的数据分析。在整本书中，我们将描述统计计算机语言R中用于探索新数据集的可视化技术。例如，我们将使用这些来学习何时应用稳健的统计技术。 然后我们将介绍线性模型和矩阵代数。我们将解释为什么使用线性模型来分析组之间的差异是有益的，以及为什么矩阵可用于表示和实现线性模型。我们继续回顾矩阵代数，包括矩阵符号和如何乘以矩阵（在纸上和在R中）。然后我们将应用我们涵盖的矩阵代数到线性模型。我们将学习如何在R中拟合线性模型，如何测试差异的显着性，以及如何估计差异的标准误差。此外，我们将回顾一些拟合线性模型的实际问题，包括共线性和混杂。最后，我们将学习如何拟合复杂模型，包括交互项，如何对比R中的多个项，以及R中的函数实际用于稳定拟合线性模型的强大技术：QR分解。 在本书的第三部分，我们涵盖了与高维数据相关的主题。具体来说，我们描述了多个测试，错误率控制程序，高吞吐量数据的探索性数据分析，p值校正和错误发现率。从这里我们继续覆盖统计建模。特别地，我们将讨论参数分布，包括二项式和伽马分布。接下来，我们将讨论最大似然估计。最后，我们将讨论层次模型和经验贝叶斯技术，以及它们如何应用于基因组学。 然后我们涵盖距离和尺寸缩减的概念。我们将介绍距离的数学定义，并使用它来激励用于维数缩减和多维缩放的奇异值分解（SVD）。一旦我们学到这一点，我们将准备好覆盖层次和k均值聚类。我们将跟踪这一点与机器学习的基本介绍。 我们通过学习批量效应以及如何使用组件和因素分析来应对这一挑战。特别是，我们将研究混杂，显示批次效应的例子，使因子分析的连接，并描述替代变量分析。 ###这本书有什么不同？ 虽然统计教科书侧重于数学，本书着重于使用计算机进行数据分析。这本书遵循Stat Labs1的方法，Deborah Nolan和Terry Speed。而不是解释数学和理论，然后展示例子，我们开始说明一个实际的数据相关的挑战。本书还包括提供问题解决方案并帮助说明解决方案背后的概念的计算机代码。通过自己运行代码，并且看到数据生成和分析发生在现场，你将得到一个更好的直觉的概念，数学和理论。 我们专注于数据分析师在生命科学领域面临的实际挑战，并引入数学作为一种工具，可以帮助我们实现科学目标。此外，在整本书中，我们展示了执行这种分析的R代码，并将代码行连接到我们解释的统计和数学概念。</description>
+    </item>
+    
+    <item>
+      <title>Genome-Wide-Association-Studies-and-Genomic-Prediction</title>
+      <link>/post/stat/genome-wide-association-studies-and-genomic-prediction/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/stat/genome-wide-association-studies-and-genomic-prediction/</guid>
+      <description>第三章 1.1 Frequentist Measures of Evidence 频率或非贝叶斯统计学家将概率视为限制重复事件的频率。 频繁者将认为未知参数具有真实值（仅仅，而不是概率分布），并且基于在假设重复样本下的统计的频率分布进行推断。频率统计学家不喜欢在贝叶斯统计中使用的先验概率分布的主观性。 然而，大多数实践的频率统计学家事实上对未知参数（例如，混合模型中的随机效应）使用先验概率分布，并且使用先验信息（例如，如果他们对于在接受之前需要较低阈值的效果更加怀疑 ）。 频率工作者使用p值，定义为测试统计量在假设复制下在零假设下比观测值更极端的概率
+1.2 Bayesian Measures of Evidence 贝叶斯统计是基于概率理论的统计学[17]。概率理论是在不确定性下作出决策的唯一可靠的方法。尽管使用了几个世纪，但没有更好的方法被证明。概率模型（其中通常所有信息都是“先验”信息）被广泛使用（例如，在人工智能领域）。贝叶斯统计可以被认为是概率建模的一种特殊情况，其中除了先前的信息之外，还可以获得与生成数据的过程的模型一起的数据。贝叶斯统计学家使用概率理论来建模不确定性。贝叶斯定理用于将由概率分布表示的先验信息与生成数据的过程的数据和模型相结合，由似然函数表示。 注意：概率论的贝叶斯概念通常被认为与基于限制重复事件的概率的频率概率论不同。然而，概率论基本上是唯一的 - 这两种理论都满足概率理论的基本公理，因此基本上是相同的。如果无限重复事件序列可用，贝叶斯概率具有相同的限制频率解释。频率论者否认可以为先验信息构建概率模型，同时使用概率模型来确定可能性，其选择通常具有更宽的效应。贝叶斯方法的一个有力的论据是，在实践中，重复事件是假设的并且在实践中不可用，并且只有观察到的数据可用和相关。在统计学中，我们给出观测数据y，并且有兴趣了解未知参数θ。给定关于由概率分布πðθ表示的θ的先验知识和定义所观察数据的概率分布的似然函数fΘyjθ，贝叶斯定理给出了后验分布gðθj的表达式。贝叶斯定理[17]从条件概率的基本属性：对于任何事件A，B：
+2 Power Calculations 2.1 Traditional Power Calculations Power POWER是用所使用的标准检测指定效应的概率。 传统的power计算得出用p≤α检测一个效应的概率，对于给定的效果大小。 *F*检验 考虑一个ANOVA模型，对于被测试的效应具有v1自由度，以及对于误差具有v2自由度。 在零假设下，F统计量具有（中心）F分布。 在替代假设下，F统计量具有非中心F分布。</description>
+    </item>
+    
+    <item>
+      <title>Hierarchical-（Nested）-and-Factorial</title>
+      <link>/post/stat/hierarchical-nested-and-factorial/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/stat/hierarchical-nested-and-factorial/</guid>
+      <description> Hierarchical and Factorial models In globulus, the family (mum) is *nested* within the provenance (gg)
+This is a matter of codification:
+Nested factors （Hierarchical models） gg	mum A	1 A	2 B	3 B	4 Crossed factors （Factorial models） gg	mum A	1 A	2 B	1 B	2   分层（hierarchical）与巢式（nested）意思是一致的；cross与析因（factorial）是一致的。
+ </description>
+    </item>
+    
+    <item>
+      <title>S1--方差分析的方法</title>
+      <link>/post/stat/s1--%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%E7%9A%84%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/stat/s1--%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
+      <description>Venkateswarlu K., 1997 Estimation of Variance Components Based on a Diallel Model Involving Maternal and Maternal Interaction Effects. Biometrical J. 39: 287–295.
+ There are several methods available in the literature for the estimation of variance components. These are: 1. Analysis of Variance (ANOVA), 2. Maximum Likelihood (ML) (HARTLEY and RAO, 1967), 3. Restricted Maximum Likelihood (REML) (PATTERSON and THOMPSON, 1971; CORBEIL and SEARLE, 1976), 4. Minimum Norm Quadratic Unbiased Estimation (MINQUE) (RAo,1971a, 1971b), 5.</description>
+    </item>
+    
+    <item>
+      <title>S3--加性模型-additive-model</title>
+      <link>/post/stat/s3--%E5%8A%A0%E6%80%A7%E6%A8%A1%E5%9E%8B-additive-model/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/stat/s3--%E5%8A%A0%E6%80%A7%E6%A8%A1%E5%9E%8B-additive-model/</guid>
+      <description> A.F. Zuur et al., Mixed Effects Models and Extensions in Ecology with R, p36, chr 3.2
+ 当线性模型的种种条件不能满足时，就要考虑用平滑性模型来替代。平滑性模型可以对非线性关系建模，也被称之作加性模型。加性模型是一般加性模型（GAM）的一类，是具有高斯分布的一般加性模型。 *Y_i* = *α* + *β* × *X_i* + *ε_i*
+线性模型中最重要的是参数β，加性模型中是利用一个平滑函数将Yi 和Xi 连接起来。即： ​Y_i* = *α* + *f* (X_i) + *ε_i ​用平滑曲线*f *(*Xi*)替代了线性模型中的*β × Xi ***。
+线性模型​给了我们一个方程Y和X之间的关系用参数β 量化。GAM中没有这样的方程，只有一个平滑函数，唯一能做的是把它画出来。这不是说不能用于预测了，同样可以，只是没了方程而已。置信区间变成了置信带。 </description>
+    </item>
+    
+    <item>
+      <title>S4--线性回归模型</title>
+      <link>/post/stat/s4--%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/stat/s4--%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/</guid>
+      <description>  A.F. Zuur et al., Mixed Effects Models and Extensions in Ecology with R, p17-25, chr 2.2-2.3
+ 1.模型 *Y_i* = *α* + *β* × *X_i* + *ε_i**
+ε_i包含不能解释的信息，并且*ε_i *∼ N(0*,σ^*2)。 用样本估计​***α 和β*的置信区间，置信区间告诉我们如果重复实验很多次，​*α 和β 的真值落入该区间的可能性。 估计参数​α 和β*需要假设：正态、同质性，固定的X，独立性**及特定而正确的模型。 正态是指对任何X，对应的Y们服从正态分布。同质性是指对于全部的X，对应的Y的高斯密度曲线们都是一样的（下图）。 2.模型验证 模型验证过程，就是验证一系列的假设。 因中心极限定理的缘故，有人说正态性的验证不是一个严重的问题(Sokal andRohlf, 1995; Zar, 1999)。甚至有人说如果样本量够大，正态验证不是必要的(Fitzmaurice et al., 2004)。 对于每个X值处的正态验证，需要对X值处Y值们做直方图。但通常每个X那里没有足够的Y，在这种情况下，最好的做法是把全部的残差混起来做一个直方图。这样做保证了残差的正态性，但我们并不能因此得出整个群体的Y是服从正态分布的。很多时候我们对Y画一个直方图来判断其正态与否，但这是有前提的：在每一个X处都有重复的观测值。否则不能单单根据观测值的直方图来判定其正态性，而是应该利用一个模型，检查残差的分布情况。 ​同质性是要求在每一个X值处，观测值有相同的分散程度。这样判断有点主观，Barlett’s test是客观的方法，但软件要求数据要正态分布，这是有问题的，而且​​​​​Barlett’s test对非正态数据的同质性非常敏感，所以只靠图检残差分布是否一致是更好的选择。严重的异质性是非常要命的。转换数据可以部分解决，但缺点是会改变之间的关系。 独立性的验证是最重要的，因为它能使一些重要的检验如F-test和t-test无效。不独立是指X处的Y值受到另一个X变量的影响​。 在相信获得的F-statistic​并利用5%拒绝水平前，需要确信所有的模型假设都是有效的。标准的模型验证图有（1）残差vs拟合值验证同质性，（2）QQ或直方图验证正态性，（3）残差vs每个自变量检验独立性。 </description>
+    </item>
+    
+    <item>
+      <title>S5--最大似然估计（ML）和REML</title>
+      <link>/post/stat/s5--%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1ml%E5%92%8Creml/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/stat/s5--%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1ml%E5%92%8Creml/</guid>
+      <description>A.F. Zuur et al., Mixed Effects Models and Extensions in Ecology with R, p116-119, chr 5.6
+ 当利用混合效应建模时，你会遇到诸如REML和ML这样的词汇。不像线性回归模型，就算你不知道背后的数学理论也可以照样使用。但是在混合效应建模中，你必须懂得一些相关的数学知识。所以REML是什么意思？它能干什么？ 第一个问题比较简单，REML限制性最大似然估计英文首字母的缩写。但是对于第二个问题，大多数教材在这点上就变得相当专业，或者解释得比较粗略，只是提到它是矫正自由度的一个神秘方法。而我们则选择尝试更为详细地解释它，所以需要利用矩阵代数的知识。但是为了理解REML，首先需要理解最大似然估计的原理，我们从这儿开始。如果你不熟悉矩阵代数，或者如果这一部分对数学水平的要求太高，我们仍建议你跳过这一部分。 我们首先回顾用于线性回归的最大似然，然后给出REML是如何用于矫正方差估计子的。 假设有一个线性回归模型模型中有3个未知参数α, β, and σ。为了简便，θ = (α, β, σ ) 。普通最小二乘是估计θ的一个方法。给出θ中每一个元素的表达式。利用线性回归获取方差估计的表达式是： （5.14） 我们给参数加了一个帽子^，表示它是估计值，n是观测值的个数。可以证明σ^是σ的无偏估计，意味着E（σ^）=σ。现在让我们看一看最大似然估计方法。假设Y_i服从正态分布，其密度函数为 因为我们也假设了Y_i是独立的，可以将Y1,Y2,&amp;hellip;,Yn的联合密度函数写成单个密度曲线f1,f2,&amp;hellip;,fn乘积的形式。这个乘积就叫做似然函数*L*。它是数据和θ的一个函数。问题是如何选择θ使L最高。为了简化，对L取自然对数，得到如下的log-似然方程式：
+我们需要最大化这个式子，问题就变成了对每一个参数偏导，令偏导数=0并求解。因为我们很容易计算，这些偏导数=0的式子称之为封闭解。对于线性混合模型我们将会看到开放解，意思是参数没有直接的解。 这里没有给出α和β估计子的式子，但对于方差我们得到： 注意这个式子与我们利用普通最小二乘得到的式子（5.14）非常相似。实际上，受到因子（n-2）/n的影响，利用最大似然得到的方差估计子是有偏的（S6. 回归分析为什么误差方差中自由度是n-2？）。如果线性回归模型含有*p*个解释变量，那么偏度是（n-p）/n。最大似然是有偏的的原因是它忽略了截距和斜率也被估计的事实。所以我们需要更好的ML估计子，而这正是REML所做的事情。 REML的工作如下：线性回归模型可以写成 ，这是简单的矩阵形式，Xi=（1 Xi），β的第一个元素是截距，第二个元素是原始的β。正态性假设意味着 （5.18）。 用ML估计子的问题是我们不得不估计式子（5.18）中β中的截距和斜率。显然，如果没有β，就能解决问题。为了消除β，可以找到一个维度n × (n – 2) 的特殊矩阵A，特殊指的是“与X&amp;rsquo;正交”，然后用这个矩阵乘以Y=（*Y1*，&amp;hellip;，*Yn*）&amp;rsquo;之后再用ML估计。正交指的是如果A与X相乘，结果是0.因此，我们得到A&amp;rsquo;×Y=A&amp;rsquo;×X×β+A&amp;rsquo;×ε =0+A&amp;rsquo;×ε =A&amp;rsquo;×ε 。现在A&amp;rsquo;×Y的分布是 ，而不再依赖β。那么对A&amp;rsquo;×Y进行似然估计就会得到σ 2的无偏估计子（5.14）。现在我们讨论REML如何应用到混合线性模型。我们的起点是边际模型 。故事又重新开始，如之前，我们可以写一个略微不同的log似然式子。未知参数是β和D及Σ中的元素，依然用θ 表示。似然函数： |Vi| 是Vi的行列式。对β求偏导并=0解方程。如之前讨论的例子，得到的参数是有偏的，因此我们需要REML。 总之，REML，就是用一个特殊的矩阵乘以Y，这样X×β就消去。然后用ML估计得到的参数估计子就是无偏的，并且与特定的矩阵相乘无关。因此，β的REML估计子与ML的估计子不同。如果相对于观测值的个数，固定协变量的个数很少，就没有太大的不同，相反有许多的固定协变量，情况就大不相同。</description>
+    </item>
+    
+    <item>
+      <title>S6--回归分析为什么误差方差中自由度是n-2？</title>
+      <link>/post/stat/s6--%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%AF%E5%B7%AE%E6%96%B9%E5%B7%AE%E4%B8%AD%E8%87%AA%E7%94%B1%E5%BA%A6%E6%98%AFn-2/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/stat/s6--%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%AF%E5%B7%AE%E6%96%B9%E5%B7%AE%E4%B8%AD%E8%87%AA%E7%94%B1%E5%BA%A6%E6%98%AFn-2/</guid>
+      <description>Crawley MJ. Statistics: An Introduction Using R [Internet]. 2nd ed. Wiley; 2014. Available from: http://gen.lib.rus.ec/book/index.php?md5=7039b0c2dae409ebbd1cc9bdb44c10bd p118    当响应变量和解释变量都是连续变量时，我们通常使用的统计方法是回归分析。当想知道适不适合用回归分析时，最简单的方法是做散点图，对于方差分析则做箱线图或是条形图。 回归分析的本质是利用样本数据估计参数值和它们的标准误。但是首先我们需要选择一个能够描述解释变量和响应变量间关系的模型。我们能选的模型有数百个。也许学习回归最重要的事情是模型选择。最简单的模型是线性回归y=a+bx。模型中有2个参数，a和b，a是截距b是斜率。b很重要，有必要弄清楚它涉及的内容。y的变化除以x的变化。 估计出2个参数以后，我们还想知道它们的可靠性或不可靠性。我们最想要的是参数的最大似然估计，就是说，给定数据，选择一个线性模型，我们想找出使数据出现可能性最大的参数。 回归斜率b的最小二乘估计：最佳拟合斜率是通过旋转直线直至找出残差平方和最小。 自由度的估计：我们应当知道与每个均方和相应的自由度。最容易处理的是得到总均方和的，因为它的自由度总是有相同的公式。定义是 ，你可以发现只有一个从数据中估计的参数——均值ybar。因为我们已经从数据中估计了一个参数，所以我们有n-1个自由度（n是观测值的总个数）。第二个比较容易得到的是误差均方和的自由度。 让我们看一下它的式子有多少个参数需要估计 。我们需要知道a和b2个的数值才能计算SSE。它们是从数据中估计的，所以误差的自由度是n-2.这一点很重要，所以重读最后一句话如果你还没有看见它。3个中最困难的是回归的自由度，因为你需要用一个不同的方式去思考。问题是：在y的均值之外有多少个额外的参数？答案是1。那个额外要估计的参数是斜率b。所以这个只有一个解释变量的简单模型中，回归的自由度是1。</description>
+    </item>
+    
+    <item>
+      <title>S7--模型选择</title>
+      <link>/post/stat/s7--%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/stat/s7--%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9/</guid>
+      <description>Crawley MJ. Statistics: An Introduction Using R [Internet]. 2nd ed. Wiley; 2014. Available from: http://gen.lib.rus.ec/book/index.php?md5=7039b0c2dae409ebbd1cc9bdb44c10bd p120   模型选择有2个主要的方法： 1. 基于选择工具比如AIC或BIC。AIC 和BIC 都包含2项，测定模型拟合和模型的复杂度。似然值用于定义拟合测定；参数的个数测定复杂度。log似然函数可以用于测定拟合，但是有2个似然函数，REML 和ML 。 AIC和BIC的区别是，后者考虑了观测值的个数。对于ML，n=n，对于RMEL，n=n-p。这就意味着基于REML的AIC（BIC）和基于ML的AIC（BIC）是不可比的。 2. 假设检验。3中方法，t-统计量、F-统计量或似然比检验。 模型选择的策略：从上至下。</description>
+    </item>
+    
+    <item>
+      <title>Smoothing-Splines-平滑样条</title>
+      <link>/post/stat/smoothing-splines-%E5%B9%B3%E6%BB%91%E6%A0%B7%E6%9D%A1/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/stat/smoothing-splines-%E5%B9%B3%E6%BB%91%E6%A0%B7%E6%9D%A1/</guid>
+      <description>Wang Y. Smoothing Splines: Methods and Applications (Chapman &amp;amp; Hall CRC Monographs on Statistics &amp;amp; Applied Probability) [Internet]. 1st ed. Chapman and Hall/CRC; 2011. Available from: http://gen.lib.rus.ec/book/index.php?md5=2EFF745DDEB91107DC1030287CB70BED   前言 统计分析通常涉及建立检查依赖变量和自变量之间的关系的数学模型。这本书是关于一般类的强大而灵活的建模技术，即样条平滑。平滑样条模型的研究近年来引起了人们的极大关注，并且该方法已经在许多领域得到广泛应用。本书提供了一些基本平滑样条线模型的介绍，包括多项式，周期，球面，薄板，L-和部分样条，以及更高级模型的概述，包括平滑样条线ANOVA，扩展和广义平滑样条ANOVA，矢量样条，非参数非线性回归，半参数回归和半参数混合效应模型。还介绍了模型选择和推理的方法。本书中非参数/半参数线性/非线性固定/混合平滑样条模型的一般形式为估计，推理和软件实现提供了统一的框架。本书借鉴了再现核Hilbert空间（RKHS）的理论，以统一的方式呈现各种平滑样条模型。另一方面，在RKHS和正则化的背景下的平滑样条的主题通常被认为是技术和困难的。我的主要目标之一是使基于RKHS的高级平滑样条法更易于从业者和学生访问。考虑到这一点，本书侧重于方法，计算，实现，软件和应用。它为RKHS提供了温和的介绍，将理论保持在最低水平，并提供了有关如何使用RKHS构建样条模型的细节。用户友好的软件是任何统计方法的常规使用的关键。 R中的辅助库实现本书中提出的用于拟合各种非参数/半参数线性/非线性固定/混合平滑样条模型的方法。辅助库可以在http://www.r-project.org获得。大部分的说明是基于对实例的分析。 这些示例不是形式分析，而是用于说明样条平滑方法的功能和多样性。所有数据分析在R中执行，其中大多数使用辅助库中的函数。与本书相关的所有示例和进一步发展的代码将公布在网页http://www.pstat.ucsb.edu/faculty/yuedong/book.html 本书面向那些想了解平滑样条曲线的人。它可以是需要先进和灵活的建模技术的统计学家和科学家的参考书。它也可以作为一个高级研究生课程的文本。事实上，第1章到第4章的主题在加州大学圣塔芭芭拉分校和中国科学技术大学的四分之一课程中讨论。我确实幸运地学到了平滑样条 GraceWahba，他的先驱工作为许多研究工作铺平了道路，使本书成为可能。我非常感谢我的前学生和合作者Chunlei Ke开发的辅助包。特别感谢刘安娜仔细阅读草稿，纠正了许多错误。几个人帮助我写了这本书的各个阶段：创业，郭文生，大卫恒克利，平马和温迪迈林。我必须感谢我的编辑David Grubbes的耐心和鼓励。最后，我要感谢几位研究人员分享他们的数据集以纳入本书;他们被引用到他们的数据被引入。
+第1章简介 1.1参数和非参数回归 回归分析构建检验因变量与一个或多个自变量的关系的数学模型。这些模型可以用于预测自变量的未观察值和/或未来值的响应。在简单情况下，从属变量y和独立变量x都是标量变量，给定对于i = 1，&amp;hellip;的观察值（xi，yi）。 。 。 ，n，回归模型关联依赖和自变量如下： 其中f是回归函数，ei是具有共同方差σ2的零均值独立随机误差。回归分析的目的是构建f的模型，并基于噪声数据进行估计。 例如，对于黄石国家公园的老忠实喷泉，考虑使用先前喷发的长度预测下一次喷发的等待时间的问题。图1.1（a）显示了来自旧忠实喷泉的272次观测的等待时间到下一次喷发（y =等待）对先前喷发持续时间（x =持续时间）的散点图。目标是建立一个数学模型，将等待时间与先前喷发的持续时间相关联。第一次尝试可能是通过直线近似回归函数f 最小二乘直线拟合如图1.1（a）所示。没有明显的缺乏适应的迹象。此外，在图1.1（b）中的残差图中没有明显的可见趋势。通常f在x中是非线性的。处理非线性关系的常见方法是通过阶m的多项式近似f 图1.2显示了模拟摩托车碰撞实验对冲击头盔的功效的加速度（y =加速度）对冲击后时间（x =时间）的散点图。很明显，直线不能解释加速度和时间之间的关系。多元醇，m = 1，。 。 。 ，20被拟合到数据，并且图1.2示出了由Akaike的信息标准（AIC）选择的最佳拟合。在范围的两端的拟合曲线中存在波浪。即使考虑到高达20阶的多项式，拟合仍然不能完全令人满意。与线性回归模型（1.2）不同，除了小m，模型（1.3）中的系数不再有很好的解释。 一般来说，参数回归模型假定f的形式是已知的，除了有限多个未知参数。 f的具体形式可以来自科学理论和/或在一些简化假设下的力学近似。这些假设可能太限制，并且对于一些应用，近似可能太粗糙。不适当的模型可能导致系统偏差和误导性结论。在实践中，应该总是检查函数f的假设形式。 获得f的特定功能形式通常是困难的，即使不是不可能的。非参数回归模型不采用预定义形式。相反，它对f的定性性质做出假设。例如，可以愿意假设f是“平滑的”，其不会减少到具有有限数量的参数的特定形式。相反，它通常导致一些无限维函数集合。非参数回归的基本思想是让数据自己说话。这就是让数据决定哪个函数最适合，而不在f上强加任何特定的形式。因此，非参数方法通常更灵活。它们可以揭示数据中可能被遗漏的结构。 为了说明，我们将三次样条拟合到间歇数据。三次样条是一个特殊的非参数回归模型，将在1.2节中介绍。对来自线性模型（1.2）的残差的三次样条拟合显示出图1.3（a）中的非零趋势。这提出了一个简单的线性回归模型是否适合间歇泉数据的问题。对原始数据的三次样条拟合如图1.3（b）所示。它揭示了在自变量中有两个聚类，并且每个聚类可能需要不同的线性模型。第2.10,3.8和3.9节包含对间歇泉数据的更多分析。摩托车数据的三次样条拟合如图1.4所示。它比多项式模型更好地拟合数据。第2.10,3.8,5.4.1和6.4节包含了对摩托车数据的更多分析。 上述简单的说明表明，非参数回归技术可以应用于回归分析中的不同步骤：数据探索，建模，测试参数模型和诊断。事实上，如整个书中所示，样条平滑是用于建立统计模型以利用数据中的结构的强大且通用的工具。
+1.2多项式样条 多项式（1.3）是一个全局模型，使其对局部变化的适应性较差。个人观察可能对偏远地区的适应有不当影响。例如，在摩托车数据中，平均函数的行为从一个区域到另一个区域急剧变化。 这些局部变化导致在多项式拟合的范围的两端的振荡。克服这种限制的一个自然方法是使用分段多项式，多项式样条曲线的基本思想。令a &amp;lt;t1 &amp;lt;&amp;hellip; &amp;lt;tk &amp;lt;b是称为节点的固定点。令t0 = a和tk + 1 = b。粗略地说，多项式样条是在结处平滑连接在一起的分段多项式。形式上，阶数r的多项式样条是[a，b]，f（t）上的实值函数，使得 （i）f是阶数r on [ti，ti + 1）的分段多项式，i = 0,1，&amp;hellip;， 。 。 ，k; （ii）f具有r -2个连续导数，并且（r -1）st导数是具有节点跳跃的阶跃函数 现在考虑甚至表示为r = 2m的订单。如果除了（i）和（ii）之外，函数f是2m的自然多项式样条，其满足自然边界条件 （iii）f（j）（a）= f（j）（b）= 0，j = m。 。 。 ，2m-1。 自然边界条件意味着f是在两个外部子间隔[a，t1]和[tk，b]上的阶m的多项式。用节点t1，表示2m的自然多项式样条函数空间。 。 。 ，tk作为NS2m（t1，&amp;hellip;，tk）。一种被称为回归样条的方法是使用多项式样条或自然多项式样条近似f。为了获得良好的效果，需要决定结的数量和位置。本书涵盖了一种称为平滑样条的不同方法。它从f的一个明确定义的模型空间开始，并引入一个惩罚，以防止过度拟合。我们现在描述这种多项式样条的方法。考虑回归模型（1.</description>
+    </item>
+    
+    <item>
+      <title>k折交叉验证-modelr和broom包</title>
+      <link>/post/stat/k%E6%8A%98%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81-modelr%E5%92%8Cbroom%E5%8C%85/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/stat/k%E6%8A%98%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81-modelr%E5%92%8Cbroom%E5%8C%85/</guid>
+      <description>2016年12月3日 使用modelr和扫帚的k折交叉验证 @drsimonj这里讨论如何进行k-折交叉验证，对通过评估模型支持重点大卫·罗宾逊的 扫帚包。 完全学分制此亦大卫，因为这是一个稍微更详细的版本他的过去后 ，这是我以前看过一段时间，感觉就像拆包。 假设知识：K折交叉验证 这个帖子假设你知道什么k折交叉验证。 如果你想刷了，这里有一个从斯坦福大学的教授特雷弗·黑斯蒂和Rob Tibshirani梦幻般的教程 。 创建折叠 担心模型之前，我们就可以产生k个折叠使用crossv_kfold 从modelr包。 让我们从实践mtcars 数据让事情变得简单。
+library(modelr) set.seed(1) # Run to replicate this post folds &amp;lt;- crossv_kfold(mtcars, k = 5) folds #&amp;gt; # A tibble: 5 × 3 #&amp;gt; train test .id #&amp;gt; &amp;lt;list&amp;gt; &amp;lt;list&amp;gt; &amp;lt;chr&amp;gt; #&amp;gt; 1 &amp;lt;S3: resample&amp;gt; &amp;lt;S3: resample&amp;gt; 1 #&amp;gt; 2 &amp;lt;S3: resample&amp;gt; &amp;lt;S3: resample&amp;gt; 2 #&amp;gt; 3 &amp;lt;S3: resample&amp;gt; &amp;lt;S3: resample&amp;gt; 3 #&amp;gt; 4 &amp;lt;S3: resample&amp;gt; &amp;lt;S3: resample&amp;gt; 4 #&amp;gt; 5 &amp;lt;S3: resample&amp;gt; &amp;lt;S3: resample&amp;gt; 5  该函数接受一个数据帧，并随机划分它的行（1到32 mtcars ）到k 大致相等组。 我们已经分配的行数为k = 5 组。 结果作为像上面那样的小块（数据帧）返回。 在每个单元test 列包含一个resample 对象，这是参照在数据帧的行的子集的一种有效的方法（ ?</description>
+    </item>
+    
+    <item>
+      <title>仔细评估模型预测</title>
+      <link>/post/stat/%E4%BB%94%E7%BB%86%E8%AF%84%E4%BC%B0%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/stat/%E4%BB%94%E7%BB%86%E8%AF%84%E4%BC%B0%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/</guid>
+      <description>仔细评估模型预测 2016年12月2日 由约翰·摩
+（本文首次发表于的R -赢矢量博客 ，并亲切地促进了R-博客）
+有一件事我教的是：评估回归模型的性能时， 你不应该使用关联作为你的分数 。 这是因为相关性告诉你结果的重新缩放是否有用，但是你想知道手中的结果是否真的有用。 例如：火星气候轨道器软件在磅-秒为单位期待的命令发出推力命令，发动机是在牛顿秒为单位 。 这两个量通过1.4881639的常数比相关，因此以磅 - 秒为单位测量的任何值与以牛顿 - 秒为单位的相同测量值具有1.0的相关性。 然而，一个不是另一个，区别是为什么火星气候轨道器“遇到火星在低于预期的高度和由于大气压力分解。 需要毫无意外地引发了与计算相关相关的隐式重新缩放方便的直接F-测试是我们提供的原因之一SIGR [- R库。 然而，即使事情可能变得混乱。
+
+请阅读一个讨厌的小例子。
+考虑以下“无害数据帧”。
+d &amp;lt;-data.frame（prediction = c（0,0，-1，-2,0,0，-1，-2）， actual = c（2,3,1,2,2,3,1,2））
+检查“的质量推荐的测试prediction 相关的”，“ actual ”是F-检验（这是测试stats::lm 使用）。 我们可以直接运行该测试sigr （假设我们已经安装包），如下所示：
+sigr :: formatFTest（d，&amp;rsquo;prediction&amp;rsquo;，&amp;rsquo;actual&amp;rsquo;，format =&amp;lsquo;html&amp;rsquo;）$ formatStr
+F测试总结*：（R 2  = -16，F（1,6）=* - *5.6，P* = NS）。 sigr 报告的R平方-16（请参阅这里的R平方的一些讨论）。 这可能是混乱的，但它正确传达我们没有模式，实际上是“ prediction ”是比只使用平均（一个非常传统的空模型）差。 然而， cor.test 似乎认为“ prediction ”是一个可用的模型：
+cor.test（d $ prediction，d $ actual） Pearson的乘积矩相关 data：d $ prediction和d $ actual t = 1.</description>
+    </item>
+    
+    <item>
+      <title>半参数模型</title>
+      <link>/post/stat/%E5%8D%8A%E5%8F%82%E6%95%B0%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/stat/%E5%8D%8A%E5%8F%82%E6%95%B0%E6%A8%A1%E5%9E%8B/</guid>
+      <description>  Kosorok MR (2008) Introduction to empirical processes and semiparametric inference, 1st edn. Springer
+ 3.1半参数模型和效率 统计模型是在样本空间*X*上的概率测量{P∈P}的集合。这样的模型可以以P = {Pθ：θ∈Θ}的形式表示，其中θ是一些参数空间。 半参数模型是其中Θ具有一个或多个无限维分量的统计模型。 例如，线性回归模型的参数空间（1.1），其中 Y = β&amp;rsquo;Z + e 由两个分量组成，即p维欧氏空间的子集（对于回归参数β）和（e，Z）的所有联合分布函数的无限维空间。半参数推理的目的是建立用于评估半参数模型参数的最佳估计量和测试统计量。
+[学习资料] 参数、非参、半参模型 参数回归是我们最长用的模型。与参数回归相对的非参数回归，这种模型对变量分布等假定并不是很严等，因此可以说扩展了参数回归的应用范围。但是非参数回归的局限性在于，在存在较多的解释变量时，很容易出现所谓的“维度灾难”，像方差的急剧增大等现象。这类模型包括实例回归，局部加权回归（LOESS）和样条回归。非参数方法一般适用于低维空间（较少的解释变量）。该局部加权回归曲线是利用点附近的点信息，使用的点信息越多，曲线与拟合直线越接近；使用的点信息越少，与散点越吻合。在变量间非线性关联较强的情况下，相比普通回归，通常更稳健一些。 介于参数回归与非参回归之间的就是半参数模型，这种模型结合了前面两种参数模型的诸多优点，例如使用的连接函数、分析形式多样化，而且光滑参数值的确认均可以使用广义交叉验证技术。其应用情景首先是因变量在不符合正态分布时，该模型的结果仍然很稳定，我们可以选择不同的分布形式等。非参数模型的另一个典型应用是可以对具有截尾数据的资料进行生存预测。例如，普通生存分析，并没有很好的解决多解释变量的情况，并且对分布有特定的需求，而且当相关假定违反时，往往会对模型产生很大的影响，半参数生存分析回归模型克服了上述参数法的诸多局限，可以灵活地处理许多未知分布与不服从参数分布类型的资料。 另外，一个比较容易混淆的是广义可加模型（使用连接函数的可加模型），与广义线性模型很相似，主要使用非参估计的方法。 </description>
+    </item>
+    
+    <item>
+      <title>协方差矩阵，协方差结构</title>
+      <link>/post/stat/%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/stat/%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%BB%93%E6%9E%84/</guid>
+      <description> by KAREN GRACE-MARTIN
+ 学习高水平统计学时，最难理解的概念是协方差矩阵和协方差结构。理解它们是学习一些统计分析尤其是混合模型和结构方程模型的基础。一旦了解它们，你会发现其实没那么可怕。
+  什么是协方差矩阵? 让我们从矩阵开始。矩阵是线性代数里的一个概念，强烈建议学习这门课程。你可以用矩阵处理很多非常复杂的、数学上的事情。但作为一个研究人员和数据分析人员，不需要用矩阵解决全部的复杂处理。你只需要知道矩阵是什么，理解概念，了解一些简单的矩阵处理，比如一个矩阵乘以一个常数。如果这还不行，你得知道矩阵就是一个表格。 和许多统计中利用的矩阵类似，协方差矩阵是对称的。举一个最简单的例子，相关矩阵。 如果这个写成矩阵的形式，你只能看到数字，而没有行列名。协方差矩阵与之相像，但也有不同。 协方差只是未标准化的相关——为了计算相关，我们用两个变量的标准差除协方差，消除测量单位。所以协方差只是用原始变量的单位测定的相关。协方差又不像相关，不被限制于-1~1之间，协方差=0和相关=0的意思是一样的——没有线性关系。由于协方差是带单位的，值越大，相应的变量分布就越广。对角元素是每个变量的方差。
+ 什么是协方差结构? 协方差结构是协方差矩阵的模式。有以下几类： 复合对称（Compound Symmetry），方差组分（Variance Components），非结构化（Unstructured）。它们只是模式的说明。比如复合对称结果仅仅是指所有方差相等，所有协方差也相等，对应于单变量方法。但是对于不同尺度的变量是无意义的。方差组分是指每个方差都不相同，并且全部协方差=0。如果变量完全独立，并且彼此测量尺度不同，才是有意义的模式。非结构化是指根本没有模式，每个方差和协方差完全不同，彼此间没有关系，对应于多变量方法。协方差结构有很多种，只有在特定的统计条件下才有意义。
+  </description>
+    </item>
+    
+    <item>
+      <title>无标题文章</title>
+      <link>/post/stat/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/stat/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/</guid>
+      <description>线性模型是统计实践的核心。它们是任何应用统计学家所期望的核心知识的一部分。线性模型是广泛的统计方法的基础;这本书是从线性模型成长的技术的调查。我们的起点是回归模型，响应y和预测变量x1，&amp;hellip; xp。该模型采用以下形式：y =β0+β1x1+ &amp;hellip; +βpxp+ε 其中ε是正态分布的。本书介绍了这个框架的三个扩展。第一个概括了y部分;第二，ε部分;第三，线性模型的x部分。 广义线性模型GLM：标准线性模型不能处理非正态响应y，如计数或比例。这促进了可以表示分类，二进制和其他响应类型的广义线性模型的发展。 混合效应模型 LMM：某些数据具有分组，嵌套或层次结构。重复的措施，纵向和多层数据包括对同一个人或群体进行的几个观察。这导致误差ε中的相关结构。混合效应模型允许这种数据的建模。 非参数回归模型：在线性模型中，预测变量x以线性方式组合以模拟对响应的影响。有时，这种线性度不足以捕获数据的结构，需要更多的灵活性。诸如加性模型，树和神经网络的方法允许以非参数方式组合预测结果的响应的更灵活的回归建模。
+线性模型是统计实践的核心。它们是任何应用统计学家所期望的核心知识的一部分。线性模型是广泛的统计方法的基础;这本书是从线性模型成长的技术的调查。我们的起点是回归模型，响应y和预测变量x1，&amp;hellip; xp。该模型采用以下形式：y =β0+β1x1+ &amp;hellip; +βpxp+ε 其中ε是正态分布的。本书介绍了这个框架的三个扩展。第一个概括了y部分;第二，ε部分;第三，线性模型的x部分。 广义线性模型GLM：标准线性模型不能处理非正态响应y，如计数或比例。这促进了可以表示分类，二进制和其他响应类型的广义线性模型的发展。 混合效应模型 LMM：某些数据具有分组，嵌套或层次结构。重复的措施，纵向和多层数据包括对同一个人或群体进行的几个观察。这导致误差ε中的相关结构。混合效应模型允许这种数据的建模。 非参数回归模型：在线性模型中，预测变量x以线性方式组合以模拟对响应的影响。有时，这种线性度不足以捕获数据的结构，需要更多的灵活性。诸如加性模型，树和神经网络的方法允许以非参数方式组合预测结果的响应的更灵活的回归建模。
+线性模型是统计实践的核心。它们是任何应用统计学家所期望的核心知识的一部分。线性模型是广泛的统计方法的基础;这本书是从线性模型成长的技术的调查。我们的起点是回归模型，响应y和预测变量x1，&amp;hellip; xp。该模型采用以下形式：y =β0+β1x1+ &amp;hellip; +βpxp+ε 其中ε是正态分布的。本书介绍了这个框架的三个扩展。第一个概括了y部分;第二，ε部分;第三，线性模型的x部分。 广义线性模型GLM：标准线性模型不能处理非正态响应y，如计数或比例。这促进了可以表示分类，二进制和其他响应类型的广义线性模型的发展。 混合效应模型 LMM：某些数据具有分组，嵌套或层次结构。重复的措施，纵向和多层数据包括对同一个人或群体进行的几个观察。这导致误差ε中的相关结构。混合效应模型允许这种数据的建模。 非参数回归模型：在线性模型中，预测变量x以线性方式组合以模拟对响应的影响。有时，这种线性度不足以捕获数据的结构，需要更多的灵活性。诸如加性模型，树和神经网络的方法允许以非参数方式组合预测结果的响应的更灵活的回归建模。</description>
+    </item>
+    
+    <item>
+      <title>空间自相关</title>
+      <link>/post/stat/%E7%A9%BA%E9%97%B4%E8%87%AA%E7%9B%B8%E5%85%B3/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/stat/%E7%A9%BA%E9%97%B4%E8%87%AA%E7%9B%B8%E5%85%B3/</guid>
+      <description>https://github.com/famuvie/breedR/wiki/Overview#hierarchical-and-factorial-models
+ 概念 环境因素影响响应值，造成距离更近的个体之间比距离远的个体间更相似。它会影响估计值和估计精度。这是试验要随机到空间区组中去的原因。
+残差图 空间自相关的诊断（残差变异函数variograms of residuals）  Isotropic variogram： 不考虑方向The empirical isotropic variogram is built by aggregating all the pairs of points separated by (h),no matter the direction.  - Row/Column variogram: 行列The empirical row/col variogram is built by aggregating all the pairs of points separated by exactly (x) rows and (y) columns.
+ Anisotropic variogram:方向相同 The empirical anisotropic variogram is built by aggregating all the pairs of points in the same direction separated by x.</description>
+    </item>
+    
+  </channel>
+</rss>

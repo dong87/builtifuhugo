@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Frentiu2008-无谱系动物模型-基于分子标记构建谱系</title>
+  <meta property="og:title" content="Frentiu2008-无谱系动物模型-基于分子标记构建谱系" />
+  <meta name="twitter:title" content="Frentiu2008-无谱系动物模型-基于分子标记构建谱系" />
+  <meta name="description" content="Frentiu FD, et al. (2008) Pedigree-free animal models: the relatedness matrix reloaded. Proc Biol Sci / R Soc 275(1635):639–647.   动物模型通常需要已知的遗传家谱来估计定量遗传参数。在这里我们测试动物模型是否可以基于完全源自分子标记数据的相关性的估计。我们的案例研究是野生鸟类的形态，我们报告的遗传方差协方差矩阵（G）六个形态特征的使用三种方法：传统的动物模型;基于分子标记的方法基于Ritland成对回归法估计遗传率;以及使用布置在关联矩阵（R）中的分子系谱来替代动物模型中的谱系的新方法。使用传统的动物模型，我们发现所有六个性状和积极的遗传协方差性状的重大遗传变异。成对回归方法没有返回该群体中定量遗传参数的可靠估计，遗传方差和协方差的估计通常非常小或为负。相比之下，我们发现使用无血统动物模型的混合证据。与成对回归方法类似，当使用基于分子谱的全秩R矩阵时，无系谱方法表现不佳。然而，当我们降低R矩阵的维数以便最大化信噪比时，性能显着改善。使用降序R矩阵产生的遗传方差的估计更接近那些从传统模型。然而，这种方法在估计协方差方面不太可靠，通常估计为负值。总之，这些结果表明无血统动物模型可以恢复定量遗传信息，虽然信号仍然相对较弱。仍然需要确定这个问题是否可以通过使用更强大的电池分子标记和改进的家谱重建方法来克服。
+##1.引言 动物模型对野生种群的应用有可能彻底改变我们对自然环境中进化遗传学的理解（Kruuk 2004）。这是因为在最广泛的意义上，动物模型是简单的基于个体的混合模型，使用已知的谱系来估计个体之间的相关性，从而估计一定范围的定量遗传参数（Lynch＆Walsh 1998）。动物模型为研究野生种群提供这样的前景的关键原因是，这种方法可以使用天然谱系在自然条件下提取定量遗传信息。相比之下，大多数定量遗传技术需要育种实验，因此主要限于实验室或农业研究（Falconer＆Mackay 1996）。动物模型现已应用于许多人群，以解决各种问题，如健康遗传（Kruuk等人，2000），进化停滞（MerilaĄL等人2001; Kruuk等人2002），性选择和着色Hadfield＆Owens 2006; Hadfield等人2006,2007），条件依赖（Gleeson等人2005），亲本关怀（MacColl＆Hatchwell 2003），收获的遗传后果（Coltman等人2003）和进化反应气候变化（Brommer et al。2005）。然而，对动物模型方法的这种广泛关注导致认识到对已知谱系的需要本身是一种限制。使用动物模型到目前为止的大多数研究关注的是已经成为长期项目主题的人群（Kruuk et al.2000,2001,2002;MerilaĄL＆Sheldon 2000;MerilaĄLet al.2001; Coltman et al。 2003; Garant等人2004,2005; McCleery等人2004; Charmantier等人2006a，b）。对于个体交配和繁殖模式的长期信息的需要限制了可以使用动物模型的群体的范围和类型*。克服这种限制的一种方法是使用分子标记数据来估计群体中个体之间的遗传关系，然后使用所得的相关性矩阵代替已知的谱系来构建动物模型（Lynch＆Walsh 1998; Garant＆ Kruuk 2005; Rodr ?sguez-Ramilo等人2007）。这种方法可以允许动物模型框架扩展到任何人口，有可能基于分子标记数据获得可靠的相关性估计（Moore＆Kukuk 2002），这将大大扩展潜在应用范围，如果该方法被证明稳健。然而，这种方法尚未在任何人口中得到充分实施。因此，本研究的总体目的是测试动物模型是否确实可以基于完全源于分子标记数据的相关性的估计。
+使用来自分子标记数据的相关性估计来估计定量遗传参数的想法已经被许多工作者研究（Mousseau等人1998; Thomas＆Hill 2000; Thomas等人2000; Thomas 2005）特别是由Ritland开发的（1996,2000a，b; Ritland＆Ritland 1996）。虽然RitlandĄŚs方法在概念上类似于我们在这里讨论的无血统动物模型，但两者之间存在主要差异。其中最重要的是RitlandĄSs方法基于对遗传相关性的成对估计的表型相似性的回归成对估计（Ritland 1996）。这种方法的局限性包括由于相关性估计的非独立性而导致的估计显着性的困难，并且力矩相关性测量方法不提供在整个人群内部一致的估计。相比之下，我们在这里探讨的无血统动物模型方法是基于肯定的相关性矩阵（即多个个体之间的相关性是一致的），并且允许动物模型的全部功能（和方便性）应用于估计定量遗传参数。我们将无血统动物模型应用于在澳大利亚大堡礁上的小珊瑚礁Heron岛上的自由生活的摩羯座（Zosterops lateralis chlorocephalus）的例子。这个研究人群非常适合我们的需要，因为我们可以从行为信息构建已知的谱系（Kikkawa＆Wilson 1983; Robertson et al。2001），我们以前用来估计遗传力和遗传相关性的一系列形态性状基于谱系的动物模型（Frentiu et al。2007）。此外，我们有一个数据集，包括在交叉培育实验中使用的个人（Frentiu等人2007），最大限度地减少了共享基因的影响被共享环境的影响膨胀的程度。最后，这种鸟类群体的形态学的定量遗传基础是内在的兴趣，因为它是一个异常大的岛屿种族的例子，显示了岛屿雀形目鸟类的特征模式（Clegg＆Owens 2002），演化到大约40％ （Clegg等人2002a，b; Robinson-Wolrath＆Owens 2003; Scott等人2003; Frentiu等人2007）中大于其大陆对应物。研究的具体目的是：（i）开发一系列多态分子标记，并确定它们是否能够区分近亲（完全兄弟）和无关个体，（ii）估计六个形态性状的定量遗传参数，使用RitlandĄŚs成对回归方法，并将这些与基于谱系的传统动物模型的估计进行比较，（iii）使用分子谱系开发无系谱动物模型，（iv）确定无谱系与传统动物模型的有效性在估计定量遗传参数，和（v）探索增加分子谱系方法的力量的方法。">
+  <meta property="og:description" content="Frentiu FD, et al. (2008) Pedigree-free animal models: the relatedness matrix reloaded. Proc Biol Sci / R Soc 275(1635):639–647.   动物模型通常需要已知的遗传家谱来估计定量遗传参数。在这里我们测试动物模型是否可以基于完全源自分子标记数据的相关性的估计。我们的案例研究是野生鸟类的形态，我们报告的遗传方差协方差矩阵（G）六个形态特征的使用三种方法：传统的动物模型;基于分子标记的方法基于Ritland成对回归法估计遗传率;以及使用布置在关联矩阵（R）中的分子系谱来替代动物模型中的谱系的新方法。使用传统的动物模型，我们发现所有六个性状和积极的遗传协方差性状的重大遗传变异。成对回归方法没有返回该群体中定量遗传参数的可靠估计，遗传方差和协方差的估计通常非常小或为负。相比之下，我们发现使用无血统动物模型的混合证据。与成对回归方法类似，当使用基于分子谱的全秩R矩阵时，无系谱方法表现不佳。然而，当我们降低R矩阵的维数以便最大化信噪比时，性能显着改善。使用降序R矩阵产生的遗传方差的估计更接近那些从传统模型。然而，这种方法在估计协方差方面不太可靠，通常估计为负值。总之，这些结果表明无血统动物模型可以恢复定量遗传信息，虽然信号仍然相对较弱。仍然需要确定这个问题是否可以通过使用更强大的电池分子标记和改进的家谱重建方法来克服。
+##1.引言 动物模型对野生种群的应用有可能彻底改变我们对自然环境中进化遗传学的理解（Kruuk 2004）。这是因为在最广泛的意义上，动物模型是简单的基于个体的混合模型，使用已知的谱系来估计个体之间的相关性，从而估计一定范围的定量遗传参数（Lynch＆Walsh 1998）。动物模型为研究野生种群提供这样的前景的关键原因是，这种方法可以使用天然谱系在自然条件下提取定量遗传信息。相比之下，大多数定量遗传技术需要育种实验，因此主要限于实验室或农业研究（Falconer＆Mackay 1996）。动物模型现已应用于许多人群，以解决各种问题，如健康遗传（Kruuk等人，2000），进化停滞（MerilaĄL等人2001; Kruuk等人2002），性选择和着色Hadfield＆Owens 2006; Hadfield等人2006,2007），条件依赖（Gleeson等人2005），亲本关怀（MacColl＆Hatchwell 2003），收获的遗传后果（Coltman等人2003）和进化反应气候变化（Brommer et al。2005）。然而，对动物模型方法的这种广泛关注导致认识到对已知谱系的需要本身是一种限制。使用动物模型到目前为止的大多数研究关注的是已经成为长期项目主题的人群（Kruuk et al.2000,2001,2002;MerilaĄL＆Sheldon 2000;MerilaĄLet al.2001; Coltman et al。 2003; Garant等人2004,2005; McCleery等人2004; Charmantier等人2006a，b）。对于个体交配和繁殖模式的长期信息的需要限制了可以使用动物模型的群体的范围和类型*。克服这种限制的一种方法是使用分子标记数据来估计群体中个体之间的遗传关系，然后使用所得的相关性矩阵代替已知的谱系来构建动物模型（Lynch＆Walsh 1998; Garant＆ Kruuk 2005; Rodr ?sguez-Ramilo等人2007）。这种方法可以允许动物模型框架扩展到任何人口，有可能基于分子标记数据获得可靠的相关性估计（Moore＆Kukuk 2002），这将大大扩展潜在应用范围，如果该方法被证明稳健。然而，这种方法尚未在任何人口中得到充分实施。因此，本研究的总体目的是测试动物模型是否确实可以基于完全源于分子标记数据的相关性的估计。
+使用来自分子标记数据的相关性估计来估计定量遗传参数的想法已经被许多工作者研究（Mousseau等人1998; Thomas＆Hill 2000; Thomas等人2000; Thomas 2005）特别是由Ritland开发的（1996,2000a，b; Ritland＆Ritland 1996）。虽然RitlandĄŚs方法在概念上类似于我们在这里讨论的无血统动物模型，但两者之间存在主要差异。其中最重要的是RitlandĄSs方法基于对遗传相关性的成对估计的表型相似性的回归成对估计（Ritland 1996）。这种方法的局限性包括由于相关性估计的非独立性而导致的估计显着性的困难，并且力矩相关性测量方法不提供在整个人群内部一致的估计。相比之下，我们在这里探讨的无血统动物模型方法是基于肯定的相关性矩阵（即多个个体之间的相关性是一致的），并且允许动物模型的全部功能（和方便性）应用于估计定量遗传参数。我们将无血统动物模型应用于在澳大利亚大堡礁上的小珊瑚礁Heron岛上的自由生活的摩羯座（Zosterops lateralis chlorocephalus）的例子。这个研究人群非常适合我们的需要，因为我们可以从行为信息构建已知的谱系（Kikkawa＆Wilson 1983; Robertson et al。2001），我们以前用来估计遗传力和遗传相关性的一系列形态性状基于谱系的动物模型（Frentiu et al。2007）。此外，我们有一个数据集，包括在交叉培育实验中使用的个人（Frentiu等人2007），最大限度地减少了共享基因的影响被共享环境的影响膨胀的程度。最后，这种鸟类群体的形态学的定量遗传基础是内在的兴趣，因为它是一个异常大的岛屿种族的例子，显示了岛屿雀形目鸟类的特征模式（Clegg＆Owens 2002），演化到大约40％ （Clegg等人2002a，b; Robinson-Wolrath＆Owens 2003; Scott等人2003; Frentiu等人2007）中大于其大陆对应物。研究的具体目的是：（i）开发一系列多态分子标记，并确定它们是否能够区分近亲（完全兄弟）和无关个体，（ii）估计六个形态性状的定量遗传参数，使用RitlandĄŚs成对回归方法，并将这些与基于谱系的传统动物模型的估计进行比较，（iii）使用分子谱系开发无系谱动物模型，（iv）确定无谱系与传统动物模型的有效性在估计定量遗传参数，和（v）探索增加分子谱系方法的力量的方法。">
+  <meta name="twitter:description" content="Frentiu FD, et al. (2008) Pedigree-free animal models: the relatedness matrix reloaded. Proc Biol Sci / R Soc 275(1635):639–647.   动物模型通常需要已知的遗传家谱来估计定量遗传参数。在这里我们测试动物模型是否可以基于完全源自分子标记数据的相关性的估计。我们的案例研究是野 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/frentiu2008-%E6%97%A0%E8%B0%B1%E7%B3%BB%E5%8A%A8%E7%89%A9%E6%A8%A1%E5%9E%8B-%E5%9F%BA%E4%BA%8E%E5%88%86%E5%AD%90%E6%A0%87%E8%AE%B0%E6%9E%84%E5%BB%BA%E8%B0%B1%E7%B3%BB/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/frentiu2008-%E6%97%A0%E8%B0%B1%E7%B3%BB%E5%8A%A8%E7%89%A9%E6%A8%A1%E5%9E%8B-%E5%9F%BA%E4%BA%8E%E5%88%86%E5%AD%90%E6%A0%87%E8%AE%B0%E6%9E%84%E5%BB%BA%E8%B0%B1%E7%B3%BB/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Frentiu2008-无谱系动物模型-基于分子标记构建谱系</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (72 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Frentiu2008-无谱系动物模型-基于分子标记构建谱系</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (72 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<ol>
+<li>Frentiu FD, et al. (2008) Pedigree-free animal models: the relatedness matrix reloaded. Proc Biol Sci / R Soc 275(1635):639–647.</li>
+</ol>
+</blockquote>
+
+<p><strong>动物模型通常需要已知的遗传家谱来估计定量遗传参数</strong>。在这里我们测试动物模型是否可以<strong>基于完全源自分子标记数据的相关性的估计</strong>。我们的案例研究是野生鸟类的形态，我们报告的遗传方差协方差矩阵（G）六个形态特征的使用三种方法：传统的动物模型;<strong>基于分子标记的方法基于Ritland成对回归法估计遗传率</strong>;以及使用布置在关联矩阵（R）中的分子系谱来替代动物模型中的谱系的新方法。使用传统的动物模型，我们发现所有六个性状和积极的遗传协方差性状的重大遗传变异。成对回归方法没有返回该群体中定量遗传参数的可靠估计，遗传方差和协方差的估计通常非常小或为负。相比之下，我们发现使用无血统动物模型的混合证据。与成对回归方法类似，<strong>当使用基于分子谱的全秩R矩阵时，无系谱方法表现不佳</strong>。然而，<strong>当我们降低R矩阵的维数以便最大化信噪比时，性能显着改善</strong>。<strong>使用降序R矩阵产生的遗传方差的估计更接近那些从传统模型。然而，这种方法在估计协方差方面不太可靠，通常估计为负值</strong>。总之，这些结果表明<strong>无血统动物模型可以恢复定量遗传信息，虽然信号仍然相对较弱。仍然需要确定这个问题是否可以通过使用更强大的电池分子标记和改进的家谱重建方法来克服</strong>。</p>
+
+<p>##1.引言
+动物模型对野生种群的应用有可能彻底改变我们对自然环境中进化遗传学的理解（Kruuk 2004）。这是因为在最广泛的意义上，动物模型是简单的基于个体的混合模型，使用已知的谱系来估计个体之间的相关性，从而估计一定范围的定量遗传参数（Lynch＆Walsh 1998）。动物模型为研究野生种群提供这样的前景的关键原因是，这种方法可以使用天然谱系在自然条件下提取定量遗传信息。相比之下，大多数定量遗传技术需要育种实验，因此主要限于实验室或农业研究（Falconer＆Mackay 1996）。动物模型现已应用于许多人群，以解决各种问题，如健康遗传（Kruuk等人，2000），进化停滞（MerilaĄL等人2001; Kruuk等人2002），性选择和着色Hadfield＆Owens 2006; Hadfield等人2006,2007），条件依赖（Gleeson等人2005），亲本关怀（MacColl＆Hatchwell 2003），收获的遗传后果（Coltman等人2003）和进化反应气候变化（Brommer et al。2005）。然而，对动物模型方法的这种广泛关注导致认识到对已知谱系的需要本身是一种限制。使用动物模型到目前为止的大多数研究关注的是已经成为长期项目主题的人群（Kruuk et al.2000,2001,2002;MerilaĄL＆Sheldon 2000;MerilaĄLet al.2001; Coltman et al。 2003; Garant等人2004,2005; McCleery等人2004; Charmantier等人2006a，b）。<strong>对于个体交配和繁殖模式的长期信息的需要限制了可以使用动物模型的群体的范围和类型*。克服这种限制的一种方法是使用分子标记数据来估计群体中个体之间的遗传关系，然后使用所得的相关性矩阵代替已知的谱系来构建动物模型</strong>（Lynch＆Walsh 1998; Garant＆ Kruuk 2005; Rodr ?sguez-Ramilo等人2007）。这种方法可以允许动物模型框架扩展到任何人口，有可能基于分子标记数据获得可靠的相关性估计（Moore＆Kukuk 2002），这将大大扩展潜在应用范围，如果该方法被证明稳健。然而，这种方法尚未在任何人口中得到充分实施。因此，本研究的总体目的是测试动物模型是否确实可以基于完全源于分子标记数据的相关性的估计。</p>
+
+<p>使用来自分子标记数据的相关性估计来估计定量遗传参数的想法已经被许多工作者研究（Mousseau等人1998; Thomas＆Hill 2000; Thomas等人2000; Thomas 2005）特别是由Ritland开发的（1996,2000a，b; Ritland＆Ritland 1996）。虽然RitlandĄŚs方法在概念上类似于我们在这里讨论的无血统动物模型，但两者之间存在主要差异。其中最重要的是RitlandĄSs方法基于对遗传相关性的成对估计的表型相似性的回归成对估计（Ritland 1996）。<strong>这种方法的局限性包括由于相关性估计的非独立性而导致的估计显着性的困难，并且力矩相关性测量方法不提供在整个人群内部一致的估计</strong>。相比之下，我们在这里探讨的无血统动物模型方法是基于肯定的相关性矩阵（即多个个体之间的相关性是一致的），并且允许动物模型的全部功能（和方便性）应用于估计定量遗传参数。我们将无血统动物模型应用于在澳大利亚大堡礁上的小珊瑚礁Heron岛上的自由生活的摩羯座（Zosterops lateralis chlorocephalus）的例子。这个研究人群非常适合我们的需要，因为我们可以从行为信息构建已知的谱系（Kikkawa＆Wilson 1983; Robertson et al。2001），我们以前用来估计遗传力和遗传相关性的一系列形态性状基于谱系的动物模型（Frentiu et al。2007）。此外，我们有一个数据集，包括在交叉培育实验中使用的个人（Frentiu等人2007），最大限度地减少了共享基因的影响被共享环境的影响膨胀的程度。最后，这种鸟类群体的形态学的定量遗传基础是内在的兴趣，因为它是一个异常大的岛屿种族的例子，显示了岛屿雀形目鸟类的特征模式（Clegg＆Owens 2002），演化到大约40％ （Clegg等人2002a，b; Robinson-Wolrath＆Owens 2003; Scott等人2003; Frentiu等人2007）中大于其大陆对应物。研究的具体目的是：（i）开发一系列多态分子标记，并确定它们是否能够区分近亲（完全兄弟）和无关个体，（ii）估计六个形态性状的定量遗传参数，使用RitlandĄŚs成对回归方法，并将这些与基于谱系的传统动物模型的估计进行比较，（iii）使用分子谱系开发无系谱动物模型，（iv）确定无谱系与传统动物模型的有效性在估计定量遗传参数，和（v）探索增加分子谱系方法的力量的方法。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/diallel/fries--1998-%E8%83%B8%E5%BE%84vd---va--2-80%E9%83%A8%E5%88%86diallel-%E5%BF%83%E6%9D%90%E5%BD%A2%E6%88%90-%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1-%E4%B8%8E%E5%85%B6%E4%BB%96%E6%80%A7%E7%8A%B6%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/" data-toggle="tooltip" data-placement="top" title="Fries--1998-胸径（VD---VA-=-2-80）部分diallel-心材形成-参数估计-与其他性状间的关系">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/freimer-2004-%E4%BD%BF%E7%94%A8%E8%B0%B1%E7%B3%BB%E5%90%8C%E8%83%9E%E5%AF%B9%E5%92%8C%E5%85%B3%E8%81%94%E5%88%86%E6%9E%90%E5%B8%B8%E8%A7%81%E7%96%BE%E7%97%85%E7%9A%84%E9%81%97%E4%BC%A0%E4%BD%9C%E5%9B%BE/" data-toggle="tooltip" data-placement="top" title="Freimer-2004-使用谱系、同胞对和关联分析常见疾病的遗传作图">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

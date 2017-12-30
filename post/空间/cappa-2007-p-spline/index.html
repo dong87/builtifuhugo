@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Cappa-2007-p-spline</title>
+  <meta property="og:title" content="Cappa-2007-p-spline" />
+  <meta name="twitter:title" content="Cappa-2007-p-spline" />
+  <meta name="description" content="Cappa EP, Cantet RJC. Bayesian estimation of a surface to account for a spatial trend using penalized splines in an individual-tree mixed model. Can. J. For. Res. [Internet]. 2007;37:2677–88. Available from: http://www.scopus.com/inward/record.url?eid=2-s2.0-38849165334&amp;partnerID=40&amp;md5=595ec0deebe7eb7aef9f8bb9e0e7b3e1   未考虑空间变异性导致估计遗传参数和预测来自森林遗传试验的育种值的偏差。先前尝试解释大规模连续空间变化的尝试采用在行（或列）的方向上的空间坐标。在这项研究中，我们使用单树混合模型和B样条基础的张量积与适当的协方差结构的随机结效应来解释空间变异性。使用贝叶斯技术通过Gibbs采样估计分散参数。该程序用来自桉属（Eucalyptus globulus subsp。）的子代试验的数据说明。 globulus Labill。续篇中使用了四种不同的模型。第一个模型包括区组效应，另外三个模型包括8 x 8，12 x 12或18 x 18节的网格上的表面。具有B样条的三个模型显示出比具有区组的模型更大的偏离信息标准值。此外，拟合表面的混合模型显示σ2e的后验均值的一致减少，σ2A和h2DBH的后验平均值的增加，以及对于亲本的增加66％（对于父母）或60％（对于后代）育种值的准确性。
+与其他栽培植物相比，森林遗传试验易产生高度的环境异质性（Libby and Cockerham 1980）：树木是大型活生物体，比大多数栽培植物物种占据更多的空间。此外，树木通常种植在具有高生育力，湿度，土壤深度或坡度的地方。尽管空间异质性在森林遗传评价中是一种滋扰效应，其主要目的是预测育种值，忽略这种来源可能导致遗传参数的估计和个体加性遗传效应的预测中的偏差（育种值：Mag- Nussen 1993，1994）。为了解释环境梯度，树种繁殖者使用随机完全区块或不完全区块设计设计了森林试验。然而，设置块的固定限制使得难以解释不断变化的环境因素。此外，建立一个适当地考虑环境异质性的所有来源的设计可能是一个无希望的任务，因为“环境变化在建立之前是未知的”（Fu等人1999a）。或者，空间变化可以在评价模型内的后验考虑。在这些所谓的“空间模式”中，连续变异性有两个主要来源：“局部趋势”或小规模变化，“全球趋势”或大规模变异，跨越空间梯度。这两个来源在森林遗传试验中是可观察到的：任一组分单独或彼此组合（例如，Fu等人1999b; Costa e Silva等人2001; Dutkowski等人2002）。 说明大规模连续空间变化的模型包括表示为分类变量或协变量的空间坐标。后者是非随机函数，例如多项式（Federer 1998）或平滑样条（Verbyla et al。1999）。 Costa e Silva et al。 （2001）和Dutkowski et al。 （2002）通过拟合行和列的一阶自回归（AR（1））协方差结构的克罗内克（Kronecker）乘积来考虑连续空间趋势（Gilmour等人，1997）。为了解释大规模变化，Costa e Silva et al。 （2001）提出使用固定或随机分类变量，Dutkowski et al。 （2002）包括空间坐标的固定效应作为二次多项式或三次平滑样条（Verbyla et al。1999）。然而，Dutkowski et al。 （2002）发现，五个试验中的两个的变异性不是静态的，这意味着大规模协方差仍然存在于空间误差中。注意，在具有行和列效应的加性模型中或在具有相互作用的模型中的拟合分类变量不以连续方式处理信息，使得表面不能被拟合。另一方面，具有多项式或样条函数的加性模型只使用行和列效应的边缘化估计，以致网格内部点的信息丢失。因此，在连续空间变异发生在二维的森林遗传试验中，使用分类变量，协方差，多项式或一维样条，或加性模型或具有分类变量相互作用的模型的分析可能不能完全考虑空间协方差。 Thomson和El-Kassaby（1988）通过最小二乘法在二维中拟合了六次多项式，以比较道格拉斯冷杉（Pseudotsuga menziesii（Mirb。）Franco）的不同品质。在Liu和Burkhart（1994）和Saenz-Romero等人的工作中也可以找到森林遗传数据的两个维度（“趋势分析”）中多项式的分析。 （2001）。然而，多项式拟合存在一些缺点（Green和Silverman 1994，第2页）。首先，拟合是全局的而不是局部的，这意味着（i）该方法不能够考虑数据中存在的局部变化，（ii）很少有影响的观察可能对结果拟合产生大的影响， （iii）边缘的配合通常较差。多项式的另一个严重缺点是随着多项式阶数的增加，它们的数值不稳定性。 样条是使用多边形的更有效的方法。它们是局部拟合的分段多项式函数，使得得到的函数在段（“节”）的接点处是可微分的，直到拟合的顺序。样条能够捕获数据中存在的大多数正弦，并且不会遭受数值不稳定性。 Eilers和Marx（1996）使用具有等间距结的基本样条（B样条）和线性模型方法在一维中引入了“惩罚样条”（P样条），粗糙度惩罚由参数之间的差异组成，即结的效果。 T.">
+  <meta property="og:description" content="Cappa EP, Cantet RJC. Bayesian estimation of a surface to account for a spatial trend using penalized splines in an individual-tree mixed model. Can. J. For. Res. [Internet]. 2007;37:2677–88. Available from: http://www.scopus.com/inward/record.url?eid=2-s2.0-38849165334&amp;partnerID=40&amp;md5=595ec0deebe7eb7aef9f8bb9e0e7b3e1   未考虑空间变异性导致估计遗传参数和预测来自森林遗传试验的育种值的偏差。先前尝试解释大规模连续空间变化的尝试采用在行（或列）的方向上的空间坐标。在这项研究中，我们使用单树混合模型和B样条基础的张量积与适当的协方差结构的随机结效应来解释空间变异性。使用贝叶斯技术通过Gibbs采样估计分散参数。该程序用来自桉属（Eucalyptus globulus subsp。）的子代试验的数据说明。 globulus Labill。续篇中使用了四种不同的模型。第一个模型包括区组效应，另外三个模型包括8 x 8，12 x 12或18 x 18节的网格上的表面。具有B样条的三个模型显示出比具有区组的模型更大的偏离信息标准值。此外，拟合表面的混合模型显示σ2e的后验均值的一致减少，σ2A和h2DBH的后验平均值的增加，以及对于亲本的增加66％（对于父母）或60％（对于后代）育种值的准确性。
+与其他栽培植物相比，森林遗传试验易产生高度的环境异质性（Libby and Cockerham 1980）：树木是大型活生物体，比大多数栽培植物物种占据更多的空间。此外，树木通常种植在具有高生育力，湿度，土壤深度或坡度的地方。尽管空间异质性在森林遗传评价中是一种滋扰效应，其主要目的是预测育种值，忽略这种来源可能导致遗传参数的估计和个体加性遗传效应的预测中的偏差（育种值：Mag- Nussen 1993，1994）。为了解释环境梯度，树种繁殖者使用随机完全区块或不完全区块设计设计了森林试验。然而，设置块的固定限制使得难以解释不断变化的环境因素。此外，建立一个适当地考虑环境异质性的所有来源的设计可能是一个无希望的任务，因为“环境变化在建立之前是未知的”（Fu等人1999a）。或者，空间变化可以在评价模型内的后验考虑。在这些所谓的“空间模式”中，连续变异性有两个主要来源：“局部趋势”或小规模变化，“全球趋势”或大规模变异，跨越空间梯度。这两个来源在森林遗传试验中是可观察到的：任一组分单独或彼此组合（例如，Fu等人1999b; Costa e Silva等人2001; Dutkowski等人2002）。 说明大规模连续空间变化的模型包括表示为分类变量或协变量的空间坐标。后者是非随机函数，例如多项式（Federer 1998）或平滑样条（Verbyla et al。1999）。 Costa e Silva et al。 （2001）和Dutkowski et al。 （2002）通过拟合行和列的一阶自回归（AR（1））协方差结构的克罗内克（Kronecker）乘积来考虑连续空间趋势（Gilmour等人，1997）。为了解释大规模变化，Costa e Silva et al。 （2001）提出使用固定或随机分类变量，Dutkowski et al。 （2002）包括空间坐标的固定效应作为二次多项式或三次平滑样条（Verbyla et al。1999）。然而，Dutkowski et al。 （2002）发现，五个试验中的两个的变异性不是静态的，这意味着大规模协方差仍然存在于空间误差中。注意，在具有行和列效应的加性模型中或在具有相互作用的模型中的拟合分类变量不以连续方式处理信息，使得表面不能被拟合。另一方面，具有多项式或样条函数的加性模型只使用行和列效应的边缘化估计，以致网格内部点的信息丢失。因此，在连续空间变异发生在二维的森林遗传试验中，使用分类变量，协方差，多项式或一维样条，或加性模型或具有分类变量相互作用的模型的分析可能不能完全考虑空间协方差。 Thomson和El-Kassaby（1988）通过最小二乘法在二维中拟合了六次多项式，以比较道格拉斯冷杉（Pseudotsuga menziesii（Mirb。）Franco）的不同品质。在Liu和Burkhart（1994）和Saenz-Romero等人的工作中也可以找到森林遗传数据的两个维度（“趋势分析”）中多项式的分析。 （2001）。然而，多项式拟合存在一些缺点（Green和Silverman 1994，第2页）。首先，拟合是全局的而不是局部的，这意味着（i）该方法不能够考虑数据中存在的局部变化，（ii）很少有影响的观察可能对结果拟合产生大的影响， （iii）边缘的配合通常较差。多项式的另一个严重缺点是随着多项式阶数的增加，它们的数值不稳定性。 样条是使用多边形的更有效的方法。它们是局部拟合的分段多项式函数，使得得到的函数在段（“节”）的接点处是可微分的，直到拟合的顺序。样条能够捕获数据中存在的大多数正弦，并且不会遭受数值不稳定性。 Eilers和Marx（1996）使用具有等间距结的基本样条（B样条）和线性模型方法在一维中引入了“惩罚样条”（P样条），粗糙度惩罚由参数之间的差异组成，即结的效果。 T.">
+  <meta name="twitter:description" content="Cappa EP, Cantet RJC. Bayesian estimation of a surface to account for a spatial trend using penalized splines in an individual-tree mixed model. Can. J. For. Res. [Internet]. 2007;37:2677–88. …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/cappa-2007-p-spline/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/cappa-2007-p-spline/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Cappa-2007-p-spline</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (189 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Cappa-2007-p-spline</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (189 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<ol>
+<li>Cappa EP, Cantet RJC. Bayesian estimation of a surface to account for a spatial trend using penalized splines in an individual-tree mixed model. Can. J. For. Res. [Internet]. 2007;37:2677–88. Available from: <a href="http://www.scopus.com/inward/record.url?eid=2-s2.0-38849165334&amp;partnerID=40&amp;md5=595ec0deebe7eb7aef9f8bb9e0e7b3e1">http://www.scopus.com/inward/record.url?eid=2-s2.0-38849165334&amp;partnerID=40&amp;md5=595ec0deebe7eb7aef9f8bb9e0e7b3e1</a></li>
+</ol>
+</blockquote>
+
+<p>未考虑空间变异性导致估计遗传参数和预测来自森林遗传试验的育种值的偏差。先前尝试解释大规模连续空间变化的尝试采用在行（或列）的方向上的空间坐标。在这项研究中，我们使用单树混合模型和B样条基础的张量积与适当的协方差结构的随机结效应来解释空间变异性。使用贝叶斯技术通过Gibbs采样估计分散参数。该程序用来自桉属（Eucalyptus globulus subsp。）的子代试验的数据说明。 globulus Labill。续篇中使用了<strong>四种不同的模型。第一个模型包括区组效应，另外三个模型包括8 x 8，12 x 12或18 x 18节的网格上的表面</strong>。<strong>具有B样条的三个模型显示出比具有区组的模型更大的偏离信息标准值。此外，拟合表面的混合模型显示σ2e的后验均值的一致减少，σ2A和h2DBH的后验平均值的增加，以及对于亲本的增加66％（对于父母）或60％（对于后代）育种值的准确性</strong>。</p>
+
+<hr />
+
+<p>与其他栽培植物相比，森林遗传试验易产生高度的环境异质性（Libby and Cockerham 1980）：树木是大型活生物体，比大多数栽培植物物种占据更多的空间。此外，树木通常种植在具有高生育力，湿度，土壤深度或坡度的地方。<strong>尽管空间异质性在森林遗传评价中是一种滋扰效应，其主要目的是预测育种值，忽略这种来源可能导致遗传参数的估计和个体加性遗传效应的预测中的偏差（育种值：Mag- Nussen 1993，1994）</strong>。为了解释环境梯度，树种繁殖者使用随机完全区块或不完全区块设计设计了森林试验。然而，<strong>设置块的固定限制使得难以解释不断变化的环境因素</strong>。此外，建立一个适当地考虑环境异质性的所有来源的设计可能是一个无希望的任务，因为“环境变化在建立之前是未知的”（Fu等人1999a）。或者，空间变化可以在评价模型内的后验考虑。在这些所谓的“空间模式”中，连续变异性有两个主要来源：“局部趋势”或小规模变化，“全球趋势”或大规模变异，跨越空间梯度。这两个来源在森林遗传试验中是可观察到的：任一组分单独或彼此组合（例如，Fu等人1999b; Costa e Silva等人2001; Dutkowski等人2002）。
+说明大规模连续空间变化的模型包括表示为分类变量或协变量的空间坐标。后者是非随机函数，例如多项式（Federer 1998）或平滑样条（Verbyla et al。1999）。 Costa e Silva et al。 （2001）和Dutkowski et al。 （2002）通过拟合行和列的一阶自回归（AR（1））协方差结构的克罗内克（Kronecker）乘积来考虑连续空间趋势（Gilmour等人，1997）。<strong>为了解释大规模变化，Costa e Silva et al。 （2001）提出使用固定或随机分类变量，Dutkowski et al。 （2002）包括空间坐标的固定效应作为二次多项式或三次平滑样条（Verbyla et al。1999）</strong>。然而，Dutkowski et al。 （2002）发现，<strong>五个试验中的两个的变异性不是静态的，这意味着大规模协方差仍然存在于空间误差中</strong>。注意，在具有行和列效应的加性模型中或在具有相互作用的模型中的拟合分类变量不以连续方式处理信息，使得表面不能被拟合。另一方面，<strong>具有多项式或样条函数的加性模型只使用行和列效应的边缘化估计，以致网格内部点的信息丢失</strong>。因此，<strong>在连续空间变异发生在二维的森林遗传试验中，使用分类变量，协方差，多项式或一维样条，或加性模型或具有分类变量相互作用的模型的分析可能不能完全考虑空间协方差</strong>。 Thomson和El-Kassaby（1988）通过最小二乘法在二维中拟合了六次多项式，以比较道格拉斯冷杉（Pseudotsuga menziesii（Mirb。）Franco）的不同品质。在Liu和Burkhart（1994）和Saenz-Romero等人的工作中也可以找到森林遗传数据的两个维度（“趋势分析”）中多项式的分析。 （2001）。然而，<strong>多项式拟合存在一些缺点（Green和Silverman 1994，第2页）。首先，拟合是全局的而不是局部的，这意味着（i）该方法不能够考虑数据中存在的局部变化，（ii）很少有影响的观察可能对结果拟合产生大的影响， （iii）边缘的配合通常较差。多项式的另一个严重缺点是随着多项式阶数的增加，它们的数值不稳定性</strong>。
+<strong>样条是使用多边形的更有效的方法。它们是局部拟合的分段多项式函数，使得得到的函数在段（“节”）的接点处是可微分的，直到拟合的顺序。样条能够捕获数据中存在的大多数正弦，并且不会遭受数值不稳定性。 Eilers和Marx（1996）使用具有等间距结的基本样条（B样条）和线性模型方法在一维中引入了“惩罚样条”（P样条），粗糙度惩罚由参数之间的差异组成，即结的效果。 T. Speed（见Robinson 1991）首先指出样条和混合模型之间的联系，Ruppert等人进一步扩展了这一问题。 （2003）和Wand（2003）。 Cantet et al。 （2005）在一维中使用适当的协方差结构而不是动物育种背景中的差异矩阵逼近P样条。 Eilers和Marx（2003）扩展了它们的方法，使用B样条的张量乘积来估计沿着二维的表面。无论在一维还是二维（Eilers和Marx 1996，2003），B样条函数的参数被视为固定效应。类似的结果可以通过混合模型方法通过将B样条函数参数作为随机变量来处理来获得，从现在起我们称为“随机结效应”（RKE）。本研究的目的是展示如何使用B样条基的张量产品拟合表面，以解决森林遗传评价的个体树混合模型中的大规模连续空间变化。为此，我们</strong>在二维网格中叠加RKE的协方差结构**。如在最近对森林育种的一些贡献（例如，Soria等人1998; Cappa和Cantet 2006; Waldmann和Ericsson 2006）中，我们采用贝叶斯方法通过吉布斯样本来推断模型的所有色散参数。通过来自桉树桉亚种子代试验的乳房高度直径数据说明发育。 globulus Labill。将包括拟合表面的混合模型的所有色散参数的所得估计最终与来自包括块的经典模型的对应估计进行比较。</p>
+
+<h2 id="方法">方法</h2>
+
+<p>B样条的二维张量积我们首先简单地在一维中引入P样条，如Eilers和Marx（1996）所提出的。然后，我们采用Eilers和Marx（2003）和Green和Silverman（1994）的方法，并使用B样条的张量乘积将P样条扩展到两维。
+Eilers和Marx（1996）提倡使用有等间隔的结的B样条以获得P样条。 B样条是由通常为二次或立方的d次多项式段组成的局部基函数，其在连接点处具有d-1个连续导数或结。因此，结是参数值，其中组成样条的多项式函数彼此连接。我们将<strong>用nx表示样条函数的节数</strong>。度d的B样条在由d + 2节所跨越的域上是正的，并且在其他地方为零。总而言之，d + 1个B样条系数是非零的。 Eilers和Marx（1996）引入了影响B样条参数的第一或第二差异的惩罚。罚分控制拟合函数时的平滑度。设长度为n的数据向量为y。此外，让向量x包含树的行（或列）的位置，表示为与试验的开始行（或列）的距离（以米计）。例如，在行之间具有3m的间隔，x&rsquo;= [0,3,6,9，&hellip;]。然后，将针对行（或列）的一维样条函数s（x）写为
+##讨论
+<strong>未考虑森林遗传试验的空间变异性导致估计遗传参数和预测育种值的偏差（Magnussen 1993，1994），因此选择的精确性降低，从而降低遗传增益</strong>。在当前的研究中，<strong>我们展示了如何使用B样条基的张量积，通过混合模型在Eilers和Marx的P样条的精神中拟合二维表面（1996，2003 ）</strong>。通过贝叶斯方法也获得了二维中的P-样条，如Lang和Brezger（2004）所示。这些作者将差异矩阵3视为一阶或二阶随机游走。我们的方法不同于他们在差异3的奇异矩阵通过在两个维度中的RKE的适当方差 - 协方差矩阵的替换。在这样做时，<strong>我们将B样条基的张量积扩展为单树混合模型，以解释大规模连续空间变异性。因此，模型包含沿着列和行的方向平滑的表面</strong>。 <strong>Gilmour at al。 （1997）通过拟合多项式或三次平滑样条来模拟农业试验的一个维度的大规模变化</strong>。然而，在树木种植在正方形或矩形的森林遗传试验中，全球趋势的很大一部分通常存在于两个方面。此外，非常罕见的是，仅在行或列的方向上发现大规模连续的空间变异性，并且必须考虑行和列之间的某种相互作用以解释这种变异性（Federer 1998 ）。虽然存在几种平滑的统计方法来捕获一维的变化的非近似性，但是二维中的方法不太丰富。为了这个目的，Federer（1998）提出了<strong>行和列的多项式之间的拟合相互作用</strong>。然而，当在极值拟合观察值时，多项式的工作做得很差。此外，数据的小变化在参数的估计值中产生显着的效果，并且对于更高级的多项式尤其如此。另外，应该选择多项式的范围，这反过来引入模型选择的问题。相反，我们提出使用P样条估计平滑表面。该方法是灵活的，因为<strong>B样条函数对数据是局部敏感的，并且在数字上有很好的条件</strong>。方差σ2 b用于平滑行和列的效果。在Eilers和Marx（2003）和Lang和Brezger（2004）的方法中，使用了行和列的不同方差。 Lang和Brezger（2004）进一步使用了分散参数的局部自适应估计。在未来的研究中，我们可以考虑平滑具有不同色散参数的行和列，尽管我们不清楚这种方法对于拟合的质量（即DIC的值）可能比我们更有利。 Eilers和Marx的P样条方法（1996，2003）包括使用具有等间距结的立方体B样条。在这种方法中，关键参数是惩罚或平滑因子？ （见方程2和5），并且样条中的结的数量对于拟合是不重要的，只要有“足够”多的（Eilers和Marx 1996; Cantet等人2005）。在P样条的混合模型方法中，？是等式2中的比率α2e=α2b（Cantet等人2005）。从表1可以看出，与其他方差分量相比，α2b（α的分母）的大小对结的数量敏感。已知的是，非常少的结的拟合产生偏差，其随着结的数量的增加而迅速减小（Ruppert 2002）。一旦达到最小数目，增加结的数目给出令人满意的拟合（Ruppert 2002）。 Cantet et al。 （2005）发现，对于具有20,40,60,80或120个等间距结的模型，改进的Akaike信息标准的值几乎相等。然而，方差分量的受限最大似然估计对于120节的某些模型没有收敛。对于达到120节的收敛的情况，对于没有记录数据的间隔的拟合存在一些不一致。可以得出结论，除了极端量之外，结的数量不是关键的，并且通常有几个结数产生类似的拟合并产生方差分量的类似估计。在当前的研究中，将节数从18减少到8产生了更平滑的表面（图3）。虽然模型用12？ 12节显示的DIC最小，DIC之间的差异在12个模型之间？ 12和18？ 18节很小。这也适用于从两个模型获得的h2DBH的估计：第三个小数位的差异。在P样条的混合模型方法中，RKE的协方差结构代替了方程中差异的任何奇异矩阵。在本研究中，Durban等人提出的三对角矩阵（2001）被选择来建模RKE之间的列和行的协方差。该公式比Cantet等人使用的密集相关结构更简单。 （2005）和Hyndman et al。 （2005），其中在所有RKE中存在完全依赖性。后者的协方差结构具有比Durban等人使用的更大的DIC。 （2001），如题为分析模型一节所述。然而，对于α2a（3.668,3.753和3.754），对于σ2e（10.994,10.76和10.275）和对于h2DBH（0.250,0.258和0.267），从具有协方差的模型结构使用Cantet等。 （2005），Hyndman et al。 （2005），和Durban et al。 （2001）。另一方面，来自这三种模型的β2b的估计值是非常不同的：11.931,1.611和22.317。这与Cantet等人获得的结果一致。 （2005）。在分析育种数据时，有一些使用B样条函数的一些例子。因此，动物育种者使用样条来模拟功能育种值（White等人1999; Bohmanova等人2005）或管理单位和时间的影响（Cantet等人2005）。在森林遗传育种中，Cornillon et al。 （2003）使用固定效应模型使用B-样条模型桉树克隆的时间功能育种值。 Magnussen和Yanchuk（1994）将样条函数拟合为观测数据，以便估计来自道格拉斯杉木的非记录时间的个体高度。然后将得到的数据用于预测非记录年龄的育种值和遗传分布参数。平滑表面的拟合对子球体试验在E. globulus subsp。球状体与B样条的张量乘积而不是先验块设计一致地增加了Δ2A和h2DBH的后验均值（表1）。结果与Zas（2006）的结果一致，Zas（2006）使用克里金法计算空间变异性，并且与Dutkowski等人的不同。 （2002,2006）。在后一种情况下，在调整AR（1）之后获得Δ2A的不一致估计。 AR（1）协方差结构到模型的残差。在我们的数据中，空间模型产生的估计的精度的增加，可以注意到在低得多的标准偏差和95％高后验概率密度间隔的较窄的值，当与估计从具有块的模型（表1）。此外，用空间模型计算的来自亲本和后代的育种值的准确度高于从具有块效应的模型估计的对应值（表2），这是由于估计的加性方差的增加和估计误差的降低方差（表1）。当与随机完全区块设计进行比较时，Costa e Silva等报道了空间模型的精度提高。 （2001）的树高和Zas（2006）的树径。 Costa e Silva et al。 （2001）分析了12项试验，发现父母和后代的预测加性效应的精确度提高了71％。此外，Zas（2006）报告了校正空间相关变异后，BLUP的家庭效应的准确性显着增加，从0.40-0.63增加到0.72-0.79。 <strong>Dutkowski等人发现精度的增益较小。 （2002,2006）</strong>，但仍然在空间模型的方向与模型的块。准确度增益的很大一部分是由于以下事实：<strong>并非所有的空间变异性都通过使用块设计（Singh等人2003）的变异性来解释为块间变异性，否则其将变为误差方差</strong>。因此，与使用模型的分析相比，显示大规模连续空间变化的数据分析（例如由可变深度的石油层引起的数据）通过空间模型将很可能提高选择的准确性。块。在当前的研究中，我们使用具有平滑表面的单树混合模型，模拟沿着站点的连续和永久的空间变异性。在森林遗传评价中，微地点水平的空间变异用最近邻的技术建模（Magnussen 1990; Costa e Silva et al.2001; Dutkowski et al.2002）或用克里金法（Hamann et al.2002 ; Zas 2006）。然而，<strong>植物间竞争可能是影响邻居之间相关性的小规模空间变异的另一个来源</strong>（Magnussen 1994）。混合模型6不考虑树木之间的遗传竞争，这可以偏向σ2A的估计（Cappa和Cantet 2007）。
+然而，分析中使用的树龄为6岁，因此竞争不强或不存在。对于在竞争效应相当大的年龄测量树木的情况，最好同时适应连续的空间变异和竞争的遗传效应。更重要的是，值得将本研究所提出的方法与其他空间技术通过计算机模拟进行比较，这是未来研究的主题。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%AB%9E%E4%BA%89/cappa-2008-%E7%AB%9E%E4%BA%89/" data-toggle="tooltip" data-placement="top" title="Cappa-2008-竞争">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/bayesian/cappa-2006-%E8%B4%9D%E5%8F%B6%E6%96%AF-%E5%A4%9A%E6%80%A7%E7%8A%B6%E5%8D%95%E6%A0%AA%E6%A8%A1%E5%9E%8B-%E5%85%B1%E8%BD%ADgibbs/" data-toggle="tooltip" data-placement="top" title="Cappa-2006-贝叶斯-多性状单株模型-共轭Gibbs">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

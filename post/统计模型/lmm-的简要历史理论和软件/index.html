@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>LMM-的简要历史（理论和软件）</title>
+  <meta property="og:title" content="LMM-的简要历史（理论和软件）" />
+  <meta name="twitter:title" content="LMM-的简要历史（理论和软件）" />
+  <meta name="description" content=" 1.2 LMM的简要历史 关于这个主题的一些历史视角是有用的。至少，虽然LMM可能似乎很难掌握起初，令人安慰的是，知道，几十人花了一百多年来整理出来。以下小节突出了导致LMM广泛使用的许多（但不是几乎所有）重要的历史发展。我们将关键的历史发展分为两类：理论和软件。本时间表中介绍的一些术语和概念将在本书后面更详细地讨论。对于其他历史视角，我们将读者引用到Brown＆Prescott（2006）。
+1.2.1关键理论发展以下时间线展示了LMM的理论基础的演变：  1861：单向随机效应模型（具有一个随机因子，没有固定因子的LMM）的第一个已知公式是Airy的，由Scheff&rsquo;ein 1956进一步澄清.Airy在同一天晚上做了几次望远镜观察（聚类数据）的几个不同的夜晚，并分析数据分离的随机夜间效应的方差随机的夜间残差。 1863：Chauvenet在一个简单的随机效应模型中计算随机效应的方差。 1925：Fisher&rsquo;s book*研究工作的统计方法*概述了用于平衡数据的估计方差分量或将随机变化划分为来自不同来源的分量的一般方法。 1927：Yule假设在建立纯串行相关模型中，当前残差在有限数量的前述残差上的显式依赖性。 1931：Tippett将Fisher的工作扩展到线模框架中，将数量建模为由多个随机因素导致的随机变量的线性函数。他还阐明了一种估计随机效应方差的ANOVA方法。 1935：Neyman，Iwaszkiewicz和Kolodziejczyk检查了随机区块和拉丁方块设计的比较效率，并在其工作中广泛使用LMM。 1938年：费雪1925年第七版的工作讨论了类内相关系数（ICC）的估计。 1939：Jackson在一个随机因子和一个固定因子的LMM描述中假定随机效应和残差的正态性。这项工作在LMM的上下文中介绍了术语效应。 Cochran提出了一个用于不平衡数据的单向随机效应模型。 1940：Winsor和Clarke以及Yates，着重于在不平衡数据的情况下估计随机效应的方差.Wald考虑方差分量比率的置信区间。在这一点上，方差分量的估计仍然不是唯一的。 1941：Ganguli应用与随机效应相关的方差分量的ANOVA估计与嵌套混合模型。 1946：Crump将ANOVA估计应用于具有相互作用的混合模型。 Ganguli和Crump是第一个提到ANOVA估计可以产生与随机效应相关的方差分量的负估计的问题。 Satterthwaite使用方差分量估计的近似抽样分布，并定义了用于计算混合模型中近似F统计的近似自由度的过程。 1947：Eisenhart介绍了“混合模型”术语，并正式区分固定和随机效应模型。 1950：Henderson提供了随机效应和固定效应的BLUP是解的方程，称为混合模型方程（MME）。 1952：Anderson和Bancroft发表了“统计理论研究”一书，它提供了对平衡数据的方差分量估计的全面覆盖，并引入了嵌套随机效应模型中不平衡数据的分析。 1953：Henderson在生物统计学中产生了开创性的论文“估计方差和协方差分量”，重点是使用三个平方和方法之一来估计混合模型中不平衡数据的方差分量（常用III型方法，基于线性模型，但所有类型都可用于统计软件包）。各种其他论文在20世纪50年代末和60年代建立在这三种方法为不同的混合模型。 1965：Rao负责系统开发的增长曲线模型，一个具有共同的线性时间趋势的所有单位和单位特异性随机截距和随机斜率的模型。 1967：Hartley和Rao表明，使用最大似然法，使用从混合模型的矩阵表示得到的方程可以获得方差分量的独特估计（Searle等，1992）。然而，方差分量的估计向下偏移，因为该方法假定固定效应是已知的，而不是从数据估计。 1968：Townsend是第一个寻找方差分量的最小方差二次无偏估计量的人。 1971：Patterson＆Thompson（1971）引入限制最大似然（REML）估计作为在具有不平衡数据的一般线性模型中估计方差分量（不假设固定效应是已知的）的方法。基于似然的方法发展缓慢，因为它们是计算密集型的。 Searle描述了具有一个随机因子的LMM中的估计方差分量的置信区间。 1972：Gabriel开发了阶数p的先前依赖的术语来描述一个模型，其中当前残差的条件分布，假定其前身，仅取决于其前辈。这导致一阶自回归AR（1）过程的发展（适用于个体随时间的等间隔测量），其中当前残余随机地取决于先前的残差。 Rao完成了最小范数二次无偏方程（MINQUE）估计的工作，该方法不需要随机效应或剩余项的分布形式（Rao，1972）。 Lindley和Smith介绍了HLM。 1976：Albert表明，没有任何分布假设，ANOVA估计是LMM中方差分量的最佳二次无偏估计量，以及在正态假设下的最佳无偏估计量。 20世纪70年代中期：LMMs经常应用于农业环境，特别是分裂地块设计（Brown＆Prescott，2006）。 1982：Laird和Ware描述了在单个阶段拟合随机系数模型的理论（Laird＆Ware，1982）。随机系数模型先前在两个阶段中处理：估计时间斜率，然后对个体的时间斜率执行分析。 1985年：Khuri和Sahai提供了估计方差分量的置信区间工作的全面调查。 1986：Jennrich和Schluchter描述了使用不同的协方差模型模型来分析重复测量数据以及如何在它们之间进行选择（Jennrich＆Schluchter，1986）。 Smith和Murray将方差分量作为协方差，并使用基于二次形式的ANOVA程序从平衡数据估计它们.Green将完成对不平衡数据的该公式.Goldstein引入迭代重新加权的一般化最小二乘法。 1987：Self＆Liang（1987）和后来的Stram＆Lee（1994）的结果使得方差分量的显着性可行。 1990：Verbyla和Cullis在纵向数据设置中应用REML。 1994：Diggle，Liang和Zeger在三种类型的随机方差分量之间进行区分：随机效应和随机系数，串行相关（在时间上彼此接近的残差更接近于相距更远的残差）和随机测量误差（Diggle等，2002）。 20世纪90年代以后：LMM在医学中越来越流行（Brown＆Prescott，2006）和社会科学（Raudenbush＆Bryk，2002），他们也被称为多层模型或层级线性模型。
+1.2.2关键软件开发一些重要的地标在这里突出显示： 1982：Bryk和Raudenbush首次发布了HLM计算机程序。 1988年：Schluchter和Jennrich首先介绍了用于非平衡重复测量模型的BMDP5-V软件例程。
+ 1992：SAS引入proc混合作为SAS / STAT分析包的一部分。
+ 1995：StataCorp发布了Stata Release 5，其提供了用于拟合具有与单个随机因子相关联的随机效应的模型的xtreg过程，以及使用广义估计方程（GEE）将拟合模型与面板数据进行拟合的xtgee过程。
+ 1998：Bates和Pinheiro介绍了R软件包的通用线性混合效应建模函数lme（）。
+ 2001：Rabe-Hesketh et al。协作编写Stata命令gllamm用于拟合LMM（以及其他类型的模型）。 SPSS发布了第一版的MIXED过程作为SPSS 11.0版的一部分。
+ 2005：Stata使得一般LMM命令xtmixed作为Stata Release 9的一部分可用，并且这将成为Stata Release 13中的混合命令.Bates为R软件包引入了lmer（）函数。
+  ">
+  <meta property="og:description" content=" 1.2 LMM的简要历史 关于这个主题的一些历史视角是有用的。至少，虽然LMM可能似乎很难掌握起初，令人安慰的是，知道，几十人花了一百多年来整理出来。以下小节突出了导致LMM广泛使用的许多（但不是几乎所有）重要的历史发展。我们将关键的历史发展分为两类：理论和软件。本时间表中介绍的一些术语和概念将在本书后面更详细地讨论。对于其他历史视角，我们将读者引用到Brown＆Prescott（2006）。
+1.2.1关键理论发展以下时间线展示了LMM的理论基础的演变：  1861：单向随机效应模型（具有一个随机因子，没有固定因子的LMM）的第一个已知公式是Airy的，由Scheff&rsquo;ein 1956进一步澄清.Airy在同一天晚上做了几次望远镜观察（聚类数据）的几个不同的夜晚，并分析数据分离的随机夜间效应的方差随机的夜间残差。 1863：Chauvenet在一个简单的随机效应模型中计算随机效应的方差。 1925：Fisher&rsquo;s book*研究工作的统计方法*概述了用于平衡数据的估计方差分量或将随机变化划分为来自不同来源的分量的一般方法。 1927：Yule假设在建立纯串行相关模型中，当前残差在有限数量的前述残差上的显式依赖性。 1931：Tippett将Fisher的工作扩展到线模框架中，将数量建模为由多个随机因素导致的随机变量的线性函数。他还阐明了一种估计随机效应方差的ANOVA方法。 1935：Neyman，Iwaszkiewicz和Kolodziejczyk检查了随机区块和拉丁方块设计的比较效率，并在其工作中广泛使用LMM。 1938年：费雪1925年第七版的工作讨论了类内相关系数（ICC）的估计。 1939：Jackson在一个随机因子和一个固定因子的LMM描述中假定随机效应和残差的正态性。这项工作在LMM的上下文中介绍了术语效应。 Cochran提出了一个用于不平衡数据的单向随机效应模型。 1940：Winsor和Clarke以及Yates，着重于在不平衡数据的情况下估计随机效应的方差.Wald考虑方差分量比率的置信区间。在这一点上，方差分量的估计仍然不是唯一的。 1941：Ganguli应用与随机效应相关的方差分量的ANOVA估计与嵌套混合模型。 1946：Crump将ANOVA估计应用于具有相互作用的混合模型。 Ganguli和Crump是第一个提到ANOVA估计可以产生与随机效应相关的方差分量的负估计的问题。 Satterthwaite使用方差分量估计的近似抽样分布，并定义了用于计算混合模型中近似F统计的近似自由度的过程。 1947：Eisenhart介绍了“混合模型”术语，并正式区分固定和随机效应模型。 1950：Henderson提供了随机效应和固定效应的BLUP是解的方程，称为混合模型方程（MME）。 1952：Anderson和Bancroft发表了“统计理论研究”一书，它提供了对平衡数据的方差分量估计的全面覆盖，并引入了嵌套随机效应模型中不平衡数据的分析。 1953：Henderson在生物统计学中产生了开创性的论文“估计方差和协方差分量”，重点是使用三个平方和方法之一来估计混合模型中不平衡数据的方差分量（常用III型方法，基于线性模型，但所有类型都可用于统计软件包）。各种其他论文在20世纪50年代末和60年代建立在这三种方法为不同的混合模型。 1965：Rao负责系统开发的增长曲线模型，一个具有共同的线性时间趋势的所有单位和单位特异性随机截距和随机斜率的模型。 1967：Hartley和Rao表明，使用最大似然法，使用从混合模型的矩阵表示得到的方程可以获得方差分量的独特估计（Searle等，1992）。然而，方差分量的估计向下偏移，因为该方法假定固定效应是已知的，而不是从数据估计。 1968：Townsend是第一个寻找方差分量的最小方差二次无偏估计量的人。 1971：Patterson＆Thompson（1971）引入限制最大似然（REML）估计作为在具有不平衡数据的一般线性模型中估计方差分量（不假设固定效应是已知的）的方法。基于似然的方法发展缓慢，因为它们是计算密集型的。 Searle描述了具有一个随机因子的LMM中的估计方差分量的置信区间。 1972：Gabriel开发了阶数p的先前依赖的术语来描述一个模型，其中当前残差的条件分布，假定其前身，仅取决于其前辈。这导致一阶自回归AR（1）过程的发展（适用于个体随时间的等间隔测量），其中当前残余随机地取决于先前的残差。 Rao完成了最小范数二次无偏方程（MINQUE）估计的工作，该方法不需要随机效应或剩余项的分布形式（Rao，1972）。 Lindley和Smith介绍了HLM。 1976：Albert表明，没有任何分布假设，ANOVA估计是LMM中方差分量的最佳二次无偏估计量，以及在正态假设下的最佳无偏估计量。 20世纪70年代中期：LMMs经常应用于农业环境，特别是分裂地块设计（Brown＆Prescott，2006）。 1982：Laird和Ware描述了在单个阶段拟合随机系数模型的理论（Laird＆Ware，1982）。随机系数模型先前在两个阶段中处理：估计时间斜率，然后对个体的时间斜率执行分析。 1985年：Khuri和Sahai提供了估计方差分量的置信区间工作的全面调查。 1986：Jennrich和Schluchter描述了使用不同的协方差模型模型来分析重复测量数据以及如何在它们之间进行选择（Jennrich＆Schluchter，1986）。 Smith和Murray将方差分量作为协方差，并使用基于二次形式的ANOVA程序从平衡数据估计它们.Green将完成对不平衡数据的该公式.Goldstein引入迭代重新加权的一般化最小二乘法。 1987：Self＆Liang（1987）和后来的Stram＆Lee（1994）的结果使得方差分量的显着性可行。 1990：Verbyla和Cullis在纵向数据设置中应用REML。 1994：Diggle，Liang和Zeger在三种类型的随机方差分量之间进行区分：随机效应和随机系数，串行相关（在时间上彼此接近的残差更接近于相距更远的残差）和随机测量误差（Diggle等，2002）。 20世纪90年代以后：LMM在医学中越来越流行（Brown＆Prescott，2006）和社会科学（Raudenbush＆Bryk，2002），他们也被称为多层模型或层级线性模型。
+1.2.2关键软件开发一些重要的地标在这里突出显示： 1982：Bryk和Raudenbush首次发布了HLM计算机程序。 1988年：Schluchter和Jennrich首先介绍了用于非平衡重复测量模型的BMDP5-V软件例程。
+ 1992：SAS引入proc混合作为SAS / STAT分析包的一部分。
+ 1995：StataCorp发布了Stata Release 5，其提供了用于拟合具有与单个随机因子相关联的随机效应的模型的xtreg过程，以及使用广义估计方程（GEE）将拟合模型与面板数据进行拟合的xtgee过程。
+ 1998：Bates和Pinheiro介绍了R软件包的通用线性混合效应建模函数lme（）。
+ 2001：Rabe-Hesketh et al。协作编写Stata命令gllamm用于拟合LMM（以及其他类型的模型）。 SPSS发布了第一版的MIXED过程作为SPSS 11.0版的一部分。
+ 2005：Stata使得一般LMM命令xtmixed作为Stata Release 9的一部分可用，并且这将成为Stata Release 13中的混合命令.Bates为R软件包引入了lmer（）函数。
+  ">
+  <meta name="twitter:description" content=" 1.2 LMM的简要历史 关于这个主题的一些历史视角是有用的。至少，虽然LMM可能似乎很难掌握起初，令人安慰的是，知道，几十人花了一百多年来整理出来。以下小节突出了导致LMM广泛使用的许多（但不是几乎所有）重要的历史发展。我们将关键的历史发展分为两类：理论和软件。本时间表中介绍的一些术语和概念将在本书后面更详细地讨论。对于其他历史视角，我们将读者引用到Brown＆Prescott（2006）。 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/lmm-%E7%9A%84%E7%AE%80%E8%A6%81%E5%8E%86%E5%8F%B2%E7%90%86%E8%AE%BA%E5%92%8C%E8%BD%AF%E4%BB%B6/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/lmm-%E7%9A%84%E7%AE%80%E8%A6%81%E5%8E%86%E5%8F%B2%E7%90%86%E8%AE%BA%E5%92%8C%E8%BD%AF%E4%BB%B6/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>LMM-的简要历史（理论和软件）</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (62 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>LMM-的简要历史（理论和软件）</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (62 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h2 id="1-2-lmm的简要历史">1.2 LMM的简要历史</h2>
+
+<p>关于这个主题的一些历史视角是有用的。至少，虽然LMM可能似乎很难掌握起初，令人安慰的是，知道，几十人花了一百多年来整理出来。以下小节突出了导致LMM广泛使用的许多（但不是几乎所有）重要的历史发展。我们将关键的历史发展分为两类：理论和软件。本时间表中介绍的一些术语和概念将在本书后面更详细地讨论。对于其他历史视角，我们将读者引用到Brown＆Prescott（2006）。</p>
+
+<h3 id="1-2-1关键理论发展以下时间线展示了lmm的理论基础的演变">1.2.1关键理论发展以下时间线展示了LMM的理论基础的演变：</h3>
+
+<ul>
+<li>1861：单向随机效应模型（具有一个随机因子，没有固定因子的LMM）的第一个已知公式是Airy的，由Scheff&rsquo;ein 1956进一步澄清.Airy在同一天晚上做了几次望远镜观察（聚类数据）的几个不同的夜晚，并分析数据分离的随机夜间效应的方差随机的夜间残差。</li>
+<li>1863：Chauvenet在一个简单的随机效应模型中计算随机效应的方差。</li>
+<li>1925：Fisher&rsquo;s book*研究工作的统计方法*概述了用于平衡数据的估计方差分量或将随机变化划分为来自不同来源的分量的一般方法。</li>
+<li>1927：Yule假设在建立纯串行相关模型中，当前残差在有限数量的前述残差上的显式依赖性。</li>
+<li>1931：Tippett将Fisher的工作扩展到线模框架中，将数量建模为由多个随机因素导致的随机变量的线性函数。他还阐明了一种估计随机效应方差的ANOVA方法。</li>
+<li>1935：Neyman，Iwaszkiewicz和Kolodziejczyk检查了随机区块和拉丁方块设计的比较效率，并在其工作中广泛使用LMM。</li>
+<li>1938年：费雪1925年第七版的工作讨论了类内相关系数（ICC）的估计。</li>
+<li>1939：Jackson在一个随机因子和一个固定因子的LMM描述中假定随机效应和残差的正态性。这项工作在LMM的上下文中介绍了术语效应。 Cochran提出了一个用于不平衡数据的单向随机效应模型。</li>
+<li>1940：Winsor和Clarke以及Yates，着重于在不平衡数据的情况下估计随机效应的方差.Wald考虑方差分量比率的置信区间。在这一点上，方差分量的估计仍然不是唯一的。</li>
+<li>1941：Ganguli应用与随机效应相关的方差分量的ANOVA估计与嵌套混合模型。</li>
+<li>1946：Crump将ANOVA估计应用于具有相互作用的混合模型。 Ganguli和Crump是第一个提到ANOVA估计可以产生与随机效应相关的方差分量的负估计的问题。 Satterthwaite使用方差分量估计的近似抽样分布，并定义了用于计算混合模型中近似F统计的近似自由度的过程。</li>
+<li>1947：Eisenhart介绍了“混合模型”术语，并正式区分固定和随机效应模型。</li>
+<li>1950：Henderson提供了随机效应和固定效应的BLUP是解的方程，称为混合模型方程（MME）。</li>
+<li>1952：Anderson和Bancroft发表了“统计理论研究”一书，它提供了对平衡数据的方差分量估计的全面覆盖，并引入了嵌套随机效应模型中不平衡数据的分析。</li>
+<li>1953：<strong>Henderson在生物统计学中产生了开创性的论文“估计方差和协方差分量”</strong>，重点是使用三个平方和方法之一来估计混合模型中不平衡数据的方差分量（常用III型方法，基于线性模型，但所有类型都可用于统计软件包）。各种其他论文在20世纪50年代末和60年代建立在这三种方法为不同的混合模型。</li>
+<li>1965：Rao负责系统开发的增长曲线模型，一个具有共同的线性时间趋势的所有单位和单位特异性随机截距和随机斜率的模型。</li>
+<li>1967：Hartley和Rao表明，使用最大似然法，使用从混合模型的矩阵表示得到的方程可以获得方差分量的独特估计（Searle等，1992）。然而，方差分量的估计向下偏移，因为该方法假定固定效应是已知的，而不是从数据估计。</li>
+<li>1968：Townsend是第一个寻找方差分量的最小方差二次无偏估计量的人。</li>
+<li>1971：Patterson＆Thompson（1971）引入限制最大似然（REML）估计作为在具有不平衡数据的一般线性模型中估计方差分量（不假设固定效应是已知的）的方法。基于似然的方法发展缓慢，因为它们是计算密集型的。 Searle描述了具有一个随机因子的LMM中的估计方差分量的置信区间。</li>
+<li>1972：Gabriel开发了阶数p的先前依赖的术语来描述一个模型，其中当前残差的条件分布，假定其前身，仅取决于其前辈。这导致一阶自回归AR（1）过程的发展（适用于个体随时间的等间隔测量），其中当前残余随机地取决于先前的残差。 Rao完成了最小范数二次无偏方程（MINQUE）估计的工作，该方法不需要随机效应或剩余项的分布形式（Rao，1972）。 Lindley和Smith介绍了HLM。</li>
+<li>1976：Albert表明，没有任何分布假设，ANOVA估计是LMM中方差分量的最佳二次无偏估计量，以及在正态假设下的最佳无偏估计量。</li>
+<li>20世纪70年代中期：LMMs经常应用于农业环境，特别是分裂地块设计（Brown＆Prescott，2006）。</li>
+<li>1982：Laird和Ware描述了在单个阶段拟合随机系数模型的理论（Laird＆Ware，1982）。随机系数模型先前在两个阶段中处理：估计时间斜率，然后对个体的时间斜率执行分析。</li>
+<li>1985年：Khuri和Sahai提供了估计方差分量的置信区间工作的全面调查。</li>
+<li>1986：Jennrich和Schluchter描述了使用不同的协方差模型模型来分析重复测量数据以及如何在它们之间进行选择（Jennrich＆Schluchter，1986）。 Smith和Murray将方差分量作为协方差，并使用基于二次形式的ANOVA程序从平衡数据估计它们.Green将完成对不平衡数据的该公式.Goldstein引入迭代重新加权的一般化最小二乘法。</li>
+<li>1987：Self＆Liang（1987）和后来的Stram＆Lee（1994）的结果使得方差分量的显着性可行。</li>
+<li>1990：Verbyla和Cullis在纵向数据设置中应用REML。</li>
+<li>1994：Diggle，Liang和Zeger在三种类型的随机方差分量之间进行区分：随机效应和随机系数，串行相关（在时间上彼此接近的残差更接近于相距更远的残差）和随机测量误差（Diggle等，2002）。</li>
+
+<li><p>20世纪90年代以后：LMM在医学中越来越流行（Brown＆Prescott，2006）和社会科学（Raudenbush＆Bryk，2002），他们也被称为多层模型或层级线性模型。</p>
+
+<h3 id="1-2-2关键软件开发一些重要的地标在这里突出显示">1.2.2关键软件开发一些重要的地标在这里突出显示：</h3></li>
+
+<li><p>1982：Bryk和Raudenbush首次发布了HLM计算机程序。
+1988年：Schluchter和Jennrich首先介绍了用于非平衡重复测量模型的BMDP5-V软件例程。</p></li>
+
+<li><p>1992：SAS引入proc混合作为SAS / STAT分析包的一部分。</p></li>
+
+<li><p>1995：StataCorp发布了Stata Release 5，其提供了用于拟合具有与单个随机因子相关联的随机效应的模型的xtreg过程，以及使用广义估计方程（GEE）将拟合模型与面板数据进行拟合的xtgee过程。</p></li>
+
+<li><p>1998：Bates和Pinheiro介绍了R软件包的通用线性混合效应建模函数lme（）。</p></li>
+
+<li><p>2001：Rabe-Hesketh et al。协作编写Stata命令gllamm用于拟合LMM（以及其他类型的模型）。 SPSS发布了第一版的MIXED过程作为SPSS 11.0版的一部分。</p></li>
+
+<li><p>2005：Stata使得一般LMM命令xtmixed作为Stata Release 9的一部分可用，并且这将成为Stata Release 13中的混合命令.Bates为R软件包引入了lmer（）函数。</p></li>
+</ul>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/lambert2004-%E7%A9%BA%E9%97%B4%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" data-toggle="tooltip" data-placement="top" title="Lambert2004-空间回归模型">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/rcodes/ld%E7%9A%84%E8%AE%A1%E7%AE%97-#rstat%23/" data-toggle="tooltip" data-placement="top" title="LD的计算-#rstat#">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Lstiburek2015a-利用bwb补充缺失的信息</title>
+  <meta property="og:title" content="Lstiburek2015a-利用bwb补充缺失的信息" />
+  <meta name="twitter:title" content="Lstiburek2015a-利用bwb补充缺失的信息" />
+  <meta name="description" content="Lstibůrek M, Hodge GR, Lachout P (2015) Uncovering genetic information from commercial forest plantations—making up for lost time using “Breeding without Breeding.” Tree Genet Genomes. doi: 10.1007/s11295-015-0881-y
+ 提议使用Breeding without Breeding（BwB）来从现有种植园中揭示或提取遗传信息，使用谱系重建和BLUP来预测育种值并鉴定遗传上的个体。重点是在一个操作育种计划开始使用该方法以绕开育种和测试的第一个周期，但它也可以应用于更先进的树木改良计划。进行了模拟研究以检查在BwB方法中使用的三个概念群体的不同大小，并且比较使用该方法获得的遗传增益与如果已经开始的全同胞育种和测试策略将获得的遗传增益年前。 BwB方法基于具有相对少数的树（从1,200至3,600）的谱系重建，所述树由随机选择的大小为NR = 600至3,000的亚群和大小为NT = 1的顶表型亚群组成， 600（基于表型单独在5,940至23,760棵树中预选）。使用重建的谱系，进行表型数据的组合REML / BLUP分析以预测育种值，并且进行线性优化以进行最终选择以最大化增益，同时约束与给定有效群体大小N e = 5的相关性，10或20.结果表明，BwB策略可以实现高水平的遗传增益，相当于使用全同胞策略可以实现的增益的80％至98％。
+介绍
+树是长寿的有机体，因此经常需要几年才能达到繁殖成熟。商业林业还涉及比大多数作物植物或动物长得多的时间：对于桉树的8年轮伐长度被认为相当快，对于温带和亚热带松树的15年至25年是非常普遍的，并且树种北方气候可以有30到80年的轮伐，甚至更长。因此，树木育种是一项长期的努力。 传统上，树木育种计划是通过在自然林中进行大规模选择或在商业种植园中为外来种植物种开始的。有时，育种者将直接从自然林或种植园中选择的树上收集种子，但是经常将选择的树嫁接在种子园或育种树木中，随后等待若干年，直到可以进行种子收集。使用这种种子，育种者通常建立大量重复的进展测试，结构良好的交配设计，并再次等待一些年的树木达到可以获得有意义的数据的年龄（例如，4至20年，取决于物种）（White et al。2007）。 二十多年来，遗传学家已经知道潜在地使用分子标记数据来估计亲缘关系（例如，Queller和Goodnight 1989）。分子遗传学的进展，特别是高度信息的DNA标记如微卫星（SSR）和单核苷酸多态性（SNP）的发展，已经引入了树种繁殖的新方法的可能性。这些新方法之一是系谱重建，其是使用分子数据来确定个体群体之间的系谱关系（例如，Meagher和Thompson 1986）。 树种繁殖者提出了一系列方法，家谱重建可用于作业育种计划。例如，Lambeth et al。 （2001）引入了一项名为Polymix Breeding with Parental Analysis的测试策略。该策略背后的动机是花粉组合的育种将比全同胞育种更有成本效益，并且标记随后可用于鉴定潜在选择候选者的男性亲本，以便控制相关性，或鉴定所有后代的雄性亲本以产生全同胞配偶系谱。 El-Kassaby et al。 （2007）和El-Kassaby和Lstibuchrek（2009）将这个想法扩展到开放授粉群体，指出即使是自然交配和家庭大小不同，系谱重建也可用于估计遗传参数和预测育种值。他们的重点是，育种者可以在不做任何交叉的情况下获得遗传获益，他们称这种方法没有育种 育种^（BwB）。 Hansen和McKinney（2010）已经将这种方法应用于从具有99个克隆的种子园产生的Abies nordmanniana的商业种植。使用一组12个SSR标记物，以及关于亲本的基因型信息，他们能够以98％的置信水平为98％的后代分配亲本（双亲）。 Hansen和McKinney称他们的方法Bquasi现场测试，强调，育种者可以创建类似正常的子代测试数据使用谱系重建方法。 在当前的研究中，我们将讨论从现有种植园中发现或提取谱系信息，预测育种值和鉴定遗传优势个体的方法。具体来说，我们试图描述如何对特定物种的种植园进行BwB方法来启动操作育种计划。实际上，这种方法可用于规避森林树木改良计划中的育种和测试的第一个周期。目标是概述一种方法，如果一个全面的传统选择和育种计划已经开始多年，将实现大部分的遗传获益。首先，我们简要概述概念思想，然后进行彻底的定量遗传分析。
+BwB方法概述 假设我们有一个商业利益的物种，这个物种的一些种植园，没有遗传测试。此外，假设种植园的亲本是未知的，即不能用于育种或果园，并且不可用于基因分型。目的是从商业种植园提取Bprogeny检验数据，并进行遗传评价（育种值的预测）以用于选择的目的。 该过程涉及三个概念种群：BwB种群和该种群的两个子集，随机亚群和顶表型亚群。该过程概述如下。">
+  <meta property="og:description" content="Lstibůrek M, Hodge GR, Lachout P (2015) Uncovering genetic information from commercial forest plantations—making up for lost time using “Breeding without Breeding.” Tree Genet Genomes. doi: 10.1007/s11295-015-0881-y
+ 提议使用Breeding without Breeding（BwB）来从现有种植园中揭示或提取遗传信息，使用谱系重建和BLUP来预测育种值并鉴定遗传上的个体。重点是在一个操作育种计划开始使用该方法以绕开育种和测试的第一个周期，但它也可以应用于更先进的树木改良计划。进行了模拟研究以检查在BwB方法中使用的三个概念群体的不同大小，并且比较使用该方法获得的遗传增益与如果已经开始的全同胞育种和测试策略将获得的遗传增益年前。 BwB方法基于具有相对少数的树（从1,200至3,600）的谱系重建，所述树由随机选择的大小为NR = 600至3,000的亚群和大小为NT = 1的顶表型亚群组成， 600（基于表型单独在5,940至23,760棵树中预选）。使用重建的谱系，进行表型数据的组合REML / BLUP分析以预测育种值，并且进行线性优化以进行最终选择以最大化增益，同时约束与给定有效群体大小N e = 5的相关性，10或20.结果表明，BwB策略可以实现高水平的遗传增益，相当于使用全同胞策略可以实现的增益的80％至98％。
+介绍
+树是长寿的有机体，因此经常需要几年才能达到繁殖成熟。商业林业还涉及比大多数作物植物或动物长得多的时间：对于桉树的8年轮伐长度被认为相当快，对于温带和亚热带松树的15年至25年是非常普遍的，并且树种北方气候可以有30到80年的轮伐，甚至更长。因此，树木育种是一项长期的努力。 传统上，树木育种计划是通过在自然林中进行大规模选择或在商业种植园中为外来种植物种开始的。有时，育种者将直接从自然林或种植园中选择的树上收集种子，但是经常将选择的树嫁接在种子园或育种树木中，随后等待若干年，直到可以进行种子收集。使用这种种子，育种者通常建立大量重复的进展测试，结构良好的交配设计，并再次等待一些年的树木达到可以获得有意义的数据的年龄（例如，4至20年，取决于物种）（White et al。2007）。 二十多年来，遗传学家已经知道潜在地使用分子标记数据来估计亲缘关系（例如，Queller和Goodnight 1989）。分子遗传学的进展，特别是高度信息的DNA标记如微卫星（SSR）和单核苷酸多态性（SNP）的发展，已经引入了树种繁殖的新方法的可能性。这些新方法之一是系谱重建，其是使用分子数据来确定个体群体之间的系谱关系（例如，Meagher和Thompson 1986）。 树种繁殖者提出了一系列方法，家谱重建可用于作业育种计划。例如，Lambeth et al。 （2001）引入了一项名为Polymix Breeding with Parental Analysis的测试策略。该策略背后的动机是花粉组合的育种将比全同胞育种更有成本效益，并且标记随后可用于鉴定潜在选择候选者的男性亲本，以便控制相关性，或鉴定所有后代的雄性亲本以产生全同胞配偶系谱。 El-Kassaby et al。 （2007）和El-Kassaby和Lstibuchrek（2009）将这个想法扩展到开放授粉群体，指出即使是自然交配和家庭大小不同，系谱重建也可用于估计遗传参数和预测育种值。他们的重点是，育种者可以在不做任何交叉的情况下获得遗传获益，他们称这种方法没有育种 育种^（BwB）。 Hansen和McKinney（2010）已经将这种方法应用于从具有99个克隆的种子园产生的Abies nordmanniana的商业种植。使用一组12个SSR标记物，以及关于亲本的基因型信息，他们能够以98％的置信水平为98％的后代分配亲本（双亲）。 Hansen和McKinney称他们的方法Bquasi现场测试，强调，育种者可以创建类似正常的子代测试数据使用谱系重建方法。 在当前的研究中，我们将讨论从现有种植园中发现或提取谱系信息，预测育种值和鉴定遗传优势个体的方法。具体来说，我们试图描述如何对特定物种的种植园进行BwB方法来启动操作育种计划。实际上，这种方法可用于规避森林树木改良计划中的育种和测试的第一个周期。目标是概述一种方法，如果一个全面的传统选择和育种计划已经开始多年，将实现大部分的遗传获益。首先，我们简要概述概念思想，然后进行彻底的定量遗传分析。
+BwB方法概述 假设我们有一个商业利益的物种，这个物种的一些种植园，没有遗传测试。此外，假设种植园的亲本是未知的，即不能用于育种或果园，并且不可用于基因分型。目的是从商业种植园提取Bprogeny检验数据，并进行遗传评价（育种值的预测）以用于选择的目的。 该过程涉及三个概念种群：BwB种群和该种群的两个子集，随机亚群和顶表型亚群。该过程概述如下。">
+  <meta name="twitter:description" content="Lstibůrek M, Hodge GR, Lachout P (2015) Uncovering genetic information from commercial forest plantations—making up for lost time using “Breeding without Breeding.” Tree Genet Genomes. doi: …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/lstiburek2015a-%E5%88%A9%E7%94%A8bwb%E8%A1%A5%E5%85%85%E7%BC%BA%E5%A4%B1%E7%9A%84%E4%BF%A1%E6%81%AF/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/lstiburek2015a-%E5%88%A9%E7%94%A8bwb%E8%A1%A5%E5%85%85%E7%BC%BA%E5%A4%B1%E7%9A%84%E4%BF%A1%E6%81%AF/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Lstiburek2015a-利用bwb补充缺失的信息</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (222 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Lstiburek2015a-利用bwb补充缺失的信息</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (222 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Lstibůrek M, Hodge GR, Lachout P (2015) Uncovering genetic information from commercial forest plantations—making up for lost time using “Breeding without Breeding.” Tree Genet Genomes. doi: 10.1007/s11295-015-0881-y</p>
+</blockquote>
+
+<p>提议<strong>使用Breeding without Breeding（BwB）来从现有种植园中揭示或提取遗传信息</strong>，<strong>使用谱系重建和BLUP来预测育种值并鉴定遗传上的个体</strong>。重点是在一个操作育种计划开始使用该方法以绕开育种和测试的第一个周期，但它也可以应用于更先进的树木改良计划。进行了模拟研究以检查在BwB方法中使用的三个概念群体的不同大小，并且比较使用该方法获得的遗传增益与如果已经开始的全同胞育种和测试策略将获得的遗传增益年前。 BwB方法基于具有相对少数的树（从1,200至3,600）的谱系重建，所述树由随机选择的大小为NR = 600至3,000的亚群和大小为NT = 1的顶表型亚群组成， 600（基于表型单独在5,940至23,760棵树中预选）。使用重建的谱系，进行表型数据的组合REML / BLUP分析以预测育种值，并且进行线性优化以进行最终选择以最大化增益，同时约束与给定有效群体大小N e = 5的相关性，10或20.结果表明，<strong>BwB策略可以实现高水平的遗传增益，相当于使用全同胞策略可以实现的增益的80％至98％</strong>。</p>
+
+<hr />
+
+<p>介绍</p>
+
+<p>树是长寿的有机体，因此经常需要几年才能达到繁殖成熟。商业林业还涉及比大多数作物植物或动物长得多的时间：对于桉树的8年轮伐长度被认为相当快，对于温带和亚热带松树的15年至25年是非常普遍的，并且树种北方气候可以有30到80年的轮伐，甚至更长。因此，树木育种是一项长期的努力。
+传统上，树木育种计划是通过在自然林中进行大规模选择或在商业种植园中为外来种植物种开始的。有时，育种者将直接从自然林或种植园中选择的树上收集种子，但是经常将选择的树嫁接在种子园或育种树木中，随后等待若干年，直到可以进行种子收集。使用这种种子，育种者通常建立大量重复的进展测试，结构良好的交配设计，并再次等待一些年的树木达到可以获得有意义的数据的年龄（例如，4至20年，取决于物种）（White et al。2007）。
+二十多年来，<strong>遗传学家已经知道潜在地使用分子标记数据来估计亲缘关系</strong>（例如，Queller和Goodnight 1989）。分子遗传学的进展，特别是高度信息的DNA标记如微卫星（SSR）和单核苷酸多态性（SNP）的发展，已经引入了树种繁殖的新方法的可能性。这些新方法之一是<strong>系谱重建</strong>，其是<strong>使用分子数据来确定个体群体之间的系谱关系</strong>（例如，Meagher和Thompson 1986）。
+树种繁殖者提出了一系列方法，家谱重建可用于作业育种计划。例如，Lambeth et al。 （2001）引入了一项名为Polymix Breeding with Parental Analysis的测试策略。该策略背后的动机是花粉组合的育种将比全同胞育种更有<strong>成本效益</strong>，并且标记随后可用于鉴定潜在选择候选者的男性亲本，以便控制相关性，或鉴定所有后代的雄性亲本以产生全同胞配偶系谱。 El-Kassaby et al。 （2007）和El-Kassaby和Lstibuchrek（2009）将这个想法扩展到开放授粉群体，指出即使是自然交配和家庭大小不同，系谱重建也可用于估计遗传参数和预测育种值。他们的重点是，<strong>育种者可以在不做任何交叉的情况下获得遗传获益，他们称这种方法没有育种
+育种^（BwB）</strong>。 <strong>Hansen和McKinney（2010）已经将这种方法应用于从具有99个克隆的种子园产生的Abies nordmanniana的商业种植。使用一组12个SSR标记物，以及关于亲本的基因型信息，他们能够以98％的置信水平为98％的后代分配亲本（双亲）</strong>。 Hansen和McKinney称他们的方法Bquasi现场测试，强调，育种者可以创建类似正常的子代测试数据使用谱系重建方法。
+在当前的研究中，我们将讨论从现有种植园中发现或提取谱系信息，预测育种值和鉴定遗传优势个体的方法。具体来说，我们试图描述如何对特定物种的种植园进行BwB方法来启动操作育种计划。实际上，这种方法可用于规避森林树木改良计划中的育种和测试的第一个周期。目标是概述一种方法，如果一个全面的传统选择和育种计划已经开始多年，将实现大部分的遗传获益。首先，我们简要概述概念思想，然后进行彻底的定量遗传分析。</p>
+
+<h2 id="bwb方法概述">BwB方法概述</h2>
+
+<p>假设我们有一个商业利益的物种，这个物种的一些种植园，没有遗传测试。此外，假设种植园的亲本是未知的，即不能用于育种或果园，并且不可用于基因分型。目的是从商业种植园提取Bprogeny检验数据，并进行遗传评价（育种值的预测）以用于选择的目的。
+该过程涉及<strong>三个概念种群：BwB种群和该种群的两个子集，随机亚群和顶表型亚群</strong>。该过程概述如下。</p>
+
+<p>1.测量和/或检查大小为NBwB的整个BwB群体，其将是该物种的种植基地的子集。
+2.鉴定大小NT的顶部表型亚群，由BwB群体中的最佳表型组成。这些树将是最终选择候选者，并提供高选择差异。
+3.从BwB群体中选择大小为NR的随机子群体。随机亚群的目的是为家庭平均值（或相等地，父母育种值）的估计提供数据。
+4.使用随机和顶部表型亚群的分子标记基因型信息用于组合全系谱重建（NR + NT）。
+5.进行REML-BLUP评估（利用系谱和表型测量）来预测组合的随机和顶部表型亚群的育种值（BV）。</p>
+
+<p>将从BwB方法获得的遗传学益处与可从大规模全同胞育种和测试策略获得的遗传学获益进行比较。我们不打算建议下面描述的特定全同胞测试策略在效率方面是最佳的;相反，我们只想比较BwB策略与一个大的，全面的全同胞测试努力，应该导致良好的遗传增益。
+本研究的具体目标是：</p>
+
+<p>1.从BwB方法检查遗传参数估计和BV预测的准确性。
+2.确定BwB方法的预期遗传增益，并将其与传统测试策略（全同胞交配，重复后代测试等）的获益进行比较。
+3.检查BwB策略（NBwB，NR和NT）中使用的三种群体的不同大小，以便为操作树改进程序建议接近最佳大小。</p>
+
+<p>模拟模型</p>
+
+<p>在R系统（R Core Team 2014）中开发了随机仿真模型，其中包括1个主程序和10个子程序。在R代码中引入并调用了两个外部软件库：（1）用于R的ASReml（Butler等人2007），和（2）Gurobi Optimizer（Gurobi Development Team 2014）。对每个场景重复使用500次独立迭代的模拟实验，并且在这些场景之间绘制统计推断。
+讨论</p>
+
+<p>遗传获益</p>
+
+<p>BwB策略在商业化植物中的应用提供了获得实质遗传收益的机会，或许更重要的是，在测试中节省多年的时间。 1800棵树（从更大的群体中选择1,200个 -  + 600个顶部表型）的谱系的重建可以返回通过大规模全同胞测试程序实现的大约85至95％的遗传获得。这种85至95％的效率适用于从Ne = 5至20的选择强度范围。如果仅有一个种植材料的遗传来源，则育种者将使用Ne = 20的目标，并且育种者想要构建种子园。或者如果存在多个已知的种植园的遗传来源，育种者可能希望使用来自所有种子的材料构建种子园，并且每个来源的Ne = 5的目标可能是适当的。或者，育种者可能想使用Ne = 5的目标来为小全同胞生产群体（或克隆生产群体）选择亲本。
+事实上，BwB方法非常有效，并且与遗传增益方面的FS战略相当，可能会令人惊讶。在这项研究中，重点是在开始树改良计划的后代选择，父母基因型无法选择。子代选择的遗传获得的一部分来自于鉴定最佳家族，或者换句话说，准确地预测最佳亲本的育种值（即使父母本身是未知的或不可获得的）。亲本育种值确定全同胞家族（即中亲家族BV）的加性遗传值。来自后代选择的遗传获得的另一部分来自于鉴定来自顶层家族的突出后代。因此，对于任何个体后代，预测的遗传增益可以被认为是中亲预测的育种值加上家族内预测的遗传增益的总和。中亲值和家族内遗传值的基础遗传方差等于加性遗传方差的1/2。
+中亲遗传值预测基于两个亲本的许多后代的观察。但是家庭内遗传偏差通过比较个体后代与其余的兄弟姐妹的表型来确定（概念上）。换句话说，通过单个表型观察（针对环境错误效应进行调整）确定特定子代的预测遗传值的大部分。低遗传力性状的单一表型观察本质上是基础遗传价值（在这种情况下，家庭内遗传价值）的不精确测量，因此选择rα的整体精确度a将是有限的。对于基于单个性状的表型选择或质量选择，预测的准确性理论上等于遗传力的平方根（Falconer 1981; Hodge和White 1992）。在本研究中，h2 = 0.15，因此PH策略的准确性应为râ，a = 0.39，这与本研究中500个模拟运行中的PH策略的平均精确度准确匹配（表2）。使用FS策略和BwB策略，BLUP分析将同时预测中亲遗传值和家族内遗传偏差，以预测每个后代的遗传值，并且准确度将高于该基线的rα，a = 0.39。对于给定的遗传力，假定无限后代测试，可以推导FS和BwB策略的后代选择的理论最大准确度（见附录）。在这项研究中，h2 = 0.15，后代选择的最大准确性是râ，a = 0.74。
+对于FS策略，平均精度为râ，a = 0.68（表2），在本研究中假设的遗传参数接近最大可能;这是对后代的真实和预测的遗传值的适度高的相关性。 BwB策略接近这种准确性（表2），这表明使用FS策略，育种人员在预测基因遗传价值方面将投入更多的资源。此外，BwB和FS精度相似的事实意味着使用两种策略的选择的遗传增益也将是类似的（图2和图3）。重要的是要注意，如果BwB策略和FS策略之间的比较是基于父母遗传值预测进行的，则可能发现非常不同的结果。如果亲本基因型可供育种者选择，则该比较是相关的;在这种情况下，FS战略可能具有实质性优势。
+如果可以使用建议的BwB策略获得显着的遗传增益，则在树改进程序开始时规避测试周期将具有特别的价值。不管是否使用BwB策略，育种程序将开始于在天然支架或种植园中进行检查和/或质量选择，以鉴定BwB的顶部表型群体，或鉴定加群的群体 - 用于随后的后代测试。 BwB方法将准确识别杰出的基因型，而无需嫁接，种子收集或后代测试，可以节省许多年的工作。然后，最好的基因型将立即供育种者用于建立或部署到种植园。
+根据物种生物学，在选择和移植后，种子生产可能存在相当长的时间滞后。在这种情况下，育种者可以选择通过建立具有加树群体的种子园来开始树改良程序，并且使用从种植园中的加树收集的OP种子来后代测试这些选择。当果园开始产生种子时，后代测试可能足够老，以提供数据对果园中的父母排名。这种方法的预期遗传增益将取决于许多因素，包括移植到果园和子代测试中的初始选择的数量，后代测试的数量和设计，以及育种者是否选择使用谱系重建控制果园中的相关性。从初始选择的获得可能大约是我们估计的单独的表型选择（图2和3），在种子果园（roching the seed orchard）之后具有轻微的边缘增加（例如，Lindgren和El-Kassaby 1989; Prescher等2008）。换句话说，在这种情况下，BwB方法可能不节省时间，但会产生额外的遗传增益。此外，育种者可以在方案开始时将加速育种工作集中在最佳基因型上，例如顶端嫁接（Hartman和Kestler 1968）或花刺激处理（例如，Pharis和Kuo 1977）。</p>
+
+<p>谱系重建精度</p>
+
+<p>上面讨论的潜在遗传增益假设系谱重建的100％准确性。谱系重建可以用SNP或SSR进行，但是使用这两种技术，<strong>在基因分型过程中将总是存在一些错误</strong>。例如，一些个体可能具有针对一些或所有基因座的缺失数据，并且具有数据的一些个体不能以高置信度分配给父亲。然而，随着技术的改进和足够数量的标记，可以实现相当高的精度。</p>
+
+<p>如前所述，Hansen和McKinney（2010）能够使用12个SSR标记将两个亲本分配给北方甘薯种植园中98％的后代。然而，他们注意到，在收集这种种子的果园中花粉污染极低（约3％）。较高水平的花粉污染在林木种子园中是常见的（El-Kassaby等人1989; Adams等人1997; Slavov等人2005），并且这可以使谱系重建更具挑战性。例如，在基于樟子松数据的模拟研究中，Wang et al。 （2010）能够将两个亲本分配到果园克隆交配的97％的后代，但对于涉及外国（非果园）的交配，他们的准确度甚至母亲父亲分配显着较低，约78％的后代正确分配。本研究采用平均9.3个等位基因的9个SSR位点进行。对于来自具有40％污染率的59个克隆的种子园的Pseudotsuga menziesii种群，El-Kassaby等人（2007）使用九个SSR标记来分配双亲成功43％至58％。鉴于在分配亲本方面可能有不到100％的成功，本研究中讨论的随机和顶表型亚群的大小可以被认为是最小值。例如，育种者可以选择对更大数量的树进行基因分型，但是然后仅使用可以以高水平的置信度分配亲本或同胞的数据。在本研究中提出的BwB策略方面，花粉污染的主要影响将在随机子群体。 Lstibůrek等人的理论研究（2012）证实，种子果园的大量子代中的表型预选将显着降低由花粉污染引起的后代的频率，这取决于许多因素，包括果园的遗传优势，实际水平花粉污染，性状的遗传性和表型预选择的强度。随后是对樟子松第一代种子园的应用研究，报告的花粉污染为21％至70％。选择来自果园的整体后代群体的顶部10％的表型，随后的gentotyping显示预选群体具有小于5％的花粉污染（或者换句话说，小于5％的那些顶部表型具有来自果园外的父母）（Korecký等人2014）。与BwB策略相关，这些结果表明Top Phenotype子群体可能相对没有花粉污染;然而，未选择的随机亚群可能具有高水平的花粉污染。对于大小为NR = 1,800的随机亚群，那些后代的数目将是来自种子园外的亲本的后代。关于这些后代的数据因此将提供关于果园中的亲本以及因此关于感兴趣的后代的更少的信息，即，将是最终选择的群体的候选者的具有更高遗传质量的后代。这将影响由BwB策略产生的遗传增益多少可以通过沿着图1和2中的线向左移动（朝向较低的NR）来近似。 2-3，例如，通过将NR从1,800减少到1,200。在这个例子中，即使从随机子群体中丢失1/3的数据将使遗传增益降低小于1％，因此似乎很清楚，随机子群体中花粉污染的影响将降低整体遗传只获得少量。
+大多数谱系重建和BwB文献（无论是模拟或实际应用）是基于已知的父母基因型，这使得儿科重建的工作更容易。<strong>如果父母基因型是未知的，谱系重建变得更加困难，但仍然可能的</strong>。对于林木，Massah et al。 （2010）研究了具有未知父母的黄柏（Callitropsis nootkatensis）群体的谱系重建，并且能够鉴定群体和家庭关系。 Grattapaglia et al。 （2014）使用10个SSR标记平均每个位点13.2个等位基因，以确认质量控制授粉家庭的父母在栎树的克隆种子园。他们报告高同一性概率和父母排斥，并表示等位基因变异应提供良好的鉴定力，即使更复杂的交配模式与一些未知的父母。
+渔业遗传学家在这个研究领域非常活跃。 Rodriguez-Barreto et al。 （2013）在没有父本信息的情况下研究了野生种群的秃鹫（Seriola dumerili）的基础建设。仅使用四个高信息SSR（每个标记7个等位基因，H0&gt; 0.80），他们能够估计亲本和构建家族的数量。 Rodríguez-Ramilo et al。 （2007）研究了由具有已知谱系结构的139个全同胞家族组成的Scophthalmus maximus（turbot）群体，但假定不知道亲本基因型。使用10个SSR平均15.1等位基因，他们将分子相关性转换为coancestry（Queller和晚安1989年）。对于560人群，检查所有可能的成对关系，并且不相关的对，半同胞和全同胞的分类相当准确，约80％。看起来似乎<strong>更大数量的标记将提高科学重建的准确性</strong>。在基于油棕（Elaeis guineensis）的数据的模拟研究中，Cros等人（2014）检验了从分子相关性估计的真实coancestry和祖先之间的相关性。他们发现10个SSR将给出大约0.80的相关性，而36个SSR将增加相关性到大于0.90。这个结果支持这样的想法，育种者可以简单地增加标记的数量，以达到所需的谱系重建精度水平。
+稍有不同的方法可能是直接使用分子相关性矩阵来估计方差和预测育种值。这将避免将所有个体正确地分类为无关，半同胞或全同胞的困难，并且具有能够使用所有基因分型个体的另外的优点。作为例子，Blonk等人（2010）比较了使用重建的谱系和分子相关性对大豆，自然交配种群的Solea solea（共同的唯一）与未知父母做的育种价值预测。人口规模为1,953人，谱系重建能够分配亲子关系其中1338。使用交叉验证，他们确定估计育种值的准确度为0.54与谱系重建和0.55与1,338个人的分子相关性。然而，他们指出，如果所有1,953个个体用分子相关性进行分析，精度提高到0.60。</p>
+
+<p>表型准确性</p>
+
+<p>上面讨论的潜在遗传增益也假定了精确的表型。换句话说，假设的遗传参数来自良好设计和维持良好生存的子代测试;因此，对于在BwB情景下预测的增益是准确的，选择条件必须相似。如果<strong>人工林比后代测试的异质性显着更大</strong>，那么遗传性将会更低，并且本研究中估计的BwB增益和效率将向上偏移。然而，对于大的种植园基地，似乎可能育种者可以定位一些具有良好生长和良好一致性的小块，类似于维持的后代测试。在这项研究中，这种块的必要总尺寸大约在6和24公顷之间。
+在本研究中提出的BwB策略中，有三个群体必须被表型化（即测量或检查）：总BwB群体以及随机和顶表型亚群体。我们设想随机子群体将用一种方法表型化，并且其他两种群体将以不同的方法一起处理。
+对于随机亚群，表型应该在种植园的至少两个部分（即两个不同的部位）进行。这些地点应具有高生存期，均匀间隔，并且优选地具有很少的地点内变化（即，在测量随机群体的平面部分处的低环境变化水平）。为了减少环境误差，一个选择是使用行列网格绘制网站，并使用空间分析技术来模拟环境变化（Dutkowski et al。2002）。另一种选择是<strong>使用由Gezan等人建议的事后阻塞。 （2006），有效地创建25至50棵树的小随机不完全块，以纳入BLUP模型</strong>。
+对于BwB和顶部表型群体，情况有些不同。在这里讨论的情况下，BwB人口的规模可以从5,940棵树（约6公顷的种植园，假设间隔3×3米）到23,760棵树（约24公顷的种植园）。我们设想一个非常类似于用于大规模选择的过程（Zobel和Talbert 1984; White等人2007）。总之，现场工作人员会将种植园从四到六行扫描，以获得出色的表型。当潜在的顶部表型位于时，船员将评估特征，如茎形态，疾病的不存在，近邻的存活等。如果树似乎是适当的，船员将采取测量该树和其最近邻居的15-20，以便将顶部表型树的测量表达为与相邻树（或B比较树）的偏差。在本研究中，最终的顶部表型群体（其将被基因分型以确定亲本）的大小为NT = 600。在NT = 600的情况下，每个候选者使用15-20个比较树将导致在9,000和12,000个比较树之间进行测量。这是一个重要的努力，大致相当于在最大FS策略（23,760）中测量的树的一半。可以通过减少比较树的数量或通过减少顶部表型群体中的数量来减少测量的邻居的数量。
+关于比较树的数量的减少，对于大规模选择，建议的数量通常在大约4-6个邻居（例如，Brown和Goddard 1961; White等人2007，第333页）。比较树的目的是为了精确地计算顶部表型树与群体的偏差，来估计位点势（或者换句话说，该微点上的群体平均值）。使用15-20个邻居应该给出相当精确的偏差测量。可能减少要测量的邻居的数量（可能减少到6-10），但这也可能略微减少遗传收益。
+关于Top表型数量的减少，似乎对NT = 600以上的基因分型相对没有什么好处，因为这样做的唯一目标是确保足够的基因型来选择足够的不相关的树以满足所需的有效群体大小（Ne）。根据Ne的大小，可能使用NT &lt;600，对遗传增益几乎没有影响。工作负荷和精度之间的最佳平衡（即NT的大小和每个表型树的比较树的数量）是未来研究的一个领域。</p>
+
+<p>##较大的BwB群体</p>
+
+<p>重要的是要注意，应该可以通过增加NBwB超过本研究中检查的23,760个最大值来获得额外的遗传增益。回想一下，这里概述的FS战略仅仅是为了提供一些BwB收益与传统育种和测试计划可能获得的收益进行比较的基础。因此，图6和7中的Bmaximum增益。 2-3，即100％FS增益是任意的。 。如图2和图3所示，可以看出，BwB群体的大小从NBwB = 5,940增加到NBwB = 11,880增加约2％（并且将QBwB / FS增加约3至5％）。将BwB的大小从NBwB = 11,880加倍到NBwB = 23,760，使增益增加相似的量。这意味着NBwB的进一步增加将产生进一步的收益。在操作上，这意味着将检查更多的公顷的种植园以鉴定另外的顶部表型，从而增加选择强度和家庭内的增益。显然，在某些时候，来自增加NBwB的边际回报将太小，不足以证明额外的努力，但由于步行计划可能是一个低成本操作，育种者应该考虑大于23,760棵树的BwB种群。</p>
+
+<p>BwB超过第一个周期</p>
+
+<p>虽然本研究的重点是树木改良计划的启动，BwB方法的效率和在本研究中估计的潜在遗传增益表明BwB方法可能有超越第一个改进周期的优势。没有理由认为这种方法不能与先进世代一起使用。如果可能从未结构化的种植园中获得Buncover ^遗传信息，育种者可以选择简单地建立种植园，并且当需要和方便时，恢复Bprogeny测试信息。换句话说，育种者可以支付预付成本来建立子代测试，然后等待信息，或者他可以稍后支付成本来进行BwB基因分型以收集必要的遗传信息。或者，育种者可以考虑一种补充方法，将少量的复制后代测试与BwB方法相结合，其中大型种植园地基中的所有树木都被视为选择候选者。一些亲本/家族信息将来自复制的后代测试，并且可以从种植园中选择少数顶部表型以增加选择强度和遗传获得，并且这些将被基因分型以控制谱系并优化最佳亲本基因型。
+BwB超过第一周期的效用将在很大程度上取决于由该方法产生的亲本育种值预测的准确性，并且这应当是额外研究的主题。另一个重要的研究课题是综合研究家系重建中的错误对BwB效率的影响。</p>
+
+<p>##结论</p>
+
+<p>本研究的目的是检查BwB策略从植物中发现遗传信息的有效性，作为开始树木改良计划的一种方式，并避免育种和测试的初始循环。假设可以准确地进行子代重建，很明显，BwB方法将是有效的，并且该策略将返回来自后代选择的遗传获得的80-98％，如果育种和测试程序具有几年前开始。
+这项研究没有进行成本效益分析，因为基因分型成本继续下降，其他与野外作业相关的成本（育种，试验机构，大规模选择种植园的检查等）在不同国家之间差别很大和程序。应该进行详细的成本/效益分析，以评估实际经济效率，同时给出表示实际树木改进计划的具体成本和时间要素。然而，我们认为BwB方法将是成本有效的，需要低水平的基因分型和相对低的评价BwBand随机人群的投资（至少与子代测试建立，维护和测量的成本相比）。 BwB策略要求1,200到3,600棵树进行基因分型，并且基于本研究的结果，我们建议对1,200到1,800棵树的随机子群体和不超过600棵树的顶部表型子群体进行基因分型应该给出接近最佳的结果。 如果最终选择的群体很小（例如，Ne = 5），则顶表型亚群体的大小可能减少以便节省基因分型成本。 顶部表型亚群应该从非常大的群体（BwB群体）中预选择，大约24,000棵或更多的树，可能在典型的种植园中建立。 大的BwB群体不需要全部测量，但应该对小的顶部表型群体进行彻底和精确的测量。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/lstiburek2017-%E5%A4%A9%E7%84%B6%E7%BE%A4%E4%BD%93%E4%B8%AD%E7%8E%B0%E5%AE%9E%E9%81%97%E4%BC%A0%E5%8A%9B%E7%9A%84%E8%AE%A1%E7%AE%97/" data-toggle="tooltip" data-placement="top" title="Lstiburek2017-天然群体中现实遗传力的计算">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/lstiburek2015a-bwb/" data-toggle="tooltip" data-placement="top" title="Lstiburek2015a-bwb">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

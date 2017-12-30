@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>TGG-一篇关于G-by-E的综述</title>
+  <meta property="og:title" content="TGG-一篇关于G-by-E的综述" />
+  <meta name="twitter:title" content="TGG-一篇关于G-by-E的综述" />
+  <meta name="description" content="Li Y, Suontama M, Burdon R D, et al. 2017. Genotype by environment interactions in forest tree breeding: review of methodology and perspectives on research and application. Tree Genetics &amp; Genomes, in press.
+ 摘要 环境相互作用的基因型（G×E）是指不同环境之间不同基因型的比较性，代表基因型排名差异或环境遗传差异表达水平的差异。 G×E可以减少遗传力和整体遗传增益，除非育种计划的结构可以解决不同类别的环境。了解G×E的影响，环境在产生G×E中的作用以及问题和机遇对于有效的育种程序设计和部署遗传物质至关重要。我们回顾了目前用于识别G×E：因子分析模型，双标图分析和反应规范的主要分析方法。我们还回顾了G×E对全球经济重要性的森林物种的生长，形态和木材性质的生物学和统计学证据，包括一些松树，桉树，道格拉斯冷杉，云杉和一些杨树。在这些物种中，高水平的G×E倾向于报告生长性状，对于形态特征和木材性质，G×E含量低。最后，我们讨论了利用G×E可以最大限度地发现森林树种育种中的遗传增益。表征环境在产生互动中的作用被视为基本平台，允许有效测试候选基因型。我们讨论相对于等级交互的表达式互动的重要性，比以前的许多报告更为重要，尤其是部署决策。我们研究了G×E对树木育种的影响，一些导致G×E的环境因素和G×E处理树种育种的策略，以及基因组学的未来作用。 关键词环境相互作用的基因型。分析方法G×E司机。影响。探索策略。森林树种育种。基因型筛选。基因型部署
+介绍 个体的表型由其基因型，环境和基因型与环境之间的任何相互作用（G×E相互作用或G×E）控制。当基因型的比较性能根据环境而变化时，这种相互作用据说存在。在一个环境中优于一种基因型的表现在另一个环境中可能会较差（de Jong 1990; Falconer和Mackay 1996）。在林业中，G×E可能导致某些基因型在某些环境环境下的表现的不可预测性。因此，为了减少甚至消除这种不可预测性，特征和理解G×E是一个首要目标。发生在哪里，G×E使繁殖计划的设计复杂化，同时也为最合适的种植种群配置目标部署条件提供了机会，以优化森林的森林健康，成长和木材质量。 G×E可以分为两大类（Lynch和Walsh 1998; White et al。2007）：（1）排名变化相互作用，其中基因型在不同环境中以不同的顺序排列;和（2）表达水平的相互作用，由此基因型差异的表达（例如育种值的扩散）在不同环境中变化，而不一定是基因型排序顺序的任何变化。因此，育种者需要确定G×E的模式和幅度，以获得森林工业的最佳遗传增益（Muir等人，1992; Raymond和Namkoong，1990）。由于育种者主要关注候选基因型的评估和选择，因此排名变化的相互作用通常对他们更感兴趣。虽然表达水平的相互作用对于育种通常不太重要，但是帮助确定在特定生长环境和特定最终产品中选择用于部署什么遗传物质可能是主要的兴趣。 1我们区分表达水平与尺度效应的相互作用，为后者通过数据转换消除交互的子集的子集。 在林木育种中，G×E常常是很大的，并且在找到一贯优越的基因型方面产生问题，特别是广泛适应。育种者经常通过选择对环境变化不敏感的稳定基因型，或为特定环境选择基因型，以便最大限度地增加遗传增益（Raymond和Namkoong，1990），来解决G×E。在树木中，几乎所有商业上重要的物种如辐射松（Pinus radiata D.Ton; Raymond 2011; Wu和Matheson 2005），火炬松（Pinus taeda L.; McKeand等人1997; Paul等人1997），苏格兰松（Pinus sylvestris L。; Gullberg和Vegerfors 1987; Haapanen 1996），斜纹松（Pinus elliottii Englem。var.">
+  <meta property="og:description" content="Li Y, Suontama M, Burdon R D, et al. 2017. Genotype by environment interactions in forest tree breeding: review of methodology and perspectives on research and application. Tree Genetics &amp; Genomes, in press.
+ 摘要 环境相互作用的基因型（G×E）是指不同环境之间不同基因型的比较性，代表基因型排名差异或环境遗传差异表达水平的差异。 G×E可以减少遗传力和整体遗传增益，除非育种计划的结构可以解决不同类别的环境。了解G×E的影响，环境在产生G×E中的作用以及问题和机遇对于有效的育种程序设计和部署遗传物质至关重要。我们回顾了目前用于识别G×E：因子分析模型，双标图分析和反应规范的主要分析方法。我们还回顾了G×E对全球经济重要性的森林物种的生长，形态和木材性质的生物学和统计学证据，包括一些松树，桉树，道格拉斯冷杉，云杉和一些杨树。在这些物种中，高水平的G×E倾向于报告生长性状，对于形态特征和木材性质，G×E含量低。最后，我们讨论了利用G×E可以最大限度地发现森林树种育种中的遗传增益。表征环境在产生互动中的作用被视为基本平台，允许有效测试候选基因型。我们讨论相对于等级交互的表达式互动的重要性，比以前的许多报告更为重要，尤其是部署决策。我们研究了G×E对树木育种的影响，一些导致G×E的环境因素和G×E处理树种育种的策略，以及基因组学的未来作用。 关键词环境相互作用的基因型。分析方法G×E司机。影响。探索策略。森林树种育种。基因型筛选。基因型部署
+介绍 个体的表型由其基因型，环境和基因型与环境之间的任何相互作用（G×E相互作用或G×E）控制。当基因型的比较性能根据环境而变化时，这种相互作用据说存在。在一个环境中优于一种基因型的表现在另一个环境中可能会较差（de Jong 1990; Falconer和Mackay 1996）。在林业中，G×E可能导致某些基因型在某些环境环境下的表现的不可预测性。因此，为了减少甚至消除这种不可预测性，特征和理解G×E是一个首要目标。发生在哪里，G×E使繁殖计划的设计复杂化，同时也为最合适的种植种群配置目标部署条件提供了机会，以优化森林的森林健康，成长和木材质量。 G×E可以分为两大类（Lynch和Walsh 1998; White et al。2007）：（1）排名变化相互作用，其中基因型在不同环境中以不同的顺序排列;和（2）表达水平的相互作用，由此基因型差异的表达（例如育种值的扩散）在不同环境中变化，而不一定是基因型排序顺序的任何变化。因此，育种者需要确定G×E的模式和幅度，以获得森林工业的最佳遗传增益（Muir等人，1992; Raymond和Namkoong，1990）。由于育种者主要关注候选基因型的评估和选择，因此排名变化的相互作用通常对他们更感兴趣。虽然表达水平的相互作用对于育种通常不太重要，但是帮助确定在特定生长环境和特定最终产品中选择用于部署什么遗传物质可能是主要的兴趣。 1我们区分表达水平与尺度效应的相互作用，为后者通过数据转换消除交互的子集的子集。 在林木育种中，G×E常常是很大的，并且在找到一贯优越的基因型方面产生问题，特别是广泛适应。育种者经常通过选择对环境变化不敏感的稳定基因型，或为特定环境选择基因型，以便最大限度地增加遗传增益（Raymond和Namkoong，1990），来解决G×E。在树木中，几乎所有商业上重要的物种如辐射松（Pinus radiata D.Ton; Raymond 2011; Wu和Matheson 2005），火炬松（Pinus taeda L.; McKeand等人1997; Paul等人1997），苏格兰松（Pinus sylvestris L。; Gullberg和Vegerfors 1987; Haapanen 1996），斜纹松（Pinus elliottii Englem。var.">
+  <meta name="twitter:description" content="Li Y, Suontama M, Burdon R D, et al. 2017. Genotype by environment interactions in forest tree breeding: review of methodology and perspectives on research and application. Tree Genetics &amp; …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/tgg-%E4%B8%80%E7%AF%87%E5%85%B3%E4%BA%8Eg-by-e%E7%9A%84%E7%BB%BC%E8%BF%B0/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/tgg-%E4%B8%80%E7%AF%87%E5%85%B3%E4%BA%8Eg-by-e%E7%9A%84%E7%BB%BC%E8%BF%B0/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>TGG-一篇关于G-by-E的综述</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 4 minutes (665 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>TGG-一篇关于G-by-E的综述</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 4 minutes (665 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Li Y, Suontama M, Burdon R D, et al. 2017. Genotype by environment interactions in forest tree breeding: review of methodology and perspectives on research and application. Tree Genetics &amp; Genomes, in press.</p>
+</blockquote>
+
+<h1 id="摘要">摘要</h1>
+
+<p>环境相互作用的基因型（G×E）是指不同环境之间不同基因型的比较性，代表基因型排名差异或环境遗传差异表达水平的差异。 G×E可以减少遗传力和整体遗传增益，除非育种计划的结构可以解决不同类别的环境。了解G×E的影响，环境在产生G×E中的作用以及问题和机遇对于有效的育种程序设计和部署遗传物质至关重要。我们回顾了目前用于识别G×E：<strong>因子分析模型，双标图分析和反应规范</strong>的主要分析方法。我们还回顾了G×E对全球经济重要性的森林物种的生长，形态和木材性质的生物学和统计学证据，包括一些松树，桉树，道格拉斯冷杉，云杉和一些杨树。在这些物种中，<strong>高水平的G×E倾向于报告生长性状，对于形态特征和木材性质，G×E含量低</strong>。最后，我们讨论了利用G×E可以最大限度地发现森林树种育种中的遗传增益。表征环境在产生互动中的作用被视为基本平台，允许有效测试候选基因型。我们讨论相对于等级交互的表达式互动的重要性，比以前的许多报告更为重要，尤其是部署决策。我们研究了G×E对树木育种的影响，一些导致G×E的环境因素和G×E处理树种育种的策略，以及基因组学的未来作用。
+关键词环境相互作用的基因型。分析方法G×E司机。影响。探索策略。森林树种育种。基因型筛选。基因型部署</p>
+
+<h1 id="介绍">介绍</h1>
+
+<p>个体的表型由其基因型，环境和基因型与环境之间的任何相互作用（G×E相互作用或G×E）控制。当基因型的比较性能根据环境而变化时，这种相互作用据说存在。在一个环境中优于一种基因型的表现在另一个环境中可能会较差（de Jong 1990; Falconer和Mackay 1996）。在林业中，G×E可能导致某些基因型在某些环境环境下的表现的不可预测性。因此，为了减少甚至消除这种不可预测性，特征和理解G×E是一个首要目标。发生在哪里，G×E使繁殖计划的设计复杂化，同时也为最合适的种植种群配置目标部署条件提供了机会，以优化森林的森林健康，成长和木材质量。
+G×E可以分为两大类（Lynch和Walsh 1998; White et al。2007）：（1）排名变化相互作用，其中基因型在不同环境中以不同的顺序排列;和（2）表达水平的相互作用，由此基因型差异的表达（例如育种值的扩散）在不同环境中变化，而不一定是基因型排序顺序的任何变化。因此，育种者需要确定G×E的模式和幅度，以获得森林工业的最佳遗传增益（Muir等人，1992; Raymond和Namkoong，1990）。由于育种者主要关注候选基因型的评估和选择，因此排名变化的相互作用通常对他们更感兴趣。虽然表达水平的相互作用对于育种通常不太重要，但是帮助确定在特定生长环境和特定最终产品中选择用于部署什么遗传物质可能是主要的兴趣。
+1我们区分表达水平与尺度效应的相互作用，为后者通过数据转换消除交互的子集的子集。
+在林木育种中，G×E常常是很大的，并且在找到一贯优越的基因型方面产生问题，特别是广泛适应。育种者经常通过选择对环境变化不敏感的稳定基因型，或为特定环境选择基因型，以便最大限度地增加遗传增益（Raymond和Namkoong，1990），来解决G×E。在树木中，几乎所有商业上重要的物种如辐射松（Pinus radiata D.Ton; Raymond 2011; Wu和Matheson 2005），火炬松（Pinus taeda L.; McKeand等人1997; Paul等人1997），苏格兰松（Pinus sylvestris L。; Gullberg和Vegerfors 1987; Haapanen 1996），斜纹松（Pinus elliottii Englem。var. elliottii; Hodge and White 1992; Roth等人2007），桉树（Eucalyptus （Pseudotsuga menziesii（Mirb。）Franco; Campbell 1992; Dungey et al。，2012），云杉（云杉属植物; Bentzer等1988）和杨树（Populus spp。; Rae et al.2008; Yu和Pulkkinen 2003）均有报道。
+<strong>提高对G×E的规模和性质的认识有助于树木种植者和林农看到增加森林遗传增益的机会</strong>（Cullis等，2014; Ivkovi等，2013a，b）。由于这种意识来自于G×E的思考过程，主要是与育种人群的选择和结构相关，更多地关注G×E与部署有关。为了繁殖，捕获额外遗传增益的预期收益可能不会超过多环境育种计划的复杂性和额外成本（Carson 1991）。然而，对于部署来说，新西兰的树木企业对一些场地遗传获益的实现感到关切，导致了Radiata Pine Breeding Company（RPBC）（屠夫，2015年个人通信）对情况的重新评估。<strong>多环境因素分析模型的应用也给出了新的统计效率水平和证据，通过在正确的位置部署正确的基因型，可以获得额外的遗传增益</strong>（Cullis等，2014）。
+在本次审查中，我们研究了可用的识别G×E及其性质的分析方法，G×E在选定的商业重要物种的森林中的重要性和模式的实证证据，关于驱动G×E的环境变量的信息在林业中采用G×E处理树种育种方案。基于此信息，讨论了探索G×E以优化林木育种遗传增益的影响和挑战。还讨论了基因组选择对于确定G×E在林木育种中的重要性。我们在审查统计方法学方面的重点是分析现有的选择和其他育种决策的试验数据。识别G×E的环境驱动因素对于筛选环境的未来选择的方面只给予了有限的关注，被视为单独审查的主题。</p>
+
+<h1 id="用于估计g-e相互作用的分析方法">用于估计G×E相互作用的分析方法</h1>
+
+<p>提出了一些分析方法，用于测量树种育种性状的G×E的程度，包括<strong>与遗传变异的相互作用比，稳定性分析，B型遗传相关性，双标图分析，因子分析模型和反应规范</strong>。所有这些方法都可以作为混合线性模型的特殊情况来实现。可以使用方差分析来估计相互作用与遗传变异的比例（例如，Shelbourne 1972）。<strong>已经使用稳定性分析来确定跨多个环境的稳定或敏感的基因型</strong>（例如，Eberhart和Russell 1966; Finlay和Wilkinson 1963; Huehn 1990）。 <strong>B型遗传相关性（Burdon 1977）和因子分析模型表征了多种环境中基因型排名变化的模式</strong>（Cullis等，2014）。似然比测试现在提供了与完美的B型相关性的相互作用的强大的测试。 <strong>Biplot分析结合方差分析（ANOVA）和主成分分析（PCA），并允许结果可视化</strong>（Gauch 1992; Mandel 1971; Yan et al。2007）。<strong>反应规范描述了在一系列环境中由单一基因型产生的一系列反应或表型</strong>（Lynch和Walsh 1998; Pierce 2005; Woltereck 1909）。在作物和林木育种中G×E的书籍或评论文章中已经涵盖了前三种方法（Freeman 1973; Kang and Gauch 1996; Zobel等1988）。本综述将涵盖双标图分析，因子分析模型和反应规范。</p>
+
+<h2 id="biplot分析">Biplot分析</h2>
+
+<p><strong>双标图分析最常用于植物育种，目的是开发高产量，高质量的作物</strong>。从一个环境中选出的品种可能不会由于G×E在另一个环境中保持高性能。<strong>确定多个环境中具有高性能和广泛适应性的品种是最终目标</strong>。<strong>双标图分析使用奇异值分解将数据分解成分量矩阵，同时显示列和行信息</strong>（Gabriel 1971）。<strong>加性主效应和乘法相互作用（AMMI）和基因型主效应和G×E效应（GGE）是识别植物和林木育种中G×E模式的两个主要的双标图分析方法</strong>。 AMMI和GGE双标图分析测试G×E的显着性和G×E方差的相对大小与遗传方差的关系，并可视化基因型和基因型最佳进行环境的稳定性。
+<strong>AMMI是结合ANOVA和PCA的统计方法</strong>（Gauch 1992; Mandel 1971; Mrode 2014）。它将变异源分解，首先是使用方差分析的基因型和环境的加和效应，然后使用PCA对G×E进行乘法效应（Zobel等人，1988）。相互作用效应被分解为表示对G×E的实际响应的部分和由于随机变化引起的部分（Crossa等人，1990）。用于AMMI分析的线性模型如下（Gauch 1992）：
+ñ
+yij？ ？一世 ？ j？ k ikjk？ij？ij
+K +
+其中yij是环境j中基因型i的观察表型，是大平均值，i是偏离的基因型主效应，j是作为偏离的环境主效应，k是相互作用主成分（IPC）的奇异值）轴k，ik和jk是轴k的基因型和环境IPC得分（即左和右奇异矢量），ij是包含不包括在模型中的所有乘法项的相互作用残差; n是模型保留的轴数或主成分数，ij是在环境j处与基因型i相关联的残差，假定独立于相同分布。 AMMI模型（，i和j）的加法部分是从ANAVA和PCA的乘法部分（k，ik和jk）估计的。
+GGE方法还基于ANOVA和PCA，使用具有两个主要组分的位点回归模型（SREG）。 GGE分析中使用的线性模型如下（Yan and Hunt 2001）：
+2
+yij-j？ k ik jk？ij
+K +
+其中yij是环境j中基因型i的平均性能，j是在环境j种植的所有基因型的平均性能，k是主成分k的奇异值，ik和jk是基因型i和环境j的得分主分量k，ij是与基因型i和环境j相关联的残差。
+GGE方法通过ANOVA消除了环境主要影响，并以环境为中心的数据保留了基因型主效应（G）和相互作用效应（G×E）（Yan et al。2000）。它允许通过PCA直接观察多种环境下基因型的性能和稳定性。<strong>当环境是与基因型和G×E相对于总变异性的贡献相关的主要变异来源时，建议使用该模型</strong>（Kandus等，2010）。在GGE双向图中，连接双极原点和环境标记的线是环境矢量。两个环境的向量之间的角度与它们之间的相关系数有关。角度的余弦近似于相关系数（Yan 2002），这相当于Ding等进行的研究中的B型遗传相关性。 （2008B）。 GGE二位图的限制是，当基因型主效应显着小于相互作用或当G×E模式复杂时，它可能仅解释总GGE的一小部分（Ding et al。2008b）。 GGE双向方法不适用于严格的假设检验，因此作为一个假设发生器而不是作为决策者（Ding et al。2008b）更好。
+AMMI和GGE方法都使用线性模型，将主要和互动效应视为固定效应（Crossa 2012）。残余方差具有正态分布，并且在各个环境中是均匀和独立的（Gauch 1992; Kang and Gauch 1996; Piepho 1995）。通过绘制每种基因型和环境的相互作用效应的PCA分数来提供结果的图形解释（Crossa 1990; Crossa等人，1990; Kempton 1984; Yan et al。2000）。<strong>它们之间的区别是GGE双极分析基于环境中心的PCA，而AMMI分析则指的是双重中心PCA</strong>（Kroonenberg 1995; Rad等，2013）。 GGE biplot有许多可视化的解释，AMMI在“哪些赢得哪里”，特别是当可视化任何交叉G×E（Ding等人2008b）时，没有。
+<strong>AMMI分析方法已广泛应用于作物育种多环境品种试验的统计分析</strong>（Annicchiarico 1997; Crossa et al。1990，1999; Table 1; Gauch and Zobel 1989; Gauch and Zobel 1997; Hassanpanah 2010）。 <strong>AMMI也用于表征林木中的G×E</strong>，例如在桉树（Baril等人1997a; Karuntimi 2012; Lavoranti等人2007），松树（Pinus spp。; Chambel等人2008; Falkenhagen 1996; Kim等人2008），杨树（Populus spp。; Rae et al。 （2008）），白云杉（云杉（Moench）Voss; Rweyongeza 2011），桦木（Betula spp。，Zhao et al。，2014）和落叶松（Pinus contorta Douglas; Wu and Ying 2001）。
+<strong>GGE</strong>方法已被用于许多农学试验（Yan et al。2000,2007）以及树种育种（Correia et al。2010; Ding et al。2008b; Sixto et al。2011）中的G×E。 Correia等人（2010）在西班牙多种环境考察试验中，利用GGE二次分析法研究了来自葡萄牙，西班牙，法国和澳大利亚的30个海洋松（Pinus pinaster Aiton）种群的总高，直径，茎形和存活率G×E 。用GGE二分法分析杨树克隆的生物量生产和稳定性，根据西南欧平均表现和稳定性进行排序（Sixto et al。2011）。丁等（2008b）使用GGE biplot来研究澳大利亚五个环境中216个辐射松科的G×E。双区分析允许不同组的克隆根据其显示的性能和相互作用程度来识别，从而为辐射松的选择过程提供有用的信息。</p>
+
+<p>使用的统计方法：rg：对环境之间的遗传相关性，括号中的特征; FA：使用FA模型估计遗传相关性;方差分析：方差分析; AMMI，rg：AMMI被使用，估计一对位点之间的遗传相关性; GE / G：相互作用方差与加性遗传方差的比值; GGE：基因型主效应和G×E效应; [FS]：家庭网站交互，[FSWP]：家庭网站之间的相互作用，[PS]：出处？网站互动，否则：基因型？网站互动
+DBH直径高度，HT高度，VOL体积，BD基础密度，MoE弹性模量，MfA微纤维角度，STR茎直线度，DEN木材密度，MAI平均年增量，OP开花授粉，CP对照授粉</p>
+
+<h2 id="因子分析模型">因子分析模型</h2>
+
+<p>因子分析（FA）模型可以为估计所有试验对之间的遗传相关性提供可靠，简便和整体的方法（Cullis等人，2014;史密斯等人，2015），并为G×E模式建模提供了一个自然框架复杂的多环境实验（Meyer 2009）。 FA模型对于选择育种种群和生产人口部署决策最有用。
+在多环境试验中使用FA模型是基于使用PCA的特征向量（Jolliffe 1986; Smith et al。2001），并扩展为适应添加和非加性效应（Oakey等人，2006a，b）。 Cullis等人（2014年）使用FA模型来适应大量环境以及具有减少动物模型的环境之间的连接性差。 FA模型旨在确定引起变量之间相关性的统计常见因素（Mrode 2014）。它们代表在多个环境下评估的特征，作为一些潜在变量的线性组合（Cullis et al。2014; Smith et al。2001），被称为常见因素（Hardner et al。2010; Meyer 2009），从而降低了相对于G×E的位置变化。因子的数量称为模型的阶数，阶数k的FA模型表示为FAk。假设一个线性混合模型
+y？X？Zu？e
+其中y是t站点的观测向量;是固定效应的向量; u是随机加性的向量
+遗传效应与u N（0，GA），其中Gα2a1a1ata1a2t2，其中a2i是位点i的加性遗传方差，a i j是站点i与站点j之间的加性遗传协方差，A是数值关系 -
+表示克罗内克产品; e是eN？0的随机残差效应向量; e210 0e2t？其中e2i是站点i的剩余方差，X和Z是与u的相关表型的设计矩阵，t是试验的数量。在t试验中，m基因型的加性遗传效应的FAk模型可以建模为u =（Im）f +（Costa e Silva et al。2006; Cullis et al。，2014），其中是试验的t？k矩阵加载，f是分数的mk？1向量，是遗传回归残差的mt？1向量。 Var（u）=（+）Im，其中假设var（f）= Imk，var（）= Im，其中在每个环境具有方差（称为特定变量）的Δt对角矩阵，的随机效应f并且作为具有零均值的多元高斯分布相互独立。环境间遗传方差矩阵定义为Ge =（+）。 Ge可以用REML算法估计Ge？0？并且可以转换为相关矩阵Ce？DeGeDe，其中De是具有由Ge对角线元素的平方根的倒数给出的元素的对角矩阵。上面概述的FA模型相当于Meyer（2009）指定的扩展因子分析模型。
+潜伏回归图用于显示遗传重估试验载量，表明FA模型中多个环境中候选人的G×E（或稳定性）的大小（Chen et al。2017; Cullis et al。2014 ; Smith等人，2015;表1）。具有较高斜率的选择候选人的潜在回归意味着候选人对环境更敏感。具有零斜率的潜在回归表明候选者的表现在多个环​​境中是稳定的。
+这种方法已被应用于研究大麦多个环境中的G×E（Smith等，2001），马铃薯（Burgue駉等，2011），玉米（Burgue駉等，2011）和小麦（Burgue駉et al。 2011; Oakey等人2006a，b），以及畜牧业（Meyer 2009）。在树种育种中，这种方法已经成功地应用于卡西松（Kusiya Royle ex Gordon，Costa e Silva 2007），辐射松（Cullis et al。，2014; Ivkovi等，2015）中G×E的研究，松树（Zapata-Valenzuela 2012），桉树和桉树杂种克隆（Costa e Silva et al。2006; Hardner et al。2010）和挪威云杉（Picea abies（L.）H. Karst; Chen et al。尽管统计权力，FA方法在确定特定环境因素在驾驶G×E（B.Cullis，2016，个人通信）方面的作用尚未得到实现。</p>
+
+<h2 id="反应规范">反应规范</h2>
+
+<p>反应规范（也称为反应规范）描述了在一系列环境中由单一基因型产生的一系列反应或表型（Lynch和Walsh 1998; Pierce 2005; Woltereck 1909）。适用于分析环境梯度（例如温度）逐渐和连续变化的性状的数据（Kolmodin和Bijma 2004）。单一性状的线性反应规范有一个模型（Kolmodin and Bijma 2004; Strandberg et al。2000）：
+yik？b0？b1xk？a0i？a1i xk？e0i？e1i xk
+其中yik是环境k中基因型i的表型价值; b0和b1分别是基因型反应规范的截距和斜率的固定效应; a0i和a1i分别是基因型i的反应规范的截距（对应于性能潜力的经典EBV）和斜率（相当于环境敏感性的EBV）的随机加性遗传效应。 e0i和e1i是基因型i的反应规范的截距和斜率的随机残差效应;而xk是环境k对表型的影响。假设随机加性遗传效应a0和a1分别为正态分布，期望值为零，方差a20和a21分别为协方差a0a1：
+反应规范的优点是，不仅可以在任何环境中的表型表达中预测选择反应，而且可以通过线性反应规范的斜率（鲁棒性或对环境变化的响应）量化性状的环境敏感性， （Kolmodin和Bijma 2004）。在进行反应规范分析时，疾病暴露，放养密度和营养质量被认为是影响家畜生产的环境因素（Rauw和Gomez-Raya，2015）。同样，与森林树种育种有关的环境因素，如温度，降雨和土壤营养也可用于反应规范分析，以确定森林树种繁殖中G×E的驱动因素。反应规范的局限性在于分析中包含的任何环境变量都需要明确确定，并且所确定的G×E模式仅在模拟环境条件的范围内有效（Gregorius和Kleinschmit 2001）。通过绘制观察到的表型值与一个或多个环境变量，可以使反应范数模型中给定基因型的稳定性可视化。反应规范的平坦斜率意味着在整个环境范围内产生的表型是不变的。基因型反应规范与人口整体反应规范之间的差异构成了G×E的一个组成部分。例如，给定基因型的特别陡峭的反应规范斜率意味着其表型对环境更敏感，基​​因型将对G×E有很大的贡献。 G×E的水平也可以表示为加性遗传斜率（2a1）与加性遗传截距（a20）（Kolmodin和Bijma 2004）之间的变异比，或者通过遗传相关性（rg）用rg拦截
+（Strandberg等2000）。
+反应规范方法已被应用于森林（Gregorius和Kleinschmit 2001），其中包括广泛分布于斯德哥尔摩的物种，特别是挪威云杉（Oleksyn et al。1998）和苏格兰松（Abraitiene et al。，2002） （Rehfeldt等1999; Wang et al。2006）及其杂种（Wu and Ying 2001）在加拿大。 Oleksyn等人（1998）审查了54个挪威云杉种群的植物生长，分配，净CO2汇率，组织化学和物候学，以量化海拔梯度的种群之间的生长和相关植物性状的差异，并更好地了解其关系。这项研究表明，来自寒冷山区环境的挪威云杉种群可以通过几个潜在的适应性特征来表征，如年平均气温和高度。
+Abraitiene等（2002）研究了苏云金芽胞杆菌花粉活力和臭氧敏感性的遗传变异。发现花粉对臭氧浓度增加的敏感性有显着的遗传变异，但只有5％的变异归因于G×E。
+采用反应规范理论推导出将气候变量纳入分析模型的响应函数，大大提高了他们对桉树种群的可靠性（Wang et al。2006）和两种桉树之间的特异性结合能力结构（Baril et al.1997b）。响应函数预测，小型变化极大地影响了森林种群的生长和生存，并且在全球变暖期间维持当代森林生产力需要在整个景观中进行基因型的批发再分配（Rehfeldt等，1999）。在五个源头测试地点中测定了三个洛德松松亚种（Pinus contorta ssp。contorta，sif。latifolia和ssp。murrayana）取得的10个天然洛德布隆群体之间的现场相互作用的重要人口为20年的高度内陆不列颠哥伦比亚省（Wu and Ying 2001）。</p>
+
+<h2 id="林木中g-e的证据">林木中G×E的证据</h2>
+
+<p>在林木中，G×E已经在各种经济上重要的物种研究，特别是在新西兰，澳大利亚，美国，欧洲，亚洲和非洲（表1）。大多数研究调查了G×E的生长和形态特征，并对木材密度性状和木材性状的G×E进行了一些调查。表1列举了文献中各种林木研究中G×E的证据。在两项研究中提出了测量林木育种中G×E幅度的标准。罗伯逊（Robertson，1959）提出将0.8或更高的遗传相关性解释为G×E，具有较小的生物学重要性的指导方针。 Shelbourne（1972）提出，当相互作用方差达到基因差异的50％以上时，相互作用对选择和测试的遗传增益有重要影响。
+高G×E通常被发现用于树木生长（例如辐射松; Carson 1991; Johnson和Burdon 1990;表1; Wu和Matheson 2005）。在澳大利亚10个地点进行的拨号实验中，估计的相互作用与直立胸高度（DBH）的相互作用比例在0.50以上（Wu and Matheson 2005）。 DBH环境对之间的遗传相关估计为0.39（Wu and Matheson 2005），0.34？.38（Ding et al。2008a）和-0.60〜1.0（Raymond 2011）。 B型遗传相关系数为0.27？.84（Dieters和Huber 2007; Li and Mckeand 1989; Roth et al。2007; Sierra-Lucero et al。2003），0.18？.95为高度（Gwaze et al.2001 ; Li和Mckeand 1989; Owino等人1977; Paul et al.1997），和0.27，用于每公顷体积的年平均增量（Sierra-Lucero等人，2003）。 Baltunis和Brawner（2010）报道了澳大利亚遗址的克隆试验的高G×E，而不是新西兰的遗址。在使用覆盖整个新西兰的76个地点的数据（McDonald和Apiolaza，2009年）的数据分析中，近三分之二的配对位点间DBH的遗传相关性估计值低于0.6。 Ivkovi等人（2015）报道，20个对照授粉试验中DBH的成对遗传相关性范围为-0.51〜0.98，其中48％与1的完全遗传相关性显着不同，平均为0.35。试验中B型遗传相关性的估计随年龄增长而增加，表明G×E的重要性似乎随年龄而下降，早期生长数据在成熟期评估G×E可能不可靠（Dieters等，1995; Gwaze等2001; Roth et al。2007; Zas et al。2003）。
+树形通常是树种育种计划中的一个重要特征。诸如茎直线度和分枝的特征赋予树木在旋转时代的价值（Cown等人，1984; Ivkovi等人2006）。这些性状中G×E的程度在研究中变化更大。在大多数干直线性研究中已经报道了低水平的G×E（Carson 1991; Gapare等人2012b; Johnson和Burdon 1990; Pederick 1990），分支角（Gapare等，2012b），分支大小（Gapare等，2012b; Pederick 1990），分支习惯（Carson 1991; Johnson and Burdon 1990）和畸形（Johnson和Burdon，1990）。这与一些证据表明，分支规模，叉数和枝条分支的形态特征（Wu和Matheson，2005年）以及澳大利亚和新西兰部分地区（Baltnis和Brawner，2010年）茎干直线度和分枝质量的一些证据。同样，Gwaze等（2001）报道了津巴布韦茎直挺直度的高度G×E为茎直挺度，Suontama等（2015年）报道，新西兰分行的高水平G×E。两项新西兰研究发现了G×E冲突：Dungey et al。 （2012年）报道道德格拉斯冷杉的高水平原产地站点相互作用，茎干直线度低，家庭内源低，位置相互作用低;肯尼迪等人（2011）发现了直线度和形态评分高B型遗传相关性（超过0.80），畸形型B型遗传相关性低（0.49）。
+<strong>与木结构和质量相关的性状通常在针叶树中具有低G×E</strong>，例如，木材基础密度（Apiolaza 2012; Baltunis et al。2010; Gapare et al。2010，2012a; Johnson and Gartner 2006; Muneri and Raymond 2000），声速或弹性模量（Dungey et al。2012; Gapare et al。2012a ; Jayawickrama等人2011; Johnson和Gartner 2006），<strong>木材化学性质</strong>（Sykes等人2006），木材比重（Jett等人，1991）和树脂管道性状（Westbrook等人，2014）。 Osorio等人（2001）报道了哥伦比亚桉树木材密度的最小G×E。然而，发现巴西的桉树杂交克隆（Eucalyptus grandis？Eucalyptus urophylla）在四个地点的木基本密度具有显着的G×E（Lima等，2000）。
+<strong>统计学显着的B型遗传相关性可能不反映G×E的真实幅度</strong>。 当估计遗传参数时，<strong>良好的实验设计在测试的所有阶段至关重要。幼苗种群缺乏随机性显然导致遗传变异分配问题，造成家庭间差异膨胀</strong>（Baltunis et al。2007）。环境之间的遗传相关性的差（即非常不精确）估计通常与环境中共同的有限数量的父母有关（Apiolaza 2012; Raymond 2011）。传播效应可能与根植根的季节有关。在与冬季设置的根茎和任何其他试验之间建立的试验之间观察到最差的遗传相关性，而从包括源自春季环境的根系切片的田间试验获得最佳遗传相关性（Baltunis等人2005 ，2007）。</p>
+
+<h1 id="g-e对树种育种的影响">G×E对树种育种的影响</h1>
+
+<p>G×E对树种育种者的整体影响是使育种计划设计复杂化。在一个环境中选择一个性状以在另一个环境中追求遗传增益的效率与两种环境之间的遗传相关性和两种环境下性状的总遗传力成正比（Falconer和Mackay，1996）。整个环境的遗传力计算为其中σ2a是加性遗传e方差，σ2ge是相互作用方差，σ2e是残差方差。因此，高G×E可以在两个方面降低站点的整体遗传力。首先，分母中的大G×E方差直接降低了总遗传力。其次，<strong>G×E也损害了多个环境下遗传变异的估计，进一步减小了遗传力估计的大小</strong>。例如，在七个地点的分析中，平均年增量的遗传度为0.08，而在两个地区的每个地区，其年均增量为0.08（Sierra-Lucero等，2003）。如果在一个环境中估计，G×E也可以增加遗传力的估计。当G×E存在时，单个位置检验的估计值用于一般遗传预测时，遗传度估计将被扩大，因为G×E方差的一部分被划分为加性遗传方差。例如，<strong>发现添加剂G×E足够大以致可靠性估计和遗传增益预测高达60-100％的上升偏差</strong>（Owino等，1977）。与单站点估计相比，家庭平均遗传度估计高估了约15％，与现场分析相比，家庭平均遗传率估计高达15％，甚至网站之间的B型遗传相关性也是0.85。</p>
+
+<p>G×E可以影响sce-用于测试和选择的方法，因为它可以降低环境中的整体遗传力或准确性。 Sierra-Lucero等人（2003）发现，选择区域1中的家庭在区域2中进行部署，导致每公顷体积平均年增长率下降4-8％。在忽视G×E的情况下，遗传增益的遗传率达到10％以上与场地B型遗传相关性小于0.80时考虑G×E的情景相比（Diaz Solar et al。2011）。 Leksono（2009）报道，直接选择产生的遗传增益明显高于间接选择产生的遗传增益，如果育种种群在繁殖区之间转移，遗传增益下降了24-60％。澳大利亚昆士兰州北部最北端的直径与其他地区的直径相关（r = g = 0.39），如果个别选择是根据本站种植任何其他地点，估计的遗传增益只有29-57％作为基于种植园点的选择程序（Woolaston等人，1991）。</p>
+
+<p>谢（2003）发现，在五个种子规划区域内，内部云杉，白云杉（云杉glauca（Moench）Voss）和恩格尔曼云杉（Picea engelmannii Parry ex Engelm。）综合体（Xie和Yanchuk 2002）位于不列颠哥伦比亚省中北部地区，平均遗址间相关性为0.64。五个种子计划区分为两个新种子区，新种子区内遗传相关性分别为0.97和0.84，两个新疆之间的遗传相关性为0.41。当选择每个区域内最佳25％的测试父母时，考虑整个区域为一个区域时，预期的遗传增益为19％，考虑五个原始区域时为24％，当将五个原始区域整合到两个新区尽管来自区域化育种的预期收益明显有所改善，但是在与其他地方不太相关的地方，未能评估基因型将不可避免地牺牲了大约一半以上的遗传增益</p>
+
+<p>显着的G×E并不总是导致遗传增益的相当大的损失。 Jett等人（1991）发现火炬松特定木材重力的G×E显着。 18个家庭中有4个被列为不稳定的性状，占观察到的G×E方差的一半。然而，这种G×E仅对潜在的遗传增益产生了微不足道的影响。 Dieters et al。 （1996）报道，梭状锈病抗性的B型遗传相关性超过0.67，G×E在美国的斜纹松的抗锈性中似乎并不重要。 Carson（1991）发现辐射松的直径有显着的G×E，但是对于若干区域化选择预测的遗传增益表明，新西兰辐射松的G×E大小似乎太小，无法保证区域性繁殖种群。</p>
+
+<p>已经使用了潜在收益损失（C）的度量标准来评估G×E对家庭选择育种计划（Matheson和Raymond 1984，1986）的影响，其中Vf是表型方差，Vi是方差由于相互作用，Ve是误差均方; S是站点的数量，B是每个站点的复制次数，N是每个地块的树木数量。这假设选择的强度保持不变，并且剩余和遗传组分在包括或不包括相互作用项的模型中保持相同。使用前述关系，潜在增益的2％损失对应于遗传力数值的5％的近似降低。</p>
+
+<p><strong>鉴定哪些环境因素是G×E的关键驱动因素对于育种和部署都是重要的目的</strong>。它通知候选基因型要进行测试和评估的环境的选择。了解特定环境中基因型的性能可以告诉我们在其他环境中的预期性能，这可能具有其特征，但不一定是通过经验G×E数据，这一点也很重要。</p>
+
+<p>已经进行了各种研究，以表征在辐射松中产生G×E的环境的作用。 G×È经常发现，当环境因素对于至少一些基因型处于亚最优或强次级最佳水平时，基因型之间反映差异应激反应（Kang 2002）。压力可能是生物（疾病或害虫）或非生物（例如温度，盐度和水分或营养物的过量或缺乏）。对于给定的一组基因型，环境越多样化，可能的G×E的幅度越大（Li等，2015）。 G×E可能是由于子区域或个体基因型对夏季促进水分和光胁迫的环境条件的不同适应性，在某种程度上可能与观察到的生物因子的差异敏感性有关（Costa e Silva et al。2006）。</p>
+
+<p>Johnson和Burdon（1990）在新西兰的两个地点类别之间获得了很好的区分，代表着北部地区的粘土（天然磷缺乏）和水泥场，这与澳大利亚（Fielding和Brown 1961）和新西兰早期的结果相似（Burdon 1971; Burdon 1976）。 Wu和Matheson（2005）发现，以前的土地利用根据互动行为创造了一些网站的分组。此后，Raymond（2011）G×E对新南威尔士州辐射松的直径增长的研究发现，海拔高度是G×E的主要驱动因素，对以前的土地利用和地质母体材料的作用较小。然而，海拔与一系列重要的生物气候因素有关，包括降雨，季节和温度变量。高纬度原产地和寒冷的冬季和夏季夏季以及高原起源和高降水和生长季节较短的地点，在白云杉（Rweyongeza 2011）中对G×E的高度和DBH贡献最大。</p>
+
+<p>Wu和Matheson（2005）报道，在辐射松中，区域相互作用的大型基因型归因于两个高原位点的大量积雪。发现DBH的G×E可能受到极端最高气温的驱动，分析了整个新西兰（麦当劳和Apiolaza 2009）76种辐射松试验数据的分析，以及来源和后代水平的最低温度（Gapare et al。，2015）。 5月和6月平均每日温度小于3.2 June，解释了G×E相互作用的27.8％，与FA模型的第一个因素相关，表明春季或秋季霜冻天气状况可能是G的主要驱动力。 E在挪威云杉（Chen et al。，2017）。 Ivkovi等人（2013a）报道，由于Cullis等人估计的DBH的育种值，高降雨和低温解释了G×E方差的25％，可能是新西兰G×E的驱动因素。 （2014）。</p>
+
+<p>另一方面，与降雨及其季节性有密切关系的叶面疾病等生物因子对于直径和体积增长而言是G×E的明显潜在驱动因素（参见Ades and Garnier-G？1997 ）。在道格拉斯冷杉不同暴露于瑞士针刺造成的G×E也是一个很好的例子，因为针头疾病在较暖的温度下更普遍，并且在宿主树种群中的位点可以具有根本不同的疾病负荷和差异生长反应结果（Dungey等人2012）。</p>
+
+<p>Li et al。 （2015）报道，生长性状的G×E水平与氮和总磷土壤营养水平与年平均温度的位置差异显着相关，叶片钙含量和分子量的G×E水平与位点差异显着相关分别在镁和钾的土壤水平。在最广泛的规模（横跨新西兰和澳大利亚），气候变量如温度和降雨量是驱动观测G×E的最重要因素;然而，在当地的区域尺度上，土壤和地形因素更为重要（Ivkovi等，2013a）。</p>
+
+<h1 id="在树种育种计划中处理g-e的策略">在树种育种计划中处理G×E的策略</h1>
+
+<p>已经提出了两个主要策略来处理强G×E的存在（Kang 2002; Raymond 2011）：<strong>（1）选择跨站点稳定的人员;或（2）选择非常适合每个个体环境的个体以最大化遗传增益</strong>。第一种策略适用于没有观察到的G×E的明显来源，并且相互作用被认为是“噪声”。该策略旨在选择具有广泛适应性的基因型，预期在广泛的环境中可靠地产生。选择稳定性是澳大利亚（Ding 2008; Matheson和Raymond 1984），新西兰（Carson 1991）和西班牙（Codesido和Fern醤dez-L髉ez 2009）在G×E研究中推荐的方法， ;在美国的火炬松（Owino 1977; Paul et al。1997）;挪威云杉（Bentzer et al。，1988）。这种方法旨在消除与环境最互动的基因型。然而，为了获得成功，育种者需要使用一套适合于交互式和稳定的基因型的测试环境。</p>
+
+<p>第二个策略是通过分析和解释遗传和环境差异来利用相互作用（Raymond 2011）。预期这一策略将在每个环境中单独地最大化遗传力和遗传增益，因此，这需要创建独立的种群和种子生产，从而导致成本，管理，记录和祖先控制问题（Barnes et al。1984）。当环境数量大，跨越不同的气候和地理区域以及不同的土壤类型时，这种策略可能是不切实际的。这种策略的实际改编是将类似的环境分组到区域。该策略的应用依赖于识别哪些站点或环境因素导致互动的能力（Raymond 2011）。区域化通常用于在其自然范围内生长的北半球物种，其中通常与温度梯度相关的单一环境因素决定种子表现。例如，对于瑞典的苏格兰松，基于纬度温度梯度建立了育种和种子区，这些生长性状区内的G×E非常低（Hannrup et al。2008; Raymond 2011）。</p>
+
+<p>研究结果表明，辐射松的圆形交配设计实验似乎有利于将DBH辐射松林育种区分为澳大利亚的两个主要地区：新南威尔士州的高海拔Tumut地区以及维多利亚州，南澳大利亚州和西澳大利亚地区Wu and Matheson 2005）。然而，在新西兰，Carson（1991）报道，辐射松的G×E的大小似乎太小，无法保证区域性的繁殖种群。 Matheson和Raymond（1984）提出，更好地解决G×E问题不是试图区分育种，而是忽略似乎特别容易受环境变化影响的家庭。需要充分评估权衡，因为这些方法对运营育种有严重的影响，可能需要进行成本/效益分析。具有单独繁殖种群的区域性育种计划在每个环境中可能具有较小的育种种群，较低的选择强度，因此比同一大小的一个国家计划降低遗传增益（Carson 1991）。虽然通过区域化可以获得额外的收益，但土地利用的进一步成本，多个种子果园的运营，附加记录和子代测试中的延伸将会成比例地增加（Barnes et al。1984; Carson 1991）。</p>
+
+<h1 id="应用和未来研究">应用和未来研究</h1>
+
+<h2 id="多特征背景">多特征背景</h2>
+
+<p>我们已经回顾了研究G×E的统计方法，主要是关于单一特征的情况。然而，定量遗传学家和育种者在选择和部署的多个特征的背景下几乎总是必须考虑G×E。在方法学中，B型遗传相关性的研究（Burdon 1977）可以容易地扩展到多种环境之间的多种特征。具有多重特征，可能会出现G×E的几个更复杂的表现。不同的特征可能表现出不同的G×E模式。此外，遗传和表型性状（类型A）相关矩阵可以在环境之间不同，作为另一种形式的G×E。在不同环境中表达的不同性状之间的相关性（其中提出了类型-AB相关性的术语）在G×E的复杂表现中可能在成对环境之间不同，可能与健康和霜冻或耐旱性相关的性状相关。</p>
+
+<p>多特征案例在选择和部署之间创建秩和变化级别G×E之间的相互作用。如上所述，表达水平的相互作用可以产生等级变化相互作用，一些典型的例子是疾病表达的影响，其通过影响树木生长或树形形式肯定会影响后者的基因型排名，具有明显的影响基因型表现的稳定性。一个这样的例子涉及新西兰辐射松的原产地试验，其中对针刺疾病耐受性较差的Cambria来源对易发生发病的部位的生长相对性能要差得多（Burdon等，1997）。另一个涉及新西兰沿海道格拉斯冷杉的原产地试验，其中比较增长表现受到瑞士针刺（由Phaeocrypopus gaeumannii引起）的强烈影响，易受影响的最低纬度原产地在最高纬度地区做得比较好（ 46？S），其中疾病风险远低于低纬度地区（38？S）（Dungey et al。2012）。这种与疾病有关的影响对于育种和部署都是有意义的。</p>
+
+<h2 id="表达水平的相互作用">表达水平的相互作用</h2>
+
+<p>表达水平G×E不会导致选择候选者的等级变化，并且通常对育种不太重要（Muir等人，1992），但是对于跨多个环境进行部署是重要的（Burdon等人，2017）。如果没有排名变化的互动，在一个环境中的测试应该是足够的。如果部署选择涉及一系列环境和多特征选择，则级别的表达式相互作用可能需要将不同的基因型集合部署到不同的环境中，而不必进行排名变化的交互。在这种情况下，可能需要对几种环境进行评估，以便对所有感兴趣的特征提供良好的遗传差异分辨率。水平表达相互作用的典型例子可能与抗病性相关，其中基因型差异的分辨率可以很大程度上取决于疾病发病率（例如Dieters等人，1996; Sohn和Goddard，1979）。通常，分辨率往往最适合中度到重度的疾病，特别是在最耐药的基因型之间。然而，可能存在一种疾病可能以不具有直接实际重要性的水平存在的情况，但在该环境中解决遗传差异可能仍然很好。对这种疾病的抵抗不需要在这样一个环境中作为部署标准，而在那里表达的抗病性仍然可能是在其他环境中部署的有价值的选择标准，其中疾病是麻烦的，但发病率不高，因为高水平的“噪音”变化。</p>
+
+<h2 id="基因组学将有助于解决g-e">基因组学将有助于解决G×E</h2>
+
+<p>正在越来越多地探索基因组选择作为森林树种育种选择的主要手段（Grattapaglia和Resende 2011; Isik et al。2011，2016; Lexer and St？ling 2012; Ratcliffe et al。2015; Resende et al。2011，2012a ，b）。基因组选择的主要优点是选择可以在正常的表型年龄之前进行 - 大约8岁的辐射松。 DNA可以提取，基因分型仅在几个针前进行，6个月之前。这意味着可以大大减少育种的产生间隔，并且可以增加每单位时间的预期遗传增益（Grattapaglia和Resende 2011; Isik 2014）。</p>
+
+<p>已经对几种森林物种研究了基因组选择中的G×E。当G×E相互作用存在性状时，观察到的SNP对性状的影响在不同环境之间发生变化，而与性状的关系在一个环境中可能是显着的，而在其他环境中则不显着，如辐射松（Li et al。 ）。与一个F2家族和三个F1家族的663个个体相比，发现了与DBH相关的QTL，基本木材密度，牛皮纸浆产量和纤维素，木质素木质素和提取物的木材化学成分以及木质素丁香醛对愈创木脂比的显着QTL在维多利亚州和西澳大利亚州塔斯马尼亚种植的桉树（Freeman等人，2011年，2013年）。然而，当使用一个群体的数据集开发模型来预测桉树中另一群体的表型时，基因组选择的准确性已显示显着下降（Resende等，2012a）。在美国的火龙果中，<strong>G×E严重影响了育种区域模型的转移能力</strong>（Resende et al。2012b）。在加拿大西海岸种植的室内云杉中，在预测不同地点的表型时，<strong>在多位点模型（其中拟合G×E项）的基因组选择准确度高于单站模型</strong>（El-Dien等人，2015）。</p>
+
+<p><strong>为了表征基因型和环境在驱动G×E在林木育种中的作用，我们可能需要在分子水平上收集基因型数据，评估更广泛的表型，并在所有季节中收集气候和地理数据以及土壤数据以及所测试的基因型增长的所有年份</strong>。<strong>功能基因组学（Pevsner 2009），基因组序列注释（Ouzounis和Karp 2002; Wolf等人2001）和高分辨率表型（Crowell等，2016）可用于表征基因型和环境在驾驶G×E中的作用</strong>。<strong>开发环境特异性基因组育种价值是在林木育种中使用基因组选择时，在多个环境中最大化遗传增益的下一个挑战。在上述分析方法中，因子分析模型（Cullis et al。，2014; Smith et al。，2015）是估计所有环境对之间的遗传相关性的简洁而整体的方法，最终可以发挥环境的重要作用特定的基因组育种值用于大量环境</strong>。</p>
+
+<h1 id="概观">概观</h1>
+
+<p>统计方法，AMMI，GGE二次分析，FA和反应规范在本文中进行了综述。表2总结了这些方法的优缺点。它们是确定森林树种繁殖中G×E的模式和幅度的工具。前三种方法推断环境和基因型分组，纯粹基于表型数据，并使用PCA来降低维度。 AMMI和GGE二分析分析测试G×E的显着性和G×E方差与遗传变异的相对大小，并且允许观察基因型最佳进行的稳定性和环境。这些方法最适合围绕跨多个环境部署基因型的决策。它们在森林数据的可视化中肯定会有用，以帮助您做出明智的部署决策。</p>
+
+<p>FA模型能够在不使用过多数量的方差参数的情况下估计大量环境的非结构化遗传方差 - 协方差矩阵。这种类型的模型可以很容易地用于解释G×E的性质和程度。从FA模型估计的B型遗传相关性可以清楚地显示环境中是否存在基因型的等级变化。 FA模型在育种价值估计方面具有统计学的有效性，并提供可靠的整体方法来估计所有环境对之间的遗传相关性（Cullis等人，2014）。 FA模型对于选择育种种群和生产人口部署决策最有用。反应规范方法结合表型和环境数据，对G×E的环境驱动因素作了推论。适用于分析环境梯度逐渐不断变化的特征，需要明确界定的环境变量。稳定性分析对林木养殖具有直观的吸引力，有助于森林种植者识别稳定的基因型并减少长期风险。</p>
+
+<p>所有这些统计方法为森林树种育种计划中高效稳定基因型的鉴定提供了解决方案。然而，追求性能的稳定性不能充分利用潜在的遗传在特定环境中获益。为了最大限度地发挥所有环境的潜在遗传增益，<strong>选择最适合特定环境的正确个体可能是最好的方法</strong>。大多数G×E林木育种研究调查了G×E的生长特征的模式和幅度。报道了这些特征的高水平G×E，特别是在辐射松，火炬松，桉树和杨树种。一些研究还研究了G×E的形态特征和木材性状特征的模式和幅度。<strong>本评价中的一半研究报告了G×E的高水平的形态性状，而木材性状没有报告G×E或最小G×E</strong>。总之，G×E可以通过多种方式进行量化，采取几种不同的方法可能会提供补充的见解，以帮助了解所涉及的相互作用，并确保最佳结果。对于新西兰和一般的林业，<strong>使用因子分析模型等新方法，育种价值估计显然是最有效的</strong>。为了理解和量化环境的详细作用，仍需要更多的工作。我们认为基因组技术（如Elshire等，2011; Neves et al。2013）和基因组序列注释（Ouzounis和Karp 2002; Wolf et al。2001）将提供更多信息，帮助解释遗传水平的原因和结果。为了最大限度地利用森林种植园的遗传收益和经济效益，应采用选择具体和已知环境的个人的策略。最终结果将是森林生产力和森林管理体系的进步，这将确保森林工业的长期可持续性和增加的利润。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/gs/tan2017-%E6%A1%89%E6%A0%91/" data-toggle="tooltip" data-placement="top" title="Tan2017-桉树">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%AB%9E%E4%BA%89/stringer2011-%E7%AB%9E%E4%BA%89/" data-toggle="tooltip" data-placement="top" title="Stringer2011-竞争">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

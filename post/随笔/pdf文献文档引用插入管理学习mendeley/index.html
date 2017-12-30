@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>PDF文献文档引用插入管理学习&amp;mendeley</title>
+  <meta property="og:title" content="PDF文献文档引用插入管理学习&amp;mendeley" />
+  <meta name="twitter:title" content="PDF文献文档引用插入管理学习&amp;mendeley" />
+  <meta name="description" content="不念到大二，很少接触到PDF文档。能读到博士，过手或过眼的有大几千份。PDF文档多了，管理起来很麻烦。有些文档从网上下载的时候，很少能有个正常的名字，从新命名并服从管理也是一件麻烦的事。当然不写论文，这都能忍。我最开始接触这类软件也并不是要使用它们的管理功能，而是较为次要的论文文献引用插入。 我用的第一个是Endnote，一个非常伟大的收费软件，伴随了我几乎整个硕士阶段。能用它从谷歌学术里直接导入引用条目；Alt&#43;2的快捷插入真的很快捷。当我长久不写论文，只看文献的时候，还是用手动的办法去命名，去分组。有一天，我想把谷歌学术里一个关键词的搜索结果全部导出来的时候，用endnote就比较费时。学习使用R的时间久了，就发现很多类似的事情可以用几个函数解决。不是说人变懒了，而是说聪明的人类总是能开发一些偷懒的办法。chrome类型的浏览器能够安装zotero的插件，能够把一整页的搜索结果导入到软件里，是不是非常称心？如果有PDF的链接还能把PDF导入进去，是不是很满意？但是zotero的管理和插入功能有些欠缺，不及mendeley。 我认为用mendeley的人比较牛，但是独用用不如分享方便更多的人。mendeley的第一个好处是免费，不像endnote，不过这个在中国不叫事儿。mendeley的word插入快捷键组合是Alt&#43;m。你知道endnote里也很快捷，但是要先在endnote里选中，再切到word中Alt&#43;2，这样你就得先在endnote里搜。mendeley是怎么干的？不用切换，快捷键会召唤一个条框，输入关键词比如作者，自动给出候选，这一方面就节省了不少时间。mendeley能导入endnote，能导入zotero，反过来endnote不行。就这一条就可以放弃endnote。mendeley的期刊模板更新非常及时，endnote有些杂志的要滞后好几年。 最重要的一部分，文献管理和学习。endnote能直接导入PDF，根据doi等信息识别出题目等。mendeley的识别效率更高，作者，时间和期刊一般都能给出来，年代久远的容易出错。开头提到一个文献命名的问题，mendeley里有非常好的解决方案，它能自动从新命名，可以自定义格式比如 作者&#43;时间&#43;title或者时间&#43;期刊名&#43;title，是不是很膜拜。不过mendeley的界面是英文的，一般人不知道怎么设置：Tools&gt;Options&gt;File organizer，3个都勾上，自己摸索吧。还有一个功能我个人非常欣赏，就是PDF文档内的全局搜索，唯有感谢那些想要“偷懒”而又有能力把懒偷到手的人，感谢。世事艰难，愿我们互相帮扶。">
+  <meta property="og:description" content="不念到大二，很少接触到PDF文档。能读到博士，过手或过眼的有大几千份。PDF文档多了，管理起来很麻烦。有些文档从网上下载的时候，很少能有个正常的名字，从新命名并服从管理也是一件麻烦的事。当然不写论文，这都能忍。我最开始接触这类软件也并不是要使用它们的管理功能，而是较为次要的论文文献引用插入。 我用的第一个是Endnote，一个非常伟大的收费软件，伴随了我几乎整个硕士阶段。能用它从谷歌学术里直接导入引用条目；Alt&#43;2的快捷插入真的很快捷。当我长久不写论文，只看文献的时候，还是用手动的办法去命名，去分组。有一天，我想把谷歌学术里一个关键词的搜索结果全部导出来的时候，用endnote就比较费时。学习使用R的时间久了，就发现很多类似的事情可以用几个函数解决。不是说人变懒了，而是说聪明的人类总是能开发一些偷懒的办法。chrome类型的浏览器能够安装zotero的插件，能够把一整页的搜索结果导入到软件里，是不是非常称心？如果有PDF的链接还能把PDF导入进去，是不是很满意？但是zotero的管理和插入功能有些欠缺，不及mendeley。 我认为用mendeley的人比较牛，但是独用用不如分享方便更多的人。mendeley的第一个好处是免费，不像endnote，不过这个在中国不叫事儿。mendeley的word插入快捷键组合是Alt&#43;m。你知道endnote里也很快捷，但是要先在endnote里选中，再切到word中Alt&#43;2，这样你就得先在endnote里搜。mendeley是怎么干的？不用切换，快捷键会召唤一个条框，输入关键词比如作者，自动给出候选，这一方面就节省了不少时间。mendeley能导入endnote，能导入zotero，反过来endnote不行。就这一条就可以放弃endnote。mendeley的期刊模板更新非常及时，endnote有些杂志的要滞后好几年。 最重要的一部分，文献管理和学习。endnote能直接导入PDF，根据doi等信息识别出题目等。mendeley的识别效率更高，作者，时间和期刊一般都能给出来，年代久远的容易出错。开头提到一个文献命名的问题，mendeley里有非常好的解决方案，它能自动从新命名，可以自定义格式比如 作者&#43;时间&#43;title或者时间&#43;期刊名&#43;title，是不是很膜拜。不过mendeley的界面是英文的，一般人不知道怎么设置：Tools&gt;Options&gt;File organizer，3个都勾上，自己摸索吧。还有一个功能我个人非常欣赏，就是PDF文档内的全局搜索，唯有感谢那些想要“偷懒”而又有能力把懒偷到手的人，感谢。世事艰难，愿我们互相帮扶。">
+  <meta name="twitter:description" content="不念到大二，很少接触到PDF文档。能读到博士，过手或过眼的有大几千份。PDF文档多了，管理起来很麻烦。有些文档从网上下载的时候，很少能有个正常的名字，从新命名并服从管理也是一件麻烦的事。当然不写论文，这都能忍。我最开始接触这类软件也并不是要使用它们的管理功能，而是较为次要的论文文献引用插入。 我用的第一个是Endnote，一个非常伟大的收费软件，伴随了我几乎整个硕士阶段。能用它从谷歌学术里直接导入 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E9%9A%8F%E7%AC%94/pdf%E6%96%87%E7%8C%AE%E6%96%87%E6%A1%A3%E5%BC%95%E7%94%A8%E6%8F%92%E5%85%A5%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B9%A0mendeley/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E9%9A%8F%E7%AC%94/pdf%E6%96%87%E7%8C%AE%E6%96%87%E6%A1%A3%E5%BC%95%E7%94%A8%E6%8F%92%E5%85%A5%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B9%A0mendeley/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>PDF文献文档引用插入管理学习&amp;mendeley</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (6 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>PDF文献文档引用插入管理学习&amp;mendeley</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (6 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>不念到大二，很少接触到PDF文档。能读到博士，过手或过眼的有大几千份。PDF文档多了，管理起来很麻烦。有些文档从网上下载的时候，很少能有个正常的名字，从新命名并服从管理也是一件麻烦的事。当然不写论文，这都能忍。我最开始接触这类软件也并不是要使用它们的管理功能，而是较为次要的论文文献引用插入。
+        我用的第一个是Endnote，一个非常伟大的收费软件，伴随了我几乎整个硕士阶段。能用它从谷歌学术里直接导入引用条目；Alt+2的快捷插入真的很快捷。当我长久不写论文，只看文献的时候，还是用手动的办法去命名，去分组。有一天，我想把谷歌学术里一个关键词的搜索结果全部导出来的时候，用endnote就比较费时。学习使用R的时间久了，就发现很多类似的事情可以用几个函数解决。不是说人变懒了，而是说聪明的人类总是能开发一些偷懒的办法。chrome类型的浏览器能够安装zotero的插件，能够把一整页的搜索结果导入到软件里，是不是非常称心？如果有PDF的链接还能把PDF导入进去，是不是很满意？但是zotero的管理和插入功能有些欠缺，不及mendeley。
+        我认为用mendeley的人比较牛，但是独用用不如分享方便更多的人。mendeley的第一个好处是免费，不像endnote，不过这个在中国不叫事儿。mendeley的word插入快捷键组合是Alt+m。你知道endnote里也很快捷，但是要先在endnote里选中，再切到word中Alt+2，这样你就得先在endnote里搜。mendeley是怎么干的？不用切换，快捷键会召唤一个条框，输入关键词比如作者，自动给出候选，这一方面就节省了不少时间。mendeley能导入endnote，能导入zotero，反过来endnote不行。就这一条就可以放弃endnote。mendeley的期刊模板更新非常及时，endnote有些杂志的要滞后好几年。
+        最重要的一部分，文献管理和学习。endnote能直接导入PDF，根据doi等信息识别出题目等。mendeley的识别效率更高，作者，时间和期刊一般都能给出来，年代久远的容易出错。开头提到一个文献命名的问题，mendeley里有非常好的解决方案，它能自动从新命名，可以自定义格式比如 作者+时间+title或者时间+期刊名+title，是不是很膜拜。不过mendeley的界面是英文的，一般人不知道怎么设置：Tools&gt;Options&gt;File organizer，3个都勾上，自己摸索吧。还有一个功能我个人非常欣赏，就是PDF文档内的全局搜索，唯有感谢那些想要“偷懒”而又有能力把懒偷到手的人，感谢。世事艰难，愿我们互相帮扶。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/paques2010-moe-%E7%A1%AC%E5%BA%A6%E8%AE%A1/" data-toggle="tooltip" data-placement="top" title="Paques2010-MOE-硬度计">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/rcodes/pca/" data-toggle="tooltip" data-placement="top" title="PCA">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

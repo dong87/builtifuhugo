@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Dong&#39;s blog</title>
+  <meta property="og:title" content="Dong&#39;s blog" />
+  <meta name="twitter:title" content="Dong&#39;s blog" />
+  <meta name="description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta property="og:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="twitter:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../" />
+  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../">
+            <img class="avatar-img" src="../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Dong&#39;s blog</h1>
+                
+                  
+                    <hr class="small">
+                    <span class="page-subheading">Enterprising &amp; Concentrating欢迎光临！</span>
+                  
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div role="main" class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+          <div class="well">
+            
+
+<h2 id="front-page-content">Front Page Content</h2>
+
+<p><code>beautifulhugo</code> supports content on your front page. Edit <code>/content/_index.md</code> to change what appears here. Delete <code>/content/_index.md</code> if you don&rsquo;t want any content here.</p>
+
+          </div>
+        
+
+        <div class="posts-list">
+          
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/tidyverse%E7%B1%BB%E4%BC%BC%E5%8C%85%E4%BF%AE%E6%94%B9%E6%8C%87%E5%8D%97/">
+                <h2 class="post-title">tidyverse类似包修改指南</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (1 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>要修改的函数：attach中core、</p>
+</blockquote>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/to-some-extent-%E5%9C%A8%E6%9F%90%E7%A7%8D%E7%A8%8B%E5%BA%A6%E4%B8%8A/">
+                <h2 class="post-title">to-some-extent-在某种程度上</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (101 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  The parents transferring their genes to the next breeding generation are therefore determined, to some extent, at the time of selection, but not at the time of the cross. (Vidal et al., 2017) Pollination mechanisms, or the structure of the ovule tip and the process by which pollen is taken into the micropyle, have been described to some extent for most maintain conelets of uniform development within a bag and on a tree.
+                  <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/to-some-extent-%E5%9C%A8%E6%9F%90%E7%A7%8D%E7%A8%8B%E5%BA%A6%E4%B8%8A/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/to-this-end-%E4%B8%BA%E4%BA%86%E8%BF%99%E4%B8%AA%E7%9B%AE%E7%9A%84/">
+                <h2 class="post-title">to-this-end-为了这个目的</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (87 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  To this end several statistical methods that belong to the class known as assignment tests have been developed (Paetkau et al. (Hoglund, 2009) To this end, Bayesian approaches may provide superior means of incorporating issues which have rather been swept under the carpet to date, such as assessments of uncertainty, more complex statistical distributions or impacts of selection (Hadfield 2008; Ovaskainen et al. (Kruuk, Hill, 2008) Currently, two wellestablished but inefficient routes to this end are based on mature and widely available technologies.
+                  <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/to-this-end-%E4%B8%BA%E4%BA%86%E8%BF%99%E4%B8%AA%E7%9B%AE%E7%9A%84/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/trace-amounts-%E5%BE%AE%E9%87%8F/">
+                <h2 class="post-title">trace-amounts-微量</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (76 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Some micronutrients are required in only trace amounts; their presence in large quantities in the soil solution may be toxic to plants. (Acquaah, 2012) Resolving individuals contributing trace amounts of DNA to highly complex mixtures using high-density SNP genotyping microarrays. (Nielsen et al., 2010) In the ref8 mutant, total lignin content was reduced to 20-40% of wild-type levels and both G- and S-units were found only in trace amounts (Franke et al.
+                  <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/trace-amounts-%E5%BE%AE%E9%87%8F/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/tractable-%E6%98%93%E5%A4%84%E7%90%86%E7%9A%84/">
+                <h2 class="post-title">tractable-易处理的</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (88 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  In particular, functional mapping capitalizes on statistical modeling of the covariance structure based on autoregressive (AR) and structured antedependence (SAD) processes and, thus, makes a longitudinal high-dimensional problem computationally tractable. (Wu, Yang, Wu, 2007) To date maternal effects have been the most widely studied form of IGE (McAdam et al., 2014), but rapid development of theory and statistically tractable models (Bijma et al., 2007; Bijma and Wade, 2008) means that the IGE framework will increasingly be used to model the quantitative genetics of social interactions.
+                  <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/tractable-%E6%98%93%E5%A4%84%E7%90%86%E7%9A%84/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/trans-/">
+                <h2 class="post-title">trans-</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 0 minutes (0 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p><img src="http://upload-images.jianshu.io/upload_images/3289684-17941e1994294aa2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="trans.png" /></p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80/wang1999-%E9%93%B6%E6%A1%A6-%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80/">
+                <h2 class="post-title">wang1999-银桦-近交衰退</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (96 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Wang, T., Hagqvist, R., and Tigerstedt, P.M.A. 1999. Inbreeding depression in three generations of selfed families of silver birch ({&lt;}i{&gt;}Betula pendula{&lt;}/i{&gt;}). Can. J. For. Res. 29(6): 662–668. doi:10.1139/cjfr-29-6-662.
+ 摘要：在银桦（Betula pendula Roth）13年的田间试验的基础上，通过三代自交，研究了近交衰退的生存和生长活力。 （S0）到第一代自交树（S1）和从第二代（S2）到第三代自交树（S3）的一些恢复的生存显示显着下降，表明致死，亚致死，或高度有害的等位基因通过自交。随着近亲繁殖的增加，生长活力的持续下降表明清除影响数量性状的轻度有害等位基因的效率低，进一步近交繁殖恢复的可能性低。近亲繁殖对生存和生长活力的线性影响（作为身高，胸径和茎体积）解释了近交的主要变异，表明在不同位点加性组合显性效应是本次近交抑制的主要来源种类。同时也观察到近交繁殖对高，茎体积的弱非线性效应，表明存在上位性效应。
+介绍 近亲繁殖抑制（ID）是异体植物物种中的普遍现象。森林遗传学家和树木育种者对ID的兴趣是基于几个目标的。一个主要问题是种子园中自花授粉和其他种群近亲繁殖的程度和负面影响，特别是在后代育种群体中，人口规模越来越小。针对这些目标的一些研究已经在针叶树（Pinus resinosa Ait）等主要林木中进行。 （Fowler 1965），云杉属（L.）喀斯特。 （Koski 1973），Pseudotsuga menziesii（Mirb。）Franco，Pinus ponderosa Dougl。前法律。 （Sorensen and Miles 1982; Woods and Heaman 1989），Radus D.Don（Wilcox 1983），Pinus taeda L.（Sniezko和Zobel 1988），Sylvestris L.（Koski 1973; Lundkvist等，1987）和Pinus elliottii Engelm。（Matheson等，1995）;并在阔叶树桉（Eucalyptus regnans F. Mull） （Griffin和Cotterill，1988; Moran等，1989）和蓝桉（Eucalyptus globulus Labill）。 （Hardner和Potts 1994）。 大多数关于森林树木ID的研究比较了一个给定水平的近亲繁殖与非近交种材料。关于种子生产力和生存力的一些观察将近亲繁殖水平延伸到F = 0.
+                  <a href="../../post/%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80/wang1999-%E9%93%B6%E6%A1%A6-%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/wang2010-bwb/">
+                <h2 class="post-title">wang2010-bwb</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (44 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  
+
+<blockquote>
+<p>Wang X-R, Torimaru T, Lindgren D, Fries A (2010) Marker-based parentage analysis facilitates low input “breeding without breeding” strategies for forest trees. Tree Genet Genomes 6:227–235. doi: 10.1007/s112</p>
+</blockquote>
+
+<h1 id="摘要">摘要</h1>
+
+<p>控制杂交和子代测试是树种育种计划的重要组成部分。近来，已经提出了一种“无育种育种”（BWB）的新方法，以获得风花授粉后代的育种和试验结构谱系;该技术使用高分辨率标记而不是常规方法。 BWB方法对于跨越针叶树而言是有吸引力的，其中育种周期长，繁殖成熟度常常延迟。对于BWB方法的应用，父母的准确分配至关重要。应用BWB方法的第一步是在复杂情况下对亲子关系和父对排除程序的可靠性进行测试。在本研究中，我们对苏格兰松树种子果园作物进行了基于多基因座的实验和模拟分析，以便为BWB开发适当的亲本分配技术，并调查是否可以以足够的准确度确定种子果园作物的品种。结果是有希望的，因为在种子果园克隆中交配产生的种子的93％〜7％被正确分配给亲本对。当与外来花粉交配时，鉴定母亲克隆的成功率为60％〜8％。基于这些结果，我们提出了三种针对林木的低输入育种策略。使用苏格兰松作为案例研究描述和讨论了不同选项及其潜在收益和成本的原则。
+关键词育种策略DNA标记。遗传增益血统重建。种子果园</p>
+
+<h1 id="介绍">介绍</h1>
+
+<p><strong>先进的树种育种计划包括控制杂交，克隆档案，长期现场试验，生产实验材料苗圃，育种站和专业树种育种人员;因此，这项工作需要由一个完善的机构运行，而且需要长期的规划。</strong>一些繁殖投资与改良材料的大量繁殖可能会有很长的时间滞后。田间实验对损害敏感，降低了精度，因此这种实验通常被保护，例如。通过栅栏。为了跟踪这种实验过程中的植物特征，通常使用方格栅格，自然再生植被被去除。这种做法增加了成本和时间承诺，使其应用对于经营林业的代表性较少。一些针叶树开花是不规律的，经常发生在年龄较晚的时期，开花季节的杂交时间窗口通常很短，不可预测。因此，经验丰富的船员和设施需要处于待命状态，而人造十字架的结果仍然是非常不可预测的。该制度也容易受到育种机构的干扰，与进行十年繁殖计划相关的不确定性可能很高。虽然传统树种育种计划对种植园森林的收益增加是有理由的，但成本的不可预测性意味着替代解决方案值得研究。
+<strong>长期的森林​​树种繁殖主要包括重复最佳个体基因重组的周期，以创建新的后代，形成下一轮选择候选人群。</strong>如El-Kassaby及其同事（El-Kassaby等人，2007; El-Kassaby和Lstibrek 2009）所强调的，来自最佳个体的基因的重组可以在没有受控杂交的情况下实现，而使用分子标记的开放授粉的谱系识别可以服用这个功能。 <strong>El-Kassaby及其同事创造了“育种育种”（BWB）概念。</strong>由于表型选择在林木育种的许多情况下是有效的（Lindgren和Wei 2007），基于表型的选择策略很可能是成功的，即使谱系是未知的，如商业种植园（El-Kassaby和Lindgren，2008） 。在源自克隆种子果园的种植园中进行表型选择后，选择之间的兄弟关系可以使用高分辨率遗传标记技术进行组装。<strong>在道格拉斯冷杉的实证研究中，El-Kassaby和Lstibrek（2009）证实，BWB方法能够捕获通过常规育种获得的遗传反应的75％〜5％。</strong>
+<strong>BWB战略旨在避免受控十字架和后代测试的昂贵和耗时的任务。在这种方法中，关键因素是能够从繁殖种群或种子果园的开花授粉种子重建谱系结构。</strong>到目前为止，尚未对不同的树种进行广泛的检验。对于异交针叶树，种子果园中的种子作物通常是与已知的一组候选母亲和父亲（果园中存在的基因型）和未知花粉亲本（污染物）的频率的混合物。重要的是，无效等位基因可能导致错误排除，因此可能难以识别亲本基因型。所有这些因素使克隆种子果园的大量作物的亲本分配变得复杂，并且调查与仅有限数量的标记基因座产生的复杂谱系关系并不是微不足道的。<strong>在应用BWB方法之前，都需要使用亲代克隆和后代的多基因座基因型和模拟研究的实证研究</strong>。
+对于大多数物种，用于亲本分析的最强大的遗传工具之一是使用微卫星（简单序列重复序列（SSR））标记，并且亲本相关分析中最近的进展大多采用微卫星。有几种方法可用于排除，分类和分数分配以及基因型重建（Jones和Ardren 2003）。现有统计方法的问题之一是处理无效等位基因时遇到困难。大多数应用程序最初是针对其中一个父母（女性）已知的情况开发的。在预期的林木BWB申请中，另一方面，父母双方都是未知数;相反，有一些潜在的父母候选人。当有无效等位基因时，父对排除概率的估计方法仍然需要开发和评估。<strong>需要在复杂情况下对亲子关系和父母对排除程序的可靠性进行测试，作为应用BWB方法的基本初步步骤</strong>。
+我们研究的目的是为针叶树种群中的复杂交配系统开发亲子鉴定技术，包括开发使用SSR标记估计排除概率的方法。我们使用这种技术来研究源自种子果园的基因型的谱系是否可以以足够的准确度来确定。最后，我们在瑞典讨论使用苏格兰松的BWB策略的潜在低投入应用。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/diallel/weng-2015-%E6%8A%97%E7%97%85/">
+                <h2 class="post-title">weng-2015-抗病</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (60 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  
+
+<blockquote>
+<ol>
+<li>Weng YH, Lu P, Meng QQF, Krasowski MJ. Genetic resistance to western gall rust in jack pine and its relationship with tree height growth. Can. J. For. Res. [Internet]. 2015;45:970–7. Available from: <a href="http://www.scopus.com/inward/record.url?eid=2-s2.0-84938362950&amp;partnerID=tZOtx3y1">http://www.scopus.com/inward/record.url?eid=2-s2.0-84938362950&amp;partnerID=tZOtx3y1</a></li>
+</ol>
+</blockquote>
+
+<p>发展对一种病（WGR）的抗性对于保持健康和生产性杰克松种植园是重要的。在本研究中，我们基于从加拿大新不伦瑞克省种植的三个第二代全同胞后代测试系列收集的数据，估计WGR抗性的遗传参数及其与树高度生长的关系。结果表明：（i）<strong>千穗松中对WGR的抗性由加性和显性基因效应控制，后者起更大的作用</strong>; （平均值= 0.05;系列范围= 0.00-0.09），**广义遗传力估计在个体树的基础上是中等的（平均值= 0.53），并且显着高于全同胞家系平均水平（平均值= 0.87）; （iii）两个系列树高生长和WGR发病率之间的加性遗传相关性低（≤0.06），一个系列中仅略高和有利（-0.19），这表明对生长性状的选择不会不利地影响WGR抗性;和（iv）对WGR的中亲附加遗传和显性效应经验相关（&gt; 0.65），表明将种子园方法的WGR抗性的育种掺入当前的果树改良程序可部分地捕获来自显性效应的益处。尽管通过各种育种和部署方案可以实现WGR抗性的遗传增益，但似乎可以通过全同胞家系方式的向后选择实现快速改善。</p>
+
+<hr />
+
+<p><strong>树改良计划传统上利用加性遗传方差用于在种子园中生产遗传改良的种子。这通常是合理的，因为在许多情况下，非加性遗传方差（如显性变异）与疾病抗性的加性遗传方差的比例相对较小（Carson 1989; Sluder 1988; Dieters et al.1996; Quencez and Bastien 2001）。非加性遗传方差是否在开发遗传抗性中发挥重要作用尚不明确，因为到目前为止还没有报道。</strong>
+在本文中，我们尝试填补信息缺口与遗传参数估计的千鸟松的WGR抗性，并调查的WGR抗性和树高的增长之间的关系，基于从三个系列的第二代杰克松全同胞后代测试建立的数据新不伦瑞克树改良委员会（NBTIC）。预计这些信息将有助于在NB和其他地方的松树改良计划，其中杰克松是一种主要的商业森林物种。</p>
+
+<h2 id="对松树育种的意义">对松树育种的意义</h2>
+
+<p>在杰克松中对WGR的抗性部分地由加性遗传效应控制（表2）。因此，WGR抗性的遗传获得可以部分从前向和后向选择，使用预测的育种值（Avalue）结合正在进行的育种计划对HT生长率捕获。例如，根据预测的WGR抗性值，从2000和2002系列中选择前1％的子代，可以经验地预期将WGR发病率分别降低17.8％和30.1％。在这项研究中，预测的个人Avalue的可靠性，然而，低，因为低hi2。从正向选择计算的遗传增益可能与大样本错误相关。因此，在应用此策略时应谨慎行事。
+ 在三个测试系列中，<strong>WGR抗性的显性效应的估计似乎是中等大的。因此，可以预期捕获β2的可观的遗传增益</strong>。<strong>选择和部署全同胞家系对于在种子园中具有受控授粉是可行的，但具有较高操作成本</strong>。 WGR抗性可以通过在育苗阶段使用根切割的全同胞后代的大规模繁殖进一步增强;这种技术现在已经完善（Browne等人，1997），并且已经报道了千叶根切割可以在田间试验以及幼苗中进行（Lu等人2012）。例如，从2000年系列中选择前10个全同胞家系将导致WGR发病率降低35.9％（表4），其中大部分（80.2％）对主导变异有贡献。此外，Avalue和用于WGR抗性的Dvalue之间的经验强相关性（表3）支持这种策略。从表4中可以看出，通过Avalue间接选择和部署全同胞家系将导致对WGR的抗性的改善仅比通过直接选择Dvalue（表4）获得的改善稍微低一些。使用Avalue的优点是它可以从所有类型的后代测试中预测，而Dvalue只能从全同胞子代测试中预测。
+毫无疑问，NBTIC的松树改良计划将继续专注于提高增长率和质量。这是合理的，因为没有显着的风险对WGR抗性产生不利影响，因为WGR和高度生长之间的遗传相关性可忽略不计（表3和4）。然而，树种繁殖者总是对同时改善高度生长和WGR抗性感兴趣。一个选择是改善生长，同时将WGR抗性保持在可接受的水平。如图所示。如图3所示，存在显示出具有高于平均WGR抗性的较高生长的全同胞家系（图3中左上象限中的家系）。因此，部署更快的生长家庭而不影响WGR抗性是可行的。 NBTIC的杰克松育种策略目前不考虑利用遗传变异在遗传性WGR抗性获得遗传获益（Fowler 1986）。鉴于对WGR的可感知的遗传控制水平和对WGR抗性控制的高度生长的实际上独立的遗传控制，可以想象，将WGR抗性结合到正在进行的松树改良计划中将不是困难的，并且得益于WGR只有当WGR易感性因气候变化而增加时，抗性才能增加。未来对并入抗性的成本效益关系的经济分析可以更好地揭示可用的选择。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/%E6%9C%80%E8%BF%91%E4%BD%BF%E7%94%A8%E7%9A%84%E6%96%87%E6%A1%A3%E7%81%B0%E8%89%B2%E4%B8%8D%E8%83%BD%E8%AE%BE%E7%BD%AE/">
+                <h2 class="post-title">“最近使用的文档”灰色，不能设置</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (11 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p>Q：
+<a href="http://club.excelhome.net/thread-440720-1-1.html">前面还用的好好的，这两天发现“最近使用的文档”全空了。
+在excel选项—高级—显示下面，显示此数目的“最近使用的文档”整个一行居然是灰色，无法设置。
+看了word里也是这样。看了帮助文件
+在另一台的office2007不会</a></p>
+
+<p>看了帮助文件，没办法。请教解决办法。::Q ::Q</p>
+
+<p>A：
+首先感谢楼上的各位,经过尝试,我发现最好的解决办法是</p>
+
+<p>首先从组策略里面禁用版主提到的以上两项,然后再选择未配置,就解决了</p>
+
+<p>我的是windows7的系统,是由于一次office的更新造成历史文件无法设置的,现在这样已经解决</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+        </div>
+
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="../../page/46/">&larr; Newer Posts</a>
+              </li>
+            
+            
+              <li class="next">
+                <a href="../../page/48/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

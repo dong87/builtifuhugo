@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Rincent2017-作物生长模型和基因组选择模型</title>
+  <meta property="og:title" content="Rincent2017-作物生长模型和基因组选择模型" />
+  <meta name="twitter:title" content="Rincent2017-作物生长模型和基因组选择模型" />
+  <meta name="description" content="Rincent R, Kuhn E, Monod H, et al (2017) Optimization of multi-environment trials for genomic selection based on crop models. Theor Appl Genet 130:1735–1752. doi: 10.1007/s00122-017-2922-4
+ 摘要 关键信息通过结合作物生长模型和基因组选择模型，我们提出了一个统计标准，优化多环境试验，以更有效地预测基因型→环境相互作用。
+摘要种类？环境相互作用（GEI）在植物多环境试验（METs）中很常见。在这种情况下，需要调整用于基因组选择（GS）的模型，这些模型是指使用全基因组信息来预测候选者的育种价值。在各种环境中提高预测准确度的一个有希望的方法是结合生物生态学和遗传建模，因为结合遗传参数的作物生长模型（CGM）。这种方法的效率取决于参数估计的质量，这取决于组成该MET用于校准的环境。这项研究的目的是确定一种方法来优化组合MET的环境，以估计遗传参数。为了达到这一目的，定义了一个称为OptiMET的标准，并以模拟和实际数据为例，以小麦物候学为例。用OptiMET定义的MET允许以较低误差估计遗传参数，导致更高的QTL检测功率和更高的预测精度。使用OptiMET定义的MET在参数估计的质量方面平均比使用两倍于环境的随机MET更有效。因此，OptiMET是确定最佳实验条件以有效利用MET和目前开发的表型工具的有价值的工具。
+介绍 在植物育种中，表现最佳的品种往往与一个环境不同。这些现象称为基因型？环境相互作用（GEI）。为了应对它们，育种者在多环境试验（METs）中反复表现出相同的品种。然而，这种方法具有经济限制，并且在所有环境中筛选所有材料是不可行的。因此，开发能够预测这些相互作用的模型将是非常有意义的。实现这一目标的一个有希望的工具是基因组选择（GS），其是用于动物和植物育种的方法，以使用全基因组分子标记物来预测基因组育种值（Whittaker等人2000; Meuwissen等人2001）。在最近的一些研究中，提出通过将环境特异性效应归因于标记（Schulz-Streeck等人，2013; Crossa等人，2015），或通过建模环境协方差（Burgue）来将参考GS模型适应于GEI上下文駉等人2012）。在其他研究中，在GS模型中引入了环境协变量（Heslot et al。2014; Jarquani et al。2014; Malosetti et al。2016），可以在新的环境中进行预测。然而，这些模型获得的收益是有限的。一个可能的原因是，在大多数情况下，GEI将减少到品种与少数环境协变量之间的线性关系，这不能允许植物发育与环境条件之间的复杂相互作用。 植物与环境的相互作用一直是生态学家进行精细分析的主题。他们的研究允许开发作物生长模型（CGM），其使用与生理参数和环境协变量的机械关系作为输入来描述植物发育。根据定义，生理参数独立于环境，但其中一些称为遗传参数可能取决于多样性。例如，对于任何环境，给定品种对光周期的敏感度是相同的。然而，由于其他品种可能具有不同的光周期敏感性，因此光周期可能因环境而异，产生GEI。 CGM可用于预测GEI，因为它们明确地整合了品种特征（遗传参数）和环境协变量（Chapman et al.2002; Hammer et al.2002; Bertin et al。2010; Bustos-Korts et al。2016）。一旦估计了遗传参数，就可以确定其遗传结构，并可以对GS模型进行校准。然后可以使用GS模型来预测其他品种的遗传参数。这些预测的遗传参数也可以用于通过运行CGM来预测新环境中这些新品种的综合性状，如产量（图1）。对玉米叶片延长率（Reymond et al。2003; Chenu et al。2008），水果质量（Quilot et al。2005; Prudent et al。2011），对CGM和遗传学的耦合方法的兴趣和可行性进行了验证，和各种物种的物候学（White and Hoogenboom 1996; Yin 2005; Nakagawa et al。2005; Messina et al。2006; White et al。2008; Uptmoor et al。2011; Zheng et al。2013; Bogard et al。 Onogi等人，2016）。最近，Technow等人（2015），Cooper et al。 （2016）和Messina等（2017）表明了CGM和GS模型的耦合关系，用于预测和选择高度综合性状如粮食产量。他们的方法的一个主要优点和Onogi等人的方法（2016）是遗传参数和标记效应联合估计，因此基因型数据可以在个人之间共享信息。 偶联CGM和标记辅助选择（CGM-MAS）的方法也称为基于基因的建模或基于QTL的建模（参见图1）。在CGM-MAS中，遗传参数的全基因组关联研究（GWAS）和GS的效率取决于校准集的组成，作物模型的相关性以及参数估计的质量。考虑到作物模型中涉及的遗传参数的数量及其在复杂过程中的纠缠方式，很明显，需要大量的数据来估计参数，并且正在开发的高通量表型工具，如无人机（UAV）和表型平台将有很大的帮助。 一些遗传参数可以通过测量表型平台上的简单性状几乎直接估计（Reymond等人2003; Yin 2005）。其他遗传参数通过调整CGM输出到更综合性状的观察来估计。在这种情况下，可以通过粗体算法（Bogard et al。2014），更复杂的探索算法（Wallach et al。2011; Klein et al。2012）或贝叶斯推理（Makowski et al。，2002 ; Van Oijen等人2005; Iizumi等人2009; Dumont等人，2014）。参数的质量通过误差方差估计高度QTL检测能力（Wang 2008; Teyss等人，2012; Rincent等，2014）和GS精度（Daetwyler et al。2008; VanRaden 2008）。 数据收集和参数推理的一个基本问题是实验设计的选择。关于植物育种实验设计的大多数文献集中在试验中将品种分配给地块（Piepho和Williams 2006; Butler等人，2014）。然而，当设计METs来估计遗传参数时，主要的问题是确定哪些种植条件需要表型来提供最佳估计。例如，如果日长度在CGM行为中起主要作用，则可以预期，捕获日长度的重要变异性的实验设计将比其他估计相应遗传参数更有效。在一些研究中已经讨论了实验设计定义对估计模型参数的重要性（W鰄linget al。2013; Dumont等，2014）。因此，最佳MET设计的定义是一个关键点，必须基于可靠的统计方法。 一些研究明确地处理了MET的设计（参见Talbot第10章关于Kempton和Fox 1997的选择系统的资源分配）。最近，提出了一个有趣的方法来优化实验设计来校准水文模型（Leube et al。2012）。在CGMMAS的背景下开发这样的新工具是目前最重要的需要。 本研究的主要目的是制定统计标准，在CGM-MAS的上下文中收集数据之前优化组合MET的环境。采用此标准采样的设计应允许对整个品种集合的作物模型进行最有效的校准。用最佳实验设计获得的遗传参数估计的高质量应反过来增加CGM-MAS效率（QTL检测功率和预测精度）。使用模拟和实际数据集，对这些方法进行了测试，其中包括参考作物模型（Jamieson et al。1998b; Keating et al。2003）。这种特征受温度和日长度的影响，因此我们将重点放在定位和播种日期的最佳组合的定义上。使用贝叶斯推理方法估计使用综合表型的作物模型的遗传参数。">
+  <meta property="og:description" content="Rincent R, Kuhn E, Monod H, et al (2017) Optimization of multi-environment trials for genomic selection based on crop models. Theor Appl Genet 130:1735–1752. doi: 10.1007/s00122-017-2922-4
+ 摘要 关键信息通过结合作物生长模型和基因组选择模型，我们提出了一个统计标准，优化多环境试验，以更有效地预测基因型→环境相互作用。
+摘要种类？环境相互作用（GEI）在植物多环境试验（METs）中很常见。在这种情况下，需要调整用于基因组选择（GS）的模型，这些模型是指使用全基因组信息来预测候选者的育种价值。在各种环境中提高预测准确度的一个有希望的方法是结合生物生态学和遗传建模，因为结合遗传参数的作物生长模型（CGM）。这种方法的效率取决于参数估计的质量，这取决于组成该MET用于校准的环境。这项研究的目的是确定一种方法来优化组合MET的环境，以估计遗传参数。为了达到这一目的，定义了一个称为OptiMET的标准，并以模拟和实际数据为例，以小麦物候学为例。用OptiMET定义的MET允许以较低误差估计遗传参数，导致更高的QTL检测功率和更高的预测精度。使用OptiMET定义的MET在参数估计的质量方面平均比使用两倍于环境的随机MET更有效。因此，OptiMET是确定最佳实验条件以有效利用MET和目前开发的表型工具的有价值的工具。
+介绍 在植物育种中，表现最佳的品种往往与一个环境不同。这些现象称为基因型？环境相互作用（GEI）。为了应对它们，育种者在多环境试验（METs）中反复表现出相同的品种。然而，这种方法具有经济限制，并且在所有环境中筛选所有材料是不可行的。因此，开发能够预测这些相互作用的模型将是非常有意义的。实现这一目标的一个有希望的工具是基因组选择（GS），其是用于动物和植物育种的方法，以使用全基因组分子标记物来预测基因组育种值（Whittaker等人2000; Meuwissen等人2001）。在最近的一些研究中，提出通过将环境特异性效应归因于标记（Schulz-Streeck等人，2013; Crossa等人，2015），或通过建模环境协方差（Burgue）来将参考GS模型适应于GEI上下文駉等人2012）。在其他研究中，在GS模型中引入了环境协变量（Heslot et al。2014; Jarquani et al。2014; Malosetti et al。2016），可以在新的环境中进行预测。然而，这些模型获得的收益是有限的。一个可能的原因是，在大多数情况下，GEI将减少到品种与少数环境协变量之间的线性关系，这不能允许植物发育与环境条件之间的复杂相互作用。 植物与环境的相互作用一直是生态学家进行精细分析的主题。他们的研究允许开发作物生长模型（CGM），其使用与生理参数和环境协变量的机械关系作为输入来描述植物发育。根据定义，生理参数独立于环境，但其中一些称为遗传参数可能取决于多样性。例如，对于任何环境，给定品种对光周期的敏感度是相同的。然而，由于其他品种可能具有不同的光周期敏感性，因此光周期可能因环境而异，产生GEI。 CGM可用于预测GEI，因为它们明确地整合了品种特征（遗传参数）和环境协变量（Chapman et al.2002; Hammer et al.2002; Bertin et al。2010; Bustos-Korts et al。2016）。一旦估计了遗传参数，就可以确定其遗传结构，并可以对GS模型进行校准。然后可以使用GS模型来预测其他品种的遗传参数。这些预测的遗传参数也可以用于通过运行CGM来预测新环境中这些新品种的综合性状，如产量（图1）。对玉米叶片延长率（Reymond et al。2003; Chenu et al。2008），水果质量（Quilot et al。2005; Prudent et al。2011），对CGM和遗传学的耦合方法的兴趣和可行性进行了验证，和各种物种的物候学（White and Hoogenboom 1996; Yin 2005; Nakagawa et al。2005; Messina et al。2006; White et al。2008; Uptmoor et al。2011; Zheng et al。2013; Bogard et al。 Onogi等人，2016）。最近，Technow等人（2015），Cooper et al。 （2016）和Messina等（2017）表明了CGM和GS模型的耦合关系，用于预测和选择高度综合性状如粮食产量。他们的方法的一个主要优点和Onogi等人的方法（2016）是遗传参数和标记效应联合估计，因此基因型数据可以在个人之间共享信息。 偶联CGM和标记辅助选择（CGM-MAS）的方法也称为基于基因的建模或基于QTL的建模（参见图1）。在CGM-MAS中，遗传参数的全基因组关联研究（GWAS）和GS的效率取决于校准集的组成，作物模型的相关性以及参数估计的质量。考虑到作物模型中涉及的遗传参数的数量及其在复杂过程中的纠缠方式，很明显，需要大量的数据来估计参数，并且正在开发的高通量表型工具，如无人机（UAV）和表型平台将有很大的帮助。 一些遗传参数可以通过测量表型平台上的简单性状几乎直接估计（Reymond等人2003; Yin 2005）。其他遗传参数通过调整CGM输出到更综合性状的观察来估计。在这种情况下，可以通过粗体算法（Bogard et al。2014），更复杂的探索算法（Wallach et al。2011; Klein et al。2012）或贝叶斯推理（Makowski et al。，2002 ; Van Oijen等人2005; Iizumi等人2009; Dumont等人，2014）。参数的质量通过误差方差估计高度QTL检测能力（Wang 2008; Teyss等人，2012; Rincent等，2014）和GS精度（Daetwyler et al。2008; VanRaden 2008）。 数据收集和参数推理的一个基本问题是实验设计的选择。关于植物育种实验设计的大多数文献集中在试验中将品种分配给地块（Piepho和Williams 2006; Butler等人，2014）。然而，当设计METs来估计遗传参数时，主要的问题是确定哪些种植条件需要表型来提供最佳估计。例如，如果日长度在CGM行为中起主要作用，则可以预期，捕获日长度的重要变异性的实验设计将比其他估计相应遗传参数更有效。在一些研究中已经讨论了实验设计定义对估计模型参数的重要性（W鰄linget al。2013; Dumont等，2014）。因此，最佳MET设计的定义是一个关键点，必须基于可靠的统计方法。 一些研究明确地处理了MET的设计（参见Talbot第10章关于Kempton和Fox 1997的选择系统的资源分配）。最近，提出了一个有趣的方法来优化实验设计来校准水文模型（Leube et al。2012）。在CGMMAS的背景下开发这样的新工具是目前最重要的需要。 本研究的主要目的是制定统计标准，在CGM-MAS的上下文中收集数据之前优化组合MET的环境。采用此标准采样的设计应允许对整个品种集合的作物模型进行最有效的校准。用最佳实验设计获得的遗传参数估计的高质量应反过来增加CGM-MAS效率（QTL检测功率和预测精度）。使用模拟和实际数据集，对这些方法进行了测试，其中包括参考作物模型（Jamieson et al。1998b; Keating et al。2003）。这种特征受温度和日长度的影响，因此我们将重点放在定位和播种日期的最佳组合的定义上。使用贝叶斯推理方法估计使用综合表型的作物模型的遗传参数。">
+  <meta name="twitter:description" content="Rincent R, Kuhn E, Monod H, et al (2017) Optimization of multi-environment trials for genomic selection based on crop models. Theor Appl Genet 130:1735–1752. doi: 10.1007/s00122-017-2922-4
+ 摘要 关键信息通过结 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/gs/rincent2017-%E4%BD%9C%E7%89%A9%E7%94%9F%E9%95%BF%E6%A8%A1%E5%9E%8B%E5%92%8C%E5%9F%BA%E5%9B%A0%E7%BB%84%E9%80%89%E6%8B%A9%E6%A8%A1%E5%9E%8B/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/gs/rincent2017-%E4%BD%9C%E7%89%A9%E7%94%9F%E9%95%BF%E6%A8%A1%E5%9E%8B%E5%92%8C%E5%9F%BA%E5%9B%A0%E7%BB%84%E9%80%89%E6%8B%A9%E6%A8%A1%E5%9E%8B/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Rincent2017-作物生长模型和基因组选择模型</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (131 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Rincent2017-作物生长模型和基因组选择模型</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (131 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Rincent R, Kuhn E, Monod H, et al (2017) Optimization of multi-environment trials for genomic selection based on crop models. Theor Appl Genet 130:1735–1752. doi: 10.1007/s00122-017-2922-4</p>
+</blockquote>
+
+<h1 id="摘要">摘要</h1>
+
+<p><strong>关键信息</strong>通过结合<strong>作物生长模型和基因组选择模型</strong>，我们提出了一个统计标准，优化多环境试验，以更有效地预测基因型→环境相互作用。</p>
+
+<p><strong>摘要</strong>种类？环境相互作用（GEI）在植物多环境试验（METs）中很常见。在这种情况下，需要调整用于基因组选择（GS）的模型，这些模型是指使用全基因组信息来预测候选者的育种价值。在各种环境中提高预测准确度的一个有希望的方法是结合生物生态学和遗传建模，因为结合遗传参数的作物生长模型（CGM）。这种方法的效率取决于参数估计的质量，这取决于组成该MET用于校准的环境。这项研究的目的是确定一种方法来优化组合MET的环境，以估计遗传参数。为了达到这一目的，定义了一个称为OptiMET的标准，并以模拟和实际数据为例，以小麦物候学为例。用OptiMET定义的MET允许以较低误差估计遗传参数，导致更高的QTL检测功率和更高的预测精度。使用OptiMET定义的MET在参数估计的质量方面平均比使用两倍于环境的随机MET更有效。因此，OptiMET是确定最佳实验条件以有效利用MET和目前开发的表型工具的有价值的工具。</p>
+
+<h1 id="介绍">介绍</h1>
+
+<p>在植物育种中，表现最佳的品种往往与一个环境不同。这些现象称为基因型？环境相互作用（GEI）。为了应对它们，育种者在多环境试验（METs）中反复表现出相同的品种。然而，这种方法具有经济限制，并且在所有环境中筛选所有材料是不可行的。因此，开发能够预测这些相互作用的模型将是非常有意义的。实现这一目标的一个有希望的工具是基因组选择（GS），其是用于动物和植物育种的方法，以使用全基因组分子标记物来预测基因组育种值（Whittaker等人2000; Meuwissen等人2001）。在最近的一些研究中，<strong>提出通过将环境特异性效应归因于标记</strong>（Schulz-Streeck等人，2013; Crossa等人，2015），或<strong>通过建模环境协方差（Burgue）来将参考GS模型适应于GEI</strong>上下文駉等人2012）。在其他研究中，<strong>在GS模型中引入了环境协变量</strong>（Heslot et al。2014; Jarquani et al。2014; Malosetti et al。2016），可以在新的环境中进行预测。然而，<strong>这些模型获得的收益是有限的。一个可能的原因是，在大多数情况下，GEI将减少到品种与少数环境协变量之间的线性关系，这不能允许植物发育与环境条件之间的复杂相互作用。</strong>
+植物与环境的相互作用一直是生态学家进行精细分析的主题。<strong>他们的研究允许开发作物生长模型（CGM），其使用与生理参数和环境协变量的机械关系作为输入来描述植物发育。</strong>根据定义，<strong>生理参数独立于环境，但其中一些称为遗传参数可能取决于多样性</strong>。例如，对于任何环境，给定品种对光周期的敏感度是相同的。然而，由于其他品种可能具有不同的光周期敏感性，因此光周期可能因环境而异，产生GEI。 CGM可用于预测GEI，因为它们明确地整合了品种特征（遗传参数）和环境协变量（Chapman et al.2002; Hammer et al.2002; Bertin et al。2010; Bustos-Korts et al。2016）。<strong>一旦估计了遗传参数，就可以确定其遗传结构，并可以对GS模型进行校准</strong>。然后可以使用GS模型来预测其他品种的遗传参数。这些预测的遗传参数也可以用于通过运行CGM来预测新环境中这些新品种的综合性状，如产量（图1）。对玉米叶片延长率（Reymond et al。2003; Chenu et al。2008），水果质量（Quilot et al。2005; Prudent et al。2011），对CGM和遗传学的耦合方法的兴趣和可行性进行了验证，和各种物种的物候学（White and Hoogenboom 1996; Yin 2005; Nakagawa et al。2005; Messina et al。2006; White et al。2008; Uptmoor et al。2011; Zheng et al。2013; Bogard et al。 Onogi等人，2016）。最近，Technow等人（2015），Cooper et al。 （2016）和Messina等（2017）表明了CGM和GS模型的耦合关系，用于预测和选择高度综合性状如粮食产量。他们的方法的一个主要优点和Onogi等人的方法（2016）是<strong>遗传参数和标记效应联合估计</strong>，因此基因型数据可以在个人之间共享信息。
+偶联CGM和标记辅助选择（CGM-MAS）的方法也称为基于基因的建模或基于QTL的建模（参见图1）。在CGM-MAS中，遗传参数的全基因组关联研究（GWAS）和GS的效率取决于校准集的组成，作物模型的相关性以及参数估计的质量。考虑到作物模型中涉及的遗传参数的数量及其在复杂过程中的纠缠方式，很明显，需要大量的数据来估计参数，并且正在开发的高通量表型工具，如无人机（UAV）和表型平台将有很大的帮助。
+一些遗传参数可以通过测量表型平台上的简单性状几乎直接估计（Reymond等人2003; Yin 2005）。其他遗传参数通过调整CGM输出到更综合性状的观察来估计。在这种情况下，可以通过粗体算法（Bogard et al。2014），更复杂的探索算法（Wallach et al。2011; Klein et al。2012）或贝叶斯推理（Makowski et al。，2002 ; Van Oijen等人2005; Iizumi等人2009; Dumont等人，2014）。参数的质量通过误差方差估计高度QTL检测能力（Wang 2008; Teyss等人，2012; Rincent等，2014）和GS精度（Daetwyler et al。2008; VanRaden 2008）。
+数据收集和参数推理的一个基本问题是实验设计的选择。关于植物育种实验设计的大多数文献集中在试验中将品种分配给地块（Piepho和Williams 2006; Butler等人，2014）。然而，<strong>当设计METs来估计遗传参数时，主要的问题是确定哪些种植条件需要表型来提供最佳估计</strong>。例如，如果日长度在CGM行为中起主要作用，则可以预期，捕获日长度的重要变异性的实验设计将比其他估计相应遗传参数更有效。在一些研究中已经讨论了实验设计定义对估计模型参数的重要性（W鰄linget al。2013; Dumont等，2014）。因此，<strong>最佳MET设计的定义是一个关键点，必须基于可靠的统计方法</strong>。
+一些研究明确地处理了MET的设计（参见Talbot第10章关于Kempton和Fox 1997的选择系统的资源分配）。最近，提出了一个有趣的方法来优化实验设计来校准水文模型（Leube et al。2012）。在CGMMAS的背景下开发这样的新工具是目前最重要的需要。
+本研究的主要目的是制定统计标准，<strong>在CGM-MAS的上下文中收集数据之前优化组合MET的环境。采用此标准采样的设计应允许对整个品种集合的作物模型进行最有效的校准。用最佳实验设计获得的遗传参数估计的高质量应反过来增加CGM-MAS效率（QTL检测功率和预测精度）。</strong>使用模拟和实际数据集，对这些方法进行了测试，其中包括参考作物模型（Jamieson et al。1998b; Keating et al。2003）。这种特征受温度和日长度的影响，因此我们将重点放在<strong>定位和播种日期</strong>的最佳组合的定义上。使用贝叶斯推理方法估计使用综合表型的作物模型的遗传参数。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/roberds2003-%E7%81%AB%E7%82%AC%E6%9D%BE-%E6%B2%B9%E6%A0%91%E8%84%82/" data-toggle="tooltip" data-placement="top" title="Roberds2003-火炬松-油树脂">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%AB%9E%E4%BA%89/resende2016-%E6%A1%89%E6%A0%91-%E6%97%A0%E6%80%A7%E7%B3%BB-%E7%AB%9E%E4%BA%89/" data-toggle="tooltip" data-placement="top" title="Resende2016-桉树-无性系-竞争">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

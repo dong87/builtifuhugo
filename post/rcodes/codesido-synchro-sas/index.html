@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Codesido-SYNCHRO-SAS</title>
+  <meta property="og:title" content="Codesido-SYNCHRO-SAS" />
+  <meta name="twitter:title" content="Codesido-SYNCHRO-SAS" />
+  <meta name="description" content="/**********************************************************************************************/ /*********************** SYNCHRO1: Input data and checks ***************************************/ /**********************************************************************************************/ %macro SYNCHRO1(Message); options nonotes mautosource NOmerror nomprint noserror nosource nodate; %put SYNCHRO START; %let beta=0.02; %let ERR=;%let libname=;%let table=;%let block=;%let branch=; %do i=1 %to 8; %let m&amp;i=0; %let f&amp;i=0;%let ud=3; %end; %empieza: %window START color=gray irow=10 rows=23 icolumn=20 columns=32 #1 @2 &quot;&amp;Message&quot; color=red attr=highlight #3 @2 &quot;Table:&quot; &#43;1 libname 8 attr=underline color=blue &quot;.&quot; table 8 attr=underline required=yes color=blue #5 @2 &quot;Start Day:&quot; &#43;1 inicio 3 attr=underline required=yes color=blue #5 @18 &quot;End Day:&quot; &#43;1 fin 3 attr=underline required=yes color=blue #7 @2 &quot;MALE STAGES&quot; attr=underline &#43;5 &quot;FEMALE STAGES&quot; attr=underline #8 @5 &quot;1&quot; &#43;1 m1 3 color=blue attr=underline &#43;12 &quot;1&quot; &#43;1 f1 3 color=blue attr=underline #9 @5 &quot;2&quot; &#43;1 m2 3 color=blue attr=underline &#43;12 &quot;2&quot; &#43;1 f2 3 color=blue attr=underline #10 @5 &quot;3&quot; &#43;1 m3 3 color=blue attr=underline &#43;12 &quot;3&quot; &#43;1 f3 3 color=blue attr=underline #11 @5 &quot;4&quot; &#43;1 m4 3 color=blue attr=underline &#43;12 &quot;4&quot; &#43;1 f4 3 color=blue attr=underline #12 @5 &quot;5&quot; &#43;1 m5 3 color=blue attr=underline &#43;12 &quot;5&quot; &#43;1 f5 3 color=blue attr=underline #13 @5 &quot;6&quot; &#43;1 m6 3 color=blue attr=underline &#43;12 &quot;6&quot; &#43;1 f6 3 color=blue attr=underline #14 @5 &quot;7&quot; &#43;1 m7 3 color=blue attr=underline &#43;12 &quot;7&quot; &#43;1 f7 3 color=blue attr=underline #15 @5 &quot;8&quot; &#43;1 m8 3 color=blue attr=underline &#43;12 &quot;8&quot; &#43;1 f8 3 color=blue attr=underline #17 @7 &quot;Press&quot; &#43;1 &quot;F3&quot; attr=underline &#43;1 &quot;when ready&quot;; %display START; %if &amp;libname= %then %let libname=work; %let message=; /**************** Data verifications *********************************************************/ PROC contents data=&amp;libname.">
+  <meta property="og:description" content="/**********************************************************************************************/ /*********************** SYNCHRO1: Input data and checks ***************************************/ /**********************************************************************************************/ %macro SYNCHRO1(Message); options nonotes mautosource NOmerror nomprint noserror nosource nodate; %put SYNCHRO START; %let beta=0.02; %let ERR=;%let libname=;%let table=;%let block=;%let branch=; %do i=1 %to 8; %let m&amp;i=0; %let f&amp;i=0;%let ud=3; %end; %empieza: %window START color=gray irow=10 rows=23 icolumn=20 columns=32 #1 @2 &quot;&amp;Message&quot; color=red attr=highlight #3 @2 &quot;Table:&quot; &#43;1 libname 8 attr=underline color=blue &quot;.&quot; table 8 attr=underline required=yes color=blue #5 @2 &quot;Start Day:&quot; &#43;1 inicio 3 attr=underline required=yes color=blue #5 @18 &quot;End Day:&quot; &#43;1 fin 3 attr=underline required=yes color=blue #7 @2 &quot;MALE STAGES&quot; attr=underline &#43;5 &quot;FEMALE STAGES&quot; attr=underline #8 @5 &quot;1&quot; &#43;1 m1 3 color=blue attr=underline &#43;12 &quot;1&quot; &#43;1 f1 3 color=blue attr=underline #9 @5 &quot;2&quot; &#43;1 m2 3 color=blue attr=underline &#43;12 &quot;2&quot; &#43;1 f2 3 color=blue attr=underline #10 @5 &quot;3&quot; &#43;1 m3 3 color=blue attr=underline &#43;12 &quot;3&quot; &#43;1 f3 3 color=blue attr=underline #11 @5 &quot;4&quot; &#43;1 m4 3 color=blue attr=underline &#43;12 &quot;4&quot; &#43;1 f4 3 color=blue attr=underline #12 @5 &quot;5&quot; &#43;1 m5 3 color=blue attr=underline &#43;12 &quot;5&quot; &#43;1 f5 3 color=blue attr=underline #13 @5 &quot;6&quot; &#43;1 m6 3 color=blue attr=underline &#43;12 &quot;6&quot; &#43;1 f6 3 color=blue attr=underline #14 @5 &quot;7&quot; &#43;1 m7 3 color=blue attr=underline &#43;12 &quot;7&quot; &#43;1 f7 3 color=blue attr=underline #15 @5 &quot;8&quot; &#43;1 m8 3 color=blue attr=underline &#43;12 &quot;8&quot; &#43;1 f8 3 color=blue attr=underline #17 @7 &quot;Press&quot; &#43;1 &quot;F3&quot; attr=underline &#43;1 &quot;when ready&quot;; %display START; %if &amp;libname= %then %let libname=work; %let message=; /**************** Data verifications *********************************************************/ PROC contents data=&amp;libname.">
+  <meta name="twitter:description" content="/**********************************************************************************************/ /*********************** SYNCHRO1: Input data and checks ***************************************/ …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/rcodes/codesido-synchro-sas/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/rcodes/codesido-synchro-sas/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Codesido-SYNCHRO-SAS</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 12 minutes (2548 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Codesido-SYNCHRO-SAS</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 12 minutes (2548 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <pre><code>/**********************************************************************************************/
+/*********************** SYNCHRO1: Input data and checks ***************************************/
+/**********************************************************************************************/
+
+%macro SYNCHRO1(Message);
+ options nonotes mautosource NOmerror nomprint noserror nosource nodate;
+ %put SYNCHRO START;
+ %let beta=0.02;
+ %let ERR=;%let libname=;%let table=;%let block=;%let branch=;
+ %do i=1 %to 8; %let m&amp;i=0; %let f&amp;i=0;%let ud=3; %end;
+ %empieza:
+ %window START color=gray irow=10 rows=23 icolumn=20 columns=32
+   #1 @2 &quot;&amp;Message&quot; color=red attr=highlight
+   #3 @2 &quot;Table:&quot; +1 libname 8 attr=underline color=blue &quot;.&quot; table 8 attr=underline required=yes color=blue
+   #5 @2 &quot;Start Day:&quot;  +1 inicio 3 attr=underline required=yes color=blue
+   #5 @18 &quot;End Day:&quot; +1 fin 3 attr=underline required=yes color=blue
+   #7 @2 &quot;MALE STAGES&quot; attr=underline +5 &quot;FEMALE STAGES&quot;  attr=underline
+   #8 @5 &quot;1&quot; +1 m1 3 color=blue attr=underline +12 &quot;1&quot; +1 f1 3 color=blue attr=underline
+   #9 @5 &quot;2&quot; +1 m2 3 color=blue attr=underline +12 &quot;2&quot; +1 f2 3 color=blue attr=underline
+   #10 @5 &quot;3&quot; +1 m3 3 color=blue attr=underline +12 &quot;3&quot; +1 f3 3 color=blue attr=underline
+   #11 @5 &quot;4&quot; +1 m4 3 color=blue attr=underline +12 &quot;4&quot; +1 f4 3 color=blue attr=underline
+   #12 @5 &quot;5&quot; +1 m5 3 color=blue attr=underline +12 &quot;5&quot; +1 f5 3 color=blue attr=underline
+   #13 @5 &quot;6&quot; +1 m6 3 color=blue attr=underline +12 &quot;6&quot; +1 f6 3 color=blue attr=underline
+   #14 @5 &quot;7&quot; +1 m7 3 color=blue attr=underline +12 &quot;7&quot; +1 f7 3 color=blue attr=underline
+   #15 @5 &quot;8&quot; +1 m8 3 color=blue attr=underline +12 &quot;8&quot; +1 f8 3 color=blue attr=underline
+   #17 @7 &quot;Press&quot; +1 &quot;F3&quot; attr=underline +1 &quot;when ready&quot;;
+ %display START;
+ %if &amp;libname= %then %let libname=work;
+ %let message=;
+
+
+/**************** Data verifications *********************************************************/
+
+PROC contents data=&amp;libname.._ALL_ memtype=data out=verify noprint;
+data _null_; set verify end=eof;
+ if memname=upcase(&quot;&amp;table&quot;) then ERR=1;
+ retain ERR;
+ if eof and ERR^=1 then call symput('Message',&quot;ERROR: Table does not exist&quot;);
+run;
+
+%if %length(&amp;Message)&gt;0 %then %goto empieza;
+
+data _null_;
+ do i=1 to 8 until(_error_);
+  if symget('m'||left(i))&gt;100 then call symput('Message',&quot;ERROR: m&quot;||substr(left(i),1,1)||&quot; &gt; 100&quot;);
+  if _ERROR_=1 then do;call symput('Message',&quot;ERROR: m&quot;||substr(left(i),1,1)||&quot; not numeric&quot;);goto adeus;end;
+  if symget('f'||left(i))&gt;100 then call symput('Message',&quot;ERROR: f&quot;||substr(left(i),1,1)||&quot; &gt; 100&quot;);
+  if _ERROR_=1 then call symput('Message',&quot;ERROR: f&quot;||substr(left(i),1,1)||&quot; not numeric&quot;);
+ end;
+ if symget('inicio')&gt;365 or symget('fin')&gt;365 then call symput('Message',&quot;ERROR: Start/End &gt; 365&quot;);
+ if _ERROR_=1 then call symput('Message',&quot;ERROR: Start/End not numeric&quot;);
+adeus: run;
+%if %length(&amp;Message)&gt;0 %then %goto empieza;
+%if &amp;inicio&gt;=&amp;fin %then %SYNCHRO1(ERROR: Start&gt;=End);
+
+PROC contents data=&amp;libname..&amp;TABLE out=verify noprint;
+data verify; set verify; if substr(name,1,1)='D' then d=0+substr(name,2,3);
+proc sort; by d;
+data _null;
+ set verify end=eof;
+ if _n_=1 then do;day=0;id=0;block=0;sex=0; branch=0;inicio=0;fin=0;end;
+ if name='ID' then ID=1;
+ if name='RAMET' then ramet=1;
+ if name='BLOCK' then block=1;
+ if name='SEX' and type=2 then sex=1;
+ if name='BRANCHE' then branch=1;
+ if name=&quot;D&amp;inicio&quot; then inicio=1;
+ if name=&quot;D&amp;fin&quot; then fin=1;
+ if substr(name,1,1)='D' then do;
+  if substr(name,2,3)&gt;0 and substr(name,2,3)&lt;365 then day+1;
+  if type=2 then dayS=1;
+  call symput('Day'||left(day),substr(name,2,3));
+ end;
+ retain id ramet block sex dayS branch inicio fin;
+ if eof then do;
+  if ID^=1 then call symput('ERR',&quot;ERROR: ID does not exist&quot;);
+  if block^=1 then call symput('BLOCK',1);
+  if ramet^=1 then call symput('ERR',&quot;ERROR: RAMET field does not exist&quot;);
+  if sex^=1 then call symput('ERR',&quot;ERROR: Problems with SEX field&quot;);
+  if branch^=1 then call symput('BRANCH',1);
+  if day&lt;=2 then call symput('ERR',&quot;ERROR: Too low day measurements&quot;);
+  if day=0 then call symput('ERR',&quot;ERROR: No day measurements&quot;);
+  if dayS=1 then call symput('ERR',&quot;ERROR: Some score fields are $&quot;);
+  if inicio^=1 then call symput('Message',&quot;ERROR: D&amp;inicio does not exist&quot;);
+  if fin^=1 then call symput('Message',&quot;ERROR: D&amp;fin does not exist&quot;);
+  call symput('n',day);
+ end;
+run;
+%put &amp;err;
+%if %length(&amp;err)&gt;0 %then %do;
+ %window ERR color=gray irow=13 rows=3 icolumn=7 columns=40
+   #1 @2 &quot;&amp;ERR&quot; color=red attr=highlight;
+ %display ERR;
+ %goto theend;
+%end;
+data pheno; set &amp;libname..&amp;table; ok1=0;
+ if SEX in ('m','f','M','F') then ok1=1;
+ if ok1=0 then call symput('ERR',&quot;ERROR: SEX values ^= mf&quot;);
+ array d %original(D);
+ do i=1 to &amp;n; if d(i)=. or substr(left(D(i)),1,1) in ('1','2','3','4','5','6','7','8') then ok1=1;
+  else call symput('ERR',&quot;ERROR: Score values ^= 1-8&quot;);
+ end;
+ if symget('BLOCK')=1 then BLOCK=1;
+ if symget('BRANCH')=1 then BRANCH=_N_;
+ drop ok1;
+run;
+%if %length(&amp;Message)&gt;0 %then %goto empieza;
+%if &amp;BLOCK=1 %then %put NOTES: BLOCK field has been artificially created and set to 1;
+%if &amp;BRANCH=1 %then %put NOTES: BRANCH field has been artificially created and set to _N_;
+%if %length(&amp;err)&gt;0 %then %do;
+ %window ERR color=gray irow=13 rows=3 icolumn=7 columns=40
+   #1 @2 &quot;&amp;ERR&quot; color=red attr=highlight;
+ %display ERR;
+ %goto theend;
+%end;
+%do i=2 %to &amp;n;
+ %let j=%eval(&amp;i-1);
+ %if &amp;&amp;day&amp;i-&amp;&amp;day&amp;j&gt;=5 %then %put NOTES: Too many days between day &amp;&amp;day&amp;j and day &amp;&amp;day&amp;i;
+%end;
+%SYNCHRO2
+%theend: %mend SYNCHRO1;
+
+/**********************************************************************************************/
+/*********************** SYNCHRO2: indices computations ****************************************/
+/**********************************************************************************************/
+
+/***************** Relative pollen-sheddind and female receptivity ****************************/
+%macro SYNCHRO2;
+data pheno;
+ set pheno end=eof;
+ array D(&amp;n) %original(D);
+ array PCT(&amp;n) %original(PCT);
+ SEX=upcase(SEX);
+ if _N_=1 then miss=0;
+ do i=1 to &amp;n until(flag);
+  if d(i)=. then miss+1;
+  else if i&gt;1 then do;
+    if d(i-1) and D(i)-d(i-1)&gt;2 then do;
+        put 'ERROR: Too large stage change. Record has been deleted. ID=' id 'RAMET=' ramet 'BLOCK=' block 'branch=' branch;
+        delete;
+        flag=1;
+    end;
+    if d(i-1) and D(i)&lt;d(i-1) then do;
+        put 'ERROR: Stages get lower with time. Record has been deleted. ID=' id 'RAMET=' ramet 'BLOCK=' block 'branch=' branch;
+        delete;
+        flag=1;
+    end;
+  end;
+  if SEX='M' and d(i)^=. then PCT(i)=symget('m'||left(D(i)));
+  if SEX='F' and d(i)^=. then PCT(i)=symget('f'||left(D(i)));
+  if i&gt;1 then do;
+   if PCT(i)&gt;0 and start=. then start=(symget('day'||left(i))+symget('day'||left(i-1)))/2;
+   if PCT(i)=0 and start^=. and end=. then end=(symget('day'||left(i))+symget('day'||left(i-1)))/2;
+  end;
+ end;
+ if pct(1)&gt;0 then start=&amp;inicio;
+ if pct(&amp;n)&gt;0 then end=&amp;fin;
+ duration=end-start;
+ if sum(of PCT(*))=0 then put 'NOTES: All receptivity/emission rates are null in ID=' id 'RAMET=' ramet 'BLOCK=' block 'BRANCH=' branch;
+ if sum(of PCT(*))=. then put 'NOTES: All receptivity/emission rates are missing in ID=' id 'RAMET=' ramet 'BLOCK=' block 'BRANCH=' branch;
+ if eof and miss&gt;0 then put 'NOTES: ' miss 'score values are missing';
+ length IDS $ 8; IDS='ID'||substr(upcase(ID),1,6);
+ keep IDS ramet block branch sex %original(PCT) start end duration;
+
+/***************** Means on clon basis (&amp;ud=3) or ramet basis (&amp;ud=15) *********************/
+
+proc means data=PHENO noprint;
+ class block ramet sex IDS;
+ var %original(PCT) start end;
+ output out=MEAN   mean=%original(PCTM)
+                   min(start)=start
+                   max(end)=end;
+data MEAN; set MEAN; duration=end-start;run;
+
+/***************** Estimation of POij and RDPij   ******************************************/
+
+%let ud=15;
+%loop1:
+data M;
+ set MEAN (where=(_type_=&amp;ud));
+ if sex='M';
+ union='A';
+ rename idS=IDM RAMET=RAMETM block=blockM %rename(M) start=startM end=endM;
+ drop sex _type_ _freq_ duration;
+
+data F;
+ set MEAN (where=(_type_=&amp;ud));
+ if sex='F';
+ union='A';
+ rename idS=IDF RAMET=RAMETF block=blockF %rename(F) start=startF end=endF;
+ drop sex _type_ _freq_ duration;
+
+proc sql;
+ create table MF (drop=union) as select * from M inner join F on
+ M.union=F.union;
+
+%let keep=;%let classF=IDF;%let classM=IDM;%let result=MF;
+%if &amp;ud=15 %then %do;
+ %let classF=rametF;%let classM=rametM;
+ %let result=RESULT2b;
+ %let keep=%str(keep IDF RAMETF blockF IDM RAMETM blockM STARTM ENDM STARTF ENDF PO RD RDP %original(M) %original(F););
+%end;
+
+data MF; set MF (where=(&amp;classF^=&amp;classM));
+ array m %original(M);
+ array f %original(F);
+ array den %original(DEN);
+ array num %original(NUM);
+ do i=1 to &amp;n;
+   num(i)=min(m(i),f(i));
+   den(i)=max(m(i),f(i));
+ end;
+ DD=sum(of den(*));
+ NN=sum(of num(*));
+ PO=NN/DD;
+ RD=min(endM,endF)-max(startF,startM);
+ if RD&lt;0 then RD=0;
+
+proc means data=MF noprint;
+ class &amp;classF &amp;classM;
+ var PO RD ;
+ output out=MFM (where=(_type_=1 or _Type_=2)) mean(PO)=PO mean(RD)=RDmean
+                                               min(PO)=POmin min(RD)=RDmin
+                                               max(PO)=POmax max(RD)=RDmax
+                                               sum(rd)=srd;
+proc sort data=mf; by &amp;classF &amp;classM;run;
+
+data &amp;result;
+ merge  mf
+        mfm (where=(_type_=2) keep=&amp;classF srd _type_);
+ by &amp;classF;
+ RDP=RD/SRD;
+ &amp;keep
+run;
+
+%if &amp;ud=15 %then %do;
+ data mfm; set mfm;length sex $ 1;
+  if rametM='' then do; RAMET=RAMETF;sex='F';end;
+  if rametF='' then do; RAMET=RAMETM;sex='M';end;
+ proc sort; by sex ramet;
+ proc sort data=mean; by sex ramet;
+ data result2;
+  merge MEAN (where=(_type_=15)
+              keep=_type_ IDS RAMET BLOCK sex %original(PCTM) start end duration)
+        MFM  (keep=RAMET sex PO POmin POmax RDmean RDmin RDmax);
+  by sex RAMET;
+  drop _type_;
+ run;
+ %let ud=3;
+ %goto loop1;
+%end;
+
+proc sort data=mean; by IDS;
+data _NULL_; set mean (where=(_type_=3)) end=eof; by IDS;if _n_=1 then n=0;
+   if first.IDS then do; n+1;call symput('ID'||left(n),left(IDS));end;
+   if eof then call symput('NoID',n);
+run;
+%let lista=%all;
+
+/***************** OUTPUT: Pollen-shedding and Female flowers receptivity *******************/
+
+title1 'SYNCHRO.sas: A SAS program for analysing phenology synchronicity in seed orchards';
+title2 &quot;A total of &amp;NOID clones assessed at &amp;n days were included in calculations&quot;;
+title3 'Start, duration and end of Pollen-shedding';
+title4;
+proc print data=MEAN (where=(_type_=3 and sex='M') rename=(IDS=ID));
+ id ID;
+ var start end duration;
+run;
+title1 'Start, duration and end of Female flowers receptivity';
+title2;title3;title4;
+proc print data=MEAN (where=(_type_=3 and sex='F') rename=(IDS=ID));
+ id ID;
+ var start end duration;
+run;
+/************************** OUTPUT: ASKEW &amp; BLUSH 1990 **************************************/
+
+proc sort data=mf; by IDF IDM;
+proc transpose data=MF out=PO;
+ by IDF;
+ var PO;
+ id IDM;
+
+title1 'Cross Matrix: PO INDICES (Askew &amp; Blush, 1990)';
+title3 'Male';
+
+proc print data=PO (drop=_name_ rename=(IDF=Female)) noobs round;
+ var &amp;lista;
+ id Female;
+run;
+title1 'SUMMARY: PO values for all clones serving as female parents';title3;
+
+proc means data=MFM (where=(idf^='')) noprint; var PO POmin POmax;
+ output out=POglobal mean(PO)=PO min(POMIN)=POmin max(POMAX)=POmax;
+data POGLOBAL; set mfm (where=(idf^='')) POglobal;if idf='' then idf='Overall';
+proc print data=POGLOBAL (rename=(PO=POmean)) noobs round;
+ id idf;
+ var POmean POmin POmax;
+run;
+
+proc means data=MFM (where=(idm^='')) noprint; var PO POmin POmax;
+ output out=POglobal mean(PO)=PO min(POMIN)=POmin max(POMAX)=POmax;
+title1 'SUMMARY: PO values for all clones serving as male parents';
+data POGLOBAL; set mfm (where=(idm^='')) POglobal;if idm='' then idm='Overall';
+proc print data=POGLOBAL (rename=(PO=POmean)) noobs round;
+ id idm;
+ var POmean POmin POmax;
+run;
+
+/***************************** OUTPUT: Xie et al 1994 ****************************************/
+proc transpose data=MF out=RDP;
+ by IDF;
+ var RDP;
+ id IDM;
+
+title1 'Cross Matrix: RDPij INDICES (Xie et al, 1990)';
+title3 'Male';
+proc print data=RDP (where=(Female^='Mean') drop=_name_ rename=(IDF=Female)) noobs round;
+ var &amp;lista;
+ id Female;
+ format _numeric_ 4.3;
+run;
+title1 'SUMMARY: RD values for all clones serving as female parents';title3;
+proc print data=MFM (where=(idf^='')) noobs round;
+ id idf;
+ var RDmean RDmin RDmax;
+run;
+title1 'SUMMARY: RD values for all clones serving as male parents';
+proc print data=MFM (where=(idm^='')) noobs round;
+ id idm;
+ var RDmean RDmin RDmax;
+run;
+
+
+/***************************** ESTIMATION &amp; OUTPUT: G鰉鰎y et al 2003 *********************/
+
+proc sort data=mean ; by ids sex;
+proc transpose data=mean (where=(_type_=3)) out=meanori;
+ by ids sex;
+ var %original(PCTM);
+data M; set meanori; if sex='M'; rename col1=Mvalue IDS=IDM;
+data F; set meanori; if sex='F'; rename col1=Fvalue IDS=IDF;
+proc sql;
+ create table MF2 as select M.IDM,M.Mvalue,M._name_,F.IDF,F.Fvalue from M inner join F on
+ M._name_=F._name_;
+
+proc sort data=MF2; by IDM _name_ Mvalue;
+proc means data=MF2 (where=(IDF^=IDM)) noprint;
+ by IDM _name_ mvalue;
+ var Fvalue;
+ output out=corr mean=Fmean;
+proc corr data=corr outp=M noprint;
+ by IDM;
+ var Mvalue Fmean;
+
+proc sort data=MF2; by IDF _name_ Fvalue;
+proc means data=MF2 (where=(IDF^=IDM)) noprint;
+ by IDF _name_ Fvalue;
+ var Mvalue;
+ output out=corr mean=Mmean;
+proc corr data=corr outp=F noprint;
+ by IDF;
+ var Fvalue Mmean;
+
+proc sort data=MF2; by IDF IDM _name_;run;
+proc corr data=MF2 outP=CORR noprint;
+ by IDF IDM;
+ var Fvalue Mvalue;
+
+proc transpose data=CORR (where=(_type_='CORR' and upcase(_name_)='FVALUE'))  out=RPH;
+ by IDF;
+ var Mvalue;
+ Id IDM;
+
+title1 'Pearson coefficients of phenological synchronization (rph) (Gomory et al, 2003)';
+title3 'Male';
+proc print data=RPH (drop=_name_ rename=(IDF=Female)) noobs round;
+ id Female;
+run;
+
+data Rphmean;
+ merge F (where=(_type_='CORR' and upcase(_name_)='FVALUE') rename=(mmean=rphF IDF=ID) drop=fvalue)
+       M (where=(_type_='CORR' and upcase(_name_)='MVALUE') rename=(fmean=rphM IDM=ID) drop=Mvalue);
+ by ID;
+ drop _type_ _name_;
+
+title3;
+proc print data=rpHmean noobs round;
+ var rphF rphM;
+ id id;
+run;
+data mfm; set mfm;
+ if IDM='' then do; IDS=IDF;sex='F';end;
+ if IDF='' then do; IDS=IDM;sex='M';end;
+proc sort; by sex ids;
+data rphmean;set rphmean;
+ rename ID=IDS;
+ sex='M';rph=rphM;output;
+ sex='F';rph=rphF;output;
+
+proc sort; by sex ids;
+proc sort data=mean; by sex ids;
+data result1;
+ merge MEAN (where=(_type_=3)
+             keep=_type_ IDS sex %original(PCTM) start end duration )
+       MFM (keep=IDS sex PO POmin POmax RDmean RDmin RDmax)
+       RPHMEAN (keep=IDS sex RPH);
+ by sex IDS;
+ drop _type_;
+
+proc datasets library=work memtype=data nolist; delete m f mf mf2 mfm verify rphmean meanori corr;run;quit;
+
+%window grf color=gray irow=13 rows=7 icolumn=7 columns=45
+   #1 @2 &quot;Do you want to draw a Phenogram (Y/N)&quot; color=black +1 q1 1 attr=underline;
+%display grf;
+%put Phenological indices were succesfully calculated;
+%if %upcase(&amp;q1)=Y %then %SYNCHRO3;
+%theend:
+%put SYNCHRO END;
+options notes merror mprint serror date source;
+%mend SYNCHRO2;
+
+/********************************************************************************************/
+/*********************** SYNCHRO3: Drawing Phenograms ****************************************/
+/********************************************************************************************/
+
+%macro SYNCHRO3;
+%let lista=ALL;
+%let file=c:\MisDoc~1\;
+%let outgrf=D;
+%window grf color=gray irow=13 rows=14 icolumn=3 columns=100
+   #1 @2 &quot;Select genotypes to be included&quot; color=black +1 lista 100 color=blue
+   #3 @2 &quot;Use spaces as delimiter&quot; color=black
+   #4 @2 &quot;Enter genotypes names preceded by ID&quot; color=black
+   #5 @2 &quot;If you want to select all IDs, enter ALL&quot; color=black
+   #6 @2 &quot;Do you want to print to a wmf File or to the Display? (F/D)&quot; color=black +1 outgrf 1 color=blue attr=underline
+   #6 @64 &quot;Folder:&quot; color=black +1 file 50 color=blue attr=underline
+   #8 @10 &quot;Press&quot; +1 &quot;F3&quot; attr=underline +1 &quot;when ready&quot;;
+%display grf;
+
+%if %upcase(&amp;outgrf)=F %then %do; %let device=wmf;%let display=display;%end;
+%else %do; %let device=win;%let display=nodisplay;%end;
+
+%if %upcase(&amp;lista)=ALL %then %let lista=%all;
+%else %do; data _null_; array temp &amp;lista; call symput('NoID',dim(temp));run; %end;
+
+%let listab=%listab;
+
+
+/******************************** DATA preparation ***************************************/
+
+proc sort data=mean; by sex;
+proc transpose data=mean (where=(_type_=3)) out=graph;
+ by sex;
+ var %original(PCTM);
+ id ids;
+data graph; set graph;
+ day=substr(_name_,5,3);
+ array IDS &amp;lista;
+ array IDSN &amp;listab;
+ do i=1 to &amp;NoID;
+  IDS(i)=IDS(i)/2;
+  IDSN(i)=-IDS(i);
+  IDS(i)=IDS(i)+i*120;
+  IDSN(i)=IDSN(i)+i*120;
+ end;
+ d=day-1+1;
+run;
+
+
+/******************* Axis, symbols, patterns, annotate dataset *************************/
+
+%let axisend1=%eval(120*(&amp;NOID+1));
+%let series=%eval(2*&amp;Noid);
+%do k=4 %to &amp;fin;
+ %if %eval(((101-57)/&amp;k)*&amp;k=(101-57)) %then %do;
+  %let step=&amp;k; %let hminor=%eval(&amp;k-1); %goto stepend;
+ %end;
+%end;
+%stepend:
+%do k=1 %to &amp;series;
+ symbol&amp;k color=black i=join value=none;
+ %if %eval((&amp;k/2)*2)=&amp;k %then %str(pattern&amp;k c=black v=solid;);
+ %else %str(pattern&amp;k c=black v=e;);
+%end;
+axis1 order= 0 to &amp;axisend1 by 120 label=none value=('' %axis '') offset=(0,0);
+axis2 order=&amp;inicio to &amp;fin by &amp;step offset=(0,0) length=45 pct label=('Day of the year');
+%let listagrf=%listagrf;
+data anno;
+ length function color style text $8;
+ xsys='2'; ysys='2'; hsys='1';
+ function='poly';x=&amp;fin-1;y=70; color='black'; style='solid';output;
+ function='polycont';x=&amp;fin;y=70; color=''; style='';output;
+ x=&amp;fin;y=170; output;
+ x=&amp;fin-1;y=170; output;
+ x=&amp;fin-1;y=70; output;
+ function='label';text='100%';x=&amp;fin; y=120;size=3;position='6';output;
+
+title1;title3;
+
+
+/****************** Phenograms (male, female and both together) *************************/
+
+proc catalog catalog=work.gseg kill; run;quit;
+goptions &amp;display DEVICE=&amp;device gsfname=grf gsfmode=replace;
+filename grf &quot;&amp;file.Female.wmf&quot;;
+proc gplot data=graph (where=(sex='F')) annotate=anno;
+ title1 'Female Phenogram';
+ plot (&amp;listagrf)*d /
+  name='f'
+  overlay
+  areas=&amp;series
+  vaxis=axis1 haxis=axis2 frame
+  hminor=&amp;hminor vminor=0;
+run;
+filename grf &quot;&amp;file.Male.wmf&quot;;
+proc gplot data=graph (where=(sex='M')) annotate=anno;
+ title1 'Male Phenogram';
+ plot (&amp;listagrf)*d /
+  name='m'
+  overlay
+  areas=&amp;series
+  vaxis=axis1 haxis=axis2 frame
+  hminor=&amp;hminor vminor=0;
+run;
+goptions display device=&amp;device gsfname=grf gsfmode=replace;
+filename grf &quot;&amp;file.MandF.wmf&quot;;
+proc greplay nofs tc=work.gseg template=mf
+  igout=gseg gout=gseg;
+  tdef mf  1/color=white   llx=-20 ulx=-20 urx=70 lrx=70
+                           lly=0 uly=100 ury=100 lry=0
+            2/copy=1 xlatex=50;
+  treplay 1:f  2:m;
+run;quit;
+
+
+/********************* Overall Phenology synchronity plot ***************************/
+
+proc transpose data=MEAN (where=(_type_=2)) out=graph;
+ var %original(PCTM);
+ id sex;
+data graph; set graph;
+ dia=substr(_name_,5,3)+0;
+ rename m=Male F=Female;
+
+axis3 order=0 to 100 by 10 offset=(0,0) label=('%');
+title1 'Overall Phenology Synchronity';title2;
+legend1 across=2 down=1 label=none value=('Pollen-shedding rate' 'Female receptivity rate');
+symbol1 i=splines v=dot color=black h=0.7;
+symbol2 i=splines v=square color=black h=0.7;
+filename grf &quot;&amp;file.synchro.wmf&quot;;
+proc gplot data=graph;
+ plot (male female)*dia/
+  overlay
+  frame legend=legend1
+  vaxis=axis3 haxis=axis2 vminor=0 hminor=&amp;hminor;
+run;
+
+
+/**************** Frequency Histograms of the synchronity indices *******************/
+pattern1 v=solid c=black;
+axis4 label=('N') minor=none length=70 pct;
+axis5 length=70 pct;
+axis6 value=('0.1' '0.2' '0.3' '0.4' '0.5' '0.6' '0.7' '0.8' '0.9' '1.0') length=70 pct;
+
+%let sex=M;%let titulo=Male;
+%gchart:
+proc gchart data=result1 (where=(sex=&quot;&amp;sex&quot;));
+ title1 &quot;Frecuency histograms for RPH indices (&amp;titulo)&quot;;
+ filename grf &quot;&amp;file.RPH&amp;sex..wmf&quot;;
+ vbar rph /midpoints=-0.9 -0.7 -0.5 -0.3 -0.1 0.1 0.3 0.5 0.7 0.9
+           axis=axis4 maxis=axis5
+           frame width=5
+           name=&quot;RPH&amp;sex&quot;;
+ label rph=&quot;rph (&amp;sex)&quot;;
+
+proc gchart data=result1 (where=(sex=&quot;&amp;sex&quot;));
+ title1 &quot;Frecuency histograms for PO indices (&amp;titulo)&quot;;
+ filename grf &quot;&amp;file.PO&amp;sex..wmf&quot;;
+ vbar PO /midpoints=0.05 0.15 0.25 0.35 0.45 0.55 0.65 0.75 0.85 0.95
+           axis=axis4 maxis=axis6
+           frame width=5
+           name=&quot;PO&amp;sex&quot;;
+ label PO=&quot;PO (&amp;sex)&quot;;
+
+proc gchart data=result1 (where=(sex=&quot;&amp;sex&quot;));
+ title1 &quot;Frecuency histograms for RD indices (&amp;titulo)&quot;;
+ filename grf &quot;&amp;file.RD&amp;sex..wmf&quot;;
+ vbar RDMEAN /midpoints=4 to 24 by 2
+           axis=axis4
+           maxis=axis5
+           frame width=5
+           name=&quot;RD&amp;sex&quot;;
+ label RDMEAN=&quot;RD (&amp;sex)&quot;;
+
+%if &amp;sex=M %then %do; %let sex=F; %let titulo=Female; %goto gchart;%end;
+proc greplay nofs tc=work.gseg template=mf
+  igout=gseg gout=gseg;
+  filename grf &quot;&amp;file.allfreqs.wmf&quot;;
+  tdef mf  1/color=white   llx=0 ulx=0 urx=33 lrx=33
+                           lly=50 uly=100 ury=100 lry=50
+           2/copy=1 xlatex=33
+           3/copy=1 xlatex=66
+           4/copy=1 xlatey=-50
+           5/copy=2 xlatey=-50
+           6/copy=3 xlatey=-50;
+  treplay 1:rphm  2:pom 3:rdm 4:rphf 5:pof 6:rdf;
+run;quit;
+proc datasets library=work memtype=data nolist; delete graph anno mean;run;quit;
+%put NOTES: All graphs were created succesfully;
+%MEND SYNCHRO3;
+
+/********************* Macros definition *************************/
+%macro listab;
+ %do j=1 %to &amp;NoID;
+  %scan(&amp;lista,&amp;j)b
+ %end;
+%mend;
+%macro listagrf;
+ %do j=1 %to &amp;NoID;
+  %scan(&amp;listab,&amp;j) %scan(&amp;lista,&amp;j)
+ %end;
+%mend;
+%macro axis;
+ %do j=1 %to &amp;NoID;
+   &quot;%substr(%scan(&amp;lista,&amp;j),3,%eval(%length(%scan(&amp;lista,&amp;j))-2))&quot;
+ %end;
+%mend;
+%macro all;
+ %do j=1 %to &amp;NoID;
+  &amp;&amp;ID&amp;j
+ %end;
+%mend;
+%macro rename(sex);
+ %do i=1 %to &amp;n;
+  PCTM&amp;&amp;day&amp;i=&amp;sex&amp;&amp;day&amp;i
+ %end;
+%mend;
+%macro original(name);
+ %do i=1 %to &amp;n;
+  &amp;name&amp;&amp;day&amp;i
+ %end;
+%mend;
+
+/********************* Program execution *************************/
+
+%SYNCHRO1()
+</code></pre>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/codesido2008-%E8%BE%90%E5%B0%84%E6%9D%BE-%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0-%E4%B8%AA%E4%BD%93%E9%80%89%E6%8B%A9/" data-toggle="tooltip" data-placement="top" title="Codesido2008-辐射松-遗传参数-个体选择">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/diallel/cockerham-1984%E6%98%BE%E6%80%A7%E5%AF%BC%E8%87%B4%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80-/" data-toggle="tooltip" data-placement="top" title="Cockerham-1984显性导致近交衰退-">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Lstiburek2017-天然群体中现实遗传力的计算</title>
+  <meta property="og:title" content="Lstiburek2017-天然群体中现实遗传力的计算" />
+  <meta name="twitter:title" content="Lstiburek2017-天然群体中现实遗传力的计算" />
+  <meta name="description" content="Lstibůrek, M., Bittner, V., Hodge, G.R., Picek, J., and Mackay, T.F.C. 2017. Estimating Realized Heritability in Panmictic Populations. Genetics (November): genetics.300508.2017. doi:10.1534/genetics.117.300508.
+ ##摘要 狭义遗传力（h2）是定量遗传学中的一个关键概念，它表示观察到的从父母传递到后代的表型变异的比例。 h2决定了亲属之间的相似性以及对人工和自然选择的反应速度。用于估计h2的经典方法使用具有已知相关性的个体的随机样本，以及当被称为实现遗传性时对人工选择的响应。在这里，我们提出了一个估计实现h2的方法，基于一个简单的随机交配人口评估，没有人为操纵的人口结构，并导出估计的标准误差。这种方法可以适用于任何人口的表型片段（例如，排名前列的父母和子女），而不是随机抽样。因此，它可以应用于非纯种随机交配群体，其中亲缘关系由p选择的亲本和子代中的分子标记确定，因此大大节省了基因分型成本。此外，我们通过随机模拟来评估该方法，并如数学推导所预期的那样，它提供了对h2的无偏估计。我们将我们的方法与利用Galton的人体高度数据集的回归和最大似然方法进行了比较，所有三种方法提供了相同的结果。 关键词数量遗传学;哈代 - 温伯格平衡;流行的人口
+狭义遗传力（h2）是数量遗传学中的一个关键概念。 h2在技术上定义为加性遗传方差（育种值的方差）与总表型方差（h2 = a2 / p2）之比，并且表示可从一代传播到数量性状的表型变异的分数下一个。 h2确定亲属之间的相似程度和对人工和自然选择的反应速度;因此，估计h2往往是应用动植物育种计划和进化遗传学研究的第一步。 h2也是从分子标记数据（基因组预测）预测表型准确性的上限，因此是精准医学中人类常见疾病的必要知识（Yang et al。2010）。 由于h2决定亲属之间的相似程度，所以用于估计h2的经典方法使用观察到的紧密相关个体之间的表型相关性以及它们的平均相关系数来估计h2。一种这样的经典方法是对中亲本表型值（后代 - 亲本回归）的后代表型值的回归，其中回归系数b提供对h2的无偏估计。其他经典方法包括全半同胞和半同胞的方差分析，以及使用基于最大似然的方法分析亲缘关系不同的亲属。这些方法需要设计实验，其中通过交配特定的雄性和雌性来构建家系，或者利用至少一个亲本已知的天然交配。这些设计可以通过操纵家庭数量和家庭规模来最大限度地提高样本量约束条件下h2估计的精度。 但是，这些设计并不总是适用的。例如，在自然人群中通常不知道谱系。在这种情况下，可以使用分子标记来估计h2以重新构建谱系（Aykanat等，2014; Lynch和Walsh，1998）。然而，随后是基于重构谱系的方差分量分析，如同为设计实验所做的那样，因此还需要对群体的大型随机样本进行基因分型。最近，已经在使用全基因组标记回归为大量分子标记进行基因分型的个体群体中估计了“基因组遗传力”（Yang等，2010）。基因组遗传力是遗传变异的一部分，可以通过标记回归来解释，只有当所有的致病变异体被基因分型时，例如序列数据，才会等同于真正的h2;或当真正的因果变体与标记完全连锁不平衡时（de los Campos et al。2015）。用于估计h2的所有基于标记的方法的主要缺点是基因分型的花费，因此可以降低这种成本的方法是合乎需要的。 在这里，我们提出了一种方法来估计自然人口的h2与h2的概念有关。传统上，通过将选择响应（R）与选择差分（S）进行比较来估计实现的h2。 h2，R / S的估计需要特定的交配。我们在这里展示，实现的h2概念可以推广到一个随机交配的自然种群，其中数量性状的表型值已经为父母和子代世代进行了评分。 h2是由来自定义的表型范围的后代的比例估计的（例如，顶端p后代），其由来自相同定义的表型范围的p父母产生。因此，只需要从表型分布的相同截短的部分确定选择的p个父母子代和p个子代的相关性，从而大大节省了基因分型成本。当然，需要假设DNA标记的中性（例如高度多态的SSR）来估计截断子集内的谱系。假设这种方法，我们推导出h2估计值及其相关的标准误差。">
+  <meta property="og:description" content="Lstibůrek, M., Bittner, V., Hodge, G.R., Picek, J., and Mackay, T.F.C. 2017. Estimating Realized Heritability in Panmictic Populations. Genetics (November): genetics.300508.2017. doi:10.1534/genetics.117.300508.
+ ##摘要 狭义遗传力（h2）是定量遗传学中的一个关键概念，它表示观察到的从父母传递到后代的表型变异的比例。 h2决定了亲属之间的相似性以及对人工和自然选择的反应速度。用于估计h2的经典方法使用具有已知相关性的个体的随机样本，以及当被称为实现遗传性时对人工选择的响应。在这里，我们提出了一个估计实现h2的方法，基于一个简单的随机交配人口评估，没有人为操纵的人口结构，并导出估计的标准误差。这种方法可以适用于任何人口的表型片段（例如，排名前列的父母和子女），而不是随机抽样。因此，它可以应用于非纯种随机交配群体，其中亲缘关系由p选择的亲本和子代中的分子标记确定，因此大大节省了基因分型成本。此外，我们通过随机模拟来评估该方法，并如数学推导所预期的那样，它提供了对h2的无偏估计。我们将我们的方法与利用Galton的人体高度数据集的回归和最大似然方法进行了比较，所有三种方法提供了相同的结果。 关键词数量遗传学;哈代 - 温伯格平衡;流行的人口
+狭义遗传力（h2）是数量遗传学中的一个关键概念。 h2在技术上定义为加性遗传方差（育种值的方差）与总表型方差（h2 = a2 / p2）之比，并且表示可从一代传播到数量性状的表型变异的分数下一个。 h2确定亲属之间的相似程度和对人工和自然选择的反应速度;因此，估计h2往往是应用动植物育种计划和进化遗传学研究的第一步。 h2也是从分子标记数据（基因组预测）预测表型准确性的上限，因此是精准医学中人类常见疾病的必要知识（Yang et al。2010）。 由于h2决定亲属之间的相似程度，所以用于估计h2的经典方法使用观察到的紧密相关个体之间的表型相关性以及它们的平均相关系数来估计h2。一种这样的经典方法是对中亲本表型值（后代 - 亲本回归）的后代表型值的回归，其中回归系数b提供对h2的无偏估计。其他经典方法包括全半同胞和半同胞的方差分析，以及使用基于最大似然的方法分析亲缘关系不同的亲属。这些方法需要设计实验，其中通过交配特定的雄性和雌性来构建家系，或者利用至少一个亲本已知的天然交配。这些设计可以通过操纵家庭数量和家庭规模来最大限度地提高样本量约束条件下h2估计的精度。 但是，这些设计并不总是适用的。例如，在自然人群中通常不知道谱系。在这种情况下，可以使用分子标记来估计h2以重新构建谱系（Aykanat等，2014; Lynch和Walsh，1998）。然而，随后是基于重构谱系的方差分量分析，如同为设计实验所做的那样，因此还需要对群体的大型随机样本进行基因分型。最近，已经在使用全基因组标记回归为大量分子标记进行基因分型的个体群体中估计了“基因组遗传力”（Yang等，2010）。基因组遗传力是遗传变异的一部分，可以通过标记回归来解释，只有当所有的致病变异体被基因分型时，例如序列数据，才会等同于真正的h2;或当真正的因果变体与标记完全连锁不平衡时（de los Campos et al。2015）。用于估计h2的所有基于标记的方法的主要缺点是基因分型的花费，因此可以降低这种成本的方法是合乎需要的。 在这里，我们提出了一种方法来估计自然人口的h2与h2的概念有关。传统上，通过将选择响应（R）与选择差分（S）进行比较来估计实现的h2。 h2，R / S的估计需要特定的交配。我们在这里展示，实现的h2概念可以推广到一个随机交配的自然种群，其中数量性状的表型值已经为父母和子代世代进行了评分。 h2是由来自定义的表型范围的后代的比例估计的（例如，顶端p后代），其由来自相同定义的表型范围的p父母产生。因此，只需要从表型分布的相同截短的部分确定选择的p个父母子代和p个子代的相关性，从而大大节省了基因分型成本。当然，需要假设DNA标记的中性（例如高度多态的SSR）来估计截断子集内的谱系。假设这种方法，我们推导出h2估计值及其相关的标准误差。">
+  <meta name="twitter:description" content="Lstibůrek, M., Bittner, V., Hodge, G.R., Picek, J., and Mackay, T.F.C. 2017. Estimating Realized Heritability in Panmictic Populations. Genetics (November): genetics.300508.2017. …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/lstiburek2017-%E5%A4%A9%E7%84%B6%E7%BE%A4%E4%BD%93%E4%B8%AD%E7%8E%B0%E5%AE%9E%E9%81%97%E4%BC%A0%E5%8A%9B%E7%9A%84%E8%AE%A1%E7%AE%97/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/lstiburek2017-%E5%A4%A9%E7%84%B6%E7%BE%A4%E4%BD%93%E4%B8%AD%E7%8E%B0%E5%AE%9E%E9%81%97%E4%BC%A0%E5%8A%9B%E7%9A%84%E8%AE%A1%E7%AE%97/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Lstiburek2017-天然群体中现实遗传力的计算</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (52 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Lstiburek2017-天然群体中现实遗传力的计算</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (52 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Lstibůrek, M., Bittner, V., Hodge, G.R., Picek, J., and Mackay, T.F.C. 2017. Estimating Realized Heritability in Panmictic Populations. Genetics (November): genetics.300508.2017. doi:10.1534/genetics.117.300508.</p>
+</blockquote>
+
+<p>##摘要
+狭义遗传力（h2）是定量遗传学中的一个关键概念，它表示观察到的从父母传递到后代的表型变异的比例。 h2决定了亲属之间的相似性以及对人工和自然选择的反应速度。用于估计h2的经典方法使用具有已知相关性的个体的随机样本，以及当被称为实现遗传性时对人工选择的响应。在这里，我们提出了一个估计实现h2的方法，基于一个简单的随机交配人口评估，没有人为操纵的人口结构，并导出估计的标准误差。这种方法可以适用于任何人口的表型片段（例如，排名前列的父母和子女），而不是随机抽样。因此，它可以应用于非纯种随机交配群体，其中亲缘关系由p选择的亲本和子代中的分子标记确定，因此大大节省了基因分型成本。此外，我们通过随机模拟来评估该方法，并如数学推导所预期的那样，它提供了对h2的无偏估计。我们将我们的方法与利用Galton的人体高度数据集的回归和最大似然方法进行了比较，所有三种方法提供了相同的结果。
+关键词数量遗传学;哈代 - 温伯格平衡;流行的人口</p>
+
+<hr />
+
+<p>狭义遗传力（h2）是数量遗传学中的一个关键概念。 h2在技术上定义为加性遗传方差（育种值的方差）与总表型方差（h2 = a2 / p2）之比，并且表示可从一代传播到数量性状的表型变异的分数下一个。 <strong>h2确定亲属之间的相似程度和对人工和自然选择的反应速度</strong>;因此，估计h2往往是应用动植物育种计划和进化遗传学研究的第一步。 <strong>h2也是从分子标记数据（基因组预测）预测表型准确性的上限</strong>，因此是精准医学中人类常见疾病的必要知识（Yang et al。2010）。
+由于h2决定亲属之间的相似程度，所以用于估计h2的经典方法使用观察到的紧密相关个体之间的表型相关性以及它们的平均相关系数来估计h2。一种这样的经典方法是对中亲本表型值（后代 - 亲本回归）的后代表型值的回归，其中回归系数b提供对h2的无偏估计。其他经典方法包括全半同胞和半同胞的方差分析，以及使用基于最大似然的方法分析亲缘关系不同的亲属。这些方法需要设计实验，其中通过交配特定的雄性和雌性来构建家系，或者利用至少一个亲本已知的天然交配。这些设计可以通过操纵家庭数量和家庭规模来最大限度地提高样本量约束条件下h2估计的精度。
+但是，这些设计并不总是适用的。例如，在自然人群中通常不知道谱系。在这种情况下，可以使用分子标记来估计h2以重新构建谱系（Aykanat等，2014; Lynch和Walsh，1998）。然而，随后是基于重构谱系的方差分量分析，如同为设计实验所做的那样，因此还需要对群体的大型随机样本进行基因分型。最近，已经在使用全基因组标记回归为大量分子标记进行基因分型的个体群体中估计了“基因组遗传力”（Yang等，2010）。基因组遗传力是遗传变异的一部分，可以通过标记回归来解释，只有当所有的致病变异体被基因分型时，例如序列数据，才会等同于真正的h2;或当真正的因果变体与标记完全连锁不平衡时（de los Campos et al。2015）。用于估计h2的所有基于标记的方法的主要缺点是基因分型的花费，因此可以降低这种成本的方法是合乎需要的。
+在这里，我们提出了一种方法来估计自然人口的h2与h2的概念有关。传统上，通过将选择响应（R）与选择差分（S）进行比较来估计实现的h2。 h2，R / S的估计需要特定的交配。我们在这里展示，实现的h2概念可以推广到一个随机交配的自然种群，其中数量性状的表型值已经为父母和子代世代进行了评分。 h2是由来自定义的表型范围的后代的比例估计的（例如，顶端p后代），其由来自相同定义的表型范围的p父母产生。因此，只需要从表型分布的相同截短的部分确定选择的p个父母子代和p个子代的相关性，从而大大节省了基因分型成本。当然，需要假设DNA标记的中性（例如高度多态的SSR）来估计截断子集内的谱系。假设这种方法，我们推导出h2估计值及其相关的标准误差。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/lu2011-%E9%AB%98%E5%BA%A6%E7%9B%B4%E5%BE%84-%E7%A9%BA%E9%97%B4%E8%87%AA%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" data-toggle="tooltip" data-placement="top" title="Lu2011-高度直径-空间自回归模型">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/lstiburek2015a-%E5%88%A9%E7%94%A8bwb%E8%A1%A5%E5%85%85%E7%BC%BA%E5%A4%B1%E7%9A%84%E4%BF%A1%E6%81%AF/" data-toggle="tooltip" data-placement="top" title="Lstiburek2015a-利用bwb补充缺失的信息">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

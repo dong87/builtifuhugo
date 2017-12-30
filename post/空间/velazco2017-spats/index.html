@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Velazco2017-SpATS</title>
+  <meta property="og:title" content="Velazco2017-SpATS" />
+  <meta name="twitter:title" content="Velazco2017-SpATS" />
+  <meta name="description" content="Velazco JG, et al. (2017) Modelling spatial trends in sorghum breeding field trials using a two-dimensional P-spline mixed model. Theor Appl Genet 0(0):0.   摘要 关键信息 一种灵活和用户友好的空间方法称为SpATS，与一系列高粱繁殖试验中的更详细和特定于试验的空间模型相比较。抽象调整植物育种田间试验的空间趋势对基因型的有效评估和选择至关重要。当前混合模型的空间分析方法是基于多步建模过程，其中在尝试了几个候选空间模型之后拟合了全局和局部趋势。本文报告了一种新颖的空间方法的应用，其通过拟合平滑表面来考虑单个建模步骤中的所有类型的连续场变化。该方法在混合模型框架中使用了具有各向异性平滑度的二维P样条，称为SpATS模型。 我们将这种方法应用于一系列大型和部分复制的高粱繁殖试验。与使用残差自回归相关性的更精细的标准空间模型进行比较，评估了新模型。由SpATS模型产生的精度和基因型值预测的改进等同于使用每个试验的最佳拟合标准空间模型获得的精确度和预测值。 SpATS方法的一个优点是，通过拟合单个模型，可以同时模拟所有模式的空间趋势和遗传效应。此外，我们使用灵活的模型来适应现场趋势。该策略降低了潜在的参数识别问题，简化了模型选择过程。因此，新方法应被视为对植物育种试验的常规分析的有效且易于使用的替代方法。
+介绍 植物育种计划中有效的表型和基因组选择方案依赖于对现场实验中基因型表型性能的准确评估（Qiao et al。2004; Lado et al。2013; Bernal-Vasquez et al。，2014; Sarker and Singh，2015）。植物育种试验通常涉及大量的测试条目，涵盖了大面积的空间变异可能成为遗传价值可靠预测的障碍。在使用有限的遗传物质复制的条件下，这在早期的一代品种试验中特别有挑战性。一些复杂的实验设计，例如能够恢复块体间信息的那些（Yates 1940; Patterson等人，1978; John和Williams 1995）或部分复制的设计（Cullis等人2006; Williams et al。 2014），已经开发出来纠正部分现场趋势。然而，考虑到更复杂的环境变化的有效方法需要用适当的分析模型来补充实验设计（Basford等人1996; Qiao等人2000; Smith等人2002）。已经提出了几种空间方法来提高表型的精确度。最常用的空间模型考虑相邻地块的残差之间的相关性来调整局部趋势或小尺度变化。这些空间方法包括最近邻分析（Bartlett 1978; Wilkin-son et al.1983），以及使用一阶自回归（AR1）函数（Cullis和Gleeson 1991）或其他空间协方差结构（例如Zimmanman）的混合模型分析和Harville 1991; Piepho和Williams 2010）。多项式也被用于实验设计特征之上，以考虑沿行和列方向的添加和非添加趋势（Edmondson 1993; Federer 1998）。早期生物多样性试验的生育趋势已经通过在块内拟合一维立方平滑样条来建模（Durban等，2001）。杜邦等人（2003）应用半参数模型进行现场实验的空间分析，并提出了图形和分析模型选择标准。
+在混合模式框架下，Gilmour等（1997）提出了一个详细的农业品种试验空间分析程序。他们的做法是从默认情况下拟合一个二维可分离的AR1模型开始考虑到局部趋势。最终，试验管理实践产生的无关变化可以用附加的模型术语来实现，而反映整个领域的大规模变化的全球趋势由行和/或列方向上的一维多项式或样条线建模。作者提出了一个序列模型拟合方案来确定最合适的空间模型。该过程依赖于图形诊断工具，需要尝试多种建模选择。 Stefanova等人（2009）通过包括更正式的诊断来促进模型选择来扩展此建模过程。然而，上述方法并非没有限制。首先，提出的多步骤程序对于大量试验的常规分析可能不具有吸引力，因为它需要高水平的动手干预。此外，当模型选择过程中涉及的候选模型的数量增加时，存在过度拟合空间数据的风险。最后，当尝试同时适应不同的空间项时，可能会出现由于参数识别问题引起的收敛失败（Dutkowski等，2006; Muller等，2010; Piepho等，2015）。 多维回归样条方法代表了复杂变异结构的灵活替代方法。它们允许平滑多维（或相互作用）表面的建模（例如，Ruppert等人2003; Currie等人2006; Wood 2006）。回归样条是由多项式（通常是二次或立方体）组成的有效的曲线拟合函数，它们在称为“knots”的点处连接。使用样条曲线的一个有趣的方法是基于Eilers和Marx（1996，2003）提出的二维P样条（2D P样条），以及其在线性混合模型框架中的配置（Eilers 1999; Currie and Durban 2002）。 P样条组合回归样条和粗糙度惩罚，这是关键组成部分。这种惩罚是通过一个或多个平滑参数进行调整的，该参数控制装配空间表面的平滑度以防止过度拟合。 P样条和混合模型之间的连接提供了有吸引力的优势。它可以使用有效的算法进行推理和预测。此外，最优平滑参数通过限制最大似然（REML; Patterson和Thompson 1971）作为方差分量的比率自动估计。已经报道了2D P样条模型的一些应用，用于现场试验的空间分析。 Cappa和Cantet（2007）和Cappa等人（2011年，2015年）在贝叶斯方法中使用这些模型来解释森林遗传试验的全球趋势。这些研究考虑了一个单一的平滑参数，它控制了行列和列的方向上的空间效应的平滑度，强化各向同性平滑。在农业实验中，Taye和Njuho（2008）提出在二维中使用P样条来调整全球趋势，并用Papadakis和克里格特协变量来模拟局部变异。作者比较了P样条模型，假设加性趋势或趋势之间的相互作用，并强调了在两种模型设置之间进行选择的重要性。 Rodriguez-Alvarez等人最近提出了使用2D P样条混合模型的现场试验空间分析的不同方法。 （2016a）。他们引入了一种新颖的空间模型，可同时调整全球和当地趋势。作者称这个模型为SpATS，Spatial Analysis for Spatial Analysis of Field Trials with Splines。根据Lee等人，新的空间方法利用光滑表面的P样条方差分析方法。 （2013）。 SpATS模型的独特特征是将空间表面有吸引力地分解为一维趋势和二维相互作用趋势。此外，该模型为每个空间分量分配不同的平滑参数，允许大面积平滑。这种参数化可以对空间表面进行灵活建模，其中每个组件都有直接的解释。 对于本研究，我们考虑了澳大利亚东部高粱（Sorghum bicolor（L.">
+  <meta property="og:description" content="Velazco JG, et al. (2017) Modelling spatial trends in sorghum breeding field trials using a two-dimensional P-spline mixed model. Theor Appl Genet 0(0):0.   摘要 关键信息 一种灵活和用户友好的空间方法称为SpATS，与一系列高粱繁殖试验中的更详细和特定于试验的空间模型相比较。抽象调整植物育种田间试验的空间趋势对基因型的有效评估和选择至关重要。当前混合模型的空间分析方法是基于多步建模过程，其中在尝试了几个候选空间模型之后拟合了全局和局部趋势。本文报告了一种新颖的空间方法的应用，其通过拟合平滑表面来考虑单个建模步骤中的所有类型的连续场变化。该方法在混合模型框架中使用了具有各向异性平滑度的二维P样条，称为SpATS模型。 我们将这种方法应用于一系列大型和部分复制的高粱繁殖试验。与使用残差自回归相关性的更精细的标准空间模型进行比较，评估了新模型。由SpATS模型产生的精度和基因型值预测的改进等同于使用每个试验的最佳拟合标准空间模型获得的精确度和预测值。 SpATS方法的一个优点是，通过拟合单个模型，可以同时模拟所有模式的空间趋势和遗传效应。此外，我们使用灵活的模型来适应现场趋势。该策略降低了潜在的参数识别问题，简化了模型选择过程。因此，新方法应被视为对植物育种试验的常规分析的有效且易于使用的替代方法。
+介绍 植物育种计划中有效的表型和基因组选择方案依赖于对现场实验中基因型表型性能的准确评估（Qiao et al。2004; Lado et al。2013; Bernal-Vasquez et al。，2014; Sarker and Singh，2015）。植物育种试验通常涉及大量的测试条目，涵盖了大面积的空间变异可能成为遗传价值可靠预测的障碍。在使用有限的遗传物质复制的条件下，这在早期的一代品种试验中特别有挑战性。一些复杂的实验设计，例如能够恢复块体间信息的那些（Yates 1940; Patterson等人，1978; John和Williams 1995）或部分复制的设计（Cullis等人2006; Williams et al。 2014），已经开发出来纠正部分现场趋势。然而，考虑到更复杂的环境变化的有效方法需要用适当的分析模型来补充实验设计（Basford等人1996; Qiao等人2000; Smith等人2002）。已经提出了几种空间方法来提高表型的精确度。最常用的空间模型考虑相邻地块的残差之间的相关性来调整局部趋势或小尺度变化。这些空间方法包括最近邻分析（Bartlett 1978; Wilkin-son et al.1983），以及使用一阶自回归（AR1）函数（Cullis和Gleeson 1991）或其他空间协方差结构（例如Zimmanman）的混合模型分析和Harville 1991; Piepho和Williams 2010）。多项式也被用于实验设计特征之上，以考虑沿行和列方向的添加和非添加趋势（Edmondson 1993; Federer 1998）。早期生物多样性试验的生育趋势已经通过在块内拟合一维立方平滑样条来建模（Durban等，2001）。杜邦等人（2003）应用半参数模型进行现场实验的空间分析，并提出了图形和分析模型选择标准。
+在混合模式框架下，Gilmour等（1997）提出了一个详细的农业品种试验空间分析程序。他们的做法是从默认情况下拟合一个二维可分离的AR1模型开始考虑到局部趋势。最终，试验管理实践产生的无关变化可以用附加的模型术语来实现，而反映整个领域的大规模变化的全球趋势由行和/或列方向上的一维多项式或样条线建模。作者提出了一个序列模型拟合方案来确定最合适的空间模型。该过程依赖于图形诊断工具，需要尝试多种建模选择。 Stefanova等人（2009）通过包括更正式的诊断来促进模型选择来扩展此建模过程。然而，上述方法并非没有限制。首先，提出的多步骤程序对于大量试验的常规分析可能不具有吸引力，因为它需要高水平的动手干预。此外，当模型选择过程中涉及的候选模型的数量增加时，存在过度拟合空间数据的风险。最后，当尝试同时适应不同的空间项时，可能会出现由于参数识别问题引起的收敛失败（Dutkowski等，2006; Muller等，2010; Piepho等，2015）。 多维回归样条方法代表了复杂变异结构的灵活替代方法。它们允许平滑多维（或相互作用）表面的建模（例如，Ruppert等人2003; Currie等人2006; Wood 2006）。回归样条是由多项式（通常是二次或立方体）组成的有效的曲线拟合函数，它们在称为“knots”的点处连接。使用样条曲线的一个有趣的方法是基于Eilers和Marx（1996，2003）提出的二维P样条（2D P样条），以及其在线性混合模型框架中的配置（Eilers 1999; Currie and Durban 2002）。 P样条组合回归样条和粗糙度惩罚，这是关键组成部分。这种惩罚是通过一个或多个平滑参数进行调整的，该参数控制装配空间表面的平滑度以防止过度拟合。 P样条和混合模型之间的连接提供了有吸引力的优势。它可以使用有效的算法进行推理和预测。此外，最优平滑参数通过限制最大似然（REML; Patterson和Thompson 1971）作为方差分量的比率自动估计。已经报道了2D P样条模型的一些应用，用于现场试验的空间分析。 Cappa和Cantet（2007）和Cappa等人（2011年，2015年）在贝叶斯方法中使用这些模型来解释森林遗传试验的全球趋势。这些研究考虑了一个单一的平滑参数，它控制了行列和列的方向上的空间效应的平滑度，强化各向同性平滑。在农业实验中，Taye和Njuho（2008）提出在二维中使用P样条来调整全球趋势，并用Papadakis和克里格特协变量来模拟局部变异。作者比较了P样条模型，假设加性趋势或趋势之间的相互作用，并强调了在两种模型设置之间进行选择的重要性。 Rodriguez-Alvarez等人最近提出了使用2D P样条混合模型的现场试验空间分析的不同方法。 （2016a）。他们引入了一种新颖的空间模型，可同时调整全球和当地趋势。作者称这个模型为SpATS，Spatial Analysis for Spatial Analysis of Field Trials with Splines。根据Lee等人，新的空间方法利用光滑表面的P样条方差分析方法。 （2013）。 SpATS模型的独特特征是将空间表面有吸引力地分解为一维趋势和二维相互作用趋势。此外，该模型为每个空间分量分配不同的平滑参数，允许大面积平滑。这种参数化可以对空间表面进行灵活建模，其中每个组件都有直接的解释。 对于本研究，我们考虑了澳大利亚东部高粱（Sorghum bicolor（L.">
+  <meta name="twitter:description" content="Velazco JG, et al. (2017) Modelling spatial trends in sorghum breeding field trials using a two-dimensional P-spline mixed model. Theor Appl Genet 0(0):0.   摘要 关键信息 一种灵活和用户友好的空间方法称为SpATS，与一系列高粱繁殖试验中的更 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/velazco2017-spats/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/velazco2017-spats/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Velazco2017-SpATS</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (108 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Velazco2017-SpATS</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (108 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<ol>
+<li>Velazco JG, et al. (2017) Modelling spatial trends in sorghum breeding field trials using a two-dimensional P-spline mixed model. Theor Appl Genet 0(0):0.</li>
+</ol>
+</blockquote>
+
+<p>摘要
+关键信息
+一种灵活和用户友好的空间方法称为SpATS，与一系列高粱繁殖试验中的更详细和特定于试验的空间模型相比较。抽象调整植物育种田间试验的空间趋势对基因型的有效评估和选择至关重要。当前混合模型的空间分析方法是基于多步建模过程，其中在尝试了几个候选空间模型之后拟合了全局和局部趋势。本文报告了一种新颖的空间方法的应用，其通过拟合平滑表面来考虑单个建模步骤中的所有类型的连续场变化。该方法在混合模型框架中使用了具有各向异性平滑度的二维P样条，称为SpATS模型。
+我们将这种方法应用于一系列大型和部分复制的高粱繁殖试验。与使用残差自回归相关性的更精细的标准空间模型进行比较，评估了新模型。由SpATS模型产生的精度和基因型值预测的改进等同于使用每个试验的最佳拟合标准空间模型获得的精确度和预测值。 SpATS方法的一个优点是，通过拟合单个模型，可以同时模拟所有模式的空间趋势和遗传效应。此外，我们使用灵活的模型来适应现场趋势。该策略降低了潜在的参数识别问题，简化了模型选择过程。因此，新方法应被视为对植物育种试验的常规分析的有效且易于使用的替代方法。</p>
+
+<p>介绍
+植物育种计划中有效的表型和基因组选择方案依赖于对现场实验中基因型表型性能的准确评估（Qiao et al。2004; Lado et al。2013; Bernal-Vasquez et al。，2014; Sarker and Singh，2015）。<strong>植物育种试验通常涉及大量的测试条目，涵盖了大面积的空间变异可能成为遗传价值可靠预测的障碍</strong>。在使用有限的遗传物质复制的条件下，这在早期的一代品种试验中特别有挑战性。<strong>一些复杂的实验设计，例如能够恢复块体间信息的那些（Yates 1940; Patterson等人，1978; John和Williams 1995）或部分复制的设计（Cullis等人2006; Williams et al。 2014）</strong>，已经开发出来纠正部分现场趋势。然而，考虑到更复杂的环境变化的有效方法需要用适当的分析模型来补充实验设计（Basford等人1996; Qiao等人2000; Smith等人2002）。已经提出了几种空间方法来提高表型的精确度。<strong>最常用的空间模型考虑相邻地块的残差之间的相关性来调整局部趋势或小尺度变化</strong>。这些空间方法包括<strong>最近邻分析（Bartlett 1978; Wilkin-son et al.1983）</strong>，以及使用<strong>一阶自回归（AR1）函数（Cullis和Gleeson 1991）</strong>或<strong>其他空间协方差结构（例如Zimmanman）的混合模型分析和Harville 1991; Piepho和Williams 2010）</strong>。<strong>多项式</strong>也被用于实验设计特征之上，以<strong>考虑沿行和列方向的添加和非添加趋势（Edmondson 1993; Federer 1998）</strong>。早期生物多样性试验的生育趋势已经通过<strong>在块内拟合一维立方平滑样条来建模（Durban等，2001）</strong>。<strong>杜邦等人（2003）应用半参数模型进行现场实验的空间分析，并提出了图形和分析模型选择标准</strong>。</p>
+
+<p><strong>在混合模式框架下，Gilmour等（1997）提出了一个详细的农业品种试验空间分析程序</strong>。他们的做法是从默认情况下拟合一个二维可分离的AR1模型开始考虑到局部趋势。最终，试验管理实践产生的无关变化可以用附加的模型术语来实现，而<strong>反映整个领域的大规模变化的全球趋势由行和/或列方向上的一维多项式或样条线建模</strong>。作者提出了一个序列模型拟合方案来确定最合适的空间模型。该过程依赖于<strong>图形诊断工具，需要尝试多种建模选择</strong>。 Stefanova等人（2009）通过包括更正式的诊断来促进模型选择来扩展此建模过程。然而，上述方法并非没有限制。首先，提出的多步骤程序对于大量试验的常规分析可能不具有吸引力，因为它需要高水平的动手干预。此外，<strong>当模型选择过程中涉及的候选模型的数量增加时，存在过度拟合空间数据的风险</strong>。最后，<strong>当尝试同时适应不同的空间项时，可能会出现由于参数识别问题引起的收敛失败</strong>（Dutkowski等，2006; Muller等，2010; Piepho等，2015）。
+多维回归样条方法代表了复杂变异结构的灵活替代方法。它们允许平滑多维（或相互作用）表面的建模（例如，Ruppert等人2003; Currie等人2006; Wood 2006）。回归样条是由多项式（通常是二次或立方体）组成的有效的曲线拟合函数，它们在称为“knots”的点处连接。使用样条曲线的一个有趣的方法是基于Eilers和Marx（1996，2003）提出的二维P样条（2D P样条），以及其在线性混合模型框架中的配置（Eilers 1999; Currie and Durban 2002）。 P样条组合回归样条和粗糙度惩罚，这是关键组成部分。这种<strong>惩罚是通过一个或多个平滑参数进行调整的</strong>，该参数控制装配空间表面的平滑度以防止过度拟合。 P样条和混合模型之间的连接提供了有吸引力的优势。它可以使用有效的算法进行推理和预测。此外，最优平滑参数通过限制最大似然（REML; Patterson和Thompson 1971）作为方差分量的比率自动估计。已经报道了2D P样条模型的一些应用，用于现场试验的空间分析。 Cappa和Cantet（2007）和Cappa等人（2011年，2015年）在贝叶斯方法中使用这些模型来解释森林遗传试验的全球趋势。这些研究考虑了一个单一的平滑参数，它控制了行列和列的方向上的空间效应的平滑度，强化各向同性平滑。在农业实验中，Taye和Njuho（2008）提出在二维中使用P样条来调整全球趋势，并用Papadakis和克里格特协变量来模拟局部变异。作者比较了P样条模型，假设加性趋势或趋势之间的相互作用，并强调了在两种模型设置之间进行选择的重要性。 Rodriguez-Alvarez等人最近提出了使用2D P样条混合模型的现场试验空间分析的不同方法。 （2016a）。他们引入了一种新颖的空间模型，可同时调整全球和当地趋势。作者称这个模型为SpATS，Spatial Analysis for Spatial Analysis of Field Trials with Splines。根据Lee等人，新的空间方法利用光滑表面的P样条方差分析方法。 （2013）。 SpATS模型的独特特征是将空间表面有吸引力地分解为一维趋势和二维相互作用趋势。此外，该模型为每个空间分量分配不同的平滑参数，允许大面积平滑。这种参数化可以对空间表面进行灵活建模，其中每个组件都有直接的解释。
+对于本研究，我们考虑了澳大利亚东部高粱（Sorghum bicolor（L.）Moench）育种计划的一系列多环境试验。这些三项属于评估的初始阶段，其中使用部分复制的设计在每个实验中测试了大量的育种系（约1000个）。此外，关于在高粱遗传试验中进行空间分析的影响的研究在文献中是有限的。因此，该数据集用于说明当需要灵活且高效的空间分析工具时的情况。本文报告了SpATS混合模型的应用，以适应早期发育高粱繁殖试验中的各种类型的田间趋势。我们使用一步建模方法进行空间分析，通过拟合一般的SpATS模型来分析整个系列的试验。与根据Gilmour等人的方法确定的更复杂和试验特定的空间模型进行比较，评估该方法。 （1997）。在方差分量估计，精度的提高和预测的基因型效应的相关性方面比较两种方法。新的空间模型已经使用了名为SpATS（Rodríguez-Álvarezet al。2016b）的大量制造的R包（R Development Core Team 2016），可从CRAN（https：//cran.r- project.org/ package = SpATS）。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/diallel/venkateswar1997-%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/" data-toggle="tooltip" data-placement="top" title="Venkateswar1997-方差分析的几种方法">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/varona1999%E9%A2%84%E6%B5%8B%E4%BA%B2%E6%9C%AC%E6%98%BE%E6%80%A7%E7%BB%84%E5%90%88/" data-toggle="tooltip" data-placement="top" title="Varona1999预测亲本显性组合">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

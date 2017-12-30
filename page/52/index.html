@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Dong&#39;s blog</title>
+  <meta property="og:title" content="Dong&#39;s blog" />
+  <meta name="twitter:title" content="Dong&#39;s blog" />
+  <meta name="description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta property="og:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="twitter:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../" />
+  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../">
+            <img class="avatar-img" src="../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Dong&#39;s blog</h1>
+                
+                  
+                    <hr class="small">
+                    <span class="page-subheading">Enterprising &amp; Concentrating欢迎光临！</span>
+                  
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div role="main" class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+          <div class="well">
+            
+
+<h2 id="front-page-content">Front Page Content</h2>
+
+<p><code>beautifulhugo</code> supports content on your front page. Edit <code>/content/_index.md</code> to change what appears here. Delete <code>/content/_index.md</code> if you don&rsquo;t want any content here.</p>
+
+          </div>
+        
+
+        <div class="posts-list">
+          
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/%E6%9C%80%E5%A5%BD%E7%9A%84%E5%91%8A%E5%88%AB/">
+                <h2 class="post-title">最好的告别</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (10 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <ul>
+<li>一次谈话并不能涉及所有问题。接受个人的必死性、清楚了解医学的局限性和可能性，这是一个过程而不是一种顿悟。</li>
+<li>我希望事情不是这个样子</li>
+<li>如果时间不多了，对我来说最重要的是什么</li>
+<li>我们觉得预后会怎么样</li>
+<li>对于前景，我们有哪些担忧</li>
+<li>如果健康状况恶化，我们希望怎样利用余下的时间</li>
+<li>如果我们自己不能做决定，希望谁来做决定</li>
+<li>我需要了解为了博取一个活命的机会，你愿意承受多少，以及你可以忍受的生存水平</li>
+<li>我的直觉是让她走，因为情况太糟糕了</li>
+<li>但是之后我会痛打我自己，会不停之一自己是不是让他走得太早</li>
+</ul>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/%E6%9C%89%E5%85%B3rjava%E5%8C%85%E7%9B%B8%E5%85%B3%E5%8C%85%E7%9A%84%E5%AE%89%E8%A3%85-64-bit/">
+                <h2 class="post-title">有关rjava包相关包的安装-64-bit</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (33 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p>文本挖掘需要用到一些包，比如<code>rjava</code>，<code>Rwordseg</code>，我自己写的包也需要<code>Java</code>。但在配置好Java后依然报错</p>
+
+<p><code>Error : .onLoad failed in loadNamespace() for 'rJava', details:
+  call: inDL(x, as.logical(local), as.logical(now), ...)
+  error: unable to load shared object 'D:/Program Files/R/R-3.3.2/library/rJava/libs/i386/rJava.dll':
+  LoadLibrary failure:  %1 不是有效的 Win32 应用程序。</code></p>
+
+<p>可以看到这里是找不到i386/rJava.dll，很明显，程序调用的是32 bit，而我的都是64 bit，怎么强制64位包的安装？</p>
+
+<p>在安装命令后加上<code>INSTALL_opts=&quot;--no-multiarch&quot;</code>就可以了。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/%E6%9C%9F%E5%88%8A%E5%BD%B1%E5%93%8D%E5%9B%A0%E5%AD%90/">
+                <h2 class="post-title">期刊影响因子</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (79 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  表1 林业不太相关  Journal | IF |分区 -|-|- CURRENT MICROBIOLOGY|1.423|4 EVOLUTION|4.426|2 GENETICS|5.158|2 HEREDITY|3.803|3 The Journal of heredity|2.044|3 The Plant Journal|6.085|1 The Plant Cell|9.150|1 Cell|31.36|1 Genome biology|10.86|1 MOLECULAR ECOLOGY|6.494|2 Ecology and Evolution|3.232| Nature Communications|11.18|1 Molecular Ecology Resources|3.712|2 Genetics Research|1.468|4 Tree physiology|3.549|1 Genetics Selection Evolution|2.964|3 Plant Cell and Environment|6.4|1
+ 表2 林业期刊  Journal | IF |分区 -|-|- Canadian jounal of forest research|1.67|3 European journal of forest research|1.94|2 Forestry|1.96|2 Journal of forestry|1.
+                  <a href="../../post/%E9%9A%8F%E7%AC%94/%E6%9C%9F%E5%88%8A%E5%BD%B1%E5%93%8D%E5%9B%A0%E5%AD%90/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%8A%95%E7%A8%BF%E6%8A%80%E5%B7%A7/%E6%9C%9F%E6%9C%9B%E4%B8%8E%E6%96%B9%E5%B7%AE.h/">
+                <h2 class="post-title">期望与方差.h</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (100 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  &lt;!DOCTYPE html&gt;  期望与方差 body { margin: 0; font-family: &ldquo;Helvetica Neue&rdquo;, Helvetica, Arial, &ldquo;Hiragino Sans GB&rdquo;, sans-serif; font-size: 14px; line-height: 20px; color: #777; background-color: white; } .container { width: 700px; margin-right: auto; margin-left: auto; }
+ .post { font-family: Georgia, &quot;Times New Roman&quot;, Times, &quot;SimSun&quot;, serif; position: relative; padding: 70px; bottom: 0; overflow-y: auto; font-size: 16px; font-weight: normal; line-height: 25px; color: #515151; } .post h1{ font-size: 50px; font-weight: 500; line-height: 60px; margin-bottom: 40px; color: inherit; } .
+                  <a href="../../post/%E6%8A%95%E7%A8%BF%E6%8A%80%E5%B7%A7/%E6%9C%9F%E6%9C%9B%E4%B8%8E%E6%96%B9%E5%B7%AE.h/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E8%82%B2%E7%A7%8D/%E6%9D%A8%E6%A0%91%E8%82%B2%E7%A7%8D/">
+                <h2 class="post-title">杨树育种</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (105 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Hidalgo E, González-martínez SC, Lexer C, Heinze B (2010) Genetics and Genomics of Populus.
+ 3控制繁殖  生殖生物学 杨树种是雌雄异株的，尽管已经针对三个主要部分中的每一个提交了雌雄同体性的报告（图3）。性似乎由染色体XIX上的单个基因座或一组紧密连锁的基因决定（Yin等人，2008）。双性恋状态可以由抑制该基因座处的重组的机制的松弛产生，否则在还原分裂期间保持性别决定多基因完整。在北半球的毛茛中的男性和女性生殖结构是在前一年的4月至6月形成的（Boes和Strauss，1994）。繁殖涉及花序的花粉授粉，其包含约60个花朵或35个雌花（Boes和Strauss，1994）（图3）。控制繁殖的过程是很好理解的，但需要针对每个主要部分的不同技术和方法（Stanton和Villar，1996，图4）。人工杂交在温室中使用从在水培养中保持的雄性选择的花插条提取的花粉制备（Seitz，1958）。西蒙白杨（P. simonii）的花粉母细胞在72小时内开始在温室中被减数分裂，并在从芽出现四分之一长度的staminate花序的时候完成该过程（Wang等人， 2009）。冬虫夏草的Megagametophytes发展到两个四核阶段，并在温室条件下春天授粉后18小时移动到八核阶段（Fechner，1972）。种子是在设置在水中，移植到盆栽的底层（Farmer and Nance，1968）或植根于土壤中的雌蕊切片上产生的（Joennoz和Vallee，1974）。在中国，使用脚手架或部分脱落和碾压树种的种子果园树的控制育种技术超过了基于温室的技术，以节省成本和容易生产果实（Zhou等人，2008）。种子在一个生长季节成熟，不经历生理休眠，并且在适当的温度和湿度条件下容易发芽而没有分层。育种群体通常达到足以在10年内开始选择育种的开花水平。无性繁殖在属内相当先进;这是利用1年的硬木扦插或2年杆（Aigeiros和Tacamahaca部分）的不定根据生根，或在雾传播（杨杨部分）多汁芽的温室根。 从其开始以来，特异性杂交在白杨育种中占据显着地位。 Aigeiros和Tacamahaca之间的跨部门交叉大部分兼容，虽然相互交叉效应有时可能是有问题的。例如，三角叶蛾和毛癣菌交叉组合的产量远远高于其中使用塔卡马哈母体作为母本的杂交（Stanton，2005; Zsuffa等，1999） 。在繁殖区段内P.canadensis分类群中遇到相同的效果：斑鸠草黑质杂交是高度能育的，但是当试图逆转时，该杂交完全无效，P.nigra P. deltoides方向（Melchior和Seitz，1968）。对于所有实际的育种目的，由于花粉 - 柱头识别过程中的不相容性，杨杨叶是繁殖性分离自Aigeiros和Tacamahaca的（Gaget等人，1984; Villar等人，1987）。然而，作为雌性亲本的杨杨（例如P. canescens [P.alba P. grandidentata]）的复杂杂种的使用已经显示出有希望在与Aigeiros和Tacamahaca部分（Ronald，1982）的区间交叉。然而，在人工条件下，杨属中的物种可自由交叉。 虽然有争议，大多数应用育种工作集中在七个物种，基于控制杂交的投资，使用的商业栽培品种的数量和生产种植园管理的面积。这些是斑节of的部分Aigeiros，P. maximowiczii和P. trichocarpa的P. deltoides和P.nigra和P.permula，P. tremuloides和P.alba的部分杨。全世界的白杨种群已经使用它们开发以下商业分类群：（1）P.wurtsteinii，P.tmarula和 P. tremuloides，（2）P.canadensis，P. deltoides和 黑曲霉，（3）P. generosa的P. deltoides和 毛茛，（4）中国白杨（P. tomentosa），银白杨和黄ula的内部组合。 davidiana 2，和（5）特异的P.totoides的杂交体（表1）。两个其他类群缺乏指定的混合二项式-P。 黑曲霉和米曲霉，目前没有像其他五种流行，但很可能很快在繁殖，品种发育及其对杨属栽培的贡献的意义上达到平衡。
+ 育种策略 &gt; 多个群体正反交轮回选择reciprocal recurrent selection (RRS)：RRS是一种用于群体内和群体间育种的高效过程，不管性状或群体间的分离水平如何。当存在显性时，RRS增加了群体间杂交的杂种优势，并且减少了群体中的近交衰退，以及群体和杂种中的遗传变异。当没有显性、群体间也不分离时，RRS也能确定群体分化。半同胞RRS相当于基于GCA效应选择，比基于基因型值的全同胞RRS更有效，不论性状或群体的改良水平如何。基于SCA效应的全同胞RRS对于群体内和种群间育种是无效的。
+  第一代（F1）特异性杂交结合亲本物种的相互复发选择（RRS）是最常被推荐的长期改良方法。今天，RRS被用于开发P. wettsteinii，P.canadensis和P.proposa taxa。作为F1杂交的替代方案，使用F2加拿大红花饲养来开发合成杂交种。考虑到计算机模拟，这是值得注意的，这表明与RRS-F1计划相比，先进代方法是一种更具成本效益的遗传改良途径（Kerr et al。，2004）。然而，这假定在F2代中没有杂种活力的分解，似乎是加拿大斑ensis的真实，这是相同部分的物种之间的交叉，斑鸠菊 黑曲霉。由于许多原因，包括在另外整合的基因组内的共适应或物种特异性连接的破坏，更远亲缘物种的先进代育种可能经历减弱的杂交性能（Lester，1973; Stettler等，1996） 。 其他育种策略 - 回交，多物种杂交，多倍体，体细胞克隆变异 - 不经常被作为主线，长期育种方法，尽管它们用于短期方案。实施例包括：（1）将F1植物杂种与P.
+                  <a href="../../post/%E8%82%B2%E7%A7%8D/%E6%9D%A8%E6%A0%91%E8%82%B2%E7%A7%8D/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80/%E6%9D%B0%E5%85%8B%E6%9D%BE-%E8%87%AA%E4%BA%A4%E8%A1%B0%E9%80%80pinus-banksiana/">
+                <h2 class="post-title">杰克松-自交衰退Pinus-banksiana</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (35 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>OECD Environment, Health and Safety Publications
+Series on Harmonisation of Regulatory Oversight in Biotechnology
+No. 40
+Consensus Document on the Biology of Pinus banksiana (Jack Pine)</p>
+</blockquote>
+
+<p>B.近交繁殖抑制
+27.
+由自花传粉引起的近交繁殖抑制已经通过较低的种子集，死亡率，异常萌发，异常表型，叶绿素缺乏，较低的水使用效率，较低的生长速率，开花开始的延迟和较低的繁殖力（Fowler，1965a，1965b; Rudolph 1966a，1981b; Blake和Yeatman，1989）。鲁道夫（1981a）观察到在自交S2后代中18至24％的树高中的近交繁殖抑制。 Fowler（1965b）观察到种子果园树的上冠13％的自交和下冠26％的自交。然而，许多自交后代不会预期存活; Sittmann和Tyson（1971）估计由于Hardy-Weinberg平衡中的一个群体的每代自交5％的近亲繁殖率。由于千年松树保留其血清圆锥多年，可以在不同年份产生的同一树的种子之间进行比较（Teich，1970）。在最近的种子中发现更高的自交种子率（Cheliak等人，1985; Snyder等人，1985）;似乎对自交种子的选择以线性速率发生，自交种子的存活力丧失</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/rcodes/%E6%9E%84%E5%BB%BA%E6%AD%A3%E5%8F%8D%E4%BA%A4%E5%8F%98%E9%87%8F/">
+                <h2 class="post-title">构建正反交变量</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (227 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  full diallel需要估算正反交效应的方差及评价显著性，正常状态数据框中并不包含该变量，其需要构建相应的隐含变量，具体操作如下：
+ data(hayman.tobacco) dat1 &lt;- subset(hayman.tobacco, year==1951) # Make a factor 'comb' in which G1xG2 is the same cross as G2xG1 dat1 &lt;- transform(dat1, comb = ifelse(as.character(male) &lt; as.character(female), paste0(male,female), paste0(female,male))) # 'dr' is the direction of the cross, 0 for self dat1$dr &lt;- 1 dat1 &lt;- transform(dat1, dr = ifelse(as.character(male) &lt; as.character(female), -1, dr)) dat1 &lt;- transform(dat1, dr = ifelse(as.character(male) == as.character(female), 0, dr)) m1 &lt;- asreml(day~1, data=dat1, random = ~ male + and(female) + comb + comb:dr) summary(m1)$varcomp #--- setwd(&quot;D:/Sync/R/Mohring_reml/&quot;) df&lt;-asreml.
+                  <a href="../../post/rcodes/%E6%9E%84%E5%BB%BA%E6%AD%A3%E5%8F%8D%E4%BA%A4%E5%8F%98%E9%87%8F/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/%E6%9E%97%E6%9C%A8%E9%81%97%E4%BC%A0%E8%82%B2%E7%A7%8D%E9%A2%86%E5%9F%9F%E7%9A%84%E4%B8%93%E5%AE%B6/">
+                <h2 class="post-title">林木遗传&amp;育种领域的专家</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (97 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  North America  Name|Country/institution &ndash;|&ndash; Bailian Li|北卡 Steven E Mckeand| Funda Ogut| 吴夏明|瑞典 Gene Namkoong|UBC Alvin D. Yanchuk|UBC Chang-Yi Xie| Satish Kumar|New Zealand Fikret Isik |北卡 Yousry A El-Kassaby|UBC Jaroslav Klápště| Milan Lstibůrek| Ilga Porth| Cherdsak Liewlaksaneeyanawin| Eduardo Pablo Cappa| Christophe Plomion| Michael U. Stoehr| Yong-Bi Fu (符永碧)| David B Neale| Konstantin V Krutovsky| Salvador A. Gezan|
+ Sweden  Name|Country/institution &ndash;|&ndash; Dag Lindgren| Anders Fries| Tore Ericsson| Tim J Mullin|
+                  <a href="../../post/%E9%9A%8F%E7%AC%94/%E6%9E%97%E6%9C%A8%E9%81%97%E4%BC%A0%E8%82%B2%E7%A7%8D%E9%A2%86%E5%9F%9F%E7%9A%84%E4%B8%93%E5%AE%B6/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E8%82%B2%E7%A7%8D/%E6%AC%A7%E6%B4%B2%E8%90%BD%E5%8F%B6%E6%9D%BE%E6%94%B9%E8%89%AF2013%E4%B8%80/">
+                <h2 class="post-title">欧洲——落叶松改良2013（一）</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (90 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Pâques LE (2013) Forest Tree Breeding in Europe: Current State-of-the-Art and Perspectives, 1st edn. Springer Netherlands
+ 第1章 引言 Luc E. Paues
+森林树种育种旨在遗传改良森林树种 即使由于自然选择压力而适应当地环境，森林树种的当地遗传来源也不一定符合社会经济需要和工业需求。例如，建筑图案（例如茎形，分支图案）或内部木材性质（例如晶粒角度，纤维尺寸）可能在技术上和经济上不适合于生产高品质木材最终产品。此外，由于新的不利气候或有害生物的限制，当地环境状况正在改变。此外，人类的需求也在不断发展，新的服务和产品将会得到预期。结合森林管理实践和工业过程的适应性，育种可以成为当前和未来环境和社会经济需求改善森林树种的有效途径。 林木育种基本上通过重组和选择压力模拟自然选择，但有两个主要差异：人工选择是定向的，重点是社会经济需求和适应性要求，选择过程更快。
+森林树种繁殖处理经济重要性的物种 树种繁殖主要涉及到经济重要性的物种，通过人工种植或直接播种改良品种进行人工再生，用于造林和/或再造林。因此，改良品种首先用于工业林区，也用于农业林业，有时还用于浓缩当地的森林。高质量的木材快速（短轮）和高持续生产通常是经济和经济上的优先事项，期待饲养进步期望很高。另一方面，品种繁多的高效率种植也成为育种计划的推动力：目前，欧洲和世界上最活跃，最具创意的育种计划仅存在于种植或种植高地的物种木材价值。在欧洲，这些包括：苏格兰松和海洋松，挪威和Sitka云杉，道格拉斯冷杉，杨树和一些高贵的硬木。
+近来森林树种的遗传改良 与其他作物（谷物，蔬菜，果树）相比，森林驯化最近才开始：五十年代在美国正式发起的林业育种，然后蔓延到欧洲国家。因此，除了一些地方对森林进行消耗性剥削外，引进外来物种和转移同种异体种群（二十世纪二十年代已经很频繁），这可能与当地群体杂交，欧洲大多数森林树种仍然可以被认为是野生的。 这对林木育种者来说很幸运。与普遍广泛的遗传变异性相关，欧洲大多数森林树种都是典型的，没有森林的驯化，通过选择保证了遗传进展的巨大机会。此外，并行地，它允许组织基因库的保存。然而，最近对种植森林的兴趣也意味着在过去几十年中，为了获得物种生物学的基础知识，巨大的研究工作（并且仍然是一些物种）。育种进展已相应推迟。
+一个故事在不同的步骤 投入巨资努力研究主要林业物种及其地理组织的遗传变异性。这是育种前的一个不可避免的初步步骤。除了少数例外，这些研究仅在20世纪40年代才开始在国际上与主要针叶树。他们受到IUFRO（国际森林研究组织联合会）的大力支持，他们在很大程度上受益于高度专业的林务人员和研究人员的承诺，其中包括欧洲落叶松的W. Schober教授，日本落叶松的W. Langner A. Schwappach，W. Schmidt，S.Kociecki，M Giertych for Scots pine，O. Langlet，P.Krutsch和M.Giertych for Norway spruce，H.Barner和A.Fletcher for Douglas fir and Sitka spruce。对于广泛的（而且对于一些其他针叶树），研究已经更新了欧盟赠款支持的举措，如灰分（RAP项目）;核桃（核桃脑）;道格拉斯冷杉（Forest，Eudirec）;对于欧亚落叶松物种（Sib Larch）或一些国家计划（例如：灰，野樱桃）。 在整个自然范围（从几十到一千个人口）采样的人口（自然和有时是人造的）在欧洲许多测试地点（原产地试验）和有时甚至超越之间联合种植和评估。逐渐地，他们将结果用于适应性，生长和建筑特征的特定遗传变异性，并且在较晚的时间内对木材性质进行了研究。他们一直是选择最适合人群开始繁殖和推荐种群在种植和选择结果之前部署在森林中的令人难以置信的信息来源。 在几个国家和某些物种，遗传改良停止在那里。基于适应性和造林性状的这些遗传变异性结果，与分子或生物化学标记物研究相辅相成，已经描绘出源地区;已经选择了种田，组织种子来源的收集，转移和部署。来源地区对应于地理区域，生态均匀，种子站或种子源具有相似的表型或遗传特征。它们主要是针对本地物种定义的，它是通过收集在该区域之外的种子来避免当地遗传物质不受控制的遗传污染的一种方法。然而，出口地区也被定义为广泛使用的外来物种。 今天，超出其初步范围的遗传多样性研究，来源审判也是临时保护的一种临时形式;一些灭绝或濒危人口的水库;遗传研究的DNA材料的易于获取的来源等。这些试验及其相关的数据集积累了多年，也从气候变化的威胁的角度重新考察，研究人群对气候的灵活性和反应规范的建立。五十年后，甚至更多的是一些物种，许多这些试验仍然存在，但像许多森林遗传学田间试验一样，由于缺乏资金和关切，它们有被遗弃的危险。 基于这些知识，从本地范围或原产地的最适合种群中挑选出树木（与邻居相比，表型优越的树木）已经建立了试种和种群。基于几十到几百（有时成千上万）选定的树木（克隆），这些人群是进一步育种的核心，并将随着育种进度而发展。然后可以启动重组检测选择的育种周期，旨在增加有利基因的目标性状的频率。根据经济需要和当地资源，短期（通常是一代）或相反长期（几代）的育种策略已经开始实施。 短期育种策略旨在释放高度表现的品种，通常是一些有限的特征。选择压力（强度）通常很重，所释放品种的遗传多样性可以很窄（至少一个品种至少一个品种混合物）。育种通常不会超过第一代。遗传变异性降低确实是进一步遗传进展的主要瓶颈。相比之下，长期育种策略的目的是在繁殖群体中保持足够长的遗传变异性，以便允许遗传增长超过育种周期。在建立遗传进展的同时，通过仔细组织繁殖种群，基因型重组，选择过程以及繁殖和部署种群的明确分离来维持和监测遗传多样性。
+对于给定的生物地理区域而言，育种工作的方向是针对特定生物地理区域的改进，从生态角度来看，对于某一特定的物种来说，育种工作是完全统一的它们被称为“繁殖区”（根据与遗传数据相结合或不与遗传数据相结合的自然气候标准）或“部署区”（根据改良品种的性能定义），但后者可能更具限制性。强大的纬度梯度，例如斯堪的纳维亚或大陆或英国的大陆梯度，例如强加了这些组织部门。然而，这些区域的环境条件可能较不均匀，在这种情况下，遗址上品种的稳定性成为主要的选择标准。
+对于林木繁殖，时间是一个主要的制约因素 树是长期多年生生物，具有普遍较晚的性成熟。显而易见的后果是重组和遗传物质评估的延迟：事实上，一些感兴趣的特征（例如心材含量，木材性质，对某些疾病的抵抗力）的最佳表达可能迟到，只能在更成熟的材料中或在一些极端之后观察到（经常罕见）气候事件。因此，战略旨在缩短繁殖周期跨度，并优化每单位时间的遗传增益。通过诸如茎环和/或化学处理（如注射赤霉素）的机械手段开花和刺激的进展加速了几种天然晚期再生物种的重组期。早期间接预测因子（标记辅助选择是其中一种形式）通过农场测试中选择的特征提高了几种性状选择的效率（每单位时间更多的增益）。
+选择是最常见的多特征 总体而言，无论物种和策略类型如何，相同的特征都是针对性的。选择最常见的是多特征，这可能会在拮抗性状之间产生一些妥协。感兴趣的最常见的特征包括：适应非生物（霜冻，干旱，风等）和生物（真菌，细菌病原体，昆虫，啮齿动物）药剂，生长，茎和冠形，分枝和木材性质（解剖，物理，机械，化学，生物和技术）。其他特征可以直接关于品种的进一步部署，如品种在环境中的遗传稳定性，（性或无性）大量传播的容易性等。选择标准优先级或重量根据种类而变化，并且取决于种植环境和工业背景 基于物种的生物学和遗传特征，利用种间特异性，如特异性间交叉可能性和杂交优势（例如，杨树和幼体的杂交程序），自发成功地消除有害基因（例如，海洋松树改善茎形），易生产（例如基于苏格兰松，挪威云杉和道格拉斯冷杉的反复选择的育种计划）或植物（例如，野樱桃的克隆程序，部分用于Sitka云杉）繁殖等。
+改良品种的释放仍然是最终目标 无论采用何种策略，改良品种的选择和释放仍然是最终目标。森林树品种覆盖不同的形式：从营养繁殖的单个个体（栽培品种）（例如杨树，野樱桃，栗子）或单个半或全同胞后代（如Sitka云杉）或在杂交果园中产生（例如，杂交落叶松），种子果实中的合成品种（通常来自数十个亲本克隆的后代，例如苏格兰松，挪威云杉，道格拉斯冷杉，野樱桃，灰，桦木）或杂交种子果园（例如杂交落叶松）。 质量传播技术的改进是将育种进度纳入林业的另一个先决条件，与育种同时进行了大量的研究工作。再次根据物种特征，可以设想性传播或无性传播。种子果园是生产品种的主要途径：它们是选定树木的特殊种植园，以便有利于泛滥，并以合理的成本设法生产大量和规则的种子。种子园通常用于生产松树，云杉，冷杉，荔枝，还有几个阔叶（灰，樱桃，桦木等）。通过切割的植物繁殖完全用于杨树和柳树。它现在也广泛应用于Sitka云杉，野樱桃等，并尝试了其他几个种类，如混种落叶松，道格拉斯冷杉和挪威云杉。结合低温保存的体细胞胚胎发生也是目前开发的几种物种（松树，落叶松，道格拉斯冷杉）的切割的有吸引力的替代品。
+在欧洲一级采取严格的监管框架 森林生殖材料按照经合组织和欧盟（1999/105 / CE指令）规则，在欧洲范围内进行交易：“确定”（黄色标签），“选定”（绿色标签），“合格”（粉红色标签）和“测试“（蓝色标签）。 “确定”类别只是保证来自某个给定原产地的材料的来源，但没有任何选择; “选择”类别由表型选择的种子架中收集的合成品种表示; “合格”类别由种子果园中收集的合成或杂种品种表示，其组成部分已被选定为某些标准;品种的优越性正在评估中。最后，“测试”类别对应于在给定的部署区域中的某些标准的优点已被证明的品种。它们包括种子架，种子果园，家庭和品种的父母。 只要新品种符合DUS（区分 - 均匀性 - 稳定性）标准，就可以通过植物品种权利获得森林树种的法律保护。在林业中，它仅适用于克隆材料（品种），因此限制到杨树和柳树，但是可以使用可以使用克隆繁殖的一些其他种类的野生樱桃，栗子或核桃的品种也可能受益从这个保护。
+                  <a href="../../post/%E8%82%B2%E7%A7%8D/%E6%AC%A7%E6%B4%B2%E8%90%BD%E5%8F%B6%E6%9D%BE%E6%94%B9%E8%89%AF2013%E4%B8%80/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E8%82%B2%E7%A7%8D/%E6%AC%A7%E6%B4%B2%E8%90%BD%E5%8F%B6%E6%9D%BE%E6%94%B9%E8%89%AF%E4%B8%89/">
+                <h2 class="post-title">欧洲——落叶松改良（三）</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (207 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Pâques LE (2013) Forest Tree Breeding in Europe: Current State-of-the-Art and Perspectives, 1st edn. Springer Netherlands
+ 2.3今日落叶松繁殖 2.3.1介绍 落叶松的遗传改良近50年前在欧洲开始，比较原产地试验的第一个成果可用。然后，在几乎所有欧洲国家的国家层面开展了育种计划，但范围和强度不同。 虽然几乎所有的国家计划都参与并积极从事原产地测试，总是提出种子来源建议，并且在种子采购种子选择方面，他们对繁殖感染的投资在国家和国家之间也是不同的。这样做的一些原因可能是存在其他优先事项，如保护自然遗传资源或种植物种的下降或缺乏兴趣。 大致来说，在欧洲落叶松最好的基因库的核心位置的东欧国家（PL，SK，CZ，RO，AT）中，本地资源的保护计划被视为优先事项。在这些国家，欧洲落叶松是最受欢迎的物种，对其他物种如日落落叶松或杂交种没有什么兴趣。在一些国家，如斯洛伐克，国家公园和自然保护区禁止非本地物种的传播，其他地方的使用受到限制或沮丧。以前引进的这些分类单位甚至可能被视为有害生物，污染自然资源（例如Sindel？1973,1981,1992）。 在西北欧洲国家，落叶松属于非本土（BE，DK，GB，IRL，NL）或其原生植物，但也被用作异国情调（DE，FR），繁殖已经或仍然活跃：在这些欧洲落叶松或日本落叶松或两者都与其杂种一起使用（图2.10）。 在其他一些国家，如奥地利，意大利和斯堪的纳维亚，落叶松种植非常微弱，不认为育种是必要的。然而，瑞典的兴趣在日益增加，其中包括南部的欧洲？日本杂种，北方的西伯利亚长颈鹿（L. sukaczewi，L. sibirica）（Martinsson和Lesinski 2007）。除冰岛以外，西伯利亚长颈鹿是目标物种，特别是东部地区。 无论如何，在大多数国家达成的共同目标是除了不改进的本地或人工选择的种子来源之外，还为合成品种的种子采购创造了基础材料。如下所述，现在欧洲各地都有第一代种子果园。仅在特殊情况下才设想多发育种。 育种进展最终取决于生产足够量的全种子。与其他针叶树相比，欧洲落叶松比例较大（Messer 1956; Nilsson 1959; Dieckert 1964; Hall and Brown 1977; Kosiski 1981），在波兰这样的一些国家，落叶松繁殖的进程实际上取决于有限的数量的声音种子。例如，在波兰K髍nik（欧洲落叶松）的实验种子园中，即使花粉分散和雌花接受度之间的同步足够，全种子的平均产量约为27％（Kosiski，1986a）。在特定冠水平和克隆群体之间，异交率和全种子百分比之间也没有相关性（Burczyk等人，1991）。关于这一问题的详细研究显示，由于缺乏授粉（17％），异孢子发生紊乱（9％），花粉失败（17％）和胚胎退化，主要在亲本期间产生了70％以上的空白种子胚胎和早期胚胎发育（30％）（Kosiski 1986a，b，1987）。 图2.10欧洲落叶松物种的实验遗传田间试验（资料来源：Treebreedex遗传资源数据库） 胚胎流产主要有遗传原因。然而，如Kosiski（1981）发现的，相当低的胚胎次数（计算为4.8）不足以解释落叶松中空白种子的这么大比例。这只能在高频率的群体中存在少数胚胎激素的情况下解释。在这种情况下，即使在不相关个体交配之后，它们也可能进行纯合。这与欧洲落叶松的低遗传多态性（Kosiski，1986a）一致。 由于观察到全种子产量的广泛的克隆间变化（Hall 1985; Kosiski 1986a）和胚胎衰竭的遗传原因，所产生的全种子的比例始终较高的克隆的选择似乎是增加有效量的唯一有用的方法在落叶松种子果园生产全种子（Hall和Brown 1977）。
+2.3.1.1育种目标 据我们所知，没有专门针对高海拔地区（&gt; 1000米）的落叶松进行育种计划。在这些区域中，根据“当地最好”的原则（被证明或不认可），天然再生是优选的，或者使用当地种子来源进行再造林。然而，在一些地区，如法国阿尔卑斯山的边缘地区，落叶松溃疡病的问题非常严重，特定的方案可能是有用的，可能包括引入更好的适应人群。 另一方面，所有国家的养殖一直面向低海拔地区（0？000米）的重新造林，在大多数情况下，在生态或造林背景下，比山区更为有利。 因此，正确物种（包括杂交种）和种群的选择是战略性的：对较为温和的低地地点条件的适应性是（并且）是优先事项，其中特别关注春季物候和抗溃疡耐药性。使用这些新的遗传物质和改善的位点条件，自然诱导更高的生长。产量本身仍然是养殖目标，但根据造林传统和森林经济的不同观点。欧洲在这方面明显分为两个方面，一方面是西欧（BE，FR，GB，IRL，NL，DK），另一方面是中欧和东欧。在西方国家，寻求短暂的转机（40〜0年），目的是为了快速的经济回报。通过具有较低种植密度（1,500至600株/公顷）的动态造林和早期强化的稀释，可以实现高生物量生产（目标直径约50厘米）。在一些国家，落叶松主要种植为更多的霜敏感物种如欧洲山毛榉。在中欧和东欧，批量生产也是针对性的，但视觉上优质木材是重中之重;这里的旋转时间可能超过120年，落叶松通常在具有阔叶阔叶林的混交林中生长。 茎秆弯曲现在是落叶松的一个缺陷，导致木材质量的高贬值（较低的产量，压缩木材）（图2.11）。增长的增长，特别是在更加复杂的海域和/或这个更长的生长季节的海域，似乎对于形式有害。因此，直线度是一个主要的选择标准。 除了通常具有粗枝的日本落叶松之外，分支特征（大小，角度和密度）不被认为与落叶松相关，因为它们对于其他针叶树种，主要是由于其细枝和有利的自然修剪。 令人惊讶的是，自从育种计划开始以来，其他性状已被纳入育种目标，木材性能在最近才受到关注。位置是与其他温带针叶树相比，落叶松在物理（木材密度）和机械性能方面是最好的树林之一，并且有利于有利于其天然耐久性。然而，更快的生长和更短的轮次导致少年木材的比例较高，以及心材延伸和质量的不确定性意味着育种者终于对木材性能感兴趣。现在的目标是提高或至少维持初始性能。心材的木材密度，收缩率，刚度和耐久性现在是研究最多的特征。螺纤丝角也是日本落叶松的最佳标准之一（Fujimoto et al。2006）？ 图2.11茎直线度是落叶松的关键选择性状（图片：INRA？L.E.Paues） 此外，一些区域性的关切已经导致了具体的育种目标的定义：例如，为了应对由于重型瓦斯排放造成的矿石污染，德国进行了耐污染/耐受性落叶松的育种（Hering 1994） 。在瑞典南部，由于挪威云杉根腐病（Fomes annosus）的严重破坏，对落叶松对Fomes的抗性及其遗传变异性进行了调查（Stener和Ahlberg 2002），以便在这些感染部位更广泛地使用落叶松（图2.12）。在罗马尼亚，选择的目的是抵抗羊毛蚜虫（Adelges laricis Vall。），这是一种攻击花芽根部并减少锥体生产的害虫（Blada 1995）。 图2.12根腐病害（Fomes annosus）（照片：SkogForsk？L-G.
+                  <a href="../../post/%E8%82%B2%E7%A7%8D/%E6%AC%A7%E6%B4%B2%E8%90%BD%E5%8F%B6%E6%9D%BE%E6%94%B9%E8%89%AF%E4%B8%89/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+        </div>
+
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="../../page/51/">&larr; Newer Posts</a>
+              </li>
+            
+            
+              <li class="next">
+                <a href="../../page/53/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

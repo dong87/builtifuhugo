@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Dong&#39;s blog</title>
+  <meta property="og:title" content="Dong&#39;s blog" />
+  <meta name="twitter:title" content="Dong&#39;s blog" />
+  <meta name="description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta property="og:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="twitter:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../" />
+  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../">
+            <img class="avatar-img" src="../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Dong&#39;s blog</h1>
+                
+                  
+                    <hr class="small">
+                    <span class="page-subheading">Enterprising &amp; Concentrating欢迎光临！</span>
+                  
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div role="main" class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+          <div class="well">
+            
+
+<h2 id="front-page-content">Front Page Content</h2>
+
+<p><code>beautifulhugo</code> supports content on your front page. Edit <code>/content/_index.md</code> to change what appears here. Delete <code>/content/_index.md</code> if you don&rsquo;t want any content here.</p>
+
+          </div>
+        
+
+        <div class="posts-list">
+          
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/porth2013-/">
+                <h2 class="post-title">Porth2013-</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (325 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Porth I, Klápště J, Skyba O, et al. 2013. Populus trichocarpa cell wall chemistry and ultrastructure trait variation, genetic control and genetic correlations. New Phytologist, 197(3): 777–790.
+ 概要
+日益增加的生态和经济的重要性杨树品种和杂交刺激了研究物种的自然变化，并超出其木材质量性状传统的林业活动，以及新兴的生物能源部门遗传控制的程度估计的调查。构建了基于信息，高密度，双重单核苷酸多态性（SNP）遗传标记的实现的亲缘关系矩阵，以估计性状方差分量，遗传力，遗传和表型相关性。 研究了在共同花园图中生长的334 9年龄的杨树毛茛科植物中与木材化学和超微结构相关的17种性状，代表横跨44°至58.6°的纬度范围内的种群。在这些个体中，符合Hardy-Weinberg期望的9342个SNP用于评估基因组双向亲属关系以估计性状之间的狭义遗传和遗传相关性。 所有性状的范围广泛的表型变异是显着的，几个性状遗传度大于0.6。总共鉴定了61个重要的遗传和表型相关性以及高度相关性状的网络。 高特征变异，中度至高遗传的证据，以及鉴定有利特征组合的工业重要特征，有助于为现代工业用途提高杨树育种策略奠定基础。
+介绍 杨树种（杨树，白杨和白杨木;整个被称为杨树）是跨越北半球温带和北部地区的重要地理区域的生态和经济上重要的树种（Burns＆Honkala，1990 ; Mansfield＆Weineisen，2007） 。虽然裸子植物主要用于转换成商品，但杨树对于森林产品行业和新的绿色经济来说变得越来越重要，特别是作为提供纸浆和纸张生产的纤维的短轮型物质，定向的刨花板（OSB），模制件和装饰件以及家具部件（Semple 等人，2007）。最近，由于其固有的快速生长速率和有利的细胞壁化学，这些物种已经成为潜在的生物能源作物（Dinus，2000）。在生态效益，能源和二氧化碳平衡方面，木质纤维素原料被认为比基于生物能源生产的基于淀粉和糖的原料更可持续（Yuan et al。，2008）。虽然白杨可以产生相对较高的产量和显着的能量输出（Yuan et al。，2008 ; Carroll＆Somerville，2009），其先天的细胞壁组成需要昂贵的预处理方法来获取复杂的细胞壁碳水化合物（Hendriks＆Zeeman，2009 ; Mansfield ，2009）。已经提出许多因素有助于植物细胞壁解构的这种自然的顽固性（Chang＆Holtzapple，2000 ; Dinus，2000 ; Mosier et al。，2005 ; Studer 等，2011），目前有若干研究策略目前正在努力优化和提高糖化效率（曼斯菲尔德等，1999年，2012年 ; Yuan 等，2008 ; Carroll＆Somerville，2009 ; Shen 等，2011）。
+已知生物量积累，木材组成和超微结构性状非常复杂（Dinus，2000 ; Novaes et al。，2009）。还知道杨树在许多重要的木材性质中显示出实质性的变化，例如木质素含量和丁香酰到愈创木酰（S：G）木质素单体的比例（Wegrzyn 等人，2010 ; Studer 等，2011），纤维素和半纤维素组合物（Sannigrahi 等，2010），纤维素结晶度（Kumar 等，2009）和木材密度（Zhang et al。，2012）。杨树改良计划可以利用现有的木材性状的自然变化以及近年来可用于该物种的广泛的基因组资源（Tuskan 等，2006 ; Jansson＆Douglas，2007 ; Ralph et al。 ，2008 ; Geraldes 等人，2011 ; Geraldes 等人，新闻 ; Slavov 等人，2012），以加速改善细胞壁和生长性状的育种策略。已经实施了定量性状位点（QTL）鉴定和其他传统的定量遗传学方法来研究木材形成的复杂遗传结构（Pot et al。，2002 ; Kirst et al。，2004 ; Novaes et al。，2009 ; Thumma et al，2010 ; Wegrzyn et al。，2010 ; Beaulieu et al。，2011）。然而，关于木材性状的遗传控制（遗传力）模式及其遗传关系的知识对于有效的选择育种计划是至关重要的。育种计划的目的是最大限度地发挥工业上重要的木材性状的遗传增益，同时有效地管理不良性状相关性，同时维持未来选择和适应的遗传变异性。为此，需要更好地了解感兴趣的特征之间的继承和关系。除了通常研究的木材密度，通常显示中等至高遗传率（Yanchuk 等人，1984 ; Pliura 等人，2007 ; El-Kassaby 等，2011），对遗传参数知之甚少用于其他与杨木相关的木材性状。本文提供了一个综合评估木材性状，被认为是改善杨树属的实用性的关键。用于工业应用。
+                  <a href="../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/porth2013-/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/pot2002a-%E6%B5%B7%E6%9D%BE-%E6%9D%90%E6%80%A7-/">
+                <h2 class="post-title">Pot2002a-海松-材性-</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (16 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p>木材是我们最重要的自然资源之一，已经被利用了数百年的燃料，建筑材料和纸张来源。其组成在物种内和物种之间是变化的。监测特异性变异性的能力是提高木材和最终产品性能的先决条件。本文介绍了一种大型木材性质的遗传控制研究，包​​括生长，木材质量性状，木材化学成分，牛皮纸浆生产参数和纸浆性质，在mari-2时间松木的12×12半透析中Pinus pinaster Ait。）。虽然观察到密度异质性，木质素含量，α-纤维素含量和粗糙度相对较高（hns&gt; 0.3）的狭义遗传，半纤维素，水提取物，牛皮纸浆制备参数和pylodin没有显着的遗传效应。木材密度和纤维性能（长度，宽度，卷曲，零跨度）也获得了较低的遗传力（0.15 &lt;hns &lt;0.3）。因此，考虑到这些性状获得的表型变异系数，通过选择具有优异木材质量的树木进行改良是可行的。然而，似乎很明显，木材质量育种不能在不考虑增长的情况下进行，而管理这种约束的唯一方式（增长与密度之间的负相关）将是精英“木材质量”人口在已经增长中的组成改善遗传种群。</p>
+
+<p>介绍
+木材可以被认为是由粘合在一起并由木质素固定的纤维素的柔性管组成的天然复合材料。然而，这种简单的定义隐藏了木材也是非常复杂和可变的，不仅在其化学成分中，而且在解剖学水平（例如管状体形态）。这种变异性不仅发生在物种之间，而且发生在一个物种内，甚至在一棵树内，都是双边的。一方面，木材可以用于各种产品（纸张，建筑材料，化学品，能源等），但另一方面则损害了其在各种应用中的性能。对这种变异性的理解和使用它的能力对于改进最终用途产品至关重要。
+海松（Pinus pinaster Ait。）是西南欧重要的商业物种。它是法国的主要针叶树种植面积（140万公顷）和收获产量（每年830万立方米）。其木材用于木材和纸浆行业，涉及不同性状可能感兴趣的不同合作伙伴（森林所有者，木材和纸浆工业）。今天，海上松树育种计划已经实现了第三代的选择。改良品种的遗传增益在体积和直度方面约为30％。<strong>木质素选择标准的引入现在被认为是育种计划的重要目标</strong>。然而，这种选择受到木材质量特性缺乏信息的阻碍，不仅在遗传上，而且在工业层面。
+木材质量只能根据特定的最终用途来定义，并且可能涉及几个性状（例如密度，木质异质性，木材化学成分和纤维性能）。平均密度被认为是木材机械性能的最佳单一预测因子​​[1，36，41，43，48，67]。经常报道<strong>弹性模量（MOE），软木的基本力学性能和密度之间的非常强的正相关性（见[54]）</strong>。但是，尽管其重要性，平均密度并不是木材力学性能中唯一的特征。 Larson [33]指出，<strong>所有木材使用行业面临的最大的木材质量问题缺乏统一性</strong>。关于密度，根据Megraw [38]，“比重最大的变异性发生在每个年度环”之内。因此，<strong>木材机械性能的育种目标之一可能是各环内密度异质性的降低</strong>。如果密度的内环异质性与化学和纤维性质的异质性有关，则此修改也可能影响纸浆生产。假设木材密度与纸浆产量呈正相关（增加密度也增加了每单位面积生产的干纤维的吨位）和一些纸浆质量性状[9,22,25,28]。不幸的是，<strong>单独的木材密度是其他牛皮纸浆质量性状的不良指标</strong>[28,29]。为了估计树的“纸浆潜力”，重要的是要考虑其纤维特性。最近的研究表明，几种纤维性能可以对纸浆产量和纸浆质量产生显着的影响[16,25,27,68]。也必须考虑化学成分（如木质素，多糖，提取物），这些性状对生产成本和最终产品质量都有直接后果。
+为给木材加工业种植树木是一个复杂的问题。确定哪些是影响产品质量的关键属性，（2）<strong>估计这些关键性质的遗传改良的可能性</strong>，（3）估计其他关键性质选择的相关响应目标性特征如增长。为了提供启动海洋木材质量育种计划的背景，在广泛的实验设计（diallel，因子和克隆试验）中，估计了大量木材性质的遗传参数。本文介绍了一种半透明度中大量木材特性的遗传决定性研究。介绍遗传参数，包括遗传相关性和遗传相关性，并讨论了用于木材和制浆目的的海洋松木利用的育种策略。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r-list-to-data-frame%E5%88%97%E8%A1%A8%E8%BD%AC%E6%95%B0%E6%8D%AE%E6%A1%86/">
+                <h2 class="post-title">R-list-to-data-frame列表转数据框</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (45 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p>Assuming your list of lists is called<code> l</code>:</p>
+
+<pre><code>df &lt;- data.frame(matrix(unlist(l), nrow=132, byrow=T))
+</code></pre>
+
+<p>The above will convert all character columns to factors, to avoid this you can add a parameter to the <code>data.frame()</code> call:</p>
+
+<pre><code>df &lt;- data.frame(matrix(unlist(l), nrow=132, byrow=T),stringsAsFactors=FALSE)
+</code></pre>
+
+<p>from <a href="http://stackoverflow.com/questions/4227223/r-list-to-data-frame">R list to data frame</a>.</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r1--%E8%AE%BE%E5%AE%9A%E5%B7%A5%E4%BD%9C%E8%B7%AF%E5%BE%84/">
+                <h2 class="post-title">R1--设定工作路径</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (6 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>想要程序正常运行，通常得告诉电脑要执行的程序和文件在哪里，所以第一步是设定工作路径，在R中更是这样。</p>
+</blockquote>
+
+<p>R有默认的工作路径，执行<code>getwd()</code>，默认工作路径可以在软件中更改。但一般我们的工作项目不止一个，不适合直接在默认路径下操作，而是建立不同的文件夹，然后分别调用。有2种方法：
+1. 设定完全工作路径，比如<code>setwd(&quot;D:/Sync/R/&quot;)</code>；
+2. 简化工作路径，比如<code>setwd(&quot;./group1&quot;)</code>，很明显，默认工作路径或已经设定好的工作路径用一个<code>.</code>表示，这样做也可以在上一级路径中调取这一路径下的文件。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r2--%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E7%9A%84--csv%E6%96%87%E4%BB%B6/">
+                <h2 class="post-title">R2--读取一个文件夹下的--csv文件</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (153 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  当只有一两个数据集时，用read.csv是合乎逻辑的，相反有多个文件时，一个一个地read就显得有些繁琐，有没有批量读取的方法？见下文：
+  首先要建立工作路径 开始读取
+setwd(&quot;./BB/Venn_13Oct&quot;) ## setwd #filenames&lt;-list.files(&quot;./group1&quot;,full.names=TRUE) ## if there were just several one type files like *.csv or something text; reversely if more than 1 type you can code like this: filenames&lt;-list.files(&quot;./group1&quot;, pattern=&quot;*.csv&quot;,full.names=TRUE) ldf &lt;- lapply(filenames, read.csv) ## we use 'lapply' function to read all the files in filenames names(ldf) &lt;- substr(filenames, 10, 14) ## names of 'ldf' are empty, use 'substr' can cut out the wanted names for all files each df1&lt;-ldf[1] ## give the first element in 'ldf' to 'df1', here use a loop is preferable  some examples
+                  <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r2--%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E7%9A%84--csv%E6%96%87%E4%BB%B6/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r3--%E6%8F%90%E5%8F%96%E9%9F%A6%E6%81%A9%E5%9B%BEvenn-diagram%E4%B8%AD%E4%BA%A4%E9%9B%86%E6%88%96%E5%B9%B6%E9%9B%86%E7%9A%84%E4%BF%A1%E6%81%AF/">
+                <h2 class="post-title">R3--提取韦恩图（Venn-Diagram）中交集或并集的信息</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (64 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>当有多个分类，分类之间有相同又有差异的时候，常用的可视化方法是做韦恩图。有时我们想知道某个交集或其他部分比如独有的信息时，需要提取出来，前提是韦恩图的每个组分是知道的，也就是制作图画的软件能够提供才是可行的。在<code>R</code>中是知道的。
+可以根据不同的类别来提取，我喜欢用每部分的个数。个数一般不同，但如果有相同的时候就要手动后期调整。</p>
+</blockquote>
+
+<hr />
+
+<p><strong>Example</strong>
+<code>R</code>中我用包<code>VennDiagram</code>（感谢开发者！）
+1. 安装加载包</p>
+
+<pre><code>## install &amp; require the needed pacakge
+# install.packages(&quot;VennDiagram&quot;)
+library(VennDiagram)
+</code></pre>
+
+<ol>
+<li><a href="http://www.jianshu.com/p/9567686b9613">建立工作路径</a></li>
+<li><a href="http://www.jianshu.com/p/401179e698a1">读取数据</a></li>
+<li>使用函数<code>get.venn.partitions</code>能够获得每部分的信息
+<code>
+ldf$Aolig$ID&lt;-as.character(ldf$Aolig$ID)
+ldf$Dhapt$ID&lt;-as.character(ldf$Dhapt$ID)
+ldf$Dsten$ID&lt;-as.character(ldf$Dsten$ID)
+ldf$Everm$ID&lt;-as.character(ldf$Everm$ID)
+ldf$Hminn$ID&lt;-as.character(ldf$Hminn$ID)
+ev.getven&lt;-get.venn.partitions(x=
+                             list(
+                               &quot;Aolig&quot;=ldf$Aolig$ID,
+                               &quot;Dhapt&quot;=ldf$Dhapt$ID,
+                               &quot;Dsten&quot;=ldf$Dsten$ID,
+                               &quot;Everm&quot;=ldf$Everm$ID,
+                               &quot;Hminn&quot;=ldf$Hminn$ID)
+)
+</code></li>
+
+<li><p>提取</p>
+
+<pre><code>## write a function
+## n-a number or numerical vector
+dlm.extract.bb &lt;- function(n) {
+for(i in 1:length(n)){
+aim&lt;-ev.getven[ev.getven$..count..==n[i],]
+aim1&lt;-aim$..values.. 
+aim1&lt;-as.data.frame(aim1)
+names(aim1)&lt;-aim$..set..
+filename&lt;-paste0(substr(names(aim1[1]),2,6),&quot;.csv&quot;)
+write.csv(aim1,filename)
+}
+print(&quot;Job done!&quot;)
+}
+## Example
+a&lt;-c(208,244,1641,1239,17,2789)
+dlm.extract.bb(a)
+</code></pre>
+
+<hr /></li>
+</ol>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-74e625dc48060a75.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="例图" /></p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r4--%E9%87%8D%E5%91%BD%E5%90%8D%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%AD%E7%9A%84%E5%9B%A0%E5%AD%90%E6%B0%B4%E5%B9%B3renaming-levels-of-a-factor/">
+                <h2 class="post-title">R4--重命名一个数据集中的因子水平Renaming-levels-of-a-factor</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (410 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Problem You want to rename the levels in a factor.
+Solution # A sample factor to work with. x&lt;-factor(c(&quot;alpha&quot;,&quot;beta&quot;,&quot;gamma&quot;,&quot;alpha&quot;,&quot;beta&quot;)) x #&gt; [1] alpha beta gamma alpha beta #&gt; Levels: alpha beta gammalevels(x) #&gt; [1] &quot;alpha&quot;&quot;beta&quot;&quot;gamma&quot;  The easiest way is to use revalue() or mapvalues() from the plyr package:
+library(plyr) revalue(x, c(&quot;beta&quot;=&quot;two&quot;, &quot;gamma&quot;=&quot;three&quot;)) #&gt; [1] alpha two three alpha two #&gt; Levels: alpha two threemapvalues(x, from = c(&quot;beta&quot;, &quot;gamma&quot;), to = c(&quot;two&quot;, &quot;three&quot;)) #&gt; [1] alpha two three alpha two #&gt; Levels: alpha two three  If you don’t want to rely on plyr, you can do the following with R’s built-in functions.
+                  <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r4--%E9%87%8D%E5%91%BD%E5%90%8D%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%AD%E7%9A%84%E5%9B%A0%E5%AD%90%E6%B0%B4%E5%B9%B3renaming-levels-of-a-factor/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r5--%E7%94%BB%E5%9B%BE-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/">
+                <h2 class="post-title">R5--画图-字体设置</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (38 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>函数<code>pdf</code>（或<code>win.metafile</code>）中加入<code>famil=&quot;...&quot;</code>可以设置字体。可用的字体​除了&rdquo;sans&rdquo;，&rdquo;mono&rdquo;，&rdquo;serif&rdquo;外还有 &rdquo;AvantGarde&rdquo;, &ldquo;Bookman&rdquo;, &ldquo;Courier&rdquo;, &ldquo;Helvetica&rdquo;, &ldquo;Helvetica-Narrow&rdquo;, &ldquo;NewCenturySchoolbook&rdquo;, &ldquo;Palatino&rdquo; or &ldquo;Times&rdquo;。但这个函数的设置是全局性的，如果包含多个分图而分图需要不同字体的话（这个情况极为少见，我是画着玩儿），还是得用<code>par</code>函数，依旧是<code>family=&quot;...&quot;</code>的声明。<code>font</code>主要用来更改<strong>加粗</strong>、斜体等，改变坐标轴标签的方向则是用<code>las</code>函数，比如<code>las=2</code>时，逆时针90°。</p>
+</blockquote>
+
+<p>#example​</p>
+
+<pre><code>pdf(&quot;box.pdf&quot;,6,4,family = &quot;NewCenturySchoolbook&quot;)
+par(mar = c(2, 2,2, .5),mfrow=c(2,2))
+boxplot(mpg~cyl,data = mtcars,main=&quot;NewCenturySchoolbook&quot;)
+par(family=&quot;sans&quot;)
+boxplot(mpg~cyl,data = mtcars,main=&quot;sans (Helvetica)&quot;)
+par(family=&quot;mono&quot;)
+boxplot(mpg~cyl,data = mtcars,main=&quot;mono (Courier)&quot;)
+par(family=&quot;serif&quot;)
+boxplot(mpg~cyl,data = mtcars,main=&quot;serif (Times)&quot;)
+dev.off()
+</code></pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-5cc10966f98e5bf3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r6--%E6%8A%A5%E9%94%99error-in-plot-new---figure-margins-too-large/">
+                <h2 class="post-title">R6--报错Error-in-plot-new()---figure-margins-too-large</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (9 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p><code>RStudio</code>中报错<a href="http://stackoverflow.com/questions/23050928/error-in-plot-new-figure-margins-too-large-scatter-plot">Error in plot.new() : figure margins too large</a>。
+<strong>原因</strong>：图的边距太小，就是边距设置的太大。一个是确实小，<code>par(&quot;mar&quot;)</code>可以查看，可以通过<code>par(mar=c(1,1,1,1))</code>修改。但有时问题依然存在，这是第二个原因，<code>RStudio</code>的四分窗口中plot的窗口过小，解决办法就是<strong>用鼠标把窗口拖大点</strong>。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r7--error-result-would-be-too-long-a-vector/">
+                <h2 class="post-title">R7--error-result-would-be-too-long-a-vector</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (8 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p>result would be too long a vector</p>
+
+<p>内存不足</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+        </div>
+
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="../../page/25/">&larr; Newer Posts</a>
+              </li>
+            
+            
+              <li class="next">
+                <a href="../../page/27/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

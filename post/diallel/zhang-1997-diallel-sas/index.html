@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Zhang-1997-diallel-sas</title>
+  <meta property="og:title" content="Zhang-1997-diallel-sas" />
+  <meta name="twitter:title" content="Zhang-1997-diallel-sas" />
+  <meta name="description" content="Zhang, Y., &amp; Kang, M. S. (1997). DIALLEL-SAS: A SAS Program for Griffing’ s Diallel Analyses. Agronomy Journal, 89(2), 176–187. http://doi.org/10.2134/agronj1997.00021962008900020005x
+ Dialle1交配设计通常用于获得对固定的亲本系（固定效应）的遗传效应的估计或者从一组随机选择的亲本系中估计一般组合能力（GCA）和特异性组合能力（SCA）方差分量随机效应）。用于双列分析的发布的计算机程序不提供对于Griffing的方法1和3，以及对于Griffing方法的GCA环境和SCA x环境组件中的F1混合x环境交互到GCA x环境，SCA x环境和交互x环境组件的划分方法1和3的现有程序也不将互惠效应分配到母体和非母体效应。本文报告了一个全面的SAS程序（DIALLEL-SAS）的开发，用于分割环境（年和/或地点）和F1杂种之间的相互作用。 DIALLEL-SAS可以在任何带有SAS的微型计算机上运行，​​也可以在通过UNIX或TSO安装SAS的大型计算机上运行。 DIALLEL-SAS输出包括（i）环境，F1杂种，F1杂种x环境，GCA，SCA，倒数，母本，非母本，GCAx环境，SCAx环境，倒数x环境，母本x环境，环境，（ii）每个亲本系的GCA和母体效应的估计，以及（iii）每个F1杂种的SCA，非母系和互作用的估计。
+DIALLEL MATING DESIGNS经常用于植物育种研究以获得遗传信息，例如固定的亲本系（固定效应或模型1）的遗传效应或通用（GCA）和特异性（SCA）组合能力方差组合的估计，和从随机选择的亲本系（随机效应或模型2）的群体的遗传性。由于Griffing（1956）提出了四种计算GCA和SCA的方法，植物育种家和遗传学家已经广泛采用二元设计来获得遗传信息（Borges，1987; Moffatt等，1990; Pixley和Bjarnason，等人，1995）。 Cockerham（1963）建议将倒数均方分为母亲和非母亲平均方块。奈奎斯特开发了一个FORTRAN计划来计算母亲（一般互惠）和非母亲（特殊互惠）均值和相应的效应（总互惠平方和=母亲平方和&#43;非母亲平方和）（Nyquist，未发表数据，1966： Diallel-cross analysis for general combining ability，specific combining ability，maternal and nonmaternal reciprocal effects; Purdue Univ。，West Lafayette，IN）。在一些研究中已经提出了母体和非母体效应及其均​​方的估计（Evans等人，1966; Stuthman等人，1971; Pederson和Windham，1992）。将互惠效应分配到母体和非母体效应中有助于确定母体或核外因子是否参与性状的表达（Stuthman等，1971; Borges，1987; Moffatt等，1990）。 研究者进行多年和/或多地点实验，以获得更准确和可靠的遗传信息。可用的微型计算机程序（Burow和Coors，1994; Magari和Kang，1994）只能提供关于遗传效应（即GCA，SCA，遗传效应和遗传方差分量的估计）的信息;它们不提供关于环境与GCA，SCA和相互作用之间的相互作用的信息。在大多数情况下，这些相互作用是重要的，应该解决（Beck等人，1991; Barker和Varughese，1992; Vasal等人，1993）。随着使用称为SAS（统计分析系统，SAS研究所，1995）的强大且通用的系统的增加使用，需要一种全面的SAS双列程序，其将Griffing方法1和3的互逆平均值分割成母和非母分量，还为方法1和3提供了交互，例如（i）所有四种方法的GCA环境和SCA×环境和（ii）方法1和3的互逆×环境。本文介绍了满足上述需求的SAS程序（DIALLEL-SAS）。 Griffing（1956）描述了用于分析四种不同的双列连接设计的统计模型。这四种方法是基于一年或一个位置的数据建立的。然而，为了获得更可靠的遗传信息，通常需要来自多种环境的数据。基于Griffing的模型和Cockham模型（1963），Griffing的方法用于分析多环境数据的统计模型如表1所示。此外，四种方法之间的相似性和差异如表1所示。环境和块效应通常被认为是随机的，而F - 混合可以被认为是固定或随机效应，这取决于如何选择父母。当Ft杂交体被认为是固定的时，实验材料是参考（整个）群体，关于其将进行推断，而在随机效应模型中，实验材料代表来自参考群体的随机样品。这两个模型的预期平均值示于表2（Griffing的方法3和4）。 Griffing方法1和方法2的预期均方值分别与Griffing方法3和方法4的均值相似，未示出。方法1和方法3之间以及方法2和方法4之间的唯一区别是F - 杂种，GCA，SCA，F - 杂种×环境，GCA×环境和SCA×环境的遗传组分和自由度的一些系数，这可以从Griffing的论文（1956）中容易地推导出来。 要测试F - 杂种，GCA，SCA，互惠，母系和非母系的平均值效应，环境之间的相互作用和固定效应模型中的相应成分之间的相互作用被用作误差项。对于随机效应模型，除了GCA和母均方值外，测试所有均方的相应误差项与固定效应模型中的相同。测试GCA和母均方差的误差项需要根据其预期均方差（表2）和复杂F检验来构建。 Griffing（1956）给出了测试GCA，SCA和相互效应的误差项。然而，Griffing的误差项等于Mhy / bc（b =重复数，c =每个实验单位的样品数）（表2），而本文中的误差项对于GCA，SCA和倒数效应是不同的。例如，测试g〜，s〜和r〜2的误差项分别为Mgy / lbc，Msy / lbc和Mry / lbc。因为我们假设在分析中使用绘图装置（表2），每个绘图的样本数等于1（即c 1）。根据Cockerham 0963）和Nyquist（未公布的数据，1966），测试母体和非母体效应的误差项在表3中给出。">
+  <meta property="og:description" content="Zhang, Y., &amp; Kang, M. S. (1997). DIALLEL-SAS: A SAS Program for Griffing’ s Diallel Analyses. Agronomy Journal, 89(2), 176–187. http://doi.org/10.2134/agronj1997.00021962008900020005x
+ Dialle1交配设计通常用于获得对固定的亲本系（固定效应）的遗传效应的估计或者从一组随机选择的亲本系中估计一般组合能力（GCA）和特异性组合能力（SCA）方差分量随机效应）。用于双列分析的发布的计算机程序不提供对于Griffing的方法1和3，以及对于Griffing方法的GCA环境和SCA x环境组件中的F1混合x环境交互到GCA x环境，SCA x环境和交互x环境组件的划分方法1和3的现有程序也不将互惠效应分配到母体和非母体效应。本文报告了一个全面的SAS程序（DIALLEL-SAS）的开发，用于分割环境（年和/或地点）和F1杂种之间的相互作用。 DIALLEL-SAS可以在任何带有SAS的微型计算机上运行，​​也可以在通过UNIX或TSO安装SAS的大型计算机上运行。 DIALLEL-SAS输出包括（i）环境，F1杂种，F1杂种x环境，GCA，SCA，倒数，母本，非母本，GCAx环境，SCAx环境，倒数x环境，母本x环境，环境，（ii）每个亲本系的GCA和母体效应的估计，以及（iii）每个F1杂种的SCA，非母系和互作用的估计。
+DIALLEL MATING DESIGNS经常用于植物育种研究以获得遗传信息，例如固定的亲本系（固定效应或模型1）的遗传效应或通用（GCA）和特异性（SCA）组合能力方差组合的估计，和从随机选择的亲本系（随机效应或模型2）的群体的遗传性。由于Griffing（1956）提出了四种计算GCA和SCA的方法，植物育种家和遗传学家已经广泛采用二元设计来获得遗传信息（Borges，1987; Moffatt等，1990; Pixley和Bjarnason，等人，1995）。 Cockerham（1963）建议将倒数均方分为母亲和非母亲平均方块。奈奎斯特开发了一个FORTRAN计划来计算母亲（一般互惠）和非母亲（特殊互惠）均值和相应的效应（总互惠平方和=母亲平方和&#43;非母亲平方和）（Nyquist，未发表数据，1966： Diallel-cross analysis for general combining ability，specific combining ability，maternal and nonmaternal reciprocal effects; Purdue Univ。，West Lafayette，IN）。在一些研究中已经提出了母体和非母体效应及其均​​方的估计（Evans等人，1966; Stuthman等人，1971; Pederson和Windham，1992）。将互惠效应分配到母体和非母体效应中有助于确定母体或核外因子是否参与性状的表达（Stuthman等，1971; Borges，1987; Moffatt等，1990）。 研究者进行多年和/或多地点实验，以获得更准确和可靠的遗传信息。可用的微型计算机程序（Burow和Coors，1994; Magari和Kang，1994）只能提供关于遗传效应（即GCA，SCA，遗传效应和遗传方差分量的估计）的信息;它们不提供关于环境与GCA，SCA和相互作用之间的相互作用的信息。在大多数情况下，这些相互作用是重要的，应该解决（Beck等人，1991; Barker和Varughese，1992; Vasal等人，1993）。随着使用称为SAS（统计分析系统，SAS研究所，1995）的强大且通用的系统的增加使用，需要一种全面的SAS双列程序，其将Griffing方法1和3的互逆平均值分割成母和非母分量，还为方法1和3提供了交互，例如（i）所有四种方法的GCA环境和SCA×环境和（ii）方法1和3的互逆×环境。本文介绍了满足上述需求的SAS程序（DIALLEL-SAS）。 Griffing（1956）描述了用于分析四种不同的双列连接设计的统计模型。这四种方法是基于一年或一个位置的数据建立的。然而，为了获得更可靠的遗传信息，通常需要来自多种环境的数据。基于Griffing的模型和Cockham模型（1963），Griffing的方法用于分析多环境数据的统计模型如表1所示。此外，四种方法之间的相似性和差异如表1所示。环境和块效应通常被认为是随机的，而F - 混合可以被认为是固定或随机效应，这取决于如何选择父母。当Ft杂交体被认为是固定的时，实验材料是参考（整个）群体，关于其将进行推断，而在随机效应模型中，实验材料代表来自参考群体的随机样品。这两个模型的预期平均值示于表2（Griffing的方法3和4）。 Griffing方法1和方法2的预期均方值分别与Griffing方法3和方法4的均值相似，未示出。方法1和方法3之间以及方法2和方法4之间的唯一区别是F - 杂种，GCA，SCA，F - 杂种×环境，GCA×环境和SCA×环境的遗传组分和自由度的一些系数，这可以从Griffing的论文（1956）中容易地推导出来。 要测试F - 杂种，GCA，SCA，互惠，母系和非母系的平均值效应，环境之间的相互作用和固定效应模型中的相应成分之间的相互作用被用作误差项。对于随机效应模型，除了GCA和母均方值外，测试所有均方的相应误差项与固定效应模型中的相同。测试GCA和母均方差的误差项需要根据其预期均方差（表2）和复杂F检验来构建。 Griffing（1956）给出了测试GCA，SCA和相互效应的误差项。然而，Griffing的误差项等于Mhy / bc（b =重复数，c =每个实验单位的样品数）（表2），而本文中的误差项对于GCA，SCA和倒数效应是不同的。例如，测试g〜，s〜和r〜2的误差项分别为Mgy / lbc，Msy / lbc和Mry / lbc。因为我们假设在分析中使用绘图装置（表2），每个绘图的样本数等于1（即c 1）。根据Cockerham 0963）和Nyquist（未公布的数据，1966），测试母体和非母体效应的误差项在表3中给出。">
+  <meta name="twitter:description" content="Zhang, Y., &amp; Kang, M. S. (1997). DIALLEL-SAS: A SAS Program for Griffing’ s Diallel Analyses. Agronomy Journal, 89(2), 176–187. http://doi.org/10.2134/agronj1997.00021962008900020005x
+ Dialle1交配设计 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/diallel/zhang-1997-diallel-sas/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/diallel/zhang-1997-diallel-sas/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Zhang-1997-diallel-sas</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (80 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Zhang-1997-diallel-sas</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (80 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Zhang, Y., &amp; Kang, M. S. (1997). DIALLEL-SAS: A SAS Program for Griffing’ s Diallel Analyses. Agronomy Journal, 89(2), 176–187. <a href="http://doi.org/10.2134/agronj1997.00021962008900020005x">http://doi.org/10.2134/agronj1997.00021962008900020005x</a></p>
+</blockquote>
+
+<p>Dialle1交配设计通常用于获得对固定的亲本系（固定效应）的遗传效应的估计或者从一组随机选择的亲本系中估计一般组合能力（GCA）和特异性组合能力（SCA）方差分量随机效应）。用于双列分析的发布的计算机程序不提供对于Griffing的方法1和3，以及对于Griffing方法的GCA环境和SCA x环境组件中的F1混合x环境交互到GCA x环境，SCA x环境和交互x环境组件的划分方法1和3的现有程序也不将互惠效应分配到母体和非母体效应。本文报告了一个全面的SAS程序（DIALLEL-SAS）的开发，用于分割环境（年和/或地点）和F1杂种之间的相互作用。 DIALLEL-SAS可以在任何带有SAS的微型计算机上运行，​​也可以在通过UNIX或TSO安装SAS的大型计算机上运行。 DIALLEL-SAS输出包括（i）环境，F1杂种，F1杂种x环境，GCA，SCA，倒数，母本，非母本，GCAx环境，SCAx环境，倒数x环境，母本x环境，环境，（ii）每个亲本系的GCA和母体效应的估计，以及（iii）每个F1杂种的SCA，非母系和互作用的估计。</p>
+
+<p>DIALLEL MATING DESIGNS经常用于植物育种研究以获得遗传信息，例如固定的亲本系（固定效应或模型1）的遗传效应或通用（GCA）和特异性（SCA）组合能力方差组合的估计，和从随机选择的亲本系（随机效应或模型2）的群体的遗传性。由于Griffing（1956）提出了四种计算GCA和SCA的方法，植物育种家和遗传学家已经广泛采用二元设计来获得遗传信息（Borges，1987; Moffatt等，1990; Pixley和Bjarnason，等人，1995）。 Cockerham（1963）建议将倒数均方分为母亲和非母亲平均方块。奈奎斯特开发了一个FORTRAN计划来计算母亲（一般互惠）和非母亲（特殊互惠）均值和相应的效应（总互惠平方和=母亲平方和+非母亲平方和）（Nyquist，未发表数据，1966： Diallel-cross analysis for general combining ability，specific combining ability，maternal and nonmaternal reciprocal effects; Purdue Univ。，West Lafayette，IN）。在一些研究中已经提出了母体和非母体效应及其均​​方的估计（Evans等人，1966; Stuthman等人，1971; Pederson和Windham，1992）。将互惠效应分配到母体和非母体效应中有助于确定母体或核外因子是否参与性状的表达（Stuthman等，1971; Borges，1987; Moffatt等，1990）。
+研究者进行多年和/或多地点实验，以获得更准确和可靠的遗传信息。可用的微型计算机程序（Burow和Coors，1994; Magari和Kang，1994）只能提供关于遗传效应（即GCA，SCA，遗传效应和遗传方差分量的估计）的信息;它们不提供关于环境与GCA，SCA和相互作用之间的相互作用的信息。在大多数情况下，这些相互作用是重要的，应该解决（Beck等人，1991; Barker和Varughese，1992; Vasal等人，1993）。随着使用称为SAS（统计分析系统，SAS研究所，1995）的强大且通用的系统的增加使用，需要一种全面的SAS双列程序，其将Griffing方法1和3的互逆平均值分割成母和非母分量，还为方法1和3提供了交互，例如（i）所有四种方法的GCA环境和SCA×环境和（ii）方法1和3的互逆×环境。本文介绍了满足上述需求的SAS程序（DIALLEL-SAS）。
+Griffing（1956）描述了用于分析四种不同的双列连接设计的统计模型。这四种方法是基于一年或一个位置的数据建立的。然而，为了获得更可靠的遗传信息，通常需要来自多种环境的数据。基于Griffing的模型和Cockham模型（1963），Griffing的方法用于分析多环境数据的统计模型如表1所示。此外，四种方法之间的相似性和差异如表1所示。环境和块效应通常被认为是随机的，而F  - 混合可以被认为是固定或随机效应，这取决于如何选择父母。<strong>当Ft杂交体被认为是固定的时，实验材料是参考（整个）群体，关于其将进行推断，而在随机效应模型中，实验材料代表来自参考群体的随机样品</strong>。这两个模型的预期平均值示于表2（Griffing的方法3和4）。 Griffing方法1和方法2的预期均方值分别与Griffing方法3和方法4的均值相似，未示出。<strong>方法1和方法3之间以及方法2和方法4之间的唯一区别是F  - 杂种，GCA，SCA，F  - 杂种×环境，GCA×环境和SCA×环境的遗传组分和自由度的一些系数</strong>，这可以从Griffing的论文（1956）中容易地推导出来。
+要测试F  - 杂种，GCA，SCA，互惠，母系和非母系的平均值效应，环境之间的相互作用和固定效应模型中的相应成分之间的相互作用被用作误差项。对于随机效应模型，除了GCA和母均方值外，测试所有均方的相应误差项与固定效应模型中的相同。测试GCA和母均方差的误差项需要根据其预期均方差（表2）和复杂F检验来构建。 Griffing（1956）给出了测试GCA，SCA和相互效应的误差项。然而，Griffing的误差项等于Mhy / bc（b =重复数，c =每个实验单位的样品数）（表2），而本文中的误差项对于GCA，SCA和倒数效应是不同的。例如，测试g〜，s〜和r〜2的误差项分别为Mgy / lbc，Msy / lbc和Mry / lbc。因为我们假设在分析中使用绘图装置（表2），每个绘图的样本数等于1（即c 1）。根据Cockerham 0963）和Nyquist（未公布的数据，1966），测试母体和非母体效应的误差项在表3中给出。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/diallel/zhang2005-diallel-sas05/" data-toggle="tooltip" data-placement="top" title="Zhang2005-DIALLEL-SAS05">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/zas2014-%E7%A7%8D%E5%AD%90%E9%81%97%E4%BC%A0%E5%8A%9B/" data-toggle="tooltip" data-placement="top" title="Zas2014-种子遗传力">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>R记录本</title>
+  <meta property="og:title" content="R记录本" />
+  <meta name="twitter:title" content="R记录本" />
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/categories/r%E8%AE%B0%E5%BD%95%E6%9C%AC/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../categories/r%E8%AE%B0%E5%BD%95%E6%9C%AC/" />
+  <link rel="alternate" href="../../categories/r%E8%AE%B0%E5%BD%95%E6%9C%AC/index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../">
+            <img class="avatar-img" src="../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  <header class="header-section ">
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>#R记录本</h1>
+              <hr class="small">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    
+  <div class="container" role="main">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/mantel%E6%B5%8B%E8%AF%95/">
+                <h2 class="post-title">Mantel测试</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  概念  The Mantel test, named after Nathan Mantel, is a statistical test of the correlation between two matrices. The matrices must be of the same rank（2个相同满秩的方阵才可以）; in most applications, they are matrices of interrelations between the same vectors of objects. The test was first published by Nathan Mantel, a biostatistician at the National Institutes of Health, in 1967.[1] Accounts of it can be found in advanced statistics books (e.
+                  <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/mantel%E6%B5%8B%E8%AF%95/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r-list-to-data-frame%E5%88%97%E8%A1%A8%E8%BD%AC%E6%95%B0%E6%8D%AE%E6%A1%86/">
+                <h2 class="post-title">R-list-to-data-frame列表转数据框</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <p>Assuming your list of lists is called<code> l</code>:</p>
+
+<pre><code>df &lt;- data.frame(matrix(unlist(l), nrow=132, byrow=T))
+</code></pre>
+
+<p>The above will convert all character columns to factors, to avoid this you can add a parameter to the <code>data.frame()</code> call:</p>
+
+<pre><code>df &lt;- data.frame(matrix(unlist(l), nrow=132, byrow=T),stringsAsFactors=FALSE)
+</code></pre>
+
+<p>from <a href="http://stackoverflow.com/questions/4227223/r-list-to-data-frame">R list to data frame</a>.</p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r1--%E8%AE%BE%E5%AE%9A%E5%B7%A5%E4%BD%9C%E8%B7%AF%E5%BE%84/">
+                <h2 class="post-title">R1--设定工作路径</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>想要程序正常运行，通常得告诉电脑要执行的程序和文件在哪里，所以第一步是设定工作路径，在R中更是这样。</p>
+</blockquote>
+
+<p>R有默认的工作路径，执行<code>getwd()</code>，默认工作路径可以在软件中更改。但一般我们的工作项目不止一个，不适合直接在默认路径下操作，而是建立不同的文件夹，然后分别调用。有2种方法：
+1. 设定完全工作路径，比如<code>setwd(&quot;D:/Sync/R/&quot;)</code>；
+2. 简化工作路径，比如<code>setwd(&quot;./group1&quot;)</code>，很明显，默认工作路径或已经设定好的工作路径用一个<code>.</code>表示，这样做也可以在上一级路径中调取这一路径下的文件。</p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r2--%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E7%9A%84--csv%E6%96%87%E4%BB%B6/">
+                <h2 class="post-title">R2--读取一个文件夹下的--csv文件</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  当只有一两个数据集时，用read.csv是合乎逻辑的，相反有多个文件时，一个一个地read就显得有些繁琐，有没有批量读取的方法？见下文：
+  首先要建立工作路径 开始读取
+setwd(&quot;./BB/Venn_13Oct&quot;) ## setwd #filenames&lt;-list.files(&quot;./group1&quot;,full.names=TRUE) ## if there were just several one type files like *.csv or something text; reversely if more than 1 type you can code like this: filenames&lt;-list.files(&quot;./group1&quot;, pattern=&quot;*.csv&quot;,full.names=TRUE) ldf &lt;- lapply(filenames, read.csv) ## we use 'lapply' function to read all the files in filenames names(ldf) &lt;- substr(filenames, 10, 14) ## names of 'ldf' are empty, use 'substr' can cut out the wanted names for all files each df1&lt;-ldf[1] ## give the first element in 'ldf' to 'df1', here use a loop is preferable  some examples
+                  <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r2--%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E7%9A%84--csv%E6%96%87%E4%BB%B6/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r3--%E6%8F%90%E5%8F%96%E9%9F%A6%E6%81%A9%E5%9B%BEvenn-diagram%E4%B8%AD%E4%BA%A4%E9%9B%86%E6%88%96%E5%B9%B6%E9%9B%86%E7%9A%84%E4%BF%A1%E6%81%AF/">
+                <h2 class="post-title">R3--提取韦恩图（Venn-Diagram）中交集或并集的信息</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>当有多个分类，分类之间有相同又有差异的时候，常用的可视化方法是做韦恩图。有时我们想知道某个交集或其他部分比如独有的信息时，需要提取出来，前提是韦恩图的每个组分是知道的，也就是制作图画的软件能够提供才是可行的。在<code>R</code>中是知道的。
+可以根据不同的类别来提取，我喜欢用每部分的个数。个数一般不同，但如果有相同的时候就要手动后期调整。</p>
+</blockquote>
+
+<hr />
+
+<p><strong>Example</strong>
+<code>R</code>中我用包<code>VennDiagram</code>（感谢开发者！）
+1. 安装加载包</p>
+
+<pre><code>## install &amp; require the needed pacakge
+# install.packages(&quot;VennDiagram&quot;)
+library(VennDiagram)
+</code></pre>
+
+<ol>
+<li><a href="http://www.jianshu.com/p/9567686b9613">建立工作路径</a></li>
+<li><a href="http://www.jianshu.com/p/401179e698a1">读取数据</a></li>
+<li>使用函数<code>get.venn.partitions</code>能够获得每部分的信息
+<code>
+ldf$Aolig$ID&lt;-as.character(ldf$Aolig$ID)
+ldf$Dhapt$ID&lt;-as.character(ldf$Dhapt$ID)
+ldf$Dsten$ID&lt;-as.character(ldf$Dsten$ID)
+ldf$Everm$ID&lt;-as.character(ldf$Everm$ID)
+ldf$Hminn$ID&lt;-as.character(ldf$Hminn$ID)
+ev.getven&lt;-get.venn.partitions(x=
+                             list(
+                               &quot;Aolig&quot;=ldf$Aolig$ID,
+                               &quot;Dhapt&quot;=ldf$Dhapt$ID,
+                               &quot;Dsten&quot;=ldf$Dsten$ID,
+                               &quot;Everm&quot;=ldf$Everm$ID,
+                               &quot;Hminn&quot;=ldf$Hminn$ID)
+)
+</code></li>
+
+<li><p>提取</p>
+
+<pre><code>## write a function
+## n-a number or numerical vector
+dlm.extract.bb &lt;- function(n) {
+for(i in 1:length(n)){
+aim&lt;-ev.getven[ev.getven$..count..==n[i],]
+aim1&lt;-aim$..values.. 
+aim1&lt;-as.data.frame(aim1)
+names(aim1)&lt;-aim$..set..
+filename&lt;-paste0(substr(names(aim1[1]),2,6),&quot;.csv&quot;)
+write.csv(aim1,filename)
+}
+print(&quot;Job done!&quot;)
+}
+## Example
+a&lt;-c(208,244,1641,1239,17,2789)
+dlm.extract.bb(a)
+</code></pre>
+
+<hr /></li>
+</ol>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-74e625dc48060a75.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="例图" /></p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r4--%E9%87%8D%E5%91%BD%E5%90%8D%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%AD%E7%9A%84%E5%9B%A0%E5%AD%90%E6%B0%B4%E5%B9%B3renaming-levels-of-a-factor/">
+                <h2 class="post-title">R4--重命名一个数据集中的因子水平Renaming-levels-of-a-factor</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  Problem You want to rename the levels in a factor.
+Solution # A sample factor to work with. x&lt;-factor(c(&quot;alpha&quot;,&quot;beta&quot;,&quot;gamma&quot;,&quot;alpha&quot;,&quot;beta&quot;)) x #&gt; [1] alpha beta gamma alpha beta #&gt; Levels: alpha beta gammalevels(x) #&gt; [1] &quot;alpha&quot;&quot;beta&quot;&quot;gamma&quot;  The easiest way is to use revalue() or mapvalues() from the plyr package:
+library(plyr) revalue(x, c(&quot;beta&quot;=&quot;two&quot;, &quot;gamma&quot;=&quot;three&quot;)) #&gt; [1] alpha two three alpha two #&gt; Levels: alpha two threemapvalues(x, from = c(&quot;beta&quot;, &quot;gamma&quot;), to = c(&quot;two&quot;, &quot;three&quot;)) #&gt; [1] alpha two three alpha two #&gt; Levels: alpha two three  If you don’t want to rely on plyr, you can do the following with R’s built-in functions.
+                  <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r4--%E9%87%8D%E5%91%BD%E5%90%8D%E4%B8%80%E4%B8%AA%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%AD%E7%9A%84%E5%9B%A0%E5%AD%90%E6%B0%B4%E5%B9%B3renaming-levels-of-a-factor/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r5--%E7%94%BB%E5%9B%BE-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/">
+                <h2 class="post-title">R5--画图-字体设置</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>函数<code>pdf</code>（或<code>win.metafile</code>）中加入<code>famil=&quot;...&quot;</code>可以设置字体。可用的字体​除了&rdquo;sans&rdquo;，&rdquo;mono&rdquo;，&rdquo;serif&rdquo;外还有 &rdquo;AvantGarde&rdquo;, &ldquo;Bookman&rdquo;, &ldquo;Courier&rdquo;, &ldquo;Helvetica&rdquo;, &ldquo;Helvetica-Narrow&rdquo;, &ldquo;NewCenturySchoolbook&rdquo;, &ldquo;Palatino&rdquo; or &ldquo;Times&rdquo;。但这个函数的设置是全局性的，如果包含多个分图而分图需要不同字体的话（这个情况极为少见，我是画着玩儿），还是得用<code>par</code>函数，依旧是<code>family=&quot;...&quot;</code>的声明。<code>font</code>主要用来更改<strong>加粗</strong>、斜体等，改变坐标轴标签的方向则是用<code>las</code>函数，比如<code>las=2</code>时，逆时针90°。</p>
+</blockquote>
+
+<p>#example​</p>
+
+<pre><code>pdf(&quot;box.pdf&quot;,6,4,family = &quot;NewCenturySchoolbook&quot;)
+par(mar = c(2, 2,2, .5),mfrow=c(2,2))
+boxplot(mpg~cyl,data = mtcars,main=&quot;NewCenturySchoolbook&quot;)
+par(family=&quot;sans&quot;)
+boxplot(mpg~cyl,data = mtcars,main=&quot;sans (Helvetica)&quot;)
+par(family=&quot;mono&quot;)
+boxplot(mpg~cyl,data = mtcars,main=&quot;mono (Courier)&quot;)
+par(family=&quot;serif&quot;)
+boxplot(mpg~cyl,data = mtcars,main=&quot;serif (Times)&quot;)
+dev.off()
+</code></pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-5cc10966f98e5bf3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r6--%E6%8A%A5%E9%94%99error-in-plot-new---figure-margins-too-large/">
+                <h2 class="post-title">R6--报错Error-in-plot-new()---figure-margins-too-large</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <p><code>RStudio</code>中报错<a href="http://stackoverflow.com/questions/23050928/error-in-plot-new-figure-margins-too-large-scatter-plot">Error in plot.new() : figure margins too large</a>。
+<strong>原因</strong>：图的边距太小，就是边距设置的太大。一个是确实小，<code>par(&quot;mar&quot;)</code>可以查看，可以通过<code>par(mar=c(1,1,1,1))</code>修改。但有时问题依然存在，这是第二个原因，<code>RStudio</code>的四分窗口中plot的窗口过小，解决办法就是<strong>用鼠标把窗口拖大点</strong>。</p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r7--error-result-would-be-too-long-a-vector/">
+                <h2 class="post-title">R7--error-result-would-be-too-long-a-vector</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <p>result would be too long a vector</p>
+
+<p>内存不足</p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r8--%E6%95%B0%E6%8D%AE%E6%A1%86%E4%B8%AD%E6%8F%92%E5%85%A5%E8%A1%8C%E5%9C%A8r%E4%B8%AD/">
+                <h2 class="post-title">R8--数据框中插入行在R中</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  我们都知道在Excel中插入行是件比较简单的事情，但是当数据量非常大，而我们又不知道缺失行的具体位置时，逐个添加是件耗时费力的事。相反，R中添加行并不容易，需要一行代码，和Excel类似，具体的运算不得而知，可能会非常复杂，但依赖于许多高手不齿的for循环，查找及插入就变得相对容易操作。 今天处理一个相对棘手的问题，耗时5h有余，但值得庆幸的是问题最终得到解决，问题描述及解决方法如下：
+ 问题 需要对一个本地下载的基因数据库数据进行分类汇总，数据库的格式如下：
+UniProtID:\tA1CIY4_ASPCL Gene Symbol:\tACLA_053130 DNA Info:\tEMBL:EAW10839.1 Protein Length:\t139 Organism:\tAspergillus clavatus Taxonomy ID:\t344612 Description:\tUnknown Pubmed:\t18404212 NCBI RefSeq:\tXP_001272265.1, XM_001272264.1 Pfam:\tID:PF09044; Description: Kp4 Disease-Host:\thumans,insects Disease-Hostkey:\tvertebrata Disease:\tallergic alveolitis DiseaseKey:\tAllergy Gene Ontology:\tID:0005576; Method: IEA:InterPro; Description: C:extracellular region; ID:0009405; Method: IEA:InterPro; Description: P:pathogenesis Protein Sequence:\tMLATTLIMVASALSANALGINCRGSAKCSALWGPSDAAKQLTNVIQGIDTNRWYLNGEHI 60; ACVGNDAGNGGGYCAFLQKTGGTNGGVIKNLAHYINDHGCKQCGSVPYYYPQGNNNVDDG 120; ELTYNYVDNPCVPAGAKLC  每个基因有如上的16个信息，但个别基因缺失部分信息，而且也没有用NA表示出来，具体哪些基因信息缺失也不得而知。我们需要做的是把这16个信息分类汇总，即转成一个有 16个变量和n个基因的数据框。可能在Perl中或Python中相对容易，无奈并不会，只懂一点R语言，就用这个来处理了。
+处理步骤 首先要读取数据。 这是类似文本的文件，每行只有Tab分隔符，我们不能使用read.的一类函数，这里选择用scan()。
+te &lt;- scan(&quot;database.txt&quot;, what=&quot;&quot;, sep=&quot;\n&quot;)  注意！！！scan是逐行扫描的，这里的分隔符是\n。而文件中有些信息比如蛋白序列是在多行上的，这样的话就会当成多个元素来处理，因此要先将这些不想要的换行符去掉，直接在编辑器中替换即可。
+te.2 &lt;- strsplit(te.2, '\t') #按照tab分割信息条目 names(te.2) &lt;- sapply(te.2, `[[`, 1) #按照条目标题（16个）汇总 te.
+                  <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r8--%E6%95%B0%E6%8D%AE%E6%A1%86%E4%B8%AD%E6%8F%92%E5%85%A5%E8%A1%8C%E5%9C%A8r%E4%B8%AD/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+        </div>
+        
+          <ul class="pager main-pager">
+            
+            
+              <li class="next">
+                <a href="../../categories/r%E8%AE%B0%E5%BD%95%E6%9C%AC/page/2/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../categories/r%E8%AE%B0%E5%BD%95%E6%9C%AC/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

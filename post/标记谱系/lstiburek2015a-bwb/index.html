@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Lstiburek2015a-bwb</title>
+  <meta property="og:title" content="Lstiburek2015a-bwb" />
+  <meta name="twitter:title" content="Lstiburek2015a-bwb" />
+  <meta name="description" content="Lstibůrek M, Hodge GR, Lachout P (2015) Uncovering genetic information from commercial forest plantations—making up for lost time using “Breeding without Breeding.” Tree Genet Genomes 11:55. doi: 10.1007/s11295-015-0881-y
+ 摘要 提出了无育种育种的应用（BwB），从现有种植园中发现或提取遗传信息，利用谱系重建和BLUP预测育种价值，识别遗传优良个体。重点是在开展运营育种计划时使用该方法来规避第一个育种和测试周期，但也可以应用于更先进的树木改良计划。进行了一项模拟研究，以检查BwB方法中使用的三种概念人群的不同大小，并将使用该方法获得的遗传成果与全同胞育种和测试策略如果已经开始实现的遗传成果进行比较几年前。 BwB方法基于具有相对较少数量的树（从1,200至3600）的谱系重建，其包括大小为NR = 600至3,000的随机选择的亚群，以及大小NT = 600（根据表型单独在5,940至23,760棵树中预选）。随着重建的谱系，进行表型数据的组合的REML / BLUP分析来预测育种值，并且进行线性优化以进行最终选择以最大化增益，同时约束与给定有效群体大小的相关性Ne = 5,10，或20.结果表明，BwB战略可以实现相当程度的遗传增益，相当于使用全同步策略可以实现的收益的80％至98％。 关键词谱系重建BLUP。树繁殖。育种策略
+介绍 树是长寿的生物，因此经常需要数年才能达到繁殖成熟度。商业林业还涉及时间跨度远远大于大多数作物植物或动物的时间长度：桉树的8年旋转长度被认为是相当快的，温带和亚热带松树的15至25年是非常常见的，而树种来自北方气候可能有30至80年的旋转，甚至更长。因此，树木育种是一项长期的工作。 传统上，在商业种植园中，通过在自然景观或外来种植园物种中进行群众选择来启动树木育种计划。有时，育种者将直接从天然植物或种植园中选定的树种种子，但经常选择的树木被种植在种子果园或繁殖植物园中，随后等待数年，直到种子收集才能完成。通过种子，育种者通常会建立一系列具有良好结构的交配设计的复制后代测试，并再次等待几年的树木达到可以获得有意义的数据的年龄（例如，4至20年，具体取决于该物种）（White等人2007）。 二十多年来，遗传学家已经知道分子标记数据可能用于估计相关性（例如，Queller和Goodnight 1989）。分子遗传学的进展，特别是高度信息的DNA标记如微卫星（SSR）和单核苷酸多态性（SNPs）的发展，引入了新的树种育种方法的可能性。这些新方法之一是谱系重建，其是使用分子数据来确定个体群体之间的家谱关系（例如，Meagher和Thompson 1986）。 树种育种者提出了许多方法，可以在运营育种计划中使用谱系重建。例如，Lambeth等人（2001）引入了一种称为Polymix Breeding with Parental Analysis的测试策略。该策略的动机是，花粉组合的育种比全同质育种更具成本效益，随后可以使用该标记来识别潜在选择候选者的男性父母，以控制相关性，或识别男性父母的所有后代，以产生一个完整的同胞交配系。 El-Kassaby等人（2007）和El-Kassaby和Lstibrek（2009）将这一想法扩展到开放授粉的种群，指出即使是自然交配和家庭规模不同，家谱重建也可用于估计遗传参数并预测育种价值。他们的重点在于，育种者可以在不产生任何杂交的情况下获得遗传利益，他们称这种方法是无育种的BBreed（BwB）。 Hansen和McKinney（2010）将这种方法应用于从具有99个克隆的种子果园中产生的Abies nordmanniana的商业种植。使用一组12个SSR标记，以及父母的基因型信息，他们能够为80％置信水平的98％的后代分配亲本（双亲）。 Hansen和McKinney称他们的方法Bquasi-field测试，^强调，育种者可以使用血统重建方法创建像正常的后代测试数据。 在本研究中，我们将讨论一种从现有种植园发现或提取血统信息并预测育种价值并鉴定遗传优势个体的方法。具体来说，我们试图描述一个BwB如何处理一个特定物种的常规种植园，以启动一个运营的育种计划。实际上，这种方法可以用来规避森林树木改良计划中的第一个繁殖和测试周期。目标是勾画一种可以实现绝大多数遗传增益的方法，如果一个全面的传统选择和育种计划已经在几年前开始，那么这种遗传增益将会发生。首先简要概述概念思想，然后进行彻底的定量遗传分析。
+BwB方法概要 假设我们有一种商业利益，这种物种的一些种植园，没有遗传测试。此外，假设种植园的父母是未知的，即不能用于育种或果园，并且不能用于基因分型。目的是从商业种植园提取生殖检测数据，进行遗传评估（育种价值预测），以进行选择。该过程涉及三个概念群体：BwB群体和该群体的两个子集，随机亚群和顶表型子群体。该过程概述如下。 1.测量和/或检查NBwB大小的整个BwB群体，这将是物种种植基地的一个子集。 2.确定一个最大表型亚种群的NT，由BwB群体中最好的表型组成。这些树将是最终的选择候选人，并提供高选择差异。 3.从BwB群体中选择大小为NR的随机子群体。随机亚群的目的是提供家庭手段估计数据（或相当于亲本育种值）的数据。 4.使用分子标记基因型信息作为组合全系谱重建（NR &#43; NT）的随机和顶表型亚种群。 5.进行REML-BLUP评估（利用系谱和表型测量）预测组合随机和顶表型亚群的育种值（BV）。 将从BwB方法获得的遗传收益与可从大规模全同胞育种和测试策略中获得的遗传成果进行比较。我们不打算提出以下描述的特定全同步测试策略在效率方面是最佳的;相反，我们只是想将BwB策略与大量全面的全同步测试工作进行比较，从而导致良好的遗传增益。 本研究的具体目标是： 1.">
+  <meta property="og:description" content="Lstibůrek M, Hodge GR, Lachout P (2015) Uncovering genetic information from commercial forest plantations—making up for lost time using “Breeding without Breeding.” Tree Genet Genomes 11:55. doi: 10.1007/s11295-015-0881-y
+ 摘要 提出了无育种育种的应用（BwB），从现有种植园中发现或提取遗传信息，利用谱系重建和BLUP预测育种价值，识别遗传优良个体。重点是在开展运营育种计划时使用该方法来规避第一个育种和测试周期，但也可以应用于更先进的树木改良计划。进行了一项模拟研究，以检查BwB方法中使用的三种概念人群的不同大小，并将使用该方法获得的遗传成果与全同胞育种和测试策略如果已经开始实现的遗传成果进行比较几年前。 BwB方法基于具有相对较少数量的树（从1,200至3600）的谱系重建，其包括大小为NR = 600至3,000的随机选择的亚群，以及大小NT = 600（根据表型单独在5,940至23,760棵树中预选）。随着重建的谱系，进行表型数据的组合的REML / BLUP分析来预测育种值，并且进行线性优化以进行最终选择以最大化增益，同时约束与给定有效群体大小的相关性Ne = 5,10，或20.结果表明，BwB战略可以实现相当程度的遗传增益，相当于使用全同步策略可以实现的收益的80％至98％。 关键词谱系重建BLUP。树繁殖。育种策略
+介绍 树是长寿的生物，因此经常需要数年才能达到繁殖成熟度。商业林业还涉及时间跨度远远大于大多数作物植物或动物的时间长度：桉树的8年旋转长度被认为是相当快的，温带和亚热带松树的15至25年是非常常见的，而树种来自北方气候可能有30至80年的旋转，甚至更长。因此，树木育种是一项长期的工作。 传统上，在商业种植园中，通过在自然景观或外来种植园物种中进行群众选择来启动树木育种计划。有时，育种者将直接从天然植物或种植园中选定的树种种子，但经常选择的树木被种植在种子果园或繁殖植物园中，随后等待数年，直到种子收集才能完成。通过种子，育种者通常会建立一系列具有良好结构的交配设计的复制后代测试，并再次等待几年的树木达到可以获得有意义的数据的年龄（例如，4至20年，具体取决于该物种）（White等人2007）。 二十多年来，遗传学家已经知道分子标记数据可能用于估计相关性（例如，Queller和Goodnight 1989）。分子遗传学的进展，特别是高度信息的DNA标记如微卫星（SSR）和单核苷酸多态性（SNPs）的发展，引入了新的树种育种方法的可能性。这些新方法之一是谱系重建，其是使用分子数据来确定个体群体之间的家谱关系（例如，Meagher和Thompson 1986）。 树种育种者提出了许多方法，可以在运营育种计划中使用谱系重建。例如，Lambeth等人（2001）引入了一种称为Polymix Breeding with Parental Analysis的测试策略。该策略的动机是，花粉组合的育种比全同质育种更具成本效益，随后可以使用该标记来识别潜在选择候选者的男性父母，以控制相关性，或识别男性父母的所有后代，以产生一个完整的同胞交配系。 El-Kassaby等人（2007）和El-Kassaby和Lstibrek（2009）将这一想法扩展到开放授粉的种群，指出即使是自然交配和家庭规模不同，家谱重建也可用于估计遗传参数并预测育种价值。他们的重点在于，育种者可以在不产生任何杂交的情况下获得遗传利益，他们称这种方法是无育种的BBreed（BwB）。 Hansen和McKinney（2010）将这种方法应用于从具有99个克隆的种子果园中产生的Abies nordmanniana的商业种植。使用一组12个SSR标记，以及父母的基因型信息，他们能够为80％置信水平的98％的后代分配亲本（双亲）。 Hansen和McKinney称他们的方法Bquasi-field测试，^强调，育种者可以使用血统重建方法创建像正常的后代测试数据。 在本研究中，我们将讨论一种从现有种植园发现或提取血统信息并预测育种价值并鉴定遗传优势个体的方法。具体来说，我们试图描述一个BwB如何处理一个特定物种的常规种植园，以启动一个运营的育种计划。实际上，这种方法可以用来规避森林树木改良计划中的第一个繁殖和测试周期。目标是勾画一种可以实现绝大多数遗传增益的方法，如果一个全面的传统选择和育种计划已经在几年前开始，那么这种遗传增益将会发生。首先简要概述概念思想，然后进行彻底的定量遗传分析。
+BwB方法概要 假设我们有一种商业利益，这种物种的一些种植园，没有遗传测试。此外，假设种植园的父母是未知的，即不能用于育种或果园，并且不能用于基因分型。目的是从商业种植园提取生殖检测数据，进行遗传评估（育种价值预测），以进行选择。该过程涉及三个概念群体：BwB群体和该群体的两个子集，随机亚群和顶表型子群体。该过程概述如下。 1.测量和/或检查NBwB大小的整个BwB群体，这将是物种种植基地的一个子集。 2.确定一个最大表型亚种群的NT，由BwB群体中最好的表型组成。这些树将是最终的选择候选人，并提供高选择差异。 3.从BwB群体中选择大小为NR的随机子群体。随机亚群的目的是提供家庭手段估计数据（或相当于亲本育种值）的数据。 4.使用分子标记基因型信息作为组合全系谱重建（NR &#43; NT）的随机和顶表型亚种群。 5.进行REML-BLUP评估（利用系谱和表型测量）预测组合随机和顶表型亚群的育种值（BV）。 将从BwB方法获得的遗传收益与可从大规模全同胞育种和测试策略中获得的遗传成果进行比较。我们不打算提出以下描述的特定全同步测试策略在效率方面是最佳的;相反，我们只是想将BwB策略与大量全面的全同步测试工作进行比较，从而导致良好的遗传增益。 本研究的具体目标是： 1.">
+  <meta name="twitter:description" content="Lstibůrek M, Hodge GR, Lachout P (2015) Uncovering genetic information from commercial forest plantations—making up for lost time using “Breeding without Breeding.” Tree Genet Genomes 11:55. doi: …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/lstiburek2015a-bwb/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/lstiburek2015a-bwb/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Lstiburek2015a-bwb</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (70 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Lstiburek2015a-bwb</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (70 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Lstibůrek M, Hodge GR, Lachout P (2015) Uncovering genetic information from commercial forest plantations—making up for lost time using “Breeding without Breeding.” Tree Genet Genomes 11:55. doi: 10.1007/s11295-015-0881-y</p>
+</blockquote>
+
+<h1 id="摘要">摘要</h1>
+
+<p>提出了无育种育种的应用（BwB），从现有种植园中发现或提取遗传信息，利用谱系重建和BLUP预测育种价值，识别遗传优良个体。<strong>重点是在开展运营育种计划时使用该方法来规避第一个育种和测试周期，但也可以应用于更先进的树木改良计划。</strong>进行了一项模拟研究，以检查BwB方法中使用的三种概念人群的不同大小，并将使用该方法获得的遗传成果与全同胞育种和测试策略如果已经开始实现的遗传成果进行比较几年前。 BwB方法基于具有相对较少数量的树（从1,200至3600）的谱系重建，其包括大小为NR = 600至3,000的随机选择的亚群，以及大小NT = 600（根据表型单独在5,940至23,760棵树中预选）。随着重建的谱系，进行表型数据的组合的REML / BLUP分析来预测育种值，并且进行线性优化以进行最终选择以最大化增益，同时约束与给定有效群体大小的相关性Ne = 5,10，或20.结果表明，BwB战略可以实现相当程度的遗传增益，相当于使用全同步策略可以实现的收益的80％至98％。
+关键词谱系重建BLUP。树繁殖。育种策略</p>
+
+<h1 id="介绍">介绍</h1>
+
+<p>树是长寿的生物，因此经常需要数年才能达到繁殖成熟度。商业林业还涉及时间跨度远远大于大多数作物植物或动物的时间长度：桉树的8年旋转长度被认为是相当快的，温带和亚热带松树的15至25年是非常常见的，而树种来自北方气候可能有30至80年的旋转，甚至更长。因此，树木育种是一项长期的工作。
+传统上，在商业种植园中，通过在自然景观或外来种植园物种中进行群众选择来启动树木育种计划。有时，育种者将直接从天然植物或种植园中选定的树种种子，但经常选择的树木被种植在种子果园或繁殖植物园中，随后等待数年，直到种子收集才能完成。通过种子，育种者通常会建立一系列具有良好结构的交配设计的复制后代测试，并再次等待几年的树木达到可以获得有意义的数据的年龄（例如，4至20年，具体取决于该物种）（White等人2007）。
+二十多年来，遗传学家已经知道分子标记数据可能用于估计相关性（例如，Queller和Goodnight 1989）。分子遗传学的进展，特别是高度信息的DNA标记如微卫星（SSR）和单核苷酸多态性（SNPs）的发展，引入了新的树种育种方法的可能性。这些新方法之一是谱系重建，其是使用分子数据来确定个体群体之间的家谱关系（例如，Meagher和Thompson 1986）。
+树种育种者提出了许多方法，可以在运营育种计划中使用谱系重建。例如，<strong>Lambeth等人（2001）引入了一种称为Polymix Breeding with Parental Analysis的测试策略。该策略的动机是，花粉组合的育种比全同质育种更具成本效益，随后可以使用该标记来识别潜在选择候选者的男性父母，以控制相关性，或识别男性父母的所有后代，以产生一个完整的同胞交配系。</strong> <strong>El-Kassaby等人（2007）和El-Kassaby和Lstibrek（2009）将这一想法扩展到开放授粉的种群，指出即使是自然交配和家庭规模不同，家谱重建也可用于估计遗传参数并预测育种价值。他们的重点在于，育种者可以在不产生任何杂交的情况下获得遗传利益，他们称这种方法是无育种的BBreed（BwB）。</strong> Hansen和McKinney（2010）将这种方法应用于从具有99个克隆的种子果园中产生的Abies nordmanniana的商业种植。使用一组12个SSR标记，以及父母的基因型信息，他们能够为80％置信水平的98％的后代分配亲本（双亲）。 Hansen和McKinney称他们的方法Bquasi-field测试，^强调，育种者可以使用血统重建方法创建像正常的后代测试数据。
+在本研究中，我们将讨论一种从现有种植园发现或提取血统信息并预测育种价值并鉴定遗传优势个体的方法。具体来说，我们试图描述一个BwB如何处理一个特定物种的常规种植园，以启动一个运营的育种计划。实际上，这种方法可以用来规避森林树木改良计划中的第一个繁殖和测试周期。目标是勾画一种可以实现绝大多数遗传增益的方法，如果一个全面的传统选择和育种计划已经在几年前开始，那么这种遗传增益将会发生。首先简要概述概念思想，然后进行彻底的定量遗传分析。</p>
+
+<p>BwB方法概要
+假设我们有一种商业利益，这种物种的一些种植园，没有遗传测试。此外，假设种植园的父母是未知的，即不能用于育种或果园，并且不能用于基因分型。目的是从商业种植园提取生殖检测数据，进行遗传评估（育种价值预测），以进行选择。该过程涉及三个概念群体：BwB群体和该群体的两个子集，随机亚群和顶表型子群体。该过程概述如下。
+1.测量和/或检查NBwB大小的整个BwB群体，这将是物种种植基地的一个子集。
+2.确定一个最大表型亚种群的NT，由BwB群体中最好的表型组成。这些树将是最终的选择候选人，并提供高选择差异。
+3.从BwB群体中选择大小为NR的随机子群体。随机亚群的目的是提供家庭手段估计数据（或相当于亲本育种值）的数据。
+4.使用分子标记基因型信息作为组合全系谱重建（NR + NT）的随机和顶表型亚种群。
+5.进行REML-BLUP评估（利用系谱和表型测量）预测组合随机和顶表型亚群的育种值（BV）。
+将从BwB方法获得的遗传收益与可从大规模全同胞育种和测试策略中获得的遗传成果进行比较。我们不打算提出以下描述的特定全同步测试策略在效率方面是最佳的;相反，我们只是想将BwB策略与大量全面的全同步测试工作进行比较，从而导致良好的遗传增益。
+本研究的具体目标是：
+1.从BwB方法检查BV预测的遗传参数估计和准确性。
+2.确定来自BwB方法的预期遗传增益，并将其与传统测试策略（全同胞交配，复制后代测试等）的收益进行比较。
+3.检查BwB策略（NBwB，NR和NT）中使用的三个人群的不同大小，以便为操作树改进计划提出近似最佳的大小。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/lstiburek2015a-%E5%88%A9%E7%94%A8bwb%E8%A1%A5%E5%85%85%E7%BC%BA%E5%A4%B1%E7%9A%84%E4%BF%A1%E6%81%AF/" data-toggle="tooltip" data-placement="top" title="Lstiburek2015a-利用bwb补充缺失的信息">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/diallel/lopez2003-%E6%A1%89%E6%A0%91-%E6%AF%8D%E4%BD%93%E6%95%88%E5%BA%94/" data-toggle="tooltip" data-placement="top" title="Lopez2003-桉树-母体效应">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

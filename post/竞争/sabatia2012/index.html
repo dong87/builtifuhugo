@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Sabatia2012</title>
+  <meta property="og:title" content="Sabatia2012" />
+  <meta name="twitter:title" content="Sabatia2012" />
+  <meta name="description" content="Sabatia C O, Burkhart H E. 2012. Competition among loblolly pine trees: Does genetic variability of the trees in a stand matter? Forest Ecology and Management, 263(January 2012): 122–130.
+ 使用基于个体大小的竞争指数，比较了一个立地中树间的种内竞争强度，用于火炬松种子起源vs克隆起源。应用了使用模拟退火最大似然度（MLSA）的方法，采用具有简单相关系数（DRSC）的离散半径的方法，并将其结果与竞争对手的可观察效应进行比较。发现DRSC估计竞争对手的搜索半径是合理的，符合可观察到的种内竞争的立场效应。 MLSA似乎高估了最佳竞争对手的搜索范围，有可能对竞争对手的搜索范围进行估计，这并不是独一无二的，而且一般来说，遗传多样性在竞争对手中竞争力最为激烈。 DRSC方法提供了MLSA的简单替代方案，其中MLSA背后的假设不成立或可能不容易进行检查。比较不同遗传多样性的竞争者搜索半径和竞争的可观察站立水平效应没有发现证据支持这样的假设，即火龙杉树中树木之间更大的遗传均匀性将导致树木之间更强烈的种内竞争站。
+1.引言 **森林中的树木之间的竞争已经影响森林生产力。在管理森林中种植时间和间隔时间表的最佳间隔处方是对立场中树木之间竞争的影响的回应。在生态学上，树木之间的竞争影响森林生态系统的物种组成，并在演化和物种形成中发挥作用。随着克隆林业的到来，人们担心克隆植物中树木之间的遗传一致性可能导致与非克隆树种相比，在这种立场上的更大的种内竞争（Lindgren，1993）。因此，克隆立场可能需要管理与非克隆战略中使用的策略不同的竞争效应的策略。很少有研究比较了克隆与非克隆立场之间的树木间竞争。 Boyden等人（2008）提到，大多数关于遗传均匀性对植物竞争强度的影响的研究已经在草本植物中，发现没有一致认为同一物种生长在一起的植物之间的遗传相似性是否增加，减少或没有影响他们之间的竞争激烈。比较遗传均匀性对森林景观树木竞争性相互作用的研究，得出了一个立场中树木遗传一致性与该树种竞争强度之间关系的相关结论。出售（2005）在南非的一项研究中得出结论，桉树的克隆立场中的树木之间的竞争？桉树比桉树种子原始树中的树木竞争较不强烈。 Boyden等人（2008）在巴西的研究中，使用与克隆和种子起源相同的物种组合作为销售（2005），得出结论是相反的情况。矛盾的结论可能是由于用于“衡量”竞争的不同方法。销售（2005）通过比较两种支架类型的密度诱导死亡率和单位面积体积产量得出结论。 Boyden等人（2008）比较了树木生长与相邻树木大小竞争指数之间的功能关系估计的两种支架类型的有效竞争者搜索半径。 没有一个已知的实际测量森林展台竞争的强度。已经提出并利用许多利用树木特征的指数来推断出这种树木的竞争水平。这些指数包括诸如单位面积的树木，相对间距和Reineke的立场密度指数（Reineke，1933）等立面指数以及不同的树木距离无关和距离相关的竞争指数。 Daniels等人对一些现有的树木竞争指数进行了评估和比较。 （1986），Tomé和Burkhart（1989），以及Biging和Dobbertin（1995）。 Hegyi（1974）的距离加权大小比例竞争指标或其修改可能是应用最广泛的树木级别竞争指数。 Hegyi（1974）的竞争指数可能一般表示为 其中CIi是竞争索引，dbhi是第i个树的dbh; dbhj是其第j个​​竞争对手的dbh; dij是第i个树和第j个竞争对手之间的欧几里得距离; a和b是参数。参数a是尺寸比的修饰符参数。参数b是当距离增加时，给定大小的相邻树的竞争影响的指数下降速率。较大的b值表示邻居树的竞争影响更快下降。在原始的Hegyi（1974）公式中，参数a和b各自具有值1.在该公式中的假设是随着距离的增加，相邻树的竞争影响以速率= 1指数地减小。值为a = 1，Daniels（1976）观察到，在火龙果中，值b = 1导致与b = 2值相比，高度和dbh生长相关性更高的竞争指数。 Lorimer（1983）发现b = 0.5给出混合硬木架的最佳指标。利用最大似然估计与数值优化相结合来估计a和b的方法已经被提出并使用，例如， Miina和Pukkala（2000），Canham et al。 （2004），Richards et al。 （2008）。此外，为了估计a和b，这些方法还估计竞争对手搜索半径以及使用的增长竞争指数（GR-CI）模型中的其他参数数。然而，不知道这些方法是否由于这些参数之间的高相关性的可能性而唯一地估计搜索半径参数和竞争指数中的其他参数。没有使用这些方法的研究报告了参数之间的相关性。已知最大似然估计可能不是独特的，特别是在模型中的参数高度相关的情况下。竞争参数化是否使得竞争指数在竞争中的竞争强度明显更好的指标也是值得怀疑的。在Richards等人的比较中（2008），额外的参数化只将模型均方误差从0.192降低到0.167。没有提到这个减少是否显着。竞争指数以不同的方式用于比较不同展位之间竞争力的强度。 M？kinen（1997）通过比较不同遗传品种的生长斜率与树木竞争指数趋势线，比较了不同苏格兰松（Pinus silvestris L.）品种的竞争强度。采用这种方式，倾斜斜率更为陡峭的趋势线被认为在其中树木之间有更激烈的竞争。 Brodie和DeBell（2004）使用了类似的方法，但具有不同的竞争指数，以比较单克隆抗体与杨树（Populus Species）的克隆混合物站内竞争的竞争力。销售（2005）使用最大尺寸密度线和单位面积批量生产比较了桉树的克隆和非克隆立场的竞争强度。 Boyden等人（2008）通过将模拟退火（MLSA）的最大似然估计的不同支架类型的搜索半径参数进行比较，比较了克隆和非克隆立场的相似物种组合中的竞争强度，数值优化技术。因此，在比较不同支架类型的竞争强度方面并没有统一的做法，而替代方法的表现比较应该证明是有用的。 本研究的目的是（1）确定火炬松林中树木之间的遗传一致性是否会导致该支架中树木之间的竞争更激烈;（2）评估两种不同比较强度方法的性能不同摊位的树木之间的竞争。对于目标1，我们测试了一个假设，即在火鸡杉树中的树木之间的竞争比克隆中的竞争更强烈。对于目标2，我们将MLSA的性能与简单相关（DRSC）的简单方法称为离散半径进行了比较。">
+  <meta property="og:description" content="Sabatia C O, Burkhart H E. 2012. Competition among loblolly pine trees: Does genetic variability of the trees in a stand matter? Forest Ecology and Management, 263(January 2012): 122–130.
+ 使用基于个体大小的竞争指数，比较了一个立地中树间的种内竞争强度，用于火炬松种子起源vs克隆起源。应用了使用模拟退火最大似然度（MLSA）的方法，采用具有简单相关系数（DRSC）的离散半径的方法，并将其结果与竞争对手的可观察效应进行比较。发现DRSC估计竞争对手的搜索半径是合理的，符合可观察到的种内竞争的立场效应。 MLSA似乎高估了最佳竞争对手的搜索范围，有可能对竞争对手的搜索范围进行估计，这并不是独一无二的，而且一般来说，遗传多样性在竞争对手中竞争力最为激烈。 DRSC方法提供了MLSA的简单替代方案，其中MLSA背后的假设不成立或可能不容易进行检查。比较不同遗传多样性的竞争者搜索半径和竞争的可观察站立水平效应没有发现证据支持这样的假设，即火龙杉树中树木之间更大的遗传均匀性将导致树木之间更强烈的种内竞争站。
+1.引言 **森林中的树木之间的竞争已经影响森林生产力。在管理森林中种植时间和间隔时间表的最佳间隔处方是对立场中树木之间竞争的影响的回应。在生态学上，树木之间的竞争影响森林生态系统的物种组成，并在演化和物种形成中发挥作用。随着克隆林业的到来，人们担心克隆植物中树木之间的遗传一致性可能导致与非克隆树种相比，在这种立场上的更大的种内竞争（Lindgren，1993）。因此，克隆立场可能需要管理与非克隆战略中使用的策略不同的竞争效应的策略。很少有研究比较了克隆与非克隆立场之间的树木间竞争。 Boyden等人（2008）提到，大多数关于遗传均匀性对植物竞争强度的影响的研究已经在草本植物中，发现没有一致认为同一物种生长在一起的植物之间的遗传相似性是否增加，减少或没有影响他们之间的竞争激烈。比较遗传均匀性对森林景观树木竞争性相互作用的研究，得出了一个立场中树木遗传一致性与该树种竞争强度之间关系的相关结论。出售（2005）在南非的一项研究中得出结论，桉树的克隆立场中的树木之间的竞争？桉树比桉树种子原始树中的树木竞争较不强烈。 Boyden等人（2008）在巴西的研究中，使用与克隆和种子起源相同的物种组合作为销售（2005），得出结论是相反的情况。矛盾的结论可能是由于用于“衡量”竞争的不同方法。销售（2005）通过比较两种支架类型的密度诱导死亡率和单位面积体积产量得出结论。 Boyden等人（2008）比较了树木生长与相邻树木大小竞争指数之间的功能关系估计的两种支架类型的有效竞争者搜索半径。 没有一个已知的实际测量森林展台竞争的强度。已经提出并利用许多利用树木特征的指数来推断出这种树木的竞争水平。这些指数包括诸如单位面积的树木，相对间距和Reineke的立场密度指数（Reineke，1933）等立面指数以及不同的树木距离无关和距离相关的竞争指数。 Daniels等人对一些现有的树木竞争指数进行了评估和比较。 （1986），Tomé和Burkhart（1989），以及Biging和Dobbertin（1995）。 Hegyi（1974）的距离加权大小比例竞争指标或其修改可能是应用最广泛的树木级别竞争指数。 Hegyi（1974）的竞争指数可能一般表示为 其中CIi是竞争索引，dbhi是第i个树的dbh; dbhj是其第j个​​竞争对手的dbh; dij是第i个树和第j个竞争对手之间的欧几里得距离; a和b是参数。参数a是尺寸比的修饰符参数。参数b是当距离增加时，给定大小的相邻树的竞争影响的指数下降速率。较大的b值表示邻居树的竞争影响更快下降。在原始的Hegyi（1974）公式中，参数a和b各自具有值1.在该公式中的假设是随着距离的增加，相邻树的竞争影响以速率= 1指数地减小。值为a = 1，Daniels（1976）观察到，在火龙果中，值b = 1导致与b = 2值相比，高度和dbh生长相关性更高的竞争指数。 Lorimer（1983）发现b = 0.5给出混合硬木架的最佳指标。利用最大似然估计与数值优化相结合来估计a和b的方法已经被提出并使用，例如， Miina和Pukkala（2000），Canham et al。 （2004），Richards et al。 （2008）。此外，为了估计a和b，这些方法还估计竞争对手搜索半径以及使用的增长竞争指数（GR-CI）模型中的其他参数数。然而，不知道这些方法是否由于这些参数之间的高相关性的可能性而唯一地估计搜索半径参数和竞争指数中的其他参数。没有使用这些方法的研究报告了参数之间的相关性。已知最大似然估计可能不是独特的，特别是在模型中的参数高度相关的情况下。竞争参数化是否使得竞争指数在竞争中的竞争强度明显更好的指标也是值得怀疑的。在Richards等人的比较中（2008），额外的参数化只将模型均方误差从0.192降低到0.167。没有提到这个减少是否显着。竞争指数以不同的方式用于比较不同展位之间竞争力的强度。 M？kinen（1997）通过比较不同遗传品种的生长斜率与树木竞争指数趋势线，比较了不同苏格兰松（Pinus silvestris L.）品种的竞争强度。采用这种方式，倾斜斜率更为陡峭的趋势线被认为在其中树木之间有更激烈的竞争。 Brodie和DeBell（2004）使用了类似的方法，但具有不同的竞争指数，以比较单克隆抗体与杨树（Populus Species）的克隆混合物站内竞争的竞争力。销售（2005）使用最大尺寸密度线和单位面积批量生产比较了桉树的克隆和非克隆立场的竞争强度。 Boyden等人（2008）通过将模拟退火（MLSA）的最大似然估计的不同支架类型的搜索半径参数进行比较，比较了克隆和非克隆立场的相似物种组合中的竞争强度，数值优化技术。因此，在比较不同支架类型的竞争强度方面并没有统一的做法，而替代方法的表现比较应该证明是有用的。 本研究的目的是（1）确定火炬松林中树木之间的遗传一致性是否会导致该支架中树木之间的竞争更激烈;（2）评估两种不同比较强度方法的性能不同摊位的树木之间的竞争。对于目标1，我们测试了一个假设，即在火鸡杉树中的树木之间的竞争比克隆中的竞争更强烈。对于目标2，我们将MLSA的性能与简单相关（DRSC）的简单方法称为离散半径进行了比较。">
+  <meta name="twitter:description" content="Sabatia C O, Burkhart H E. 2012. Competition among loblolly pine trees: Does genetic variability of the trees in a stand matter? Forest Ecology and Management, 263(January 2012): 122–130.
+ 使用基于个体大小的竞争 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%AB%9E%E4%BA%89/sabatia2012/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%AB%9E%E4%BA%89/sabatia2012/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Sabatia2012</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (70 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Sabatia2012</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (70 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Sabatia C O, Burkhart H E. 2012. Competition among loblolly pine trees: Does genetic variability of the trees in a stand matter? Forest Ecology and Management, 263(January 2012): 122–130.</p>
+</blockquote>
+
+<p>使用基于个体大小的竞争指数，比较了一个立地中树间的种内竞争强度，用于火炬松种子起源vs克隆起源。应用了使用模拟退火最大似然度（MLSA）的方法，采用具有简单相关系数（DRSC）的离散半径的方法，并将其结果与竞争对手的可观察效应进行比较。发现DRSC估计竞争对手的搜索半径是合理的，符合可观察到的种内竞争的立场效应。 MLSA似乎高估了最佳竞争对手的搜索范围，有可能对竞争对手的搜索范围进行估计，这并不是独一无二的，而且一般来说，遗传多样性在竞争对手中竞争力最为激烈。 DRSC方法提供了MLSA的简单替代方案，其中MLSA背后的假设不成立或可能不容易进行检查。比较不同遗传多样性的竞争者搜索半径和竞争的可观察站立水平效应没有发现证据支持这样的假设，即火龙杉树中树木之间更大的遗传均匀性将导致树木之间更强烈的种内竞争站。</p>
+
+<p>1.引言
+**森林中的树木之间的竞争已经影响森林生产力。在管理森林中种植时间和间隔时间表的最佳间隔处方是对立场中树木之间竞争的影响的回应。在生态学上，树木之间的竞争影响森林生态系统的物种组成，并在演化和物种形成中发挥作用。随着克隆林业的到来，人们担心克隆植物中树木之间的遗传一致性可能导致与非克隆树种相比，在这种立场上的更大的种内竞争（Lindgren，1993）。因此，克隆立场可能需要管理与非克隆战略中使用的策略不同的竞争效应的策略。很少有研究比较了克隆与非克隆立场之间的树木间竞争。 Boyden等人（2008）提到，大多数关于遗传均匀性对植物竞争强度的影响的研究已经在草本植物中，发现没有一致认为同一物种生长在一起的植物之间的遗传相似性是否增加，减少或没有影响他们之间的竞争激烈。比较遗传均匀性对森林景观树木竞争性相互作用的研究，得出了一个立场中树木遗传一致性与该树种竞争强度之间关系的相关结论。出售（2005）在南非的一项研究中得出结论，桉树的克隆立场中的树木之间的竞争？桉树比桉树种子原始树中的树木竞争较不强烈。 Boyden等人（2008）在巴西的研究中，使用与克隆和种子起源相同的物种组合作为销售（2005），得出结论是相反的情况。矛盾的结论可能是由于用于“衡量”竞争的不同方法。销售（2005）通过比较两种支架类型的密度诱导死亡率和单位面积体积产量得出结论。 Boyden等人（2008）比较了树木生长与相邻树木大小竞争指数之间的功能关系估计的两种支架类型的有效竞争者搜索半径。
+没有一个已知的实际测量森林展台竞争的强度。已经提出并利用许多利用树木特征的指数来推断出这种树木的竞争水平。这些指数包括诸如单位面积的树木，相对间距和Reineke的立场密度指数（Reineke，1933）等立面指数以及不同的树木距离无关和距离相关的竞争指数。 Daniels等人对一些现有的树木竞争指数进行了评估和比较。 （1986），Tomé和Burkhart（1989），以及Biging和Dobbertin（1995）。 Hegyi（1974）的距离加权大小比例竞争指标或其修改可能是应用最广泛的树木级别竞争指数。 Hegyi（1974）的竞争指数可能一般表示为
+其中CIi是竞争索引，dbhi是第i个树的dbh; dbhj是其第j个​​竞争对手的dbh; dij是第i个树和第j个竞争对手之间的欧几里得距离; a和b是参数。参数a是尺寸比的修饰符参数。参数b是当距离增加时，给定大小的相邻树的竞争影响的指数下降速率。较大的b值表示邻居树的竞争影响更快下降。在原始的Hegyi（1974）公式中，参数a和b各自具有值1.在该公式中的假设是随着距离的增加，相邻树的竞争影响以速率= 1指数地减小。值为a = 1，Daniels（1976）观察到，在火龙果中，值b = 1导致与b = 2值相比，高度和dbh生长相关性更高的竞争指数。 Lorimer（1983）发现b = 0.5给出混合硬木架的最佳指标。利用最大似然估计与数值优化相结合来估计a和b的方法已经被提出并使用，例如， Miina和Pukkala（2000），Canham et al。 （2004），Richards et al。 （2008）。此外，为了估计a和b，这些方法还估计竞争对手搜索半径以及使用的增长竞争指数（GR-CI）模型中的其他参数数。然而，不知道这些方法是否由于这些参数之间的高相关性的可能性而唯一地估计搜索半径参数和竞争指数中的其他参数。没有使用这些方法的研究报告了参数之间的相关性。已知最大似然估计可能不是独特的，特别是在模型中的参数高度相关的情况下。竞争参数化是否使得竞争指数在竞争中的竞争强度明显更好的指标也是值得怀疑的。在Richards等人的比较中（2008），额外的参数化只将模型均方误差从0.192降低到0.167。没有提到这个减少是否显着。竞争指数以不同的方式用于比较不同展位之间竞争力的强度。 M？kinen（1997）通过比较不同遗传品种的生长斜率与树木竞争指数趋势线，比较了不同苏格兰松（Pinus silvestris L.）品种的竞争强度。采用这种方式，倾斜斜率更为陡峭的趋势线被认为在其中树木之间有更激烈的竞争。 Brodie和DeBell（2004）使用了类似的方法，但具有不同的竞争指数，以比较单克隆抗体与杨树（Populus Species）的克隆混合物站内竞争的竞争力。销售（2005）使用最大尺寸密度线和单位面积批量生产比较了桉树的克隆和非克隆立场的竞争强度。 Boyden等人（2008）通过将模拟退火（MLSA）的最大似然估计的不同支架类型的搜索半径参数进行比较，比较了克隆和非克隆立场的相似物种组合中的竞争强度，数值优化技术。因此，在比较不同支架类型的竞争强度方面并没有统一的做法，而替代方法的表现比较应该证明是有用的。
+本研究的目的是（1）确定火炬松林中树木之间的遗传一致性是否会导致该支架中树木之间的竞争更激烈;（2）评估两种不同比较强度方法的性能不同摊位的树木之间的竞争。对于目标1，我们测试了一个假设，即在火鸡杉树中的树木之间的竞争比克隆中的竞争更强烈。对于目标2，我们将MLSA的性能与简单相关（DRSC）的简单方法称为离散半径进行了比较。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/sarker2015-%E5%B0%8F%E6%89%81%E8%B1%86-/" data-toggle="tooltip" data-placement="top" title="Sarker2015-小扁豆-">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%9A%8F%E7%AC%94/sra%E6%8F%90%E4%BA%A4%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" data-toggle="tooltip" data-placement="top" title="SRA提交快速入门">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>burow1994-diallel-计算机程序</title>
+  <meta property="og:title" content="burow1994-diallel-计算机程序" />
+  <meta name="twitter:title" content="burow1994-diallel-计算机程序" />
+  <meta name="description" content="Burow, M. D., &amp; Coors, J. G. (1994). DIALLEL: A microcomputer program for the simulation and analysis of diallel crosses. Agronomy Journal, 86(1), 154–158. http://doi.org/10.2134/agronj1994.00021962008600010028x
+ 已经开发了微型计算机程序以用作定量遗传学类别中的教学工具并且作为分析来自双列交配的真实数据的手段。程序的第一部分，模拟模块，用作教学工具，为学生提供了机会来检查底层遗传和统计假设的双列交配设计的后果。特别地，该程序说明当采用有限数目的亲本时难以获得方差的遗传分量的可靠​​估计。使用用户输入的群体平均值，亲本数，遗传，环境和误差方差，程序生成并分析多组数据。用户可以通过改变参数来进行实验，以测试不同的策略以应对双工对接设计中固有的困难。第二个模块允许分析在任何四个双列交配设计中进行的真实世界实验。用户可以输入并修正程序本身中的数据，或者从其他程序将数据作为ASCII文件导入。该程序打印了方差表分析，以及品种和交叉，杂种优势，一般和特定组合能力，方差的遗传分量及其标准误差表。
+双列 MATING DESIGN是用于作物育种的重要方案。双列实验的分析用于估计杂种优势并结合选择优良杂交和亲本的能力。群体中的性状的基因作用的类型可以通过加性和优势方差的估计来确定。尽管双列交配的用途，他们的分析和解释可能很困难。计算繁琐，只能用最简单的数据集进行。计算机分析主要基于大型通用型，大型机型统计软件包的编写程序，尽管有几个微处理器程序处理双列交叉的一些方面（MSTAT，1986; Schaffer和Usanis，1989）。此外，由于对准确估计方差的遗传分量所需的数据的数量和质量的理解不足，解释受到阻碍。这已经被几个研究者描述，特别是关于使用不足数量的父母进行杂交（Baker，1978; Dudley和Moll，1969; Hayward，1979）。遗传，环境和误差方差，亲本数量和集合数据的集合数量的大小决定了给定方案估计遗传变异的效率。克服抽样问题的方法不清楚。可以增加父母的数量，但这可能导致大量的交叉。可以构建多套独立的套间交叉，并且结果可以集合在一起，以包括更多的父母，保持交叉的数量在可控的水平（Hallauer和Miranda，1981）。进行实际实验或用手计算实际试验结果的不可行性排除了进行探索性分析以允许比较不同的设计实验方法。 随着微型计算机的普及和对用户友好的软件的重视，克服这些限制是可能的。一个专门用于处理来自双列 cross的数据的简单易用的程序可以使分析更快更容易。这种交配设计的交互式计算机模拟可用于证明实验设计和环境和遗传变异对获得方差分量的可靠​​估计的影响。本文介绍了一种微型计算机程序，可用作量化遗传学类别的教学工具或分析实际实验的数据。作为一个模拟工具，程序使用不同的用户指定的遗传假设生成双列交叉的原始数据，然后分析这些数据，以允许用户检查指定的参数是否足以估计已知的人口基因参数。作为数据分析的工具，程序采用用户输入的数据，并产生一系列经常使用的统计表，用于分析二进制十字。">
+  <meta property="og:description" content="Burow, M. D., &amp; Coors, J. G. (1994). DIALLEL: A microcomputer program for the simulation and analysis of diallel crosses. Agronomy Journal, 86(1), 154–158. http://doi.org/10.2134/agronj1994.00021962008600010028x
+ 已经开发了微型计算机程序以用作定量遗传学类别中的教学工具并且作为分析来自双列交配的真实数据的手段。程序的第一部分，模拟模块，用作教学工具，为学生提供了机会来检查底层遗传和统计假设的双列交配设计的后果。特别地，该程序说明当采用有限数目的亲本时难以获得方差的遗传分量的可靠​​估计。使用用户输入的群体平均值，亲本数，遗传，环境和误差方差，程序生成并分析多组数据。用户可以通过改变参数来进行实验，以测试不同的策略以应对双工对接设计中固有的困难。第二个模块允许分析在任何四个双列交配设计中进行的真实世界实验。用户可以输入并修正程序本身中的数据，或者从其他程序将数据作为ASCII文件导入。该程序打印了方差表分析，以及品种和交叉，杂种优势，一般和特定组合能力，方差的遗传分量及其标准误差表。
+双列 MATING DESIGN是用于作物育种的重要方案。双列实验的分析用于估计杂种优势并结合选择优良杂交和亲本的能力。群体中的性状的基因作用的类型可以通过加性和优势方差的估计来确定。尽管双列交配的用途，他们的分析和解释可能很困难。计算繁琐，只能用最简单的数据集进行。计算机分析主要基于大型通用型，大型机型统计软件包的编写程序，尽管有几个微处理器程序处理双列交叉的一些方面（MSTAT，1986; Schaffer和Usanis，1989）。此外，由于对准确估计方差的遗传分量所需的数据的数量和质量的理解不足，解释受到阻碍。这已经被几个研究者描述，特别是关于使用不足数量的父母进行杂交（Baker，1978; Dudley和Moll，1969; Hayward，1979）。遗传，环境和误差方差，亲本数量和集合数据的集合数量的大小决定了给定方案估计遗传变异的效率。克服抽样问题的方法不清楚。可以增加父母的数量，但这可能导致大量的交叉。可以构建多套独立的套间交叉，并且结果可以集合在一起，以包括更多的父母，保持交叉的数量在可控的水平（Hallauer和Miranda，1981）。进行实际实验或用手计算实际试验结果的不可行性排除了进行探索性分析以允许比较不同的设计实验方法。 随着微型计算机的普及和对用户友好的软件的重视，克服这些限制是可能的。一个专门用于处理来自双列 cross的数据的简单易用的程序可以使分析更快更容易。这种交配设计的交互式计算机模拟可用于证明实验设计和环境和遗传变异对获得方差分量的可靠​​估计的影响。本文介绍了一种微型计算机程序，可用作量化遗传学类别的教学工具或分析实际实验的数据。作为一个模拟工具，程序使用不同的用户指定的遗传假设生成双列交叉的原始数据，然后分析这些数据，以允许用户检查指定的参数是否足以估计已知的人口基因参数。作为数据分析的工具，程序采用用户输入的数据，并产生一系列经常使用的统计表，用于分析二进制十字。">
+  <meta name="twitter:description" content="Burow, M. D., &amp; Coors, J. G. (1994). DIALLEL: A microcomputer program for the simulation and analysis of diallel crosses. Agronomy Journal, 86(1), 154–158. …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/diallel/burow1994-diallel-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/diallel/burow1994-diallel-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>burow1994-diallel-计算机程序</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (34 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>burow1994-diallel-计算机程序</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (34 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Burow, M. D., &amp; Coors, J. G. (1994). DIALLEL: A microcomputer program for the simulation and analysis of diallel crosses. Agronomy Journal, 86(1), 154–158. <a href="http://doi.org/10.2134/agronj1994.00021962008600010028x">http://doi.org/10.2134/agronj1994.00021962008600010028x</a></p>
+</blockquote>
+
+<p>已经开发了微型计算机程序以用作定量遗传学类别中的教学工具并且作为分析来自双列交配的真实数据的手段。程序的第一部分，模拟模块，用作教学工具，为学生提供了机会来检查底层遗传和统计假设的双列交配设计的后果。特别地，该程序说明当采用有限数目的亲本时难以获得方差的遗传分量的可靠​​估计。使用用户输入的群体平均值，亲本数，遗传，环境和误差方差，程序生成并分析多组数据。用户可以通过改变参数来进行实验，以测试不同的策略以应对双工对接设计中固有的困难。第二个模块允许分析在任何四个双列交配设计中进行的真实世界实验。用户可以输入并修正程序本身中的数据，或者从其他程序将数据作为ASCII文件导入。该程序打印了方差表分析，以及品种和交叉，杂种优势，一般和特定组合能力，方差的遗传分量及其标准误差表。</p>
+
+<p><strong>双列 MATING DESIGN是用于作物育种的重要方案。双列实验的分析用于估计杂种优势并结合选择优良杂交和亲本的能力</strong>。群体中的性状的基因作用的类型可以通过加性和优势方差的估计来确定。尽管双列交配的用途，他们的分析和解释可能很困难。计算繁琐，只能用最简单的数据集进行。计算机分析主要基于大型通用型，大型机型统计软件包的编写程序，尽管有几个微处理器程序处理双列交叉的一些方面（MSTAT，1986; Schaffer和Usanis，1989）。此外，由于对准确估计方差的遗传分量所需的数据的数量和质量的理解不足，解释受到阻碍。这已经被几个研究者描述，特别是关于使用不足数量的父母进行杂交（Baker，1978; Dudley和Moll，1969; Hayward，1979）。遗传，环境和误差方差，亲本数量和集合数据的集合数量的大小决定了给定方案估计遗传变异的效率。克服抽样问题的方法不清楚。可以增加父母的数量，但这可能导致大量的交叉。可以构建多套独立的套间交叉，并且结果可以集合在一起，以包括更多的父母，保持交叉的数量在可控的水平（Hallauer和Miranda，1981）。进行实际实验或用手计算实际试验结果的不可行性排除了进行探索性分析以允许比较不同的设计实验方法。
+随着微型计算机的普及和对用户友好的软件的重视，克服这些限制是可能的。一个专门用于处理来自双列 cross的数据的简单易用的程序可以使分析更快更容易。这种交配设计的交互式计算机模拟可用于证明实验设计和环境和遗传变异对获得方差分量的可靠​​估计的影响。本文介绍了一种微型计算机程序，可用作量化遗传学类别的教学工具或分析实际实验的数据。作为一个模拟工具，程序使用不同的用户指定的遗传假设生成双列交叉的原始数据，然后分析这些数据，以允许用户检查指定的参数是否足以估计已知的人口基因参数。作为数据分析的工具，程序采用用户输入的数据，并产生一系列经常使用的统计表，用于分析二进制十字。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/by-analogy-%E7%B1%BB%E6%8E%A8/" data-toggle="tooltip" data-placement="top" title="by-analogy-类推">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/breedr/" data-toggle="tooltip" data-placement="top" title="breedR">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

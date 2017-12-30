@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Gilmour1997-AR1</title>
+  <meta property="og:title" content="Gilmour1997-AR1" />
+  <meta name="twitter:title" content="Gilmour1997-AR1" />
+  <meta name="description" content="Gilmour AR, Cullis BR, Verbyla AP (1997) Accounting for natural and extraneuous variation in the analysis of field experiments. J Agric Biol Environ Stat 2:269–273.
+ 我们确定了来自实地实验的小区误差的空间变化的三个主要组成部分，并扩展Cullis和Gleeson（1991）的二维空间程序以解释它们。组件是整个领域的非平稳，大规模（全球）变化，试验中的固定变化（自然变化或局部趋势），以及通常由实验程序诱导的外部变化，主要与行和列。我们提出了一个策略，用于识别使用残差的网格小区，样本变异小区的透视小区和可能的似然比测试以确定哪些组件存在的小区错误的模型。我们使用两个说明性的例子来演示策略。我们得出结论，虽然没有一个模型充分适合所有现场实验，可分离自回归模型是主导的。然而，经常存在额外的可识别的变化。
+1.引言 自从Wilkinson，Eckert，Hancock和Mayo（1983）提出了他们最近邻的田间实验分析方法，提出了许多替代方法（Green，Jennison和Seheult 1985; Besag和Kempton 1986; Gleeson and Cullis 1987; Martin 1990 ; Cullis和Gleeson 1991; Zimmerman和Harville 1991; Cressie和Hartfield 1996; Cullis，Gogel，Verbyla和Thompson，in press）。一些研究已经审查和评价这些方法;参见例如Lill，Gleeson和Cullis（1988），Wilson（1994），Kempton，Seraphin和Sword（1994）和Grondona，Crossa，Fox和Pfeiffer（1996）。结果是关于方法和模型的一定程度的混乱，有时导致缺乏使用空间模型常规用于小小区场实验的分析的置信度。本文的动机源于我们在过去十年中每年在澳大利亚的植物改良计划中对于超过500个复制和未复制品种试验的分析中经常使用空间分析程序。我们相信它们在实现提高的准确性和效率方面的有用性。然而，显然没有一个空间模型将适合所有试验，并且除了自然存在的之外，在实验期间经常引入可识别的变化。自动使用特定的空间模型可能导致相当严重的低效率，Wilkinson等人倡导的简单模型（1983），Green et al。 （1985）和Besag和Kempton（1986）经常是不合适的。 以前的工作，建议一维模型将是足够的试验与长薄小区，也可能是误导。 Cullis和Gleeson（1991）提倡了经验选择的二维ARIMA模型。 Kempton et al。 （1994）报告了对超过200个试验的重新分析，并证明了在大多数试验中需要二维模型。 Kempton et al。 （1994）认为选择模型是不可接受的。他们表明，第一差异ARIMA（0,1,1）x ARIMA（0,1,1）模型的常规使用对于一些试验是无效的。一些作者质疑差异的需要（Martin 1990; Zimmerman和Harville 1991）。 Wilson（1994）重新分析了Cullis和Gleeson（1991）使用的数据集，发现一阶可分离自回归模型常常令人满意。 Cullis et al。 （印刷中）承认差异对于许多试验是不必要的。此外，差分常常导致需要对小区错误的方差结构进行更复杂的建模（Cullis和Gleeson 1991）。与大多数地统计数据不同，从小田间实验收集的数据可以显示源自除自然来源以外的来源的变化，例如土壤湿度梯度。然而，以前模型中的一个共同的信念（Martin 1990; Cullis和Gleeson 1991; Zimmerman和Harville 1991;以及可能Cressie和Hartfield 1996）是“趋势”主要是由于自然变异。因此，本文的目的是扩展这些空间模型，以包括额外的变异来源。我们建议的扩展识别至少三种类型的变化的建模的需要。这个模型在第2节中给出和讨论。我们建议为小区错误选择适当的方差模型的一般方法，从拟合一个合理的方差模型开始，例如ARI x ARI表示的一阶可分离自回归模型。在检查残差的小区和它们的空间协方差结构之后，修正小区误差模型以包括检测到的任何模式。我们的方法的关键是使用样本变异函数和相关似然比测试来辅助建模。第3节中给出并讨论了变差函数。在第4节中，我们给出了说明方法的两个例子的详细分析。第5节提出了一些结论">
+  <meta property="og:description" content="Gilmour AR, Cullis BR, Verbyla AP (1997) Accounting for natural and extraneuous variation in the analysis of field experiments. J Agric Biol Environ Stat 2:269–273.
+ 我们确定了来自实地实验的小区误差的空间变化的三个主要组成部分，并扩展Cullis和Gleeson（1991）的二维空间程序以解释它们。组件是整个领域的非平稳，大规模（全球）变化，试验中的固定变化（自然变化或局部趋势），以及通常由实验程序诱导的外部变化，主要与行和列。我们提出了一个策略，用于识别使用残差的网格小区，样本变异小区的透视小区和可能的似然比测试以确定哪些组件存在的小区错误的模型。我们使用两个说明性的例子来演示策略。我们得出结论，虽然没有一个模型充分适合所有现场实验，可分离自回归模型是主导的。然而，经常存在额外的可识别的变化。
+1.引言 自从Wilkinson，Eckert，Hancock和Mayo（1983）提出了他们最近邻的田间实验分析方法，提出了许多替代方法（Green，Jennison和Seheult 1985; Besag和Kempton 1986; Gleeson and Cullis 1987; Martin 1990 ; Cullis和Gleeson 1991; Zimmerman和Harville 1991; Cressie和Hartfield 1996; Cullis，Gogel，Verbyla和Thompson，in press）。一些研究已经审查和评价这些方法;参见例如Lill，Gleeson和Cullis（1988），Wilson（1994），Kempton，Seraphin和Sword（1994）和Grondona，Crossa，Fox和Pfeiffer（1996）。结果是关于方法和模型的一定程度的混乱，有时导致缺乏使用空间模型常规用于小小区场实验的分析的置信度。本文的动机源于我们在过去十年中每年在澳大利亚的植物改良计划中对于超过500个复制和未复制品种试验的分析中经常使用空间分析程序。我们相信它们在实现提高的准确性和效率方面的有用性。然而，显然没有一个空间模型将适合所有试验，并且除了自然存在的之外，在实验期间经常引入可识别的变化。自动使用特定的空间模型可能导致相当严重的低效率，Wilkinson等人倡导的简单模型（1983），Green et al。 （1985）和Besag和Kempton（1986）经常是不合适的。 以前的工作，建议一维模型将是足够的试验与长薄小区，也可能是误导。 Cullis和Gleeson（1991）提倡了经验选择的二维ARIMA模型。 Kempton et al。 （1994）报告了对超过200个试验的重新分析，并证明了在大多数试验中需要二维模型。 Kempton et al。 （1994）认为选择模型是不可接受的。他们表明，第一差异ARIMA（0,1,1）x ARIMA（0,1,1）模型的常规使用对于一些试验是无效的。一些作者质疑差异的需要（Martin 1990; Zimmerman和Harville 1991）。 Wilson（1994）重新分析了Cullis和Gleeson（1991）使用的数据集，发现一阶可分离自回归模型常常令人满意。 Cullis et al。 （印刷中）承认差异对于许多试验是不必要的。此外，差分常常导致需要对小区错误的方差结构进行更复杂的建模（Cullis和Gleeson 1991）。与大多数地统计数据不同，从小田间实验收集的数据可以显示源自除自然来源以外的来源的变化，例如土壤湿度梯度。然而，以前模型中的一个共同的信念（Martin 1990; Cullis和Gleeson 1991; Zimmerman和Harville 1991;以及可能Cressie和Hartfield 1996）是“趋势”主要是由于自然变异。因此，本文的目的是扩展这些空间模型，以包括额外的变异来源。我们建议的扩展识别至少三种类型的变化的建模的需要。这个模型在第2节中给出和讨论。我们建议为小区错误选择适当的方差模型的一般方法，从拟合一个合理的方差模型开始，例如ARI x ARI表示的一阶可分离自回归模型。在检查残差的小区和它们的空间协方差结构之后，修正小区误差模型以包括检测到的任何模式。我们的方法的关键是使用样本变异函数和相关似然比测试来辅助建模。第3节中给出并讨论了变差函数。在第4节中，我们给出了说明方法的两个例子的详细分析。第5节提出了一些结论">
+  <meta name="twitter:description" content="Gilmour AR, Cullis BR, Verbyla AP (1997) Accounting for natural and extraneuous variation in the analysis of field experiments. J Agric Biol Environ Stat 2:269–273.
+ 我们确定了来自实地实验的小区误差的空间变化的三个主要组成部分，并扩 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/gilmour1997-ar1/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/gilmour1997-ar1/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Gilmour1997-AR1</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (77 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Gilmour1997-AR1</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (77 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Gilmour AR, Cullis BR, Verbyla AP (1997) Accounting for natural and extraneuous variation in the analysis of field experiments. J Agric Biol Environ Stat 2:269–273.</p>
+</blockquote>
+
+<p>我们确定了来自实地实验的小区误差的空间变化的三个主要组成部分，并扩展Cullis和Gleeson（1991）的二维空间程序以解释它们。组件是整个领域的非平稳，大规模（全球）变化，试验中的固定变化（自然变化或局部趋势），以及通常由实验程序诱导的外部变化，主要与行和列。我们提出了一个策略，用于识别使用残差的网格小区，样本变异小区的透视小区和可能的似然比测试以确定哪些组件存在的小区错误的模型。我们使用两个说明性的例子来演示策略。我们得出结论，虽然没有一个模型充分适合所有现场实验，可分离自回归模型是主导的。然而，经常存在额外的可识别的变化。</p>
+
+<p>1.引言
+自从Wilkinson，Eckert，Hancock和Mayo（1983）提出了他们最近邻的田间实验分析方法，提出了许多替代方法（Green，Jennison和Seheult 1985; Besag和Kempton 1986; Gleeson and Cullis 1987; Martin 1990 ; Cullis和Gleeson 1991; Zimmerman和Harville 1991; Cressie和Hartfield 1996; Cullis，Gogel，Verbyla和Thompson，in press）。一些研究已经审查和评价这些方法;参见例如Lill，Gleeson和Cullis（1988），Wilson（1994），Kempton，Seraphin和Sword（1994）和Grondona，Crossa，Fox和Pfeiffer（1996）。结果是关于方法和模型的一定程度的混乱，有时导致缺乏使用空间模型常规用于小小区场实验的分析的置信度。本文的动机源于我们在过去十年中每年在澳大利亚的植物改良计划中对于超过500个复制和未复制品种试验的分析中经常使用空间分析程序。我们相信它们在实现提高的准确性和效率方面的有用性。然而，显然没有一个空间模型将适合所有试验，并且除了自然存在的之外，在实验期间经常引入可识别的变化。自动使用特定的空间模型可能导致相当严重的低效率，Wilkinson等人倡导的简单模型（1983），Green et al。 （1985）和Besag和Kempton（1986）经常是不合适的。
+以前的工作，建议一维模型将是足够的试验与长薄小区，也可能是误导。 Cullis和Gleeson（1991）提倡了经验选择的二维ARIMA模型。 Kempton et al。 （1994）报告了对超过200个试验的重新分析，并证明了在大多数试验中需要二维模型。 Kempton et al。 （1994）认为选择模型是不可接受的。他们表明，第一差异ARIMA（0,1,1）x ARIMA（0,1,1）模型的常规使用对于一些试验是无效的。一些作者质疑差异的需要（Martin 1990; Zimmerman和Harville 1991）。 Wilson（1994）重新分析了Cullis和Gleeson（1991）使用的数据集，发现一阶可分离自回归模型常常令人满意。 Cullis et al。 （印刷中）承认差异对于许多试验是不必要的。此外，差分常常导致需要对小区错误的方差结构进行更复杂的建模（Cullis和Gleeson 1991）。与大多数地统计数据不同，从小田间实验收集的数据可以显示源自除自然来源以外的来源的变化，例如土壤湿度梯度。然而，以前模型中的一个共同的信念（Martin 1990; Cullis和Gleeson 1991; Zimmerman和Harville 1991;以及可能Cressie和Hartfield 1996）是“趋势”主要是由于自然变异。因此，本文的目的是扩展这些空间模型，以包括额外的变异来源。我们建议的扩展识别至少三种类型的变化的建模的需要。这个模型在第2节中给出和讨论。我们建议为小区错误选择适当的方差模型的一般方法，从拟合一个合理的方差模型开始，例如ARI x ARI表示的一阶可分离自回归模型。在检查残差的小区和它们的空间协方差结构之后，修正小区误差模型以包括检测到的任何模式。我们的方法的关键是使用样本变异函数和相关似然比测试来辅助建模。第3节中给出并讨论了变差函数。在第4节中，我们给出了说明方法的两个例子的详细分析。第5节提出了一些结论</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/gleeson-1987-ar1/" data-toggle="tooltip" data-placement="top" title="Gleeson-1987-AR1">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/gilmour-2000-%E4%B8%8D%E5%BB%BA%E8%AE%AE%E7%94%A8%E9%AB%98%E6%AC%A1%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%8B%9F%E5%90%88%E7%A9%BA%E9%97%B4%E6%A8%A1%E5%9E%8B/" data-toggle="tooltip" data-placement="top" title="Gilmour-2000-不建议用高次多项式拟合空间模型">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

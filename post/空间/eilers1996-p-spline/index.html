@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Eilers1996-P-spline</title>
+  <meta property="og:title" content="Eilers1996-P-spline" />
+  <meta name="twitter:title" content="Eilers1996-P-spline" />
+  <meta name="description" content="Eilers PHC, Marx BD. Flexible smoothing with B -splines and penalties. Stat. Sci. 1996;11:89–121.   B样条对于非参数建模是有吸引力的，但是选择最佳数量和位置的结是一个复杂的任务。可以使用等距结，但是它们的小和离散数目仅对平滑度和拟合的有限控制。我们建议对相邻B样条的系数使用相对大数量的结和差异罚分。我们显示了对平方二阶导数的积分的熟悉的样条罚分的连接。提供了B样条，其构造和惩罚似然的简要概述。我们讨论惩罚B样条的属性，并提出了选择最佳惩罚参数的各种标准。非参数逻辑回归，密度估计和散点图平滑用作实例。提出了计算的一些细节
+1.引言 毫无疑问，平滑在今天的统计中具有可观的地位。许多论文和一些书出现（Silverman，1986; Eubank，1988; Hastie和Tibshirani，1990; Hardardle，1990; Wahba，1990; Wand和Jones，1993; Green和Silverman，1994）。这种流行有几个原因：许多数据集太“丰富”，无法用参数模型完全建模;图形显示变得越来越重要，更易于使用;并且数据的探索性分析已经变得更加普遍。实际上，非参数名称并不总是很好地选择。它可能适用于内核平滑器和运行统计，但样条平滑器由参数描述，虽然它们的数量可能很大。最好谈论“过度原则”技术或“匿名”模型;参数没有科学解释。
+运行统计学有几个改进，如内核平滑器（Silverman，1986;H¨ardle，1990）和LOWESS（Cleveland，1979）。样条有几种类型：平滑样条，回归样条（Eubank，1988）和B样条（de Boor，1978; Dierckx，1993）。有了这么多的技术，为什么要提出一个新的？我们认为，B样条和差分惩罚（对估计系数）的组合，我们称之为P样条，具有非常有吸引力的特性。 P样条没有边界效应，它们是（广义）线性回归模型的直接扩展，保存数据的矩（平均值，方差），并且具有多项式曲线拟合作为限制。计算，包括用于交叉验证的计算，相对便宜并且容易地并入标准软件中。 B样条由多项式片段构成，以特定的x值结合。一旦给出了结，很容易对任何期望的多项式递归地计算B样条;参见de Boor（1977，1978），Cox（1981）或Dierckx（1993）。结节的选择已经是许多研究的主题：太多的结导致数据的过度拟合，太少的结导致不合格。一些作者提出了用于优化结的数量和位置的自动方案（Friedman和Silverman，1989; Kooperberg和Stone，1991,1992）。这是一个困难的数值问题，据我们所知，没有吸引人的全能计划存在。 O&rsquo;Sullivan选择了一条不同的轨道（1986,1988）。他建议使用相对较大数量的结。为了防止过拟合，对二阶导数的惩罚限制了拟合曲线的灵活性，类似于Reinsch（1967）为平滑样条开创的惩罚，并且已经成为大多数样条函数的标准;参见例如，Eubank（1988），Wahba（1990）和Green和Silverman（1994）。在本文中，我们简化和推广O&rsquo;Sullivan的方法，这样它可以应用于任何条件下，B样条回归是有用的。只需要对回归方程进行小的修改。基本思想是不使用拟合曲线在惩罚中的平方高阶导数的积分，而是对相邻B样条的系数本身使用简单的差异惩罚。我们显示这两种方法对于二阶差分非常相似。然而，在一些应用中，在惩罚中使用更小或更高阶的差异可能是有用的。使用我们的方法，简单地在（广义）回归方程中并入任何阶的惩罚。任何平滑技术的主要问题是选择最佳平滑量，在我们的情况下是最优的惩罚权重。我们使用交叉验证和Akaike信息标准（AIC）。在后者中，模型的有效维度，即参数的有效数量起着至关重要的作用。我们遵循Hastie和Tibshirani（1990）使用更平滑矩阵的轨迹作为有效尺寸。因为我们使用标准回归技术，所以可以容易地计算这个量。我们发现跟踪对于比较不同数量的结，不同程度的B样条和不同罚分顺序的平滑的有效量是非常有用的。我们调查不同阶数的矩的保守性，与B样条的程度和罚分的差异的顺序有关。为了说明P样条的使用，我们提出以下作为应用：平滑散点图;剂量反应曲线的建模;和密度估计。 2.一个坚果中的B柱 并不是所有的读者都会熟悉B样条。基本参考是de Boor（1978）和Dierckx（1993），但为了说明这些想法的基本简单，我们在这里解释一些必要的背景。 B样条由多项式块组成，以特殊方式连接。在图1（a）的左侧示出了一个非常简单的示例：一个度数为1的B样条由两个直线段组成;一个从x1到x2，另一个从x2到x3。结是x1，x2和x3。在x1的左边和x3的右边，这个B样条是零。在图1（a）的右侧部分中，示出了三个度数为1的B样条：每个基于三个结。当然，我们可以通过引入更多的结来构造一组我们喜欢的B样条。在图1（b）的左侧部分中，示出了2次的B样条。它包括三个二次片，连接在两个结。在连接点处，不仅多项式片段的纵坐标匹配，而且它们的一阶导数相等（但不是它们的二阶导数）。 B样条基于四个相邻的结：x1 &hellip; x4。在图1（b）的右侧部分中，示出了另外三个2次B样条。 注意，B样条彼此重叠。一阶B样条与两个邻居重叠，二次B样条与四个邻居重叠，等等。当然，最左侧和最右侧的样条具有较少的重叠。在给定的x处，两个一级（或三个二次）B样条是非零的。这些示例说明q次的B样条的一般性质： •它由q &#43; 1个多项式片段组成，每个q度; •多项式片在q个内节处连接; •在连接点，高达q-1阶的导数是连续的; •B样条在由q &#43; 2个节所跨越的域上是正的;其他任何地方都是零; 除了在边界处，它与其邻居的2q个多项式块重叠; •在给定的x，q &#43; 1个B样条是非零的。 让xmin到xmax的域分为n？等间隔n？&#43;1节。每个间隔将由q次的q &#43; 1个B样条覆盖。用于构造B样条的结的总数将是n？ &#43; 2q &#43; 1。回归中B样条的数量为n = n？ &#43; q。这可以通过构造如图1中的图形容易地验证。 B样条作为（“非参数”）单变量回归的基函数是非常有吸引力的。 （例如）三次B样条的线性组合给出平滑的曲线。一旦可以计算B样条本身，它们的应用没有多边形回归困难。 De Boor（1978）给出了一种算法，用于计算较低程度的B样条的任何程度的B样条。因为零度B样条在两个节之间的一个间隔上只是一个常数，所以很容易将任何程度的B样条组合。在本文中，我们只使用等距结，但de Boor的算法也适用于任何放置的结。对于等距结，可以进一步简化算法，如附录中的小MATLAB函数所示。令Bj？x？ q？表示对于给定的等距网格的节数q的第j个B样条的在x处的值。拟合曲线y到数据xi，是线性组合y？x？ =＆Sigma; n j = 1 a j B j＆RightArrow; q。当B样条的范围从上下文中是清楚的，或者是不重要的，我们使用Bj？x？而不是Bj？x？ q。 B样条的索引需要一些注意，特别是当我们要使用导数时。内嵌将B样条连接到结;也就是说，它给出了表征B样条位置的结的索引。我们的选择是采取最左边的结，B样条开始变得非零的结。在图1（a）中，x1是第一个B样条的定位结。这种索引选择要求我们在x的域的左边引入q节。在衍生物的公式中，指数在总和中的确切边界是无关紧要的，所以我们将它们排除在外。 De Boor（1978）给出了一个简单的B样条的导数公式：">
+  <meta property="og:description" content="Eilers PHC, Marx BD. Flexible smoothing with B -splines and penalties. Stat. Sci. 1996;11:89–121.   B样条对于非参数建模是有吸引力的，但是选择最佳数量和位置的结是一个复杂的任务。可以使用等距结，但是它们的小和离散数目仅对平滑度和拟合的有限控制。我们建议对相邻B样条的系数使用相对大数量的结和差异罚分。我们显示了对平方二阶导数的积分的熟悉的样条罚分的连接。提供了B样条，其构造和惩罚似然的简要概述。我们讨论惩罚B样条的属性，并提出了选择最佳惩罚参数的各种标准。非参数逻辑回归，密度估计和散点图平滑用作实例。提出了计算的一些细节
+1.引言 毫无疑问，平滑在今天的统计中具有可观的地位。许多论文和一些书出现（Silverman，1986; Eubank，1988; Hastie和Tibshirani，1990; Hardardle，1990; Wahba，1990; Wand和Jones，1993; Green和Silverman，1994）。这种流行有几个原因：许多数据集太“丰富”，无法用参数模型完全建模;图形显示变得越来越重要，更易于使用;并且数据的探索性分析已经变得更加普遍。实际上，非参数名称并不总是很好地选择。它可能适用于内核平滑器和运行统计，但样条平滑器由参数描述，虽然它们的数量可能很大。最好谈论“过度原则”技术或“匿名”模型;参数没有科学解释。
+运行统计学有几个改进，如内核平滑器（Silverman，1986;H¨ardle，1990）和LOWESS（Cleveland，1979）。样条有几种类型：平滑样条，回归样条（Eubank，1988）和B样条（de Boor，1978; Dierckx，1993）。有了这么多的技术，为什么要提出一个新的？我们认为，B样条和差分惩罚（对估计系数）的组合，我们称之为P样条，具有非常有吸引力的特性。 P样条没有边界效应，它们是（广义）线性回归模型的直接扩展，保存数据的矩（平均值，方差），并且具有多项式曲线拟合作为限制。计算，包括用于交叉验证的计算，相对便宜并且容易地并入标准软件中。 B样条由多项式片段构成，以特定的x值结合。一旦给出了结，很容易对任何期望的多项式递归地计算B样条;参见de Boor（1977，1978），Cox（1981）或Dierckx（1993）。结节的选择已经是许多研究的主题：太多的结导致数据的过度拟合，太少的结导致不合格。一些作者提出了用于优化结的数量和位置的自动方案（Friedman和Silverman，1989; Kooperberg和Stone，1991,1992）。这是一个困难的数值问题，据我们所知，没有吸引人的全能计划存在。 O&rsquo;Sullivan选择了一条不同的轨道（1986,1988）。他建议使用相对较大数量的结。为了防止过拟合，对二阶导数的惩罚限制了拟合曲线的灵活性，类似于Reinsch（1967）为平滑样条开创的惩罚，并且已经成为大多数样条函数的标准;参见例如，Eubank（1988），Wahba（1990）和Green和Silverman（1994）。在本文中，我们简化和推广O&rsquo;Sullivan的方法，这样它可以应用于任何条件下，B样条回归是有用的。只需要对回归方程进行小的修改。基本思想是不使用拟合曲线在惩罚中的平方高阶导数的积分，而是对相邻B样条的系数本身使用简单的差异惩罚。我们显示这两种方法对于二阶差分非常相似。然而，在一些应用中，在惩罚中使用更小或更高阶的差异可能是有用的。使用我们的方法，简单地在（广义）回归方程中并入任何阶的惩罚。任何平滑技术的主要问题是选择最佳平滑量，在我们的情况下是最优的惩罚权重。我们使用交叉验证和Akaike信息标准（AIC）。在后者中，模型的有效维度，即参数的有效数量起着至关重要的作用。我们遵循Hastie和Tibshirani（1990）使用更平滑矩阵的轨迹作为有效尺寸。因为我们使用标准回归技术，所以可以容易地计算这个量。我们发现跟踪对于比较不同数量的结，不同程度的B样条和不同罚分顺序的平滑的有效量是非常有用的。我们调查不同阶数的矩的保守性，与B样条的程度和罚分的差异的顺序有关。为了说明P样条的使用，我们提出以下作为应用：平滑散点图;剂量反应曲线的建模;和密度估计。 2.一个坚果中的B柱 并不是所有的读者都会熟悉B样条。基本参考是de Boor（1978）和Dierckx（1993），但为了说明这些想法的基本简单，我们在这里解释一些必要的背景。 B样条由多项式块组成，以特殊方式连接。在图1（a）的左侧示出了一个非常简单的示例：一个度数为1的B样条由两个直线段组成;一个从x1到x2，另一个从x2到x3。结是x1，x2和x3。在x1的左边和x3的右边，这个B样条是零。在图1（a）的右侧部分中，示出了三个度数为1的B样条：每个基于三个结。当然，我们可以通过引入更多的结来构造一组我们喜欢的B样条。在图1（b）的左侧部分中，示出了2次的B样条。它包括三个二次片，连接在两个结。在连接点处，不仅多项式片段的纵坐标匹配，而且它们的一阶导数相等（但不是它们的二阶导数）。 B样条基于四个相邻的结：x1 &hellip; x4。在图1（b）的右侧部分中，示出了另外三个2次B样条。 注意，B样条彼此重叠。一阶B样条与两个邻居重叠，二次B样条与四个邻居重叠，等等。当然，最左侧和最右侧的样条具有较少的重叠。在给定的x处，两个一级（或三个二次）B样条是非零的。这些示例说明q次的B样条的一般性质： •它由q &#43; 1个多项式片段组成，每个q度; •多项式片在q个内节处连接; •在连接点，高达q-1阶的导数是连续的; •B样条在由q &#43; 2个节所跨越的域上是正的;其他任何地方都是零; 除了在边界处，它与其邻居的2q个多项式块重叠; •在给定的x，q &#43; 1个B样条是非零的。 让xmin到xmax的域分为n？等间隔n？&#43;1节。每个间隔将由q次的q &#43; 1个B样条覆盖。用于构造B样条的结的总数将是n？ &#43; 2q &#43; 1。回归中B样条的数量为n = n？ &#43; q。这可以通过构造如图1中的图形容易地验证。 B样条作为（“非参数”）单变量回归的基函数是非常有吸引力的。 （例如）三次B样条的线性组合给出平滑的曲线。一旦可以计算B样条本身，它们的应用没有多边形回归困难。 De Boor（1978）给出了一种算法，用于计算较低程度的B样条的任何程度的B样条。因为零度B样条在两个节之间的一个间隔上只是一个常数，所以很容易将任何程度的B样条组合。在本文中，我们只使用等距结，但de Boor的算法也适用于任何放置的结。对于等距结，可以进一步简化算法，如附录中的小MATLAB函数所示。令Bj？x？ q？表示对于给定的等距网格的节数q的第j个B样条的在x处的值。拟合曲线y到数据xi，是线性组合y？x？ =＆Sigma; n j = 1 a j B j＆RightArrow; q。当B样条的范围从上下文中是清楚的，或者是不重要的，我们使用Bj？x？而不是Bj？x？ q。 B样条的索引需要一些注意，特别是当我们要使用导数时。内嵌将B样条连接到结;也就是说，它给出了表征B样条位置的结的索引。我们的选择是采取最左边的结，B样条开始变得非零的结。在图1（a）中，x1是第一个B样条的定位结。这种索引选择要求我们在x的域的左边引入q节。在衍生物的公式中，指数在总和中的确切边界是无关紧要的，所以我们将它们排除在外。 De Boor（1978）给出了一个简单的B样条的导数公式：">
+  <meta name="twitter:description" content="Eilers PHC, Marx BD. Flexible smoothing with B -splines and penalties. Stat. Sci. 1996;11:89–121.   B样条对于非参数建模是有吸引力的，但是选择最佳数量和位置的结是一个复杂的任务。可以使用等距结，但是它们的小和离散数目仅对平滑度和拟合的有限控制。我们建议对相邻B样条的系数使用相对大数量的结和差异罚分。 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/eilers1996-p-spline/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/eilers1996-p-spline/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Eilers1996-P-spline</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (82 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Eilers1996-P-spline</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (82 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<ol>
+<li>Eilers PHC, Marx BD. Flexible smoothing with B -splines and penalties. Stat. Sci. 1996;11:89–121.</li>
+</ol>
+</blockquote>
+
+<p>B样条对于非参数建模是有吸引力的，但是选择最佳数量和位置的结是一个复杂的任务。<strong>可以使用等距结，但是它们的小和离散数目仅对平滑度和拟合的有限控制</strong>。我们建议<strong>对相邻B样条的系数使用相对大数量的结和差异罚分</strong>。我们显示了对平方二阶导数的积分的熟悉的样条罚分的连接。提供了B样条，其构造和惩罚似然的简要概述。我们讨论惩罚B样条的属性，并提出了选择最佳惩罚参数的各种标准。非参数逻辑回归，密度估计和散点图平滑用作实例。提出了计算的一些细节</p>
+
+<hr />
+
+<h2 id="1-引言">1.引言</h2>
+
+<p>毫无疑问，平滑在今天的统计中具有可观的地位。许多论文和一些书出现（Silverman，1986; Eubank，1988; Hastie和Tibshirani，1990; Hardardle，1990; Wahba，1990; Wand和Jones，1993; Green和Silverman，1994）。这种流行有几个原因：<strong>许多数据集太“丰富”，无法用参数模型完全建模;图形显示变得越来越重要，更易于使用;并且数据的探索性分析已经变得更加普遍</strong>。实际上，非参数名称并不总是很好地选择。它可能适用于内核平滑器和运行统计，但样条平滑器由参数描述，虽然它们的数量可能很大。最好谈论“过度原则”技术或“匿名”模型;参数没有科学解释。</p>
+
+<p>运行统计学有几个改进，如内核平滑器（Silverman，1986;H¨ardle，1990）和LOWESS（Cleveland，1979）。样条有几种类型：平滑样条，回归样条（Eubank，1988）和B样条（de Boor，1978; Dierckx，1993）。有了这么多的技术，为什么要提出一个新的？我们认为，B样条和差分惩罚（对估计系数）的组合，我们称之为P样条，具有非常有吸引力的特性。 <strong>P样条没有边界效应，它们是（广义）线性回归模型的直接扩展，保存数据的矩（平均值，方差），并且具有多项式曲线拟合作为限制</strong>。计算，包括用于交叉验证的计算，相对便宜并且容易地并入标准软件中。 <strong>B样条由多项式片段构成，以特定的x值结合。一旦给出了结，很容易对任何期望的多项式递归地计算B样条</strong>;参见de Boor（1977，1978），Cox（1981）或Dierckx（1993）。<strong>结节的选择已经是许多研究的主题：太多的结导致数据的过度拟合，太少的结导致不合格。一些作者提出了用于优化结的数量和位置的自动方案</strong>（Friedman和Silverman，1989; Kooperberg和Stone，1991,1992）。这是一个困难的数值问题，据我们所知，没有吸引人的全能计划存在。 O&rsquo;Sullivan选择了一条不同的轨道（1986,1988）。<strong>他建议使用相对较大数量的结。为了防止过拟合，对二阶导数的惩罚限制了拟合曲线的灵活性，类似于Reinsch（1967）为平滑样条开创的惩罚，并且已经成为大多数样条函数的标准</strong>;参见例如，Eubank（1988），Wahba（1990）和Green和Silverman（1994）。在本文中，我们简化和推广O&rsquo;Sullivan的方法，这样它可以应用于任何条件下，B样条回归是有用的。只需要对回归方程进行小的修改。<strong>基本思想是不使用拟合曲线在惩罚中的平方高阶导数的积分，而是对相邻B样条的系数本身使用简单的差异惩罚</strong>。我们显示这两种方法对于二阶差分非常相似。然而，在一些应用中，在惩罚中使用更小或更高阶的差异可能是有用的。使用我们的方法，简单地在（广义）回归方程中并入任何阶的惩罚。任何平滑技术的主要问题是选择最佳平滑量，在我们的情况下是最优的惩罚权重。<strong>我们使用交叉验证和Akaike信息标准（AIC）。在后者中，模型的有效维度，即参数的有效数量起着至关重要的作用</strong>。我们遵循Hastie和Tibshirani（1990）使用更平滑矩阵的轨迹作为有效尺寸。因为我们使用标准回归技术，所以可以容易地计算这个量。我们发现跟踪对于比较不同数量的结，不同程度的B样条和不同罚分顺序的平滑的有效量是非常有用的。我们调查不同阶数的矩的保守性，与B样条的程度和罚分的差异的顺序有关。为了说明P样条的使用，我们提出以下作为应用：平滑散点图;剂量反应曲线的建模;和密度估计。
+2.一个坚果中的B柱
+并不是所有的读者都会熟悉B样条。基本参考是de Boor（1978）和Dierckx（1993），但为了说明这些想法的基本简单，我们在这里解释一些必要的背景。 <strong>B样条由多项式块组成，以特殊方式连接</strong>。在图1（a）的左侧示出了一个非常简单的示例：一个度数为1的B样条由两个直线段组成;一个从x1到x2，另一个从x2到x3。结是x1，x2和x3。在x1的左边和x3的右边，这个B样条是零。在图1（a）的右侧部分中，示出了三个度数为1的B样条：每个基于三个结。当然，我们可以通过引入更多的结来构造一组我们喜欢的B样条。在图1（b）的左侧部分中，示出了2次的B样条。它包括三个二次片，连接在两个结。在连接点处，不仅多项式片段的纵坐标匹配，而且它们的一阶导数相等（但不是它们的二阶导数）。 B样条基于四个相邻的结：x1 &hellip; x4。在图1（b）的右侧部分中，示出了另外三个2次B样条。
+注意，B样条彼此重叠。一阶B样条与两个邻居重叠，二次B样条与四个邻居重叠，等等。当然，最左侧和最右侧的样条具有较少的重叠。在给定的x处，两个一级（或三个二次）B样条是非零的。这些示例说明q次的B样条的一般性质：
+•它由q + 1个多项式片段组成，每个q度;
+•多项式片在q个内节处连接;
+•在连接点，高达q-1阶的导数是连续的;
+•B样条在由q + 2个节所跨越的域上是正的;其他任何地方都是零;
+除了在边界处，它与其邻居的2q个多项式块重叠;
+•在给定的x，q + 1个B样条是非零的。
+让xmin到xmax的域分为n？等间隔n？+1节。每个间隔将由q次的q + 1个B样条覆盖。用于构造B样条的结的总数将是n？ + 2q + 1。回归中B样条的数量为n = n？ + q。这可以通过构造如图1中的图形容易地验证。
+B样条作为（“非参数”）单变量回归的基函数是非常有吸引力的。 （例如）三次B样条的线性组合给出平滑的曲线。一旦可以计算B样条本身，它们的应用没有多边形回归困难。 De Boor（1978）给出了一种算法，用于计算较低程度的B样条的任何程度的B样条。因为零度B样条在两个节之间的一个间隔上只是一个常数，所以很容易将任何程度的B样条组合。在本文中，我们只使用等距结，但de Boor的算法也适用于任何放置的结。对于等距结，可以进一步简化算法，如附录中的小MATLAB函数所示。令Bj？x？ q？表示对于给定的等距网格的节数q的第j个B样条的在x处的值。拟合曲线y到数据xi，是线性组合y？x？ =＆Sigma; n j = 1 a j B j＆RightArrow; q。当B样条的范围从上下文中是清楚的，或者是不重要的，我们使用Bj？x？而不是Bj？x？ q。 B样条的索引需要一些注意，特别是当我们要使用导数时。内嵌将B样条连接到结;也就是说，它给出了表征B样条位置的结的索引。我们的选择是采取最左边的结，B样条开始变得非零的结。在图1（a）中，x1是第一个B样条的定位结。这种索引选择要求我们在x的域的左边引入q节。在衍生物的公式中，指数在总和中的确切边界是无关紧要的，所以我们将它们排除在外。 De Boor（1978）给出了一个简单的B样条的导数公式：</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/el-dien2016-%E7%8E%B0%E5%AE%9E%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%85%B3%E7%B3%BB%E7%9F%A9%E9%98%B5-op-%E5%8A%A0%E6%80%A7-%E9%9D%9E%E5%8A%A0/" data-toggle="tooltip" data-placement="top" title="El-Dien2016-现实基因组关系矩阵-OP-加性-非加">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/dutkowski2016-%E5%AE%9A%E4%B9%89%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A%E5%8D%97%E9%83%A8%E8%BE%90%E5%B0%84%E6%9D%BE%E7%9A%84%E7%B9%81%E6%AE%96%E5%92%8C%E9%83%A8%E7%BD%B2%E5%9C%B0%E5%8C%BA/" data-toggle="tooltip" data-placement="top" title="Dutkowski2016-定义澳大利亚南部辐射松的繁殖和部署地区">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

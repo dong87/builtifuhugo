@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>fBayesB-</title>
+  <meta property="og:title" content="fBayesB-" />
+  <meta name="twitter:title" content="fBayesB-" />
+  <meta name="description" content="包括在贝叶斯方法中用于基于全基因组标记的遗传值的预测的非加性遗传效应
+抽象
+背景 分子标记信息是绘制关于遗传和表型变异之间的关系的推论的常见来源。遗传效应通常被建模为加性作用标记等位基因效应。生物作用的真正模式当然可以不同于这个平常的假设。更好地理解复杂性状的遗传结构的一种可能性是包括等位基因的基因座内（显性）和基因座间（上位）相互作用以及当将模型拟合到性状时的加性遗传效应。存在几种贝叶斯MCMC方法用于遗传效应的全基因组估计，具有高准确性的遗传值预测。包括成千上万个位点的成对相互作用可能超出这种采样算法的范围，因为然后将同时估计数百万个效应，导致几个月的计算时间。当研究上位性时需要替代性解决策略。
+方法 我们扩展了一个快速贝叶斯方法（fBayesB），这是以前提出的纯粹的加性模型，包括非加性效应。 fBayesB方法用于在模拟数据集的基础上估计遗传效应。模拟不同的情景以研究预测精度的损失，如果上位性效应未被模拟但是被建模，反之亦然。
+结果 如果模拟23个QTL以引起加性和显性效应，则fBayesB和常规MCMC采样器BayesB在基于包括加性和显性效应的模型的遗传值预测和方差分量估计偏差方面产生类似的结果。将fBayesB应用于具有上位性的数据，当所有成对相互作用被建模时，准确度可以提高5％。如果遗传变异扩散超过230个QTL，精确度降低20％以上。在这种情况下，基于建模只有加性和显性效应的准确性一般优于包括上位效应的复杂模型。
+结论 该模拟研究表明，fBayesB方法对于遗传值预测是方便的。共同估计加性和非加性效应（特别是显性）对预测的准确性和分配到加性遗传来源的遗传变异的比例具有合理的影响。
+1背景
+分子标记信息通常用于推断关于各种物种的遗传和表型变异之间的关系，例如。人[1]，奶牛[2]或小鼠[3]。假设数量性状基因座（QTL）和标记之间的连锁不平衡（LD），可以估计遗传效应并解释为由邻近标记捕获的QTL效应。如果育种值是焦点，遗传效应通常被建模为加性作用标记等位基因效应（例如[4,5]）。生物作用的模式当然可以不同于纯加成性的假设。更好地理解复杂性状的遗传结构的一种可能性是在将模型拟合到性状时包括等位基因的基因座内（显性）和基因座间（上位）相互作用。最近已经研究了非加性效应对遗传变异的重要性。关于非加性效应的知识对于受益于例如杂种显性效应[6]是必要的，特别是对于杂交育种方案（家禽，植物等）。通常，可以预期的是，如果对非加性效应进行另外建模，则遗传值的预测，特别是其加性部分的预测得到改善。例如，Lee等人[7]报道当在小鼠中研究表型涂层颜色（&#43; 17％的准确性）或CD8 &#43;细胞的百分比（&#43; 2％的准确性）时，与单纯加性遗传模型相比，当包括显性效应时，预测的准确度显着增加。然而，增加的上位性在这种情况下没有贡献准确性。在大豆重组近交系的实例中[8]，在上位模型下预测的准确度增加了一倍以上。即使非加性效应可能发生在基因作用的水平，当基因处于极端频率时，大多数遗传变异可能被赋予加性效应[9]。例如上位性参与调节复杂性状的程度是未知的，但关于它的知识可以用于推断生物学机制和重建生物学途径[10]。 Carlborg等人[11]在关于对鸡生长差异的非加性影响的第一个研究中，估计10％的早期生长（性状Gr18）的遗传变异是由于显性，甚至70％由于上位性。这个例子显示了相互作用位点的重要性，虽然可以假设高估上位性效应，一种已知为单个位点的Beavis效应的现象[12]。由于这个实验是基于十分不同的线，需要进一步的研究来找到证据的交互基因在纯种。
+不同的方法可用于模拟加性和非加性遗传效应。在QTL检测的方面，可以使用例如方差分量法来进行基因组扫描以揭示遗传效应[13,14]。如果加性和非加性效应要在整个基因组上同时建模，我们必须知道“p大于n”的问题，意味着有更多的参数比观察。为了应对一体化的局面，Xu提出了一种贝叶斯方法[15]，它与BayesA [4]和一个经验贝叶斯方法[16]加性剂标记效应。通常用于估计加性效应的贝叶斯方法应用需要大量计算时间的马尔科夫链蒙特卡罗（MCMC）模拟，但是他们在预测遗传值的准确性方面说服他们。特别地，BayesB方法[4]优于其他方法，例如脊回归和偏最小二乘[17,18,19]。如果包括进一步的非加性效应，MCMC采样方法可能在高标记密度下崩溃。作为一种替代方法，贝叶斯方法是可用的，应用分析导出的后验密度的标记效应，而不是其样品[20]。这种方法（称为fBayesB）显示出略微不太准确，因为在迭代过程中，一次仅研究单个标记物效应，而针对所有其他先前估计的效应校正表型的载体。 fBayesB策略比使用MCMC的传统贝叶斯方法快得多。这种解决方法提供了另外考虑全基因组相互作用效应和用合理的计算努力来估计它们的可能性。
+本研究的目的是探讨非加性效应对牲畜种群遗传价值预测的影响。当加性和非加性效应联合涉及将模型拟合到性状时，旨在改进的加性效应的估计和更好的遗传值的预测。由于旨在估计任意群体中的非加性效应的方法刚刚出现，因此使用模拟来验证这些方法是特别重要的。因此，通过这项研究，我们追求方法方面，从而组合事实，有助于解释在实际数据中获得的结果在未来的工作。我们认为加性，显性和成对地上位效应捕获在分布在整个基因组的双等位基因标记。统计建模的细节在本文的第一部分。我们扩展了快速贝叶斯方法（fBayesB），它是在纯加和性下开发的[20]，包括非加性效应。 fBayesB用于在类似于奶牛群体的模拟数据集的基础上估计遗传效应。模拟不同的情景以研究预测精度的损失，如果上位性效应未被模拟但是被建模，反之亦然。在第二部分，我们总结了分析模拟数据的结果。确定在标志物效应的全基因组估计后分配给每种遗传效应的遗传变异的量。为了简要说明该方法在实践中的行为，我们还将fBayesB应用于实际数据示例。在第三部分，我们概述了通过fBayesB方法估计非加性效应的一些约束，并讨论其他解决策略。">
+  <meta property="og:description" content="包括在贝叶斯方法中用于基于全基因组标记的遗传值的预测的非加性遗传效应
+抽象
+背景 分子标记信息是绘制关于遗传和表型变异之间的关系的推论的常见来源。遗传效应通常被建模为加性作用标记等位基因效应。生物作用的真正模式当然可以不同于这个平常的假设。更好地理解复杂性状的遗传结构的一种可能性是包括等位基因的基因座内（显性）和基因座间（上位）相互作用以及当将模型拟合到性状时的加性遗传效应。存在几种贝叶斯MCMC方法用于遗传效应的全基因组估计，具有高准确性的遗传值预测。包括成千上万个位点的成对相互作用可能超出这种采样算法的范围，因为然后将同时估计数百万个效应，导致几个月的计算时间。当研究上位性时需要替代性解决策略。
+方法 我们扩展了一个快速贝叶斯方法（fBayesB），这是以前提出的纯粹的加性模型，包括非加性效应。 fBayesB方法用于在模拟数据集的基础上估计遗传效应。模拟不同的情景以研究预测精度的损失，如果上位性效应未被模拟但是被建模，反之亦然。
+结果 如果模拟23个QTL以引起加性和显性效应，则fBayesB和常规MCMC采样器BayesB在基于包括加性和显性效应的模型的遗传值预测和方差分量估计偏差方面产生类似的结果。将fBayesB应用于具有上位性的数据，当所有成对相互作用被建模时，准确度可以提高5％。如果遗传变异扩散超过230个QTL，精确度降低20％以上。在这种情况下，基于建模只有加性和显性效应的准确性一般优于包括上位效应的复杂模型。
+结论 该模拟研究表明，fBayesB方法对于遗传值预测是方便的。共同估计加性和非加性效应（特别是显性）对预测的准确性和分配到加性遗传来源的遗传变异的比例具有合理的影响。
+1背景
+分子标记信息通常用于推断关于各种物种的遗传和表型变异之间的关系，例如。人[1]，奶牛[2]或小鼠[3]。假设数量性状基因座（QTL）和标记之间的连锁不平衡（LD），可以估计遗传效应并解释为由邻近标记捕获的QTL效应。如果育种值是焦点，遗传效应通常被建模为加性作用标记等位基因效应（例如[4,5]）。生物作用的模式当然可以不同于纯加成性的假设。更好地理解复杂性状的遗传结构的一种可能性是在将模型拟合到性状时包括等位基因的基因座内（显性）和基因座间（上位）相互作用。最近已经研究了非加性效应对遗传变异的重要性。关于非加性效应的知识对于受益于例如杂种显性效应[6]是必要的，特别是对于杂交育种方案（家禽，植物等）。通常，可以预期的是，如果对非加性效应进行另外建模，则遗传值的预测，特别是其加性部分的预测得到改善。例如，Lee等人[7]报道当在小鼠中研究表型涂层颜色（&#43; 17％的准确性）或CD8 &#43;细胞的百分比（&#43; 2％的准确性）时，与单纯加性遗传模型相比，当包括显性效应时，预测的准确度显着增加。然而，增加的上位性在这种情况下没有贡献准确性。在大豆重组近交系的实例中[8]，在上位模型下预测的准确度增加了一倍以上。即使非加性效应可能发生在基因作用的水平，当基因处于极端频率时，大多数遗传变异可能被赋予加性效应[9]。例如上位性参与调节复杂性状的程度是未知的，但关于它的知识可以用于推断生物学机制和重建生物学途径[10]。 Carlborg等人[11]在关于对鸡生长差异的非加性影响的第一个研究中，估计10％的早期生长（性状Gr18）的遗传变异是由于显性，甚至70％由于上位性。这个例子显示了相互作用位点的重要性，虽然可以假设高估上位性效应，一种已知为单个位点的Beavis效应的现象[12]。由于这个实验是基于十分不同的线，需要进一步的研究来找到证据的交互基因在纯种。
+不同的方法可用于模拟加性和非加性遗传效应。在QTL检测的方面，可以使用例如方差分量法来进行基因组扫描以揭示遗传效应[13,14]。如果加性和非加性效应要在整个基因组上同时建模，我们必须知道“p大于n”的问题，意味着有更多的参数比观察。为了应对一体化的局面，Xu提出了一种贝叶斯方法[15]，它与BayesA [4]和一个经验贝叶斯方法[16]加性剂标记效应。通常用于估计加性效应的贝叶斯方法应用需要大量计算时间的马尔科夫链蒙特卡罗（MCMC）模拟，但是他们在预测遗传值的准确性方面说服他们。特别地，BayesB方法[4]优于其他方法，例如脊回归和偏最小二乘[17,18,19]。如果包括进一步的非加性效应，MCMC采样方法可能在高标记密度下崩溃。作为一种替代方法，贝叶斯方法是可用的，应用分析导出的后验密度的标记效应，而不是其样品[20]。这种方法（称为fBayesB）显示出略微不太准确，因为在迭代过程中，一次仅研究单个标记物效应，而针对所有其他先前估计的效应校正表型的载体。 fBayesB策略比使用MCMC的传统贝叶斯方法快得多。这种解决方法提供了另外考虑全基因组相互作用效应和用合理的计算努力来估计它们的可能性。
+本研究的目的是探讨非加性效应对牲畜种群遗传价值预测的影响。当加性和非加性效应联合涉及将模型拟合到性状时，旨在改进的加性效应的估计和更好的遗传值的预测。由于旨在估计任意群体中的非加性效应的方法刚刚出现，因此使用模拟来验证这些方法是特别重要的。因此，通过这项研究，我们追求方法方面，从而组合事实，有助于解释在实际数据中获得的结果在未来的工作。我们认为加性，显性和成对地上位效应捕获在分布在整个基因组的双等位基因标记。统计建模的细节在本文的第一部分。我们扩展了快速贝叶斯方法（fBayesB），它是在纯加和性下开发的[20]，包括非加性效应。 fBayesB用于在类似于奶牛群体的模拟数据集的基础上估计遗传效应。模拟不同的情景以研究预测精度的损失，如果上位性效应未被模拟但是被建模，反之亦然。在第二部分，我们总结了分析模拟数据的结果。确定在标志物效应的全基因组估计后分配给每种遗传效应的遗传变异的量。为了简要说明该方法在实践中的行为，我们还将fBayesB应用于实际数据示例。在第三部分，我们概述了通过fBayesB方法估计非加性效应的一些约束，并讨论其他解决策略。">
+  <meta name="twitter:description" content="包括在贝叶斯方法中用于基于全基因组标记的遗传值的预测的非加性遗传效应
+抽象
+背景 分子标记信息是绘制关于遗传和表型变异之间的关系的推论的常见来源。遗传效应通常被建模为加性作用标记等位基因效应。生物作用的真正模式当然可以不同于这个平常的假设。更好地理解复杂性状的遗传结构的一种可能性是包括等位基因的基因座内（显性）和基因座间（上位）相互作用以及当将模型拟合到性状时的加性遗传效应。存在几种贝叶斯MCMC …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/bayesian/fbayesb-/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/bayesian/fbayesb-/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>fBayesB-</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (22 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>fBayesB-</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (22 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+</blockquote>
+
+<p>包括在贝叶斯方法中用于基于全基因组标记的遗传值的预测的非加性遗传效应</p>
+
+<p>抽象</p>
+
+<p>背景
+分子标记信息是绘制关于遗传和表型变异之间的关系的推论的常见来源。遗传效应通常被建模为加性作用标记等位基因效应。生物作用的真正模式当然可以不同于这个平常的假设。更好地理解复杂性状的遗传结构的一种可能性是包括等位基因的基因座内（显性）和基因座间（上位）相互作用以及当将模型拟合到性状时的加性遗传效应。存在几种贝叶斯MCMC方法用于遗传效应的全基因组估计，具有高准确性的遗传值预测。包括成千上万个位点的成对相互作用可能超出这种采样算法的范围，因为然后将同时估计数百万个效应，导致几个月的计算时间。当研究上位性时需要替代性解决策略。</p>
+
+<p>方法
+我们扩展了一个快速贝叶斯方法（fBayesB），这是以前提出的纯粹的加性模型，包括非加性效应。 fBayesB方法用于在模拟数据集的基础上估计遗传效应。模拟不同的情景以研究预测精度的损失，如果上位性效应未被模拟但是被建模，反之亦然。</p>
+
+<p>结果
+如果模拟23个QTL以引起加性和显性效应，则fBayesB和常规MCMC采样器BayesB在基于包括加性和显性效应的模型的遗传值预测和方差分量估计偏差方面产生类似的结果。将fBayesB应用于具有上位性的数据，当所有成对相互作用被建模时，准确度可以提高5％。如果遗传变异扩散超过230个QTL，精确度降低20％以上。在这种情况下，基于建模只有加性和显性效应的准确性一般优于包括上位效应的复杂模型。</p>
+
+<p>结论
+该模拟研究表明，fBayesB方法对于遗传值预测是方便的。共同估计加性和非加性效应（特别是显性）对预测的准确性和分配到加性遗传来源的遗传变异的比例具有合理的影响。</p>
+
+<hr />
+
+<p>1背景</p>
+
+<p><strong>分子标记信息通常用于推断关于各种物种的遗传和表型变异之间的关系</strong>，例如。人[1]，奶牛[2]或小鼠[3]。<strong>假设数量性状基因座（QTL）和标记之间的连锁不平衡（LD），可以估计遗传效应并解释为由邻近标记捕获的QTL效应</strong>。如果育种值是焦点，遗传效应通常被建模为加性作用标记等位基因效应（例如[4,5]）。生物作用的模式当然可以不同于纯加成性的假设。更好地理解复杂性状的遗传结构的一种可能性是在将模型拟合到性状时包括等位基因的基因座内（显性）和基因座间（上位）相互作用。最近已经研究了非加性效应对遗传变异的重要性。关于非加性效应的知识对于受益于例如杂种显性效应[6]是必要的，特别是对于杂交育种方案（家禽，植物等）。通常，可以预期的是，如果对非加性效应进行另外建模，则遗传值的预测，特别是其加性部分的预测得到改善。例如，Lee等人[7]报道当在小鼠中研究表型涂层颜色（+ 17％的准确性）或CD8 +细胞的百分比（+ 2％的准确性）时，<strong>与单纯加性遗传模型相比，当包括显性效应时，预测的准确度显着增加。然而，增加的上位性在这种情况下没有贡献准确性</strong>。在大豆重组近交系的实例中[8]，在上位模型下预测的准确度增加了一倍以上。即使非加性效应可能发生在基因作用的水平，当基因处于极端频率时，大多数遗传变异可能被赋予加性效应[9]。例如上位性参与调节复杂性状的程度是未知的，但关于它的知识可以用于推断生物学机制和重建生物学途径[10]。 Carlborg等人[11]在关于对鸡生长差异的非加性影响的第一个研究中，估计10％的早期生长（性状Gr18）的遗传变异是由于显性，甚至70％由于上位性。这个例子显示了相互作用位点的重要性，虽然可以假设高估上位性效应，一种已知为单个位点的Beavis效应的现象[12]。由于这个实验是基于十分不同的线，需要进一步的研究来找到证据的交互基因在纯种。</p>
+
+<p>不同的方法可用于模拟加性和非加性遗传效应。在QTL检测的方面，可以使用例如方差分量法来进行基因组扫描以揭示遗传效应[13,14]。如果加性和非加性效应要在整个基因组上同时建模，我们必须知道“p大于n”的问题，意味着有更多的参数比观察。为了应对一体化的局面，Xu提出了一种贝叶斯方法[15]，它与BayesA [4]和一个经验贝叶斯方法[16]加性剂标记效应。通常用于估计加性效应的贝叶斯方法应用需要大量计算时间的马尔科夫链蒙特卡罗（MCMC）模拟，但是他们在预测遗传值的准确性方面说服他们。特别地，<strong>BayesB方法[4]优于其他方法，例如脊回归和偏最小二乘[17,18,19]</strong>。如果包括进一步的非加性效应，MCMC采样方法可能在高标记密度下崩溃。作为一种替代方法，贝叶斯方法是可用的，应用分析导出的后验密度的标记效应，而不是其样品[20]。这种方法（称为fBayesB）显示出略微不太准确，因为在迭代过程中，一次仅研究单个标记物效应，而针对所有其他先前估计的效应校正表型的载体。 fBayesB策略比使用MCMC的传统贝叶斯方法快得多。这种解决方法提供了另外考虑全基因组相互作用效应和用合理的计算努力来估计它们的可能性。</p>
+
+<p>本研究的目的是探讨非加性效应对牲畜种群遗传价值预测的影响。当加性和非加性效应联合涉及将模型拟合到性状时，旨在改进的加性效应的估计和更好的遗传值的预测。由于旨在估计任意群体中的非加性效应的方法刚刚出现，因此使用模拟来验证这些方法是特别重要的。因此，通过这项研究，我们追求方法方面，从而组合事实，有助于解释在实际数据中获得的结果在未来的工作。我们认为加性，显性和成对地上位效应捕获在分布在整个基因组的双等位基因标记。统计建模的细节在本文的第一部分。我们扩展了快速贝叶斯方法（fBayesB），它是在纯加和性下开发的[20]，包括非加性效应。 fBayesB用于在类似于奶牛群体的模拟数据集的基础上估计遗传效应。模拟不同的情景以研究预测精度的损失，如果上位性效应未被模拟但是被建模，反之亦然。在第二部分，我们总结了分析模拟数据的结果。确定在标志物效应的全基因组估计后分配给每种遗传效应的遗传变异的量。为了简要说明该方法在实践中的行为，我们还将fBayesB应用于实际数据示例。在第三部分，我们概述了通过fBayesB方法估计非加性效应的一些约束，并讨论其他解决策略。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/far-reaching-%E6%B7%B1%E8%BF%9C%E7%9A%84/" data-toggle="tooltip" data-placement="top" title="far-reaching-深远的">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/exposed-to-%E6%8E%A5%E8%A7%A6%E6%9A%B4%E9%9C%B2%E4%BA%8E%E5%A4%84%E4%BA%8E%E5%8F%97%E5%88%B0/" data-toggle="tooltip" data-placement="top" title="exposed-to-接触，暴露于，处于，受到">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

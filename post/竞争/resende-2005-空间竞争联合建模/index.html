@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Resende-2005-空间&amp;竞争联合建模</title>
+  <meta property="og:title" content="Resende-2005-空间&amp;竞争联合建模" />
+  <meta name="twitter:title" content="Resende-2005-空间&amp;竞争联合建模" />
+  <meta name="description" content="Resende MDV, Stringer J, Cullis B, Thompson R. Joint Modelling of Competition and Spatial Variability in Forest Field Trials. Rev. Mat. Estat., São Paulo. 2005;23:7–22.   植物田间实验的分析应该基于考虑与所评估的性状相关的生物过程以及环境影响的现实方法。在经典区组分析模型中至少有三个基本假设。首先，与区组中的小区相关联的环境是恒定的（或接近）。其次，由于特定处理对小区的反应不直接影响邻近小区的反应。第三，残差是独立的。第一个假设涉及环境影响，通常称为空间趋势，而第二个假设涉及处理效应，称为干扰。第三个假设是关于空间相关性。这三种效应的调整可能改善分析和减少偏差。本文旨在同时考虑林木田间试验的趋势，干扰和相关性。目标是比较和扩展替代模型，量化这些物种的竞争水平，并推断在这些作物的常规数据分析中需要更复杂的模型。包括传统区组，空间（自回归行和列效应），表型竞争，表型竞争&#43;空间，基因型竞争&#43;空间模型的几个模型应用于两个数据集，一个涉及桉树物种，另一个涉及松属。结果表明，基因型竞争&#43;空间模型，包括遗传竞争效应和残余竞争效应和环境趋势之间的平衡明确考虑遗传竞争，并允许品种和竞争效应之间的协方差。它包括整个相关模式，往往比表型竞争模型更精确。结果显示，协变量方法对竞争和趋势同时建模的不一致性和不足性，这是一个众所周知的单独模拟竞争效应的结果。调整的REML方法提供表型竞争模型的精确拟合，并改进方差和竞争参数的估计。表型竞争与自回归参数大致相同的变异源。具有基因型竞争&#43;空间术语的通用模型通常是通常的第一模型，以适合，因为这将指示更有限的模型是否合适。
+1简介 植物田间实验的分析应该基于考虑与所评估的性状相关的生物过程以及环境影响的现实方法。实验设计在提供可靠的数据集进行分析方面发挥关键作用。然而，依赖于区组的局部控制方案在考虑所有环境梯度和趋势方面可能是低效的，并且甚至不完全区组不提供对环境影响的完整评价。由于生育率和其他环境影响，区组内的空间依赖性应通过适当的空间分析模型加以考虑。此外，相邻植物的竞争效应也可以导致处理比较的偏差，这是由于一种基因型对相邻植物或地块的表型响应的干扰。因此，也应该使用竞争模型，旨在评估干扰效应。在经典区组模型中存在至少三个基本假设。 首先，与区组中的小区相关的生育力是恒定的（或接近）。其次，由于特定处理对小区的反应不直接影响邻近小区的反应。第三，残差是独立的。第一个假设涉及通常称为空间趋势的环境效应，而第二个假设涉及处理效应，被称为干扰。第三个假设是关于空间相关性。趋势效应是常见的发生和纠正，它可能增加遗传力和精度估计，因为它是一种环境效应。干扰可以取决于物种的生物学，并且其调整可能降低遗传力估计，因为其涉及处理效应。对这两种效应的调整可能会减少偏差。实验者应该知道感兴趣物种中的竞争效应，以帮助在具有或没有竞争效应的模型之间进行选择。在林木中，竞争效应主要取决于测量的年龄。在竞争效应下，最好的基因型倾向于显示出它们的优势的高估，这是由于对表现出竞争敏感性的最坏基因型的更大侵略性。植物干扰和空间趋势效应的一个重要特征是它们对拟合模型的影响。空间趋势在相邻植物或地块之间产生正自相关，由于竞争，植物干扰在它们之间产生负自相关。空间模型的拟合可以揭示竞争模型的需要。在空间分析中获得的高（假&gt; 0.3）正自相关系数估计揭示空间趋势优于竞争和负或接近零自相关系数估计揭示强大的竞争效应可能与空间趋势。此外，首先拟合竞争模型可以揭示这种效应的意义。在某些情况下，只建模一个效应，可能是不合适的。所以两个效应应该一起建模。空间相关性通过Cullis和Gleeson（1991）和Gilmour，Cullis和Verbyla（1997）的残差自回归模型很好地适应。用于在植物中竞争的模型已经由Pearce（1957），Mead（1967），Draper和Guttman（1980），Kempton（1982），Besag和Kempton（1986），Stringer和Cullis（2002）和Stringer，Cullis和Thompson （2005）。在空间变异性和干扰都很重要的情况下，需要一种联合建模方法。 Durban et al。 （2001）提出了一种将平滑样条与模型趋势与竞争的表型干扰模型相结合的方法。 Stringer，Cullis和Thompson（2005）开发了一种基于基因型和表型干扰模型的早期甘蔗试验的广泛方法，并允许随机品种效应和相关的错误结构。本文探讨了最初在Stringer，Cullis和Thompson（2005）中给出的模型，旨在同时考虑现场试验的趋势，干扰和相关性。我们概述了一些基本的考虑，并进一步测试树种的两个数据集的模型。目标是比较和扩展替代模型，量化这些物种的竞争水平，并推断这些作物数据分析常规中需要更复杂的模型。">
+  <meta property="og:description" content="Resende MDV, Stringer J, Cullis B, Thompson R. Joint Modelling of Competition and Spatial Variability in Forest Field Trials. Rev. Mat. Estat., São Paulo. 2005;23:7–22.   植物田间实验的分析应该基于考虑与所评估的性状相关的生物过程以及环境影响的现实方法。在经典区组分析模型中至少有三个基本假设。首先，与区组中的小区相关联的环境是恒定的（或接近）。其次，由于特定处理对小区的反应不直接影响邻近小区的反应。第三，残差是独立的。第一个假设涉及环境影响，通常称为空间趋势，而第二个假设涉及处理效应，称为干扰。第三个假设是关于空间相关性。这三种效应的调整可能改善分析和减少偏差。本文旨在同时考虑林木田间试验的趋势，干扰和相关性。目标是比较和扩展替代模型，量化这些物种的竞争水平，并推断在这些作物的常规数据分析中需要更复杂的模型。包括传统区组，空间（自回归行和列效应），表型竞争，表型竞争&#43;空间，基因型竞争&#43;空间模型的几个模型应用于两个数据集，一个涉及桉树物种，另一个涉及松属。结果表明，基因型竞争&#43;空间模型，包括遗传竞争效应和残余竞争效应和环境趋势之间的平衡明确考虑遗传竞争，并允许品种和竞争效应之间的协方差。它包括整个相关模式，往往比表型竞争模型更精确。结果显示，协变量方法对竞争和趋势同时建模的不一致性和不足性，这是一个众所周知的单独模拟竞争效应的结果。调整的REML方法提供表型竞争模型的精确拟合，并改进方差和竞争参数的估计。表型竞争与自回归参数大致相同的变异源。具有基因型竞争&#43;空间术语的通用模型通常是通常的第一模型，以适合，因为这将指示更有限的模型是否合适。
+1简介 植物田间实验的分析应该基于考虑与所评估的性状相关的生物过程以及环境影响的现实方法。实验设计在提供可靠的数据集进行分析方面发挥关键作用。然而，依赖于区组的局部控制方案在考虑所有环境梯度和趋势方面可能是低效的，并且甚至不完全区组不提供对环境影响的完整评价。由于生育率和其他环境影响，区组内的空间依赖性应通过适当的空间分析模型加以考虑。此外，相邻植物的竞争效应也可以导致处理比较的偏差，这是由于一种基因型对相邻植物或地块的表型响应的干扰。因此，也应该使用竞争模型，旨在评估干扰效应。在经典区组模型中存在至少三个基本假设。 首先，与区组中的小区相关的生育力是恒定的（或接近）。其次，由于特定处理对小区的反应不直接影响邻近小区的反应。第三，残差是独立的。第一个假设涉及通常称为空间趋势的环境效应，而第二个假设涉及处理效应，被称为干扰。第三个假设是关于空间相关性。趋势效应是常见的发生和纠正，它可能增加遗传力和精度估计，因为它是一种环境效应。干扰可以取决于物种的生物学，并且其调整可能降低遗传力估计，因为其涉及处理效应。对这两种效应的调整可能会减少偏差。实验者应该知道感兴趣物种中的竞争效应，以帮助在具有或没有竞争效应的模型之间进行选择。在林木中，竞争效应主要取决于测量的年龄。在竞争效应下，最好的基因型倾向于显示出它们的优势的高估，这是由于对表现出竞争敏感性的最坏基因型的更大侵略性。植物干扰和空间趋势效应的一个重要特征是它们对拟合模型的影响。空间趋势在相邻植物或地块之间产生正自相关，由于竞争，植物干扰在它们之间产生负自相关。空间模型的拟合可以揭示竞争模型的需要。在空间分析中获得的高（假&gt; 0.3）正自相关系数估计揭示空间趋势优于竞争和负或接近零自相关系数估计揭示强大的竞争效应可能与空间趋势。此外，首先拟合竞争模型可以揭示这种效应的意义。在某些情况下，只建模一个效应，可能是不合适的。所以两个效应应该一起建模。空间相关性通过Cullis和Gleeson（1991）和Gilmour，Cullis和Verbyla（1997）的残差自回归模型很好地适应。用于在植物中竞争的模型已经由Pearce（1957），Mead（1967），Draper和Guttman（1980），Kempton（1982），Besag和Kempton（1986），Stringer和Cullis（2002）和Stringer，Cullis和Thompson （2005）。在空间变异性和干扰都很重要的情况下，需要一种联合建模方法。 Durban et al。 （2001）提出了一种将平滑样条与模型趋势与竞争的表型干扰模型相结合的方法。 Stringer，Cullis和Thompson（2005）开发了一种基于基因型和表型干扰模型的早期甘蔗试验的广泛方法，并允许随机品种效应和相关的错误结构。本文探讨了最初在Stringer，Cullis和Thompson（2005）中给出的模型，旨在同时考虑现场试验的趋势，干扰和相关性。我们概述了一些基本的考虑，并进一步测试树种的两个数据集的模型。目标是比较和扩展替代模型，量化这些物种的竞争水平，并推断这些作物数据分析常规中需要更复杂的模型。">
+  <meta name="twitter:description" content="Resende MDV, Stringer J, Cullis B, Thompson R. Joint Modelling of Competition and Spatial Variability in Forest Field Trials. Rev. Mat. Estat., São Paulo. 2005;23:7–22.   植物田间实验的分析应该基于考虑与所评估的性状相关的生物过程 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%AB%9E%E4%BA%89/resende-2005-%E7%A9%BA%E9%97%B4%E7%AB%9E%E4%BA%89%E8%81%94%E5%90%88%E5%BB%BA%E6%A8%A1/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%AB%9E%E4%BA%89/resende-2005-%E7%A9%BA%E9%97%B4%E7%AB%9E%E4%BA%89%E8%81%94%E5%90%88%E5%BB%BA%E6%A8%A1/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Resende-2005-空间&amp;竞争联合建模</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (36 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Resende-2005-空间&amp;竞争联合建模</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (36 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<ol>
+<li>Resende MDV, Stringer J, Cullis B, Thompson R. Joint Modelling of Competition and Spatial Variability in Forest Field Trials. Rev. Mat. Estat., São Paulo. 2005;23:7–22.</li>
+</ol>
+</blockquote>
+
+<p>植物田间实验的分析应该基于考虑与所评估的性状相关的生物过程以及环境影响的现实方法。在经典区组分析模型中至少有三个基本假设。首先，与区组中的小区相关联的环境是恒定的（或接近）。其次，由于特定处理对小区的反应不直接影响邻近小区的反应。第三，残差是独立的。第一个假设涉及环境影响，通常称为空间趋势，而第二个假设涉及处理效应，称为干扰。第三个假设是关于空间相关性。这三种效应的调整可能改善分析和减少偏差。本文旨在同时考虑林木田间试验的趋势，干扰和相关性。目标是比较和扩展替代模型，量化这些物种的竞争水平，并推断在这些作物的常规数据分析中需要更复杂的模型。包括传统区组，空间（自回归行和列效应），表型竞争，表型竞争+空间，基因型竞争+空间模型的几个模型应用于两个数据集，一个涉及桉树物种，另一个涉及松属。结果表明，基因型竞争+空间模型，包括遗传竞争效应和残余竞争效应和环境趋势之间的平衡明确考虑遗传竞争，并允许品种和竞争效应之间的协方差。它包括整个相关模式，往往比表型竞争模型更精确。结果显示，<strong>协变量方法对竞争和趋势同时建模的不一致性和不足性，这是一个众所周知的单独模拟竞争效应的结果</strong>。调整的REML方法提供表型竞争模型的精确拟合，并改进方差和竞争参数的估计。<strong>表型竞争与自回归参数大致相同的变异源</strong>。具有基因型竞争+空间术语的通用模型通常是通常的第一模型，以适合，因为这将指示更有限的模型是否合适。</p>
+
+<p>1简介
+植物田间实验的分析应该基于考虑与所评估的性状相关的生物过程以及环境影响的现实方法。实验设计在提供可靠的数据集进行分析方面发挥关键作用。然而，<strong>依赖于区组的局部控制方案在考虑所有环境梯度和趋势方面可能是低效的，并且甚至不完全区组不提供对环境影响的完整评价</strong>。由于生育率和其他环境影响，区组内的空间依赖性应通过适当的空间分析模型加以考虑。此外，相邻植物的竞争效应也可以导致处理比较的偏差，这是由于一种基因型对相邻植物或地块的表型响应的干扰。因此，也应该使用竞争模型，旨在评估干扰效应。在经典区组模型中存在至少三个基本假设。
+首先，与区组中的小区相关的生育力是恒定的（或接近）。其次，由于特定处理对小区的反应不直接影响邻近小区的反应。第三，残差是独立的。第一个假设涉及通常称为空间趋势的环境效应，而第二个假设涉及处理效应，被称为干扰。第三个假设是关于空间相关性。趋势效应是常见的发生和纠正，它可能增加遗传力和精度估计，因为它是一种环境效应。干扰可以取决于物种的生物学，并且其调整可能降低遗传力估计，因为其涉及处理效应。对这两种效应的调整可能会减少偏差。<strong>实验者应该知道感兴趣物种中的竞争效应，以帮助在具有或没有竞争效应的模型之间进行选择</strong>。在林木中，竞争效应主要取决于测量的年龄。<strong>在竞争效应下，最好的基因型倾向于显示出它们的优势的高估，这是由于对表现出竞争敏感性的最坏基因型的更大侵略性</strong>。植物干扰和空间趋势效应的一个重要特征是它们对拟合模型的影响。<strong>空间趋势在相邻植物或地块之间产生正自相关，由于竞争，植物干扰在它们之间产生负自相关</strong>。空间模型的拟合可以揭示竞争模型的需要。<strong>在空间分析中获得的高（假&gt; 0.3）正自相关系数估计揭示空间趋势优于竞争和负或接近零自相关系数估计揭示强大的竞争效应可能与空间趋势</strong>。此外，<strong>首先拟合竞争模型可以揭示这种效应的意义。在某些情况下，只建模一个效应，可能是不合适的。所以两个效应应该一起建模</strong>。<strong>空间相关性通过Cullis和Gleeson（1991）和Gilmour，Cullis和Verbyla（1997）的残差自回归模型很好地适应。用于在植物中竞争的模型已经由Pearce（1957），Mead（1967），Draper和Guttman（1980），Kempton（1982），Besag和Kempton（1986），Stringer和Cullis（2002）和Stringer，Cullis和Thompson （2005）</strong>。在空间变异性和干扰都很重要的情况下，需要一种联合建模方法。 <strong>Durban et al。 （2001）提出了一种将平滑样条与模型趋势与竞争的表型干扰模型相结合的方法</strong>。 Stringer，Cullis和Thompson（2005）开发了一种基于基因型和表型干扰模型的早期甘蔗试验的广泛方法，并允许随机品种效应和相关的错误结构。本文探讨了最初在Stringer，Cullis和Thompson（2005）中给出的模型，旨在同时考虑现场试验的趋势，干扰和相关性。<strong>我们概述了一些基本的考虑，并进一步测试树种的两个数据集的模型。目标是比较和扩展替代模型，量化这些物种的竞争水平，并推断这些作物数据分析常规中需要更复杂的模型</strong>。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/gs/resende2012/" data-toggle="tooltip" data-placement="top" title="Resende2012">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/gs/ratcliffe2017-%E5%8D%95%E6%AD%A5blup/" data-toggle="tooltip" data-placement="top" title="Ratcliffe2017-单步blup">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

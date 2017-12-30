@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>间接遗传效应及对林木育种中选择的影响</title>
+  <meta property="og:title" content="间接遗传效应及对林木育种中选择的影响" />
+  <meta name="twitter:title" content="间接遗传效应及对林木育种中选择的影响" />
+  <meta name="description" content="间接遗传效应及对林木育种中选择的影响 间接遗传效应 可遗传变异，即加性遗传方差，对选择精度和遗传增益有显著影响，在育种群体的遗传改良过程中至关重要（(Falconer and Mackay 1996)）。为避免在估计加性方差时产生偏差，分析采用的统计模型中应包括所有其他遗传变异来源以及所有可识别的环境因素。尽管经典的数量遗传模型已经使人们对遗传和选择响应有较为清晰的理解，但类似基因和基因型之间的差异以及环境的差异如何转化为表型变异的问题依旧充满挑战。随着统计模型及统计分析程序发展水平的逐渐提高，表型变异来源正被尽可能多的因素来解释，比如个体间的相互作用。个体间的相互作用又称为间接遗传效应，即个体的表型性状值可以取决于其他个体基因的表达(Griffing 1967; Wolf et al. 1998)。间接遗传效应广泛存在于自然界中，例如同种植物的相邻个体竞争相同的空间、光照或营养物质(Sakai 1955; Frank 2007; Karban 2008)。 林木个体捕获并利用有限资源的能力对其生长或繁殖极为重要（(Binkley et al. 2004)）。这种能力由林木自身和相邻树木的基因型以及空间排列决定（(Hinson and Hanson 1962)），因此林木间的竞争同样是由遗传和环境造成的（(Magnussen 1989)）。竞争可能引起个体间或邻近小区之间负向的协方差，进而造成个体育种值的估计不够准确（参见例如(Magnussen 1993; Foster et al. 1998; Radtke et al. 2003)）。尽管有许多报道证明竞争的存在(VONEULER et al. 1992; Magnussen 1993; Foster et al. 1998)，但通常在评估模型中没有包括遗传竞争效应。而林木又有世代较长及育种周期较长的特性，在育种中考虑竞争效应越发重要。因此关于林木育种群体中竞争的数量遗传学研究虽然较少，但正在引起育种工作者的重视。
+在林木遗传测定中的发展 在经典的数量遗传模型中，个体的表型是其遗传价值或育种值和残余不可遗传效应的总和。GRIFFING（(Griffing 1967, 1968a; 1968b)）引入间接遗传效应（IGE）的概念，并提出了包括个体或个体分组间竞争的遗传效应模型，而后分析了使用这些模型对选择响应的后果。在这些模型中，个体的表型是其遗传效应（“直接遗传效应”）加上其他基因型的遗传贡献（“间接遗传效应”）的线性组合。虽然直接遗传效应在个体的表型中表达，但是间接遗传效应仅在另一个个体的表型中表达。在这个意义上，对个体表型的遗传影响分为其基因的直接效应和属于个体间相互作用的个体基因的间接影响（(Moore et al. 1997; Wolf et al. 1998)）。已经提出了几种方法来调整林木遗传试验中的竞争效应：例如包括距离相关竞争指数（(Tuskan and McKinley 1984)）、高度差的角度法（(Magnussen 1989)）和迭代最近邻法（(Magnussen 1994)）。然而，这些方法只认为竞争存在于表型水平，但没有在单株水平上分离遗传和非遗传竞争效应的作用。VAN VLECK和CASSADY（(Van Vleck and Cassady 2005)）使用模拟和固定数量的竞争者来确定限制最大似然估计（REML，(PATTERSON H. D.; THOMPSON 1971)）能否解决直接和竞争遗传方差的协方差结构以及它们之间的协方差。这项研究的结果表明，竞争个体之间的加性关系在解释信息以估计（协）方差分量时可能是必要的。Muir（(Muir 2005)）在线性混合模型中包含了间接遗传效应IGE，并以林木育种为例，指出应根据将育种值与直接和间接（即竞争）效应相结合的指数来选择个体。虽然没有用实际林业数据验证，但是当使用来自日本鹌鹑的数据进行测试时，这些模型在某些情况下表明如果仅选择直接遗传效应可能会导致负选择反应。因此，林木中的人工选择方案可能是次优的，因为目前多数的性状改良的选择和育种策略中并没有考虑竞争能力的遗传基础。但他忽略了不同数量竞争者（例如邻近死亡或中心个体位于边缘）对估计竞争的加性遗传方差的影响。 较为完全的方法是在分析模型中对竞争和空间效应联合建模。同时考虑这2种因素的方法较早出现在农作物的研究中(Stringer and Cullis 2002)，随后Resende等（(Resende et al.">
+  <meta property="og:description" content="间接遗传效应及对林木育种中选择的影响 间接遗传效应 可遗传变异，即加性遗传方差，对选择精度和遗传增益有显著影响，在育种群体的遗传改良过程中至关重要（(Falconer and Mackay 1996)）。为避免在估计加性方差时产生偏差，分析采用的统计模型中应包括所有其他遗传变异来源以及所有可识别的环境因素。尽管经典的数量遗传模型已经使人们对遗传和选择响应有较为清晰的理解，但类似基因和基因型之间的差异以及环境的差异如何转化为表型变异的问题依旧充满挑战。随着统计模型及统计分析程序发展水平的逐渐提高，表型变异来源正被尽可能多的因素来解释，比如个体间的相互作用。个体间的相互作用又称为间接遗传效应，即个体的表型性状值可以取决于其他个体基因的表达(Griffing 1967; Wolf et al. 1998)。间接遗传效应广泛存在于自然界中，例如同种植物的相邻个体竞争相同的空间、光照或营养物质(Sakai 1955; Frank 2007; Karban 2008)。 林木个体捕获并利用有限资源的能力对其生长或繁殖极为重要（(Binkley et al. 2004)）。这种能力由林木自身和相邻树木的基因型以及空间排列决定（(Hinson and Hanson 1962)），因此林木间的竞争同样是由遗传和环境造成的（(Magnussen 1989)）。竞争可能引起个体间或邻近小区之间负向的协方差，进而造成个体育种值的估计不够准确（参见例如(Magnussen 1993; Foster et al. 1998; Radtke et al. 2003)）。尽管有许多报道证明竞争的存在(VONEULER et al. 1992; Magnussen 1993; Foster et al. 1998)，但通常在评估模型中没有包括遗传竞争效应。而林木又有世代较长及育种周期较长的特性，在育种中考虑竞争效应越发重要。因此关于林木育种群体中竞争的数量遗传学研究虽然较少，但正在引起育种工作者的重视。
+在林木遗传测定中的发展 在经典的数量遗传模型中，个体的表型是其遗传价值或育种值和残余不可遗传效应的总和。GRIFFING（(Griffing 1967, 1968a; 1968b)）引入间接遗传效应（IGE）的概念，并提出了包括个体或个体分组间竞争的遗传效应模型，而后分析了使用这些模型对选择响应的后果。在这些模型中，个体的表型是其遗传效应（“直接遗传效应”）加上其他基因型的遗传贡献（“间接遗传效应”）的线性组合。虽然直接遗传效应在个体的表型中表达，但是间接遗传效应仅在另一个个体的表型中表达。在这个意义上，对个体表型的遗传影响分为其基因的直接效应和属于个体间相互作用的个体基因的间接影响（(Moore et al. 1997; Wolf et al. 1998)）。已经提出了几种方法来调整林木遗传试验中的竞争效应：例如包括距离相关竞争指数（(Tuskan and McKinley 1984)）、高度差的角度法（(Magnussen 1989)）和迭代最近邻法（(Magnussen 1994)）。然而，这些方法只认为竞争存在于表型水平，但没有在单株水平上分离遗传和非遗传竞争效应的作用。VAN VLECK和CASSADY（(Van Vleck and Cassady 2005)）使用模拟和固定数量的竞争者来确定限制最大似然估计（REML，(PATTERSON H. D.; THOMPSON 1971)）能否解决直接和竞争遗传方差的协方差结构以及它们之间的协方差。这项研究的结果表明，竞争个体之间的加性关系在解释信息以估计（协）方差分量时可能是必要的。Muir（(Muir 2005)）在线性混合模型中包含了间接遗传效应IGE，并以林木育种为例，指出应根据将育种值与直接和间接（即竞争）效应相结合的指数来选择个体。虽然没有用实际林业数据验证，但是当使用来自日本鹌鹑的数据进行测试时，这些模型在某些情况下表明如果仅选择直接遗传效应可能会导致负选择反应。因此，林木中的人工选择方案可能是次优的，因为目前多数的性状改良的选择和育种策略中并没有考虑竞争能力的遗传基础。但他忽略了不同数量竞争者（例如邻近死亡或中心个体位于边缘）对估计竞争的加性遗传方差的影响。 较为完全的方法是在分析模型中对竞争和空间效应联合建模。同时考虑这2种因素的方法较早出现在农作物的研究中(Stringer and Cullis 2002)，随后Resende等（(Resende et al.">
+  <meta name="twitter:description" content="间接遗传效应及对林木育种中选择的影响 间接遗传效应 可遗传变异，即加性遗传方差，对选择精度和遗传增益有显著影响，在育种群体的遗传改良过程中至关重要（(Falconer and Mackay 1996)）。为避免在估计加性方差时产生偏差，分析采用的统计模型中应包括所有其他遗传变异来源以及所有可识别的环境因素。尽管经典的数量遗传模型已经使人们对遗传和选择响应有较为清晰的理解，但类似基因和基因型之间的差 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E8%AE%BA%E6%96%87/%E9%97%B4%E6%8E%A5%E9%81%97%E4%BC%A0%E6%95%88%E5%BA%94%E5%8F%8A%E5%AF%B9%E6%9E%97%E6%9C%A8%E8%82%B2%E7%A7%8D%E4%B8%AD%E9%80%89%E6%8B%A9%E7%9A%84%E5%BD%B1%E5%93%8D/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E8%AE%BA%E6%96%87/%E9%97%B4%E6%8E%A5%E9%81%97%E4%BC%A0%E6%95%88%E5%BA%94%E5%8F%8A%E5%AF%B9%E6%9E%97%E6%9C%A8%E8%82%B2%E7%A7%8D%E4%B8%AD%E9%80%89%E6%8B%A9%E7%9A%84%E5%BD%B1%E5%93%8D/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>间接遗传效应及对林木育种中选择的影响</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (141 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>间接遗传效应及对林木育种中选择的影响</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (141 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h2 id="间接遗传效应及对林木育种中选择的影响">间接遗传效应及对林木育种中选择的影响</h2>
+
+<h3 id="间接遗传效应">间接遗传效应</h3>
+
+<p>可遗传变异，即加性遗传方差，对选择精度和遗传增益有显著影响，在育种群体的遗传改良过程中至关重要（(Falconer and Mackay 1996)）。为避免在估计加性方差时产生偏差，分析采用的统计模型中应包括所有其他遗传变异来源以及所有可识别的环境因素。尽管经典的数量遗传模型已经使人们对遗传和选择响应有较为清晰的理解，但类似基因和基因型之间的差异以及环境的差异如何转化为表型变异的问题依旧充满挑战。随着统计模型及统计分析程序发展水平的逐渐提高，表型变异来源正被尽可能多的因素来解释，比如个体间的相互作用。个体间的相互作用又称为间接遗传效应，即个体的表型性状值可以取决于其他个体基因的表达(Griffing 1967; Wolf et al. 1998)。间接遗传效应广泛存在于自然界中，例如同种植物的相邻个体竞争相同的空间、光照或营养物质(Sakai 1955; Frank 2007; Karban 2008)。
+林木个体捕获并利用有限资源的能力对其生长或繁殖极为重要（(Binkley et al. 2004)）。这种能力由林木自身和相邻树木的基因型以及空间排列决定（(Hinson and Hanson 1962)），因此林木间的竞争同样是由遗传和环境造成的（(Magnussen 1989)）。竞争可能引起个体间或邻近小区之间负向的协方差，进而造成个体育种值的估计不够准确（参见例如(Magnussen 1993; Foster et al. 1998; Radtke et al. 2003)）。尽管有许多报道证明竞争的存在(VONEULER et al. 1992; Magnussen 1993; Foster et al. 1998)，但通常在评估模型中没有包括遗传竞争效应。而林木又有世代较长及育种周期较长的特性，在育种中考虑竞争效应越发重要。因此关于林木育种群体中竞争的数量遗传学研究虽然较少，但正在引起育种工作者的重视。</p>
+
+<h3 id="在林木遗传测定中的发展">在林木遗传测定中的发展</h3>
+
+<p>在经典的数量遗传模型中，个体的表型是其遗传价值或育种值和残余不可遗传效应的总和。GRIFFING（(Griffing 1967, 1968a; 1968b)）引入间接遗传效应（IGE）的概念，并提出了包括个体或个体分组间竞争的遗传效应模型，而后分析了使用这些模型对选择响应的后果。在这些模型中，个体的表型是其遗传效应（“直接遗传效应”）加上其他基因型的遗传贡献（“间接遗传效应”）的线性组合。虽然直接遗传效应在个体的表型中表达，但是间接遗传效应仅在另一个个体的表型中表达。在这个意义上，对个体表型的遗传影响分为其基因的直接效应和属于个体间相互作用的个体基因的间接影响（(Moore et al. 1997; Wolf et al. 1998)）。已经提出了几种方法来调整林木遗传试验中的竞争效应：例如包括距离相关竞争指数（(Tuskan and McKinley 1984)）、高度差的角度法（(Magnussen 1989)）和迭代最近邻法（(Magnussen 1994)）。然而，这些方法只认为竞争存在于表型水平，但没有在单株水平上分离遗传和非遗传竞争效应的作用。VAN VLECK和CASSADY（(Van Vleck and Cassady 2005)）使用模拟和固定数量的竞争者来确定限制最大似然估计（REML，(PATTERSON H. D.; THOMPSON 1971)）能否解决直接和竞争遗传方差的协方差结构以及它们之间的协方差。这项研究的结果表明，竞争个体之间的加性关系在解释信息以估计（协）方差分量时可能是必要的。Muir（(Muir 2005)）在线性混合模型中包含了间接遗传效应IGE，并以林木育种为例，指出应根据将育种值与直接和间接（即竞争）效应相结合的指数来选择个体。虽然没有用实际林业数据验证，但是当使用来自日本鹌鹑的数据进行测试时，这些模型在某些情况下表明如果仅选择直接遗传效应可能会导致负选择反应。因此，林木中的人工选择方案可能是次优的，因为目前多数的性状改良的选择和育种策略中并没有考虑竞争能力的遗传基础。但他忽略了不同数量竞争者（例如邻近死亡或中心个体位于边缘）对估计竞争的加性遗传方差的影响。
+较为完全的方法是在分析模型中对竞争和空间效应联合建模。同时考虑这2种因素的方法较早出现在农作物的研究中(Stringer and Cullis 2002)，随后Resende等（(Resende et al. 2005)）首先利用实地试验的林业数据验证IGE模型，建议植物田间试验分析应该同时考虑竞争因素和林地的空间变异，发现表型竞争和自回归参数能解释大致相同的变异，但该研究同样没有考虑由于死亡引起的缺株以及中心个体与其邻株之间在不同空间方向上距离不同的问题。Cappa和Cantet（(Cappa and Cantet 2008)）在数量遗传模型中纳入竞争因素的强度，从而很好地解决了这些问题，但他们没有考虑残差协方差结构。Brotherstone (Brotherstone et al. 2011)也只是单纯地利用19a生西加云杉(Picea sitchensis, Bong. Carr)的胸径数据，在遗传和残差水平拟合了竞争效应，发现模型拟合效果好于忽略竞争或只在遗传或只在残差水平拟合竞争。直到2013年，Costa E Silva等(Costa E Silva et al. 2013; Costa e Silva and Kerr 2013)结合Cappa和Cantet（(Cappa and Cantet 2008)）的竞争因素强度，针对林木遗传测定林的实际情况，较好地完成了在林木中对竞争和空间效应联合建模的方法。最近，Cappa等(Cappa et al. 2016)将这个方法扩展到具有多个试验点的情况，并发现在具有强竞争遗传效应时，联合建模比简单模型拟合效果要好；而忽略竞争效应和环境异质性导致更低的加性遗传方差和更高的残差；忽略竞争效应则高估环境异质性，而忽略环境异质性导致低估竞争效应。因此，同时考虑竞争和空间效应，能够使人们对林木的遗传和选择响应有更清晰的理解、能够更加准确地估计遗传参数、育种值及遗传增益，并有助于制定更为合理的选择策略。</p>
+
+<h3 id="对育种选择的影响">对育种选择的影响</h3>
+
+<p>进化理论和数量遗传学的一些研究表明，竞争可能在自然和人工选择程序中显着影响选择响应（(Muir 2005; Bijma et al. 2007; Bijma 2010)）。根据目标性状，由同种生物间的交互引起的间接遗传效应，可能会导致个体基因直接和间接效应之间正向（可遗传合作）或负向（可遗传竞争）的协方差（(Costa E Silva et al. 2013)）。这种协方差是间接遗传效应对可遗传变异和选择的潜在响应的关键决定因素。当直接和间接遗传效应之间的协方差为正时增加可遗传变异和对选择的潜在响应，相反协方差为负时，间接遗传效应可能对优良个体的选择造成负面效应，从而限制个体选择的效率（(Muir 2005; Bijma 2011; Costa E Silva et al. 2013)）。Griffing（(Griffing 1967)）的理论研究证实即使在弱竞争条件下，也可能发生对选择的负响应；并且尽管通常有相当大的直接遗传力，间接遗传效应也有可能完全去除可遗传方差（(Bijma 2011)）。所以目前在林木育种程序中通常忽略间接遗传效应的策略可能对选择产生很小甚至负面的效应，因为选择可能增加树木之间的竞争。因此，结合间接遗传效应的模型对于研究林木个体相互作用所影响性状的遗传基础至关重要（(Muir 2005; Costa e Silva and Kerr 2013)）。Cannell（(Cannell 1978)）建议选择非竞争性基因型以提高林木单位面积产量。如果对生长的直接影响与竞争效应负相关，这种育种策略是最有效的。在这种情况下，具有大的生长遗传潜力的个体倾向于产生较少的竞争，使得林地密度可以增加，从而增加单位面积的产量。另一方面，如果直接和竞争效应之间存在正相关性，将导致选择出更有竞争力的个体。因为生长较快的个体会阻碍其邻株的生长，这反过来会降低总产量。Denison等（(Denison et al. 2003)）指出，提高世界主要作物的产量潜力也主要是通过降低单株植物竞争力，这样有利于提高作物群体的综合表现。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/bayesian/%E9%98%88%E5%80%BC%E6%80%A7%E7%8A%B6-gibbs-blup/" data-toggle="tooltip" data-placement="top" title="阈值性状-Gibbs-BLUP">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/%E9%87%8E%E7%94%9F%E7%BA%A2%E9%B9%BF-%E7%A9%BA%E9%97%B4/" data-toggle="tooltip" data-placement="top" title="野生红鹿-空间">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Hunt-2013-竞争</title>
+  <meta property="og:title" content="Hunt-2013-竞争" />
+  <meta name="twitter:title" content="Hunt-2013-竞争" />
+  <meta name="description" content="Hunt CH, Smith AB, Jordan DR, Cullis BR (2013) Predicting Additive and Non-additive Genetic Effects from Trials Where Traits Are Affected by Interplot Competition. J Agric Biol Environ Stat 18:53–63. doi: 10.1007/s13253-012-0117-7 预测其中性状受插图间竞争影响的试验的添加和非加性遗传效应
+ 在植物育种程序中有两种关键的选择类型，即选择用于潜在商业用途的杂交体和选择用于未来育种的亲本。 Oakey et al。 （在理论和Applied Genetics 113,809-819,2006中）显示了如何使用混合模型分析中的谱系信息来实现这两个目的，以便将遗传效应分配为附加效应和非附加效应。 他们的方法是针对空间变异的现场试验数据开发的。 在本文中，我们扩展了数据从试验到插槽竞争的方法。 我们展示如何使用该方法获得纯立场添加剂和非添加剂效应的预测。 我们使用澳大利亚高粱育种计划的一个例子，在单一田间试验的背景下开发方法。
+1.引言
+广泛认识到，由于田间地块的空间位置，植物育种试验的数据常常表现出空间变化。聚焦于控制空间变化的基于模型的分析已经显示出对选择的响应导致显着的增益。大多数当前的空间方法涉及使用相关模型的趋势的直接建模，基本前提是更靠近在一起的绘图比更远离的绘图更类似（更高度相关）。一种这样的方法是Gilmour，Cullis和Verbyla（1997），其已经成功地用于分析来自澳大利亚谷物育种计划的谷物产量数据多年。然而，这些模型不适用于存在小区间竞争的试验中测量的性状。澳大利亚这种类型的一个重要例子是高粱繁殖试验的产量。 Hunt和Jordan（2009年）对36个这类试验的高粱产量（吨/公顷t / ha）进行了检查，发现三分之一的这些试验的间隙竞争的证据。他们建议，对于这种类型的数据，可以适应小区间竞争和空间趋势的联合建模方法是可取的。 Stringer（2006）讨论了用于联合建模插图竞争和生育趋势的一些方法。在这些方法之一中，使用Besag和Kempton（1986）治疗干扰模型（TIM）的随机效应模拟来模拟插图竞争。在该模型中，假定个体品种具有直接效应（在其生长的图上）和邻近效应（在相邻图上）。在随机效应设置中，这些被认为是（相关的）遗传效应，使得竞争在遗传水平上建模。 Stringer（2006）分析了许多早期甘蔗试验，发现随机效应治疗干扰模型（R-TIM）（或其降低的等级版本）在许多情况下提供了与数据的良好拟合。就杂交产量性能而言，感兴趣的关键性状是纯的产量，即来自不被不同遗传背景的杂种包围的杂种的产量。这种性状的混合效应的预测容易从R-TIM作为直接和邻居效应的预测的简单线性组合获得。 在澳大利亚高粱育种计划中，目的主要是为商业公司开发新的（完全育种的）亲本品系，以在其杂交育种计划中使用。 Oakey et al。 （2006）证明，通过并入血统信息的统计分析最好地满足这一目标。 Oakey et al。 （2006）提出了一个现场试验数据的混合模型，其中使用附加关系矩阵将遗传效应划分为附加和非附加成分，同时使用Gilmour，Cullis和Verbyla（1997）的空间技术同时建模误差变化。在本文中，我们提出了在Oakey等人的方法的扩展。 （2006），其结合了R-TIM以适应时隙竞争。所得模型能够将纯支架遗传效应分配为添加剂和非添加剂组分。在这里我们考虑单个试验的分析。在其他地方将考虑分析多个试验的扩展。 论文安排如下。首先我们介绍一个激励的例子（第2节）。在第3节中，我们提出了一系列统计模型用于单个现场试验的分析。我们开始一个基线分析，然后建立一个包含血统信息的分析，并适应空间变化和时空竞争。这些方法应用于实例的结果在第4节中给出。 ##2.移动实施例
+我们的激励榜样取自昆士兰农业，渔业和林业高粱育种计划。这个程序运行类似于两个独立的家谱育种计划，一个是女性父母，一个是男性父母。在这些程序内的所有田间评价使用两个谱系程序之间的组合的F1杂种进行。我们认为2008年在昆士兰州沃里克市的冬宫研究站进行试验。该试验是男性的初步产量试验（PYTM）。 试验包含791个F1杂交体，包括783个测试杂交体，其是单个未释放的雌性和783个雄性亲本品系之间的杂交的结果，六个商业F1杂交体两个检查，是接近释放的F1杂种。试验的实验设计是可分辨的p-rep设计（Cullis，Smith和Coombes 2006）。测试和检查F1杂交体在试验中的一个或两个地块中播种，而大多数商业F1杂交体具有额外的复制。 高粱育种程序在矩形矩阵阵列中进行试验，其中我们通过两个因子（即行和列）来指数图。地块为1.5×10米，包括两个植被行。作为行相邻的图（即，在同一列内）共享最长绘图边界。毛发的普遍性需要包括喷射排，以允许进入喷雾机械。这些喷射行在试验中以规则的间隔发生，每10行成对出现。因此，行（11,12），（23,24），&hellip;，（12n-1,12n）（其中n取决于试验中的行的总数）将是喷出行。我们考虑的PYTM试验包括64行和20列。对于所有列，可分解块被对齐，使得块1占据行1至31，块2占据行32至64。由于在方框2中出现额外的喷射行，所以块的尺寸不同。 遗传设计由目的确定。 PYTM试验的目的是选择大约10％的F4男性亲本系以促进高级试验。 PYTM试验代表了产量选择的第一次机会，因此育种者对家庭和个体表现都感兴趣。共有783名F4男性与一名女性交叉。 783 F4男性分布在48个全同胞家庭。每个家庭的品系数从1到70不等，平均为17.">
+  <meta property="og:description" content="Hunt CH, Smith AB, Jordan DR, Cullis BR (2013) Predicting Additive and Non-additive Genetic Effects from Trials Where Traits Are Affected by Interplot Competition. J Agric Biol Environ Stat 18:53–63. doi: 10.1007/s13253-012-0117-7 预测其中性状受插图间竞争影响的试验的添加和非加性遗传效应
+ 在植物育种程序中有两种关键的选择类型，即选择用于潜在商业用途的杂交体和选择用于未来育种的亲本。 Oakey et al。 （在理论和Applied Genetics 113,809-819,2006中）显示了如何使用混合模型分析中的谱系信息来实现这两个目的，以便将遗传效应分配为附加效应和非附加效应。 他们的方法是针对空间变异的现场试验数据开发的。 在本文中，我们扩展了数据从试验到插槽竞争的方法。 我们展示如何使用该方法获得纯立场添加剂和非添加剂效应的预测。 我们使用澳大利亚高粱育种计划的一个例子，在单一田间试验的背景下开发方法。
+1.引言
+广泛认识到，由于田间地块的空间位置，植物育种试验的数据常常表现出空间变化。聚焦于控制空间变化的基于模型的分析已经显示出对选择的响应导致显着的增益。大多数当前的空间方法涉及使用相关模型的趋势的直接建模，基本前提是更靠近在一起的绘图比更远离的绘图更类似（更高度相关）。一种这样的方法是Gilmour，Cullis和Verbyla（1997），其已经成功地用于分析来自澳大利亚谷物育种计划的谷物产量数据多年。然而，这些模型不适用于存在小区间竞争的试验中测量的性状。澳大利亚这种类型的一个重要例子是高粱繁殖试验的产量。 Hunt和Jordan（2009年）对36个这类试验的高粱产量（吨/公顷t / ha）进行了检查，发现三分之一的这些试验的间隙竞争的证据。他们建议，对于这种类型的数据，可以适应小区间竞争和空间趋势的联合建模方法是可取的。 Stringer（2006）讨论了用于联合建模插图竞争和生育趋势的一些方法。在这些方法之一中，使用Besag和Kempton（1986）治疗干扰模型（TIM）的随机效应模拟来模拟插图竞争。在该模型中，假定个体品种具有直接效应（在其生长的图上）和邻近效应（在相邻图上）。在随机效应设置中，这些被认为是（相关的）遗传效应，使得竞争在遗传水平上建模。 Stringer（2006）分析了许多早期甘蔗试验，发现随机效应治疗干扰模型（R-TIM）（或其降低的等级版本）在许多情况下提供了与数据的良好拟合。就杂交产量性能而言，感兴趣的关键性状是纯的产量，即来自不被不同遗传背景的杂种包围的杂种的产量。这种性状的混合效应的预测容易从R-TIM作为直接和邻居效应的预测的简单线性组合获得。 在澳大利亚高粱育种计划中，目的主要是为商业公司开发新的（完全育种的）亲本品系，以在其杂交育种计划中使用。 Oakey et al。 （2006）证明，通过并入血统信息的统计分析最好地满足这一目标。 Oakey et al。 （2006）提出了一个现场试验数据的混合模型，其中使用附加关系矩阵将遗传效应划分为附加和非附加成分，同时使用Gilmour，Cullis和Verbyla（1997）的空间技术同时建模误差变化。在本文中，我们提出了在Oakey等人的方法的扩展。 （2006），其结合了R-TIM以适应时隙竞争。所得模型能够将纯支架遗传效应分配为添加剂和非添加剂组分。在这里我们考虑单个试验的分析。在其他地方将考虑分析多个试验的扩展。 论文安排如下。首先我们介绍一个激励的例子（第2节）。在第3节中，我们提出了一系列统计模型用于单个现场试验的分析。我们开始一个基线分析，然后建立一个包含血统信息的分析，并适应空间变化和时空竞争。这些方法应用于实例的结果在第4节中给出。 ##2.移动实施例
+我们的激励榜样取自昆士兰农业，渔业和林业高粱育种计划。这个程序运行类似于两个独立的家谱育种计划，一个是女性父母，一个是男性父母。在这些程序内的所有田间评价使用两个谱系程序之间的组合的F1杂种进行。我们认为2008年在昆士兰州沃里克市的冬宫研究站进行试验。该试验是男性的初步产量试验（PYTM）。 试验包含791个F1杂交体，包括783个测试杂交体，其是单个未释放的雌性和783个雄性亲本品系之间的杂交的结果，六个商业F1杂交体两个检查，是接近释放的F1杂种。试验的实验设计是可分辨的p-rep设计（Cullis，Smith和Coombes 2006）。测试和检查F1杂交体在试验中的一个或两个地块中播种，而大多数商业F1杂交体具有额外的复制。 高粱育种程序在矩形矩阵阵列中进行试验，其中我们通过两个因子（即行和列）来指数图。地块为1.5×10米，包括两个植被行。作为行相邻的图（即，在同一列内）共享最长绘图边界。毛发的普遍性需要包括喷射排，以允许进入喷雾机械。这些喷射行在试验中以规则的间隔发生，每10行成对出现。因此，行（11,12），（23,24），&hellip;，（12n-1,12n）（其中n取决于试验中的行的总数）将是喷出行。我们考虑的PYTM试验包括64行和20列。对于所有列，可分解块被对齐，使得块1占据行1至31，块2占据行32至64。由于在方框2中出现额外的喷射行，所以块的尺寸不同。 遗传设计由目的确定。 PYTM试验的目的是选择大约10％的F4男性亲本系以促进高级试验。 PYTM试验代表了产量选择的第一次机会，因此育种者对家庭和个体表现都感兴趣。共有783名F4男性与一名女性交叉。 783 F4男性分布在48个全同胞家庭。每个家庭的品系数从1到70不等，平均为17.">
+  <meta name="twitter:description" content="Hunt CH, Smith AB, Jordan DR, Cullis BR (2013) Predicting Additive and Non-additive Genetic Effects from Trials Where Traits Are Affected by Interplot Competition. J Agric Biol Environ Stat 18:53–63. …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%AB%9E%E4%BA%89/hunt-2013-%E7%AB%9E%E4%BA%89/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%AB%9E%E4%BA%89/hunt-2013-%E7%AB%9E%E4%BA%89/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Hunt-2013-竞争</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (117 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Hunt-2013-竞争</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (117 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Hunt CH, Smith AB, Jordan DR, Cullis BR (2013) Predicting Additive and Non-additive Genetic Effects from Trials Where Traits Are Affected by Interplot Competition. J Agric Biol Environ Stat 18:53–63. doi: 10.1007/s13253-012-0117-7
+预测其中性状受插图间竞争影响的试验的添加和非加性遗传效应</p>
+</blockquote>
+
+<p>在植物育种程序中有两种关键的选择类型，即选择用于潜在商业用途的杂交体和选择用于未来育种的亲本。 Oakey et al。 （在理论和Applied Genetics 113,809-819,2006中）显示了如何使用混合模型分析中的谱系信息来实现这两个目的，以便将遗传效应分配为附加效应和非附加效应。 他们的方法是针对空间变异的现场试验数据开发的。 在本文中，我们扩展了数据从试验到插槽竞争的方法。 我们展示如何使用该方法获得纯立场添加剂和非添加剂效应的预测。 我们使用澳大利亚高粱育种计划的一个例子，在单一田间试验的背景下开发方法。</p>
+
+<hr />
+
+<p>1.引言</p>
+
+<p>广泛认识到，<strong>由于田间地块的空间位置，植物育种试验的数据常常表现出空间变化</strong>。聚焦于控制空间变化的基于模型的分析已经显示出对选择的响应导致显着的增益。大多数当前的空间方法涉及使用相关模型的趋势的直接建模，基本前提是更靠近在一起的绘图比更远离的绘图更类似（更高度相关）。一种这样的方法是Gilmour，Cullis和Verbyla（1997），其已经成功地用于分析来自澳大利亚谷物育种计划的谷物产量数据多年。然而，<strong>这些模型不适用于存在小区间竞争的试验中测量的性状</strong>。澳大利亚这种类型的一个重要例子是高粱繁殖试验的产量。 Hunt和Jordan（2009年）对36个这类试验的高粱产量（吨/公顷t / ha）进行了检查，发现<strong>三分之一的这些试验的间隙竞争的证据</strong>。他们建议，对于这种类型的数据，可以适应<strong>小区间竞争和空间趋势的联合建模方法是可取的</strong>。
+Stringer（2006）讨论了用于联合建模插图竞争和生育趋势的一些方法。在这些方法之一中，使用Besag和Kempton（1986）治疗干扰模型（TIM）的随机效应模拟来模拟插图竞争。在该模型中，假定个体品种具有直接效应（在其生长的图上）和邻近效应（在相邻图上）。在随机效应设置中，这些被认为是（相关的）遗传效应，使得竞争在遗传水平上建模。 Stringer（2006）分析了许多早期甘蔗试验，发现随机效应治疗干扰模型（R-TIM）（或其降低的等级版本）在许多情况下提供了与数据的良好拟合。就杂交产量性能而言，感兴趣的关键性状是纯的产量，即来自不被不同遗传背景的杂种包围的杂种的产量。这种性状的混合效应的预测容易从R-TIM作为直接和邻居效应的预测的简单线性组合获得。
+在澳大利亚高粱育种计划中，目的主要是为商业公司开发新的（完全育种的）亲本品系，以在其杂交育种计划中使用。 Oakey et al。 （2006）证明，<strong>通过并入血统信息的统计分析最好地满足这一目标</strong>。 Oakey et al。 （2006）提出了一个现场试验数据的混合模型，其中<strong>使用附加关系矩阵将遗传效应划分为附加和非附加成分</strong>，同时使用Gilmour，Cullis和Verbyla（1997）的空间技术同时建模误差变化。在本文中，我们提出了在Oakey等人的方法的扩展。 （2006），其结合了R-TIM以适应时隙竞争。所得模型能够将纯支架遗传效应分配为添加剂和非添加剂组分。在这里我们考虑单个试验的分析。在其他地方将考虑分析多个试验的扩展。
+论文安排如下。首先我们介绍一个激励的例子（第2节）。在第3节中，我们提出了一系列统计模型用于单个现场试验的分析。我们开始一个基线分析，然后建立一个包含血统信息的分析，并适应空间变化和时空竞争。这些方法应用于实例的结果在第4节中给出。
+##2.移动实施例</p>
+
+<p>我们的激励榜样取自昆士兰农业，渔业和林业高粱育种计划。这个程序运行类似于两个独立的家谱育种计划，一个是女性父母，一个是男性父母。在这些程序内的所有田间评价使用两个谱系程序之间的组合的F1杂种进行。我们认为2008年在昆士兰州沃里克市的冬宫研究站进行试验。该试验是男性的初步产量试验（PYTM）。
+试验包含791个F1杂交体，包括783个测试杂交体，其是单个未释放的雌性和783个雄性亲本品系之间的杂交的结果，六个商业F1杂交体两个检查，是接近释放的F1杂种。试验的实验设计是可分辨的p-rep设计（Cullis，Smith和Coombes 2006）。测试和检查F1杂交体在试验中的一个或两个地块中播种，而大多数商业F1杂交体具有额外的复制。
+高粱育种程序在矩形矩阵阵列中进行试验，其中我们通过两个因子（即行和列）来指数图。地块为1.5×10米，包括两个植被行。作为行相邻的图（即，在同一列内）共享最长绘图边界。毛发的普遍性需要包括喷射排，以允许进入喷雾机械。这些喷射行在试验中以规则的间隔发生，每10行成对出现。因此，行（11,12），（23,24），&hellip;，（12n-1,12n）（其中n取决于试验中的行的总数）将是喷出行。我们考虑的PYTM试验包括64行和20列。对于所有列，可分解块被对齐，使得块1占据行1至31，块2占据行32至64。由于在方框2中出现额外的喷射行，所以块的尺寸不同。
+遗传设计由目的确定。 PYTM试验的目的是选择大约10％的F4男性亲本系以促进高级试验。 PYTM试验代表了产量选择的第一次机会，因此育种者对家庭和个体表现都感兴趣。共有783名F4男性与一名女性交叉。 783 F4男性分布在48个全同胞家庭。每个家庭的品系数从1到70不等，平均为17.4。除了来自试验的表型数据之外，在1778个系上有谱系信息，包括61个创始者系（即具有未知父母的系）。 F1杂种的平均近交系数为0.07，范围从0到0.24，而祖先系的平均近交系数为0.985。设计中的遗传连通性高，F1杂交体之间的平均加性相关性为0.499。谱系信息的可用性是下面分析的基础。</p>
+
+<p>###3.2。 包括信息
+（3.1）的扩展以包括血统信息已经在Oakey等人 （2006）的单一试验和Oakey et al。 （2007），Beeck et al。 （2010）和Cullis等 （2010）的多环境试验。 这些论文充分描述了遗传方差分为添加剂和非添加剂部分。 该方法已被广泛使用，参见例如Burgueno等人 （2007），de los Crossa et al。 （2010），Piepho et al。 （2008）等。
+在下文中，我们简要概述了由Oakey等人描述的模型。 （2006）和Oakey et al。 （2007），但扩展他们的模型明确地解释了（总）遗传效应的向量分为两个子向量。
+##4.结果和讨论</p>
+
+<p>表1提供了拟合到PYTM试验的模型序列的概述。我们的分析开始于根据Gilmour，Cullis和Verbyla（1997）推荐的方法拟合基线模型，最近由Stefanova，Smith和Cullis（2009）修改。该模型包括对添加和非添加遗传效应的直接（D）效应，以及一个用于遵守设计的可解性的块项，并且最后对残差使用可分离的一阶自回归方差模型。
+PYTM试验的基线空间分析得到表2中给出的模型1的估计方差参数。<strong>行维度的负自相关（-0.11）表示存在间隙竞争（Stringer和Cullis 2002）</strong>。用于检查假定空间模型的充分性的标准工具是样本变量图Gilmour，Cullis和Verbyla（1997）的图表。为了集中在竞争的效果，我们将我们的注意力限制在对应于<strong>零列分离的变差函数</strong>的切片。这在图1中给出，对于高达15的行分离。在空间趋势的情况下（即，利用正自相关），该图应该平滑地增加到平稳。然而，图1（a）中<strong>行间距为1的大尖峰意味着相邻的图（一行相隔）具有比进一步分开的那些更高的半方差。这表明相邻地块对彼此有负面影响</strong>。
+图1（图（a）和（d））给出了由Stefanova，Smith和Cullis（2009）提出的诊断图。这些是表1中来自模型1的残差的经验半变差函数的样本值的行和列面。这些图利用经验表面的面的平均和95％逐点覆盖间隔来增加从Stefanova，Smith和Cullis（2009）中充分描述了这个过程，本质上使用当前方差分量模拟100次当前模型，并且计算样本变差函数每个模拟。获得2.5％和97.5％的百分位数，并包括在图1中。参数自举样本的平均行和列表面与来自模型1的残差之间存在明显的和系统的差异。在两个图<strong>所有滞后的平均值通常更高。这表示存在行和列效应。</strong>模型2通过包括行和列的随机效应来研究这种可能性。与模型1相比，模型2的残余对数似然性显着增加。模型2（a）和2（b）分别丢弃行和列项，以正式测试这些项的需要。使用残差最大似然比测试（REMLRT），这两个项被认为是显着的（p &lt;0.05）。图1（图（b）和（e））给出了来自模型2的残差的诊断图。在经验半变差函数的行和列面之间通常与参数引导样品的平均值具有良好的一致性。</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-424c8c1cbb92d588.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="semi-variogram.png" />
+这些图的值得注意的特征是在经验半变差函数的行面处存在尖锐的“尖峰”。<strong>模型2的行自相关参数的REML估计是-0.18。这表明在这个方向上存在竞争（即，在相同列内的相邻图之间，共享共同的长边界）</strong>。用于对这种（明显的）竞争进行建模的方法是将R-TIM的降低等级版本适配于两者术语，由RR（D，N）表示。
+模型3提供了对模型2的拟合的实质性改进，其中非添加剂和添加剂竞争被认为是显着的（使用REMLRT分别针对模型3a和3b与模型3）。
+来自模型3的残差的经验半变差函数的诊断图是令人满意的（图1中的图（c）和（f））。注意，这些图的水平相当明显地从先前的模型（图（b）和（e））降低，反映了由竞争效应解释的变化量，这也反映在σ2的减少2）。还要注意，经验半变差函数的行面中的大尖峰已被去除。该模型的行自相关参数的REML估计为0.12，与模型2（表2）的-0.18相比。
+图2给出了来自模型3的纯支架产率（u-ad + 2u-an）与模型2的直接效应的E-BLUP的经验BLUPS（E-BLUP）的前10％的曲线 F4男性父母。 显示在右上图中的简单相关系数显示来自这两个模型的E-BLUP的前10％的相关性为0.56。 这表明从每个模型中选择的男性父母明显不同，事实上，两个模型的前10％的E-BLUP只有77％的男性父母是共同的。 此外，纯立场效应的E-BLUP在幅度上显着小于直接效应的E-BLUP。 这是由于直接和邻近效应之间的负关系。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/isik-2003-additive-dominance-epistatic-%E5%85%8B%E9%9A%86/" data-toggle="tooltip" data-placement="top" title="Isik-2003-additive,-dominance,-epistatic-克隆">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/hung2016-%E6%9F%A0%E6%AA%AC%E6%A1%89-%E7%94%9F%E9%95%BF%E6%9D%90%E6%80%A7-nir-%E7%A7%8D%E6%BA%90%E5%86%85%E5%AE%B6%E7%B3%BB/" data-toggle="tooltip" data-placement="top" title="Hung2016-柠檬桉-生长材性-NIR-种源内家系">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

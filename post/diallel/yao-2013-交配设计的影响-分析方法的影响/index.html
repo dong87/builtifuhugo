@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Yao-2013-交配设计的影响-分析方法的影响</title>
+  <meta property="og:title" content="Yao-2013-交配设计的影响-分析方法的影响" />
+  <meta name="twitter:title" content="Yao-2013-交配设计的影响-分析方法的影响" />
+  <meta name="description" content="Yao WH, Zhang YD, Kang MS, Chen HM, Liu L, Yu LJ, et al. Diallel Analysis Models : A Comparison of Certain Genetic Statistics. 2013;1481–90.   摘要： Diallel分析虽然很受欢迎，但也提出了关键问题：（i）来自具有相同和不同的亲本组的不同diallel方法的遗传统计数据是否提供相同或相似的信息？和（ii）在某些双列交配中缺少正反交（REC）和母本（MAT）效应的信息会使育种计划面临风险？为了回答这些问题，从具有12,10,8,6和4玉米（Zea mays L.）亲本的diallels计算一般（GCA）和特殊配合力（SCA），MAT和REC效应。我们发现，使用相同的系，Griffing方法1,2,3和4中GCA效应的正负及大小相似，高度相关，Griffing方法4与Gardner和Eberhart分析III（G＆EIII） 的结果也一致。来自Griffing的方法1至4的SCA效应是相关的。Griffing的方法4产生了与G＆EII和G＆EIII相同的SCA效应;来自Griffing方法1和2的SCA效应由于包括亲本系而偏高。Griffing的方法3（没有包括亲本）是所有六种方法中最好的方法;它给出了无偏的SCA估计和关于MAT和REC效应的信息。由于双列杂交中的品系数不同，遗传统计量可作为育种计划的参考，因为GCA和SCA效应的正负和大小几乎相同;然而，必须谨慎行事，因为检测到一些正负相反的效应。不提供REC和MAT信息的diallel方法可能会错过识别优势杂种。因为方法1和2提供了GCA和SCA效应的偏高估计，所以不推荐用于估计GCA和SCA效应。我们还得出结论，方法3是最好的diallel方法;它提供了SCA效应的无偏估计，并提供了关键的REC和MAT效应，这对于正确选择杂种开发中的父母本是有用的。
+Diallel交配设计通常由植物和动物育种者使用以产生可用于设计育种策略的遗传信息。作物育种者想知道从Griffing（1956）和Gardner和Eberhart（1966）开发的不同diallel方法获得的遗传参数或统计学以及从不同亲本品系数的diallel实验得到的结果是否相同，相似或不同。这样的信息不仅对研究人员选择最合适的diallel方法有用，而且对于确定其他diallel研究的结果是否可以作为参考在我们的自己的作物育种计划。几个与双列交配设计相关的关键研究（例如，Sprague和Tatum，1942; Anderson和Kempthorne，1954; Hayman，1954a，1954b; Griffing，1956）。Griffing（1956）描述了用于分析用于植物的四种不同双列交配的统计过程：方法1（亲本&#43; F1杂交&#43;F1杂交反交），方法2（亲本&#43; F1杂交），方法3（F1杂交&#43; ，方法4（F1杂交）。 Griffing的方法清楚地定义了GCA和SCA，使得有可能了解统计模型并开发软件工具（Burow和Coors，1994; Magari和Kang，1994; Zhang和Kang，1997; Zhang等人，2005）。 因此，这些方法已被植物育种者广泛用于确定各种类型研究的GCA和SCA（Kauffman等，1982; Sughroue和Hallauer，1997; Fan等，2002; Melani和Carena，2005; Barata和Carena，2006）。 与Gardner和Eberhart分析II（G＆EII）和分析III（G＆EIII）相关的Dialle1交配模型是用于配合力分析的另外的主要模型。尽管开发了G＆EI和改进的方法（Gardner和Eberhart，1966）以获得其他信息（例如，关于近交衰退，杂种优势，附加基因作用，显性和上位性），但这些方法没有被广泛采用，因为需要额外的资源来实施。由于更少的资源限制、在杂种优势评价中有优势，使得G＆EII和G＆EIII的在许多研究中得到应用（Wright，1985; Hallauer和Miranda，1988; Murray，2003; Segovia- Lerma等，2004; Farshadfar等，2012） 。 Mahgoub（2011）最近表明，当某系分别用作母本和父本时，GCA效应可以分为母本GCA效应（F_ GCA）和父本GCA效应（M_GCA）。他发现GCA代表F_GCA和M_GCA的平均值，而F_GCA和M_GCA之间的差异的平均值正好等于该系的母本（MAT）效应。 Mahgoub（2011）还表明，当将某系作为母本和父本分别使用时，SCA作用可以分为母本SCA（F_SCA）和父本SCA（M_SCA），并且F_SCA和M_SCA之间的差异的平均值等于REC。 SCA效应的这种划分提供了对于交配和它们的反交的SCA效应的精确估计。一些研究人员已经讨论了不同的diallel方法的优缺点（Chaudary等人，1977年; Baker，1978年; Singh和Paroda，1984年; Farshadfar等人，2012年）。 Chaudhary et al。 （1977）比较了全双列和部分双列的相对效率，并发现对于GCA和SCA效应的估计，半双列与全双列一样有效。 Baker（1978）提供了公式，将从方法2和4，G＆EII和Hayman&rsquo;s diallel设计获得的各种类型的遗传统计量与G＆EIII生成的遗传统计量相关联。 Singh和Paroda（1984）的结论是G＆EII和G＆EIII提供了关于加性效应以及GCA和SCA对杂交杂种优势的平均和个体贡献的额外信息。 Farshadfar et al。 （2012）使用方法2和4，G＆EII，G＆EIII和Morley-Jones（1965）的方法，得出类似于Singh和Paroda（1984）的结论。 双列交配设计是用于杂种优势群分类，近交系选择和杂种开发的非常有用的方法（Crossa等人，1990; Vasal等人，1992; Fan等人，2003a，2003b，2008; Chen等人， 2011）。 REC和MAT效应已经被证明对育种价值评估具有重大影响（Mahgoub，2011）。普通种群想要获得从方法1至4，G＆EII和G＆EIII获得的遗传统计的比较信息。遗传统计信息，如REC和MAT效应，应允许育种者设计适当的育种策略，从而提高其育种计划的效率。育种者还想知道当没有REC和MAT效应时，它们的育种程序的效率如何受到影响;例如，在方法2和4，G＆EII和G＆EIII中。本研究旨在回答这些问题。该研究使用涉及12,10,8,6和4父母的双列交配来估计GCA，SCA，REC和MAT效应，并在双列交配方法内和双列交配方法方法间进行比较。本研究的具体目标是（i）确定从方法1至4，G＆EII和G＆EIII获得的遗传统计量对于一个双列交配的特定数目的亲本系是否相同，相似或不同（ii）确定如果从玉米育种计划中具有不同数目的近交系的diallel实验的子集中获得的遗传统计数据是否类似，并且可以用作其他玉米育种程序中的参考; （iii）确定使用没有提供REC和MAT估计值的diallel方法是否可能对玉米或其他育种计划造成风险;和（iv）六种diallel相关方法中的哪一种应当是优选的以及原因。">
+  <meta property="og:description" content="Yao WH, Zhang YD, Kang MS, Chen HM, Liu L, Yu LJ, et al. Diallel Analysis Models : A Comparison of Certain Genetic Statistics. 2013;1481–90.   摘要： Diallel分析虽然很受欢迎，但也提出了关键问题：（i）来自具有相同和不同的亲本组的不同diallel方法的遗传统计数据是否提供相同或相似的信息？和（ii）在某些双列交配中缺少正反交（REC）和母本（MAT）效应的信息会使育种计划面临风险？为了回答这些问题，从具有12,10,8,6和4玉米（Zea mays L.）亲本的diallels计算一般（GCA）和特殊配合力（SCA），MAT和REC效应。我们发现，使用相同的系，Griffing方法1,2,3和4中GCA效应的正负及大小相似，高度相关，Griffing方法4与Gardner和Eberhart分析III（G＆EIII） 的结果也一致。来自Griffing的方法1至4的SCA效应是相关的。Griffing的方法4产生了与G＆EII和G＆EIII相同的SCA效应;来自Griffing方法1和2的SCA效应由于包括亲本系而偏高。Griffing的方法3（没有包括亲本）是所有六种方法中最好的方法;它给出了无偏的SCA估计和关于MAT和REC效应的信息。由于双列杂交中的品系数不同，遗传统计量可作为育种计划的参考，因为GCA和SCA效应的正负和大小几乎相同;然而，必须谨慎行事，因为检测到一些正负相反的效应。不提供REC和MAT信息的diallel方法可能会错过识别优势杂种。因为方法1和2提供了GCA和SCA效应的偏高估计，所以不推荐用于估计GCA和SCA效应。我们还得出结论，方法3是最好的diallel方法;它提供了SCA效应的无偏估计，并提供了关键的REC和MAT效应，这对于正确选择杂种开发中的父母本是有用的。
+Diallel交配设计通常由植物和动物育种者使用以产生可用于设计育种策略的遗传信息。作物育种者想知道从Griffing（1956）和Gardner和Eberhart（1966）开发的不同diallel方法获得的遗传参数或统计学以及从不同亲本品系数的diallel实验得到的结果是否相同，相似或不同。这样的信息不仅对研究人员选择最合适的diallel方法有用，而且对于确定其他diallel研究的结果是否可以作为参考在我们的自己的作物育种计划。几个与双列交配设计相关的关键研究（例如，Sprague和Tatum，1942; Anderson和Kempthorne，1954; Hayman，1954a，1954b; Griffing，1956）。Griffing（1956）描述了用于分析用于植物的四种不同双列交配的统计过程：方法1（亲本&#43; F1杂交&#43;F1杂交反交），方法2（亲本&#43; F1杂交），方法3（F1杂交&#43; ，方法4（F1杂交）。 Griffing的方法清楚地定义了GCA和SCA，使得有可能了解统计模型并开发软件工具（Burow和Coors，1994; Magari和Kang，1994; Zhang和Kang，1997; Zhang等人，2005）。 因此，这些方法已被植物育种者广泛用于确定各种类型研究的GCA和SCA（Kauffman等，1982; Sughroue和Hallauer，1997; Fan等，2002; Melani和Carena，2005; Barata和Carena，2006）。 与Gardner和Eberhart分析II（G＆EII）和分析III（G＆EIII）相关的Dialle1交配模型是用于配合力分析的另外的主要模型。尽管开发了G＆EI和改进的方法（Gardner和Eberhart，1966）以获得其他信息（例如，关于近交衰退，杂种优势，附加基因作用，显性和上位性），但这些方法没有被广泛采用，因为需要额外的资源来实施。由于更少的资源限制、在杂种优势评价中有优势，使得G＆EII和G＆EIII的在许多研究中得到应用（Wright，1985; Hallauer和Miranda，1988; Murray，2003; Segovia- Lerma等，2004; Farshadfar等，2012） 。 Mahgoub（2011）最近表明，当某系分别用作母本和父本时，GCA效应可以分为母本GCA效应（F_ GCA）和父本GCA效应（M_GCA）。他发现GCA代表F_GCA和M_GCA的平均值，而F_GCA和M_GCA之间的差异的平均值正好等于该系的母本（MAT）效应。 Mahgoub（2011）还表明，当将某系作为母本和父本分别使用时，SCA作用可以分为母本SCA（F_SCA）和父本SCA（M_SCA），并且F_SCA和M_SCA之间的差异的平均值等于REC。 SCA效应的这种划分提供了对于交配和它们的反交的SCA效应的精确估计。一些研究人员已经讨论了不同的diallel方法的优缺点（Chaudary等人，1977年; Baker，1978年; Singh和Paroda，1984年; Farshadfar等人，2012年）。 Chaudhary et al。 （1977）比较了全双列和部分双列的相对效率，并发现对于GCA和SCA效应的估计，半双列与全双列一样有效。 Baker（1978）提供了公式，将从方法2和4，G＆EII和Hayman&rsquo;s diallel设计获得的各种类型的遗传统计量与G＆EIII生成的遗传统计量相关联。 Singh和Paroda（1984）的结论是G＆EII和G＆EIII提供了关于加性效应以及GCA和SCA对杂交杂种优势的平均和个体贡献的额外信息。 Farshadfar et al。 （2012）使用方法2和4，G＆EII，G＆EIII和Morley-Jones（1965）的方法，得出类似于Singh和Paroda（1984）的结论。 双列交配设计是用于杂种优势群分类，近交系选择和杂种开发的非常有用的方法（Crossa等人，1990; Vasal等人，1992; Fan等人，2003a，2003b，2008; Chen等人， 2011）。 REC和MAT效应已经被证明对育种价值评估具有重大影响（Mahgoub，2011）。普通种群想要获得从方法1至4，G＆EII和G＆EIII获得的遗传统计的比较信息。遗传统计信息，如REC和MAT效应，应允许育种者设计适当的育种策略，从而提高其育种计划的效率。育种者还想知道当没有REC和MAT效应时，它们的育种程序的效率如何受到影响;例如，在方法2和4，G＆EII和G＆EIII中。本研究旨在回答这些问题。该研究使用涉及12,10,8,6和4父母的双列交配来估计GCA，SCA，REC和MAT效应，并在双列交配方法内和双列交配方法方法间进行比较。本研究的具体目标是（i）确定从方法1至4，G＆EII和G＆EIII获得的遗传统计量对于一个双列交配的特定数目的亲本系是否相同，相似或不同（ii）确定如果从玉米育种计划中具有不同数目的近交系的diallel实验的子集中获得的遗传统计数据是否类似，并且可以用作其他玉米育种程序中的参考; （iii）确定使用没有提供REC和MAT估计值的diallel方法是否可能对玉米或其他育种计划造成风险;和（iv）六种diallel相关方法中的哪一种应当是优选的以及原因。">
+  <meta name="twitter:description" content="Yao WH, Zhang YD, Kang MS, Chen HM, Liu L, Yu LJ, et al. Diallel Analysis Models : A Comparison of Certain Genetic Statistics. 2013;1481–90.   摘要： Diallel分析虽然很受欢迎，但也提出了关键问题：（i）来自具有相同和不同的亲本组的不同diallel方 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/diallel/yao-2013-%E4%BA%A4%E9%85%8D%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%BD%B1%E5%93%8D-%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E7%9A%84%E5%BD%B1%E5%93%8D/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/diallel/yao-2013-%E4%BA%A4%E9%85%8D%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%BD%B1%E5%93%8D-%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E7%9A%84%E5%BD%B1%E5%93%8D/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Yao-2013-交配设计的影响-分析方法的影响</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (78 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Yao-2013-交配设计的影响-分析方法的影响</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (78 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<ol>
+<li>Yao WH, Zhang YD, Kang MS, Chen HM, Liu L, Yu LJ, et al. Diallel Analysis Models : A Comparison of Certain Genetic Statistics. 2013;1481–90.</li>
+</ol>
+</blockquote>
+
+<p>摘要：
+Diallel分析虽然很受欢迎，但也提出了关键问题：（i）来自具有相同和不同的亲本组的不同diallel方法的遗传统计数据是否提供相同或相似的信息？和（ii）在某些双列交配中缺少正反交（REC）和母本（MAT）效应的信息会使育种计划面临风险？为了回答这些问题，从具有12,10,8,6和4玉米（Zea mays L.）亲本的diallels计算一般（GCA）和特殊配合力（SCA），MAT和REC效应。我们发现，使用相同的系，Griffing方法1,2,3和4中GCA效应的正负及大小相似，高度相关，Griffing方法4与Gardner和Eberhart分析III（G＆EIII） 的结果也一致。来自Griffing的方法1至4的SCA效应是相关的。Griffing的方法4产生了与G＆EII和G＆EIII相同的SCA效应;来自Griffing<strong>方法1和2的SCA效应由于包括亲本系而偏高。Griffing的方法3（没有包括亲本）是所有六种方法中最好的方法;它给出了无偏的SCA估计和关于MAT和REC效应的信息</strong>。由于双列杂交中的品系数不同，遗传统计量可作为育种计划的参考，因为GCA和SCA效应的正负和大小几乎相同;然而，必须谨慎行事，因为检测到一些正负相反的效应。不提供REC和MAT信息的diallel方法可能会错过识别优势杂种。因为<strong>方法1和2提供了GCA和SCA效应的偏高估计，所以不推荐用于估计GCA和SCA效应</strong>。我们还得出结论，<strong>方法3是最好的diallel方法;它提供了SCA效应的无偏估计，并提供了关键的REC和MAT效应</strong>，这对于正确选择杂种开发中的父母本是有用的。</p>
+
+<hr />
+
+<p>Diallel交配设计通常由植物和动物育种者使用以产生可用于设计育种策略的遗传信息。作物育种者想知道从Griffing（1956）和Gardner和Eberhart（1966）开发的不同diallel方法获得的遗传参数或统计学以及从不同亲本品系数的diallel实验得到的结果是否相同，相似或不同。这样的信息不仅对研究人员选择最合适的diallel方法有用，而且对于确定其他diallel研究的结果是否可以作为参考在我们的自己的作物育种计划。几个与双列交配设计相关的关键研究（例如，Sprague和Tatum，1942; Anderson和Kempthorne，1954; Hayman，1954a，1954b; Griffing，1956）。Griffing（1956）描述了用于分析用于植物的四种不同双列交配的统计过程：方法1（亲本+ F1杂交+F1杂交反交），方法2（亲本+ F1杂交），方法3（F1杂交+ ，方法4（F1杂交）。 Griffing的方法清楚地定义了GCA和SCA，使得有可能了解统计模型并开发软件工具（Burow和Coors，1994; Magari和Kang，1994; Zhang和Kang，1997; Zhang等人，2005）。 因此，这些方法已被植物育种者广泛用于确定各种类型研究的GCA和SCA（Kauffman等，1982; Sughroue和Hallauer，1997; Fan等，2002; Melani和Carena，2005; Barata和Carena，2006）。
+与Gardner和Eberhart分析II（G＆EII）和分析III（G＆EIII）相关的Dialle1交配模型是用于配合力分析的另外的主要模型。尽管开发了G＆EI和改进的方法（Gardner和Eberhart，1966）以获得其他信息（例如，关于近交衰退，杂种优势，附加基因作用，显性和上位性），但这些方法没有被广泛采用，因为需要额外的资源来实施。由于更少的资源限制、在杂种优势评价中有优势，使得G＆EII和G＆EIII的在许多研究中得到应用（Wright，1985; Hallauer和Miranda，1988; Murray，2003; Segovia- Lerma等，2004; Farshadfar等，2012） 。 Mahgoub（2011）最近表明，当某系分别用作母本和父本时，GCA效应可以分为母本GCA效应（F_ GCA）和父本GCA效应（M_GCA）。他发现GCA代表F_GCA和M_GCA的平均值，而F_GCA和M_GCA之间的差异的平均值正好等于该系的母本（MAT）效应。 Mahgoub（2011）还表明，当将某系作为母本和父本分别使用时，SCA作用可以分为母本SCA（F_SCA）和父本SCA（M_SCA），并且F_SCA和M_SCA之间的差异的平均值等于REC。 SCA效应的这种划分提供了对于交配和它们的反交的SCA效应的精确估计。<strong>一些研究人员已经讨论了不同的diallel方法的优缺点（Chaudary等人，1977年; Baker，1978年; Singh和Paroda，1984年; Farshadfar等人，2012年）。 Chaudhary et al。 （1977）比较了全双列和部分双列的相对效率，并发现对于GCA和SCA效应的估计，半双列与全双列一样有效。</strong> Baker（1978）提供了公式，将从方法2和4，G＆EII和Hayman&rsquo;s diallel设计获得的各种类型的遗传统计量与G＆EIII生成的遗传统计量相关联。 Singh和Paroda（1984）的结论是G＆EII和G＆EIII提供了关于加性效应以及GCA和SCA对杂交杂种优势的平均和个体贡献的额外信息。 Farshadfar et al。 （2012）使用方法2和4，G＆EII，G＆EIII和Morley-Jones（1965）的方法，得出类似于Singh和Paroda（1984）的结论。
+双列交配设计是用于杂种优势群分类，近交系选择和杂种开发的非常有用的方法（Crossa等人，1990; Vasal等人，1992; Fan等人，2003a，2003b，2008; Chen等人， 2011）。 REC和MAT效应已经被证明对育种价值评估具有重大影响（Mahgoub，2011）。普通种群想要获得从方法1至4，G＆EII和G＆EIII获得的遗传统计的比较信息。遗传统计信息，如REC和MAT效应，应允许育种者设计适当的育种策略，从而提高其育种计划的效率。育种者还想知道当没有REC和MAT效应时，它们的育种程序的效率如何受到影响;例如，在方法2和4，G＆EII和G＆EIII中。本研究旨在回答这些问题。该研究使用涉及12,10,8,6和4父母的双列交配来估计GCA，SCA，REC和MAT效应，并在双列交配方法内和双列交配方法方法间进行比较。本研究的具体目标是（i）确定从方法1至4，G＆EII和G＆EIII获得的遗传统计量对于一个双列交配的特定数目的亲本系是否相同，相似或不同（ii）确定如果从玉米育种计划中具有不同数目的近交系的diallel实验的子集中获得的遗传统计数据是否类似，并且可以用作其他玉米育种程序中的参考; （iii）确定使用没有提供REC和MAT估计值的diallel方法是否可能对玉米或其他育种计划造成风险;和（iv）六种diallel相关方法中的哪一种应当是优选的以及原因。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/ye2008%E5%A4%9A%E7%82%B9-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90-%E8%8A%B1%E6%97%97%E6%9D%BEar1/" data-toggle="tooltip" data-placement="top" title="Ye2008多点-空间分析-花旗松AR1">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/yang2004-nna-lss-ar1%E8%B1%8C%E8%B1%86/" data-toggle="tooltip" data-placement="top" title="Yang2004-NNA-LSS-AR1豌豆">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

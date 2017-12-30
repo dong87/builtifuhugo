@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Munoz2014a-基因组关系矩阵-非加</title>
+  <meta property="og:title" content="Munoz2014a-基因组关系矩阵-非加" />
+  <meta name="twitter:title" content="Munoz2014a-基因组关系矩阵-非加" />
+  <meta name="description" content="Muñoz PR, Resende MFR, Gezan SA, et al (2014) Unraveling Additive from Nonadditive Effects Using Genomic Relationship Matrices. Genetics 198:1759–1768. doi: 10.1534/genetics.114.171322
+ 抽象 定量遗传学在植物和动物育种中的应用主要集中在加性模型上，这也可能捕获优势和上位效应。使用基于谱系的模型（P基因组最佳线性无偏估计）（P-BLUP）将遗传变异分为其添加剂和非加成成分是最常见的家族结构困难的。然而，分子标记密集面板的可用性使得可以使用添加和优势实现的基因组关系来估计方差分量和遗传值预测（G-BLUP）。我们用系统的一系列模型评估了来自树种Pinus taeda的多群体群体的高度数据，这些模型涉及加性，优势和一级上位相互作用（通过加性加法，优势优势和由优势加法），使用谱系 - 或基于标记的信息。我们显示，与系谱相比，在基于标记的模型中使用实现的基因组关系可以显着地更精确地分离遗传变异的添加剂和非加成成分。我们得出结论，在包括加性和非加性效应的模型中，基于标记的关系矩阵表现更好，提高了育种价值预测。此外，我们的结果表明，对于这个群体的树高，遗传变异的加性和非加性成分的大小相似。这个新颖的结果提高了我们对数量性状的遗传控制和结构的理解，在开发育种策略时应该考虑。
+基因组选择G-BLUP非加实现关系矩阵优势关系矩阵GENPRED共享数据资源
+定量遗传学及其在植物和动物育种中的应用主要集中在添加剂模型上。在理想化条件下，如Cockerham（1954）和Kempthorne（1954）所描述的那些，由于加性和非加成效应引起的遗传价值是正交的。然而，这些条件通常在繁殖种群中不能满足，结果是由于加性和非加成效应引起的遗传价值可能被混淆。在这些条件下，由于等位基因相互作用（优势和上位性）的大部分变异可以表现为加性方差（Hill 等， 2008）。由于同样的原因，对于最常用的家族结构，难以将遗传变异分解为加性，优势和上位效应。与标准血统模型，这些因素的差异估计高度相关，反映了混杂的影响（Lynch和Walsh 1998 ; Hill 2010）。添加剂方差可归因于等位基因的相互作用的比例在很大程度上取决于等位基因频率中的因果基因座的分布（路等人 1999 ; 希尔等人 2008 ; ZUK 等人 2012）。这会影响方差分量和育种值（BV）的预测的估计（Vanderwerf和德波尔1989 ; Palucci 等人 2007），以及解剖性状的遗传结构在因果水平的能力。了解性状的遗传结构对于定义育种策略和最大化遗传增益也是有用的。例如，可以通过设计使有利的等位基因组合最大化的交配方案来利用由于非加性效应引起的个体遗传差异，特别是如果育种程序中可能有家族或克隆繁殖。
+添加剂和非加性遗传组分与标准谱系模型的分离需要特定的家族结构，这些结构在植物或动物育种计划中通常可用。实际上，由优势和加性效应引起的方差估计涉及与大量接近的，通常是全同胞亲属的交配设计。另外，分割上位性还需要近交系或植物繁殖（克隆）种群。在多年生植物中，近交系由于其长的生长时间而不被使用，并且因为经常发生严重的近亲繁殖。因此，克隆种群是探索这些物种的完全遗传结构的替代方法（Foster and Shaw 1988）。旨在划分遗传变异成其各个组成部分的几项研究发现小的优势，并可以忽略上位性效应（福斯特和肖1988年，穆林等人。 1992年，1996年武 ; Isik的等人。 2003，2005年 ; 哥斯达黎加-席尔瓦等人。 2004年，2009年 ; Baltunis 。等人 2007，2008，2009 ; Araujo的等人 2012）。这些结果并不一定意味着这种效果并不重要。相反，非加性效应的贡献可能由于等位基因频率的分布而受到影响所掩盖（例如，Hill 等， 2008）。这些结果也可能反映了所使用的数据/家族结构或使用的遗传信息（谱系）所施加的限制，只允许估计遗传相似性的预期程度。">
+  <meta property="og:description" content="Muñoz PR, Resende MFR, Gezan SA, et al (2014) Unraveling Additive from Nonadditive Effects Using Genomic Relationship Matrices. Genetics 198:1759–1768. doi: 10.1534/genetics.114.171322
+ 抽象 定量遗传学在植物和动物育种中的应用主要集中在加性模型上，这也可能捕获优势和上位效应。使用基于谱系的模型（P基因组最佳线性无偏估计）（P-BLUP）将遗传变异分为其添加剂和非加成成分是最常见的家族结构困难的。然而，分子标记密集面板的可用性使得可以使用添加和优势实现的基因组关系来估计方差分量和遗传值预测（G-BLUP）。我们用系统的一系列模型评估了来自树种Pinus taeda的多群体群体的高度数据，这些模型涉及加性，优势和一级上位相互作用（通过加性加法，优势优势和由优势加法），使用谱系 - 或基于标记的信息。我们显示，与系谱相比，在基于标记的模型中使用实现的基因组关系可以显着地更精确地分离遗传变异的添加剂和非加成成分。我们得出结论，在包括加性和非加性效应的模型中，基于标记的关系矩阵表现更好，提高了育种价值预测。此外，我们的结果表明，对于这个群体的树高，遗传变异的加性和非加性成分的大小相似。这个新颖的结果提高了我们对数量性状的遗传控制和结构的理解，在开发育种策略时应该考虑。
+基因组选择G-BLUP非加实现关系矩阵优势关系矩阵GENPRED共享数据资源
+定量遗传学及其在植物和动物育种中的应用主要集中在添加剂模型上。在理想化条件下，如Cockerham（1954）和Kempthorne（1954）所描述的那些，由于加性和非加成效应引起的遗传价值是正交的。然而，这些条件通常在繁殖种群中不能满足，结果是由于加性和非加成效应引起的遗传价值可能被混淆。在这些条件下，由于等位基因相互作用（优势和上位性）的大部分变异可以表现为加性方差（Hill 等， 2008）。由于同样的原因，对于最常用的家族结构，难以将遗传变异分解为加性，优势和上位效应。与标准血统模型，这些因素的差异估计高度相关，反映了混杂的影响（Lynch和Walsh 1998 ; Hill 2010）。添加剂方差可归因于等位基因的相互作用的比例在很大程度上取决于等位基因频率中的因果基因座的分布（路等人 1999 ; 希尔等人 2008 ; ZUK 等人 2012）。这会影响方差分量和育种值（BV）的预测的估计（Vanderwerf和德波尔1989 ; Palucci 等人 2007），以及解剖性状的遗传结构在因果水平的能力。了解性状的遗传结构对于定义育种策略和最大化遗传增益也是有用的。例如，可以通过设计使有利的等位基因组合最大化的交配方案来利用由于非加性效应引起的个体遗传差异，特别是如果育种程序中可能有家族或克隆繁殖。
+添加剂和非加性遗传组分与标准谱系模型的分离需要特定的家族结构，这些结构在植物或动物育种计划中通常可用。实际上，由优势和加性效应引起的方差估计涉及与大量接近的，通常是全同胞亲属的交配设计。另外，分割上位性还需要近交系或植物繁殖（克隆）种群。在多年生植物中，近交系由于其长的生长时间而不被使用，并且因为经常发生严重的近亲繁殖。因此，克隆种群是探索这些物种的完全遗传结构的替代方法（Foster and Shaw 1988）。旨在划分遗传变异成其各个组成部分的几项研究发现小的优势，并可以忽略上位性效应（福斯特和肖1988年，穆林等人。 1992年，1996年武 ; Isik的等人。 2003，2005年 ; 哥斯达黎加-席尔瓦等人。 2004年，2009年 ; Baltunis 。等人 2007，2008，2009 ; Araujo的等人 2012）。这些结果并不一定意味着这种效果并不重要。相反，非加性效应的贡献可能由于等位基因频率的分布而受到影响所掩盖（例如，Hill 等， 2008）。这些结果也可能反映了所使用的数据/家族结构或使用的遗传信息（谱系）所施加的限制，只允许估计遗传相似性的预期程度。">
+  <meta name="twitter:description" content="Muñoz PR, Resende MFR, Gezan SA, et al (2014) Unraveling Additive from Nonadditive Effects Using Genomic Relationship Matrices. Genetics 198:1759–1768. doi: 10.1534/genetics.114.171322
+ 抽象 定量遗传学在植物和动物 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/gs/munoz2014a-%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%85%B3%E7%B3%BB%E7%9F%A9%E9%98%B5-%E9%9D%9E%E5%8A%A0/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/gs/munoz2014a-%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%85%B3%E7%B3%BB%E7%9F%A9%E9%98%B5-%E9%9D%9E%E5%8A%A0/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Munoz2014a-基因组关系矩阵-非加</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (121 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Munoz2014a-基因组关系矩阵-非加</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (121 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Muñoz PR, Resende MFR, Gezan SA, et al (2014) Unraveling Additive from Nonadditive Effects Using Genomic Relationship Matrices. Genetics 198:1759–1768. doi: 10.1534/genetics.114.171322</p>
+</blockquote>
+
+<h1 id="抽象">抽象</h1>
+
+<p>定量遗传学在植物和动物育种中的应用主要集中在加性模型上，这也可能捕获优势和上位效应。使用基于谱系的模型（P基因组最佳线性无偏估计）（P-BLUP）将遗传变异分为其添加剂和非加成成分是最常见的家族结构困难的。然而，分子标记密集面板的可用性使得可以使用添加和优势实现的基因组关系来估计方差分量和遗传值预测（G-BLUP）。我们用系统的一系列模型评估了来自树种Pinus taeda的多群体群体的高度数据，这些模型涉及加性，优势和一级上位相互作用（通过加性加法，优势优势和由优势加法），使用谱系 - 或基于标记的信息。我们显示，<strong>与系谱相比，在基于标记的模型中使用实现的基因组关系可以显着地更精确地分离遗传变异的添加剂和非加成成分。</strong>我们得出结论，<strong>在包括加性和非加性效应的模型中，基于标记的关系矩阵表现更好，提高了育种价值预测。</strong>此外，我们的结果表明，<strong>对于这个群体的树高，遗传变异的加性和非加性成分的大小相似</strong>。<strong>这个新颖的结果提高了我们对数量性状的遗传控制和结构的理解，在开发育种策略时应该考虑</strong>。</p>
+
+<p>基因组选择G-BLUP非加实现关系矩阵优势关系矩阵GENPRED共享数据资源</p>
+
+<p>定量遗传学及其在植物和动物育种中的应用主要集中在添加剂模型上。在理想化条件下，如Cockerham（1954）和Kempthorne（1954）所描述的那些，由于加性和非加成效应引起的遗传价值是正交的。然而，这些条件通常在繁殖种群中不能满足，结果是由于加性和非加成效应引起的遗传价值可能被混淆。在这些条件下，由于<strong>等位基因相互作用（优势和上位性）的大部分变异可以表现为加性方差</strong>（Hill 等， 2008）。由于同样的原因，<strong>对于最常用的家族结构，难以将遗传变异分解为加性，优势和上位效应</strong>。与标准血统模型，这些因素的差异估计高度相关，反映了混杂的影响（Lynch和Walsh 1998 ; Hill 2010）。<strong>添加剂方差可归因于等位基因的相互作用的比例在很大程度上取决于等位基因频率中的因果基因座的分布</strong>（路等人 1999 ; 希尔等人 2008 ; ZUK 等人 2012）。这会影响方差分量和育种值（BV）的预测的估计（Vanderwerf和德波尔1989 ; Palucci 等人 2007），以及解剖性状的遗传结构在因果水平的能力。<strong>了解性状的遗传结构对于定义育种策略和最大化遗传增益也是有用的</strong>。例如，<strong>可以通过设计使有利的等位基因组合最大化的交配方案来利用由于非加性效应引起的个体遗传差异，特别是如果育种程序中可能有家族或克隆繁殖</strong>。</p>
+
+<p>添加剂和非加性遗传组分与标准谱系模型的分离需要特定的家族结构，这些结构在植物或动物育种计划中通常可用。实际上，由优势和加性效应引起的方差估计涉及与大量接近的，通常是全同胞亲属的交配设计。另外，分割上位性还需要近交系或植物繁殖（克隆）种群。在多年生植物中，近交系由于其长的生长时间而不被使用，并且因为经常发生严重的近亲繁殖。因此，克隆种群是探索这些物种的完全遗传结构的替代方法（Foster and Shaw 1988）。旨在划分遗传变异成其各个组成部分的<strong>几项研究发现小的优势，并可以忽略上位性效应</strong>（福斯特和肖1988年，穆林等人。 1992年，1996年武 ; Isik的等人。 2003，2005年 ; 哥斯达黎加-席尔瓦等人。 2004年，2009年 ; Baltunis 。等人 2007，2008，2009 ; Araujo的等人 2012）。<strong>这些结果并不一定意味着这种效果并不重要</strong>。<strong>相反，非加性效应的贡献可能由于等位基因频率的分布而受到影响所掩盖</strong>（例如，Hill 等， 2008）。<strong>这些结果也可能反映了所使用的数据/家族结构或使用的遗传信息（谱系）所施加的限制，只允许估计遗传相似性的预期程度。</strong></p>
+
+<p><strong>全基因组的基因型数据可以高度确定成对个体之间等位基因共享的实际分数</strong>。<strong>在基于谱系的遗传关系中，分子关系矩阵（A矩阵）中的每个元素被定义为假设无穷小模型的共享等位基因的预期分数。然而，由于孟德尔采样，从分子标记信息构建的实现基因组关系（A G矩阵）的值偏离其预期值（Vanraden 2008 ; Hill和Weir 2011）</strong>。结合用于预测遗传价值的分子标记信息的一种方法是在基因组最佳线性无偏估计（BLUP）分析中，以基于标记的对应物（或遗传，G- BLUP）（Vanraden 2008）。实际上，G-BLUP是结合了分子的信息来预测的BV，并表现出在动物和植物育种群体显着地良好的预测性能（最频繁使用的方法之一海斯等人 2009 ; Habier 等人 2010 ; Veerkamp 等。 2011 ; 洛斯坎波斯等人 2012 ; Heslot 等人 2012）。</p>
+
+<p>基因组BLUP是一种众所周知且易于理解的方法。在全基因组选择（GWS）的范围内，它相当于岭回归BLUP（RR-BLUP）（2008 Vanraden ; 洛斯坎波斯等人 2012）。与P-BLUP类似，<strong>G-BLUP可以通过替代基于谱系的关系矩阵来替代基于谱系的关系矩阵来扩展，以解决非加性效应</strong>（Mrode 2005）与其基于标记的对应物。这是因为当前与A G一样，<strong>也可以使用分子信息来构建优势和上位相互作用</strong>（例如，由加性添加，优势优势和由domiance添加）关系矩阵。使用实现的遗传关系的优势和上位矩阵可能会增加从结构较差的人群中得出的估计数的准确性，并且还可能由于主要和相互作用的影响而增加将遗传方差分解为成分的能力。</p>
+
+<p>有证据表明，G-BLUP基于甲ģ产量育种值和比其基于系谱-对方（未来的表型的更精确的预测甲）（2008 Vanraden ; 洛斯坎波斯等人 2009 ; 海斯等人 2009 ; Crossa 等人 2010 ; Heslot 等人 2012 ; 勒森德等人 2012B ; 谢穆尼奥斯。等人 2013）。这表明<strong>使用实现的基因组相似性（A G）增加（相对于A）模型发现表型数据的遗传成分的能力。</strong>然而，<strong>还不清楚通过使用实现的基因组关系来改进将遗传变异分为加性和非加成成分的能力。</strong>如果是这样，这将导致对复杂性状的遗传结构的更好的剖析，这可能对未来的育种策略的设计和实施产生深远的影响。<strong>这项研究的目的是评估使用基于标记的添加剂和非加性关系矩阵提高分类遗传变异的精度的程度。</strong>对于这种评估，用一系列模型评估了来自樟子松的克隆种群的树高，这些模型考虑了加性，优势和一级上位相互作用（通过加性加法，优势加权和由优势叠加）实现具有谱系或分子标记信息。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/n2--%E4%B8%8D%E8%B7%91%E8%83%B6%E7%9A%84%E5%88%86%E5%AD%90%E6%A0%87%E8%AE%B0%E6%8A%80%E6%9C%AF/" data-toggle="tooltip" data-placement="top" title="N2--不跑胶的分子标记技术">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/munoz2014-%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%85%B3%E7%B3%BB%E7%9F%A9%E9%98%B5%E7%9F%AB%E6%AD%A3%E7%B3%BB%E8%B0%B1%E9%94%99%E8%AF%AF/" data-toggle="tooltip" data-placement="top" title="Munoz2014-基因组关系矩阵矫正系谱错误">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

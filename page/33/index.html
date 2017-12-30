@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Dong&#39;s blog</title>
+  <meta property="og:title" content="Dong&#39;s blog" />
+  <meta name="twitter:title" content="Dong&#39;s blog" />
+  <meta name="description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta property="og:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="twitter:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../" />
+  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../">
+            <img class="avatar-img" src="../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Dong&#39;s blog</h1>
+                
+                  
+                    <hr class="small">
+                    <span class="page-subheading">Enterprising &amp; Concentrating欢迎光临！</span>
+                  
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div role="main" class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+          <div class="well">
+            
+
+<h2 id="front-page-content">Front Page Content</h2>
+
+<p><code>beautifulhugo</code> supports content on your front page. Edit <code>/content/_index.md</code> to change what appears here. Delete <code>/content/_index.md</code> if you don&rsquo;t want any content here.</p>
+
+          </div>
+        
+
+        <div class="posts-list">
+          
+          
+            <article class="post-preview">
+              <a href="../../post/bayesian/waldmann-2009%E8%B4%9D%E5%8F%B6%E6%96%AF-winbugs-/">
+                <h2 class="post-title">Waldmann-2009贝叶斯-WinBUGS-</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (35 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>Waldmann P. Easy and flexible Bayesian inference of quantitative genetic parameters. Evolution (N. Y). 2009;63:1640–3.</li>
+</ol>
+</blockquote>
+
+<p>贝叶斯方法在数量遗传学和进化生物学中有了巨大的进步。然而，应用这种方法的出版物相对较少，可能是因为多用途和用户友好的软件的可用性有限。这里描述了如何只有几行代码的良好开发和非常灵活的贝叶斯软件<strong>WinBUGS（Lunn等人，2000）可以用于推断通用设计的系谱中的加性多基因方差和遗传性</strong>。所呈现的代码通过应用于早期公布的苏格兰松的数据集来说明。</p>
+
+<hr />
+
+<p>进化中感兴趣的大多数性状是多基因的并受遗传和环境因素的影响。数量遗传学为多基因性状的研究提供了一个完善的和强大的框架（Falconer和Mackay 1996）。<strong>数量遗传学背后的基本想法是观察具有不同程度的关系（coancestry）的个体（可能来自交配方案）的样本，并且基于关系系数估计该性状的遗传和环境方差分量</strong>。在历史上，或多或少复杂的交配设计已被用来产生个体之间的共祖差异（Lynch和Walsh 1998）。还有人建议，<strong>可以通过首先使用分子标记来重建看似无关的个体之间的共生来估计数量基因参数</strong>（Blouin 2003）。<strong>多基因性状的遗传变异通常被估计为加性遗传方差（和遗传力）。遗传力的估计是重要的，因为该参数确定了通过对群体应用自然和人工选择可以预期的响应</strong>。 <strong>Henderson（1976）介绍了计算一般家系的加性遗传相关矩阵的方法。这种方法通常被称为动物（或个体）模型。限制最大似然（REML）方法通常用于估计单个模型中的方差分量。众所周知，基于个体模型的统计技术在估计变异分量和预测育种值方面优于传统的基于家系的方法，因为它们使用来自谱系的所有信息，并且对选择引入的偏差较不敏感（Lynch和Walsh 1998）</strong>。<strong>贝叶斯统计方法在遗传学中变得越来越流行，因为它们在高度复杂的层次统计模型分析中以概率形式总结不确定性的能力（Sorensen和Gianola 2002; Beaumont和Rannala 2004; O&rsquo;Hara等人。2008）</strong>。<strong>数值模拟，通常是马尔可夫链蒙特卡罗（MCMC）方法，被用来执行贝叶斯推理所需的积分</strong>。<strong>吉布斯采样器是一种高效的MCMC方法，最初是由Geman和Geman（1984）开发的，用于分析Gibbs在物理场中的格子分布，后来由Gelfand和Smith（1990）引入统计学。吉布斯抽样基于从完全条件分布的抽样，并要求这些分布对于所有参数以封闭形式可用</strong>。 <strong>Metropolis-Hastings更新可用于完全条件分布不可用的模型（Gilks​​等人，1996）.WMC等人将MCMC方法引入数量遗传学。 （1993）和Sorensen et al。 （1994）</strong>。然而，鉴于贝叶斯量化遗传学中有前途的方法发展，仍然缺乏使用这些方法的出版物。主要原因可能是缺乏用户友好的软件，研究人员可以使用而没有深入的统计知识。<strong>单变量和多变量贝叶斯吉布斯抽样算法在两个动物育种软件中实现。 MT-GSAM（VanTassell和Van Vleck 1996）和GIBBSF90（Misztal等人，2002）是可以处理大家系的强大程序</strong>。然而，<strong>这些程序需要良好的动物模型知识以及贝叶斯推理的经验。即使这两个程序都能处理一系列不同的模型，但它们缺乏通用软件包的灵活性。例如，方差分量的先验次数受到限制，并且难以执行模型比较</strong>。 Damgaard（2007）展示了如何使用多目的MCMC程序WinBUGS（Lunn等人，2000）来适应动物模型，但是该方法需要事先将数据转换为使得模型在WinBUGS中拟合更容易的格式，并且代码不必要地复杂。在这里，我展示了一种在WinBUGS中实现单个模型的替代方法。使用早期公开的来自苏格兰松的数量遗传学研究的数据来说明该方法（Waldmann等人2008）。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/bayesian/waldmann-2016-%E5%8A%A0%E6%80%A7%E6%98%BE%E6%80%A7-%E8%B4%9D%E5%8F%B6%E6%96%AF/">
+                <h2 class="post-title">Waldmann-2016-加性显性-贝叶斯</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (185 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Waldmann P, Hallander J, Hoti F, Sillanpää MJ. Efficient Markov chain Monte Carlo implementation of Bayesian analysis of additive and dominance genetic variances in noninbred pedigrees. Genetics [Internet]. 2008 [cited 2016 Nov 14];179:1101–12. Available from: http://sci-hub.cc/http://www.genetics.org/content/179/2/1101.short  准确和快速计算定量遗传方差参数在自然和繁殖群体中都非常重要。对于具有复杂关系结构的实验设计，在统计模型中包括加性和显性方差分量可能是重要的。在这项研究中，我们引入了贝叶斯吉布斯抽样方法，用于估计传统的无穷小模型中的加性和显性遗传变异。该方法可以在没有近亲的情况下处理一般家系。为了优化计算时间和马尔可夫链蒙特卡罗（MCMC）链的良好混合，我们使用混合Gibbs采样器，其结合单个位点和封闭的Gibbs采样器。通过使用预转换变量，进一步改善了混合取样器的速度和单位点取样器的混合。从先前公布的苏格兰松（Pinus sylvestris L.）的双列后代测试和具有不同显性方差水平的两个大模拟数据集分析了两个性状（高度和树干直径）。我们还在后验预测损失法的基础上进行贝叶斯模型比较。结果表明，具有加性和显性分量的模型对于高度和直径以及具有高显性的模拟数据具有最佳拟合。对于具有低显性的模拟数据，我们需要一个信息，以避免显性方差分量被高估。苏格兰松林数据中的狭义遗传力估计与较早的结果相比较低，这是不奇怪的，因为显性方差的水平相当高，尤其是直径。通常，混合采样器比阻塞采样器快得多，并显示出比单位点采样器更好的混合特性。
+前言 与自然适应相关的多数性状和育种改良受许多基因（多基因性状; Lynch和Walsh 1998）的影响。在定量遗传学中，多基因性状的遗传变异通常被估计为加性遗传方差（和遗传力）。遗传力的估计具有根本重要性，因为这个比率影响可以预期在所考虑的群体中的自然和人工选择的反应（Falconer和Mackay 1996）。因此，相当关注用于估计育种值和遗传力的统计方法的发展（Henderson 1984; Searle等1992; Lynch和Walsh 1998）。 遗传方差可以进一步分成加性遗传成分和非累加遗传成分。显性方差由同一基因座处等位基因之间的相互作用引起，而上位方差由不同基因座处等位基因的相互作用引起。传统上，已经进行了复杂的交叉设计以估计显性和上位性方差，例如北卡罗来纳（NC）II设计和三重测试跨线; Kearsey和Pooni 1996; Lynch和Walsh 1998？.Henderson（1985a，b）表明基于多基因成分和谱系信息（通常称为动物或个体模型）的混合效应模型如何可用于推导非加性遗传效应和方差设计。由于加性，显性和上位性遗传效应在未选择的、连锁平衡的非近交群体中是不相关的（Cockerham 1954），理论上应该可以通过加性和显性关系矩阵的各种组合的乘法来估计所有这些遗传效应，在混合模型方程中使用这些。例如，加性 - 加性上位关系矩阵将通过两个附加遗传关系矩阵的元素方式乘法获得。不幸的是，在实践中，上位关系矩阵将是彼此的倍数，这可能导致统计模型中的参数的可识别性的顶点（对于关于可识别性的讨论，参见Gelfand和Sahu1999）。此外，应该注意包括支配因素，因为考虑的谱系可能太小，不能导致可识别的结果（Misztal 1997）。非加性遗传方差分量的估计是至关重要的几个原因。首先，它将产生更准确的统计估计，因此可以实施更准确的选择策略（Du和Heschele 2000）。这在附带实验设计中特别重要（Henderson 1985b）。在这种情况下，标准加性模型（假设残差与恒定方差不相关）可以产生加性遗传值的有偏估计，因为简单残差方差结构是错误的（Lynch和Walsh 1998）。已经发现非加性遗传效应可以对育种值的排名具有相当大的影响（Wall等人，2005）。第二，显性本身是有意义的，因为它与预期的近交衰退水平耦合（Cockerham andWeir 1984）。因此，没有显性作用不会有近交衰退，避免近亲繁殖在育种设计和保护计划中不太重要。 最近，从理论的角度来看，显性作用和上位性可以转化为瓶颈和近交的加性遗传方差（例如，Willis and Orr 1993; Wang et al.
+                  <a href="../../post/bayesian/waldmann-2016-%E5%8A%A0%E6%80%A7%E6%98%BE%E6%80%A7-%E8%B4%9D%E5%8F%B6%E6%96%AF/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/bayesian/waldmann2006-%E5%A4%9A%E6%80%A7%E7%8A%B6%E4%B8%AA%E4%BD%93%E6%A8%A1%E5%9E%8B-reml%E5%92%8Cgibbs%E7%9A%84%E6%AF%94%E8%BE%83/">
+                <h2 class="post-title">Waldmann2006-多性状个体模型-reml和gibbs的比较</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (123 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Waldmann P, Ericsson ÆT. Comparison of REML and Gibbs sampling estimates of multi-trait genetic parameters in Scots pine. Theor Appl Genet. 2006;1441–51.    REML估计精确，但是来自吉布斯群友的后验概率模式被高估，高估的程度取决于遗传力的水平。 需要进一步的研究去评估不同先验对遗传个体模型中（协）方差组分的影响。 多性状个体模型由Henderson and Quaas（1976）引入数量遗传学。 个体模型在方差组分估计和育种值预测中比常规基于家系的方法要好，因为它们可以利用来自谱系的全部信息，并且对选择引起的偏差更不敏感(Sorensen and Kennedy 1984;Henderson 1986; Borralho 1995)。 历史上，多数数量遗传分析采用经典ANOVA（也称作频数学派）方法。如今已被估计（协）方差组分的REML和利用BLUP估计育种值的方法取代。REML方法第一次由Patterson andThompson (1971) 用于不平衡混合模型，已经广泛应用于动植物育种项目。然而，REML方法需要迭代，通常需要大量计算，尤其是对于多变量数据集，所以有许多的工作用于开发更为有效的算法。已经开发了多个计算程序用于多性状模型中的REML估计，比如the derivative-free (DF) method (Meyer 1991), the expectation maximization (EM) method (Misztal andPerez-Encisco 1993) and the average information (AI)method (Jensen et al. 1996)（注：平均信息AI是Gilmour1995年提出来的，这里是说多变量模型）。这些REML方法都需要利用迭代算法寻找似然的最大值。不幸的是，获得方差组分的估计是比较容易的，但是难以计算这些参数函数可靠的置信区间(Harville and Fenech 1985;Burch and Iyer 1997; Soria et al.
+                  <a href="../../post/bayesian/waldmann2006-%E5%A4%9A%E6%80%A7%E7%8A%B6%E4%B8%AA%E4%BD%93%E6%A8%A1%E5%9E%8B-reml%E5%92%8Cgibbs%E7%9A%84%E6%AF%94%E8%BE%83/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/wang2005-gwas%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8B%85%E5%BF%83/">
+                <h2 class="post-title">Wang2005-gwas理论与实践上的一些担心</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (86 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Wang WYS, Barratt BJ, Clayton DG, Todd JA (2005) Genome-wide association studies: theoretical and practical concerns. Nat Rev Genet 6:109–118. doi: 10.1038/nrg1522
+摘要|为了完全了解常见疾病基础的等位基因变异，需要对具有和不具有疾病的许多个体进行完全的基因组测序。这在技术上仍然不可行。然而，最近已经可能通过在全基因组关联研究中对大量常见SNP进行基因分型来进行基因组的部分调查。在这里，我们概述了需要考虑的主要因素 - 包括常见疾病的等位基因结构，样本大小，地图密度和样本收集偏差的模型，以便优化识别真正的疾病易感性位点的成本效率。
+ 常见疾病的发展起因于许多环境因素和许多基因的等位基因之间的复杂相互作用。识别影响发展疾病风险的等位基因将有助于了解疾病病因和亚分类。在过去30年中，多因素人类疾病的遗传研究已经确定了〜50个基因及其等位基因变异，可以认为是不可逆的或真阳性1,2。然而，可能有数百个易感基因座增加了每种常见疾病的风险。关键问题是如何利用我们对基因组序列及其在群体中的变化的知识的显着的最近的改进，以及基因分型技术的进步，以最低的成本加速易感性基因座发现。 在本期杂志的一篇附随评论中，Hirschorn和Daly3为全基因组关联方法提出了一个案例，“其中跨基因组的一组密集的SNP被基因分型以检测最常见的遗传变异在疾病中的作用或确定作为疾病风险因素的可遗传数量性状“。他们建议谨慎使用最新的高通量方法进行基因分型4 - 8，因为失败的成本对于设计和执行具有低统计功效和不充分的质量控制的研究可能是巨大的。在这里，在全基因组关联研究和最小化每个真阳性的成本的上下文中，我们更详细地讨论使用大样本大小根据可行的最小等位基因风险的理由，检测，单核苷酸多态性的选择基因分型，研究设计效率和这些数据的统计分析的某些方面。我们不主张放弃对共同疾病的联系研究9-12。我们还不能说是否LINKAGE ANALYSIS方法在一般意义上是“失败”的，因为几乎所有已发表的研究都使用小样本大小13（少于500个受影响的SIB对），所以这不能单独用作执行的理由全基因组关联研究。基因组范围的链接分析将仍然是一个重要的方法，直到技术可用，允许在实际成本和高吞吐量关联分析罕见和共同变体。 此外，如前所述14，我们查看全基因组关联研究本身不是一种新的方法，而是作为一种更成本有效的方式来调查共同遗传变异相比基因功能候选基因方法。后一种方法已经成功，但是由于迄今为止仅研究了少量基因，并且如我们所讨论的，样品量可能太小，尽管进行了大量的研究和大量的努力，但很少有真正的阳性。通过利用位于邻近基因座（链接区域（LD））的等位基因的非随机关联，这是基因组5,15-18的重要和广泛的特征，现在可以在关联研究中调查sig-发生在高LD区域的大量基因的共同变异的显着比例。可以获得成本效率，因为不必对与其他SNP处于强LD的SNP进行基因分型;这可以通过选择捕获区域中大多数等位基因变异的SNP的子集（称为标签SNP（参见在线链接框））来完成。将讨论该策略的理由和限制，同时铭记标签SNP在检测稀有可疑性变体方面的不足，并且根据定义，它们在低LD区域缺乏成本节约优势，这可能构成20％的人类基因组。除了讨论这些更实际的问题，我们首先讨论关于两个尚未知的参数的理论考虑，这些参数决定了关联研究的潜在稳定性 - 群体中易感性等位基因的频率及其影响的大小疾病表型。
+常见疾病的等位基因谱 疾病的等位基因谱或结构指存在的疾病变异的数量，它们的等位基因频率和它们赋予的风险9,20,21。来自理论模型和实际实验的许多来源提供了对常见疾病的等位基因结构的了解，表明涉及的基因座的多样性及其作用范围。不管在疾病之间不同的光谱的确切形状如何，倾向于疾病的变体的等位基因频率和它们的表型效应的强度表明遗传相关性研究的潜在统计学力量，并因此表明它们成功的可能性和成本每个真阳性结果。在这里，我们首先讨论这两个因素可能对全基因组关联研究的可行性的影响，然后提供迄今为止已知的常见疾病的等位基因谱的概述。应该注意的是，其他因素也影响统计能力 - 例如，混杂因素，如人口结构和地理，错误分类错误和选择偏差 - 其中一些因素将在后面的章节中讨论。 对关联研究的影响。图1显示如果易感性等位基因具有小于0.1的小分子频率（MAF）和它们的效应大小小于1.3的ODDS比率，则超过10,000个病例和10,000个对照（或10,000个家族）将需要对疾病协会实现令人信服的统计支持。我们无法以任何准确性估计疾病易感性等位基因在该范围之外的比例（即，优势比为1.3或更高和MAF&gt; 0.1的那些），因此在全基因组关联研究中是可行的，这个限制在下面讨论。然而，我们建议，与目前的候选基因和基于连锁的方法相比，旨在检测这种等位基因的研究 - 需要分析数千个样品，而不是数百个样品 - 将提供每个真阳性结果的总体更低的成本。 对6,000个病例和6,000个对照（或6,000个家庭，具有2个亲本和受影响的后代）的研究将在理想条件下提供约0％，3％，43％和94％的功率以检测疾病易感性变异，优势比1.3和MAF为0.01,0.02,0.05和0.1，以相应的顺序，P &lt;10-6的显着水平（图1）。由于需要允许任何给定基因座或区域与疾病真正相关的非常小的先验概率3,14,22,24,103,104，已经提出了P &lt;10-6级的显着性阈值用于全基因组关联研究。对于优势比为1.2或更小（例如，对于MAF为0.1的34％）的功率存在急剧的下降（图1）。相反，对于优势比为2，即使对于MAF为0.005，也存在76％的功率。然而，我们怀疑这种高比值比在常见疾病中很少见（见下文）。 毫无疑问，即使是最佳设计的研究，目标是最小MAF为10％和优势比为1.3，由于许多因素，包括基因型和表型的错误分类和混杂因素，将具有比预期更低的功率，所以甚至更大的样本大小可能是必需的。然而，应当注意，在12,000例病例和对照的研究中，例如，可以在几乎没有功率损失的阶段进行基因分型。这提供了基因分型成本的显着节省，因为大多数基因分型在样品总数（约20-30％）的第一阶段进行（参见REFS 3,25，关于这些方法）。 在下面的章节中，我们讨论常见疾病的等位基因谱的理论模型，并估计其可能的分布。 易感基因座的等位基因频率。两种极化视图主导了许多关于常见疾病的等位基因频率的文献9,21。常见疾病/常见变异（CDCV）假说提出，如其名称所暗示的，常见疾病是常见变异的结果20。在这种模式下，疾病易感性被认为是由几种常见变异体的联合作用引起的，而无关的受影响个体具有显着比例的疾病等位基因。 CDCV的极端替代方案是经典疾病异质性假说（或多重稀有变异假说），其中疾病易感性是由于不同个体的不同遗传变异，疾病易感性等位基因具有低人口频率26（MAF小于大于0.01）。 最常见的疾病的等位基因谱可能落在这两个极端之间。经典异质性模型，其中多个稀有变体贡献附加地和独立地（在生物学意义上），导致相关受试者的性状之间的相关性与它们之间的关系的距离线性地下降27（图2）。这是疾病等位基因共享的线性减少与关系的增加的关系的结果。相反，如果一种常见疾病主要是由于几个基因座与常见等位基因的相互依赖的相互作用，则具有相关性程度的风险的下降将比线性下降更快。这种相关性是否适用于不同的常见疾病和性状的研究产生了不同的结果，为一些癌症28和身高29中的遗传加和性提供了支持，并且在1型糖尿病30中具有非加和性（参见在线链接框）。 用于支持这两个假设的论据在很大程度上基于人口遗传理论，因此将受这些理论的基本假设的影响20,31。经验证据表明高频和低频等位基因都有助于常见疾病2,32-38。例如，在对映射的量化位点（QTL）的评价中，大约50％的候选因果变异体具有超过0.05的MAF，而另一半具有较低的MAF9。我们建议，最好避免罕见的与常见的疾病易感性等位基因的极化，而是考虑疾病变异体的等位基因谱与所有变体（有或没有表型效应）在人类中的差异基因组（图3）。最中性的假说是疾病变体的等位基因谱与所有遗传变体的一般谱一致17,39,40。在这种中性模型下，虽然大多数易感变异是罕见的（MAF小于0.01），MAF大于0.01的SNP将占个体之间的遗传差异的90％以上并且应该显着地促进表型17,41。与总体等位基因谱相比，CDCV模型可以被认为是朝向常见变异的转变，并且异质性模型朝向罕见变异40转移（图3）。基因组的蛋白编码区具有比一般基因组更低的MAF的多态性，因此，导致非同义变化的疾病变体42,43可能导致罕见的变化。不同的进化力可导致不同的光谱移动;例如，PURIFYING SELECTION可能会导致罕见的shift31。相比之下，由免疫应答介导的疾病，如自身免疫性疾病，可能是由阳性选择的等位基因引起的，以提供对传染病的抗性，因此达到更高的人群频率36。类似地，诸如2型糖尿病（参见在线链接框）的代谢疾病，其中选择等位基因用于对饥饿或能量平衡的适应性反应，可能影响现代环境中的易感性 - 节俭基因假说44。因此，等位基因谱将在不同的常见疾病之间变化，并且可能由等位基因频率26,32的复杂混合组成，接近图1中所示的弯曲L形分布。注意，如果表示0和1.0之间的等位基因频率，则曲线将是U形，而在仅考虑次要等位基因时代替0至0.5）。 对于基因组作为整体，已经预测，对于MAF大于0.01（REFS 41,45）的预期的10至15百万个SNP，大约一半具有大于0.1的MAF，另一半具有MAF， 0.01至0.1由于赋予轻度至中度风险的疾病变异数可能很大（如下一部分所解释），则除非等位基因谱的变化是严重的 - 鉴于遗传和环境的多样性，这似乎不大可能在常见疾病中的作用 - 可能有数百种常见的和罕见的变体，其导致每种常见人类疾病的家族聚集。 作为示例，使用图3中的假设频谱， 3，考虑一种复杂的疾病，其中有20个疾病易感性变异在中性模型下促成该疾病，其中这些变异体的MAF大于0.1，并且它们的优势比足够高以使它们在全基因组中被鉴定协会研究。在这种情况下，罕见的移位可能导致〜10个变体，MAF大于0.1，并且共同移位可能导致〜40个变体。对全基因组关联分析的意义是基于常见变异体的存在的实验可能产生大量的阳性结果，除非等位基因谱中存在极端的变化 与疾病易感性变异相关的风险。关于等位基因结构的第二个主要问题是由个体变体赋予的遗传风险的分布。虽然不可能预测任何给定的常见疾病的等位基因效应的准确分布，但是几个证据线指向潜在的潜在分布。例如，这些证据来自于在果蝇，作物和家畜中的QTL研究中使用诱变，选择和连锁方法，以及对人类疾病的啮齿动物模型的研究。这些研究表明遗传变异体的表型效应大小的分布与少数具有大效应的遗传基因座和具有小效应的大量基因座的存在一致9,46-54。所得到的弯曲的L形分布已经通过使用指数或者分布（参见图4中的图，其具有与图3中的曲线不同的形状和原点）来建模。这些结果与目前的进化理论一致，其中通过将基因DRIFT和突变效应分解为经典适应模型55，QTL效应的预期分布是指数56。最近的研究结果表明，等位基因变异频繁影响基因表达和外显子剪接57-60-这可能具有比影响人类表型的多影响更小的效应。并且具有影响基因表达调节的等位基因的基因座可以通过连锁分析61,62检测。 迄今为止已经确定的大多数不可辩驳的疾病易感性变异体 - 主要来自功能 - 候选者相关性研究 - 具有1.
+                  <a href="../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/wang2005-gwas%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8B%85%E5%BF%83/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/wegary-2013-%E7%8E%89%E7%B1%B3/">
+                <h2 class="post-title">Wegary-2013-玉米</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (82 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  
+
+<blockquote>
+<p>Wegary D., Vivek B., Labuschagne M., 2013 Association of parental genetic distance with heterosis and specific combining ability in quality protein maize. Euphytica 191: 205–216.
+- 利用ssr标记和表型距离，确定遗传多样性的程度（determine the amount of genetic diversity），根据系的关系分类（classify），估计遗传距离与杂种表现、杂交优势、SCA的相关关系。
+ - 遗传距离与杂种表现强正相关。
+ - ssr标记距离与杂种优势的相关太弱，没有预测价值，除了株高。表型距离在预测杂种表现和SCA效应的重要性更低。</p>
+</blockquote>
+
+<h2 id="摘要">摘要</h2>
+
+<p>优质蛋白玉米（QPM）近交系中的<code>遗传距离分析和遗传距离与杂种优势的相关性将有助于设计育种策略和预测杂种表现</code>。本研究进行了使用SSR标记和形态距离确定QPM近交系中的遗传多样性的量;<code>根据它们的关系来分类近交系;并估计SSR标记和形态距离与杂种表现，杂种优势和特异性结合能力（SCA）的相关性</code>。通过15个QPM近交系的二级杂交产生的一百五个杂交体用15个亲本在埃塞俄比亚的哈拉雷，津巴布韦和巴科的17个形态性状进行评价，并且使用40个SSR标记检查DNA多态性。 SSR标记和遗传距离估计的形态学方法在所研究的近交系中显示出适度高的遗传距离。基于两个距离度量的聚类分析将15个亲本系列分组。<code>基于SSR标记的遗传距离与谷物产量（r = 0.37）呈正相关，高度显着相关</code>，在开花期（r = -0.40）和天数（t = -0.42）呈负相关和高度显着。这些关系表明，从SSR标记确定的亲本的距离可以预测QPM杂交体的高谷粒产量和早期，尽管相关值不是非常高。除了植物高度的情况之外，<code>SSR标记距离与杂种优势的相关性太低而不具有预测价值</code>。形态学距离在预测杂种的杂交性能和SCA效应方面不太重要。</p>
+
+<hr />
+
+<p>##　介绍
+在玉米中，杂交育种仍然是从杂种优势的影响中获得最大遗传收益的首选方法。然而，由于需要大量的产量，因此鉴定具有优异交叉性能的生产线是混合开发程序中最关键，成本最高和耗时的阶段（Melchinger等人，1990）。<code>如果可以筛选近交系，并在田间评估前预测优良杂交，则这将大大提高杂交育种程序的效率</code>。然而，玉米自交系的性能本身并不能预测玉米杂种对谷物产量和农艺性状的性能（Hallauer和Miranda 1988）。此外，性状表达常常受环境因素的显着影响。如果可以使用在田间评估之前准确预测的分子标记和优良杂交来筛选近交系的遗传多样性，可以增加杂种育种程序的效率（Melchinger等人，1991）。关于杂交性能的遗传多样性已在玉米中广泛研究。 Moll et al。 （1965）报道了在玉米杂种中杂种优势的亲本遗传多样性的基于标记物的标记物之间的正相关性。在不同地理区域的玉米种群和种群杂交之间测量的杂种优势的数量随着种群间遗传距离的增加而增加（Moll等人，1965）。同功酶研究表明，遗传距离估计在大多数情况下与粮食产量的F1表现正相关（Stuber 1994）。几个研究尝试使用同工酶变异来测量近交系之间的遗传多样性，并检查遗传多样性和谷物产量之间的关系（Smith和Smith 1989）。一般来说，通过同工酶差异测量的多样性或遗传距离不是谷物产量或谷物产量杂种优势的良好预测物。 DNA标记已被用于分析玉米自交系之间的遗传关系，并用于检测基于DNA标记的遗传距离与单杂交产量和玉米杂种优势之间的关系。<code>几个报告已经证明了RFLP距离和玉米中的杂种性能之间的高相关性（Ajmone-Marsan等人1998）。 Lanza et al。 （1997）观察到基于RAPD的遗传距离和玉米单杂交杂种谷粒产量之间的正相关，而Parentoni et al。 （2001）报道，RAPD标记估计遗传距离和SCA之间的相关性产量太低，不具有预测价值</code>。 Ajmone-Marsan et al。 （1998）和Kiula et al。 （2008）报告AFLP标记，混合性能和SCA估计之间的相关性可能在预测混合动力性能有实际用途。 Legesse et al。 （2008）报道AFLP测量的遗传距离与杂种表现的低相关性。 SSR标记是可靠的，可重复的，有利于辨别和标准化，并且与其他标记类型相比成本有效（Smith等人1997; Melchinger 1999）。 SSR标记提供了一种预测杂交性能的有效方法（Drinic et al。2002）。发现基于SSR标记的遗传距离与玉米杂种产量显着相关（Xu et al。2004）。杂种优势的程度取决于近交亲本和相应杂种的相对性能。环境可以对杂种的性能具有不同的影响，改变遗传距离和杂种优势之间的关系。关于遗传距离及其与QPM种质中产量特征的关系的信息很少。因此，本研究的目的是确定SSR标记和形态性状基于QPM近交系中的遗传距离;基于这些标记物，根据它们的关系来分类近交系，并在两种环境中估计SSR标记物和形态距离与杂种性能，杂种优势和SCA在QPM中的相关性。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E8%82%B2%E7%A7%8D/weigel2017-%E5%A5%B6%E7%89%9B%E8%82%B2%E7%A7%8D%E7%99%BE%E5%B9%B4%E5%9B%9E%E9%A1%BE%E6%96%B9%E6%B3%95%E5%92%8C%E5%9F%BA%E5%9B%A0%E7%BB%84%E9%80%89%E6%8B%A9%E4%BB%8E%E6%AF%8D%E5%A5%B3%E6%AF%94%E8%BE%83%E5%88%B0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">
+                <h2 class="post-title">Weigel2017-奶牛育种百年回顾：方法和基因组选择——从母女比较到深度学习</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (248 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Weigel, K.A., VanRaden, P.M., Norman, H.D., and Grosu, H. 2017. A 100-Year Review: Methods and impact of genetic selection in dairy cattle—From daughter–dam comparisons to deep learning algorithms. J. Dairy Sci. 100(12): 10234–10250. doi:10.3168/JDS.2017-12954. Translated by Google &amp; revised by Dong
+ 摘要 20世纪初期，育种协会的家畜血统簿已经建立起来，而产奶记录仪方案还处于起步阶段。农民想提高他们牛的生产力，但是群体遗传学、数量遗传学和动物育种的基础还没有奠定。早期的动物育种人员利用受当地环境条件和畜群特定管理措施影响的表现记录，努力确定遗传优良的家系。母-女比较使用了30多年，虽然遗传进展微乎其微，但对表现记录、遗传理论和统计方法的关注在未来几年得到了回报。当时（同群）比较方法允许更准确地考虑环境因素，当这些方法与人工授精和后代测试相结合时，遗传进展开始加快。计算能力的进步促进了混合线性模型的实现，该模型以最佳的方式使用谱系数据和表现数据，并实现了精确的选择决策。牛基因组的测序引发奶牛育种的革命，科学发现和遗传进展的步伐得以加快。基于谱系的模型已经让位给全基因组预测，贝叶斯回归模型和机器学习算法已经在现代动物育种者的工具箱中加入了混合线性模型。未来的发展将包括阐明关键生物途径中的遗传遗传和表观遗传修饰的机制，基因组数据将与来自农场传感器的数据一起使用，以促进现代奶牛场的精确管理。
+2017年3月29日收稿。2017年6月11日接收。该综述是Dairy Science杂志委托为庆祝出版百年（1917-2017）特刊的一部分。 通信作者：kweigel@wisc.edu 关键词：遗传选择，奶牛，基因组选择，统计模型
+基础 表现记录 谱系记录和表现数据是在前基因组时代开发有效的遗传选择程序的关键基石，如附录表A1所示。谱系记录可以追溯到19世纪末期育种协会创建时，在早期乳业先驱如W.D.Hoard的鼓励下，此后不久开始广泛收集表现数据。 1905年，密歇根州成立了第一个记录牛奶重量和分析乳脂样品的全州协会，到1908年，美国农业部（USDA）动物工业局开始组织地方和国家奶牛检测协会进入全国奶牛群改良协会（DHIA）。1914年这项工作转由联邦推广人员负责，参与牛奶测试的奶牛数迅速增长（VanRaden和米勒，2008年），如图1所示。 DHIA按月检测是几十年来的标准，但是现在大约三分之二的奶牛场使用省力的上午/或下午测试计划，即在每个月的交替时间采取牛奶样本。未来的战略重点是对最新鲜的母牛或最高产奶牛的母牛进行更频繁的DHIA采样，可能为处于最高效率和最常见健康疾病风险的奶牛提供更有用的数据。如图2所示，通过射频识别（RFID）传感器和在线取样系统对数据进行电子测量，取代了手动输入谱系和表现数据。 在二十世纪二十年代和三十年代，当地的公牛协会很常见，直到20世纪40年代人工授精的广泛采用，当时形成了几十个地区人工授精合作社。因为实际上所有对奶牛感兴趣的性状都是有性别限制的，所以对公牛自身表型的遗传评估是无用的，并且需要根据其后代的表现评估公牛基因优势或劣势的策略。 谱系数据 尽管早在19世纪末期，奶牛育种协会就为每个奶牛和公牛分配了独特的识别号码，但大部分未注册的动物（“等级”）不包括在育种协会的家畜血统簿中，需要另一种鉴别方法。美国农业部于1936年推出了具有独特编号的金属耳标，而后发展成9位数的耳标系列（如35ABC1234），在1955年由动植物健康检验局（APHIS）和美国动物育种者协会（NAAB）引入，今天仍在广泛使用。 1998年推出的美国ID系列具有双字符品种代码，三字符国家代码和12位数字识别号码的特点（例如，HOUSA00035ABC1234或HO840012345678910）。这个系统被设计成在全球唯一的，并且包括登记和分级动物，并且允许将用于每个个体的多个识别码相互参照到一个唯一的号码。
+早期的预测育种值的方法 母-女比较 一头母牛的泌乳表现一直被认为是受遗传影响，而早期选择的决定仅仅是基于一头牛的奶或黄油产量。在二十世纪之交出现了比较女儿与其母亲产奶量的想法。为此目的提出了几个指标（Davidson，1925; Graves，1925; Yapp，1925; Goodale，1927; Gowen，1930; Bonnier，1936; Allen，1944），Edwards（1932）比较了它们的相对准确性。在实践中，美国最早已知的母女差异是由1915年左右个别公牛协会计算出来的，根据少数几个种牛和若干后代——这是通过选择改良奶牛的第一次认真的尝试。到1927年，代表超过6000名农民的大约250个合作奶牛协会向美国农业部提供了数据，并且在接下来的40年中，美国农业部计算出了种牛的母-女比较值，并将结果寄给了它们的所有者。 20世纪30年代后期人工授精开始可用，才有了优良种牛在许多牛群中生产数百或数千只后代的机会。在各种管理和环境条件下饲养的大群子代雌牛大大提高了遗传预测的准确性。在此期间，RA Fisher（1918,1930）和JBS Haldane（1932）等巨擘的工作为群体和数量遗传学奠定了基础，使先驱Sewall Wright（1932）和Jay Lush（1931,1933）发展动物育种科学和准确评估种牛所需的统计方法。开发了基于母-女比较的各种指数，包括Wright（1932）和Lush等人（1941年）的指数 。 只要表现数据可用于母女及其女牛，母-女比较促进了用于多个牛群的公牛的遗传评估。如果母女及其女牛被安置在同一个畜群中，这种方法能够考虑牛群特定的管理做法和当地的环境条件。母女及其女牛表现之间发生的管理或环境条件的变化可以忽略。不考虑种牛与其交配个体间的关系，如果这头公牛被用到其原产地，有时会违反这一假设。母牛表现的变化，相对于她的实际遗传价值，是造成预测误差的一个重要来源。随着时间的推移遗传趋势被忽略，但当时在大多畜群中遗传进展是微不足道的。种牛的评估没有回归到平均水平是一个重要的限制，因此仅基于少数母-女对评估的公牛更可能具有极高或极低的遗传预测值。在此期间，制定了泌乳期长度（305 d），挤奶频率（2X）和产犊年龄（成年当量）的记录方法以标准化记录数据。产犊季节也进行了调整，但一般忽略年间环境条件的差异。
+                  <a href="../../post/%E8%82%B2%E7%A7%8D/weigel2017-%E5%A5%B6%E7%89%9B%E8%82%B2%E7%A7%8D%E7%99%BE%E5%B9%B4%E5%9B%9E%E9%A1%BE%E6%96%B9%E6%B3%95%E5%92%8C%E5%9F%BA%E5%9B%A0%E7%BB%84%E9%80%89%E6%8B%A9%E4%BB%8E%E6%AF%8D%E5%A5%B3%E6%AF%94%E8%BE%83%E5%88%B0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/weng2008-%E9%81%97%E4%BC%A0%E6%96%B9%E5%B7%AE%E5%89%96%E5%88%86-%E4%B8%8A%E4%BD%8D/">
+                <h2 class="post-title">Weng2008-遗传方差剖分-上位</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (218 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Weng, Y. H., Park, Y. S., Krasowski, M. J., Tosh, K. J., &amp; Adams, G. (2008). Partitioning of genetic variance and selection efficiency for alternative vegetative deployment strategies for white spruce in Eastern Canada. Tree Genetics and Genomes, 4(4), 809–819. http://doi.org/10.1007/s11295-008-0154-0
+ 通过在加拿大新不伦瑞克省的育苗场和田间环境中建立的克隆复制的全同胞后代测试来估计白云杉（云杉（Vench））的生长性状的遗传变异和选择效率。可用数据包括苗圃试验中第4,5和6年的高度;身高，年龄，身高，体重，以及14年的体积。估计方差分量根据加性显性上位性模型进行解释。在苗期试验中的高度，虽然非加性和加性差异是遗传变异的重要来源，但前者减少，但后者随年龄增加;在非加性遗传方差中，上位方差比优势方差重要得多。与苗圃性状不同，对于田间试验中的性状，加性方差占总遗传方差的平均值的81％，而优势方差解释了大部分剩余遗传方差。比较了三种植物部署策略的遗传参数和选择效率：部署半同胞家庭（VD_FAMHS），全同胞家系（VD_FAMFS）和多品种林业（MVF）。遗传力估计对于VD_FAMHS和VD_FAMFS（0.61-0.72）是中等的，对于苗圃高度是高MVF（&gt; 0.82），对于所有策略的场特征是高（&gt; 0.79）。在田间试验中，年龄14的体积的遗传相关性，即改善的目标性状，与其它田间性状强烈（&gt; 0.85）。在半同胞和全同胞家族水平，VOL14与苗圃高度的遗传相关性也强（&gt; 0.71），但对于MVF仅为中度（&gt; 0.59）。总体而言，实践MVF是最有效的部署策略，产生最高的遗传增益，其次是VD_FAMFS和VD_FAM HS，无论性状和选择方法。此外，HT9或HT4-HT6的早期选择是非常令人鼓舞的，导致每年在14岁时体积增加。
+引言 遗传变异包括三个组成部分：加性，优势和上位性遗传变异（Falconer和MacKay 1996）。树种的加性和优势方差的估计可以通过从全同胞交配设计测试幼苗子代获得。然而，如果幼苗后代用于量化上位方差，则需要近交系（Wricke和Weber 1986）。由于针叶树的长生成时间和异型特征，用于这种目的的幼苗测试实际上不可能应用。相对少数研究使用克隆复制的全同胞子代而不是种子来探索遗传组分的相对重要性。该程序需要产生亲本的交配设计，然后在一组环境中测试其克隆的后代。方差分量从测试数据估计，并转换为亲戚的协方差，然后可以用加性，数量或上位方差来解释。使用这种方法，在针叶树中发现了相对大的非加性遗传变异（Baltunis等人2007a，b; Costa e Silva等人2004; Foster and Shaw 1988; Isik等人2003,2004,2005; Kumar 2006; Mullin and Park 1994; Paul et al.
+                  <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/weng2008-%E9%81%97%E4%BC%A0%E6%96%B9%E5%B7%AE%E5%89%96%E5%88%86-%E4%B8%8A%E4%BD%8D/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%A9%BA%E9%97%B4/wilkinson--1983-papadakis%E7%9A%84nn/">
+                <h2 class="post-title">Wilkinson--1983-Papadakis的NN</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (52 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  
+
+<blockquote>
+<ol>
+<li>Wilkinson GN, Eckert SR, Hancock TW, Mayo O. Nearest Neighbour (NN) analysis of field experiments. J. R. Stat. Soc. B [Internet]. 1983 [cited 2016 Dec 21];45:G1–25. Available from: <a href="http://sci-hub.cc/http://www.jstor.org/stable/2345523">http://sci-hub.cc/http://www.jstor.org/stable/2345523</a></li>
+</ol>
+</blockquote>
+
+<h2 id="概要">概要</h2>
+
+<p>论文分为两部分。第一部分介绍了蒙特卡罗随机研究的Papadakis的NN分析的协方差方法的结果，显示（i）非迭代的Papadakis分析倾向于保守地偏向; （ii）Bartlett（1978）建议的分析的迭代导致治疗F比的显着正偏差; （iii）<strong>当在数据中存在显着的趋势效应时，该方法是非常低效的</strong>。给出这些结果的理论解释。第二部分描述了由第一作者发现并与合作者合作开发的NN分析的新方法。<strong>该方法本质上是用于“固定”块（或行，列）的经典形式的分析的“移动块”模拟。它避免了Papadakis的方法的缺陷，并导致大约无偏见的分析。与完全或不完全块实验的经典分析相比，其平均几乎总是并且经常显着更有效，并且如果在数据中存在可观的行x列相互作用，则比拉丁或格子正方形设计的标准分析更有效。描述了NN平衡的新设计标准</strong>。随机化下的新方法的有效性用蒙特卡罗研究经验证明。</p>
+
+<h2 id="介绍">介绍</h2>
+
+<p>45年前由Papadakis（1937）提出并随后由Bartlett（1938）讨论的，通过协方差分析调整相邻地块的处理校正产量的局部趋势效应的场试验的产量的想法。遗憾的是，这个重要的想法遭受了长时间的忽视，直到阿特金森（1969）恢复了它的兴趣，也参见耶茨（1970，第148页）。 Pearce和Moore（1976）提请注意在实际应用Papadakis方法时可能的处理估计准确性的实质性提高，Bartlett（1978）在向皇家统计学会的一篇论文中重新审查了其理论性质参考对称自回归形式的最近邻模型。 Bartlett还建议该方法的迭代，使用来自先前迭代的处理估计来重新定义电流的最近相关协变量。 Pearce（1980）和Kempton和Howes（1981）提出了关于该方法的实际价值的额外的经验证据。
+Papadakis方法的许多理论讨论集中在固定模型上。我们认为这是在田野实验的上下文中的错误，其中非稳态趋势效应通常是主要考虑因素。事实上，最近邻近调整在我们称为场近似实验的最近邻（或NN）分析的主要作用可以被描述为提供<strong>连续形式的局部去趋势</strong>，与经典方法的逐步块解除分析。本文从这个角度重新考虑了Papadakis方法，并且还描述了一种更有效的替代方法。本文按照这两种方法分为两部分。第一部分首先描述了具有均匀性数据的Papadakis方法的广泛的Monte Carlo随机化研究的结果。结果显示，尽管<strong>非迭代的Papadakis分析在随机化（略微倾向于保守偏差）下是合理有效的，但是Bartlett（1978）建议的分析的迭代导致治疗F比的严重向上偏差。然而，该方法的最严重的缺陷被发现是当趋势效应可感知时其固有的低效率</strong>。在1.3节中，根据平滑趋势+独立误差模型推导了无效率的理论解释。还给出了来自迭代的偏差的简单解释。 Papadakis方法中的低效率的来源被发现是形成最近相邻协变量时治疗效果的产率的先前校正。这导致第一作者发现一种替代的，更有效的NN分析方法，其可以合适地称为在Rothamsted实验站开发的经典“固定块”分析方法的“移动块”类似物。新的方法将在第二部分中描述，我们将其进一步讨论推迟到第11.1节。</p>
+
+<p>第一部分Papadakis的方法
+1.蒙特卡罗随机研究数据集在研究中使用了三组均匀性数据，从Wiebe（1935），Mercer和Hall（1911）和Kempton和Howes（1981）。它们描述如下。 Wiebe数据包括1500个小麦产量，1500个植物行，15英尺长和1英尺间距，125行×12列场布置。我们将其分为两个标记为W1和W2的集合，分别包括列1-6和7-12。 W1比W2更加可变，并且包括具有非常高产量的贴片。由于实验使用8排籽粒钻进行播种，其产生了对产量的行效应的重现模式，通过求和至8排总积分进一步减少数据。在本文的其他地方，我们还考虑4行总计，并区分具有下标8或4的两种情况。基于8行总和的轮廓图如图3所示。 Mercer和Hall数据，标记为MH，是来自20×25阵列的长10.8英尺长和11行宽，具有9英寸行间距（从指定的图面积估计，0.002英亩）的小麦产量。我们通过求和将这些数据汇总到4列总计的20×6阵列（省略列25）以获得相对长的图的产量，其中1-D NN调整将是适当的。来自Kempton和Howes（1981，第64页）的第三个数据集（KH）包括来自5英尺×14英尺样地的28×7阵列的大麦产量。实验设计和分析研究涉及a（3×2×2×2 ）因子集的24次运行和100个随机设计，用于叠加在数据集WI，W2和MH上的5×6阵列中的30次处理的2或3次重复，以及在KH上的4次运行的附加的2×2阶乘集，具有4次重复在7×7阵列中的49处理。然后在每种情况下进行10个循环重复的Papadakis分析，总共进行了28000次个体分析。研究中的其他因素有随机：无限制，限制性;分析方法：1-D，2-D
+ 无限制随机化是具有指定数目的重复和治疗的随机区组设计。除此之外，随机化被限制为给出第二级部分平衡（参见第11.6节），除了KH，其中限制性随机化是用于平衡格子正方形设计，用于与Kempton和Howes（1981） 。使用针对列邻居的单个NN协变量（1-D情况）或者针对行和列邻居的两个协变量（2-D）来执行Papadakis分析。边界图的协变量值仅使用可用的邻居来定义，因为边界图不包括在设计中。我们最初的研究，1980年12月完成，包括在Wi，W2和MH只有6运行，限制随机化和1-D分析。当Kempton和Howes的论文于1981年出版时，我们添加了一个关于KH的运行，以解决我们的结论与他们的结论之间的明显差异。 Kempton（个人沟通）建议，差异可能是由于他们的研究中的受限随机化（他们也使用2-D分析），所以我们如上所述扩展我们的研究。 （Kernpton自从他们原来的计算中发现一个错误，他们修改后的蒙特卡罗结果现在与我们的一致。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/williams-1996%E8%87%AA%E4%BA%A4-%E9%92%88%E5%8F%B6%E6%A0%91-%E8%82%B2%E7%A7%8D%E7%AD%96%E7%95%A5/">
+                <h2 class="post-title">Williams-1996自交-针叶树-育种策略</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 5 minutes (995 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Williams CG, Savolainen O. Inbreeding depression in conifers: Implications for breeding strategy. For. Sci. [Internet]. 1996 [cited 2016 Dec 9];42:102–17. Available from: http://sci-hub.cc/http://www.ingentaconnect.com/content/saf/fs/1996/00000042/00000001/art00014   使用自交作为针叶树的育种工具是有争议的;本主题通过基于广泛的植物和动物的遗传模型，理论和实验结果的回顾来解决。一些支持性证据可从针叶树研究获得。对于大多数针叶树，自交不会是减少有害等位基因的小亚群或精英品系中的近交繁殖抑制的最佳方法;同胞或随机交配是针叶树驯化的早期几代的更好的选择。可能的例外是具有少数致死等位基因的针叶树种。已经研究了很少有机体具有比针叶树更致死的当量，因此最初需要更慢的近交比自交，以防止对低后代存活和成年繁殖力的大损失。近交育种群体还将需要大量的复制品系和每个重复的后代，因为预期每条品系的灭绝概率高。像玉米一样，很少有价值的品系会在最初几代自交。如果近亲繁殖抑制是基于有害突变，则假定其对有害等位基因的严格选择（清除）而下降。在初始清洗阶段之后，自交将是有效的。自交的优点包括完美的分类交配，增加系之间的选择效率和增加系内的均匀性。针叶树近亲繁殖抑制的理论预测已超过实验。操作育种计划不会提供关于近亲繁殖抑制变化的所需数据，但是育种策略的近亲繁殖假设必须通过实验进行测试。我们主张使用实验近交种群研究直接使用近亲繁殖抑制作为育种方法。它提供了第一手的结果，并为长期人口管理决策提供了信心。最大的价值是揭示不可预见的问题，防止不可逆转的错误。作为一个例子，我们概述了快速循环的实验近交种群为松属taeda L的计划，其结合早期选择，快速筛查成年繁殖力和传统遗传测试。近亲繁殖抑郁研究是长期人口管理成功的关键。它已经变得更强大与集成的经典遗传学 - 分子方法，加速育种技术和计算机模拟模型。 使用自交而不是温和形式的近亲繁殖或甚至随机交配在精英育种品系中的问题是相关和及时的。现代高级代针对育种策略依赖于细分的育种群体（例如，Lowe和van Buijtenen 1981，Barnes 1984，Cotterill等人1988，Dean 1990，Namkoong和Kang 1990，McKeand和Bridgwater 1993，Williams和Hamrick 1996）。近交是对育种群体的控制（参见Lindgren和Gregorius 1976的综述），但没有直接用作育种方法。在较小程度上，许多程序中商业规模的控制授粉种子的新选择具有间接刺激对近交系的兴趣。这种生产果园设计使得可以使用少至两个不相关的选择，并仍然产生异型种子用于再造林（参见Williams和Askew 1993中的综述）。在所有情况下，种植的种子被假定为异型杂交，这里的近交的主题仅在育种群体内是相关的。自交作为林木的育种工具，首先是在30年前，使用玉米的经验作为证明（Righter 1960）。 Righter建议开发针叶树自交系和种植园林杂交种子生产，尽管他还指出延迟开花和繁殖能力丧失是潜在的障碍。他的想法没有实施，因为相关的育种计划正处于初期阶段，当时少数的近亲繁殖研究报告了自交种子死亡率高。全世界的早期针叶树项目被管理为近亲繁殖回避，并依赖于开放式生产种子园。然而，优选单一的大的繁殖群体，尽管如今更常使用群体细分策略（参见White 1993，Williams和Hamrick 1995中的综述）。玉米（Zea mays L.）杂交生产的成功是针叶树自交的一个很好的理由。玉米杂种生产开始于Jones（1917）首次在玉米自交系之间表现出杂种优势。到了20世纪20年代，美国农业部利用已经被驯化数千年的这种异花授粉的种子开始了强化玉米自交程序。这个计划需要非常大的繁殖群体，因为繁殖能力和产量低导致只有一小部分可接受的选择（Lindstrom 1939）。据估计，在1939年之前，实际上筛选了超过100,000条系，其中97％在1至3代自交后丢失。在保留的系中，对于一种或多种性状（包括产量）都是有缺陷的（Lindstrom，939，Hallauer和Miranda 1981，第321页）。玉米生育力的丧失是主要障碍，即使种子生产有强烈的方向选择。美国玉米方案中的自我普遍存在，因为与同胞交配相比，它需要更少的时间来开发真正的育种品系（Stringfield 1974，也参见图1）。这不是最有效的手段，玉米的外来或野生亲缘的改良依赖于同胞 - 在自交前交配。否则，如果最初使用自我训练，适当度会大大降低（Goodman 1992）。玉米成功不直接转化为针叶树。对于玉米，粮食产量既是适合性状，又是具有直接经济价值的性状，因此粮食产量的选择是选择继续繁殖。对于针叶树，生殖能力和生存也是适应性特征，但它们没有直接的经济价值。具有经济价值的针叶树性状包括木材质量和生长。对于针叶树，使用育种将意味着重点转移到选择适当的性状，如繁殖能力和生存，可能牺牲直接经济价值的性状。
+Use of selfing as a breeding tool for conifers is controversial; this topic is addressed with a review of genetic models, theory, and experimental results based on a wide range of plants and animals.
+                  <a href="../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/williams-1996%E8%87%AA%E4%BA%A4-%E9%92%88%E5%8F%B6%E6%A0%91-%E8%82%B2%E7%A7%8D%E7%AD%96%E7%95%A5/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/wolak2012-nadiv-%E9%9D%9E%E5%8A%A0%E6%80%A7%E5%85%B3%E8%81%94%E7%9F%A9%E9%98%B5-%E5%8A%A8%E7%89%A9%E6%A8%A1%E5%9E%8B/">
+                <h2 class="post-title">Wolak2012-Nadiv-非加性关联矩阵-动物模型</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (105 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Wolak ME (2012) Nadiv: An R package to create relatedness matrices for estimating non-additive genetic variances in animal models. Methods Ecol Evol 3:792–796. doi: 10.1111/j.2041-210X.2012.00213.x</p>
+</blockquote>
+
+<p>通过采用<strong>“动物模型”</strong>，在动物育种科学中具有长期和久经考验的历史的混合效应模型，提出了野生种群数量性状进化研究的重大进展 （Henderson 1984; Lynch＆Walsh 1998; Kruuk 2004）。<em>动物模型的优点</em> ** 使用亲戚之间的相似性来阐明在种群水平上的表型变异的基本遗传基础，该方法（1）使研究人员能够控制（或研究自己）混杂因素，因为环境或其他不可遗传 （2）在遗传参数的估计中同时利用超过亲代或后代或半同胞和完全同源的额外关系，从而增加能够研究的群体和生物体的类型，和（3）群体内无偏选择 （Lynch＆Walsh 1998; Kruuk 2004）**。
+<strong>数量性状的表型方差可以分解为加性遗传，非加性遗传和环境变异来源。 非加性遗传方差可以进一步细分为优势和上位方差。 加性，显性和上位性遗传变异与个体通过在相同基因座有后裔相同的等位基因，在相同基因座的两个等位基因或不同基因座的等位基因相同的概率成比例。 如果人们知道群体中的所有关系（即谱系），则可以在动物模型中估计上述遗传变异。</strong>
+非加性遗传变异在生态和进化分析中很少被评估（但见Crnokrak＆Roff 1995; Waldmann 2001），尽管动物和植物育种领域已经估计了这些遗传变异超过二十年（例如， Hoeschele 1991; Tempelman＆Burn-side 1991）。 这可能是，部分是因为非加性遗传效应被认为在预测中等大小野生种群的进化轨迹（Fisher 1958）没有什么重要性。 此外，对野生生物的研究通常在群体中具有低数量的个体，特别是与在动物育种中经常处理的数量相比。 这是有问题的，<strong>因为具有太少个体的数据集不包括在动物模型中包括太多随机效应（Kruuk 2004），并且已经显示对于优势方差的估计是有问题的（Misztal 1997）</strong>。然而，<strong>如果存在优势遗传效应，但不包括在动物模型中，则它们可能偏向于加性遗传效应的预测以及加性遗传方差的估计</strong>（Lynch＆Walsh 1998; Ovaskainen，Cano＆Merila 2008; Waldmann等人2008;但参见Misztal，Lawlor＆Fernando 1997）。另外，<strong>非加性效应对于许多进化假说是中心关注的</strong>，例如：优势和上位性预期对健身的变化有实质性贡献（Wright 1929; Haldane 1932; Fisher 1958; Crnokrak＆Roff 1995;Merila¨＆Sheldon 1999）;非加性方差可以确定加性遗传方差在瓶颈后增加的程度（Cockerham＆Tachida 1988; Goodnight 1988; Willis＆Orr 1993; Barton＆Turelli 2004）;上位性可以在过程中形成累加的遗传效应和变异，例如突变和选择（Gavrilets 1993; Hermisson，Hansen＆Wagner 2003; Carter，Hermisson＆Hansen 2005），其具有对性别和重组进展的影响（Charles-worth 1990）;上位性通过Dobzhansky-Muller不兼容性的演化在物种形成中是不可或缺的一部分（Crow＆Kimura 1970; Orr 1995; Welch 2004）;健身相关性状之间的遗传相关性的符号可能取决于优势方差的量（Curtsinger，Service＆Prout 1994; Roff 1997;Merila¨＆Sheldon 1999）;支配地位可能导致近亲繁殖抑制或杂种优势（Roff 1997），特别是在保护关注的小群体中（Waldmann等人2008）;和性联合优势效应可能在性二倍性性状的演变中发挥作用（Fairb-airn＆Roff 2006）。
+除了由于总体大小的结果不能获得非加性方差的有意义的估计（参见下面的“抽样协方差和置信区间”），<strong>在动物模型中包括优势和上位性的下一个挑战是构建非加性遗传关系矩阵（即优势矩阵D和三个上位上位性矩阵：通过加性AA的加性，通过优势AD的加性和通过优势DD-的优势，其中加性遗传关系矩阵由A和黑体字表示，大写字母表示矩阵）。另一个挑战是获得这些矩阵的逆，这是解决动物模型中的方程组所需要的</strong>。虽然构建必要的矩阵逆过程已经制定出来（例如Hoeschele＆VanRaden 1991），只有添加的逆矩阵的创建已经被并入大多数生态学家和进化生物学家使用的软件：ASReml（Gilmour et al。2009） ，MCMCglmm（Hadfield 2010）和WOMBAT（Meyer 2007）。本研究给出了在广泛使用的统计程序R（R Development Core Team，2011）中实现的软件包nadiv（Non-Additive InVerses）的概述，其可以用于构建优势和上位性遗传相关矩阵及其逆矩阵。倒位随后可用于各种动物模型软件程序中用于数量性状的单变量或多变量分析。下面，示例简要地演示了使用nadiv的模拟数据setwarcolak的主要功能。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+        </div>
+
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="../../page/32/">&larr; Newer Posts</a>
+              </li>
+            
+            
+              <li class="next">
+                <a href="../../page/34/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Dong&#39;s blog</title>
+  <meta property="og:title" content="Dong&#39;s blog" />
+  <meta name="twitter:title" content="Dong&#39;s blog" />
+  <meta name="description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta property="og:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="twitter:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../" />
+  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../">
+            <img class="avatar-img" src="../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Dong&#39;s blog</h1>
+                
+                  
+                    <hr class="small">
+                    <span class="page-subheading">Enterprising &amp; Concentrating欢迎光临！</span>
+                  
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div role="main" class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+          <div class="well">
+            
+
+<h2 id="front-page-content">Front Page Content</h2>
+
+<p><code>beautifulhugo</code> supports content on your front page. Edit <code>/content/_index.md</code> to change what appears here. Delete <code>/content/_index.md</code> if you don&rsquo;t want any content here.</p>
+
+          </div>
+        
+
+        <div class="posts-list">
+          
+          
+            <article class="post-preview">
+              <a href="../../post/gs/tanaka2017-gs%E7%9A%84%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%BC%98%E5%8C%96/">
+                <h2 class="post-title">Tanaka2017-GS的贝叶斯优化</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (61 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  
+
+<blockquote>
+<p>Tanaka, R., and Iwata, H. 2017. Bayesian optimization for genomic selection: a method for discovering the best genotype among a large number of candidates. Theor. Appl. Genet. (123456789): 1–13. Springer Berlin Heidelberg. doi:10.1007/s00122-017-2988-z.</p>
+</blockquote>
+
+<h2 id="摘要">摘要</h2>
+
+<p>提出了一种基于优化算法的新的<strong>预育策略</strong>，并通过模拟进行了评估。<strong>这种策略可以找到更好的基因型与较少的表型分型努力。</strong>摘要：基因组预测是一种很有前途的方法，用于在基因库中保存的大量种质资源中搜索优良的基因型。当一些种质进行表型和基因分型时，可以建立预测模型，并且可以从其标记基因型预测剩余种质的基因型值。在这项研究中，我们<strong>着重于基因组预测在预培育中的应用</strong>，并提出了一种新的策略，可以<strong>降低发现更好种质所需的表型分型的成本</strong>。将基因组预测优良基因型的探索作为优化问题，引入贝叶斯优化方法进行求解。贝叶斯优化，根据预期的改善（EI）作为选择标准，抽样未观察到的投入，似乎是有利于prebreeding。 EI取决于基因型值的预测分布，而通常的选择仅取决于点估计。我们模拟了候选基因型中最佳基因型的搜索，并且显示基于EI的策略比通常的和随机选择策略需要更少的基因型来鉴定最佳基因型。因此，贝叶斯优化对于将基因组预测应用于预培育可能是有用的，并且会减少大量候选人中找到最佳加入所需的表型加入的数量。</p>
+
+<hr />
+
+<h2 id="介绍">介绍</h2>
+
+<p>为了在2050年之前为90多亿人口提供粮食，我们<strong>需要通过新的育种技术和利用种质资源中的遗传多样性来加速作物遗传改良</strong>（Tester和Langridge，2010）。由于精英繁殖种群和商业栽培种在其长期的驯化和选择历史中<strong>失去了遗传多样性</strong>，所以野生，外来或本地种质的丰富变异的进化对于促进植物育种是至关重要的（Tanksley and McCouch 1997; Jordan et al。 McCouch等，2013）。为了收集，保存，保存和分发代表作物品种遗传多样性的种子（如Sachs，2009），已做出了大量的国内和国际努力。
+鉴定特定育种目标的最佳种质是耗费时间和劳力的，因为它要求在植物基因库中保存大量种质的表型。为了便于筛选，已经在各种作物物种中开发了<strong>核心种质</strong>（少量代表性种质的部分集合; Brown 1989）。然而，<strong>核心收集战略可能会限制核心收集品之外的加入者的使用</strong>。例如，<strong>核心集合中可能缺少有价值的稀有等位基因</strong>。已经提出了替代的策略，例如<strong>种质策略的重点鉴定</strong>（例如，Khazaei等，2013），但<strong>缺点是图依赖于与目标性状有关的农业生态信息，并且不能使用遗传信息</strong>。
+基因组选择（GS; Meuwissen et al.2001）依靠基因组预测来发现种质资源中的优质种质。与表型分型相比，标记基因分型即使在标记数量较多的情况下也能实现高通量且更具成本效益。可以基于训练数据（表型和全基因组标记数据对）建立基因组预测模型，并基于其全基因组标记基因型预测没有表型数据的基因型的基因型值。<strong>基因组预测可用于鉴定种质资源中的优质材料，并将其应用于预育，目的是鉴定大量材料中的高潜力基因型</strong>（Pace等，2015; Chang等，2016; Gorjanc等，2016 ; Yu等，2016）。
+<strong>全局优化是一个数学问题，用于在输入空间中查找使函数最大化的输入值，而预先培育的目的是在候选基因型中找到最好（或更好）的基因型。</strong>为了有效实现全球最优化，我们需要平衡两个相互冲突的目标：探索和利用。通常，我们只是利用我们的预测模型来找到最好的基因型;选择具有较高预测基因型值的基因型。由于我们的预测模型并不总是正确的，所以这种纯粹的利用策略可能会发现与训练数据集密切相关的更好的基因型（局部最优），而不是所有候选基因型（全局最优）中的最佳基因型。<strong>为避免陷入局部最优，需要对输入空间进行广泛的探索，以确保选定的基因型和训练数据集的遗传多样性。</strong>探索-利用折衷是全球优化中的一个众所周知的问题，并且已经开发了几种算法来解决这个问题，包括贝叶斯优化（Mockus 1994; Jones等人1998; Shahriari等人2016），但是它从未适用于前期育种的情况。
+在这项研究中，我们介绍贝叶斯优化在与基因组预测育种的背景下，并提出了一种新的有效的策略，以<strong>发现集合中最好的基因型，同时尽量减少表型筛选步骤的数量</strong>。我们的新策略使用一个新的标准选择未经测试的基因型。<strong>我们的策略和通常的GS之间的差异在于选择取决于预测的分布或预测的基因型值的点估计。</strong>我们的策略建议选择不仅具有高预测值而且具有高后验方差（换言之，预测的“不确定性”）的基因型，而通常的GS选择仅具有高预测值的基因型。通过考虑预测的不确定性，勘探开发权衡将是平衡的。在GS中，与训练群体相关的基因型在预测中往往具有很大的不确定性。因此，不确定基因型的选择导致对遗传空间的广泛搜索。因此，我们的策略平衡了探索（通过基于“不确定性”搜索基因型进行的基因空间的广泛搜索）和开发（根据预测选择更好的基因型），而通常的GS是纯粹的开发。我们通过模拟来评估我们的策略的潜力，假设最好的基因型在基因型中具有最高的基因型值。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/gs/taylor2014-gs%E7%B2%BE%E5%BA%A6/">
+                <h2 class="post-title">Taylor2014-GS精度</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (48 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  
+
+<blockquote>
+<p>Taylor JF (2014) Implementation and accuracy of genomic selection. Aquaculture 420–421:S8–S14. doi: 10.1016/j.aquaculture.2013.02.017</p>
+</blockquote>
+
+<h1 id="抽象">抽象</h1>
+
+<p>基因组选择正在成为估计植物和动物育种繁殖价值的有力工具。虽然已经提出了许多分析方法来联合估计高密度单核苷酸多态性（SNP）效应，但在最佳线性无偏估计的框架内，<strong>基因组选择等同于无表型个体的育种值的预测</strong>，其中理论解决方案于1974年首次出版。<strong>基因组选择简单地用基于标记的实现基因组关系矩阵替代了谱系派生的分子关系矩阵</strong>，这是1997年首次提出的方法。<strong>由高密度SNP基因型的可用性促进的进展是能够精确地估计个体之间实现的关系系数，而不管系统信息的可用性或已应用于人群的选择历史</strong>。然而，<strong>假设SNP基因型的独立性通常估计基因组关系系数，从而忽略连锁不平衡的影响，并且所使用的SNP被总是确定为物种基因组内的常见变异，导致关系系数的过高估计</strong>。产生的<strong>基因组估计育种值（GEBV）的准确性</strong>通常使用不同形式的验证群体进行评估，该验证群体包含不用于估计培训人群中SNP效应的基因型和表型的个体。然而，<strong>这里显示的GEBV精度是训练人口GEBV的准确性和训练和验证人群中个体之间基因组关系的大小的函数</strong>。因此，基因组选择理想地适用于高度准确的GEBV可用于训练群体个体的群体，并且其标记选择的后代继续产生表型并重新进入随后变得动态的训练群体。相反，<strong>基因组选择不太适合于鉴定家族中没有历史上对育种计划，静态培训人群或在遥远相关人群中进行培训和实施的精英个人。</strong>因此，为代价或难以测量表型（如饲料效率或疾病抗性）的基因组选择的实施将需要定期再生表型种群以重新进行GEBV预测方程或鉴定这些性状变异的因果变异。全基因组重新测序的指数降低成本可能很快允许鉴定至少大的效应变体。</p>
+
+<h1 id="介绍">介绍</h1>
+
+<p>基因组选择（GS）首先由Meuwissen等人提出。 （2001）作为预测没有表型的个体的育种值的方法，但已经用高密度标记物进行了基因分型。该方法基于使用应用于表型的线性或非线性贝叶斯模型或可用于包含训练人群的基因分型个体的估计育种值（EBV）来同时<strong>估计每个标记的等位基因替代效应</strong>（ASE），确定在独立验证群体中得到的预测方程的准确性以及应用预测方程以在实施群体内的选择候选者中产生基因组估计育种值（GEBV）。训练人口一词来自于某种形式的模型对基因型和表型进行“训练”以产生ASE和GEBV的估计。验证步骤的目的是使用在独立的一组基因型个体上可用的表型与训练人群中使用的表型，以产生将为选择候选产生的GEBV的准确性的估计。因此，采样以形成验证人群的个体应该代表选择候选人，因为为验证人群制定的GEBV的准确度应该反映在实施人群中为选择候选人所产生的GEBV的准确性。图1显示了每个群体的目的，并说明了静态和动态训练种群之间的差异。这也证明了当培训人口是静态时，验证人群估计GEBV准确性的有限效用，因为实施人群中的个人与训练人群中的个人的相关性随每个选择周期而减少。
+2007年12月，包含54,001个牛单核苷酸多态性（SNP）的BovineSNP50（Illumina，San Diego，CA; Matukumalli等，2009）测定已经可用，<strong>到2009年，GS已在美国乳制品行业实施</strong>（VanRaden et al。 ，2009）。此时，还认识到，<strong>从随机效应模型估计的ASE可用于基因组广泛关联研究（GWAS），用于检测数量性状基因座（QTL）</strong>（Cole等人，2009; Kang等，2010 ; Yang et al。，2011），<strong>并且使用基因组关系矩阵提供了保护，以抵抗基于谱系的分层对ASE估计的影响</strong>（Kang et al。，2010）。然而，<strong>当SNP ASE被联合估计为随机效应时，该方法提供了由标记物联合解释的变化比例的估计，而不是提供标记效应的单独测试</strong>。<strong>单个标记效应的测试可以通过将模型中的每个标记单独地包括为固定效应来产生（例如，Kang等人，2010; Schulman等人，2011）;然而，这高估了每种标记物的效果</strong>，然后不能将其结合起来产生GEBV。最近，Illumina已经发布了778 K SNP BovineHD，Affymetrix发布了640 K SNP Axiom BOS 1（Affymetrix，Santa Clara，CA）测定，这些测定可以提高精确定位QTL的精度，但令人惊讶的是<strong>只有小幅增长在基因组关系系数和GEBV的估计精度方面</strong>（Erbe et al。，2012）。<strong>在基因型SNP数量增加15倍的情况下，GEBV精确度的小幅增长表明，许多性状具有涉及罕见的QTL变体的潜在遗传结构，其不被商业基因分型测定中包含的常见SNP检测到</strong>。根据定义，<strong>这意味着使用这些测定法估计的基因组关系矩阵（VanRaden，2008）必须通过个体之间的血统对所实现的基因组特征产生有偏估计</strong>。
+最近的工作集中在理论（Goddard，2009）和经验评估（Hayes等人，2009; Luan等人，2009; Su等人，2010; VanRaden等人，2009年）估计的GEBV的准确性和Habier等人（2010）经验证明，<strong>随着培养和验证数据集的分离次数的增加，精度降低</strong>。然而，<strong>正式呈现GEBV在选拔候选人中与培训人口个人的相关性和培训人口GEBV的准确性之间关系的结果尚未呈现</strong>。在本文中，提出了在最佳线性无偏预测（BLUP）框架下实施GS的结果，包括在训练人群中评估GEBV和ASE的模型的等效性，以及选择候选者之间同时进行GEBV的训练和估计。还提出了可以推导选择候选人中ASE和GEBV的估计精度的采样方差和协方差。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%A9%BA%E9%97%B4/thomson1988-%E8%B6%8B%E5%8A%BF%E9%9D%A2-%E8%8A%B1%E6%97%97%E6%9D%BE/">
+                <h2 class="post-title">Thomson1988-趋势面-花旗松</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (31 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Thomson A, El-Kassaby Y (1988) Trend surface analysis of a Douglas-fir provenance-progeny transfer test. Can J For … 18:515–520.</p>
+</blockquote>
+
+<p><strong>使用趋势表面分析来分析IUFRO起源 - 后代转移试验中8年龄道格拉斯冷杉的高度的空间变异性，以区分遗传和环境对树高的影响</strong>。测试安装位于不列颠哥伦比亚大学研究森林大学，是一个<strong>随机的不完全块设计，三次重复</strong>。仅使用在每个块中复制的25个来源，并且具有平衡的数据集（8个家庭，每个家族5棵树）。趋势被拟合到每个来源的每个重复的平均高度，以及每个重复的最大和最小家族的平均大小。解释基于以下假设：微网站（主要是一个块的草侵入）的影响由趋势表面定义，而遗传效应由趋势的残差表示。数据先前已通过ANOVA方法分析，并且这些结果与使用趋势表面分析的结果形成对比。趋势表面分析通常给出类似于方差分析的结果，但在一些情况下导致不同的结论。获得了对基因型和环境的相互作用的另外的见解。<strong>趋势面分析被建议作为一个有用的补充来分析来源转移研究的方差</strong>。讨论了使用该方法的潜在问题。</p>
+
+<hr />
+
+<p><strong>原产地研究的主要目的是找出种子将在特定区域产生适当的，有生产力的森林的树木的来源，并确定来自不同地理来源的树木之间的表型变异的遗传和环境成分（1967年线）</strong> 。虽然原产地试验通常由每个位置（种源）从几棵树收集的批量种子样品建立，但在来源 - 后代试验中，种子以保持家族结构的方式收集（El-Kassaby等人，1987）。
+回顾关于来源和后代测试的文献（Kvestich 1976）表明，最常见的实验设计是完全或不完全的随机区组，在一个或多个位置使用多次重复，通过方差分析进行评价。在这些研究中进行的测量实际上反映了遗传学和微型站点的组合效应。虽然方差分析技术可能足以检测来源之间或来源范围内的家庭之间的差异，但在环境影响研究中它们的价值有限，因为这种影响仅限于确定是否存在显着性块或重复差异。
+在最近的一项研究中，<strong>Thomson（1986）证明了趋势表面分析在关于微型场效应和竞争压力的树木大小研究中的有效性</strong>。<strong>趋势表面分析是一种用于确定某一取样区域内某些感兴趣因子的分布的程序。程序将空间模式描述为数学表面，消除局部不规则的影响。可以识别特定点处的梯度的大小和方向，并且绘制等值线以链接等效点。
+变量的趋势是x和y（空间坐标）的函数</strong>。在本研究中，多项式通过最小二乘法拟合到树高。独立变量是绘制中心的东西和南北坐标，以安装的西南角处定义的原点表示，以米为单位。多项式的方程表示描述相对于绘图位置的树高的数学表面。
+<strong>在没有对高度的显着的竞争效应的情况下，Thomson（1986）提出，微网站效应可以预期具有可以由树大小的趋势表面表示的非随机空间模式，而个体树差异将由偏差表示从趋势</strong>。本研究的目的是通过分析单个种植园中已知遗传起源的树的数据来证明趋势表面分析在评估遗传学和环境对树高的相互作用中的应用。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/nir/tigabu2005-nir-%E7%A7%8D%E5%AD%90%E6%9D%A5%E6%BA%90/">
+                <h2 class="post-title">Tigabu2005-NIR-种子来源</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (115 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>Tigabu M, Oden PC, Lindgren D (2005) Identification of seed sources and parents of Pinus sylvestris L. using visible-near infrared reflectance spectra and multivariate analysis. Trees - Struct Funct 19(4):468–476.</li>
+</ol>
+</blockquote>
+
+<p>研究了可见光（VIS）和近红外（NIR）光谱法识别樟子松种子来源和亲本的潜力。从瑞典Savar（北部），Roskar（中心）和Degeberga（南）的三个地方收集了一个单一家族（克隆AC1005×BD1178）的种子，以及来自四名母亲（克隆编号BD1032，AC1014，BD1178和AC1005）的种子，和四名父系（Y3020，BD1178，AC1014和BD1032）父母进行评估。使用NIRSystems Model 6500光谱仪，从400至2,498nm，分辨率为2nm，在各种子上记录VIS和NIR反射光谱。 VIS + NIR光谱数据用乘法信号校正进行预处理，并通过类比（SIMCA）和部分最小二乘判别分析（PLS-DA）的软独立建模进行分析。计算的模型随后应用于对外部测试集中的样本进行分类。结果表明，在VIS + NIR，VIS和NIR区域，使用PLS-DA模型，以100％的分类精度鉴定种子来源。母亲父母的平均分类精度范围为92％〜96％，父系父母确定为91.2-96％的准确度。使用SIMCA方法的分类准确度对于种子来源以及母亲和父母父母来说相对较低。可以得出结论，VIS + NIR光谱可以用作监测推测种子源的快速和非破坏性方法。结果强调了基于种类鉴定种子鉴定技术的前景，作为树木改良和育种的工具。</p>
+
+<p>介绍
+再造林的成功取决于其他方面不断供应优质种子，以种植苗圃所需的种群或直接播种在外地。种子质量是一个多重概念，包括物理，生理和遗传属性，它们将在播种或储存时确定种子的性能（Hampton 2002）。在林木种子中，遗传质量特别重要，因为由于树木生长寿命长，不能及早检测出异常现象。使用优质或加树种植果树的建立是确保可持续遗传改良种子供应的最常见和最具成本效益的途径（Zobel and Talbert 1984; Varghese et al。2000）。在瑞典，樟子松的第一代果园种植于二十世纪四十年代末，直到二十世纪七十年代中期，总面积达574公顷，二代种子果园成立于20世纪80年代初，在1968  -  1994年期间，共收获了42.9吨s藜种子（Hannz et al。2000）。几项研究表明，<strong>花粉污染是维持果园种子遗传纯度的主要障碍</strong>，因为其中许多人将在果园外的邻近地方拥有未知的父母（例如Yazdani和Lindgren 1991; Pakkanen和Pulkkinen 1991; Wang et al.1991; Harju and Nikkanen 1996）。将母体克隆转移到南部较暖的气候也是常见的做法，以便更好地起花和种子成熟。花粉污染涉及将花粉从周围的立场远距离分散到种子园内。由外来花粉受精产生的种子的遗传增益将低于被花粉粉受精的种子（例如Kang等，2001），尽管低水平的花粉污染可以增强果园种子的基因多样性（Lindgren和Mullin，1998）。由于适应受双亲的基因型控制，如果迁移的花粉来自不良适应的植物，杂交种子的生存机率将很低。种子来源同样重要，因为在种子发育过程中，母体环境（也称为后效应）的影响已经反映在后代的表现中。对于樟子松，在苗圃，植物营养和田间试验中观察到种子重量，身高增长，死亡率和霜冻耐受性的显着后果（Lindgren和Wang 1986; Dormling and Johnsen 1992; Lindgren和魏1994）。还报道了落叶松幼苗的冷驯化和高度生长的后果（Wei et al。2001）。由于种子交易不仅可以在国家之间或国家之间的地方之间轻松转让种子，否则种子批次混合的风险很高，除非有正当认证。在瑞典北部，像种子生产不足的地区，这种威胁特别严重。作为目前可用的方法，<strong>基于分子标记（Wang等人，1991; Stoehr等人1998; Wang和Szmidt 2001）是昂贵且技术上复杂的，种子园管理者和种子供应商需要快速，简化和成本 - 种子转移常规监测和果园种子遗传纯度的有效方法</strong>。<strong>可视（VIS）和近红外（NIR）光谱学是最好的方法，因为该技术非常快速，无损坏，不需要样品制备并且成本更低。这是一种可以通过轻质原子如C-H，O-H和N-H之间的键的吸收NIR来测量生物材料中的化学成分的技术</strong>。这些键通常具有高的振动频率，并且导致在中红外区域中活跃的基波振荡的泛音和组合（Murray和Williams 1987; Osborne等人1993; Ciurczak 2001）。<strong>除了化学信息之外，NIR光谱还包含可用于确定物理性质的物理信息，如种子中的体积密度（Velasco et al。1998; Font et al。1999）和种子重量（Velasco等，1999）</strong>。前瞻性研究已经证明了VIS + NIR光谱仪用于表征类似生物样品的组合的能力，例如鉴定草药来源（Woo等人，1999），Gliridia来源的分类（Lister et al。 2000），大豆，水稻和小麦品种的分类（Delwiche和Massie 1996; Kwon和Cho 1998; Turza等1998），以及根据其颜色分类小麦籽粒（Delwiche和Massie 1996; Dowell 1998; Wang等1999）。在本研究中，我们调查了VIS + NIR光谱的潜力，作为识别樟子松种子来源和亲本的快速和非破坏性方法。
+从单个种子收集VIS + NIR反射光谱（log 1 / R），并通过类比（SIMCA）和偏最小二乘判别分析（PLS-DA）的软独立建模进行分析。 SIMCA和PLS-DA是用于开发基于光谱测量的多变量分类模型的最广泛使用的方法（Nas等人，2002）。 SIMCA是一种基于每类相似观察的不相交主成分分析（PCA）的监督多变量分类方法（Wold et al。1998），而PLS-DA是基于PLS广义逆的线性判别分析的正则化版本（Martens和Nas 1989; Wold等人2001; Nas等人2002; Baker和Rayens 2003）。在这种情况下，需要由指示类成员资格的虚拟值组成的Y矩阵，并且使用数字化的NIR光谱作为描述符矩阵和虚拟变量的矩阵作为回归来执行PLS回归。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E8%82%B2%E7%A7%8D/tim--mullin-2013%E6%9E%97%E6%9C%A8%E8%82%B2%E7%A7%8D%E7%9A%84%E6%96%B0%E5%B7%A5%E5%85%B7%E5%92%8C%E6%96%B0%E6%8A%80%E6%9C%AF/">
+                <h2 class="post-title">Tim-&amp;-Mullin-2013林木育种的新工具和新技术</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (51 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Tim M, Lee S, Mullin T J, et al. 2013. Best Practice for Tree Breeding in Europe.</p>
+</blockquote>
+
+<p>##林木育种的新工具和新技术
+- 发现新的选择标准
+- 育种中开发并整合基因组信息
+- 开发新的或改良育种策略并证明其效率
+##理解可塑性（稳定性）
+<strong>表型可塑性</strong>及其遗传背景是育种策略开发的重要成分，尤其是考虑环境条件的变化。
+- 干旱指数对木材密度的影响bouffier2010
+- 影响年生长节律的候选基因 lagercrantz2012
+##改进遗传价值的评估
+- 结合遗传参数，相关对指数选择的开发和育种优化是至关重要的
+- 现实关系矩阵代替系谱矩阵
+- 系谱重建
+- MAS的理论和实践操作间有缺口。在大规模应用前需验证标记和标记间的关系并考虑实际环境
+- 表型测定不够准确
+##未来的研究方向
+- 父本分析，花粉污染率
+- 标记推断进化过程及人类对森林的影响
+- 关联分析或GS需要大量验证才能使用
+- 最好的方法还是遗传修饰，但需要转化体系，体胚发生是最常用的方法</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/tips-for---pipe--/">
+                <h2 class="post-title">Tips-for---pipe--</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (73 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  pipe is a very convinent tool in r. Here I notes some usage tips I met.
+  change names (row, col, list names) from how-to-set-the-row-names-of-a-data-frame-passed-on-with-the-pipe-operator
+%&gt;% `names&lt;-`(c(&quot;x1&quot;, &quot;x2&quot;)) #将要目标名字放在括号里 %&gt;% `colnames&lt;-`(c(&quot;x1&quot;, &quot;x2&quot;)) %&gt;% `rownames&lt;-`(c(&quot;x1&quot;, &quot;x2&quot;))  With pipe your data are passed as a first argument to the next function, so if you want to use it somewhere else you need to wrap the next line in {} and use .
+                  <a href="../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/tips-for---pipe--/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%BE%A4%E4%BD%93%E7%BB%93%E6%9E%84/tripiana2007-/">
+                <h2 class="post-title">Tripiana2007-</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (46 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Tripiana V, Bourgeois M, Verhaegen D, et al (2007) Combining microsatellites, growth, and adaptive traits for managing in situ genetic resources of Eucalyptus urophylla. Can J For Res Can Rech For 37:773–785. doi: Doi 10.1139/X06-260</p>
+</blockquote>
+
+<p>遗传多样性和17个人口代表桉树桉树ST布莱克在印度尼西亚的自然范围的结构分析与10个微卫星标记。在刚果共和国建立了使用相同种群的两个产地和后代试验，并分析37个月的生长和存活。观察到的微卫星杂合性（Ho）在种群内为中等至高（Ho = 0.51-0.72）。固定指数（FIS）对于所有群体（FIS = 0.13-0.31）显着不同于零，并且可能由Wahlund效应引起。<strong>分化参数低（FST = 0.04），并且没有从零显着不同，这可以通过花粉的有效基因流来解释</strong>。<strong>存活和生长性状的遗传方面的遗传差异显着不同于零，分别占总变异的13％-23％和14％-50％</strong>。基于数量性状的群体之间的分化被标记（QST = 0.07-0.33）。观察到种子源的高度与其在刚果的表现之间的负关系（R2 = 0.59-0.67），并且可以通过沿着高度梯度的自然选择的影响来解释。尽管高表观基因流动导致数量性状的这种明显的分化导致clinal变化，这表明使用种子源的海拔作为原位或异地管理桉木遗传资源的重要原则。</p>
+
+<hr />
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/rcodes/truncate-highest-bar-in-ggplot/">
+                <h2 class="post-title">Truncate-highest-bar-in-ggplot</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (101 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Truncate highest bar in ggplot If you want to fiddle with it, you can use the gridExtra package, and plot 2 (or more) trimmed out sections of the graph. I&rsquo;ve tinkered with the margins to make it line up, but a better plan would probably be to format the axis labels to the same text width, require(ggplot2) require(gridExtra) data &lt;- data.frame(qnt=c(10,20,22,12,14,9,1000),lbl=c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;,&quot;F&quot;,&quot;G&quot;)) g1&lt;-ggplot(data=data, aes(x=lbl, y=qnt)) + geom_histogram(stat=&quot;identity&quot;)+ coord_cartesian(ylim=c(-10,50)) + labs(x=NULL, y=NULL)+ theme(plot.
+                  <a href="../../post/rcodes/truncate-highest-bar-in-ggplot/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/nir/tsuchikawa2013-nir-review/">
+                <h2 class="post-title">Tsuchikawa2013-NIR-review</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (380 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Tsuchikawa S, Schwanninger M (2013) A Review of Recent Near-Infrared Research for Wood and Paper (Part 2). Appl Spectrosc Rev 48:560–587. doi: 10.1080&frasl;05704928.2011.621079
+ 摘要：本文综述了近十年来木材和造纸工业近红外（NIR）光谱近期技术和科学报告的提升。许多研究人员已经报道，NIR技术可用于检测木材的化学和物理性质，并且已被广泛用于保留材料的特征性细胞结构的情况。关于在纸浆和纸张中应用近红外光谱，许多出版物在造纸过程控制期间已经报道了其作为在线测量技术的潜力。近红外光谱被认为是木材和纸张应用研究的基础。在木材和造纸工业中使用NIR光谱应考虑其作为非破坏性技术的适用性和局限性。 关键词NIR，木材，纸，纸浆
+介绍 近红外（NIR）技术在800至2500 nm（12,500至4000 cm-1）的电磁波的透射或反射光谱方面主要用于农业产品或食品等有机材料的非破坏性测量。然而，它在材料评估的所有方面（例如聚合物，纺织品，药品，石化产品等）显示出巨大的潜力。它已经在纸浆和造纸工业中应用，以监测在线条件下的含水量或基本重量。在木材或森林产品的情况下，近红外光谱被广泛用于不仅保留细胞结构而且其体积大的状态。这是一种有前途的技术，用于分析这些材料的物理状态以及化学成分。 这篇评论文章介绍了木材和造纸业的近红外研究，其中大部分是在2006年至2011年间出版的。
+评论 Tsuchikawa（1）介绍了最近在木材和造纸工业中的近红外光谱技术和科学报告，这在近几十年来一直受到越来越多的兴趣。龚和张（2）回顾了近年来NIR光谱技术的进展及其在林业领域的应用，特别是中国林业研究和实践项目领域。姚和Pu（3）还回顾了使用NIR研究木材化学和解剖性质的进展。 Schimleck（4）回顾了使用NIR光谱法评估与纸浆产量相关的纸浆产量和性能的所选文章。他还描述了近红外光谱如何用于估计增量核心的木材性质，以及如何使用NIR分析提供的数据用于估计遗传参数。
+木材化学 与木材相关的NIR吸收带的分配 因为木材是一种复杂的有机材料，所以NIR光谱的解释要复杂得多。由于与木材相关的NIR吸收带的分配，Tsuchikawa（1）介绍了一些基础研究。一些研究人员试图澄清这种信息丰富的光谱信号。 Labbe？et al。 （5）使用广义二维相关光谱法研究了火炬松（Pinus taeda）的NIR和热解分子束质谱（Py-MBMS），以便在两个光谱域中分配纤维素的特定贡献。在NIR和Py-MBMS光谱中分配纤维素的特定条带;而在114和173（通常称为纤维素片段）的两个m / z不是源自纤维素的热解。三井等（6）使用NIR光谱法在热处理期间监测木材中的羟基。在二次导数近红外光谱中，随着热处理的进展，出现6913cm-1处的吸收带，由于木质素含量与乙酰化云杉木的光谱相比，结论性地归因于酚羟基。 Fackler和Schwanninger（7）能够在OH伸缩振动的第一次泛音范围内对葡萄糖聚糖的O（3）-H（3）贩售（5）分子内氢键进行多个新的带分配，强烈的平行分子内氢键O（2）-H（2）贩稯（6）使用偏振傅里叶变换（FT）-NIR光谱。初步分配了蛋白质I-β（6340cm-1）和纤维素I-α（6270cm-1）的强H键合的O-H基团的第一个泛音。
+木材化学成分近红外研究 近几十年来，出版了关于木材化学成分的相关研究。然而，它们的主要目的是借助于多变量数据分析方法（如化学计量学）进行非破坏性评估。 Huang et al。 （8）使用紫外可见（UV-Vis）-NIR光谱测定了中国杉木中的全纤维素和木质素含量，发现了良好的校准方程。 Toivanen和Alen（9）提出了傅里叶变换红外璸最小二乘法（FTIR-PLS）方法来确定桦木茎木的化学成分变化。基于这种方法，准备了干木矩阵内主要成分含量变化的不同表面图，用于对从树皮到树皮的化学或微原纤维角（MFA）的径向轮廓的NIR预测。 Meder等（10）使用光纤配件与线性驱动传输系统耦合到NIR仪器，以沿扫描长度为1毫米的增量从站立树扫描增量核心。 Pasquini等人（11）开发了基于NIR的偏最小二乘回归（PLS-R）模型，以估计桉树木屑中乙醇/甲苯中总木素含量，基本密度和提取物含量。姚等人（12）表明，可以通过包括NIR光谱和新的位点的数据来扩展相思树spm的半纤维素含量校准范围。姚等人（13）也在相思树中应用半纤维素含量数据。以证明噪声对参考数据对NIR校准模型结果的影响。 Rodrigues等人（14）还研究了通过具有噪声，低精度参考值的校准获得的NIR-PLS-R结果。姚等人（15）故意和人为地添加了相思树的半纤维素含量的参考数据。有四种不同的方式。结果表明，如果噪声不太大，NIR校准模型预测值是可以接受的。 Ramadevi等人（16）开发了NIR-PLS-R模型，用于快速测定桉树和白僵菌的牛皮纸浆产量（KPY）和木质素，具有良好的相关系数，用于KPY的交叉验证为0.90，木质素为0.95，均方根误差的KPY预测为1.53％，木质素为0.77％。 Hodge和Woodbridge（17）也沿袭了发展全球近红外模型的趋势。他们使用了令人印象深刻的样品组来预测松木的木质素（517个样品）和纤维素（457个样品）含量。样品来自七个不同的松树，包括五个不同国家的热带物种和温带物种。全球模型在独立验证数据集上进行了测试，对木质素（测定系数= 0.97，预测标准误差= 0.44％）和纤维素（r2 = 0.82和SEP = 1.08％）的良好适用性进行了测试， 。唐斯等人（18）开发了一个大型（&gt; 1,000个样品）多位点和多物种数据集的近红外模型，并测试了其性能，以预测从增量核心，木片，桉树，桉树等获得的桉树（主要是桉树，和茎横截面。基于主成分分析，他们建议添加更多种化学物质的木材样品，以更充分地捕获属中存在的化学变异。 Peydecastaing等（19）应用NIR光谱分析来定量化学修饰的纤维素和木质纤维素的酯含量。可以使用PLS分析来确定取代度（DS）。也可以通过氢键从通过共价键连接的那些区分与纤维素底物连接的试剂分子。琼斯等人（20）使用漫反射NIR光谱法检查了径向木条部分的木材化学成分（纤维素，葡聚糖，木聚糖，甘露聚糖和木质素）的非破坏性估计。可能由于测试集中样本的不同来源，预测误差很高。 Huang et al。 （21）应用紫外 - 可见 - 近红外光谱法预测竹子，枞树，泡桐和杨树的克朗森木质素含量。 Li et al。 （22）还开发了一种快速的近红外反射光谱法来预测竹子的木质素含量。结果表明，NIR可以很好地预测它们。 NIR-PLS-R模型预测相思树的木质素含量（酸溶性木质素，木质素和总木质素）。 Yao等人开发了广西不同年龄，不同家庭种植的树木。 （23）。他等（24）开发了一种基于NIR的PLS-R模型，使用106个木粉样品的光谱，使用积分球来预测纤维素，戊糖和克朗森木质素含量。 Maranan和Laborie（25）应用NIR光谱和PLS方法开发混合杨树克隆的化学计量学模型。一阶导数光谱处理提供了木质素，半乳聚糖和甘露聚糖含量以及木质素丁香酰/愈创木酚（S / G）比率的最佳校准模型。 U？ner等（26）使用NIR光谱和基于湿法标准参考方法的木质素和提取物含量报告了黑松木木质素和提取物含量的预测。使用遗传反最小二乘法构建多变量校准模型。 U？ner等（27）还确定了土木松木（Pinus brutia Ten。）树木的木质素和提取物含量。山田等（28）使用透射NIR光谱法检查转基因树的快速分析。 NIR数据和木质素，纤维素和木糖含量以及S / G比率的常规湿化学结果之间获得非常强的相关性。 Zahri等（29）报道，NIR技术与多变量分析结合使用时，可以为欧洲橡木心材提取物提供可靠，快速，无损的评估。所以和Eberhardt（30）检测了从工业来源的南部黄松树皮的内部和外部树皮组成的快速分析。数学处理对NIR数据的应用改进了校准性能，从而改进了预测。泰勒等人（31）报道，基于NIR的模型可以提供合理的预测白栎单个提取成分的浓度，但总萃取物含量的NIR预测能力相对较差，这可能是由于年龄相关的变化提取物在半径范围内的混合物。 Li等人使用PLS回归建立了竹样品的化学成分含量与漫反射NIR光谱的关系。 （32）。 Petisco等（33）应用近红外光谱作为快速和非破坏性的工具，用于预测几种木本植物的叶面有机成分。他们得出结论，这样一种技术可以显着减少采样和分析时间，而不会对模型的质量产生不利影响。
+                  <a href="../../post/nir/tsuchikawa2013-nir-review/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E8%82%B2%E7%A7%8D/tuberosa2014%E9%81%97%E4%BC%A0%E5%A4%9A%E6%A0%B7%E6%80%A7%E7%A0%94%E7%A9%B6%E7%9A%84%E5%87%A0%E7%A7%8D%E5%A4%9A%E5%85%83%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95/">
+                <h2 class="post-title">Tuberosa2014遗传多样性研究的几种多元统计方法</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (48 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  
+
+<blockquote>
+<p>Tuberosa R, Graner A, Frison E. 2014. Genomics of Plant Genetic Resources: Volume 2. Crop productivity, food security and nutritional quality. 1st ed. Springer Netherlands.</p>
+</blockquote>
+
+<p><strong>多变量</strong>技术已广泛用于研究（可视化）育种<strong>种群内遗传多样性</strong>的模式。最常用的技术包括<strong>k-means聚类分析</strong>，<strong>主成分分析（PCA）</strong>，<strong>主要坐标分析（PCoA）</strong>和<strong>多维缩放（MDS）</strong>（Melchinger 1993; Johns等人1997; Thompson和Nelson 1998; Brown-Guedira et al 2000）。广泛地来说，<strong>聚类分析力求将个体分组以最小化组内的多变量距离</strong>。使用<strong>算术平均值（UPGMA）</strong>和<strong>k均值聚类</strong>的未加权配对组方法被广泛用作聚类算法（Mohammadi和Prasanna 2003; Saatchi et al。2011）。<strong>主成分分析减少数据，以澄清两个或多个性状和个体之间的关系，以检查差异并形成可能的组</strong>。<strong>主要坐标分析使用一组个体之间的相似性和不相似性矩阵</strong>。<strong>多维缩放通过使用相似度/不相似距离矩阵来表示几维中的一组个体</strong>。<strong>主成分分析，PCoA和MDS是相似的，但MDS是优选的，当个人数量非常多，需要很少的维度来找出基因型之间的关系</strong>。
+通过所有这些方法，人们对遗传多样性估计的准确性仍然存在疑问。例如，<strong>什么样本大小将正确地表示总遗传多样性</strong>，<strong>在获得少量进一步信息之前需要多少标记，以及应使用哪种距离度量聚类方法</strong>。然而，随着标记系统变得更加强大，包括数千个标记，标记的数量不再是一个问题。</p>
+
+<h2 id="7-4基因组学作为选择的辅助">7.4基因组学作为选择的辅助</h2>
+
+<p>一旦遗传变异被添加到群体中，关键的目标是选择有益的变体。对于许多特征，这可以通过表型选择容易地或最有效地完成。例如，春季生长习性的等位基因是主要的，因此冬季和春季生长习性父母的杂交冬季生长习性的选择在冬季容易死亡的环境中非常有效。因为冬季生长习性的等位基因是隐性的，<strong>只选择纯合隐性基因座是冬季生长习性</strong>，一两代生存条纹对于冬季生长习惯是纯合的，不需要进一步选择生长习性。同样地，冬季和春季生长习惯父母跨度的春季生长习性的选择在冬季生长习性植物没有春化的环境中也是非常有效的，因此不会从分离的群体中繁殖出去。然而，从群体中去除分离的隐性等位基因可能需要更多代的自然选择，因为其等位基因功能被主要的春季生长习性等位基因隐藏。后代排列和育种者选择可以消除那些分离出冬季生长习惯的家庭，并可选择纯合春季生长习性。定性特征的简单表型选择的价值在于数百万种植物可以轻松选择或反对。简单的表型选择可以非常有效地用于其它性状，例如除草剂耐受性，其中通过用所需的除草剂喷洒分离种群并杀死易感植物来选择除草剂抗性植物（Newhouse等人1992; Baenziger等人2006a ; Baenziger和DePauw 2009）。
+然而，<strong>对于许多特征，简单的表型选择是困难的（例如，具有低遗传力的性状），耗时（例如成年植物性状的选择）或昂贵的（例如需要昂贵的测定的性状）</strong>。对于某些特征，存在上述两个或多个问题。正是由于这些特征，<strong>建议间接选择</strong>（Falconer 1952; Baenziger等2011）。<strong>间接选择是选择可以比直接选择感兴趣的特征更有效地选择的相关特征</strong>。为了使间接选择有效，<strong>相关响应（非目标性状选择）与直接反应（感兴趣特征选择）的比例大于1</strong>。该比例通过相关性状[h2]遗传力的平方根除以直接性状遗传力[h1]乘以基因型（rG）之间的遗传相关性的平方根</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+        </div>
+
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="../../page/30/">&larr; Newer Posts</a>
+              </li>
+            
+            
+              <li class="next">
+                <a href="../../page/32/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

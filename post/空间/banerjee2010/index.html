@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Banerjee2010</title>
+  <meta property="og:title" content="Banerjee2010" />
+  <meta name="twitter:title" content="Banerjee2010" />
+  <meta name="description" content="Banerjee S, Finley AO, Waldmann P, Ericsson T (2010) Hierarchical Spatial Process Models for Multiple Traits in Large Genetic Trials. J Am Stat Assoc 105:506–521. doi: 10.1198/jasa.2009.ap09068
+ 本文通过在感兴趣的多个性状的大的空间参考试验数据集的背景下发展用于推断加性和优势遗传方差的空间过程模型，扩展了对贝叶斯分级模型在定量遗传学中的最近兴趣。将这种多元模型直接应用于大空间数据集通常是计算上不可行的，因为涉及估计的三次矩阵算法。在马尔科夫链蒙特卡罗（MCMC）上下文中情况甚至更糟，其中这样的计算被执行几千次迭代。在这里，我们讨论方法，有助于消除这些障碍，而不牺牲建模的丰富性。对于遗传效应，我们演示了关系矩阵的初始谱分解如何消除了以前提出的MCMC方法中所需的昂贵的矩阵反演。对于空间效应，我们讨论了一个多元预测过程，通过将原始过程投影到由指定的一组位置（或节点）处的原始过程的实现产生的子空间来减少计算负担。我们说明所提出的方法使用具有多变量加性和显性遗传效应和各向异性空间残差的合成数据集，以及来自在瑞典北部进行的苏格兰松（Pinus sylvestris L.）后代研究的大数据集。我们的方法使我们能够对这个大型试验提供一个全面的分析，充分证明，除了违反线性模型的基本假设，忽略空间效应可导致向下偏倚的遗传力测量。
+##1.引言 增加国际碳信用市场和对木纤维供应以满足新兴生物经济的需求激发了对改善森林生态系统服务的兴趣。这种需求大部分将通过大型人工林实现，因此，森林人员寻求提高这些种植园生产力的方法。树种育种是提高生产力的最重要的方法之一。在这里，重点是通过识别和交配具有高育种价值的优秀个体，增加某些性状的未来世代的遗传增益。在种植园环境中，林农通常对改善木材产量（例如增加茎高和直径）的性状感兴趣。根据木材的预期用途，还有其它考虑的性状，例如确定茎质量的那些（例如，由茎的分枝产生的结的数量和形式）。主要目的是揭示这些不同的主要或次要利益性状之间的相互关系是有利还是不利于未来选择（即，根据研究的目的评价性状是正相关还是负相关）。 Henderson和Quaas（1976）在定量遗传学中引入了多性状动物（或树或个体）模型。高效育种需要对多性状动物模型和个体育种值中的遗传方差和协方差参数的准确估计（Lynch和Walsh 1998）。定量遗传学研究多基因性状的遗传，集中于估计加性遗传方差和遗传性，通常估计为总遗传和未解释变异中的加性变异的比例。高遗传力应该导致更大的选择反应，即，在后代中遗传获得的更高概率。林业和农业遗传试验的共同特征是观测单位之间存在系统性异质性。如果在模型中忽略这种空间异质性，遗传参数的估计可能会有偏差（Dutkowski et al。2002; Cappa and Cantet 2007）。对于空间排列的观测单位，小数据集的异质性不足以用于育种目的。最近，Finley et al。 （2009a）提出了一类具有遗传和空间随机效应的适合大数据集的单个结果变量的层次模型。遗传协方差矩阵的规则频谱分解连同降级空间过程使用MCMC方法进行全贝叶斯推理。 本文将Finley等人（2009a）的工作扩展到多变量空间设置，其中已经观察到具有已知谱系的地理参考树。我们假设这些性状之间和之间的变异可以通过遗传，空间变异（例如土壤特征或小尺度地形属性）和一些非结构化测量误差。在这里，我们关注在木材和生物质的树的生产中至关重要的三个性状：高度（H），距离地面1.4米的直径（D）和分支角度（B）。前两个特征描述了树木（即木材体积）产生的木材量，第三个特征描述了木材质量（即由于连接到树木的树枝所产生的结点）和树木的结构完整性树（即，由于大雪荷载而破裂的敏感性）。通过评估每个性状添加剂的变异性，以及在调整一个位置内的相关性的同时调整一些非加性效应，连同育种值，种植树苗圃能够更好地在育种群中选择以产生种子遗传性状的最大遗传潜力。一种方法通过利用变量之间的条件关系（空间回归）建立分层多元空间模型（Royle和Berliner 1999）。这可以获得一些计算上的好处（例如，参见Banerjee，Carlin和Gelfand2004，第7.2.2节），并且在条件具有天然的年代或因果关系的情况下是有用的。然而，对于遗传性状，这样的年表通常缺乏或充其量有争议，并且寻求联合多变量模型（例如，Gelfand等人2004; Jin，Banerjee和Carlin 2007）。对于遗传效应，我们利用可分离的关联结构，并导出多元特征分解，将遗传与特征之间的关联分开，产生显着的计算益处。对于多变量空间依赖，计算上可行的选择是“可分离”或“内在”关联结构（参见例如Banerjee，Carlin和Gelfand 2004，第7章）。在这里，每个特征被赋予相同的空间相关函数。对于不同性状，结合的强度和性质将不可能是相同的，并且我们寻求适应每个性状的不同空间相关函数的更灵活的相关结构。一个“核心化的线性模型”（Gelfand et al。2004）产生任意丰富的多元相关模型，但是它对大型数据集的估计是繁重的。降级多变量“克里金”模型可以帮助实现尺寸减小。一种可能性是使用在单变量设置中相当显着的低秩平滑样条（Kamman和Wand 2003; Ruppert，Wand，and Carroll 2003; Crainiceanu，Diggle和Rowlingson 2008）。有了多个性状，我们需要多变量样条，其规格可能很难。降级多元空间过程可以说是更自然的，至少在相关函数的良好互译性的同时也是灵活的（见Banerjee等人2008; Cressie和Johannesson 2008）。这里的关键点是解决在低秩克里金或样条模型中出现的方差分量的估计中的系统偏差的问题。由于大多数现有的低秩方法集中于预测和平滑，这在上述文献中仍然基本上未解决。在这里，我们提供进一步洞察这种系统偏差和改进预测过程模型与偏差调整，很容易应用于多变量应用程序。再次，我们在这里采用的空间过程方法有助于理解和纠正这些偏差，可以说，将更难以用多元曲线解决。在第2节中，我们为数据开发多元空间模型。第3节讨论减少尺寸的预测过程模型，从这些模型估计方差成分的系统偏差及其补救措施。第4节概述遗传和空间效应的实施细节。第5节介绍了合成数据分析和苏格兰松分析。最后，第6节总结了本文的简要讨论。">
+  <meta property="og:description" content="Banerjee S, Finley AO, Waldmann P, Ericsson T (2010) Hierarchical Spatial Process Models for Multiple Traits in Large Genetic Trials. J Am Stat Assoc 105:506–521. doi: 10.1198/jasa.2009.ap09068
+ 本文通过在感兴趣的多个性状的大的空间参考试验数据集的背景下发展用于推断加性和优势遗传方差的空间过程模型，扩展了对贝叶斯分级模型在定量遗传学中的最近兴趣。将这种多元模型直接应用于大空间数据集通常是计算上不可行的，因为涉及估计的三次矩阵算法。在马尔科夫链蒙特卡罗（MCMC）上下文中情况甚至更糟，其中这样的计算被执行几千次迭代。在这里，我们讨论方法，有助于消除这些障碍，而不牺牲建模的丰富性。对于遗传效应，我们演示了关系矩阵的初始谱分解如何消除了以前提出的MCMC方法中所需的昂贵的矩阵反演。对于空间效应，我们讨论了一个多元预测过程，通过将原始过程投影到由指定的一组位置（或节点）处的原始过程的实现产生的子空间来减少计算负担。我们说明所提出的方法使用具有多变量加性和显性遗传效应和各向异性空间残差的合成数据集，以及来自在瑞典北部进行的苏格兰松（Pinus sylvestris L.）后代研究的大数据集。我们的方法使我们能够对这个大型试验提供一个全面的分析，充分证明，除了违反线性模型的基本假设，忽略空间效应可导致向下偏倚的遗传力测量。
+##1.引言 增加国际碳信用市场和对木纤维供应以满足新兴生物经济的需求激发了对改善森林生态系统服务的兴趣。这种需求大部分将通过大型人工林实现，因此，森林人员寻求提高这些种植园生产力的方法。树种育种是提高生产力的最重要的方法之一。在这里，重点是通过识别和交配具有高育种价值的优秀个体，增加某些性状的未来世代的遗传增益。在种植园环境中，林农通常对改善木材产量（例如增加茎高和直径）的性状感兴趣。根据木材的预期用途，还有其它考虑的性状，例如确定茎质量的那些（例如，由茎的分枝产生的结的数量和形式）。主要目的是揭示这些不同的主要或次要利益性状之间的相互关系是有利还是不利于未来选择（即，根据研究的目的评价性状是正相关还是负相关）。 Henderson和Quaas（1976）在定量遗传学中引入了多性状动物（或树或个体）模型。高效育种需要对多性状动物模型和个体育种值中的遗传方差和协方差参数的准确估计（Lynch和Walsh 1998）。定量遗传学研究多基因性状的遗传，集中于估计加性遗传方差和遗传性，通常估计为总遗传和未解释变异中的加性变异的比例。高遗传力应该导致更大的选择反应，即，在后代中遗传获得的更高概率。林业和农业遗传试验的共同特征是观测单位之间存在系统性异质性。如果在模型中忽略这种空间异质性，遗传参数的估计可能会有偏差（Dutkowski et al。2002; Cappa and Cantet 2007）。对于空间排列的观测单位，小数据集的异质性不足以用于育种目的。最近，Finley et al。 （2009a）提出了一类具有遗传和空间随机效应的适合大数据集的单个结果变量的层次模型。遗传协方差矩阵的规则频谱分解连同降级空间过程使用MCMC方法进行全贝叶斯推理。 本文将Finley等人（2009a）的工作扩展到多变量空间设置，其中已经观察到具有已知谱系的地理参考树。我们假设这些性状之间和之间的变异可以通过遗传，空间变异（例如土壤特征或小尺度地形属性）和一些非结构化测量误差。在这里，我们关注在木材和生物质的树的生产中至关重要的三个性状：高度（H），距离地面1.4米的直径（D）和分支角度（B）。前两个特征描述了树木（即木材体积）产生的木材量，第三个特征描述了木材质量（即由于连接到树木的树枝所产生的结点）和树木的结构完整性树（即，由于大雪荷载而破裂的敏感性）。通过评估每个性状添加剂的变异性，以及在调整一个位置内的相关性的同时调整一些非加性效应，连同育种值，种植树苗圃能够更好地在育种群中选择以产生种子遗传性状的最大遗传潜力。一种方法通过利用变量之间的条件关系（空间回归）建立分层多元空间模型（Royle和Berliner 1999）。这可以获得一些计算上的好处（例如，参见Banerjee，Carlin和Gelfand2004，第7.2.2节），并且在条件具有天然的年代或因果关系的情况下是有用的。然而，对于遗传性状，这样的年表通常缺乏或充其量有争议，并且寻求联合多变量模型（例如，Gelfand等人2004; Jin，Banerjee和Carlin 2007）。对于遗传效应，我们利用可分离的关联结构，并导出多元特征分解，将遗传与特征之间的关联分开，产生显着的计算益处。对于多变量空间依赖，计算上可行的选择是“可分离”或“内在”关联结构（参见例如Banerjee，Carlin和Gelfand 2004，第7章）。在这里，每个特征被赋予相同的空间相关函数。对于不同性状，结合的强度和性质将不可能是相同的，并且我们寻求适应每个性状的不同空间相关函数的更灵活的相关结构。一个“核心化的线性模型”（Gelfand et al。2004）产生任意丰富的多元相关模型，但是它对大型数据集的估计是繁重的。降级多变量“克里金”模型可以帮助实现尺寸减小。一种可能性是使用在单变量设置中相当显着的低秩平滑样条（Kamman和Wand 2003; Ruppert，Wand，and Carroll 2003; Crainiceanu，Diggle和Rowlingson 2008）。有了多个性状，我们需要多变量样条，其规格可能很难。降级多元空间过程可以说是更自然的，至少在相关函数的良好互译性的同时也是灵活的（见Banerjee等人2008; Cressie和Johannesson 2008）。这里的关键点是解决在低秩克里金或样条模型中出现的方差分量的估计中的系统偏差的问题。由于大多数现有的低秩方法集中于预测和平滑，这在上述文献中仍然基本上未解决。在这里，我们提供进一步洞察这种系统偏差和改进预测过程模型与偏差调整，很容易应用于多变量应用程序。再次，我们在这里采用的空间过程方法有助于理解和纠正这些偏差，可以说，将更难以用多元曲线解决。在第2节中，我们为数据开发多元空间模型。第3节讨论减少尺寸的预测过程模型，从这些模型估计方差成分的系统偏差及其补救措施。第4节概述遗传和空间效应的实施细节。第5节介绍了合成数据分析和苏格兰松分析。最后，第6节总结了本文的简要讨论。">
+  <meta name="twitter:description" content="Banerjee S, Finley AO, Waldmann P, Ericsson T (2010) Hierarchical Spatial Process Models for Multiple Traits in Large Genetic Trials. J Am Stat Assoc 105:506–521. doi: 10.1198/jasa.2009.ap09068
+ 本文通过在 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/banerjee2010/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/banerjee2010/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Banerjee2010</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (58 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Banerjee2010</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (58 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Banerjee S, Finley AO, Waldmann P, Ericsson T (2010) Hierarchical Spatial Process Models for Multiple Traits in Large Genetic Trials. J Am Stat Assoc 105:506–521. doi: 10.1198/jasa.2009.ap09068</p>
+</blockquote>
+
+<p>本文通过在感兴趣的多个性状的大的空间参考试验数据集的背景下发展用于推断加性和优势遗传方差的空间过程模型，扩展了对贝叶斯分级模型在定量遗传学中的最近兴趣。将这种多元模型直接应用于大空间数据集通常是计算上不可行的，因为涉及估计的三次矩阵算法。在马尔科夫链蒙特卡罗（MCMC）上下文中情况甚至更糟，其中这样的计算被执行几千次迭代。在这里，我们讨论方法，有助于消除这些障碍，而不牺牲建模的丰富性。对于遗传效应，我们演示了关系矩阵的初始谱分解如何消除了以前提出的MCMC方法中所需的昂贵的矩阵反演。对于空间效应，我们讨论了一个多元预测过程，通过将原始过程投影到由指定的一组位置（或节点）处的原始过程的实现产生的子空间来减少计算负担。我们说明所提出的方法使用具有多变量加性和显性遗传效应和各向异性空间残差的合成数据集，以及来自在瑞典北部进行的苏格兰松（Pinus sylvestris L.）后代研究的大数据集。我们的方法使我们能够对这个大型试验提供一个全面的分析，充分证明，除了违反线性模型的基本假设，忽略空间效应可导致向下偏倚的遗传力测量。</p>
+
+<p>##1.引言
+增加国际碳信用市场和对木纤维供应以满足新兴生物经济的需求激发了对改善森林生态系统服务的兴趣。这种需求大部分将通过大型人工林实现，因此，森林人员寻求提高这些种植园生产力的方法。<strong>树种育种是提高生产力的最重要的方法之一</strong>。在这里，<strong>重点是通过识别和交配具有高育种价值的优秀个体，增加某些性状的未来世代的遗传增益</strong>。在种植园环境中，林农通常对改善木材产量（例如增加茎高和直径）的性状感兴趣。根据木材的预期用途，还有其它考虑的性状，例如确定茎质量的那些（例如，由茎的分枝产生的结的数量和形式）。主要目的是揭示这些不同的主要或次要利益性状之间的相互关系是有利还是不利于未来选择（即，根据研究的目的评价性状是正相关还是负相关）。 Henderson和Quaas（1976）在定量遗传学中引入了多性状动物（或树或个体）模型。<strong>高效育种需要对多性状动物模型和个体育种值中的遗传方差和协方差参数的准确估计（Lynch和Walsh 1998）</strong>。定量遗传学研究多基因性状的遗传，集中于估计加性遗传方差和遗传性，通常估计为总遗传和未解释变异中的加性变异的比例。<strong>高遗传力应该导致更大的选择反应，即，在后代中遗传获得的更高概率</strong>。<strong>林业和农业遗传试验的共同特征是观测单位之间存在系统性异质性。如果在模型中忽略这种空间异质性，遗传参数的估计可能会有偏差</strong>（Dutkowski et al。2002; Cappa and Cantet 2007）。对于空间排列的观测单位，小数据集的异质性不足以用于育种目的。最近，Finley et al。 （2009a）提出了一类具有遗传和空间随机效应的适合大数据集的单个结果变量的层次模型。遗传协方差矩阵的规则频谱分解连同降级空间过程使用MCMC方法进行全贝叶斯推理。
+<strong>本文将Finley等人（2009a）的工作扩展到多变量空间设置</strong>，其中已经观察到具有已知谱系的地理参考树。我们假设这些性状之间和之间的变异可以通过遗传，空间变异（例如土壤特征或小尺度地形属性）和一些非结构化测量误差。在这里，我们关注在木材和生物质的树的生产中至关重要的三个性状：高度（H），距离地面1.4米的直径（D）和分支角度（B）。前两个特征描述了树木（即木材体积）产生的木材量，第三个特征描述了木材质量（即由于连接到树木的树枝所产生的结点）和树木的结构完整性树（即，由于大雪荷载而破裂的敏感性）。通过评估每个性状添加剂的变异性，以及在调整一个位置内的相关性的同时调整一些非加性效应，连同育种值，种植树苗圃能够更好地在育种群中选择以产生种子遗传性状的最大遗传潜力。一种方法通过利用变量之间的条件关系（空间回归）建立分层多元空间模型（Royle和Berliner 1999）。这可以获得一些计算上的好处（例如，参见Banerjee，Carlin和Gelfand2004，第7.2.2节），并且在条件具有天然的年代或因果关系的情况下是有用的。然而，对于遗传性状，这样的年表通常缺乏或充其量有争议，并且寻求联合多变量模型（例如，Gelfand等人2004; Jin，Banerjee和Carlin 2007）。对于遗传效应，我们利用可分离的关联结构，并导出多元特征分解，将遗传与特征之间的关联分开，产生显着的计算益处。对于多变量空间依赖，计算上可行的选择是“可分离”或“内在”关联结构（参见例如Banerjee，Carlin和Gelfand 2004，第7章）。在这里，每个特征被赋予相同的空间相关函数。对于不同性状，结合的强度和性质将不可能是相同的，并且我们寻求适应每个性状的不同空间相关函数的更灵活的相关结构。一个“核心化的线性模型”（Gelfand et al。2004）产生任意丰富的多元相关模型，但是它对大型数据集的估计是繁重的。降级多变量“克里金”模型可以帮助实现尺寸减小。一种可能性是使用在单变量设置中相当显着的低秩平滑样条（Kamman和Wand 2003; Ruppert，Wand，and Carroll 2003; Crainiceanu，Diggle和Rowlingson 2008）。有了多个性状，我们需要多变量样条，其规格可能很难。降级多元空间过程可以说是更自然的，至少在相关函数的良好互译性的同时也是灵活的（见Banerjee等人2008; Cressie和Johannesson 2008）。这里的关键点是解决在低秩克里金或样条模型中出现的方差分量的估计中的系统偏差的问题。由于大多数现有的低秩方法集中于预测和平滑，这在上述文献中仍然基本上未解决。在这里，我们提供进一步洞察这种系统偏差和改进预测过程模型与偏差调整，很容易应用于多变量应用程序。再次，我们在这里采用的空间过程方法有助于理解和纠正这些偏差，可以说，将更难以用多元曲线解决。在第2节中，我们为数据开发多元空间模型。第3节讨论减少尺寸的预测过程模型，从这些模型估计方差成分的系统偏差及其补救措施。第4节概述遗传和空间效应的实施细节。第5节介绍了合成数据分析和苏格兰松分析。最后，第6节总结了本文的简要讨论。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/barata-2006-ssr%E5%88%86%E7%BB%84%E4%B8%8E%E6%B5%8B%E4%BA%A4%E7%B3%BB%E7%94%B0%E9%97%B4%E6%95%B0%E6%8D%AE%E5%88%86%E7%BB%84%E7%9A%84%E6%AF%94%E8%BE%83-%E7%8E%89%E7%B1%B3/" data-toggle="tooltip" data-placement="top" title="Barata-2006-ssr分组与测交系田间数据分组的比较-玉米">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/baltunis2007-%E5%85%A8%E5%90%8C%E8%83%9E-%E4%B8%8A%E4%BD%8D/" data-toggle="tooltip" data-placement="top" title="Baltunis2007-全同胞-上位">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

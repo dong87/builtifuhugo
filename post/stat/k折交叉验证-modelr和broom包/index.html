@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>k折交叉验证-modelr和broom包</title>
+  <meta property="og:title" content="k折交叉验证-modelr和broom包" />
+  <meta name="twitter:title" content="k折交叉验证-modelr和broom包" />
+  <meta name="description" content="2016年12月3日 使用modelr和扫帚的k折交叉验证 @drsimonj这里讨论如何进行k-折交叉验证，对通过评估模型支持重点大卫·罗宾逊的 扫帚包。 完全学分制此亦大卫，因为这是一个稍微更详细的版本他的过去后 ，这是我以前看过一段时间，感觉就像拆包。 假设知识：K折交叉验证 这个帖子假设你知道什么k折交叉验证。 如果你想刷了，这里有一个从斯坦福大学的教授特雷弗·黑斯蒂和Rob Tibshirani梦幻般的教程 。 创建折叠 担心模型之前，我们就可以产生k个折叠使用crossv_kfold 从modelr包。 让我们从实践mtcars 数据让事情变得简单。
+library(modelr) set.seed(1) # Run to replicate this post folds &lt;- crossv_kfold(mtcars, k = 5) folds #&gt; # A tibble: 5 × 3 #&gt; train test .id #&gt; &lt;list&gt; &lt;list&gt; &lt;chr&gt; #&gt; 1 &lt;S3: resample&gt; &lt;S3: resample&gt; 1 #&gt; 2 &lt;S3: resample&gt; &lt;S3: resample&gt; 2 #&gt; 3 &lt;S3: resample&gt; &lt;S3: resample&gt; 3 #&gt; 4 &lt;S3: resample&gt; &lt;S3: resample&gt; 4 #&gt; 5 &lt;S3: resample&gt; &lt;S3: resample&gt; 5  该函数接受一个数据帧，并随机划分它的行（1到32 mtcars ）到k 大致相等组。 我们已经分配的行数为k = 5 组。 结果作为像上面那样的小块（数据帧）返回。 在每个单元test 列包含一个resample 对象，这是参照在数据帧的行的子集的一种有效的方法（ ?">
+  <meta property="og:description" content="2016年12月3日 使用modelr和扫帚的k折交叉验证 @drsimonj这里讨论如何进行k-折交叉验证，对通过评估模型支持重点大卫·罗宾逊的 扫帚包。 完全学分制此亦大卫，因为这是一个稍微更详细的版本他的过去后 ，这是我以前看过一段时间，感觉就像拆包。 假设知识：K折交叉验证 这个帖子假设你知道什么k折交叉验证。 如果你想刷了，这里有一个从斯坦福大学的教授特雷弗·黑斯蒂和Rob Tibshirani梦幻般的教程 。 创建折叠 担心模型之前，我们就可以产生k个折叠使用crossv_kfold 从modelr包。 让我们从实践mtcars 数据让事情变得简单。
+library(modelr) set.seed(1) # Run to replicate this post folds &lt;- crossv_kfold(mtcars, k = 5) folds #&gt; # A tibble: 5 × 3 #&gt; train test .id #&gt; &lt;list&gt; &lt;list&gt; &lt;chr&gt; #&gt; 1 &lt;S3: resample&gt; &lt;S3: resample&gt; 1 #&gt; 2 &lt;S3: resample&gt; &lt;S3: resample&gt; 2 #&gt; 3 &lt;S3: resample&gt; &lt;S3: resample&gt; 3 #&gt; 4 &lt;S3: resample&gt; &lt;S3: resample&gt; 4 #&gt; 5 &lt;S3: resample&gt; &lt;S3: resample&gt; 5  该函数接受一个数据帧，并随机划分它的行（1到32 mtcars ）到k 大致相等组。 我们已经分配的行数为k = 5 组。 结果作为像上面那样的小块（数据帧）返回。 在每个单元test 列包含一个resample 对象，这是参照在数据帧的行的子集的一种有效的方法（ ?">
+  <meta name="twitter:description" content="2016年12月3日 使用modelr和扫帚的k折交叉验证 @drsimonj这里讨论如何进行k-折交叉验证，对通过评估模型支持重点大卫·罗宾逊的 扫帚包。 完全学分制此亦大卫，因为这是一个稍微更详细的版本他的过去后 ，这是我以前看过一段时间，感觉就像拆包。 假设知识：K折交叉验证 这个帖子假设你知道什么k折交叉验证。 如果你想刷了，这里有一个从斯坦福大学的教授特雷弗·黑斯蒂和Rob …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/stat/k%E6%8A%98%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81-modelr%E5%92%8Cbroom%E5%8C%85/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/stat/k%E6%8A%98%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81-modelr%E5%92%8Cbroom%E5%8C%85/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>k折交叉验证-modelr和broom包</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 6 minutes (1227 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>k折交叉验证-modelr和broom包</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 6 minutes (1227 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>2016年12月3日
+<a href="https://github.com/drsimonj/blogR/blob/master/Rmd/cross_validation_broom.Rmd">使用modelr和扫帚的k折交叉验证</a><a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://drsimonj.svbtle.com/k-fold-cross-validation-with-modelr-and-broom&amp;usg=ALkJrhhwklrXyw-9gvZ907SSkzxJAeNr1w"> </a>
+<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://twitter.com/drsimonj&amp;usg=ALkJrhgHX5Fs0TOh4k6lbO1gaTC0O_rjGA">@drsimonj</a>这里讨论如何进行k-折交叉验证，对通过评估模型支持重点<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=http://varianceexplained.org/&amp;usg=ALkJrhgRSkzLUSRDkpmE6QU7P8eyC5UR5Q">大卫·罗宾逊的</a> <a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://cran.r-project.org/web/packages/broom/index.html&amp;usg=ALkJrhiSLY8BU20_TiTtVO1fxWzhGq983w">扫帚</a>包。 完全学分制此亦大卫，因为这是一个稍微更详细的版本<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=http://rpubs.com/dgrtwo/cv-modelr&amp;usg=ALkJrhhxvCtYKmtwo7U45mF5eFIESLkPRQ">他的过去后</a> ，这是我以前看过一段时间，感觉就像拆包。
+<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://drsimonj.svbtle.com/k-fold-cross-validation-with-modelr-and-broom&amp;usg=ALkJrhhwklrXyw-9gvZ907SSkzxJAeNr1w#assumed-knowledge-kfold-cross-validation_2"> </a>假设知识：K折交叉验证
+这个帖子假设你知道什么k折交叉验证。 如果你想刷了，这里有一个<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://www.youtube.com/watch%3Fv%3DnZAM5OXrktY&amp;usg=ALkJrhgwsmNyFaPbKXP-rTGuoMUe1H0fpw">从斯坦福大学的教授特雷弗·黑斯蒂和Rob Tibshirani梦幻般的教程</a> 。
+<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://drsimonj.svbtle.com/k-fold-cross-validation-with-modelr-and-broom&amp;usg=ALkJrhhwklrXyw-9gvZ907SSkzxJAeNr1w#creating-folds_2"> </a>创建折叠
+担心模型之前，我们就可以产生k个折叠使用crossv_kfold
+从<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://cran.r-project.org/web/packages/modelr/index.html&amp;usg=ALkJrhiv9fMflgFePMXhjqat4tc6j3k_ZQ">modelr</a>包。 让我们从实践mtcars
+数据让事情变得简单。</p>
+
+<pre><code>library(modelr)
+set.seed(1)  # Run to replicate this post
+folds &lt;- crossv_kfold(mtcars, k = 5)
+folds
+#&gt; # A tibble: 5 × 3
+#&gt;            train           test   .id
+#&gt;           &lt;list&gt;         &lt;list&gt; &lt;chr&gt;
+#&gt; 1 &lt;S3: resample&gt; &lt;S3: resample&gt;     1
+#&gt; 2 &lt;S3: resample&gt; &lt;S3: resample&gt;     2
+#&gt; 3 &lt;S3: resample&gt; &lt;S3: resample&gt;     3
+#&gt; 4 &lt;S3: resample&gt; &lt;S3: resample&gt;     4
+#&gt; 5 &lt;S3: resample&gt; &lt;S3: resample&gt;     5
+</code></pre>
+
+<p>该函数接受一个数据帧，并随机划分它的行（1到32 mtcars
+ ）到k
+大致相等组。 我们已经分配的行数为k = 5
+组。 结果作为像上面那样的小块（数据帧）返回。
+在每个单元test
+列包含一个resample
+对象，这是参照在数据帧的行的子集的一种有效的方法（ ?resample
+ ，以了解更多）。 将每个单元视为对属于每个分区的数据帧的行的引用。 例如，下面的告诉我们，数据引用行*5,9，17，20，27，28，29*的第一个分区，它占大致1 / k
+的总数据集（32行的7）的。
+folds$test[[1]] #&gt; <resample [7 x 11]> 5, 9, 17, 20, 27, 28, 29</p>
+
+<p>在每个单元train
+还包含一个resample
+对象，但引用的所有其他分区的行。例如，第一个train
+对象引用的所有行， <strong>除了</strong> <em>5，9，17，20，27，28，29：</em></p>
+
+<pre><code>folds$train[[1]] 
+#&gt; &lt;resample [25 x 11]&gt; 1, 2, 3, 4, 6, 7, 8, 10, 11, 12, ...
+</code></pre>
+
+<p>现在，我们可以运行在每个引用的数据模型train
+的对象，并验证在每个相应分区模型结果test
+ 。
+<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://drsimonj.svbtle.com/k-fold-cross-validation-with-modelr-and-broom&amp;usg=ALkJrhhwklrXyw-9gvZ907SSkzxJAeNr1w#fitting-models-to-training-data_2"> </a>将训练数据拟合模型
+假设我们感兴趣的是预测万里每加仑（ mpg
+与所有其他变量）。 使用整个数据集，我们可以通过以下方式实现：</p>
+
+<pre><code>lm(mpg ~ ., data = mtcars)
+</code></pre>
+
+<p>相反，我们希望运行的每个训练数据集（每个引用的数据这个模型train
+细胞）。 我们可以这样做：</p>
+
+<pre><code>library(dplyr)
+library(purrr)
+
+folds &lt;- folds %&gt;% mutate(model = map(train, ~ lm(mpg ~ ., data = .)))
+folds
+#&gt; # A tibble: 5 × 4
+#&gt;            train           test   .id    model
+#&gt;           &lt;list&gt;         &lt;list&gt; &lt;chr&gt;   &lt;list&gt;
+#&gt; 1 &lt;S3: resample&gt; &lt;S3: resample&gt;     1 &lt;S3: lm&gt;
+#&gt; 2 &lt;S3: resample&gt; &lt;S3: resample&gt;     2 &lt;S3: lm&gt;
+#&gt; 3 &lt;S3: resample&gt; &lt;S3: resample&gt;     3 &lt;S3: lm&gt;
+#&gt; 4 &lt;S3: resample&gt; &lt;S3: resample&gt;     4 &lt;S3: lm&gt;
+#&gt; 5 &lt;S3: resample&gt; &lt;S3: resample&gt;     5 &lt;S3: lm&gt;
+</code></pre>
+
+<p>folds %&gt;% mutate(model = &hellip;)
+中添加一个新的model
+列的褶皱tibble。
+map(train, &hellip;)
+被施加函数到每个细胞中的train</p>
+
+<p>~ lm(&hellip;)
+是施加到每个回归模型train
+细胞。
+data = .
+ 指定的回归模型的数据将是由每个所引用的数据train
+对象。</p>
+
+<p>其结果是一个新的model
+包含基于每个的嵌合回归模型列train
+的数据（即，整个数据集不包括每个分区）。
+例如，拟合我们的第一组训练数据的模型是：</p>
+
+<pre><code>folds$model[[1]] %&gt;% summary()
+#&gt; 
+#&gt; Call:
+#&gt; lm(formula = mpg ~ ., data = .)
+#&gt; 
+#&gt; Residuals:
+#&gt;     Min      1Q  Median      3Q     Max 
+#&gt; -3.6540 -0.9116  0.0439  0.9520  4.2811 
+#&gt; 
+#&gt; Coefficients:
+#&gt;               Estimate Std. Error t value Pr(&gt;|t|)  
+#&gt; (Intercept) -44.243933  31.884363  -1.388   0.1869  
+#&gt; cyl           0.844966   1.064141   0.794   0.4404  
+#&gt; disp          0.016800   0.015984   1.051   0.3110  
+#&gt; hp            0.004685   0.022741   0.206   0.8398  
+#&gt; drat          3.950410   1.989177   1.986   0.0670 .
+#&gt; wt           -4.487007   2.016341  -2.225   0.0430 *
+#&gt; qsec          2.327131   1.243095   1.872   0.0822 .
+#&gt; vs           -3.963492   3.217176  -1.232   0.2382  
+#&gt; am           -0.550804   2.333252  -0.236   0.8168  
+#&gt; gear          5.476604   2.648708   2.068   0.0577 .
+#&gt; carb         -1.595979   1.104272  -1.445   0.1704  
+#&gt; ---
+#&gt; Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+#&gt; 
+#&gt; Residual standard error: 2.159 on 14 degrees of freedom
+#&gt; Multiple R-squared:  0.9092, Adjusted R-squared:  0.8444 
+#&gt; F-statistic: 14.02 on 10 and 14 DF,  p-value: 1.205e-05
+</code></pre>
+
+<p><a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://drsimonj.svbtle.com/k-fold-cross-validation-with-modelr-and-broom&amp;usg=ALkJrhhwklrXyw-9gvZ907SSkzxJAeNr1w#predicting-the-test-data_2"> </a>预测测试数据
+下一步骤是使用每个模型用于在相应的预测结果变量test
+数据。 有很多方法来实现这一点。 一种一般方法可能是：</p>
+
+<pre><code>folds %&gt;% mutate(predicted = map2(model, test, &lt;FUNCTION_TO_PREDICT_TEST_DATA&gt; ))
+</code></pre>
+
+<p>map2(model, test, &hellip;)
+通过每个迭代模型和一组test
+数据并行。 通过在功能引用这些用于预测测试数据，这将增加一个predicted
+与预测的结果列。
+对于许多普通车型，优雅的替代方法是使用augment
+的<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://cran.r-project.org/web/packages/broom/index.html&amp;usg=ALkJrhiSLY8BU20_TiTtVO1fxWzhGq983w">扫帚</a> 。 对于回归，augment
+将采取拟合模型和一个新的数据帧，并返回预测结果的数据帧，这是我们想要的！ 上面下面，我们就可以使用augment
+如下：</p>
+
+<pre><code>library(broom)
+
+folds %&gt;% mutate(predicted = map2(model, test, ~ augment(.x, newdata = .y)))
+#&gt; # A tibble: 5 × 5
+#&gt;            train           test   .id    model             predicted
+#&gt;           &lt;list&gt;         &lt;list&gt; &lt;chr&gt;   &lt;list&gt;                &lt;list&gt;
+#&gt; 1 &lt;S3: resample&gt; &lt;S3: resample&gt;     1 &lt;S3: lm&gt; &lt;data.frame [7 × 13]&gt;
+#&gt; 2 &lt;S3: resample&gt; &lt;S3: resample&gt;     2 &lt;S3: lm&gt; &lt;data.frame [7 × 13]&gt;
+#&gt; 3 &lt;S3: resample&gt; &lt;S3: resample&gt;     3 &lt;S3: lm&gt; &lt;data.frame [6 × 13]&gt;
+#&gt; 4 &lt;S3: resample&gt; &lt;S3: resample&gt;     4 &lt;S3: lm&gt; &lt;data.frame [6 × 13]&gt;
+#&gt; 5 &lt;S3: resample&gt; &lt;S3: resample&gt;     5 &lt;S3: lm&gt; &lt;data.frame [6 × 13]&gt;
+</code></pre>
+
+<p>要提取这些相关信息predicted
+结果，我们将unnest
+数据帧感谢<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://cran.r-project.org/web/packages/tidyr/index.html&amp;usg=ALkJrhg8nCEBldJNThcIrAQtVxONbKkcag">tidyr</a>包：</p>
+
+<pre><code>library(tidyr)
+
+folds %&gt;%
+  mutate(predicted = map2(model, test, ~ augment(.x, newdata = .y))) %&gt;% 
+  unnest(predicted)
+#&gt; # A tibble: 32 × 14
+#&gt;      .id   mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
+#&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+#&gt; 1      1  18.7     8 360.0   175  3.15 3.440 17.02     0     0     3     2
+#&gt; 2      1  22.8     4 140.8    95  3.92 3.150 22.90     1     0     4     2
+#&gt; 3      1  14.7     8 440.0   230  3.23 5.345 17.42     0     0     3     4
+#&gt; 4      1  33.9     4  71.1    65  4.22 1.835 19.90     1     1     4     1
+#&gt; 5      1  26.0     4 120.3    91  4.43 2.140 16.70     0     1     5     2
+#&gt; 6      1  30.4     4  95.1   113  3.77 1.513 16.90     1     1     5     2
+#&gt; 7      1  15.8     8 351.0   264  4.22 3.170 14.50     0     1     5     4
+#&gt; 8      2  21.0     6 160.0   110  3.90 2.875 17.02     0     1     4     4
+#&gt; 9      2  21.4     6 258.0   110  3.08 3.215 19.44     1     0     3     1
+#&gt; 10     2  24.4     4 146.7    62  3.69 3.190 20.00     1     0     4     2
+#&gt; # ... with 22 more rows, and 2 more variables: .fitted &lt;dbl&gt;,
+#&gt; #   .se.fit &lt;dbl&gt;
+</code></pre>
+
+<p>这是为了向您展示中间步骤。 在实践中，我们可以跳过mutate
+步：</p>
+
+<pre><code>predicted &lt;- folds %&gt;% unnest(map2(model, test, ~ augment(.x, newdata = .y)))
+predicted
+#&gt; # A tibble: 32 × 14
+#&gt;      .id   mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
+#&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+#&gt; 1      1  18.7     8 360.0   175  3.15 3.440 17.02     0     0     3     2
+#&gt; 2      1  22.8     4 140.8    95  3.92 3.150 22.90     1     0     4     2
+#&gt; 3      1  14.7     8 440.0   230  3.23 5.345 17.42     0     0     3     4
+#&gt; 4      1  33.9     4  71.1    65  4.22 1.835 19.90     1     1     4     1
+#&gt; 5      1  26.0     4 120.3    91  4.43 2.140 16.70     0     1     5     2
+#&gt; 6      1  30.4     4  95.1   113  3.77 1.513 16.90     1     1     5     2
+#&gt; 7      1  15.8     8 351.0   264  4.22 3.170 14.50     0     1     5     4
+#&gt; 8      2  21.0     6 160.0   110  3.90 2.875 17.02     0     1     4     4
+#&gt; 9      2  21.4     6 258.0   110  3.08 3.215 19.44     1     0     3     1
+#&gt; 10     2  24.4     4 146.7    62  3.69 3.190 20.00     1     0     4     2
+#&gt; # ... with 22 more rows, and 2 more variables: .fitted &lt;dbl&gt;,
+#&gt; #   .se.fit &lt;dbl&gt;
+</code></pre>
+
+<p>我们现在有一个tibble test
+数据对于每个倍（ .id
+ =褶皱数），并且相应.fitted
+的结果变量（或预测值mpg
+在每一种情况下）。
+<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://drsimonj.svbtle.com/k-fold-cross-validation-with-modelr-and-broom&amp;usg=ALkJrhhwklrXyw-9gvZ907SSkzxJAeNr1w#validating-the-model_2"> </a>正在验证模型
+我们可以计算和检查残差：</p>
+
+<pre><code># Compute the residuals
+predicted &lt;- predicted %&gt;% 
+  mutate(residual = .fitted - mpg)
+
+# Plot actual v residual values
+library(ggplot2)
+predicted %&gt;%
+  ggplot(aes(mpg, residual)) +
+    geom_hline(yintercept = 0) +
+    geom_point() +
+    stat_smooth(method = &quot;loess&quot;) +
+    theme_minimal()
+</code></pre>
+
+<p><a href="https://svbtleusercontent.com/h7h2tbbfsdlua.png"><img src="https://svbtleusercontent.com/h7h2tbbfsdlua_small.png" alt="unamed-chunk-12-1.png" /></a>
+它看起来像我们的模型可能高估mpg
+约20-30和低估更高mpg
+ 。 但是显然较少的数据点，使预测困难。
+我们还可以使用这些值来计算每个模型所占的方差的总比例：</p>
+
+<pre><code>rs &lt;- predicted %&gt;%
+  group_by(.id) %&gt;% 
+  summarise(
+    sst = sum((mpg - mean(mpg)) ^ 2), # Sum of Squares Total
+    sse = sum(residual ^ 2),          # Sum of Squares Residual/Error
+    r.squared = 1 - sse / sst         # Proportion of variance accounted for
+    )
+rs
+#&gt; # A tibble: 5 × 4
+#&gt;     .id      sst       sse r.squared
+#&gt;   &lt;chr&gt;    &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+#&gt; 1     1 321.5886 249.51370 0.2241214
+#&gt; 2     2 127.4371  31.86994 0.7499164
+#&gt; 3     3 202.6600  42.19842 0.7917773
+#&gt; 4     4 108.4733  50.79684 0.5317113
+#&gt; 5     5 277.3283  59.55946 0.7852385
+
+# Overall
+mean(rs$r.squared)
+#&gt; [1] 0.616553
+</code></pre>
+
+<p>因此，在整个褶皱，回归模型已经占到平均方差的61.66％， mpg
+在新的测试数据。
+绘制这些结果：</p>
+
+<pre><code>rs %&gt;% 
+  ggplot(aes(r.squared, fill  = .id)) +
+    geom_histogram() +
+    geom_vline(aes(xintercept = mean(r.squared)))  # Overall mean
+</code></pre>
+
+<p><a href="https://svbtleusercontent.com/hmnlslyagqzqa.png"><img src="https://svbtleusercontent.com/hmnlslyagqzqa_small.png" alt="未命名的chunk-14-1.png" /></a>
+虽然模型平均表现良好，但当折叠1用作测试数据时，它的表现相当差。
+<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://drsimonj.svbtle.com/k-fold-cross-validation-with-modelr-and-broom&amp;usg=ALkJrhhwklrXyw-9gvZ907SSkzxJAeNr1w#all-at-once_2"> </a>一次全部
+有了这个新的知识，我们可以做类似的东西k = 20
+中所示的情况下， <a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=http://rpubs.com/dgrtwo/cv-modelr&amp;usg=ALkJrhhxvCtYKmtwo7U45mF5eFIESLkPRQ">大卫的帖子</a> 。 看到你可以理解这里发生了什么：</p>
+
+<pre><code>set.seed(1)
+# Select four variables from the mpg data set in ggplot2
+ggplot2::mpg %&gt;% select(year, cyl, drv, hwy) %&gt;% 
+  # Create 20 folds (5% of the data in each partition)
+  crossv_kfold(k = 20) %&gt;%
+  # Fit a model to training data
+  mutate(model = map(train, ~ lm(hwy ~ ., data = .))) %&gt;%
+  # Unnest predicted values on test data
+  unnest(map2(model, test, ~ augment(.x, newdata = .y))) %&gt;% 
+  # Compute R-squared values for each partition
+  group_by(.id) %&gt;%
+  summarise(
+    sst = sum((hwy - mean(hwy)) ^ 2),
+    sse = sum((hwy - .fitted) ^ 2),
+    r.squared = 1 - sse / sst
+  ) %&gt;% 
+  # Plot
+  ggplot(aes(r.squared)) +
+    geom_density() +
+    geom_vline(aes(xintercept = mean(r.squared))) +
+    theme_minimal()
+</code></pre>
+
+<p><a href="https://svbtleusercontent.com/dwq9es20tiia.png"><img src="https://svbtleusercontent.com/dwq9es20tiia_small.png" alt="" /></a>
+<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://drsimonj.svbtle.com/k-fold-cross-validation-with-modelr-and-broom&amp;usg=ALkJrhhwklrXyw-9gvZ907SSkzxJAeNr1w#sign-off_2"> </a></p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/lay-out-%E5%AE%89%E6%8E%92%E5%B8%83%E7%BD%AE%E6%A0%B7%E5%9C%B0/" data-toggle="tooltip" data-placement="top" title="lay-out-安排、布置（样地）">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%9A%8F%E7%AC%94/java%E7%9A%84%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" data-toggle="tooltip" data-placement="top" title="java的系统环境配置">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

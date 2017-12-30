@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Hall2016-林木QTL</title>
+  <meta property="og:title" content="Hall2016-林木QTL" />
+  <meta name="twitter:title" content="Hall2016-林木QTL" />
+  <meta name="description" content="Hall D, Hallingbäck HR, Wu HX (2016) Estimation of number and size of QTL effects in forest tree traits. Tree Genet Genomes 12:110. doi: 10.1007/s11295-016-1073-0
+ 映射森林树木性状的遗传结构是重要的，以了解塑造这些性状的进化力量，并促进基于基因组的育种策略的发展。我们使用30个发布的映射研究（链接和关联映射）在林木中检查影响八种类型性状的等位基因影响的数量，大小和分布。等位基因效应的大小，作为解释的表型方差测量，通常显示严重右偏态分布。我们通过改进以前由Otto和Jones开发的方法（遗传学156：2093-2107,2000），估计不同性状类别的潜在因果效应（nqtl）的数量。基于关联作图研究的nqt1的估计通常比基于连锁作图（中值为33）的那些高（中值在643）。与模拟连锁和关联映射数据的比较表明，连锁图谱研究的较低nqtl估计可以部分地解释为通常使用的全同胞家族群体内较少的因果基因座分离，但也由于有限重组的因果基因座的群体分离。基于连锁图谱研究的疾病抗性估计具有四种潜在效应的最低中值，而基于关联作图的生长性状具有约580种效应。理论上，50％的遗传变异的捕获因此将需要约200的种群大小用于连锁作图中的抗病性，而在缔合作图中的生长性状将需要约25,000。改进方法的充分性和可靠性通过应用于模拟数据成功验证。
+介绍 了解适应性和商业性状的复杂结构以评估进化力在塑造遗传变异中的作用并改善长期育种策略是非常重要的。遗传标记的引入具有快速可靠的人类遗传疾病诊断的承诺，动物和植物育种中的标记辅助选择以及对适应的遗传基础的更好理解（Neale和Savolainen 2004）。在玉米和拟南芥中，基于几个性状的遗传基础已被相对良好地鉴定为可遗传性状变异的主要部分（分别&gt; 50和&gt; 80％）由定量性状基因座（QTL ）（Buckler等人2009; Segura等人2012）。相比之下，人类的高度被认为是高度可遗传的，但大部分的遗传变异仍然无法通过全基因组关联研究（GWAS）。这种不可解释的遗传变异称为Bs缺失遗传性（Maher 2008）。最近的研究指出了每个对人类高度具有小影响的许多QTL的基础结构（Yang等人，2010）。单独地，这些QTL因此保持未通过GWAS方法检测，但是，一起，它们仍然解释大多数遗传变异。与此一致，理论工作已经显示，大效应的等位基因可能是异常的，并且已经建议等位基因效应遵循负指数分布（Orr 1998）。这反过来意味着大多数遗传将由许多具有小效应大小的等位基因解释（McKown等人2014; Porth等人2013; Rockman 2012; Yangetal。2010），并且检测到的等位基因效应的大小将形成truncateded指数分布（Otto和琼斯2000）。在开花时间inmaize和拟南芥的研究中，检测到的QTL的等位基因效应分布被描述为刚好在检测阈值以上的效应量的观察到的QTL的数量的快速增加，但是在较大的效应尺寸下显着降低，从而形成稀有大QTL效应的Blong尾（Buckler等人2009;Salomé等人2011）。当观察检测到的QTL效应的效应大小分布时，这种趋势在大多数植物中似乎是相似的（Ingvarsson和Street 2011）。 历史上，通过在极端表型或相关物种之间的交叉设计中的连锁分析检测QTL（称为QTL研究）。 QTL研究确定了与由于物理连锁导致的遗传节段聚集相关的显着影响。对于本文中处理的QTL研究，这些遗传区段在遗传距离方面的范围为0.9至60cM（Henery等人2007; Jorge等人2005; Paterson等人1988; Thummaet al.2010） 。然而，更高分辨率的QTL检测可以通过连锁不平衡（LD）分析（也称为缔合作图）进行（Lander和Schork 1994; Pritchard et al.2000）。由于基因分型技术的局限性和缺乏资源，关联映射迄今为止主要使用候选基因方法进行（Thavamanikumar等人2013）。然而，这样的研究可能不能发现意想不到的关联，因为候选基因优先在先前的QTL研究（Frewen等人2000; Ingvarsson等人2006）或通过其他研究努力指示为重要的区域中选择。尽管如此，随着大规模基因分型变得越来越负担得起，全基因组方法关联作图可能是优选的方法，因为它不受候选基因选择约束的影响。值得注意的是，QTL和关联研究常常受到相对较小的绘图群体大小的限制，导致低的统计功效，因此使得小的或甚至中等效应QTL在统计学上不显着且难以检测。这种统计力量不足的人群也可能受到影响大小估计（所谓的Beavis效应）的严重通货膨胀，特别是如果应用非常严格的显着性阈值（Beavis 1994; Beavis 1998; Xu 2003b）。过度估计的大小不仅取决于研究的力量，而且取决于真实效应的大小。如果真实效应幅度小，则需要大的样本大小（例如，千个个体）以实现无偏的效应估计（Beavis 1998）。虽然QTL和关联研究中的理论基础已经有一段时间了，但是累积的实践和经验现在表明，鉴于检测到大量可遗传变异的目的，需要大量的样本量（Lynch和Walsh 1998; Sham et al。 2000）。如果抽样标记不包括因果等位基因，或者如果标记和致病等位基因之间的LD不完全，则功率降低，并且映射群体的大小需要进一步增加（Porth等人2013）。森林树木的关联研究数量仍然有限（Thavamanikumar et al。2013），但随着目前基因组研究在许多物种中的应用（Birol等人2013; Neale和Kremer 2011; Nystedt等人2013）对复杂性状的解剖和使用用于基因组选择（GS）的分子标记的育种效率正在增加（Meuwissen等人2001）。最近在Populus的常见花园试验以及Populous trichcarpa基因组序列的完成（Tuskan等人2006）已经在毛果蛾的几个全基因组关联作图研究中产生，其中标记物的数量比以前大得多候选基因方法（Evans et al。2014; McKown et al。2014; Porth et al。2013）。然而，在森林树中的几个映射研究表明大多数性状有大量的基础QTL，到目前为止，很少有研究，有映射人口规模，提供所需的功率捕获大部分的遗传变异Neale和Savolainen 2004; Thavamanikumar etal。2013）。研究基础QTL效应的预期数量及其分布可以增强我们对重要数量性状的遗传结构的理解，设计更好的实验以揭示遗传性的遗漏因子，并促进标记辅助选择（MAS）和基因组选择的实施（Isik 2014; Meuwissen and Goddard 2010; Thavamanikumar et al。2013）。在本文中，我们建议一个修改的方法，Otto和琼斯（2000年）为了估计基础QTL的数量从所报告的表型方差的大小解释的八个不同的性状类型的重要标记。我们还使用模拟数据来验证我们的关联映射和QTL映射程序的方法，并潜在地重现关联映射研究和QTL映射研究之间在QTL数量和它们的效应的大小分布方面的差异。此外，我们提供所需的人口规模的QTL映射和关联映射研究，旨在检测至少50％的基础的8种不同性状类型的基因变异的人口规模。">
+  <meta property="og:description" content="Hall D, Hallingbäck HR, Wu HX (2016) Estimation of number and size of QTL effects in forest tree traits. Tree Genet Genomes 12:110. doi: 10.1007/s11295-016-1073-0
+ 映射森林树木性状的遗传结构是重要的，以了解塑造这些性状的进化力量，并促进基于基因组的育种策略的发展。我们使用30个发布的映射研究（链接和关联映射）在林木中检查影响八种类型性状的等位基因影响的数量，大小和分布。等位基因效应的大小，作为解释的表型方差测量，通常显示严重右偏态分布。我们通过改进以前由Otto和Jones开发的方法（遗传学156：2093-2107,2000），估计不同性状类别的潜在因果效应（nqtl）的数量。基于关联作图研究的nqt1的估计通常比基于连锁作图（中值为33）的那些高（中值在643）。与模拟连锁和关联映射数据的比较表明，连锁图谱研究的较低nqtl估计可以部分地解释为通常使用的全同胞家族群体内较少的因果基因座分离，但也由于有限重组的因果基因座的群体分离。基于连锁图谱研究的疾病抗性估计具有四种潜在效应的最低中值，而基于关联作图的生长性状具有约580种效应。理论上，50％的遗传变异的捕获因此将需要约200的种群大小用于连锁作图中的抗病性，而在缔合作图中的生长性状将需要约25,000。改进方法的充分性和可靠性通过应用于模拟数据成功验证。
+介绍 了解适应性和商业性状的复杂结构以评估进化力在塑造遗传变异中的作用并改善长期育种策略是非常重要的。遗传标记的引入具有快速可靠的人类遗传疾病诊断的承诺，动物和植物育种中的标记辅助选择以及对适应的遗传基础的更好理解（Neale和Savolainen 2004）。在玉米和拟南芥中，基于几个性状的遗传基础已被相对良好地鉴定为可遗传性状变异的主要部分（分别&gt; 50和&gt; 80％）由定量性状基因座（QTL ）（Buckler等人2009; Segura等人2012）。相比之下，人类的高度被认为是高度可遗传的，但大部分的遗传变异仍然无法通过全基因组关联研究（GWAS）。这种不可解释的遗传变异称为Bs缺失遗传性（Maher 2008）。最近的研究指出了每个对人类高度具有小影响的许多QTL的基础结构（Yang等人，2010）。单独地，这些QTL因此保持未通过GWAS方法检测，但是，一起，它们仍然解释大多数遗传变异。与此一致，理论工作已经显示，大效应的等位基因可能是异常的，并且已经建议等位基因效应遵循负指数分布（Orr 1998）。这反过来意味着大多数遗传将由许多具有小效应大小的等位基因解释（McKown等人2014; Porth等人2013; Rockman 2012; Yangetal。2010），并且检测到的等位基因效应的大小将形成truncateded指数分布（Otto和琼斯2000）。在开花时间inmaize和拟南芥的研究中，检测到的QTL的等位基因效应分布被描述为刚好在检测阈值以上的效应量的观察到的QTL的数量的快速增加，但是在较大的效应尺寸下显着降低，从而形成稀有大QTL效应的Blong尾（Buckler等人2009;Salomé等人2011）。当观察检测到的QTL效应的效应大小分布时，这种趋势在大多数植物中似乎是相似的（Ingvarsson和Street 2011）。 历史上，通过在极端表型或相关物种之间的交叉设计中的连锁分析检测QTL（称为QTL研究）。 QTL研究确定了与由于物理连锁导致的遗传节段聚集相关的显着影响。对于本文中处理的QTL研究，这些遗传区段在遗传距离方面的范围为0.9至60cM（Henery等人2007; Jorge等人2005; Paterson等人1988; Thummaet al.2010） 。然而，更高分辨率的QTL检测可以通过连锁不平衡（LD）分析（也称为缔合作图）进行（Lander和Schork 1994; Pritchard et al.2000）。由于基因分型技术的局限性和缺乏资源，关联映射迄今为止主要使用候选基因方法进行（Thavamanikumar等人2013）。然而，这样的研究可能不能发现意想不到的关联，因为候选基因优先在先前的QTL研究（Frewen等人2000; Ingvarsson等人2006）或通过其他研究努力指示为重要的区域中选择。尽管如此，随着大规模基因分型变得越来越负担得起，全基因组方法关联作图可能是优选的方法，因为它不受候选基因选择约束的影响。值得注意的是，QTL和关联研究常常受到相对较小的绘图群体大小的限制，导致低的统计功效，因此使得小的或甚至中等效应QTL在统计学上不显着且难以检测。这种统计力量不足的人群也可能受到影响大小估计（所谓的Beavis效应）的严重通货膨胀，特别是如果应用非常严格的显着性阈值（Beavis 1994; Beavis 1998; Xu 2003b）。过度估计的大小不仅取决于研究的力量，而且取决于真实效应的大小。如果真实效应幅度小，则需要大的样本大小（例如，千个个体）以实现无偏的效应估计（Beavis 1998）。虽然QTL和关联研究中的理论基础已经有一段时间了，但是累积的实践和经验现在表明，鉴于检测到大量可遗传变异的目的，需要大量的样本量（Lynch和Walsh 1998; Sham et al。 2000）。如果抽样标记不包括因果等位基因，或者如果标记和致病等位基因之间的LD不完全，则功率降低，并且映射群体的大小需要进一步增加（Porth等人2013）。森林树木的关联研究数量仍然有限（Thavamanikumar et al。2013），但随着目前基因组研究在许多物种中的应用（Birol等人2013; Neale和Kremer 2011; Nystedt等人2013）对复杂性状的解剖和使用用于基因组选择（GS）的分子标记的育种效率正在增加（Meuwissen等人2001）。最近在Populus的常见花园试验以及Populous trichcarpa基因组序列的完成（Tuskan等人2006）已经在毛果蛾的几个全基因组关联作图研究中产生，其中标记物的数量比以前大得多候选基因方法（Evans et al。2014; McKown et al。2014; Porth et al。2013）。然而，在森林树中的几个映射研究表明大多数性状有大量的基础QTL，到目前为止，很少有研究，有映射人口规模，提供所需的功率捕获大部分的遗传变异Neale和Savolainen 2004; Thavamanikumar etal。2013）。研究基础QTL效应的预期数量及其分布可以增强我们对重要数量性状的遗传结构的理解，设计更好的实验以揭示遗传性的遗漏因子，并促进标记辅助选择（MAS）和基因组选择的实施（Isik 2014; Meuwissen and Goddard 2010; Thavamanikumar et al。2013）。在本文中，我们建议一个修改的方法，Otto和琼斯（2000年）为了估计基础QTL的数量从所报告的表型方差的大小解释的八个不同的性状类型的重要标记。我们还使用模拟数据来验证我们的关联映射和QTL映射程序的方法，并潜在地重现关联映射研究和QTL映射研究之间在QTL数量和它们的效应的大小分布方面的差异。此外，我们提供所需的人口规模的QTL映射和关联映射研究，旨在检测至少50％的基础的8种不同性状类型的基因变异的人口规模。">
+  <meta name="twitter:description" content="Hall D, Hallingbäck HR, Wu HX (2016) Estimation of number and size of QTL effects in forest tree traits. Tree Genet Genomes 12:110. doi: 10.1007/s11295-016-1073-0
+ 映射森林树木性状的遗传结构是重要的，以了解塑造这些性状的进化力量，并促进 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E4%BD%9C%E5%9B%BE/hall2016-%E6%9E%97%E6%9C%A8qtl/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E4%BD%9C%E5%9B%BE/hall2016-%E6%9E%97%E6%9C%A8qtl/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Hall2016-林木QTL</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (88 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Hall2016-林木QTL</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (88 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Hall D, Hallingbäck HR, Wu HX (2016) Estimation of number and size of QTL effects in forest tree traits. Tree Genet Genomes 12:110. doi: 10.1007/s11295-016-1073-0</p>
+</blockquote>
+
+<p>映射森林树木性状的遗传结构是重要的，以了解塑造这些性状的进化力量，并促进基于基因组的育种策略的发展。我们使用30个发布的映射研究（链接和关联映射）在林木中检查影响八种类型性状的等位基因影响的数量，大小和分布。等位基因效应的大小，作为解释的表型方差测量，通常显示严重右偏态分布。我们通过改进以前由Otto和Jones开发的方法（遗传学156：2093-2107,2000），估计不同性状类别的潜在因果效应（nqtl）的数量。<code>基于关联作图研究的nqt1的估计通常比基于连锁作图（中值为33）的那些高（中值在643）</code>。与模拟连锁和关联映射数据的比较表明，连锁图谱研究的较低nqtl估计可以部分地解释为通常使用的全同胞家族群体内较少的因果基因座分离，但也由于有限重组的因果基因座的群体分离。基于连锁图谱研究的疾病抗性估计具有四种潜在效应的最低中值，而基于关联作图的生长性状具有约580种效应。理论上，<code>50％的遗传变异的捕获因此将需要约200的种群大小用于连锁作图中的抗病性，而在缔合作图中的生长性状将需要约25,000</code>。改进方法的充分性和可靠性通过应用于模拟数据成功验证。</p>
+
+<hr />
+
+<p>介绍
+了解适应性和商业性状的复杂结构以评估进化力在塑造遗传变异中的作用并改善长期育种策略是非常重要的。遗传标记的引入具有快速可靠的人类遗传疾病诊断的承诺，动物和植物育种中的标记辅助选择以及对适应的遗传基础的更好理解（Neale和Savolainen 2004）。在玉米和拟南芥中，基于几个性状的遗传基础已被相对良好地鉴定为可遗传性状变异的主要部分（分别&gt; 50和&gt; 80％）由定量性状基因座（QTL ）（Buckler等人2009; Segura等人2012）。相比之下，人类的高度被认为是高度可遗传的，但大部分的遗传变异仍然无法通过全基因组关联研究（GWAS）。这种不可解释的遗传变异称为Bs缺失遗传性（Maher 2008）。最近的研究指出了每个对人类高度具有小影响的许多QTL的基础结构（Yang等人，2010）。单独地，这些QTL因此保持未通过GWAS方法检测，但是，一起，它们仍然解释大多数遗传变异。与此一致，理论工作已经显示，大效应的等位基因可能是异常的，并且已经建议等位基因效应遵循负指数分布（Orr 1998）。这反过来意味着大多数遗传将由许多具有小效应大小的等位基因解释（McKown等人2014; Porth等人2013; Rockman 2012; Yangetal。2010），并且检测到的等位基因效应的大小将形成truncateded指数分布（Otto和琼斯2000）。在开花时间inmaize和拟南芥的研究中，检测到的QTL的等位基因效应分布被描述为刚好在检测阈值以上的效应量的观察到的QTL的数量的快速增加，但是在较大的效应尺寸下显着降低，从而形成稀有大QTL效应的Blong尾（Buckler等人2009;Salomé等人2011）。当观察检测到的QTL效应的效应大小分布时，这种趋势在大多数植物中似乎是相似的（Ingvarsson和Street 2011）。
+历史上，通过在极端表型或相关物种之间的交叉设计中的连锁分析检测QTL（称为QTL研究）。 QTL研究确定了与由于物理连锁导致的遗传节段聚集相关的显着影响。对于本文中处理的QTL研究，这些遗传区段在遗传距离方面的范围为0.9至60cM（Henery等人2007; Jorge等人2005; Paterson等人1988; Thummaet al.2010） 。然而，更高分辨率的QTL检测可以通过连锁不平衡（LD）分析（也称为缔合作图）进行（Lander和Schork 1994; Pritchard et al.2000）。由于基因分型技术的局限性和缺乏资源，关联映射迄今为止主要使用候选基因方法进行（Thavamanikumar等人2013）。然而，这样的研究可能不能发现意想不到的关联，因为候选基因优先在先前的QTL研究（Frewen等人2000; Ingvarsson等人2006）或通过其他研究努力指示为重要的区域中选择。尽管如此，随着大规模基因分型变得越来越负担得起，全基因组方法关联作图可能是优选的方法，因为它不受候选基因选择约束的影响。值得注意的是，QTL和关联研究常常受到相对较小的绘图群体大小的限制，导致低的统计功效，因此使得小的或甚至中等效应QTL在统计学上不显着且难以检测。这种统计力量不足的人群也可能受到影响大小估计（所谓的Beavis效应）的严重通货膨胀，特别是如果应用非常严格的显着性阈值（Beavis 1994; Beavis 1998; Xu 2003b）。过度估计的大小不仅取决于研究的力量，而且取决于真实效应的大小。如果真实效应幅度小，则需要大的样本大小（例如，千个个体）以实现无偏的效应估计（Beavis 1998）。虽然QTL和关联研究中的理论基础已经有一段时间了，但是累积的实践和经验现在表明，鉴于检测到大量可遗传变异的目的，需要大量的样本量（Lynch和Walsh 1998; Sham et al。 2000）。如果抽样标记不包括因果等位基因，或者如果标记和致病等位基因之间的LD不完全，则功率降低，并且映射群体的大小需要进一步增加（Porth等人2013）。森林树木的关联研究数量仍然有限（Thavamanikumar et al。2013），但随着目前基因组研究在许多物种中的应用（Birol等人2013; Neale和Kremer 2011; Nystedt等人2013）对复杂性状的解剖和使用用于基因组选择（GS）的分子标记的育种效率正在增加（Meuwissen等人2001）。最近在Populus的常见花园试验以及Populous trichcarpa基因组序列的完成（Tuskan等人2006）已经在毛果蛾的几个全基因组关联作图研究中产生，其中标记物的数量比以前大得多候选基因方法（Evans et al。2014; McKown et al。2014; Porth et al。2013）。然而，在森林树中的几个映射研究表明大多数性状有大量的基础QTL，到目前为止，很少有研究，有映射人口规模，提供所需的功率捕获大部分的遗传变异Neale和Savolainen 2004; Thavamanikumar etal。2013）。研究基础QTL效应的预期数量及其分布可以增强我们对重要数量性状的遗传结构的理解，设计更好的实验以揭示遗传性的遗漏因子，并促进标记辅助选择（MAS）和基因组选择的实施（Isik 2014; Meuwissen and Goddard 2010; Thavamanikumar et al。2013）。在本文中，我们建议一个修改的方法，Otto和琼斯（2000年）为了估计基础QTL的数量从所报告的表型方差的大小解释的八个不同的性状类型的重要标记。我们还使用模拟数据来验证我们的关联映射和QTL映射程序的方法，并潜在地重现关联映射研究和QTL映射研究之间在QTL数量和它们的效应的大小分布方面的差异。此外，我们提供所需的人口规模的QTL映射和关联映射研究，旨在检测至少50％的基础的8种不同性状类型的基因变异的人口规模。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/bayesian/hallander-2016%E8%B4%9D%E5%8F%B6%E6%96%AF-%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0-%E5%A4%9A%E5%8F%98%E9%87%8F/" data-toggle="tooltip" data-placement="top" title="Hallander-2016贝叶斯-遗传参数-多变量">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%AB%9E%E4%BA%89/hadasch2017/" data-toggle="tooltip" data-placement="top" title="Hadasch2017">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

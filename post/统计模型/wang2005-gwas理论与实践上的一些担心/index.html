@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Wang2005-gwas理论与实践上的一些担心</title>
+  <meta property="og:title" content="Wang2005-gwas理论与实践上的一些担心" />
+  <meta name="twitter:title" content="Wang2005-gwas理论与实践上的一些担心" />
+  <meta name="description" content="Wang WYS, Barratt BJ, Clayton DG, Todd JA (2005) Genome-wide association studies: theoretical and practical concerns. Nat Rev Genet 6:109–118. doi: 10.1038/nrg1522
+摘要|为了完全了解常见疾病基础的等位基因变异，需要对具有和不具有疾病的许多个体进行完全的基因组测序。这在技术上仍然不可行。然而，最近已经可能通过在全基因组关联研究中对大量常见SNP进行基因分型来进行基因组的部分调查。在这里，我们概述了需要考虑的主要因素 - 包括常见疾病的等位基因结构，样本大小，地图密度和样本收集偏差的模型，以便优化识别真正的疾病易感性位点的成本效率。
+ 常见疾病的发展起因于许多环境因素和许多基因的等位基因之间的复杂相互作用。识别影响发展疾病风险的等位基因将有助于了解疾病病因和亚分类。在过去30年中，多因素人类疾病的遗传研究已经确定了〜50个基因及其等位基因变异，可以认为是不可逆的或真阳性1,2。然而，可能有数百个易感基因座增加了每种常见疾病的风险。关键问题是如何利用我们对基因组序列及其在群体中的变化的知识的显着的最近的改进，以及基因分型技术的进步，以最低的成本加速易感性基因座发现。 在本期杂志的一篇附随评论中，Hirschorn和Daly3为全基因组关联方法提出了一个案例，“其中跨基因组的一组密集的SNP被基因分型以检测最常见的遗传变异在疾病中的作用或确定作为疾病风险因素的可遗传数量性状“。他们建议谨慎使用最新的高通量方法进行基因分型4 - 8，因为失败的成本对于设计和执行具有低统计功效和不充分的质量控制的研究可能是巨大的。在这里，在全基因组关联研究和最小化每个真阳性的成本的上下文中，我们更详细地讨论使用大样本大小根据可行的最小等位基因风险的理由，检测，单核苷酸多态性的选择基因分型，研究设计效率和这些数据的统计分析的某些方面。我们不主张放弃对共同疾病的联系研究9-12。我们还不能说是否LINKAGE ANALYSIS方法在一般意义上是“失败”的，因为几乎所有已发表的研究都使用小样本大小13（少于500个受影响的SIB对），所以这不能单独用作执行的理由全基因组关联研究。基因组范围的链接分析将仍然是一个重要的方法，直到技术可用，允许在实际成本和高吞吐量关联分析罕见和共同变体。 此外，如前所述14，我们查看全基因组关联研究本身不是一种新的方法，而是作为一种更成本有效的方式来调查共同遗传变异相比基因功能候选基因方法。后一种方法已经成功，但是由于迄今为止仅研究了少量基因，并且如我们所讨论的，样品量可能太小，尽管进行了大量的研究和大量的努力，但很少有真正的阳性。通过利用位于邻近基因座（链接区域（LD））的等位基因的非随机关联，这是基因组5,15-18的重要和广泛的特征，现在可以在关联研究中调查sig-发生在高LD区域的大量基因的共同变异的显着比例。可以获得成本效率，因为不必对与其他SNP处于强LD的SNP进行基因分型;这可以通过选择捕获区域中大多数等位基因变异的SNP的子集（称为标签SNP（参见在线链接框））来完成。将讨论该策略的理由和限制，同时铭记标签SNP在检测稀有可疑性变体方面的不足，并且根据定义，它们在低LD区域缺乏成本节约优势，这可能构成20％的人类基因组。除了讨论这些更实际的问题，我们首先讨论关于两个尚未知的参数的理论考虑，这些参数决定了关联研究的潜在稳定性 - 群体中易感性等位基因的频率及其影响的大小疾病表型。
+常见疾病的等位基因谱 疾病的等位基因谱或结构指存在的疾病变异的数量，它们的等位基因频率和它们赋予的风险9,20,21。来自理论模型和实际实验的许多来源提供了对常见疾病的等位基因结构的了解，表明涉及的基因座的多样性及其作用范围。不管在疾病之间不同的光谱的确切形状如何，倾向于疾病的变体的等位基因频率和它们的表型效应的强度表明遗传相关性研究的潜在统计学力量，并因此表明它们成功的可能性和成本每个真阳性结果。在这里，我们首先讨论这两个因素可能对全基因组关联研究的可行性的影响，然后提供迄今为止已知的常见疾病的等位基因谱的概述。应该注意的是，其他因素也影响统计能力 - 例如，混杂因素，如人口结构和地理，错误分类错误和选择偏差 - 其中一些因素将在后面的章节中讨论。 对关联研究的影响。图1显示如果易感性等位基因具有小于0.1的小分子频率（MAF）和它们的效应大小小于1.3的ODDS比率，则超过10,000个病例和10,000个对照（或10,000个家族）将需要对疾病协会实现令人信服的统计支持。我们无法以任何准确性估计疾病易感性等位基因在该范围之外的比例（即，优势比为1.3或更高和MAF&gt; 0.1的那些），因此在全基因组关联研究中是可行的，这个限制在下面讨论。然而，我们建议，与目前的候选基因和基于连锁的方法相比，旨在检测这种等位基因的研究 - 需要分析数千个样品，而不是数百个样品 - 将提供每个真阳性结果的总体更低的成本。 对6,000个病例和6,000个对照（或6,000个家庭，具有2个亲本和受影响的后代）的研究将在理想条件下提供约0％，3％，43％和94％的功率以检测疾病易感性变异，优势比1.3和MAF为0.01,0.02,0.05和0.1，以相应的顺序，P &lt;10-6的显着水平（图1）。由于需要允许任何给定基因座或区域与疾病真正相关的非常小的先验概率3,14,22,24,103,104，已经提出了P &lt;10-6级的显着性阈值用于全基因组关联研究。对于优势比为1.2或更小（例如，对于MAF为0.1的34％）的功率存在急剧的下降（图1）。相反，对于优势比为2，即使对于MAF为0.005，也存在76％的功率。然而，我们怀疑这种高比值比在常见疾病中很少见（见下文）。 毫无疑问，即使是最佳设计的研究，目标是最小MAF为10％和优势比为1.3，由于许多因素，包括基因型和表型的错误分类和混杂因素，将具有比预期更低的功率，所以甚至更大的样本大小可能是必需的。然而，应当注意，在12,000例病例和对照的研究中，例如，可以在几乎没有功率损失的阶段进行基因分型。这提供了基因分型成本的显着节省，因为大多数基因分型在样品总数（约20-30％）的第一阶段进行（参见REFS 3,25，关于这些方法）。 在下面的章节中，我们讨论常见疾病的等位基因谱的理论模型，并估计其可能的分布。 易感基因座的等位基因频率。两种极化视图主导了许多关于常见疾病的等位基因频率的文献9,21。常见疾病/常见变异（CDCV）假说提出，如其名称所暗示的，常见疾病是常见变异的结果20。在这种模式下，疾病易感性被认为是由几种常见变异体的联合作用引起的，而无关的受影响个体具有显着比例的疾病等位基因。 CDCV的极端替代方案是经典疾病异质性假说（或多重稀有变异假说），其中疾病易感性是由于不同个体的不同遗传变异，疾病易感性等位基因具有低人口频率26（MAF小于大于0.01）。 最常见的疾病的等位基因谱可能落在这两个极端之间。经典异质性模型，其中多个稀有变体贡献附加地和独立地（在生物学意义上），导致相关受试者的性状之间的相关性与它们之间的关系的距离线性地下降27（图2）。这是疾病等位基因共享的线性减少与关系的增加的关系的结果。相反，如果一种常见疾病主要是由于几个基因座与常见等位基因的相互依赖的相互作用，则具有相关性程度的风险的下降将比线性下降更快。这种相关性是否适用于不同的常见疾病和性状的研究产生了不同的结果，为一些癌症28和身高29中的遗传加和性提供了支持，并且在1型糖尿病30中具有非加和性（参见在线链接框）。 用于支持这两个假设的论据在很大程度上基于人口遗传理论，因此将受这些理论的基本假设的影响20,31。经验证据表明高频和低频等位基因都有助于常见疾病2,32-38。例如，在对映射的量化位点（QTL）的评价中，大约50％的候选因果变异体具有超过0.05的MAF，而另一半具有较低的MAF9。我们建议，最好避免罕见的与常见的疾病易感性等位基因的极化，而是考虑疾病变异体的等位基因谱与所有变体（有或没有表型效应）在人类中的差异基因组（图3）。最中性的假说是疾病变体的等位基因谱与所有遗传变体的一般谱一致17,39,40。在这种中性模型下，虽然大多数易感变异是罕见的（MAF小于0.01），MAF大于0.01的SNP将占个体之间的遗传差异的90％以上并且应该显着地促进表型17,41。与总体等位基因谱相比，CDCV模型可以被认为是朝向常见变异的转变，并且异质性模型朝向罕见变异40转移（图3）。基因组的蛋白编码区具有比一般基因组更低的MAF的多态性，因此，导致非同义变化的疾病变体42,43可能导致罕见的变化。不同的进化力可导致不同的光谱移动;例如，PURIFYING SELECTION可能会导致罕见的shift31。相比之下，由免疫应答介导的疾病，如自身免疫性疾病，可能是由阳性选择的等位基因引起的，以提供对传染病的抗性，因此达到更高的人群频率36。类似地，诸如2型糖尿病（参见在线链接框）的代谢疾病，其中选择等位基因用于对饥饿或能量平衡的适应性反应，可能影响现代环境中的易感性 - 节俭基因假说44。因此，等位基因谱将在不同的常见疾病之间变化，并且可能由等位基因频率26,32的复杂混合组成，接近图1中所示的弯曲L形分布。注意，如果表示0和1.0之间的等位基因频率，则曲线将是U形，而在仅考虑次要等位基因时代替0至0.5）。 对于基因组作为整体，已经预测，对于MAF大于0.01（REFS 41,45）的预期的10至15百万个SNP，大约一半具有大于0.1的MAF，另一半具有MAF， 0.01至0.1由于赋予轻度至中度风险的疾病变异数可能很大（如下一部分所解释），则除非等位基因谱的变化是严重的 - 鉴于遗传和环境的多样性，这似乎不大可能在常见疾病中的作用 - 可能有数百种常见的和罕见的变体，其导致每种常见人类疾病的家族聚集。 作为示例，使用图3中的假设频谱， 3，考虑一种复杂的疾病，其中有20个疾病易感性变异在中性模型下促成该疾病，其中这些变异体的MAF大于0.1，并且它们的优势比足够高以使它们在全基因组中被鉴定协会研究。在这种情况下，罕见的移位可能导致〜10个变体，MAF大于0.1，并且共同移位可能导致〜40个变体。对全基因组关联分析的意义是基于常见变异体的存在的实验可能产生大量的阳性结果，除非等位基因谱中存在极端的变化 与疾病易感性变异相关的风险。关于等位基因结构的第二个主要问题是由个体变体赋予的遗传风险的分布。虽然不可能预测任何给定的常见疾病的等位基因效应的准确分布，但是几个证据线指向潜在的潜在分布。例如，这些证据来自于在果蝇，作物和家畜中的QTL研究中使用诱变，选择和连锁方法，以及对人类疾病的啮齿动物模型的研究。这些研究表明遗传变异体的表型效应大小的分布与少数具有大效应的遗传基因座和具有小效应的大量基因座的存在一致9,46-54。所得到的弯曲的L形分布已经通过使用指数或者分布（参见图4中的图，其具有与图3中的曲线不同的形状和原点）来建模。这些结果与目前的进化理论一致，其中通过将基因DRIFT和突变效应分解为经典适应模型55，QTL效应的预期分布是指数56。最近的研究结果表明，等位基因变异频繁影响基因表达和外显子剪接57-60-这可能具有比影响人类表型的多影响更小的效应。并且具有影响基因表达调节的等位基因的基因座可以通过连锁分析61,62检测。 迄今为止已经确定的大多数不可辩驳的疾病易感性变异体 - 主要来自功能 - 候选者相关性研究 - 具有1.">
+  <meta property="og:description" content="Wang WYS, Barratt BJ, Clayton DG, Todd JA (2005) Genome-wide association studies: theoretical and practical concerns. Nat Rev Genet 6:109–118. doi: 10.1038/nrg1522
+摘要|为了完全了解常见疾病基础的等位基因变异，需要对具有和不具有疾病的许多个体进行完全的基因组测序。这在技术上仍然不可行。然而，最近已经可能通过在全基因组关联研究中对大量常见SNP进行基因分型来进行基因组的部分调查。在这里，我们概述了需要考虑的主要因素 - 包括常见疾病的等位基因结构，样本大小，地图密度和样本收集偏差的模型，以便优化识别真正的疾病易感性位点的成本效率。
+ 常见疾病的发展起因于许多环境因素和许多基因的等位基因之间的复杂相互作用。识别影响发展疾病风险的等位基因将有助于了解疾病病因和亚分类。在过去30年中，多因素人类疾病的遗传研究已经确定了〜50个基因及其等位基因变异，可以认为是不可逆的或真阳性1,2。然而，可能有数百个易感基因座增加了每种常见疾病的风险。关键问题是如何利用我们对基因组序列及其在群体中的变化的知识的显着的最近的改进，以及基因分型技术的进步，以最低的成本加速易感性基因座发现。 在本期杂志的一篇附随评论中，Hirschorn和Daly3为全基因组关联方法提出了一个案例，“其中跨基因组的一组密集的SNP被基因分型以检测最常见的遗传变异在疾病中的作用或确定作为疾病风险因素的可遗传数量性状“。他们建议谨慎使用最新的高通量方法进行基因分型4 - 8，因为失败的成本对于设计和执行具有低统计功效和不充分的质量控制的研究可能是巨大的。在这里，在全基因组关联研究和最小化每个真阳性的成本的上下文中，我们更详细地讨论使用大样本大小根据可行的最小等位基因风险的理由，检测，单核苷酸多态性的选择基因分型，研究设计效率和这些数据的统计分析的某些方面。我们不主张放弃对共同疾病的联系研究9-12。我们还不能说是否LINKAGE ANALYSIS方法在一般意义上是“失败”的，因为几乎所有已发表的研究都使用小样本大小13（少于500个受影响的SIB对），所以这不能单独用作执行的理由全基因组关联研究。基因组范围的链接分析将仍然是一个重要的方法，直到技术可用，允许在实际成本和高吞吐量关联分析罕见和共同变体。 此外，如前所述14，我们查看全基因组关联研究本身不是一种新的方法，而是作为一种更成本有效的方式来调查共同遗传变异相比基因功能候选基因方法。后一种方法已经成功，但是由于迄今为止仅研究了少量基因，并且如我们所讨论的，样品量可能太小，尽管进行了大量的研究和大量的努力，但很少有真正的阳性。通过利用位于邻近基因座（链接区域（LD））的等位基因的非随机关联，这是基因组5,15-18的重要和广泛的特征，现在可以在关联研究中调查sig-发生在高LD区域的大量基因的共同变异的显着比例。可以获得成本效率，因为不必对与其他SNP处于强LD的SNP进行基因分型;这可以通过选择捕获区域中大多数等位基因变异的SNP的子集（称为标签SNP（参见在线链接框））来完成。将讨论该策略的理由和限制，同时铭记标签SNP在检测稀有可疑性变体方面的不足，并且根据定义，它们在低LD区域缺乏成本节约优势，这可能构成20％的人类基因组。除了讨论这些更实际的问题，我们首先讨论关于两个尚未知的参数的理论考虑，这些参数决定了关联研究的潜在稳定性 - 群体中易感性等位基因的频率及其影响的大小疾病表型。
+常见疾病的等位基因谱 疾病的等位基因谱或结构指存在的疾病变异的数量，它们的等位基因频率和它们赋予的风险9,20,21。来自理论模型和实际实验的许多来源提供了对常见疾病的等位基因结构的了解，表明涉及的基因座的多样性及其作用范围。不管在疾病之间不同的光谱的确切形状如何，倾向于疾病的变体的等位基因频率和它们的表型效应的强度表明遗传相关性研究的潜在统计学力量，并因此表明它们成功的可能性和成本每个真阳性结果。在这里，我们首先讨论这两个因素可能对全基因组关联研究的可行性的影响，然后提供迄今为止已知的常见疾病的等位基因谱的概述。应该注意的是，其他因素也影响统计能力 - 例如，混杂因素，如人口结构和地理，错误分类错误和选择偏差 - 其中一些因素将在后面的章节中讨论。 对关联研究的影响。图1显示如果易感性等位基因具有小于0.1的小分子频率（MAF）和它们的效应大小小于1.3的ODDS比率，则超过10,000个病例和10,000个对照（或10,000个家族）将需要对疾病协会实现令人信服的统计支持。我们无法以任何准确性估计疾病易感性等位基因在该范围之外的比例（即，优势比为1.3或更高和MAF&gt; 0.1的那些），因此在全基因组关联研究中是可行的，这个限制在下面讨论。然而，我们建议，与目前的候选基因和基于连锁的方法相比，旨在检测这种等位基因的研究 - 需要分析数千个样品，而不是数百个样品 - 将提供每个真阳性结果的总体更低的成本。 对6,000个病例和6,000个对照（或6,000个家庭，具有2个亲本和受影响的后代）的研究将在理想条件下提供约0％，3％，43％和94％的功率以检测疾病易感性变异，优势比1.3和MAF为0.01,0.02,0.05和0.1，以相应的顺序，P &lt;10-6的显着水平（图1）。由于需要允许任何给定基因座或区域与疾病真正相关的非常小的先验概率3,14,22,24,103,104，已经提出了P &lt;10-6级的显着性阈值用于全基因组关联研究。对于优势比为1.2或更小（例如，对于MAF为0.1的34％）的功率存在急剧的下降（图1）。相反，对于优势比为2，即使对于MAF为0.005，也存在76％的功率。然而，我们怀疑这种高比值比在常见疾病中很少见（见下文）。 毫无疑问，即使是最佳设计的研究，目标是最小MAF为10％和优势比为1.3，由于许多因素，包括基因型和表型的错误分类和混杂因素，将具有比预期更低的功率，所以甚至更大的样本大小可能是必需的。然而，应当注意，在12,000例病例和对照的研究中，例如，可以在几乎没有功率损失的阶段进行基因分型。这提供了基因分型成本的显着节省，因为大多数基因分型在样品总数（约20-30％）的第一阶段进行（参见REFS 3,25，关于这些方法）。 在下面的章节中，我们讨论常见疾病的等位基因谱的理论模型，并估计其可能的分布。 易感基因座的等位基因频率。两种极化视图主导了许多关于常见疾病的等位基因频率的文献9,21。常见疾病/常见变异（CDCV）假说提出，如其名称所暗示的，常见疾病是常见变异的结果20。在这种模式下，疾病易感性被认为是由几种常见变异体的联合作用引起的，而无关的受影响个体具有显着比例的疾病等位基因。 CDCV的极端替代方案是经典疾病异质性假说（或多重稀有变异假说），其中疾病易感性是由于不同个体的不同遗传变异，疾病易感性等位基因具有低人口频率26（MAF小于大于0.01）。 最常见的疾病的等位基因谱可能落在这两个极端之间。经典异质性模型，其中多个稀有变体贡献附加地和独立地（在生物学意义上），导致相关受试者的性状之间的相关性与它们之间的关系的距离线性地下降27（图2）。这是疾病等位基因共享的线性减少与关系的增加的关系的结果。相反，如果一种常见疾病主要是由于几个基因座与常见等位基因的相互依赖的相互作用，则具有相关性程度的风险的下降将比线性下降更快。这种相关性是否适用于不同的常见疾病和性状的研究产生了不同的结果，为一些癌症28和身高29中的遗传加和性提供了支持，并且在1型糖尿病30中具有非加和性（参见在线链接框）。 用于支持这两个假设的论据在很大程度上基于人口遗传理论，因此将受这些理论的基本假设的影响20,31。经验证据表明高频和低频等位基因都有助于常见疾病2,32-38。例如，在对映射的量化位点（QTL）的评价中，大约50％的候选因果变异体具有超过0.05的MAF，而另一半具有较低的MAF9。我们建议，最好避免罕见的与常见的疾病易感性等位基因的极化，而是考虑疾病变异体的等位基因谱与所有变体（有或没有表型效应）在人类中的差异基因组（图3）。最中性的假说是疾病变体的等位基因谱与所有遗传变体的一般谱一致17,39,40。在这种中性模型下，虽然大多数易感变异是罕见的（MAF小于0.01），MAF大于0.01的SNP将占个体之间的遗传差异的90％以上并且应该显着地促进表型17,41。与总体等位基因谱相比，CDCV模型可以被认为是朝向常见变异的转变，并且异质性模型朝向罕见变异40转移（图3）。基因组的蛋白编码区具有比一般基因组更低的MAF的多态性，因此，导致非同义变化的疾病变体42,43可能导致罕见的变化。不同的进化力可导致不同的光谱移动;例如，PURIFYING SELECTION可能会导致罕见的shift31。相比之下，由免疫应答介导的疾病，如自身免疫性疾病，可能是由阳性选择的等位基因引起的，以提供对传染病的抗性，因此达到更高的人群频率36。类似地，诸如2型糖尿病（参见在线链接框）的代谢疾病，其中选择等位基因用于对饥饿或能量平衡的适应性反应，可能影响现代环境中的易感性 - 节俭基因假说44。因此，等位基因谱将在不同的常见疾病之间变化，并且可能由等位基因频率26,32的复杂混合组成，接近图1中所示的弯曲L形分布。注意，如果表示0和1.0之间的等位基因频率，则曲线将是U形，而在仅考虑次要等位基因时代替0至0.5）。 对于基因组作为整体，已经预测，对于MAF大于0.01（REFS 41,45）的预期的10至15百万个SNP，大约一半具有大于0.1的MAF，另一半具有MAF， 0.01至0.1由于赋予轻度至中度风险的疾病变异数可能很大（如下一部分所解释），则除非等位基因谱的变化是严重的 - 鉴于遗传和环境的多样性，这似乎不大可能在常见疾病中的作用 - 可能有数百种常见的和罕见的变体，其导致每种常见人类疾病的家族聚集。 作为示例，使用图3中的假设频谱， 3，考虑一种复杂的疾病，其中有20个疾病易感性变异在中性模型下促成该疾病，其中这些变异体的MAF大于0.1，并且它们的优势比足够高以使它们在全基因组中被鉴定协会研究。在这种情况下，罕见的移位可能导致〜10个变体，MAF大于0.1，并且共同移位可能导致〜40个变体。对全基因组关联分析的意义是基于常见变异体的存在的实验可能产生大量的阳性结果，除非等位基因谱中存在极端的变化 与疾病易感性变异相关的风险。关于等位基因结构的第二个主要问题是由个体变体赋予的遗传风险的分布。虽然不可能预测任何给定的常见疾病的等位基因效应的准确分布，但是几个证据线指向潜在的潜在分布。例如，这些证据来自于在果蝇，作物和家畜中的QTL研究中使用诱变，选择和连锁方法，以及对人类疾病的啮齿动物模型的研究。这些研究表明遗传变异体的表型效应大小的分布与少数具有大效应的遗传基因座和具有小效应的大量基因座的存在一致9,46-54。所得到的弯曲的L形分布已经通过使用指数或者分布（参见图4中的图，其具有与图3中的曲线不同的形状和原点）来建模。这些结果与目前的进化理论一致，其中通过将基因DRIFT和突变效应分解为经典适应模型55，QTL效应的预期分布是指数56。最近的研究结果表明，等位基因变异频繁影响基因表达和外显子剪接57-60-这可能具有比影响人类表型的多影响更小的效应。并且具有影响基因表达调节的等位基因的基因座可以通过连锁分析61,62检测。 迄今为止已经确定的大多数不可辩驳的疾病易感性变异体 - 主要来自功能 - 候选者相关性研究 - 具有1.">
+  <meta name="twitter:description" content="Wang WYS, Barratt BJ, Clayton DG, Todd JA (2005) Genome-wide association studies: theoretical and practical concerns. Nat Rev Genet 6:109–118. doi: 10.1038/nrg1522
+摘要|为了完全了解常见疾病基础的等位基因变异，需要对具有和不具有疾病的许 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/wang2005-gwas%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8B%85%E5%BF%83/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/wang2005-gwas%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8B%85%E5%BF%83/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Wang2005-gwas理论与实践上的一些担心</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (86 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Wang2005-gwas理论与实践上的一些担心</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (86 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Wang WYS, Barratt BJ, Clayton DG, Todd JA (2005) Genome-wide association studies: theoretical and practical concerns. Nat Rev Genet 6:109–118. doi: 10.1038/nrg1522</p>
+
+<p>摘要|为了完全了解常见疾病基础的等位基因变异，需要对具有和不具有疾病的许多个体进行完全的基因组测序。这在技术上仍然不可行。然而，最近已经可能通过在全基因组关联研究中对大量常见SNP进行基因分型来进行基因组的部分调查。在这里，我们概述了<strong>需要考虑的主要因素 - 包括常见疾病的等位基因结构，样本大小，地图密度和样本收集偏差的模型，以便优化识别真正的疾病易感性位点的成本效率</strong>。</p>
+</blockquote>
+
+<p><strong>常见疾病的发展起因于许多环境因素和许多基因的等位基因之间的复杂相互作用。识别影响发展疾病风险的等位基因将有助于了解疾病病因和亚分类。</strong>在过去30年中，多因素人类疾病的遗传研究已经确定了〜50个基因及其等位基因变异，可以认为是不可逆的或真阳性1,2。然而，可能有数百个易感基因座增加了每种常见疾病的风险。关键问题是如何利用我们对基因组序列及其在群体中的变化的知识的显着的最近的改进，以及基因分型技术的进步，以最低的成本加速易感性基因座发现。
+在本期杂志的一篇附随评论中，Hirschorn和Daly3为全基因组关联方法提出了一个案例，“其中跨基因组的一组密集的SNP被基因分型以检测最常见的遗传变异在疾病中的作用或确定作为疾病风险因素的可遗传数量性状“。他们建议谨慎使用最新的高通量方法进行基因分型4  -  8，因为失败的成本对于设计和执行具有低统计功效和不充分的质量控制的研究可能是巨大的。在这里，在全基因组关联研究和最小化每个真阳性的成本的上下文中，我们更详细地讨论使用大样本大小根据可行的最小等位基因风险的理由，检测，单核苷酸多态性的选择基因分型，研究设计效率和这些数据的统计分析的某些方面。我们不主张放弃对共同疾病的联系研究9-12。我们还不能说是否LINKAGE ANALYSIS方法在一般意义上是“失败”的，因为几乎所有已发表的研究都使用小样本大小13（少于500个受影响的SIB对），所以这不能单独用作执行的理由全基因组关联研究。基因组范围的链接分析将仍然是一个重要的方法，直到技术可用，允许在实际成本和高吞吐量关联分析罕见和共同变体。
+此外，如前所述14，我们查看全基因组关联研究本身不是一种新的方法，而是作为一种更成本有效的方式来调查共同遗传变异相比基因功能候选基因方法。后一种方法已经成功，但是由于迄今为止仅研究了少量基因，并且如我们所讨论的，样品量可能太小，尽管进行了大量的研究和大量的努力，但很少有真正的阳性。通过利用位于邻近基因座（链接区域（LD））的等位基因的非随机关联，这是基因组5,15-18的重要和广泛的特征，现在可以在关联研究中调查sig-发生在高LD区域的大量基因的共同变异的显着比例。可以获得成本效率，因为不必对与其他SNP处于强LD的SNP进行基因分型;这可以通过选择捕获区域中大多数等位基因变异的SNP的子集（称为标签SNP（参见在线链接框））来完成。将讨论该策略的理由和限制，同时铭记标签SNP在检测稀有可疑性变体方面的不足，并且根据定义，它们在低LD区域缺乏成本节约优势，这可能构成20％的人类基因组。除了讨论这些更实际的问题，我们首先讨论关于两个尚未知的参数的理论考虑，这些参数决定了关联研究的潜在稳定性 - 群体中易感性等位基因的频率及其影响的大小疾病表型。</p>
+
+<p>常见疾病的等位基因谱
+疾病的等位基因谱或结构指存在的疾病变异的数量，它们的等位基因频率和它们赋予的风险9,20,21。来自理论模型和实际实验的许多来源提供了对常见疾病的等位基因结构的了解，表明涉及的基因座的多样性及其作用范围。不管在疾病之间不同的光谱的确切形状如何，倾向于疾病的变体的等位基因频率和它们的表型效应的强度表明遗传相关性研究的潜在统计学力量，并因此表明它们成功的可能性和成本每个真阳性结果。在这里，我们首先讨论这两个因素可能对全基因组关联研究的可行性的影响，然后提供迄今为止已知的常见疾病的等位基因谱的概述。应该注意的是，其他因素也影响统计能力 - 例如，混杂因素，如人口结构和地理，错误分类错误和选择偏差 - 其中一些因素将在后面的章节中讨论。
+对关联研究的影响。图1显示如果易感性等位基因具有小于0.1的小分子频率（MAF）和它们的效应大小小于1.3的ODDS比率，则超过10,000个病例和10,000个对照（或10,000个家族）将需要对疾病协会实现令人信服的统计支持。我们无法以任何准确性估计疾病易感性等位基因在该范围之外的比例（即，优势比为1.3或更高和MAF&gt; 0.1的那些），因此在全基因组关联研究中是可行的，这个限制在下面讨论。然而，我们建议，与目前的候选基因和基于连锁的方法相比，旨在检测这种等位基因的研究 - 需要分析数千个样品，而不是数百个样品 - 将提供每个真阳性结果的总体更低的成本。
+对6,000个病例和6,000个对照（或6,000个家庭，具有2个亲本和受影响的后代）的研究将在理想条件下提供约0％，3％，43％和94％的功率以检测疾病易感性变异，优势比1.3和MAF为0.01,0.02,0.05和0.1，以相应的顺序，P &lt;10-6的显着水平（图1）。由于需要允许任何给定基因座或区域与疾病真正相关的非常小的先验概率3,14,22,24,103,104，已经提出了P &lt;10-6级的显着性阈值用于全基因组关联研究。对于优势比为1.2或更小（例如，对于MAF为0.1的34％）的功率存在急剧的下降（图1）。相反，对于优势比为2，即使对于MAF为0.005，也存在76％的功率。然而，我们怀疑这种高比值比在常见疾病中很少见（见下文）。
+毫无疑问，即使是最佳设计的研究，目标是最小MAF为10％和优势比为1.3，由于许多因素，包括基因型和表型的错误分类和混杂因素，将具有比预期更低的功率，所以甚至更大的样本大小可能是必需的。然而，应当注意，在12,000例病例和对照的研究中，例如，可以在几乎没有功率损失的阶段进行基因分型。这提供了基因分型成本的显着节省，因为大多数基因分型在样品总数（约20-30％）的第一阶段进行（参见REFS 3,25，关于这些方法）。
+在下面的章节中，我们讨论常见疾病的等位基因谱的理论模型，并估计其可能的分布。
+易感基因座的等位基因频率。两种极化视图主导了许多关于常见疾病的等位基因频率的文献9,21。常见疾病/常见变异（CDCV）假说提出，如其名称所暗示的，常见疾病是常见变异的结果20。在这种模式下，疾病易感性被认为是由几种常见变异体的联合作用引起的，而无关的受影响个体具有显着比例的疾病等位基因。
+CDCV的极端替代方案是经典疾病异质性假说（或多重稀有变异假说），其中疾病易感性是由于不同个体的不同遗传变异，疾病易感性等位基因具有低人口频率26（MAF小于大于0.01）。
+最常见的疾病的等位基因谱可能落在这两个极端之间。经典异质性模型，其中多个稀有变体贡献附加地和独立地（在生物学意义上），导致相关受试者的性状之间的相关性与它们之间的关系的距离线性地下降27（图2）。这是疾病等位基因共享的线性减少与关系的增加的关系的结果。相反，如果一种常见疾病主要是由于几个基因座与常见等位基因的相互依赖的相互作用，则具有相关性程度的风险的下降将比线性下降更快。这种相关性是否适用于不同的常见疾病和性状的研究产生了不同的结果，为一些癌症28和身高29中的遗传加和性提供了支持，并且在1型糖尿病30中具有非加和性（参见在线链接框）。
+用于支持这两个假设的论据在很大程度上基于人口遗传理论，因此将受这些理论的基本假设的影响20,31。经验证据表明高频和低频等位基因都有助于常见疾病2,32-38。例如，在对映射的量化位点（QTL）的评价中，大约50％的候选因果变异体具有超过0.05的MAF，而另一半具有较低的MAF9。我们建议，最好避免罕见的与常见的疾病易感性等位基因的极化，而是考虑疾病变异体的等位基因谱与所有变体（有或没有表型效应）在人类中的差异基因组（图3）。最中性的假说是疾病变体的等位基因谱与所有遗传变体的一般谱一致17,39,40。在这种中性模型下，虽然大多数易感变异是罕见的（MAF小于0.01），MAF大于0.01的SNP将占个体之间的遗传差异的90％以上并且应该显着地促进表型17,41。与总体等位基因谱相比，CDCV模型可以被认为是朝向常见变异的转变，并且异质性模型朝向罕见变异40转移（图3）。基因组的蛋白编码区具有比一般基因组更低的MAF的多态性，因此，导致非同义变化的疾病变体42,43可能导致罕见的变化。不同的进化力可导致不同的光谱移动;例如，PURIFYING SELECTION可能会导致罕见的shift31。相比之下，由免疫应答介导的疾病，如自身免疫性疾病，可能是由阳性选择的等位基因引起的，以提供对传染病的抗性，因此达到更高的人群频率36。类似地，诸如2型糖尿病（参见在线链接框）的代谢疾病，其中选择等位基因用于对饥饿或能量平衡的适应性反应，可能影响现代环境中的易感性 - 节俭基因假说44。因此，等位基因谱将在不同的常见疾病之间变化，并且可能由等位基因频率26,32的复杂混合组成，接近图1中所示的弯曲L形分布。注意，如果表示0和1.0之间的等位基因频率，则曲线将是U形，而在仅考虑次要等位基因时代替0至0.5）。
+对于基因组作为整体，已经预测，对于MAF大于0.01（REFS 41,45）的预期的10至15百万个SNP，大约一半具有大于0.1的MAF，另一半具有MAF， 0.01至0.1由于赋予轻度至中度风险的疾病变异数可能很大（如下一部分所解释），则除非等位基因谱的变化是严重的 - 鉴于遗传和环境的多样性，这似乎不大可能在常见疾病中的作用 - 可能有数百种常见的和罕见的变体，其导致每种常见人类疾病的家族聚集。
+作为示例，使用图3中的假设频谱， 3，考虑一种复杂的疾病，其中有20个疾病易感性变异在中性模型下促成该疾病，其中这些变异体的MAF大于0.1，并且它们的优势比足够高以使它们在全基因组中被鉴定协会研究。在这种情况下，罕见的移位可能导致〜10个变体，MAF大于0.1，并且共同移位可能导致〜40个变体。对全基因组关联分析的意义是基于常见变异体的存在的实验可能产生大量的阳性结果，除非等位基因谱中存在极端的变化
+与疾病易感性变异相关的风险。关于等位基因结构的第二个主要问题是由个体变体赋予的遗传风险的分布。虽然不可能预测任何给定的常见疾病的等位基因效应的准确分布，但是几个证据线指向潜在的潜在分布。例如，这些证据来自于在果蝇，作物和家畜中的QTL研究中使用诱变，选择和连锁方法，以及对人类疾病的啮齿动物模型的研究。这些研究表明遗传变异体的表型效应大小的分布与少数具有大效应的遗传基因座和具有小效应的大量基因座的存在一致9,46-54。所得到的弯曲的L形分布已经通过使用指数或者分布（参见图4中的图，其具有与图3中的曲线不同的形状和原点）来建模。这些结果与目前的进化理论一致，其中通过将基因DRIFT和突变效应分解为经典适应模型55，QTL效应的预期分布是指数56。最近的研究结果表明，等位基因变异频繁影响基因表达和外显子剪接57-60-这可能具有比影响人类表型的多影响更小的效应。并且具有影响基因表达调节的等位基因的基因座可以通过连锁分析61,62检测。
+迄今为止已经确定的大多数不可辩驳的疾病易感性变异体 - 主要来自功能 - 候选者相关性研究 - 具有1.1-1.5级（REFS 1,2）的等位基因比值比，并且对家族性复发风险很少11,22， 63。例如，假设等位基因的效应和基因座之间的相互作用的乘法模型，频率为0.1的疾病易感性等位基因使风险增加1.5倍将导致SIBLING相对复发风险（s）小于1.02，
+所有s为5，将等于1.2％的贡献。预期QTL将会结合并不是不合理
+类似尺寸的数量性状的贡献效应。然而，我们不知道这是否是常见疾病中有代表性的效应大小范围，因为在设计良好的关联研究中仅评估了基因组的一小部分（参见例如，T1DBase数据库在在线链接在1型糖尿病中研究的基因的框）。然而，我们认为，进行全基因组关联研究是不明智的，没有足够的能力来检测这种量级的疾病和数量性状的影响。</p>
+
+<p>全基因组关联研究中的SNP选择为了以统计学上有效的方式靶向占据&gt; 0.1的MAF范围和&gt; 1.3的优势比的变异，我们需要知道群体中的所有常见变异，控制取自。虽然最近我们对人类基因组变异的了解有了快速增长17  - 主要是以单核苷酸多态性的形式 - 多达30％的常见变异可能仍未被检测到。这可以通过进一步的基因组重测序校正更大的一组无关的个体（在后面的部分讨论）。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/wegary-2013-%E7%8E%89%E7%B1%B3/" data-toggle="tooltip" data-placement="top" title="Wegary-2013-玉米">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/bayesian/waldmann2006-%E5%A4%9A%E6%80%A7%E7%8A%B6%E4%B8%AA%E4%BD%93%E6%A8%A1%E5%9E%8B-reml%E5%92%8Cgibbs%E7%9A%84%E6%AF%94%E8%BE%83/" data-toggle="tooltip" data-placement="top" title="Waldmann2006-多性状个体模型-reml和gibbs的比较">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

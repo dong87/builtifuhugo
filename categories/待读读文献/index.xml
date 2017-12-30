@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>待读读文献 on Dong&#39;s blog</title>
+    <link>/categories/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/</link>
+    <description>Recent content in 待读读文献 on Dong&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>youremail@domain.com (Leiming Dong)</managingEditor>
+    <webMaster>youremail@domain.com (Leiming Dong)</webMaster>
+    <lastBuildDate>Sun, 01 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Chen2017-加性G-BY-E模式</title>
+      <link>/post/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/chen2017-%E5%8A%A0%E6%80%A7g-by-e%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/chen2017-%E5%8A%A0%E6%80%A7g-by-e%E6%A8%A1%E5%BC%8F/</guid>
+      <description> Chen Z-Q, Karlsson B, Wu HX (2017) Patterns of additive genotype-by-environment interaction in tree height of Norway spruce in southern and central Sweden. Tree Genet Genomes 13:25. doi: 10.1007/s11295-017-1103-6
+ </description>
+    </item>
+    
+    <item>
+      <title>Fuentes-Utrilla2017-</title>
+      <link>/post/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/fuentes-utrilla2017-/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/fuentes-utrilla2017-/</guid>
+      <description> Fuentes-Utrilla P, Goswami C, Cottrell JE, et al (2017) QTL analysis and genomic selection using RADseq derived markers in Sitka spruce: the potential utility of within family data. Tree Genet Genomes 13:33. doi: 10.1007/s11295-017-1118-z
+ </description>
+    </item>
+    
+    <item>
+      <title>N2--不跑胶的分子标记技术</title>
+      <link>/post/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/n2--%E4%B8%8D%E8%B7%91%E8%83%B6%E7%9A%84%E5%88%86%E5%AD%90%E6%A0%87%E8%AE%B0%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/n2--%E4%B8%8D%E8%B7%91%E8%83%B6%E7%9A%84%E5%88%86%E5%AD%90%E6%A0%87%E8%AE%B0%E6%8A%80%E6%9C%AF/</guid>
+      <description>Vishwakarma, G., Saini, A., Das, B. K., Bhagwat, S. G. and Jawali, N. (2016), Rapid and convenient gel-free screening of SCAR markers in wheat using SYBR green-based melt-profiling. Plant Breed. doi:10.1111/pbr.12415
+ 利用real-time PCR机器扩增标记。分析融合曲线，确定扩增子的特异性。也可以同时利用multiplex技术在一个反应中扩增多个标记。 &amp;gt; 想法很好，前提是得有机器，有机器还得不用和其他人抢。限于这个因素，该方法并不快捷，也过度依赖于机器。理想的方法是类似试纸的材料或类似快捷的方法，能够取一点叶样直接检测。</description>
+    </item>
+    
+    <item>
+      <title>N9--多任务高斯过程推断多性状和多点试验中的缺失数据</title>
+      <link>/post/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/n9--%E5%A4%9A%E4%BB%BB%E5%8A%A1%E9%AB%98%E6%96%AF%E8%BF%87%E7%A8%8B%E6%8E%A8%E6%96%AD%E5%A4%9A%E6%80%A7%E7%8A%B6%E5%92%8C%E5%A4%9A%E7%82%B9%E8%AF%95%E9%AA%8C%E4%B8%AD%E7%9A%84%E7%BC%BA%E5%A4%B1%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/n9--%E5%A4%9A%E4%BB%BB%E5%8A%A1%E9%AB%98%E6%96%AF%E8%BF%87%E7%A8%8B%E6%8E%A8%E6%96%AD%E5%A4%9A%E6%80%A7%E7%8A%B6%E5%92%8C%E5%A4%9A%E7%82%B9%E8%AF%95%E9%AA%8C%E4%B8%AD%E7%9A%84%E7%BC%BA%E5%A4%B1%E6%95%B0%E6%8D%AE/</guid>
+      <description>Hori T, Montcho D, Agbangla C, Ebana K. Multi ‑ task Gaussian process for imputing missing data in multi ‑ trait and multi ‑ environment trials. Theor. Appl. Genet. Springer Berlin Heidelberg; 2016;   要点： + 主要利用性状间的相关信息进行推断。 + 作者构建的工作框架能够利用多性状多环境数据间的相关，也能结合MET（多点试验）数据集标记基因型数据。 + 比较了多任务高斯过程和迭代调控PCA2个方法，也考虑了不同缺失率下的推断。 + 高斯的准确率高于PCA,尤其在高缺失率的情况下。</description>
+    </item>
+    
+    <item>
+      <title>无标题文章</title>
+      <link>/post/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

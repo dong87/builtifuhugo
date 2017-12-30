@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Stringer2011-竞争</title>
+  <meta property="og:title" content="Stringer2011-竞争" />
+  <meta name="twitter:title" content="Stringer2011-竞争" />
+  <meta name="description" content="Stringer JK, Cullis BR, Thompson R (2011) Joint Modeling of Spatial Variability and Within-Row Interplot Competition to Increase the Efficiency of Plant Improvement. J Agric Biol Environ Stat 16:269–281. doi: 10.1007/s13253-010-0051-5 空间变异和行内小区间竞争的联合建模，以提高植物改良的效率
+ 在选择的早期阶段的试验经常受到从空间变异性和间隙竞争产生的变化，这可以严重偏倚品种性能的评估和减少遗传进展。提出了一种联合建模两种偏倚来源的方法。它模拟基因型和残留竞争以及全局和外来空间变异。品种效应被认为是随机的，并且残余最大似然用于参数估计。使用两个特殊的同时自回归模型检验剩余水平的竞争。对于竞争占主导地位的试验，提出了等根二阶自回归（EAR（2））模型。等根三阶自回归（EAR（3））模型允许竞争和空间变异性。这些模型适用于澳大利亚甘蔗选择程序的两个产量数据集。一个数据集在纸上，另一个是在线补充材料。为了确定同时调整空间变异性和小区间间竞争对选择的影响，比较了在联合模型和经典方法的前15％中共同的优良品种的百分比。两种方法之间的协议是45％和84％。因此，对于一些试验，在进入下一个选择阶段的品种之间存在大的差异。 关键词：基因型竞争;残余水平竞争;残余最大似然;同时自回归模型。
+1.引言 在选择的早期阶段，大多数植物改良计划面临着在通过异花授粉产生的大量品种中检测几个递增优越个体的挑战。由于用于现场测试的每种品种的种植材料的量通常是有限的，所以品种通常种植在小的，未复制的或部分复制的单钻地块中。不幸的是，这种试验受到空间变异性和间隙竞争的影响，这偏差了它们的遗传优势的评估。除非考虑，空间变异性和插槽竞争可能会严重降低通过选择获得的遗传先进的速率。 插值竞争难以量化，并且没有通用的方法来解释相邻地块之间的竞争交互。由于资源限制通常排除使用多钻孔图或邻近平衡设计（Williams 1952; David和Kempton 1996），建议在工厂改进程序的早期阶段考虑间隙竞争的建模方法。 Besag和Kempton（1986）提出了两种分析方法来估计插值竞争。所谓的表型干扰模型，建立在Kempton（1982）早期的工作基础上，是一种同时自回归方法，其中竞争被假定为与相邻地块的产量直接相关。这已显示适用于根茎作物如甜菜（Kempton 1982; Durban，Currie和Kempton 2001），马铃薯（Connolly等人1993）和swedes（Bradshaw 1989）。在Pearce（1957）最初提出的处理或基因型干扰模型中，竞争效应与高度，分蘖能力，成熟日期或冠层大小等品种特征相关（Kempton and Lockwood 1984; Talbot et al。1995）。在该第二模型中，干扰的原因与最近邻基因型的平均基因型值而不是表型反应相关。在治疗干扰模型中，假设每个治疗对相邻图具有直接效应和邻近效应。 在通常包含大量品种的早期田间试验中，生长条件在整个试验区域可能变化很大，导致称为空间变异性的现象。由Gilmour，Cullis和Verbyla（1997）开发的并由Stefanova，Smith和Cullis（2009）提出的空间分析方法通过使用来自近邻的信息来调整可变性的图。这些技术常规用于分析澳大利亚的谷物数据，并且导致在品种效应的估计中提高的准确性和精度（Gilmour，Cullis和Verbyla 1997; Qiao等人2000; Silva，Dutkowski和Gilmour 2001; Dutkowski等人2002）。 Stringer和Cullis（2002）使用Gilmour，Cullis和Ver-byla（1997）开发的方法分析了来自澳大利亚28个早期甘蔗试验的甘蔗产量和蔗糖含量。他们在分析中发现两个主要因素。第一个是许多试验表现出甘蔗产量和蔗糖含量的大量空间异质性。这是由于实验程序或管理实践的大规模变化和变化的形式。然而，甘蔗产量最引人注目的特征是在相同柱中共享最长侧（10m）的相邻图之间发生负相关。这是竞争的证据。 鉴于空间变异性和插槽竞争在早期糖甲试验中占主导地位，挑战是有效地建模两种偏倚来源，从而通过提高遗传效应预测的准确性来增加遗传收益。 Durban，Currie和Kempton（2001）提出了一种空间变异性和竞争联合建模的方法。他们使用立方平滑样条与Besag和Kempton（1986）竞争的表型干扰模型一起建模空间变异性。假设品种效应是固定的，并且将调整的概况可能性用于参数估计（McCullagh和Tibshirani 1990）。这种模型受到没有空间依赖过程模型趋势或随机品种效应的限制。 Matassa（2003）开发了一种允许竞争处于表型或基因型水平的方法，并将其与Gilmour，Cullis和Verbyla（1997）的空间变异性方法相结合。品种效应被认为是固定的，边际似然性和轮廓似然被用于参数估计。最近，Cappa和Cantet（2008）应用基因型干扰模型来估计树育种中的直接和竞争加性效应。他们的方法受到不考虑空间变异性的限制。 在本文中，提出了同时建模的空间变异性和插槽竞争的替代方法。这允许基因型（Besag和Kempton 1986）或残余水平竞争，并且模型如Gilmour，Cullis和Verbyla（1997）详述的全局趋势和外来变异。品种效应被认为是随机的，并且残余最大似然（REML）被用于参数估计。 论文安排如下。在第2节中，我们概述了混合线性模型来分割空间变异性，详见Gilmour，Cullis和Verbyla（1997）。这个模型然后扩展到包括遗传和残留水平的竞争（第3节）。然后将联合建模方法应用于澳大利亚甘蔗选择计划的两个早期数据集（第4节和补充在线资料）。为了确定同时调整空间变异性和小区间间竞争对选择的影响，比较了联合模型和经典方法中前15％的优良品种的百分比。
+2.建模空间变率
+基线方法是没有竞争效应的空间混合线性模型。考虑在r行和c列（n = rc）的矩形阵列中布置的n个图的场实验。该田间试验包含m个基因型或品种，在这种情况下 的甘蔗，克隆繁殖并且更好地称为克隆。如果观察 在数据向量y（n×1）中，按照字段顺序，即列中的行，则y的混合线性模型">
+  <meta property="og:description" content="Stringer JK, Cullis BR, Thompson R (2011) Joint Modeling of Spatial Variability and Within-Row Interplot Competition to Increase the Efficiency of Plant Improvement. J Agric Biol Environ Stat 16:269–281. doi: 10.1007/s13253-010-0051-5 空间变异和行内小区间竞争的联合建模，以提高植物改良的效率
+ 在选择的早期阶段的试验经常受到从空间变异性和间隙竞争产生的变化，这可以严重偏倚品种性能的评估和减少遗传进展。提出了一种联合建模两种偏倚来源的方法。它模拟基因型和残留竞争以及全局和外来空间变异。品种效应被认为是随机的，并且残余最大似然用于参数估计。使用两个特殊的同时自回归模型检验剩余水平的竞争。对于竞争占主导地位的试验，提出了等根二阶自回归（EAR（2））模型。等根三阶自回归（EAR（3））模型允许竞争和空间变异性。这些模型适用于澳大利亚甘蔗选择程序的两个产量数据集。一个数据集在纸上，另一个是在线补充材料。为了确定同时调整空间变异性和小区间间竞争对选择的影响，比较了在联合模型和经典方法的前15％中共同的优良品种的百分比。两种方法之间的协议是45％和84％。因此，对于一些试验，在进入下一个选择阶段的品种之间存在大的差异。 关键词：基因型竞争;残余水平竞争;残余最大似然;同时自回归模型。
+1.引言 在选择的早期阶段，大多数植物改良计划面临着在通过异花授粉产生的大量品种中检测几个递增优越个体的挑战。由于用于现场测试的每种品种的种植材料的量通常是有限的，所以品种通常种植在小的，未复制的或部分复制的单钻地块中。不幸的是，这种试验受到空间变异性和间隙竞争的影响，这偏差了它们的遗传优势的评估。除非考虑，空间变异性和插槽竞争可能会严重降低通过选择获得的遗传先进的速率。 插值竞争难以量化，并且没有通用的方法来解释相邻地块之间的竞争交互。由于资源限制通常排除使用多钻孔图或邻近平衡设计（Williams 1952; David和Kempton 1996），建议在工厂改进程序的早期阶段考虑间隙竞争的建模方法。 Besag和Kempton（1986）提出了两种分析方法来估计插值竞争。所谓的表型干扰模型，建立在Kempton（1982）早期的工作基础上，是一种同时自回归方法，其中竞争被假定为与相邻地块的产量直接相关。这已显示适用于根茎作物如甜菜（Kempton 1982; Durban，Currie和Kempton 2001），马铃薯（Connolly等人1993）和swedes（Bradshaw 1989）。在Pearce（1957）最初提出的处理或基因型干扰模型中，竞争效应与高度，分蘖能力，成熟日期或冠层大小等品种特征相关（Kempton and Lockwood 1984; Talbot et al。1995）。在该第二模型中，干扰的原因与最近邻基因型的平均基因型值而不是表型反应相关。在治疗干扰模型中，假设每个治疗对相邻图具有直接效应和邻近效应。 在通常包含大量品种的早期田间试验中，生长条件在整个试验区域可能变化很大，导致称为空间变异性的现象。由Gilmour，Cullis和Verbyla（1997）开发的并由Stefanova，Smith和Cullis（2009）提出的空间分析方法通过使用来自近邻的信息来调整可变性的图。这些技术常规用于分析澳大利亚的谷物数据，并且导致在品种效应的估计中提高的准确性和精度（Gilmour，Cullis和Verbyla 1997; Qiao等人2000; Silva，Dutkowski和Gilmour 2001; Dutkowski等人2002）。 Stringer和Cullis（2002）使用Gilmour，Cullis和Ver-byla（1997）开发的方法分析了来自澳大利亚28个早期甘蔗试验的甘蔗产量和蔗糖含量。他们在分析中发现两个主要因素。第一个是许多试验表现出甘蔗产量和蔗糖含量的大量空间异质性。这是由于实验程序或管理实践的大规模变化和变化的形式。然而，甘蔗产量最引人注目的特征是在相同柱中共享最长侧（10m）的相邻图之间发生负相关。这是竞争的证据。 鉴于空间变异性和插槽竞争在早期糖甲试验中占主导地位，挑战是有效地建模两种偏倚来源，从而通过提高遗传效应预测的准确性来增加遗传收益。 Durban，Currie和Kempton（2001）提出了一种空间变异性和竞争联合建模的方法。他们使用立方平滑样条与Besag和Kempton（1986）竞争的表型干扰模型一起建模空间变异性。假设品种效应是固定的，并且将调整的概况可能性用于参数估计（McCullagh和Tibshirani 1990）。这种模型受到没有空间依赖过程模型趋势或随机品种效应的限制。 Matassa（2003）开发了一种允许竞争处于表型或基因型水平的方法，并将其与Gilmour，Cullis和Verbyla（1997）的空间变异性方法相结合。品种效应被认为是固定的，边际似然性和轮廓似然被用于参数估计。最近，Cappa和Cantet（2008）应用基因型干扰模型来估计树育种中的直接和竞争加性效应。他们的方法受到不考虑空间变异性的限制。 在本文中，提出了同时建模的空间变异性和插槽竞争的替代方法。这允许基因型（Besag和Kempton 1986）或残余水平竞争，并且模型如Gilmour，Cullis和Verbyla（1997）详述的全局趋势和外来变异。品种效应被认为是随机的，并且残余最大似然（REML）被用于参数估计。 论文安排如下。在第2节中，我们概述了混合线性模型来分割空间变异性，详见Gilmour，Cullis和Verbyla（1997）。这个模型然后扩展到包括遗传和残留水平的竞争（第3节）。然后将联合建模方法应用于澳大利亚甘蔗选择计划的两个早期数据集（第4节和补充在线资料）。为了确定同时调整空间变异性和小区间间竞争对选择的影响，比较了联合模型和经典方法中前15％的优良品种的百分比。
+2.建模空间变率
+基线方法是没有竞争效应的空间混合线性模型。考虑在r行和c列（n = rc）的矩形阵列中布置的n个图的场实验。该田间试验包含m个基因型或品种，在这种情况下 的甘蔗，克隆繁殖并且更好地称为克隆。如果观察 在数据向量y（n×1）中，按照字段顺序，即列中的行，则y的混合线性模型">
+  <meta name="twitter:description" content="Stringer JK, Cullis BR, Thompson R (2011) Joint Modeling of Spatial Variability and Within-Row Interplot Competition to Increase the Efficiency of Plant Improvement. J Agric Biol Environ Stat …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%AB%9E%E4%BA%89/stringer2011-%E7%AB%9E%E4%BA%89/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%AB%9E%E4%BA%89/stringer2011-%E7%AB%9E%E4%BA%89/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Stringer2011-竞争</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (71 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Stringer2011-竞争</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (71 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Stringer JK, Cullis BR, Thompson R (2011) Joint Modeling of Spatial Variability and Within-Row Interplot Competition to Increase the Efficiency of Plant Improvement. J Agric Biol Environ Stat 16:269–281. doi: 10.1007/s13253-010-0051-5
+空间变异和行内小区间竞争的联合建模，以提高植物改良的效率</p>
+</blockquote>
+
+<p><strong>在选择的早期阶段的试验经常受到从空间变异性和间隙竞争产生的变化，这可以严重偏倚品种性能的评估和减少遗传进展。</strong>提出了一种联合建模两种偏倚来源的方法。它模拟基因型和残留竞争以及全局和外来空间变异。品种效应被认为是随机的，并且残余最大似然用于参数估计。使用两个特殊的同时自回归模型检验剩余水平的竞争。对于竞争占主导地位的试验，提出了等根二阶自回归（EAR（2））模型。等根三阶自回归（EAR（3））模型允许竞争和空间变异性。这些模型适用于澳大利亚甘蔗选择程序的两个产量数据集。一个数据集在纸上，另一个是在线补充材料。为了确定同时调整空间变异性和小区间间竞争对选择的影响，比较了在联合模型和经典方法的前15％中共同的优良品种的百分比。两种方法之间的协议是45％和84％。因此，对于一些试验，在进入下一个选择阶段的品种之间存在大的差异。
+关键词：基因型竞争;残余水平竞争;残余最大似然;同时自回归模型。</p>
+
+<hr />
+
+<p>1.引言
+在选择的早期阶段，大多数植物改良计划面临着在通过异花授粉产生的大量品种中检测几个递增优越个体的挑战。由于用于现场测试的每种品种的种植材料的量通常是有限的，所以品种通常种植在小的，未复制的或部分复制的单钻地块中。不幸的是，这种试验受到空间变异性和间隙竞争的影响，这偏差了它们的遗传优势的评估。除非考虑，空间变异性和插槽竞争可能会严重降低通过选择获得的遗传先进的速率。
+插值竞争难以量化，并且没有通用的方法来解释相邻地块之间的竞争交互。由于资源限制通常排除使用多钻孔图或邻近平衡设计（Williams 1952; David和Kempton 1996），建议在工厂改进程序的早期阶段考虑间隙竞争的建模方法。
+Besag和Kempton（1986）提出了两种分析方法来估计插值竞争。所谓的表型干扰模型，建立在Kempton（1982）早期的工作基础上，是一种同时自回归方法，其中竞争被假定为与相邻地块的产量直接相关。这已显示适用于根茎作物如甜菜（Kempton 1982; Durban，Currie和Kempton 2001），马铃薯（Connolly等人1993）和swedes（Bradshaw 1989）。在Pearce（1957）最初提出的处理或基因型干扰模型中，竞争效应与高度，分蘖能力，成熟日期或冠层大小等品种特征相关（Kempton and Lockwood 1984; Talbot et al。1995）。在该第二模型中，干扰的原因与最近邻基因型的平均基因型值而不是表型反应相关。在治疗干扰模型中，假设每个治疗对相邻图具有直接效应和邻近效应。
+在通常包含大量品种的早期田间试验中，生长条件在整个试验区域可能变化很大，导致称为空间变异性的现象。由Gilmour，Cullis和Verbyla（1997）开发的并由Stefanova，Smith和Cullis（2009）提出的空间分析方法通过使用来自近邻的信息来调整可变性的图。这些技术常规用于分析澳大利亚的谷物数据，并且导致在品种效应的估计中提高的准确性和精度（Gilmour，Cullis和Verbyla 1997; Qiao等人2000; Silva，Dutkowski和Gilmour 2001; Dutkowski等人2002）。
+Stringer和Cullis（2002）使用Gilmour，Cullis和Ver-byla（1997）开发的方法分析了来自澳大利亚28个早期甘蔗试验的甘蔗产量和蔗糖含量。他们在分析中发现两个主要因素。第一个是许多试验表现出甘蔗产量和蔗糖含量的大量空间异质性。这是由于实验程序或管理实践的大规模变化和变化的形式。然而，甘蔗产量最引人注目的特征是在相同柱中共享最长侧（10m）的相邻图之间发生负相关。这是竞争的证据。
+鉴于空间变异性和插槽竞争在早期糖甲试验中占主导地位，挑战是有效地建模两种偏倚来源，从而通过提高遗传效应预测的准确性来增加遗传收益。 Durban，Currie和Kempton（2001）提出了一种空间变异性和竞争联合建模的方法。他们使用立方平滑样条与Besag和Kempton（1986）竞争的表型干扰模型一起建模空间变异性。假设品种效应是固定的，并且将调整的概况可能性用于参数估计（McCullagh和Tibshirani 1990）。这种模型受到没有空间依赖过程模型趋势或随机品种效应的限制。 Matassa（2003）开发了一种允许竞争处于表型或基因型水平的方法，并将其与Gilmour，Cullis和Verbyla（1997）的空间变异性方法相结合。品种效应被认为是固定的，边际似然性和轮廓似然被用于参数估计。最近，Cappa和Cantet（2008）应用基因型干扰模型来估计树育种中的直接和竞争加性效应。他们的方法受到不考虑空间变异性的限制。
+在本文中，提出了同时建模的空间变异性和插槽竞争的替代方法。这允许基因型（Besag和Kempton 1986）或残余水平竞争，并且模型如Gilmour，Cullis和Verbyla（1997）详述的全局趋势和外来变异。品种效应被认为是随机的，并且残余最大似然（REML）被用于参数估计。
+论文安排如下。在第2节中，我们概述了混合线性模型来分割空间变异性，详见Gilmour，Cullis和Verbyla（1997）。这个模型然后扩展到包括遗传和残留水平的竞争（第3节）。然后将联合建模方法应用于澳大利亚甘蔗选择计划的两个早期数据集（第4节和补充在线资料）。为了确定同时调整空间变异性和小区间间竞争对选择的影响，比较了联合模型和经典方法中前15％的优良品种的百分比。</p>
+
+<p>2.建模空间变率</p>
+
+<p>基线方法是没有竞争效应的空间混合线性模型。考虑在r行和c列（n = rc）的矩形阵列中布置的n个图的场实验。该田间试验包含m个基因型或品种，在这种情况下
+的甘蔗，克隆繁殖并且更好地称为克隆。如果观察
+在数据向量y（n×1）中，按照字段顺序，即列中的行，则y的混合线性模型</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/tgg-%E4%B8%80%E7%AF%87%E5%85%B3%E4%BA%8Eg-by-e%E7%9A%84%E7%BB%BC%E8%BF%B0/" data-toggle="tooltip" data-placement="top" title="TGG-一篇关于G-by-E的综述">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%AB%9E%E4%BA%89/stringer2002-%E7%94%98%E8%94%97/" data-toggle="tooltip" data-placement="top" title="Stringer2002-甘蔗">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

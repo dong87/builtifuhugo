@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>数据转换与标准化</title>
+  <meta property="og:title" content="数据转换与标准化" />
+  <meta name="twitter:title" content="数据转换与标准化" />
+  <meta name="description" content="Forest genetics
+ 数据转换与标准化 一些类型的变量在分析之前经常被转换。例如，反正弦和逻辑变换通常用于二项数据，而对数变换有时被推荐用于增长变量（Snedecor and Cochran，1967; Anderson and McLean，1974）。然而，重要的是要记住，这些转换的理论和实际价值已经在固定效应模型（稍后描述）中得到证明，其中目标是比较处理手段。其中目标是随机育种值预测的MM分析转化的价值（参见本章中的线性统计模型）不太确定。 例如，对于二项式数据，上述推荐的转换不能针对单独的树进行，而是必须应用于单元格或绘图方式。单个树木育种值不能通过转化的方法预测;所以转换二项式数据的价值是值得怀疑的。此外，有一些信息表明，在一些情况下，未转换的0,1二项数据的MM分析可能是合适的（Foulley和Im，1989; Mantysaari等，1991; Lopes等，2000）。对于连续变量，当对数转换回原始单位时，对数转换会产生偏倚。出于这些原因，所有转换的价值和理由应在使用前仔细考虑。很多时候，在MM分析中使用未转换的数据是合适的。 一个例外是有时称为标准化的特殊转换，在MM分析之前，应该在许多情况下使用标准化，这有三个原因（Hill，1984; Visscher等，1991; Jarvis等，1995）：（1）在线性模型中的一个单一效应内跨水平汇集在一起​​; （2）为了消除仅由于尺度效应（与排名变化相反，第6章）的基因型x环境相互作用的统计显着交互作用; （3）促进简单，无偏倚的反向转换，以预测各种环境下的计量单位的遗传获益。关于第一点，许多转换的目标是在测试位置上的块之间以及跨越不同测试位置的块差异内均化。如果这些方差汇总在一个方差（例如方差）中，则效应（例如，线性模型中的块项）内的所有级别（例如，所有位置内的所有块）的均匀方差是分析的基本假设。由于块差异汇集在所有站点中，因此跨站点进行标准化非常重要。在块和位置级别的标准化会影响估计的所有差异，并消除基因型x环境交互的scaleeffect。 在块和位置级别上进行标准化的一种有效方法是，通过以下方式标准化每个变量的所有树木测量值：（1）计算每个块的表型标准偏差（使用块中的所有数据计算的方差的平方根）特征）; （2）将每个树的测量结果除以该块的标准偏差。有时候，这种转换是应用在每个测试位置而不是块级（Jarvis et al。，1995）。 在E. grandis病例研究（表15.1）的茎体积中，估计的总表型方差（o2P）在六个测试点之间存在较大的差异，范围从0.18到8.66（m3）2的50倍，这些差异是与整个场地大的平均茎体积差异正相关。通过将每棵树的体积测量值除以包含该树的块计算的表型标准差来进行标准化。每棵树的标准化体积是所有分析中使用的变量，这些分析结合了测试地点的数据。茎形态的表型变异（表15.1）在测试位点（0.43-1.02）中仅为2.5倍，这种变异与茎形态的位点均值无关。因此，所有随后的表格分析都使用原始的，非标准化的数据值。 请注意，在标准化之后，每个块（因此每个测试点）的表型方差和标准偏差都是1：Var（y / yy）= Var（y）/ o2y = o2y / o2y = 1（White和Hodge，1989 ，第46页）。这确保了块和测试站点的测量的规模是相同的，并且消除了由于规模效应导致的相互作用（例如基因型x环境相互作用）的数据。然而，由于一个区块内的所有测量值都被相同的数字相除，所以基因型和治疗手段之间的相对比较不会改变。 当使用标准化值预测育种值时，预测值以表型标准偏差为单位。因此，为了以绝对值表示育种值，有必要将预测的育种值重新标定回原始测量单位，方法是将它们乘以适当的表型标准偏差（例如，通过跨所有测试点的汇总标准偏差，或者当在特定目标环境中的表现最感兴趣时，由单个测试场地的标准偏差）。另一种方法不是重新缩放到原来的计量单位，而是以高于或低于变量标准化均值的百分比表示育种值。这产生了与第一次重新缩放相同的结果，然后将育种值表示为高于或低于非标准化平均值的百分比。">
+  <meta property="og:description" content="Forest genetics
+ 数据转换与标准化 一些类型的变量在分析之前经常被转换。例如，反正弦和逻辑变换通常用于二项数据，而对数变换有时被推荐用于增长变量（Snedecor and Cochran，1967; Anderson and McLean，1974）。然而，重要的是要记住，这些转换的理论和实际价值已经在固定效应模型（稍后描述）中得到证明，其中目标是比较处理手段。其中目标是随机育种值预测的MM分析转化的价值（参见本章中的线性统计模型）不太确定。 例如，对于二项式数据，上述推荐的转换不能针对单独的树进行，而是必须应用于单元格或绘图方式。单个树木育种值不能通过转化的方法预测;所以转换二项式数据的价值是值得怀疑的。此外，有一些信息表明，在一些情况下，未转换的0,1二项数据的MM分析可能是合适的（Foulley和Im，1989; Mantysaari等，1991; Lopes等，2000）。对于连续变量，当对数转换回原始单位时，对数转换会产生偏倚。出于这些原因，所有转换的价值和理由应在使用前仔细考虑。很多时候，在MM分析中使用未转换的数据是合适的。 一个例外是有时称为标准化的特殊转换，在MM分析之前，应该在许多情况下使用标准化，这有三个原因（Hill，1984; Visscher等，1991; Jarvis等，1995）：（1）在线性模型中的一个单一效应内跨水平汇集在一起​​; （2）为了消除仅由于尺度效应（与排名变化相反，第6章）的基因型x环境相互作用的统计显着交互作用; （3）促进简单，无偏倚的反向转换，以预测各种环境下的计量单位的遗传获益。关于第一点，许多转换的目标是在测试位置上的块之间以及跨越不同测试位置的块差异内均化。如果这些方差汇总在一个方差（例如方差）中，则效应（例如，线性模型中的块项）内的所有级别（例如，所有位置内的所有块）的均匀方差是分析的基本假设。由于块差异汇集在所有站点中，因此跨站点进行标准化非常重要。在块和位置级别的标准化会影响估计的所有差异，并消除基因型x环境交互的scaleeffect。 在块和位置级别上进行标准化的一种有效方法是，通过以下方式标准化每个变量的所有树木测量值：（1）计算每个块的表型标准偏差（使用块中的所有数据计算的方差的平方根）特征）; （2）将每个树的测量结果除以该块的标准偏差。有时候，这种转换是应用在每个测试位置而不是块级（Jarvis et al。，1995）。 在E. grandis病例研究（表15.1）的茎体积中，估计的总表型方差（o2P）在六个测试点之间存在较大的差异，范围从0.18到8.66（m3）2的50倍，这些差异是与整个场地大的平均茎体积差异正相关。通过将每棵树的体积测量值除以包含该树的块计算的表型标准差来进行标准化。每棵树的标准化体积是所有分析中使用的变量，这些分析结合了测试地点的数据。茎形态的表型变异（表15.1）在测试位点（0.43-1.02）中仅为2.5倍，这种变异与茎形态的位点均值无关。因此，所有随后的表格分析都使用原始的，非标准化的数据值。 请注意，在标准化之后，每个块（因此每个测试点）的表型方差和标准偏差都是1：Var（y / yy）= Var（y）/ o2y = o2y / o2y = 1（White和Hodge，1989 ，第46页）。这确保了块和测试站点的测量的规模是相同的，并且消除了由于规模效应导致的相互作用（例如基因型x环境相互作用）的数据。然而，由于一个区块内的所有测量值都被相同的数字相除，所以基因型和治疗手段之间的相对比较不会改变。 当使用标准化值预测育种值时，预测值以表型标准偏差为单位。因此，为了以绝对值表示育种值，有必要将预测的育种值重新标定回原始测量单位，方法是将它们乘以适当的表型标准偏差（例如，通过跨所有测试点的汇总标准偏差，或者当在特定目标环境中的表现最感兴趣时，由单个测试场地的标准偏差）。另一种方法不是重新缩放到原来的计量单位，而是以高于或低于变量标准化均值的百分比表示育种值。这产生了与第一次重新缩放相同的结果，然后将育种值表示为高于或低于非标准化平均值的百分比。">
+  <meta name="twitter:description" content="Forest genetics
+ 数据转换与标准化 一些类型的变量在分析之前经常被转换。例如，反正弦和逻辑变换通常用于二项数据，而对数变换有时被推荐用于增长变量（Snedecor and Cochran，1967; Anderson and McLean，1974）。然而，重要的是要记住，这些转换的理论和实际价值已经在固定效应模型（稍后描述）中得到证明，其中目标是比较处理手段。其中目标是随机育种值 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E8%82%B2%E7%A7%8D/%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2%E4%B8%8E%E6%A0%87%E5%87%86%E5%8C%96/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E8%82%B2%E7%A7%8D/%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2%E4%B8%8E%E6%A0%87%E5%87%86%E5%8C%96/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>数据转换与标准化</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (36 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>数据转换与标准化</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (36 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Forest genetics</p>
+</blockquote>
+
+<h2 id="数据转换与标准化">数据转换与标准化</h2>
+
+<p>一些类型的变量在分析之前经常被转换。例如，反正弦和逻辑变换通常用于二项数据，而对数变换有时被推荐用于增长变量（Snedecor and Cochran，1967; Anderson and McLean，1974）。然而，重要的是要记住，这些转换的理论和实际价值已经在固定效应模型（稍后描述）中得到证明，其中目标是比较处理手段。其中目标是随机育种值预测的MM分析转化的价值（参见本章中的线性统计模型）不太确定。
+例如，对于二项式数据，上述推荐的转换不能针对单独的树进行，而是必须应用于单元格或绘图方式。单个树木育种值不能通过转化的方法预测;所以转换二项式数据的价值是值得怀疑的。此外，有一些信息表明，在一些情况下，未转换的0,1二项数据的MM分析可能是合适的（Foulley和Im，1989; Mantysaari等，1991; Lopes等，2000）。对于连续变量，当对数转换回原始单位时，对数转换会产生偏倚。出于这些原因，所有转换的价值和理由应在使用前仔细考虑。很多时候，在MM分析中使用未转换的数据是合适的。
+一个例外是有时称为标准化的特殊转换，在MM分析之前，应该在许多情况下使用标准化，这有三个原因（Hill，1984; Visscher等，1991; Jarvis等，1995）：（1）在线性模型中的一个单一效应内跨水平汇集在一起​​; （2）为了消除仅由于尺度效应（与排名变化相反，第6章）的基因型x环境相互作用的统计显着交互作用; （3）促进简单，无偏倚的反向转换，以预测各种环境下的计量单位的遗传获益。关于第一点，许多转换的目标是在测试位置上的块之间以及跨越不同测试位置的块差异内均化。如果这些方差汇总在一个方差（例如方差）中，则效应（例如，线性模型中的块项）内的所有级别（例如，所有位置内的所有块）的均匀方差是分析的基本假设。由于块差异汇集在所有站点中，因此跨站点进行标准化非常重要。在块和位置级别的标准化会影响估计的所有差异，并消除基因型x环境交互的scaleeffect。
+在块和位置级别上进行标准化的一种有效方法是，通过以下方式标准化每个变量的所有树木测量值：（1）计算每个块的表型标准偏差（使用块中的所有数据计算的方差的平方根）特征）; （2）将每个树的测量结果除以该块的标准偏差。有时候，这种转换是应用在每个测试位置而不是块级（Jarvis et al。，1995）。
+在E. grandis病例研究（表15.1）的茎体积中，估计的总表型方差（o2P）在六个测试点之间存在较大的差异，范围从0.18到8.66（m3）2的50倍，这些差异是与整个场地大的平均茎体积差异正相关。通过将每棵树的体积测量值除以包含该树的块计算的表型标准差来进行标准化。每棵树的标准化体积是所有分析中使用的变量，这些分析结合了测试地点的数据。茎形态的表型变异（表15.1）在测试位点（0.43-1.02）中仅为2.5倍，这种变异与茎形态的位点均值无关。因此，所有随后的表格分析都使用原始的，非标准化的数据值。
+请注意，在标准化之后，每个块（因此每个测试点）的表型方差和标准偏差都是1：Var（y / yy）= Var（y）/ o2y = o2y / o2y = 1（White和Hodge，1989 ，第46页）。这确保了块和测试站点的测量的规模是相同的，并且消除了由于规模效应导致的相互作用（例如基因型x环境相互作用）的数据。然而，由于一个区块内的所有测量值都被相同的数字相除，所以基因型和治疗手段之间的相对比较不会改变。
+当使用标准化值预测育种值时，预测值以表型标准偏差为单位。因此，为了以绝对值表示育种值，有必要<strong>将预测的育种值重新标定回原始测量单位，方法是将它们乘以适当的表型标准偏差</strong>（例如，通过跨所有测试点的汇总标准偏差，或者当在特定目标环境中的表现最感兴趣时，由单个测试场地的标准偏差）。<strong>另一种方法不是重新缩放到原来的计量单位，而是以高于或低于变量标准化均值的百分比表示育种值。这产生了与第一次重新缩放相同的结果，然后将育种值表示为高于或低于非标准化平均值的百分比</strong>。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/stat/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/" data-toggle="tooltip" data-placement="top" title="无标题文章">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%9A%8F%E7%AC%94/%E6%8E%A2%E9%92%88%E8%AE%BE%E8%AE%A1/" data-toggle="tooltip" data-placement="top" title="探针设计">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

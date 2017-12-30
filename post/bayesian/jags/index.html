@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Jags</title>
+  <meta property="og:title" content="Jags" />
+  <meta name="twitter:title" content="Jags" />
+  <meta name="description" content="e Silva FF, Viana JMS, Faria VR, de Resende MDV. Bayesian inference of mixed models in quantitative genetics of crop species. Theor. Appl. Genet. 2013;126:1749–61.   本研究的目的是实施一个贝叶斯框架，用于作物品种育种中的混合模型分析，并利用信息先验启发的替代品。用爆米花种群中前两个半同胞选择周期说明了年际作物育种中遗传评价的贝叶斯推理。贝叶斯框架基于Just Another Gibbs Sampler软件和R2jags软件包。对于第一周期，使用方差分量的逆的非信息先验和基于荟萃分析的信息先验。对于第二周期，使用非信息先验和信息先验，其被定义为来自第一周期的非信息性和信息性分析的后验。关于第一周期，从荟萃分析中使用信息性先验提供了相对于仅针对谷物产量的非信息先验的分析的明显不同的结果。关于第二个循环，膨胀体积和籽粒产量的结果显示三个分析之间的差异。非信息性和信息性先验分析之间的差异限于方差分量和遗传性。这些分析的预测育种值之间的相关性几乎是完美的。
+介绍 最好的线性无偏预测（BLUP）（Henderson 1974）已经广泛用于动物和林业育种计划中的遗传评估。估计方差分量的常用方法是限制最大似然（REML）（Patterson和Thompson 1971）。贝叶斯预测的遗传变异和育种价值也已被大量采用（Sorensen 2009; Blasco 2001）。事实上，贝叶斯推理在遗传学和育种中具有额外的相关应用，例如使用全基因组密度标记图谱（Meuwissen等人，2001），数量性状基因座定位（Bink等人，2008）的预测育种值，群体结构分析（Pritchard等人2000），关联作图（Marttinen和Corander 2010）以及推断基因表达和调节的水平（Beaumont和Rannala 2004）。只有最近才有年度作物育种者认识到BLUP或贝叶斯分析的遗传评估的优势，如基于不平衡数据的优越方法的方差分量估计，使用谱系信息和历史数据以提高预测准确度，以及可能性包括关于待估计参数的先前信息（Piepho等人2008; Bauer等人2009; Viana等人2012a）。 Bauer等人（2006），Flachenecker et al。 （2006），Oakey et al。 （2007），Viana et al。 （2010a，2011a）等人已经证明了BLUP在复发的群体间和群体间育种程序中以及在纯/自交系的发育中的功效。混合模型在年度作物育种中的贝叶斯推理研究很少。 Mathew et al。 （2012）观察到，方差分量的贝叶斯估计与模拟数据的REML估计相比更准确，并且与大麦田间数据的REML估计一样准确。此外，贝叶斯和BLUP预测的准确性是相等的。 Bauer等人（2009）分析了田间和弹簧条线的模拟数据，考虑了基因型对环境的相互作用效应和系谱信息。一般来说，当性状的遗传率高时，贝叶斯推理和BLUP导致类似的育种价值预测。然而，贝叶斯方法对于低遗传性状优良（表现更好）。幸运的是，所有用于动物和林业育种的遗传评估的贝叶斯分析适合于年度作物育种。 Waldmann和Ericsson（2006）拟合了一个多特征个体模型，用于部分拨号分析场地和来自苏ots松后代的模拟数据。在两个数据集中的REML和Gibbs取样估计之间观察到差异。作者认为REML估计是准确的，吉布斯取样的后验分布模式可能会高估，取决于遗传性。使用相同的数据集，Waldmann et al。 （2008）拟合了基于关系矩阵变换的加性优势模型。具有高优势，加性优势模型具有最佳拟合。在低优势的情况下，需要一个信息先验，以避免高估主导方差。 REML和吉布斯采样估计同意良好，贝叶斯和BLUP预测显示类似的准确性。与BLUP分析相比，贝叶斯方法具有一些优点，例如在选择样本数据和未知参数的分布方面的灵活性以及结合关于模型的参数的先验知识的可能性（Sorensen 2009; Blasco 2001）。尽管后一个优势在文献中被广泛提及为贝叶斯推理的一个潜在的有吸引力的特征（Beaumont和Rannala 2004），但在动物和植物育种的实践中却没有得到重视，因为缺乏这样的情况：这种现有知识可以自然地并入。在我们看来，背景信息的结合代表了贝叶斯分析在作物品种育种中的特殊特征，因为选择周期的概念表征了信息先验的自然机制。这是因为来自给定周期的感兴趣参数的后验分布（例如方差分量）可以用作下一周期的分析中的先验分布，从而形成知识更新系统。在混合模型的贝叶斯推理的计算特征方面，广泛使用了使用马尔可夫链蒙特卡罗（MCMC）算法的统计工具，例如吉布斯采样器，在动物育种中尤其如此。在这些工具中，包括MTGSAM Van Tassell和Van Vleck 1996）和gibbsf90（Misztal等人，2002）仅可用于具有一个育种值载体的加性模型，例如个体和半同胞家族模型。此外，这些软件在选择数据和参数的分布方面没有灵活性，这阻止了使用非正态数据分布和信息先验分布。 R（RDevelopment核心团队2012）包MCMCglmm（Hadfield 2010），其理论背景由Hadfield和Nakagawa（Hadfield和Nakagaw 2010）详细描述，是一个更灵活的工具。该软件包提供了多种数据分发选项，包括单向离散分布和多元离散分布，并允许更改不同类别的先前分布的超参数。此外，它允许通过使用谱系语句包含附加关系矩阵。然而，类似于MTGSAM和gibbsf90，MCMCglmm不能解决包括显性或多于一个遗传随机效应作为配子模型的模型。这个问题的一个有吸引力的解决方案是使用软件WinBUGS（Lunn等人2009）贝叶斯编程环境。它相对于前面提到的模型和分布是高度灵活的，只需要数据列表，似然函数和先验分布的规范。 Damgaard（2007），Waldmann（2009）和Hallander et al。 （2010）在本软件中对动物和林业育种数据实施了混合模型分析。 Hallander等人提出的方法（2010）是一种非常灵活的贝叶斯分析，允许推断具有大量遗传参数的线性混合模型。此外，他们的方法减少了大型家系的计算需求。虽然WinBUGS的灵活性是无可争议的，但它不允许直接处理事件和关系矩阵。这些限制使得必须使用基于代数符号的间接方法，使得代码复杂并且对许多用户不利。一个有趣的替代方案是Just Another Gibbs Sampler（JAGS）软件（Plummer 2012），它具有与WinBUGS相同的灵活性和设施，但具有允许矩阵语言编程的优点。本研究的目的是实施一个贝叶斯框架，用于在作物品种育种中进行混合模型分析，并利用替代品进行信息先验引出。">
+  <meta property="og:description" content="e Silva FF, Viana JMS, Faria VR, de Resende MDV. Bayesian inference of mixed models in quantitative genetics of crop species. Theor. Appl. Genet. 2013;126:1749–61.   本研究的目的是实施一个贝叶斯框架，用于作物品种育种中的混合模型分析，并利用信息先验启发的替代品。用爆米花种群中前两个半同胞选择周期说明了年际作物育种中遗传评价的贝叶斯推理。贝叶斯框架基于Just Another Gibbs Sampler软件和R2jags软件包。对于第一周期，使用方差分量的逆的非信息先验和基于荟萃分析的信息先验。对于第二周期，使用非信息先验和信息先验，其被定义为来自第一周期的非信息性和信息性分析的后验。关于第一周期，从荟萃分析中使用信息性先验提供了相对于仅针对谷物产量的非信息先验的分析的明显不同的结果。关于第二个循环，膨胀体积和籽粒产量的结果显示三个分析之间的差异。非信息性和信息性先验分析之间的差异限于方差分量和遗传性。这些分析的预测育种值之间的相关性几乎是完美的。
+介绍 最好的线性无偏预测（BLUP）（Henderson 1974）已经广泛用于动物和林业育种计划中的遗传评估。估计方差分量的常用方法是限制最大似然（REML）（Patterson和Thompson 1971）。贝叶斯预测的遗传变异和育种价值也已被大量采用（Sorensen 2009; Blasco 2001）。事实上，贝叶斯推理在遗传学和育种中具有额外的相关应用，例如使用全基因组密度标记图谱（Meuwissen等人，2001），数量性状基因座定位（Bink等人，2008）的预测育种值，群体结构分析（Pritchard等人2000），关联作图（Marttinen和Corander 2010）以及推断基因表达和调节的水平（Beaumont和Rannala 2004）。只有最近才有年度作物育种者认识到BLUP或贝叶斯分析的遗传评估的优势，如基于不平衡数据的优越方法的方差分量估计，使用谱系信息和历史数据以提高预测准确度，以及可能性包括关于待估计参数的先前信息（Piepho等人2008; Bauer等人2009; Viana等人2012a）。 Bauer等人（2006），Flachenecker et al。 （2006），Oakey et al。 （2007），Viana et al。 （2010a，2011a）等人已经证明了BLUP在复发的群体间和群体间育种程序中以及在纯/自交系的发育中的功效。混合模型在年度作物育种中的贝叶斯推理研究很少。 Mathew et al。 （2012）观察到，方差分量的贝叶斯估计与模拟数据的REML估计相比更准确，并且与大麦田间数据的REML估计一样准确。此外，贝叶斯和BLUP预测的准确性是相等的。 Bauer等人（2009）分析了田间和弹簧条线的模拟数据，考虑了基因型对环境的相互作用效应和系谱信息。一般来说，当性状的遗传率高时，贝叶斯推理和BLUP导致类似的育种价值预测。然而，贝叶斯方法对于低遗传性状优良（表现更好）。幸运的是，所有用于动物和林业育种的遗传评估的贝叶斯分析适合于年度作物育种。 Waldmann和Ericsson（2006）拟合了一个多特征个体模型，用于部分拨号分析场地和来自苏ots松后代的模拟数据。在两个数据集中的REML和Gibbs取样估计之间观察到差异。作者认为REML估计是准确的，吉布斯取样的后验分布模式可能会高估，取决于遗传性。使用相同的数据集，Waldmann et al。 （2008）拟合了基于关系矩阵变换的加性优势模型。具有高优势，加性优势模型具有最佳拟合。在低优势的情况下，需要一个信息先验，以避免高估主导方差。 REML和吉布斯采样估计同意良好，贝叶斯和BLUP预测显示类似的准确性。与BLUP分析相比，贝叶斯方法具有一些优点，例如在选择样本数据和未知参数的分布方面的灵活性以及结合关于模型的参数的先验知识的可能性（Sorensen 2009; Blasco 2001）。尽管后一个优势在文献中被广泛提及为贝叶斯推理的一个潜在的有吸引力的特征（Beaumont和Rannala 2004），但在动物和植物育种的实践中却没有得到重视，因为缺乏这样的情况：这种现有知识可以自然地并入。在我们看来，背景信息的结合代表了贝叶斯分析在作物品种育种中的特殊特征，因为选择周期的概念表征了信息先验的自然机制。这是因为来自给定周期的感兴趣参数的后验分布（例如方差分量）可以用作下一周期的分析中的先验分布，从而形成知识更新系统。在混合模型的贝叶斯推理的计算特征方面，广泛使用了使用马尔可夫链蒙特卡罗（MCMC）算法的统计工具，例如吉布斯采样器，在动物育种中尤其如此。在这些工具中，包括MTGSAM Van Tassell和Van Vleck 1996）和gibbsf90（Misztal等人，2002）仅可用于具有一个育种值载体的加性模型，例如个体和半同胞家族模型。此外，这些软件在选择数据和参数的分布方面没有灵活性，这阻止了使用非正态数据分布和信息先验分布。 R（RDevelopment核心团队2012）包MCMCglmm（Hadfield 2010），其理论背景由Hadfield和Nakagawa（Hadfield和Nakagaw 2010）详细描述，是一个更灵活的工具。该软件包提供了多种数据分发选项，包括单向离散分布和多元离散分布，并允许更改不同类别的先前分布的超参数。此外，它允许通过使用谱系语句包含附加关系矩阵。然而，类似于MTGSAM和gibbsf90，MCMCglmm不能解决包括显性或多于一个遗传随机效应作为配子模型的模型。这个问题的一个有吸引力的解决方案是使用软件WinBUGS（Lunn等人2009）贝叶斯编程环境。它相对于前面提到的模型和分布是高度灵活的，只需要数据列表，似然函数和先验分布的规范。 Damgaard（2007），Waldmann（2009）和Hallander et al。 （2010）在本软件中对动物和林业育种数据实施了混合模型分析。 Hallander等人提出的方法（2010）是一种非常灵活的贝叶斯分析，允许推断具有大量遗传参数的线性混合模型。此外，他们的方法减少了大型家系的计算需求。虽然WinBUGS的灵活性是无可争议的，但它不允许直接处理事件和关系矩阵。这些限制使得必须使用基于代数符号的间接方法，使得代码复杂并且对许多用户不利。一个有趣的替代方案是Just Another Gibbs Sampler（JAGS）软件（Plummer 2012），它具有与WinBUGS相同的灵活性和设施，但具有允许矩阵语言编程的优点。本研究的目的是实施一个贝叶斯框架，用于在作物品种育种中进行混合模型分析，并利用替代品进行信息先验引出。">
+  <meta name="twitter:description" content="e Silva FF, Viana JMS, Faria VR, de Resende MDV. Bayesian inference of mixed models in quantitative genetics of crop species. Theor. Appl. Genet. 2013;126:1749–61.   本研究的目的是实施一个贝叶斯框架，用于作物品种育种中的混合模型分析， …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/bayesian/jags/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/bayesian/jags/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Jags</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (80 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Jags</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (80 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<ol>
+<li>e Silva FF, Viana JMS, Faria VR, de Resende MDV. Bayesian inference of mixed models in quantitative genetics of crop species. Theor. Appl. Genet. 2013;126:1749–61.</li>
+</ol>
+</blockquote>
+
+<p>本研究的目的是实施一个贝叶斯框架，用于作物品种育种中的混合模型分析，并利用信息先验启发的替代品。用爆米花种群中前两个半同胞选择周期说明了年际作物育种中遗传评价的贝叶斯推理。贝叶斯框架基于Just Another Gibbs Sampler软件和R2jags软件包。对于第一周期，使用方差分量的逆的非信息先验和基于荟萃分析的信息先验。对于第二周期，使用非信息先验和信息先验，其被定义为来自第一周期的非信息性和信息性分析的后验。关于第一周期，从荟萃分析中使用信息性先验提供了相对于仅针对谷物产量的非信息先验的分析的明显不同的结果。关于第二个循环，膨胀体积和籽粒产量的结果显示三个分析之间的差异。非信息性和信息性先验分析之间的差异限于方差分量和遗传性。这些分析的预测育种值之间的相关性几乎是完美的。</p>
+
+<hr />
+
+<p>介绍
+最好的线性无偏预测（BLUP）（Henderson 1974）已经广泛用于动物和林业育种计划中的遗传评估。估计方差分量的常用方法是限制最大似然（REML）（Patterson和Thompson 1971）。贝叶斯预测的遗传变异和育种价值也已被大量采用（Sorensen 2009; Blasco 2001）。事实上，贝叶斯推理在遗传学和育种中具有额外的相关应用，例如使用全基因组密度标记图谱（Meuwissen等人，2001），数量性状基因座定位（Bink等人，2008）的预测育种值，群体结构分析（Pritchard等人2000），关联作图（Marttinen和Corander 2010）以及推断基因表达和调节的水平（Beaumont和Rannala 2004）。只有最近才有年度作物育种者认识到BLUP或贝叶斯分析的遗传评估的优势，如基于不平衡数据的优越方法的方差分量估计，使用谱系信息和历史数据以提高预测准确度，以及可能性包括关于待估计参数的先前信息（Piepho等人2008; Bauer等人2009; Viana等人2012a）。 Bauer等人（2006），Flachenecker et al。 （2006），Oakey et al。 （2007），Viana et al。 （2010a，2011a）等人已经证明了BLUP在复发的群体间和群体间育种程序中以及在纯/自交系的发育中的功效。混合模型在年度作物育种中的贝叶斯推理研究很少。 Mathew et al。 （2012）观察到，<strong>方差分量的贝叶斯估计与模拟数据的REML估计相比更准确，并且与大麦田间数据的REML估计一样准确</strong>。此外，<strong>贝叶斯和BLUP预测的准确性是相等的</strong>。 Bauer等人（2009）分析了田间和弹簧条线的模拟数据，考虑了基因型对环境的相互作用效应和系谱信息。一般来说，<strong>当性状的遗传率高时，贝叶斯推理和BLUP导致类似的育种价值预测。然而，贝叶斯方法对于低遗传性状优良（表现更好）</strong>。幸运的是，所有用于动物和林业育种的遗传评估的贝叶斯分析适合于年度作物育种。 Waldmann和Ericsson（2006）拟合了一个多特征个体模型，用于部分拨号分析场地和来自苏ots松后代的模拟数据。在两个数据集中的REML和Gibbs取样估计之间观察到差异。作者认为<strong>REML估计是准确的，吉布斯取样的后验分布模式可能会高估，取决于遗传性</strong>。使用相同的数据集，Waldmann et al。 （2008）拟合了基于关系矩阵变换的加性优势模型。具有高优势，加性优势模型具有最佳拟合。在低优势的情况下，需要一个信息先验，以避免高估主导方差。 REML和吉布斯采样估计同意良好，贝叶斯和BLUP预测显示类似的准确性。<strong>与BLUP分析相比，贝叶斯方法具有一些优点，例如在选择样本数据和未知参数的分布方面的灵活性以及结合关于模型的参数的先验知识的可能性</strong>（Sorensen 2009; Blasco 2001）。尽管后一个优势在文献中被广泛提及为贝叶斯推理的一个潜在的有吸引力的特征（Beaumont和Rannala 2004），但在动物和植物育种的实践中却没有得到重视，因为缺乏这样的情况：这种现有知识可以自然地并入。在我们看来，背景信息的结合代表了贝叶斯分析在作物品种育种中的特殊特征，因为选择周期的概念表征了信息先验的自然机制。这是因为<strong>来自给定周期的感兴趣参数的后验分布（例如方差分量）可以用作下一周期的分析中的先验分布，从而形成知识更新系统</strong>。在混合模型的贝叶斯推理的计算特征方面，广泛使用了使用马尔可夫链蒙特卡罗（MCMC）算法的统计工具，例如吉布斯采样器，在动物育种中尤其如此。在这些工具中，包括MTGSAM Van Tassell和Van Vleck 1996）和gibbsf90（Misztal等人，2002）仅可用于具有一个育种值载体的加性模型，例如个体和半同胞家族模型。此外，这些软件在选择数据和参数的分布方面没有灵活性，这阻止了使用非正态数据分布和信息先验分布。 R（RDevelopment核心团队2012）包<strong>MCMCglmm（Hadfield 2010），其理论背景由Hadfield和Nakagawa（Hadfield和Nakagaw 2010）详细描述，是一个更灵活的工具</strong>。该软件包提供了多种数据分发选项，包括单向离散分布和多元离散分布，并允许更改不同类别的先前分布的超参数。此外，它允许通过使用谱系语句包含附加关系矩阵。然而，类似于MTGSAM和gibbsf90，<strong>MCMCglmm不能解决包括显性或多于一个遗传随机效应作为配子模型的模型</strong>。这个问题的一个有吸引力的解决方案是使用软件<strong>WinBUGS（Lunn等人2009）贝叶斯编程环境。它相对于前面提到的模型和分布是高度灵活的，只需要数据列表，似然函数和先验分布的规范</strong>。 Damgaard（2007），Waldmann（2009）和Hallander et al。 （2010）在本软件中对动物和林业育种数据实施了混合模型分析。 Hallander等人提出的方法（2010）是一种非常灵活的贝叶斯分析，允许推断具有大量遗传参数的线性混合模型。此外，他们的方法减少了大型家系的计算需求。<strong>虽然WinBUGS的灵活性是无可争议的，但它不允许直接处理事件和关系矩阵</strong>。这些限制使得必须使用基于代数符号的间接方法，使得代码复杂并且对许多用户不利。一个有趣的替代方案是<strong>Just Another Gibbs Sampler（JAGS）软件（Plummer 2012），它具有与WinBUGS相同的灵活性和设施，但具有允许矩阵语言编程的优点</strong>。本研究的目的是实施一个贝叶斯框架，用于在作物品种育种中进行混合模型分析，并利用替代品进行信息先验引出。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/gs/jannink2010b-%E6%A4%8D%E7%89%A9%E7%BB%BC%E8%BF%B0/" data-toggle="tooltip" data-placement="top" title="Jannink2010b-植物综述">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/jagosz-2011-%E8%83%A1%E8%90%9D%E5%8D%9C/" data-toggle="tooltip" data-placement="top" title="Jagosz-2011-胡萝卜">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

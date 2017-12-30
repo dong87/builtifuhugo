@@ -7,9 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>youremail@domain.com (Leiming Dong)</managingEditor>
     <webMaster>youremail@domain.com (Leiming Dong)</webMaster>
+    <lastBuildDate>Sun, 01 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bayesian</title>
+      <link>/categories/bayesian/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/bayesian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Diallel</title>
+      <link>/categories/diallel/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/diallel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gs</title>
+      <link>/categories/gs/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/gs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nir</title>
+      <link>/categories/nir/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/nir/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Notes</title>
@@ -30,11 +67,200 @@
     </item>
     
     <item>
+      <title>Rcodes</title>
+      <link>/categories/rcodes/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/rcodes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R记录本</title>
+      <link>/categories/r%E8%AE%B0%E5%BD%95%E6%9C%AC/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/r%E8%AE%B0%E5%BD%95%E6%9C%AC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stat</title>
+      <link>/categories/stat/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/stat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>作图</title>
+      <link>/categories/%E4%BD%9C%E5%9B%BE/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/%E4%BD%9C%E5%9B%BE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>分子生物</title>
+      <link>/categories/%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>工作日志</title>
+      <link>/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>待读读文献</title>
+      <link>/categories/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>投稿技巧</title>
+      <link>/categories/%E6%8A%95%E7%A8%BF%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/%E6%8A%95%E7%A8%BF%E6%8A%80%E5%B7%A7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>日本落叶松</title>
+      <link>/categories/%E6%97%A5%E6%9C%AC%E8%90%BD%E5%8F%B6%E6%9D%BE/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/%E6%97%A5%E6%9C%AC%E8%90%BD%E5%8F%B6%E6%9D%BE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>杂交优势</title>
+      <link>/categories/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>标记谱系</title>
+      <link>/categories/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>每日一词</title>
       <link>/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
       <author>youremail@domain.com (Leiming Dong)</author>
       <guid>/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>空间</title>
+      <link>/categories/%E7%A9%BA%E9%97%B4/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/%E7%A9%BA%E9%97%B4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>突变</title>
+      <link>/categories/%E7%AA%81%E5%8F%98/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/%E7%AA%81%E5%8F%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>竞争</title>
+      <link>/categories/%E7%AB%9E%E4%BA%89/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/%E7%AB%9E%E4%BA%89/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>统计模型</title>
+      <link>/categories/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>群体结构</title>
+      <link>/categories/%E7%BE%A4%E4%BD%93%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/%E7%BE%A4%E4%BD%93%E7%BB%93%E6%9E%84/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>育种</title>
+      <link>/categories/%E8%82%B2%E7%A7%8D/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/%E8%82%B2%E7%A7%8D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>表达谱</title>
+      <link>/categories/%E8%A1%A8%E8%BE%BE%E8%B0%B1/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/%E8%A1%A8%E8%BE%BE%E8%B0%B1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>论文</title>
+      <link>/categories/%E8%AE%BA%E6%96%87/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/%E8%AE%BA%E6%96%87/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>近交衰退</title>
+      <link>/categories/%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>遗传参数</title>
+      <link>/categories/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/categories/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/</guid>
       <description></description>
     </item>
     

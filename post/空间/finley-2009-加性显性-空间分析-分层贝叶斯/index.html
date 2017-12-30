@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Finley-2009-加性显性-空间分析-分层贝叶斯</title>
+  <meta property="og:title" content="Finley-2009-加性显性-空间分析-分层贝叶斯" />
+  <meta name="twitter:title" content="Finley-2009-加性显性-空间分析-分层贝叶斯" />
+  <meta name="description" content="Finley AO, Banerjee S, Waldmann P, Ericsson T. Hierarchical spatial modeling of additive and dominance genetic variance for large spatial trial datasets. Biometrics. 2009;65:441–51.   摘要：本文通过在大空间参考试验数据集的背景下开发用于推断加性和显性遗传方差的空间过程模型，扩展了在数量遗传学中最近感兴趣的贝叶斯分级模型。然而，这种模型到大空间数据集的直接应用在计算上是不可行的，因为涉及估计的三次矩阵算法。在马尔可夫链蒙特卡罗（MCMC）背景中情况甚至更糟，其中这样的计算被执行几次迭代。在这里，我们讨论有助于消除这些障碍而不牺牲建模的丰富性的方法。对于遗传效应，我们演示了关系矩阵的初始谱分解如何消除在先前提出的MCMC方法中所需的昂贵的矩阵逆转。对于空间效应，我们概述了避开昂贵的矩阵分解的两种方法：第一个利用从Ornstein-Uhlenbeck过程的分析结果，产生计算上有效的三角形结构，而第二个通过投影其实现从原始模型导出修改的预测过程模型到较低维子空间，从而减少计算负担。我们阐述了使用具有加性，显性，遗传效应和各向异性空间残差的合成数据集以及来自在瑞典北部进行的苏格兰松（Pinus sylvestris L.）后代研究的大数据集的所提出的方法。我们的方法使我们能够对这个大型试验提供一个全面的分析，充分证明，除了有违线性模型的基本假设，忽略空间效应可导致向下偏倚的遗传力测量。
+通过马尔可夫链蒙特卡罗（MCMC）方法实现的分层随机效应模型最近在数量遗传学中获得普及（参见例如Sorensen和Gianola，2002; Waldmann和Ericsson，2006，以及其中的参考文献）。已经提出了单组分single-component和阻塞吉布斯取样器blocked Gibbs samplers。然而，单分量采样器受到缓慢混合的困扰，并且阻塞采样器通常涉及矩阵分解，其复杂度随着MCMC算法每次迭代的观测值数目n（n）的增加而增加。这些计算密集型矩阵计算限制对小样本大小的推断，这可能导致不可靠的结果和不确定的证据。
+数量遗传学研究多基因性状的遗传，重点是估计加性遗传方差，σ2a和遗传力h2 =σ2a /σ2Tot，其中分母代表遗传和未解释的总变异。高遗传力应导致更大的选择响应，即在后代中遗传获得的概率更高。遗传变异可以进一步分成添加和非添加成分（Lynch和Walsh，1998）。给定一个感兴趣的多基因变量和个体谱系信息以及附带关系的实验设计，混合效应模型可以提供所有遗传变异的推断（Henderson，1985），因为加性，显性和上位性遗传效应在处于连锁平衡未选择的、非近交种群体中是不相关的（Cockerham，1954）。给定显性遗传方差σ2d，显性ra-tio，d2 =σ2d/σ2Tot，经常被估计，但目前缺乏直接的实际解释。
+林业和农业栽培遗传试验的共同特征是观察单位之间存在系统性异质性。如果在模型中忽略这种空间异质性，遗传参数的估计可能会有偏差（Dutkowski et al。，2002; Cappa and Cantet，2007）。对于空间排列的观测单元，异质性通常源自小规模环境条件（例如，土壤特性，微气候，光可用性等），这可能导致单位之间的相关性作为距离和/或方向的函数。尽管传统的随机设计试图消除任何混杂的空间相关性，但是最近的兴趣转向了解释空间相关性的模型，最常见的是通过差分或通过使用来自相邻单元的残差构造协变量来合并空间相关性（参见例如， Zimmerman和Harville，1991; Cullis等，1998，及其中的参考文献）。 一个值得注意的例外是Zimmerman和Harville（1991），他们探索了在其模型中包括空间协方差的古典地理统计方法。我们也采用地理统计方法，但着重于设置，其中位置数量太大，无法有效估计层次空间模型。我们提供计算高效的方法给在基于个体的线性混合模型中包含或不包含空间随机效应的贝叶斯估计遗传方差分量。对于遗传效应，我们采用关系矩阵的谱分解来估计先前提出的MCMC采样器中所需的昂贵的矩阵求逆。我们限制自己到加性和显性效应，以避免通过上位性效应引起的可识别性问题。 对于空间效应，我们探讨两种方法来规避昂贵的矩阵分解。第一种是从产生稀疏三角形结构的特殊相关函数的产物构造空间过程。 Martin（1990）研究了基于可能性的方法的这种方法;在这里，我们将其适应于具有丢失数据的分层贝叶斯框架。我们的第二种方法不太熟悉，特别是在遗传试验中：我们应用驻留在具有较低计算负担的较低维子空间中的预测过程模型（Banerjee等人，2008）。预测过程的原始公式的缺点是它在模型的非空间误差项中引入正偏差。为了解决这个缺点，我们提出了一个修改的预测过程，有效地消除这种偏见。在第2节中，我们开发了数据模型，并详细介绍了帮助模型选择的方法。在第3节中，我们概述了拟议的MCMC采样器和讨论遗传和空间效应的实现。综合数据分析和苏格兰松分析在第4部分中介绍。在Web附录B中，我们在Scots pine试验站点的一个子集上提出的空间模型之间提供额外的比较分析。在第5节中，我们简要讨论了文章。">
+  <meta property="og:description" content="Finley AO, Banerjee S, Waldmann P, Ericsson T. Hierarchical spatial modeling of additive and dominance genetic variance for large spatial trial datasets. Biometrics. 2009;65:441–51.   摘要：本文通过在大空间参考试验数据集的背景下开发用于推断加性和显性遗传方差的空间过程模型，扩展了在数量遗传学中最近感兴趣的贝叶斯分级模型。然而，这种模型到大空间数据集的直接应用在计算上是不可行的，因为涉及估计的三次矩阵算法。在马尔可夫链蒙特卡罗（MCMC）背景中情况甚至更糟，其中这样的计算被执行几次迭代。在这里，我们讨论有助于消除这些障碍而不牺牲建模的丰富性的方法。对于遗传效应，我们演示了关系矩阵的初始谱分解如何消除在先前提出的MCMC方法中所需的昂贵的矩阵逆转。对于空间效应，我们概述了避开昂贵的矩阵分解的两种方法：第一个利用从Ornstein-Uhlenbeck过程的分析结果，产生计算上有效的三角形结构，而第二个通过投影其实现从原始模型导出修改的预测过程模型到较低维子空间，从而减少计算负担。我们阐述了使用具有加性，显性，遗传效应和各向异性空间残差的合成数据集以及来自在瑞典北部进行的苏格兰松（Pinus sylvestris L.）后代研究的大数据集的所提出的方法。我们的方法使我们能够对这个大型试验提供一个全面的分析，充分证明，除了有违线性模型的基本假设，忽略空间效应可导致向下偏倚的遗传力测量。
+通过马尔可夫链蒙特卡罗（MCMC）方法实现的分层随机效应模型最近在数量遗传学中获得普及（参见例如Sorensen和Gianola，2002; Waldmann和Ericsson，2006，以及其中的参考文献）。已经提出了单组分single-component和阻塞吉布斯取样器blocked Gibbs samplers。然而，单分量采样器受到缓慢混合的困扰，并且阻塞采样器通常涉及矩阵分解，其复杂度随着MCMC算法每次迭代的观测值数目n（n）的增加而增加。这些计算密集型矩阵计算限制对小样本大小的推断，这可能导致不可靠的结果和不确定的证据。
+数量遗传学研究多基因性状的遗传，重点是估计加性遗传方差，σ2a和遗传力h2 =σ2a /σ2Tot，其中分母代表遗传和未解释的总变异。高遗传力应导致更大的选择响应，即在后代中遗传获得的概率更高。遗传变异可以进一步分成添加和非添加成分（Lynch和Walsh，1998）。给定一个感兴趣的多基因变量和个体谱系信息以及附带关系的实验设计，混合效应模型可以提供所有遗传变异的推断（Henderson，1985），因为加性，显性和上位性遗传效应在处于连锁平衡未选择的、非近交种群体中是不相关的（Cockerham，1954）。给定显性遗传方差σ2d，显性ra-tio，d2 =σ2d/σ2Tot，经常被估计，但目前缺乏直接的实际解释。
+林业和农业栽培遗传试验的共同特征是观察单位之间存在系统性异质性。如果在模型中忽略这种空间异质性，遗传参数的估计可能会有偏差（Dutkowski et al。，2002; Cappa and Cantet，2007）。对于空间排列的观测单元，异质性通常源自小规模环境条件（例如，土壤特性，微气候，光可用性等），这可能导致单位之间的相关性作为距离和/或方向的函数。尽管传统的随机设计试图消除任何混杂的空间相关性，但是最近的兴趣转向了解释空间相关性的模型，最常见的是通过差分或通过使用来自相邻单元的残差构造协变量来合并空间相关性（参见例如， Zimmerman和Harville，1991; Cullis等，1998，及其中的参考文献）。 一个值得注意的例外是Zimmerman和Harville（1991），他们探索了在其模型中包括空间协方差的古典地理统计方法。我们也采用地理统计方法，但着重于设置，其中位置数量太大，无法有效估计层次空间模型。我们提供计算高效的方法给在基于个体的线性混合模型中包含或不包含空间随机效应的贝叶斯估计遗传方差分量。对于遗传效应，我们采用关系矩阵的谱分解来估计先前提出的MCMC采样器中所需的昂贵的矩阵求逆。我们限制自己到加性和显性效应，以避免通过上位性效应引起的可识别性问题。 对于空间效应，我们探讨两种方法来规避昂贵的矩阵分解。第一种是从产生稀疏三角形结构的特殊相关函数的产物构造空间过程。 Martin（1990）研究了基于可能性的方法的这种方法;在这里，我们将其适应于具有丢失数据的分层贝叶斯框架。我们的第二种方法不太熟悉，特别是在遗传试验中：我们应用驻留在具有较低计算负担的较低维子空间中的预测过程模型（Banerjee等人，2008）。预测过程的原始公式的缺点是它在模型的非空间误差项中引入正偏差。为了解决这个缺点，我们提出了一个修改的预测过程，有效地消除这种偏见。在第2节中，我们开发了数据模型，并详细介绍了帮助模型选择的方法。在第3节中，我们概述了拟议的MCMC采样器和讨论遗传和空间效应的实现。综合数据分析和苏格兰松分析在第4部分中介绍。在Web附录B中，我们在Scots pine试验站点的一个子集上提出的空间模型之间提供额外的比较分析。在第5节中，我们简要讨论了文章。">
+  <meta name="twitter:description" content="Finley AO, Banerjee S, Waldmann P, Ericsson T. Hierarchical spatial modeling of additive and dominance genetic variance for large spatial trial datasets. Biometrics. 2009;65:441–51.   摘要：本文通过在大空间参考试验数 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/finley-2009-%E5%8A%A0%E6%80%A7%E6%98%BE%E6%80%A7-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90-%E5%88%86%E5%B1%82%E8%B4%9D%E5%8F%B6%E6%96%AF/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/finley-2009-%E5%8A%A0%E6%80%A7%E6%98%BE%E6%80%A7-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90-%E5%88%86%E5%B1%82%E8%B4%9D%E5%8F%B6%E6%96%AF/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Finley-2009-加性显性-空间分析-分层贝叶斯</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (47 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Finley-2009-加性显性-空间分析-分层贝叶斯</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (47 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<ol>
+<li>Finley AO, Banerjee S, Waldmann P, Ericsson T. Hierarchical spatial modeling of additive and dominance genetic variance for large spatial trial datasets. Biometrics. 2009;65:441–51.</li>
+</ol>
+</blockquote>
+
+<p>摘要：本文通过在大空间参考试验数据集的背景下开发用于推断加性和显性遗传方差的空间过程模型，扩展了在数量遗传学中最近感兴趣的贝叶斯分级模型。然而，这种模型到大空间数据集的直接应用在计算上是不可行的，因为涉及估计的三次矩阵算法。在马尔可夫链蒙特卡罗（MCMC）背景中情况甚至更糟，其中这样的计算被执行几次迭代。在这里，我们讨论有助于消除这些障碍而不牺牲建模的丰富性的方法。对于遗传效应，我们演示了关系矩阵的初始谱分解如何消除在先前提出的MCMC方法中所需的昂贵的矩阵逆转。对于空间效应，我们概述了避开昂贵的矩阵分解的两种方法：第一个利用从Ornstein-Uhlenbeck过程的分析结果，产生计算上有效的三角形结构，而第二个通过投影其实现从原始模型导出修改的预测过程模型到较低维子空间，从而减少计算负担。我们阐述了使用具有加性，显性，遗传效应和各向异性空间残差的合成数据集以及来自在瑞典北部进行的苏格兰松（Pinus sylvestris L.）后代研究的大数据集的所提出的方法。我们的方法使我们能够对这个大型试验提供一个全面的分析，充分证明，除了有违线性模型的基本假设，忽略空间效应可导致向下偏倚的遗传力测量。</p>
+
+<hr />
+
+<p>通过马尔可夫链蒙特卡罗（MCMC）方法实现的分层随机效应模型最近在数量遗传学中获得普及（参见例如Sorensen和Gianola，2002; Waldmann和Ericsson，2006，以及其中的参考文献）。已经提出了单组分single-component和阻塞吉布斯取样器blocked Gibbs samplers。然而，单分量采样器受到缓慢混合的困扰，并且阻塞采样器通常涉及矩阵分解，其复杂度随着MCMC算法每次迭代的观测值数目n（n）的增加而增加。这些计算密集型矩阵计算限制对小样本大小的推断，这可能导致不可靠的结果和不确定的证据。</p>
+
+<p>数量遗传学研究多基因性状的遗传，重点是估计加性遗传方差，σ2a和遗传力h2 =σ2a /σ2Tot，其中分母代表遗传和未解释的总变异。高遗传力应导致更大的选择响应，即在后代中遗传获得的概率更高。遗传变异可以进一步分成添加和非添加成分（Lynch和Walsh，1998）。给定一个感兴趣的多基因变量和个体谱系信息以及附带关系的实验设计，混合效应模型可以提供所有遗传变异的推断（Henderson，1985），因为加性，显性和上位性遗传效应在处于连锁平衡未选择的、非近交种群体中是不相关的（Cockerham，1954）。给定显性遗传方差σ2d，显性ra-tio，d2 =σ2d/σ2Tot，经常被估计，但目前缺乏直接的实际解释。</p>
+
+<p>林业和农业栽培遗传试验的共同特征是观察单位之间存在系统性异质性。如果在模型中忽略这种空间异质性，遗传参数的估计可能会有偏差（Dutkowski et al。，2002; Cappa and Cantet，2007）。对于空间排列的观测单元，异质性通常源自小规模环境条件（例如，土壤特性，微气候，光可用性等），这可能导致单位之间的相关性作为距离和/或方向的函数。尽管传统的随机设计试图消除任何混杂的空间相关性，但是最近的兴趣转向了解释空间相关性的模型，最常见的是通过差分或通过使用来自相邻单元的残差构造协变量来合并空间相关性（参见例如， Zimmerman和Harville，1991; Cullis等，1998，及其中的参考文献）。
+ 一个值得注意的例外是Zimmerman和Harville（1991），他们探索了在其模型中包括空间协方差的古典地理统计方法。我们也采用地理统计方法，但着重于设置，其中位置数量太大，无法有效估计层次空间模型。我们提供计算高效的方法给在基于个体的线性混合模型中包含或不包含空间随机效应的贝叶斯估计遗传方差分量。对于遗传效应，我们采用关系矩阵的谱分解来估计先前提出的MCMC采样器中所需的昂贵的矩阵求逆。我们限制自己到加性和显性效应，以避免通过上位性效应引起的可识别性问题。
+对于空间效应，我们探讨两种方法来规避昂贵的矩阵分解。第一种是从产生稀疏三角形结构的特殊相关函数的产物构造空间过程。 Martin（1990）研究了基于可能性的方法的这种方法;在这里，我们将其适应于具有丢失数据的分层贝叶斯框架。我们的第二种方法不太熟悉，特别是在遗传试验中：我们应用驻留在具有较低计算负担的较低维子空间中的预测过程模型（Banerjee等人，2008）。预测过程的原始公式的缺点是它在模型的非空间误差项中引入正偏差。为了解决这个缺点，我们提出了一个修改的预测过程，有效地消除这种偏见。在第2节中，我们开发了数据模型，并详细介绍了帮助模型选择的方法。在第3节中，我们概述了拟议的MCMC采样器和讨论遗传和空间效应的实现。综合数据分析和苏格兰松分析在第4部分中介绍。在Web附录B中，我们在Scots pine试验站点的一个子集上提出的空间模型之间提供额外的比较分析。在第5节中，我们简要讨论了文章。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80/ford2015-%E8%BF%91%E4%BA%A4%E5%AF%B9%E7%81%AB%E7%82%AC%E6%9D%BE%E7%94%9F%E9%95%BF%E5%92%8C%E8%B4%A8%E9%87%8F%E6%80%A7%E7%8A%B6%E7%9A%84%E5%BD%B1%E5%93%8D/" data-toggle="tooltip" data-placement="top" title="Ford2015-近交对火炬松生长和质量性状的影响">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/gs/fe2016-%E9%BB%91%E9%BA%A6%E8%8D%89-%E5%9F%BA%E5%9B%A0%E7%BB%84%E9%A2%84%E6%B5%8B%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7/" data-toggle="tooltip" data-placement="top" title="Fe2016-黑麦草-基因组预测的准确性">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

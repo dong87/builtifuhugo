@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Zas2006-Kriging</title>
+  <meta property="og:title" content="Zas2006-Kriging" />
+  <meta name="twitter:title" content="Zas2006-Kriging" />
+  <meta name="description" content="Zas R. Iterative kriging for removing spatial autocorrelation in analysis of forest genetic trials. Tree Genet. Genomes. 2006;2:177–85.   在未充分阻断的田间基因试验中空间相关数据的常规分析可能会产生严重影响育种决定的错误结果。森林基因试验通常非常大且非常不均匀，因此微环境异质性的调整变得不可或缺。本研究探讨使用地统计学来解释四个松属松果Ait的空间自相关。后代试验建立在丘陵和不规则的地形，随机完全块设计和大块。使用基于半变异函数和克里金法的迭代方法调整在8岁时评估的5种不同性状的数据，并且与常规分析相比评价对方差分量，遗传力和家庭效应的估计的影响。几乎所有研究的性状显示非随机空间结构。因此，在对空间自相关进行调整之后，在常规分析中非常高的块和族x块方差分量几乎消失。相互作用方差的减少通过家族方差分量恢复，导致更高的遗传力估计。空间自相关的消除也影响家庭效应的估计，导致在空间调整后家庭等级的重要变化。由于家庭效应估计的更高的准确性，家族之间的比较也大大改善。生长性状的分析改善较大，其显示出最强的空间异质性，但对于其它性状如直线性或螺旋数也是明显的。本文演示如何空间自相关可以大幅度影响森林遗传试验与大块的分析。本文提出的迭代克里金程序是解决这种空间异质性的有前途的工具。
+介绍 森林遗传试验（FGT）通常是非常大的，因为遗传条目的数量很大并且个体植物需要大的空间。此外，FGT通常建立在丘陵和不规则地形上，导致复制块内的空间异质性，这可能限制测试的效率。事实上，空间梯度和斑块性已经显示为FGT中的规范（Costa-Silva等人2001; Dutkowski等人2002; Fu等人1999; Hamann等人2002; Magnussen 1990），甚至在表观上（Joyce等人，2002年）。当存在空间异质性时，近邻相比远离近邻更相似，即，数据是自相关的，并且违反了在标准参数统计中的数据独立性的要求（Legendre 1993）。尽管已经表明遗传试验中空间相关观察的常规分析可能是灾难性的（Magnussen 1993a），但是在数据分析中并入空间相关性正在慢慢地出现。具有小块的几个复杂的不完全块（IB）设计可以成功地解释这种空间异质性的大部分（Fu等人1998）。这些实验设计中的一些，如alpha设计（Whitaker等人，1999），在最近的森林遗传试验中已经变得流行，但是随机化完全区块设计（RCB）仍然在使用，并且是几十年前建立的FGT中的典型设计（Loo-Dinkins 1992; Magnussen 1993b）。由于FGT的评估必须延迟，以实现对成熟性能的可靠预测，仍然有许多森林测试需要RCB和大块，仍然需要评估。然而，IB设计的使用可能无法解释短距离上的完全空间异质性（Magnussen 1990），并且块边界和位置变化的实际模式之间的失配将会发生，而不管采用何种设计，因为环境变化倾向于连续和平滑（Dutilleul 1993; Dutkowski等人2002; Ettema和Wardle 2002）。植物间竞争可能是老年森林试验的另一个特殊性，影响邻居之间的相关性（Magnussen 1994）。为了最小化不同遗传项之间的竞争，FGT通常与多树连续地块建立（Magnussen 1993b）。在多树连续图中，基本环境协方差与给定图中的遗传协方差混淆，导致偏倚的遗传参数估计和大块进入块间相互作用方差，这可能大大降低现场测试的精度（Loo -Dinkins 1992）。除了IB设计，​​已经提出了几种分析方法来解释环境变化并且提高现场遗传试验的分析的效率。空间分析，如趋势分析，邻居分析或最近邻分析，已显示加强农业田间试验的分析，并在农艺学中变得相当普遍（例如，Gilmour等人1997; Grondona等人1996年;乔et al.2000，2004）。虽然没有如此常用，空间分析方法在森林试验中也给出了成功的结果（Anekonda和Libby 1996; Costa-Silva等人2001; Dutkowski等人2002; Hamann等人2002; Joyce等人2002; Magnussen 1993a，1994）。 在不同的方法中，地统计学已被证明是一种优秀的工具来模拟土壤性质的空间变化（Gallardo 2003; Gallardo和Covelo 2005;López和Arrúe1995年），并且还去除了遗传试验中的微环境异质性（Hamann et al.2002）。加利西亚（NW西班牙）是一个多山和异质区域与酸性和不育森林土壤。该地区森林种植的生产力高度依赖于土壤性质（Merino等人2003;Sánchez-Rodríguez等人2002; Zas和Serrada 2003），其已知具有小规模空间异质性（Gallardo 2003; Gallardo和Covelo 2005）。在四个RCB松属pinaster Ait。在加利西亚的后代测试，这种空间异质性反映了总方差的大比例解释块之间的差异和一个大的家庭由块相互作用（Zas et al。2004a）。空间自相关在这些试验中似乎是非常重要的，所选择的材料显示出极端和不协调的环境敏感性，应该进一步研究。本研究的目的是1）分析这些后代试验中不同变量的空间结构，以及2）评估空间异质性对RCB试验常规统计分析效率的影响。空间变异使用半变异函数和克里金法建模。提出了基于这些技术的迭代方法以从数据中去除空间异质性。
+空间分析 因为不是所有的树苗都按照规则网格种植，所以使用在〜1：1000尺度的正交航空照片估计每棵树的近似x-y坐标。容易地鉴定种植系，并且从照片中获得每条线的开始和结束的坐标。通过用n-1个等长段中的种植线划分来确定每条线内的树的坐标，其中n是给定线中的树的数目。减去家族效应后每个变量的残差用于探索数据的空间结构。进行单向方差分析，家族效应被认为是随机的，并且使用SAS系统中的MIXED程序（SAS Institute 1999）获得家族效应的最佳线性无偏预测器（BLUP）。 使用半变异函数对所得到的残差的空间结构进行建模，其将树中的半方差作为它们之间的距离的函数进行绘图（Cressie 1993）。半方差γ（h）计算为">
+  <meta property="og:description" content="Zas R. Iterative kriging for removing spatial autocorrelation in analysis of forest genetic trials. Tree Genet. Genomes. 2006;2:177–85.   在未充分阻断的田间基因试验中空间相关数据的常规分析可能会产生严重影响育种决定的错误结果。森林基因试验通常非常大且非常不均匀，因此微环境异质性的调整变得不可或缺。本研究探讨使用地统计学来解释四个松属松果Ait的空间自相关。后代试验建立在丘陵和不规则的地形，随机完全块设计和大块。使用基于半变异函数和克里金法的迭代方法调整在8岁时评估的5种不同性状的数据，并且与常规分析相比评价对方差分量，遗传力和家庭效应的估计的影响。几乎所有研究的性状显示非随机空间结构。因此，在对空间自相关进行调整之后，在常规分析中非常高的块和族x块方差分量几乎消失。相互作用方差的减少通过家族方差分量恢复，导致更高的遗传力估计。空间自相关的消除也影响家庭效应的估计，导致在空间调整后家庭等级的重要变化。由于家庭效应估计的更高的准确性，家族之间的比较也大大改善。生长性状的分析改善较大，其显示出最强的空间异质性，但对于其它性状如直线性或螺旋数也是明显的。本文演示如何空间自相关可以大幅度影响森林遗传试验与大块的分析。本文提出的迭代克里金程序是解决这种空间异质性的有前途的工具。
+介绍 森林遗传试验（FGT）通常是非常大的，因为遗传条目的数量很大并且个体植物需要大的空间。此外，FGT通常建立在丘陵和不规则地形上，导致复制块内的空间异质性，这可能限制测试的效率。事实上，空间梯度和斑块性已经显示为FGT中的规范（Costa-Silva等人2001; Dutkowski等人2002; Fu等人1999; Hamann等人2002; Magnussen 1990），甚至在表观上（Joyce等人，2002年）。当存在空间异质性时，近邻相比远离近邻更相似，即，数据是自相关的，并且违反了在标准参数统计中的数据独立性的要求（Legendre 1993）。尽管已经表明遗传试验中空间相关观察的常规分析可能是灾难性的（Magnussen 1993a），但是在数据分析中并入空间相关性正在慢慢地出现。具有小块的几个复杂的不完全块（IB）设计可以成功地解释这种空间异质性的大部分（Fu等人1998）。这些实验设计中的一些，如alpha设计（Whitaker等人，1999），在最近的森林遗传试验中已经变得流行，但是随机化完全区块设计（RCB）仍然在使用，并且是几十年前建立的FGT中的典型设计（Loo-Dinkins 1992; Magnussen 1993b）。由于FGT的评估必须延迟，以实现对成熟性能的可靠预测，仍然有许多森林测试需要RCB和大块，仍然需要评估。然而，IB设计的使用可能无法解释短距离上的完全空间异质性（Magnussen 1990），并且块边界和位置变化的实际模式之间的失配将会发生，而不管采用何种设计，因为环境变化倾向于连续和平滑（Dutilleul 1993; Dutkowski等人2002; Ettema和Wardle 2002）。植物间竞争可能是老年森林试验的另一个特殊性，影响邻居之间的相关性（Magnussen 1994）。为了最小化不同遗传项之间的竞争，FGT通常与多树连续地块建立（Magnussen 1993b）。在多树连续图中，基本环境协方差与给定图中的遗传协方差混淆，导致偏倚的遗传参数估计和大块进入块间相互作用方差，这可能大大降低现场测试的精度（Loo -Dinkins 1992）。除了IB设计，​​已经提出了几种分析方法来解释环境变化并且提高现场遗传试验的分析的效率。空间分析，如趋势分析，邻居分析或最近邻分析，已显示加强农业田间试验的分析，并在农艺学中变得相当普遍（例如，Gilmour等人1997; Grondona等人1996年;乔et al.2000，2004）。虽然没有如此常用，空间分析方法在森林试验中也给出了成功的结果（Anekonda和Libby 1996; Costa-Silva等人2001; Dutkowski等人2002; Hamann等人2002; Joyce等人2002; Magnussen 1993a，1994）。 在不同的方法中，地统计学已被证明是一种优秀的工具来模拟土壤性质的空间变化（Gallardo 2003; Gallardo和Covelo 2005;López和Arrúe1995年），并且还去除了遗传试验中的微环境异质性（Hamann et al.2002）。加利西亚（NW西班牙）是一个多山和异质区域与酸性和不育森林土壤。该地区森林种植的生产力高度依赖于土壤性质（Merino等人2003;Sánchez-Rodríguez等人2002; Zas和Serrada 2003），其已知具有小规模空间异质性（Gallardo 2003; Gallardo和Covelo 2005）。在四个RCB松属pinaster Ait。在加利西亚的后代测试，这种空间异质性反映了总方差的大比例解释块之间的差异和一个大的家庭由块相互作用（Zas et al。2004a）。空间自相关在这些试验中似乎是非常重要的，所选择的材料显示出极端和不协调的环境敏感性，应该进一步研究。本研究的目的是1）分析这些后代试验中不同变量的空间结构，以及2）评估空间异质性对RCB试验常规统计分析效率的影响。空间变异使用半变异函数和克里金法建模。提出了基于这些技术的迭代方法以从数据中去除空间异质性。
+空间分析 因为不是所有的树苗都按照规则网格种植，所以使用在〜1：1000尺度的正交航空照片估计每棵树的近似x-y坐标。容易地鉴定种植系，并且从照片中获得每条线的开始和结束的坐标。通过用n-1个等长段中的种植线划分来确定每条线内的树的坐标，其中n是给定线中的树的数目。减去家族效应后每个变量的残差用于探索数据的空间结构。进行单向方差分析，家族效应被认为是随机的，并且使用SAS系统中的MIXED程序（SAS Institute 1999）获得家族效应的最佳线性无偏预测器（BLUP）。 使用半变异函数对所得到的残差的空间结构进行建模，其将树中的半方差作为它们之间的距离的函数进行绘图（Cressie 1993）。半方差γ（h）计算为">
+  <meta name="twitter:description" content="Zas R. Iterative kriging for removing spatial autocorrelation in analysis of forest genetic trials. Tree Genet. Genomes. 2006;2:177–85.   在未充分阻断的田间基因试验中空间相关数据的常规分析可能会产生严重影响育种决定的错误结果。森林基因试验通常非常大且非常不均匀， …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/zas2006-kriging/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/zas2006-kriging/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Zas2006-Kriging</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (128 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Zas2006-Kriging</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (128 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<ol>
+<li>Zas R. Iterative kriging for removing spatial autocorrelation in analysis of forest genetic trials. Tree Genet. Genomes. 2006;2:177–85.</li>
+</ol>
+</blockquote>
+
+<p>在未充分阻断的田间基因试验中空间相关数据的常规分析可能会产生严重影响育种决定的错误结果。森林基因试验通常非常大且非常不均匀，因此微环境异质性的调整变得不可或缺。本研究探讨使用地统计学来解释四个松属松果Ait的空间自相关。后代试验建立在丘陵和不规则的地形，随机完全块设计和大块。使用基于半变异函数和克里金法的迭代方法调整在8岁时评估的5种不同性状的数据，并且与常规分析相比评价对方差分量，遗传力和家庭效应的估计的影响。<strong>几乎所有研究的性状显示非随机空间结构</strong>。因此，在对空间自相关进行调整之后，在常规分析中非常高的块和族x块方差分量几乎消失。<strong>相互作用方差的减少通过家族方差分量恢复，导致更高的遗传力估计</strong>。<strong>空间自相关的消除也影响家庭效应的估计，导致在空间调整后家庭等级的重要变化。由于家庭效应估计的更高的准确性，家族之间的比较也大大改善。生长性状的分析改善较大，其显示出最强的空间异质性</strong>，但对于其它性状如直线性或螺旋数也是明显的。本文演示如何空间自相关可以大幅度影响森林遗传试验与大块的分析。本文提出的迭代克里金程序是解决这种空间异质性的有前途的工具。</p>
+
+<hr />
+
+<h2 id="介绍">介绍</h2>
+
+<p>森林遗传试验（FGT）通常是非常大的，因为遗传条目的数量很大并且个体植物需要大的空间。此外，FGT通常建立在丘陵和不规则地形上，导致复制块内的空间异质性，这可能限制测试的效率。事实上，空间梯度和斑块性已经显示为FGT中的规范（Costa-Silva等人2001; Dutkowski等人2002; Fu等人1999; Hamann等人2002; Magnussen 1990），甚至在表观上（Joyce等人，2002年）。<strong>当存在空间异质性时，近邻相比远离近邻更相似，即，数据是自相关的，并且违反了在标准参数统计中的数据独立性的要求（Legendre 1993）</strong>。尽管已经表明遗传试验中空间相关观察的常规分析可能是灾难性的（Magnussen 1993a），但是在数据分析中并入空间相关性正在慢慢地出现。具有小块的几个复杂的不完全块（IB）设计可以成功地解释这种空间异质性的大部分（Fu等人1998）。这些实验设计中的一些，如alpha设计（Whitaker等人，1999），在最近的森林遗传试验中已经变得流行，但是随机化完全区块设计（RCB）仍然在使用，并且是几十年前建立的FGT中的典型设计（Loo-Dinkins 1992; Magnussen 1993b）。由于FGT的评估必须延迟，以实现对成熟性能的可靠预测，仍然有许多森林测试需要RCB和大块，仍然需要评估。然而，<strong>IB设计的使用可能无法解释短距离上的完全空间异质性</strong>（Magnussen 1990），并且块边界和位置变化的实际模式之间的失配将会发生，而不管采用何种设计，因为环境变化倾向于连续和平滑（Dutilleul 1993; Dutkowski等人2002; Ettema和Wardle 2002）。植物间竞争可能是老年森林试验的另一个特殊性，影响邻居之间的相关性（Magnussen 1994）。为了最小化不同遗传项之间的竞争，FGT通常与多树连续地块建立（Magnussen 1993b）。在多树连续图中，基本环境协方差与给定图中的遗传协方差混淆，导致偏倚的遗传参数估计和大块进入块间相互作用方差，这可能大大降低现场测试的精度（Loo -Dinkins 1992）。除了IB设计，​​已经提出了几种分析方法来解释环境变化并且提高现场遗传试验的分析的效率。空间分析，如趋势分析，邻居分析或最近邻分析，已显示加强农业田间试验的分析，并在农艺学中变得相当普遍（例如，Gilmour等人1997; Grondona等人1996年;乔et al.2000，2004）。虽然没有如此常用，空间分析方法在森林试验中也给出了成功的结果（Anekonda和Libby 1996; Costa-Silva等人2001; Dutkowski等人2002; Hamann等人2002; Joyce等人2002; Magnussen 1993a，1994）。
+在不同的方法中，<strong>地统计学已被证明是一种优秀的工具来模拟土壤性质的空间变化（Gallardo 2003; Gallardo和Covelo 2005;López和Arrúe1995年），并且还去除了遗传试验中的微环境异质性（Hamann et al.2002）</strong>。加利西亚（NW西班牙）是一个多山和异质区域与酸性和不育森林土壤。该地区森林种植的生产力高度依赖于土壤性质（Merino等人2003;Sánchez-Rodríguez等人2002; Zas和Serrada 2003），其已知具有小规模空间异质性（Gallardo 2003; Gallardo和Covelo 2005）。在四个RCB松属pinaster Ait。在加利西亚的后代测试，这种空间异质性反映了总方差的大比例解释块之间的差异和一个大的家庭由块相互作用（Zas et al。2004a）。空间自相关在这些试验中似乎是非常重要的，所选择的材料显示出极端和不协调的环境敏感性，应该进一步研究。本研究的目的是1）分析这些后代试验中不同变量的空间结构，以及2）评估空间异质性对RCB试验常规统计分析效率的影响。空间变异使用半变异函数和克里金法建模。提出了基于这些技术的迭代方法以从数据中去除空间异质性。</p>
+
+<h2 id="空间分析">空间分析</h2>
+
+<p>因为不是所有的树苗都按照规则网格种植，所以使用在〜1：1000尺度的正交航空照片估计每棵树的近似x-y坐标。容易地鉴定种植系，并且从照片中获得每条线的开始和结束的坐标。通过用n-1个等长段中的种植线划分来确定每条线内的树的坐标，其中n是给定线中的树的数目。减去家族效应后每个变量的残差用于探索数据的空间结构。进行单向方差分析，家族效应被认为是随机的，并且使用SAS系统中的MIXED程序（SAS Institute 1999）获得家族效应的最佳线性无偏预测器（BLUP）。
+使用半变异函数对所得到的残差的空间结构进行建模，其将树中的半方差作为它们之间的距离的函数进行绘图（Cressie 1993）。半方差γ（h）计算为</p>
+
+<p>其中n是由距离h（称为滞后距离）分离的相邻树的对数，z（si）是位于si处的树的测量的特征值，z（si + h）是位于距离h。对于随机分布的数据，当h增加时，将获得半变化的很小变化，并且半变异函数将基本上是平的。如果存在空间依赖性，半变异性在短距离上将很小，将在中间距离处增加，并且将在大距离处达到渐近线（图1）。实验半变异函数使用SAS中的VARIOGRAM程序（Sas Institute，1999）构建。使用SAS中的NLIN程序，将指数理论半变异函数拟合到实验半变异函数中（SAS Institute1999）。该理论半变异函数用于使用克里金法将残差的变化划分为空间自相关变化和随机误差。克里金基于由理论半变异函数定义的空间结构来计算空间网格上的值的最佳线性无偏预测的平滑表面。<strong>在每个点，克里金估计的值将被解释为由于空间位置引起的性状的量。因此，每个树配置的克里金值用于校正每个变量相对于它们的空间变化的原始值</strong>。使用KRIG2D SAS程序（SAS Institute 1999）进行克里金分析。</p>
+
+<h2 id="讨论">讨论</h2>
+
+<p>本文提出的结果表明强烈的空间自相关，可能严重影响数据的遗传分析。如前所述，<strong>RCB设计的块结构可能不足以说明这种空间异质性，并且常规统计分析可能导致错误方差和家族效应估计</strong>（Costa-Silva等人2001; Dutkowski等人2002 ; Hamann等人2002; Joyce等人2002; Magnussen 1993a）。当块大且存在空间依赖性时，需要一些空间分析技术。本文中使用的迭代克里金程序有效地消除了空间变异，块和逐块相互作用方差消失或最终消失。<strong>其他空间分析程序，如最近邻（NN）调整，已被用于解释空间异质性，但已经注意到几个关注点。在NN-协方差调整中使用的邻居数目（Joyce等人2002）和权重（Magnussen 1993a）对分析具有重要影响，并且通常是任意定义的</strong>。克里金法使用对应于实际空间依赖性的比率（范围）内的完整信息来执行空间结构的无偏估计，并且使用基于点之间的距离和理论半变异函数（例如， Cressie 1993）。<strong>克里金法然后可以被认为是NN方法的外推，其中在调整中使用的邻居的数量和权重从数据的实际空间结构最佳地导出。因此，克里金估计是特别由于树位置引起的性状量的更可靠的指示</strong>。如本文所观察到的，Hamann et al。 （2002），分析三个红der木基因试验发现，单个克里金步骤，去除块效应，减少了族间的相互作用，增加了家庭和原产地方差分量，遗传力相应增加。然而，<strong>家庭或出生手段的排序没有改变</strong>，在本研究中的P pinaster测试。空间异质性的强度越低，由较低的co / cn比率和相对较低的块方差表示，可以解释这些差异。 Costa-Silva et al。 （2001），包括统计分析中的空间相关残差，还发现在几个FGT中的遗传方差的增加和与标准分析相关的遗传条目的排名的相对大的变化。 Joyce等人报道了使用NN方法的类似结果。 （2002）在黑云杉后代试验中，以及Anekonda和Libby（1996）在红木的克隆试验中。然而，Magnussen（1993a）使用模拟数据，发现空间自相关人为地增加了多单位地块设计中的遗传方差和遗传率。在这些情况下，空间自相关可能使绝对家庭方差膨胀，因为单个图中的树将更相似，但是这应当通过逐个块相互作用方差的增加来清楚地补偿（由块内空间异质性），导致遗传力估计的向下偏差。 Magnussen（1993a）模拟数据中的小尺度斑块结构可能在更大程度上影响家族差异，而不是逐个家庭的相互作用变量，这将解释为什么他没有发现向下偏差遗传性估计。在本研究中，家族方差的绝对值在空间分析后没有持续变化，但其相对值有一致的增加（图5），因此，在遗传力估计中（表2） 。家族平均值的预减法可以偏倚遗传参数的估计，因为环境协方差可以与家庭成员之间的协方差混淆，如果一个家庭发生在每个块中的优于平均值的微遗漏中的情况（Joyce等人。2002; Loo- Dinkins 1992）。然而，这可能不会发生在所有十个块的P. pinaster后代试验。这种偏差已被认为是在遗传场数据分析中NN调整的主要约束，但是通过本文提出的迭代过程来克服。在所有块中的优于平均微阵列中出现的家族将在家族发生的位置周围的克里金估计中最初产生向下偏差。然而，家族效应的以下估计将更低，并且这种偏差将趋向于在进一步迭代中消失。事实上，在迭代过程之后残差的小尺度空间变化对于内行和横行方向没有差异，如相似的各向异性半变量所示（数据未示出）。考虑到方差分量的变化，家族BLUP的准确性和在第一步之后保持的家族等级，需要迭代过程是明显的。还可以考虑其他收敛标准，如去除的共振的变化或BLUP的精度变化，以完成迭代过程。然而，家族等级的稳定性似乎是最严格的标准，并且在家族等级稳定后，去除的协方差的变化或BLUP的准确性不显着。类似地，Magnussen（1993a）也发现NN调整过程的迭代被证明比非迭代调整更有效。其他作者在两个步骤中对空间变化进行建模：首先，通过线性回归来识别行和列中的一般梯度，然后针对小规模空间变化探索去趋势残差（Fu等人1999; Joyce等人2002 ）。尽管这样的两步分析在空间变异的表征中可能是有利的（Fu等人1999），在RCB场基因试验的分析中更重要的方面是块内空间异质性，即小规模空间变化。在一般梯度的情况下，块设计的效率更高。然后应将半变异函数构建到与块大小相似的距离。 Fu et al。 （1999）发现，球面协方差模型很好地适合于剪影残差的高度在50个66道格拉斯杉木后代试验，并表明其他方向，而不是行和列的大规模梯度可能解释缺乏适合其余网站。如果将原始残差（未去除）用于半变异函数拟合（如在这种情况下），这些大规模空间变化可以通过其他理论函数来解释，例如逐渐到达渐近线的指数函数。然而，应该尝试几种空间模型，并决定哪种模型是最适合的情况。 SAS提供了几种空间协方差模型（球形，指数，高斯，线性，功率，嵌套模型等）（SAS研究所，1999）。另一个问题是，当试验分成几个不同的区域时，我们应该如何进行;这是图2中的情况。在绘图边界附近克里金法的可靠性较小，因为用于克里金估计的邻居较少，导致克里格估计的标准误差较高。因此，克里金法将在分割位置或具有不规则形状的位置（边界附近的树的比例较高）中表现较差。在几个离散区域的情况下，可以为每个区域构建单独的半变异函数。在具有本文的离散区域（位点B和C）的P. pinaster位点中，迭代克里金法似乎是鲁棒的，并且使用单独的半变异函数或整个位点的唯一半变异函数，结果几乎相同（数据未示出）。然而，在未来的FGT中应当避免分割位点或具有不规则形状的位点以优化空间分析技术的有效性。生长性状最受空间异质性影响，但较少受土壤性质变化影响的其他性状，如直线度和螺旋数，并不完全没有这种现象。除了可能存在的土壤空间依赖性（del-Ríoet al。2004），主观评估的性状可能受到评估者（Sierra de Grado et al。1999）的相对性引起的自相关性的影响， ，通过提出的空间分析程序有效地去除。如Hamann等人（2002）对于物候特征，当存在低空间自相关时，方差分量和家庭效应估计的减少的变化表明即使在这些情况下应用所提出的过程也几乎没有什么危害。本文结果表明空间异质性如何可以大大影响FGT的遗传分析与大块在丘陵和不规则的地形。如已经指出的（Costa-Silva等人2001; Dutkowski等人2002; Hamann等人2002; Magnussen 1993b，1994），在存在空间自相关的情况下留下未调整的数据是明显不可接受的。在不去除空间效应的情况下，当规划高级育种策略和错误估计遗传增益时，错误方差估计可能导致不幸的决定。家庭选择也可以受到强烈影响，因为在空间调整后在家庭等级中观察到严重的变化。子代试验中用于进一步育种的个体选择也将被错误，并且潜在的遗传收益将丢失。提出的迭代克里金程序是解决空间异质性的有前途的工具。虽然这种方法是相当艰巨的应用，需要很长时间来完成分析，计算机资源的限制不再是障碍，正如几年前所讨论的（Joyce等人2002; Magnussen 1993a），所有的完整可以使用常见的SAS-STAT软件包（SAS Institute 1999）进行空间分析。仍然有许多RCB试验与大块，在这种空间调整是至关重要的。应当定期检查半变异函数，以检验模型的残差是否是空间自相关的，在这种情况下，强烈建议使用迭代克里金法去除这种空间异质性。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/zas2014-%E7%A7%8D%E5%AD%90%E9%81%97%E4%BC%A0%E5%8A%9B/" data-toggle="tooltip" data-placement="top" title="Zas2014-种子遗传力">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/zamudio2008-%E5%85%8B%E9%9A%86-%E9%87%8D%E5%A4%8D%E6%B5%8B%E9%87%8F-lmm-%E7%A9%BA%E9%97%B4/" data-toggle="tooltip" data-placement="top" title="Zamudio2008-克隆-重复测量-LMM-空间">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

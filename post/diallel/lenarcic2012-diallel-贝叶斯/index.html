@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Lenarcic2012-diallel-贝叶斯</title>
+  <meta property="og:title" content="Lenarcic2012-diallel-贝叶斯" />
+  <meta name="twitter:title" content="Lenarcic2012-diallel-贝叶斯" />
+  <meta name="description" content="Lenarcic, A.B., Svenson, K.L., Churchill, G.A., and Valdar, W. 2012. General Bayesian approach to analyzing diallel crosses of inbred strains. Genetics 190(2): 413–435. doi:10.1534/genetics.111.132563.
+ 摘要 经典的diallel采取一组父母，并从所有可能的交配对产生后代。后代中的表型值可以与其各自的亲本相关联。当父母是二倍体的，有性别的和近交的时候，双列可以表征遗传背景对表型的总体影响，揭示菌株剂量，杂种优势，亲本来源，上位性和其性别特异性形式的影响。然而，其分析传统上错综复杂，无计划的缺失信息，对不平衡的高度敏感，使得双列对许多遗传学家无法接近。尽管如此，不平衡和不完整的diallel经常出现，尽管是无意识地，作为收集F1数据的大规模实验的副产品，例如试验研究或多种繁殖努力，例如Collaborative Cross或拟南芥MAGIC系列。我们提出了一个通用的贝叶斯模型，用于分析雌雄异株二倍体近交系的双列数据，将观察到的变异模式干净地分解成生物直观成分，同时模型和适应异常值，并提供由于不平衡、缺失数据、样本量小导致的不确定性而自动包含不确定性的效应的收缩估计。我们进一步提出了一个模型选择程序，用于衡量是否将这些组件纳入预测模型的证据。我们通过模拟评估我们的方法，并将其应用于关于创建者和Collaborative Cross 的F1的不完整双列数据，强健地表征了48种表型的遗传结构。
+diallel是遗传学中最古老的设计之一，其分析非常复杂。前提是简单的：给予一组J父母，从所有JxJ互惠杂交产生和表型后代，并从这些数据估计遗传参数，表征亲代基因组和性别如何影响表型变异。使用这种设计，可以估计平均父母对表型的影响以及与其他父母的特定组合的影响。当亲本是近交系时，也可以估计亲本效应。尽管在diallel中包含了大量的信息，但在实践中阻碍了它的使用。关于估计参数的解释的争议已经与关于分析方法本身的争议不可避免地混淆在一起，并且讨论文献中的大部分被沉浸在潜在用户不熟悉的术语中。事实上，对于局外人来说，这个diallel是作为一个奥秘的难题出现的，或许是为了简化设计而最好的避免。 这个diallel起源于动物和植物育种，作为从育种的角度来看，你应该通过它的后代的表型来判断一个人的价值（克里斯蒂和沙特克1992年及其中的参考文献）。它最初被Schmidt（1919）定义为所有可能的J2成对杂交的集合，并且后来被Jinks和Hayman（1953）引入主流遗传学文献。在接下来的十年里，这个diallel定义迅速扩展到包含J之间的任何一组F1。 2位家长，引起了一群活跃的定量遗传学家的注意，他们继续研究设计和分析的一系列细节。最简单和最流行的分析是Griffing（1956）。如果hjk是亲本j与亲本k的交叉的平均表型或预测值，那么亲本效应可以被建模为 其中m是截距，gj是父母j的主效应，sjk是j和k的统计互动，即父母j和k的特定配对引起的组合主效应的偏差。继斯普拉格和塔特姆（1942）提出并在整个双语文献中使用的术语之后，gj是父亲j的广义组合能力（GCA），而sjk是父母j和k的特定组合能力（SCA）。 GCA捕获加性遗传学的综合影响，而SCA则反映导致偏离加性的总遗传效应，如显性和上位性。 已经提出了许多对Griffing模型的扩展，以从双列中提取更微妙的效应。 （Hayman，1957; Gardner和Eberhart，1966）将其分解为互惠效应（Griffing，1956），进一步将其分解为母体和父本效应（Cockerham和Weir，1977; Zhu和Weir，1996）和与其性相关的变体（Carbonell等，1983）。相反，对获得少于J2十字架的GCA的兴趣激发了设计的变体，例如半双列（Griffing 1956）和部分双列（Kempthorne and Curnow 1961）等等（参见Christie and Shattuck 1992; Lynch and Walsh 1998），它们本身也导致了技术创新（如Greenberg等，2010）。 关于从diallel估计的参数的确切含义的不一致，给他们的解释提出了一个理论上的绊脚石。亲本可以是自交系，独立的杂交种群（如开放授粉的玉米品种）或远交的个体（Eberhart和Gardner，1966）。他们可能是故意选择的，随机抽样的，或者是这些的妥协。试验的目的可以是推断父母本身，每个父母代表的人群，还是所有父母都从中得到的更广泛的人群。对这些因素的综合考虑是通过1950年至1970年的大部分基础性diallel进行的，并且一直是争议的来源（Baker，1978; Wright，1985）。 一个更实际的绊脚石来自估计来自不完整，不平衡或被异常值污染的diallel数据的参数的困难。虽然有意识地建立了一些diallel杂交，但在多亲本育种计划中，作为中间阶段的副产品出现了相当数量的杂交。这样的偶然拨号可以包含有价值的信息，但是它们经常杂乱无章的缺失模式使得它们与经过充分研究的设计不完美匹配。对于许多不完整的diallel，目前还不清楚如何在不丢弃观测数据的情况下分析数据，大大减少推断的范围或做出其他重大的妥协。 即使传统分析方法适用于设计，关于哪些参数（例如明显的显性模型，SCA等）应该被包括在模型中的选择可以改变对其他参数的估计和解释。通过对个别术语的重要性测试进行模型选择的选择（在较老的文献中经常提出）提供了一些指导，但不令人满意，因为所包含的参数是以忽略模型选择中的不确定性的方式估计的。我们认为任何先验合理的效应都应该被排除在建模之外，这似乎是人为的，与现代的应用统计推断方法（例如Gelman and Hill，2007）不同步。 我们提出了一种通用而有效的双列杂交分析方法，并将其应用于从建立协作杂交中偶然发现的不完整八菌株中收集的48种表型的数据集（Churchill等人2004; Chesler等人al。2008; Collaborative Cross Consortium 2012）。我们的分析方法提供了一个推理框架，对于设计中的不平衡，缺少数据和异常值是强大的。我们模拟了广泛的效应，包括加性，杂种优势，上位性，亲本起源和性别特异性变异。这个结构实现了两个重要的目标。首先是对模型参数的熟悉和不断的解释。二是通过分层贝叶斯收缩和模型选择实现稳定一致的估计和预测。">
+  <meta property="og:description" content="Lenarcic, A.B., Svenson, K.L., Churchill, G.A., and Valdar, W. 2012. General Bayesian approach to analyzing diallel crosses of inbred strains. Genetics 190(2): 413–435. doi:10.1534/genetics.111.132563.
+ 摘要 经典的diallel采取一组父母，并从所有可能的交配对产生后代。后代中的表型值可以与其各自的亲本相关联。当父母是二倍体的，有性别的和近交的时候，双列可以表征遗传背景对表型的总体影响，揭示菌株剂量，杂种优势，亲本来源，上位性和其性别特异性形式的影响。然而，其分析传统上错综复杂，无计划的缺失信息，对不平衡的高度敏感，使得双列对许多遗传学家无法接近。尽管如此，不平衡和不完整的diallel经常出现，尽管是无意识地，作为收集F1数据的大规模实验的副产品，例如试验研究或多种繁殖努力，例如Collaborative Cross或拟南芥MAGIC系列。我们提出了一个通用的贝叶斯模型，用于分析雌雄异株二倍体近交系的双列数据，将观察到的变异模式干净地分解成生物直观成分，同时模型和适应异常值，并提供由于不平衡、缺失数据、样本量小导致的不确定性而自动包含不确定性的效应的收缩估计。我们进一步提出了一个模型选择程序，用于衡量是否将这些组件纳入预测模型的证据。我们通过模拟评估我们的方法，并将其应用于关于创建者和Collaborative Cross 的F1的不完整双列数据，强健地表征了48种表型的遗传结构。
+diallel是遗传学中最古老的设计之一，其分析非常复杂。前提是简单的：给予一组J父母，从所有JxJ互惠杂交产生和表型后代，并从这些数据估计遗传参数，表征亲代基因组和性别如何影响表型变异。使用这种设计，可以估计平均父母对表型的影响以及与其他父母的特定组合的影响。当亲本是近交系时，也可以估计亲本效应。尽管在diallel中包含了大量的信息，但在实践中阻碍了它的使用。关于估计参数的解释的争议已经与关于分析方法本身的争议不可避免地混淆在一起，并且讨论文献中的大部分被沉浸在潜在用户不熟悉的术语中。事实上，对于局外人来说，这个diallel是作为一个奥秘的难题出现的，或许是为了简化设计而最好的避免。 这个diallel起源于动物和植物育种，作为从育种的角度来看，你应该通过它的后代的表型来判断一个人的价值（克里斯蒂和沙特克1992年及其中的参考文献）。它最初被Schmidt（1919）定义为所有可能的J2成对杂交的集合，并且后来被Jinks和Hayman（1953）引入主流遗传学文献。在接下来的十年里，这个diallel定义迅速扩展到包含J之间的任何一组F1。 2位家长，引起了一群活跃的定量遗传学家的注意，他们继续研究设计和分析的一系列细节。最简单和最流行的分析是Griffing（1956）。如果hjk是亲本j与亲本k的交叉的平均表型或预测值，那么亲本效应可以被建模为 其中m是截距，gj是父母j的主效应，sjk是j和k的统计互动，即父母j和k的特定配对引起的组合主效应的偏差。继斯普拉格和塔特姆（1942）提出并在整个双语文献中使用的术语之后，gj是父亲j的广义组合能力（GCA），而sjk是父母j和k的特定组合能力（SCA）。 GCA捕获加性遗传学的综合影响，而SCA则反映导致偏离加性的总遗传效应，如显性和上位性。 已经提出了许多对Griffing模型的扩展，以从双列中提取更微妙的效应。 （Hayman，1957; Gardner和Eberhart，1966）将其分解为互惠效应（Griffing，1956），进一步将其分解为母体和父本效应（Cockerham和Weir，1977; Zhu和Weir，1996）和与其性相关的变体（Carbonell等，1983）。相反，对获得少于J2十字架的GCA的兴趣激发了设计的变体，例如半双列（Griffing 1956）和部分双列（Kempthorne and Curnow 1961）等等（参见Christie and Shattuck 1992; Lynch and Walsh 1998），它们本身也导致了技术创新（如Greenberg等，2010）。 关于从diallel估计的参数的确切含义的不一致，给他们的解释提出了一个理论上的绊脚石。亲本可以是自交系，独立的杂交种群（如开放授粉的玉米品种）或远交的个体（Eberhart和Gardner，1966）。他们可能是故意选择的，随机抽样的，或者是这些的妥协。试验的目的可以是推断父母本身，每个父母代表的人群，还是所有父母都从中得到的更广泛的人群。对这些因素的综合考虑是通过1950年至1970年的大部分基础性diallel进行的，并且一直是争议的来源（Baker，1978; Wright，1985）。 一个更实际的绊脚石来自估计来自不完整，不平衡或被异常值污染的diallel数据的参数的困难。虽然有意识地建立了一些diallel杂交，但在多亲本育种计划中，作为中间阶段的副产品出现了相当数量的杂交。这样的偶然拨号可以包含有价值的信息，但是它们经常杂乱无章的缺失模式使得它们与经过充分研究的设计不完美匹配。对于许多不完整的diallel，目前还不清楚如何在不丢弃观测数据的情况下分析数据，大大减少推断的范围或做出其他重大的妥协。 即使传统分析方法适用于设计，关于哪些参数（例如明显的显性模型，SCA等）应该被包括在模型中的选择可以改变对其他参数的估计和解释。通过对个别术语的重要性测试进行模型选择的选择（在较老的文献中经常提出）提供了一些指导，但不令人满意，因为所包含的参数是以忽略模型选择中的不确定性的方式估计的。我们认为任何先验合理的效应都应该被排除在建模之外，这似乎是人为的，与现代的应用统计推断方法（例如Gelman and Hill，2007）不同步。 我们提出了一种通用而有效的双列杂交分析方法，并将其应用于从建立协作杂交中偶然发现的不完整八菌株中收集的48种表型的数据集（Churchill等人2004; Chesler等人al。2008; Collaborative Cross Consortium 2012）。我们的分析方法提供了一个推理框架，对于设计中的不平衡，缺少数据和异常值是强大的。我们模拟了广泛的效应，包括加性，杂种优势，上位性，亲本起源和性别特异性变异。这个结构实现了两个重要的目标。首先是对模型参数的熟悉和不断的解释。二是通过分层贝叶斯收缩和模型选择实现稳定一致的估计和预测。">
+  <meta name="twitter:description" content="Lenarcic, A.B., Svenson, K.L., Churchill, G.A., and Valdar, W. 2012. General Bayesian approach to analyzing diallel crosses of inbred strains. Genetics 190(2): 413–435. …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/diallel/lenarcic2012-diallel-%E8%B4%9D%E5%8F%B6%E6%96%AF/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/diallel/lenarcic2012-diallel-%E8%B4%9D%E5%8F%B6%E6%96%AF/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Lenarcic2012-diallel-贝叶斯</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (61 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Lenarcic2012-diallel-贝叶斯</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (61 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Lenarcic, A.B., Svenson, K.L., Churchill, G.A., and Valdar, W. 2012. General Bayesian approach to analyzing diallel crosses of inbred strains. Genetics 190(2): 413–435. doi:10.1534/genetics.111.132563.</p>
+</blockquote>
+
+<h2 id="摘要">摘要</h2>
+
+<p>经典的diallel采取一组父母，并从所有可能的交配对产生后代。后代中的表型值可以与其各自的亲本相关联。当父母是二倍体的，有性别的和近交的时候，<strong>双列可以表征遗传背景对表型的总体影响，揭示菌株剂量，杂种优势，亲本来源，上位性和其性别特异性形式的影响。然而，其分析传统上错综复杂，无计划的缺失信息，对不平衡的高度敏感，使得双列对许多遗传学家无法接近</strong>。尽管如此，不平衡和不完整的diallel经常出现，尽管是无意识地，作为收集F1数据的大规模实验的副产品，例如试验研究或多种繁殖努力，例如Collaborative Cross或拟南芥MAGIC系列。我们提出了一个通用的贝叶斯模型，用于分析雌雄异株二倍体近交系的双列数据，将观察到的变异模式干净地分解成生物直观成分，同时模型和适应异常值，并提供由于不平衡、缺失数据、样本量小导致的不确定性而自动包含不确定性的效应的收缩估计。我们进一步提出了一个模型选择程序，用于衡量是否将这些组件纳入预测模型的证据。我们通过模拟评估我们的方法，并将其应用于关于创建者和Collaborative Cross 的F1的不完整双列数据，强健地表征了48种表型的遗传结构。</p>
+
+<hr />
+
+<p>diallel是遗传学中最古老的设计之一，其分析非常复杂。前提是简单的：给予一组J父母，从所有JxJ互惠杂交产生和表型后代，并从这些数据估计遗传参数，<strong>表征亲代基因组和性别如何影响表型变异</strong>。使用这种设计，可以估计<strong>平均父母对表型的影响</strong>以及<strong>与其他父母的特定组合的影响</strong>。<strong>当亲本是近交系时，也可以估计亲本效应。</strong>尽管在diallel中包含了大量的信息，但<strong>在实践中阻碍了它的使用</strong>。关于估计参数的解释的争议已经与关于分析方法本身的争议不可避免地混淆在一起，并且讨论文献中的大部分被沉浸在潜在用户不熟悉的术语中。事实上，对于局外人来说，这个diallel是作为一个奥秘的难题出现的，或许是为了简化设计而最好的避免。
+这个diallel起源于动物和植物育种，作为<strong>从育种的角度来看，你应该通过它的后代的表型来判断一个人的价值</strong>（克里斯蒂和沙特克1992年及其中的参考文献）。它最初被Schmidt（1919）定义为所有可能的J2成对杂交的集合，并且后来被Jinks和Hayman（1953）引入主流遗传学文献。在接下来的十年里，这个diallel定义迅速扩展到包含J之间的任何一组F1。 2位家长，引起了一群活跃的定量遗传学家的注意，他们继续研究设计和分析的一系列细节。最简单和最流行的分析是Griffing（1956）。如果hjk是亲本j与亲本k的交叉的平均表型或预测值，那么亲本效应可以被建模为
+其中m是截距，gj是父母j的主效应，sjk是j和k的统计互动，即父母j和k的特定配对引起的组合主效应的偏差。继斯普拉格和塔特姆（1942）提出并在整个双语文献中使用的术语之后，gj是父亲j的广义组合能力（GCA），而sjk是父母j和k的特定组合能力（SCA）。 <strong>GCA捕获加性遗传学的综合影响</strong>，<strong>而SCA则反映导致偏离加性的总遗传效应，如显性和上位性</strong>。
+<strong>已经提出了许多对Griffing模型的扩展，以从双列中提取更微妙的效应。 （Hayman，1957; Gardner和Eberhart，1966）将其分解为互惠效应（Griffing，1956），进一步将其分解为母体和父本效应（Cockerham和Weir，1977; Zhu和Weir，1996）和与其性相关的变体（Carbonell等，1983）。相反，对获得少于J2十字架的GCA的兴趣激发了设计的变体，例如半双列（Griffing 1956）和部分双列（Kempthorne and Curnow 1961）等等（参见Christie and Shattuck 1992; Lynch and Walsh 1998），它们本身也导致了技术创新（如Greenberg等，2010）。</strong>
+关于<strong>从diallel估计的参数的确切含义的不一致</strong>，给他们的解释提出了一个理论上的绊脚石。亲本可以是<strong>自交系，独立的杂交种群（如开放授粉的玉米品种）或远交的个体</strong>（Eberhart和Gardner，1966）。他们可能是<strong>故意选择的，随机抽样的，或者是这些的妥协</strong>。试验的目的可以是<strong>推断父母本身，每个父母代表的人群，还是所有父母都从中得到的更广泛的人群</strong>。对这些因素的综合考虑是通过1950年至1970年的大部分基础性diallel进行的，并且一直是争议的来源（Baker，1978; Wright，1985）。
+一个更实际的绊脚石来自估计来自<strong>不完整，不平衡或被异常值污染的diallel数据</strong>的参数的困难。虽然有意识地建立了一些diallel杂交，但在多亲本育种计划中，作为中间阶段的副产品出现了相当数量的杂交。这样的偶然拨号可以包含有价值的信息，但是它们经常杂乱无章的缺失模式使得它们与经过充分研究的设计不完美匹配。对于许多不完整的diallel，目前还不清楚如何在不丢弃观测数据的情况下分析数据，大大减少推断的范围或做出其他重大的妥协。
+即使传统分析方法适用于设计，关于哪些参数（例如明显的显性模型，SCA等）应该被包括在模型中的选择可以改变对其他参数的估计和解释。通过对个别术语的重要性测试进行模型选择的选择（在较老的文献中经常提出）提供了一些指导，但不令人满意，因为所包含的参数是以忽略模型选择中的不确定性的方式估计的。我们认为<strong>任何先验合理的效应都应该被排除在建模之外</strong>，这似乎是人为的，与现代的应用统计推断方法（例如Gelman and Hill，2007）不同步。
+我们提出了一种通用而有效的双列杂交分析方法，并将其应用于从建立协作杂交中偶然发现的不完整八菌株中收集的48种表型的数据集（Churchill等人2004; Chesler等人al。2008; Collaborative Cross Consortium 2012）。我们的分析方法提供了一个推理框架，对于设计中的不平衡，缺少数据和异常值是强大的。我们模拟了广泛的效应，包括加性，杂种优势，上位性，亲本起源和性别特异性变异。这个结构实现了两个重要的目标。<strong>首先是对模型参数的熟悉和不断的解释。二是通过分层贝叶斯收缩和模型选择实现稳定一致的估计和预测。</strong></p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/lenz-2013-%E6%9D%90%E6%80%A7/" data-toggle="tooltip" data-placement="top" title="Lenz-2013-材性">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/lambeth2001-%E5%A4%9A%E7%B3%BB%E6%B7%B7%E5%90%88%E8%82%B2%E7%A7%8D-%E4%BA%B2%E6%9C%AC%E5%88%86%E6%9E%90-%E6%9B%BF%E4%BB%A3%E5%85%A8%E5%90%8C%E8%83%9E/" data-toggle="tooltip" data-placement="top" title="Lambeth2001-多系混合育种-亲本分析-替代全同胞">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

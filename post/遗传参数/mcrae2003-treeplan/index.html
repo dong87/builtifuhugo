@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>McRae2003-Treeplan</title>
+  <meta property="og:title" content="McRae2003-Treeplan" />
+  <meta name="twitter:title" content="McRae2003-Treeplan" />
+  <meta name="description" content="McRae, T. a, Apiolaza, L. a, Dutkowski, G.W., Kerr, R.J., Pilbeam, D.J., Powell, M.B., and Tier, B. 2003. Treeplan- A genetic evaluation system for forest trees. 27th Bienn. South. For. Tree Improv. Conf. Stillwater, Oklahoma, USA, 24-27 june (May): 1–6.
+ TREEPLAN？遗传评估系统专门用于高效，准确地预测树木的育种和其他遗传价值。 TREEPLAN？使用个体树加性遗传效应的最佳线性无偏预测（BLUP）的优选统计方法。尽管BLUP方法在理论上发展良好，但其他软件仅适用于对小型和/或高度结构化（平衡）数据集进行育种值估计和预测。 ASREML和SAS等软件包具有硬件和软件限制，使其不适用于具有复杂谱系结构和重叠世代的大型数据集的常规预测。为了提高效率，TREEPLAN？适合简化的个体树模型。 TREEPLAN™可以模拟多个遗传群体，处理克隆数据，拟合具有50多种性状的多性状模型，适应异质差异，拟合特定地点的统计和遗传模型，以及跨环境权重信息（通过环境相互作用考虑基因型）和时间（允许年龄：年龄相关性）。 南部树木繁殖协会（STBA）通常使用TREEPLAN？在辐射松，桉树和桉树的澳大利亚树木改良计划中进行遗传评估。 TREEPLAN™允许将多代和多年的数据结合起来进行多性状分析，为每个性状和环境组合生成单一的育种值列表。 TREEPLAN？易于使用，具有处理大量不平衡数据的“工业强度”，其复杂的谱系结构通常与国家或地区的树木改良计划相关。 TREEPLAN™完全集成了基于网络的数据管理系统，可高效处理数据和谱系信息。 TREEPLAN系统的分析能力和灵活性使得树木中的常规遗传评估成为一个简单的过程。
+介绍 澳大利亚的种植园总面积为163万公顷（“2003年国家种植库目录”）。南方树种繁育协会（STBA）管理辐射松和蓝桉的全国育种合作社。这两个物种约占全国的三分之二，主要用于实木制品和纸浆和造纸生产。 树木改良计划基本上包括：（1）定义育种目标;（2）父母之间的交配;（3）在田间试验中测试后代;（4）分析性能数据和遗传评估;（5）选择树木进行部署和进一步育种与精英父母。一般来说，树木育种人员能够熟练地处理树木育种和试验的生物学方面。然而，他们往往没有及时利用系谱和相关的表现信息对遗传评估进行优化。也就是说，在后代试验中生成和评估树木以生成数据相对容易。然而，以高效和全面的方式处理所收集的数据常常困难得多。因此，与其他许多树木改良项目一样，STBA可以从研究和育种试验中获得许多记录（未经处理的数据），这些记录不符合简单分析通常的限制性要求。
+历史上，树木育种强调了树木中的实验设计特征（复制，绘图和不完整的块在日益复杂的设计），以解释当地的环境影响，相比之下，更完整的遗传组成模型。因此，单一代，单一地点和单一性状的混合模式已经成为树木育种的常态。这允许使用直接的分析方法，包括最佳线性预测（BLP），没有分子关系矩阵。家庭模式在很大程度上被用于预测家庭内部的价值。 在20世纪90年代，STBA在其树木改良计划中采用了单个树加性遗传模型（ITM）BLUP（Jarvis等，1995）。然而，直到开发TREEPLAN系统之前，其应用仅限于相对较小且不复杂的数据集。这种模式的应用后来出现在树木育种上，比动物育种要少得多。这种情况已经出现了，因为树木的育种计划通常是在他们的早期阶段，简单的浅种系，树木在大型设计试验中进行评估。家庭往往是开放的结果，这样简单的家庭模式就有可能用来预测父母的育种价值。与动物不同，树木往往不会被扑杀，因此数据集更加平衡。环境相互作用（GxE）的基因型的大小往往是未知的，除了在一个大的环境范围。测量的性状的数量和类型通常是有限的，但是随着木材质量性状变得更重要，性状正在快速地发展。 现代树木改良项目需要更多地使用BLUP来预测遗传值，原因有几个。育种计划正在进行，现在已经跨越了几代人。具有相同基本人口的不同样本的个别项目正在合并为较大的合作社。考虑到随着时间的推移选择的影响是很重要的。现在许多项目正在向重叠世代转变，每年都有一定比例的育种活动，所有的家庭都没有同时在所有的测试点进行测试。最后，需要在树木之间和性状之间整合所有数据，使得选育和监测育种计划的遗传进展变得更容易。 目前，STBA正在收集P.radiata的第三代后代和E. globulus的第二代后代的试验数据。过去，使用辐射松的BLP（White等人，1992bab）和BLUP（蓝色嗜热菌）（Jarvis等人，1995）估计育种值。由于缺乏合适的BLUP软件，多个独立的育种值列表使得难以比较树木在整个种群中的遗传价值。尽管存在良好的遗传连锁关系，但家谱太复杂，无法适应。大量的数据也被排除在外，因为试验评估不完整或在不同年龄段进行。也就是说，数据是“混乱的”，或者没有完全满足“平衡”的其他限制性要求。 数据和信息的低效使用显然是不可取的，特别是对于大型的国家养殖合作社而言。为了克服这个弱点，STBA设计了TREEPLAN在程序广泛的基础上应用“工业强度”单独树模型BLUP。尽管STBA和AGBU最初开发了TREEPLAN系统，用于澳大利亚的P. radiata和E. globulus的树木改良计划，但其设计具有更大范围的应用灵活性。">
+  <meta property="og:description" content="McRae, T. a, Apiolaza, L. a, Dutkowski, G.W., Kerr, R.J., Pilbeam, D.J., Powell, M.B., and Tier, B. 2003. Treeplan- A genetic evaluation system for forest trees. 27th Bienn. South. For. Tree Improv. Conf. Stillwater, Oklahoma, USA, 24-27 june (May): 1–6.
+ TREEPLAN？遗传评估系统专门用于高效，准确地预测树木的育种和其他遗传价值。 TREEPLAN？使用个体树加性遗传效应的最佳线性无偏预测（BLUP）的优选统计方法。尽管BLUP方法在理论上发展良好，但其他软件仅适用于对小型和/或高度结构化（平衡）数据集进行育种值估计和预测。 ASREML和SAS等软件包具有硬件和软件限制，使其不适用于具有复杂谱系结构和重叠世代的大型数据集的常规预测。为了提高效率，TREEPLAN？适合简化的个体树模型。 TREEPLAN™可以模拟多个遗传群体，处理克隆数据，拟合具有50多种性状的多性状模型，适应异质差异，拟合特定地点的统计和遗传模型，以及跨环境权重信息（通过环境相互作用考虑基因型）和时间（允许年龄：年龄相关性）。 南部树木繁殖协会（STBA）通常使用TREEPLAN？在辐射松，桉树和桉树的澳大利亚树木改良计划中进行遗传评估。 TREEPLAN™允许将多代和多年的数据结合起来进行多性状分析，为每个性状和环境组合生成单一的育种值列表。 TREEPLAN？易于使用，具有处理大量不平衡数据的“工业强度”，其复杂的谱系结构通常与国家或地区的树木改良计划相关。 TREEPLAN™完全集成了基于网络的数据管理系统，可高效处理数据和谱系信息。 TREEPLAN系统的分析能力和灵活性使得树木中的常规遗传评估成为一个简单的过程。
+介绍 澳大利亚的种植园总面积为163万公顷（“2003年国家种植库目录”）。南方树种繁育协会（STBA）管理辐射松和蓝桉的全国育种合作社。这两个物种约占全国的三分之二，主要用于实木制品和纸浆和造纸生产。 树木改良计划基本上包括：（1）定义育种目标;（2）父母之间的交配;（3）在田间试验中测试后代;（4）分析性能数据和遗传评估;（5）选择树木进行部署和进一步育种与精英父母。一般来说，树木育种人员能够熟练地处理树木育种和试验的生物学方面。然而，他们往往没有及时利用系谱和相关的表现信息对遗传评估进行优化。也就是说，在后代试验中生成和评估树木以生成数据相对容易。然而，以高效和全面的方式处理所收集的数据常常困难得多。因此，与其他许多树木改良项目一样，STBA可以从研究和育种试验中获得许多记录（未经处理的数据），这些记录不符合简单分析通常的限制性要求。
+历史上，树木育种强调了树木中的实验设计特征（复制，绘图和不完整的块在日益复杂的设计），以解释当地的环境影响，相比之下，更完整的遗传组成模型。因此，单一代，单一地点和单一性状的混合模式已经成为树木育种的常态。这允许使用直接的分析方法，包括最佳线性预测（BLP），没有分子关系矩阵。家庭模式在很大程度上被用于预测家庭内部的价值。 在20世纪90年代，STBA在其树木改良计划中采用了单个树加性遗传模型（ITM）BLUP（Jarvis等，1995）。然而，直到开发TREEPLAN系统之前，其应用仅限于相对较小且不复杂的数据集。这种模式的应用后来出现在树木育种上，比动物育种要少得多。这种情况已经出现了，因为树木的育种计划通常是在他们的早期阶段，简单的浅种系，树木在大型设计试验中进行评估。家庭往往是开放的结果，这样简单的家庭模式就有可能用来预测父母的育种价值。与动物不同，树木往往不会被扑杀，因此数据集更加平衡。环境相互作用（GxE）的基因型的大小往往是未知的，除了在一个大的环境范围。测量的性状的数量和类型通常是有限的，但是随着木材质量性状变得更重要，性状正在快速地发展。 现代树木改良项目需要更多地使用BLUP来预测遗传值，原因有几个。育种计划正在进行，现在已经跨越了几代人。具有相同基本人口的不同样本的个别项目正在合并为较大的合作社。考虑到随着时间的推移选择的影响是很重要的。现在许多项目正在向重叠世代转变，每年都有一定比例的育种活动，所有的家庭都没有同时在所有的测试点进行测试。最后，需要在树木之间和性状之间整合所有数据，使得选育和监测育种计划的遗传进展变得更容易。 目前，STBA正在收集P.radiata的第三代后代和E. globulus的第二代后代的试验数据。过去，使用辐射松的BLP（White等人，1992bab）和BLUP（蓝色嗜热菌）（Jarvis等人，1995）估计育种值。由于缺乏合适的BLUP软件，多个独立的育种值列表使得难以比较树木在整个种群中的遗传价值。尽管存在良好的遗传连锁关系，但家谱太复杂，无法适应。大量的数据也被排除在外，因为试验评估不完整或在不同年龄段进行。也就是说，数据是“混乱的”，或者没有完全满足“平衡”的其他限制性要求。 数据和信息的低效使用显然是不可取的，特别是对于大型的国家养殖合作社而言。为了克服这个弱点，STBA设计了TREEPLAN在程序广泛的基础上应用“工业强度”单独树模型BLUP。尽管STBA和AGBU最初开发了TREEPLAN系统，用于澳大利亚的P. radiata和E. globulus的树木改良计划，但其设计具有更大范围的应用灵活性。">
+  <meta name="twitter:description" content="McRae, T. a, Apiolaza, L. a, Dutkowski, G.W., Kerr, R.J., Pilbeam, D.J., Powell, M.B., and Tier, B. 2003. Treeplan- A genetic evaluation system for forest trees. 27th Bienn. South. For. Tree Improv. …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/mcrae2003-treeplan/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/mcrae2003-treeplan/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>McRae2003-Treeplan</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (60 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>McRae2003-Treeplan</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (60 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>McRae, T. a, Apiolaza, L. a, Dutkowski, G.W., Kerr, R.J., Pilbeam, D.J., Powell, M.B., and Tier, B. 2003. Treeplan- A genetic evaluation system for forest trees. 27th Bienn. South. For. Tree Improv. Conf. Stillwater, Oklahoma, USA, 24-27 june (May): 1–6.</p>
+</blockquote>
+
+<p>TREEPLAN？遗传评估系统专门用于高效，准确地预测树木的育种和其他遗传价值。 TREEPLAN？使用个体树加性遗传效应的最佳线性无偏预测（BLUP）的优选统计方法。尽管BLUP方法在理论上发展良好，但其他软件仅适用于对小型和/或高度结构化（平衡）数据集进行育种值估计和预测。 ASREML和SAS等软件包具有硬件和软件限制，使其不适用于具有复杂谱系结构和重叠世代的大型数据集的常规预测。为了提高效率，TREEPLAN？适合简化的个体树模型。 TREEPLAN™可以模拟多个遗传群体，处理克隆数据，拟合具有50多种性状的多性状模型，适应异质差异，拟合特定地点的统计和遗传模型，以及跨环境权重信息（通过环境相互作用考虑基因型）和时间（允许年龄：年龄相关性）。
+南部树木繁殖协会（STBA）通常使用TREEPLAN？在辐射松，桉树和桉树的澳大利亚树木改良计划中进行遗传评估。 TREEPLAN™允许将多代和多年的数据结合起来进行多性状分析，为每个性状和环境组合生成单一的育种值列表。 TREEPLAN？易于使用，具有处理大量不平衡数据的“工业强度”，其复杂的谱系结构通常与国家或地区的树木改良计划相关。 TREEPLAN™完全集成了基于网络的数据管理系统，可高效处理数据和谱系信息。 TREEPLAN系统的分析能力和灵活性使得树木中的常规遗传评估成为一个简单的过程。</p>
+
+<hr />
+
+<h2 id="介绍">介绍</h2>
+
+<p>澳大利亚的种植园总面积为163万公顷（“2003年国家种植库目录”）。南方树种繁育协会（STBA）管理辐射松和蓝桉的全国育种合作社。这两个物种约占全国的三分之二，主要用于实木制品和纸浆和造纸生产。
+<strong>树木改良计划基本上包括：（1）定义育种目标;（2）父母之间的交配;（3）在田间试验中测试后代;（4）分析性能数据和遗传评估;（5）选择树木进行部署和进一步育种与精英父母。</strong>一般来说，树木育种人员能够熟练地处理树木育种和试验的生物学方面。然而，他们往往没有及时利用系谱和相关的表现信息对遗传评估进行优化。也就是说，在后代试验中生成和评估树木以生成数据相对容易。然而，以高效和全面的方式处理所收集的数据常常困难得多。因此，与其他许多树木改良项目一样，STBA可以从研究和育种试验中获得许多记录（未经处理的数据），这些记录不符合简单分析通常的限制性要求。</p>
+
+<p>历史上，树木育种强调了树木中的实验设计特征（复制，绘图和不完整的块在日益复杂的设计），以解释当地的环境影响，相比之下，更完整的遗传组成模型。因此，单一代，单一地点和单一性状的混合模式已经成为树木育种的常态。这允许使用直接的分析方法，包括最佳线性预测（BLP），<strong>没有分子关系矩阵。家庭模式在很大程度上被用于预测家庭内部的价值</strong>。
+在20世纪90年代，STBA在其树木改良计划中采用了单个树加性遗传模型（ITM）BLUP（Jarvis等，1995）。然而，直到开发TREEPLAN系统之前，其应用仅限于相对较小且不复杂的数据集。这种模式的应用后来出现在树木育种上，比动物育种要少得多。这种情况已经出现了，因为树木的育种计划通常是在他们的早期阶段，简单的浅种系，树木在大型设计试验中进行评估。家庭往往是开放的结果，这样简单的家庭模式就有可能用来预测父母的育种价值。<strong>与动物不同，树木往往不会被扑杀，因此数据集更加平衡。</strong>环境相互作用（GxE）的基因型的大小往往是未知的，除了在一个大的环境范围。测量的性状的数量和类型通常是有限的，但是随着木材质量性状变得更重要，性状正在快速地发展。
+现代树木改良项目需要更多地使用BLUP来预测遗传值，原因有几个。育种计划正在进行，现在已经跨越了几代人。具有相同基本人口的不同样本的个别项目正在合并为较大的合作社。考虑到随着时间的推移选择的影响是很重要的。现在许多项目正在向重叠世代转变，每年都有一定比例的育种活动，所有的家庭都没有同时在所有的测试点进行测试。最后，需要在树木之间和性状之间整合所有数据，使得选育和监测育种计划的遗传进展变得更容易。
+目前，STBA正在收集P.radiata的第三代后代和E. globulus的第二代后代的试验数据。过去，使用辐射松的BLP（White等人，1992bab）和BLUP（蓝色嗜热菌）（Jarvis等人，1995）估计育种值。由于缺乏合适的BLUP软件，多个独立的育种值列表使得难以比较树木在整个种群中的遗传价值。尽管存在良好的遗传连锁关系，但家谱太复杂，无法适应。大量的数据也被排除在外，因为试验评估不完整或在不同年龄段进行。也就是说，数据是“混乱的”，或者没有完全满足“平衡”的其他限制性要求。
+数据和信息的低效使用显然是不可取的，特别是对于大型的国家养殖合作社而言。为了克服这个弱点，STBA设计了TREEPLAN在程序广泛的基础上应用“工业强度”单独树模型BLUP。尽管STBA和AGBU最初开发了TREEPLAN系统，用于澳大利亚的P. radiata和E. globulus的树木改良计划，但其设计具有更大范围的应用灵活性。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/diallel/mckeand2008-%E4%B8%8D%E8%BF%9E%E7%BB%AD%E5%8F%8C%E5%88%97-%E7%81%AB%E7%82%AC%E6%9D%BE%E5%8F%82%E6%95%B0/" data-toggle="tooltip" data-placement="top" title="Mckeand2008-不连续双列-火炬松参数">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/mckeand2008-%E5%8F%8C%E5%88%97-%E7%94%9F%E9%95%BF-%E7%81%AB%E7%82%AC%E6%9D%BE/" data-toggle="tooltip" data-placement="top" title="McKeand2008-双列-生长-火炬松">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

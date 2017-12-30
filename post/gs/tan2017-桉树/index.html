@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Tan2017-桉树</title>
+  <meta property="og:title" content="Tan2017-桉树" />
+  <meta name="twitter:title" content="Tan2017-桉树" />
+  <meta name="description" content="Tan B, Grattapaglia D, Martins G S等. Evaluating the accuracy of genomic prediction of growth and wood traits in two Eucalyptus species and their F1 hybrids[J]. BMC Plant Biology, BMC Plant Biology, 2017, 17(1): 110.
+ 抽象 背景 基因组预测是一种基因组学辅助育种方法，通过加快育种周期和潜在地提高育种价值的准确性，可以增加遗传增益。在这项研究中，我们使用41304个信息性SNP对包括90个巨桉和78个尾叶桉的育种群体及和他们的949个杂交˚F 1基因分型用以制定3和6龄时八个表型性状-基本密度和纸浆得率，胸高周长，身高和树体积得分的基因组预测模型。我们评估了不同基因组预测方法的影响，训练和验证集的组成和大小以及SNP的数量和基因组位置对预测能力（PA）的影响。 结果 使用实现的基因组关系矩阵（GRM）估计的遗传距离显着高于基于预期系谱的估计，主要是由于GRM容易纠正的预期血统不一致。此外，GRM更准确地捕获相关个体之间的孟德尔采样，使得遗传协方差基于个体之间共享的基因组的真实比例。当增加训练集的大小和增强与验证集的相关性时，PA显着改善。训练纯种父母的预测模型在F 1杂种中无法很好地预测，表明如果要在杂种选择候选中进行预测，必须在混合种群中进行模型训练。不同的基因组预测方法为所有性状提供了类似的结果，因此，GBLUP或rrBLUP表示计算时间和预测效率之间的更好的折衷。在所有性状中使用超过5000个SNP时，仅在PA中观察到轻微的改善。在基因间区域使用单核苷酸多态性比使用仅在基因区域采样的SNP提供略好的PA。 结论 与SNP的统计方法和基因组位置相比，训练集的大小和组成以及使用的SNP数量是模型预测的两个最重要因素。此外，基于纯亲本物种的预测模型的训练只能提供有限的预测种间杂种特征的能力。我们的结果提供了通过选择种间杂种来实施桉树育种计划中的基因组预测的另外有希望的观点。 关键词 基因组关系 基因遗传学 两代 基因组注释 高密度SNP芯片 贝叶斯LASSO GBLUP rrBLUP
+背景 桉树树种及其杂交后代是在热带，亚热带和温带地区种植最广泛的硬木，由于其生长速度快，短轮次，宽环境适应性和适用性商业纸浆和纸张生产[ 1，2 ]。的种间杂种巨桉和尾桉，特别是一般优于他们的父母在增长，木材质量和生物和非生物逆境的抗性，通过继承两者的快速增长和良好的生根能力巨维持疾病而耐受性和适应性广尾叶桉 [ 3 ]。常规育种周期朝向混合群体克隆选择涉及交配，后代试验中，一个小规模的克隆试验和第二膨胀克隆试验中，它们一起通常为12至18岁之间取[ 1，4 ]。为了加快单位时间的遗传增益，需要有助于缩短繁殖周期的新方法。 基因组预测或基因组选择（GS）是旨在提高育种效率和遗传增益的基因组学辅助方法的最新发展之一。基因组预测提供了全基因组范式的标记辅助选择（MAS）[ 5，6 ]。在GS中，所有全基因组标记物都同时在依赖于连锁不平衡（LD）原理捕获整个基因组中的大部分相关变异的模型中拟合，而MAS专注于先前已经被分离的离散数量性状基因座（QTL）检测到，通常在功能不足的实验中，从而使大部分表型变异不明显[ 7 ]。">
+  <meta property="og:description" content="Tan B, Grattapaglia D, Martins G S等. Evaluating the accuracy of genomic prediction of growth and wood traits in two Eucalyptus species and their F1 hybrids[J]. BMC Plant Biology, BMC Plant Biology, 2017, 17(1): 110.
+ 抽象 背景 基因组预测是一种基因组学辅助育种方法，通过加快育种周期和潜在地提高育种价值的准确性，可以增加遗传增益。在这项研究中，我们使用41304个信息性SNP对包括90个巨桉和78个尾叶桉的育种群体及和他们的949个杂交˚F 1基因分型用以制定3和6龄时八个表型性状-基本密度和纸浆得率，胸高周长，身高和树体积得分的基因组预测模型。我们评估了不同基因组预测方法的影响，训练和验证集的组成和大小以及SNP的数量和基因组位置对预测能力（PA）的影响。 结果 使用实现的基因组关系矩阵（GRM）估计的遗传距离显着高于基于预期系谱的估计，主要是由于GRM容易纠正的预期血统不一致。此外，GRM更准确地捕获相关个体之间的孟德尔采样，使得遗传协方差基于个体之间共享的基因组的真实比例。当增加训练集的大小和增强与验证集的相关性时，PA显着改善。训练纯种父母的预测模型在F 1杂种中无法很好地预测，表明如果要在杂种选择候选中进行预测，必须在混合种群中进行模型训练。不同的基因组预测方法为所有性状提供了类似的结果，因此，GBLUP或rrBLUP表示计算时间和预测效率之间的更好的折衷。在所有性状中使用超过5000个SNP时，仅在PA中观察到轻微的改善。在基因间区域使用单核苷酸多态性比使用仅在基因区域采样的SNP提供略好的PA。 结论 与SNP的统计方法和基因组位置相比，训练集的大小和组成以及使用的SNP数量是模型预测的两个最重要因素。此外，基于纯亲本物种的预测模型的训练只能提供有限的预测种间杂种特征的能力。我们的结果提供了通过选择种间杂种来实施桉树育种计划中的基因组预测的另外有希望的观点。 关键词 基因组关系 基因遗传学 两代 基因组注释 高密度SNP芯片 贝叶斯LASSO GBLUP rrBLUP
+背景 桉树树种及其杂交后代是在热带，亚热带和温带地区种植最广泛的硬木，由于其生长速度快，短轮次，宽环境适应性和适用性商业纸浆和纸张生产[ 1，2 ]。的种间杂种巨桉和尾桉，特别是一般优于他们的父母在增长，木材质量和生物和非生物逆境的抗性，通过继承两者的快速增长和良好的生根能力巨维持疾病而耐受性和适应性广尾叶桉 [ 3 ]。常规育种周期朝向混合群体克隆选择涉及交配，后代试验中，一个小规模的克隆试验和第二膨胀克隆试验中，它们一起通常为12至18岁之间取[ 1，4 ]。为了加快单位时间的遗传增益，需要有助于缩短繁殖周期的新方法。 基因组预测或基因组选择（GS）是旨在提高育种效率和遗传增益的基因组学辅助方法的最新发展之一。基因组预测提供了全基因组范式的标记辅助选择（MAS）[ 5，6 ]。在GS中，所有全基因组标记物都同时在依赖于连锁不平衡（LD）原理捕获整个基因组中的大部分相关变异的模型中拟合，而MAS专注于先前已经被分离的离散数量性状基因座（QTL）检测到，通常在功能不足的实验中，从而使大部分表型变异不明显[ 7 ]。">
+  <meta name="twitter:description" content="Tan B, Grattapaglia D, Martins G S等. Evaluating the accuracy of genomic prediction of growth and wood traits in two Eucalyptus species and their F1 hybrids[J]. BMC Plant Biology, BMC Plant Biology, …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/gs/tan2017-%E6%A1%89%E6%A0%91/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/gs/tan2017-%E6%A1%89%E6%A0%91/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Tan2017-桉树</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 5 minutes (1031 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Tan2017-桉树</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 5 minutes (1031 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Tan B, Grattapaglia D, Martins G S等. Evaluating the accuracy of genomic prediction of growth and wood traits in two Eucalyptus species and their F1 hybrids[J]. BMC Plant Biology, BMC Plant Biology, 2017, 17(1): 110.</p>
+</blockquote>
+
+<h2 id="抽象">抽象</h2>
+
+<p><strong>背景</strong>
+基因组预测是一种基因组学辅助育种方法，通过加快育种周期和潜在地提高育种价值的准确性，可以增加遗传增益。在这项研究中，我们使用41304个信息性SNP对包括90个巨桉和78个尾叶桉的育种群体及和他们的949个杂交˚F 1基因分型用以制定3和6龄时八个表型性状-基本密度和纸浆得率，胸高周长，身高和树体积得分的基因组预测模型。我们评估了不同基因组预测方法的影响，训练和验证集的组成和大小以及SNP的数量和基因组位置对预测能力（PA）的影响。
+<strong>结果</strong>
+使用实现的基因组关系矩阵（GRM）估计的遗传距离显着高于基于预期系谱的估计，主要是由于GRM容易纠正的预期血统不一致。此外，GRM更准确地捕获相关个体之间的孟德尔采样，使得遗传协方差基于个体之间共享的基因组的真实比例。当增加训练集的大小和增强与验证集的相关性时，PA显着改善。训练纯种父母的预测模型在F 1杂种中无法很好地预测，表明如果要在杂种选择候选中进行预测，必须在混合种群中进行模型训练。不同的基因组预测方法为所有性状提供了类似的结果，因此，GBLUP或rrBLUP表示计算时间和预测效率之间的更好的折衷。在所有性状中使用超过5000个SNP时，仅在PA中观察到轻微的改善。在基因间区域使用单核苷酸多态性比使用仅在基因区域采样的SNP提供略好的PA。
+<strong>结论</strong>
+与SNP的统计方法和基因组位置相比，<strong>训练集的大小和组成以及使用的SNP数量是模型预测的两个最重要因素</strong>。此外，<strong>基于纯亲本物种的预测模型的训练只能提供有限的预测种间杂种特征的能力</strong>。我们的结果提供了通过选择种间杂种来实施桉树育种计划中的基因组预测的另外有希望的观点。
+<strong>关键词</strong>
+基因组关系 基因遗传学 两代 基因组注释 高密度SNP芯片 贝叶斯LASSO GBLUP rrBLUP</p>
+
+<h2 id="背景">背景</h2>
+
+<p>桉树树种及其杂交后代是在热带，亚热带和温带地区种植最广泛的硬木，由于其生长速度快，短轮次，宽环境适应性和适用性商业纸浆和纸张生产[ 1，2 ]。的种间杂种巨桉和尾桉，特别是一般优于他们的父母在增长，木材质量和生物和非生物逆境的抗性，通过继承两者的快速增长和良好的生根能力巨维持疾病而耐受性和适应性广尾叶桉 [ 3 ]。常规育种周期朝向混合群体克隆选择涉及交配，后代试验中，一个小规模的克隆试验和第二膨胀克隆试验中，它们一起通常为12至18岁之间取[ 1，4 ]。为了加快单位时间的遗传增益，需要有助于缩短繁殖周期的新方法。
+基因组预测或基因组选择（GS）是旨在提高育种效率和遗传增益的基因组学辅助方法的最新发展之一。基因组预测提供了全基因组范式的标记辅助选择（MAS）[ 5，6 ]。<strong>在GS中，所有全基因组标记物都同时在依赖于连锁不平衡（LD）原理捕获整个基因组中的大部分相关变异的模型中拟合，而MAS专注于先前已经被分离的离散数量性状基因座（QTL）检测到，通常在功能不足的实验中，从而使大部分表型变异不明显</strong>[ 7 ]。</p>
+
+<p>GS通常以三个步骤进行：</p>
+
+<ol>
+<li><p>基因分型和表型“参考”或“训练群体”结合基因组预测模型的开发，其允许从基因型预测表型;</p></li>
+
+<li><p>验证“验证人口”中的预测模型，即一组不参与模型训练的个人;</p></li>
+
+<li><p>应用模型预测根据其GEBVs选择的未表型个体的基因组估计育种值（GEBV）[ 6 ]。</p></li>
+</ol>
+
+<p>GS已经在家畜繁育成功实施[ 7，8 ]和农作物[ 9，10 ]和最近的几篇文章也举例说明在林木育种[其巨大的潜力11，12 ]。</p>
+
+<p>基因组预测模型的准确性取决于所使用的统计学方法。几种方法已为GS开发，包括脊回归最佳线性无偏预测（rrBLUP），基因组最佳线性无偏预测（GBLUP），BayesA，BayesB，贝叶斯LASSO，BayesR和再生核Hilbert空间（RKHS）回归[ 7，13 ]。这些方法在标记效应的分布和方差的假设上主要不同。对于rrBLUP，所有基因座都是先验地假定解释等量的方差，因此假设标记效应遵循正态分布，其中所有效应都缩小到相似和小的大小。[ 6，14 ]在贝叶斯方法（BayesA，BayesB，LASSO贝叶斯和BayesR）遗传方差由解释I个基因座，V GI，被假定为自己遵循先验分布，p（V GI）。因此，方差各基因座而变化，并且组合从与数据的先验分布的信息产生的估计V GI [6，15 ]。例如，贝叶斯A假设遗传方差遵循倒置卡方分布，而贝叶斯LASSO假定遗传方差遵循双指数分布。GBLUP方法从基因组关系矩阵计算附加遗传优点，并且在实践中通常满足的条件下相当于rrBLUP [ 16 ]。RKHS回归模型是由再生核提供的基本函数的线性组合[ 17 ]。最近的研究表明，<strong>合适的统计方法的选择依赖于手头和实际数据使用的表型变异的在所关注的性状，并与参比群体的模式</strong>9，18 ]。
+<strong>除统计学方法之外，已知其他因素影响基因组预测模型的准确性，例如训练人口的数量，所使用的标记数量以及训练与验证人群之间的关联性，以及对未来选择候选者的相关性。</strong>Hayes等人 [ 19 ]发现，<strong>对于给定的有效人口大小（N e），增加参考群体的大小导致基因组预测的准确性提高。据报道，训练人口与选拔候选人之间更密切的关系导致基因组预测的准确性更高，同时扩大培训人群的遗传多样性导致了较低的准确性</strong>[ 20 ]。一些模拟和经验研究已经表明，增加标记物的数量可以提高预测精度，Ne也增加[ 9，21 - 23 ]。然而，增加的小标记的数目Ñ Ë群体提供预测准确度很小或没有提高[ 24，25 ]。
+从以前的森林树木研究中，将相同育种世代的个体分配给用于评估基因组预测模型的培训和验证集，在本研究中，我们同时使用了E. grandis的亲本和后代，E桉树及其F 1杂种构建使用不同子集的父母和子代进行训练和验证的预测模型。使用含有60,904个SNP的多种单核苷酸多态性（SNP）芯片[ 26 ]提供两代的高密度基因分型。基于这些数据，我们使用多种统计方法开发了身高，胸高（CBH），体积，木基密度和纸浆产量的基因组预测模型，并将其性能与传统的基于谱系的预测进行了比较。此外，我们评估了改变SNP数量和训练和验证集合的组成和大小对基因组预测的预测能力（PA）的影响。</p>
+
+<h2 id="方法">方法</h2>
+
+<h3 id="育种人口">育种人口</h3>
+
+<p>本研究中的繁殖种群通过不完全二次交配设计的86 桉树和95 桉树（G0种群）的控制交叉获得，导致16,660个后代个体（G1群体）包含476个全同族家族，其中35个每个家庭的个人 2009年，在Veracel Celulose SA（贝拉蒙特（巴西，39.19 W，16.06 S，海拔210米）），采用随机完整区块设计进行了一项随机完整区块设计实地试验， Eunápolis，BA，巴西）。我们的实验人口包括168名父母（78名欧洲疟原虫和90名E.grandis）（G0），不是所有的父母在研究时仍然活着，958个后代个体（G1）同胞家庭避免低绩效树木。每个同胞家庭中的个人人数从1人到13人，平均每家庭2.8人。</p>
+
+<h3 id="表型">表型</h3>
+
+<p>对于958G1样品，分别在3岁和6岁时测量胸部高度（CBH）的身高，体积和周长，并在五岁时测量木材性状（基本密度和纸浆产量）。对于168个G0父母，相同的特征已在年龄测量七年*E·格兰迪斯*和年龄五年*尾叶桉*。简而言之，使用Suunto低深度计/高度计（PM-5/1520系列）测量高度，并用距离地面130厘米的厘米带测量CBH。通过使用FOSSNIRSystem 5000-M采用乳房高度收集的锯末样品的近红外反射光谱并应用VeracelSA早期开发的校准模型，估算木材性质。
+$$
+\ boldsymbol {Y} = \ mathbf {X} \ boldsymbol {\ beta} + </p>
+
+<p>mathbf {Z} \ boldsymbol {u} + \ mathbf {W} \ boldsymbol {b} + \ boldsymbol {e}
+$$</p>
+
+<p>然后通过减去所有个体的位点变异，年龄和不完全区组效应来校正每个性状的表型，并将其转化为调整的表型。调整后的表型性状用于计算性状的遗传力和建立基因组预测模型。</p>
+
+<h3 id="基因分型和质量控制"><strong>基因分型和质量控制</strong></h3>
+
+<p>使用含有60,904个SNP的探针的IlluminaInfinium EuCHIP60K [ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR24">24</a> ] 对168个G0和958 G1群体进行基因分型。通过GENESEEK（Lincoln，NE，USA）获得EUChip60K强度数据（.idat文件）。按照标准基因分型和质量控制程序，使用GenomeStudio（IlluminaInc.，SanDiego，CA，USA）将SNP基因型称为前文所述[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR26">26</a> ]。使用PLINK进行基因型样品的进一步质量控制[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR27">27</a> ]。9个具有小于70％的样品呼叫率的G1个体或大于1的近亲繁殖系数被去除用于进一步分析。由于低呼叫率（小于70％），排除了10,240个SNP，并且由于单态或具有小于0.01的等位基因频率（MAF），滤除了9243个SNP。最后，117个SNP被去除，因为它们显示出与Hardy-Weinberg平衡的强偏差（*p*值&lt;1×10 -6）。</p>
+
+<p>质量控制后，剩余个体的遗传基因型被插补。我们首先通过人工去除我们基因型的一部分SNP来测试一系列缺失数据（2％ - 30％）的插补方法的准确性。在现有的基于家庭和人口的方法中，我们评估了以下插补准确程序：BEAGLE
+[ 28 ]，fastPHASE
+[ 29 ]，MENDEL
+[ 30 ]，随机森林，SVD
+Impute，k-最近邻[ 31 ]，BLUP矩阵，贝叶斯PCA，NIPALS，概率PCA
+[ 32 ]。<strong>BEAGLE为所有丢失的数据百分比提供了最佳的准确性，所有情况下的准确度都超过了95％</strong>（附加文件1）。因此，我们因此在所有168个G0和949个G1个体之间使用BEAGLE来估计在上述过滤步骤后保留的41,304个SNP的遗传基因型。所有基因组预测分析随机使用估算的基因型数据。使用位于同一染色体上的SNP 的平方相关系数（r 2）测量SNP对之间的LD 。遵循Remington等 [ 33 ]然后，使用非线性回归方法对LD与物理距离的衰减进行建模。</p>
+
+<p>我们通过执行主分量分析（PCA）[进一步估计1117个个体之间群体结构和成对的基因组的关系<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR34">34</a> ]和由个人[之间计算的基因组的关系<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR14">14</a> ]使用10213组独立的SNP（LD-修剪）（R 2  &lt;0.2）来计算在PLINK
+[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR27">27</a> ]。通过在ASReml中使用ABLUP估计基于谱系的遗传关系（有关更多信息，请参见下文）。</p>
+
+<p><strong>基因组预测的统计方法</strong></p>
+
+<p>评估了四种统计方法估计方程式参数的能力。（<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#Equ1">1</a>）和预测GEBV。这些方法包括*基因组最佳线性无偏估计*（GBLUP）[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR5">5</a> ]，*脊回归<strong>BLUP*（rrBLUP）[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR6">6</a> ]，*贝叶斯</strong>LASSO*（BL）[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR35">35</a> ]和*再生核希尔伯特空间*（RKHS）回归[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR17">17</a>]。选择这些方法来表示用于基因组预测的可用方法的多样性。GBLUP表示不依赖标记效应估计的方法; rrBLUP使用线性和惩罚参数来估计标记效应; BL代表线性，参数和贝叶斯方法进行标记效应估计; 而RKHS表示非线性半参数方法。将四种基因组预测方法的性能与常用的基于谱系的BLUP（ABLUP）进行比较[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR36">36</a> ]。</p>
+
+<p>使用以下混合线性模型估计GEBV：</p>
+
+<p>$$ \ boldsymbol {y} = \ mathbf {1} \ boldsymbol{\ beta} + \ boldsymbol {Za} + \ boldsymbol {e} $$</p>
+
+<h3 id="ablup">ABLUP</h3>
+
+<p>ABLUP是使用基于家系信息的个人预期相关性来预测育种价值的标准方法[ 36 ]。对于ABLUP，方程中随机加法效应（a）的向量 （1）假设遵循正态分布\（\ boldsymbol {a} \ sim N \ left（0，\ boldsymbol {A} {\ sigma} _a ^ 2 \ right）\），其中A是加性分子关系从系谱信息估计的矩阵和\（{\ sigma} _a ^ 2 \）是加性遗传方差。剩余向量e被假定为\（\ boldsymbol {e} \ sim N \ left（0，\ boldsymbol {I} {\ sigma} _e ^ 2 \ right）\），其中我是单位矩阵。在这些假设下，（1）可以重写为：
+$$ \ left [\ begin {array} {cc} \ hfill {\ boldsymbol {X}} ^ {\ boldsymbol {T}} \ boldsymbol {X} \ hfill＆\ hfill {\ boldsymbol {X}} ^ {\ boldsymbol {T}} \ boldsymbol {Z} \ hfill \ {} \ hfill {\ boldsymbol {Z}} ^ {\ boldsymbol {T}} \ boldsymbol {X} \ hfill＆\ hfill {\ boldsymbol {Z}} ^ {\ boldsymbol {T}} \ boldsymbol {Z} + {\ boldsymbol {A}} ^ { - 1} \ frac {\ sigma_e ^ 2} {\ sigma_a ^ 2} \ hfill \ end {array} \ right] \ left [\ begin {array} {c} \ hfill \ overset {\ wedge} {\ boldsymbol {\ beta}} \ hfill \ {} \ hfill \ overset {\ wedge} {\ mathbf {a}} \ hfill \ end {array} \ right] = \ left [\ begin {array} {c} \ hfill {\ boldsymbol {X}} ^ {\ boldsymbol {T}} \ boldsymbol {y} \ hfill \ {} \ hfill {\ boldsymbol {Z}} ^ {\ boldsymbol {T}} \ boldsymbol {y} \ hfill \ end {array} \ right] $$
+（2）
+其中\（{\西格玛} _E ^ 2 \）和\（{\西格玛} _a ^ 2 \）使用的是受限制的最大似然法估计。估计的育种值（\（\ hat {\ mathbf {a}} \））和固定效应（\（\ hat {\ boldsymbol {\ beta}}））可以直接从公式 （2）。使用ASReml 3.0进行ABLUP计算[ 37 ]。</p>
+
+<h3 id="gblup">GBLUP</h3>
+
+<p>GBLUP方法从ABLUP派生，但不同之处在于方程式中的矩阵A （2）用基因型数据计算的基因组关系矩阵（G）替换，使用\（\ mathbf {G} = \ frac {\ left（\ mathbf {M} - \ mathbf {P} \ right）{\左（\ mathbf {M} - \ mathbf {p} \右）} ^ {\ mathrm【T}}} {2 {\总和} _ {J = 1} ^ p {p} _j \左（1- { p} _j \ right）} \），其中M是编码为0,1,2的SNP的样本矩阵（即次要等位基因的数量），P是具有由第j列给出的等位基因频率的矩阵2（p j - 0.5），其中p j是样本的等位基因频率[ 5 ]。在GBLUP中，方程式中的随机加和效应（a）（1）假定为\（\ boldsymbol {a} \ sim N \ left（0，\ mathbf {G} {\ sigma} _g ^ 2 \ right）\），其中\（{\ sigma} _g ^ 2 \）是基于基因组的遗传方差，GEBV（\（\ hat {\ mathbf {a}} \））再次从等式（2）计算，但A -1被G -1和\（{\ sigma } _a ^ 2 \）替换为\（{\ sigma} _g ^ 2 \）。<strong>使用ASReml 3.0 [ 37 ] 执行GBLUP计算，并且使用R [ 14 ]中的rrBLUP包中的“A.mat”函数估计G矩阵</strong>。</p>
+
+<h3 id="rrblup">rrBLUP</h3>
+
+<p>与之前的两种方法相反，rrBLUP改变方程式中参数a和Z的符号。（1），其中，Ž现指用于SNP效果的设计矩阵，而不是一个入射矩阵和一个指的是假定为遵循SNP效应\（\ boldsymbol {A} \ SIMÑ\左（0，\ mathbf { I} {\ sigma} _m ^ 2 \ right）\），其中\（{\ sigma} _m ^ 2 \）表示由每个SNP贡献的遗传方差的比例[ 6 ]。有了这些改变，（2）变成：
+$$ \ left [\ begin {array} {cc} \ hfill {\ boldsymbol {X}} ^ {\ boldsymbol {T}} \ boldsymbol {X} \ hfill＆\ hfill {\ boldsymbol {X}} ^ {\ boldsymbol {T}} \ boldsymbol {Z} \ hfill \ {} \ hfill {\ boldsymbol {Z}} ^ {\ boldsymbol {T}} \ boldsymbol {X} \ hfill＆\ hfill {\ boldsymbol {Z}} ^ {\ boldsymbol {T}} \ boldsymbol {Z} + \ boldsymbol {I} \ lambda \ hfill \ end {array} \ right] \ left [\ begin {array} {c} \ hfill \ overset {\ wedge} {\ boldsymbol {\ beta}} \ hfill \ {} \ hfill \ overset {\ wedge} {\ mathbf {a}} \ hfill \ end {array} \ right] = \ left [\ begin {array} {c } \ hfill {\ boldsymbol {X}} ^ {\ boldsymbol {T}} \ boldsymbol {y} \ hfill \ {} \ hfill {\ boldsymbol {Z}} ^ {\ boldsymbol {T}} \ boldsymbol {y } \ hfill \ end {array} \ right] $$
+（3）
+其中\（\ lambda = {\ sigma} _e ^ 2 / {\ sigma} _u ^ 2 \）是残差和标记差异之间的比率。每个人的GEBV的预测计算为\（{\ hat {g}} _ i = {\ mathbf {Z}} _ {\ mathbf {i}} ^ {\ mathbf {T}} \ hat {\ mathbf {A}} \）从等式（3），其中\（{\ mathbf {Z}} _ {\ mathbf {I}} ^ {\ mathbf【T}} \）是用于个人的SNP矢量我和\（ \ hat {\ mathbf {a}} \）是估计SNP效应的向量。所有计算使用R [ 14 ]中的rrBLUP包中的“mixed.solve”函数进行。</p>
+
+<h3 id="遗传力估计">遗传力估计</h3>
+
+<p>我们使用ABLUP方法的关系矩阵和狭义基因组遗传性（\（{h} _ ^ ^ 2））估计了基于谱系的狭义遗传力（\（{h} _a ^ 2 \）））使用GBLUP的基因组关系矩阵（详见[ 41 ]）。各自的遗传力计算如下：
+$$ {h} _a ^ 2 = \ frac {\ sigma_a ^ 2} {\ sigma_y ^ 2} \ kern2.25em {h} _g ^ 2 = \ frac {\ sigma_g ^ 2} {\ sigma_y ^ 2} $$
+其中\（{\ sigma} _a ^ 2 \）是从ABLUP估计的加性方差，而\（{\ sigma} _g ^ 2 \）是从GBLUP估计的基于标记的遗传方差。\（{\ sigma} _y ^ 2 \）是人口的表型方差。</p>
+
+<h3 id="培训和验证集的大小和遗传组成">培训和验证集的大小和遗传组成</h3>
+
+<p>我们同时评估了G0和G1个体的大小和遗传参与对基因组预测模型的训练集（TS）和验证集（VS）的影响。对于相对TS / VS尺寸，我们将所有1117（G0和G1）个体分为五个不同大小的组，TS：VS比为1：1,2：1,3：1,4：1或9：1。TS / VS的相应大小分别为558 / 559,743 / 378,836 / 281,892/225和1003/114个人。在这些预先确定的大小组合物中，使用四种情景，其中评估G0和G1个体的参与以评估改变TS和VS之间的关系和多样性程度的影响。在第一种情况（CV 1）中，个体对TS或VS的分配是随机的。对于第二种情况（CV 2）所有G0父母被分配到TS，并与G1个人随机选择了在所需要的设定数量的补充，而VS是剩余G1个人的专门组成。基于最小化和最大化TS和VS之间的相关性构建了第三个（CV 3）和第四个（CV 4）场景。使用Spindel等人描述的程序确定个体的相关性分配。[ 9 ]。简而言之，使用在R中的fpc包中的“pamk”函数中实现的k均值聚类算法，基于其基因型将1117个个体分配到182个群集。该方法尝试最小化群集中的个体与中心之间的距离那个集群。使用相关性估计，然后通过基于不相似性将个人分配给TS和VS来构建CV 3，使得来自相同群集的个体不被允许在同一个TS或VS中。对于CV 4分从同一集群的个人被迫是无论是在TS还是VS内TS和VS增加关联[ 9 ]。</p>
+
+<h3 id="基因组预测模型">基因组预测模型</h3>
+
+<p>我们评估了五种统计学方法（GBLUP，rrBLUP，BL，RKHS和ABLUP），五个TS / VS大小和四个TS / VS组合情景（总共5 * 5 * 4 = 100个模型）对预测能力PA）基因组预测。对于100个模型中的每一个，对于每个性状进行200次重复运行，并且根据它们的PA（r y， \（\ hat {g} \））评估模型的性能，其被定义为Pearson调整后的表型与VS中样品的GEBV之间的相关性。在所测试的100个模型（排除了20个ABLUP模型）中，80个声明为固定的所有效果，将总方差分解为不同的来源（基因组预测方法，TS / VS大小和遗传组成）。我们发现的显着差异进一步通过配对t检验（α= 5％）进行评估，通过Bonferroni校正进行调整。如上所述，80个模型用于评估TS / VS组成和TS / VS大小的影响，而使用所有100个模型来评估针对ABLUP的统计学方法。所有可用的SNP都用于这些模型的所有分析。</p>
+
+<h3 id="snps子集的数量和基因组位置">SNPs子集的数量和基因组位置</h3>
+
+<p>我们最终评估了SNP及其位置（基因与基因间区域）数量对基因组预测模型PA的影响。通过从所有可用的SNP中随机选择10,20,50,100,200,500,1000,2000,5000,10,000,20,000和41,304个SNP来产生具有不同数目的SNP的12个子集。对于SNP位置，通过包括位于四个不同区域的SNP来建立位于基因组不同区域的SNP子集：（i）仅编码序列（CDS）（11,786个SNP）; （ii）包括CDS，UTR，内含子和基因上游和下游2kb（30,405个SNP）的整个基因区;（iii）基因间区域（10,899个SNP），和（iv）所有41,304个SNP。通过映射的SNP获得到的位置和每个SNP的分类巨使用SnpEff [基因组42 ]。仅使用两种统计方法（GBLUP和RKHS），在以前的分析中显示出最佳预测性能，使用4：1（892/224）的TS / VS尺寸比，为所有四种TS / VS组合物构建基因组预测模型， 。</p>
+
+<h2 id="讨论">讨论</h2>
+
+<p>本研究提出了使用高密度SNP阵列的数据对*桉树*生长和木材质量性状进行基因组预测准确性的实证评估结果。我们的结果是基于来自两代繁殖种群的数据，并为使用基因组预测加速育种的前景提供了令人鼓舞的结果。我们已经评估了一系列因素，包括用于估计预测能力的统计方法，训练和验证集的大小和组成以及预测模型中使用的SNP的数量和基因组位置。以下我们将讨论这些因素如何影响预测精度。</p>
+
+<h3 id="基因组数据校正血统不一致"><strong>基因组数据校正血统不一致</strong></h3>
+
+<p>所有四种基因组预测方法都显着优于所评估的所有复杂性状的基于谱系的评估（图<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#Fig3">3</a>）。虽然类似的结果已报告的动物[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR18">18</a>，<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR43">43</a> ]和作物物种[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR9">9</a>，<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR36">36</a> ]跨越多个性状，林木使用基因组数据的预测精度一般都大于获得精度相似或高达10-30％下使用谱系-估计育种值，包括<em>桉树</em> [ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR4">4</a> ]，火炬松（*火炬松*）[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR44">44</a> ]，白云杉（*云杉青冈*）[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR45">45</a>，<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR46">46</a> ]，内部云杉（*云杉<strong>engelmannii* × *青冈*）[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR47">47</a>，<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR48">48</a> ]和海洋松（*Pinuspinaster*）[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR49">49</a> ]。</strong>基因组预测的准确度低于基于谱系的预测可能来自不足的标记密度，因此不是所有的随机变量都被捕获在基因组估计中<strong>[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR41">41</a> ]，</strong>或者由于无法确定真实的半同胞家庭的遗传关系<strong>[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR47">47</a> ]。然而，我们的结果与以前的林木研究不同，原因是</strong>使用SNP数据，个体之间的遗传关系的平均成对估计值比基于谱系信息的预期（表<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#Tab1">1</a>）显着降低<strong>，这清楚地表明预期的谱系，因此</strong>成对关系具有由SNP数据纠正的相当大的不一致之处<strong>。我们推测</strong>这些不一致可能来源于产生全半胞和双亲家庭的花粉污染和/或错贴标签<strong>。</strong>除了纠正潜在的谱系错误，我们研究中使用的相对密集的SNP数据还能够准确地捕获家族内的孟德尔抽样变异**，从而遗传变异估计基于与血统（IBD）相同的基因组的真实比例状态（IBS）在半同胞或全同胞个体中，导致对性状遗传力的改善估计（表<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#Tab2">2</a>）。</p>
+
+<h3 id="基因组预测表明-性状充分适合无穷小模型"><strong>基因组预测表明，性状充分适合无穷小模型</strong></h3>
+
+<p>总体而言，不同的基因组预测方法为所评估的所有性状提供了类似的结果，对于低遗传力生长性状，RKHS仅具有较小的优势，表现出更好的PA（图<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#Fig3">3</a>）。然而，对于纸浆产量，RKHS反而是表现最差的方法，并且可能的是，内核的定义根本不适合于这种特征[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR17">17</a> ]。我们的研究结果证实了来自农作物和动物[以前的报告<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR18">18</a>，<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR50">50</a>，<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR51">51</a> ]，以及林木。例如，在火炬松中，rrBLUP和三种贝叶斯方法的性能在仅具有不同遗传力的17种性状之间比较时略有不同，对于BayesA而言，只有针对梭状锈病抗性的小改进，其中描述了相对较大效应的位点[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR44">44</a> ]。在其他森林树木生长和木材性状表示rrBLUP和贝叶斯方法[之间没有性能差异获得类似的结果<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR46">46</a>，<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR48">48</a>，<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR49">49</a> ]。这种情况发生时，尽管模拟研究表明贝叶斯方法，如BL，应该优于单变量方法如rrBLUP和GBLUP[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR6">6</a>，<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR52">52</a>，<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR53">53</a> ]。<strong>模拟和经验数据集之间明显不一致的一个可能原因可能是大多数性状的真实QTL效应相对较小，分布不如模拟数据更为极端</strong>[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR54">54</a> ]。因此，<strong>我们的结果支持rrBLUP或GBLUP是提供计算时间和预测效率之间最佳折中的有效方法[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR55">55</a> ]，并且我们研究中评估的数量性状充分符合无穷小模型的假设</strong>。</p>
+
+<h3 id="训练集大小-组成和相关性强烈影响预测能力"><strong>训练集大小，组成和相关性强烈影响预测能力</strong></h3>
+
+<p>我们的研究结果表明，训练和验证集的大小和组成对PA有最大的影响，不管使用的分析方法如何（图<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#Fig4">4</a>）。平均PA随着TS尺寸的增加而迅速增加，并没有出现任何平稳的迹象。*桉树*育种场景的早期模拟实际上表明， 在TS中高达<em>N</em> =1000个个体，准确性将迅速增加， 对于具有低遗传力的性状，<em>N</em> =2000个个体的附加增益可见，对于较大数量的QTL参与性状和更大的有效人口规模（*N e*）。在<em>N</em>  =2000 之后，无论*N e*和基因分型密度如何，预测精度将趋于平稳[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR22">22</a> ]。模拟[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR19">19</a>，<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR56">56</a> ]和验证的概念研究[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR57">57</a> ]在作物物种还表明具有较大尺寸的TS改善PA。较大的训练人群减轻了随着世代的选择进步而从繁殖人群中遗失罕见的有利等位基因的可能性。此外，通过抽取更多的个人进行培训，捕获更多的多样性，并获得更好的标记效应估计，这反过来又对交叉验证和未来基因组选择候选者的预测产生积极影响。</p>
+
+<p>如预期的那样，TS与VS的相关性对所有性状的PA具有很大的影响。基于情景CV 3建立的预测模型（TS和VS之间的相关性最小化）导致相对于情景CV 4最大化时的预测显着更差。我们的结果与在森林树木以前的报告中，如白云杉[线<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR45">45</a>，<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR46">46</a> ]和<em>桉树</em> [ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR4">4</a> ]，其中模型一个人口已限制或无预测无关群体的表型的能力的发展，这表明预测模型是基本上是人口具体 TS与VS之间的关系较低，LD的程度较短，跨群体中相关个体不稳定，因此基因组预测模型的预测能力下降。最近的模拟显示，基因组预测模型的准确性随训练和预测种群之间的遗传距离的增加而呈线性下降[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR58">58</a>]。增加的相关性减少了独立分离的染色体片段的数量，因此增加了IBD染色体片段以及在训练种群中被抽样的染色体片段也被选择候选者的概率。我们的结果提供了额外的实验证据，为了成功实施GS，选择候选人必须与培训人口呈现密切的遗传关系。</p>
+
+<p>当所有G0父母都保存在TS（情景CV 2）时，PA显着较高。这个结果可能是由于两个原因。一方面，通过将所有G0父母都保留在TS中，我们确保模型训练有较大的遗传多样性，这可以解释G0包含对预测的积极影响。另一方面，可能的是，通过将所有G0个体分配给TS，我们观察到的阳性效应严格不是由于预测能力增加而是因为我们避免了在组合中验证集合中具有纯种亲本的潜在负面影响与G1的后代在很大程度上˚F 1个杂种。为了评估这一点，我们使用GBLUP和RKHS估计了基因组预测模型的PA，只有168位G0亲本用于TS，随机选择168名G1个体。为了控制大大减小的TS大小的影响，我们将这种设置与个体随机分配到TS或VS进行比较，但是保持每个人的大小在<em>N</em>  =168。使用结果显示相当低的PA（甚至为零或负）只有纯种父母预测G1杂交后代表型（附文件<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#MOESM13">13</a>）。这一观察结果，与事实功率放大器用于方案CV一起4（TS和VS之间的最大相关性）也通常比CV低2，建议我们对于场景CV观察更高的PA 2主要是由于避免具有的负面影响纯种的父母在VS.</p>
+
+<p>在杂交育种的基因组预测的问题迄今仅在物种并且仅用于家养动物研究，更具体地用于牛和猪饲养在其中选择是在纯种但与目的进行了提高杂交性能[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR43">43</a>，<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR59">59</a> ]。模拟结果显示，杂交数据的培训通过选择纯种的杂交品种提供了良好的PA，尽管PA随品种间距离的增加而下降[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR60">60</a> ]。当杂交数据不可用时，单独的纯种培养种群可以单独使用或组合使用，这取决于纯系之间的LD相位的相关性[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR61">61</a> ]，而这些相关部分又部分地由群体之间的分歧时间决定。相比之下，属于同一物种的牛品种相对较少（&lt;300KYA）[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR62">62</a> ]，我们研究中使用的两种*桉树*品种之间的估计分歧时间要大得多，估计为2-5MYA [ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR63">63</a> ]。因此，我们不期望两个物种之间的LD相位有很大的相关性，因此，在F 1杂种中验证的组合纯种群的培训导致PA差。据我们所知，我们的结果是首先对从纯种到种间杂种的基因组预测问题进行初步研究，我们的研究结果表明，与理论预期一致，必须使用杂种来训练模型，如果一个是预测杂交选择候选者中的表型。</p>
+
+<h3 id="snp-的数目比snp-基因组位置更重要"><strong>SNP</strong><strong>的数目比SNP</strong><strong>基因组位置更重要</strong></h3>
+
+<p>在所有特征方面，当使用超过5000个SNP时，在PA中未检测到重大改善（附图<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#MOESM10">10</a>，图<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#Fig5">5</a>），尽管在使用GBLUP时基于密度和纸浆产量的三年高度，基本密度和纸浆产量略有增加20,000个SNP。几项研究已经表明以前低得多的号码的SNP提供功率放大器等价于观察使用所有SNP可用的[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR24">24</a>，<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR64">64</a> ]。基因组预测模型所需的SNP必需数量取决于严格依赖于*N e*的LD的程度。我们的结果，我们实现等效的PA使用全部或只有10-20％的基因型标记表明，它代表一个封闭的繁殖种群具有相对适度的*N e*。这是家养动物的一种常见方法，目的是开发低密度基因分型芯片以降低基因分型成本[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR8">8</a> ]。使用降低的SNP面板的主要优点是成本效益，尽管由于复合和选择对LD的模式的综合影响，预期使用更高密度的标记物将是必需的，以减轻PA的衰变，<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR65">65</a> ]。对于针对特定人群的靶向低密度SNP芯片还是可以在多个组织的种群中使用的全SNP芯片，是否更具成本效益也是值得怀疑的。通过使SNP芯片能适应几个人群，使用相同芯片进行基因分型的更多样品的成本效益和规模经济性可能会远远大于通过在每个特定的使用较少数量的SNP观察到的成本降低人口。</p>
+
+<p>SNP位置也有助于基因组预测模型的预测能力，尽管效果相当温和。在基因区域使用SNP的PA略好于在基因区域中使用SNP或使用所有SNP，除了可以在编码和基因区域中用SNP稍微更好地预测的纸浆产量（图<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#Fig6">6</a>）。这可能代表随机抽样效应，而不是对于这种特征的功能变体的任何特异性富集。然而，在基因组区域中，SNP的降低比在基因和/或编码区域中的SNP降低（附加文件<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#MOESM12">12</a>），并且较长的LD范围可能有助于解释为什么在基因间区域中使用SNP提供更好的PA。通过较慢的LD衰减，在LD衰减更快的编码区中，基因间区域的SNP可能更好地捕获更长的基因组区段上的QTL。</p>
+
+<h3 id="影响模型预测准确性的其他问题"><strong>影响模型预测准确性的其他问题</strong></h3>
+
+<p>在运营桉树育种中，遗传基因组预测的成功应用还有待研究。首先，由于重组的影响，基因组预测的准确性如何下降？模拟研究期间初代图示了预测精度迅速下降，但这种下降会减慢在后人[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR6">6</a>，<a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR16">16</a> ]。因此，在下一代人的表现可用后，应更新GS模型。第二，跨多个环境的基因组预测模型的稳定性，以及模型中环境相互作用考虑基因型的重要性？基因组预测和环境影响之间的相互作用将基本遵循传统的Gx E策略。预计模型预计在同一繁殖区内的各个地点（在其中可以种植单一种群的改良树种，不用担心适应不良的地区），但不一定在不同的繁殖区内[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR12">12</a> ]。此外，使用基因组预测，个体不是根据自己的表型性能进行评估，而是基于其他个体，年龄和环境的基因组信息，这给予了评估特定基因组片段的共同作用的机会个人跨多个环境。Burgueno等人 [ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR66">66</a> ]表明，将来自多个环境的小麦系谱系和标记数据的模型相对于仅基于系谱的预测或相对于从单个环境导出的基因组学预测模型，可以显着提高预测精度。最后，我们只考虑了在我们的桉树种群中构建基因组预测模型的加性遗传方差，但是可能的，甚至可能的是，非加性遗传效应在许多育种群体中，特别是在由早期杂交种。最近*桉树*育种中基因组预测的模拟研究报道，包括优势效应在内的基因组预测对克隆选择表现更好，因为非加性效应并没有改善育种价值对父母选择的估计[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR67">67</a> ]。据我们所知，在森林中没有关于GS预测单个树的总基因型值的能力的实验数据，包括添加和非加性效应。</p>
+
+<h2 id="结论">结论</h2>
+
+<p>我们的实验结果为*桉树*育种计划中基因组预测的实施提供了进一步的前景。基因组预测在我们的实验中大大优于基于谱系的预测，主要是由于我们预期的谱系存在严重不一致，导致对所有基于谱系的估计的粗略低估。这种相当意想不到的结果表明在育种程序中使用SNP数据和基因组预测的另外的优点。虽然基因组预测在桉树育种中的主要优势可能是减少繁殖周期长度[ <a href="https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-017-1059-6#CR4">4</a> ]，但使用基因组关系矩阵可以使我们获得遗传关系和遗传因素的准确估计，否则我们将无法获取至。此外，我们的结果证实了相关性作为PA驱动因素的关键作用，使用低密度SNP面板的潜力，以及生长和木材特征充分适应无限小模型的事实，使得GBLUP或rrBLUP表示计算时间和预测效率。与以前在*桉树的*研究相比，我们已经访问了纯种父母（*E.grandis*和*E.urophylla*）及其F 1后代。我们表明，对纯种父母培训的模型不能准确预测F 1杂种，这可能是由于两种物种之间强烈的遗传分歧和两种物种及其杂种之间缺乏一致的LD模式。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/gs/tanaka2017-gs%E7%9A%84%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%BC%98%E5%8C%96/" data-toggle="tooltip" data-placement="top" title="Tanaka2017-GS的贝叶斯优化">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/tgg-%E4%B8%80%E7%AF%87%E5%85%B3%E4%BA%8Eg-by-e%E7%9A%84%E7%BB%BC%E8%BF%B0/" data-toggle="tooltip" data-placement="top" title="TGG-一篇关于G-by-E的综述">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Durban2001-竞争</title>
+  <meta property="og:title" content="Durban2001-竞争" />
+  <meta name="twitter:title" content="Durban2001-竞争" />
+  <meta name="description" content="Durban M, Currie ID, Kempton RA (2001) Adjusting for fertility and competition in variety trials. J Agric Sci 136:129–140. doi: 10.1017/S0021859601008541
+ 描述了响应于生育趋势和插图间竞争的绘图产量的联合模型。该模型将三次平滑样条的混合模型表示与模型生育率以及具有自回归项的模型竞争的回归模型相结合。估计是基于残差最大似然的泛化。将这些方法应用于由英国剑桥的植物育种研究所进行的一系列70个甜菜试验，并且结果总结。
+介绍 育种者或管理机构对植物性能的评价通常涉及在小块地带具有大量品种的试验设计。然而，这种试验中品种产量之间的比较通常倾向于由于两个扭曲因素的影响：生育趋势和插槽竞争。有大量关于实验设计的文献，通过将试验区域划分为更小，更均匀的块并以平衡的方式将块分配给块来减少土壤异质性的影响（Mead 1997）。特别地，α设计（Patterson等人，1978）现在广泛用于全世界的植物育种试验中。调整生育率的一个更新的方法是明确地模拟空间变异（Green和Silverman 1994; Gleeson 1997; Gilmour等人1997）。对一系列品种试验的分析（Cullis和Gleeson 1989; Kempton等人1994）已经表明，空间分析通常比常规不完全块分析在减少曲线变化方面更有效。小地块品种的产量也可能受到相邻地块品种竞争的影响。竞争可以通过保护行显着减少，或者等效地，通过仅收获图的内部行。然而，这通常是不切实际的;实际上，在种子有限的早期生成试验中，地块可以仅由单排植物组成。 David et al。 （1996）提出使用修饰的alpha设计，其中品种的随机化受到限制，从而具有非常不同的竞争能力的品种从不出现在相邻的图中。
+然而，这种方法需要提前知道品种的竞争能力。通过设计控制竞争的替代方案是在分析阶段调整竞争效应。对于谷物作物，发现插图间竞争与邻近品种的植物高度差异最密切相关（Talbot等人，1995），并且这些差异在统计分析中由协变量调节。对于根作物，几个作者观察到与邻近地块的根产量相关的插图间竞争：在甜菜（Kempton 1982），土豆（Connolly等人1993）和swedes（Bradshaw 1989）。具有自回归项的回归模型已经用于调整竞争的品种产量（Kempton 1982; Besag＆Kempton 1986），但是这些模型忽略了块内的生育趋势，因为同时建模两种类型的局部相关性的问题。本文提出了可用于根茎作物产量试验的生育力和竞争的联合模型。该模型将用于生育的平滑样条（Green＆Silverman 1994）的混合模型表示与用于竞争的Besag＆Kempton（1986）模型组合。该模型允许我们采用似然法来估计竞争和趋势的参数，并给出调整的品种产量估计。该模型应用于一系列用于单行地块的糖用甜菜的植物育种试验，并且之前已经发现其显示插图间竞争的证据（Kempton 1982）。在对试验进行描述之后，依次考虑三个模型：（i）生育趋势模型，（ii）竞争模型和（iii）联合生育趋势和竞争的组合模型。将组合模型与来自70个甜菜试验的根产量拟合的结果被汇总以量化试验中的生育趋势和竞争效应的程度。由于模型的效率增益和对品种产量和排名的调整与标准完全块分析进行比较。 一系列早产儿甜菜试验 这些数据源于20世纪70年代和80年代初英国剑桥植物育种研究所的甜菜育种计划。用于产量评估的第一条目（以下称为变体）在单行图中生长，12m长并且在行之间以0〜5μm间隔开。每个试验由36个品种的三个重复块组成，每个块由在每个块的末端具有保护行的线性阵列的阵列组成。典型的现场计划的示例如图1所示。从这些试验中的70个（来自1977年的33个，1978年的34个和1979年的3个）获得了根产量，并且来自1979年试验的数据将用于说明我们的分析的阶段（表1）。在1979年的试验中，测量了卫兵排的产量，但是这两年前没有做到。这里讨论的所有试验都使用完全块设计;直到后来才引入使用较小的不完全块来减少生育力中的块内变化。 Arnold＆Kempton（1979）描述了生育趋势和行间竞争如何在这些试验中偏差品种比较。他们还指出，拖拉机轮子造成的土壤压实会严重影响排产量。对于本文讨论的试验，轮子在第1行和第2行之间通过，每组六行的行和第5行和第6行，在一个6行图中，中心行产生平均23％的产量优势为了减少使用单行图的试验中的随之而来的偏差，将每个品种随机分配一次到每个行对（1,6），（2,5），（3， 4），跨越三个重复。
+植物育种者传统上使用经典设计，例如随机完全块或不完全块设计，以在试验中调整对生育趋势的多样性影响。虽然随机化理论表明，对品种随机化的完整集合的品种效应的估计的期望将是不偏不倚的，但是来自具有显着的生育趋势的单一试验的结果可能产生大量偏差的估计，特别是如果块大且重复的数量小。在这系列甜菜试验中，有36个品种，只有3个重复，因此在一些试验中可能出现由于生育趋势的偏差。处理块内生育力变化的一种技术是使用平滑数学函数来建模生育力。假设数据（xi，yi） 1，&hellip;，n可用;在本上下文中，xi表示块内的绘图位置，yi表示产量。 Green＆Silverman（1994）认为平滑是一个惩罚最小二乘问题，其中平滑函数g（x）被选择为最小化 其中λ是确定函数g（x）的平滑度的参数。最小化问题（1）的解是三次平滑样条，并且可以通过最小化例如广义交叉验证分数来选择平滑参数λ（Green和Silverman 1994）。平滑参数λ的较大值导致更平滑的拟合曲线。一个简单的例子说明平滑样条的拟合和平滑参数λ的作用。令yi？（xi≤5）（xi≤15）（xi≤25）？ 1000？εi，其中xi？1，&hellip;，36和εi是独立的（0,1）变量。图2示出了对于xi以及两个拟合的样条的yi的实现;更平滑的函数产生于λ≥74≤75，而λ≤10≤75给出更粗糙的函数。两种特殊情况也值得一提：λ≥0给出了内插数据点yi的函数，而λ？给出数据的线性拟合。下面讨论λ的选择。拟合三次平滑样条的另一种方法是使用混合模型表示法（Verbyla et al。1999）。这个数学设备使我们能够通过最大似然选择λ，或者更适当地通过剩余最大似然（REML）选择λ;参见例如Genstat 5（1993）参考手册，第10章，关于REML算法的讨论。这种方法的吸引力之一是三次样条的混合模型可以扩展到具有多种效应和块内不同生育率的模型。该模型还可以扩展到包括竞争效应，从而给出一种统一的方法来建模品种效应，生育力和竞争。在附录中，显示了在REML样式框架中如何适应各种具有平滑生育趋势和竞争效应的多样性效应的模型。本文的主要部分集中在描述模型和从拟合这些模型到实际作物数据的结论。 混合模型为单个三次样条 假设已经获得了来自均匀性试验中的单个线性阵列的图的产量。考虑一个解释性向量变量（绘图位置）x ?? （1，&hellip;，n）与相关的生育向量y ?? （y4，&hellip;，yn）。在完整的块分析中，每个图中的生育水平通过块内平均yi n来估计。然而，假设yi对xi的图表示yi中的平滑趋势。在矩阵符号中，yi中趋势的混合模型可以写为 其中xs≠x≠xE，xE是等于Σxi≠n的元素的向量。响应y由三部分组成：第一，固定效应，这里是平均值μ（广义固定块和品种效应）;第二，生育趋势f（x）？βsxs？Nsus，它被划分为沿块长度的固定线性趋势（βsxs）和随机非线性趋势（Nsus），其中us是一组相关随机法线偏差为零均值和基本方差σ5s;第三，残余变量ε，其以通常方式通过具有零均值和方差σ5的独立的，相同分布的正态变量建模。 （关于Ns和us的定义，参见附录方程式（8）到（11））。现在可以估计该混合模型中的参数，即固定效应μ和βs以及方差分量σ5和σ5s。混合模型和三次平滑样条之间的连接是平滑参数等于方差分量的比率，即λ？σ5？σ5s（Verbyla等人1999）。来自混合模型的拟合值与由具有相同平滑参数λ值的平滑样条给出的拟合值完全一致。在这个简单的例子中，固定效应的估计是μ5ΔyD，趋势f（x）的估计是Sy，其中S ?S（λ）是在附录（12）中定义的平滑矩阵。平滑样条被定义为平滑参数λ的函数。平滑量的替代测量是平滑矩阵S的迹（由tr（S）表示），并且许多统计包指定此平滑样条替代方法。 λ的值等于0（数据的内插）或？ （线性趋势）分别对应于等于n≥1或至1的tr（S）。因此λ和tr（S）是拟合曲线的平滑度的反向量度。混合模型方法有助于通过残差最大似然（REML）估计平滑参数λ（参见附录公式（15））。在我们的简单例子中，λ5≈74≤75，相当于tr（S）？ 4和32，以及拟合的样条（ - ），如图4所示。 2，是对潜在生育力的估计。为了比较，还示出了λ≤10≤75或tr（S）≤7的样条（ - - - ）。没有多样性效应的单个块的简单模型已经在一些细节中讨论，因为这个模型可以以直接的方式被推广到用于完整块设计中的多样性试验的模型。现在将考虑用于区块内的建模趋势的两种选择：（i）当每个块中的趋势由公共值λ指定时，以及（ii）当每个块具有其自己的λ值时。 完整块的混合模型 在t个品种的单独完整块中的多样性试验的混合模型表示是（2）的泛化，">
+  <meta property="og:description" content="Durban M, Currie ID, Kempton RA (2001) Adjusting for fertility and competition in variety trials. J Agric Sci 136:129–140. doi: 10.1017/S0021859601008541
+ 描述了响应于生育趋势和插图间竞争的绘图产量的联合模型。该模型将三次平滑样条的混合模型表示与模型生育率以及具有自回归项的模型竞争的回归模型相结合。估计是基于残差最大似然的泛化。将这些方法应用于由英国剑桥的植物育种研究所进行的一系列70个甜菜试验，并且结果总结。
+介绍 育种者或管理机构对植物性能的评价通常涉及在小块地带具有大量品种的试验设计。然而，这种试验中品种产量之间的比较通常倾向于由于两个扭曲因素的影响：生育趋势和插槽竞争。有大量关于实验设计的文献，通过将试验区域划分为更小，更均匀的块并以平衡的方式将块分配给块来减少土壤异质性的影响（Mead 1997）。特别地，α设计（Patterson等人，1978）现在广泛用于全世界的植物育种试验中。调整生育率的一个更新的方法是明确地模拟空间变异（Green和Silverman 1994; Gleeson 1997; Gilmour等人1997）。对一系列品种试验的分析（Cullis和Gleeson 1989; Kempton等人1994）已经表明，空间分析通常比常规不完全块分析在减少曲线变化方面更有效。小地块品种的产量也可能受到相邻地块品种竞争的影响。竞争可以通过保护行显着减少，或者等效地，通过仅收获图的内部行。然而，这通常是不切实际的;实际上，在种子有限的早期生成试验中，地块可以仅由单排植物组成。 David et al。 （1996）提出使用修饰的alpha设计，其中品种的随机化受到限制，从而具有非常不同的竞争能力的品种从不出现在相邻的图中。
+然而，这种方法需要提前知道品种的竞争能力。通过设计控制竞争的替代方案是在分析阶段调整竞争效应。对于谷物作物，发现插图间竞争与邻近品种的植物高度差异最密切相关（Talbot等人，1995），并且这些差异在统计分析中由协变量调节。对于根作物，几个作者观察到与邻近地块的根产量相关的插图间竞争：在甜菜（Kempton 1982），土豆（Connolly等人1993）和swedes（Bradshaw 1989）。具有自回归项的回归模型已经用于调整竞争的品种产量（Kempton 1982; Besag＆Kempton 1986），但是这些模型忽略了块内的生育趋势，因为同时建模两种类型的局部相关性的问题。本文提出了可用于根茎作物产量试验的生育力和竞争的联合模型。该模型将用于生育的平滑样条（Green＆Silverman 1994）的混合模型表示与用于竞争的Besag＆Kempton（1986）模型组合。该模型允许我们采用似然法来估计竞争和趋势的参数，并给出调整的品种产量估计。该模型应用于一系列用于单行地块的糖用甜菜的植物育种试验，并且之前已经发现其显示插图间竞争的证据（Kempton 1982）。在对试验进行描述之后，依次考虑三个模型：（i）生育趋势模型，（ii）竞争模型和（iii）联合生育趋势和竞争的组合模型。将组合模型与来自70个甜菜试验的根产量拟合的结果被汇总以量化试验中的生育趋势和竞争效应的程度。由于模型的效率增益和对品种产量和排名的调整与标准完全块分析进行比较。 一系列早产儿甜菜试验 这些数据源于20世纪70年代和80年代初英国剑桥植物育种研究所的甜菜育种计划。用于产量评估的第一条目（以下称为变体）在单行图中生长，12m长并且在行之间以0〜5μm间隔开。每个试验由36个品种的三个重复块组成，每个块由在每个块的末端具有保护行的线性阵列的阵列组成。典型的现场计划的示例如图1所示。从这些试验中的70个（来自1977年的33个，1978年的34个和1979年的3个）获得了根产量，并且来自1979年试验的数据将用于说明我们的分析的阶段（表1）。在1979年的试验中，测量了卫兵排的产量，但是这两年前没有做到。这里讨论的所有试验都使用完全块设计;直到后来才引入使用较小的不完全块来减少生育力中的块内变化。 Arnold＆Kempton（1979）描述了生育趋势和行间竞争如何在这些试验中偏差品种比较。他们还指出，拖拉机轮子造成的土壤压实会严重影响排产量。对于本文讨论的试验，轮子在第1行和第2行之间通过，每组六行的行和第5行和第6行，在一个6行图中，中心行产生平均23％的产量优势为了减少使用单行图的试验中的随之而来的偏差，将每个品种随机分配一次到每个行对（1,6），（2,5），（3， 4），跨越三个重复。
+植物育种者传统上使用经典设计，例如随机完全块或不完全块设计，以在试验中调整对生育趋势的多样性影响。虽然随机化理论表明，对品种随机化的完整集合的品种效应的估计的期望将是不偏不倚的，但是来自具有显着的生育趋势的单一试验的结果可能产生大量偏差的估计，特别是如果块大且重复的数量小。在这系列甜菜试验中，有36个品种，只有3个重复，因此在一些试验中可能出现由于生育趋势的偏差。处理块内生育力变化的一种技术是使用平滑数学函数来建模生育力。假设数据（xi，yi） 1，&hellip;，n可用;在本上下文中，xi表示块内的绘图位置，yi表示产量。 Green＆Silverman（1994）认为平滑是一个惩罚最小二乘问题，其中平滑函数g（x）被选择为最小化 其中λ是确定函数g（x）的平滑度的参数。最小化问题（1）的解是三次平滑样条，并且可以通过最小化例如广义交叉验证分数来选择平滑参数λ（Green和Silverman 1994）。平滑参数λ的较大值导致更平滑的拟合曲线。一个简单的例子说明平滑样条的拟合和平滑参数λ的作用。令yi？（xi≤5）（xi≤15）（xi≤25）？ 1000？εi，其中xi？1，&hellip;，36和εi是独立的（0,1）变量。图2示出了对于xi以及两个拟合的样条的yi的实现;更平滑的函数产生于λ≥74≤75，而λ≤10≤75给出更粗糙的函数。两种特殊情况也值得一提：λ≥0给出了内插数据点yi的函数，而λ？给出数据的线性拟合。下面讨论λ的选择。拟合三次平滑样条的另一种方法是使用混合模型表示法（Verbyla et al。1999）。这个数学设备使我们能够通过最大似然选择λ，或者更适当地通过剩余最大似然（REML）选择λ;参见例如Genstat 5（1993）参考手册，第10章，关于REML算法的讨论。这种方法的吸引力之一是三次样条的混合模型可以扩展到具有多种效应和块内不同生育率的模型。该模型还可以扩展到包括竞争效应，从而给出一种统一的方法来建模品种效应，生育力和竞争。在附录中，显示了在REML样式框架中如何适应各种具有平滑生育趋势和竞争效应的多样性效应的模型。本文的主要部分集中在描述模型和从拟合这些模型到实际作物数据的结论。 混合模型为单个三次样条 假设已经获得了来自均匀性试验中的单个线性阵列的图的产量。考虑一个解释性向量变量（绘图位置）x ?? （1，&hellip;，n）与相关的生育向量y ?? （y4，&hellip;，yn）。在完整的块分析中，每个图中的生育水平通过块内平均yi n来估计。然而，假设yi对xi的图表示yi中的平滑趋势。在矩阵符号中，yi中趋势的混合模型可以写为 其中xs≠x≠xE，xE是等于Σxi≠n的元素的向量。响应y由三部分组成：第一，固定效应，这里是平均值μ（广义固定块和品种效应）;第二，生育趋势f（x）？βsxs？Nsus，它被划分为沿块长度的固定线性趋势（βsxs）和随机非线性趋势（Nsus），其中us是一组相关随机法线偏差为零均值和基本方差σ5s;第三，残余变量ε，其以通常方式通过具有零均值和方差σ5的独立的，相同分布的正态变量建模。 （关于Ns和us的定义，参见附录方程式（8）到（11））。现在可以估计该混合模型中的参数，即固定效应μ和βs以及方差分量σ5和σ5s。混合模型和三次平滑样条之间的连接是平滑参数等于方差分量的比率，即λ？σ5？σ5s（Verbyla等人1999）。来自混合模型的拟合值与由具有相同平滑参数λ值的平滑样条给出的拟合值完全一致。在这个简单的例子中，固定效应的估计是μ5ΔyD，趋势f（x）的估计是Sy，其中S ?S（λ）是在附录（12）中定义的平滑矩阵。平滑样条被定义为平滑参数λ的函数。平滑量的替代测量是平滑矩阵S的迹（由tr（S）表示），并且许多统计包指定此平滑样条替代方法。 λ的值等于0（数据的内插）或？ （线性趋势）分别对应于等于n≥1或至1的tr（S）。因此λ和tr（S）是拟合曲线的平滑度的反向量度。混合模型方法有助于通过残差最大似然（REML）估计平滑参数λ（参见附录公式（15））。在我们的简单例子中，λ5≈74≤75，相当于tr（S）？ 4和32，以及拟合的样条（ - ），如图4所示。 2，是对潜在生育力的估计。为了比较，还示出了λ≤10≤75或tr（S）≤7的样条（ - - - ）。没有多样性效应的单个块的简单模型已经在一些细节中讨论，因为这个模型可以以直接的方式被推广到用于完整块设计中的多样性试验的模型。现在将考虑用于区块内的建模趋势的两种选择：（i）当每个块中的趋势由公共值λ指定时，以及（ii）当每个块具有其自己的λ值时。 完整块的混合模型 在t个品种的单独完整块中的多样性试验的混合模型表示是（2）的泛化，">
+  <meta name="twitter:description" content="Durban M, Currie ID, Kempton RA (2001) Adjusting for fertility and competition in variety trials. J Agric Sci 136:129–140. doi: 10.1017/S0021859601008541
+ 描述了响应于生育趋势和插图间竞争的绘图产量的联合模型。该模型将三次平滑样条的混合模型表示与 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%AB%9E%E4%BA%89/durban2001-%E7%AB%9E%E4%BA%89/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%AB%9E%E4%BA%89/durban2001-%E7%AB%9E%E4%BA%89/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Durban2001-竞争</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (102 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Durban2001-竞争</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (102 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Durban M, Currie ID, Kempton RA (2001) Adjusting for fertility and competition in variety trials. J Agric Sci 136:129–140. doi: 10.1017/S0021859601008541</p>
+</blockquote>
+
+<p>描述了响应于生育趋势和插图间竞争的绘图产量的联合模型。该模型将三次平滑样条的混合模型表示与模型生育率以及具有自回归项的模型竞争的回归模型相结合。估计是基于残差最大似然的泛化。将这些方法应用于由英国剑桥的植物育种研究所进行的一系列70个甜菜试验，并且结果总结。</p>
+
+<hr />
+
+<p>介绍
+育种者或管理机构对植物性能的评价通常涉及在小块地带具有大量品种的试验设计。然而，这种试验中品种产量之间的比较通常倾向于由于两个扭曲因素的影响：生育趋势和插槽竞争。有大量关于实验设计的文献，通过将试验区域划分为更小，更均匀的块并以平衡的方式将块分配给块来减少土壤异质性的影响（Mead 1997）。特别地，α设计（Patterson等人，1978）现在广泛用于全世界的植物育种试验中。调整生育率的一个更新的方法是明确地模拟空间变异（Green和Silverman 1994; Gleeson 1997; Gilmour等人1997）。对一系列品种试验的分析（Cullis和Gleeson 1989; Kempton等人1994）已经表明，空间分析通常比常规不完全块分析在减少曲线变化方面更有效。小地块品种的产量也可能受到相邻地块品种竞争的影响。竞争可以通过保护行显着减少，或者等效地，通过仅收获图的内部行。然而，这通常是不切实际的;实际上，在种子有限的早期生成试验中，地块可以仅由单排植物组成。 David et al。 （1996）提出使用修饰的alpha设计，其中品种的随机化受到限制，从而具有非常不同的竞争能力的品种从不出现在相邻的图中。</p>
+
+<p>然而，这种方法需要提前知道品种的竞争能力。通过设计控制竞争的替代方案是在分析阶段调整竞争效应。对于谷物作物，发现插图间竞争与邻近品种的植物高度差异最密切相关（Talbot等人，1995），并且这些差异在统计分析中由协变量调节。对于根作物，几个作者观察到与邻近地块的根产量相关的插图间竞争：在甜菜（Kempton 1982），土豆（Connolly等人1993）和swedes（Bradshaw 1989）。具有自回归项的回归模型已经用于调整竞争的品种产量（Kempton 1982; Besag＆Kempton 1986），但是这些模型忽略了块内的生育趋势，因为同时建模两种类型的局部相关性的问题。本文提出了可用于根茎作物产量试验的生育力和竞争的联合模型。该模型将用于生育的平滑样条（Green＆Silverman 1994）的混合模型表示与用于竞争的Besag＆Kempton（1986）模型组合。该模型允许我们采用似然法来估计竞争和趋势的参数，并给出调整的品种产量估计。该模型应用于一系列用于单行地块的糖用甜菜的植物育种试验，并且之前已经发现其显示插图间竞争的证据（Kempton 1982）。在对试验进行描述之后，依次考虑三个模型：（i）生育趋势模型，（ii）竞争模型和（iii）联合生育趋势和竞争的组合模型。将组合模型与来自70个甜菜试验的根产量拟合的结果被汇总以量化试验中的生育趋势和竞争效应的程度。由于模型的效率增益和对品种产量和排名的调整与标准完全块分析进行比较。
+一系列早产儿甜菜试验
+这些数据源于20世纪70年代和80年代初英国剑桥植物育种研究所的甜菜育种计划。用于产量评估的第一条目（以下称为变体）在单行图中生长，12m长并且在行之间以0〜5μm间隔开。每个试验由36个品种的三个重复块组成，每个块由在每个块的末端具有保护行的线性阵列的阵列组成。典型的现场计划的示例如图1所示。从这些试验中的70个（来自1977年的33个，1978年的34个和1979年的3个）获得了根产量，并且来自1979年试验的数据将用于说明我们的分析的阶段（表1）。在1979年的试验中，测量了卫兵排的产量，但是这两年前没有做到。这里讨论的所有试验都使用完全块设计;直到后来才引入使用较小的不完全块来减少生育力中的块内变化。 Arnold＆Kempton（1979）描述了生育趋势和行间竞争如何在这些试验中偏差品种比较。他们还指出，拖拉机轮子造成的土壤压实会严重影响排产量。对于本文讨论的试验，轮子在第1行和第2行之间通过，每组六行的行和第5行和第6行，在一个6行图中，中心行产生平均23％的产量优势为了减少使用单行图的试验中的随之而来的偏差，将每个品种随机分配一次到每个行对（1,6），（2,5），（3， 4），跨越三个重复。</p>
+
+<p>植物育种者传统上使用经典设计，例如随机完全块或不完全块设计，以在试验中调整对生育趋势的多样性影响。虽然随机化理论表明，对品种随机化的完整集合的品种效应的估计的期望将是不偏不倚的，但是来自具有显着的生育趋势的单一试验的结果可能产生大量偏差的估计，特别是如果块大且重复的数量小。在这系列甜菜试验中，有36个品种，只有3个重复，因此在一些试验中可能出现由于生育趋势的偏差。处理块内生育力变化的一种技术是使用平滑数学函数来建模生育力。假设数据（xi，yi） 1，&hellip;，n可用;在本上下文中，xi表示块内的绘图位置，yi表示产量。 Green＆Silverman（1994）认为平滑是一个惩罚最小二乘问题，其中平滑函数g（x）被选择为最小化
+其中λ是确定函数g（x）的平滑度的参数。最小化问题（1）的解是三次平滑样条，并且可以通过最小化例如广义交叉验证分数来选择平滑参数λ（Green和Silverman 1994）。平滑参数λ的较大值导致更平滑的拟合曲线。一个简单的例子说明平滑样条的拟合和平滑参数λ的作用。令yi？（xi≤5）（xi≤15）（xi≤25）？ 1000？εi，其中xi？1，&hellip;，36和εi是独立的（0,1）变量。图2示出了对于xi以及两个拟合的样条的yi的实现;更平滑的函数产生于λ≥74≤75，而λ≤10≤75给出更粗糙的函数。两种特殊情况也值得一提：λ≥0给出了内插数据点yi的函数，而λ？给出数据的线性拟合。下面讨论λ的选择。拟合三次平滑样条的另一种方法是使用混合模型表示法（Verbyla et al。1999）。这个数学设备使我们能够通过最大似然选择λ，或者更适当地通过剩余最大似然（REML）选择λ;参见例如Genstat 5（1993）参考手册，第10章，关于REML算法的讨论。这种方法的吸引力之一是三次样条的混合模型可以扩展到具有多种效应和块内不同生育率的模型。该模型还可以扩展到包括竞争效应，从而给出一种统一的方法来建模品种效应，生育力和竞争。在附录中，显示了在REML样式框架中如何适应各种具有平滑生育趋势和竞争效应的多样性效应的模型。本文的主要部分集中在描述模型和从拟合这些模型到实际作物数据的结论。
+混合模型为单个三次样条
+假设已经获得了来自均匀性试验中的单个线性阵列的图的产量。考虑一个解释性向量变量（绘图位置）x ?? （1，&hellip;，n）与相关的生育向量y ?? （y4，&hellip;，yn）。在完整的块分析中，每个图中的生育水平通过块内平均yi n来估计。然而，假设yi对xi的图表示yi中的平滑趋势。在矩阵符号中，yi中趋势的混合模型可以写为
+其中xs≠x≠xE，xE是等于Σxi≠n的元素的向量。响应y由三部分组成：第一，固定效应，这里是平均值μ（广义固定块和品种效应）;第二，生育趋势f（x）？βsxs？Nsus，它被划分为沿块长度的固定线性趋势（βsxs）和随机非线性趋势（Nsus），其中us是一组相关随机法线偏差为零均值和基本方差σ5s;第三，残余变量ε，其以通常方式通过具有零均值和方差σ5的独立的，相同分布的正态变量建模。 （关于Ns和us的定义，参见附录方程式（8）到（11））。现在可以估计该混合模型中的参数，即固定效应μ和βs以及方差分量σ5和σ5s。混合模型和三次平滑样条之间的连接是平滑参数等于方差分量的比率，即λ？σ5？σ5s（Verbyla等人1999）。来自混合模型的拟合值与由具有相同平滑参数λ值的平滑样条给出的拟合值完全一致。在这个简单的例子中，固定效应的估计是μ5ΔyD，趋势f（x）的估计是Sy，其中S ?S（λ）是在附录（12）中定义的平滑矩阵。平滑样条被定义为平滑参数λ的函数。平滑量的替代测量是平滑矩阵S的迹（由tr（S）表示），并且许多统计包指定此平滑样条替代方法。 λ的值等于0（数据的内插）或？ （线性趋势）分别对应于等于n≥1或至1的tr（S）。因此λ和tr（S）是拟合曲线的平滑度的反向量度。混合模型方法有助于通过残差最大似然（REML）估计平滑参数λ（参见附录公式（15））。在我们的简单例子中，λ5≈74≤75，相当于tr（S）？ 4和32，以及拟合的样条（ - ），如图4所示。 2，是对潜在生育力的估计。为了比较，还示出了λ≤10≤75或tr（S）≤7的样条（ -   -   - ）。没有多样性效应的单个块的简单模型已经在一些细节中讨论，因为这个模型可以以直接的方式被推广到用于完整块设计中的多样性试验的模型。现在将考虑用于区块内的建模趋势的两种选择：（i）当每个块中的趋势由公共值λ指定时，以及（ii）当每个块具有其自己的λ值时。
+完整块的混合模型
+在t个品种的单独完整块中的多样性试验的混合模型表示是（2）的泛化，</p>
+
+<p>同样，响应y由三部分组成：第一，固定效应Xβ，其中X是各种设计矩阵，β是多样性和块效应的向量;第二，生育趋势Xsβs？Nsus，包括跨块的固定线性趋势（Xsβs）和随机非线性趋势Nsus的和;第三，残差ε。有关Xs，Ns和us的定义，请参见附录。对于单块模型，可以通过REML估计平滑参数λ（或者如果为每个块拟合单独的平滑参数，则为λ4，&hellip;，λp）。然后通过调整生育力的品种效应的估计</p>
+
+<p>并且基本生育力的估计是S（y≤Xβ5）。将该模型拟合于表1中的甜菜试验数据，以说明通过在块内拟合平滑样条来调整生育力的多样性方法的估计的影响。在产量模型中考虑了拖拉机轮的附加效果，通过拟合每个块的36个图的行效应的系统模式1 2 3 3 2 1 1 2 3 3 2 1。这些行效应在本试验中不显着，并且从说明性分析中省略，但是在下面报道的所有70个试验的分析中，这些效应常规地包括在固定效应的载体β中（也参见讨论）。图3（ - ）是估计的生育率趋势S（y≤Xβ5）的图，其中β5是从（4）计算的，λ5≈222是λ（公共的跨块）的REML估计。显然，在块2中存在强的非线性生育趋势。图3（ -   - ）也给出了当残差似然性在λ2（λ4，λ5，λ6）上最大化时的估计的生育趋势的图， 。 （486,48，？），其中λ56？对应于块3中的线性生育趋势。共同和分离λ的拟合生育趋势非常相似。形式上，近似似然比测试可用于比较H3：λ4？ λ5λ6其中H4：λ4λ5λ6其中，测试统计量Λ^ 2（73〜74），以及73和74分别是H3和H4下的残余对数似然的最大值。计算出的Λ为2〜60。在10％水平上不显着。这表明对于该数据集，具有不同λi的模型是不必要的，并且可能导致标准误差的低估。因此，对于该数据集，modelH3看起来比H4更合适。建模生育率趋势影响品种均值和其标准误差。 。 3，每个块中品种8和36的位置已标记;在方块1和2中，品种8在较高的生育力地区，而品种36在较低的生育力地区。表2显示了在有和没有生育趋势调整的情况下这些品种的估计平均产量。显然，未能消除趋势会导致显着的偏见。去除σ5的估计从15°2°到10°9°的趋势也减少了残余图变化，导致了一个共同的λ（10°±5°，具有不同的λ），并且随后减少了10％的标准误差（表2）。差异的平均标准误差也减少了约25％。因此，除了减少偏差，调整生育趋势也提高了品种比较的精度。然而，趋势的存在只是这些试验中的一种偏倚来源。插板间竞争已经被证明是甜菜试验的一个特征，在下一节中，考虑了调整邻居竞争对甜菜产量的影响。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/dutilleul-1993%E8%AE%B2%E8%A7%A3%E7%A9%BA%E9%97%B4%E5%BC%82%E8%B4%A8%E6%80%A7/" data-toggle="tooltip" data-placement="top" title="Dutilleul-1993讲解空间异质性">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/dungey2006-%E7%A1%AC%E5%BA%A6-%E8%BE%90%E5%B0%84%E6%9D%BE/" data-toggle="tooltip" data-placement="top" title="Dungey2006-硬度-辐射松">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

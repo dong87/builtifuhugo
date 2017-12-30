@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Tuberosa2014遗传多样性研究的几种多元统计方法</title>
+  <meta property="og:title" content="Tuberosa2014遗传多样性研究的几种多元统计方法" />
+  <meta name="twitter:title" content="Tuberosa2014遗传多样性研究的几种多元统计方法" />
+  <meta name="description" content="Tuberosa R, Graner A, Frison E. 2014. Genomics of Plant Genetic Resources: Volume 2. Crop productivity, food security and nutritional quality. 1st ed. Springer Netherlands.
+ 多变量技术已广泛用于研究（可视化）育种种群内遗传多样性的模式。最常用的技术包括k-means聚类分析，主成分分析（PCA），主要坐标分析（PCoA）和多维缩放（MDS）（Melchinger 1993; Johns等人1997; Thompson和Nelson 1998; Brown-Guedira et al 2000）。广泛地来说，聚类分析力求将个体分组以最小化组内的多变量距离。使用算术平均值（UPGMA）和k均值聚类的未加权配对组方法被广泛用作聚类算法（Mohammadi和Prasanna 2003; Saatchi et al。2011）。主成分分析减少数据，以澄清两个或多个性状和个体之间的关系，以检查差异并形成可能的组。主要坐标分析使用一组个体之间的相似性和不相似性矩阵。多维缩放通过使用相似度/不相似距离矩阵来表示几维中的一组个体。主成分分析，PCoA和MDS是相似的，但MDS是优选的，当个人数量非常多，需要很少的维度来找出基因型之间的关系。 通过所有这些方法，人们对遗传多样性估计的准确性仍然存在疑问。例如，什么样本大小将正确地表示总遗传多样性，在获得少量进一步信息之前需要多少标记，以及应使用哪种距离度量聚类方法。然而，随着标记系统变得更加强大，包括数千个标记，标记的数量不再是一个问题。
+7.4基因组学作为选择的辅助 一旦遗传变异被添加到群体中，关键的目标是选择有益的变体。对于许多特征，这可以通过表型选择容易地或最有效地完成。例如，春季生长习性的等位基因是主要的，因此冬季和春季生长习性父母的杂交冬季生长习性的选择在冬季容易死亡的环境中非常有效。因为冬季生长习性的等位基因是隐性的，只选择纯合隐性基因座是冬季生长习性，一两代生存条纹对于冬季生长习惯是纯合的，不需要进一步选择生长习性。同样地，冬季和春季生长习惯父母跨度的春季生长习性的选择在冬季生长习性植物没有春化的环境中也是非常有效的，因此不会从分离的群体中繁殖出去。然而，从群体中去除分离的隐性等位基因可能需要更多代的自然选择，因为其等位基因功能被主要的春季生长习性等位基因隐藏。后代排列和育种者选择可以消除那些分离出冬季生长习惯的家庭，并可选择纯合春季生长习性。定性特征的简单表型选择的价值在于数百万种植物可以轻松选择或反对。简单的表型选择可以非常有效地用于其它性状，例如除草剂耐受性，其中通过用所需的除草剂喷洒分离种群并杀死易感植物来选择除草剂抗性植物（Newhouse等人1992; Baenziger等人2006a ; Baenziger和DePauw 2009）。 然而，对于许多特征，简单的表型选择是困难的（例如，具有低遗传力的性状），耗时（例如成年植物性状的选择）或昂贵的（例如需要昂贵的测定的性状）。对于某些特征，存在上述两个或多个问题。正是由于这些特征，建议间接选择（Falconer 1952; Baenziger等2011）。间接选择是选择可以比直接选择感兴趣的特征更有效地选择的相关特征。为了使间接选择有效，相关响应（非目标性状选择）与直接反应（感兴趣特征选择）的比例大于1。该比例通过相关性状[h2]遗传力的平方根除以直接性状遗传力[h1]乘以基因型（rG）之间的遗传相关性的平方根">
+  <meta property="og:description" content="Tuberosa R, Graner A, Frison E. 2014. Genomics of Plant Genetic Resources: Volume 2. Crop productivity, food security and nutritional quality. 1st ed. Springer Netherlands.
+ 多变量技术已广泛用于研究（可视化）育种种群内遗传多样性的模式。最常用的技术包括k-means聚类分析，主成分分析（PCA），主要坐标分析（PCoA）和多维缩放（MDS）（Melchinger 1993; Johns等人1997; Thompson和Nelson 1998; Brown-Guedira et al 2000）。广泛地来说，聚类分析力求将个体分组以最小化组内的多变量距离。使用算术平均值（UPGMA）和k均值聚类的未加权配对组方法被广泛用作聚类算法（Mohammadi和Prasanna 2003; Saatchi et al。2011）。主成分分析减少数据，以澄清两个或多个性状和个体之间的关系，以检查差异并形成可能的组。主要坐标分析使用一组个体之间的相似性和不相似性矩阵。多维缩放通过使用相似度/不相似距离矩阵来表示几维中的一组个体。主成分分析，PCoA和MDS是相似的，但MDS是优选的，当个人数量非常多，需要很少的维度来找出基因型之间的关系。 通过所有这些方法，人们对遗传多样性估计的准确性仍然存在疑问。例如，什么样本大小将正确地表示总遗传多样性，在获得少量进一步信息之前需要多少标记，以及应使用哪种距离度量聚类方法。然而，随着标记系统变得更加强大，包括数千个标记，标记的数量不再是一个问题。
+7.4基因组学作为选择的辅助 一旦遗传变异被添加到群体中，关键的目标是选择有益的变体。对于许多特征，这可以通过表型选择容易地或最有效地完成。例如，春季生长习性的等位基因是主要的，因此冬季和春季生长习性父母的杂交冬季生长习性的选择在冬季容易死亡的环境中非常有效。因为冬季生长习性的等位基因是隐性的，只选择纯合隐性基因座是冬季生长习性，一两代生存条纹对于冬季生长习惯是纯合的，不需要进一步选择生长习性。同样地，冬季和春季生长习惯父母跨度的春季生长习性的选择在冬季生长习性植物没有春化的环境中也是非常有效的，因此不会从分离的群体中繁殖出去。然而，从群体中去除分离的隐性等位基因可能需要更多代的自然选择，因为其等位基因功能被主要的春季生长习性等位基因隐藏。后代排列和育种者选择可以消除那些分离出冬季生长习惯的家庭，并可选择纯合春季生长习性。定性特征的简单表型选择的价值在于数百万种植物可以轻松选择或反对。简单的表型选择可以非常有效地用于其它性状，例如除草剂耐受性，其中通过用所需的除草剂喷洒分离种群并杀死易感植物来选择除草剂抗性植物（Newhouse等人1992; Baenziger等人2006a ; Baenziger和DePauw 2009）。 然而，对于许多特征，简单的表型选择是困难的（例如，具有低遗传力的性状），耗时（例如成年植物性状的选择）或昂贵的（例如需要昂贵的测定的性状）。对于某些特征，存在上述两个或多个问题。正是由于这些特征，建议间接选择（Falconer 1952; Baenziger等2011）。间接选择是选择可以比直接选择感兴趣的特征更有效地选择的相关特征。为了使间接选择有效，相关响应（非目标性状选择）与直接反应（感兴趣特征选择）的比例大于1。该比例通过相关性状[h2]遗传力的平方根除以直接性状遗传力[h1]乘以基因型（rG）之间的遗传相关性的平方根">
+  <meta name="twitter:description" content="Tuberosa R, Graner A, Frison E. 2014. Genomics of Plant Genetic Resources: Volume 2. Crop productivity, food security and nutritional quality. 1st ed. Springer Netherlands.
+ 多变量技术已广泛用于研究（可视化）育种种群内遗传多样 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E8%82%B2%E7%A7%8D/tuberosa2014%E9%81%97%E4%BC%A0%E5%A4%9A%E6%A0%B7%E6%80%A7%E7%A0%94%E7%A9%B6%E7%9A%84%E5%87%A0%E7%A7%8D%E5%A4%9A%E5%85%83%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E8%82%B2%E7%A7%8D/tuberosa2014%E9%81%97%E4%BC%A0%E5%A4%9A%E6%A0%B7%E6%80%A7%E7%A0%94%E7%A9%B6%E7%9A%84%E5%87%A0%E7%A7%8D%E5%A4%9A%E5%85%83%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Tuberosa2014遗传多样性研究的几种多元统计方法</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (48 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Tuberosa2014遗传多样性研究的几种多元统计方法</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (48 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Tuberosa R, Graner A, Frison E. 2014. Genomics of Plant Genetic Resources: Volume 2. Crop productivity, food security and nutritional quality. 1st ed. Springer Netherlands.</p>
+</blockquote>
+
+<p><strong>多变量</strong>技术已广泛用于研究（可视化）育种<strong>种群内遗传多样性</strong>的模式。最常用的技术包括<strong>k-means聚类分析</strong>，<strong>主成分分析（PCA）</strong>，<strong>主要坐标分析（PCoA）</strong>和<strong>多维缩放（MDS）</strong>（Melchinger 1993; Johns等人1997; Thompson和Nelson 1998; Brown-Guedira et al 2000）。广泛地来说，<strong>聚类分析力求将个体分组以最小化组内的多变量距离</strong>。使用<strong>算术平均值（UPGMA）</strong>和<strong>k均值聚类</strong>的未加权配对组方法被广泛用作聚类算法（Mohammadi和Prasanna 2003; Saatchi et al。2011）。<strong>主成分分析减少数据，以澄清两个或多个性状和个体之间的关系，以检查差异并形成可能的组</strong>。<strong>主要坐标分析使用一组个体之间的相似性和不相似性矩阵</strong>。<strong>多维缩放通过使用相似度/不相似距离矩阵来表示几维中的一组个体</strong>。<strong>主成分分析，PCoA和MDS是相似的，但MDS是优选的，当个人数量非常多，需要很少的维度来找出基因型之间的关系</strong>。
+通过所有这些方法，人们对遗传多样性估计的准确性仍然存在疑问。例如，<strong>什么样本大小将正确地表示总遗传多样性</strong>，<strong>在获得少量进一步信息之前需要多少标记，以及应使用哪种距离度量聚类方法</strong>。然而，随着标记系统变得更加强大，包括数千个标记，标记的数量不再是一个问题。</p>
+
+<h2 id="7-4基因组学作为选择的辅助">7.4基因组学作为选择的辅助</h2>
+
+<p>一旦遗传变异被添加到群体中，关键的目标是选择有益的变体。对于许多特征，这可以通过表型选择容易地或最有效地完成。例如，春季生长习性的等位基因是主要的，因此冬季和春季生长习性父母的杂交冬季生长习性的选择在冬季容易死亡的环境中非常有效。因为冬季生长习性的等位基因是隐性的，<strong>只选择纯合隐性基因座是冬季生长习性</strong>，一两代生存条纹对于冬季生长习惯是纯合的，不需要进一步选择生长习性。同样地，冬季和春季生长习惯父母跨度的春季生长习性的选择在冬季生长习性植物没有春化的环境中也是非常有效的，因此不会从分离的群体中繁殖出去。然而，从群体中去除分离的隐性等位基因可能需要更多代的自然选择，因为其等位基因功能被主要的春季生长习性等位基因隐藏。后代排列和育种者选择可以消除那些分离出冬季生长习惯的家庭，并可选择纯合春季生长习性。定性特征的简单表型选择的价值在于数百万种植物可以轻松选择或反对。简单的表型选择可以非常有效地用于其它性状，例如除草剂耐受性，其中通过用所需的除草剂喷洒分离种群并杀死易感植物来选择除草剂抗性植物（Newhouse等人1992; Baenziger等人2006a ; Baenziger和DePauw 2009）。
+然而，<strong>对于许多特征，简单的表型选择是困难的（例如，具有低遗传力的性状），耗时（例如成年植物性状的选择）或昂贵的（例如需要昂贵的测定的性状）</strong>。对于某些特征，存在上述两个或多个问题。正是由于这些特征，<strong>建议间接选择</strong>（Falconer 1952; Baenziger等2011）。<strong>间接选择是选择可以比直接选择感兴趣的特征更有效地选择的相关特征</strong>。为了使间接选择有效，<strong>相关响应（非目标性状选择）与直接反应（感兴趣特征选择）的比例大于1</strong>。该比例通过相关性状[h2]遗传力的平方根除以直接性状遗传力[h1]乘以基因型（rG）之间的遗传相关性的平方根</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/type-b/" data-toggle="tooltip" data-placement="top" title="Type-B">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/nir/tsuchikawa2013-nir-review/" data-toggle="tooltip" data-placement="top" title="Tsuchikawa2013-NIR-review">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

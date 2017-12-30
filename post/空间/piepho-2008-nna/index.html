@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Piepho-2008-NNA</title>
+  <meta property="og:title" content="Piepho-2008-NNA" />
+  <meta name="twitter:title" content="Piepho-2008-NNA" />
+  <meta name="description" content="Piepho HP, Richter C, Williams E. Nearest neighbour adjustment and linear variance models in plant breeding trials. Biometrical J. 2008;50:164–89.   本文综述了最近邻分析的方法，适用于一维的局部趋势。这样的方法通常用于植物育种和品种测试。重点是简单的差分方法，包括第一个差异和Papadakis方法。我们讨论这些方法的混合模型表示观察数据的规模。与差异相比，建模观察数据具有许多实际优点，例如方便地计算调整的品种平均值的设施。大多数模型考虑涉及线性方差协方差结构，可以表示为状态空间模型。使用三个数据集来例示所审查的方法和模型。
+新作物品种和育种品系的评价需要在跨多个环境重复的田间试验中进行测试。通常，测试的品种数量很大，通常达到超过100个条目。在早期生成试验中，植物材料可能是如此有限，以至于难以完全重复，因此经常使用具有重复检查例如增强设计的设计（Federer，1961,2002; Williams和John，2003）。在后代和用于释放的品种中，具有两到四个重复的重复试验是常规。由于大量条目，某种形式的不完全区组在两种情况下都是常见的，优选使用诸如a-designs的可分辨设计（John和Williams，1995）。最近，对用于分析产量试验的地质统计方法的兴趣增加，并且可以考虑这样的分析选项来优化设计（Williams等人，2006; Cullis等人，2006）。本文涉及最近邻居调整（NNA），一种特殊类型的地球物理分析现场试验。假设根据某种区组设计布置了试验，并且每个块执行空间调整。我们的重点是一维调整，假设空间趋势主要是在一个方向，这将是这样的情况，当块已经被定向为与任何主要趋势正交，并且由等间隔的小区的单个阵列组成，如许多重要作物，最着名的是谷物，其中地块长而薄。一维分析类似于具有对应于小区的空间位置的时间点的时间序列分析。我们的基本模型可以写为vj =lþbðjÞþtjþej; ð1，其中绘小区（j = 1,2，&hellip;，n）按照场次序索引，vj是第j个小区上观察到的产量，l是截距，bjjjj是测试的品种对j的影响第i个品种生长在第j个小区上，tj是局部趋势，ej是测量误差。本文考虑的模型在tj和ej的假设不同。虽然我们最初通过相关联的计算分析方法来激励一些模型，但是应当理解，模型选择优先于特定计算方法的选择。自从Papadakis（1937）的开创性工作以来，NNA的想法已经引起了相当大的关注，例如在Bartlett（1978）和Wilkinson et al。 （1983）。已经提出了许多扩展和修改。基本思想是通过从相邻小区中减去一些观测值的函数来调整绘小区值，假设该操作至少大致消除了局部趋势。对于Papadakis方法，第j个小区的调整采用形式
+其中b是通常不远离统一的回归系数。方程（2）可以通过不同的模型来证明，如本文所述。在其最简单的形式中，Papadakis方法取b = 1，因此通过相邻平均值的减法获得调整（Wilkinson等人，1983）。此方法等效于分析绘制值之间的第二个差异，由。或者，可以通过几种方法之一迭代地确定b的适当估计（Wilkinson等人，1983），或者可以将相邻小区的平均值用作协方差迭代分析中的协变量（Wilkinson，1983; Stroup等人al。，1994; Wu et al。，1998）。这些方法已经被几家植物育种公司常规使用。例如，一些德国植物育种者使用软件包ANOFT（Schwarzbach，1984），其基于（2）以b = 1执行NNA。在该包中实施的方法采用迭代算法以通过最小二乘估计参数，假设独立的第二个差异。 AN-OFT内核也成为AGROBASE Generation II软件（www.agronomix.com）（E. Schwarzbach，2007，和D. K. Mulitze，2007，personal communication）的一部分。 NNA的另一个选择是通过第一差异去除趋势rj = vj &#43; 1？vj。 第一差异在误差自由度方面比第二差异更便宜。 Wilkinson等人的第二个差异的建议。 （1983）在很大程度上是由他们对澳大利亚品种试验数据库的表现推动的，而基于英国品种试验的经验推荐了第一个差异和相关的线性变异模型（Williams，1986）。在那个阶段（可能还是这种情况），澳大利亚的数据往往比英国更加可变，并且更多地用于二次差分而不是首次差分。我们认为，随着温和的趋势，似乎在欧洲条件下盛行，使用第一差异就足够了。第一个差异已经被几个作者提出，包括Besag和Kempton（1986），Gleeson和Cullis（1987），Cullis和Gleeson（1991），Stroup和Mulitze（1991），Kempton等， （1994），Wu et al。 （1998），和Wu和Dutilleul（1999）。差分是ARIMA或Box-Jenkins模型的非常全面的机器的一部分，在时间序列分析中非常流行，其中第一差异对应于集成误差过程。这些模型已经在现场试验的背景下广泛研究（Gleeson和Cullis，1987），并且已经提出了对二维的扩展（Cullis和Gleeson，1991）。对于一个非常易于访问的帐户，请参阅Gleeson（1997）。最近，这些作者中的一些已经放弃了差分的想法，倾向于更复杂的模拟非平稳场趋势的方法，例如。对大规模趋势（Gilmour等人，1997）和平滑样条的随机效应的加法（Verbyla等人，1999）。虽然这些更复杂的方法具有其优点，但是它们在常规应用中更难以使用，因为在产生最终分析之前需要采取几个模型选择步骤，并且用于竞争地质统计模型和方法的最优模型选择是一个微妙的任务（Huang和Chen，2007）。相比之下，第一个差异的方法具有简单的优点，是相当稳健和有效的（Baird和Mead，1991），在实践中工作良好（Wu等人，1998; Wu和Dutilleul，1999）。第一个差异与威廉姆斯（1986）和随机游走模型（Piepho和Williams，2007; Lee和Piepho，2007）提出的线性方差模型密切相关，Piepho和Ogutu是一种特殊的状态空间模型。这种关系可以用于将等价模型拟合到原始数据而不是第一差异。类似地，可以通过迭代拟合协方差模型的分析来实现b 6 = 1的Papadakis方法，该协方差模型将相邻小区的平均值作为协变量（Wilkinson，1983; Stroup等人，1994; Wu等人。，1998）或通过拟合一个特定的状态空间模型，如本文所示。将邻域模型拟合为观测数据而不是第一或第二差异具有许多优点，包括便利地进行品种平均值的成对比较和处理缺失观测的容易性的便利。此外，扩展模型是直截了当的，特别是当需要考虑除了土壤趋势之外的多个变化来源以及当需要计算调整的方法时，可能考虑协变量。本文的目的是通过专门的拟合算法提供对NNA的一些看似不同的方法的统一评论。我们的论文强调了明确制定统计模型的优点，而不仅仅是为NNA提供算法。我们强调的方法来拟合模型到观察数据，而不是差异数据。我们的审查主要集中于在混合模型框架中产生线性期望和线性方差 - 协方差结构的方法。 唯一的例外是具有b 6 = 1的Papadakis方法，其对应于非线性模型，尽管在b上有条件地是线性的，其可以在拟合中利用。方差协方差结构中的线性是与通常使用中的许多其他空间模型相比的显着特征（Schabenberger和Gotway，2005）。我们展示了当b = 1时，如何使用线性模型包来非迭代地实现Papadakis方法。我们将讨论这种非迭代方法如何与Schwarzbach的迭代方法中使用第二个差异相关1984）。接下来，将示出在简单混合模型中如何考虑由测量误差引起的第一和第二差中的随机依赖性，从而有助于实际中的路由使用。利用与线性方差模型（Williams，1986）和随机游走的密切联系，将展示如何在不实际计算第一或第二差异的情况下实现最接近的邻近调整。最后，证明了如何通过非线性最小二乘法来实现用于b 6/1的Papadakis方法，以及如何解释非线性混合模型框架中的变量的误差，再次利用与状态空间模型的联系。三个例子用于说明所提出的方法的范围。第一个例子是一个小的人工数据集，而第二个数据集来自一个更大的实验（Besag和Kempton，1986）。使用小数据集以便说明NNA的不同方法的计算步骤。真实数据集用于举例说明一些更复杂的模型，并证明空间分析的模型选择需要一些谨慎。来自真实实验的第二个例子是为了显示如何将空间分析容易地整合到大量试验的常规分析中。我们把注意力集中在一维调整上。为了简化说明，我们的一些方程考虑了单个小区块的情况，但是扩展到几个块是直接的，并且事实上在示例中使用。块可以与字段中的单列小区相同，或者列可以被划分为几个块，使得块是连续的，但是针对趋势的调整不会跨越块延伸。根据随机化结构，块可以对应于可分辨设计的不完全块，或者它们可以对应于随机完全块设计的完全重复。这一审查部分是由一些植物育种公司表示希望从传统迭代NNA迁移的动机？ la Papadakis到一个更强大的完全混合模型分析与本地趋势的空间组件。这样的分析框架非常灵活，例如允许包含用于关联映射的混合模型组件（Stich等人，2008）和利用谱系关系来预测育种值（Stroup和Mulitze，1991; Piepho等人，2008） 。">
+  <meta property="og:description" content="Piepho HP, Richter C, Williams E. Nearest neighbour adjustment and linear variance models in plant breeding trials. Biometrical J. 2008;50:164–89.   本文综述了最近邻分析的方法，适用于一维的局部趋势。这样的方法通常用于植物育种和品种测试。重点是简单的差分方法，包括第一个差异和Papadakis方法。我们讨论这些方法的混合模型表示观察数据的规模。与差异相比，建模观察数据具有许多实际优点，例如方便地计算调整的品种平均值的设施。大多数模型考虑涉及线性方差协方差结构，可以表示为状态空间模型。使用三个数据集来例示所审查的方法和模型。
+新作物品种和育种品系的评价需要在跨多个环境重复的田间试验中进行测试。通常，测试的品种数量很大，通常达到超过100个条目。在早期生成试验中，植物材料可能是如此有限，以至于难以完全重复，因此经常使用具有重复检查例如增强设计的设计（Federer，1961,2002; Williams和John，2003）。在后代和用于释放的品种中，具有两到四个重复的重复试验是常规。由于大量条目，某种形式的不完全区组在两种情况下都是常见的，优选使用诸如a-designs的可分辨设计（John和Williams，1995）。最近，对用于分析产量试验的地质统计方法的兴趣增加，并且可以考虑这样的分析选项来优化设计（Williams等人，2006; Cullis等人，2006）。本文涉及最近邻居调整（NNA），一种特殊类型的地球物理分析现场试验。假设根据某种区组设计布置了试验，并且每个块执行空间调整。我们的重点是一维调整，假设空间趋势主要是在一个方向，这将是这样的情况，当块已经被定向为与任何主要趋势正交，并且由等间隔的小区的单个阵列组成，如许多重要作物，最着名的是谷物，其中地块长而薄。一维分析类似于具有对应于小区的空间位置的时间点的时间序列分析。我们的基本模型可以写为vj =lþbðjÞþtjþej; ð1，其中绘小区（j = 1,2，&hellip;，n）按照场次序索引，vj是第j个小区上观察到的产量，l是截距，bjjjj是测试的品种对j的影响第i个品种生长在第j个小区上，tj是局部趋势，ej是测量误差。本文考虑的模型在tj和ej的假设不同。虽然我们最初通过相关联的计算分析方法来激励一些模型，但是应当理解，模型选择优先于特定计算方法的选择。自从Papadakis（1937）的开创性工作以来，NNA的想法已经引起了相当大的关注，例如在Bartlett（1978）和Wilkinson et al。 （1983）。已经提出了许多扩展和修改。基本思想是通过从相邻小区中减去一些观测值的函数来调整绘小区值，假设该操作至少大致消除了局部趋势。对于Papadakis方法，第j个小区的调整采用形式
+其中b是通常不远离统一的回归系数。方程（2）可以通过不同的模型来证明，如本文所述。在其最简单的形式中，Papadakis方法取b = 1，因此通过相邻平均值的减法获得调整（Wilkinson等人，1983）。此方法等效于分析绘制值之间的第二个差异，由。或者，可以通过几种方法之一迭代地确定b的适当估计（Wilkinson等人，1983），或者可以将相邻小区的平均值用作协方差迭代分析中的协变量（Wilkinson，1983; Stroup等人al。，1994; Wu et al。，1998）。这些方法已经被几家植物育种公司常规使用。例如，一些德国植物育种者使用软件包ANOFT（Schwarzbach，1984），其基于（2）以b = 1执行NNA。在该包中实施的方法采用迭代算法以通过最小二乘估计参数，假设独立的第二个差异。 AN-OFT内核也成为AGROBASE Generation II软件（www.agronomix.com）（E. Schwarzbach，2007，和D. K. Mulitze，2007，personal communication）的一部分。 NNA的另一个选择是通过第一差异去除趋势rj = vj &#43; 1？vj。 第一差异在误差自由度方面比第二差异更便宜。 Wilkinson等人的第二个差异的建议。 （1983）在很大程度上是由他们对澳大利亚品种试验数据库的表现推动的，而基于英国品种试验的经验推荐了第一个差异和相关的线性变异模型（Williams，1986）。在那个阶段（可能还是这种情况），澳大利亚的数据往往比英国更加可变，并且更多地用于二次差分而不是首次差分。我们认为，随着温和的趋势，似乎在欧洲条件下盛行，使用第一差异就足够了。第一个差异已经被几个作者提出，包括Besag和Kempton（1986），Gleeson和Cullis（1987），Cullis和Gleeson（1991），Stroup和Mulitze（1991），Kempton等， （1994），Wu et al。 （1998），和Wu和Dutilleul（1999）。差分是ARIMA或Box-Jenkins模型的非常全面的机器的一部分，在时间序列分析中非常流行，其中第一差异对应于集成误差过程。这些模型已经在现场试验的背景下广泛研究（Gleeson和Cullis，1987），并且已经提出了对二维的扩展（Cullis和Gleeson，1991）。对于一个非常易于访问的帐户，请参阅Gleeson（1997）。最近，这些作者中的一些已经放弃了差分的想法，倾向于更复杂的模拟非平稳场趋势的方法，例如。对大规模趋势（Gilmour等人，1997）和平滑样条的随机效应的加法（Verbyla等人，1999）。虽然这些更复杂的方法具有其优点，但是它们在常规应用中更难以使用，因为在产生最终分析之前需要采取几个模型选择步骤，并且用于竞争地质统计模型和方法的最优模型选择是一个微妙的任务（Huang和Chen，2007）。相比之下，第一个差异的方法具有简单的优点，是相当稳健和有效的（Baird和Mead，1991），在实践中工作良好（Wu等人，1998; Wu和Dutilleul，1999）。第一个差异与威廉姆斯（1986）和随机游走模型（Piepho和Williams，2007; Lee和Piepho，2007）提出的线性方差模型密切相关，Piepho和Ogutu是一种特殊的状态空间模型。这种关系可以用于将等价模型拟合到原始数据而不是第一差异。类似地，可以通过迭代拟合协方差模型的分析来实现b 6 = 1的Papadakis方法，该协方差模型将相邻小区的平均值作为协变量（Wilkinson，1983; Stroup等人，1994; Wu等人。，1998）或通过拟合一个特定的状态空间模型，如本文所示。将邻域模型拟合为观测数据而不是第一或第二差异具有许多优点，包括便利地进行品种平均值的成对比较和处理缺失观测的容易性的便利。此外，扩展模型是直截了当的，特别是当需要考虑除了土壤趋势之外的多个变化来源以及当需要计算调整的方法时，可能考虑协变量。本文的目的是通过专门的拟合算法提供对NNA的一些看似不同的方法的统一评论。我们的论文强调了明确制定统计模型的优点，而不仅仅是为NNA提供算法。我们强调的方法来拟合模型到观察数据，而不是差异数据。我们的审查主要集中于在混合模型框架中产生线性期望和线性方差 - 协方差结构的方法。 唯一的例外是具有b 6 = 1的Papadakis方法，其对应于非线性模型，尽管在b上有条件地是线性的，其可以在拟合中利用。方差协方差结构中的线性是与通常使用中的许多其他空间模型相比的显着特征（Schabenberger和Gotway，2005）。我们展示了当b = 1时，如何使用线性模型包来非迭代地实现Papadakis方法。我们将讨论这种非迭代方法如何与Schwarzbach的迭代方法中使用第二个差异相关1984）。接下来，将示出在简单混合模型中如何考虑由测量误差引起的第一和第二差中的随机依赖性，从而有助于实际中的路由使用。利用与线性方差模型（Williams，1986）和随机游走的密切联系，将展示如何在不实际计算第一或第二差异的情况下实现最接近的邻近调整。最后，证明了如何通过非线性最小二乘法来实现用于b 6/1的Papadakis方法，以及如何解释非线性混合模型框架中的变量的误差，再次利用与状态空间模型的联系。三个例子用于说明所提出的方法的范围。第一个例子是一个小的人工数据集，而第二个数据集来自一个更大的实验（Besag和Kempton，1986）。使用小数据集以便说明NNA的不同方法的计算步骤。真实数据集用于举例说明一些更复杂的模型，并证明空间分析的模型选择需要一些谨慎。来自真实实验的第二个例子是为了显示如何将空间分析容易地整合到大量试验的常规分析中。我们把注意力集中在一维调整上。为了简化说明，我们的一些方程考虑了单个小区块的情况，但是扩展到几个块是直接的，并且事实上在示例中使用。块可以与字段中的单列小区相同，或者列可以被划分为几个块，使得块是连续的，但是针对趋势的调整不会跨越块延伸。根据随机化结构，块可以对应于可分辨设计的不完全块，或者它们可以对应于随机完全块设计的完全重复。这一审查部分是由一些植物育种公司表示希望从传统迭代NNA迁移的动机？ la Papadakis到一个更强大的完全混合模型分析与本地趋势的空间组件。这样的分析框架非常灵活，例如允许包含用于关联映射的混合模型组件（Stich等人，2008）和利用谱系关系来预测育种值（Stroup和Mulitze，1991; Piepho等人，2008） 。">
+  <meta name="twitter:description" content="Piepho HP, Richter C, Williams E. Nearest neighbour adjustment and linear variance models in plant breeding trials. Biometrical J. 2008;50:164–89.   本文综述了最近邻分析的方法，适用于一维的局部趋势。这样的方法通常用于植物育种和品种测试。重点是简单的差 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/piepho-2008-nna/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/piepho-2008-nna/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Piepho-2008-NNA</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (79 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Piepho-2008-NNA</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (79 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<ol>
+<li>Piepho HP, Richter C, Williams E. Nearest neighbour adjustment and linear variance models in plant breeding trials. Biometrical J. 2008;50:164–89.</li>
+</ol>
+</blockquote>
+
+<p>本文综述了<strong>最近邻分析的方法，适用于一维的局部趋势</strong>。这样的方法通常用于植物育种和品种测试。重点是简单的差分方法，包括第一个差异和Papadakis方法。我们讨论这些方法的混合模型表示观察数据的规模。与差异相比，建模观察数据具有许多实际优点，例如方便地计算调整的品种平均值的设施。大多数模型考虑涉及线性方差协方差结构，可以表示为状态空间模型。使用三个数据集来例示所审查的方法和模型。</p>
+
+<p>新作物品种和育种品系的评价需要在跨多个环境重复的田间试验中进行测试。通常，测试的品种数量很大，通常达到超过100个条目。在早期生成试验中，植物材料可能是如此有限，以至于难以完全重复，因此经常使用具有重复检查例如增强设计的设计（Federer，1961,2002; Williams和John，2003）。在后代和用于释放的品种中，具有两到四个重复的重复试验是常规。由于大量条目，某种形式的不完全区组在两种情况下都是常见的，优选使用诸如a-designs的可分辨设计（John和Williams，1995）。最近，对用于分析产量试验的地质统计方法的兴趣增加，并且可以考虑这样的分析选项来优化设计（Williams等人，2006; Cullis等人，2006）。本文涉及最近邻居调整（NNA），一种特殊类型的地球物理分析现场试验。假设根据某种区组设计布置了试验，并且每个块执行空间调整。我们的重点是一维调整，假设空间趋势主要是在一个方向，这将是这样的情况，当块已经被定向为与任何主要趋势正交，并且由等间隔的小区的单个阵列组成，如许多重要作物，最着名的是谷物，其中地块长而薄。一维分析类似于具有对应于小区的空间位置的时间点的时间序列分析。我们的基本模型可以写为vj =lþbðjÞþtjþej; ð1，其中绘小区（j = 1,2，&hellip;，n）按照场次序索引，vj是第j个小区上观察到的产量，l是截距，bjjjj是测试的品种对j的影响第i个品种生长在第j个小区上，tj是局部趋势，ej是测量误差。本文考虑的模型在tj和ej的假设不同。虽然我们最初通过相关联的计算分析方法来激励一些模型，但是应当理解，模型选择优先于特定计算方法的选择。<strong>自从Papadakis（1937）的开创性工作以来，NNA的想法已经引起了相当大的关注，例如在Bartlett（1978）和Wilkinson et al。 （1983）。已经提出了许多扩展和修改。基本思想是通过从相邻小区中减去一些观测值的函数来调整绘小区值，假设该操作至少大致消除了局部趋势</strong>。对于Papadakis方法，第j个小区的调整采用形式</p>
+
+<p>其中b是通常不远离统一的回归系数。方程（2）可以通过不同的模型来证明，如本文所述。在其最简单的形式中，Papadakis方法取b = 1，因此通过相邻平均值的减法获得调整（Wilkinson等人，1983）。此方法等效于分析绘制值之间的第二个差异，由。或者，可以通过几种方法之一迭代地确定b的适当估计（Wilkinson等人，1983），或者可以将相邻小区的平均值用作协方差迭代分析中的协变量（Wilkinson，1983; Stroup等人al。，1994; Wu et al。，1998）。这些方法已经被几家植物育种公司常规使用。例如，一些德国植物育种者使用软件包ANOFT（Schwarzbach，1984），其基于（2）以b = 1执行NNA。在该包中实施的方法采用迭代算法以通过最小二乘估计参数，假设独立的第二个差异。 AN-OFT内核也成为AGROBASE Generation II软件（www.agronomix.com）（E. Schwarzbach，2007，和D. K. Mulitze，2007，personal communication）的一部分。 NNA的另一个选择是通过第一差异去除趋势rj = vj + 1？vj。
+第一差异在误差自由度方面比第二差异更便宜。 Wilkinson等人的第二个差异的建议。 （1983）在很大程度上是由他们对澳大利亚品种试验数据库的表现推动的，而基于英国品种试验的经验推荐了第一个差异和相关的线性变异模型（Williams，1986）。在那个阶段（可能还是这种情况），澳大利亚的数据往往比英国更加可变，并且更多地用于二次差分而不是首次差分。我们认为，随着温和的趋势，似乎在欧洲条件下盛行，使用第一差异就足够了。第一个差异已经被几个作者提出，包括Besag和Kempton（1986），Gleeson和Cullis（1987），Cullis和Gleeson（1991），Stroup和Mulitze（1991），Kempton等， （1994），Wu et al。 （1998），和Wu和Dutilleul（1999）。差分是ARIMA或Box-Jenkins模型的非常全面的机器的一部分，在时间序列分析中非常流行，其中第一差异对应于集成误差过程。这些模型已经在现场试验的背景下广泛研究（Gleeson和Cullis，1987），并且已经提出了对二维的扩展（Cullis和Gleeson，1991）。对于一个非常易于访问的帐户，请参阅Gleeson（1997）。最近，这些作者中的一些已经放弃了差分的想法，倾向于更复杂的模拟非平稳场趋势的方法，例如。对大规模趋势（Gilmour等人，1997）和平滑样条的随机效应的加法（Verbyla等人，1999）。虽然这些更复杂的方法具有其优点，但是它们在常规应用中更难以使用，因为在产生最终分析之前需要采取几个模型选择步骤，并且用于竞争地质统计模型和方法的最优模型选择是一个微妙的任务（Huang和Chen，2007）。相比之下，第一个差异的方法具有简单的优点，是相当稳健和有效的（Baird和Mead，1991），在实践中工作良好（Wu等人，1998; Wu和Dutilleul，1999）。第一个差异与威廉姆斯（1986）和随机游走模型（Piepho和Williams，2007; Lee和Piepho，2007）提出的线性方差模型密切相关，Piepho和Ogutu是一种特殊的状态空间模型。这种关系可以用于将等价模型拟合到原始数据而不是第一差异。类似地，可以通过迭代拟合协方差模型的分析来实现b 6 = 1的Papadakis方法，该协方差模型将相邻小区的平均值作为协变量（Wilkinson，1983; Stroup等人，1994; Wu等人。，1998）或通过拟合一个特定的状态空间模型，如本文所示。将邻域模型拟合为观测数据而不是第一或第二差异具有许多优点，包括便利地进行品种平均值的成对比较和处理缺失观测的容易性的便利。此外，扩展模型是直截了当的，特别是当需要考虑除了土壤趋势之外的多个变化来源以及当需要计算调整的方法时，可能考虑协变量。本文的目的是通过专门的拟合算法提供对NNA的一些看似不同的方法的统一评论。我们的论文强调了明确制定统计模型的优点，而不仅仅是为NNA提供算法。我们强调的方法来拟合模型到观察数据，而不是差异数据。我们的审查主要集中于在混合模型框架中产生线性期望和线性方差 - 协方差结构的方法。
+唯一的例外是具有b 6 = 1的Papadakis方法，其对应于非线性模型，尽管在b上有条件地是线性的，其可以在拟合中利用。方差协方差结构中的线性是与通常使用中的许多其他空间模型相比的显着特征（Schabenberger和Gotway，2005）。我们展示了当b = 1时，如何使用线性模型包来非迭代地实现Papadakis方法。我们将讨论这种非迭代方法如何与Schwarzbach的迭代方法中使用第二个差异相关1984）。接下来，将示出在简单混合模型中如何考虑由测量误差引起的第一和第二差中的随机依赖性，从而有助于实际中的路由使用。利用与线性方差模型（Williams，1986）和随机游走的密切联系，将展示如何在不实际计算第一或第二差异的情况下实现最接近的邻近调整。最后，证明了如何通过非线性最小二乘法来实现用于b 6/1的Papadakis方法，以及如何解释非线性混合模型框架中的变量的误差，再次利用与状态空间模型的联系。三个例子用于说明所提出的方法的范围。第一个例子是一个小的人工数据集，而第二个数据集来自一个更大的实验（Besag和Kempton，1986）。使用小数据集以便说明NNA的不同方法的计算步骤。真实数据集用于举例说明一些更复杂的模型，并证明空间分析的模型选择需要一些谨慎。来自真实实验的第二个例子是为了显示如何将空间分析容易地整合到大量试验的常规分析中。我们把注意力集中在一维调整上。为了简化说明，我们的一些方程考虑了单个小区块的情况，但是扩展到几个块是直接的，并且事实上在示例中使用。块可以与字段中的单列小区相同，或者列可以被划分为几个块，使得块是连续的，但是针对趋势的调整不会跨越块延伸。根据随机化结构，块可以对应于可分辨设计的不完全块，或者它们可以对应于随机完全块设计的完全重复。这一审查部分是由一些植物育种公司表示希望从传统迭代NNA迁移的动机？ la Papadakis到一个更强大的完全混合模型分析与本地趋势的空间组件。这样的分析框架非常灵活，例如允许包含用于关联映射的混合模型组件（Stich等人，2008）和利用谱系关系来预测育种值（Stroup和Mulitze，1991; Piepho等人，2008） 。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/piepho-2010-lv-%E6%A8%A1%E5%9E%8B/" data-toggle="tooltip" data-placement="top" title="Piepho-2010-LV-模型">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E6%97%A5%E6%9C%AC%E8%90%BD%E5%8F%B6%E6%9D%BE/philippe2016-%E6%9D%82%E7%A7%8D%E7%A7%8D%E5%AD%90%E5%9B%AD-%E6%9D%82%E7%A7%8D%E7%A7%8D%E5%AD%90%E6%AF%94%E4%BE%8B/" data-toggle="tooltip" data-placement="top" title="Philippe2016-杂种种子园-杂种种子比例">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

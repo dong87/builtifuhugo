@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Wilkinson--1983-Papadakis的NN</title>
+  <meta property="og:title" content="Wilkinson--1983-Papadakis的NN" />
+  <meta name="twitter:title" content="Wilkinson--1983-Papadakis的NN" />
+  <meta name="description" content="Wilkinson GN, Eckert SR, Hancock TW, Mayo O. Nearest Neighbour (NN) analysis of field experiments. J. R. Stat. Soc. B [Internet]. 1983 [cited 2016 Dec 21];45:G1–25. Available from: http://sci-hub.cc/http://www.jstor.org/stable/2345523   概要 论文分为两部分。第一部分介绍了蒙特卡罗随机研究的Papadakis的NN分析的协方差方法的结果，显示（i）非迭代的Papadakis分析倾向于保守地偏向; （ii）Bartlett（1978）建议的分析的迭代导致治疗F比的显着正偏差; （iii）当在数据中存在显着的趋势效应时，该方法是非常低效的。给出这些结果的理论解释。第二部分描述了由第一作者发现并与合作者合作开发的NN分析的新方法。该方法本质上是用于“固定”块（或行，列）的经典形式的分析的“移动块”模拟。它避免了Papadakis的方法的缺陷，并导致大约无偏见的分析。与完全或不完全块实验的经典分析相比，其平均几乎总是并且经常显着更有效，并且如果在数据中存在可观的行x列相互作用，则比拉丁或格子正方形设计的标准分析更有效。描述了NN平衡的新设计标准。随机化下的新方法的有效性用蒙特卡罗研究经验证明。
+介绍 45年前由Papadakis（1937）提出并随后由Bartlett（1938）讨论的，通过协方差分析调整相邻地块的处理校正产量的局部趋势效应的场试验的产量的想法。遗憾的是，这个重要的想法遭受了长时间的忽视，直到阿特金森（1969）恢复了它的兴趣，也参见耶茨（1970，第148页）。 Pearce和Moore（1976）提请注意在实际应用Papadakis方法时可能的处理估计准确性的实质性提高，Bartlett（1978）在向皇家统计学会的一篇论文中重新审查了其理论性质参考对称自回归形式的最近邻模型。 Bartlett还建议该方法的迭代，使用来自先前迭代的处理估计来重新定义电流的最近相关协变量。 Pearce（1980）和Kempton和Howes（1981）提出了关于该方法的实际价值的额外的经验证据。 Papadakis方法的许多理论讨论集中在固定模型上。我们认为这是在田野实验的上下文中的错误，其中非稳态趋势效应通常是主要考虑因素。事实上，最近邻近调整在我们称为场近似实验的最近邻（或NN）分析的主要作用可以被描述为提供连续形式的局部去趋势，与经典方法的逐步块解除分析。本文从这个角度重新考虑了Papadakis方法，并且还描述了一种更有效的替代方法。本文按照这两种方法分为两部分。第一部分首先描述了具有均匀性数据的Papadakis方法的广泛的Monte Carlo随机化研究的结果。结果显示，尽管非迭代的Papadakis分析在随机化（略微倾向于保守偏差）下是合理有效的，但是Bartlett（1978）建议的分析的迭代导致治疗F比的严重向上偏差。然而，该方法的最严重的缺陷被发现是当趋势效应可感知时其固有的低效率。在1.3节中，根据平滑趋势&#43;独立误差模型推导了无效率的理论解释。还给出了来自迭代的偏差的简单解释。 Papadakis方法中的低效率的来源被发现是形成最近相邻协变量时治疗效果的产率的先前校正。这导致第一作者发现一种替代的，更有效的NN分析方法，其可以合适地称为在Rothamsted实验站开发的经典“固定块”分析方法的“移动块”类似物。新的方法将在第二部分中描述，我们将其进一步讨论推迟到第11.1节。
+第一部分Papadakis的方法 1.蒙特卡罗随机研究数据集在研究中使用了三组均匀性数据，从Wiebe（1935），Mercer和Hall（1911）和Kempton和Howes（1981）。它们描述如下。 Wiebe数据包括1500个小麦产量，1500个植物行，15英尺长和1英尺间距，125行×12列场布置。我们将其分为两个标记为W1和W2的集合，分别包括列1-6和7-12。 W1比W2更加可变，并且包括具有非常高产量的贴片。由于实验使用8排籽粒钻进行播种，其产生了对产量的行效应的重现模式，通过求和至8排总积分进一步减少数据。在本文的其他地方，我们还考虑4行总计，并区分具有下标8或4的两种情况。基于8行总和的轮廓图如图3所示。 Mercer和Hall数据，标记为MH，是来自20×25阵列的长10.8英尺长和11行宽，具有9英寸行间距（从指定的图面积估计，0.002英亩）的小麦产量。我们通过求和将这些数据汇总到4列总计的20×6阵列（省略列25）以获得相对长的图的产量，其中1-D NN调整将是适当的。来自Kempton和Howes（1981，第64页）的第三个数据集（KH）包括来自5英尺×14英尺样地的28×7阵列的大麦产量。实验设计和分析研究涉及a（3×2×2×2 ）因子集的24次运行和100个随机设计，用于叠加在数据集WI，W2和MH上的5×6阵列中的30次处理的2或3次重复，以及在KH上的4次运行的附加的2×2阶乘集，具有4次重复在7×7阵列中的49处理。然后在每种情况下进行10个循环重复的Papadakis分析，总共进行了28000次个体分析。研究中的其他因素有随机：无限制，限制性;分析方法：1-D，2-D 无限制随机化是具有指定数目的重复和治疗的随机区组设计。除此之外，随机化被限制为给出第二级部分平衡（参见第11.6节），除了KH，其中限制性随机化是用于平衡格子正方形设计，用于与Kempton和Howes（1981） 。使用针对列邻居的单个NN协变量（1-D情况）或者针对行和列邻居的两个协变量（2-D）来执行Papadakis分析。边界图的协变量值仅使用可用的邻居来定义，因为边界图不包括在设计中。我们最初的研究，1980年12月完成，包括在Wi，W2和MH只有6运行，限制随机化和1-D分析。当Kempton和Howes的论文于1981年出版时，我们添加了一个关于KH的运行，以解决我们的结论与他们的结论之间的明显差异。 Kempton（个人沟通）建议，差异可能是由于他们的研究中的受限随机化（他们也使用2-D分析），所以我们如上所述扩展我们的研究。 （Kernpton自从他们原来的计算中发现一个错误，他们修改后的蒙特卡罗结果现在与我们的一致。">
+  <meta property="og:description" content="Wilkinson GN, Eckert SR, Hancock TW, Mayo O. Nearest Neighbour (NN) analysis of field experiments. J. R. Stat. Soc. B [Internet]. 1983 [cited 2016 Dec 21];45:G1–25. Available from: http://sci-hub.cc/http://www.jstor.org/stable/2345523   概要 论文分为两部分。第一部分介绍了蒙特卡罗随机研究的Papadakis的NN分析的协方差方法的结果，显示（i）非迭代的Papadakis分析倾向于保守地偏向; （ii）Bartlett（1978）建议的分析的迭代导致治疗F比的显着正偏差; （iii）当在数据中存在显着的趋势效应时，该方法是非常低效的。给出这些结果的理论解释。第二部分描述了由第一作者发现并与合作者合作开发的NN分析的新方法。该方法本质上是用于“固定”块（或行，列）的经典形式的分析的“移动块”模拟。它避免了Papadakis的方法的缺陷，并导致大约无偏见的分析。与完全或不完全块实验的经典分析相比，其平均几乎总是并且经常显着更有效，并且如果在数据中存在可观的行x列相互作用，则比拉丁或格子正方形设计的标准分析更有效。描述了NN平衡的新设计标准。随机化下的新方法的有效性用蒙特卡罗研究经验证明。
+介绍 45年前由Papadakis（1937）提出并随后由Bartlett（1938）讨论的，通过协方差分析调整相邻地块的处理校正产量的局部趋势效应的场试验的产量的想法。遗憾的是，这个重要的想法遭受了长时间的忽视，直到阿特金森（1969）恢复了它的兴趣，也参见耶茨（1970，第148页）。 Pearce和Moore（1976）提请注意在实际应用Papadakis方法时可能的处理估计准确性的实质性提高，Bartlett（1978）在向皇家统计学会的一篇论文中重新审查了其理论性质参考对称自回归形式的最近邻模型。 Bartlett还建议该方法的迭代，使用来自先前迭代的处理估计来重新定义电流的最近相关协变量。 Pearce（1980）和Kempton和Howes（1981）提出了关于该方法的实际价值的额外的经验证据。 Papadakis方法的许多理论讨论集中在固定模型上。我们认为这是在田野实验的上下文中的错误，其中非稳态趋势效应通常是主要考虑因素。事实上，最近邻近调整在我们称为场近似实验的最近邻（或NN）分析的主要作用可以被描述为提供连续形式的局部去趋势，与经典方法的逐步块解除分析。本文从这个角度重新考虑了Papadakis方法，并且还描述了一种更有效的替代方法。本文按照这两种方法分为两部分。第一部分首先描述了具有均匀性数据的Papadakis方法的广泛的Monte Carlo随机化研究的结果。结果显示，尽管非迭代的Papadakis分析在随机化（略微倾向于保守偏差）下是合理有效的，但是Bartlett（1978）建议的分析的迭代导致治疗F比的严重向上偏差。然而，该方法的最严重的缺陷被发现是当趋势效应可感知时其固有的低效率。在1.3节中，根据平滑趋势&#43;独立误差模型推导了无效率的理论解释。还给出了来自迭代的偏差的简单解释。 Papadakis方法中的低效率的来源被发现是形成最近相邻协变量时治疗效果的产率的先前校正。这导致第一作者发现一种替代的，更有效的NN分析方法，其可以合适地称为在Rothamsted实验站开发的经典“固定块”分析方法的“移动块”类似物。新的方法将在第二部分中描述，我们将其进一步讨论推迟到第11.1节。
+第一部分Papadakis的方法 1.蒙特卡罗随机研究数据集在研究中使用了三组均匀性数据，从Wiebe（1935），Mercer和Hall（1911）和Kempton和Howes（1981）。它们描述如下。 Wiebe数据包括1500个小麦产量，1500个植物行，15英尺长和1英尺间距，125行×12列场布置。我们将其分为两个标记为W1和W2的集合，分别包括列1-6和7-12。 W1比W2更加可变，并且包括具有非常高产量的贴片。由于实验使用8排籽粒钻进行播种，其产生了对产量的行效应的重现模式，通过求和至8排总积分进一步减少数据。在本文的其他地方，我们还考虑4行总计，并区分具有下标8或4的两种情况。基于8行总和的轮廓图如图3所示。 Mercer和Hall数据，标记为MH，是来自20×25阵列的长10.8英尺长和11行宽，具有9英寸行间距（从指定的图面积估计，0.002英亩）的小麦产量。我们通过求和将这些数据汇总到4列总计的20×6阵列（省略列25）以获得相对长的图的产量，其中1-D NN调整将是适当的。来自Kempton和Howes（1981，第64页）的第三个数据集（KH）包括来自5英尺×14英尺样地的28×7阵列的大麦产量。实验设计和分析研究涉及a（3×2×2×2 ）因子集的24次运行和100个随机设计，用于叠加在数据集WI，W2和MH上的5×6阵列中的30次处理的2或3次重复，以及在KH上的4次运行的附加的2×2阶乘集，具有4次重复在7×7阵列中的49处理。然后在每种情况下进行10个循环重复的Papadakis分析，总共进行了28000次个体分析。研究中的其他因素有随机：无限制，限制性;分析方法：1-D，2-D 无限制随机化是具有指定数目的重复和治疗的随机区组设计。除此之外，随机化被限制为给出第二级部分平衡（参见第11.6节），除了KH，其中限制性随机化是用于平衡格子正方形设计，用于与Kempton和Howes（1981） 。使用针对列邻居的单个NN协变量（1-D情况）或者针对行和列邻居的两个协变量（2-D）来执行Papadakis分析。边界图的协变量值仅使用可用的邻居来定义，因为边界图不包括在设计中。我们最初的研究，1980年12月完成，包括在Wi，W2和MH只有6运行，限制随机化和1-D分析。当Kempton和Howes的论文于1981年出版时，我们添加了一个关于KH的运行，以解决我们的结论与他们的结论之间的明显差异。 Kempton（个人沟通）建议，差异可能是由于他们的研究中的受限随机化（他们也使用2-D分析），所以我们如上所述扩展我们的研究。 （Kernpton自从他们原来的计算中发现一个错误，他们修改后的蒙特卡罗结果现在与我们的一致。">
+  <meta name="twitter:description" content="Wilkinson GN, Eckert SR, Hancock TW, Mayo O. Nearest Neighbour (NN) analysis of field experiments. J. R. Stat. Soc. B [Internet]. 1983 [cited 2016 Dec 21];45:G1–25. Available from: …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/wilkinson--1983-papadakis%E7%9A%84nn/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/wilkinson--1983-papadakis%E7%9A%84nn/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Wilkinson--1983-Papadakis的NN</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (52 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Wilkinson--1983-Papadakis的NN</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (52 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<ol>
+<li>Wilkinson GN, Eckert SR, Hancock TW, Mayo O. Nearest Neighbour (NN) analysis of field experiments. J. R. Stat. Soc. B [Internet]. 1983 [cited 2016 Dec 21];45:G1–25. Available from: <a href="http://sci-hub.cc/http://www.jstor.org/stable/2345523">http://sci-hub.cc/http://www.jstor.org/stable/2345523</a></li>
+</ol>
+</blockquote>
+
+<h2 id="概要">概要</h2>
+
+<p>论文分为两部分。第一部分介绍了蒙特卡罗随机研究的Papadakis的NN分析的协方差方法的结果，显示（i）非迭代的Papadakis分析倾向于保守地偏向; （ii）Bartlett（1978）建议的分析的迭代导致治疗F比的显着正偏差; （iii）<strong>当在数据中存在显着的趋势效应时，该方法是非常低效的</strong>。给出这些结果的理论解释。第二部分描述了由第一作者发现并与合作者合作开发的NN分析的新方法。<strong>该方法本质上是用于“固定”块（或行，列）的经典形式的分析的“移动块”模拟。它避免了Papadakis的方法的缺陷，并导致大约无偏见的分析。与完全或不完全块实验的经典分析相比，其平均几乎总是并且经常显着更有效，并且如果在数据中存在可观的行x列相互作用，则比拉丁或格子正方形设计的标准分析更有效。描述了NN平衡的新设计标准</strong>。随机化下的新方法的有效性用蒙特卡罗研究经验证明。</p>
+
+<h2 id="介绍">介绍</h2>
+
+<p>45年前由Papadakis（1937）提出并随后由Bartlett（1938）讨论的，通过协方差分析调整相邻地块的处理校正产量的局部趋势效应的场试验的产量的想法。遗憾的是，这个重要的想法遭受了长时间的忽视，直到阿特金森（1969）恢复了它的兴趣，也参见耶茨（1970，第148页）。 Pearce和Moore（1976）提请注意在实际应用Papadakis方法时可能的处理估计准确性的实质性提高，Bartlett（1978）在向皇家统计学会的一篇论文中重新审查了其理论性质参考对称自回归形式的最近邻模型。 Bartlett还建议该方法的迭代，使用来自先前迭代的处理估计来重新定义电流的最近相关协变量。 Pearce（1980）和Kempton和Howes（1981）提出了关于该方法的实际价值的额外的经验证据。
+Papadakis方法的许多理论讨论集中在固定模型上。我们认为这是在田野实验的上下文中的错误，其中非稳态趋势效应通常是主要考虑因素。事实上，最近邻近调整在我们称为场近似实验的最近邻（或NN）分析的主要作用可以被描述为提供<strong>连续形式的局部去趋势</strong>，与经典方法的逐步块解除分析。本文从这个角度重新考虑了Papadakis方法，并且还描述了一种更有效的替代方法。本文按照这两种方法分为两部分。第一部分首先描述了具有均匀性数据的Papadakis方法的广泛的Monte Carlo随机化研究的结果。结果显示，尽管<strong>非迭代的Papadakis分析在随机化（略微倾向于保守偏差）下是合理有效的，但是Bartlett（1978）建议的分析的迭代导致治疗F比的严重向上偏差。然而，该方法的最严重的缺陷被发现是当趋势效应可感知时其固有的低效率</strong>。在1.3节中，根据平滑趋势+独立误差模型推导了无效率的理论解释。还给出了来自迭代的偏差的简单解释。 Papadakis方法中的低效率的来源被发现是形成最近相邻协变量时治疗效果的产率的先前校正。这导致第一作者发现一种替代的，更有效的NN分析方法，其可以合适地称为在Rothamsted实验站开发的经典“固定块”分析方法的“移动块”类似物。新的方法将在第二部分中描述，我们将其进一步讨论推迟到第11.1节。</p>
+
+<p>第一部分Papadakis的方法
+1.蒙特卡罗随机研究数据集在研究中使用了三组均匀性数据，从Wiebe（1935），Mercer和Hall（1911）和Kempton和Howes（1981）。它们描述如下。 Wiebe数据包括1500个小麦产量，1500个植物行，15英尺长和1英尺间距，125行×12列场布置。我们将其分为两个标记为W1和W2的集合，分别包括列1-6和7-12。 W1比W2更加可变，并且包括具有非常高产量的贴片。由于实验使用8排籽粒钻进行播种，其产生了对产量的行效应的重现模式，通过求和至8排总积分进一步减少数据。在本文的其他地方，我们还考虑4行总计，并区分具有下标8或4的两种情况。基于8行总和的轮廓图如图3所示。 Mercer和Hall数据，标记为MH，是来自20×25阵列的长10.8英尺长和11行宽，具有9英寸行间距（从指定的图面积估计，0.002英亩）的小麦产量。我们通过求和将这些数据汇总到4列总计的20×6阵列（省略列25）以获得相对长的图的产量，其中1-D NN调整将是适当的。来自Kempton和Howes（1981，第64页）的第三个数据集（KH）包括来自5英尺×14英尺样地的28×7阵列的大麦产量。实验设计和分析研究涉及a（3×2×2×2 ）因子集的24次运行和100个随机设计，用于叠加在数据集WI，W2和MH上的5×6阵列中的30次处理的2或3次重复，以及在KH上的4次运行的附加的2×2阶乘集，具有4次重复在7×7阵列中的49处理。然后在每种情况下进行10个循环重复的Papadakis分析，总共进行了28000次个体分析。研究中的其他因素有随机：无限制，限制性;分析方法：1-D，2-D
+ 无限制随机化是具有指定数目的重复和治疗的随机区组设计。除此之外，随机化被限制为给出第二级部分平衡（参见第11.6节），除了KH，其中限制性随机化是用于平衡格子正方形设计，用于与Kempton和Howes（1981） 。使用针对列邻居的单个NN协变量（1-D情况）或者针对行和列邻居的两个协变量（2-D）来执行Papadakis分析。边界图的协变量值仅使用可用的邻居来定义，因为边界图不包括在设计中。我们最初的研究，1980年12月完成，包括在Wi，W2和MH只有6运行，限制随机化和1-D分析。当Kempton和Howes的论文于1981年出版时，我们添加了一个关于KH的运行，以解决我们的结论与他们的结论之间的明显差异。 Kempton（个人沟通）建议，差异可能是由于他们的研究中的受限随机化（他们也使用2-D分析），所以我们如上所述扩展我们的研究。 （Kernpton自从他们原来的计算中发现一个错误，他们修改后的蒙特卡罗结果现在与我们的一致。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/williams-1996%E8%87%AA%E4%BA%A4-%E9%92%88%E5%8F%B6%E6%A0%91-%E8%82%B2%E7%A7%8D%E7%AD%96%E7%95%A5/" data-toggle="tooltip" data-placement="top" title="Williams-1996自交-针叶树-育种策略">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/weng2008-%E9%81%97%E4%BC%A0%E6%96%B9%E5%B7%AE%E5%89%96%E5%88%86-%E4%B8%8A%E4%BD%8D/" data-toggle="tooltip" data-placement="top" title="Weng2008-遗传方差剖分-上位">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

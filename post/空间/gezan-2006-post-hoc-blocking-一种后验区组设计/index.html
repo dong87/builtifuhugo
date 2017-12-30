@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Gezan-2006-Post-hoc-blocking-一种后验区组设计</title>
+  <meta property="og:title" content="Gezan-2006-Post-hoc-blocking-一种后验区组设计" />
+  <meta name="twitter:title" content="Gezan-2006-Post-hoc-blocking-一种后验区组设计" />
+  <meta name="description" content="Gezan SA, Huber DA, White TL. Post hoc blocking to improve heritability and precision of best linear unbiased genetic predictions. Can. J. For. Res. [Internet]. 2006;36:2141–7. Available from: http://www.scopus.com/inward/record.url?eid=2-s2.0-33845624230&amp;partnerID=40&amp;md5=6bce3998c32880cd3b835c9e958863f3   在具有三种不同环境模式的单树小区中总共256个“种植的”克隆模拟单个位点克隆试验：仅补丁（PATCH），仅梯度（GRAD）和两个组分（ALL）。分析了几个模拟实验设计（随机完全区组设计;具有4,8,16和32个不完整区组的不完全区组设计;以及行 - 列设计），并且与随机化完全区组相同的设计的事后阻塞进行比较。此外，在事实之后叠加了两个不完整的块设计（64和128块）以检查极小的块。为了选择最佳拟合，研究了对数似然性和差异的平均标准误差（SED）的性能，并与平均个体广义遗传率进行比较。使用事后阻塞，使用很少的努力获得统计效率（或精确度）的改善。事后阻塞的结果是有希望的，与预设的局部控制相比可以忽略不计。事后最佳设计是行列（对于ALL和PATCH）和不完全区组具有八个块（对于GRAD）。此外，真实值和预测值（CORR）之间的平均相关性显示极小块的效率降低，但是随着块大小减小，没有观察到遗传方差的降低。模型选择的两个标准（对数似然性和SED）显示与平均CORR相似的趋势，并且推荐使用它们的使用。 ©2006 NRC。
+引言 &gt; - 随机完全区组RCB 传统上，在森林试验中，随机完全区组（RCB）设计受到青睐。当重复（或块）变异性相对较小时，RCB设计是有效的，这种情况在森林地区很少发生，或者仅在相对较小的重复中发生（Costa e Silva et al。2001）。 - 不完全区组设计（IB） 其将完整的复制物细分为更趋向于更均匀的较小隔室（即，不完全区组）。对于这些设计，几个作者报告了与RCB相比更高的效率（Fu等人1998,1999; Gezan等人2006a）。 - 行列设计（R-C） R-C设计由John和Williams（1995）详细描述，并且通常比IB设计产生更高的效率（Lin等人1993; Qiao等人2000; Gezan等人2006a）。
+林业和农作物中的来源，品种和家庭的遗传检测通常是一个漫长的过程，并且经常是任何一个遗传改良计划中最昂贵的活动之一（Zobel和Talbert 1984）。适当选择实验设计和统计分析可以显着提高育种价值的预测和有效利用现有资源。传统上，在森林试验中，随机完全区组（RCB）设计受到青睐。当重复（或块）变异性相对较小时，RCB设计是有效的，这种情况在森林地区很少发生，或者仅在相对较小的重复中发生（Costa e Silva et al。2001）。因为大量的遗传实体通常一起测试，所以一个好的替代方案是实施不完全区组设计（IB），其将完整的复制物细分为更趋向于更均匀的较小隔室（即，不完全区组）。对于这些设计，几个作者报告了与RCB相比更高的效率（Fu等人1998,1999; Gezan等人2006a）。也可以使用行列设计（R-C）同时实现双向阻塞。这些R-C设计由John和Williams（1995）详细描述，并且通常比IB设计产生更高的效率（Lin等人1993; Qiao等人2000; Gezan等人2006a）。 拟合最好的线性模型，充分描述试验数据以及随机和固定效应的适当规范是至关重要的。在文献中，有几种技术可用于改进统计分析，例如 （i）空间模型（Gilmour等人，1997）; （ii）最近邻法（Vollmann et al。1996）;和 （iii）包括协变量和其他因素来处理缺失值（Cochran 1957）或妨害效应（Gilmour等人，1997）。 这些是后验分析的例子。在这些选项中，拟合不同于原始实验设计的扩展线性模型，其旨在对在测试建立时未被注意或未被控制的元素建模。另一种后验技术，称为事后阻塞，也可以容易地实现。该方法包括在原始田间设计顶部加上一个阻塞结构，并拟合一个线性模型，好像阻塞效应存在于原始设计中一样。通常，IB设计适合于更简单的设计（例如，RCB）上，但是R-C也可以叠加。这种技术最初由Patterson和Hunter（1983）提出作为一种工具，用于低成本地评价潜在实验设计的效率。尽管如此，一些作者已经成功地使用事后阻断来增加遗传性和遗传效应预测的精确度，用于最终分析（Ericsson 1997; Dutkowski et al.">
+  <meta property="og:description" content="Gezan SA, Huber DA, White TL. Post hoc blocking to improve heritability and precision of best linear unbiased genetic predictions. Can. J. For. Res. [Internet]. 2006;36:2141–7. Available from: http://www.scopus.com/inward/record.url?eid=2-s2.0-33845624230&amp;partnerID=40&amp;md5=6bce3998c32880cd3b835c9e958863f3   在具有三种不同环境模式的单树小区中总共256个“种植的”克隆模拟单个位点克隆试验：仅补丁（PATCH），仅梯度（GRAD）和两个组分（ALL）。分析了几个模拟实验设计（随机完全区组设计;具有4,8,16和32个不完整区组的不完全区组设计;以及行 - 列设计），并且与随机化完全区组相同的设计的事后阻塞进行比较。此外，在事实之后叠加了两个不完整的块设计（64和128块）以检查极小的块。为了选择最佳拟合，研究了对数似然性和差异的平均标准误差（SED）的性能，并与平均个体广义遗传率进行比较。使用事后阻塞，使用很少的努力获得统计效率（或精确度）的改善。事后阻塞的结果是有希望的，与预设的局部控制相比可以忽略不计。事后最佳设计是行列（对于ALL和PATCH）和不完全区组具有八个块（对于GRAD）。此外，真实值和预测值（CORR）之间的平均相关性显示极小块的效率降低，但是随着块大小减小，没有观察到遗传方差的降低。模型选择的两个标准（对数似然性和SED）显示与平均CORR相似的趋势，并且推荐使用它们的使用。 ©2006 NRC。
+引言 &gt; - 随机完全区组RCB 传统上，在森林试验中，随机完全区组（RCB）设计受到青睐。当重复（或块）变异性相对较小时，RCB设计是有效的，这种情况在森林地区很少发生，或者仅在相对较小的重复中发生（Costa e Silva et al。2001）。 - 不完全区组设计（IB） 其将完整的复制物细分为更趋向于更均匀的较小隔室（即，不完全区组）。对于这些设计，几个作者报告了与RCB相比更高的效率（Fu等人1998,1999; Gezan等人2006a）。 - 行列设计（R-C） R-C设计由John和Williams（1995）详细描述，并且通常比IB设计产生更高的效率（Lin等人1993; Qiao等人2000; Gezan等人2006a）。
+林业和农作物中的来源，品种和家庭的遗传检测通常是一个漫长的过程，并且经常是任何一个遗传改良计划中最昂贵的活动之一（Zobel和Talbert 1984）。适当选择实验设计和统计分析可以显着提高育种价值的预测和有效利用现有资源。传统上，在森林试验中，随机完全区组（RCB）设计受到青睐。当重复（或块）变异性相对较小时，RCB设计是有效的，这种情况在森林地区很少发生，或者仅在相对较小的重复中发生（Costa e Silva et al。2001）。因为大量的遗传实体通常一起测试，所以一个好的替代方案是实施不完全区组设计（IB），其将完整的复制物细分为更趋向于更均匀的较小隔室（即，不完全区组）。对于这些设计，几个作者报告了与RCB相比更高的效率（Fu等人1998,1999; Gezan等人2006a）。也可以使用行列设计（R-C）同时实现双向阻塞。这些R-C设计由John和Williams（1995）详细描述，并且通常比IB设计产生更高的效率（Lin等人1993; Qiao等人2000; Gezan等人2006a）。 拟合最好的线性模型，充分描述试验数据以及随机和固定效应的适当规范是至关重要的。在文献中，有几种技术可用于改进统计分析，例如 （i）空间模型（Gilmour等人，1997）; （ii）最近邻法（Vollmann et al。1996）;和 （iii）包括协变量和其他因素来处理缺失值（Cochran 1957）或妨害效应（Gilmour等人，1997）。 这些是后验分析的例子。在这些选项中，拟合不同于原始实验设计的扩展线性模型，其旨在对在测试建立时未被注意或未被控制的元素建模。另一种后验技术，称为事后阻塞，也可以容易地实现。该方法包括在原始田间设计顶部加上一个阻塞结构，并拟合一个线性模型，好像阻塞效应存在于原始设计中一样。通常，IB设计适合于更简单的设计（例如，RCB）上，但是R-C也可以叠加。这种技术最初由Patterson和Hunter（1983）提出作为一种工具，用于低成本地评价潜在实验设计的效率。尽管如此，一些作者已经成功地使用事后阻断来增加遗传性和遗传效应预测的精确度，用于最终分析（Ericsson 1997; Dutkowski et al.">
+  <meta name="twitter:description" content="Gezan SA, Huber DA, White TL. Post hoc blocking to improve heritability and precision of best linear unbiased genetic predictions. Can. J. For. Res. [Internet]. 2006;36:2141–7. Available from: …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/gezan-2006-post-hoc-blocking-%E4%B8%80%E7%A7%8D%E5%90%8E%E9%AA%8C%E5%8C%BA%E7%BB%84%E8%AE%BE%E8%AE%A1/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/gezan-2006-post-hoc-blocking-%E4%B8%80%E7%A7%8D%E5%90%8E%E9%AA%8C%E5%8C%BA%E7%BB%84%E8%AE%BE%E8%AE%A1/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Gezan-2006-Post-hoc-blocking-一种后验区组设计</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (87 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Gezan-2006-Post-hoc-blocking-一种后验区组设计</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (87 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<ol>
+<li>Gezan SA, Huber DA, White TL. Post hoc blocking to improve heritability and precision of best linear unbiased genetic predictions. Can. J. For. Res. [Internet]. 2006;36:2141–7. Available from: <a href="http://www.scopus.com/inward/record.url?eid=2-s2.0-33845624230&amp;partnerID=40&amp;md5=6bce3998c32880cd3b835c9e958863f3">http://www.scopus.com/inward/record.url?eid=2-s2.0-33845624230&amp;partnerID=40&amp;md5=6bce3998c32880cd3b835c9e958863f3</a></li>
+</ol>
+</blockquote>
+
+<p>在具有三种不同环境模式的单树小区中总共256个“种植的”克隆模拟单个位点克隆试验：仅补丁（PATCH），仅梯度（GRAD）和两个组分（ALL）。分析了几个模拟实验设计（随机完全区组设计;具有4,8,16和32个不完整区组的不完全区组设计;以及行 - 列设计），并且与随机化完全区组相同的设计的事后阻塞进行比较。此外，在事实之后叠加了两个不完整的块设计（64和128块）以检查极小的块。为了选择最佳拟合，研究了对数似然性和差异的平均标准误差（SED）的性能，并与平均个体广义遗传率进行比较。<strong>使用事后阻塞，使用很少的努力获得统计效率（或精确度）的改善</strong>。事后阻塞的结果是有希望的，与预设的局部控制相比可以忽略不计。事后最佳设计是行列（对于ALL和PATCH）和不完全区组具有八个块（对于GRAD）。此外，真实值和预测值（CORR）之间的平均相关性显示极小块的效率降低，<strong>但是随着块大小减小，没有观察到遗传方差的降低</strong>。模型选择的两个标准（对数似然性和SED）显示与平均CORR相似的趋势，并且推荐使用它们的使用。 ©2006 NRC。</p>
+
+<p>引言
+&gt;
+- 随机完全区组RCB
+ 传统上，在森林试验中，随机完全区组（RCB）设计受到青睐。当重复（或块）变异性相对较小时，RCB设计是有效的，这种情况在森林地区很少发生，或者仅在相对较小的重复中发生（Costa e Silva et al。2001）。
+- 不完全区组设计（IB）
+ 其将完整的复制物细分为更趋向于更均匀的较小隔室（即，不完全区组）。对于这些设计，几个作者报告了与RCB相比更高的效率（Fu等人1998,1999; Gezan等人2006a）。
+- 行列设计（R-C）
+ R-C设计由John和Williams（1995）详细描述，并且通常比IB设计产生更高的效率（Lin等人1993; Qiao等人2000; Gezan等人2006a）。</p>
+
+<p><strong>林业和农作物中的来源，品种和家庭的遗传检测通常是一个漫长的过程，并且经常是任何一个遗传改良计划中最昂贵的活动之一（Zobel和Talbert 1984）。适当选择实验设计和统计分析可以显着提高育种价值的预测和有效利用现有资源</strong>。传统上，在森林试验中，随机完全区组（RCB）设计受到青睐。当重复（或块）变异性相对较小时，RCB设计是有效的，这种情况在森林地区很少发生，或者仅在相对较小的重复中发生（Costa e Silva et al。2001）。因为大量的遗传实体通常一起测试，所以一个好的替代方案是实施不完全区组设计（IB），其将完整的复制物细分为更趋向于更均匀的较小隔室（即，不完全区组）。对于这些设计，几个作者报告了与RCB相比更高的效率（Fu等人1998,1999; Gezan等人2006a）。也可以使用行列设计（R-C）同时实现双向阻塞。这些R-C设计由John和Williams（1995）详细描述，并且通常比IB设计产生更高的效率（Lin等人1993; Qiao等人2000; Gezan等人2006a）。
+<strong>拟合最好的线性模型，充分描述试验数据以及随机和固定效应的适当规范是至关重要的</strong>。在文献中，有几种技术可用于改进统计分析，例如
+（i）空间模型（Gilmour等人，1997）;
+（ii）最近邻法（Vollmann et al。1996）;和
+（iii）包括协变量和其他因素来处理缺失值（Cochran 1957）或妨害效应（Gilmour等人，1997）。
+这些是后验分析的例子。在这些选项中，拟合不同于原始实验设计的扩展线性模型，其旨在<strong>对在测试建立时未被注意或未被控制的元素建模</strong>。另一种后验技术，称为<strong>事后阻塞</strong>，也可以容易地实现。该方法包括在原始田间设计顶部加上一个阻塞结构，并拟合一个线性模型，好像阻塞效应存在于原始设计中一样。通常，IB设计适合于更简单的设计（例如，RCB）上，但是R-C也可以叠加。这种技术最初由Patterson和Hunter（1983）提出作为一种工具，用于低成本地评价潜在实验设计的效率。尽管如此，一些作者已经成功地使用事后阻断来增加遗传性和遗传效应预测的精确度，用于最终分析（Ericsson 1997; Dutkowski et al.2002; Lopez et al.2002）。
+&gt; post hoc blocking <strong>事后阻塞</strong>
+最初由Patterson和Hunter（1983）提出作为一种工具，用于低成本地评价潜在实验设计的效率。该方法包括在原始田间设计顶部加上一个阻塞结构，并拟合一个线性模型，好像阻塞效应存在于原始设计中一样。</p>
+
+<p><strong>实现事后阻塞的主要问题是确定要叠加的不完全区组的特性。如果使用大的不完全区组，区组将继续是高度异质的。另一方面，小的不完全区组通过捕获环境表面的较小区域（或斑块），应当显着减少残留变异性。然而，如果块大小变得太小，则在同一块中一起发生较少的处理;因此，它们的差异的标准误差可以相当大。此外，根据爱立信（1997），当使用小块时，由于两个良好（或坏的）基因型一起发生在同一块中的机会增加，处理（或遗传）可变性的一部分可以被块方差吸收。另一个问题是不完全区组的形状;然而，可以遵循用于实验设计的一般准则。例如，应当优选尽可能接近正方形并且使块主轴垂直于主场梯度定向的形状（Zobel和Talbert 1984）</strong>。
+本研究使用模拟单站点克隆试验和三种不同的环境模式来了解使用事后阻塞在估计广义遗传力和预测育种值时的后果和定义未来策略。具体来说，目标是（i）研究使用事后阻塞对几个实验设计，表面模式和分子数量; （ii）随着不完全区组变得更小，验证遗传方差的潜在减少; （iii）比较用于选择合适的阻断结构的不同策略或标准的性能;和（iv）讨论与实施事后阻塞相关的统计和实际问题。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/gezan2017-gxe-%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95-%E7%81%AB%E7%82%AC%E6%9D%BE%E5%85%8B%E9%9A%86/" data-toggle="tooltip" data-placement="top" title="Gezan2017-GxE-统计方法-火炬松克隆">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/stat/genome-wide-association-studies-and-genomic-prediction/" data-toggle="tooltip" data-placement="top" title="Genome-Wide-Association-Studies-and-Genomic-Prediction">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

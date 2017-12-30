@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Ratcliffe2017-单步blup</title>
+  <meta property="og:title" content="Ratcliffe2017-单步blup" />
+  <meta name="twitter:title" content="Ratcliffe2017-单步blup" />
+  <meta name="description" content="Blaise Ratcliffe, 2017. Single-Step BLUP with Varying Genotyping Effort in Open-Pollinated Picea glauca. G3-Genes Genomes Genetics
+ 林木育种计划中遗传增益的最大化取决于预测的育种值的准确性和估计的遗传参数的精度。我们调查了当代谱系信息和基因组相关性估计结合使用的预测育种值的准确性和估计的遗传参数的精度以及使用单步基因组评价（HBLUP）的候选人排名的影响。在这项研究中，在不同水平的家庭基因分型努力（0，25，50，75，100％）从白云杉（白云杉）组成的1,694组成的群体中评估具有多样性遗传（树高度和木材密度）来自214个自花授粉家庭的树木，代表加拿大魁北克省的43个种源。结果表明，HBLUP双变量分析有效减少已知偏倚的遗传的人口的遗传力估计，因为它暴露隐藏的相关性，潜在的谱系错误和近亲繁殖。在分析中添加基因组信息显着提高了育种价值估计的准确性，因为孟德尔样本和历史共同祖先并没有被当代谱系单独捕获。增加的家族基因分型努力与模型拟合，遗传参数的精确性和育种值精确性的持续改进相关联。然而，即使在最小的基因分型努力观察到改善，指示即使适度的基因分型努力有效改善遗传评价。组合利用谱系和基因组信息可以是提高森林树育种程序中育种值的准确性的成本有效的方法，其中浅的家系和大的测试群体是规范。
+1.介绍 使树木育种程序中的遗传增益最大化取决于估计的遗传参数的可靠性。性状遗传及其遗传相关性是确定潜在遗传进展的最关键的遗传参数之一，因此它们的精确性是非常重要的。后代测试是估计这些遗传参数的载体，而个体树数据，家庭组成，谱系深度和连通性以及野外性能决定了它们的可靠性（Huber等人，1992）。开放授粉测试通常用于有效地筛选和评估大量候选树（Burdon和Shelbourne 1971; Jayawickrama等人2000）。然而，公认的是，由于在传统的基于谱系的分析中不容易解开的隐性相关性的影响，将开放授粉家族作为“半同胞”处理是不准确的，因此影响所得遗传参数和候选排名（Squillace 1974 ; Askew和El-Kassaby 1994; Namkoong等人2012）。
+分子标记的使用可以通过谱系重建和亲子分配揭示隐性传粉群体中隐藏的相关性和潜在的谱系误差（Wang 2004; Kalinowski等2007）。谱系重建已经被有效地用于确定相关个体的群体之间的谱系关系，导致以更高的精度估计遗传参数（El-Kassaby和Lstibuchrek 2009; Doerksen和Herbinger 2010; El-Kassaby等人2011;Koreckỳ等人2013 ;Klápště等人2014）。 Ritland（1996）提出了一种创新的方法，其中基于标记的关系估计可用于估计性状遗传力，并证明该方法在野生种群中的效用。利用密集的基因组标记集的可用性，VanRaden（2008）将个体对之间基于标记的关系的估计推导为基因组关系矩阵（G），其可以用作Henderson动物模型中传统的基于谱系的平均分子关系矩阵（A）的替代（Henderson 1984 ）（Frentiu等人2008; Habier等人2013;Klápště等人2014）。 使用基于标记的关系估计的优势是1）绕过生成结构化谱系所需的经典的交配设计（El-Kassaby等人2011;Klápště等人2014），2）适用于自然和实验种群（El-Kassaby et al。2012; Porth et al。2013;Klápštěet al。2014）; 3）通过考虑共同祖先（即历史谱系）的遗传相似性提高遗传参数估计的准确性（Powell等人，2010） 和孟德尔分离（Visscher等人2006;Ødegård和Meuwissen 2012）。 在单个遗传协方差矩阵*A*中结合基于标记的关系矩阵G（Legarra等人2009; Misztal等人2009）已被证明是改善关系系数的更好的遗传参数估计和跟踪的有效方法遗传多样性。这种方法被称为“HBLUP”，因为育种值的最佳线性无偏预测值（BLUP）来自于组合的遗传协方差矩阵。 HBLUP方法在林木后代测试评估中可能特别有用，因为对整个试验进行基因分型的成本和后勤是令人望而却步的，因此将来自少数站点的一些家族的树的子集的基于标记的关系与基于谱系关系估计器将是改善整个测试的衍生遗传参数精度的有效选择。 本研究的目的是通过比较遗传参数的精确性，育种值的准确性和使用可变比例的选择候选物的排名（0,25,50,75和100％）来比较传统的ABLUP方法与HBLUP方法。 ）的开放授粉家庭内的基因型个体。
+材料和方法 2.1白云杉开放授粉后代试验，表型数据和基因分型 本研究的数据来自（Beaulieu等人2014a），并从Dryad数字仓库下载：doi10.5061 / dryad.6rd6f（Beaulieu等人2014b）。简而言之，这项研究涉及一个白色的云杉（白云杉（Moench）Voss）原产地 - 后代试验地点，1979年在加拿大魁北克建立。试验地点包括来自43个魁北克原产地的214个开放传粉的家系，其种植在随机分配的5个树丛行地块中，行间距为2.4m，行间距为1.2m，以获得具有6个块的随机区组设计。从该地点采集了1,694棵树的子集，每个家族的树平均数为〜7.9，每块每个家族的平均树数为〜1.3。测试场地的完整细节可以在（Beaulieu等人2014a）。该研究的表型数据包括通过X射线光密度测定法获得的22年树高（cm）和木密度（kg / m 3）。使用Illumina Infinium HD iSelect珠芯片PgAS1（Illumina，San Diego，CA，USA）（Beaulieu等人2014a）对1,694棵树的单核苷酸多态性（SNP）进行基因分型。 SNP位于2,814个基因内，并以200个碱基对的最小距离分开。基因选自白色云杉基因目录“GCAT”（Rigault等人2011），并且是不同功能的基因（Pavy等人2013）。总共6,716个SNP可用于分析。">
+  <meta property="og:description" content="Blaise Ratcliffe, 2017. Single-Step BLUP with Varying Genotyping Effort in Open-Pollinated Picea glauca. G3-Genes Genomes Genetics
+ 林木育种计划中遗传增益的最大化取决于预测的育种值的准确性和估计的遗传参数的精度。我们调查了当代谱系信息和基因组相关性估计结合使用的预测育种值的准确性和估计的遗传参数的精度以及使用单步基因组评价（HBLUP）的候选人排名的影响。在这项研究中，在不同水平的家庭基因分型努力（0，25，50，75，100％）从白云杉（白云杉）组成的1,694组成的群体中评估具有多样性遗传（树高度和木材密度）来自214个自花授粉家庭的树木，代表加拿大魁北克省的43个种源。结果表明，HBLUP双变量分析有效减少已知偏倚的遗传的人口的遗传力估计，因为它暴露隐藏的相关性，潜在的谱系错误和近亲繁殖。在分析中添加基因组信息显着提高了育种价值估计的准确性，因为孟德尔样本和历史共同祖先并没有被当代谱系单独捕获。增加的家族基因分型努力与模型拟合，遗传参数的精确性和育种值精确性的持续改进相关联。然而，即使在最小的基因分型努力观察到改善，指示即使适度的基因分型努力有效改善遗传评价。组合利用谱系和基因组信息可以是提高森林树育种程序中育种值的准确性的成本有效的方法，其中浅的家系和大的测试群体是规范。
+1.介绍 使树木育种程序中的遗传增益最大化取决于估计的遗传参数的可靠性。性状遗传及其遗传相关性是确定潜在遗传进展的最关键的遗传参数之一，因此它们的精确性是非常重要的。后代测试是估计这些遗传参数的载体，而个体树数据，家庭组成，谱系深度和连通性以及野外性能决定了它们的可靠性（Huber等人，1992）。开放授粉测试通常用于有效地筛选和评估大量候选树（Burdon和Shelbourne 1971; Jayawickrama等人2000）。然而，公认的是，由于在传统的基于谱系的分析中不容易解开的隐性相关性的影响，将开放授粉家族作为“半同胞”处理是不准确的，因此影响所得遗传参数和候选排名（Squillace 1974 ; Askew和El-Kassaby 1994; Namkoong等人2012）。
+分子标记的使用可以通过谱系重建和亲子分配揭示隐性传粉群体中隐藏的相关性和潜在的谱系误差（Wang 2004; Kalinowski等2007）。谱系重建已经被有效地用于确定相关个体的群体之间的谱系关系，导致以更高的精度估计遗传参数（El-Kassaby和Lstibuchrek 2009; Doerksen和Herbinger 2010; El-Kassaby等人2011;Koreckỳ等人2013 ;Klápště等人2014）。 Ritland（1996）提出了一种创新的方法，其中基于标记的关系估计可用于估计性状遗传力，并证明该方法在野生种群中的效用。利用密集的基因组标记集的可用性，VanRaden（2008）将个体对之间基于标记的关系的估计推导为基因组关系矩阵（G），其可以用作Henderson动物模型中传统的基于谱系的平均分子关系矩阵（A）的替代（Henderson 1984 ）（Frentiu等人2008; Habier等人2013;Klápště等人2014）。 使用基于标记的关系估计的优势是1）绕过生成结构化谱系所需的经典的交配设计（El-Kassaby等人2011;Klápště等人2014），2）适用于自然和实验种群（El-Kassaby et al。2012; Porth et al。2013;Klápštěet al。2014）; 3）通过考虑共同祖先（即历史谱系）的遗传相似性提高遗传参数估计的准确性（Powell等人，2010） 和孟德尔分离（Visscher等人2006;Ødegård和Meuwissen 2012）。 在单个遗传协方差矩阵*A*中结合基于标记的关系矩阵G（Legarra等人2009; Misztal等人2009）已被证明是改善关系系数的更好的遗传参数估计和跟踪的有效方法遗传多样性。这种方法被称为“HBLUP”，因为育种值的最佳线性无偏预测值（BLUP）来自于组合的遗传协方差矩阵。 HBLUP方法在林木后代测试评估中可能特别有用，因为对整个试验进行基因分型的成本和后勤是令人望而却步的，因此将来自少数站点的一些家族的树的子集的基于标记的关系与基于谱系关系估计器将是改善整个测试的衍生遗传参数精度的有效选择。 本研究的目的是通过比较遗传参数的精确性，育种值的准确性和使用可变比例的选择候选物的排名（0,25,50,75和100％）来比较传统的ABLUP方法与HBLUP方法。 ）的开放授粉家庭内的基因型个体。
+材料和方法 2.1白云杉开放授粉后代试验，表型数据和基因分型 本研究的数据来自（Beaulieu等人2014a），并从Dryad数字仓库下载：doi10.5061 / dryad.6rd6f（Beaulieu等人2014b）。简而言之，这项研究涉及一个白色的云杉（白云杉（Moench）Voss）原产地 - 后代试验地点，1979年在加拿大魁北克建立。试验地点包括来自43个魁北克原产地的214个开放传粉的家系，其种植在随机分配的5个树丛行地块中，行间距为2.4m，行间距为1.2m，以获得具有6个块的随机区组设计。从该地点采集了1,694棵树的子集，每个家族的树平均数为〜7.9，每块每个家族的平均树数为〜1.3。测试场地的完整细节可以在（Beaulieu等人2014a）。该研究的表型数据包括通过X射线光密度测定法获得的22年树高（cm）和木密度（kg / m 3）。使用Illumina Infinium HD iSelect珠芯片PgAS1（Illumina，San Diego，CA，USA）（Beaulieu等人2014a）对1,694棵树的单核苷酸多态性（SNP）进行基因分型。 SNP位于2,814个基因内，并以200个碱基对的最小距离分开。基因选自白色云杉基因目录“GCAT”（Rigault等人2011），并且是不同功能的基因（Pavy等人2013）。总共6,716个SNP可用于分析。">
+  <meta name="twitter:description" content="Blaise Ratcliffe, 2017. Single-Step BLUP with Varying Genotyping Effort in Open-Pollinated Picea glauca. G3-Genes Genomes Genetics
+ 林木育种计划中遗传增益的最大化取决于预测的育种值的准确性和估计的遗传参数的精度。我们调查了当代谱系信息和基因组相关性估计结合使用的预测育 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/gs/ratcliffe2017-%E5%8D%95%E6%AD%A5blup/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/gs/ratcliffe2017-%E5%8D%95%E6%AD%A5blup/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Ratcliffe2017-单步blup</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (75 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Ratcliffe2017-单步blup</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (75 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Blaise Ratcliffe, 2017. Single-Step BLUP with Varying Genotyping Effort in Open-Pollinated Picea glauca.  G3-Genes Genomes Genetics</p>
+</blockquote>
+
+<p><strong>林木育种计划中遗传增益的最大化取决于预测的育种值的准确性和估计的遗传参数的精度</strong>。我们调查了当代谱系信息和基因组相关性估计结合使用的预测育种值的准确性和估计的遗传参数的精度以及使用单步基因组评价（HBLUP）的候选人排名的影响。在这项研究中，在不同水平的家庭基因分型努力（0，25，50，75，100％）从白云杉（白云杉）组成的1,694组成的群体中评估具有多样性遗传（树高度和木材密度）来自214个自花授粉家庭的树木，代表加拿大魁北克省的43个种源。结果表明，<strong>HBLUP双变量分析有效减少已知偏倚的遗传的人口的遗传力估计，因为它暴露隐藏的相关性，潜在的谱系错误和近亲繁殖</strong>。<strong>在分析中添加基因组信息显着提高了育种价值估计的准确性，因为孟德尔样本和历史共同祖先并没有被当代谱系单独捕获。</strong>增加的家族基因分型努力与模型拟合，遗传参数的精确性和育种值精确性的持续改进相关联。然而，<strong>即使在最小的基因分型努力观察到改善，指示即使适度的基因分型努力有效改善遗传评价。组合利用谱系和基因组信息可以是提高森林树育种程序中育种值的准确性的成本有效的方法</strong>，其中浅的家系和大的测试群体是规范。</p>
+
+<hr />
+
+<p>1.介绍
+使树木育种程序中的遗传增益最大化取决于估计的遗传参数的可靠性。性状遗传及其遗传相关性是确定潜在遗传进展的最关键的遗传参数之一，因此它们的精确性是非常重要的。后代测试是估计这些遗传参数的载体，而个体树数据，家庭组成，谱系深度和连通性以及野外性能决定了它们的可靠性（Huber等人，1992）。<strong>开放授粉测试通常用于有效地筛选和评估大量候选树（Burdon和Shelbourne 1971; Jayawickrama等人2000）。然而，公认的是，由于在传统的基于谱系的分析中不容易解开的隐性相关性的影响，将开放授粉家族作为“半同胞”处理是不准确的，因此影响所得遗传参数和候选排名（Squillace 1974 ; Askew和El-Kassaby 1994; Namkoong等人2012）</strong>。</p>
+
+<p>分子标记的使用可以通过谱系重建和亲子分配揭示隐性传粉群体中隐藏的相关性和潜在的谱系误差（Wang 2004; Kalinowski等2007）。谱系重建已经被有效地用于确定相关个体的群体之间的谱系关系，导致以更高的精度估计遗传参数（El-Kassaby和Lstibuchrek 2009; Doerksen和Herbinger 2010; El-Kassaby等人2011;Koreckỳ等人2013 ;Klápště等人2014）。 <strong>Ritland（1996）提出了一种创新的方法，其中基于标记的关系估计可用于估计性状遗传力，并证明该方法在野生种群中的效用</strong>。利用密集的基因组标记集的可用性，VanRaden（2008）将个体对之间基于标记的关系的估计推导为基因组关系矩阵（G），其可以用作Henderson动物模型中传统的基于谱系的平均分子关系矩阵（A）的替代（Henderson 1984 ）（Frentiu等人2008; Habier等人2013;Klápště等人2014）。
+<strong>使用基于标记的关系估计的优势是1）绕过生成结构化谱系所需的经典的交配设计（El-Kassaby等人2011;Klápště等人2014），2）适用于自然和实验种群（El-Kassaby et al。2012; Porth et al。2013;Klápštěet al。2014）; 3）通过考虑共同祖先（即历史谱系）的遗传相似性提高遗传参数估计的准确性（Powell等人，2010） 和孟德尔分离（Visscher等人2006;Ødegård和Meuwissen 2012）</strong>。
+在单个遗传协方差矩阵*A*中结合基于标记的关系矩阵G（Legarra等人2009; Misztal等人2009）已被证明是改善关系系数的更好的遗传参数估计和跟踪的有效方法遗传多样性。这种方法被称为“HBLUP”，<strong>因为育种值的最佳线性无偏预测值（BLUP）来自于组合的遗传协方差矩阵</strong>。 HBLUP方法在林木后代测试评估中可能特别有用，因为对整个试验进行基因分型的成本和后勤是令人望而却步的，因此将来自少数站点的一些家族的树的子集的基于标记的关系与基于谱系关系估计器将是改善整个测试的衍生遗传参数精度的有效选择。
+本研究的目的是通过比较遗传参数的精确性，育种值的准确性和使用可变比例的选择候选物的排名（0,25,50,75和100％）来比较传统的ABLUP方法与HBLUP方法。 ）的开放授粉家庭内的基因型个体。</p>
+
+<h2 id="材料和方法">材料和方法</h2>
+
+<h3 id="2-1白云杉开放授粉后代试验-表型数据和基因分型">2.1白云杉开放授粉后代试验，表型数据和基因分型</h3>
+
+<p>本研究的数据来自（Beaulieu等人2014a），并从Dryad数字仓库下载：doi10.5061 / dryad.6rd6f（Beaulieu等人2014b）。简而言之，这项研究涉及一个白色的云杉（白云杉（Moench）Voss）原产地 - 后代试验地点，1979年在加拿大魁北克建立。试验地点包括来自43个魁北克原产地的214个开放传粉的家系，其种植在随机分配的5个树丛行地块中，行间距为2.4m，行间距为1.2m，以获得具有6个块的随机区组设计。从该地点采集了1,694棵树的子集，每个家族的树平均数为〜7.9，每块每个家族的平均树数为〜1.3。测试场地的完整细节可以在（Beaulieu等人2014a）。该研究的表型数据包括通过X射线光密度测定法获得的22年树高（cm）和木密度（kg / m 3）。使用Illumina Infinium HD iSelect珠芯片PgAS1（Illumina，San Diego，CA，USA）（Beaulieu等人2014a）对1,694棵树的单核苷酸多态性（SNP）进行基因分型。 SNP位于2,814个基因内，并以200个碱基对的最小距离分开。基因选自白色云杉基因目录“GCAT”（Rigault等人2011），并且是不同功能的基因（Pavy等人2013）。总共6,716个SNP可用于分析。</p>
+
+<h3 id="2-2数据分析">2.2数据分析</h3>
+
+<p>传统的基于谱系的遗传分析是在无关半兄弟家族结构和最小种群结构效应的假设下进行的，如（Beaulieu et al。2014a）所示。用双变量动物模型（本文称为“ABLUP”）（Henderson 1984）估计方差分量，遗传力，遗传相关性和个体树木育种值如下：其中𝐠针对两种性状的单独缩放和中心表型观察的响应矩阵; 𝐠是固定效应的概率矩阵（性状均值）; 𝐱和𝐲是</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%AB%9E%E4%BA%89/resende-2005-%E7%A9%BA%E9%97%B4%E7%AB%9E%E4%BA%89%E8%81%94%E5%90%88%E5%BB%BA%E6%A8%A1/" data-toggle="tooltip" data-placement="top" title="Resende-2005-空间&amp;竞争联合建模">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/raley2003-%E6%A0%91%E9%AB%98%E6%98%AF%E9%80%89%E6%8B%A9%E6%A0%87%E5%87%86/" data-toggle="tooltip" data-placement="top" title="Raley2003-树高是选择标准">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Costa-2013-竞争-TGG</title>
+  <meta property="og:title" content="Costa-2013-竞争-TGG" />
+  <meta name="twitter:title" content="Costa-2013-竞争-TGG" />
+  <meta name="description" content="Costa e Silva J, Kerr RJ. Accounting for competition in genetic analysis, with particular emphasis on forest genetic trials. Tree Genet. Genomes. 2013;9:1–17.   可用的实验证据表明，除了由于微位点变异引起的非遗传差异之外，树木竞争资源的能力存在遗传差异。在线性混合模型方法的框架内使用间接遗传效应已经被提出用于在存在遗传竞争的情况下估计遗传参数和选择的反应。在这种情况下，个体的总育种价值反映了其直接育种价值对其自身表型的影响及其对其邻居的表型的竞争性育种价值。本研究使用模拟数据来调查在遗传和非遗传水平竞争效应的相关性，在（共）方差分量的估计和选择反应。不同的实验设计，导致不同的遗传相关水平在邻里和生存是其他关键问题进行了检查。对加性遗传和残留效应估计的方差在忽略遗传竞争的模型之下往往存在偏差。在遗传水平上进行竞争的模型也仅导致直接加性，竞争性加性剂和残余效应的偏差（共）方差估计。当邻域内的相关性非常低并且存活降低时，检测正确模型的能力降低。在选择忽略遗传竞争的模型的育种值估计和使用正确模型的总育种估计之间，选择反应发生显着变化。我们的研究结果表明，考虑竞争能力的遗传基础将是重要的优化选择程序的树种的遗传改良。
+介绍 捕获和利用有效可用资源的能力对于森林中个别树木的生长或繁殖成功是至关重要的（Binkley et al。2004）。因此，考虑到林木的长期性和长周期性，竞争将是林分开发的重要因素。具有高竞争能力的植物物种可以在低应激和低干扰的条件下进化（Grime 1977）。因此，考虑竞争对森林树木育种尤其重要，因为大多数物种最近被驯化，从低压力，自然环境获得的创始者基因型可能具有竞争力。在森林物种中，已经有几项研究显示基因型间竞争对立地（图）生产力的显着影响（von Euler等人1992; Foster等人1998），但是关于树木竞争的定量遗传学知之甚少。已经提出了几种方法来调整森林遗传试验中的竞争效应：例如包括距离相关竞争指数（Tuskan和McKinley 1984），使用高度差的角度（Magnussen 1989）和迭代最近邻法（Magnussen 1994） 。然而，这些建模方法认为竞争在表型水平上操作，但不试图在个体树水平上分离（并因此混淆）遗传和非遗传（即残留）竞争效应的贡献。 进化理论和量化遗传学的最新发展表明，竞争可能在自然和人工选择程序中显着影响对选择的反应（Muir 2005; Bijmaetal.2007a; Bijma 2010a; Muir etal。2010）。 Denison et al。 （2003）指出，世界主要作物的产量潜力的大部分提高是通过降低单株植物竞争力，有利于提高植物群落的性能。 Griffing（1967,1977）引入了关联或间接遗传效应（IGE）的概念，以便更正式地检查个人与社区层面绩效的动态。在这个意义上，对个体表型的遗传影响分为其基因的直接效应和属于个体相互作用的个体的基因的间接影响（参见Moore等人1997; Wolf等人1998 ）。 Muir（2005）在线性混合模型框架内实施IGE，并以林木育种为例，指出应根据将遗传价值与直接和间接（即竞争）效应相结合的指数来选择个体。虽然没有用实际林业数据验证，但是当使用来自日本鹌鹑的数据进行测试时，这些模型表明在某些情况下，如果仅选择直接遗传效应，可能会导致负选择反应。因此，林木中的人工选择方案可能是次优的，因为目前的性状改良的选择和育种策略很可能不考虑竞争能力的遗传基础。 Bijma及其同事（Bijma等人2007a，b; Ellen等人2007; Bergsma等人2008; Bijma 2010b，c，2011）检查了使用IGE来模拟动物的同伴的贡献。在这种情况下，IGE被称为社会效应，并且表明对受试动物的合作或积极行为的遗传基础。本研究涉及定量遗传理论，解释个人之间的相互作用和多层次选择，探索遗传参数估计的统计方法，并检查社会效应，动物笔大小和笔内动物的相关性之间的相互关系。在农作物物种竞争的背景下，Stringer（2006）和Stringer et al。 （2011）将线性混合模型框架中的IGE拟合为“治疗干扰模型”，将品种效应视为随机的。特别感兴趣的是它们在剩余水平上的竞争模型，或者当使用IGE时，当在遗传水平存在竞争时，或在缺少竞争时。在这个意义上，自回归模型被提出和测试，以说明竞争作为变异的主要来源或联合模拟竞争和环境趋势。这些残留水平模拟竞争的分析方法为植物和森林树木遗传学家提供了指导手段，而不是动物遗传学中使用的方法。这是因为农业和森林田间试验代表了焦点植物和邻近关系的连续体，而动物以离散单位饲养，例如笔或笼子。 Resende et al。 （2005）和Cappa和Cantet（2008）第一次验证IGE模型与实地试验的实际林业数据。然而，Resende et al。 （2005）没有考虑由于死亡率和焦点树与其邻居之间在不同空间方向上的可变距离的遗漏的邻居，在Cappa和Cantet（2008）的工作中考虑的竞争因素的强度在定量遗传模型中。然而，Cappa和Cantet（2008）没有考虑残差协方差结构的模型。 本研究汇集了上述研究中的建模竞争的几个方面。然而，以前的森林遗传研究没有检查不同水平的相关性和生存的影响，当建模竞争在遗传水平，也没有评估性状遗传结构对选择响应时的树木之间的竞争存在的影响。这些重要问题可以通过使用模拟数据有效地接近。在这个意义上，我们使用模拟数据来研究IGE结合到定量遗传模型中以说明竞争，特别关注森林遗传试验，目的是： ＆检查对基因和/或非遗传水平竞争的（共）方差分量估计的影响。 ＆探索在焦点树和总体生存的邻域内不同级别的遗传相关性对在遗传水平上检测和估计竞争效应的能力的影响。 通过评估选择候选人的排名和对选择的预期响应的影响，并考虑竞争（共）方差分量的不同幅度以及不同水平，确定对遗传评价竞争的重要性的遗传相关性。">
+  <meta property="og:description" content="Costa e Silva J, Kerr RJ. Accounting for competition in genetic analysis, with particular emphasis on forest genetic trials. Tree Genet. Genomes. 2013;9:1–17.   可用的实验证据表明，除了由于微位点变异引起的非遗传差异之外，树木竞争资源的能力存在遗传差异。在线性混合模型方法的框架内使用间接遗传效应已经被提出用于在存在遗传竞争的情况下估计遗传参数和选择的反应。在这种情况下，个体的总育种价值反映了其直接育种价值对其自身表型的影响及其对其邻居的表型的竞争性育种价值。本研究使用模拟数据来调查在遗传和非遗传水平竞争效应的相关性，在（共）方差分量的估计和选择反应。不同的实验设计，导致不同的遗传相关水平在邻里和生存是其他关键问题进行了检查。对加性遗传和残留效应估计的方差在忽略遗传竞争的模型之下往往存在偏差。在遗传水平上进行竞争的模型也仅导致直接加性，竞争性加性剂和残余效应的偏差（共）方差估计。当邻域内的相关性非常低并且存活降低时，检测正确模型的能力降低。在选择忽略遗传竞争的模型的育种值估计和使用正确模型的总育种估计之间，选择反应发生显着变化。我们的研究结果表明，考虑竞争能力的遗传基础将是重要的优化选择程序的树种的遗传改良。
+介绍 捕获和利用有效可用资源的能力对于森林中个别树木的生长或繁殖成功是至关重要的（Binkley et al。2004）。因此，考虑到林木的长期性和长周期性，竞争将是林分开发的重要因素。具有高竞争能力的植物物种可以在低应激和低干扰的条件下进化（Grime 1977）。因此，考虑竞争对森林树木育种尤其重要，因为大多数物种最近被驯化，从低压力，自然环境获得的创始者基因型可能具有竞争力。在森林物种中，已经有几项研究显示基因型间竞争对立地（图）生产力的显着影响（von Euler等人1992; Foster等人1998），但是关于树木竞争的定量遗传学知之甚少。已经提出了几种方法来调整森林遗传试验中的竞争效应：例如包括距离相关竞争指数（Tuskan和McKinley 1984），使用高度差的角度（Magnussen 1989）和迭代最近邻法（Magnussen 1994） 。然而，这些建模方法认为竞争在表型水平上操作，但不试图在个体树水平上分离（并因此混淆）遗传和非遗传（即残留）竞争效应的贡献。 进化理论和量化遗传学的最新发展表明，竞争可能在自然和人工选择程序中显着影响对选择的反应（Muir 2005; Bijmaetal.2007a; Bijma 2010a; Muir etal。2010）。 Denison et al。 （2003）指出，世界主要作物的产量潜力的大部分提高是通过降低单株植物竞争力，有利于提高植物群落的性能。 Griffing（1967,1977）引入了关联或间接遗传效应（IGE）的概念，以便更正式地检查个人与社区层面绩效的动态。在这个意义上，对个体表型的遗传影响分为其基因的直接效应和属于个体相互作用的个体的基因的间接影响（参见Moore等人1997; Wolf等人1998 ）。 Muir（2005）在线性混合模型框架内实施IGE，并以林木育种为例，指出应根据将遗传价值与直接和间接（即竞争）效应相结合的指数来选择个体。虽然没有用实际林业数据验证，但是当使用来自日本鹌鹑的数据进行测试时，这些模型表明在某些情况下，如果仅选择直接遗传效应，可能会导致负选择反应。因此，林木中的人工选择方案可能是次优的，因为目前的性状改良的选择和育种策略很可能不考虑竞争能力的遗传基础。 Bijma及其同事（Bijma等人2007a，b; Ellen等人2007; Bergsma等人2008; Bijma 2010b，c，2011）检查了使用IGE来模拟动物的同伴的贡献。在这种情况下，IGE被称为社会效应，并且表明对受试动物的合作或积极行为的遗传基础。本研究涉及定量遗传理论，解释个人之间的相互作用和多层次选择，探索遗传参数估计的统计方法，并检查社会效应，动物笔大小和笔内动物的相关性之间的相互关系。在农作物物种竞争的背景下，Stringer（2006）和Stringer et al。 （2011）将线性混合模型框架中的IGE拟合为“治疗干扰模型”，将品种效应视为随机的。特别感兴趣的是它们在剩余水平上的竞争模型，或者当使用IGE时，当在遗传水平存在竞争时，或在缺少竞争时。在这个意义上，自回归模型被提出和测试，以说明竞争作为变异的主要来源或联合模拟竞争和环境趋势。这些残留水平模拟竞争的分析方法为植物和森林树木遗传学家提供了指导手段，而不是动物遗传学中使用的方法。这是因为农业和森林田间试验代表了焦点植物和邻近关系的连续体，而动物以离散单位饲养，例如笔或笼子。 Resende et al。 （2005）和Cappa和Cantet（2008）第一次验证IGE模型与实地试验的实际林业数据。然而，Resende et al。 （2005）没有考虑由于死亡率和焦点树与其邻居之间在不同空间方向上的可变距离的遗漏的邻居，在Cappa和Cantet（2008）的工作中考虑的竞争因素的强度在定量遗传模型中。然而，Cappa和Cantet（2008）没有考虑残差协方差结构的模型。 本研究汇集了上述研究中的建模竞争的几个方面。然而，以前的森林遗传研究没有检查不同水平的相关性和生存的影响，当建模竞争在遗传水平，也没有评估性状遗传结构对选择响应时的树木之间的竞争存在的影响。这些重要问题可以通过使用模拟数据有效地接近。在这个意义上，我们使用模拟数据来研究IGE结合到定量遗传模型中以说明竞争，特别关注森林遗传试验，目的是： ＆检查对基因和/或非遗传水平竞争的（共）方差分量估计的影响。 ＆探索在焦点树和总体生存的邻域内不同级别的遗传相关性对在遗传水平上检测和估计竞争效应的能力的影响。 通过评估选择候选人的排名和对选择的预期响应的影响，并考虑竞争（共）方差分量的不同幅度以及不同水平，确定对遗传评价竞争的重要性的遗传相关性。">
+  <meta name="twitter:description" content="Costa e Silva J, Kerr RJ. Accounting for competition in genetic analysis, with particular emphasis on forest genetic trials. Tree Genet. Genomes. 2013;9:1–17.   可用的实验证据表明，除了由于微位点变异引起的非遗传差异之外，树木竞争资源的能力 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%AB%9E%E4%BA%89/costa-2013-%E7%AB%9E%E4%BA%89-tgg/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%AB%9E%E4%BA%89/costa-2013-%E7%AB%9E%E4%BA%89-tgg/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Costa-2013-竞争-TGG</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (199 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Costa-2013-竞争-TGG</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (199 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<ol>
+<li>Costa e Silva J, Kerr RJ. Accounting for competition in genetic analysis, with particular emphasis on forest genetic trials. Tree Genet. Genomes. 2013;9:1–17.</li>
+</ol>
+</blockquote>
+
+<p>可用的实验证据表明，除了由于微位点变异引起的非遗传差异之外，树木竞争资源的能力存在遗传差异。在线性混合模型方法的框架内使用间接遗传效应已经被提出用于在存在遗传竞争的情况下估计遗传参数和选择的反应。在这种情况下，<strong>个体的总育种价值反映了其直接育种价值对其自身表型的影响及其对其邻居的表型的竞争性育种价值</strong>。本研究使用模拟数据来调查在遗传和非遗传水平竞争效应的相关性，在（共）方差分量的估计和选择反应。不同的实验设计，导致不同的遗传相关水平在邻里和生存是其他关键问题进行了检查。<strong>对加性遗传和残留效应估计的方差在忽略遗传竞争的模型之下往往存在偏差</strong>。<strong>在遗传水平上进行竞争的模型也仅导致直接加性，竞争性加性剂和残余效应的偏差（共）方差估计。当邻域内的相关性非常低并且存活降低时，检测正确模型的能力降低。在选择忽略遗传竞争的模型的育种值估计和使用正确模型的总育种估计之间，选择反应发生显着变化</strong>。我们的研究结果表明，考虑竞争能力的遗传基础将是重要的优化选择程序的树种的遗传改良。</p>
+
+<hr />
+
+<h2 id="介绍">介绍</h2>
+
+<p>捕获和利用有效可用资源的能力对于森林中个别树木的生长或繁殖成功是至关重要的（Binkley et al。2004）。因此，考虑到林木的长期性和长周期性，竞争将是林分开发的重要因素。具有高竞争能力的植物物种可以在低应激和低干扰的条件下进化（Grime 1977）。因此，考虑竞争对森林树木育种尤其重要，因为大多数物种最近被驯化，从低压力，自然环境获得的创始者基因型可能具有竞争力。在森林物种中，已经有几项研究显示基因型间竞争对立地（图）生产力的显着影响（von Euler等人1992; Foster等人1998），但是关于树木竞争的定量遗传学知之甚少。已经提出了几种方法来调整森林遗传试验中的竞争效应：例如包括距离相关竞争指数（Tuskan和McKinley 1984），使用高度差的角度（Magnussen 1989）和迭代最近邻法（Magnussen 1994） 。然而，这些建模方法认为竞争在表型水平上操作，但不试图在个体树水平上分离（并因此混淆）遗传和非遗传（即残留）竞争效应的贡献。
+进化理论和量化遗传学的最新发展表明，<strong>竞争可能在自然和人工选择程序中显着影响对选择的反应</strong>（Muir 2005; Bijmaetal.2007a; Bijma 2010a; Muir etal。2010）。 Denison et al。 （2003）指出，世界主要作物的产量潜力的大部分提高是通过降低单株植物竞争力，有利于提高植物群落的性能。 Griffing（1967,1977）引入了关联或间接遗传效应（IGE）的概念，以便更正式地检查个人与社区层面绩效的动态。在这个意义上，对个体表型的遗传影响分为其基因的直接效应和属于个体相互作用的个体的基因的间接影响（参见Moore等人1997; Wolf等人1998 ）。 Muir（2005）在线性混合模型框架内实施IGE，并以林木育种为例，指出应根据将遗传价值与直接和间接（即竞争）效应相结合的指数来选择个体。虽然没有用实际林业数据验证，但是当使用来自日本鹌鹑的数据进行测试时，这些模型表明在某些情况下，如果仅选择直接遗传效应，可能会导致负选择反应。因此，林木中的人工选择方案可能是次优的，因为目前的性状改良的选择和育种策略很可能不考虑竞争能力的遗传基础。 Bijma及其同事（Bijma等人2007a，b; Ellen等人2007; Bergsma等人2008; Bijma 2010b，c，2011）检查了使用IGE来模拟动物的同伴的贡献。在这种情况下，IGE被称为社会效应，并且表明对受试动物的合作或积极行为的遗传基础。本研究涉及定量遗传理论，解释个人之间的相互作用和多层次选择，探索遗传参数估计的统计方法，并检查社会效应，动物笔大小和笔内动物的相关性之间的相互关系。在农作物物种竞争的背景下，Stringer（2006）和Stringer et al。 （2011）将线性混合模型框架中的IGE拟合为“治疗干扰模型”，将品种效应视为随机的。特别感兴趣的是它们在剩余水平上的竞争模型，或者当使用IGE时，当在遗传水平存在竞争时，或在缺少竞争时。在这个意义上，自回归模型被提出和测试，以说明竞争作为变异的主要来源或联合模拟竞争和环境趋势。这些残留水平模拟竞争的分析方法为植物和森林树木遗传学家提供了指导手段，而不是动物遗传学中使用的方法。这是因为农业和森林田间试验代表了焦点植物和邻近关系的连续体，而动物以离散单位饲养，例如笔或笼子。 Resende et al。 （2005）和Cappa和Cantet（2008）第一次验证IGE模型与实地试验的实际林业数据。然而，Resende et al。 （2005）没有考虑由于死亡率和焦点树与其邻居之间在不同空间方向上的可变距离的遗漏的邻居，在Cappa和Cantet（2008）的工作中考虑的竞争因素的强度在定量遗传模型中。然而，<strong>Cappa和Cantet（2008）没有考虑残差协方差结构的模型</strong>。
+本研究汇集了上述研究中的建模竞争的几个方面。然而，以前的森林遗传研究没有检查不同水平的相关性和生存的影响，当建模竞争在遗传水平，也没有评估性状遗传结构对选择响应时的树木之间的竞争存在的影响。这些重要问题可以通过使用模拟数据有效地接近。在这个意义上，我们使用模拟数据来研究IGE结合到定量遗传模型中以说明竞争，特别关注森林遗传试验，目的是：
+＆检查对基因和/或非遗传水平竞争的（共）方差分量估计的影响。
+＆探索在焦点树和总体生存的邻域内不同级别的遗传相关性对在遗传水平上检测和估计竞争效应的能力的影响。
+通过评估选择候选人的排名和对选择的预期响应的影响，并考虑竞争（共）方差分量的不同幅度以及不同水平，确定对遗传评价竞争的重要性的遗传相关性。</p>
+
+<h2 id="材料和方法">材料和方法</h2>
+
+<h3 id="定量遗传模型和邻域的定义">定量遗传模型和邻域的定义</h3>
+
+<p>因为我们的背景是森林遗传试验中的竞争，并且仅考虑基因的累加效应，因此IGE将被称为竞争性加性效应。我们考虑的起始模型，由Griffing（1967）首次提出，是将个体树的表型分解为其直接育种值，其邻居的竞争性育种值和随机的，非系统的，环境的残余）效应。因此，模型可以写为：</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-0f19bd493f00728e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+其中<strong>i表示中心个体，j是其竞争者之一（具有j01 &hellip; ni），Pi是i的表型，DBVi是i的直接育种值，CBVj是j的竞争性育种值，Ei表示第i种表型的残余组分，其也可以分为直接和竞争性残留项</strong>。在森林遗传试验中，竞争者是与焦点树相邻植物种植的树，因此，假定更远的邻居的竞争性加性效应不影响焦点树的表型。一阶竞争者ni的数量取决于焦点树在种植网格中的位置，以及诸如死亡率和缓冲行的存在或不存在的因素。网格通常是由行和列编号索引的规则形状。图1示出了由F表示的焦点树的两个示例，其位于规则网格的子集内，分别在等于R和C的行和列编号。邻域1中的焦点树具有最大可能数目的八个邻域。邻域2中的焦点树是位于网格的边界上的边缘树的示例，其中其邻居中的一个死亡;取决于是否存在缓冲行，这个焦点树具有七个或四个邻居。</p>
+
+<h3 id="竞争因素的强度">竞争因素的强度</h3>
+
+<p>竞争因素的强度应该用于说明邻居对第i个焦点个体的表型所产生的竞争效应的差异强度，如Cappa和Cantet（2008）和Cantet和Cappa（2008）所建议的。这种不同的竞争强度适用于一个社区和邻里。考虑图1中的邻域1的情况。 1：如果列间间距小于行间距，则N1和N2所产生的竞争强度大于N3和N4所施加的竞争强度。接下来，考虑在没有缓冲行的同一试验中的两个不同的邻域：一个聚焦树是仅具有五个邻居的边树，并且另一个是具有八个邻居的完全互补的非边树。在这两种情况下，期望的是第i个焦点树的竞争者能够在具有较少共邻域的邻域中以更大的强度发挥其竞争性加性效应。结合竞争因素强度的等式（1）表示为：</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-d7f7cf9310070074.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+其中f ij是邻居j对第i个焦点个体施加的强度因子。如Cappa和Cantet（2008）所示，通过在以下限制条件下使用竞争因素的强度，可以在Pi的表型方差内扩展竞争性遗传效应的方差，同时考虑不同的邻域大小：</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-3feb2c9ef10835b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+其中nRk，nCk和nDk分别表示行，列和对角线邻居的数量，fRk，fCk和fDk是为第k个邻域计算的行，列和对角线邻居的竞争因子的强度。因此， （3）认为位于相对于焦点个体的给定取向上的邻居具有相同的f ij。 <strong>Cappa和Cantet（2008）演示了如何计算等间行和列间间隔的fij，假设竞争强度与i和j之间的距离的倒数相关。我们已经通过引入参数p来扩展这种方法</strong>，其中行间间距不等于列间间距，这是行间到列间间隔的比率（关于公式的推导的细节，参见在线资源1，电子辅助材料）。
+##数据模拟描述
+模拟两个性状的数据。我们名义上称为生长并具有中度至低度遗传性的一个性状（即<strong>在林木树种中，茎生长性状的狭义遗传力范围为0.10至0.30，White等人，2007，p127</strong>）受到直接和竞争效应。由于<strong>在林业试验的遗传和非遗传水平的模拟竞争框架内探讨死亡率的影响是一个目标</strong>，因此有必要考虑数据模拟中的生存。因此，模拟的第二个性状是二元生存性状。在这种情况下，假定表型仅具有直接遗传组分，对于狭义遗传力和与第一性状的正加性相关性具有中等量级（例如Chambers等人，1996）。在模拟数据中考虑80和100％的存活水平。
+模拟开始于为创始人一代产生遗传值。假设生长性状具有正态分布，直接加性方差（σ2d）为20.表1中显示的竞争性加性方差（σ2c）和直接和竞争性加性效应（rdc）之间的相关性的9种组合值以代表σ2c与σ2d的高，中和低比值，以及对于rdc具有小的负值，中度负值和大的负值。<strong>当竞争存在于遗传水平时（例如Muir 2005），直接和竞争性加性效应（σdc）之间的协方差预期是负的</strong>，因此模拟的rdc值也是阴性的。对于加性（共）方差参数模拟的值近似于我们在不同森林物种（桉树）的五个田间试验的直径生长的初步分析（未发表数据）中的比率σ2c /σ2d和rdc ，樟子松和云杉），在几个年龄的种植（范围从4至18年）。
+在等式（2）和（3）中，竞争效应的尺度使得σ2c值直接对应于竞争性加性效应对表型方差的总（基于所有邻居）的贡献，假设焦点个体的邻居是遗传性的无关。然而，在方程（1），竞争性加性方差对表型方差的总贡献将等于niσ2c，假设再次是无关的邻居。
+因此，使用fij因子的竞争效应的扩展强烈影响对竞争效应的大小的解释。当将使用fij因子的研究与不使用fij因子的研究进行比较时，这是很重要的。在观察到的规模上具有0（死亡）或1（活的）表型值的存活性状被假定为具有加性方差为0.5的基本正态分布。 Chambers et al。 （1996）报告了许多试验的生长和生长之间的平均遗传相关性为0.5，但作者还指出，在严重干旱条件下，这种相关性的幅度可能较低。因此，我们假设生长和存活的直接附加效应之间的遗传相关性的值为0.3，作为尝试以适应影响树生存的广泛的环境胁迫条件（例如竞争，霜冻和干旱） 。对于表1中所示的（共）方差参数的每个组合，使用包含零的平均向量（由m表示）从多变量正态分布中采样生长的直接和竞争性添加剂值和存活的直接相加值和（3×3）方差协方差矩阵（由C表示）。模拟由交配创始人进行，使用异花授粉（CP）或开放授粉（OP）交配设计，以产生后代。对于CP，产生了36个创建者，并且每个创建者在部分diallel交配设计之后交叉四次，这导致72个家族，每个包含36个全同胞。对CP后代的育种值从多变量正态分布中取平均值向量：
+和方差协方差矩阵C * = 0：5？C;在m中，d表示直接育种值，c表示竞争性育种值，d和c下标为G表示生长，S表示存活，缩写fp和mp分别指女性和男性父母。对于OP设计，生成了72个创建者，每个创建者被假定产生36个后代。 OP后代的遗传值从多变量正态分布中平均矢量：
+和方差协方差矩阵C * = 0：75？C。非加性遗传效应被假定为在我们的人群中不重要，因此不是在假​​定添加的遗传模型对于所考虑的性状是足够的的情况下模拟的。在两种设计中，产生2,592个子代并定位在由72行和36列组成的规则网格上，具有相等的行间和列间间隔。
+在邻域内的三个水平的加性遗传相关性被强加为：
+- 通过创建四树线图，在CP交配设计下实现的<strong>中间相关性</strong>，在这种情况下，焦点树在非边缘邻域中具有一个或两个完整的同胞作为邻居;
+- 低相关性 - 通过创建单树图在CP交配设计下实现;
+- 非常低的相关性 - 在OP交配设计下通过创建单树图实现。</p>
+
+<p>除了对随机化的限制之外，将所述图随机放置在网格上，确保不存在来自相同两个家族的成对图位于一起的趋势。对于包括焦点树及其八个竞争者的邻域，<strong>对于中等，低和非常低的遗传相关性水平，所有对个体之间的相加关系系数的所得平均值分别为0.11,0.03和0.003</strong>。上述的配合设计和绘图配置在森林遗传学的现场测试中经常使用（White等人，2007）。因此，在可比较的实验设置下，预期三个模拟的相关性水平将表示在实际田间试验中通常在树木邻域内可以发现的平均遗传相关性的量值。对于子代的生长表型如方程式（2）。当存活率为100％时，需要fij来反映行和列邻居相对于对角邻居施加的竞争的不同优势。此外，对于80％的存活，需要fij来解释ni在非边缘焦点个体之间不同的事实。在生长的残留效应的产生中，我们已经将式中的随机项E i （2）转化为竞争性和直接剩余组分。我们进一步假设，竞争性成分遵循空间相关过程，直接成分是一个不相关的残差分布独立于竞争术语。在这种情况下，残差方差协方差矩阵的一般形式定义为（Gilmour等人1997; Stringer 2006; Stringer等人2011）
+其中ξ是其元素遵循空间相关过程的向量，η是元素是成对独立的向量，Σ是空间相关过程的相关矩阵（以向量α中的参数为条件），关联方差由σ2给出ce，σ2是独立残差的方差，I是单位矩阵。此外，我们假设在行和列方向上存在可分离的空间相关过程，因此Σ被定义为（对于按行内的列排序的数据）：
+其中αrow和αcol分别是行和列自相关参数的向量，⊗表示Kro-necker乘积运算。<strong>一阶自回归（AR1）过程可以用到Σ来建模剩余竞争效应或局部环境趋势，但是不能同时有效地建模（Stringer 2006; Stringer等人，2011）</strong>。在本研究中，我们的目的是探讨竞争本身的影响，因此我们假设在我们的模拟数据中，<strong>环境趋势在全球和地方水平都不重要</strong>（例如，一个现场试验位于同一个站点，小环境 - 精神变异性）。因此，我们在Σ中使用AR1过程，<strong>考虑竞争是剩余水平上自相关的主要来源</strong>。在这个意义上，在初步分析中已经观察到了竞争对环境趋势具有支配性的情况，我们已经针对来自辐射松（年龄从田间种植范围从11到13年）和云杉的森林遗传试验的实际直径生长数据（年龄从田间种植16至18年）（未发表的结果）。<strong>在AR1模型中，向量αrow和αcol中的每一个包括单个自相关参数，当在剩余水平上存在竞争并且在环境趋势上占优势时，通常是负的</strong>（例如，Stringer 2006）。 R列网格中的C列的相关残差从具有包含零的协和变量结构的多元正态分布和协方差结构生成。 （5），假设σ2ce等于20，αrow和αcol中的参数等于-0.5。独立残差由具有零均值和σ2（即等于80）的正态分布产生。
+使用下式模拟生存的基础，连续表型：P * S; i = BVS; iþES; ið6
+其中BVS，i和ES，i分别表示第i个个体的育种值和残留项。 ES，i值由具有零均值和方差等于1的正态分布产生。随后使用从累积标准正态分布计算的阈值X将P * S i值转换为二进制标度，其中从负无穷大到X的积分对于100％存活具有值0，或对于80％存活具有0.2。也就是说，如果P * S; i &lt;X则PS，i00（死），否则PS，i01（活的）。然后，对于焦点个体i，其一阶邻域（ni）的数量由下式给出：
+假定缓冲行不存在，因此不被模拟;因此，当焦点个体是边树时，对应于网格外的位置的j，PS，j值被假定为零。因此，对于80和100％的存活水平，竞争因子的强度也需要反映对边缘和非边缘焦点个体施加的竞争的不同优势。对于针对遗传竞争参数模拟的值的每个组合（表1），测试了遗传相关性的三个水平和两个存活水平。总共，对定义的邻居测试了54个不同的情景，并为每个情景生成了100个重复。在下述四个统计模型下分析每个重复。另外，对于每个探索对选择的影响的情况，使用100个重复（参见下文）。
+##统计模型
+表2给出了在本研究中拟合的模拟数据的统计模型的概述。基本模型（B）不适合在遗传或残余水平的竞争。在该模型下估计的加性方差不假设为明确表示直接加和效应，并且更一般地表示为σ2a。育种值不被定性为直接或竞争性，并且简称为BV。假设残差效应独立和相同分布，残差方差简单表示为σ2e。 B模型表示为：
+其中y是模拟表型的载体，1是将表型与平均值μ连接的载体，Z是将个体的表型与载体中包含的它们的BV连接的矩阵，e是残差的载体。向量a中加性效应的方差矩阵为：
+其中A是人口中个体之间的相加关系系数矩阵，向量e中残差效应的方差矩阵定义为：
+表2中的<strong>第二个模型（AR）不考虑遗传水平的竞争，而是使用可分离的AR1过程在残余水平上进行竞争</strong>。因此，向量a中的加性效应的方差矩阵被定义为等式（9），随机残差矢量被划分为e=ξ+η，并根据方程协方差矩阵拟合。 （4）和（5）。
+第三个模型是遗传竞争模型（GC），其明确地将加性效应分离为直接和竞争性加性效应。<strong>直接和竞争性加性效应之间的遗传协方差也被拟合</strong>。 GC模型表示为：
+其中Zd和Zc是将个体的表型与它们分别包含在载体d和c中的直接育种值和竞争性育种值相连接的矩阵。在统计分析中使用的fij因子与在数据生成中使用的因子相同，其中Zc中的第i行包含针对第i个焦点个体的邻居j计算的竞争因子的强度。加法效应的方差协方差矩阵。 （11）由下式给出：
+其中σ2d，σ2c和σdc如上定义。矩阵A的使用允许我们通过社区内和跨社区的个体关系来链接直接和竞争性的附加效应。 e中的效应的方差矩阵定义为方程。 （10），因为残余水平的竞争不适用于GC模型。表2中的第四个模型是组合的遗传信念和自回归模型（GC-AR），其考虑遗传和残留水平的竞争。对比嵌套模型进行了喜欢比率（LR）测试，如表2所示.LR测试是隐含双尾的，但是当假设测试涉及测试方差时（如我们的情况），它应该被调整，限制为大于或等于零（Stram和Lee 1994）。然而，不是为每个模型比较确定LR检验统计量的正确理论渐近分布，而是总是使用具有所述自由度的双尾检验。因此，我们所做的所有LR测试都是保守的。所有模型都使用ASReml软件（Gilmour等人2009），使用限制最大似然估计（共）方差参数。</p>
+
+<h2 id="对选择的影响">对选择的影响</h2>
+
+<p>在IGE定量遗传模型的框架中，<strong>Bijma（2011）证明了表型方差的可遗传成分与个体传递给下一代的遗传效应之间的区别。后一术语完全是焦点个体的遗传性质。它代表个体基因对群体遗传平均值（Pgenetic）的影响，称为总育种值（TBV）</strong>。按照公式（2），群体的遗传平均值可以定义为：</p>
+
+<p>因此，对于第i个焦点个体，总育种值（TBVi）将被定义为：</p>
+
+<p>其中nR fR，nC fC和nD fD表示在群体中所有焦点个体中其邻居数目和在行，列或对角线方向上的相互作用因子强度的平均值的乘积。对于100％的存活率，模拟情景的每个重复中，nR fRþnCfCnD fDD的数量为2.7。
+重要的是检查遗传评估中的不考虑实际存在竞争效应对选择决定的影响（除了对方差分量估计的影响）。在这方面，比较了三种选择方法：
+ 1.  基于使用B模型的估计育种值进行选择（bBV）;
+ 1. 使用GC-AR模型（​​DbBV）基于估计的直接育种值进行选择;
+ 1. 使用GC-AR模型（​​TbBV）基于估计的总育种值进行选择;</p>
+
+<p>其中估计的育种值通过最佳线性无偏预测（BLUP）获得。
+使用三种方法对后代进行排序。作为排名差异的指示，Spearman等级相关性计算为：基于BV和Dbb BV的选择;并基于b BV和Tb BV比较选择。在选择约5％最高级别的个体后，计算个体（后代）选择的预期遗传反应。对于模拟数据，可获得真实遗传值，并且可以根据在给定方法下选择的个体的模拟遗传值的平均值计算对选择的预期反应。通过使用模拟（真）育种值（分别表示为直接，竞争性和总遗传效应的DBV，CBV和TBV），基于B或GC-AR模型的选择的预期遗传应答在相同规模上表达，因此反映了所选个体中模型之间的差异。因此，策略是将方法（i）下排名的顶级个体的平均TBV与方法（iii）下排名的顶级个体的平均TBV进行比较。对于方程式2中的两项也获得平均值。 （14），<strong>以便评估直接和竞争性遗传效应对基于任一方法的选择的总响应的贡献。</strong>
+##结果
+我们使用中值来描述研究的参数在模拟中的100个重复的结果。当比较估计量和总结数据时，Hozo et al。 （2005）指出，当样本大小大于25时，中位数提供了正态分布或偏态分布的集中趋势的一致性测量。
+###从拟合不完全模型的参数估计</p>
+
+<p>用于模拟数据集的（共）方差参数的真实值通过在最完整的GC-AR模型（​​图2）下获得的相应估计来最佳近似。对于其余模型，观察到σ2c0 10和100％存活率的（共）方差参数估计中的以下主要模式。
+对于B模型（图3），bσ2a在非常低的相关性下似乎是无偏的，但在其他相关性水平下，rdc值超过-0.3时倾向于变得偏向下。 B模型中的残余方差总是超过其期望值（即σ2ie+σ2ce0 100），其中偏差量接近于σ2c的真实值，并且因此指示其由于竞争而吸收叠加效应。此外，残余方差似乎吸收在介质相关性水平下的直接加和方差，如rdc变得更负（图3）时这两个方差分量的估计中的相反趋势所暗示的。在AR模型（​​图4）下，随着rdc值变得更负，bσ2a对于所有关联水平似乎越来越向下偏移，相对于其他相关水平，偏差更大。 bσ2ie在rdc0-0.3下的所有相关水平都被充气，但随着rdc变得更负，在rdc0-0.9下达到非常低的相关水平的向下偏差。相反，对于更多的rdc负值，bσ2ce似乎越来越偏向上。对bσ2ce和bσ2a观察到的相反趋势（图4）表明，随着rdc变得更负，bσ2ce可以在吸收bσ2a方面具有增加的贡献。此外，观察到的残余偏差</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/costa-silva-2001-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" data-toggle="tooltip" data-placement="top" title="Costa-Silva-2001-空间分析">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%AB%9E%E4%BA%89/costa-2013-%E7%AB%9E%E4%BA%89-newphy/" data-toggle="tooltip" data-placement="top" title="Costa-2013-竞争-NewPhy">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

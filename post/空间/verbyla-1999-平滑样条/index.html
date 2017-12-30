@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Verbyla-1999-平滑样条</title>
+  <meta property="og:title" content="Verbyla-1999-平滑样条" />
+  <meta name="twitter:title" content="Verbyla-1999-平滑样条" />
+  <meta name="description" content="Verbyla AP, Cullis BR, Kenward MG, Welham SJ (1999) The analysis of designed experiments and longitudinal data by using smoothing splines. J R Stat Soc Ser C-Applied Stat 48:269–300. doi: 10.1111&frasl;1467-9876.00154
+ ##概要 平滑样条和其他非参数平滑方法被广泛接受用于探索性数据分析。这些方法已用于回归，重复测量或纵向数据分析，以及广义线性模型。然而，一个主要的缺点是缺乏正式的推理框架。没有被充分利用的例外是三次平滑样条。三次平滑样条允许混合模型公式，其将该非参数更稳定地平滑在参数设置中。本文提出的公式提供了在模型中包括三次平滑样条用于设计实验和纵向数据分析的机制。因此，非线性曲线可以包括随机效应和随机系数，这导致在线性混合模型框架内非常灵活和信息性建模。也可以适应差异异质性。在纵向数据的情况下使用三次平滑样条的优点是特别明显的，因为对于随机系数模型隐含地实现协方差建模。几个例子被认为是说明的想法。 关键词：方差分析;最佳线性无偏预测;立方平滑样条;纵向数据;混合模型;随机系数模型;重复措施;残差最大似然。 1简介
+在许多情况下，作为定量变量（例如时间）的函数的响应变量的关系是重要的。在缺乏可能为关系提供机械模型的实质性知识的情况下，将需要建立经验模型。其他变量或因素的存在可能在关系中引入一些系统的变化。例如，如果该关系可以通过简单的线性回归近似，截距和斜率可以在组或受试者之间变化。这些系数可以是固定的或取决于上下文作为随机的。这个想法在设计实验中的更复杂的设置的扩展是立即的，并且使用正交多项式将效应分解成一个自由度对比度在方差分析中是众所周知的。然而，如果该关系是非线性的并且不能由多项式近似，则出现困难。 需要建模的一个重要领域是重复测量或纵向数据的分析。通常治疗的影响是关于反应和定量变量，时间之间的关系。这方面有大量文献，不会尝试在这里提供全面的综述。方法范围从使用方差分析，其中进行分裂图分析，子图“处理”为时间（参见例如Diggle等人，1994，第6.4节），使用方差分析对多项式对比度的分析（Wishart，1938，Rowell＆Walters，1976）和多变量方法（Cole＆Grizzle，1966，Grizzle＆Allen，1969）。最近，已经采用了平均响应概况和基础协方差结构的联合建模（Diggle，1988，Cullis＆McGilchrist，1990，Verbyla＆Cullis，1992，Diggle等人，1994），平均通常使用线性模型。已经尝试为协方差结构寻找灵活的低阶参数化（Kenward，1987）。 从业者在纵向数据的常规分析中未采用联合建模方法。一个主要问题是，该方法需要用于平均响应曲线和协方差结构的合理的模型，这可能是非常困难的。 As Diggle et al。 （1994），p。 102，关于将在2.1节中介绍的实验，">
+  <meta property="og:description" content="Verbyla AP, Cullis BR, Kenward MG, Welham SJ (1999) The analysis of designed experiments and longitudinal data by using smoothing splines. J R Stat Soc Ser C-Applied Stat 48:269–300. doi: 10.1111&frasl;1467-9876.00154
+ ##概要 平滑样条和其他非参数平滑方法被广泛接受用于探索性数据分析。这些方法已用于回归，重复测量或纵向数据分析，以及广义线性模型。然而，一个主要的缺点是缺乏正式的推理框架。没有被充分利用的例外是三次平滑样条。三次平滑样条允许混合模型公式，其将该非参数更稳定地平滑在参数设置中。本文提出的公式提供了在模型中包括三次平滑样条用于设计实验和纵向数据分析的机制。因此，非线性曲线可以包括随机效应和随机系数，这导致在线性混合模型框架内非常灵活和信息性建模。也可以适应差异异质性。在纵向数据的情况下使用三次平滑样条的优点是特别明显的，因为对于随机系数模型隐含地实现协方差建模。几个例子被认为是说明的想法。 关键词：方差分析;最佳线性无偏预测;立方平滑样条;纵向数据;混合模型;随机系数模型;重复措施;残差最大似然。 1简介
+在许多情况下，作为定量变量（例如时间）的函数的响应变量的关系是重要的。在缺乏可能为关系提供机械模型的实质性知识的情况下，将需要建立经验模型。其他变量或因素的存在可能在关系中引入一些系统的变化。例如，如果该关系可以通过简单的线性回归近似，截距和斜率可以在组或受试者之间变化。这些系数可以是固定的或取决于上下文作为随机的。这个想法在设计实验中的更复杂的设置的扩展是立即的，并且使用正交多项式将效应分解成一个自由度对比度在方差分析中是众所周知的。然而，如果该关系是非线性的并且不能由多项式近似，则出现困难。 需要建模的一个重要领域是重复测量或纵向数据的分析。通常治疗的影响是关于反应和定量变量，时间之间的关系。这方面有大量文献，不会尝试在这里提供全面的综述。方法范围从使用方差分析，其中进行分裂图分析，子图“处理”为时间（参见例如Diggle等人，1994，第6.4节），使用方差分析对多项式对比度的分析（Wishart，1938，Rowell＆Walters，1976）和多变量方法（Cole＆Grizzle，1966，Grizzle＆Allen，1969）。最近，已经采用了平均响应概况和基础协方差结构的联合建模（Diggle，1988，Cullis＆McGilchrist，1990，Verbyla＆Cullis，1992，Diggle等人，1994），平均通常使用线性模型。已经尝试为协方差结构寻找灵活的低阶参数化（Kenward，1987）。 从业者在纵向数据的常规分析中未采用联合建模方法。一个主要问题是，该方法需要用于平均响应曲线和协方差结构的合理的模型，这可能是非常困难的。 As Diggle et al。 （1994），p。 102，关于将在2.1节中介绍的实验，">
+  <meta name="twitter:description" content="Verbyla AP, Cullis BR, Kenward MG, Welham SJ (1999) The analysis of designed experiments and longitudinal data by using smoothing splines. J R Stat Soc Ser C-Applied Stat 48:269–300. doi: …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/verbyla-1999-%E5%B9%B3%E6%BB%91%E6%A0%B7%E6%9D%A1/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/verbyla-1999-%E5%B9%B3%E6%BB%91%E6%A0%B7%E6%9D%A1/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Verbyla-1999-平滑样条</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (44 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Verbyla-1999-平滑样条</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (44 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Verbyla AP, Cullis BR, Kenward MG, Welham SJ (1999) The analysis of designed experiments and longitudinal data by using smoothing splines. J R Stat Soc Ser C-Applied Stat 48:269–300. doi: 10.<sup>1111</sup>&frasl;<sub>1467</sub>-9876.00154</p>
+</blockquote>
+
+<p>##概要
+<strong>平滑样条和其他非参数平滑方法</strong>被广泛接受用于探索性数据分析。这些方法已用于回归，重复测量或纵向数据分析，以及广义线性模型。然而，<strong>一个主要的缺点是缺乏正式的推理框架</strong>。没有被充分利用的<strong>例外是三次平滑样条</strong>。<strong>三次平滑样条允许混合模型公式，其将该非参数更稳定地平滑在参数设置中</strong>。本文提出的公式提供了在模型中包括三次平滑样条用于设计实验和纵向数据分析的机制。因此，非线性曲线可以包括随机效应和随机系数，这导致在线性混合模型框架内非常灵活和信息性建模。也可以适应差异异质性。在纵向数据的情况下使用三次平滑样条的优点是特别明显的，因为对于随机系数模型隐含地实现协方差建模。几个例子被认为是说明的想法。
+关键词：方差分析;最佳线性无偏预测;立方平滑样条;纵向数据;混合模型;随机系数模型;重复措施;残差最大似然。
+1简介</p>
+
+<p>在许多情况下，作为定量变量（例如时间）的函数的响应变量的关系是重要的。在缺乏可能为关系提供机械模型的实质性知识的情况下，将需要建立经验模型。其他变量或因素的存在可能在关系中引入一些系统的变化。例如，如果该关系可以通过简单的线性回归近似，截距和斜率可以在组或受试者之间变化。这些系数可以是固定的或取决于上下文作为随机的。这个想法在设计实验中的更复杂的设置的扩展是立即的，并且使用正交多项式将效应分解成一个自由度对比度在方差分析中是众所周知的。然而，如果该关系是非线性的并且不能由多项式近似，则出现困难。
+需要建模的一个重要领域是重复测量或纵向数据的分析。通常治疗的影响是关于反应和定量变量，时间之间的关系。这方面有大量文献，不会尝试在这里提供全面的综述。方法范围从使用方差分析，其中进行分裂图分析，子图“处理”为时间（参见例如Diggle等人，1994，第6.4节），使用方差分析对多项式对比度的分析（Wishart，1938，Rowell＆Walters，1976）和多变量方法（Cole＆Grizzle，1966，Grizzle＆Allen，1969）。最近，已经采用了平均响应概况和基础协方差结构的联合建模（Diggle，1988，Cullis＆McGilchrist，1990，Verbyla＆Cullis，1992，Diggle等人，1994），平均通常使用线性模型。已经尝试为协方差结构寻找灵活的低阶参数化（Kenward，1987）。
+从业者在纵向数据的常规分析中未采用联合建模方法。一个主要问题是，该方法需要用于平均响应曲线和协方差结构的合理的模型，这可能是非常困难的。 As Diggle et al。 （1994），p。 102，关于将在2.1节中介绍的实验，</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/diallel/viana2013-reciprocal-recurrent-selection-rrs/" data-toggle="tooltip" data-placement="top" title="Viana2013-Reciprocal-recurrent-selection-(RRS)">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/diallel/venkateswar1997-%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/" data-toggle="tooltip" data-placement="top" title="Venkateswar1997-方差分析的几种方法">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

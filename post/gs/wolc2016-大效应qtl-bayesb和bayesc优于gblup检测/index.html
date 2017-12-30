@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Wolc2016-大效应QTL-BayesB和BayesC优于GBLUP检测</title>
+  <meta property="og:title" content="Wolc2016-大效应QTL-BayesB和BayesC优于GBLUP检测" />
+  <meta name="twitter:title" content="Wolc2016-大效应QTL-BayesB和BayesC优于GBLUP检测" />
+  <meta name="description" content="Wolc A, Arango J, Settar P, et al (2016) Mixture models detect large effect QTL better than GBLUP and result in more accurate and persistent predictions. J Anim Sci Biotechnol 7:7. doi: 10.1186/s40104-016-0066-z
+ 背景：SNP效应的准确评估对于全基因组关联研究和基因组预测是重要的。数量性状的遗传结构差异很大，一些性状表现出很少的具有大效应的数量性状位点（QTL），而其他性状具有一个或几个容易检测的QTL，具有很大的作用。\ n \ nETHODS：肉鸡体重层中的蛋重是具有大效应的QTL的性状的两个实例。用于全基因组关联研究的常用方法是拟合混合物模型，例如BayesB，其假设一些已知比例的SNP效应为零。相比之下，最常用的基因组预测方法称为GBLUP，其涉及将动物模型拟合表型数据，动物中的方差 - 协方差或基因组关系矩阵通过基因组宽SNP基因型测定。在确定GBLUP的基因组关系矩阵时，通常对每个SNP的基因型进行等同加权。我们使用GBLUP的等效标记效应模型公式进行本研究。我们比较这两种类型的模型使用从2324动物基因型与42 K SNP面板8代收集的鸡蛋重量数据。\ n \ nRESULTS：使用来自前7代的数据，BayesB和GBLUP发现最大的QTL在类似公认的QTL区，但是该QTL估计占BayesB的遗传变异的24％，而GBLUP的遗传变异小于1％。当预测第8代表型时，BayesB占表型变异的36％，GBLUP占25％。当仅使用来自任何一代的数据时，在除一个世代之外的所有BayesB中鉴定了相同的QTL，但是不与GBLUP一起鉴定。基于仅来自第1代的295只动物的第2代至第7代表型的预测占BayesB的10％表型变异，但是仅有6％与GBLUP。仅使用在1 Mb区域中的标记效应的预测表型，其对来自第1代数据的卵重量的最大影响占据使用BayesB的近8％的变化，但是没有GBLUP的预测能力。结论：在大效应QTL存在的情况下，BayesB做了更好的QTL检测工作，其基因组预测比GBLUP更准确和持久。
+在大效应QTL存在下精确评估SNP效应的方法的选择对于全基因组关联研究（GWAS）和基因组选择（GS）可能是关键的。混合模型，有时称为变量选择模型，假设一些SNP效应为零。一个这样的混合模型，BayesB [1]，已被证明足以估计标记效应在模拟数据[2,3]，但基于真实数据的比较，其中真实效应未知更不直接。在最近的一篇使用肉鸡体重数据的论文中，Wang et al。 [4]得出结论，与单步GBLUP程序相比，“BayesB似乎过度收缩区域为零，而高估归因于剩余SNP效应的遗传变异的量”。蛋重是一个层次的性状，多项研究报告在染色体4上的一致位置检测到具有大效应的QTL [5-8]。本研究的目的是证明在存在这种大效应QTL ，混合模型像BayesB和BayesC [9,10]优于GBLUP检测和量化QTL的影响，混合模型提供更准确的基因组估计的育种价值（GEBV），更持久的代，使用棕色蛋层数据。">
+  <meta property="og:description" content="Wolc A, Arango J, Settar P, et al (2016) Mixture models detect large effect QTL better than GBLUP and result in more accurate and persistent predictions. J Anim Sci Biotechnol 7:7. doi: 10.1186/s40104-016-0066-z
+ 背景：SNP效应的准确评估对于全基因组关联研究和基因组预测是重要的。数量性状的遗传结构差异很大，一些性状表现出很少的具有大效应的数量性状位点（QTL），而其他性状具有一个或几个容易检测的QTL，具有很大的作用。\ n \ nETHODS：肉鸡体重层中的蛋重是具有大效应的QTL的性状的两个实例。用于全基因组关联研究的常用方法是拟合混合物模型，例如BayesB，其假设一些已知比例的SNP效应为零。相比之下，最常用的基因组预测方法称为GBLUP，其涉及将动物模型拟合表型数据，动物中的方差 - 协方差或基因组关系矩阵通过基因组宽SNP基因型测定。在确定GBLUP的基因组关系矩阵时，通常对每个SNP的基因型进行等同加权。我们使用GBLUP的等效标记效应模型公式进行本研究。我们比较这两种类型的模型使用从2324动物基因型与42 K SNP面板8代收集的鸡蛋重量数据。\ n \ nRESULTS：使用来自前7代的数据，BayesB和GBLUP发现最大的QTL在类似公认的QTL区，但是该QTL估计占BayesB的遗传变异的24％，而GBLUP的遗传变异小于1％。当预测第8代表型时，BayesB占表型变异的36％，GBLUP占25％。当仅使用来自任何一代的数据时，在除一个世代之外的所有BayesB中鉴定了相同的QTL，但是不与GBLUP一起鉴定。基于仅来自第1代的295只动物的第2代至第7代表型的预测占BayesB的10％表型变异，但是仅有6％与GBLUP。仅使用在1 Mb区域中的标记效应的预测表型，其对来自第1代数据的卵重量的最大影响占据使用BayesB的近8％的变化，但是没有GBLUP的预测能力。结论：在大效应QTL存在的情况下，BayesB做了更好的QTL检测工作，其基因组预测比GBLUP更准确和持久。
+在大效应QTL存在下精确评估SNP效应的方法的选择对于全基因组关联研究（GWAS）和基因组选择（GS）可能是关键的。混合模型，有时称为变量选择模型，假设一些SNP效应为零。一个这样的混合模型，BayesB [1]，已被证明足以估计标记效应在模拟数据[2,3]，但基于真实数据的比较，其中真实效应未知更不直接。在最近的一篇使用肉鸡体重数据的论文中，Wang et al。 [4]得出结论，与单步GBLUP程序相比，“BayesB似乎过度收缩区域为零，而高估归因于剩余SNP效应的遗传变异的量”。蛋重是一个层次的性状，多项研究报告在染色体4上的一致位置检测到具有大效应的QTL [5-8]。本研究的目的是证明在存在这种大效应QTL ，混合模型像BayesB和BayesC [9,10]优于GBLUP检测和量化QTL的影响，混合模型提供更准确的基因组估计的育种价值（GEBV），更持久的代，使用棕色蛋层数据。">
+  <meta name="twitter:description" content="Wolc A, Arango J, Settar P, et al (2016) Mixture models detect large effect QTL better than GBLUP and result in more accurate and persistent predictions. J Anim Sci Biotechnol 7:7. doi: …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/gs/wolc2016-%E5%A4%A7%E6%95%88%E5%BA%94qtl-bayesb%E5%92%8Cbayesc%E4%BC%98%E4%BA%8Egblup%E6%A3%80%E6%B5%8B/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/gs/wolc2016-%E5%A4%A7%E6%95%88%E5%BA%94qtl-bayesb%E5%92%8Cbayesc%E4%BC%98%E4%BA%8Egblup%E6%A3%80%E6%B5%8B/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Wolc2016-大效应QTL-BayesB和BayesC优于GBLUP检测</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (53 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Wolc2016-大效应QTL-BayesB和BayesC优于GBLUP检测</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (53 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Wolc A, Arango J, Settar P, et al (2016) Mixture models detect large effect QTL better than GBLUP and result in more accurate and persistent predictions. J Anim Sci Biotechnol 7:7. doi: 10.1186/s40104-016-0066-z</p>
+</blockquote>
+
+<p>背景：SNP效应的准确评估对于全基因组关联研究和基因组预测是重要的。数量性状的遗传结构差异很大，一些性状表现出很少的具有大效应的数量性状位点（QTL），而其他性状具有一个或几个容易检测的QTL，具有很大的作用。\ n \ nETHODS：肉鸡体重层中的蛋重是具有大效应的QTL的性状的两个实例。用于全基因组关联研究的常用方法是拟合混合物模型，例如BayesB，其假设一些已知比例的SNP效应为零。相比之下，最常用的基因组预测方法称为GBLUP，其涉及将动物模型拟合表型数据，动物中的方差 - 协方差或基因组关系矩阵通过基因组宽SNP基因型测定。<strong>在确定GBLUP的基因组关系矩阵时，通常对每个SNP的基因型进行等同加权</strong>。我们使用GBLUP的等效标记效应模型公式进行本研究。我们比较这两种类型的模型使用从2324动物基因型与42 K SNP面板8代收集的鸡蛋重量数据。\ n \ nRESULTS：使用来自前7代的数据，BayesB和GBLUP发现最大的QTL在类似公认的QTL区，但是该QTL估计占BayesB的遗传变异的24％，而GBLUP的遗传变异小于1％。当预测第8代表型时，BayesB占表型变异的36％，GBLUP占25％。当仅使用来自任何一代的数据时，在除一个世代之外的所有BayesB中鉴定了相同的QTL，但是不与GBLUP一起鉴定。基于仅来自第1代的295只动物的第2代至第7代表型的预测占BayesB的10％表型变异，但是仅有6％与GBLUP。仅使用在1 Mb区域中的标记效应的预测表型，其对来自第1代数据的卵重量的最大影响占据使用BayesB的近8％的变化，但是没有GBLUP的预测能力。结论：<strong>在大效应QTL存在的情况下，BayesB做了更好的QTL检测工作，其基因组预测比GBLUP更准确和持久。</strong></p>
+
+<p>在大效应QTL存在下精确评估SNP效应的方法的选择对于全基因组关联研究（GWAS）和基因组选择（GS）可能是关键的。混合模型，有时称为变量选择模型，假设一些SNP效应为零。一个这样的混合模型，<code>BayesB [1]，已被证明足以估计标记效应在模拟数据[2,3]</code>，但基于真实数据的比较，其中真实效应未知更不直接。在最近的一篇使用肉鸡体重数据的论文中，<code>Wang et al。 [4]得出结论，与单步GBLUP程序相比，“BayesB似乎过度收缩区域为零，而高估归因于剩余SNP效应的遗传变异的量”</code>。蛋重是一个层次的性状，多项研究报告在染色体4上的一致位置检测到具有大效应的QTL [5-8]。本研究的目的是证明在<code>存在这种大效应QTL ，混合模型像BayesB和BayesC [9,10]优于GBLUP检测和量化QTL的影响，混合模型提供更准确的基因组估计的育种价值（GEBV）</code>，更持久的代，使用棕色蛋层数据。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E4%BD%9C%E5%9B%BE/wu-2004%E5%8F%91%E8%82%B2%E6%80%A7%E7%8A%B6%E9%81%97%E4%BC%A0%E7%BB%84%E6%88%90%E7%9A%84%E5%88%86%E6%9E%90/" data-toggle="tooltip" data-placement="top" title="Wu-2004发育性状遗传组成的分析">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/wolak2012-nadiv-%E9%9D%9E%E5%8A%A0%E6%80%A7%E5%85%B3%E8%81%94%E7%9F%A9%E9%98%B5-%E5%8A%A8%E7%89%A9%E6%A8%A1%E5%9E%8B/" data-toggle="tooltip" data-placement="top" title="Wolak2012-Nadiv-非加性关联矩阵-动物模型">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

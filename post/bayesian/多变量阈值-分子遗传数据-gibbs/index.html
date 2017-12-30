@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>多变量阈值-分子遗传数据-Gibbs</title>
+  <meta property="og:title" content="多变量阈值-分子遗传数据-Gibbs" />
+  <meta name="twitter:title" content="多变量阈值-分子遗传数据-Gibbs" />
+  <meta name="description" content="Stock KF, Distl O, Hoeschele I. Bayesian estimation of genetic parameters for multivariate threshold and continuous phenotypes and molecular genetic data in simulated horse populations using Gibbs sampling. BMC Genet. [Internet]. 2007;8:19. Available from: http://dx.doi.org/10.1186/1471-2156-8-19   使用Gibbs采样的模拟马群中多变量阈值和连续表型和分子遗传数据的遗传参数的贝叶斯估计
+抽象
+背景 成功实施包括表型和基因型信息的多变量动物阈值模型的要求尚不清楚。这里使用模拟马数据来调查遗传参数的遗传参数的多变量估计器的性质在分类，连续和分子遗传数据在重要的放射性健康性状的背景下使用混合线性阈值动物模型通过Gibbs采样。模拟谱系包括7代和40000动物每代。模拟了四个二元性状的一个连续性状和负债liabilities的加性遗传值，残差​​和固定效应，类似于Warmblood马中遇到的情况。对一种负债模拟了数量性状基因座（QTL）效应和遗传标记信息。研究了遗传标记与QTL之间的重组率和遗传标记多态性信息含量的不同情况。对于每种情况，从模拟群体中抽取10个重复，并且在每个重复中产生具有性状记录和遗传标志信息可用性的动物的数量和分布不同的6个不同数据集。 （Co）方差分量使用​​贝叶斯混合线性阈值动物模型通过Gibbs采样进行估计。残差方差固定为零，适当的先验用于遗传协方差矩阵。
+结果 有效样本大小（ESS）和遗传参数的偏差在数据集之间显着不同。遗传力估计的偏差对于连续性状为-6％至&#43; 6％，对于中度遗传性的二元性状为-6％至&#43; 10％，对于低遗传力的二元性状为-21％至&#43; 25％。加性遗传相关性大多低估了低遗传力的连续性状和二元性状之间，在连续性状和中度遗传性的二元性状之间低估或高估，并且在两个二元性状之间高估。使用性状信息对后续两代动物增加了ESS和减少参数估计的偏差，而不仅仅是增加来自一代的信息性动物的数量。将基因型信息考虑为模型中的固定效应导致高估QTL性状的多基因遗传性，但增加QTL性状的加性遗传相关性的准确性**。
+结论 联合使用表型和基因型信息对父母和后代将有助于确定感兴趣的性状之间的激动和拮抗遗传相关性，促进有效的多特征选择方案的设计。
+背景
+使用线性模型估计分类性状的遗传参数违反了混合线性模型方法的基本假设。已经开发了算法以将线性模型估计转换为潜在的责任尺度，以补偿由线性模型中的非线性性状的分析所导致的估计偏差，但是变换的遗传参数估计可能仍然是显着偏差的[例如， 2，3，4]]。阈值模型用于估计遗传参数的使用直接说明了分类性状的非线性性质，并且阈值模型估计应当比线性模型估计或变换的线性模型估计更可靠[例如[5,6,7]]。
+马尔科夫链蒙特卡罗（MCMC）方法如吉布斯取样（GS）使得实现多变量阈值模型或多变量混合线性阈值模型成为可能。动物模型充分利用可用的谱系信息，但遗传方差和协方差估计的准确性以及GS链的收敛可能在低性状流行率和每个个体的少量观察的情况下是一个问题[例如[5,8,9,10] ]。因此，在实际情况下，多变量动物阈值模型的实现并不总是直接的。连续性状的包含，即使用多元线性阈值模型，预期增加遗传参数估计的可靠性[例如，[2,11,12,13]]。
+在动物育种中，健康数据通常使用离散类别记录，而大多数性能特征是连续的。在马中，二进制编码已经用于对马on的放射学检查的研究，并且在年轻马的肢体中已经确定了放射学可见的改变的高流行性，主要在10-25％的范围内。 [14，15，16，17]]。这促进了寻求预防而不是治疗措施。由于马运动系统的强度和健壮性在马业的所有部门都非常重要，因此已经提出在Warmblood骑乘马的当前育种计划中包括放射健康性状[18,19]。这些分类性状的可靠估计的遗传参数提供了这样做的基础。对于分析的射线照相健康数据，根据Dempster和Lerner [20]和Vinson等人的转换因子的适用性[21]通过残差最大似然（REML）获得的线性动物模型估计已经通过模拟证明[22]。然而，由线性模型中的二元性状的分析引起的并且必须通过变换进行补偿的过估计或低估速率取决于数据结构。因此，需要重新评估变换过程，以分析关于可用信息的分布和种类的不同结构的数据。用于（共）方差分量估计的贝叶斯多变量动物阈值或混合线性阈值模型的实现可以提供有价值的替代方案。
+已经为不同物种的生产和健康性状鉴定了定量性状基因座（QTL），即包括影响个体关于特定性状的表型的基因的基因组区域[23]。增加对遗传决定放射性健康特性的知识[24,25]意味着在马中改进遗传评价和选择计划的进一步机会。有效利用标记辅助选择的条件已经被描述[26]，但是结合使用表型和基因型数据对分类性状的遗传参数估计的准确性的影响还没有被研究。成功实施包括表型和基因型信息的多变量动物阈值模型的要求是未知的。
+本研究的目的是使用线性阈值动物模型和Gibbs采样来表征分类，连续和分子遗传数据的遗传参数的多变量估计的性质。在Warmblood马的重要放射健康性状的上下文中研究了数据结构和分子遗传数据的质量对遗传参数估计的准确性的影响。
+统计分析 使用用于动物模型的多特征Gibbs采样器（MTGSAM）的阈值版本的Gibbs采样来评估遗传参数[35]，该软件支持连续和分类性状的任何组合的多变量遗传分析。随机和残差效应被假定为正态分布，平均先验被用于固定效应。用户可以为加性遗传和残差（共）方差矩阵指定起始值和先验。对于我们的分析，为所有加性遗传变异选择起始值1，对所有加性遗传协方差选择起始值0，并且所有性状之间的残余协方差固定为零。在单变量和多变量二进制阈值模型中，通过将阈值和残差方差分别固定为零和一的值来确保模型的可识别性[36]。用于限制固定在一个的对角线元素的残余协方差矩阵的有效抽样的方法仍在开发中。然而，本研究的残差协方差的固定由以前的实际数据分析的结果证明[14]，并拟合我们的模拟数据。因为残差协方差在实际数据中可以忽略，因此在数据模拟中设置为零，进一步信息的可能增益似乎与残差协方差的采样的额外成本不成比例。因此，在本研究中，残余协方差被固定为零。对于遗传协方差矩阵，使用具有最小形状参数（即υIW= 7）的逆Wishart分布的适当的先验，以确保后验适当性。在所有分析中考虑了性别和当代组的固定效应。在仅对数据集C1和C2的分析中考虑标记基因型的固定效应，区分所有遗传标记的不利等位基因纯合阴性的个体，至少一个遗传标记的不利等位基因杂合的个体和纯合的个体对于四种遗传标记中的至少一种的不利等位基因。
+在所有分析中，吉布斯链的总长度设定为205000，并且保存5000轮的老化后的所有样品。通过样品图的目视检查来检查Gibbs链的收缩以及对要丢弃的加性轮次的老化的需要。通过在后Gibbs分析程序POSTGIBBSF90 [37]中实施的时间序列方法，以10的稀释率计算所有（共）方差估计值的有效样本大小（ESS）和蒙特卡罗误差（MCE）。未稀释的链用于计算加性遗传（共）方差，遗传性和加性遗传相关性估计的后验均值。选择后验手段而不是模式作为点估计，因为在初步分析中，手段在大多数情况下比模式更接近于真实的，即模拟的值，这与先前的研究一致[8,38]。遗传性和加性遗传相关性估计的偏差计算为估计值（parest）与真实（即模拟）值（partrue）的平均相对偏差。
+bias =（par est-par true）/ par true">
+  <meta property="og:description" content="Stock KF, Distl O, Hoeschele I. Bayesian estimation of genetic parameters for multivariate threshold and continuous phenotypes and molecular genetic data in simulated horse populations using Gibbs sampling. BMC Genet. [Internet]. 2007;8:19. Available from: http://dx.doi.org/10.1186/1471-2156-8-19   使用Gibbs采样的模拟马群中多变量阈值和连续表型和分子遗传数据的遗传参数的贝叶斯估计
+抽象
+背景 成功实施包括表型和基因型信息的多变量动物阈值模型的要求尚不清楚。这里使用模拟马数据来调查遗传参数的遗传参数的多变量估计器的性质在分类，连续和分子遗传数据在重要的放射性健康性状的背景下使用混合线性阈值动物模型通过Gibbs采样。模拟谱系包括7代和40000动物每代。模拟了四个二元性状的一个连续性状和负债liabilities的加性遗传值，残差​​和固定效应，类似于Warmblood马中遇到的情况。对一种负债模拟了数量性状基因座（QTL）效应和遗传标记信息。研究了遗传标记与QTL之间的重组率和遗传标记多态性信息含量的不同情况。对于每种情况，从模拟群体中抽取10个重复，并且在每个重复中产生具有性状记录和遗传标志信息可用性的动物的数量和分布不同的6个不同数据集。 （Co）方差分量使用​​贝叶斯混合线性阈值动物模型通过Gibbs采样进行估计。残差方差固定为零，适当的先验用于遗传协方差矩阵。
+结果 有效样本大小（ESS）和遗传参数的偏差在数据集之间显着不同。遗传力估计的偏差对于连续性状为-6％至&#43; 6％，对于中度遗传性的二元性状为-6％至&#43; 10％，对于低遗传力的二元性状为-21％至&#43; 25％。加性遗传相关性大多低估了低遗传力的连续性状和二元性状之间，在连续性状和中度遗传性的二元性状之间低估或高估，并且在两个二元性状之间高估。使用性状信息对后续两代动物增加了ESS和减少参数估计的偏差，而不仅仅是增加来自一代的信息性动物的数量。将基因型信息考虑为模型中的固定效应导致高估QTL性状的多基因遗传性，但增加QTL性状的加性遗传相关性的准确性**。
+结论 联合使用表型和基因型信息对父母和后代将有助于确定感兴趣的性状之间的激动和拮抗遗传相关性，促进有效的多特征选择方案的设计。
+背景
+使用线性模型估计分类性状的遗传参数违反了混合线性模型方法的基本假设。已经开发了算法以将线性模型估计转换为潜在的责任尺度，以补偿由线性模型中的非线性性状的分析所导致的估计偏差，但是变换的遗传参数估计可能仍然是显着偏差的[例如， 2，3，4]]。阈值模型用于估计遗传参数的使用直接说明了分类性状的非线性性质，并且阈值模型估计应当比线性模型估计或变换的线性模型估计更可靠[例如[5,6,7]]。
+马尔科夫链蒙特卡罗（MCMC）方法如吉布斯取样（GS）使得实现多变量阈值模型或多变量混合线性阈值模型成为可能。动物模型充分利用可用的谱系信息，但遗传方差和协方差估计的准确性以及GS链的收敛可能在低性状流行率和每个个体的少量观察的情况下是一个问题[例如[5,8,9,10] ]。因此，在实际情况下，多变量动物阈值模型的实现并不总是直接的。连续性状的包含，即使用多元线性阈值模型，预期增加遗传参数估计的可靠性[例如，[2,11,12,13]]。
+在动物育种中，健康数据通常使用离散类别记录，而大多数性能特征是连续的。在马中，二进制编码已经用于对马on的放射学检查的研究，并且在年轻马的肢体中已经确定了放射学可见的改变的高流行性，主要在10-25％的范围内。 [14，15，16，17]]。这促进了寻求预防而不是治疗措施。由于马运动系统的强度和健壮性在马业的所有部门都非常重要，因此已经提出在Warmblood骑乘马的当前育种计划中包括放射健康性状[18,19]。这些分类性状的可靠估计的遗传参数提供了这样做的基础。对于分析的射线照相健康数据，根据Dempster和Lerner [20]和Vinson等人的转换因子的适用性[21]通过残差最大似然（REML）获得的线性动物模型估计已经通过模拟证明[22]。然而，由线性模型中的二元性状的分析引起的并且必须通过变换进行补偿的过估计或低估速率取决于数据结构。因此，需要重新评估变换过程，以分析关于可用信息的分布和种类的不同结构的数据。用于（共）方差分量估计的贝叶斯多变量动物阈值或混合线性阈值模型的实现可以提供有价值的替代方案。
+已经为不同物种的生产和健康性状鉴定了定量性状基因座（QTL），即包括影响个体关于特定性状的表型的基因的基因组区域[23]。增加对遗传决定放射性健康特性的知识[24,25]意味着在马中改进遗传评价和选择计划的进一步机会。有效利用标记辅助选择的条件已经被描述[26]，但是结合使用表型和基因型数据对分类性状的遗传参数估计的准确性的影响还没有被研究。成功实施包括表型和基因型信息的多变量动物阈值模型的要求是未知的。
+本研究的目的是使用线性阈值动物模型和Gibbs采样来表征分类，连续和分子遗传数据的遗传参数的多变量估计的性质。在Warmblood马的重要放射健康性状的上下文中研究了数据结构和分子遗传数据的质量对遗传参数估计的准确性的影响。
+统计分析 使用用于动物模型的多特征Gibbs采样器（MTGSAM）的阈值版本的Gibbs采样来评估遗传参数[35]，该软件支持连续和分类性状的任何组合的多变量遗传分析。随机和残差效应被假定为正态分布，平均先验被用于固定效应。用户可以为加性遗传和残差（共）方差矩阵指定起始值和先验。对于我们的分析，为所有加性遗传变异选择起始值1，对所有加性遗传协方差选择起始值0，并且所有性状之间的残余协方差固定为零。在单变量和多变量二进制阈值模型中，通过将阈值和残差方差分别固定为零和一的值来确保模型的可识别性[36]。用于限制固定在一个的对角线元素的残余协方差矩阵的有效抽样的方法仍在开发中。然而，本研究的残差协方差的固定由以前的实际数据分析的结果证明[14]，并拟合我们的模拟数据。因为残差协方差在实际数据中可以忽略，因此在数据模拟中设置为零，进一步信息的可能增益似乎与残差协方差的采样的额外成本不成比例。因此，在本研究中，残余协方差被固定为零。对于遗传协方差矩阵，使用具有最小形状参数（即υIW= 7）的逆Wishart分布的适当的先验，以确保后验适当性。在所有分析中考虑了性别和当代组的固定效应。在仅对数据集C1和C2的分析中考虑标记基因型的固定效应，区分所有遗传标记的不利等位基因纯合阴性的个体，至少一个遗传标记的不利等位基因杂合的个体和纯合的个体对于四种遗传标记中的至少一种的不利等位基因。
+在所有分析中，吉布斯链的总长度设定为205000，并且保存5000轮的老化后的所有样品。通过样品图的目视检查来检查Gibbs链的收缩以及对要丢弃的加性轮次的老化的需要。通过在后Gibbs分析程序POSTGIBBSF90 [37]中实施的时间序列方法，以10的稀释率计算所有（共）方差估计值的有效样本大小（ESS）和蒙特卡罗误差（MCE）。未稀释的链用于计算加性遗传（共）方差，遗传性和加性遗传相关性估计的后验均值。选择后验手段而不是模式作为点估计，因为在初步分析中，手段在大多数情况下比模式更接近于真实的，即模拟的值，这与先前的研究一致[8,38]。遗传性和加性遗传相关性估计的偏差计算为估计值（parest）与真实（即模拟）值（partrue）的平均相对偏差。
+bias =（par est-par true）/ par true">
+  <meta name="twitter:description" content="Stock KF, Distl O, Hoeschele I. Bayesian estimation of genetic parameters for multivariate threshold and continuous phenotypes and molecular genetic data in simulated horse populations using Gibbs …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/bayesian/%E5%A4%9A%E5%8F%98%E9%87%8F%E9%98%88%E5%80%BC-%E5%88%86%E5%AD%90%E9%81%97%E4%BC%A0%E6%95%B0%E6%8D%AE-gibbs/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/bayesian/%E5%A4%9A%E5%8F%98%E9%87%8F%E9%98%88%E5%80%BC-%E5%88%86%E5%AD%90%E9%81%97%E4%BC%A0%E6%95%B0%E6%8D%AE-gibbs/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>多变量阈值-分子遗传数据-Gibbs</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (71 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>多变量阈值-分子遗传数据-Gibbs</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (71 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<ol>
+<li>Stock KF, Distl O, Hoeschele I. Bayesian estimation of genetic parameters for multivariate threshold and continuous phenotypes and molecular genetic data in simulated horse populations using Gibbs sampling. BMC Genet. [Internet]. 2007;8:19. Available from: <a href="http://dx.doi.org/10.1186/1471-2156-8-19">http://dx.doi.org/10.1186/1471-2156-8-19</a></li>
+</ol>
+</blockquote>
+
+<p>使用Gibbs采样的模拟马群中多变量阈值和连续表型和分子遗传数据的遗传参数的贝叶斯估计</p>
+
+<p>抽象</p>
+
+<p>背景
+成功实施<strong>包括表型和基因型信息的多变量动物阈值模型</strong>的要求尚不清楚。这里使用模拟马数据来调查遗传参数的遗传参数的多变量估计器的性质在分类，连续和分子遗传数据在重要的放射性健康性状的背景下使用混合线性阈值动物模型通过Gibbs采样。模拟谱系包括7代和40000动物每代。模拟了四个二元性状的一个连续性状和负债liabilities的加性遗传值，残差​​和固定效应，类似于Warmblood马中遇到的情况。对一种负债模拟了数量性状基因座（QTL）效应和遗传标记信息。研究了遗传标记与QTL之间的重组率和遗传标记多态性信息含量的不同情况。对于每种情况，从模拟群体中抽取10个重复，并且在每个重复中产生具有性状记录和遗传标志信息可用性的动物的数量和分布不同的6个不同数据集。 <strong>（Co）方差分量使用​​贝叶斯混合线性阈值动物模型通过Gibbs采样进行估计</strong>。残差方差固定为零，适当的先验用于遗传协方差矩阵。</p>
+
+<p>结果
+有效样本大小（ESS）和遗传参数的偏差在数据集之间显着不同。遗传力估计的偏差对于连续性状为-6％至+ 6％，对于中度遗传性的二元性状为-6％至+ 10％，对于低遗传力的二元性状为-21％至+ 25％。<strong>加性遗传相关性大多低估了低遗传力的连续性状和二元性状之间，在连续性状和中度遗传性的二元性状之间低估或高估，并且在两个二元性状之间高估。使用性状信息对后续两代动物增加了ESS和减少参数估计的偏差，而不仅仅是增加来自一代的信息性动物的数量。</strong>将基因型信息考虑为模型中的固定效应导致高估QTL性状的多基因遗传性，但增加QTL性状的加性遗传相关性的准确性**。</p>
+
+<p>结论
+<strong>联合使用表型和基因型信息对父母和后代将有助于确定感兴趣的性状之间的激动和拮抗遗传相关性，促进有效的多特征选择方案的设计</strong>。</p>
+
+<hr />
+
+<p>背景</p>
+
+<p>使用线性模型估计分类性状的遗传参数违反了混合线性模型方法的基本假设。已经开发了算法以将线性模型估计转换为潜在的责任尺度，以补偿由线性模型中的非线性性状的分析所导致的估计偏差，但是变换的遗传参数估计可能仍然是显着偏差的[例如， 2，3，4]]。阈值模型用于估计遗传参数的使用直接说明了分类性状的非线性性质，并且<strong>阈值模型估计应当比线性模型估计或变换的线性模型估计更可靠</strong>[例如[5,6,7]]。</p>
+
+<p><strong>马尔科夫链蒙特卡罗（MCMC）方法如吉布斯取样（GS）使得实现多变量阈值模型或多变量混合线性阈值模型成为可能</strong>。动物模型充分利用可用的谱系信息，但遗传方差和协方差估计的准确性以及GS链的收敛可能在低性状流行率和每个个体的少量观察的情况下是一个问题[例如[5,8,9,10] ]。因此，在实际情况下，<strong>多变量动物阈值模型的实现并不总是直接的</strong>。连续性状的包含，即使用多元线性阈值模型，预期增加遗传参数估计的可靠性[例如，[2,11,12,13]]。</p>
+
+<p>在动物育种中，健康数据通常使用离散类别记录，而大多数性能特征是连续的。在马中，二进制编码已经用于对马on的放射学检查的研究，并且在年轻马的肢体中已经确定了放射学可见的改变的高流行性，主要在10-25％的范围内。 [14，15，16，17]]。这促进了寻求预防而不是治疗措施。由于马运动系统的强度和健壮性在马业的所有部门都非常重要，因此已经提出在Warmblood骑乘马的当前育种计划中包括放射健康性状[18,19]。这些分类性状的可靠估计的遗传参数提供了这样做的基础。对于分析的射线照相健康数据，根据Dempster和Lerner [20]和Vinson等人的转换因子的适用性[21]通过残差最大似然（REML）获得的线性动物模型估计已经通过模拟证明[22]。然而，由<strong>线性模型中的二元性状的分析引起的并且必须通过变换进行补偿的过估计或低估速率取决于数据结构。因此，需要重新评估变换过程，以分析关于可用信息的分布和种类的不同结构的数据。用于（共）方差分量估计的贝叶斯多变量动物阈值或混合线性阈值模型的实现可以提供有价值的替代方案</strong>。</p>
+
+<p>已经为不同物种的生产和健康性状鉴定了定量性状基因座（QTL），即包括影响个体关于特定性状的表型的基因的基因组区域[23]。<strong>增加对遗传决定放射性健康特性的知识[24,25]意味着在马中改进遗传评价和选择计划的进一步机会</strong>。<strong>有效利用标记辅助选择的条件已经被描述[26]，但是结合使用表型和基因型数据对分类性状的遗传参数估计的准确性的影响还没有被研究</strong>。<strong>成功实施包括表型和基因型信息的多变量动物阈值模型的要求是未知的</strong>。</p>
+
+<p>本研究的目的是使用线性阈值动物模型和Gibbs采样来表征分类，连续和分子遗传数据的遗传参数的多变量估计的性质。在Warmblood马的重要放射健康性状的上下文中研究了数据结构和分子遗传数据的质量对遗传参数估计的准确性的影响。</p>
+
+<p>统计分析
+使用用于动物模型的多特征Gibbs采样器（MTGSAM）的阈值版本的Gibbs采样来评估遗传参数[35]，该软件支持连续和分类性状的任何组合的多变量遗传分析。<strong>随机和残差效应被假定为正态分布，平均先验被用于固定效应</strong>。用户可以为加性遗传和残差（共）方差矩阵指定起始值和先验。<strong>对于我们的分析，为所有加性遗传变异选择起始值1，对所有加性遗传协方差选择起始值0，并且所有性状之间的残余协方差固定为零</strong>。在单变量和多变量二进制阈值模型中，通过将阈值和残差方差分别固定为零和一的值来确保模型的可识别性[36]。用于限制固定在一个的对角线元素的残余协方差矩阵的有效抽样的方法仍在开发中。然而，本研究的残差协方差的固定由以前的实际数据分析的结果证明[14]，并拟合我们的模拟数据。因为残差协方差在实际数据中可以忽略，因此在数据模拟中设置为零，进一步信息的可能增益似乎与残差协方差的采样的额外成本不成比例。因此，在本研究中，残余协方差被固定为零。对于遗传协方差矩阵，使用具有最小形状参数（即υIW= 7）的逆Wishart分布的适当的先验，以确保后验适当性。在所有分析中考虑了性别和当代组的固定效应。在仅对数据集C1和C2的分析中考虑标记基因型的固定效应，区分所有遗传标记的不利等位基因纯合阴性的个体，至少一个遗传标记的不利等位基因杂合的个体和纯合的个体对于四种遗传标记中的至少一种的不利等位基因。</p>
+
+<p>在所有分析中，<strong>吉布斯链的总长度设定为205000，并且保存5000轮的老化后的所有样品。通过样品图的目视检查来检查Gibbs链的收缩以及对要丢弃的加性轮次的老化的需要</strong>。通过在后Gibbs分析程序POSTGIBBSF90 [37]中实施的时间序列方法，以10的稀释率计算所有（共）方差估计值的有效样本大小（ESS）和蒙特卡罗误差（MCE）。未稀释的链用于计算加性遗传（共）方差，遗传性和加性遗传相关性估计的后验均值。选择后验手段而不是模式作为点估计，因为在初步分析中，手段在大多数情况下比模式更接近于真实的，即模拟的值，这与先前的研究一致[8,38]。遗传性和加性遗传相关性估计的偏差计算为估计值（parest）与真实（即模拟）值（partrue）的平均相对偏差。</p>
+
+<p>bias =（par est-par true）/ par true</p>
+
+<p>使用统计分析系统（SAS），版本9.1.3（SAS Institute，Cary，NC，USA，2005）的程序GLM，通过方差分析测试数据结构和遗传标记信息的质量对ESS和偏差的影响。 。有效样本量或偏倚被认为是因变量，遗传标记信息（r0p9，r1p9，r0p7）的数据集（A1，A2，B1，B2，C1，C2）和质量被认为是固定效应。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97%E6%95%88%E5%BA%94%E5%80%BC-%E4%BE%8B%E5%A6%82%E8%82%B2%E7%A7%8D%E5%80%BC-%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7-accuracy/" data-toggle="tooltip" data-placement="top" title="如何计算效应值（例如育种值）的准确性（accuracy）？">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%9A%8F%E7%AC%94/%E5%9F%BA%E5%9B%A0%E7%BB%84%E7%AD%BE%E5%90%8D--%E5%92%8C%E5%9F%BA%E5%9B%A0%E7%BB%84%E6%8C%87%E7%BA%B9%E7%B1%BB%E4%BC%BC/" data-toggle="tooltip" data-placement="top" title="基因组签名--和基因组指纹类似">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>isik2016-breeding-空间分析</title>
+  <meta property="og:title" content="isik2016-breeding-空间分析" />
+  <meta name="twitter:title" content="isik2016-breeding-空间分析" />
+  <meta name="description" content="Isik FT, Holland J, Maltecca C (2016) Genetic Data Analysis for Plant and Animal Breeding.
+ 第7章：空间分析 概要
+在本章中，我们描述了在事后分析中处理异常的异质性的空间分析，而不是在实验设计中。 这些空间分析可以通过更准确地模拟田间试验中误差效应的空间分布来改善遗传效应的估计。 当模型对于固定和随机效应不同时，选择最佳模型可能是复杂的。
+背景
+通常的最小二乘方差分析的假设是误差效应独立地分布在实验单元之间。这个假设在许多动物育种和遗传学研究中是合理的，其中动物本身是实验单位，并且能够移动，限制其环境中的空间趋势的影响。然而，这种假设可能不适用于植物或树木育种中的许多田间实验。如果可能，植物育种者选择均匀的田间位点进行实验，但由于土壤类型，生育力，持水能力等方面的差异，一些田地可能表现出高水平的异质性。随着实验条目的数量变得更大，将实验区域分成均匀实验单元的块的能力变得更加困难。当每个实验条目的单个图可以拟合到几个均质块中的每一个中时，随机完全块是优异的实验设计，但随着测试基因型的数量变大，这变得越来越困难。
+不完全的块设计，如格子（Cochran和Cox，1957）和alpha设计（Patterson和Williams，1976）被开发以处理实验单元在完整块内不均匀的情况。不完全块设计在实验设计中引入不平衡，其可以通过混合模型分析来很好地处理，所述混合模型分析同时估计随机完全块和不完全块随着（随机或固定）处理效果的影响。当不完全块内的实验单元是均匀的时，不完全块设计将是非常有效的，但是不能保证在实地实验中的情况。不完全的块设计不可能捕获在具有未知空间趋势的领域中的实验单元的异质性（尽管一些趋势在种植之前可能是明显的，但是许多其他趋势在种植之后将不会出现;另外的空间趋势将仅在种植后出现，管理和数据收集）。
+在本章中，我们考虑随机完全块和不完全块字段设计，并且还描述了在事后分析中而不是在实验设计中处理错误的异质性的空间分析。这些空间分析可以通过更准确地建模场中误差效应的空间分布来改进遗传效应的估计。
+空间分析对田间数据分析的潜在改进不应被视为放弃良好实验设计原则的理由。事实上，我们建议在可能的情况下使用不完全块设计进行大型实验，并将传统的不完全块设计分析与空间分析进行比较，也许将两个分析的方面结合起来，以优化地模拟田间实验中的非遗传变异，作为改善估计测试材料的育种值。
+建模空间效应 随机完全区块设计是通过拟合分析中块的主要效应来处理实验单元中的异质性的一种方法。不同复制中的图的平均程度不同，归因于块效应，并且由块效应解释的变化在模型本身中解释，因此与忽略块效应的分析相比，减少了残差误差方差。这也从误差估计中去除了r-1个自由度，这可以降低误差方差估计的精度，但是在大的实验中这种效应通常是可忽略的。不完全块设计进一步扩展了该概念，由于完全块中的不完全块的影响，以从残余物去除更多自由度，向实验设计引入不平衡和成对的不同水平的精度吸收额外的变化条目比较。行列α设计（John和Eccleston，1986）允许在行和列方向上进行阻塞，同时优化作为设计一部分的成对条目比较的精度的平衡。如果可能，我们建议使用这些不完全块设计用于大型实验，用于评估作物或树木的育种值或基因型值。
+在某些情况下，出于实际原因，不可能使用行 - 列设计。例如，北卡罗来纳州立大学的玉米育种计划在几个实验研究站进行研究，这些研究站管理各种作物和研究项目的实验。字段在作物和项目之间旋转多年，并且用于规划的字段的身份通常直到设计实验以允许种子被计数并包装用于种植之后才知道。因此，α晶格通常用于实验设计，知道不完全的块将可能不表示场的矩形子部分。然而，它们仍然可以捕获场梯度的一部分，因此是有用的。此外，通过使用趋势分析（其将正交多项式变量拟合到行和列位置; Brownie等人，1993; Brownie和Gumpertz，1997），样条函数（Gilmour et al。 ，1997b），或者甚至通过简单地将行和列作为随机效应来拟合，如果具有足够的自由度和行和列之间的条目的充分重叠，则使用重复的检查变体（如在增补设计的各种形式（Federer和Raghavarao，1975）以系统或随机的方式（Müller等人，2010）帮助提供关于空间趋势的信息，并允许它们以这种方式建模;或者，可以将误差效应建模为由于最后，这些方法不是排他的，可以将模型中的行和列因子作为固定或随机效应，以及残差之间的模型相关性进行拟合。不完全块设计，空间分析和模型选择的组合可以大大提高品种选择试验的准确性（Qiao et al。，2004，2000）。当使用这些方法时的关键挑战是避免过拟合模型并且在许多各种可能性中选择最佳模型。">
+  <meta property="og:description" content="Isik FT, Holland J, Maltecca C (2016) Genetic Data Analysis for Plant and Animal Breeding.
+ 第7章：空间分析 概要
+在本章中，我们描述了在事后分析中处理异常的异质性的空间分析，而不是在实验设计中。 这些空间分析可以通过更准确地模拟田间试验中误差效应的空间分布来改善遗传效应的估计。 当模型对于固定和随机效应不同时，选择最佳模型可能是复杂的。
+背景
+通常的最小二乘方差分析的假设是误差效应独立地分布在实验单元之间。这个假设在许多动物育种和遗传学研究中是合理的，其中动物本身是实验单位，并且能够移动，限制其环境中的空间趋势的影响。然而，这种假设可能不适用于植物或树木育种中的许多田间实验。如果可能，植物育种者选择均匀的田间位点进行实验，但由于土壤类型，生育力，持水能力等方面的差异，一些田地可能表现出高水平的异质性。随着实验条目的数量变得更大，将实验区域分成均匀实验单元的块的能力变得更加困难。当每个实验条目的单个图可以拟合到几个均质块中的每一个中时，随机完全块是优异的实验设计，但随着测试基因型的数量变大，这变得越来越困难。
+不完全的块设计，如格子（Cochran和Cox，1957）和alpha设计（Patterson和Williams，1976）被开发以处理实验单元在完整块内不均匀的情况。不完全块设计在实验设计中引入不平衡，其可以通过混合模型分析来很好地处理，所述混合模型分析同时估计随机完全块和不完全块随着（随机或固定）处理效果的影响。当不完全块内的实验单元是均匀的时，不完全块设计将是非常有效的，但是不能保证在实地实验中的情况。不完全的块设计不可能捕获在具有未知空间趋势的领域中的实验单元的异质性（尽管一些趋势在种植之前可能是明显的，但是许多其他趋势在种植之后将不会出现;另外的空间趋势将仅在种植后出现，管理和数据收集）。
+在本章中，我们考虑随机完全块和不完全块字段设计，并且还描述了在事后分析中而不是在实验设计中处理错误的异质性的空间分析。这些空间分析可以通过更准确地建模场中误差效应的空间分布来改进遗传效应的估计。
+空间分析对田间数据分析的潜在改进不应被视为放弃良好实验设计原则的理由。事实上，我们建议在可能的情况下使用不完全块设计进行大型实验，并将传统的不完全块设计分析与空间分析进行比较，也许将两个分析的方面结合起来，以优化地模拟田间实验中的非遗传变异，作为改善估计测试材料的育种值。
+建模空间效应 随机完全区块设计是通过拟合分析中块的主要效应来处理实验单元中的异质性的一种方法。不同复制中的图的平均程度不同，归因于块效应，并且由块效应解释的变化在模型本身中解释，因此与忽略块效应的分析相比，减少了残差误差方差。这也从误差估计中去除了r-1个自由度，这可以降低误差方差估计的精度，但是在大的实验中这种效应通常是可忽略的。不完全块设计进一步扩展了该概念，由于完全块中的不完全块的影响，以从残余物去除更多自由度，向实验设计引入不平衡和成对的不同水平的精度吸收额外的变化条目比较。行列α设计（John和Eccleston，1986）允许在行和列方向上进行阻塞，同时优化作为设计一部分的成对条目比较的精度的平衡。如果可能，我们建议使用这些不完全块设计用于大型实验，用于评估作物或树木的育种值或基因型值。
+在某些情况下，出于实际原因，不可能使用行 - 列设计。例如，北卡罗来纳州立大学的玉米育种计划在几个实验研究站进行研究，这些研究站管理各种作物和研究项目的实验。字段在作物和项目之间旋转多年，并且用于规划的字段的身份通常直到设计实验以允许种子被计数并包装用于种植之后才知道。因此，α晶格通常用于实验设计，知道不完全的块将可能不表示场的矩形子部分。然而，它们仍然可以捕获场梯度的一部分，因此是有用的。此外，通过使用趋势分析（其将正交多项式变量拟合到行和列位置; Brownie等人，1993; Brownie和Gumpertz，1997），样条函数（Gilmour et al。 ，1997b），或者甚至通过简单地将行和列作为随机效应来拟合，如果具有足够的自由度和行和列之间的条目的充分重叠，则使用重复的检查变体（如在增补设计的各种形式（Federer和Raghavarao，1975）以系统或随机的方式（Müller等人，2010）帮助提供关于空间趋势的信息，并允许它们以这种方式建模;或者，可以将误差效应建模为由于最后，这些方法不是排他的，可以将模型中的行和列因子作为固定或随机效应，以及残差之间的模型相关性进行拟合。不完全块设计，空间分析和模型选择的组合可以大大提高品种选择试验的准确性（Qiao et al。，2004，2000）。当使用这些方法时的关键挑战是避免过拟合模型并且在许多各种可能性中选择最佳模型。">
+  <meta name="twitter:description" content="Isik FT, Holland J, Maltecca C (2016) Genetic Data Analysis for Plant and Animal Breeding.
+ 第7章：空间分析 概要
+在本章中，我们描述了在事后分析中处理异常的异质性的空间分析，而不是在实验设计中。 这些空间分析可以通过更准确地模拟田间试验中误差效应的空间分布来改善遗传效应的估计。 当模型对于固定和随机效应不 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/isik2016-breeding-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/isik2016-breeding-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>isik2016-breeding-空间分析</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (37 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>isik2016-breeding-空间分析</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (37 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Isik FT, Holland J, Maltecca C (2016) Genetic Data Analysis for Plant and Animal Breeding.</p>
+</blockquote>
+
+<h2 id="第7章-空间分析">第7章：空间分析</h2>
+
+<p>概要</p>
+
+<p>在本章中，我们描述了在事后分析中处理异常的异质性的空间分析，而不是在实验设计中。 这些空间分析可以通过更准确地模拟田间试验中误差效应的空间分布来改善遗传效应的估计。 <strong>当模型对于固定和随机效应不同时，选择最佳模型可能是复杂的</strong>。</p>
+
+<p>背景</p>
+
+<p>通常的最小二乘方差分析的假设是误差效应独立地分布在实验单元之间。这个假设在许多动物育种和遗传学研究中是合理的，其中动物本身是实验单位，并且能够移动，限制其环境中的空间趋势的影响。然而，这种假设可能不适用于植物或树木育种中的许多田间实验。<strong>如果可能，植物育种者选择均匀的田间位点进行实验，但由于土壤类型，生育力，持水能力等方面的差异，一些田地可能表现出高水平的异质性。随着实验条目的数量变得更大，将实验区域分成均匀实验单元的块的能力变得更加困难。当每个实验条目的单个图可以拟合到几个均质块中的每一个中时，随机完全块是优异的实验设计，但随着测试基因型的数量变大，这变得越来越困难</strong>。</p>
+
+<p><strong>不完全的块设计</strong>，如格子（Cochran和Cox，1957）和alpha设计（Patterson和Williams，1976）被开发以处理实验单元在完整块内不均匀的情况。不完全块设计在实验设计中引入不平衡，其可以通过混合模型分析来很好地处理，所述混合模型分析同时估计随机完全块和不完全块随着（随机或固定）处理效果的影响。当不完全块内的实验单元是均匀的时，不完全块设计将是非常有效的，但是不能保证在实地实验中的情况。不完全的块设计不可能捕获在具有未知空间趋势的领域中的实验单元的异质性（尽管一些趋势在种植之前可能是明显的，但是许多其他趋势在种植之后将不会出现;另外的空间趋势将仅在种植后出现，管理和数据收集）。</p>
+
+<p>在本章中，我们考虑随机完全块和不完全块字段设计，并且还描述了在事后分析中而不是在实验设计中处理错误的异质性的空间分析。这些空间分析可以通过更准确地建模场中误差效应的空间分布来改进遗传效应的估计。</p>
+
+<p><strong>空间分析对田间数据分析的潜在改进不应被视为放弃良好实验设计原则的理由。事实上，我们建议在可能的情况下使用不完全块设计进行大型实验，并将传统的不完全块设计分析与空间分析进行比较，也许将两个分析的方面结合起来，以优化地模拟田间实验中的非遗传变异，作为改善估计测试材料的育种值</strong>。</p>
+
+<h3 id="建模空间效应">建模空间效应</h3>
+
+<p>随机完全区块设计是通过拟合分析中块的主要效应来处理实验单元中的异质性的一种方法。不同复制中的图的平均程度不同，归因于块效应，并且由块效应解释的变化在模型本身中解释，因此与忽略块效应的分析相比，减少了残差误差方差。这也从误差估计中去除了r-1个自由度，这可以降低误差方差估计的精度，但是在大的实验中这种效应通常是可忽略的。不完全块设计进一步扩展了该概念，由于完全块中的不完全块的影响，以从残余物去除更多自由度，向实验设计引入不平衡和成对的不同水平的精度吸收额外的变化条目比较。行列α设计（John和Eccleston，1986）允许在行和列方向上进行阻塞，同时优化作为设计一部分的成对条目比较的精度的平衡。如果可能，我们建议使用这些不完全块设计用于大型实验，用于评估作物或树木的育种值或基因型值。</p>
+
+<p>在某些情况下，出于实际原因，不可能使用行 - 列设计。例如，北卡罗来纳州立大学的玉米育种计划在几个实验研究站进行研究，这些研究站管理各种作物和研究项目的实验。字段在作物和项目之间旋转多年，并且用于规划的字段的身份通常直到设计实验以允许种子被计数并包装用于种植之后才知道。因此，α晶格通常用于实验设计，知道不完全的块将可能不表示场的矩形子部分。然而，它们仍然可以捕获场梯度的一部分，因此是有用的。此外，<strong>通过使用趋势分析（其将正交多项式变量拟合到行和列位置; Brownie等人，1993; Brownie和Gumpertz，1997），样条函数（Gilmour et al。 ，1997b），或者甚至通过简单地将行和列作为随机效应来拟合，如果具有足够的自由度和行和列之间的条目的充分重叠，则使用重复的检查变体（如在增补设计的各种形式（Federer和Raghavarao，1975）以系统或随机的方式（Müller等人，2010）帮助提供关于空间趋势的信息</strong>，并允许它们以这种方式建模;或者，可以将误差效应建模为由于最后，<strong>这些方法不是排他的，可以将模型中的行和列因子作为固定或随机效应，以及残差之间的模型相关性进行拟合</strong>。不完全块设计，空间分析和模型选择的组合可以大大提高品种选择试验的准确性（Qiao et al。，2004，2000）。<strong>当使用这些方法时的关键挑战是避免过拟合模型并且在许多各种可能性中选择最佳模型</strong>。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%9A%8F%E7%AC%94/java%E7%9A%84%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" data-toggle="tooltip" data-placement="top" title="java的系统环境配置">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/instrumental-helpful%E6%9C%89%E5%B8%AE%E5%8A%A9%E7%9A%84/" data-toggle="tooltip" data-placement="top" title="instrumental-helpful有帮助的">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

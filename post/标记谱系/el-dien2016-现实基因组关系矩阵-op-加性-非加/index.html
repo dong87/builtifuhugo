@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>El-Dien2016-现实基因组关系矩阵-OP-加性-非加</title>
+  <meta property="og:title" content="El-Dien2016-现实基因组关系矩阵-OP-加性-非加" />
+  <meta name="twitter:title" content="El-Dien2016-现实基因组关系矩阵-OP-加性-非加" />
+  <meta name="description" content="El-Dien OG, et al. (2016) Implementation of the Realized Genomic Relationship Matrix to Open-Pollinated White Spruce Family Testing for Disentangling Additive from Non-additive Genetic Effects. G3&amp; Genes|Genomes|Genetics 6(April):743–753.
+ 抽象
+开放授粉（OP）家族测试结合了最简单的已知后代评估和定量遗传学分析，因为假定候选者的后代代表独立的半同胞家族。遗传参数估计的准确性常常被质疑，因为OP家族中的“半同胞”的假设可能经常被违反。我们比较了基于谱系与基于标记的遗传模型，通过分析2196个白色云杉[ 云杉glauca（Moench）Voss] OP家族的22年高度和30年木材密度，由加拿大魁北克的一个地点生长的1694个个体。假设半同胞，基于谱系的模型仅限于估计加性遗传变异，而这些变异又被严重高估，因为它们由非常小的优势和主要的加和性上位性遗传变异混淆。相比之下，实施的基因组成对实现的关系模型允许添加剂从所有非添加因子通过遗传方差分解解缠结。基于标记的模型产生更现实的狭义遗传估计，并且第一次允许从OP测试估计优势和上位性遗传变异。此外，与家谱模型相比，基因组模型显示更好的预测精度，并且能够预测来自未测试家族的新个体的个体育种值，这是不可能使用基于谱系的模型。显然，使用基于标记的关系方法在估计复杂性状的定量遗传参数中是有效的，即使在简单和浅家谱结构下。
+开放授粉（OP）（也称为风花授粉）家族测试是迄今为止最简单和最经济的筛选，评估和排序大量候选亲本树的方法。因此，OP测试将最简单已知的实验设计在谱系测试中结合，因为候选树进入测试作为母亲父母，并且它们的后代被假定为代表独立的半同胞家族。OP测试已经广泛应用于世界各地的几种树种，例如辐射松（Pinus radiata D.Don）（Burdon和Shelbourne 1971），内部云杉[ Picea glauca（Moench）Voss× P. engelmannii Parry ex Engelm。] （Kiss和Yanchuk 1991），道格拉斯冷杉（Pseudotsuga menziesii（Mirb。）Franco]（El-Kassaby和Sziklai 1982 ; Johnson 1997），西部落叶松（Larix occidentalis Nutt。）（Ratcliffe 等人 2014） （P.sylvestris L.）（Korecky 等人 2013），并且它被认为是全谱测试的前奏（Jayawickrama和Carson 2000）。
+从家谱学角度来看，OP测试（即部分谱系）位于“无谱系”来源测试（Callaham 1964）和“全谱系”基于交配设计的后代测试之间，包括所有更高水平的相关性和连接性家庭（Namkoong 等人， 1988）。因此，所有基于OP测试的估计遗传参数（例如，加性遗传方差，遗传力，育种值等）的准确度优于前者，但与后者相比有些受限（但也参见Hallingback和Jansson 2013） 。事实上，由于“半同胞”的假设几乎不能满足（Namkoong 1966 ; Squillace 1974 ; Askew和El-Kassaby 1994），因此对OP家族测试衍生的遗传参数的准确性经常提出疑问。">
+  <meta property="og:description" content="El-Dien OG, et al. (2016) Implementation of the Realized Genomic Relationship Matrix to Open-Pollinated White Spruce Family Testing for Disentangling Additive from Non-additive Genetic Effects. G3&amp; Genes|Genomes|Genetics 6(April):743–753.
+ 抽象
+开放授粉（OP）家族测试结合了最简单的已知后代评估和定量遗传学分析，因为假定候选者的后代代表独立的半同胞家族。遗传参数估计的准确性常常被质疑，因为OP家族中的“半同胞”的假设可能经常被违反。我们比较了基于谱系与基于标记的遗传模型，通过分析2196个白色云杉[ 云杉glauca（Moench）Voss] OP家族的22年高度和30年木材密度，由加拿大魁北克的一个地点生长的1694个个体。假设半同胞，基于谱系的模型仅限于估计加性遗传变异，而这些变异又被严重高估，因为它们由非常小的优势和主要的加和性上位性遗传变异混淆。相比之下，实施的基因组成对实现的关系模型允许添加剂从所有非添加因子通过遗传方差分解解缠结。基于标记的模型产生更现实的狭义遗传估计，并且第一次允许从OP测试估计优势和上位性遗传变异。此外，与家谱模型相比，基因组模型显示更好的预测精度，并且能够预测来自未测试家族的新个体的个体育种值，这是不可能使用基于谱系的模型。显然，使用基于标记的关系方法在估计复杂性状的定量遗传参数中是有效的，即使在简单和浅家谱结构下。
+开放授粉（OP）（也称为风花授粉）家族测试是迄今为止最简单和最经济的筛选，评估和排序大量候选亲本树的方法。因此，OP测试将最简单已知的实验设计在谱系测试中结合，因为候选树进入测试作为母亲父母，并且它们的后代被假定为代表独立的半同胞家族。OP测试已经广泛应用于世界各地的几种树种，例如辐射松（Pinus radiata D.Don）（Burdon和Shelbourne 1971），内部云杉[ Picea glauca（Moench）Voss× P. engelmannii Parry ex Engelm。] （Kiss和Yanchuk 1991），道格拉斯冷杉（Pseudotsuga menziesii（Mirb。）Franco]（El-Kassaby和Sziklai 1982 ; Johnson 1997），西部落叶松（Larix occidentalis Nutt。）（Ratcliffe 等人 2014） （P.sylvestris L.）（Korecky 等人 2013），并且它被认为是全谱测试的前奏（Jayawickrama和Carson 2000）。
+从家谱学角度来看，OP测试（即部分谱系）位于“无谱系”来源测试（Callaham 1964）和“全谱系”基于交配设计的后代测试之间，包括所有更高水平的相关性和连接性家庭（Namkoong 等人， 1988）。因此，所有基于OP测试的估计遗传参数（例如，加性遗传方差，遗传力，育种值等）的准确度优于前者，但与后者相比有些受限（但也参见Hallingback和Jansson 2013） 。事实上，由于“半同胞”的假设几乎不能满足（Namkoong 1966 ; Squillace 1974 ; Askew和El-Kassaby 1994），因此对OP家族测试衍生的遗传参数的准确性经常提出疑问。">
+  <meta name="twitter:description" content="El-Dien OG, et al. (2016) Implementation of the Realized Genomic Relationship Matrix to Open-Pollinated White Spruce Family Testing for Disentangling Additive from Non-additive Genetic Effects. …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/el-dien2016-%E7%8E%B0%E5%AE%9E%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%85%B3%E7%B3%BB%E7%9F%A9%E9%98%B5-op-%E5%8A%A0%E6%80%A7-%E9%9D%9E%E5%8A%A0/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/el-dien2016-%E7%8E%B0%E5%AE%9E%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%85%B3%E7%B3%BB%E7%9F%A9%E9%98%B5-op-%E5%8A%A0%E6%80%A7-%E9%9D%9E%E5%8A%A0/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>El-Dien2016-现实基因组关系矩阵-OP-加性-非加</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (289 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>El-Dien2016-现实基因组关系矩阵-OP-加性-非加</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (289 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>El-Dien OG, et al. (2016) Implementation of the Realized Genomic Relationship Matrix to Open-Pollinated White Spruce Family Testing for Disentangling Additive from Non-additive Genetic Effects. G3&amp; Genes|Genomes|Genetics 6(April):743–753.</p>
+</blockquote>
+
+<p>抽象</p>
+
+<p>开放授粉（OP）家族测试结合了最简单的已知后代评估和定量遗传学分析，因为假定候选者的后代代表独立的半同胞家族。<strong>遗传参数估计的准确性常常被质疑，因为OP家族中的“半同胞”的假设可能经常被违反</strong>。我们比较了基于谱系与基于标记的遗传模型，通过分析2196个白色云杉[ 云杉glauca（Moench）Voss] OP家族的22年高度和30年木材密度，由加拿大魁北克的一个地点生长的1694个个体。<strong>假设半同胞，基于谱系的模型仅限于估计加性遗传变异，而这些变异又被严重高估，因为它们由非常小的优势和主要的加和性上位性遗传变异混淆</strong>。相比之下，实施的基因组成对实现的关系模型允许添加剂从所有非添加因子通过遗传方差分解解缠结。基于标记的模型产生更现实的狭义遗传估计，并且第一次允许从OP测试估计优势和上位性遗传变异。此外，<strong>与家谱模型相比，基因组模型显示更好的预测精度，并且能够预测来自未测试家族的新个体的个体育种值，这是不可能使用基于谱系的模型</strong>。显然，使用基于标记的关系方法在估计复杂性状的定量遗传参数中是有效的，即使在简单和浅家谱结构下。</p>
+
+<hr />
+
+<p><strong>开放授粉（OP）（也称为风花授粉）家族测试是迄今为止最简单和最经济的筛选，评估和排序大量候选亲本树的方法</strong>。因此，OP测试将最简单已知的实验设计在谱系测试中结合，因为候选树进入测试作为母亲父母，并且它们的后代被假定为代表独立的半同胞家族。OP测试已经广泛应用于世界各地的几种树种，例如辐射松（Pinus radiata D.Don）（Burdon和Shelbourne 1971），内部云杉[ Picea glauca（Moench）Voss× P. engelmannii Parry ex Engelm。] （Kiss和Yanchuk 1991），道格拉斯冷杉（Pseudotsuga menziesii（Mirb。）Franco]（El-Kassaby和Sziklai 1982 ; Johnson 1997），西部落叶松（Larix occidentalis Nutt。）（Ratcliffe 等人 2014） （P.sylvestris L.）（Korecky 等人 2013），并且它被认为是全谱测试的前奏（Jayawickrama和Carson 2000）。</p>
+
+<p>从家谱学角度来看，<strong>OP测试（即部分谱系）位于“无谱系”来源测试（Callaham 1964）和“全谱系”基于交配设计的后代测试之间，包括所有更高水平的相关性和连接性家庭（Namkoong 等人， 1988）</strong>。因此，所有基于OP测试的估计遗传参数（例如，加性遗传方差，遗传力，育种值等）的准确度优于前者，但与后者相比有些受限（但也参见Hallingback和Jansson 2013） 。事实上，由于“半同胞”的假设几乎不能满足（Namkoong 1966 ; Squillace 1974 ; Askew和El-Kassaby 1994），因此对OP家族测试衍生的遗传参数的准确性经常提出疑问。</p>
+
+<p>基于谱系的个体遗传关系[基于所谓的A矩阵：平均分子关系矩阵（Wright 1922）]经常用于通过使用限制最大似然估计遗传方差分量（Gilmour 等人， 1995）并预测在采用最佳线性无偏预测算法（每个个体的育种值恒基兆业1975年，1976年，1984年）。然而，虽然有效，这种方法与其传统的基于系谱的方法不适应孟德尔抽样项，也就是说，这种方法忽略半家族或全同胞家庭的家庭成员之间围绕家庭的平均相关性的差异[所有同胞不一样（Hill和Weir 2011）]。此外，使用A矩阵，特别是在大多数林木育种和测试群体中存在的众所周知的“浅”谱系的情况下，不允许检测隐藏的coancestry和近亲繁殖。因此，<strong>个体的估计育种值通过加性遗传方差的高估而膨胀</strong>。</p>
+
+<p>由于下一代测序技术的可负担性，可扩展性和高通量性质，成千上万的单核苷酸多态性（SNPs）已经可用于模型和非模型物种（Baird 等人 2008 ; Elshire 等人 2011 ; Peterson 等人人。 2012年，波兰等， 2012 ; 张庭等人。 2012 ; 陈等人 2013）。这种技术进步使得有可能以高水平的准确性确定个体之间共享的等位基因的实际分数，并且可以容易地确定个体的成对实现的关系（包括潜在近交）的估计（Santure 等人 2010）。因此，基因组指纹数据允许准确估计任何一组个体之间的实现的关系，而不考虑它们的谱系，以构建可用于替代A矩阵的实现的基因组关系矩阵（G矩阵）（VanRaden 2008） 。这种进步代表了清楚的定量遗传学分水岭，因为用于估计遗传参数的对已知谱系关系的完全依赖性（即，A矩阵）可以在使用G矩阵的所谓的“无血统模型”中避开。如前面的情况下已经证明的，摹 -矩阵可以提供相对准确的方差分量和育种值估计，而不需要复杂的交配设计（托马斯等人。 2002 ; Frentiu 等。 2008年，海耶斯等人 2009年 ; EL- Kassaby 等人 2012 ; Gay 等人 2013 ; Porth 等人 2013 ; Zapata-Valenzuela 等人 2013 ; Klápště 等人 2014 ; Muñoz 等人 2014）。</p>
+
+<p>在OP家族测试中使用G矩阵有几个含义，并且预期：（1）克服平均分子关系矩阵（A矩阵）的缺点，因为基因组数据将揭开任何不可检测的隐藏相关性，例如全同胞，自我同胞和自我半身，它们使估计的加性遗传方差膨胀（Namkoong 1966 ; Squillace 1974 ; Askew和El-Kassaby 1994）（图1），（2）在亲属中提供更准确的遗传协方差，孟德尔采样术语（Visscher的等 2006年），和（3）在捕捉数量性状位点（QTL）（本等位基因频率偏析提供更高的灵活性与缺席QTL）（利珀特等人 2013）。此外，我们假设也为OP家族使用基因组标记将创建有效地分解遗传方差分量的机会，从而通过定义与特定方差分量相关的实现的基因组关系矩阵分离添加和非添加遗传成分，远远不可能的专长为OP家庭测试。</p>
+
+<p>在214个白云杉OP家族（右图）和（左图）成员之间的基因组成对关系系数的代表性直方图显示关于聚集在预期0.25附近的关系，与作为不完全半同胞家族的指示的0.25的偏差（右图）和聚集在0.00左右，表示无关系（左图）。
+在这里，我们使用在一个位点[Mastigouche Arboretum，Quebec，Canada（Lat.46°38&rsquo;N，Long.73°13&rsquo;W，Elev.230m）]上生长的214个白色云杉OP家族]在随机完全区组设计中，复制在六个块（复制）上，每个OP族由六个块的每一个内的五个树行图表示[完整的细节，参见Beaulieu 等人 2014）]。我们比较了从平均分子关系矩阵（预期关系）和实现的基因组关系矩阵（观察到的关系）生成的遗传方差估计，以证明基因组标记在将遗传方差分量分成加性和非加和效应。据我们所知，这项研究提供了这种分析方法在OP家族的第一次尝试。</p>
+
+<h2 id="讨论">讨论</h2>
+
+<p>传统上，基于谱系的平均分子关系矩阵（A矩阵）用于估计林木后代测试群体的遗传方差分量。估计的遗传方差分量（例如，加性和优势遗传变异等）通常是交配设计依赖的，并且配对方案确定可以获得哪个组分。在大多数情况下，这种方法不能解释家庭内遗传从家庭内环境影响。这在OP家族筛选中甚至更成问题，因为分离添加剂与非添加遗传变异性受限于浅家谱和被测试家族之间缺乏连通性; 此外，如表1所示，估计的加性遗传方差由于半同胞假设几乎不能满足而膨胀（Namkoong 1966 ; Squillace 1974 ; Askew和El-Kassaby 1994）。事实上，所研究的214个OP家族的估计的基因组成对关系显示偏离预期的半同胞的0.25相关性系数，证实了加性遗传方差高估的原因，而不相关家族的成员之间的关系聚集在预期的0.0 图1）。密集的基因组标记物组的可用性使得可能对大量的SNP进行基因分型，并且在这些个体中获得实现的基因组关系矩阵（G-矩阵）。反过来，G矩阵可以用作A矩阵的替代，以估计更准确和精确的遗传方差分量，因为G矩阵表示实现的谱系，以及具有利用孟德尔抽样/分离的能力家庭（VanRaden 2008 ; Hayes 等人 2009）。值得注意的是，最近报道的一些动物育种计划的增加主要是由于利用孟德尔采样项（Avendano 等人 2004）。</p>
+
+<p>最近已经探索了G矩阵在从森林树木实验种群（例如，全同胞家族）产生改进的遗传方差参数估计中的效用（Zapata-Valenzuela 等人 2013 ; Klápště 等人 2014 ; Muñoz et al。2014）。根据我们的知识，本研究代表在OP家族测试中实施G-矩阵的第一次尝试，因此不仅克服了与未完成的半同基因假设相关的常见偏差，而且将添加剂与非添加遗传方差分量分离。众所周知，将添加剂与非加性（优势和上位变异）遗传组分分开需要具有大量互连的全同胞家族的精细的交配设计，包括复制的克隆材料（Foster和Shaw 1988 ; Bradshaw和Foster 1992 ; Costa 等人 2009）。我们的研究完成了方差分解的混合模型方法，提供了添加剂，优势和上位性遗传变异的实现估计，而不需要交配设计产生互连的全同胞家族或营养繁殖用于生产复制的克隆材料。</p>
+
+<p>有趣的是，要注意，这三个推定加性遗传变异来实现基因组关系基于矩阵的分析（GBLUP-A，GBLUP-AD和GBLUP-ADE）比平均分子关系矩阵（ABLUP）的低级（表1），已经报道的小鼠观察（Lee 等人 2010），火炬松（Muñoz 等人 2014）和Brown Swiss牛群（Loberg 等人 2015）。与ABLUP相比，GBLUP-A的性能改进表明，前一种模型充分利用了：（1）家庭内变化（即孟德尔抽样项），（2）辨别全同胞， sibs和自我半数存在于研究的214个OP家族中;（3）能够估计家族关系（即使它们与图1和图4中所示的一样小），如果存在，鉴定谱系误差的能力，如如图1所示（即，一些个体在相同的OP家族中具有0.0的关系系数）。观察到的两个模型（ABLUP 与 GBLUP-A）之间的加性遗传方差的减少导致残余误差项的伴随增加，因此显着降低了高度的狭义遗传力估计（0.25 对 0.16）密度（0.61 对 0.30）以及基于改进的AIC值的模型拟合的改善（表1）。此外，与ABLUP（图2 ; ABLUP 与 GBLUP-A）相比，GBLUP-A对其估计的育种值（EBV）产生更高的精确度，如EBV的更小的SE 所示。</p>
+
+<p>分别对于高度（左）和木材密度（右）的前50个执行白云杉个体的排名图，比较ABLUP 与 GBLUP-ADE评估的结果（注意，从顶部下降的ABLUP中高度排名的个体的数量50在GBLUP-ADE中）。
+值得注意的是，本研究是基于从一个位点收集的数据，因此存在估计的遗传参数可能由于基因型×特定于该特定位点或年份的环境混杂效应而向上偏移的机会。然而，对于在不列颠哥伦比亚省的三个地点的复制试验中种植的一组25个OP家族，对相同物种和属性的相似分析的结果与在此报道的具有估计添加剂和优势×位点（环境） （O.Gamal El-Dien，未发表的数据）。</p>
+
+<p>当使用Su 等人提出的替代基因型方法估计优势遗传方差时，观察到的遗传方差分解的总趋势持续存在。（2012）并由Vitezica 等人讨论。（2013） ; 然而，木材密度的优势遗传方差略有增加（支持信息，表S1）。</p>
+
+<p>此外，估计优势遗传方差只有当全同胞家庭可用时才可行（Zapata-Valenzuela 等人 2013 ; Klápště 等人 2014 ; Muñoz 等人 2014）。当pedigree-和基于标记的模型进行交配设计容纳全同胞家系（相比，这种情况是很容易解决的穆尼奥斯等人 2014年）。然而，GBLUP-AD模型在OP家族测试中的效用仍然值得探索以辨别优势遗传方差（如果存在的话）以及将遗传方差与混杂环境效应分离。应该注意的是，GBLUP-AD的拟合优度统计（AIC）清楚地表明，添加优势遗传方差导致模型过拟合，这是预期的，因为极小和不显着的优势遗传方差（1.1和，高度和木材密度分别为2.8％）。</p>
+
+<p>包括加性，优势和上位方差（GBLUP-ADE）的模型提供了方差补充的更好分割，因为加性×附加上位方差变得非常显着，并且占高度和木材的总方差的11和52％密度（表1和表S1）。当我们从GBLUP-ADE模型中去除优势遗传方差时，修正模型（GBLUP-AE）产生更好的高度模型拟合（17,466.9 对 14,472.9）和木材密度（-9,732.6 对 -9,726.6），证实支配方差可忽略不计（表1）。有趣的是，两种模型（GBLUP-ADE和GBLUP-AE）产生相似的方差分量分配和遗传估计（表1，图S1，图S2和图S3）。添加剂×加上位方差的添加剂方差的类似幅度本身，火炬松也有人（穆尼奥斯等人 2014年），这种情况符合理论预期，其中加性×加上位变化通常是由两种吸收加性和残差方差（Lynch和Walsh 1998 ; Jannink 2007 ; Mackay 2014）。GBLUP-ADE和/或GBLUP-AE模型在鉴定和分离加性遗传方差中的加性×加性上位性的能力在于所测试家族的遗传背景，用于提供一系列选项以证明所有已建立的等位基因在影响研究的性状的各种基因座。观察到的高度和木材密度以及从测试模型产生的AIC值的上位添加剂×加性遗传方差的量值需要一些反射。观察到的AIC值支持GBLUP-A和GBLUP-AE分别是高度和木材密度的最佳模型（表1）。然而，在添加剂添加剂的添加量为添加剂方差的3倍的木材密度下，GBLUP-AE和GBLUP-A模型的预测精度几乎相似（表1和表2）。这表明加性×加法和加法关系矩阵在相同方差上处于“拔河”状态。事实上，我们估计这两个关系矩阵之间的相关性，并且接近完全相关（r = 0.988），证实了我们的观点，并使我们相信，虽然我们观察到极大的上位性加性×加性遗传方差，但是对预测GBLUP-A和GBLUP-AE之间的BV是相似的（图S4）。</p>
+
+<p>遗传上位的主题是有争议的，因为所有的方差分量，包括上位性，依赖于研究人群中的等位基因频率。因此，上位可以具有在不同的场景的暗指和独特的效果（希尔等人 2008 ; 麦凯2014年）。由于上位性的统计学和功能定义之间的若干差异，上位在数量性状的遗传结构上的作用仍然没有明确确定。统计方法考虑上位性方差与加性遗传方差正交，并假定通过在模型中实现独立项来清楚确定（分离）两个组分。此外，上位效应是短暂的，并通过连锁不平衡（LD）（破消失希尔等人 2008 ; 克罗2008，2010）。功能性方法假定等位基因替代效应取决于遗传背景。Hill et al。（2008）基于他们的经验证据对一个广泛的物种的详尽审查。这包括狭义和广义遗传力估计之间的比较，结论是复杂性状主要由加性遗传方差控制，因为大多数研究案例支持大多数遗传方差似乎是加性的概念（Crow 2010）。然而，在本研究中，如果我们仅利用来自GBLUP-A或GBLUP-AD模型的遗传力估计（没有应用GBLUP-ADE和/或GBLUP-AE模型），则遗传方差的一部分可归因于加性×加成相互作用将从计算中排除，因此我们的结论将主要基于充分的加性遗传方差。显然，使用基于标记的关系方法能够使添加剂从非添加遗传组分解开，同时通过去除可能的混杂效应有效地解决适当的环境变化。这种方法为个体提供了更现实的育种价值估计。</p>
+
+<p>Habier et al。（2007年，2010，2013）表明，实现了基因组的关系做个人之间不仅采集相关性，而且SNP和QTL，从同一配子等位基因自由组合的偏差之间的LD如果位点链接（共分离或古典联动），以及加性遗传关系。Habier et al。（2013）证明这些类型的信息共同对EBV的准确性有不同的影响。因此，可以安全地说明，实现的基因组关系比对孟德尔采样项的直接解释更多，因此导致遗传方差分量和BV估计的优越分解。</p>
+
+<p>当使用ABLUP来估计半或全同胞家族的遗传方差分量时，上述因素几乎不被考虑，除了通过共同祖先捕获的那些。如上所述，OP /半同胞结构不能估计优势和上位性遗传变异。在Muñoz 等人的研究中清楚地证明了这种情况。（2014），因为更准确的育种价值估计和方差分量的有效划分从其单一位点，全同胞和克隆复制火炬松实验获得。另一方面，本研究在使用更具挑战性的结构（OP家族）的定量遗传分析中证明了实现的基因组关系的力量。作为概念验证，我们基于常规ABLUP 与 GBLUP-ADE / GBLUP-AE（参见图4的交互图中的细节）比较了前50个执行个体之间的排序顺序。从ABLUP到GBLUP-ADE / GBLUP-AE的前50个个体中只有23个和33个分别保持高度和木材密度，总体上，个体在50个树木中的排名从ABLUP大大改变为GBLUP-AE。有趣的是，对于10个最佳表现树，只有2和4个人坚持高度和木密度，分别（图4）。个体的真正EBV通常由具有充分连通性的深谱系的实验确定; 然而，当ABLUP方法用于以浅和不足的连通性为特征的林业后代测试实验时，所获得的育种值预期大大偏离其真实值，因为无错协方差矩阵的混合模型的假设不是met（Mrode 2014）。GBLUP和ABLUP模型之间的最大区别是前者更精确地定义任何两个个体之间与后者相比的遗传关系的能力（图1）。我们的模型的交叉验证支持这个概念，因为GBLUP模型的预测精度大于ABLUP产生的预测精度，而不管折叠场景（表2 ;对角线）。这种差异是由于用于预测的实现的成对遗传关系信息的数量，其中在ABLUP中，仅来自pedigreed OP家族的信息用于预测育种值。相反，在GBLUP中，来自相关个体的所有信息被使用，而不考虑家庭分配; 这可以在家庭折叠场景中看到（表2）。因此，我们认为GBLUP模型产生的EBV更接近真实值，因为使用了更多的信息。</p>
+
+<p>我们认为，我们的结果对林业树木改良计划有重要和直接的影响，因为大多数计划是长期和资源依赖的（El-Kassaby 1993）。林业中的常规遗传改良遵循经典的轮回选择方案，其中重复循环的选择，育种和测试随时间和空间（Gamal El-Dien 等人 2015 ; Ratcliffe 等人 2015）。这些程序通常包括：（1）从自然或被管理的森林中未测试的候选亲本的表型选择，（2）将选择的亲本作为移植物繁殖，随后一段不活动直到性成熟，（3）来自选择的父母使用特定的交配设计，（4）在广阔的地理区域上的现场测试合理的时期以获得目标性状的有意义的数据，（5）基于其BV的遗传参数和个体排名的估计，和（6） ）用于第二轮育种的优良个体的基因型选择和/或来自种子果园种群的种子生产。显然，由于几个不可控制的生物因素，完成单个育种 - 测试 - 选择循环是一项长期的努力; 即，时间需要达到结构化血统的生产和生殖物候和生育率变化阻碍交配完成设计性成熟（埃尔- Kassaby 等人 1984年，1989年，埃尔- Kassaby和巴克莱1992）。因此，如本研究中所证明的，使用OP家族测试允许使用其自然产生的后代通过风花授粉而不需要结构化谱系的大量个体的即时测试和评估。本研究还证明了实现的基因组关系方法的实用性提供了一个简单的和极其有效的方法从简单的OP测试产生精确的遗传参数，其特点是浅层谱系是典型的大多数森林树木测试人口。值得注意的是，使用已实现的基因组关系还允许产生与仅从与克隆方法相结合的精细配合设计产生的基因参数相当的遗传参数。总之，在简单，但极其有效的测试方法（例如OP家族）中实现的基因组关系的效用不能被忽视，并且要求重新评价当前常规的复杂测试方法，其不能提供遗传在本研究中产生的信息。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/el-kassaby2010-%E9%9B%8C%E6%80%A7%E7%94%9F%E6%AE%96%E6%88%90%E5%8A%9F%E5%8F%98%E5%BC%82/" data-toggle="tooltip" data-placement="top" title="El-Kassaby2010-雌性生殖成功变异">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/eilers1996-p-spline/" data-toggle="tooltip" data-placement="top" title="Eilers1996-P-spline">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

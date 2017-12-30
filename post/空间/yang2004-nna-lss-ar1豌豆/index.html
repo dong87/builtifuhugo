@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Yang2004-NNA-LSS-AR1豌豆</title>
+  <meta property="og:title" content="Yang2004-NNA-LSS-AR1豌豆" />
+  <meta name="twitter:title" content="Yang2004-NNA-LSS-AR1豌豆" />
+  <meta name="description" content="Yang RC, Ye TZ, Blade SF, Bandara M. Efficiency of Spatial Analyses of Field Pea Variety Trials. Crop Sci. 2004;44:49–55.   现在可以对邻近地块进行若干空间分析以提高品种试验的精度。这项研究的目的是评估三个常用的空间分析的效率，最近邻域调整（NNA），最小二乘平滑（LSS）和一阶自回归模型（AR1），从157 1997年至2001年在加拿大阿尔伯塔省不同生长地区进行的豌豆豌豆（豌豆豌豆）品种试验。所有试验均采用随机化完全区块（RCB）设计进行，三次或四次重复。完整的复制（块）种植在单个字段层中。来自157个试验的每一个的产量数据进行常规RCB分析和三个空间分析。与RCB分析相比，LSS，NNA和AR1分析分别去除了平均22％，16％和7％的残留变化，但是三个分析的去除量在试验中有很大不同。每个空间分析在1997年和1998年实现了更多的误差减少，其中试验包含比1999至2001年更大的块大小，其中试验包含更小的块大小。在涉及大量品种的大块尺寸中，空间变异去除的效率是巨大的。此外，LSS和NAN分析在这样的移除比AR1分析更有效。
+品种试验评价作物改良计划中不同种类的性能，并测试大量选择作为新品种的可能释放。随着目前北美和其他地区作物多样化的趋势（Blade等，2002），一些品种试验开始在新环境中测试非传统作物的注册品种。在任何情况下，对品种均值或品种差异的准确估计需要通过使用适当的实验设计或通过统计分析来控制由品种效应所忽略的误差变化。 RCB设计，由于其简单性，继续成为许多品种试验的流行选择。 RCB分析的有效性和效率取决于每个块内的地块是否具有相对均匀的生长条件（例如，土壤肥力和水分）。然而，在大于8到12个地块的块内的空间同质性很少发生在田间试验中（Stroup等人，1994）。因此，在涉及大量条目的多样化试验中，RCB设计的效率通常较差。不完全的块设计，例如格子或σ-设计可以具有更小的块，但是空间异质性可以持续在小块中。显然，这种基于设计的误差变化控制可能不足以消除品种试验中的所有空间趋势。 开发了利用绘图位置信息的不同的基于模型的分析，并应用于估计和校正块内和块之间的空间变化。这些空间分析包括NNA（Bartlett，1978; Wilkinson等，1983; Zimmerman和Harville，1991），LSS（Green等，1985）和空间自相关建模如AR1模型（Glee- son和Cullis，1987 ; Gilmour等人，1997）。经常评估相对于块设计的分析的不同空间分析的效率（Ball等人，1993; Brownie等人，1993; Clarke等人，1994; Stroup等人，1994; Grondona等人， ，1996; Wu et al。，1998; Helms et al。，1999），但是这种评价通常基于有限数目的田间试验。另一方面，其他研究（例如，Kempton和Howes，1981; Cullis和Gleeson，1989; Kempton等，1994）已经使用了大量的试验，但是集中在一个空间分析与常规RCB的比较分析。品种试验通常在多年的大量试验地点进行。空间变异性的模式和程度可能在不同环境之间变化很大，表明不同的空间分析在不同环境中消除空间异质性的能力可能不同。期望在包含不同环境的大量试验中评价不同空间分析的效率。 本文报告了相对于常规RCB分析的三个空间分析（NNA，LSS和AR1）的效率的评估，基于1997年至2001年在加拿大艾伯塔省不同生长区测试的157个豌豆品种试验。这些试验是1987年成立的阿尔伯塔田豌豆区域品种测试计划的一部分，该计划是为了向全省的当地豌豆生产者推荐注册品种进行多年和多地点测试（Park and Lopetinsky，1999）。
+方法 NNA 对于NNA分析，我们使用Papadakis程序的迭代一维修正（Wilkinson等人，1983）从每个图的任一侧的邻居计算趋势指数（怎么计算），但块效应（i）被保留。 因此，方程式中的Tij&#43;εij。 [1]在NNA分析中成为βi&#43;bXij &#43;eij，其中Xij=（ei，j 1&#43;ei，j 1）/ 2，b与协变量X ij相关的回归系数，eij Yij Y ij 平均值。 对于在块的任一端的边界小区，计算Xij作为一个相邻的残差。 每次迭代从新的趋势指数开始，该趋势指数是观察到的和调整后的品种与前一次迭代的差异。 迭代继续，直到两个连续迭代中的调整均值之间的差值可忽略。
+LSS 对于LSS分析（Green等人，1985），趋势效应Tij是在其第二差异为零的约束条件下估计的（Ti，j 1 2 Tij Ti，j 1 0）。进一步假设残差（εij）彼此不相关和具有趋势效应。必须选择适当的调谐常数（）以确保相邻图之间的不相关残差，同时保持平滑趋势。根据Clarke et al。 （1994）中，我们搜索在估计残差中给出接近零的串行相关性的值。当串行相关的绝对值为0.">
+  <meta property="og:description" content="Yang RC, Ye TZ, Blade SF, Bandara M. Efficiency of Spatial Analyses of Field Pea Variety Trials. Crop Sci. 2004;44:49–55.   现在可以对邻近地块进行若干空间分析以提高品种试验的精度。这项研究的目的是评估三个常用的空间分析的效率，最近邻域调整（NNA），最小二乘平滑（LSS）和一阶自回归模型（AR1），从157 1997年至2001年在加拿大阿尔伯塔省不同生长地区进行的豌豆豌豆（豌豆豌豆）品种试验。所有试验均采用随机化完全区块（RCB）设计进行，三次或四次重复。完整的复制（块）种植在单个字段层中。来自157个试验的每一个的产量数据进行常规RCB分析和三个空间分析。与RCB分析相比，LSS，NNA和AR1分析分别去除了平均22％，16％和7％的残留变化，但是三个分析的去除量在试验中有很大不同。每个空间分析在1997年和1998年实现了更多的误差减少，其中试验包含比1999至2001年更大的块大小，其中试验包含更小的块大小。在涉及大量品种的大块尺寸中，空间变异去除的效率是巨大的。此外，LSS和NAN分析在这样的移除比AR1分析更有效。
+品种试验评价作物改良计划中不同种类的性能，并测试大量选择作为新品种的可能释放。随着目前北美和其他地区作物多样化的趋势（Blade等，2002），一些品种试验开始在新环境中测试非传统作物的注册品种。在任何情况下，对品种均值或品种差异的准确估计需要通过使用适当的实验设计或通过统计分析来控制由品种效应所忽略的误差变化。 RCB设计，由于其简单性，继续成为许多品种试验的流行选择。 RCB分析的有效性和效率取决于每个块内的地块是否具有相对均匀的生长条件（例如，土壤肥力和水分）。然而，在大于8到12个地块的块内的空间同质性很少发生在田间试验中（Stroup等人，1994）。因此，在涉及大量条目的多样化试验中，RCB设计的效率通常较差。不完全的块设计，例如格子或σ-设计可以具有更小的块，但是空间异质性可以持续在小块中。显然，这种基于设计的误差变化控制可能不足以消除品种试验中的所有空间趋势。 开发了利用绘图位置信息的不同的基于模型的分析，并应用于估计和校正块内和块之间的空间变化。这些空间分析包括NNA（Bartlett，1978; Wilkinson等，1983; Zimmerman和Harville，1991），LSS（Green等，1985）和空间自相关建模如AR1模型（Glee- son和Cullis，1987 ; Gilmour等人，1997）。经常评估相对于块设计的分析的不同空间分析的效率（Ball等人，1993; Brownie等人，1993; Clarke等人，1994; Stroup等人，1994; Grondona等人， ，1996; Wu et al。，1998; Helms et al。，1999），但是这种评价通常基于有限数目的田间试验。另一方面，其他研究（例如，Kempton和Howes，1981; Cullis和Gleeson，1989; Kempton等，1994）已经使用了大量的试验，但是集中在一个空间分析与常规RCB的比较分析。品种试验通常在多年的大量试验地点进行。空间变异性的模式和程度可能在不同环境之间变化很大，表明不同的空间分析在不同环境中消除空间异质性的能力可能不同。期望在包含不同环境的大量试验中评价不同空间分析的效率。 本文报告了相对于常规RCB分析的三个空间分析（NNA，LSS和AR1）的效率的评估，基于1997年至2001年在加拿大艾伯塔省不同生长区测试的157个豌豆品种试验。这些试验是1987年成立的阿尔伯塔田豌豆区域品种测试计划的一部分，该计划是为了向全省的当地豌豆生产者推荐注册品种进行多年和多地点测试（Park and Lopetinsky，1999）。
+方法 NNA 对于NNA分析，我们使用Papadakis程序的迭代一维修正（Wilkinson等人，1983）从每个图的任一侧的邻居计算趋势指数（怎么计算），但块效应（i）被保留。 因此，方程式中的Tij&#43;εij。 [1]在NNA分析中成为βi&#43;bXij &#43;eij，其中Xij=（ei，j 1&#43;ei，j 1）/ 2，b与协变量X ij相关的回归系数，eij Yij Y ij 平均值。 对于在块的任一端的边界小区，计算Xij作为一个相邻的残差。 每次迭代从新的趋势指数开始，该趋势指数是观察到的和调整后的品种与前一次迭代的差异。 迭代继续，直到两个连续迭代中的调整均值之间的差值可忽略。
+LSS 对于LSS分析（Green等人，1985），趋势效应Tij是在其第二差异为零的约束条件下估计的（Ti，j 1 2 Tij Ti，j 1 0）。进一步假设残差（εij）彼此不相关和具有趋势效应。必须选择适当的调谐常数（）以确保相邻图之间的不相关残差，同时保持平滑趋势。根据Clarke et al。 （1994）中，我们搜索在估计残差中给出接近零的串行相关性的值。当串行相关的绝对值为0.">
+  <meta name="twitter:description" content="Yang RC, Ye TZ, Blade SF, Bandara M. Efficiency of Spatial Analyses of Field Pea Variety Trials. Crop Sci. 2004;44:49–55.   现在可以对邻近地块进行若干空间分析以提高品种试验的精度。这项研究的目的是评估三个常用的空间分析的效率，最近邻域调整（NNA），最小二乘平滑（LSS）和一 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/yang2004-nna-lss-ar1%E8%B1%8C%E8%B1%86/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/yang2004-nna-lss-ar1%E8%B1%8C%E8%B1%86/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Yang2004-NNA-LSS-AR1豌豆</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (83 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Yang2004-NNA-LSS-AR1豌豆</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (83 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<ol>
+<li>Yang RC, Ye TZ, Blade SF, Bandara M. Efficiency of Spatial Analyses of Field Pea Variety Trials. Crop Sci. 2004;44:49–55.</li>
+</ol>
+</blockquote>
+
+<p>现在可以对邻近地块进行若干空间分析以提高品种试验的精度。这项研究的目的是评估<strong>三个常用的空间分析的效率，最近邻域调整（NNA），最小二乘平滑（LSS）和一阶自回归模型（AR1）</strong>，从157 1997年至2001年在加拿大阿尔伯塔省不同生长地区进行的豌豆豌豆（豌豆豌豆）品种试验。所有试验均采用随机化完全区块（RCB）设计进行，三次或四次重复。完整的复制（块）种植在单个字段层中。来自157个试验的每一个的产量数据进行常规RCB分析和三个空间分析。<strong>与RCB分析相比，LSS，NNA和AR1分析分别去除了平均22％，16％和7％的残留变化，但是三个分析的去除量在试验中有很大不同</strong>。每个空间分析在1997年和1998年实现了更多的误差减少，其中试验包含比1999至2001年更大的块大小，其中试验包含更小的块大小。在涉及大量品种的大块尺寸中，空间变异去除的效率是巨大的。此外，<strong>LSS和NAN分析在这样的移除比AR1分析更有效</strong>。</p>
+
+<hr />
+
+<p>品种试验评价作物改良计划中不同种类的性能，并测试大量选择作为新品种的可能释放。随着目前北美和其他地区作物多样化的趋势（Blade等，2002），一些品种试验开始在新环境中测试非传统作物的注册品种。在任何情况下，<strong>对品种均值或品种差异的准确估计需要通过使用适当的实验设计或通过统计分析来控制由品种效应所忽略的误差变化</strong>。 <strong>RCB设计，由于其简单性，继续成为许多品种试验的流行选择</strong>。 <strong>RCB分析的有效性和效率取决于每个块内的地块是否具有相对均匀的生长条件（例如，土壤肥力和水分）</strong>。然而，<strong>在大于8到12个地块的块内的空间同质性很少发生在田间试验中（Stroup等人，1994）。因此，在涉及大量条目的多样化试验中，RCB设计的效率通常较差</strong>。<strong>不完全的块设计，例如格子或σ-设计可以具有更小的块，但是空间异质性可以持续在小块中。显然，这种基于设计的误差变化控制可能不足以消除品种试验中的所有空间趋势</strong>。
+开发了利用绘图位置信息的不同的基于模型的分析，<strong>并应用于估计和校正块内和块之间的空间变化。这些空间分析包括NNA（Bartlett，1978; Wilkinson等，1983; Zimmerman和Harville，1991），LSS（Green等，1985）和空间自相关建模如AR1模型（Glee- son和Cullis，1987 ; Gilmour等人，1997）</strong>。经常评估相对于块设计的分析的不同空间分析的效率（Ball等人，1993; Brownie等人，1993; Clarke等人，1994; Stroup等人，1994; Grondona等人， ，1996; Wu et al。，1998; Helms et al。，1999），但是这种评价通常基于有限数目的田间试验。另一方面，其他研究（例如，Kempton和Howes，1981; Cullis和Gleeson，1989; Kempton等，1994）已经使用了大量的试验，但是集中在一个空间分析与常规RCB的比较分析。品种试验通常在多年的大量试验地点进行。<strong>空间变异性的模式和程度可能在不同环境之间变化很大，表明不同的空间分析在不同环境中消除空间异质性的能力可能不同。期望在包含不同环境的大量试验中评价不同空间分析的效率</strong>。
+本文报告了相对于常规RCB分析的三个空间分析（NNA，LSS和AR1）的效率的评估，基于1997年至2001年在加拿大艾伯塔省不同生长区测试的157个豌豆品种试验。这些试验是1987年成立的阿尔伯塔田豌豆区域品种测试计划的一部分，<strong>该计划是为了向全省的当地豌豆生产者推荐注册品种进行多年和多地点测试</strong>（Park and Lopetinsky，1999）。</p>
+
+<hr />
+
+<h2 id="方法">方法</h2>
+
+<h3 id="nna">NNA</h3>
+
+<p>对于NNA分析，我们使用Papadakis程序的迭代一维修正（Wilkinson等人，1983）从每个图的任一侧的邻居计算趋势指数（怎么计算），但块效应（i）被保留。 因此，方程式中的Tij+εij。 [1]在NNA分析中成为βi+bXij +eij，其中Xij=（ei，j 1+ei，j 1）/ 2，b与协变量X ij相关的回归系数，eij Yij Y ij 平均值。 对于在块的任一端的边界小区，计算Xij作为一个相邻的残差。 每次迭代从新的趋势指数开始，该趋势指数是观察到的和调整后的品种与前一次迭代的差异。 迭代继续，直到两个连续迭代中的调整均值之间的差值可忽略。</p>
+
+<h3 id="lss">LSS</h3>
+
+<p>对于LSS分析（Green等人，1985），趋势效应Tij是在其第二差异为零的约束条件下估计的（Ti，j 1 2 Tij Ti，j 1 0）。进一步假设残差（εij）彼此不相关和具有趋势效应。必须选择适当的调谐常数（）以确保相邻图之间的不相关残差，同时保持平滑趋势。根据Clarke et al。 （1994）中，我们搜索在估计残差中给出接近零的串行相关性的值。当串行相关的绝对值为0.02或当达到预设的上限106时，即使串行相关保持为远离零，搜索处理也停止。</p>
+
+<h3 id="ar1">AR1</h3>
+
+<p>第三个分析是直接拟合场趋势（Zim merman和Harville，1991; Gilmour等人，1997），而不是像前两个分析中那样通过区分或使用邻域残差。在这种方法中，假设残差（εij）根据空间相关性模型分布。常用的空间相关模型是AR1。在AR1模型下εij和εij之间的协方差由Cov（εij，εij）2 2C（εij，εij）2 | jj |，[2]给出，其中2是将使用RCB分析趋势）。<strong>空间趋势的存在将表明相邻地块倾向于比更远离（0）的地块更相似。我们仅考虑块内的空间关系（一维AR1模型），因为完全复制（块）在单个字段层中。在存在诸如AR1的残差的复杂协方差结构的情况下，需要基于似然的混合模型分析来建模和估计协方差结构和调整的变量均值</strong>。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/diallel/yao-2013-%E4%BA%A4%E9%85%8D%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%BD%B1%E5%93%8D-%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E7%9A%84%E5%BD%B1%E5%93%8D/" data-toggle="tooltip" data-placement="top" title="Yao-2013-交配设计的影响-分析方法的影响">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/diallel/yanchuk-1996-vd---va-/" data-toggle="tooltip" data-placement="top" title="Yanchuk-1996-VD---VA-">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

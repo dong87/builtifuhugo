@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Dong&#39;s blog</title>
+  <meta property="og:title" content="Dong&#39;s blog" />
+  <meta name="twitter:title" content="Dong&#39;s blog" />
+  <meta name="description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta property="og:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="twitter:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../" />
+  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../">
+            <img class="avatar-img" src="../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Dong&#39;s blog</h1>
+                
+                  
+                    <hr class="small">
+                    <span class="page-subheading">Enterprising &amp; Concentrating欢迎光临！</span>
+                  
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div role="main" class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+          <div class="well">
+            
+
+<h2 id="front-page-content">Front Page Content</h2>
+
+<p><code>beautifulhugo</code> supports content on your front page. Edit <code>/content/_index.md</code> to change what appears here. Delete <code>/content/_index.md</code> if you don&rsquo;t want any content here.</p>
+
+          </div>
+        
+
+        <div class="posts-list">
+          
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%97%A5%E6%9C%AC%E8%90%BD%E5%8F%B6%E6%9D%BE/philippe2016-%E6%9D%82%E7%A7%8D%E7%A7%8D%E5%AD%90%E5%9B%AD-%E6%9D%82%E7%A7%8D%E7%A7%8D%E5%AD%90%E6%AF%94%E4%BE%8B/">
+                <h2 class="post-title">Philippe2016-杂种种子园-杂种种子比例</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (99 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Philippe G, Buret C, Matz S, Pâques LE (2016) Composition of hybrid larch (Larix × eurolepis Henry) forest reproductive materials: How much does hybrid percentage affect stand performance? New For 47:541–564. doi: 10.1007/s11056-016-9530-z
+ 杂交落叶松（Larix eurolepis）的表现可以通过以下事实改变：在杂交种子园中产生的种子批总是包含非杂种种子的部分。我们通过三步过程研究了这种杂交/非杂交混合物对幼苗生产力和质量的影响：确定树种身份与细胞质DNA标记，杂交和非杂交树性能的比较，最后，评估稀化对混合百分比的影响。总的来说，我们分析了来自三个地点的八个商业种子园的后代。在果园后代中发现杂交百分比的巨大变化。在全球范围内，关于生存，干旱易感性和睫毛梅里亚，生长，茎形式和木材硬度的结果显然有利于杂种。特别地，它们比非杂交树生长得更快，并且表现出比混合后代更均匀的生长。杂交优势是最高的果园组成的单一母本克隆一个物种，适应不足的植物。混合百分比通过连续稀疏增强。然而，当种植后代具有低初始杂种百分比和高杂种优势时，预期收入严重损失。此外，杂种百分比的变化证明在种子果园测试中是有问题的，因为种子果园等级可以根据是否仅基于所有树木或杂交种的性能而改变。这些变化降低了通常向森林所有者提出的建议的可靠性。对于商业和造林原因，我们建议在市场上的森林生殖材料中设置混合百分比的最低阈值水平60-70％。
+引言 自从他们在20世纪初的Dunkeld遗产中发现（Henry和Flood 1919; Edwards 1956），欧洲落叶松（EL）（Larix decidua Mill。）和日本落叶松（JL）（Larix kaempferi（Lamb）Carr）之间的种间杂种。 ）在林农和后来的种植者中产生了相当大的热情。不仅杂交落叶松（Larix 9 eurolepis Henry）具有良好的抗落叶松（Lachnellula willkom-mii）抗性（Edwards 1956; Sylvestre等人1999），在许多情况下它显示出比任一种亲本更好的生长（例如Ferrand和Bastien 1985; Pa ques 1992; Baltunis等1998; Pa ques等2013），有时具有更好的形式（Lacaze和Birot 1974）和更好的存活率（Miller和Thulin 1967; Zaczek等人1994）。对于木材性质，杂交通常介于EL和JL之间或比最佳亲本更好（Nanson和Sacre'1978; Reck 1980; Bastien和Keller 1980）。已经开发了欧洲和日本落叶松之间的种间杂交育种程序，因为已经建立了用于杂种种子生产的四十年代和种植园，称为杂交种子果园。在11个欧洲国家种植了约40个第一代果园，覆盖面积超过100公顷（Pa ques et al。2013）。这些果园在用作雄性和雌性（从一个到几十个），收集锥体的物种（EL或JL，有时两者）和种植设计的基因型的数量上不同。 EL和JL克隆可以紧密混合，交替排列或甚至种植在分开的单元中，特别是为花粉或种子生产而管理（Nanson 2004）。种子通过开放授粉或例外通过补充大量授粉（SMP）产生（Philippe和Baldet 1997）。在混合物中种植EL和JL基因型允许种间杂交发生，并且确实导致一些杂交种子生产，只要它们的开花期不太太异步（Paques等人2013）。然而，在果园内相同物种的个体的接近也使得种内杂交成为可能：不同克隆的品种，同一克隆的品种或同一树中的品种。作为结果，在杂交果园中产生的种子批次总是由杂种种子和来自一种或两种亲本种子的种子的混合物组成（Paques等人2006）。获得非杂种种子的风险是果园有限的，包括单个母本克隆，其中如果果园与进入的花粉良好隔离，则种内杂交限于自交。由于自花授粉胚珠由于胚胎流产而常常产生空种子（Kosinski 1986; Owens 1995; Slobodnik和Guttenberger 2005; Williams 2007）或具有低活力的幼苗（Dieckert 1964，Nanson 2004），该设计被认为是生产的最佳的高百分比的杂种种子。杂种种子的比例还根据以下因素而变化：（1）亲本物种对花粉云的各自贡献（Lewandowski等人1994），（2）两种物种的基因型之间的开花重叠的程度（Nanson 2004， Pa ques等人2013），和（3）授粉成功（霍尔和布朗1977年）。这些过程涉及遗传因素，如克隆开花能力，物候和“自交能力”;在花开始，冬季和授粉期间的气候因素（Owens和Blake 1985; Philippe等人2006）;和在一些情况下，人类因素（花刺激处理和SMP的有效性）。因此，商业种子批次中的杂种百分比从一个果园到另一个果实波动，但对于给定的果园，每年也是如此（Bergmann和Ruetz 1987; Paques等人2006）。长期以来，杂种百分比不能量化，因为杂种，EL和JL的形态学鉴定对种子是不可能的，对于幼苗是困难的（Paques等人2006），并且对于幼苗是非常不确定的。在20世纪90年代开发的同功酶标记物有相当大的改进（例如Ha¨cker和Bergmann 1991），但它们不适用于所有种类的果园。同工酶现在已被基于线粒体（母本遗传）和叶绿体（父系遗传）DNA的分子标记所替代，其允许任何种子或幼苗的可靠分类鉴定（Achere等人，2004）。从那时开始用标记进行的大量分析显示果园后代中杂种百分比的巨大波动，范围从小于10％至大于90％（Pa ques等人2006）。在欧盟，种子批次可以以任何杂种百分比销售，只要种子批发商在官方文件中指定（理事会指令1999/105 / CE 2000）。然而，一些成员国已经施加了更多，更严格的要求。例如，在法国，国家对种植的补助取决于使用混合率高于60％的森林生殖材料（FRM）。除了市场化FRM与认证种子园的遗传一致性的问题，产生具有低和可变杂种百分比的种子批可能对林权者具有不利后果：降低或不稳定的支架性能，异质最终产物和对特定疾病的增加的易感性[例如。落叶松溃疡（Lachnellulla willkommii）和莴苣（Meria laricis on EL）; Phytophtora ramorum对JL]。因此，重要的是要了解混合百分比对摊位生产率和质量的影响。在我们的研究中，我们试图回答以下问题：1.
+                  <a href="../../post/%E6%97%A5%E6%9C%AC%E8%90%BD%E5%8F%B6%E6%9D%BE/philippe2016-%E6%9D%82%E7%A7%8D%E7%A7%8D%E5%AD%90%E5%9B%AD-%E6%9D%82%E7%A7%8D%E7%A7%8D%E5%AD%90%E6%AF%94%E4%BE%8B/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%A9%BA%E9%97%B4/piepho-2008-nna/">
+                <h2 class="post-title">Piepho-2008-NNA</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (79 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>Piepho HP, Richter C, Williams E. Nearest neighbour adjustment and linear variance models in plant breeding trials. Biometrical J. 2008;50:164–89.</li>
+</ol>
+</blockquote>
+
+<p>本文综述了<strong>最近邻分析的方法，适用于一维的局部趋势</strong>。这样的方法通常用于植物育种和品种测试。重点是简单的差分方法，包括第一个差异和Papadakis方法。我们讨论这些方法的混合模型表示观察数据的规模。与差异相比，建模观察数据具有许多实际优点，例如方便地计算调整的品种平均值的设施。大多数模型考虑涉及线性方差协方差结构，可以表示为状态空间模型。使用三个数据集来例示所审查的方法和模型。</p>
+
+<p>新作物品种和育种品系的评价需要在跨多个环境重复的田间试验中进行测试。通常，测试的品种数量很大，通常达到超过100个条目。在早期生成试验中，植物材料可能是如此有限，以至于难以完全重复，因此经常使用具有重复检查例如增强设计的设计（Federer，1961,2002; Williams和John，2003）。在后代和用于释放的品种中，具有两到四个重复的重复试验是常规。由于大量条目，某种形式的不完全区组在两种情况下都是常见的，优选使用诸如a-designs的可分辨设计（John和Williams，1995）。最近，对用于分析产量试验的地质统计方法的兴趣增加，并且可以考虑这样的分析选项来优化设计（Williams等人，2006; Cullis等人，2006）。本文涉及最近邻居调整（NNA），一种特殊类型的地球物理分析现场试验。假设根据某种区组设计布置了试验，并且每个块执行空间调整。我们的重点是一维调整，假设空间趋势主要是在一个方向，这将是这样的情况，当块已经被定向为与任何主要趋势正交，并且由等间隔的小区的单个阵列组成，如许多重要作物，最着名的是谷物，其中地块长而薄。一维分析类似于具有对应于小区的空间位置的时间点的时间序列分析。我们的基本模型可以写为vj =lþbðjÞþtjþej; ð1，其中绘小区（j = 1,2，&hellip;，n）按照场次序索引，vj是第j个小区上观察到的产量，l是截距，bjjjj是测试的品种对j的影响第i个品种生长在第j个小区上，tj是局部趋势，ej是测量误差。本文考虑的模型在tj和ej的假设不同。虽然我们最初通过相关联的计算分析方法来激励一些模型，但是应当理解，模型选择优先于特定计算方法的选择。<strong>自从Papadakis（1937）的开创性工作以来，NNA的想法已经引起了相当大的关注，例如在Bartlett（1978）和Wilkinson et al。 （1983）。已经提出了许多扩展和修改。基本思想是通过从相邻小区中减去一些观测值的函数来调整绘小区值，假设该操作至少大致消除了局部趋势</strong>。对于Papadakis方法，第j个小区的调整采用形式</p>
+
+<p>其中b是通常不远离统一的回归系数。方程（2）可以通过不同的模型来证明，如本文所述。在其最简单的形式中，Papadakis方法取b = 1，因此通过相邻平均值的减法获得调整（Wilkinson等人，1983）。此方法等效于分析绘制值之间的第二个差异，由。或者，可以通过几种方法之一迭代地确定b的适当估计（Wilkinson等人，1983），或者可以将相邻小区的平均值用作协方差迭代分析中的协变量（Wilkinson，1983; Stroup等人al。，1994; Wu et al。，1998）。这些方法已经被几家植物育种公司常规使用。例如，一些德国植物育种者使用软件包ANOFT（Schwarzbach，1984），其基于（2）以b = 1执行NNA。在该包中实施的方法采用迭代算法以通过最小二乘估计参数，假设独立的第二个差异。 AN-OFT内核也成为AGROBASE Generation II软件（www.agronomix.com）（E. Schwarzbach，2007，和D. K. Mulitze，2007，personal communication）的一部分。 NNA的另一个选择是通过第一差异去除趋势rj = vj + 1？vj。
+第一差异在误差自由度方面比第二差异更便宜。 Wilkinson等人的第二个差异的建议。 （1983）在很大程度上是由他们对澳大利亚品种试验数据库的表现推动的，而基于英国品种试验的经验推荐了第一个差异和相关的线性变异模型（Williams，1986）。在那个阶段（可能还是这种情况），澳大利亚的数据往往比英国更加可变，并且更多地用于二次差分而不是首次差分。我们认为，随着温和的趋势，似乎在欧洲条件下盛行，使用第一差异就足够了。第一个差异已经被几个作者提出，包括Besag和Kempton（1986），Gleeson和Cullis（1987），Cullis和Gleeson（1991），Stroup和Mulitze（1991），Kempton等， （1994），Wu et al。 （1998），和Wu和Dutilleul（1999）。差分是ARIMA或Box-Jenkins模型的非常全面的机器的一部分，在时间序列分析中非常流行，其中第一差异对应于集成误差过程。这些模型已经在现场试验的背景下广泛研究（Gleeson和Cullis，1987），并且已经提出了对二维的扩展（Cullis和Gleeson，1991）。对于一个非常易于访问的帐户，请参阅Gleeson（1997）。最近，这些作者中的一些已经放弃了差分的想法，倾向于更复杂的模拟非平稳场趋势的方法，例如。对大规模趋势（Gilmour等人，1997）和平滑样条的随机效应的加法（Verbyla等人，1999）。虽然这些更复杂的方法具有其优点，但是它们在常规应用中更难以使用，因为在产生最终分析之前需要采取几个模型选择步骤，并且用于竞争地质统计模型和方法的最优模型选择是一个微妙的任务（Huang和Chen，2007）。相比之下，第一个差异的方法具有简单的优点，是相当稳健和有效的（Baird和Mead，1991），在实践中工作良好（Wu等人，1998; Wu和Dutilleul，1999）。第一个差异与威廉姆斯（1986）和随机游走模型（Piepho和Williams，2007; Lee和Piepho，2007）提出的线性方差模型密切相关，Piepho和Ogutu是一种特殊的状态空间模型。这种关系可以用于将等价模型拟合到原始数据而不是第一差异。类似地，可以通过迭代拟合协方差模型的分析来实现b 6 = 1的Papadakis方法，该协方差模型将相邻小区的平均值作为协变量（Wilkinson，1983; Stroup等人，1994; Wu等人。，1998）或通过拟合一个特定的状态空间模型，如本文所示。将邻域模型拟合为观测数据而不是第一或第二差异具有许多优点，包括便利地进行品种平均值的成对比较和处理缺失观测的容易性的便利。此外，扩展模型是直截了当的，特别是当需要考虑除了土壤趋势之外的多个变化来源以及当需要计算调整的方法时，可能考虑协变量。本文的目的是通过专门的拟合算法提供对NNA的一些看似不同的方法的统一评论。我们的论文强调了明确制定统计模型的优点，而不仅仅是为NNA提供算法。我们强调的方法来拟合模型到观察数据，而不是差异数据。我们的审查主要集中于在混合模型框架中产生线性期望和线性方差 - 协方差结构的方法。
+唯一的例外是具有b 6 = 1的Papadakis方法，其对应于非线性模型，尽管在b上有条件地是线性的，其可以在拟合中利用。方差协方差结构中的线性是与通常使用中的许多其他空间模型相比的显着特征（Schabenberger和Gotway，2005）。我们展示了当b = 1时，如何使用线性模型包来非迭代地实现Papadakis方法。我们将讨论这种非迭代方法如何与Schwarzbach的迭代方法中使用第二个差异相关1984）。接下来，将示出在简单混合模型中如何考虑由测量误差引起的第一和第二差中的随机依赖性，从而有助于实际中的路由使用。利用与线性方差模型（Williams，1986）和随机游走的密切联系，将展示如何在不实际计算第一或第二差异的情况下实现最接近的邻近调整。最后，证明了如何通过非线性最小二乘法来实现用于b 6/1的Papadakis方法，以及如何解释非线性混合模型框架中的变量的误差，再次利用与状态空间模型的联系。三个例子用于说明所提出的方法的范围。第一个例子是一个小的人工数据集，而第二个数据集来自一个更大的实验（Besag和Kempton，1986）。使用小数据集以便说明NNA的不同方法的计算步骤。真实数据集用于举例说明一些更复杂的模型，并证明空间分析的模型选择需要一些谨慎。来自真实实验的第二个例子是为了显示如何将空间分析容易地整合到大量试验的常规分析中。我们把注意力集中在一维调整上。为了简化说明，我们的一些方程考虑了单个小区块的情况，但是扩展到几个块是直接的，并且事实上在示例中使用。块可以与字段中的单列小区相同，或者列可以被划分为几个块，使得块是连续的，但是针对趋势的调整不会跨越块延伸。根据随机化结构，块可以对应于可分辨设计的不完全块，或者它们可以对应于随机完全块设计的完全重复。这一审查部分是由一些植物育种公司表示希望从传统迭代NNA迁移的动机？ la Papadakis到一个更强大的完全混合模型分析与本地趋势的空间组件。这样的分析框架非常灵活，例如允许包含用于关联映射的混合模型组件（Stich等人，2008）和利用谱系关系来预测育种值（Stroup和Mulitze，1991; Piepho等人，2008） 。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%A9%BA%E9%97%B4/piepho-2010-lv-%E6%A8%A1%E5%9E%8B/">
+                <h2 class="post-title">Piepho-2010-LV-模型</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (31 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>Piepho HP, Williams ER. Linear variance models for plant breeding trials. Plant Breed. 2010;129:1–8.</li>
+</ol>
+</blockquote>
+
+<p>大多数植物育种试验涉及在行和列中的图的布局。可解析的行列设计已经证明在获得处理效果的有效估计中是有效的。通过后封锁或通过包括空间模型分量，进一步改进是可能的。本研究回顾了通过添加空间分量来增强基线行列模型的选项。所考虑的模型是一维和二维中的线性方差模型的不同变体。通过分析来自植物育种和品种测试的许多田间试验来评估这些选项的有用性。</p>
+
+<hr />
+
+<p>田间试验的空间模型在过去已经受到相当大的关注（Wilkinson等人1983，Green等人1985，Besag和Kempton 1986，Kempton等人1994，Besag和Higdon 1999，Watson 2000，Edmondson 2005，McCullagh和Clifford 2006，Campbell和Bauer 2007，Piepho等人2008），随着强大的统计软件包的出现，具有空间协方差结构的完全基于REML的混合模型分析可以方便地用于作物品种试验和植物育种试验（Smith et al.2005）。已经为现场试验数据提出了大量空间模型，因此空间分析需要做出多种选择。因此，<strong>模型选择和防止过度拟合成为一个主要问题</strong>。<strong>过拟合的危险随着对数据尝试的候选模型的数量而增加，因此在设计阶段限制模型选择的数量是可取的</strong>。在用于现场试验的空间建模的一些应用中，<strong>空间模型已经被视为使用阻塞和经典设计原理的替代方案</strong>。最近，在考虑特定空间分析的情况下寻找最佳设计的兴趣增加（Cullis等人2006，Martin等人2006，Butler等人2008）。采取有点中间立场，威廉姆斯等。 （2006）提出了基于线性方差（LV）模型的可分辨的空间行列设计，当空间分量不导致改进的拟合时，通过选择对行列设计的经典分析，提供随机化保护。因此，分析可以通过用行和列效应拟合基线模型并检查空间分量的添加是否值得来进行。这种方法虽然允许利用空间相关性，但仅使用非常有限的一组候选模型。此外，如果特定数据集需要复杂的方差 - 协方差结构，而同时只有几个空间方差 - 协方差参数变得相对较小，则以降低的精度支付少量额外费用，空间列设计的用户就受到保护。本研究描述了可分辨行列设计的二维LV模型。它研究了Williams等人提出的模型。 （2006），并提出一个满足可分离性条件的新模型（Martin 1979）。为了激励模型，我们首先考虑Williams提出的一维LV结构（1986）。随后，我们在两个维度探索扩展的选项。使用来自均匀性试验和设计实验的数据集来比较模型。本文中考虑的所有模型使用标准混合模型包（如SAS，GENSTAT或ASREML）很容易拟合。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%A9%BA%E9%97%B4/piepho-2015-ar1%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98-/">
+                <h2 class="post-title">Piepho-2015-AR(1)模型中的问题-</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (53 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  
+
+<blockquote>
+<ol>
+<li>Piepho H, Möhring J, Pflugfelder M, Hermann W, Williams ER. Problems in parameter estimation for power and AR (1) models of spatial correlation in designed field experiments. Commun. biometry Crop Sci. 2015;10:3–16.</li>
+</ol>
+</blockquote>
+
+<p>AR（1）和空间相关的功率模型在现场试验数据的分析中是流行的。当自相关参数ρ倾向于为零或一致时，可能发生这些模型的估计和解释的数值困难。这里使用三个不同的示例来考虑这些问题。第一个例子是基于部分复制设计的模拟数据，其中真实的底层方差协方差结构是已知的。其他两个例子涉及来自精确农业试验和植物育种试验的真实数据。我们建议四个选项来处理观察到的数值问题，并说明它们与示例的使用。在示例中示出，<strong>AR（1）模型的空间坐标的重新缩放或重新参数化作为指数模型可以有助于模型收敛。我们得出结论，AR（1）模型的个别参数估计应仔细解释，特别是当自相关估计接近零或单位时</strong>。</p>
+
+<hr />
+
+<h2 id="引言">引言</h2>
+
+<p>在混合模型框架中嵌入的空间方差 - 协方差结构在现场试验的分析中已经变得流行（Gilmour等人1997，Piepho等人2008，Gonçalves等人2010）。最常见的空间模型假设与距离的空间相关性的非线性衰减。在每个图的单次观察的随机化实验中，可以在同一块中的图之间假定空间相关性（Williams 1986）。类似地，在具有大图的农场试验中，可以获得每个图的许多空间参考测量（即记录空间坐标的测量），以及相关的协变量信息。对这些试验的全面分析需要考虑同一地块重复测量之间的空间变化（Piepho et al。2011）。用于具有等间隔图的场试验的非常流行的非线性空间模型是一阶自回归AR（1）模型。该模型暗示与空间距离​​的相关性的指数衰减，根据图之间的滞后距离测量，等于间歇图的数量加1。模型也可以扩展到两个维度，最流行的变量是可分离的AR（1）⊗AR（1）模型（Gilmour等人，1997）。当对每个地块进行重复观测时，正如在精确农业实验中常见的情况，观测通常是不规则的间隔，而不是形成一个精确的矩形网格（Piepho et al。2011）。 AR（1）模型不适用于这种实验，因为它需要相等的间距。然而，AR（1）模型可以容易地扩展到不等间隔测量，如所谓的功率模型或指数模型（Gotway和Schabenberger 2004）。这两个模型是基本上相同模型的不同参数化（参见下文）。通常，当试图使用提供混合模型分析的各种统计包来基于残差最大似然（REML）将非线性空间模型拟合到现场试验数据时遇到数值问题。例如，REML算法可能无法收敛，或者最终的Hessian矩阵可能不是非正定的。在本文中，我们考虑AR（1）和功率模型的这些问题，并看看可能的补救措施，以实现收敛到一个正确的解决方案。还考虑参数估计的解释。使用三个不同的示例来说明在实践中遇到的典型问题，并且讨论可能的解决方案。第一个例子是基于部分复制（p-rep）设计的模拟数据（Cullis等人2006，Williams等人2011,2014），而其他两个例子涉及精确农业试验和植物的真实数据育种试验。
+本文组织如下。首先我们介绍三个例子。接下来，我们描述空间模型。随后简要介绍尝试适合这些模型时的潜在问题，在收敛问题的情况下解决故障的可能措施以及这三个示例的应用。本文最后简要讨论和我们的建议。</p>
+
+<h2 id="讨论和结论">讨论和结论</h2>
+
+<p>我们调查了在随机试验中拟合功效和AR（1）模型时可能出现的一些数值问题。我们还考虑了一些选项，当默认设置失败时，实现收敛到基于REML的过程的正确解决方案。关键问题是，空间分量可能与熔核方差或对于实验单位例如块（在每个图的单次观察的随机化实验的情况下）和图的随机效应混淆（在随机化实验的情况下在同一图上进行的重复和空间参考测量）。我们表明，需要小心解释各个参数估计。通常，它们可以产生空间相关性显着的印象，而对于块和独立残留误差的基于随机化的效应很小。但是本文中阐明的混杂问题意味着在模型的不同参数的估计之间存在相互作用，并且大的自相关估计可能实际上是由于块效应的大变化，反之亦然。类似地，与大的空间方差相关联的小自相关估计实际上可能与块金方差混淆，并且与空间距离​​的相关性的衰减可能如此之快，使得块内的拟合的成对残差相关对于大多数对图。因此，仅仅查看空间方差估计可能是误导。也许最好避免单独对各个参数估计的强烈解释。相反，重点应放在数据的整个拟合方差 - 协方差结构上。在随机现场试验中，建议使用具有简单随机效应的基于随机化的模型（Nelder 1965）。这可以被视为涉及空间附加组件的更精细建模的出发点。当空间模型难以拟合或不提供改进时，这样的模型也可以作为后退选项（Piepho和Williams 2010）。我们建议反对在设计涉及阻塞时拟合纯空间模型而不影响块的常见做法。存在一些危险，即当实际上如果块被拟合以反映随机化布局时，空间相关性被错误地报告为高。可以通过用基于随机化的模型开始建模过程并且仅将空间协方差视为可选的附加组件来避免这样的问题。
+在本文中，我们使用了一个特定的REML包（SAS的MIXED过程）。在某种程度上，统计程序的数值问题总是软件特有的。由于REML算法的迭代过程的实现的差异，其他软件可以产生不同的解决方案，特别是当难以实现收敛时。在这里我们不打算比较不同的混合模型包。然而，在我们的经验中，AR（1）和功率模型的问题与大多数包相似，尽管相同数据集的收敛行为有一些差异。这主要是由于当ρ→0或→1时的混杂问题，这是ρ是模型本身的固有性质而不是所使用的特定包装的固有性质。我们已经考虑过处理这些问题的选项，并用三个例子来说明。可以推荐重建AR（1）模型的空间坐标或重新参数化作为指数模型，以帮助模型收敛。在给定情况下，以下哪些选项可能工作很大程度取决于数据集。 LV模型是非线性空间模型（如AR（1））的可行替代方案，在我们的经验中，它通常具有良好的收敛行为。因此，我们建议在探索竞争空间附加组件到基于随机化的模型时定期考虑这个模型。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/piepho2007-%E4%B8%8D%E5%B9%B3%E8%A1%A1-%E9%81%97%E4%BC%A0%E5%8A%9B%E5%92%8C%E9%80%89%E6%8B%A9%E5%93%8D%E5%BA%94/">
+                <h2 class="post-title">Piepho2007-不平衡-遗传力和选择响应</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (162 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Piepho HP, Möhring J (2007) Computing heritability and selection response from unbalanced plant breeding trials. Genetics 177:1881–1888. doi: 10.1534/genetics.107.074229 计算遗传和选择响应从不平衡植物育种试验
+ 抽象 遗传力通常由植物育种者和遗传学家用作测试或一系列试验的精确度。 它的主要用途是计算对选择的响应。 提出用于计算遗传力的大多数公式隐含地假设平衡数据和独立基因型效应。 这两个假设在植物育种试验中经常被违反。 本文提出了一种基于模拟的方法来解决这个问题。 关键思想是直接模拟感兴趣的数量， *例如* ，对选择的反应，而不是试图使用一些*特定*的遗传度量来近似它。 该方法由三个示例说明。
+遗传性通常由植物育种者用于量化单一田间试验或一系列田间试验的精度。它被定义为由于可遗传的遗传效应（也称为狭义上的遗传性）而导致的群体中的个体之间的表型差异的比例。 类似地，广义上的遗传性被定义为归因于整个基因型的效应的表型方差的比例，包括加性，优势和上位效应的总和（ [N yquist 1991] ; [F alconer和M ackay 1996]）。 遗传力是定量遗传学中的一个关键参数，因为它决定了对选择的反应。 在动物繁殖环境中提出了遗传力的原始定义，其中观察和选择的基本单位通常是个体动物。 相比之下，在植物育种中有许多不同的交配设计，观察单位是非常多样的，从个体植物到在设计实验中在广泛环境中测试的基因型的手段。 正如[H olland *et al* 。][（2003）]，这使遗传性的定义和估计复杂化。 一个特别的困难是几乎所有的遗传方程都假定平衡数据，而大多数试验表现出某种形式的不平衡。 具体来说，通常在涉及不完全阻断的设计中测试大组基因型，并且在这种情况下不使用共同遗传性定义。 此外，标准定义假设试验通过对块，图，植物等具有独立随机效应的模型进行分析，而田间试验的分析通常由空间模型进行，这意味着与观察单位有关的复杂方差 - 协方差结构。 对于在具有*r个*重复的随机完全区段中展开的*m个*试验的平衡系列，在入口平均基础上的广义遗传力被定义为 （1）（ [F alconer和M ackay 1996]，其中 是基因型方差 [] 是表型方差。 一些作者使用符号*H*代替*H* 2 ， *例如* ， [N yquist （1991）]。 此外， *H* 2 有时称为“重复性”。“表型”是每个试验（环境）和*r个*重复的基因型的平均值。这有差异 ][图片上传中。。。（4）]（2）其中 [图片上传中。。。（5）] 是基因型 - 环境相互作用方差 [图片上传中。。。（6）] 是残差误差方差。 类似地，平均值的狭义遗传度定义为[]（3）其中 [] 是加性遗传方差 [] 是如[等式2]中给出的。 在平衡设计的情况下， *H*2 和*h* 2 具有许多简单和直接的解释。 例如， *H* 2 是可以由基因型解释的表型变异的分数，其中表型被认为是算术输入平均值。 因此， *H* 2等价于（潜在）基因型对观察到的表型的线性回归的测定系数。 它也是预测（表型）值和实际遗传或基因型值之间的平方相关。 最重要的是，遗传力（ *H* 2和*h*2）可用于预测对选择*R*的响应， *R* = *h* 2 *S* （或*H* 2 *S* ），其中*S*是选择差（ [F alconer和M ackay 1996]这也许是植物育种者的主要用途。 当数据不平衡或当遗传效应相关或异方差时， [方程2]不再成立，并且没有简单的方程可用于计算对选择的响应。 基本上，这是因为表型和选择反应之间的相关性在不同基因型之间不同，因此在平衡情况下，在选择反应（ *R*）和选择差异（ *S* ）之间没有简单的线性关系。 表型可以被认为是调整的输入平均值， *即* ，假设固定基因型效应的最佳线性无偏估计量（BLUE）。 然后，对选择反应的分析计算不仅受到调整平均值的方差的异质性，而且还受到通过最小二乘平差调整诱导的平均值之间的相关性的阻碍。 此外，对于不平衡数据和大量基因型，期望通过最佳线性无偏预测（BLUP）而不是BLUE来估计遗传效应，并且在BLUP的计算中，调节输入平均值（通常被认为是表型）通常不直接涉及。 当遗传效应相关时，出现进一步的并发症， *例如* ，当利用谱系信息时。 这提出了在不平衡数据和相关遗传效应的更一般情况下如何计算遗传力的问题。 在文献中可以找到各种方法，其中大多数提出了对不平衡数据和/或相关遗传效应的遗传力的一般定义（ [H olland *等人* 2003]; [Cullis *等人* 2006];[H elms和H ammond 2006] ; [O akey *等人* 2006]; K.
+                  <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/piepho2007-%E4%B8%8D%E5%B9%B3%E8%A1%A1-%E9%81%97%E4%BC%A0%E5%8A%9B%E5%92%8C%E9%80%89%E6%8B%A9%E5%93%8D%E5%BA%94/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/diallel/piepho2013-multiplicative-models-sca/">
+                <h2 class="post-title">Piepho2013-Multiplicative-models-SCA</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (81 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Piepho, H.P. 2013. Multiplicative models for specific combining ability in half-diallels with parents. Crop Sci. 53(6): 2321–2331. doi:10.2135/cropsci2013.04.0256.</p>
+</blockquote>
+
+<p>Multiplicative models&ndash;是有相乘项的模型。</p>
+
+<hr />
+
+<p>本文考虑了用于分析具有父母（自交）的半双列的乘法模型以及基于这样的模型的图形显示，包括双图。 这表明，关于diallel双向分类的对称性的模型是固有地限制性的，因为用于特定组合能力（SCA）效应的乘法项被迫对于所有自交具有相同的符号。 使用来自小麦（Triticum aestivum L）的实例说明模型。 还讨论了用于双列分析的其他乘法模型的限制，例如AMMI和GGE模型。 结论是，当SCA效应的模式可以由一个或两个乘法项很好地表示时，乘法模型可用于分析diallels。 然而，当SCA效应具有更复杂的结构时，可优选采用经典的diallel分析。</p>
+
+<hr />
+
+<p>育种者经常测试源自一组亲本品系的杂种杂交。其中形成n个母线的可能交配的全部或子集的配合设计被称为dialle1。 Griffing（1956）描述了线性模型用于分析diallel交配设计的各种变体。我们这里考虑半双工的情况，其中包括父母（自交配），但不包括交配交配（Griffing的实验方法2）。因此，<strong>假设一系是用作男性还是女性，即没有相互影响，没有区别。这是一个强大的假设，这通常不是现实的。为了测试这个假设，需要一个完整的diallel，这允许比较模型的拟合</strong>，在没有互惠效应的简单假设，允许互惠效应的模型（Griffing，1956; Zhang等人，2005;Möhring等人et al。，2011）。
+为了说明，考虑小麦数据关于6个小麦基因型的健康叶面积的百分比和它们的F1杂种接种后的表达的角质柄角霉（Stagonospora nodorum）。没有交配的交配可用于此数据集。可以使用以下固定效应线性模型：
+h =m+a +a +b ,
+其中ijh是第i个和第j个父（i，j = 1，&hellip;，n）之间的交配的期望值，m是截距，a是
+一世
+第i个父母和ij的一般组合能力（GCA）效应
+b是第i个交配的特定组合能力（SCA）效应。假设由于不存在ij b = b
+。
+互惠效应，意味着对称关系h = h成立。不失一般性，我们强加  每个j的可估计约束åa=和åb=
+。 [1]。这些约束似乎是最自然的，他们与某些量化遗传理论的diallels协议（Viana，2000; Viana和de Pina Matta，2003）。此外，它们与等式的随机效应版本有一些关系。 [1]，其中假设i a和ij b是零均值的独立随机效应（Kempthorne and Curnow，1961;Möhringet al。，2011）。注意，每个j的n个约束Σ=不与Griffing（1956）使用的那些b 0 ij i = 1 n相同，他们提出b + b =åfor 0 jj ij i = 1每个j，计算原因（Viana，2000）。
+模型（1）是一个双向线性模型。已经提出了几种方法来用具有乘法项的模型表示双向数据，特别是对于基因型×环境数据。这种类型最突出的模型是附加主效应和乘法相互作用（AMMI）模型（Gauch，1988）和基因型主效应加基因型×环境相互作用（GGE）模型（Yan等人，2000）。这些模型也被应用于diallel数据（Yan和Hunt，2002; Ortiz等，2001）。基因型×环境数据和diallel数据之间有一个主要区别。对于diallel数据的双向分类的行和列因子是相同的，两者对应于拨号的n个父行。相比之下，基因型×环境分类的行和列因子是完全不同的。从第一原则开始，在下一节中，我们将考虑几个用于diallels的乘法模型，其尊重基本双向分类的行和列因子的对称性。然后将讨论使用各种图（包括双图）对这些模型的可视化。这些模型将使用表1中的小麦数据进行说明。在讨论中，在简要考虑乘法模型的适当性之后，提出的模型与另外两种常用乘法模型的差异，讨论了拨号数据（GGE和AMMI）。讨论结束于对乘法术语的符号选择的一些想法和对于其他实验设计的简单说明。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/piepho2013-%E9%9A%8F%E6%9C%BA%E5%8C%96/">
+                <h2 class="post-title">Piepho2013-随机化</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (75 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Piepho HP, Möhring J, Williams ER (2013) Why randomize agricultural experiments? J Agron Crop Sci 199:374–383. doi: 10.1111/jac.12026
+ 这项研究说明了使用两个假设场试验的随机化的重要性，一个具有标记的系统趋势，另一个具有更不稳定的空间模式。 这两个例子的见解通过均匀性试验和小型模拟研究的分析得到加强。 结果表明，假设独立误差的基于模型的空间分析和基于随机化的分析在完全随机化时有效，但是当缺乏随机化时可能无效。 结论是随机化提供了针对不同形式的空间趋势的保护。 在研究中给出的例子作为一般提醒，农业实验应该尽可能随机。
+介绍 科学实验的目的通常是使研究者能够将结果推广到未来的类似情况，而不仅仅是获得关于可测量性状的一些数值结果。考虑到这一目的，单个实验应当被认为仅仅是来自潜在大量的类似实验的单个样品，其可以是或可以用相同的实验单元进行的。统计分析方法允许有效的统计推断，可以生成超出观察样本或实验，只要设计的方式满足一些基本的统计要求。在设计实验中，需求归纳为适当的随机化。随机化在压力条件下的实验中特别重要，其中空间趋势和产量能力的异质性倾向于相当明显（Haase等人2007，Leiser等人2012，Mu€hleisen等人2013）。在本研究中，如果没有随机化，在空间趋势和异质性存在的情况下，有效的统计推断是困难的，如果不是不可能实现的话，在治疗效果的估计中的偏差是不可避免的。
+虽然从Fisher的工作（1925年）以来，随机化作为实证研究中的基本原理的作用已经被很好地理解，但是它的重要性似乎并不总是被完全理解。根据我们审查文章和统计咨询的经验，相当多的农业实验缺乏适当的随机化。本研究使用几个例子来证明随机化是获得有效统计推理的关键先决条件。为了举例说明问题和说明关键想法，我们开始一个小的假设品种试验包括五个品种在20个情节。然后我们基于均匀性试验和小型模拟研究提出结果。在两者中，我们将系统设计与完全随机化设计进行比较。还探讨了空间分析的好处。 我们的文章基本上提醒了众所周知的事实和结果，许多统计学家已经审查和强调。一个与我们的风格和精神相似，但考虑不同应用的研究是Greenberg（1951）。我们承认，我们的阐述可能出现有点粗略的统计学训练。这种风格是有意的，我们希望它是吸引目标观众。可以在例如Kempthorne（1977）中找到对不限于农业实验的主题的更广泛和数学上严格的处理，我们认为，在农业背景下强化重要的随机化原则是很有价值的，并希望我们的文章对于从事农业实验和希望刷新其知识的人有一定的价值。
+三个说明性例子
+一个小的假设品种试验 为了说明随机化的重要性，假设对布置在5行乘4列的网格上的20个场图布局进行多项试验。进一步假设我们要在四个地块上测试五个不同品种（A-E）的小麦。然而，由于一些事故，所有种子袋仅含有品种A的种子，但是用于试验的袋无意中标记为A-E。因此，我们认为实验中不同的品种，事实上，同一品种的副本，也就是说，品种A在所有20个地块测试。图1显示了这种实验的假设结果。数据显示系统空间趋势，其产量从左下角向右上角递减。这种趋势可能是由于土壤类型和持水能力的异质性，进而影响产量。因此，例如，左下角的图将具有最大的观测产量，因为该图上的土壤具有最高的持水能力。 注意，该假设实验对应于所谓的均匀性试验。这样的试验，其中对每个区域应用相同的处理，通常被用来比较替代的实验设计和地块大小（Smith 1938，Williams和Luckett 1988）。现在，考虑在随机实验中将品种标签分配到图。最简单的实验设计是完全随机设计，其中将品种标签随机地完全分配给图。在这项研究中，我们完全集中于完全随机设计为简单。但是应该强调的是，良好的实验设计通常涉及某种形式的阻塞（完全或不完整的块，单向阻塞或行列设计）以用于有效的误差控制（Kempthorne 1977，John和Williams 1995）。虽然我们的重点是完全随机设计，我们关于随机化优点的结论同样适用于任何形式的随机块设计。 完全随机设计的一种可能的随机化如图2（a）所示。回想一下，尽管分配给图的不同品种标签，我们假设在现实中，在所有图上测试品种A.方差的古典分析（ANOVA），其为无治疗差异的全局零假设提供F检验，依赖于如图2（a）所例示的治疗的随机分配。具体来说，ANOVA的基于随机化的判断假定每个可能的分配同样可能。有了这个假设，在零假设下的ANOVA F统计量的分布，简称“零分布”，可以解析地或从随机分布得到（Pitman 1938，Good 2000）。其他统计和程序可以以分析的方式处理，但在这里我们将主要集中在F统计为简单。我们将在稍后更详细地研究随机化分布，并且稍后显示其基本上与分析F分布相同。 或者，考虑如图2（b）所示将品种系统分配到图中。与此类似的系统设计有时用于例如精确农业实验（Piepho等人，2011）。注意，该设计也可以被认为是具有对应于柱的块的完整块设计，以及柱内的处理的系统布置。原则上，这种分配可以完全是偶然发生的，但是完全地发生系统分配的概率是非常小的。如果使用这种系统分配，单因素方差分析F统计量为F = 5.63。但实际上，处理之间没有差异（每种处理是相同的品种A），因此在这种情况下，大的F值仅由图1中产量数据中看到的列的显着的系统空间趋势产生。当将系统设计的处理方法与表1中的随机设计的处理方法进行比较时，得到的偏差也是显而易见的。
+使用图2（b）中的设计的普遍理由是每行中的图可以在拖拉机的单个通道中管理。然而，重要的是要注意，在这种情况下，实验单位（随机化单位）是行，而不是图。显然，在这种情况下，绘图必须被认为是伪复制或子样本，因此每次处理只有一个真实复制。此设计的适当ANOVA基于每行的平均值（或总和），并且没有错误自由度，这反映了假复制问题。 图1中的数据显示出强的系统趋势，产量在一个特定方向上增加。为了说明随机化也是有用的，当有一个更不稳定的空间模式，没有容易辨别的系统趋势，图3中的数据被考虑。注意，图3中的产率与图1中的产率完全相同，但是它们的位置相对于图1中的位置而改变。具体地，通过首先对行进行置换然后在行中置换曲线，意味着行的组成保持不变。因此，图2（b）中的系统设计的F值为F = 5.63，这与图1中的数据完全相同，如同品种均值（表2）。对于图2（a）中的随机设计，通过比较F值小（F = 1.36）。两个例子（图1和图3）表明，随机化的失败可能是有和没有明显可辨的系统趋势的问题。
+为了获得进一步的洞察，更密切地考虑随机化设计的ANOVA F统计量的零分布是有益的。我们需要引用一个空分布，因为在任何一个试验中使用的治疗标签的特定分配仅仅是通常大量可能分配的一个实例，并且在判断值的时候需要考虑所有这些可能的分配单个F统计量。如前所述，F检验的零分布通常被认为是具有合适的分子和分母自由度的分析F分布（Mead等人，2002）。这个零分布假设在用于试验的随机化方案中，每个可能的处理分配给地块同样可能。或者，这种零分布可以通过如下的排列经验地获得：生成大量（如果可行的话，所有的完整集合）可能分配的品种标签到绘图，并且对于每个分配计算F统计量。这产生ANOVA F统计量的空分布的经验版本（Pitman 1938，Good 2000）。这个随机分布的原理如下：如果没有真正的治疗效果，也就是说，如果每个治疗具有相同的预期值，那么对于实验的预期结果，当我们重新洗牌处理标签到地块的分配。因此，当测试没有治疗效果的零假设时，对应于在实验中使用的特定随机化的F值必须被视为只有一个可能的F值范围的实例，其可以在零假设下预期无治疗效果。图4显示了使用图1中的数据进行100 000次扫描的分布。注意，假设使用了所有可能的随机化，该随机化分布以及系统设计的观察F值。 2b），在使用图3中的数据时是相同的，因此下面的说明同样适用于这两个例子（有和没有系统趋势）。应该清楚的是，图4中的随机化分布实际上是一个零分布，因为我们假设在所有图上事实上测试了相同的品种A.然而，强调的是，随着品种A-E的种子袋未被混合，随机化方法也将是有效的，因为在没有治疗效果的无效假设下，治疗标签总是可交换的（Good 2000）。如果随后的ANOVA将I型错误率控制在标称水平，则在此考虑随机化方法有效。 显着性检验的一般思路是，每当检验统计量的观察值与零分布相比是非典型的，则拒绝零假设。为了评估观察到的F值是多么典型或非典型，我们可以计算来自随机化分布的F值超过或等于实验的F值的次数的比例。这个比例或概率被称为P值。对于图2（b）中的系统设计，随机化P值为P = 0.0071，表明观察到的F = 5.63是一个非常典型的值，相对于在零值下期望的F值的分布假设（图4）：只有0.71％的F值预期与系统分配观察到的F值一样大或大。如果观察到的F值在假设的零假设下是非典型的，这是拒绝该零假设的原因。常规阈值是当P值小于a = 0.05时拒绝零假设。随机化P值非常接近于通过参考具有四个分子和15个分母自由度的F分布（P = 0.0057）获得的P值，该分布参数为该实施例的参考空分布。原则上，我们总是可以使用随机化分布进行F检验，但是计算上只需使用分析结果就不那么要求;除非数据显示总体偏离正态性或方差齐性，否则结果在两种情况下将几乎相同。
+在两个例子中，系统设计导致非常大的F值，与图4中的随机化分布相比，F值被认为非常典型。因此，无效假设将被这种非随机设计错误地拒绝，例如不随机化时发生的危险。这里重要的关键点是刚刚讨论的空分布（见图4）是F检验的适当参考分布，只有当试验实际上是随机的。只有在这种情况下，每个随机化都是同样可能的，只有在这种情况下，零分布可以从一个经典的随机化论证中得到（Calinski和Kageyama 2000）。事实上，人们可能认为图4中的随机分布不是系统设计的适当参考分布，因为这不能被认为是来自所有可能的完全随机化设计的集合中的随机样本（Kempthorne 1977）。显然，如果研究人员决定选择一个系统设计，如图2（b）所示的四个图的行中所示的处理，剩下的唯一的自由是行之间的处理的排列。但每个这样的排列产生完全相同的F值，因此在这种情况下的参考分布崩溃到单个可能的F值！这个考虑表明，没有有意义的测试可以基于系统设计的随机性论证。 考虑与为随机化分布计算的F统计量相关联的分析P值的分布也是有益的。一个重要的统计事实是，对于F检验（或任何其他显着性检验）是有效的，P值的随机分布必须遵循均匀分布。因此，研究分析P值的随机分布提供了一种特别方便的方法来评估任何显着性检验的适宜性。对于该示例，P值很好地均匀分布（图5），因此测试是有效的。同样地，关于随机化分布，估计的治疗差异未显示，如使用图1中的数据的品种标签A和E（图6）的平均差异的实例所示（本段中讨论的结果是如果我们考虑品种A和B的比较，图3中的数据相同;表2）。分布以零为中心，这正确反映了与两种标记相关的产量来自品种A的事实，因此没有治疗差异。相比之下，对于系统设计，观察到的差异是d = -1.
+                  <a href="../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/piepho2013-%E9%9A%8F%E6%9C%BA%E5%8C%96/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E8%82%B2%E7%A7%8D/plomion2016-%E6%9E%97%E6%9C%A8%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%89%8D%E5%90%8E10%E5%B9%B4%E4%B8%80/">
+                <h2 class="post-title">Plomion2016-林木基因组前后10年（一）</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 3 minutes (521 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Plomion C, Bastien C, Bogeat-Triboulot M-B, et al (2016) Forest tree genomics: 10 achievements from the past 10 years and future prospects. Ann For Sci 73:77–103. doi: 10.1007/s13595-015-0488-3
+ 摘要 [主要信息]本评论着重介绍过去10年来由“omics”技术实现的一些发现和应用，并为先驱研究提供了观点，以增加对树木生物学的了解。[背景] 在第一个森林树基因组序列发布到公有领域十年之后，迅速发展的基因组学和生物信息学工具箱提高了我们对森林树木基因组结构，功能和进化的认识。与目标和方法本综述着重介绍了过去10年来，“omics”技术在森林中所取得的一些发现和应用。 [结果]在这篇综述中，我们从目前对基因组进化和基因调控复杂性的生物和非生物胁迫的繁殖，发育和应答的理解开始。然后，我们分析了交互成分分析和表观基因组学的进展，物种内部和物种之间的遗传变异程度的知识，揭示了微观和宏观进化过程和物种历史，以及数量性状的复杂结构。我们终于在遗传资源保护和育种中得到应用。[结论]通过使用这些技术获得的知识对于适应森林面临的主要挑战具有巨大的潜在影响，即面临的主要挑战：生态系统服务的需求不断变化，保护和利用以及气候变化潜在的冲突战略和相关的威胁。基因组学无疑将在未来十年及以后发挥重要作用，不仅要进一步了解适应与演变的机制，还要制定和实施创新的管理和政策行动，以保护天然林和集约化管理种植园的适应性。 关键词基因组学。森林树。发育生物学。表观遗传学。互动微观进化。育种与保育
+1介绍 森林系统目前面临一些重大挑战，包括木材需求增加，保护森林面积的压力，全球气候变化及相关威胁。这些系统对这些挑战的适应将需要一种多方面的方法，其中基因组科学可以发挥重要作用。目的是应用一系列由生物信息学促进的遗传学，分子和细胞生物学领域的技术，以及机器人技术，分析基因组的结构，功能和进化，直到完成基因组，并使用高通量的方法。这些方法包括整个基因组，基因，mRNA和蛋白质的结构表征，基因组测绘和测序（基因组学），跨越不同环境条件和/或发育阶段的mRNA，蛋白质和代谢物丰度的研究（功能基因组学，即，转录组学，蛋白质组学，代谢组学），表观遗传修饰（表观遗传学）的分析，进化机制的推断（与分别与宏观和微观进化过程相关的比较和群体基因组学）和复杂生物系统（社区基因组学，宏基因组学）。自从第一棵树基因组序列（黑棉，Tuskan等人2006）出版以来，促进森林树木基因组学研究的技术和遗传资源提高了我们对树木生长发育的认识（导致大型和长寿命的生物体） ，树木对固有（本体相变）和外在（生物和非生物）因素的响应，树木的显着缓冲能力（可塑性），使其能够应付慢性应激和极端事件，遗传变异的分子基础物种之间的变化以及进化力与其与表型变异和适应关系的变化形成的方式。本综述的目的不是详尽无遗，概述了过去10年来森林树木基因组学取得的巨大进展。通过考虑一系列10项成就说明了这一进展。我们将从对森林树木基因组测序获得的知识开始。然后，我们将介绍木本多年生植物生物学的关键发展特征，推动树木对生物和非生物胁迫的响应的分子机制，并且我们将处理两个新兴领域（分子相互作用，表观遗传学），这些领域有望提高我们的理解的基因组功能相当大。最后，我们考虑从物种内部和之间自然发生的遗传变异的描述和解释获得的知识。这些知识为我们提供了对当前和历史进化过程的理解，这些过程有助于观察到的地理和表型变异模式以及数量性状变异的分子基础。我们将通过考虑基因组研究对保护和改善森林遗传资源的潜在影响来得出结论。这种审查可以从不同背景的读者访问，热衷于获得对克服本学科提供的世界森林面临的复杂问题的机会的基本了解。添加了不一定熟悉基因组学或其他专业术语的读者术语表作为电子补充材料（ESM_1.doc）。
+2森林树木基因组学成果 2.1我们从树基因组的序列中学到了什么？ 在过去10年中，森林树木基因组学已经受益于下一代测序技术的进步，使得有可能调查数百种基因的作用，以基因组规模获取基于序列的标记进行育种，并研究树种进化史（Neale and Kremer 2011）。即使森林树木基因组的序列远远落后于果树和一年生作物（http://en.wikipedia.org/wiki/List_of_sequenced_plant_genomes），目前正在进行20多个树基因组测序项目（Neale et al。 2013年），六个完成的林木基因组尚未发布。 2002年，美国能源部（美国能源部）成立了一项国际倡议，以将拟南芥（Arabidopsis thaliana），模型双子叶植物（Dicot），第一个植物基因组（Tuskan et al。2006）和第三个植物基因组植物生物学（拟南芥基因组计划2000）和水稻，成为单子叶植物的主要经济作物（Goff et al。2002; Yu et al。2002; IRGSP 2005）。已经对另外的杨树种类进行了测序，即杨树（Ma et al。2013），以及第二个被子植物树桉树（Myburg et al。，2014）和三只针叶树，挪威云杉（Nystedt et al。，2013）白云杉（Birol等，2013）和火炬松（Neale等，2014; Zimin等，2014）。在本评论的第一部分，我们将简要总结探索这些第一个森林树种基因组的新发现，从树木生物学的具体方面，如被子植物/裸子植物木材的形成和生命史特征。 杨树基因组序列提供了对特定树的基因组结构和功能生物学的第一次了解。杨树基因组大约是拟南芥的四倍。这种更大的尺寸主要来自全基因组重复的复杂历史，染色体重排和串联重复，如Tuskan等人所示。 （2006年）。杨树基因组含有拟南芥基因组的1.6倍的基因，与树种特征相关的几个基因家族的扩展也可能促成了树木生物学的进化。每年木材的形成只是树木独有的一个过程之一（Plomion et al。2001）。发现与纤维素或木质素生物合成相关的几个基因在杨树中重复出现，而在拟南芥中仅存在单拷贝。例如，木质素的前体单骨醇的氧化聚合涉及两种不同的非冗余类型的氧化酶 - 漆酶和过氧化物酶 - 如最近在拟南芥微管发育中所证明的（Zhao等，2013a）。山杨的漆酶基因家族远高于拟南芥（51对17个基因，Berthet等，2012）。此外，这两个多基因家族的系统发育和表达研究表明，杨树中存在的三种拟南芥木质素相关漆酶（AtLAC4，AtLAC11和AtLAC17）的16个直系同源物主要表达在茎木质部，但有一些例外根或其他器官），表明功能的保护，但对于一些重复的杨树基因具有亚功能化。 如果我们仔细观察木材的形成过程，我们发现次生木质部发育演化在裸子植物和被子植物之间。这两组之间的两个主要区别之一是针叶树木素中缺少S单位。所有参与被子植物单细胞生物合成的基因在松树基因组中被鉴定，除了F5H同源物，这对植物中S单位的生物合成至关重要（Bonawitz和Chapple 2010，用于复习; Neale等人，2014）。第二个差异涉及水运输和机械支持功能，这两个功能主要由针叶树中的气管介导，而被子植物具有用于机械支撑的纤维和用于水运的船只。编码血管相关NAC结构域转录因子的基因数量，被子植物中木质部血管分化的关键调节因子在挪威云杉（Nystedt et al。2013）中比在拟南芥和白杨中小得多（只有两个基因被鉴定），其中7并分别鉴定了16个这样的基因（Ohtani等人，2011），表明NAC域转录因子家族在被子植物中的可能扩增和亚功能化，特别是在木本被子植物中。 与寿命短的一年生植物不同，树木不得不制定针对昆虫和病原体的长期防御策略。有趣的是，尽管在拟南芥和杨树中NBS-LRR病原体抗性基因总数相似，但在杨树中，一些亚科（Tuskan et al。2006; Kohler et al。2008; Bresson et al。，2011）也相当大。有趣的是，在拟南芥（3个基因）中，针叶树（火龙果中的780个基因和挪威云杉中的180个基因）的TIR类别也比在拟南芥（3个基因）中大得多。 除了揭示基因组之间的功能差异，这些最近的作品增加了我们对被子植物/裸子植物树的生活史的理解。杨树，如桉树和葡萄，已经历至少一次全基因组复制（WGD）事件。对杨树基因组的分析导致了三个单独的WGD事件的识别。由于单一的全基因组事件，最近爆发的基因创造发生在60至6500万年（Myr）之前。发现在共同祖先的山杨（Fabid，也被称为欧洲伊朗）和拟南芥（Malvid，也称为欧洲红葡萄酒II）的第二次重复发生在大约100至120年前。对于第三个更古老的重复事件，也发现了一个较弱的信号，但是这个事件没有由作者注意（这可能对应于古六倍体事件，见下文）。对杨树和拟南芥估计的分子时钟的比较显示，杨树的序列进化速率显着降低，这可能是由于其常年状态，导致老年人“古代配子”的复发性贡献（Tuskan等，2006）。对最近测序的桉树基因组和基于17种物种的系统发育研究的分析表明，杨树应该被重新分类为Malvid，并且桉树应该被放置在鳗鱼的姊妹分类中（Myburg et al。，2014）。对桉树基因组进化史的研究也揭示了古老的六倍体倍性事件（130至150Myr），其也在葡萄中被发现，并且是所有幼体的常见（Jaillon等人，2007）。这个事件也被证明是叠加在一个更新的谱系特有的四倍体事件（110 Myr）上。 WGD是基因组大小扩展的重要机制。由于针叶树具有比被子植物大约20至30倍的基因组，令人感兴趣的是，在挪威云杉中没有发现这种机制的证据（Nystedt等，2013）;作者（350 Myr）检测到只有一个非常古老的WGD的踪迹预示被子植物和裸子植物的分歧，与以前的系统发育分析一致（Jiao et al。2011）。相反，针叶树基因组似乎主要通过插入重复的元件，主要是长末端重复反转录转座子（LTR-RT;基本上是Ty3 / Gypsy和Ty1 / Copia超家族）（Nystedt等人，2013）。作者提出了针叶树基因组进化模型（调查了六种针叶树种），其中反转录转座子活性在进化早期开始，并没有像被子植物一样有效地反映，导致更大的基因/假基因数量和许多长的内含子，基因由转座子的大区域分离，针叶树中高度多态性的DNA，但在大系统发育距离上维持合成。
+                  <a href="../../post/%E8%82%B2%E7%A7%8D/plomion2016-%E6%9E%97%E6%9C%A8%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%89%8D%E5%90%8E10%E5%B9%B4%E4%B8%80/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E8%82%B2%E7%A7%8D/plomion2016-%E6%9E%97%E6%9C%A8%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%89%8D%E5%90%8E10%E5%B9%B4%E4%BA%8C/">
+                <h2 class="post-title">Plomion2016-林木基因组前后10年（二）</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (198 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Plomion C, Bastien C, Bogeat-Triboulot M-B, et al (2016) Forest tree genomics: 10 achievements from the past 10 years and future prospects. Ann For Sci 73:77–103. doi: 10.1007/s13595-015-0488-3
+ 2.7将基因组学整合到系统学和系统发育中 物种之间的系统发育关系，密切相关物种的划分以及物种内遗传结构为保护和可持续利用森林种质资源提供决策的关键信息。关于同功酶或质体DNA的早期遗传研究揭示了温带树中过去范围动态的主要足迹（例如Petit等，2003），其发现在森林繁殖材料的遗传来源鉴定中的应用。质体DNA标记也用于树木中的物种划分（Kress和Erickson，2008）;然而，由于生殖障碍较弱，树木中种间基因流动频繁，其功力仍然有限（Petit和Hampe，2006）。在过去十年中，越来越多地使用多种核遗传标记和高通量基因组学，使得有可能提供关于过去人口历史，更有效的物种划分以及它们之间的系统发育关系的推断和表征适应性进化的更准确的信息在森林中的分子水平。遗传标记中的这一革命伴随着数据分析的重大转变，特别是从描述性到假设检验方法的转变，为森林遗传资源的管理提供了有价值的信息。 在过去十年中，系统地理学研究越来越多地使用多个不连接的核基因与使用聚结理论的群体遗传模型结合使用（Nielsen和Beaumont 2009）。这允许区分种群和密切相关物种中种群遗传历史的替代方案（Heuertz et al。2006; Gao et al。2012; Cornille et al。2013），并允许对群体遗传参数进行可靠的估计，如谱系之间的分歧时间（Budde et al。2013; Couvreur et al。2008; Morris et al。2008; Scotti-Saintagne et al。2013a; Scotti-Saintagne et al。2013b）。推测的人口统计学历史已经被用作鲁棒的基线信息来检测适应性进化中的基因位点（Grivet et al。2011;K鋖lmanet al。，2014）。比较系统地理学方法已经深入了解了人类历史在物种间的一致性，首先是温带树种（例如，Jaramillo-Correa et al。2010; Petit et al。2003），最近在热带物种（Dauby et al。 2014; Heuertz et al。2014; Jones et al。2013; van der Merwe et al。，2014）。通过在不同时间段内通过空间插值气候数据整合物种分布建模，在系统地理学中获得了重要的预测能力（Carstens和Richards 2007; Cornille et al。2013）。来自诸如“地质学”等新学科的系统地理学进展将进一步发展，其中涉及到使用大规模遗传数据来约束地质假说（Baker等，2014）。 近年来出现了大规模并行高通量测序（HTS）的应用，促进了成本效益的标记开发（McPherson等，2013; Micheneau等人2011; Slavov等，2012）。 HTS技术对复杂组织中进化关系的解脱有很大的希望，特别是在植物学知识依然有限而且隐性物种很常见的热带树分类单元（Heuertz et al。2014; Turchetto-Zolet等，2013）中。第一个HTS研究重建了树分类群的完整的细胞器基因组，导致了系统地理学中更高的分辨率（McPherson et al。2013; van der Merwe et al。，2014），分类学和系统发育学，特别是热带分类群（Chrysobalanacae， Mal？et al。，2014; Malpighiales，Xi et al。2012）。核基因组的HTS研究在树木的系统发育和系统地理学中仍然很少（但参见Carstens等人，2013; St？ling等，2013）。它们需要对数百个个体进行数百或数千个同源DNA区域的成本效益的并行测序，使用适用于目标系统发育深度的技术。涉及酶消化的基因组还原方法在物种内水平是适合的（例如，St？ling et al。2013），而对于保守核区的序列捕获被推荐用于系统发育（McCormack等，2013）。 在系统发育学中，新的贝叶斯方法使得可以从多位核数据推断系统发育关系，同时考虑到种内多态性和不完全谱系分类（Heled and Drummond 2010）。此外，包含进化速率变化的不确定性和基于化石的时间限制的贝叶斯测年方法有望改善约会（Dos Reis等，2012）。 当生殖障碍不完整时，密切相关物种之间遗传边界的表征仍然具有挑战性。种间基因流可能具有重要的进化后果，如有益变异体的快速渗透（Morjan and Rieseberg，2004）。这有助于适应遗传变异，这在快速扩张过程中尤为重要（Keller等，2010; Lascoux和Petit 2010）。贝叶斯聚类算法（Fran鏾和Durand 2010综述）已被证明对于树种划界是有用的（Duminil等人，2012; Guichoux等，2013）。然而，人口抽样必须通过包括进化上重要的领域（如次级接触区域或混合区域）来解释基因流的存在（Eckert et al。2008; Scotti-Saintagne et al。2013a）。 最后，系统地理学和生态遗传学研究无疑将在未来更加一体化。历史推论不仅对于了解特定物种或生态社区的进化过程非常重要，而且也是测试序列数据选择的先决条件（Carstens等人，2013;K鋖lman等，2014）和分析不同种群的表型演化（Keir et al。2011; Stone et al。2011）。
+                  <a href="../../post/%E8%82%B2%E7%A7%8D/plomion2016-%E6%9E%97%E6%9C%A8%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%89%8D%E5%90%8E10%E5%B9%B4%E4%BA%8C/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/poke2006-%E8%93%9D%E6%A1%89-%E6%9D%90%E6%80%A7-%E8%85%90%E7%83%82/">
+                <h2 class="post-title">Poke2006-蓝桉-材性-腐烂</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (42 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  
+
+<blockquote>
+<p>Poke FS, Potts BM, Vaillancourt RE, Raymond C a (2006) Genetic parameters for lignin, extractives and decay in Eucalyptus globulus. Ann For Sci 63:813–821. doi: DOI 10.1051/forest:2006080</p>
+</blockquote>
+
+<h1 id="摘要">摘要</h1>
+
+<p>桉树生长在世界温带地区，用于纸浆生产。其木材的化学和物理性质使其非常适合于此目的。本研究分析了九个地点的蓝桉的<strong>木质素含量，提取物含量和衰变</strong>的遗传变异。还获得了遗传力估算值，并对这些性状与物理性状和生长之间的关系进行了检验。在木质素含量（Klason木质素和酸溶性木质素含量）和腐烂之间发现了显着的遗传变异。检测到的地方家庭之间唯一的特征是酸溶性木质素含量，导致这种性状也具有最高的狭义遗传力（0.51〜0.26）。然而，家庭意味着木质素含量，提取物含量和朽烂（0.42？.64）的遗传力都很高。化学木材性状在表型和遗传上都彼此强烈相关，与密度和微原纤维角度有重要的相关性。相关性表明，<strong>在选择繁殖目标性状时，可能同时选择化学木性状，衰变抗性和纤维性质的有利状态，而可以独立选择生长</strong>。这项初步研究为未来研究提供了一个垫脚石，可以进一步区分繁殖群体的特定地区。
+相关性/桉树遗传变异/遗传力/木质素</p>
+
+<h1 id="介绍">介绍</h1>
+
+<p>桉树是在温带的澳大利亚和世界其他地区（包括南美洲，南欧，非洲和亚洲）生长用于纸浆生产的。已经鉴定了广泛的性状，包括<strong>生长和物理和化学木材性质</strong>之间的球形球菌的相似遗传变异[1,10,23,24]。这些变化中的一些已经在育种计划中得到利用，用于选择优良的树木。当选择树木进行纸浆生产时，澳大利亚目前只检查出一些特征，重点是<strong>每公顷数量增加，基本密度和纸浆产量增加</strong>[1,16,17]。虽然这些性状的选择使每公顷的纸浆产量增加，但<strong>许多其他物理和化学木材性质对于硫酸盐纸浆制浆是重要的</strong>，并且这些变化可以有助于最小化该方法的成本或环境影响。
+<strong>牛皮纸制浆通常涉及使用碱从纤维素纤维中去除大部分提取物，约80％的木质素和约50％的半纤维素</strong>[35]。<strong>为了生产高质量的纸张，纸浆进一步漂白以除去残留的木质素，其负责通过氧化和光吸收转换纸黄色</strong>[35]。木质素的木质素和提取物含量是快速被认为在最小化硫酸盐纸浆制浆的成本和环境影响方面具有重要意义的特征。由于木质素和提取物是制浆过程的主要废物，木材中的较低水平将导致更快的脱木质素和/或减少化学品和能源的使用。这将有助于最大限度地减少制浆过程中污染物的产生。
+研究木质素和提取物的遗传变异和遗传力在桉树中一直受到限制，直到最近。这主要是由于用于测量这些性状的<strong>化学测定的昂贵和耗时的性质</strong>[2,3]。最近，为了预测这些性状，已经开发了简单且具有成本效益的技术，涉及到对地面<strong>木芯的近红外反射（NIR）分析</strong>[4,30]。已经发现这是用于在大量样品中可靠地预测这些性状的有效技术。少数研究表明，<strong>球茎中木质素和提取物含量存在遗传变异</strong>，尽管它们仅涉及三四种，少数个体[24,41]。研究调查化学木性状与其他木材性状之间的相关性也受到小样本量和少量性状的限制，并且仅涉及表型相关性[23,39]。<strong>遗传相关性尚未报道在这些性状在球茎</strong>。为了充分探索化学性状及其遗传控制范围内的变异，需要大量的个体，家族和种源，其中包括球茎的范围。
+<strong>树木对木材腐烂的敏感性很重要，因为它可能以两种方式影响纸浆产量：首先，植物防御反应可能导致木材中存在的木质素和提取物的量增加，这将降低纸浆产量;其次，衰变导致木材退化，导致细胞结构的破坏</strong>[29]。这种衰退可能是由于受伤后暴露的易受伤害组织的病原体感染或心脏病（心脏腐烂）的侵袭引起的，由于缺乏活细胞，其不能有主动反应[29]。衰变的影响还将取决于腐烂生物是否在纤维素或木质素上进食。两种类型的真菌通常负责腐烂，褐腐病真菌，其降解纤维素和降解木质素的白腐真菌。可以通过反应区（健康和腐烂的木材之间的紫色/粉色彩色边界）和周围木材变色或心材腐烂的“口袋”中观察到朽烂[29,40]。已经发现，真菌侵袭与木质素的增加有关，这是由于其在E. gunnii [18]中对病原体的降解具有抗性，并且在E. nitens中增加含有抗微生物化合物的提取物[5]。在E.球根中，<strong>遗传变异的衰变敏感性及其与其他木材性质的关系尚未得到检验</strong>。
+<strong>通过育种提高树种的化学木材性质需要遗传变异才能进行选择。还有必要了解要改进的性状如何相互关联以及目前尚未被选择的其他性状，因此当选择一种性状的增加时，可以预测对其他性状的潜在影响</strong>。由Apiolaza等人进行的一项研究[1]使用188个来自35个家庭和8个子项目的球虫的个体，检查了生长和木材性状的变化及其相关性，目前这是澳大利亚国家育种计划的单一育种人口的一部分。检查的性状包括在树皮上的<strong>直径（DBH），基本密度（BD），平均纤维长度（FL），平均微纤丝角（MFA）</strong>，<strong>其是纤维素微原纤维螺旋相对于纵向纤维轴的平均角度[ 11]，预测纸浆产量（PY）和纤维素含量（CELL）</strong>。目前的研究旨在建立在Apiolaza等人的基础上[1]特别关注化学木材性质。使用在田间试验中生长的相同的开放授粉后代，我们检查了起始的E.球茎的九个地方之间和之间的<strong>木质素含量（LIG），提取物含量（EXTR）和衰变程度（DEC）的遗传力的变化</strong>和遗传从塔斯马尼亚州和维多利亚东南部。在这些性状和Apiolaza等人的生长和木材性状之间也确定了表型和遗传相关性。 [1]。这些化学木材性状与物理木材性状，木材腐烂和生长之间的关系在E. globulus之前没有被检查过，并且将提供在选择优异树木期间多少性状受到影响的指示。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+        </div>
+
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="../../page/24/">&larr; Newer Posts</a>
+              </li>
+            
+            
+              <li class="next">
+                <a href="../../page/26/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

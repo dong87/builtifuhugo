@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Macosko2015-单细胞表达谱</title>
+  <meta property="og:title" content="Macosko2015-单细胞表达谱" />
+  <meta name="twitter:title" content="Macosko2015-单细胞表达谱" />
+  <meta name="description" content="Macosko EZ, et al. (2015) Highly parallel genome-wide expression profiling of individual cells using nanoliter droplets. Cell 161(5):1202–1214.   概要 细胞，生物结构和功能的基本单位在类型和状态上有广泛的变化。单细胞基因组学可以表征细胞识别和功能，但容易程度和量表的局限性已经消除了其广泛应用。在这里我们描述了Drop-seq，它是通过将数千个单个细胞分离成纳米尺寸的水滴，将不同的条形码与每个细胞的RNA相关联并将它们排列在一起的策略。 Drop-seq同时记录来自数千个单个细胞的mRNA转录，同时记住转录本的细胞。我们分析了44,808只小鼠视网膜细胞的转录组，并确定了39个转录不同的细胞群，为已知的视网膜细胞类型和新型候选细胞亚型创建了分子基因表达图谱。 Drop-seq将通过在单细胞分辨率下进行常规转录谱分析来加速生物发现。
+介绍 个体细胞是组织，器官和组织的组成部分。每个组织包含许多类型的细胞，每种类型的细胞可以在生物学状态之间切换。在大多数生物系统中，我们对细胞多样性的认识是不完整的;例如，脑的细胞类型复杂性是未知的，并且被广泛争议（Luo et al。，2008; Petilla Interneuron Nomencla Group，et al。，2008）。要了解复杂组织的工作原理，了解每种细胞类型的功能能力和反应是非常重要的。每个细胞功能的主要决定因素是其转录程序。最近的进展现在使单个细胞的mRNA-seq分析（Tang等人，2009）。然而，制备用于分析的细胞的方法在实践中已经适用于刚刚狩猎（Hashimshony等人，2012; Picelli等人，2013）或（自动化）几千个细胞（Jaitin等通常在通过流分选（Shalek等，2013）或微流体学（Shalek等人，2014）首先分离细胞之后，然后分别扩增每个细胞的转录组。在不同的条件和扰动下，需要快速，可扩展的方法来表征具有许多细胞类型和状态的复杂组织。在这里，我们描述了Drop-seq，一种通过将细胞封装在微小液滴中用于平行分析来分析数千个单个细胞中的mRNA表达的方法。通过在微流体装置（Thorsen等人，2001; Umbanhowar等人，2000）中精确地组合水和油流形成的液滴 - 纳升级水性隔室已被用作PCR的微小反应室（Hindson等人，2011; Vogelstein和Kinzler，1999）和逆转录（Beer等人，2008）。我们在这里寻求使用液滴将细胞分隔成纳米尺寸的反应室，以分析其所有RNA。使用液滴进行转录组学的一个基本挑战是保留每个mRNA转录本所分离的细胞同一性的分子记忆。为了实现这一点，我们开发了一种分子条形码策略来记住每个mRNA的起始细胞。我们批判性地评估Drop-seq，然后用它来细胞周期细胞状态。当将其应用于复合神经组织，小鼠视网膜，并从44,808个细胞谱鉴定了39个不同的群体，每个对应于一个或一组密切相关的细胞类型。我们的研究结果表明，大规模的单细胞分析可以帮助我们深入了解复杂组织和细胞群的生物学。">
+  <meta property="og:description" content="Macosko EZ, et al. (2015) Highly parallel genome-wide expression profiling of individual cells using nanoliter droplets. Cell 161(5):1202–1214.   概要 细胞，生物结构和功能的基本单位在类型和状态上有广泛的变化。单细胞基因组学可以表征细胞识别和功能，但容易程度和量表的局限性已经消除了其广泛应用。在这里我们描述了Drop-seq，它是通过将数千个单个细胞分离成纳米尺寸的水滴，将不同的条形码与每个细胞的RNA相关联并将它们排列在一起的策略。 Drop-seq同时记录来自数千个单个细胞的mRNA转录，同时记住转录本的细胞。我们分析了44,808只小鼠视网膜细胞的转录组，并确定了39个转录不同的细胞群，为已知的视网膜细胞类型和新型候选细胞亚型创建了分子基因表达图谱。 Drop-seq将通过在单细胞分辨率下进行常规转录谱分析来加速生物发现。
+介绍 个体细胞是组织，器官和组织的组成部分。每个组织包含许多类型的细胞，每种类型的细胞可以在生物学状态之间切换。在大多数生物系统中，我们对细胞多样性的认识是不完整的;例如，脑的细胞类型复杂性是未知的，并且被广泛争议（Luo et al。，2008; Petilla Interneuron Nomencla Group，et al。，2008）。要了解复杂组织的工作原理，了解每种细胞类型的功能能力和反应是非常重要的。每个细胞功能的主要决定因素是其转录程序。最近的进展现在使单个细胞的mRNA-seq分析（Tang等人，2009）。然而，制备用于分析的细胞的方法在实践中已经适用于刚刚狩猎（Hashimshony等人，2012; Picelli等人，2013）或（自动化）几千个细胞（Jaitin等通常在通过流分选（Shalek等，2013）或微流体学（Shalek等人，2014）首先分离细胞之后，然后分别扩增每个细胞的转录组。在不同的条件和扰动下，需要快速，可扩展的方法来表征具有许多细胞类型和状态的复杂组织。在这里，我们描述了Drop-seq，一种通过将细胞封装在微小液滴中用于平行分析来分析数千个单个细胞中的mRNA表达的方法。通过在微流体装置（Thorsen等人，2001; Umbanhowar等人，2000）中精确地组合水和油流形成的液滴 - 纳升级水性隔室已被用作PCR的微小反应室（Hindson等人，2011; Vogelstein和Kinzler，1999）和逆转录（Beer等人，2008）。我们在这里寻求使用液滴将细胞分隔成纳米尺寸的反应室，以分析其所有RNA。使用液滴进行转录组学的一个基本挑战是保留每个mRNA转录本所分离的细胞同一性的分子记忆。为了实现这一点，我们开发了一种分子条形码策略来记住每个mRNA的起始细胞。我们批判性地评估Drop-seq，然后用它来细胞周期细胞状态。当将其应用于复合神经组织，小鼠视网膜，并从44,808个细胞谱鉴定了39个不同的群体，每个对应于一个或一组密切相关的细胞类型。我们的研究结果表明，大规模的单细胞分析可以帮助我们深入了解复杂组织和细胞群的生物学。">
+  <meta name="twitter:description" content="Macosko EZ, et al. (2015) Highly parallel genome-wide expression profiling of individual cells using nanoliter droplets. Cell 161(5):1202–1214.   概要 细胞，生物结构和功能的基本单位在类型和状态上有广泛的变化。单细胞基因组学可以表征细胞识别和功能，但容易 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E8%A1%A8%E8%BE%BE%E8%B0%B1/macosko2015-%E5%8D%95%E7%BB%86%E8%83%9E%E8%A1%A8%E8%BE%BE%E8%B0%B1/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E8%A1%A8%E8%BE%BE%E8%B0%B1/macosko2015-%E5%8D%95%E7%BB%86%E8%83%9E%E8%A1%A8%E8%BE%BE%E8%B0%B1/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Macosko2015-单细胞表达谱</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (36 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Macosko2015-单细胞表达谱</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (36 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<ol>
+<li>Macosko EZ, et al. (2015) Highly parallel genome-wide expression profiling of individual cells using nanoliter droplets. Cell 161(5):1202–1214.</li>
+</ol>
+</blockquote>
+
+<p>概要
+细胞，生物结构和功能的基本单位在类型和状态上有广泛的变化。单细胞基因组学可以表征细胞识别和功能，但容易程度和量表的局限性已经消除了其广泛应用。在这里我们描述了Drop-seq，它是通过将数千个单个细胞分离成纳米尺寸的水滴，将不同的条形码与每个细胞的RNA相关联并将它们排列在一起的策略。 Drop-seq同时记录来自数千个单个细胞的mRNA转录，同时记住转录本的细胞。我们分析了44,808只小鼠视网膜细胞的转录组，并确定了39个转录不同的细胞群，为已知的视网膜细胞类型和新型候选细胞亚型创建了分子基因表达图谱。 Drop-seq将通过在单细胞分辨率下进行常规转录谱分析来加速生物发现。</p>
+
+<p>介绍
+个体细胞是组织，器官和组织的组成部分。每个组织包含许多类型的细胞，每种类型的细胞可以在生物学状态之间切换。在大多数生物系统中，我们对细胞多样性的认识是不完整的;例如，脑的细胞类型复杂性是未知的，并且被广泛争议（Luo et al。，2008; Petilla Interneuron Nomencla Group，et al。，2008）。<strong>要了解复杂组织的工作原理，了解每种细胞类型的功能能力和反应是非常重要的。每个细胞功能的主要决定因素是其转录程序</strong>。最近的进展现在使单个细胞的mRNA-seq分析（Tang等人，2009）。然而，制备用于分析的细胞的方法在实践中已经适用于刚刚狩猎（Hashimshony等人，2012; Picelli等人，2013）或（自动化）几千个细胞（Jaitin等通常在通过流分选（Shalek等，2013）或微流体学（Shalek等人，2014）首先分离细胞之后，然后分别扩增每个细胞的转录组。在不同的条件和扰动下，需要快速，可扩展的方法来表征具有许多细胞类型和状态的复杂组织。在这里，我们描述了Drop-seq，一种通过将细胞封装在微小液滴中用于平行分析来分析数千个单个细胞中的mRNA表达的方法。通过在微流体装置（Thorsen等人，2001; Umbanhowar等人，2000）中精确地组合水和油流形成的液滴 - 纳升级水性隔室已被用作PCR的微小反应室（Hindson等人，2011; Vogelstein和Kinzler，1999）和逆转录（Beer等人，2008）。我们在这里寻求使用液滴将细胞分隔成纳米尺寸的反应室，以分析其所有RNA。使用液滴进行转录组学的一个基本挑战是保留每个mRNA转录本所分离的细胞同一性的分子记忆。为了实现这一点，我们开发了一种分子条形码策略来记住每个mRNA的起始细胞。我们批判性地评估Drop-seq，然后用它来细胞周期细胞状态。当将其应用于复合神经组织，小鼠视网膜，并从44,808个细胞谱鉴定了39个不同的群体，每个对应于一个或一组密切相关的细胞类型。我们的研究结果表明，大规模的单细胞分析可以帮助我们深入了解复杂组织和细胞群的生物学。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/madhibha-2013%E7%A7%8D%E9%97%B4%E6%9D%82%E7%A7%8D-%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0-%E6%A1%89%E6%A0%91/" data-toggle="tooltip" data-placement="top" title="Madhibha-2013种间杂种-遗传参数-桉树">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/rcodes/m3m4%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83_2016-10-21-11-22-10-cst_/" data-toggle="tooltip" data-placement="top" title="M3M4模型比较_2016-10-21-11-22-10-CST_">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

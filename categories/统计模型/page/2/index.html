@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>统计模型</title>
+  <meta property="og:title" content="统计模型" />
+  <meta name="twitter:title" content="统计模型" />
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/categories/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../../categories/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/" />
+  <link rel="alternate" href="../../../../categories/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../../">
+            <img class="avatar-img" src="../../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  <header class="header-section ">
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>#统计模型</h1>
+              <hr class="small">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    
+  <div class="container" role="main">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="../../../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/zamudio2008-%E5%85%8B%E9%9A%86-%E9%87%8D%E5%A4%8D%E6%B5%8B%E9%87%8F-lmm-%E7%A9%BA%E9%97%B4/">
+                <h2 class="post-title">Zamudio2008-克隆-重复测量-LMM-空间</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  Zamudio F, Wolfinger R, Stanton B, Guerra F (2008) The use of linear mixed model theory for the genetic analysis of repeated measures from clonal tests of forest trees. I. A focus on spatially repeated data. Tree Genet Genomes 4:299–313. doi: 10.1007/s11295-007-0110-4
+ ##摘要 本文综述了线性混合模型（LMM）方法，适用于从克隆子代测试收集的空间重复测量的统计和遗传分析。例如，我们考虑了杨树克隆试验，其中不同家系的后代通过插枝繁殖，并且在每个块上每个克隆仅种植一个分株。基于LMM理论建模协方差结构允许基于克隆测试改进遗传参数估计。除了方差分量，我们还获得了残差之间的协方差（在两个不同块中的克隆效应内）的估计。这种协方差是由于在同一试验中从相同基因型种植多个分株，其产生来自不同块的相关残留效应。其估计可显着改善克隆中后代测试或克隆测试网络中的测试之间的比较。结果表明协方差也是遗传方差估计的一个组成部分，并在评估特定（微）环境影响的方差中发挥重要作用。正协方差意味着分布在多于一个块中表现出类似的性能。因此，更大和更积极的协方差意味着控制地方环境中的性状表达的更强的遗传效应和更小的特定环境影响的变化。相反，负协方差意味着个别分株的性能受到对一个或多个嵌段特异性的强微环境效应的影响，这也可以直接增加克隆内变异性。
+##介绍
+当研究数量性状时，森林遗传学家和树种育种者必须面对几个挑战。他们从几年的现场测试收集大量数据，其中一个或两个父母的血统已知，并运行统计分析旨在测试一组假​​设，并推断固定和随机效应参数在模型中对应到实验现场设计。他们然后使用统计结果来估计遗传参数，其适合于理解性状的遗传模式，预测对选择策略的响应，并且开发有助于区分突出基因型的精确排名。通常，选择的树将配置繁殖群体，尽管一些直接选择用于商业繁殖。 后代测试的数据的统计和遗传分析可能变得复杂，因为两个可能的原因。首先，从实地试验中建立的不同遗传项目收集的数据由于正常预期的死亡率而不平衡。第二，在后代的个体发育过程中多年来从相同的后代中常规地收集重复的测量。一般来说，重复测量用于描述其中在相同受试者或实验单元（例如树或后代测试中的图）上顺序观察到响应变量的数据。森林研究中的典型重复测量实验包括随机分配给处理的树和在一系列时间点上对每棵树测量的响应变量。因此，实验是一种因素试验，处理和时间作为两个因素。实验的数据分析涉及处理和时间的主要影响与它们的一级相互作用的方差的分配（Moser等人1990; Littell等人1998）。通常，反应用于纵向研究，旨在评估生长曲线随时间的趋势。 Meredith和Stehman（1991）提出了森林研究中重复测量的其他实例，例如评估疾病影响，监测光合作用和呼吸等。 在树种育种中，纵向数据分析的直接应用之一是幼年成熟相关性的估计，用于评估进行早期选择的可能性（Zobel和Talbert 1984）。然而，也可以在空间序列中进行重复测量，例如在树的茎中在（a）不同高度或（b）不同环数（摄影机年龄），*在特定高度处测量的木材相关性状*et al.2002，2005）。因此，森林遗传学的研究往往面临着在多个层次相关的数据。 传统上，树木育种程序依赖于测试由不同配对方案产生的完全和半同胞子代（Zobel和Talbert 1984）。随着更好的营养繁殖技术的发展，预先的育种计划正在增加使用选择的基因型的克隆用于测试和选择目的（Paul等人1997; Lynch和Walsh 1998; Giannini和Raddi 1992; Menzies和Aimers- Halliday 1997）。虽然，克隆测试的使用对于选择优质杨树杂种是传统的（Bisoffi和Gullberg 1996; Koubaa等人1998）。 因此，从克隆遗传测试收集的数据可能变得更复杂，以便分析，因为措施可以双重重复。首先，在空间上，因为来自相同克隆的两个分株的测量实际上是相同基因型的两个重复测量。第二，随着时间的推移，因为在不同时刻采取的相同尺度的措施是纵向数据。 Littell et al。 （2006）将这种类型的数据命名为时间序列横截面或面板数据。 有几种统计方法用于分析重复测量随时间的变化。 Littell et al。 （2006）提到例如：（1）在每个时间点的单独分析，（2）单变量方差分析，（3）时间对比变量的单变量和多变量分析，和（4）混合模型方法。 Moser et al。 （1990）也提到时间序列分析。在过去20年左右的线性混合模型（LMM）方面已经做了大量的工作（McCulloch和Searle 2001），它已经通过计算硬件和软件的开发得到了增强。因此，当前的LMM方法不仅允许在线性模型中存在方差异质性（仍然假定正态性），而且允许研究者直接解决协方差结构。建模数据的协方差结构可以通过提供有效的标准误差和高效的统计测试来提高我们分析重复测量数据的能力。 在本文中，我们审查适用于从克隆森林试验收集的空间重复测量的统计和遗传分析的LMM方法。来自在智利中心建立的杨树克隆测试的数据用作例子。
+                  <a href="../../../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/zamudio2008-%E5%85%8B%E9%9A%86-%E9%87%8D%E5%A4%8D%E6%B5%8B%E9%87%8F-lmm-%E7%A9%BA%E9%97%B4/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/%E9%9A%8F%E6%9C%BA%E6%95%88%E5%BA%94%E7%9A%84%E6%8E%A8%E6%96%AD/">
+                <h2 class="post-title">随机效应的推断</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  
+
+<blockquote>
+<p>Butler D, Cullis BR, Gilmour a R, Gogel BJ (2009) Mixed models for S language environments.</p>
+</blockquote>
+
+<h2 id="2-5随机效应的推断">2.5随机效应的推断</h2>
+
+<h2 id="2-5-1假设的测试">2.5.1假设的测试</h2>
+
+<p>关于线性混合效应模型的方差参数的推论通常取决于从渐近结果导出的（RE）ML估计的近似分布。</p>
+
+<p>可以表明，<strong>REML估计的近似方差矩阵由期望信息矩阵的逆提供</strong>[Cox和Hinkley，1974，Section 4.8]。由于这个矩阵在asreml（）中不可用，我们<strong>用AI矩阵替换预期的信息矩阵</strong>。此外，REML估计是连续和渐近正常的，尽管在小样本中，这种近似似乎是不可靠的（见后文）。</p>
+
+<p>用于比较由REML拟合的嵌套模型的拟合的一般方法是<strong>REML似然比检验</strong>或REMLRT。 <strong>REMLRT仅在两个模型的固定效应相同时有效</strong>。在asreml（）中，这不仅需要相同的固定效应模型，而且需要相同的参数化，因为矩阵X&rsquo;X的对数决定因素不包括在REML对数似然中。
+如果*lR2*是更一般模型的REML对数似然，并且*lR1*是受限模型的REML对数似然（即，在零假设下的REML对数似然），则REMLRT由下式给出</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-55830b691dea9865.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="REMLRT.png" />（2.14）</p>
+
+<p>这是严格的积极。如果ri是在模型i中估计的参数的数量，则在限制模型下的REMLRT的渐近分布是χ2r2-r1。</p>
+
+<p><strong>REMLRT是隐式双侧的，并且当测试涉及具有参数在参数空间的边界上的参数的假设时必须被调整</strong>。可以表明，对于单个方差分量，REMLRT的理论渐近分布是χ2变量的混合，其中混合概率为0.5，一个具有0自由度（尖峰在0），另一个具有1度自由。
+REMLRT统计量（D）的近似P值为0.5（1-Pr（χ2≤d）），其中d是D的观测值。与3.84临界值相比，5％临界值为2.71值为χ21变量。用于k个方差分量为零的测试的REMLRT的分布或者涉及随机回归的测试涉及方差和协方差分量，涉及从0到k自由度的χ2变量的混合。详见Self and Liang [1987]。</p>
+
+<p>关于一般平衡设计中的方差分量的测试，例如平衡单向分类，可以从通常的方差分析中导出。可以表明，对于方差分量为零的REMLRT是关联项的F统计量的色调函数。
+为了比较两个（或更多）非嵌套模型，我们可以对每个模型评估Akaike信息准则（AIC）或贝叶斯信息准则（BIC）。这些是由
+AIC =-2ℓRi+ 2ti
+BIC =-2ℓRi+ tilogv（2.15）
+其中ti是模型i中方差参数的数量，ν= n-p是剩余自由度。对每个模型计算AIC和BIC，并且选择具有最小值的模型作为优选模型。</p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+        </div>
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="../../../../categories/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/page/1/">&larr; Newer Posts</a>
+              </li>
+            
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../../categories/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../../js/main.js"></script>
+<script src="../../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

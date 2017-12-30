@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Weng2008-遗传方差剖分-上位</title>
+  <meta property="og:title" content="Weng2008-遗传方差剖分-上位" />
+  <meta name="twitter:title" content="Weng2008-遗传方差剖分-上位" />
+  <meta name="description" content="Weng, Y. H., Park, Y. S., Krasowski, M. J., Tosh, K. J., &amp; Adams, G. (2008). Partitioning of genetic variance and selection efficiency for alternative vegetative deployment strategies for white spruce in Eastern Canada. Tree Genetics and Genomes, 4(4), 809–819. http://doi.org/10.1007/s11295-008-0154-0
+ 通过在加拿大新不伦瑞克省的育苗场和田间环境中建立的克隆复制的全同胞后代测试来估计白云杉（云杉（Vench））的生长性状的遗传变异和选择效率。可用数据包括苗圃试验中第4,5和6年的高度;身高，年龄，身高，体重，以及14年的体积。估计方差分量根据加性显性上位性模型进行解释。在苗期试验中的高度，虽然非加性和加性差异是遗传变异的重要来源，但前者减少，但后者随年龄增加;在非加性遗传方差中，上位方差比优势方差重要得多。与苗圃性状不同，对于田间试验中的性状，加性方差占总遗传方差的平均值的81％，而优势方差解释了大部分剩余遗传方差。比较了三种植物部署策略的遗传参数和选择效率：部署半同胞家庭（VD_FAMHS），全同胞家系（VD_FAMFS）和多品种林业（MVF）。遗传力估计对于VD_FAMHS和VD_FAMFS（0.61-0.72）是中等的，对于苗圃高度是高MVF（&gt; 0.82），对于所有策略的场特征是高（&gt; 0.79）。在田间试验中，年龄14的体积的遗传相关性，即改善的目标性状，与其它田间性状强烈（&gt; 0.85）。在半同胞和全同胞家族水平，VOL14与苗圃高度的遗传相关性也强（&gt; 0.71），但对于MVF仅为中度（&gt; 0.59）。总体而言，实践MVF是最有效的部署策略，产生最高的遗传增益，其次是VD_FAMFS和VD_FAM HS，无论性状和选择方法。此外，HT9或HT4-HT6的早期选择是非常令人鼓舞的，导致每年在14岁时体积增加。
+引言 遗传变异包括三个组成部分：加性，优势和上位性遗传变异（Falconer和MacKay 1996）。树种的加性和优势方差的估计可以通过从全同胞交配设计测试幼苗子代获得。然而，如果幼苗后代用于量化上位方差，则需要近交系（Wricke和Weber 1986）。由于针叶树的长生成时间和异型特征，用于这种目的的幼苗测试实际上不可能应用。相对少数研究使用克隆复制的全同胞子代而不是种子来探索遗传组分的相对重要性。该程序需要产生亲本的交配设计，然后在一组环境中测试其克隆的后代。方差分量从测试数据估计，并转换为亲戚的协方差，然后可以用加性，数量或上位方差来解释。使用这种方法，在针叶树中发现了相对大的非加性遗传变异（Baltunis等人2007a，b; Costa e Silva等人2004; Foster and Shaw 1988; Isik等人2003,2004,2005; Kumar 2006; Mullin and Park 1994; Paul et al.">
+  <meta property="og:description" content="Weng, Y. H., Park, Y. S., Krasowski, M. J., Tosh, K. J., &amp; Adams, G. (2008). Partitioning of genetic variance and selection efficiency for alternative vegetative deployment strategies for white spruce in Eastern Canada. Tree Genetics and Genomes, 4(4), 809–819. http://doi.org/10.1007/s11295-008-0154-0
+ 通过在加拿大新不伦瑞克省的育苗场和田间环境中建立的克隆复制的全同胞后代测试来估计白云杉（云杉（Vench））的生长性状的遗传变异和选择效率。可用数据包括苗圃试验中第4,5和6年的高度;身高，年龄，身高，体重，以及14年的体积。估计方差分量根据加性显性上位性模型进行解释。在苗期试验中的高度，虽然非加性和加性差异是遗传变异的重要来源，但前者减少，但后者随年龄增加;在非加性遗传方差中，上位方差比优势方差重要得多。与苗圃性状不同，对于田间试验中的性状，加性方差占总遗传方差的平均值的81％，而优势方差解释了大部分剩余遗传方差。比较了三种植物部署策略的遗传参数和选择效率：部署半同胞家庭（VD_FAMHS），全同胞家系（VD_FAMFS）和多品种林业（MVF）。遗传力估计对于VD_FAMHS和VD_FAMFS（0.61-0.72）是中等的，对于苗圃高度是高MVF（&gt; 0.82），对于所有策略的场特征是高（&gt; 0.79）。在田间试验中，年龄14的体积的遗传相关性，即改善的目标性状，与其它田间性状强烈（&gt; 0.85）。在半同胞和全同胞家族水平，VOL14与苗圃高度的遗传相关性也强（&gt; 0.71），但对于MVF仅为中度（&gt; 0.59）。总体而言，实践MVF是最有效的部署策略，产生最高的遗传增益，其次是VD_FAMFS和VD_FAM HS，无论性状和选择方法。此外，HT9或HT4-HT6的早期选择是非常令人鼓舞的，导致每年在14岁时体积增加。
+引言 遗传变异包括三个组成部分：加性，优势和上位性遗传变异（Falconer和MacKay 1996）。树种的加性和优势方差的估计可以通过从全同胞交配设计测试幼苗子代获得。然而，如果幼苗后代用于量化上位方差，则需要近交系（Wricke和Weber 1986）。由于针叶树的长生成时间和异型特征，用于这种目的的幼苗测试实际上不可能应用。相对少数研究使用克隆复制的全同胞子代而不是种子来探索遗传组分的相对重要性。该程序需要产生亲本的交配设计，然后在一组环境中测试其克隆的后代。方差分量从测试数据估计，并转换为亲戚的协方差，然后可以用加性，数量或上位方差来解释。使用这种方法，在针叶树中发现了相对大的非加性遗传变异（Baltunis等人2007a，b; Costa e Silva等人2004; Foster and Shaw 1988; Isik等人2003,2004,2005; Kumar 2006; Mullin and Park 1994; Paul et al.">
+  <meta name="twitter:description" content="Weng, Y. H., Park, Y. S., Krasowski, M. J., Tosh, K. J., &amp; Adams, G. (2008). Partitioning of genetic variance and selection efficiency for alternative vegetative deployment strategies for white …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/weng2008-%E9%81%97%E4%BC%A0%E6%96%B9%E5%B7%AE%E5%89%96%E5%88%86-%E4%B8%8A%E4%BD%8D/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/weng2008-%E9%81%97%E4%BC%A0%E6%96%B9%E5%B7%AE%E5%89%96%E5%88%86-%E4%B8%8A%E4%BD%8D/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Weng2008-遗传方差剖分-上位</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (218 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Weng2008-遗传方差剖分-上位</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (218 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Weng, Y. H., Park, Y. S., Krasowski, M. J., Tosh, K. J., &amp; Adams, G. (2008). Partitioning of genetic variance and selection efficiency for alternative vegetative deployment strategies for white spruce in Eastern Canada. Tree Genetics and Genomes, 4(4), 809–819. <a href="http://doi.org/10.1007/s11295-008-0154-0">http://doi.org/10.1007/s11295-008-0154-0</a></p>
+</blockquote>
+
+<p>通过在加拿大新不伦瑞克省的育苗场和田间环境中建立的克隆复制的全同胞后代测试来估计白云杉（云杉（Vench））的生长性状的遗传变异和选择效率。可用数据包括苗圃试验中第4,5和6年的高度;身高，年龄，身高，体重，以及14年的体积。估计方差分量根据加性显性上位性模型进行解释。在苗期试验中的高度，虽然非加性和加性差异是遗传变异的重要来源，但前者减少，但后者随年龄增加;在非加性遗传方差中，上位方差比优势方差重要得多。与苗圃性状不同，对于田间试验中的性状，加性方差占总遗传方差的平均值的81％，而优势方差解释了大部分剩余遗传方差。比较了三种植物部署策略的遗传参数和选择效率：部署半同胞家庭（VD_FAMHS），全同胞家系（VD_FAMFS）和多品种林业（MVF）。遗传力估计对于VD_FAMHS和VD_FAMFS（0.61-0.72）是中等的，对于苗圃高度是高MVF（&gt; 0.82），对于所有策略的场特征是高（&gt; 0.79）。在田间试验中，年龄14的体积的遗传相关性，即改善的目标性状，与其它田间性状强烈（&gt; 0.85）。在半同胞和全同胞家族水平，VOL14与苗圃高度的遗传相关性也强（&gt; 0.71），但对于MVF仅为中度（&gt; 0.59）。总体而言，实践MVF是最有效的部署策略，产生最高的遗传增益，其次是VD_FAMFS和VD_FAM HS，无论性状和选择方法。此外，HT9或HT4-HT6的早期选择是非常令人鼓舞的，导致每年在14岁时体积增加。</p>
+
+<hr />
+
+<h2 id="引言">引言</h2>
+
+<p>遗传变异包括三个组成部分：加性，优势和上位性遗传变异（Falconer和MacKay 1996）。树种的加性和优势方差的估计可以通过从全同胞交配设计测试幼苗子代获得。然而，如果幼苗后代用于量化上位方差，则需要近交系（Wricke和Weber 1986）。由于针叶树的长生成时间和异型特征，用于这种目的的幼苗测试实际上不可能应用。相对少数研究使用克隆复制的全同胞子代而不是种子来探索遗传组分的相对重要性。该程序需要产生亲本的交配设计，然后在一组环境中测试其克隆的后代。方差分量从测试数据估计，并转换为亲戚的协方差，然后可以用加性，数量或上位方差来解释。使用这种方法，在针叶树中发现了相对大的非加性遗传变异（Baltunis等人2007a，b; Costa e Silva等人2004; Foster and Shaw 1988; Isik等人2003,2004,2005; Kumar 2006; Mullin and Park 1994; Paul et al.1997; Stonecypher and McCullough 1986）。当评估植物部署策略时，精确分配遗传组分，特别是非加性相对强度与加性方差是至关重要的。由于针叶树中营养繁殖技术的改进（Park et al。，1998），遗传改良树木的营养部署选择产生了很大的兴趣。目前，植物部署半同胞家庭（VD_FAMHS），植物部署全同胞家族（VD_FAMFS）和营养部署克隆（也称为多品种林业（MVF））的三种植物营养策略是用针叶树进行的。 VD_FAMHS涉及鉴定最佳的通用组合能力（GCA）亲本，随后是开放授粉或多克隆种子的大规模营养繁殖用于操作种植。类似地，VD_FAMFS包括鉴定来自受控授粉后代测试的最佳杂交，随后重复杂交所选择的杂交组合以及所得种子的营养繁殖。这些策略提出与挪威云杉（云杉松属（Karst; Bentzer 1993）和辐射松（Pinus radiata D.唐; Gleed 1993），并且根的生根通常是营养繁殖方法。由于幼苗被用作根茎切割的供体材料，当实施这些策略时，可以控制供体克隆的成熟。第三个策略MVF涉及从克隆复制的测试中选择最佳表现的品种（克隆），随后是这些选择的营养部署。由于现场测试需要很长时间，通过从幼苗生根的营养繁殖通常是不实际的。因此，对于这种策略，通过体细胞胚胎发生（SE）的营养繁殖是优选的（Park等人1998）。
+与传统的种子果园程序相比，植物部署有很多优点（Libby和Rauter 1984），例如有效利用更多的遗传变异;灵活性，快速使用精英克隆，以满足不断变化的产品目标和环境;和更有效地管理多样性的能力。 Libby（1969）提示，克隆选择总是比家族加群体选择，家族选择或群体选择更有效。然而，为了实施植物部署策略，特别是MVF，需要建立克隆复制的全同胞后代测试。由于克隆复制的全同胞子代测试中的克隆的分株具有可追踪的亲本，例如家族关系中的半同胞，全同胞和克隆，所以克隆复制的全同胞后代测试提供了评估选择效率的机会（Picea mariana（Mill）BSP; Mullin and Park 1994; New Brunswick Tree Improvement Council（NBTIC）1999）和火炬松（Pinus taeda L 。; Baltunis等人2007b）。理论上，旋转年龄的至少三分之一必须通过，然后才能进行最佳早期选择年龄的实际评估（Zobel和Talbert 1984），这使得育种工作在每单位时间基础上效率较低。为了减少测试时间，早期选择通常是一个有吸引力的选择（Wu 1998）。早期选择对于营养部署策略可能尤其重要，使得具有高优势概率的克隆可以在较早阶段使用，或者可以从野外克隆测试中消除较差的克隆。从早期克隆选择发布的效率很少，但结果一般令人鼓舞（Högberg和Karlsson 1998; Rouland等人1986）。然而，他们的结果在传统的“克隆试验”中观察到，其中没有考虑谱系信息。其他研究已经证明通过克隆复制测试的遗传参数的增加的精确度（Baltunis等人2007a; Burdon和Shelbourne 1974; Isik等人2003）。到目前为止，尚未报道克隆复制试验的早期选择效率。白色云杉（云杉Glauca [Moench] Voss）是北美最广泛分布的针叶树之一，是加拿大大部分地区用于纸浆木材和建筑木材的重要造林树种。该物种的遗传改良计划在过去30年中已经进行。通过插条或SE的植物繁殖对于白云杉的这种类型的应用充分地改进（Park等人1998）。目前，需要在新不伦瑞克（NB）中选择用于该物种的植物部署的高质量材料，并且满足该需要的实际方式是在早期选择优良的种植材料。虽然关于加性遗传方差的广泛信息已被报道从开放授粉苗后代测试（Magnussen 1993; Merrill和Mohn 1985; Nienstaedt 1984; Nienstaedt和Riemenschneider 1985; Weng等人2007），文献是稀疏的， sib和白色云杉的克隆变化，这限制了植物部署策略的效率的评价。 1990年，在野外和苗圃环境中建立了白云杉后代的克隆复制基因测试。本文的目的是（1）通过将遗传方差分为加性，优势和上位方差分量来检查遗传方差的相对重要性，以及（2）计算替代植物部署策略的遗传参数和选择效率。结果应该为规划白云杉育种，测试和克隆部署计划提供有用的见解。</p>
+
+<h2 id="讨论">讨论</h2>
+
+<h3 id="分离遗传方差">分离遗传方差</h3>
+
+<p>已经讨论了用于本研究中使用的加性优势 - 上位性模型所需的通常假设（Costa e Silva等人2004; Foster and Shaw 1988; Mullin 1990; Paul等人1997）。然而，其他因素也可能偏差从克隆复制测试的遗传方差的分配。如前所述，估计的bs2A和bD可能被上位性方差的s2a分数污染。结果表明，来自上位性方差的污染在苗圃试验中可能偏向bs2A和bDs2的估计，但在田间试验中可能较小，因为对于每个性状，田间试验中的b s2 I本身较小。此外，众所周知克隆中的一些变异可以是非遗传的，例如供体树的位置和老化的影响（C效应），导致增加的克隆和上位性变异。从已发表的文献中得出的一般结论是，C效应仅对少年性状产生显着偏差，但在几年后可能没有什么影响（Cannell等人1988; Libby和Jund 1962; Wilcox和Farmer 1968）。因此，在苗圃试验中估计的高b s2 I可能部分是由于这些非遗传效应。我们的研究结果还表明，互惠效应可能对年轻时的生长性状很重要，但在年龄消失。在苗圃和田间试验中显示的每个遗传组分的相对重要性的量值彼此不平行（表1和2，图1）。它们之间的直接比较可能不合理，因为它们是在不同的年龄和环境下测量的。遗传方差分量的相对幅度可随时间变化（Carson 1990; Cotterill和Dean 1988; Foster and Shaw 1988; Franklin 1979; Isik et al.2003; King et al.1998; Mullin and Park 1994）和环境1990）。然而，在苗圃s2试验（图1）中bs2 I和bA随年龄增加的趋势表明在两种环境下遗传方差的分配可能是合理的。在火炬松（Pinus taeda L.; Balocchi等人1993）和辐射松（Pinus radiata D.Don; King等人1998）中也发现了增加附加方差的趋势。我们在田间试验中的结果与一般发现一致，即加性遗传方差在森林树种的总遗传方差中起主要作用。然而，文献中非加性方差的相对重要性的公布结果是不一致的。对于5至10岁的生长性状，上位相互作用是黑云杉（Picea mariana（Mill。）BSP; Mullin and Park 1994; NBTIC 1999）和Populus deltoides中最重要的非加性遗传方差（Foster and Shaw 1988） 。然而，Stonecypher和McCullough（1986）报道道格拉斯冷杉（Pseudotsuga menziesii（Mirb。）Franco）在5岁和6岁的DBH的上位方差的估计值为零。在火炬松中，上位性方差在生长性状方面没有显着的作用，但是在早期年龄段的优势方差相当大（Baltunis等人2007a; Isik等人2003; Paul等人1997）。 Costa e Silva et al。 （2004）报道，优势方差和上位方差分别占桉树4年直径表型方差的4％和0.4％。研究之间的差异可能是由于不同的物种，人群，年龄，实验设计或涉及的测试环境。然而，在本研究和上述文献中发现的生长性状的非加性遗传方差的存在再次表明使用非加性遗传方差的可能重要性。</p>
+
+<h3 id="遗传参数">遗传参数</h3>
+
+<p>这项研究的一个重要的结果是估计遗传参数的三个植物部署战略基于克隆复制测试在野外和苗圃环境。尽管苗圃试验的寄生均匀性较高，但苗期试验的遗传力估计值低于田间试验的，特别是对于VD_FAMHS和VD_FAMFS。这是不出乎意料的，并且在两个测试中的遗传方差的分配模式一致：在苗圃试验中VD_FAMHS和VD_FAMFS的可用遗传方差比在现场测试中的相应的低。不同的测试尺寸和测试之间的年龄也可能涉及这种差异。尽管存在这些差异，但是苗圃试验中的H 2C虽然略低，但相对于现场试验中的那些相对较高，这表明苗圃试验尽管具有小的测试尺寸，但可以提供高精度的克隆选择。在这项研究中，VOL14和其他生长性状之间的遗传相关性在现场测试令人印象深刻的所有策略，可能表明这些性状实际上在同一组的基因的控制下。 VOL14和苗圃高度之间的遗传相关性也非常高;那些对VD_FAMHS的影响远远高于其他NBTIC苗圃试验系列（Weng et al。2007）。从克隆复制试验估计的遗传相关性比来自幼苗后代试验的基因相关性更高和更精确（Baltunis等人2007a; Burdon和Shelbourne 1974; Isik等人2003）。结果还表明，半同胞家族水平的遗传相关性高于全同胞家系，这又高于克隆水平的遗传相关性。这些结果与早期的理论研究和实证证据非常一致（Huehn等人1987;Hühn1986; Mullin和Park 1994）。在现场测试中所有性状的高B型遗传相关性表明基因型在位置之间的顺序基本上相似，并且即使在克隆水平，这种相互作用的利用可能低。这并不奇怪，因为所有的选择和位置都在同一个繁殖区。</p>
+
+<h3 id="遗传增益和选择的相对效率">遗传增益和选择的相对效率</h3>
+
+<p>虽然VD_FAMHS和VD_FAMFS选择可以分别捕获加性遗传方差和优势方差以及加性遗传方差，但是MVF可以利用所有的遗传方差。因此，实践MVF通常是最有效的，其次是VD_FAMFS和VD_FAMHS，尽管每个策略的实际益处主要取决于遗传方差的分割模式。由于轮作年龄的森林生产力总是改进的目标，本研究中14岁时生长性状的非加性遗传方差的存在表明，相对于白色的VD_FAMHS，尝试实施VD_FAMFS或MVF可能会增加大量额外的遗传增益云杉，除非非加性方差估计随年龄下降。 MVF在G中比VD_FAMFS高62％，而后者比VD_FAMHS高大约45％。
+在VD_FAMHS中获得的遗传增益可以变化很大，这取决于用于产生营养部署种子的方法。一个选择是通过与来自其他选择的最佳GCA亲本的混合花粉进行多交叉来产生种子。然而，据我们所知，很难找到与所选GCA亲本具有相似育种价值的花粉来源。一个实际的选择是从种子园中选择的GCA亲本收集种子。这种策略类似于半同胞家庭林业，但是具有营养部署而不是苗的部署。在目前的研究中，不包括花粉侧的改善在VD_FAMHS中的获益，导致低估了这种策略的收益。基于相同选择强度的假设，在策略之间进行G的比较（表3）。然而，该假设由于在测试中受限的亲本 - 家族 - 克隆结构而具有限制。在克隆复制的测试中，VD_FAMFS，特别是MVF的选择强度可以显着大于VD_FAMHS的选择强度。因此，在调整选择强度之后，MVF和VD_FAMFS甚至可以比VD_FAMHS更有效（图2）。数据还提供了计算VOL14中实现的遗传增益的机会，所选择的群体和总体群体之间的平均值差异，并且表示为群体平均值的百分比。发现与基于理论预测的那些类似的结果（图2）。然而，实施MVF比其他部署策略或VD_FAMFS在VD_FAMHS上的额外的好处是在实现的增益比预测的更大，特别是当选择强度变得更高。其原因是大多数预测的增益是人口统计。即使当群体中预测的增益低时，仍然可以存在显示不可预测的良好生长的个体克隆或家族。通过部署这些精英克隆或家系进行再造林可以获得更高的增益。实践MVF策略似乎有更多的应用程序在NB部署改进的材料。 MVF的最重要的优点是胚胎发生组织可以冷冻保存，而不改变其遗传构成和不失去成熟（Park等人1998年）。此外，该策略也灵活响应克隆排名或市场需求变化的可能变化，因为克隆现场测试继续提供更新的选择信息，直到旋转年龄。这提供了通过基因测试已经显示哪些克隆是最佳表现者之后通过解冻和再繁殖冷冻保藏克隆来开发高价值克隆品种的机会。然而，通过忽略选择之间的相关性，导致可能从少数更好的家族中选择的许多克隆，实现了该策略先前所证明的最高遗传增益（表4和图2）。我们的计算表明，如果目标是选择34克隆（10％的克隆，i = 1.755），他们将从20个家庭中选择。因此，从遗传多样性的观点来看，不考虑相关性的克隆选择可能不是所希望的。对此的折衷是在选择克隆进行部署时（家庭加上家庭选择）对家庭水平设置限制。再一次，假设相同的选择强度（i = 1.755），当它们选择每个更好家族一个克隆时，来自直接选择的VOL14的遗传增益比DV_FAMFS高出近28％。本研究最重要的目标之一是研究每种营养部署策略的早期选择效率。由于最新的测量只有14年，两个测试中的树木只在几个年龄段进行测量，所以不可能预测早期选择的真实最佳年龄。然而，每单位时间基础的令人印象深刻的高选择效率表明从实践早期选择的潜在收益，特别是在苗圃测试。在白云杉（Picea glauca（Moench）Voss）（Weng等人，2007）和黑云杉（Picea mariana（Mill）BSP）中也报道了在半同胞家族水平的回顾性苗圃选择的令人鼓舞的发现等人，1987; Sulzer等人1993; Mullin等人1995），并且类似于对于VD_FAMHS的这个研究，这些研究表明在苗圃环境中进行GCA选择之前通常需要4或5年测试。然而，对于四分之一圈的体积，我们在苗圃试验中的结果表明，在2或3年的克隆复制苗圃试验中的早期选择对于VD_FAMFS或MVF也是可行的。考虑到，苗圃选择可以与克隆开发结合用于现场测试，并且苗圃选择程序的效率可以进一步改善。白云杉克隆测试一般建立与2岁股票;在2年的早期苗圃选择将允许在现场测试之前剔除具有差的性能的克隆，但避免在现场建立中的任何不必要的延迟。本研究的优势在于大样本量和体积被用作目标性状。为了获得人口参数的显着估计，在diallel实验中通常需要超过10个亲本（Hayman 1963）。然而，上面引用的大多数研究涉及少量父母（&lt;10）或家族（&lt;40）或克隆，单个位点或仅早期测量（&lt;6岁）。在早期选择中，体积可以是比高度更有效的标准，以最大化遗传增益（Xiang等人，2003）。然而，这里报告的结果与很多不确定性有关，因此应谨慎使用。最重要的是，目标年龄设定为14岁，这是白色云杉的NB的旋转年龄只有四分之一。此外，研究受到以下事实的限制：苗圃试验仅在一个位置建立，因此，苗圃试验中的遗传参数可能由于可能的G×E相互作用而偏向。然而，每年更高的选择效率，特别是从苗圃选择，表明早期选择克隆复制测试可以非常有效，并应纳入树木改良计划。</p>
+
+<h2 id="结论">结论</h2>
+
+<p>在苗圃试验中，在较早的年龄（4-6岁）高度生长，虽然加性和非加性方差是遗传变异的重要来源，前者增加，而后者随年龄减少。对于在田间试验中约四分之一的旋转年龄的生长性状，遗传变异的主要来源是累加的，并且其占总遗传方差的平均值81％。大多数剩余的遗传变异是由优势引起的。检查了早期选择14年体积（VOL14）的遗传增益和选择效率的三个植物部署策略。由于选择强度相等，MVF策略始终是最有效的，其次是植物部分全同胞家庭和半同胞家庭。对于四分之一旋转年龄的体积，在田间试验中HT9的早期选择或在4,5和6年龄的苗圃高度在遗传获得方面效率较低，但是在每年的基础上比直接选择更有吸引力</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/wilkinson--1983-papadakis%E7%9A%84nn/" data-toggle="tooltip" data-placement="top" title="Wilkinson--1983-Papadakis的NN">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E8%82%B2%E7%A7%8D/weigel2017-%E5%A5%B6%E7%89%9B%E8%82%B2%E7%A7%8D%E7%99%BE%E5%B9%B4%E5%9B%9E%E9%A1%BE%E6%96%B9%E6%B3%95%E5%92%8C%E5%9F%BA%E5%9B%A0%E7%BB%84%E9%80%89%E6%8B%A9%E4%BB%8E%E6%AF%8D%E5%A5%B3%E6%AF%94%E8%BE%83%E5%88%B0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" data-toggle="tooltip" data-placement="top" title="Weigel2017-奶牛育种百年回顾：方法和基因组选择——从母女比较到深度学习">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

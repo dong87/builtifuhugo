@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Crossa2010-系谱和标记预测育种值</title>
+  <meta property="og:title" content="Crossa2010-系谱和标记预测育种值" />
+  <meta name="twitter:title" content="Crossa2010-系谱和标记预测育种值" />
+  <meta name="description" content="Crossa J, De Los Campos G, Pérez P, et al. 2010. Prediction of genetic values of quantitative traits in plant breeding using pedigree and molecular markers. Genetics, 186(2): 713–724.
+ 抽象 密集分子标记的可用性使得使用基因组选择（GS）用于植物育种成为可能。然而，实际植物种群中GS的模型评估非常有限。本文评估了使用小麦（Triticum aestivum L.）和玉米（Zea mays）数据的参数和半参数模型的性能，其中在几种环境条件下测量不同的性状。基于广泛的交叉验证的研究结果表明，包括标记信息的模型具有比基于谱系的模型更高的预测能力。在小麦数据集中，相对于谱系模型，由于包含标记的预测能力的提高范围为7.7〜35.7％。玉米数据集观察值与预测值的相关性达到0.79。标记效应的估计在环境条件下是不同的，表明基因型×环境相互作用是遗传变异性的重要组成部分。这些结果表明，植物育种中的GS可能是选择尚未观察到其表型的品系的有效策略。
+加性无穷小模型是基于系谱预测遗传值的基础F isher 1918）在植物和动物复杂性状的遗传改良方面发挥了中心作用。动物育种者已经使用这种模型来预测混合模型（最佳线性无偏估计，BLUP）（H enderson 1984）或贝叶斯框架（G ianola和Fernando 1986）中的育种价值。最近，植物育种家并入系谱信息转换成线性混合模型用于预测育种值(Crossa et al. 2006, 2007; Oakey et al. 2006; Burguen ˜o et al. 2007; Piepho et al. 2007).。
+数以千计的基因组范围的分子标志物的可用性已使用基因组选择的（GS）的遗传值的预测成为可能（中号euwissen 等人 2001。 ）在植物（例如，乙ernardo和Y ü 2007 ; P iepho 2009 ; Ĵ annink 等人 2010。 ）和动物（Gonzalez-Recio et al.">
+  <meta property="og:description" content="Crossa J, De Los Campos G, Pérez P, et al. 2010. Prediction of genetic values of quantitative traits in plant breeding using pedigree and molecular markers. Genetics, 186(2): 713–724.
+ 抽象 密集分子标记的可用性使得使用基因组选择（GS）用于植物育种成为可能。然而，实际植物种群中GS的模型评估非常有限。本文评估了使用小麦（Triticum aestivum L.）和玉米（Zea mays）数据的参数和半参数模型的性能，其中在几种环境条件下测量不同的性状。基于广泛的交叉验证的研究结果表明，包括标记信息的模型具有比基于谱系的模型更高的预测能力。在小麦数据集中，相对于谱系模型，由于包含标记的预测能力的提高范围为7.7〜35.7％。玉米数据集观察值与预测值的相关性达到0.79。标记效应的估计在环境条件下是不同的，表明基因型×环境相互作用是遗传变异性的重要组成部分。这些结果表明，植物育种中的GS可能是选择尚未观察到其表型的品系的有效策略。
+加性无穷小模型是基于系谱预测遗传值的基础F isher 1918）在植物和动物复杂性状的遗传改良方面发挥了中心作用。动物育种者已经使用这种模型来预测混合模型（最佳线性无偏估计，BLUP）（H enderson 1984）或贝叶斯框架（G ianola和Fernando 1986）中的育种价值。最近，植物育种家并入系谱信息转换成线性混合模型用于预测育种值(Crossa et al. 2006, 2007; Oakey et al. 2006; Burguen ˜o et al. 2007; Piepho et al. 2007).。
+数以千计的基因组范围的分子标志物的可用性已使用基因组选择的（GS）的遗传值的预测成为可能（中号euwissen 等人 2001。 ）在植物（例如，乙ernardo和Y ü 2007 ; P iepho 2009 ; Ĵ annink 等人 2010。 ）和动物（Gonzalez-Recio et al.">
+  <meta name="twitter:description" content="Crossa J, De Los Campos G, Pérez P, et al. 2010. Prediction of genetic values of quantitative traits in plant breeding using pedigree and molecular markers. Genetics, 186(2): 713–724.
+ 抽象 密集分子标记的可用性使得 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/crossa2010-%E7%B3%BB%E8%B0%B1%E5%92%8C%E6%A0%87%E8%AE%B0%E9%A2%84%E6%B5%8B%E8%82%B2%E7%A7%8D%E5%80%BC/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/crossa2010-%E7%B3%BB%E8%B0%B1%E5%92%8C%E6%A0%87%E8%AE%B0%E9%A2%84%E6%B5%8B%E8%82%B2%E7%A7%8D%E5%80%BC/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Crossa2010-系谱和标记预测育种值</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (157 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Crossa2010-系谱和标记预测育种值</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (157 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Crossa J, De Los Campos G, Pérez P, et al. 2010. Prediction of genetic values of quantitative traits in plant breeding using pedigree and molecular markers. Genetics, 186(2): 713–724.</p>
+</blockquote>
+
+<h2 id="抽象">抽象</h2>
+
+<p>密集分子标记的可用性使得使用基因组选择（GS）用于植物育种成为可能。然而，实际植物种群中GS的模型评估非常有限。本文评估了使用小麦（Triticum aestivum L.）和玉米（Zea mays）数据的参数和半参数模型的性能，其中在几种环境条件下测量不同的性状。基于广泛的交叉验证的研究结果表明，包括标记信息的模型具有比基于谱系的模型更高的预测能力。在小麦数据集中，相对于谱系模型，由于包含标记的预测能力的提高范围为7.7〜35.7％。玉米数据集观察值与预测值的相关性达到0.79。标记效应的估计在环境条件下是不同的，表明基因型×环境相互作用是遗传变异性的重要组成部分。这些结果表明，植物育种中的GS可能是选择尚未观察到其表型的品系的有效策略。</p>
+
+<hr />
+
+<p><strong>加性无穷小模型是基于系谱预测遗传值的基础</strong>F isher 1918）在植物和动物复杂性状的遗传改良方面发挥了中心作用。动物育种者已经使用这种模型来预测混合模型（最佳线性无偏估计，<strong>BLUP</strong>）（H enderson 1984）或<strong>贝叶斯框架</strong>（G ianola和Fernando 1986）中的育种价值。最近，植物育种家<strong>并入系谱信息转换成线性混合模型用于预测育种值</strong>(Crossa et al. 2006, 2007; Oakey et al. 2006; Burguen
+˜o et al. 2007; Piepho et al. 2007).。</p>
+
+<p>数以千计的基因组范围的分子标志物的可用性已使用基因组选择的（GS）的遗传值的预测成为可能（中号euwissen 等人 2001。 ）在植物（例如，乙ernardo和Y ü 2007 ; P iepho 2009 ; Ĵ annink 等人 2010。 ）和动物（Gonzalez-Recio et al. 2008; VanRaden et al. 2008; Hayes et al. 2009; de  ç ampos 等人 2009a的。）。<strong>实施GS提出了几个统计和计算挑战，例如模型如何应对维度的诅咒，标记之间的共线性或数量性状的复杂性</strong>。参数（例如，M euwissen 等人 2001）和半参数（例如，G ianola 等人 2006 ; G ianola和van K aam 2008）方法解决了这些问题。</p>
+
+<p>在标准遗传模型中，表型结果， 数学，被视为遗传价值的总和， 数学，和模型残差， 数学; 那是，数学。在GS的参数模型中，数学 被描述为标记协变量的回归 数学（j = 1，&hellip;，p分子标记）数学，这样
+数学
+（要么 数学，以矩阵表示法），其中 数学 是回归 数学在第j个标记协变量上数学。</p>
+
+<p>估计 数学<strong>当p&gt; n时，通过普通最小二乘法（OLS）的多元回归是不可行的</strong>。常用的替代方法是使用诸如脊回归（H oerl和K ennard 1970）或最小绝对收缩和选择算子（LASSO）（T ibshirani 1996）或其贝叶斯相似物等惩罚方法联合地估计标记效应。这种方法产生更高的估计遗传价值的准确性，并且可以与通常用于植物育种的地统计技术结合，以模拟多环境试验（P iepho 2009）。</p>
+
+<p><strong>在脊回归（或其贝叶斯对应物）中，收缩的程度在标记物之间是均匀的，如果一些标记位于与遗传方差无关的区域中，则可能不合适，而其他区域的标记可能与QTL</strong>（G oddard和H 全委会 2007年）。为了克服这个限制，许多作者提出了使用<strong>标记特异性收缩</strong>的方法。<strong>在贝叶斯环境中，可以使用标度效应的先验来实现</strong>，这些标记效应是比例正常密度的混合。例子是M euwissen 等人的贝叶斯A和贝叶斯B的方法。（2001）和贝叶斯计划（P ark and C asella）（2008）。</p>
+
+<p>到参数回归一个替代方案是使用半参数的方法，例如再生核Hilbert空间（RKHS）回归（ģ ianola和v 的 ķ AAM 2008）。所述RKHS贝叶斯回归关于遗传值作为从在零和与（共）方差结构成比例内核矩阵为中心的高斯过程来随机变量ķ（德 洛斯 ç ampos 等人 2009年b。）; 那是，数学，哪里 数学， 数学是用于标记基因型的矢量我和第Ĵ个个体分别与数学是在标记基因型中评估的正定函数。在有限维度设置中，这相当于对遗传值的向量建模，数学，作为多变量正常; 那是，数学 哪里 数学是方差参数。RKHS回归最有吸引力的特征之一是该方法可以与几乎任何信息集（例如协变量，字符串，图像，图形）一起使用。第二个优点是，使用RKHS，该模型以n个未知数来表示，这给出了RKHS相对于一些参数方法的巨大计算优势，特别是当p » n时。</p>
+
+<p>本研究提出了GS的几种方法的评估，使用两个广泛的数据集。一个包含一系列小麦试验的表型记录和最近生成的基因组数据。其他数据集涉及在严重干旱和充分浇水条件下评估的玉米品系中测量不同性状的国际玉米试验。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/gs/cuevas2016-gs-ge-%E9%9D%9E%E7%BA%BF%E6%80%A7%E9%AB%98%E6%96%AF%E6%A0%B8%E5%87%BD%E6%95%B0/" data-toggle="tooltip" data-placement="top" title="Cuevas2016-GS-G×E-非线性高斯核函数">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/gs/crossa2010-gs-%E5%8F%82%E6%95%B0%E5%92%8C%E5%8D%8A%E5%8F%82%E6%95%B0%E6%A8%A1%E5%9E%8B/" data-toggle="tooltip" data-placement="top" title="Crossa2010-GS-参数和半参数模型">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

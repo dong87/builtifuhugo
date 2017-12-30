@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Waldmann-2006-REML-VS--Bayesian-多性状</title>
+  <meta property="og:title" content="Waldmann-2006-REML-VS--Bayesian-多性状" />
+  <meta name="twitter:title" content="Waldmann-2006-REML-VS--Bayesian-多性状" />
+  <meta name="description" content="Waldmann P, Ericsson ÆT, Ericsson T. Comparison of REML and Gibbs sampling estimates of multi-trait genetic parameters in Scots pine. Theor. Appl. Genet. 2006;112:1441–51.   摘要 多性状（协）方差估计是植物和动物育种的重要课题。在这项研究中，我们比较了从限制最大似然（REML）和贝叶斯Gibbs抽样的模拟数据和三个性状（直径，高度和分支角度）从26年的部分双列子代测试的苏格兰松（樟子松L.）。基于模拟数据的结果，我们可以得出结论，REML估计是准确的，但是吉布斯采样的后验分布的模式可以高估，取决于遗传力的水平。后代的平均值和中位数显着高于遗传力的预期值。用Δ法计算的置信区间向下偏移。最高概率密度（HPD）间隔提供更好的间隔估计，但可以在较低水平上稍微偏置。对于苏格兰松数据，发现REML和吉布斯样本估计之间存在类似的差异。我们得出结论，需要进一步的模拟研究，以评估不同先验对遗传个体模型中（共）方差分量的影响。
+介绍 在最佳效益的育种中，通常存在受到最大关注的主要关键性状。然而，还有其他经常值得考虑的特征，因为它们在关键特征或其特性受到影响的情况下对最终或未来结果做出贡献。实例是家畜的健康性状和木材生产树的树干质量性状，其中数量生产能力通常是育种的主要特征。具有一定重要性的所有性状的有利发展需要用于同时评估的方法，例如长期以来在育种工业中已经使用的多特征限制最大似然（REML）协方差估计（例如Meyer和Thompson 1986; Meyer 1991 ）。主要目的是揭示相互关系是有利还是不利于未来选择（即，根据研究的目的评估性状是正相关还是负相关）。多特征“动物（或树或个体）模型”由Henderson和Quaas（1976）在定量遗传学中引入。基于个体模型的技术在估计方差分量和预测育种值方面比传统的基于家庭的方法更好，因为它们可以使用来自谱系的所有信息，并且对通过选择引入的偏差较不敏感（Sorensen和Kennedy 1984; Henderson 1986; Borralho 1995）。 历史上，大多数分析在定量遗传学已经用古典（也称为频率）ANOVA方法进行。概率在这里从在相同条件下假设地重复实验大量次的框架下观察。现在，ANOVA方法已经在很大程度上被REML方法取代，用于估计（共）方差分量和使用（近似）最佳线性无偏预测器（BLUP）预测育种值。最初由Patterson和Thompson（1971）描述的用于非平衡混合模型的REML方法已经广泛用于动物育种。然而，REML方法需要一种迭代技术，通常倾向于在计算上非常苛刻，特别是对于多变量数据集，因此已经投入了大量的努力来开发更有效的算法。已经开发了用于多特征模型中的REML估计的各种计算程序，例如， （Meyer 1991），期望最大化（EM）方法（Misztal和Perez-Encisco 1993）和平均信息（AI）方法（Jensen等人，1996）。通常，这些REML方法使用迭代算法来找到似然的最大值。遗憾的是，尽管很容易获得所得参数估计值（方差分量）的估计值，但是要计算这些参数函数的可靠置信区间要困难得多（Harville和Fenech，1985; Burch和Iyer 1997; Soria等人1998）。 计算能力的当前进步实际上导致了在遗传学中统计方法的发展中的贝叶斯革命（Shoemaker等人1999; Sorensen和Gianola 2002; Xu 2003; Beaumont和Rannala 2004）。在贝叶斯范式中，概率可以被理解为对不确定性或信念程度的度量。贝叶斯方法在复杂情况下特别有用，并且通常比普通频率方法更容易解释。鉴于许多遗传问题的复杂性，很明显贝叶斯方法可以大大有助于改进分析。贝叶斯马尔科夫链蒙特卡罗（MCMC）方法在1990年代上半年在定量遗传学中被引入（Wang等人1993; Sorensen等人1994），通过吉布斯采样程序的发展促进（Geman和Geman 1984; Gelfand和Smith 1990）。吉布斯采样器连续地从模型中的所有参数的条件分布中采样，以便产生边际后验分布的随机样本，其是贝叶斯推理的目标。吉布斯取样已经在动物育种中广泛实施，并且已经开发了用于多特征评价的不同算法（例如Jensen等人1994; van Tassel和Van Vleck 1996）。然而，在植物应用中的吉布斯取样仍然很少（例如Soria等人1998; Gwaze和Woolliams 2001; Zeng等人2004; Waldmann等人2005）。 这项研究的主要目标是比较REML和吉布斯抽样估计的遗传参数从多个性状个别树模型。这些方法适用于来自瑞典北部的苏格兰松（Pinus sylvestris L.）二年级后代试验的模拟数据和数据，测量三种性状（博尔直径，树高和分枝角）。我们将分析限制为加性模型，因为加性组分最容易应用于基于有性繁殖群体的轮回选择的实际育种。">
+  <meta property="og:description" content="Waldmann P, Ericsson ÆT, Ericsson T. Comparison of REML and Gibbs sampling estimates of multi-trait genetic parameters in Scots pine. Theor. Appl. Genet. 2006;112:1441–51.   摘要 多性状（协）方差估计是植物和动物育种的重要课题。在这项研究中，我们比较了从限制最大似然（REML）和贝叶斯Gibbs抽样的模拟数据和三个性状（直径，高度和分支角度）从26年的部分双列子代测试的苏格兰松（樟子松L.）。基于模拟数据的结果，我们可以得出结论，REML估计是准确的，但是吉布斯采样的后验分布的模式可以高估，取决于遗传力的水平。后代的平均值和中位数显着高于遗传力的预期值。用Δ法计算的置信区间向下偏移。最高概率密度（HPD）间隔提供更好的间隔估计，但可以在较低水平上稍微偏置。对于苏格兰松数据，发现REML和吉布斯样本估计之间存在类似的差异。我们得出结论，需要进一步的模拟研究，以评估不同先验对遗传个体模型中（共）方差分量的影响。
+介绍 在最佳效益的育种中，通常存在受到最大关注的主要关键性状。然而，还有其他经常值得考虑的特征，因为它们在关键特征或其特性受到影响的情况下对最终或未来结果做出贡献。实例是家畜的健康性状和木材生产树的树干质量性状，其中数量生产能力通常是育种的主要特征。具有一定重要性的所有性状的有利发展需要用于同时评估的方法，例如长期以来在育种工业中已经使用的多特征限制最大似然（REML）协方差估计（例如Meyer和Thompson 1986; Meyer 1991 ）。主要目的是揭示相互关系是有利还是不利于未来选择（即，根据研究的目的评估性状是正相关还是负相关）。多特征“动物（或树或个体）模型”由Henderson和Quaas（1976）在定量遗传学中引入。基于个体模型的技术在估计方差分量和预测育种值方面比传统的基于家庭的方法更好，因为它们可以使用来自谱系的所有信息，并且对通过选择引入的偏差较不敏感（Sorensen和Kennedy 1984; Henderson 1986; Borralho 1995）。 历史上，大多数分析在定量遗传学已经用古典（也称为频率）ANOVA方法进行。概率在这里从在相同条件下假设地重复实验大量次的框架下观察。现在，ANOVA方法已经在很大程度上被REML方法取代，用于估计（共）方差分量和使用（近似）最佳线性无偏预测器（BLUP）预测育种值。最初由Patterson和Thompson（1971）描述的用于非平衡混合模型的REML方法已经广泛用于动物育种。然而，REML方法需要一种迭代技术，通常倾向于在计算上非常苛刻，特别是对于多变量数据集，因此已经投入了大量的努力来开发更有效的算法。已经开发了用于多特征模型中的REML估计的各种计算程序，例如， （Meyer 1991），期望最大化（EM）方法（Misztal和Perez-Encisco 1993）和平均信息（AI）方法（Jensen等人，1996）。通常，这些REML方法使用迭代算法来找到似然的最大值。遗憾的是，尽管很容易获得所得参数估计值（方差分量）的估计值，但是要计算这些参数函数的可靠置信区间要困难得多（Harville和Fenech，1985; Burch和Iyer 1997; Soria等人1998）。 计算能力的当前进步实际上导致了在遗传学中统计方法的发展中的贝叶斯革命（Shoemaker等人1999; Sorensen和Gianola 2002; Xu 2003; Beaumont和Rannala 2004）。在贝叶斯范式中，概率可以被理解为对不确定性或信念程度的度量。贝叶斯方法在复杂情况下特别有用，并且通常比普通频率方法更容易解释。鉴于许多遗传问题的复杂性，很明显贝叶斯方法可以大大有助于改进分析。贝叶斯马尔科夫链蒙特卡罗（MCMC）方法在1990年代上半年在定量遗传学中被引入（Wang等人1993; Sorensen等人1994），通过吉布斯采样程序的发展促进（Geman和Geman 1984; Gelfand和Smith 1990）。吉布斯采样器连续地从模型中的所有参数的条件分布中采样，以便产生边际后验分布的随机样本，其是贝叶斯推理的目标。吉布斯取样已经在动物育种中广泛实施，并且已经开发了用于多特征评价的不同算法（例如Jensen等人1994; van Tassel和Van Vleck 1996）。然而，在植物应用中的吉布斯取样仍然很少（例如Soria等人1998; Gwaze和Woolliams 2001; Zeng等人2004; Waldmann等人2005）。 这项研究的主要目标是比较REML和吉布斯抽样估计的遗传参数从多个性状个别树模型。这些方法适用于来自瑞典北部的苏格兰松（Pinus sylvestris L.）二年级后代试验的模拟数据和数据，测量三种性状（博尔直径，树高和分枝角）。我们将分析限制为加性模型，因为加性组分最容易应用于基于有性繁殖群体的轮回选择的实际育种。">
+  <meta name="twitter:description" content="Waldmann P, Ericsson ÆT, Ericsson T. Comparison of REML and Gibbs sampling estimates of multi-trait genetic parameters in Scots pine. Theor. Appl. Genet. 2006;112:1441–51.   摘要 多性状（协）方差估计是植物和动物育种的重要课 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/bayesian/waldmann-2006-reml-vs--bayesian-%E5%A4%9A%E6%80%A7%E7%8A%B6/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/bayesian/waldmann-2006-reml-vs--bayesian-%E5%A4%9A%E6%80%A7%E7%8A%B6/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Waldmann-2006-REML-VS--Bayesian-多性状</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (66 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Waldmann-2006-REML-VS--Bayesian-多性状</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (66 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<ol>
+<li>Waldmann P, Ericsson ÆT, Ericsson T. Comparison of REML and Gibbs sampling estimates of multi-trait genetic parameters in Scots pine. Theor. Appl. Genet. 2006;112:1441–51.</li>
+</ol>
+</blockquote>
+
+<p>摘要
+多性状（协）方差估计是植物和动物育种的重要课题。在这项研究中，我们比较了从限制最大似然（REML）和贝叶斯Gibbs抽样的模拟数据和三个性状（直径，高度和分支角度）从26年的部分双列子代测试的苏格兰松（樟子松L.）。基于模拟数据的结果，我们可以得出结论，<strong>REML估计是准确的，但是吉布斯采样的后验分布的模式可以高估，取决于遗传力的水平</strong>。后代的平均值和中位数显着高于遗传力的预期值。用Δ法计算的置信区间向下偏移。最高概率密度（HPD）间隔提供更好的间隔估计，但可以在较低水平上稍微偏置。对于苏格兰松数据，发现REML和吉布斯样本估计之间存在类似的差异。我们得出结论，需要进一步的模拟研究，以评估不同先验对遗传个体模型中（共）方差分量的影响。</p>
+
+<hr />
+
+<p>介绍
+在最佳效益的育种中，通常存在受到最大关注的主要关键性状。然而，还有其他经常值得考虑的特征，因为它们在关键特征或其特性受到影响的情况下对最终或未来结果做出贡献。实例是家畜的健康性状和木材生产树的树干质量性状，其中数量生产能力通常是育种的主要特征。具有一定重要性的所有性状的有利发展需要用于同时评估的方法，例如长期以来在育种工业中已经使用的多特征限制最大似然（REML）协方差估计（例如Meyer和Thompson 1986; Meyer 1991 ）。主要目的是揭示相互关系是有利还是不利于未来选择（即，根据研究的目的评估性状是正相关还是负相关）。多特征“动物（或树或个体）模型”由Henderson和Quaas（1976）在定量遗传学中引入。<strong>基于个体模型的技术在估计方差分量和预测育种值方面比传统的基于家庭的方法更好，因为它们可以使用来自谱系的所有信息，并且对通过选择引入的偏差较不敏感</strong>（Sorensen和Kennedy 1984; Henderson 1986; Borralho 1995）。
+历史上，大多数分析在定量遗传学已经用古典（也称为频率）ANOVA方法进行。概率在这里从在相同条件下假设地重复实验大量次的框架下观察。现在，<strong>ANOVA方法已经在很大程度上被REML方法取代，用于估计（共）方差分量和使用（近似）最佳线性无偏预测器（BLUP）预测育种值</strong>。最初由Patterson和Thompson（1971）描述的用于非平衡混合模型的REML方法已经广泛用于动物育种。然而，REML方法需要一种迭代技术，通常倾向于在计算上非常苛刻，特别是对于多变量数据集，因此已经投入了大量的努力来开发更有效的算法。已经开发了用于多特征模型中的REML估计的各种计算程序，例如， （Meyer 1991），期望最大化（EM）方法（Misztal和Perez-Encisco 1993）和平均信息（AI）方法（Jensen等人，1996）。通常，<strong>这些REML方法使用迭代算法来找到似然的最大值。遗憾的是，尽管很容易获得所得参数估计值（方差分量）的估计值，但是要计算这些参数函数的可靠置信区间要困难得多</strong>（Harville和Fenech，1985; Burch和Iyer 1997; Soria等人1998）。
+计算能力的当前进步实际上导致了在遗传学中统计方法的发展中的贝叶斯革命（Shoemaker等人1999; Sorensen和Gianola 2002; Xu 2003; Beaumont和Rannala 2004）。<strong>在贝叶斯范式中，概率可以被理解为对不确定性或信念程度的度量。贝叶斯方法在复杂情况下特别有用，并且通常比普通频率方法更容易解释。鉴于许多遗传问题的复杂性，很明显贝叶斯方法可以大大有助于改进分析</strong>。贝叶斯马尔科夫链蒙特卡罗（MCMC）方法在1990年代上半年在定量遗传学中被引入（Wang等人1993; Sorensen等人1994），通过吉布斯采样程序的发展促进（Geman和Geman 1984; Gelfand和Smith 1990）。<strong>吉布斯采样器连续地从模型中的所有参数的条件分布中采样，以便产生边际后验分布的随机样本，其是贝叶斯推理的目标。吉布斯取样已经在动物育种中广泛实施，并且已经开发了用于多特征评价的不同算法</strong>（例如Jensen等人1994; van Tassel和Van Vleck 1996）。然而，在植物应用中的吉布斯取样仍然很少（例如Soria等人1998; Gwaze和Woolliams 2001; Zeng等人2004; Waldmann等人2005）。
+这项研究的主要目标是比较REML和吉布斯抽样估计的遗传参数从多个性状个别树模型。这些方法适用于来自瑞典北部的苏格兰松（Pinus sylvestris L.）二年级后代试验的模拟数据和数据，测量三种性状（博尔直径，树高和分枝角）。我们将分析限制为加性模型，因为加性组分最容易应用于基于有性繁殖群体的轮回选择的实际育种。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/bayesian/waldmann-2009%E8%B4%9D%E5%8F%B6%E6%96%AF-winbugs-/" data-toggle="tooltip" data-placement="top" title="Waldmann-2009贝叶斯-WinBUGS-">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/volker-2008%E7%A7%8D%E5%86%85-%E7%A7%8D%E9%97%B4-%E6%9D%82%E7%A7%8D%E4%BC%98%E5%8A%BF-%E6%A1%89%E6%A0%91/" data-toggle="tooltip" data-placement="top" title="Volker-2008种内-种间-杂种优势-桉树">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

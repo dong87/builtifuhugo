@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>第一章</title>
+  <meta property="og:title" content="第一章" />
+  <meta name="twitter:title" content="第一章" />
+  <meta name="description" content="2.2.材料与方法 2.2.1植物材料与试验设计 从初级种子园中选择12个无性系，开展双列交配试验（包含自交）。共获得55个组合，包括8个自交、34对正反交和13个单交（交配设计见表1 - 1）。此外，同年收集12个亲本自由授粉种子。在苗圃中将种子育苗，培育2年后移植到试验林地（1988年）。试验林位于中国辽宁省抚顺市清原县大孤家镇林场（42.72°N，124.88°E），林地海拔约460 m。试验设计采用随机完全区组设计，5个重复，其中重复2和重复4分别包含4个和5个亚重复，密度2 × 2 m。每个组合及自由授粉家系获得的子代个数不完全一致，由于要将全部子代个体布置到林地内，所以小区的大小是变化的，总体上服从每行5株多列(1-3)。试验林四周设有保护行以避免边缘效应。每年进行常规抚育管理。为维持林地的生产力，2009年对试验林进行隔株间伐。 采集12个亲本的新鲜针叶，硅胶干燥，用于后续基因组DNA提取和遗传分析。 表1 - 1全双列交配设计 Table 1 – 1 A full diallel mating design used for the present Japanese larch improvement program
+注：⊙-自交；×-异交。
+2.2.2数据收集与清洗 分别在2005年和2014年树木休眠期，调查测定试验林内单株的树高（m）、胸径（cm），用H05、H14、DBH05和DBH14表示。树高和胸径分别用测高仪(Vertex Ⅲ, Haglof Company Group, Sweden)和围尺测定。而后利用树高和胸径计算每木的带皮材积指数（m3），用V05、V14表示。材积指数公式为V = H × D2 (1)。 在家系水平和重复水平检查各性状的极端异常值。极端异常值的定义为≤下四分位数减去3倍IQR（interquartile range）的数值，或≥上四分位加上3倍IQR的数值。而后去除极端异常小的数值，因为这些数值的观测个体可能是受压木、遭受严重病虫害或是所处环境条件很差，未能反映真实的生长潜力。 2.2.3 统计分析 因为Yao等(2013)发现使用家系模型分析包含自交的全双列会高估SCA效应，认为不含自交全双列是用于估计GCA和SCA效应的最佳交配设计。因此，在去除自交数据后进行遗传参数估计及遗传效应值预测。混合模型如下： y=Xb&#43;Z_1 gm&#43;Z_2 gd&#43;Z_3 s&#43;Z_4 r&#43;Z_5 p&#43;e 这里，响应变量y是单株表型值列向量。b是固定的重复效应列向量，gm (gd)是随机的亲本GCA效应向量，s是随机的交配组合SCA效应向量，r、p、e分别是随机的正反交效应、小区效应和残差向量。X和Z(Z1-Z5) 分别是将观测值关联到各自固定和随机效应上的设计矩阵。模型（2）中的随机效应假定期望为0并服从正态分布： A亲缘关系矩阵，I是单位矩阵，σ ̂_g^2，σ ̂_s^2，σ ̂_r^2，σ ̂_p^2和σ ̂e^2分别是随机效应gm(gd)，s，r，p，和e的方差估计。 方差估计由限制性最大似然估计（Restricted maximum likelihood，REML）方法获得。各方差的标准误由1阶泰勒展开式决定。利用似然比检验检验（LRT）各方差组分的统计显著性(α = 0.05)。通过解Henderson混合模型方程组(Henderson 1975)求得模型的解，即为包括育种值在内的随机效应值。 为比较各生长性状的相对遗传方差，利用公式(&ldquo;CV&rdquo; ) ̂&ldquo;g&rdquo; &ldquo;=&rdquo; √(&ldquo;σ&rdquo; ̂&ldquo;a&rdquo; ^&ldquo;2&rdquo; &#43;4&rdquo;σ&rdquo; ̂&ldquo;s&rdquo; ^&ldquo;2&rdquo; )/&ldquo;x&rdquo; ̅ &ldquo;×100%&rdquo; (3)和(&ldquo;CV&rdquo; ) ̂&ldquo;p&rdquo; &ldquo;=&rdquo; √(&ldquo;σ&rdquo; ̂&ldquo;P&rdquo; ^&ldquo;2&rdquo; )/&ldquo;x&rdquo; ̅ &ldquo;×100%&rdquo; (4)，分别估计了加性遗传变异系数((&ldquo;CV&rdquo; ) ̂&ldquo;g&rdquo; )和表型变异系数((&ldquo;CV&rdquo; ) ̂&ldquo;p&rdquo; )。 &ldquo;σ&rdquo; ̂&ldquo;a&rdquo; ^&ldquo;2&rdquo; 和&rdquo;σ&rdquo; ̂&ldquo;s&rdquo; ^&ldquo;2&rdquo; 如上描述，&rdquo;σ&rdquo; ̂_&ldquo;P&rdquo; ^&ldquo;2&rdquo; 是表型方差估计值。x ̅是性状的均值。 狭义遗传力(h2)和广义遗传力(H2)分别按以下2个公式估计： h^2=(4σ_a^2)/(〖2σ〗_a^2&#43;σ_s^2&#43;σ_r^2&#43;σ_p^2&#43;σ_e^2 ) (4) H^2=(4(σ_a^2&#43;σ_s^2))/(〖2σ〗_a^2&#43;σ_s^2&#43;σ_r^2&#43;σ_p^2&#43;σ_e^2 ) (5) 两性状（x、y）遗传相关系数（&rdquo;r&rdquo; _&ldquo;A&rdquo; ）计算公式为： &ldquo;r&rdquo; &ldquo;A&rdquo; &ldquo;=&rdquo; &ldquo;σ&rdquo; ̂(&ldquo;a&rdquo; _&ldquo;x&rdquo; &ldquo;a&rdquo; &ldquo;y&rdquo; )/√(&ldquo;σ&rdquo; ̂(&ldquo;a&rdquo; &ldquo;x&rdquo; )^&ldquo;2&rdquo; &ldquo;σ&rdquo; ̂(&ldquo;a&rdquo; _&ldquo;y&rdquo; )^&ldquo;2&rdquo; ) (7) 以上提及的分析均由ASReml-R 软件包3.">
+  <meta property="og:description" content="2.2.材料与方法 2.2.1植物材料与试验设计 从初级种子园中选择12个无性系，开展双列交配试验（包含自交）。共获得55个组合，包括8个自交、34对正反交和13个单交（交配设计见表1 - 1）。此外，同年收集12个亲本自由授粉种子。在苗圃中将种子育苗，培育2年后移植到试验林地（1988年）。试验林位于中国辽宁省抚顺市清原县大孤家镇林场（42.72°N，124.88°E），林地海拔约460 m。试验设计采用随机完全区组设计，5个重复，其中重复2和重复4分别包含4个和5个亚重复，密度2 × 2 m。每个组合及自由授粉家系获得的子代个数不完全一致，由于要将全部子代个体布置到林地内，所以小区的大小是变化的，总体上服从每行5株多列(1-3)。试验林四周设有保护行以避免边缘效应。每年进行常规抚育管理。为维持林地的生产力，2009年对试验林进行隔株间伐。 采集12个亲本的新鲜针叶，硅胶干燥，用于后续基因组DNA提取和遗传分析。 表1 - 1全双列交配设计 Table 1 – 1 A full diallel mating design used for the present Japanese larch improvement program
+注：⊙-自交；×-异交。
+2.2.2数据收集与清洗 分别在2005年和2014年树木休眠期，调查测定试验林内单株的树高（m）、胸径（cm），用H05、H14、DBH05和DBH14表示。树高和胸径分别用测高仪(Vertex Ⅲ, Haglof Company Group, Sweden)和围尺测定。而后利用树高和胸径计算每木的带皮材积指数（m3），用V05、V14表示。材积指数公式为V = H × D2 (1)。 在家系水平和重复水平检查各性状的极端异常值。极端异常值的定义为≤下四分位数减去3倍IQR（interquartile range）的数值，或≥上四分位加上3倍IQR的数值。而后去除极端异常小的数值，因为这些数值的观测个体可能是受压木、遭受严重病虫害或是所处环境条件很差，未能反映真实的生长潜力。 2.2.3 统计分析 因为Yao等(2013)发现使用家系模型分析包含自交的全双列会高估SCA效应，认为不含自交全双列是用于估计GCA和SCA效应的最佳交配设计。因此，在去除自交数据后进行遗传参数估计及遗传效应值预测。混合模型如下： y=Xb&#43;Z_1 gm&#43;Z_2 gd&#43;Z_3 s&#43;Z_4 r&#43;Z_5 p&#43;e 这里，响应变量y是单株表型值列向量。b是固定的重复效应列向量，gm (gd)是随机的亲本GCA效应向量，s是随机的交配组合SCA效应向量，r、p、e分别是随机的正反交效应、小区效应和残差向量。X和Z(Z1-Z5) 分别是将观测值关联到各自固定和随机效应上的设计矩阵。模型（2）中的随机效应假定期望为0并服从正态分布： A亲缘关系矩阵，I是单位矩阵，σ ̂_g^2，σ ̂_s^2，σ ̂_r^2，σ ̂_p^2和σ ̂e^2分别是随机效应gm(gd)，s，r，p，和e的方差估计。 方差估计由限制性最大似然估计（Restricted maximum likelihood，REML）方法获得。各方差的标准误由1阶泰勒展开式决定。利用似然比检验检验（LRT）各方差组分的统计显著性(α = 0.05)。通过解Henderson混合模型方程组(Henderson 1975)求得模型的解，即为包括育种值在内的随机效应值。 为比较各生长性状的相对遗传方差，利用公式(&ldquo;CV&rdquo; ) ̂&ldquo;g&rdquo; &ldquo;=&rdquo; √(&ldquo;σ&rdquo; ̂&ldquo;a&rdquo; ^&ldquo;2&rdquo; &#43;4&rdquo;σ&rdquo; ̂&ldquo;s&rdquo; ^&ldquo;2&rdquo; )/&ldquo;x&rdquo; ̅ &ldquo;×100%&rdquo; (3)和(&ldquo;CV&rdquo; ) ̂&ldquo;p&rdquo; &ldquo;=&rdquo; √(&ldquo;σ&rdquo; ̂&ldquo;P&rdquo; ^&ldquo;2&rdquo; )/&ldquo;x&rdquo; ̅ &ldquo;×100%&rdquo; (4)，分别估计了加性遗传变异系数((&ldquo;CV&rdquo; ) ̂&ldquo;g&rdquo; )和表型变异系数((&ldquo;CV&rdquo; ) ̂&ldquo;p&rdquo; )。 &ldquo;σ&rdquo; ̂&ldquo;a&rdquo; ^&ldquo;2&rdquo; 和&rdquo;σ&rdquo; ̂&ldquo;s&rdquo; ^&ldquo;2&rdquo; 如上描述，&rdquo;σ&rdquo; ̂_&ldquo;P&rdquo; ^&ldquo;2&rdquo; 是表型方差估计值。x ̅是性状的均值。 狭义遗传力(h2)和广义遗传力(H2)分别按以下2个公式估计： h^2=(4σ_a^2)/(〖2σ〗_a^2&#43;σ_s^2&#43;σ_r^2&#43;σ_p^2&#43;σ_e^2 ) (4) H^2=(4(σ_a^2&#43;σ_s^2))/(〖2σ〗_a^2&#43;σ_s^2&#43;σ_r^2&#43;σ_p^2&#43;σ_e^2 ) (5) 两性状（x、y）遗传相关系数（&rdquo;r&rdquo; _&ldquo;A&rdquo; ）计算公式为： &ldquo;r&rdquo; &ldquo;A&rdquo; &ldquo;=&rdquo; &ldquo;σ&rdquo; ̂(&ldquo;a&rdquo; _&ldquo;x&rdquo; &ldquo;a&rdquo; &ldquo;y&rdquo; )/√(&ldquo;σ&rdquo; ̂(&ldquo;a&rdquo; &ldquo;x&rdquo; )^&ldquo;2&rdquo; &ldquo;σ&rdquo; ̂(&ldquo;a&rdquo; _&ldquo;y&rdquo; )^&ldquo;2&rdquo; ) (7) 以上提及的分析均由ASReml-R 软件包3.">
+  <meta name="twitter:description" content="2.2.材料与方法 2.2.1植物材料与试验设计 从初级种子园中选择12个无性系，开展双列交配试验（包含自交）。共获得55个组合，包括8个自交、34对正反交和13个单交（交配设计见表1 - 1）。此外，同年收集12个亲本自由授粉种子。在苗圃中将种子育苗，培育2年后移植到试验林地（1988年）。试验林位于中国辽宁省抚顺市清原县大孤家镇林场（42.72°N，124.88°E），林地海拔约460 m。试 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E8%AE%BA%E6%96%87/%E7%AC%AC%E4%B8%80%E7%AB%A0/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E8%AE%BA%E6%96%87/%E7%AC%AC%E4%B8%80%E7%AB%A0/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>第一章</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 6 minutes (1198 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>第一章</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 6 minutes (1198 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h2 id="2-2-材料与方法">2.2.材料与方法</h2>
+
+<p>2.2.1植物材料与试验设计
+从初级种子园中选择12个无性系，开展双列交配试验（包含自交）。共获得55个组合，包括8个自交、34对正反交和13个单交（交配设计见表1 - 1）。此外，同年收集12个亲本自由授粉种子。在苗圃中将种子育苗，培育2年后移植到试验林地（1988年）。试验林位于中国辽宁省抚顺市清原县大孤家镇林场（42.72°N，124.88°E），林地海拔约460 m。试验设计采用随机完全区组设计，5个重复，其中重复2和重复4分别包含4个和5个亚重复，密度2 × 2 m。每个组合及自由授粉家系获得的子代个数不完全一致，由于要将全部子代个体布置到林地内，所以小区的大小是变化的，总体上服从每行5株多列(1-3)。试验林四周设有保护行以避免边缘效应。每年进行常规抚育管理。为维持林地的生产力，2009年对试验林进行隔株间伐。
+采集12个亲本的新鲜针叶，硅胶干燥，用于后续基因组DNA提取和遗传分析。
+表1 - 1全双列交配设计
+Table 1 – 1 A full diallel mating design used for the present Japanese larch improvement program</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-c791240165f5147b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+注：⊙-自交；×-异交。</p>
+
+<p>2.2.2数据收集与清洗
+分别在2005年和2014年树木休眠期，调查测定试验林内单株的树高（m）、胸径（cm），用H05、H14、DBH05和DBH14表示。树高和胸径分别用测高仪(Vertex Ⅲ, Haglof Company Group, Sweden)和围尺测定。而后利用树高和胸径计算每木的带皮材积指数（m3），用V05、V14表示。材积指数公式为V = H × D2 (1)。
+在家系水平和重复水平检查各性状的极端异常值。极端异常值的定义为≤下四分位数减去3倍IQR（interquartile range）的数值，或≥上四分位加上3倍IQR的数值。而后去除极端异常小的数值，因为这些数值的观测个体可能是受压木、遭受严重病虫害或是所处环境条件很差，未能反映真实的生长潜力。
+2.2.3 统计分析
+因为Yao等(2013)发现使用家系模型分析包含自交的全双列会高估SCA效应，认为不含自交全双列是用于估计GCA和SCA效应的最佳交配设计。因此，在去除自交数据后进行遗传参数估计及遗传效应值预测。混合模型如下：
+y=Xb+Z_1 gm+Z_2 gd+Z_3 s+Z_4 r+Z_5 p+e
+这里，响应变量y是单株表型值列向量。b是固定的重复效应列向量，gm (gd)是随机的亲本GCA效应向量，s是随机的交配组合SCA效应向量，r、p、e分别是随机的正反交效应、小区效应和残差向量。X和Z(Z1-Z5) 分别是将观测值关联到各自固定和随机效应上的设计矩阵。模型（2）中的随机效应假定期望为0并服从正态分布：
+A亲缘关系矩阵，I是单位矩阵，σ ̂_g^2，σ ̂_s^2，σ ̂_r^2，σ ̂_p^2和σ ̂<em>e^2分别是随机效应gm(gd)，s，r，p，和e的方差估计。
+方差估计由限制性最大似然估计（Restricted maximum likelihood，REML）方法获得。各方差的标准误由1阶泰勒展开式决定。利用似然比检验检验（LRT）各方差组分的统计显著性(α = 0.05)。通过解Henderson混合模型方程组(Henderson 1975)求得模型的解，即为包括育种值在内的随机效应值。
+为比较各生长性状的相对遗传方差，利用公式(&ldquo;CV&rdquo; ) ̂</em>&ldquo;g&rdquo;  &ldquo;=&rdquo;  √(&ldquo;σ&rdquo;  ̂<em>&ldquo;a&rdquo; ^&ldquo;2&rdquo; +4&rdquo;σ&rdquo;  ̂</em>&ldquo;s&rdquo; ^&ldquo;2&rdquo;  )/&ldquo;x&rdquo;  ̅  &ldquo;×100%&rdquo;  (3)和(&ldquo;CV&rdquo; ) ̂<em>&ldquo;p&rdquo;  &ldquo;=&rdquo;  √(&ldquo;σ&rdquo;  ̂</em>&ldquo;P&rdquo; ^&ldquo;2&rdquo;  )/&ldquo;x&rdquo;  ̅  &ldquo;×100%&rdquo;  (4)，分别估计了加性遗传变异系数((&ldquo;CV&rdquo; ) ̂<em>&ldquo;g&rdquo; )和表型变异系数((&ldquo;CV&rdquo; ) ̂</em>&ldquo;p&rdquo; )。
+&ldquo;σ&rdquo;  ̂<em>&ldquo;a&rdquo; ^&ldquo;2&rdquo; 和&rdquo;σ&rdquo;  ̂</em>&ldquo;s&rdquo; ^&ldquo;2&rdquo; 如上描述，&rdquo;σ&rdquo;  ̂_&ldquo;P&rdquo; ^&ldquo;2&rdquo; 是表型方差估计值。x ̅是性状的均值。
+狭义遗传力(h2)和广义遗传力(H2)分别按以下2个公式估计：
+ h^2=(4σ_a^2)/(〖2σ〗_a^2+σ_s^2+σ_r^2+σ_p^2+σ_e^2 ) (4)
+H^2=(4(σ_a^2+σ_s^2))/(〖2σ〗_a^2+σ_s^2+σ_r^2+σ_p^2+σ_e^2 ) (5)
+两性状（x、y）遗传相关系数（&rdquo;r&rdquo; _&ldquo;A&rdquo; ）计算公式为：
+&ldquo;r&rdquo; <em>&ldquo;A&rdquo;  &ldquo;=&rdquo;  &ldquo;σ&rdquo;  ̂</em>(&ldquo;a&rdquo; _&ldquo;x&rdquo;  &ldquo;a&rdquo; <em>&ldquo;y&rdquo;  )/√(&ldquo;σ&rdquo;  ̂</em>(&ldquo;a&rdquo; <em>&ldquo;x&rdquo; )^&ldquo;2&rdquo;  &ldquo;σ&rdquo;  ̂</em>(&ldquo;a&rdquo; _&ldquo;y&rdquo; )^&ldquo;2&rdquo;  ) (7)
+以上提及的分析均由ASReml-R 软件包3.0完成(Butler et al. 2009; R. Core Team 2013)。
+为调查不同杂交组合个体的生长表现，将来自成对亲本的组合及亲本自交（有的话）和亲本半同胞划分成一组，利用Turkey检验考察组内的差异显著性。
+平均杂种优势和自交衰退(SD)的计算公式分别为：
+Heterosis (%) = (O_i-OP_i)/OP_i ×100%   (8)和SD (%) = 〖OP_j-S〗_j/OP_j ×100%  (9)
+O和S 分别代表异交和自交子代的均值。OP是优势亲本半同胞的平均表现，对于自交而言则只利用其亲本半同胞的表现作对照。亲本CF29和Y9没有半同胞子代，以其全部异交子代作为对照。
+2.2.4 DNA提取和EST-SSR基因型分型
+利用改良的CTAB法(Doyle and Doyle 1987)，提取亲本个体的基因组DNA。
+EST-SSR分型的方法及步骤如PCR反应体系、PCR循环程序按照Chen(Chen et al. 2015)的描述进行。共使用了17个EST-SSR标记，引物序列见表2。
+利用获得的EST-SSR基因型数据和GenAlEx 6.5软件(Peakall and Smouse 2012)估计亲本群体的遗传多样性指数，如观测等位基因数(Na)、有效等位基因数(Ne)、Shannon 信息指数(I)、观测杂合度(Ho)、无偏期望杂合度(He)。
+成对亲本间的Nei遗传距离(Nei 1978)由R软件包poppr Version 2.2.1 (Kamvar and Grunwald 2014)计算。而后利用获得的遗传相似性矩阵及UPGMA（Unweighted Pair Group Method using Arithmetic averages）算法由R软件包Phangorn Version 2.0.4 (Schliep 2011)完成聚类分析。
+表1 - 2 17对EST-SSRs引物序列
+Table 1 - 2 Details of 17 EST-SSRs used to genotype in L. kaempferi</p>
+
+<h2 id="2-3-结果">2.3 结果</h2>
+
+<p>2.3.1 方差组分和遗传力
+表1 - 3给出了每个生长性状的不同效应的方差分量及遗传力估计。对所有性状，GCA和SCA效应均达到显著水平(p &lt; 0.05)。狭义遗传力为加性方差与表型方差的比值。由于较低加性方差、小区效应和不能解释的残差方差比例较高，狭义遗传力均较低。其中，H14中的最高为0.08，而对于DBH05，只有2%的表型变异能由GCA效应所解释。狭义遗传力在群体28a时略有上升。SCA也显著影响了生长性状，由于存在较大的方差分量，广义遗传力相比狭义遗传力有明显的提升（表1 - 3）。
+表1 - 3各表型性状的方差组分和遗传力估计
+Table 1 - 3 Estimates of variance components and heritabilities with standard errors (SE in parentheses) for each of analyzed traits
+Source  H05 (SE)    DBH05 (SE)  V05 (SE)    H14 (SE)    DBH14 (SE)  V14 (SE)
+GCA 0.024 (0.056) **    0.036 (0.069) **    0.0002 (0.0003) **  0.114 (0.105) **    0.084 (0.123) **    0.0014 (0.0015) **
+SCA 0.147 (0.15) ** 0.14 (0.147) *  0.0009 (0.0008) **  0.052 (0.170) **    0.168 (0.259) * &lt;0.0001 (&lt;0.0001) *
+Reciprocal  &lt;0.001 (&lt;0.001)     &lt;0.001 (&lt;0.001) &lt;0.0001 (&lt;0.0001)   0.273 (0.194) **    &lt;0.001 (&lt;0.001) &lt;0.0001 (&lt;0.0001)
+Plot    1.263 (0.206) **    0.797 (0.209) **    0.0035 (0.0009) **  2.063 (0.329) **    1.51 (0.423) ** 0.0323 (0.0068)
+Residual    3.363 (0.149)   6.344 (0.28)    0.0293 (0.0013)     2.883 (0.156)   9.64 (0.505)    0.1173 (0.0063)
+SCA/GCA 6.125   3.889   4.498   0.456   2.001   0.051
+Narrowsenseh2   0.022 (0.046)   0.020 (0.037)   0.021 (0.040)   0.083 (0.075)   0.030 (0.041)   0.037 (0.040)
+BroadsenseH2    0.138 (0.107)   0.095 (0.068)   0.132 (0.078)   0.121 (0.119)   0.086 (0.080)   0.037 (0.040)
+*Significant at p = 0.05. **Significant at p = 0.01.
+对于多数性状，SCA比GCA效应起到更为重要的作用（表1 - 3）。SCA/GCA变幅为0.051（V14）-6.125（H05）。SCA的重要性在28a生时降低，尤其是V14，而DBH14的SCA依然是GCA的2倍之多。
+正反交效应只对H14一个性状有显著的作用(p&lt; 0.01)（表1 - 3）。部分亲本组合的正交和反交间也存在显著的差异，比如RC5和Y7（图1 - 1a）。对于其他几个性状，该效应的方差分量相当小，可以忽略。</p>
+
+<p>图1 - 1正交、反交、自交及自由授粉子代的生长表现。(a)正交和反交的差异，(b)杂种优势，&copy;和(d) 杂种优势随年龄的变化，(e)和(f)自交衰退。箱式图中相同字母表示P = 0.05水平差异不显著。
+Fig. 1 - 1. Growth performance among the progeny from crosses, reciprocal crosses, selfings and OP. (a) Difference between crosses and reciprocal crosses, (b) heterosis, &copy; and (d) heterosis variation with age, (e) and (f) selfing depression. The same letter over boxes presents no significant difference between means at P = 0.05.
+2.3.2正反交效应对H14遗传参数估计及BLUP育种值的影响
+为研究正反交效应对H14的影响，从数据中去除反交后，比较全双列和半双列交配设计分析结果的差异。对于全双列，GCA和SCA方差、狭义遗传力和广义遗传力分别只有半双列的42.85%、7.58%、43.96%和17.99%，说明半双列交配设计中遗传参数的是高估了的。
+育种值排名家系是后续优良个体或家系选择的标准。全双列和半双列中亲本的育种值排名间的差异很小。相关分析发现两种交配设计获得的育种值和SCA效应值间存在显著的正相关，相关系数分别为0.87和0.86。
+2.3.3生长表现、杂种优势和自交衰退
+19a生时子代苗木的整体存活率为44.5%。所有交配组合及自由授粉的子代的生长性状H05、DBH05、V05、H14、DBH14和V的整体均值（变幅）分别为17.07 m (14.10-19.00 m)、15.74 cm (13.59-18.20 cm)、0.45 m3 (0.30-0.63 m3)、22.32 m (18.98-24.77 m)、21.04 cm (16.10-25.12 cm)和1.03 m3 (0.52-1.52 m3)。
+本研究发现显著的杂种优势。例如组合CF29×RC402的V14比对照高出38.17%。正反交杂种优势列于表1 - 4。对每一个性状，亲本组合的杂种优势间各不相同，但对于全部性状，组合的杂种优势排名较为一致，而且正反交杂种优势也有相似的变化趋势。杂种优势排名的组合是CF29×RC402、Y11×CF29、RC13×CF29、Y11×RC82和Y8×RF27。这些组合的亲本有较高的GCA效应值，但这些组合的SCA效应值并不总是最大，但对于每个性状基本是正值。杂种优势度随年龄的变化而变化，在29a生时下降，尤其是树高(图1 - 1c和1d)。
+日本落叶松自交可育。本研究发现12个亲本中8个自交能够获得可育种子，并且至今（29a生）自交子代的生长没有表现出异常，而且在存活率方面与自由授粉和异交子代相比也没有显著差异（图1 - 2）。只有RC13和Y9两个亲本自交子代表现出显著的自交衰退（图1 - 1e，表1 - 5）。亲本Y11的自交衰退可以归因于取样误差，因为只保存有1个子代。相反，RF27的自交衰退程度最低，2次调差的材积都比对照高出50%之多（图1 - 1f）。没有发现自交衰退与GCA效应值有显著的相关。
+表1 - 4 生长性状正反交杂种优势
+Table 1 - 4. Heterosis of crosses and reciprocal crosses for growth traits
+Parents Crosses/%   Reciprocal crosses/%
+P1  P2  H05 DBH05   V05 H14 DBH14   V14 H05 DBH05   V05 H14 DBH14   V14
+CF29    RC13    7.22    10.65   25.14 * 4.01    3.63    6.98<br />
+CF29    RC82    -5.05   -4.67   -13.53  -1.09   -6.20   -12.24<br />
+CF29    RC402                           5.19    6.28    16.5    3.82    16.71   38.17 *
+CF29    Y11 4.46    1.69    8.35 *  5.02    1.72    7.80    -6.26   -0.73   -8.81   -11.33  -4.07   -15.49
+CF29    Y9  -19.79* -10.39  -37.13  -16.97 *    -3.42   -21.39<br />
+R1  RC5 -3.85   -5.25   -14.01  -6.58 * 0.07    -5.29<br />
+R1  RF27    -3.93   -4.23   -6.72   -7.93   -5.52   -15.50  -2.64   -4.23   -8.22   -3.53   1.87    0.26
+R1  Y16 -13.92 *    -14.56  -36.93 *    -15.01 *    -8.74   -28.65<br />
+R1  Y7  -2.99   -0.02   -2.26   -3.68   0.28    -5.63   -0.94   6.54    15.22   -3.45   1.03    -2.56
+R1  Y8  -2.46   -2.70   -6.31   0.23    3.17    5.43<br />
+RC13    RC402                           -7.25   -11.08 *    -26.1 * -9.78 * -10.45  -27.28 *
+RC13    RC82    0.39    -0.64   -4.14   0.91    -3.53   -8.79   -1.16   -2.03   -4.79   -4.15   -2.22   -13.21
+RC13    Y11 -7.67   1.75    -2.69   -4.17   1.39    -3.50<br />
+RC13    Y9  3.03    -1.51   -1.59   -13.56 *    -4.67   -25.47  -1.16   -1.90   -8.23   -5.63   -3.84   -13.44
+RC402   RC82    1.10    -0.90   -0.78   1.25    3.13    7.28    0.65    0.56    0.82    -0.57   3.71    6.07
+RC402   Y11 -2.38   -4.26   -12.36  -2.44   -8.45   -18.46<br />
+RC402   Y9  -8.50   -4.24   -12.22  -7.50   1.48    -1.56<br />
+RC5 RF27    -1.41   -1.43   -2.45   -1.77   -1.46   -3.48   0.72    -0.82   -0.76   1.69    -2.44   -3.83
+RC5 Y16 -2.82   -1.00   -4.31   -5.43   -2.09   -10.76  -8.57 * -4.08   -11.43  -6.98 * -7.32   -17.57
+RC5 Y7  -7.91   -8.83   -24.50  -13.76 *    -10.98  -32.12  -2.47   0.97    0.52    -1.53   -0.55   -4.41 *
+RC5 Y8  -0.71   -2.47   -3.32   -1.15   2.22    2.18    3.00    0.64    4.01    2.21    2.82    1.18
+RC82    Y11 2.82    2.88    2.55    7.68 *  1.91    6.19    0.51    3.89    5.96    -4.29   3.65    -6.51
+RC82    Y9  -11.60  -5.95   -24.30  -7.92   -11.23  -26.37  4.12    -5.00   -4.38   0.01    -1.26   -1.04
+RF27    Y16 -7.43   -6.26   -16.47  -15.40 *    -6.72   -26.37  -3.34   3.89    9.17    -7.29   5.70    2.26
+RF27    Y7  -5.81   -0.54   -5.91   -2.46   -3.19   -10.53  -6.23   -3.00   -6.61   -7.14 * -2.22   -12.55
+RF27    Y8  -0.5    3.92    6.70    -1.04   6.18    7.20 *  -5.29   2.09    1.56    -3.85   1.17    -1.19
+Y11 Y9                          -8.30 * -4.64   -14.70  -2.83   -9.98   -17.22
+Y16 Y7  -5.74   -7.28 * -19.65  -7.83 * -8.85 * -24.04  -9.59   -16.21 *    -32.74  -13.55 *    -16.78 *    -36.48
+Y16 Y8  -7.78   -5.91   -18.77  -6.31 * -7.37   -21.42  -1.40   0.46    -1.79   -8.15   -3.83   -16.38
+Y8  Y7  -19.02 *    -10.87  -36.60 *    -18.96 *    -13.47  -40.56 *<br />
+*Significant at P = 0.05.
+表1 - 5 亲本的自交衰退及GCA效应值
+Table 1 - 5. Selfing depression and estimated GCA effects of parents
+Parent  H05 DBH05   V05 H14 DBH14   V14
+    SD %    GCA SD %    GCA SD %    GCA SD %    GCA SD %    GCA SD %    GCA
+CF29        0.037       0.117       0.008       0.169       0.292       0.041
+R1      -0.045      -0.008      -0.001      -0.249      0.023       -0.001
+RC13    5.92    0.072   0.64    0.091   10.94   0.006   11.86 * 0.212   6.69    0.083   22.76   0.011
+RC402   -1.22   0.079   -14.87 *    0.072   -28.47  0.005   0.08    0.065   -14.71  0.084   -26.58  0.013
+RC5     0.013       -0.086      -0.005      0.157       -0.141      -0.014
+RC82    -4.47   0.132   -6.89   0.037   -13.51  0.005   -1.43   0.377   3.05    0.156   7.14    0.023
+RF27    -9.24   -0.055  -17.98  -0.018  -51 -0.001  -10.26  -0.150  -21.07 *    -0.024  -55.99 *    -0.005
+Y11 6.53    -0.030  9.58    0.038   30.29   0.002   10.2    0.120   22.77   0.007   50.1    0.003
+Y16 -5.12   -0.136  -3.59   -0.219  -12.57  -0.015  -2.91   -0.412  -1.09   -0.385  -4.05   -0.055
+Y7      0.006       0.027       0.001       -0.003      -0.013      -0.001
+Y8  0.05    -0.021  -0.56   0.051   -0.18   0.001   -1.42   -0.004  -2.88   0.000   -5.73   -0.001
+Y9  12.8 *  -0.052  5.52    -0.103  21.93   -0.006  11.24 * -0.282  10.99   -0.083  26.93 * -0.014
+*Significant at P = 0.05.</p>
+
+<p>图1 - 2 自由授粉、异交和自交子代的存活率。箱体上方的相同字母表示均值在P = 0.05水平没有显著差异。
+Fig. 1 - 2. Survival rates of open-pollinated, Outcrossed and Selfed progeny. The same letter over boxes presents no significant difference between means at P = 0.05.
+2.3.4杂种优势度与遗传距离的关系
+基于17个EST-SSR标记分析了12个亲本间的遗传多样性。共得到61个等位位点，从最少的2个坐位（H339、HL215、QL322、H197和H177）到最多有9个的1个坐位（QL386），平均3.6个观测等位变异和2.6个有效等位变异（表1 - 6）。平均I，Ho和uHe分别为0.957，0.624和0.557（表1 - 6），表明亲本群体有中度的遗传多样性。亲本的遗传距离变幅为0.19 (Y16 vs RC82)到0.94 (Y16 vs Y7)，平均0.42。聚类分析将12个亲本划分到2大类群中（图1 - 3）
+表1 - 6 基于17个EST-SSR的亲本遗传多样性统计量
+Table 1 -6. Statistics of genetic diversity based on 17 EST-SSR markers for the 12 parents
+    Mean    SE
+Na  3.588   0.493
+Ne  2.598   0.318
+I   0.957   0.115
+Ho  0.624   0.066
+uHe 0.557   0.051</p>
+
+<p>图1 - 3 基于Nei遗传距离12个亲本的UPGMA聚类图
+Fig. 1 - 3. UPGMA dendrogram based on Nei’s genetic distance between 12 parents of the mating design</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%9A%8F%E7%AC%94/%E7%B3%BB%E8%B0%B1%E6%9E%84%E5%BB%BA%E4%B8%AD%E5%BE%AE%E5%8D%AB%E6%98%9F%E5%92%8Csnp%E7%9A%84%E7%89%B9%E7%82%B9/" data-toggle="tooltip" data-placement="top" title="系谱构建中微卫星和SNP的特点">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/stat/%E7%A9%BA%E9%97%B4%E8%87%AA%E7%9B%B8%E5%85%B3/" data-toggle="tooltip" data-placement="top" title="空间自相关">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

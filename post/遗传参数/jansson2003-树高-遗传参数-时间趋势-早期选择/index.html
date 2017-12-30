@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Jansson2003-树高-遗传参数-时间趋势-早期选择</title>
+  <meta property="og:title" content="Jansson2003-树高-遗传参数-时间趋势-早期选择" />
+  <meta name="twitter:title" content="Jansson2003-树高-遗传参数-时间趋势-早期选择" />
+  <meta name="description" content="Jansson G, Li B, Hannrup B. 2003. Time Trends in Genetic Parameters for Height and Optimal Age for Parental Selection in Scots Pine. Forest Science, 49(5): 696–705.
+ 抽象。用于估计遗传参数时间趋势的数据和父母选择的最佳年龄从瑞典南部的13 Scots pine（Pinus sylvestris L.）子代测试中获得。最终的测量年龄在24至39岁之间，相当于瑞典南部约一半的旋转年龄。每个测试中的树已测量高度4？次，覆盖年龄从5岁到39岁。个体树遗传度高度平均为0.16，随着时间的推移略有增加，尽管测试有差异。随着年龄的增长，身高（CVA）的平均增加系数为6.0％，平均不加性变异系数（CVD）为3.8％，随着时间的推移不显示任何显着的趋势。使用基于测量两个年龄之间的比例的自然对数的模型来预测遗传年龄相关性。在考虑30岁以下的总高度作为目标特征的分析中，还考察了早期选择的效率。基于每单位时间增长的父母选择的最佳年龄在11岁达到峰值，育龄为10年的时间滞后。在南方测试中，高峰比北方测试早了一些。基于现值的5％的选择效率在11年时显示为最佳。 关键词：年龄相关性，育种策略，早期选择，选择效率，樟子松
+早期选择在林木育种计划中由于长时间的旋转而被实践。早期选择预计每单位时间的遗传增益要高于旋转年龄的直接选择。估计在树木改良计划中每年获得最高收益的选择年龄需要有关相关遗传参数时间趋势的信息。确定最佳选择年龄的关键参数是遗传力和年龄遗传相关性。由于北方森林中的森林具有特别长的旋转，因此很少知道这些参数，通常使用在少年田间试验中测量的属性来预测成熟性能。最佳选择年龄通常定义为育种周期的年增益最大化的年龄。 关于苏格兰松（Pinus sylvestris）的遗传参数时间趋势的数据很少，尽管已经在最近的两项研究中进行了研究。詹森等人（1998）发现，三种瑞典苏格兰松树试验中，遗传力增加的趋势略有增加，而且在三至二十九岁之间测量了几次，树木高度的加性遗传变异系数趋于降低。 Haapanen（2001）在芬兰南部的苏格兰松松前18年的测试中没有发现遗传性的系统趋势，而加性遗传变异系数随着年龄的增长而降低。 Lambeth（1980）开发了一种基于表型相关性的模型，似乎使用已发表文章的数据，对许多针叶树种的高度的幼年成熟相关性进行了相当好的预测。考虑到这些结果，Lindgren（1984）提出，苏格兰松的选择可以在3的高度上进行。米Haapanen（2001）发现在芬兰南部，家长选择的最佳年龄约为5至7岁。许多年龄研究已经考虑了在一系列物种中每单位时间获得最大增益的方法（例如，Lambeth等，1983，McKeand 1988，Li et al.1991,1992，Hodge and White 1992，Dieters et al.1995， Woods等人，1995，Gwaze等人2000，Wu et al.2000，Xiang et al.2003）。在最近关于火炬松的报告中，Xiang et al。 （2003）发现，半同胞家庭的最佳退休年龄早于3岁，体重为4岁。火炬松的旋转时间约为25年。迄今为止，大多数早期选择研究已经在南部松树或其他快速生长的物种上进行了旋转，而苏格兰松比较少。 苏格兰松树是瑞典森林工业的两个最重要的树种之一（另一个是云杉），第一批加树开始于50多年前。根据后代测试的结果选择下一代使用的树木。来自第一代加树的苏格兰松的一些后代测试现在已经达到24至39岁，相当于瑞典南部的旋转年龄的三分之一到一半。苏格兰松的生长性状的年龄遗传相关性估计的一个限制是后代测试数据仅可用于旋转年龄的一半以下。 本研究的主要目标是（1）确定对苏格兰松后代测试和育种重要性的遗传参数的时间趋势，（2）估计父母的最佳年龄，即后向选择。在本研究中使用遗传参数和高度时间趋势，以使每单位时间的增益最大化或家长选择的最大现值最大化。">
+  <meta property="og:description" content="Jansson G, Li B, Hannrup B. 2003. Time Trends in Genetic Parameters for Height and Optimal Age for Parental Selection in Scots Pine. Forest Science, 49(5): 696–705.
+ 抽象。用于估计遗传参数时间趋势的数据和父母选择的最佳年龄从瑞典南部的13 Scots pine（Pinus sylvestris L.）子代测试中获得。最终的测量年龄在24至39岁之间，相当于瑞典南部约一半的旋转年龄。每个测试中的树已测量高度4？次，覆盖年龄从5岁到39岁。个体树遗传度高度平均为0.16，随着时间的推移略有增加，尽管测试有差异。随着年龄的增长，身高（CVA）的平均增加系数为6.0％，平均不加性变异系数（CVD）为3.8％，随着时间的推移不显示任何显着的趋势。使用基于测量两个年龄之间的比例的自然对数的模型来预测遗传年龄相关性。在考虑30岁以下的总高度作为目标特征的分析中，还考察了早期选择的效率。基于每单位时间增长的父母选择的最佳年龄在11岁达到峰值，育龄为10年的时间滞后。在南方测试中，高峰比北方测试早了一些。基于现值的5％的选择效率在11年时显示为最佳。 关键词：年龄相关性，育种策略，早期选择，选择效率，樟子松
+早期选择在林木育种计划中由于长时间的旋转而被实践。早期选择预计每单位时间的遗传增益要高于旋转年龄的直接选择。估计在树木改良计划中每年获得最高收益的选择年龄需要有关相关遗传参数时间趋势的信息。确定最佳选择年龄的关键参数是遗传力和年龄遗传相关性。由于北方森林中的森林具有特别长的旋转，因此很少知道这些参数，通常使用在少年田间试验中测量的属性来预测成熟性能。最佳选择年龄通常定义为育种周期的年增益最大化的年龄。 关于苏格兰松（Pinus sylvestris）的遗传参数时间趋势的数据很少，尽管已经在最近的两项研究中进行了研究。詹森等人（1998）发现，三种瑞典苏格兰松树试验中，遗传力增加的趋势略有增加，而且在三至二十九岁之间测量了几次，树木高度的加性遗传变异系数趋于降低。 Haapanen（2001）在芬兰南部的苏格兰松松前18年的测试中没有发现遗传性的系统趋势，而加性遗传变异系数随着年龄的增长而降低。 Lambeth（1980）开发了一种基于表型相关性的模型，似乎使用已发表文章的数据，对许多针叶树种的高度的幼年成熟相关性进行了相当好的预测。考虑到这些结果，Lindgren（1984）提出，苏格兰松的选择可以在3的高度上进行。米Haapanen（2001）发现在芬兰南部，家长选择的最佳年龄约为5至7岁。许多年龄研究已经考虑了在一系列物种中每单位时间获得最大增益的方法（例如，Lambeth等，1983，McKeand 1988，Li et al.1991,1992，Hodge and White 1992，Dieters et al.1995， Woods等人，1995，Gwaze等人2000，Wu et al.2000，Xiang et al.2003）。在最近关于火炬松的报告中，Xiang et al。 （2003）发现，半同胞家庭的最佳退休年龄早于3岁，体重为4岁。火炬松的旋转时间约为25年。迄今为止，大多数早期选择研究已经在南部松树或其他快速生长的物种上进行了旋转，而苏格兰松比较少。 苏格兰松树是瑞典森林工业的两个最重要的树种之一（另一个是云杉），第一批加树开始于50多年前。根据后代测试的结果选择下一代使用的树木。来自第一代加树的苏格兰松的一些后代测试现在已经达到24至39岁，相当于瑞典南部的旋转年龄的三分之一到一半。苏格兰松的生长性状的年龄遗传相关性估计的一个限制是后代测试数据仅可用于旋转年龄的一半以下。 本研究的主要目标是（1）确定对苏格兰松后代测试和育种重要性的遗传参数的时间趋势，（2）估计父母的最佳年龄，即后向选择。在本研究中使用遗传参数和高度时间趋势，以使每单位时间的增益最大化或家长选择的最大现值最大化。">
+  <meta name="twitter:description" content="Jansson G, Li B, Hannrup B. 2003. Time Trends in Genetic Parameters for Height and Optimal Age for Parental Selection in Scots Pine. Forest Science, 49(5): 696–705.
+ 抽象。用于估计遗传参数时间趋势的数据和父母选择的最佳年龄从瑞典南部 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/jansson2003-%E6%A0%91%E9%AB%98-%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0-%E6%97%B6%E9%97%B4%E8%B6%8B%E5%8A%BF-%E6%97%A9%E6%9C%9F%E9%80%89%E6%8B%A9/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/jansson2003-%E6%A0%91%E9%AB%98-%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0-%E6%97%B6%E9%97%B4%E8%B6%8B%E5%8A%BF-%E6%97%A9%E6%9C%9F%E9%80%89%E6%8B%A9/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Jansson2003-树高-遗传参数-时间趋势-早期选择</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (56 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Jansson2003-树高-遗传参数-时间趋势-早期选择</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (56 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Jansson G, Li B, Hannrup B. 2003. Time Trends in Genetic Parameters for Height and Optimal Age for Parental Selection in Scots Pine. Forest Science, 49(5): 696–705.</p>
+</blockquote>
+
+<p>抽象。用于估计遗传参数时间趋势的数据和父母选择的最佳年龄从瑞典南部的13 Scots pine（Pinus sylvestris L.）子代测试中获得。最终的测量年龄在24至39岁之间，相当于瑞典南部约一半的旋转年龄。每个测试中的树已测量高度4？次，覆盖年龄从5岁到39岁。<strong>个体树遗传度高度平均为0.16，随着时间的推移略有增加</strong>，尽管测试有差异。随着年龄的增长，身高（CVA）的平均增加系数为6.0％，平均不加性变异系数（CVD）为3.8％，随着时间的推移不显示任何显着的趋势。使用基于测量两个年龄之间的比例的自然对数的模型来预测遗传年龄相关性。在考虑30岁以下的总高度作为目标特征的分析中，还考察了<strong>早期选择的效率</strong>。基于每单位时间增长的父母选择的最佳年龄在11岁达到峰值，育龄为10年的时间滞后。在南方测试中，高峰比北方测试早了一些。基于现值的5％的选择效率在11年时显示为最佳。
+关键词：年龄相关性，育种策略，早期选择，选择效率，樟子松</p>
+
+<p><strong>早期选择在林木育种计划中由于长时间的旋转而被实践。早期选择预计每单位时间的遗传增益要高于旋转年龄的直接选择。估计在树木改良计划中每年获得最高收益的选择年龄需要有关相关遗传参数时间趋势的信息。确定最佳选择年龄的关键参数是遗传力和年龄遗传相关性。由于北方森林中的森林具有特别长的旋转，因此很少知道这些参数，通常使用在少年田间试验中测量的属性来预测成熟性能。最佳选择年龄通常定义为育种周期的年增益最大化的年龄。</strong>
+关于苏格兰松（Pinus sylvestris）的遗传参数时间趋势的数据很少，尽管已经在最近的两项研究中进行了研究。詹森等人（1998）发现，三种瑞典苏格兰松树试验中，遗传力增加的趋势略有增加，而且在三至二十九岁之间测量了几次，<strong>树木高度的加性遗传变异系数趋于降低</strong>。 Haapanen（2001）在芬兰南部的苏格兰松松前18年的测试中没有发现遗传性的系统趋势，而加性遗传变异系数随着年龄的增长而降低。
+Lambeth（1980）开发了一种基于表型相关性的模型，似乎使用已发表文章的数据，对许多针叶树种的高度的幼年成熟相关性进行了相当好的预测。考虑到这些结果，Lindgren（1984）提出，苏格兰松的选择可以在3的高度上进行。米Haapanen（2001）发现在芬兰南部，家长选择的最佳年龄约为5至7岁。许多年龄研究已经考虑了在一系列物种中每单位时间获得最大增益的方法（例如，Lambeth等，1983，McKeand 1988，Li et al.1991,1992，Hodge and White 1992，Dieters et al.1995， Woods等人，1995，Gwaze等人2000，Wu et al.2000，Xiang et al.2003）。在最近关于火炬松的报告中，Xiang et al。 （2003）发现，半同胞家庭的最佳退休年龄早于3岁，体重为4岁。火炬松的旋转时间约为25年。迄今为止，大多数早期选择研究已经在南部松树或其他快速生长的物种上进行了旋转，而苏格兰松比较少。
+苏格兰松树是瑞典森林工业的两个最重要的树种之一（另一个是云杉），第一批加树开始于50多年前。根据后代测试的结果选择下一代使用的树木。来自第一代加树的苏格兰松的一些后代测试现在已经达到24至39岁，相当于瑞典南部的旋转年龄的三分之一到一半。苏格兰松的生长性状的年龄遗传相关性估计的一个限制是后代测试数据仅可用于旋转年龄的一半以下。
+本研究的主要目标是（1）确定对苏格兰松后代测试和育种重要性的遗传参数的时间趋势，（2）估计父母的最佳年龄，即后向选择。在本研究中使用遗传参数和高度时间趋势，以使每单位时间的增益最大化或家长选择的最大现值最大化。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/diallel/johnsen-1999%E5%8F%8C%E5%88%97-%E7%94%9F%E7%90%86%E6%80%A7%E7%8A%B6-%E7%A2%B3%E5%90%8C%E4%BD%8D%E7%B4%A0/" data-toggle="tooltip" data-placement="top" title="Johnsen-1999双列-生理性状-碳同位素">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/diallel/jansson-li-2004%E6%98%BE%E6%80%A7-%E5%8A%A0%E6%80%A7-%E4%B8%8D%E8%BF%9E%E7%BB%AD-/" data-toggle="tooltip" data-placement="top" title="Jansson-Li-2004显性-加性-不连续-">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

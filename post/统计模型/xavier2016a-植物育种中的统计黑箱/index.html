@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Xavier2016a-植物育种中的统计黑箱</title>
+  <meta property="og:title" content="Xavier2016a-植物育种中的统计黑箱" />
+  <meta name="twitter:title" content="Xavier2016a-植物育种中的统计黑箱" />
+  <meta name="description" content="Xavier A, Muir WM, Craig B, Rainey KM (2016) Walking through the statistical black boxes of plant breeding. Theor Appl Genet 129:1933–1949. doi: 10.1007/s00122-016-2750-y
+ #抽象 关键信息 植物育种的主要统计程序是基于高斯过程，可以通过混合线性模型计算。 摘要智能决策依赖于我们从数据中提取有用信息的能力，以帮助我们更有效地实现我们的目标。许多植物育种者和遗传学家在不理解方法的基本假设或它们的优势和缺陷的情况下进行统计分析。换句话说，他们将这些统计方法（软件和程序）视为黑盒子。黑盒表示具有用户不完全理解的内容的机械的复杂件。用户在不知道如何产生输出的情况下看到输入和输出。通过提供统计方法的一般背景，本评论旨在（1）介绍机器学习的基本概念及其在植物育种中的应用; （2）将经典选择理论与当前的统计方法联系起来; （3）展示如何解决混合模型并将其应用扩展到基于谱系和基于基因组的预测;和（4）阐明全基因组关联研究的算法如何工作，包括他们的假设和限制。 #介绍
+推理和模型可以是经验的或实验的设计。经验方法（监督）最好地与良好表征的现象，其解决方案可以分析发现，而从数据推理和使用算法识别数据中的模式需要实验方法。研究这些算法的科学被称为机器学习（非监督）。机器学习还描述了专用于建立和研究能够从数据学习的算法的人工智能的领域，努力寻找最小化给定损失的最优解。这使得这些机器学习算法比逻辑算法更灵活。 遗传学充分利用机器学习的两个特殊分支，即所谓的监督和无监督学习（Libbrecht and Noble 2015）。监督学习有助于解决有解释和响应变量的问题。这通常适用于在定量遗传学中的预测，选择和分类。当没有响应变量存在时，使用无监督学习，对于聚类基因型和在群体中发现混合物的问题。 由于大多数感兴趣的性状的定量性质，在植物和动物育种中最常用的监督学习算法是高斯过程（GP）（Rasmussen 2004; Lynch和Walsh 1998）。** Fisher的无穷小模型，它形成了育种原理的基础，表明无限多个随机过程（指基因）控制观察到的表型（Orr 2005; Farrall 2004），根据中心极限定理收敛到的高斯分布。 GP代表选择理论，育种价值和关联研究的基础（Sorensen和Gianola 2002）。 在监督学习程序中，预测对于改善数量性状是重要的，分类对于决策和分类性状的遗传改良是重要的。育种计划开发特定产品以满足各种市场的需要（Acquaah 2009; Cleveland和Soleri 2002）分类模型确定了定义这些市场边缘的质量的边界**（Lim 1997）。在大豆中，适应区域基于纬度，土壤和气候来定义可在每个区域中栽培哪个成熟度组（MG）换句话说，它们决定了育种者的目标环境（Dardanelli et al。2006）。 Zhang et al。 （2007）提出大豆适应区有错误分类问题，因为MG IV到MG VI的生长区比原来想象的要大得多。 本文的主要目的是通过解释统计遗传学的理论和应用，揭示植物育种黑盒统计分析的内部工作，着重于广泛应用的混合线性模型设计用于育种。 ##高斯过程
+数量性状都遵循某种分布模式。例如，具有两个类的分类性状遵循二项分布，如同大豆中的花的颜色，其为白色或紫色。性状如谷物产量和植物高度是连续的，并且经常遵循正态分布。性状的遗传性可以假定在0和1之间的任何值，因此β分布最好地表征该过程。方差分量在连续的尺度上具有正值，因此，它们可以用卡方分布来描述。 由于大多数定量遗传学假设正态性，知道如何处理植物和动物育种中的正态分布是特别重要的。正态分布具有S形特性，任何正态随机变量X的期望值是其平均值（μ），并且与期望值的偏差是方差（σ2）。一旦参数均值和方差已知，可以使用概率密度函数（PDF，φ）来推断观察任何给定事件的概率，例如在给定群体中找到产生x bu / ac的植物的概率。如果为群体中的所有个体计算此概率，则这些概率的乘积是该特定平均值和方差的数据的似然性。 计算发现产量等于或低于x的植物的概率需要累积密度函数（CDF，8），它是PDF的积分。图1显示了高斯特征的这些计算的示例。 在所有数据集中，每个观测值包含一些关于未知参数的信息。因此，更多的数据提供更准确和精确的平均值和方差估计。有多种方法来估计分布的参数。这些包括似然法和贝叶斯过程。似然方法搜索使观测数据的似然性（L）最大化的未知参数，使用PDF来定义数据和参数p（X，θ）的联合概率，其中X表示观测数据，θ ）表示未知参数。对于简单的正态分布，θ=（μ，σ2）。贝叶斯过程使用分配给未知参数的概率分布来估计参数，其被称为先验，以及似然方程。">
+  <meta property="og:description" content="Xavier A, Muir WM, Craig B, Rainey KM (2016) Walking through the statistical black boxes of plant breeding. Theor Appl Genet 129:1933–1949. doi: 10.1007/s00122-016-2750-y
+ #抽象 关键信息 植物育种的主要统计程序是基于高斯过程，可以通过混合线性模型计算。 摘要智能决策依赖于我们从数据中提取有用信息的能力，以帮助我们更有效地实现我们的目标。许多植物育种者和遗传学家在不理解方法的基本假设或它们的优势和缺陷的情况下进行统计分析。换句话说，他们将这些统计方法（软件和程序）视为黑盒子。黑盒表示具有用户不完全理解的内容的机械的复杂件。用户在不知道如何产生输出的情况下看到输入和输出。通过提供统计方法的一般背景，本评论旨在（1）介绍机器学习的基本概念及其在植物育种中的应用; （2）将经典选择理论与当前的统计方法联系起来; （3）展示如何解决混合模型并将其应用扩展到基于谱系和基于基因组的预测;和（4）阐明全基因组关联研究的算法如何工作，包括他们的假设和限制。 #介绍
+推理和模型可以是经验的或实验的设计。经验方法（监督）最好地与良好表征的现象，其解决方案可以分析发现，而从数据推理和使用算法识别数据中的模式需要实验方法。研究这些算法的科学被称为机器学习（非监督）。机器学习还描述了专用于建立和研究能够从数据学习的算法的人工智能的领域，努力寻找最小化给定损失的最优解。这使得这些机器学习算法比逻辑算法更灵活。 遗传学充分利用机器学习的两个特殊分支，即所谓的监督和无监督学习（Libbrecht and Noble 2015）。监督学习有助于解决有解释和响应变量的问题。这通常适用于在定量遗传学中的预测，选择和分类。当没有响应变量存在时，使用无监督学习，对于聚类基因型和在群体中发现混合物的问题。 由于大多数感兴趣的性状的定量性质，在植物和动物育种中最常用的监督学习算法是高斯过程（GP）（Rasmussen 2004; Lynch和Walsh 1998）。** Fisher的无穷小模型，它形成了育种原理的基础，表明无限多个随机过程（指基因）控制观察到的表型（Orr 2005; Farrall 2004），根据中心极限定理收敛到的高斯分布。 GP代表选择理论，育种价值和关联研究的基础（Sorensen和Gianola 2002）。 在监督学习程序中，预测对于改善数量性状是重要的，分类对于决策和分类性状的遗传改良是重要的。育种计划开发特定产品以满足各种市场的需要（Acquaah 2009; Cleveland和Soleri 2002）分类模型确定了定义这些市场边缘的质量的边界**（Lim 1997）。在大豆中，适应区域基于纬度，土壤和气候来定义可在每个区域中栽培哪个成熟度组（MG）换句话说，它们决定了育种者的目标环境（Dardanelli et al。2006）。 Zhang et al。 （2007）提出大豆适应区有错误分类问题，因为MG IV到MG VI的生长区比原来想象的要大得多。 本文的主要目的是通过解释统计遗传学的理论和应用，揭示植物育种黑盒统计分析的内部工作，着重于广泛应用的混合线性模型设计用于育种。 ##高斯过程
+数量性状都遵循某种分布模式。例如，具有两个类的分类性状遵循二项分布，如同大豆中的花的颜色，其为白色或紫色。性状如谷物产量和植物高度是连续的，并且经常遵循正态分布。性状的遗传性可以假定在0和1之间的任何值，因此β分布最好地表征该过程。方差分量在连续的尺度上具有正值，因此，它们可以用卡方分布来描述。 由于大多数定量遗传学假设正态性，知道如何处理植物和动物育种中的正态分布是特别重要的。正态分布具有S形特性，任何正态随机变量X的期望值是其平均值（μ），并且与期望值的偏差是方差（σ2）。一旦参数均值和方差已知，可以使用概率密度函数（PDF，φ）来推断观察任何给定事件的概率，例如在给定群体中找到产生x bu / ac的植物的概率。如果为群体中的所有个体计算此概率，则这些概率的乘积是该特定平均值和方差的数据的似然性。 计算发现产量等于或低于x的植物的概率需要累积密度函数（CDF，8），它是PDF的积分。图1显示了高斯特征的这些计算的示例。 在所有数据集中，每个观测值包含一些关于未知参数的信息。因此，更多的数据提供更准确和精确的平均值和方差估计。有多种方法来估计分布的参数。这些包括似然法和贝叶斯过程。似然方法搜索使观测数据的似然性（L）最大化的未知参数，使用PDF来定义数据和参数p（X，θ）的联合概率，其中X表示观测数据，θ ）表示未知参数。对于简单的正态分布，θ=（μ，σ2）。贝叶斯过程使用分配给未知参数的概率分布来估计参数，其被称为先验，以及似然方程。">
+  <meta name="twitter:description" content="Xavier A, Muir WM, Craig B, Rainey KM (2016) Walking through the statistical black boxes of plant breeding. Theor Appl Genet 129:1933–1949. doi: 10.1007/s00122-016-2750-y
+ #抽象 关键信息 植物育种的主要统计程序是基于高斯过程， …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/xavier2016a-%E6%A4%8D%E7%89%A9%E8%82%B2%E7%A7%8D%E4%B8%AD%E7%9A%84%E7%BB%9F%E8%AE%A1%E9%BB%91%E7%AE%B1/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/xavier2016a-%E6%A4%8D%E7%89%A9%E8%82%B2%E7%A7%8D%E4%B8%AD%E7%9A%84%E7%BB%9F%E8%AE%A1%E9%BB%91%E7%AE%B1/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Xavier2016a-植物育种中的统计黑箱</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 3 minutes (513 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Xavier2016a-植物育种中的统计黑箱</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 3 minutes (513 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Xavier A, Muir WM, Craig B, Rainey KM (2016) Walking through the statistical black boxes of plant breeding. Theor Appl Genet 129:1933–1949. doi: 10.1007/s00122-016-2750-y</p>
+</blockquote>
+
+<p>#抽象
+关键信息
+植物育种的主要统计程序是基于高斯过程，可以通过混合线性模型计算。
+摘要智能决策依赖于我们从数据中提取有用信息的能力，以帮助我们更有效地实现我们的目标。<strong>许多植物育种者和遗传学家在不理解方法的基本假设或它们的优势和缺陷的情况下进行统计分析</strong>。换句话说，他们将这些统计方法（软件和程序）视为黑盒子。黑盒表示具有用户不完全理解的内容的机械的复杂件。用户在不知道如何产生输出的情况下看到输入和输出。通过提供统计方法的一般背景，本评论旨在（1）介绍机器学习的基本概念及其在植物育种中的应用; （2）将经典选择理论与当前的统计方法联系起来; （3）展示如何解决混合模型并将其应用扩展到基于谱系和基于基因组的预测;和（4）阐明全基因组关联研究的算法如何工作，包括他们的假设和限制。
+#介绍</p>
+
+<p>推理和模型可以是经验的或实验的设计。经验方法（监督）最好地与良好表征的现象，其解决方案可以分析发现，而<strong>从数据推理和使用算法识别数据中的模式需要实验方法。研究这些算法的科学被称为机器学习（非监督）</strong>。机器学习还描述了专用于建立和研究能够从数据学习的算法的人工智能的领域，努力寻找最小化给定损失的最优解。这使得这些机器学习算法比逻辑算法更灵活。
+遗传学充分利用机器学习的两个特殊分支，即所谓的监督和无监督学习（Libbrecht and Noble 2015）。<strong>监督学习有助于解决有解释和响应变量的问题。这通常适用于在定量遗传学中的预测，选择和分类。当没有响应变量存在时，使用无监督学习，对于聚类基因型和在群体中发现混合物的问题</strong>。
+由于大多数感兴趣的性状的定量性质，<strong>在植物和动物育种中最常用的监督学习算法是高斯过程（GP）（Rasmussen 2004; Lynch和Walsh 1998）</strong>。** Fisher的无穷小模型，它形成了育种原理的基础，表明无限多个随机过程（指基因）控制观察到的表型（Orr 2005; Farrall 2004），根据中心极限定理收敛到的高斯分布。 GP代表选择理论，育种价值和关联研究的基础（Sorensen和Gianola 2002）<strong>。
+在监督学习程序中，</strong>预测对于改善数量性状是重要的，分类对于决策和分类性状的遗传改良是重要的<strong>。育种计划开发特定产品以满足各种市场的需要（Acquaah 2009; Cleveland和Soleri 2002）</strong>分类模型确定了定义这些市场边缘的质量的边界**（Lim 1997）。在大豆中，适应区域基于纬度，土壤和气候来定义可在每个区域中栽培哪个成熟度组（MG）换句话说，它们决定了育种者的目标环境（Dardanelli et al。2006）。 Zhang et al。 （2007）提出大豆适应区有错误分类问题，因为MG IV到MG VI的生长区比原来想象的要大得多。
+本文的主要目的是通过解释统计遗传学的理论和应用，揭示植物育种黑盒统计分析的内部工作，着重于广泛应用的混合线性模型设计用于育种。
+##高斯过程</p>
+
+<p>数量性状都遵循某种分布模式。例如，具有两个类的分类性状遵循二项分布，如同大豆中的花的颜色，其为白色或紫色。性状如谷物产量和植物高度是连续的，并且经常遵循正态分布。性状的遗传性可以假定在0和1之间的任何值，因此β分布最好地表征该过程。方差分量在连续的尺度上具有正值，因此，它们可以用卡方分布来描述。
+由于大多数定量遗传学假设正态性，知道如何处理植物和动物育种中的正态分布是特别重要的。正态分布具有S形特性，任何正态随机变量X的期望值是其平均值（μ），并且与期望值的偏差是方差（σ2）。<strong>一旦参数均值和方差已知，可以使用概率密度函数（PDF，φ）来推断观察任何给定事件的概率</strong>，例如在给定群体中找到产生x bu / ac的植物的概率。<strong>如果为群体中的所有个体计算此概率，则这些概率的乘积是该特定平均值和方差的数据的似然性</strong>。
+<strong>计算发现产量等于或低于x的植物的概率需要累积密度函数（CDF，8），它是PDF的积分</strong>。图1显示了高斯特征的这些计算的示例。
+<strong>在所有数据集中，每个观测值包含一些关于未知参数的信息。因此，更多的数据提供更准确和精确的平均值和方差估计</strong>。有多种方法来估计分布的参数。这些包括<strong>似然法和贝叶斯过程</strong>。似然方法搜索使观测数据的似然性（L）最大化的未知参数，使用PDF来定义数据和参数p（X，θ）的联合概率，其中X表示观测数据，θ ）表示未知参数。对于简单的正态分布，θ=（μ，σ2）。贝叶斯过程使用分配给未知参数的概率分布来估计参数，其被称为先验，以及似然方程。</p>
+
+<p>##无穷小模型和选择理论</p>
+
+<p>对于群体中的正态分布性状，当育种者诱导平均值在所需方向上移动时，发生方向选择（图2）。为了实现这一点，育种者施加选择阈值。高于该阈值的个体被选择作为下一代的祖先，假定那些个体提供更好的遗传性质（Recker等人，2014）。
+影响表型的遗传性质涉及具有阳性和阴性效应的等位基因。等位基因是代表对给定性状的遗传效应的基因的版本。等位基因可以在基因座内，跨基因座和外部刺激相互作用;这些现象分别被称为基因作用，上位性和表达。基因座携带的等位基因的数目取决于个体的倍性水平。在这里，我们关注二倍体生物，假设在每个轨迹两个等位基因。
+<strong>选择强度（i）表示来自用作群体的截止值的平均值的标准偏差的数量</strong>;换句话说，选择的个体在育种群体中保持作为祖先的截短点。所选择的个体的这个群体代表单侧截断的正态分布。计算截断分布的期望值
+（μ*）使用原始分布的平均值（μ）和标准偏差（）以及截断点（t =μ+iσ）（Wricke和Weber 1986），然后估计选定群体的预期平均值如：
+下一代将不具有期望的平均值μ*，因为表型不完全是由于遗传因素（Nyquist和Baker 1991）。尽管等位基因以非常复杂的方式相互作用的事实，观察到的表型是与环境刺激（也称为基因型 - 环境相互作用）相互作用的遗传因子的表达。因此，<strong>实现的遗传力（h2）定义为基于所选择的祖细胞的新产生的观察平均值（μ（t + 1））与其期望值（μ*）之间的比率</strong>。实现的遗传力不是跨代的。相反，在有限群体中施加的选择压力在选择和遗传增益的响应之间强加了主要的权衡（图4）。 Fisher（1918）提出，对于给定的数量性状，存在无限数量的具有影响表型，即所谓的无限小模型的小加性贡献的基因（费舍尔是这个意思吗？）。在选择理论中，育种者的一般目标是在等位基因效应以加性方式工作的假设下，增加群体中期望的等位基因随时间的频率。该方法的例外包括与开发杂种（如玉米）的程序或通过克隆繁殖的物种（例如马铃薯）利用的杂种优势相关的获益。根据Fisher&rsquo;s模型，每个基因的结果是相加的，并且通过等位基因置换的效应来测量。该模型定义为由无限维空间（也称为希尔伯特空间）的正态分布元素产生的高斯过程，其中基因组的每个无限小部分代表参数或维度。当应用于有限种群时，Fisher模型遇到种群遗传问题。例如，有限群体可以只维持有限数量的等位基因（Kimura和Crow 1964）。此外，多个进化力将同时作用，如各种类型的选择和长期随机遗传漂移，这引发连续瓶颈（Wright 1930）。有限群体的无限小模型的这种扩展称为Wright-Fisher模型。大多数作物的育种群体遵循随机Fisher-Wright过程的定义（Imhof和Nowak 2006）：具有非重叠代的有限群体，二倍体行为和正在进行的选择。
+乌鸦和木村（1970）指出，费希尔定义为噪音的波动，Sewall Wright定义为（一个缓慢的）进化。<strong>遗传增益随时间的稳定性取决于选择强度，突变率，以及总（n）和有效（Ne）群体大小。有效的群体大小是植物育种计划中有效选择的主要限制因素，对传统和基于基因组的选择技术有严重影响（MacLeod et al。2014）</strong>。根据Zeng和Hill（1986），当新的单倍体出现在等位基因进行固定的相同频率时，最佳选择强度发生，使得群体不耗尽其多样性。自花授粉物种由于其繁殖性质而更有可能用完遗传资源。例如，美国大豆的有效种群大小相当于27行（St. Martin 1982），而不足为奇的是，大豆产量已经接近产量高原（Egli 2008a），约为田间潜力的一半Specht等人，1999），因为这些有限的遗传资源（Egli 2008b）。然而，“组学生成”中的新的育种工具可能会在目前有限的情况下提高收益（Rincker et al。2014）。
+##方差分解和简约
+<strong>数量性状的表型处于非确定状态。它需要一个随机模型来近似无穷人口</strong>;换句话说，具有定义感兴趣的方差分量的随机变量的模型。<strong>表示表型变异的第一个模型是Fisher的无穷小模型</strong>，其中表型方差（σ2y）是遗传（σ2G）和环境方差（σ2E）的函数，因此σ2P =σ2G +σ2E.
+方差分量分析（VCA）在植物育种和农艺研究中非常常见。<strong>两种最常见的方差分解方法是方差分析（ANOVA）和限制最大可能性（REML）计算</strong>。研究大豆基因型和环境的差异，<strong>Carvalho et al。 （2008）建议两种方法在平衡实验设计下提供相似的方差分量，但在不平衡条件下，ANOVA方法变得有偏差，而REML仍然提供一致的变量分量和最佳线性无偏预测（BLUP）（Henderson 1975 ）</strong>。这使得REML程序成为育种研究中最常用的VCA方法，BLUP用于品种选择（Piepho et al。2008）。<strong>在无穷小模型中，所有未由遗传学解释的变异是由于环境</strong>。在植物育种中，复制使我们能够测量由于环境引起的变化，从而进一步分解模型的方差。因此，例如，可以估计基因型和环境之间的相互作用（σ2G×E）并分离纯误差（σ2ε）。<strong>每个术语可以进行进一步分解</strong>。例如，环境方差可以包括反映可控环境的分量（σ2Y），位置（σ2L）和管理（σ2M）。 Yan和Rajcan（2003）在大豆中进行了基因型分析，将所有可能的相互作用项（即σ2G×Y×L，σ2G×L，σ2G×Y）的σ2E分解为σ2Y和σ2L，大多数与环境相关的方差是由于年而不是位置。如果通过用共显性分子标记（例如单核苷酸多态性（SNP））进行基因分型来提供基因型信息，那么育种者和遗传学家也能够细分遗传方差项（Xu 2013）。遗传变异的第一次分解产生了附加遗传方差（σ2A），优势遗传方差（σ2D）和上位性（σ2I）。<strong>上位性表示基因座之间的相互作用，包括：加性添加剂（σ2AA），加性显性（σ2AD）和显性显性（σ2DD）</strong>。
+在这一点上，非常重要的是引入两个概念：窄（h2）和广义（H）遗传（Acquaah 2009）。<strong>在统计学中，遗传性被称为类内相关系数，其是指由于其组分之一而导致的总变异量。广义遗传力是由遗传学（H =σ2G/σ2P）引起的变异量，也称为重复性（Nyquist和Baker，1991）</strong>。它说明了“自然与保护”，区分由于遗传学和由于环境造成的变化。狭义遗传力是由于仅与加性遗传方差（h2 =σ2A/σ2P）有关的表型方差的一部分，其与在世代传播的方差相关。后者对于育种数量性状是重要的，因为它描述了育种值如何准确对应于表型。
+遗传方差分量的估计开始于使用核矩阵（又名亲属矩阵）定义个体之间的关系。该矩阵是对称的方阵，其中每个单元指示每对个体之间的关系。然后矩阵用于解决亨德森方程（Henderson 1984），混合模型框架适应具有独立和非独立处理和观察的项，以及由核矩阵表示的观测值之间的相互依赖性。
+分析使用多种类型的核矩阵（K）来表示随机效应（即基因型）之间的关系。最简单的情况假设随机效应是独立的，在这种情况下，内核然后由单位矩阵（K = I）表示。关于非独立效应，最有名的内核包括<strong>谱系关系矩阵核（Wright的1922），基因组关系矩阵（VanRaden 2008）和空间核（Piepho 2009）</strong>。
+用于基因组分析的核是从基因型信息矩阵（M）构建的。该矩阵具有维数q×m，其中每行（q）表示基因型，每列（m）表示分子标记。因此，该矩阵中的每个细胞代表给定个体的基因座，并且每个基因座被数字编码以表示{AA，Aa，aa}。许多基因组分析需要特异性等位基因编码来正确解释结果（Strandén和Chris- tensen 2011）。例如，G2A模型（Zeng等人2005）提出了集中等位基因编码{2q，1-2p，-2p}以保持主效应和外因效应之间的正交性。表1介绍了一些经典的设置。相同的模型可以包括多个遗传术语以使用多个核（加性，优势和上位性）分解总遗传方差。<strong>虽然可能向方差分解模型添加所需的复杂性（Akdemir和Jannink 2015），但这项研究必须考虑两个统计原则：分层原则和稀疏原则</strong>。分层原则表明，低阶项通常比高阶项更重要。换句话说，上位性可能对总遗传方差和高计算成本贡献不大。稀疏原则涉及统计学分析，其中很少有术语解释大多数变化。稀疏性在基因组分析中起着重要作用，因为在实践中，不是所有的基因组都对所有性状有贡献，而是减少数量的区域贡献最多。这些区域称为数量性状基因座（QTL）。 <strong>Lander和Botstein（1989）提出，数量性状的表型方差不是单一正态分布，而是由与多个QTL组合相关的分布混合物组成的高斯过程（图5）</strong>。
+鉴定和定位QTL在定量遗传学中是非常重要的。 QTL发现通过比较两个模型的可能性工作（Yang et al。2014）。第一个是空模型（l0），其仅包含由加性核定义的多基因项（Xu 2013; de los Campos等人2010）。第二个是完整模型（l1），其包括除了多基因项之外的候选基因组部分（标记或区域）。该分析的统计测试是似然比测试（LRT），简单地计算为比例l0：l1。结果可以LRT本身表示为p值（LRT〜χ2ν= 1），或者通过将LRT除以4.61（Lynch和Walsh 1998）作为赔率的对数（LOD分数）。
+QTL作图发生在实验和随机种群中。有两个主要的方法来找到QTL：<strong>链接映射和关联映射</strong>。链接图谱是一种跟踪QTL作为标记物之间已知遗传距离的图谱函数的方法。它通常在为此目的设计的实验群体中进行，在完全或简化模型中不需要多基因项。关联作图是对整个基因组的单个标记的实验或随机群体的测试，其提供对亚群的存在的额外检查。
+在这两种方法中，未检测到的区域将使QTL的数量向下偏移，并且，QTL的平均效应向上，由于称为<strong>Beavis效应</strong>的现象。<strong>是因为发现真实QTL的精度和准确性广泛依赖于种群规模（Beavis 1998）和与种群类型相关的隐含假设（Xu 2003; Nyquist和Baker 1991）</strong>。
+##育种值和方差组分
+在育种计划中开发的只有一小部分品系作为商业品系释放，并且基于表现最好的基因型进行选择。然而，总是有多个感兴趣的性状，因此选择可以采取几种形式：一次一个性状（即串联选择），同时多个数量性状（即独立剔除）或性状组合（即指数选择）。此外，<strong>有三个指标来评估数量性状：表型值，遗传价值和育种价值</strong>。虽然基于表型值的选择以直接的方式使用表型，但遗传和育种值的估计需要实施混合模型。混合模型理论是遗传学家亨德森（Charles Henderson）的生活工作，他主动实施和应用赖特的家谱核矩阵进行育种和选择。这个理论是现代基因组预测方法的基础。线性模型表示当响应变量（y）是固定效应项（Xb）和一个或多个随机效应（Zu）而不是残差（e）的函数的混合效应。混合模型的常见符号由下式给出：
+y = Xb + Zu + e u〜N（0，Kσ2a）e〜N（0，Rσ2e）
+其中X和Z分别是固定和随机效应的尺寸n×p和n×q的设计矩阵。对于这些矩阵，n表示数目观察值，p表示固定效应参数（块，协变量等）的数目，q表示随机效应参数的数目，在这种情况下是基因型的数目。固定和随机效应的回归系数b和u是长度为p和q的向量。随机项和残差方差表示为σ2a和σ2e。矩阵K和R分别是用于定义随机效应（即基因型）和观测值之间的关系的随机效应（q×q）和残差（n×n）的内核。对于该模型，y的协方差由协方差矩阵（V）表示为随机和残余项（V =ZKZ&rsquo;σ2a+Rσ2e）的函数。设计矩阵的示例显示在附录中。
+线性模型的一个常见假设是考虑残差是独立的（R = I）。然而，残差关系矩阵可以提供处理相关残差（即异方差）的有效方法。例如，可以使用R矩阵来通知场图中的成对距离的模型（即，kriging）。这允许我们承认在场中可能存在某些斑点，其中场图可以比其他场更好地执行，而不必知道这些斑是在哪里。
+<strong>随机效应的显着特性是基于它们对模型的贡献来归一化回归系数的收缩</strong>。正则化参数由λ（λ）表示，其被分析地定义为残差方差和随机项变量之间的比率（α=σ2 e /σ2 a），使得遗传项的收缩与性状的遗传性。因此，h2 =（1 +α）-1。
+具有非独立随机项的混合模型的最简单的情况是所谓的动物模型。动物模型是Henderson的Fisher&rsquo;s方差分解的实现，其将不是由于遗传项导致的一切归因于误差，因为可能在模型中包括可控的环境因素作为固定效应。动物模型是基于基因组的分析的大多数方法的基础，包括基因组预测和关联研究。为了促进解决方案，动物模型的简化混合模型方程（MME）假设残差不相关（R = I），将其减少到Cg = r问题，如下：
+？X&rsquo;XZ&rsquo;X
+其中C是包括设计矩阵和核矩阵的叉积的方阵，g是固定和随机效应的回归系数的向量，r表示设计矩阵和响应变量的叉积。
+在这个设置中，内核矩阵K将定义模型为选择目的产生什么类型的值。<strong>如果K是单位矩阵，则u是遗传值的向量</strong>，对于其重复观察是特别重要的。<strong>如果K是谱系或基因组关系矩阵，则u是育种值的向量</strong>，其中共享K中定义的遗传基础的个体作为部分复制。<strong>如果K是非线性核（例如高斯），则u是非线性基因组值的向量，因为高斯核可以解释某种程度的上位性</strong>。为了避免冲突的术语，从这一点上，术语“育种值”表示随机效应系数u。如果事先知道σ2 e和σ2 a，则找到系数b和u不会是问题，因为C g = r可以通过最小二乘回归来求解。然而，有必要同时从数据估计系数和方差分量。由亨德森方法估计的参数被描述为“经验贝叶斯”，因为他们基于数据（Zhou和Stephens 2014; Gianola等人，1986）估计解决模型所需的先验信息（即σ2e和σ2a）。 Sorensen和Gianola（2002）通过将X&rsquo;X表示为额外的随机效应（X&rsquo;X +ΔK-1）来表示混合模型的贝叶斯性质，由于先验知识σ2b=∞，这导致具有独立项（ΔK-1 = 0×K-1 = 0）的零缩小（σ=σ2e/σ2b=σ2e/∞= 0）。 Sorensen和Gianola（2002）明确区分了频率论和贝叶斯混合模型的概率性质：在频率框架下，概率模型定义为y〜N（Xb，ZKZσ2a+Iσ2e），而在贝叶斯框架下变为y〜N（Xb + Zu，Iσ2e）。
+<strong>除非先验知道方差分量，剩下的问题是：如何找到一个lamta参数</strong>，提供了一个可靠的估计育种值？监督机器学习的主要策略是使用<strong>交叉验证</strong>来找到的值？提供了最好的预测。交叉验证的工作原理是将数据集划分为k个子集，并测试大范围值的可预测性。可预测性可以计算为均方预测误差（越低越好）或预测与观测值之间的相关性（越高越好）。一个三折交叉验证发现？将工作如下：
+1.将观察到的数据分为三组（A，B，C）。 2.为？提出一个值。使用AB来预测C; AC预测B;和BC预测A，
+4.计算该给定值的可预测性。 5.对宽范围的值重复前两个步骤。
+6.使用值？提供最高的预测性。
+？？参数控制模型的复杂性，并因此控制偏差和方差之间的已知权衡。增加？添加偏差，减少方差，这通常创建更一致的预测。<strong>作为交叉验证的替代，仍然可以估计值（σ=σ2e/σ2a），以提供最佳的线性无偏预测（BLUP）</strong>。有两种流行的方法来估计基于内核的混合模型中的变量组件，以获得一个鲁棒的值？作为σ2e/σ2a（Robinson 1991）：<strong>限制最大似然（REML）（Patterson和Thompson 1971）和贝叶斯吉布斯取样（BGS）（Wang等人，1993）</strong>。我们还将提出一种包括<strong>使用再现核Hilbert空间重新参数化</strong>的替代方案（Gianola等人2006）。在呈现基于内核的模型之后，下一节还将介绍一些不需要显式内核来提供等效BLUP解决方案的方法。
+##REML算法
+REML可能是最常用的方差分量和回归系数的通用估计方法。<strong>当观测的数量大于参数的数量（n&gt; p）时，它是相对无偏的</strong>，并且许多工作已经进入计算可行的算法（Zhou和Stephens 2014; Kang等人2008; Lee and van der Werf 2016; Misztal等人2002）。
+有多种算法来计算REML方差分量。这是一个<strong>数值优化问题</strong>，其中主要目标是找到优化数据的受限最大似然的方差分量和回归系数。作为方差分量的函数的数据的受限（对数）似然函数可以表示为：
+其中V =ZKZ&rsquo;σ2a+Rσ2e（Searle 1979）。流行算法包括<strong>无导出算法（Meyer 1989）</strong>;<strong>一阶导数方法，如期望最大化（EM）（Dempster等人，1977）</strong>;和<strong>二阶导数方法，如平均信息（AI）（Gilmour等人，1995）</strong>。<strong>一阶和二阶导数方法有一个解析解</strong>，但<strong>也可以通过蒙特卡罗数学求解（Matilainen等人2013）</strong>。 <strong>Meyer（1989）实现的无导出方法通过称为单纯形法的优化启发式方法</strong>（Nelder和Mead 1965）找到了最大化上述似然函数的方差分量，这与“猜测和检查”方法类似。经典版本对于具有大数据的复杂模型是无效的，但<strong>Kang等人（2008）重新引入了一个替代版本，直接搜索？使负对数似然最小化，称为效率混合模型关联（EMMA）算法</strong>。 <strong>Henderson（1984）提出了基于Dempster等人的EM-ML算法的期望最大化（EM-REML）算法</strong>。 （1977），使用Searle（1979）简化的受限对数似然的一阶导数。<strong>EM的原理是迭代更新残差</strong>，变量和系数如下：
+其中C22表示来自C-1的C22项，W = [X，Z]。 <strong>EM是一个非常一致的算法，但它收敛缓慢</strong>，它需要每轮的C反演找到回归系数。 一些数值策略可以帮助解决MME，例如Cholesky分解和Gauss-Seidel算法（Legarra和Misztal 2008）。
+牛顿型方法使用由二阶导数获得的<strong>梯度</strong>同时更新两个方差分量。 <strong>梯度由在参数最小化负对数似然性的方向上收敛的泰勒级数生成（Hofer 1998）</strong>。 在这些方法中，<strong>Gilmour等人提出的平均信息（AI-REML） （1995）是最常见的，因为它基于预期和观察到的信息的平均值创建梯度</strong>。 用于在动物模型中找到方差分量的迭代算法AI-REML是：
+其中参数化矩阵P被定义为P = V-1 -V-1X（X&rsquo;V-1X）-1XV-1。 AI-REML在计算上是苛刻的，但是它在几次迭代中收敛到一致的结果。 这种算法已经广泛应用于育种应用（Gilour等人2009; Meyer 2007; Misztal等人2002）。 该方法最耗时的部分是更新P矩阵，因为其需要协方差矩阵的求逆。
+通过K的特征分解可以显着减少这种计算负担，从而加速V的反演（Kang et al.2008; Lippert et al。2011）。 <strong>任何方阵都可以特征分解为特征向量（U）和特征值（D），因此K = UDU&rsquo;</strong>。 从而，可以获得V-1 = ZU [D×（σ2a/σ2e）+1]-1U&rsquo;Z&rsquo;σ-2e，并且所需的唯一反演是对角矩阵的元素。
+###BGS算法
+<strong>贝叶斯吉布斯取样（BGS）是由Geman和Geman（1984）提出的算法</strong>，其与EM算法类似地工作，一次更新一个参数。参数存储在每个周期中，并在结束时取平均值。 BGS算法通常在静止状态（即熵）之前丢弃周期以提供最终估计的稳定性（所谓的“烧入”）。来自几个周期的参数的分布称为后验分布，通常表示为p（θ| X）。在这种情况下，我们寻找的参数是θ= {b，u，σ2a，σ2}（给定我们所拥有的数据），它指的是我们的矩阵，因此X = {y，X，Z，K}。
+<strong>贝叶斯方法的优点是它们最初包含了你对数据的一些期望，例如参数的概率分布</strong>。 Wang et al。 （1993）提出了第一个吉布斯采样器算法来解决在繁殖上下文中的混合模型，其中系数遵循正态分布（如它们在REML中），并且方差分量遵循缩放的逆卡方分布（χ-2v，S）。这确保了变量分量的正估计。算法如下：
+其中g * i =（ri-Ci，-ig-i）C-1 ii，W = [X，Z]，并且方差分量的pri-形状和自由度由S * ν*，其中S * = 0.5×var（y）和ν* = 5是合理的优先级（Morota et al。2014）。根据拉普拉斯的均匀无知原理，一些先验者表示对预期响应的完全不一致。这些称为平原，它们应该提供等效于REML的结果。使用平坦的先验，设置S * = 0和ν* = -2（García-Cortés和Sorensen 1996）。使用<strong>再现内核的参数化希尔伯特空间（RKHS）是一种解决使用内核的混合模型的替代方法</strong>。<strong>该过程遵循de los Campos等人提出的算法 （2010）使用内核的本征分解（即K = UDU&rsquo;）来获得矩阵特征向量（U）和特征值对角矩阵（D）</strong>。因此，具有u〜N（0，Kσ2a）的随机项Zu可以被重新定义为具有δ〜N（0，Dσ2a）的Z *δ，其中Z * = ZU。
+当多个内核参与同一模型（加性、显性和上位核），RKHS通常优于传统方法。 RKHS与BGS和REML框架兼容，它还允许混合模型的解作为特征向量的脊回归，具有特殊的正则化（σ* =σ2e/σ2a D）。</p>
+
+<p>##全基因组回归（WGR）算法
+<strong>没有亲缘关系矩阵也有可能获得BLUP估计的育种值和方差分量</strong>。当基因型信息可用时（de los Campos等人2013; VanRaden 2008）允许更可靠地推导育种值（Beradardo和Nyquist 1998），这是特别有用的。这些被称为<strong>全基因组回归（WGR）方法</strong>。用于WGR的方法是灵活的，使得它们可以适应超维问题，因为当模型具有比观察值（p×n）更多的参数，而不必计算大矩阵（例如M&rsquo;M）。
+给定线性模型y = Xb +Mα+ e，<strong>WGR计算每个标记（mi）的加和值（αi），并通过取所有标记值的和获得育种值</strong>。因此，育种值估计为u =Mα。然后，该过程将路径编码为{-1,0,1}或{0,1,2}，表示{AA，Aa，aa}，而回归系数α的向量表示每个等位基因替换的加性值徐2013）。
+简单的WGR模型称为<strong>脊回归（RR）或Tikhonov正则化</strong>。<strong>这是包含p个随机过程的高斯过程，其中p是模型中的标记数（p = m）</strong>，其提供等价于使用添加的基因组关系作为核基质的先前方法的结果（VanRaden 2008; Morota et al。2014）。 Ridge回归假设回归系数是正态分布的，并为使用多重共线性提供了一个有趣的框架（Hoerl和Kennard 1970）。这是处理基因组数据的高度理想的属性，当位于同一区域的多个标记携带相似的信息时。
+大多数WGR方法试图使<strong>由argmin（e&rsquo;e +αα&rsquo;α）表示的损失函数最小化</strong>。注意，该损失函数具有两个项：残差平方和（e&rsquo;e）和复杂度项αα&rsquo;α。系数的平方惩罚（αα&rsquo;α）被称为L2惩罚，而L1惩罚表示使用绝对和（α||α||）。 L1惩罚也被称为最小绝对收缩和选择算子（LASSO）损失（Tibshirani 1996）。
+坐标下降有助于最小化上面提出的山脊和LASSO损失函数（Hastie et al。2005），这意味着回归系数每次更新一次。 让我们从最简单的单变量解开始：普通最小二乘法（OLS）。 对于给定的单变量模型y = xb + e，回归系数的OLS解为：</p>
+
+<p>而对于相同问题的脊回归解由下式给出：</p>
+
+<p>其中正则化参数？ 施加收缩。 LASSO单变量解法工作略有不同。 对于正OLS系数，LASSO解是：
+如果LASSO解是负的，则将回归系数设置为零。类似地，当OLS为负且LASSO分子由x&rsquo;y +α给出时，当LASSO解是正数时，系数设置为零。因此，LASSO除了收缩之外还执行变量选择，而脊不能提供零回归系数。脊回归和LASSO之间的中间模型称为弹性网（Zou和Hastie 2005），其中正则化最小化L1和L2惩罚，单变量解是：
+在确定单变量解之后，坐标下降算法如下。对于初学者，假设我们正在求解一个模型，其中唯一的固定效应是截距（μ），并且来自p个参数的omic数据由模型y =μ+ Xb + e的矩阵X表示。算法很简单：将线性模型简化为单变量版本（~yi = xibi + e），一次求解一个系数直到收敛。为此，必须适配除正被更新的一个变量之外的所有变量。因此，第i个参数的脊解为：</p>
+
+<p>yi xi xi其中〜yi表示除一个（xi）之外的所有参数的y。 Legarra和Misztal（2008）提供了一个有效的框架，以防止每个回归系数X-ib-i的重新计算，两步Gauss-Seidel残差更新（GSRU）算法，其中残差的向量有助于更换为〜yi。第一步涉及使用当前版本的残差来更新第i个回归系数（bt + 1i）：
+这之后是残差的后续更新：</p>
+
+<p>正则化参数通常通过传统机器学习框架中的交叉验证来估计（Hastie等人，2005），而截距是由于其固定效应性质而唯一无正则化更新的系数（α= 0）。如果在每个回合中估计方差分量，则还可以将正则化参数更新为： =σ2e/σ2a。贝叶斯对应的脊回归（BRR）通过吉布斯采样器解决，提供几乎相同的解决方案（de los Campos等人2013）。主要区别是基于抽样的参数更新。 BRR算法进行如下：
+使用GSRU解作为具有后续残差更新的期望值从正态分布对回归系数进行采样：
+然后，从缩放的逆卡方分布更新方差分量：
+两个模型通过将规则化设置修改为非高斯过程从BRR得到：BayesA和Bayesian LASSO。 BayesA（Meuwissen等人，2001）是BRR的特殊情况，其中每个标记具有其自己的变异（σ2bi=（b2 i + S * v *）/χ21+ v *），这意味着每个标记将具有唯一的正则化参数（Δi=σ2e/σ2）。
+标记效应遵循t分布（厚尾）。来自BayesA的育种值比BRR更准确，但往往对先前的规范有偏见和敏感（Lehermeier等人2013; Gianola 2013）。
+Park和Casella（2008）提出的Bayesian LASSO（BL）具有非常特殊的参数化，强加了收缩，但是与非贝叶斯对应物不同，它不能执行可变选择。在BL中，从具有期望值σeφ/ bi和形状φ2的反高斯分布对每个单独参数（θi）的正则化参数进行采样，使得标记效应的分布遵循拉普拉斯分布。
+非高斯过程（例如BayesA，BL，LASSO）能够捕获大效应QTL比脊回归和BRR（图6），而内核方法甚至不分配值给每个制造商。 Zhang et al。 （2010a）提出了一个两步法，将大效应QTL纳入核方法，从而生成加权内核（也称为性状相关内核）。第一步包括拟合WGR以获得每个标记物的回归系数。第二步涉及在设计内核之前重新编码编码为{ - | b |，0，| b |}的等位基因，使得每个等位基因根据其与性状的关联而被加权。由各种方法（内核和回归）提供的预测精度根据性状的遗传结构而改变（de los Campos等人2013），并且具有更现实假设的模型通常提供最准确的预测。虽然所有模型都可能提供稳健的预测，但寻找最佳方法可能需要育种人员通过交叉验证来评估多个模型。</p>
+
+<p>人们可能相信并非所有标记都有助于感兴趣的性状，但是收缩不会从模型中消除标记。有两种方法来解决这个问题：使用L1损失或在L2模型中添加变量选择项。事实上，前面提到的每个贝叶斯模型都有一个变量选择对​​应物：BayesA有BayesB（Meuwissen等人，2001），BRR有BayesCπ（Habier等人，2011），BL有一个由Legarra等人提出的扩展版本et al。 （2011）。 Meuwissen et al。 （2001）使用Metropolis-Hasting算法提出了变量选择，这表明标记被随机地包括在模型中。当新模型提供更好的可能性时，接受所提出的改变。 Meuwissen的方法是健壮的，但是计算成本高。或者，可以通过以下三种方法将有效的变量选择结合到Gibbs样本（O&rsquo;Hara和Sillanpää2009）中：
+随机搜索变量选择（George McCulloch 1993）。
+无条件先验（Kuo和Mallick 1998）。 3.吉布斯变量选择（Dellaportas等人2002）。
+表2总结了这一部分，显示了育种值的计算，以帮助通过基因和WGR方法进行选择。通过在基于核心的多基因术语条件下测试一个标记物来筛选全基因组的大效应QTL的程序称为全基因组关联研究（GWAS）。因为非高斯WGR方法能够捕获主要效应等位基因，所以这些方法可以直接用于执行GWAS。 LASSO和BayesCπ已被广泛用于检测QTL（Colombani等人2013; Fang等人2012; Li和Sillanpää2012; Yi和Xu 2008）。
+此外，Legarra等人进行的比较研究（2015）指出这些方法优于传统框架，这是基于比较零模型和完全模型的可能性。
+##数据质量控制和关联分析
+<strong>理解数量性状的基本遗传学为作物改良的策略提供了信息（Sonah et al。2014）</strong>。将基因和表型与分子工具相关联的最基本的程序是找到与表型相关的标记，从而确定涉及哪些基因。<strong>不管遗传资源（即种群类型），关联研究具有四个基本步骤：表型分型，基因分型，作图和验证</strong>。<strong>验证包括对为此目的特别设计的实验群体（例如近等基因品系）进行表型分型，基因分型和作图的前三个程序</strong>。因此，我们将只强调三个初始步骤。
+###表型
+当性状受许多基因座控制时，对环境变异的敏感性增加。外部刺激影响不同水平的不同基因座的遗传表达。<strong>复杂性状的基因表达，如产量和耐旱性，在整个基因组中是高度可变的（Guimarães-Dias等2012; Le等2011）</strong>。在使表型中的环境噪声最小化的背景下，对现场表型的研究旨在产生或改善高通量和高精度表型分型技术，但是各种来源的omic数据的整合主要用于改善非生物胁迫（Deshmukh等人2014）。
+复制的使用总是非常需要的，因为具有多个观察总是提高真实遗传值的估计的准确性。<strong>可以使用空间统计进一步降低由于场变化引起的噪声</strong>，例如克里金（Basso等人，2001），其允许调整现场试验之间的空间相关性（Ba​​nerjee等人2010; Zas 2006）。例如，<strong>Lado et al。 （2013）能够通过使用具有移动平均协变结构的简单混合模型通过空间调整控制场变化来提高小麦基因组预测的准确性</strong>。
+<strong>克里金法控制场变化可以补充实验设计和未复制的试验（Banerjee等人2010; Lado等人2013）</strong>。表型数据包含遗传信息，微环境和大环境变化，以及环境和遗传因素之间的相互作用。对于克里金的这种应用，我们可以使用具有附加项的混合效应模型来定义场图中的场相关。从而：
+y = Xb + Zu + Iv + e，
+其中观察到的表型（y）是某些固定效应（Xb）的函数，例如块或环境。遗传效应（Zu）允许指定个体之间的关联u〜N（0，Kσ2a），其中K表示加性遗传关系矩阵。场变化（Iv）项表示由空间核（例如高斯）定义的空间关系（即场中的图之间的欧几里得距离），使得v〜N（0，Sσ2s）。残差项（e）包含随机误差和高阶相互作用。还有一种替代方法，假设残差是相关的，使得e〜N（0，Sσ2e），从而避免模型中的附加项（Iv）。当谱系和基因型信息稀缺时，空间变异的考虑在未复制的试验（例如后代行）中特别重要。因此，遗传学和环境之间的区别是一个复杂的问题，使用复制检查可能是场变化的唯一真正的指示器。随着环境噪声的降低，基因型值在不同环境中具有更稳定的性能，这可以使用Pearson或Spearman相关性来测量。通过考虑场变化而提供的另一种改善措施是宽和狭义遗传性的增加，其中预期增加的方差是由遗传因素引起的。
+##基因分型
+高通量基因分型技术已经在植物育种中变得非常流行（Jarquín等人2014; Sonah等人2014），通常具有差的基因分型质量和大量的缺失数据（Halperin和Stephan 2009），使得绘图和选择具有挑战性（Jarquínet al。2014; Poland and Rife 2012）。在这种情况下，<strong>缺失基因座的准确插补和SNP miscall的良好校正对于强大的下游分析至关重要（Marchini和Howie 2010; Xavier等人2016）</strong>。<strong>植物育种中基因型插补的两种人口方法是隐马尔可夫模型（HMM）和随机森林（Swarts等人2014; Rutkoski等人2013）。
+ HMM通常用于遗传学和基因组学中用于马尔可夫过程的随机建模，例如单倍型的计算</strong>。在遗传学上，具有给定基因座m的两个等位基因的二倍体生物体的三种可能状态是：M1M1，M1M2和M2M2，忽略连锁相。假设有序标记，HMM基于标记mt的转变概率估计最可能的状态路径（即基因型），以改变给定先前标记mt-1的状态。 HMM是插入缺失基因型的最常用方法。此外，Marchini和Howie（2010）显示HMM可以提高全基因组关联研究的功效和分辨率。
+<strong>随机森林是一种用于预测，分类和估算混合数据类型的非参数方法。它建立了决策树预测器的组合，其中决策树被自举以产生构成训练森林的随机独立向量。这对于插补无序标记特别有用。</strong> Rutkoski et al。 （2013）报告随机森林作为一种有希望的插入法在小麦基因分型测序（GBS）数据，和Xavier等。 （2016）表明随机森林与大豆中的HMM一样有效。对分析有重要影响的其他质量参数是分子标记的次要等位基因频率（MAF）（Tabangin等人，2009）和标记物携带基因的能力。后者根据标记遗传力（Forneris et al。2015）估计，当标记被视为分子表型时。它用于鉴定由于等位基因的偏向遗传而不遵循孟德尔分离的标记（Glémin2010）。<strong>小等位基因对于群体分层非常重要。</strong> Wen et al。 （2008）在评估中国393个地方品种和196个大豆种群的结构时发现多达9个亚种群。然而，<strong>低MAF在关联分析中具有两个主要缺点：（1）如果人们不知道亚群的存在，它可能增加假发现的速率;和（2）如果等位基因具有主要效应但仅存在于低频率，则该特定基因将由于缺乏与其低信噪比相关的功率而变得不可检测（Tabangin等人2009）</strong>。 Jarquínet al。 （2014）发现MAF阈值高达0.30提高了大豆中基因组选择模型的预测准确性。
+##基因作图
+在基因作图中看到的改进是机器学习涉及增强推理精度的罕见场合之一。之前讨论了绘图的原理，其中我们显示标记和性状之间的关联可以通过标记提供的（限制）可能性的改善来估计，条件是多基因项（即加性细胞）亚种群的存在。<strong>来自随机群体的早期绘图研究忽略了群体结构，这可能导致大量的假发现（Xu和Shete 2005）</strong>。 <strong>Yu et al。 （2005）提出了一个混合模型框架，解释背景遗传学称为统一混合模型（UMM），也称为K + Q方法。在这种方法中，固定效应群体结构项（Q）与衍生自系谱，基因组数据或两者的内核（K）的多态项互补</strong>。群体结构通常由来自软件STRUCURE（Pritchard等人2000）或使用软件EIGEN-STRAT（Price等人2006）计算的特征向量的群来定义。 UMM具有一些不期望的属性，包括冗余（一旦从K提取Q的信息）和来自每个标记的方差分量的估计的计算负担。
+为了避免每轮计算混合模型，Aulchenko et al。 （2007）提出了使用混合模型和回归（GRAMMAR）算法的称为全基因组快速关联的近似方法。作者提出拟合动物模型和分析残留项作为非结构化表型，而不需要包括多基因项，使混合模型只需要解决一次。虽然方便快捷，原始的GRAMMAR方法提供了SNP效应的有偏估计。一些人提出了与原始算法的差异以克服这个限制，包括GRAMMAR-γ（Svishcheva等人2012）和BOLT-LMM（Loh等人2015）。由于其计算可行性，<strong>GRAMMAR通常是分析大量标记物的首选模型</strong>。在上一节中，我们提到使用Eigende-composition来有效地计算混合模型。 Kang等人（2008）提出了EMMA算法为K + Q模型提供一个计算解决方案，使用数值优化方法来搜索a？最大化REML。在这个算法中，Eigende composition在简化似然函数的计算中起着主要作用。 <strong>EMMA算法成为单内核混合模型的大众解决方案</strong>，在诸如rrBLUP，EMMREML和NAM的流行R包中实现（Endelman 2011; Akdemir和Jannink 2015; Xavier等人2015）。然而，<strong>EMMA在大型数据集中的联合分析是不切实际的</strong>。为了克服在EMMA中看到的计算限制，一些人提出了称为压缩混合模型的近似方法。这些包括EMMA限制（EMMAX）算法（Kang等人，2010）和先前确定的群体参数（P3D）算法（Zhang等人，2010b）。 EMMAX和P3D产生用于个体群集的多项式项来压缩K的信息。这些方法还假定全模式中的方差分量等于空模型，并且因此仅估计方差分量一次。多基因项的压缩需要大量的信息损失，但是Q项有助于预先保存部分信息。其他人已经为没有压缩的混合模型提出了更有效的解决方案，也称为精确方法。 Lippert et al。 （2011）提出了因子变换（FaST）算法，而Zhou和Stefins（2012）引入了全基因组高效混合模型关联（GEMMA）算法。 <strong>GEMMA利用全排核，基因组关系矩阵（即使用所有特征向量），这提供了算法的稳定性和对混合的非常鲁棒的控制</strong>。另一方面，FaST被设计为适应更大数量的具有降低等级核的个体，这也防止了下面讨论的标记的双重拟合。
+一般来说，<strong>混合模型可以以合理的成本增加功率和预防假阳性，但这种方法也存在一些缺陷</strong>（Yang等人，2014），例如病例对照研究中的功率损失和（通常）双重 - 将标记拟合到模型中，其中在完整模型中评估的标记也用于建立内核（基因组关系矩阵）。使用WGR作为GWAS方法可以很容易地满足双重拟合的限制，一旦每个标记效应被推断，条件是所有其他参数。表3总结了主关联算法的属性。最近，一些人提出了更灵活的模型以放松由GWAS算法做出的假设并且处理复杂的结构化群体，包括下一代面板，例如多父亲高级生成交叉（MAGIC）和嵌套关联图 - 平均（NAM）人群。经验贝叶斯算法（Xavier等人2015; Wei和Xu 2016）努力通过将标记作为随机效应来将背景噪声收缩到零来进一步增加GWAS的功率和分辨率，还实现了一个滑动窗口来克服双重通过从多基因项中移除局部标记来匹配标记。此外，如果任何分层因子是先验已知的，该算法将标记重新参数化为单倍型，因此占据一定程度的上位性，从而放宽关于不同亚群中标记物和QTL之间的连锁相的假设。图7比较了GWAS算法。
+##结论
+<strong>各种模型和算法都做出重要的假设。了解计算的工作方式可能有助于改进统计分析和决策。育种理论中的最稳定程序基于高斯过程，可以通过使用内核和回归模型的混合模型计算</strong>。我们已经说明了当使用机器学习和混合模型的原理进行选择，预测和映射以及推断方差分量时的一些灵活性。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/diallel/xiang-li-2001-diallel-%E6%96%B9%E6%B3%95/" data-toggle="tooltip" data-placement="top" title="Xiang-Li-2001-diallel-方法">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80/wu2016-%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80-%E4%B8%83%E7%A7%8D%E7%AD%96%E7%95%A5-%E8%A1%A8%E7%8E%B0/" data-toggle="tooltip" data-placement="top" title="Wu2016-近交衰退-七种策略-表现">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Hamann-2002-kriging</title>
+  <meta property="og:title" content="Hamann-2002-kriging" />
+  <meta name="twitter:title" content="Hamann-2002-kriging" />
+  <meta name="description" content="Hamann A, Namkoong G, Koshy MP. Improving precision of breeding values by removing spatially autocorrelated variation in forestry field experiments. Silvae Genet. Sauerl{ä}nder; 2002;51:210–5.   在不充分区组的田间实验中微环境异质性的调整是希望改善遗传参数的估计和最大化从选择的遗传增益。在三个红al木（Alnus rubra Bong。）的林业田间试验中，我们使用克里金法去除了空间自相关变异，并且与标准分析相比，评估了对处理手段和可能性的估计的影响。克里金消除块效应和减少家庭x块相互作用在所有性状。由于相互作用的变化在简单家族或起源方差分量中恢复，其在一些性状中增加高达40％。遗传力估计和选择的预期收益相应增加，而家庭和出生的估计的标准误差降低。改进在实验中是最大的，其中区组显然不足以捕获位点变异，当块尺寸大时，以及对于可能受土壤性质变化影响的性状。假定与土壤变化无关的芽断裂和叶脱落在空间上是独立的。根据不完全块设计的实验估计的遗传力，每块有9棵树只能最小化改进。我们建议在林业田间试验的分析中常规地构建变异函数。测试来自标准模型的残差是否是空间自相关的。如果它们是，克里金被建议作为ANOVA在树木育种实验和其他林业田间试验中的有用补充。
+介绍 由于环境梯度，例如土壤肥力，水分或以前的土地利用，从林业田间实验收集的数据通常在重复的区组内变化。仔细布置区组和集中场地准备可以减少现场实验中的这种残余误差，但是在评估时经常发现不确定性阻塞。改善位置变化效应的最有效手段之一是使用具有小区组的不完全区组设计。 **Alpha设计，一类广义网格设计，已经变得流行用于管理林业实验中的环境梯度（CORRELL和CELLIER，1987; KLEIN，1989; WILLIAMS和MATHESON，1994; JOHN，1995）。尽管如此，仍然使用完整的区组设计，并且长期林业实验中的许多后代试验的设计严重阻碍了对遗传参数和育种值的精确估计。 ERICSSON（1997）建议，不管实验是如何初始设计的，在评价时应该对试验施加不完全区组，并且确定最佳区组尺寸作为产生最高遗传力的区组。然而，由于遗传力或其他遗传参数估计有误差，通过试验和误差选择实验设计可能导致遗传力的过度估计。 一种替代方法是将位置变化建模为平滑表面，这是吸引人的，因为具有不同边界的区组在概念上不适于模拟连续位置变化。已经提出了许多方法来模拟空间变化，例如趋势面分析（THOMSON和EL-KASSABY，1988），最小二乘平滑（GREEN等人，1985; CLARKE等人，1994,1996），可分离ARIMA过程CULLIS和CLEESON，1991），最近邻法（WIL-KINSON等，1983; STROUP和MULITZE，1991）或克里金法（BRESLER等，1981; SAMBRA等，1989; LOPEZ和ARRUE，1995）。一些作者比较了这些和其他方法在农业田间试验中的应用（SAMBRA等，1990; BROWNIE等，1993; STROUP等，1994; CLARKE和BAKER，1996）。虽然很少使用，克里金证明是适合于消除农业实验中的微环境异质性，而一些其他方法已被证明偶尔会增加处理估计的误差。此外，土壤科学中有大量文献表明土壤性质，如土壤水分，营养，淤泥和粘土含量在空间上是依赖的，并且最好用克里金法建模（例如BURGESS和WEBSTER，1980a，1980b; BURROUGH， 1993）。由于树木生长的变化通常是由土壤特性的变化引起的，因此将相同的方法应用于林业田间实验的空间变异是显而易见的。 本研究的目的是研究克里金法是否适合回收由于林业田间试验中环境区组内变化引起的家系×区组间相互作用，以及是否能提高育种值的精度。此外，为了遗传资源管理的目的，我们提供红der种群遗传参数的估计。这样的信息提供了性状遗传变异性的度量，并且必须预测树改进程序中的选择的获得。
+材料和方法 田间实验我们用遗传测试的分裂图设计（实验1和2）和不完全区组设计的一个试验（实验3）评估了两个试验。测量的性状是三年高度和直径，叶脱落的日期和芽断裂的日期，如HAMANN等人（1998）。这两个标准试验是分裂图设计，从不列颠哥伦比亚省获得高达55个证明。试验有三个复制，原产地位于主地区组，每个原产地有五个地区组位于子地区组。根据以下模型分析它们： Yijkl =μ&#43; Bi &#43; Pj &#43; P×Bji &#43; F（P）k（j）&#43; F（P）×Bk（ij）&#43; l 其中Y是来自省份j和家庭k的区组i中的幼苗l的测量; μ是总体平均值; B，P和F（P）分别是产地内区组，起源和家系的影响; P×B是区组与优势的相互作用效应，也是主误差; F（P）×B是产区内区组与家系的相互作用效应; ε是实验误差。 具有先进实验设计的第三个试验是不完全区组设计，来自阿拉斯加的4个来源和每个来源20个家族。我们使用一个格子正方形设计与10重复，每个细分为九个不完整的区组与九棵树。由于已知九个相互正交的拉丁方格（GRAHAM等人，1995），可以导出布局，其中每个家族与每个其他家族共享一次不完整的区组。虽然这种设计是针对81种处理，并且由于每次复制中的一次错位处理而具有轻微的不平衡，根据WILLIAMS和MATHESON（1994）的发病率矩阵计算的统计效率比可以实现的高10％与计算机生成的alpha设计（CSIRO / BIOSS，1994）。以下线性模型用于分析： Yijkl =μ&#43; Bi &#43; I（B）j（i）&#43; Pk &#43; P×Bik &#43; P×I（B）jk（i）&#43; F &#43; F（P）×I（B）jk（i）&#43; m（ijkl） ε 其中I（B）是完整区组中的不完全区组。其它符号如上。在所有实验中使用PROC MIXED（SAS INSTITUTE，1999）的限制最大似然法估计方差分量，假设随机模型。 参数估计从方差分量σ2，个体遗传力，h2，估计如下：h2 =4σ2 F（P）/（σ2F（P）&#43;σ2B×F（P）&#43;σ2I（B）×F（P）&#43;σ2E） 这种遗传性将用于估计来源选择内的获得。在不列颠哥伦比亚省的育种计划中的选择可能会跨越原产地。因此，我们还根据公式计算作为上限的B.">
+  <meta property="og:description" content="Hamann A, Namkoong G, Koshy MP. Improving precision of breeding values by removing spatially autocorrelated variation in forestry field experiments. Silvae Genet. Sauerl{ä}nder; 2002;51:210–5.   在不充分区组的田间实验中微环境异质性的调整是希望改善遗传参数的估计和最大化从选择的遗传增益。在三个红al木（Alnus rubra Bong。）的林业田间试验中，我们使用克里金法去除了空间自相关变异，并且与标准分析相比，评估了对处理手段和可能性的估计的影响。克里金消除块效应和减少家庭x块相互作用在所有性状。由于相互作用的变化在简单家族或起源方差分量中恢复，其在一些性状中增加高达40％。遗传力估计和选择的预期收益相应增加，而家庭和出生的估计的标准误差降低。改进在实验中是最大的，其中区组显然不足以捕获位点变异，当块尺寸大时，以及对于可能受土壤性质变化影响的性状。假定与土壤变化无关的芽断裂和叶脱落在空间上是独立的。根据不完全块设计的实验估计的遗传力，每块有9棵树只能最小化改进。我们建议在林业田间试验的分析中常规地构建变异函数。测试来自标准模型的残差是否是空间自相关的。如果它们是，克里金被建议作为ANOVA在树木育种实验和其他林业田间试验中的有用补充。
+介绍 由于环境梯度，例如土壤肥力，水分或以前的土地利用，从林业田间实验收集的数据通常在重复的区组内变化。仔细布置区组和集中场地准备可以减少现场实验中的这种残余误差，但是在评估时经常发现不确定性阻塞。改善位置变化效应的最有效手段之一是使用具有小区组的不完全区组设计。 **Alpha设计，一类广义网格设计，已经变得流行用于管理林业实验中的环境梯度（CORRELL和CELLIER，1987; KLEIN，1989; WILLIAMS和MATHESON，1994; JOHN，1995）。尽管如此，仍然使用完整的区组设计，并且长期林业实验中的许多后代试验的设计严重阻碍了对遗传参数和育种值的精确估计。 ERICSSON（1997）建议，不管实验是如何初始设计的，在评价时应该对试验施加不完全区组，并且确定最佳区组尺寸作为产生最高遗传力的区组。然而，由于遗传力或其他遗传参数估计有误差，通过试验和误差选择实验设计可能导致遗传力的过度估计。 一种替代方法是将位置变化建模为平滑表面，这是吸引人的，因为具有不同边界的区组在概念上不适于模拟连续位置变化。已经提出了许多方法来模拟空间变化，例如趋势面分析（THOMSON和EL-KASSABY，1988），最小二乘平滑（GREEN等人，1985; CLARKE等人，1994,1996），可分离ARIMA过程CULLIS和CLEESON，1991），最近邻法（WIL-KINSON等，1983; STROUP和MULITZE，1991）或克里金法（BRESLER等，1981; SAMBRA等，1989; LOPEZ和ARRUE，1995）。一些作者比较了这些和其他方法在农业田间试验中的应用（SAMBRA等，1990; BROWNIE等，1993; STROUP等，1994; CLARKE和BAKER，1996）。虽然很少使用，克里金证明是适合于消除农业实验中的微环境异质性，而一些其他方法已被证明偶尔会增加处理估计的误差。此外，土壤科学中有大量文献表明土壤性质，如土壤水分，营养，淤泥和粘土含量在空间上是依赖的，并且最好用克里金法建模（例如BURGESS和WEBSTER，1980a，1980b; BURROUGH， 1993）。由于树木生长的变化通常是由土壤特性的变化引起的，因此将相同的方法应用于林业田间实验的空间变异是显而易见的。 本研究的目的是研究克里金法是否适合回收由于林业田间试验中环境区组内变化引起的家系×区组间相互作用，以及是否能提高育种值的精度。此外，为了遗传资源管理的目的，我们提供红der种群遗传参数的估计。这样的信息提供了性状遗传变异性的度量，并且必须预测树改进程序中的选择的获得。
+材料和方法 田间实验我们用遗传测试的分裂图设计（实验1和2）和不完全区组设计的一个试验（实验3）评估了两个试验。测量的性状是三年高度和直径，叶脱落的日期和芽断裂的日期，如HAMANN等人（1998）。这两个标准试验是分裂图设计，从不列颠哥伦比亚省获得高达55个证明。试验有三个复制，原产地位于主地区组，每个原产地有五个地区组位于子地区组。根据以下模型分析它们： Yijkl =μ&#43; Bi &#43; Pj &#43; P×Bji &#43; F（P）k（j）&#43; F（P）×Bk（ij）&#43; l 其中Y是来自省份j和家庭k的区组i中的幼苗l的测量; μ是总体平均值; B，P和F（P）分别是产地内区组，起源和家系的影响; P×B是区组与优势的相互作用效应，也是主误差; F（P）×B是产区内区组与家系的相互作用效应; ε是实验误差。 具有先进实验设计的第三个试验是不完全区组设计，来自阿拉斯加的4个来源和每个来源20个家族。我们使用一个格子正方形设计与10重复，每个细分为九个不完整的区组与九棵树。由于已知九个相互正交的拉丁方格（GRAHAM等人，1995），可以导出布局，其中每个家族与每个其他家族共享一次不完整的区组。虽然这种设计是针对81种处理，并且由于每次复制中的一次错位处理而具有轻微的不平衡，根据WILLIAMS和MATHESON（1994）的发病率矩阵计算的统计效率比可以实现的高10％与计算机生成的alpha设计（CSIRO / BIOSS，1994）。以下线性模型用于分析： Yijkl =μ&#43; Bi &#43; I（B）j（i）&#43; Pk &#43; P×Bik &#43; P×I（B）jk（i）&#43; F &#43; F（P）×I（B）jk（i）&#43; m（ijkl） ε 其中I（B）是完整区组中的不完全区组。其它符号如上。在所有实验中使用PROC MIXED（SAS INSTITUTE，1999）的限制最大似然法估计方差分量，假设随机模型。 参数估计从方差分量σ2，个体遗传力，h2，估计如下：h2 =4σ2 F（P）/（σ2F（P）&#43;σ2B×F（P）&#43;σ2I（B）×F（P）&#43;σ2E） 这种遗传性将用于估计来源选择内的获得。在不列颠哥伦比亚省的育种计划中的选择可能会跨越原产地。因此，我们还根据公式计算作为上限的B.">
+  <meta name="twitter:description" content="Hamann A, Namkoong G, Koshy MP. Improving precision of breeding values by removing spatially autocorrelated variation in forestry field experiments. Silvae Genet. Sauerl{ä}nder; 2002;51:210–5.   在不充分区 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/hamann-2002-kriging/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/hamann-2002-kriging/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Hamann-2002-kriging</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (110 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Hamann-2002-kriging</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (110 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<ol>
+<li>Hamann A, Namkoong G, Koshy MP. Improving precision of breeding values by removing spatially autocorrelated variation in forestry field experiments. Silvae Genet. Sauerl{ä}nder; 2002;51:210–5.</li>
+</ol>
+</blockquote>
+
+<p>在不充分区组的田间实验中微环境异质性的调整是希望改善遗传参数的估计和最大化从选择的遗传增益。在三个红al木（Alnus rubra Bong。）的林业田间试验中，我们使用<strong>克里金</strong>法去除了空间自相关变异，并且与标准分析相比，评估了对处理手段和可能性的估计的影响。<strong>克里金消除块效应和减少家庭x块相互作用在所有性状</strong>。<strong>由于相互作用的变化在简单家族或起源方差分量中恢复，其在一些性状中增加高达40％。遗传力估计和选择的预期收益相应增加，而家庭和出生的估计的标准误差降低</strong>。<strong>改进在实验中是最大的，其中区组显然不足以捕获位点变异，当块尺寸大时，以及对于可能受土壤性质变化影响的性状。假定与土壤变化无关的芽断裂和叶脱落在空间上是独立的。根据不完全块设计的实验估计的遗传力，每块有9棵树只能最小化改进。我们建议在林业田间试验的分析中常规地构建变异函数</strong>。测试来自标准模型的残差是否是空间自相关的。如果它们是，克里金被建议作为ANOVA在树木育种实验和其他林业田间试验中的有用补充。</p>
+
+<h2 id="介绍">介绍</h2>
+
+<p>由于环境梯度，例如土壤肥力，水分或以前的土地利用，从林业田间实验收集的数据通常在重复的区组内变化。仔细布置区组和集中场地准备可以减少现场实验中的这种残余误差，但是在评估时经常发现不确定性阻塞。<strong>改善位置变化效应的最有效手段之一是使用具有小区组的不完全区组设计</strong>。 **Alpha设计，一类广义网格设计，已经变得流行用于管理林业实验中的环境梯度（CORRELL和CELLIER，1987; KLEIN，1989; WILLIAMS和MATHESON，1994; JOHN，1995）。尽管如此，仍然使用完整的区组设计，并且长期林业实验中的许多后代试验的设计严重阻碍了对遗传参数和育种值的精确估计。 <strong>ERICSSON（1997）建议，不管实验是如何初始设计的，在评价时应该对试验施加不完全区组，并且确定最佳区组尺寸作为产生最高遗传力的区组。然而，由于遗传力或其他遗传参数估计有误差，通过试验和误差选择实验设计可能导致遗传力的过度估计</strong>。
+<strong>一种替代方法是将位置变化建模为平滑表面，这是吸引人的，因为具有不同边界的区组在概念上不适于模拟连续位置变化。已经提出了许多方法来模拟空间变化，例如趋势面分析（THOMSON和EL-KASSABY，1988），最小二乘平滑（GREEN等人，1985; CLARKE等人，1994,1996），可分离ARIMA过程CULLIS和CLEESON，1991），最近邻法（WIL-KINSON等，1983; STROUP和MULITZE，1991）或克里金法（BRESLER等，1981; SAMBRA等，1989; LOPEZ和ARRUE，1995）</strong>。一些作者比较了这些和其他方法在农业田间试验中的应用（SAMBRA等，1990; BROWNIE等，1993; STROUP等，1994; CLARKE和BAKER，1996）。<strong>虽然很少使用，克里金证明是适合于消除农业实验中的微环境异质性，而一些其他方法已被证明偶尔会增加处理估计的误差。此外，土壤科学中有大量文献表明土壤性质，如土壤水分，营养，淤泥和粘土含量在空间上是依赖的，并且最好用克里金法建模（例如BURGESS和WEBSTER，1980a，1980b; BURROUGH， 1993）</strong>。<strong>由于树木生长的变化通常是由土壤特性的变化引起的，因此将相同的方法应用于林业田间实验的空间变异是显而易见的</strong>。
+本研究的目的是研究克里金法是否适合回收由于林业田间试验中环境区组内变化引起的家系×区组间相互作用，以及是否能提高育种值的精度。此外，为了遗传资源管理的目的，我们提供红der种群遗传参数的估计。这样的信息提供了性状遗传变异性的度量，并且必须预测树改进程序中的选择的获得。</p>
+
+<h2 id="材料和方法">材料和方法</h2>
+
+<p>田间实验我们用遗传测试的分裂图设计（实验1和2）和不完全区组设计的一个试验（实验3）评估了两个试验。测量的性状是三年高度和直径，叶脱落的日期和芽断裂的日期，如HAMANN等人（1998）。这两个标准试验是分裂图设计，从不列颠哥伦比亚省获得高达55个证明。试验有三个复制，原产地位于主地区组，每个原产地有五个地区组位于子地区组。根据以下模型分析它们：
+Yijkl =μ+ Bi + Pj + P×Bji + F（P）k（j）+ F（P）×Bk（ij）+ l
+其中Y是来自省份j和家庭k的区组i中的幼苗l的测量; μ是总体平均值; B，P和F（P）分别是产地内区组，起源和家系的影响; P×B是区组与优势的相互作用效应，也是主误差; F（P）×B是产区内区组与家系的相互作用效应; ε是实验误差。
+具有先进实验设计的第三个试验是不完全区组设计，来自阿拉斯加的4个来源和每个来源20个家族。我们使用一个格子正方形设计与10重复，每个细分为九个不完整的区组与九棵树。由于已知九个相互正交的拉丁方格（GRAHAM等人，1995），可以导出布局，其中每个家族与每个其他家族共享一次不完整的区组。虽然这种设计是针对81种处理，并且由于每次复制中的一次错位处理而具有轻微的不平衡，根据WILLIAMS和MATHESON（1994）的发病率矩阵计算的统计效率比可以实现的高10％与计算机生成的alpha设计（CSIRO / BIOSS，1994）。以下线性模型用于分析：
+Yijkl =μ+ Bi + I（B）j（i）+ Pk + P×Bik + P×I（B）jk（i）+ F + F（P）×I（B）jk（i）+ m（ijkl）
+ε
+其中I（B）是完整区组中的不完全区组。其它符号如上。在所有实验中使用PROC MIXED（SAS INSTITUTE，1999）的限制最大似然法估计方差分量，假设随机模型。
+参数估计从方差分量σ2，个体遗传力，h2，估计如下：h2 =4σ2
+F（P）/（σ2F（P）+σ2B×F（P）+σ2I（B）×F（P）+σ2E）
+这种遗传性将用于估计来源选择内的获得。在不列颠哥伦比亚省的育种计划中的选择可能会跨越原产地。因此，我们还根据公式计算作为上限的B.C.中所有来源的个体选择的遗传力：
+h2
+BC =4σ2
+F（P）+σ2
+P /（σ2F（P）+σ2P+σ2B×F（P）+σ2I（B）×F（P）+σ2B×P +σ2
+I（B）×P +σ2
+E）
+<strong>这个值应该是高估的，因为随机交配的假设可能被违反</strong>，并且因为不列颠哥伦比亚省红a树的树种育种计划可能包括不同环境的几个育种群体。用于在这样的群体内选择的性状的遗传性将在两个值h2和h2之间
+公元前。
+根据差异方法（LYNCH和WALSH，1998，Appenix 1），根据方差和协方差矩阵估计遗传的标准误差SE（h2），该方差与使用受限最大似然法（MIXED）（SAS学院，1999）。</p>
+
+<h2 id="空间分析">空间分析</h2>
+
+<p>根据以前的模型，<strong>在分解方差分量后，检测到环境异质性为残差的空间依赖性</strong>。<strong>产生来自上述没有区组效应的模型的残差图，并且这种变化用克里金法分成空间自相关变化和随机误差</strong>。 <strong>Kriging是一种最佳插值方法，它能产生空间网格上的值的最佳线性无偏预测（BLUP）的平滑变化表面。克里金是一个两步骤过程，涉及构建一个变量图，提供最佳内插权重的信息和插值本身。变量是拟合在所有样本点对与其欧氏距离的平方差的图上的函数。通常，拟合所谓的“球形模型”，其从零距离处的最小值开始（指示最高空间相关性），首先线性增加，然后逐渐接近最大值（指示没有超过特定距离的空间相关性采样点）。然后用下式执行内插</strong>：
+z（x0）=Σ（λi·z（xi））
+其中z（x0）是在位置x0处要预测的值，z（xi）是在位置xi处采样的变量的值，并且<strong>λi是交错权重。该权重取决于xi和x0之间的距离，并且是通过基于变差函数的复杂计算导出的，使得z（x0）的估计是无偏的，并且z（x0）的估计方差小于任何其他线性组合的观测值（BURROUGH和MCDONNELL，1998）</strong>。 PEBESMA和WESSELING（1998）的程序GSTAT2用于拟合变差函数模型并生成预测值和方差图。随后，我们比较了来自标准分析的结果，以及原始数据通过减去确定为由于空间自相关的量来校正之后的相同分析。 GIS软件ARCVIEW用于生成残差和预测值的图。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/hamilton2017%E5%A3%B0%E6%B3%A2%E9%80%9F%E4%B8%8E%E7%BA%B8%E6%B5%86%E4%BA%A7%E9%87%8F%E7%9A%84%E5%85%B3%E7%B3%BB/" data-toggle="tooltip" data-placement="top" title="Hamilton2017声波速与纸浆产量的关系">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/hallingback2013-%E6%AF%94%E8%BE%83op%E4%B8%8Ecp/" data-toggle="tooltip" data-placement="top" title="Hallingback2013-比较OP与CP">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

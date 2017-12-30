@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Oakey2006-单点-加性和非加-联合建模</title>
+  <meta property="og:title" content="Oakey2006-单点-加性和非加-联合建模" />
+  <meta name="twitter:title" content="Oakey2006-单点-加性和非加-联合建模" />
+  <meta name="description" content="Oakey H, Verbyla A, Pitchford W, Cullis B (2006) Joint modeling of additive and non-additive genetic line effects in single field trials. Theor Appl 113:809–819.
+ 提出了一种统计方法，用于从标准农艺试验中为未来育种计划选择商业释放的最佳表现品系和最佳家长。该方法涉及使用基于谱系的系间关系，以与用于动物育种中类似的方式将系的遗传效应分配为加和效应和非加性效应。差异是估计非加性效应的能力。系性能可以通过总体遗传系效应评估，具有比忽略谱系信息更高的准确度，并且加性效应是预测的育种值。开发遗传力的一般化定义以解释所呈现的复杂模型。
+##　介绍 在大多数作物育种计划中，有两个基本目标。主要目标是确定商业发布的最佳表现系，第二个目标是识别可以在未来杂交中用作父母的系。 为感兴趣的性状选择最佳性能品系是通过在多个环境中进行的良好设计的育种试验进行并适当分析。良好的试验设计和随后的统计分析能够有效地分离遗传和环境效应。合适的设计可以包括对于预先规定的相关结构（Martin等人2004）有效的更新近设计的设计的经典设计，例如不完全块，行列，拉伸行列（John等人2002）。分析方法应支持所使用的设计和试验的目的。尽管单一试验的大多数方法（例如，Besag和Kempton 1986; Cullis和Gleeson 1991; Gilmour等人1997）将系的遗传效应视为固定效应，如果分析的最终目的是选择系效应应被视为随机的（Smith et al。2005）。系作为亲本的适宜性可以通过专门的交配设计进行，例如diallel cross（参见Topal等人2004最近的例子）。这些设计允许将系的遗传效应分配为加和和非加性效应。对于每一行获得的加性效应或育种值测量作为亲本的系的潜力（Falconer和Mackay 1996）和二级交叉的称为“一般组合能力”。对于每条系获得的非加性效应与优势和上位效应相关，对于二层交叉，称为“特定组合能力”。然而，正式的配合设计有几个缺点。首先，可以一次检查少量的系。第二，它们必须在任何育种试验之外进行，并且通常在系的商业释放之后或附近进行，因此限制其用途。由于这些缺点，作为亲本的品系的适合性通常以与其商业释放的潜力相同的方式来评价，即通过检查它们的总体遗传效应。然而，如果释放系的属性是基因之间的相互作用的结果（上位性），则该方法不太理想。在这种情况下，系的性能大于导致充分的育种潜力评估的等位基因的总和。在动物育种试验中广泛确定加性遗传效应或育种值，并用于评估动物作为亲本的潜力（参见Brown等人2000，对于羊中的最近实例），因为复制基因型不简单。该方法涉及将动物的谱系信息以附加关系矩阵A（Henderson 1976）的形式并入试验分析中。然而，包含系谱信息的动物方法最近被提倡用于植物的育种程序，参见例如Durel等人（1998）和Dutkowski et al。 （2002）。 Davik和Honne（2005）也纳入了谱系信息，但是在一个diallel设置。在本文中，开发了一种方法，其中谱系信息被纳入对大田作物的单一试验的分析。这涉及使用附加关系矩阵（允许近交），因此估计育种值。此外，由于可以在植物育种试验中复制品系，分析也可以估计非加性遗传效应。在自花传粉或近交系中，这些非加性效应将反映上位相互作用，因为近交会在很大程度上消除优势效应。然而，在混合作物中，优势和上位效应可能反映在非加性效应中。因此，单一分析将允许选择潜在的亲本用于未来的育种程序，使用加和效应和有希望的组合添加和非添加效应的商业品系，即总体遗传效应或总遗传效应。遗传效应被视为随机效应，其与经典的定量遗传学方法一致，并且具有作为优良亲本和商业品系的选择的基本目标。遗传方差参数的信息通常只能从正式的交配设计中获得，作为这种方法的一个双产品。遗传性的一般定义是由简单的定量遗传模型产生的经典定义不适用于本文中考虑的混合模型。这里提出的方法是“扩展”经典定量遗传学模型的混合模型形式。它遵循一个长期和持续的传统，尝试建立基因的表型关系（见Cooper和Hammer 2005年最近的审查）。本文结构如下。用于说明该方法的激励示例被呈现，并且当前单试验分析的概述被概括。讨论谱系信息的合并。这导致为所得到的混合模型定义一个广义遗传率，其用于分析数据并形成包括本文的讨论的基础。">
+  <meta property="og:description" content="Oakey H, Verbyla A, Pitchford W, Cullis B (2006) Joint modeling of additive and non-additive genetic line effects in single field trials. Theor Appl 113:809–819.
+ 提出了一种统计方法，用于从标准农艺试验中为未来育种计划选择商业释放的最佳表现品系和最佳家长。该方法涉及使用基于谱系的系间关系，以与用于动物育种中类似的方式将系的遗传效应分配为加和效应和非加性效应。差异是估计非加性效应的能力。系性能可以通过总体遗传系效应评估，具有比忽略谱系信息更高的准确度，并且加性效应是预测的育种值。开发遗传力的一般化定义以解释所呈现的复杂模型。
+##　介绍 在大多数作物育种计划中，有两个基本目标。主要目标是确定商业发布的最佳表现系，第二个目标是识别可以在未来杂交中用作父母的系。 为感兴趣的性状选择最佳性能品系是通过在多个环境中进行的良好设计的育种试验进行并适当分析。良好的试验设计和随后的统计分析能够有效地分离遗传和环境效应。合适的设计可以包括对于预先规定的相关结构（Martin等人2004）有效的更新近设计的设计的经典设计，例如不完全块，行列，拉伸行列（John等人2002）。分析方法应支持所使用的设计和试验的目的。尽管单一试验的大多数方法（例如，Besag和Kempton 1986; Cullis和Gleeson 1991; Gilmour等人1997）将系的遗传效应视为固定效应，如果分析的最终目的是选择系效应应被视为随机的（Smith et al。2005）。系作为亲本的适宜性可以通过专门的交配设计进行，例如diallel cross（参见Topal等人2004最近的例子）。这些设计允许将系的遗传效应分配为加和和非加性效应。对于每一行获得的加性效应或育种值测量作为亲本的系的潜力（Falconer和Mackay 1996）和二级交叉的称为“一般组合能力”。对于每条系获得的非加性效应与优势和上位效应相关，对于二层交叉，称为“特定组合能力”。然而，正式的配合设计有几个缺点。首先，可以一次检查少量的系。第二，它们必须在任何育种试验之外进行，并且通常在系的商业释放之后或附近进行，因此限制其用途。由于这些缺点，作为亲本的品系的适合性通常以与其商业释放的潜力相同的方式来评价，即通过检查它们的总体遗传效应。然而，如果释放系的属性是基因之间的相互作用的结果（上位性），则该方法不太理想。在这种情况下，系的性能大于导致充分的育种潜力评估的等位基因的总和。在动物育种试验中广泛确定加性遗传效应或育种值，并用于评估动物作为亲本的潜力（参见Brown等人2000，对于羊中的最近实例），因为复制基因型不简单。该方法涉及将动物的谱系信息以附加关系矩阵A（Henderson 1976）的形式并入试验分析中。然而，包含系谱信息的动物方法最近被提倡用于植物的育种程序，参见例如Durel等人（1998）和Dutkowski et al。 （2002）。 Davik和Honne（2005）也纳入了谱系信息，但是在一个diallel设置。在本文中，开发了一种方法，其中谱系信息被纳入对大田作物的单一试验的分析。这涉及使用附加关系矩阵（允许近交），因此估计育种值。此外，由于可以在植物育种试验中复制品系，分析也可以估计非加性遗传效应。在自花传粉或近交系中，这些非加性效应将反映上位相互作用，因为近交会在很大程度上消除优势效应。然而，在混合作物中，优势和上位效应可能反映在非加性效应中。因此，单一分析将允许选择潜在的亲本用于未来的育种程序，使用加和效应和有希望的组合添加和非添加效应的商业品系，即总体遗传效应或总遗传效应。遗传效应被视为随机效应，其与经典的定量遗传学方法一致，并且具有作为优良亲本和商业品系的选择的基本目标。遗传方差参数的信息通常只能从正式的交配设计中获得，作为这种方法的一个双产品。遗传性的一般定义是由简单的定量遗传模型产生的经典定义不适用于本文中考虑的混合模型。这里提出的方法是“扩展”经典定量遗传学模型的混合模型形式。它遵循一个长期和持续的传统，尝试建立基因的表型关系（见Cooper和Hammer 2005年最近的审查）。本文结构如下。用于说明该方法的激励示例被呈现，并且当前单试验分析的概述被概括。讨论谱系信息的合并。这导致为所得到的混合模型定义一个广义遗传率，其用于分析数据并形成包括本文的讨论的基础。">
+  <meta name="twitter:description" content="Oakey H, Verbyla A, Pitchford W, Cullis B (2006) Joint modeling of additive and non-additive genetic line effects in single field trials. Theor Appl 113:809–819.
+ 提出了一种统计方法，用于从标准农艺试验中为未来育种计划选择商业释放的最佳表 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/oakey2006-%E5%8D%95%E7%82%B9-%E5%8A%A0%E6%80%A7%E5%92%8C%E9%9D%9E%E5%8A%A0-%E8%81%94%E5%90%88%E5%BB%BA%E6%A8%A1/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/oakey2006-%E5%8D%95%E7%82%B9-%E5%8A%A0%E6%80%A7%E5%92%8C%E9%9D%9E%E5%8A%A0-%E8%81%94%E5%90%88%E5%BB%BA%E6%A8%A1/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Oakey2006-单点-加性和非加-联合建模</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (44 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Oakey2006-单点-加性和非加-联合建模</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (44 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Oakey H, Verbyla A, Pitchford W, Cullis B (2006) Joint modeling of additive and non-additive genetic line effects in single field trials. Theor Appl 113:809–819.</p>
+</blockquote>
+
+<p>提出了一种统计方法，用于从标准农艺试验中为未来育种计划选择商业释放的最佳表现品系和最佳家长。该方法涉及使用基于谱系的系间关系，以与用于动物育种中类似的方式将系的遗传效应分配为加和效应和非加性效应。差异是估计非加性效应的能力。系性能可以通过总体遗传系效应评估，具有比忽略谱系信息更高的准确度，并且加性效应是预测的育种值。开发遗传力的一般化定义以解释所呈现的复杂模型。</p>
+
+<p>##　介绍
+<strong>在大多数作物育种计划中，有两个基本目标。主要目标是确定商业发布的最佳表现系，第二个目标是识别可以在未来杂交中用作父母的系。</strong>
+为感兴趣的性状选择最佳性能品系是通过在多个环境中进行的良好设计的育种试验进行并适当分析。良好的试验设计和随后的统计分析能够有效地分离遗传和环境效应。合适的设计可以包括对于预先规定的相关结构（Martin等人2004）有效的更新近设计的设计的经典设计，例如不完全块，行列，拉伸行列（John等人2002）。分析方法应支持所使用的设计和试验的目的。尽管单一试验的大多数方法（例如，Besag和Kempton 1986; Cullis和Gleeson 1991; Gilmour等人1997）将系的遗传效应视为固定效应，如果分析的最终目的是选择系效应应被视为随机的（Smith et al。2005）。系作为亲本的适宜性可以通过专门的交配设计进行，例如diallel cross（参见Topal等人2004最近的例子）。这些设计允许将系的遗传效应分配为加和和非加性效应。对于每一行获得的加性效应或育种值测量作为亲本的系的潜力（Falconer和Mackay 1996）和二级交叉的称为“一般组合能力”。对于每条系获得的非加性效应与优势和上位效应相关，对于二层交叉，称为“特定组合能力”。然而，正式的配合设计有几个缺点。首先，可以一次检查少量的系。第二，它们必须在任何育种试验之外进行，并且通常在系的商业释放之后或附近进行，因此限制其用途。由于这些缺点，作为亲本的品系的适合性通常以与其商业释放的潜力相同的方式来评价，即通过检查它们的总体遗传效应。然而，如果释放系的属性是基因之间的相互作用的结果（上位性），则该方法不太理想。在这种情况下，系的性能大于导致充分的育种潜力评估的等位基因的总和。在动物育种试验中广泛确定加性遗传效应或育种值，并用于评估动物作为亲本的潜力（参见Brown等人2000，对于羊中的最近实例），因为复制基因型不简单。该方法涉及将动物的谱系信息以附加关系矩阵A（Henderson 1976）的形式并入试验分析中。然而，包含系谱信息的动物方法最近被提倡用于植物的育种程序，参见例如Durel等人（1998）和Dutkowski et al。 （2002）。 Davik和Honne（2005）也纳入了谱系信息，但是在一个diallel设置。在本文中，开发了一种方法，其中谱系信息被纳入对大田作物的单一试验的分析。这涉及使用附加关系矩阵（允许近交），因此估计育种值。此外，由于可以在植物育种试验中复制品系，分析也可以估计非加性遗传效应。在自花传粉或近交系中，这些非加性效应将反映上位相互作用，因为近交会在很大程度上消除优势效应。然而，在混合作物中，优势和上位效应可能反映在非加性效应中。因此，单一分析将允许选择潜在的亲本用于未来的育种程序，使用加和效应和有希望的组合添加和非添加效应的商业品系，即总体遗传效应或总遗传效应。遗传效应被视为随机效应，其与经典的定量遗传学方法一致，并且具有作为优良亲本和商业品系的选择的基本目标。遗传方差参数的信息通常只能从正式的交配设计中获得，作为这种方法的一个双产品。遗传性的一般定义是由简单的定量遗传模型产生的经典定义不适用于本文中考虑的混合模型。这里提出的方法是“扩展”经典定量遗传学模型的混合模型形式。它遵循一个长期和持续的传统，尝试建立基因的表型关系（见Cooper和Hammer 2005年最近的审查）。本文结构如下。用于说明该方法的激励示例被呈现，并且当前单试验分析的概述被概括。讨论谱系信息的合并。这导致为所得到的混合模型定义一个广义遗传率，其用于分析数据并形成包括本文的讨论的基础。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/diallel/ofori-2015-%E7%8B%AD%E4%B9%89%E9%81%97%E4%BC%A0%E5%8A%9B%E4%BD%8E%E7%9A%84%E8%A7%A3%E9%87%8A/" data-toggle="tooltip" data-placement="top" title="Ofori-2015-狭义遗传力低的解释">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/gs/omalley1994-mas-%E6%9E%97%E6%9C%A8/" data-toggle="tooltip" data-placement="top" title="OMalley1994-MAS-林木">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

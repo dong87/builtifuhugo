@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Dong&#39;s blog</title>
+  <meta property="og:title" content="Dong&#39;s blog" />
+  <meta name="twitter:title" content="Dong&#39;s blog" />
+  <meta name="description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta property="og:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="twitter:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../" />
+  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../">
+            <img class="avatar-img" src="../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Dong&#39;s blog</h1>
+                
+                  
+                    <hr class="small">
+                    <span class="page-subheading">Enterprising &amp; Concentrating欢迎光临！</span>
+                  
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div role="main" class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+          <div class="well">
+            
+
+<h2 id="front-page-content">Front Page Content</h2>
+
+<p><code>beautifulhugo</code> supports content on your front page. Edit <code>/content/_index.md</code> to change what appears here. Delete <code>/content/_index.md</code> if you don&rsquo;t want any content here.</p>
+
+          </div>
+        
+
+        <div class="posts-list">
+          
+          
+            <article class="post-preview">
+              <a href="../../post/gs/wolc2016-%E5%A4%A7%E6%95%88%E5%BA%94qtl-bayesb%E5%92%8Cbayesc%E4%BC%98%E4%BA%8Egblup%E6%A3%80%E6%B5%8B/">
+                <h2 class="post-title">Wolc2016-大效应QTL-BayesB和BayesC优于GBLUP检测</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (53 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Wolc A, Arango J, Settar P, et al (2016) Mixture models detect large effect QTL better than GBLUP and result in more accurate and persistent predictions. J Anim Sci Biotechnol 7:7. doi: 10.1186/s40104-016-0066-z</p>
+</blockquote>
+
+<p>背景：SNP效应的准确评估对于全基因组关联研究和基因组预测是重要的。数量性状的遗传结构差异很大，一些性状表现出很少的具有大效应的数量性状位点（QTL），而其他性状具有一个或几个容易检测的QTL，具有很大的作用。\ n \ nETHODS：肉鸡体重层中的蛋重是具有大效应的QTL的性状的两个实例。用于全基因组关联研究的常用方法是拟合混合物模型，例如BayesB，其假设一些已知比例的SNP效应为零。相比之下，最常用的基因组预测方法称为GBLUP，其涉及将动物模型拟合表型数据，动物中的方差 - 协方差或基因组关系矩阵通过基因组宽SNP基因型测定。<strong>在确定GBLUP的基因组关系矩阵时，通常对每个SNP的基因型进行等同加权</strong>。我们使用GBLUP的等效标记效应模型公式进行本研究。我们比较这两种类型的模型使用从2324动物基因型与42 K SNP面板8代收集的鸡蛋重量数据。\ n \ nRESULTS：使用来自前7代的数据，BayesB和GBLUP发现最大的QTL在类似公认的QTL区，但是该QTL估计占BayesB的遗传变异的24％，而GBLUP的遗传变异小于1％。当预测第8代表型时，BayesB占表型变异的36％，GBLUP占25％。当仅使用来自任何一代的数据时，在除一个世代之外的所有BayesB中鉴定了相同的QTL，但是不与GBLUP一起鉴定。基于仅来自第1代的295只动物的第2代至第7代表型的预测占BayesB的10％表型变异，但是仅有6％与GBLUP。仅使用在1 Mb区域中的标记效应的预测表型，其对来自第1代数据的卵重量的最大影响占据使用BayesB的近8％的变化，但是没有GBLUP的预测能力。结论：<strong>在大效应QTL存在的情况下，BayesB做了更好的QTL检测工作，其基因组预测比GBLUP更准确和持久。</strong></p>
+
+<p>在大效应QTL存在下精确评估SNP效应的方法的选择对于全基因组关联研究（GWAS）和基因组选择（GS）可能是关键的。混合模型，有时称为变量选择模型，假设一些SNP效应为零。一个这样的混合模型，<code>BayesB [1]，已被证明足以估计标记效应在模拟数据[2,3]</code>，但基于真实数据的比较，其中真实效应未知更不直接。在最近的一篇使用肉鸡体重数据的论文中，<code>Wang et al。 [4]得出结论，与单步GBLUP程序相比，“BayesB似乎过度收缩区域为零，而高估归因于剩余SNP效应的遗传变异的量”</code>。蛋重是一个层次的性状，多项研究报告在染色体4上的一致位置检测到具有大效应的QTL [5-8]。本研究的目的是证明在<code>存在这种大效应QTL ，混合模型像BayesB和BayesC [9,10]优于GBLUP检测和量化QTL的影响，混合模型提供更准确的基因组估计的育种价值（GEBV）</code>，更持久的代，使用棕色蛋层数据。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E4%BD%9C%E5%9B%BE/wu-2004%E5%8F%91%E8%82%B2%E6%80%A7%E7%8A%B6%E9%81%97%E4%BC%A0%E7%BB%84%E6%88%90%E7%9A%84%E5%88%86%E6%9E%90/">
+                <h2 class="post-title">Wu-2004发育性状遗传组成的分析</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (93 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Wu R, Ma CX, Lin M, Casella G (2004) A General Framework for Analyzing the Genetic Architecture of Developmental Characteristics. Genetics 166:1541–1551. doi: 10.1534/genetics.166.3.1541
+ 生长性状的遗传结构在形成生物的生长，发育和进化中起着中心作用。虽然有限数量的模型被设计来估计对复杂表型的遗传效应，没有模型可用于检查基因行为和相互作用如何改变生物的本体发育，并将改变的个体发育转化为后代。在本文中，我们提出一个新的统计模型，用于定位数量性状基因位点（QTL）确定复杂性状的发育过程。我们的模型是在用EM算法实现的传统最大似然框架内构建的。我们采用生物有意义的生长曲线方程来建模时间特异性预期遗传值和AR（1）模型，以构造不同时间点之间的残差方差 - 协方差矩阵。由于估计参数的数量减少和生物学原理的并入，新模型显示增加的统计功效以检测QTL对个体发育生长和发育的形状产生影响。该模型允许对关于上位在确定生物生长，形式和形状以及解决与进化界面处的发育问题的作用的许多生物假设的测试。使用我们新开发的模型，我们已经成功地检测到显着的添加剂×添加上位性效应对茎高度生长轨迹在林木中。
+复杂生物（如动物和植物）的演化不仅仅是由成年祖先直接转化为成年后代的结果，而是涉及一系列发展过程，产生每一代的新特征。越来越多的进化研究已经发射，以确定在所述速率或必须发生从其祖先派生特定表型的发育过程的定时的遗传或发育变化（ř 冰 1997 ; ř AFF 2000 ; ř ougvie 2001）。一般的看法是，发展进程的演变是由环境和单独行动，并与对方（交互许多基因共同影响大号ynch和W alsh 1998）。然而，为了准确地预测性状进化的方向和速率，必须量化基因如何作用和相互作用以控制发育的各个阶段的详细遗传结构。
+倾向于表现个体之间连续变异的表型特征的基因称为数量性状基因座（QTL）。QTL的遗传效应或方差包括两个组件，添加剂，由于育种值的累积和非加性，由于等位基因（显性）或nonallelic（上位）相互作用。不同基因座之间的上位相互作用可以进一步分成不同类型：加性×加性，加性×显性（或显性×加性）和显性×显性。上位的存在意味着基因对表型的影响严重依赖于由其他基因提供的上下文。在过去，添加剂和数量性状的非加性遗传结构的估计是基于相关个体（表型大号ynch和W alsh 1998），虽然这有最小的功率，以检测非加性遗传变异，特别是上位方差因为上位贡献甚微亲属之间的相似（ç heverud和R 奥特曼 1995年）。
+基于DNA的遗传连锁图谱的出现打开用于精确估算发育性状的遗传结构的新颖的途径（V aughn 等人 1999年）。目前提出的检测QTL的主要和相互作用效应的统计方法是基于在有限组的标志性年龄下测量的数量性状的表型。最近，W ü 等。（2002年，2003年a，b）和M 一个 等。（2002）已经得到的强大功能映射方法用于通过普遍增长法律实施个体发育成长的过程中推定的QTL效应的动态变化（W¯¯ EST 等人 2001）和结构化残差（共）方差之间不同的矩阵的时间点（参见ķ irkpatrick和H 埃克曼 1989年 ; K- irkpatrick 等人 1990年，1994年 ; P 莱彻和G eyer 1999年）。这种方法已被证明是由于参数数量减少的统计上更强大和更精确的被估计并且是生物学更有意义，由于考虑的生物学原理基础性状开发（W¯¯ Û 等人 2002）。然而，这个模型没有纳入上位相互作用的估计过程，因此，不能检查整个遗传结构在发展轨迹中的作用。
+                  <a href="../../post/%E4%BD%9C%E5%9B%BE/wu-2004%E5%8F%91%E8%82%B2%E6%80%A7%E7%8A%B6%E9%81%97%E4%BC%A0%E7%BB%84%E6%88%90%E7%9A%84%E5%88%86%E6%9E%90/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80/wu2016-%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80-%E4%B8%83%E7%A7%8D%E7%AD%96%E7%95%A5-%E8%A1%A8%E7%8E%B0/">
+                <h2 class="post-title">Wu2016-近交衰退-七种策略-表现</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (65 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Wu HX, Hallingbäck HR, Sánchez L (2016) Performance of Seven Tree Breeding Strategies Under Conditions of Inbreeding Depression. G3 Genes|Genomes|Genetics 6:529–540. doi: 10.1534/g3.115.025767
+在近交繁殖抑郁条件下的七种育种策略的性能</p>
+</blockquote>
+
+<p>在驯化和育种受到近亲繁殖抑制（ID）的树种，不同育种策略的长期性能知之甚少。因此，使用具有加性，部分和完全优势等位基因效应以及中间，U形和主要等位基因分布的多基因座模型来模拟包括单个群体，亚系，自交和细胞核育种在内的七种树育种策略。比较遗传增益，近交繁殖，显示ID的能力，不利的等位基因的频率和固定以及育种和生产种群中的遗传变异的策略。通过生产群体的遗传增益测量，在所有模拟情景中，尽管其近亲繁殖系数较高，但是具有群体选择策略的细胞核育种和单个育种群体等于或优于在所有模拟情景中的家族内选择策略的亚系和单个育种群体。近交和杂交有效降低了ID，并且在一些情况下可以在头几代产生遗传增益。然而，在所有情况下，不利的等位基因的大量固定使自交和杂交育种策略的清除性能无效，并且与长期的其他策略相比导致显着的缺点。</p>
+
+<hr />
+
+<p>在世界上大多数树木育种计划与优树选择和后代测试20世纪50年代开始（<a href="http://www.g3journal.org/content/6/3/529.full#ref-62">佐贝尔和塔尔伯特1984年</a>），其中许多人现在已经进入到第二个，第三个，甚至第四代（*例如*，火炬松和辐射松）。轮回选择一直是树种改良的主要方法（<a href="http://www.g3journal.org/content/6/3/529.full#ref-51">2001年白色</a> ; <a href="http://www.g3journal.org/content/6/3/529.full#ref-54">白色*。等*2007</a>）。为了增加短期和长期的遗传增益和管理近亲繁殖和多样性，提出了几种先进的林木育种战略是包括多个群体（<a href="http://www.g3journal.org/content/6/3/529.full#ref-37">Namkoong 1976</a>），亚系（<a href="http://www.g3journal.org/content/6/3/529.full#ref-49">面包车Buijtenen和罗威1979</a>），核心群育种（<a href="http://www.g3journal.org/content/6/3/529.full#ref-11">科特里尔1989</a>）单种群繁育和自交系杂交（<a href="http://www.g3journal.org/content/6/3/529.full#ref-59">吴<em>等人</em> 2004年a</a>）。在此背景下，近交管理是重要的，因为在近亲繁殖和在杂同时减少过于迅速增加已经显示会导致在几个针叶树种（严重近交衰退（ID），<a href="http://www.g3journal.org/content/6/3/529.full#ref-57">威廉姆斯和1996萨沃莱宁</a>）。等位基因表现出显性基因操作（完整，部分或超显性）和方向性的患病率（最隐性基因是不利的）已被提出作为用于使ID和其相对的对应杂种优势（主要机制<a href="http://www.g3journal.org/content/6/3/529.full#ref-19">福尔克纳和1996麦凯</a>）。针叶树中ID的症状通常包括减少的种子产量，受损的生长和减少的成虫繁殖力。
+在与一般配合力的轮回选择一个单一的人口繁殖一直是最初使用了许多树木育种程序的默认选项（<a href="http://www.g3journal.org/content/6/3/529.full#ref-42">谢尔1969年</a>）。为了提高遗传增益和选择强度，这一战略已经演变成一个滚动前配对和选择的设计，其中育种工作负载虚拟养殖周期内连续交叉，测试和选择每年蔓延（<a href="http://www.g3journal.org/content/6/3/529.full#ref-7">Borralho和1998年Dutkowski</a>）。单一的人口方案的最大优势是其潜在的大尺寸成为可能增加选择强度，用的放心交配所选择的管理工具限制近亲繁殖（合<a href="http://www.g3journal.org/content/6/3/529.full#ref-29">Kinghorn 2011</a>）。
+然而，近亲繁殖，也可通过一个亚系策略，其中繁殖种群被细分成两个或多个基团（亚系，管理<a href="http://www.g3journal.org/content/6/3/529.full#ref-8">波顿和Namkoong 1983</a>）。仅允许在每个亚系内进行配对和选择用于育种目的，而在亚系之间的交配仅为产生生产群体（PP）进行以限制近交的程度和推定部署个体的ID。里衬从多个繁殖群体的策略不同之处在于前者仅用于管理近亲繁殖，而后者通常是通过应用不同的育种目标，以不同的人群（与如何几个潜在育种性状之间的优先级的不确定性处理<a href="http://www.g3journal.org/content/6/3/529.full#ref-38">Namkoong <em>等人</em> 1988年</a> ; <a href="http://www.g3journal.org/content/6/3/529.full#ref-4">巴恩斯1995年</a>）。辅线战略已在许多第二代或第三代的树改进计划被用于（<a href="http://www.g3journal.org/content/6/3/529.full#ref-9">卡森<em>等人</em> 1990年</a> ; <a href="http://www.g3journal.org/content/6/3/529.full#ref-35">McKeand和1993年布里奇沃特</a> ; <a href="http://www.g3journal.org/content/6/3/529.full#ref-2">贝兹与白1997年</a> ; <a href="http://www.g3journal.org/content/6/3/529.full#ref-28">Jayawickrama和卡森2000</a> ; <a href="http://www.g3journal.org/content/6/3/529.full#ref-52">怀特和2004年卡森</a>）。另一种称为细胞核育种策略的方法最初被提议用于改善牲畜的计划，目的是更快地获得更高的收益，同时保持长期的多样性和遗传收益。核育种策略的育种群体通常分为两个层次：小核和更大的主层。核心层通过选择具有最高育种值（〜10％）的树进行强化育种，测试和选择来组织。主层包含其他候选物和选择以较低强度选择，以避免近亲繁殖和保持遗传多样性，从而确保长期的可持续遗传学益处。允许在这两个层之间的配子转移以带来增益和多样性。一些树木育种计划都用这个方案（<a href="http://www.g3journal.org/content/6/3/529.full#ref-12">科特里尔和卡梅伦1989年</a>，<a href="http://www.g3journal.org/content/6/3/529.full#ref-50">白1993年</a> ; <a href="http://www.g3journal.org/content/6/3/529.full#ref-36">McKeand和1998年布里奇沃特</a> ; <a href="http://www.g3journal.org/content/6/3/529.full#ref-53">白<em>等，</em> 1999年</a>）。一种完全不同的方法是自交系和杂交育种战略，作物育种常用（<a href="http://www.g3journal.org/content/6/3/529.full#ref-1">1999年阿拉德</a>）。因为<a href="http://www.g3journal.org/content/6/3/529.full#ref-44">沙尔（1909）</a>和<a href="http://www.g3journal.org/content/6/3/529.full#ref-17">东（1909）</a>首次开发这种想法，以便产生均匀的和高生产力的玉米（*玉蜀黍*属）杂交种，自交和随后的杂交育种已为许多农艺物种的改善的主育种方法（<a href="http://www.g3journal.org/content/6/3/529.full#ref-24">哈劳尔和米兰达1981年</a>）。假定有害的隐性等位基因是底层的ID的主要原因，它应该有可能消除这些隐性基因和通过与定向选择组合施加系统的近亲繁殖修复有利显性等位基因，即所谓的清除（<a href="http://www.g3journal.org/content/6/3/529.full#ref-5">Barrett和查尔斯沃思1991年</a> ; <a href="http://www.g3journal.org/content/6/3/529.full#ref-26">赫德里克1994年</a>）。因此，近交繁殖抑制将在整个世代中下降，因为清除有效地去除有害等位基因。作为自交林木育种手段是首先倡导五十年前（<a href="http://www.g3journal.org/content/6/3/529.full#ref-34">马修斯和麦克莱恩1957年</a>，<a href="http://www.g3journal.org/content/6/3/529.full#ref-6">宾厄姆1973年</a>，<a href="http://www.g3journal.org/content/6/3/529.full#ref-3">巴克和利比1974年</a>）。由于林木育种已进展到第二代，第三代，采用自交和同胞交配作为繁殖的工具一直争论不休由于少数精英繁殖种群不断增长的利息（<a href="http://www.g3journal.org/content/6/3/529.full#ref-56">威廉姆斯和1996年哈姆里克</a> ; <a href="http://www.g3journal.org/content/6/3/529.full#ref-57">威廉姆斯和1996年萨沃莱恩</a> ; <a href="http://www.g3journal.org/content/6/3/529.full#ref-58">吴<em>等人，</em> 1998年</a>）。尽管如此，长代世代和观察到的严重的ID阻止了树种繁殖者使用这种方法。虽然上述育种策略及其概念上的短期和长期优点和缺点已经被提出用于各种树育种程序，但是没有进行详细的比较遗传学研究以量化短（2-5代）和长 - 实施（15-20代）遗传结果。这种比较研究只能通过模拟方法进行，其中通常使用的无限小模型不允许追踪清除的不利等位基因，并且不能真实地模拟隐性/显性等位基因如何诱导ID。仅基于轨迹的模型必须跟踪个体等位基因的行为非加性情况下与模拟更复杂的现象，如连锁不平衡的能力（<a href="http://www.g3journal.org/content/6/3/529.full#ref-26">1994赫德里克</a> ; <a href="http://www.g3journal.org/content/6/3/529.full#ref-22">富<em>等人</em> 1998</a>）。
+本研究的目的是比较用于在加性和非加性遗传模式下改善数量性状的育种策略。为此，我们建立了一个有限的基因组模型，以模拟各种策略，并检查相关的人口参数，育种和PPs的遗传获益，不利或隐性等位基因的固定和近亲繁殖的积累。我们还评估了某些系统近亲繁殖方法是否可以适合克服近亲繁殖抑制通过清除ID和不利的等位基因给定一定范围的条件。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/xavier2016a-%E6%A4%8D%E7%89%A9%E8%82%B2%E7%A7%8D%E4%B8%AD%E7%9A%84%E7%BB%9F%E8%AE%A1%E9%BB%91%E7%AE%B1/">
+                <h2 class="post-title">Xavier2016a-植物育种中的统计黑箱</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 3 minutes (513 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Xavier A, Muir WM, Craig B, Rainey KM (2016) Walking through the statistical black boxes of plant breeding. Theor Appl Genet 129:1933–1949. doi: 10.1007/s00122-016-2750-y
+ #抽象 关键信息 植物育种的主要统计程序是基于高斯过程，可以通过混合线性模型计算。 摘要智能决策依赖于我们从数据中提取有用信息的能力，以帮助我们更有效地实现我们的目标。许多植物育种者和遗传学家在不理解方法的基本假设或它们的优势和缺陷的情况下进行统计分析。换句话说，他们将这些统计方法（软件和程序）视为黑盒子。黑盒表示具有用户不完全理解的内容的机械的复杂件。用户在不知道如何产生输出的情况下看到输入和输出。通过提供统计方法的一般背景，本评论旨在（1）介绍机器学习的基本概念及其在植物育种中的应用; （2）将经典选择理论与当前的统计方法联系起来; （3）展示如何解决混合模型并将其应用扩展到基于谱系和基于基因组的预测;和（4）阐明全基因组关联研究的算法如何工作，包括他们的假设和限制。 #介绍
+推理和模型可以是经验的或实验的设计。经验方法（监督）最好地与良好表征的现象，其解决方案可以分析发现，而从数据推理和使用算法识别数据中的模式需要实验方法。研究这些算法的科学被称为机器学习（非监督）。机器学习还描述了专用于建立和研究能够从数据学习的算法的人工智能的领域，努力寻找最小化给定损失的最优解。这使得这些机器学习算法比逻辑算法更灵活。 遗传学充分利用机器学习的两个特殊分支，即所谓的监督和无监督学习（Libbrecht and Noble 2015）。监督学习有助于解决有解释和响应变量的问题。这通常适用于在定量遗传学中的预测，选择和分类。当没有响应变量存在时，使用无监督学习，对于聚类基因型和在群体中发现混合物的问题。 由于大多数感兴趣的性状的定量性质，在植物和动物育种中最常用的监督学习算法是高斯过程（GP）（Rasmussen 2004; Lynch和Walsh 1998）。** Fisher的无穷小模型，它形成了育种原理的基础，表明无限多个随机过程（指基因）控制观察到的表型（Orr 2005; Farrall 2004），根据中心极限定理收敛到的高斯分布。 GP代表选择理论，育种价值和关联研究的基础（Sorensen和Gianola 2002）。 在监督学习程序中，预测对于改善数量性状是重要的，分类对于决策和分类性状的遗传改良是重要的。育种计划开发特定产品以满足各种市场的需要（Acquaah 2009; Cleveland和Soleri 2002）分类模型确定了定义这些市场边缘的质量的边界**（Lim 1997）。在大豆中，适应区域基于纬度，土壤和气候来定义可在每个区域中栽培哪个成熟度组（MG）换句话说，它们决定了育种者的目标环境（Dardanelli et al。2006）。 Zhang et al。 （2007）提出大豆适应区有错误分类问题，因为MG IV到MG VI的生长区比原来想象的要大得多。 本文的主要目的是通过解释统计遗传学的理论和应用，揭示植物育种黑盒统计分析的内部工作，着重于广泛应用的混合线性模型设计用于育种。 ##高斯过程
+数量性状都遵循某种分布模式。例如，具有两个类的分类性状遵循二项分布，如同大豆中的花的颜色，其为白色或紫色。性状如谷物产量和植物高度是连续的，并且经常遵循正态分布。性状的遗传性可以假定在0和1之间的任何值，因此β分布最好地表征该过程。方差分量在连续的尺度上具有正值，因此，它们可以用卡方分布来描述。 由于大多数定量遗传学假设正态性，知道如何处理植物和动物育种中的正态分布是特别重要的。正态分布具有S形特性，任何正态随机变量X的期望值是其平均值（μ），并且与期望值的偏差是方差（σ2）。一旦参数均值和方差已知，可以使用概率密度函数（PDF，φ）来推断观察任何给定事件的概率，例如在给定群体中找到产生x bu / ac的植物的概率。如果为群体中的所有个体计算此概率，则这些概率的乘积是该特定平均值和方差的数据的似然性。 计算发现产量等于或低于x的植物的概率需要累积密度函数（CDF，8），它是PDF的积分。图1显示了高斯特征的这些计算的示例。 在所有数据集中，每个观测值包含一些关于未知参数的信息。因此，更多的数据提供更准确和精确的平均值和方差估计。有多种方法来估计分布的参数。这些包括似然法和贝叶斯过程。似然方法搜索使观测数据的似然性（L）最大化的未知参数，使用PDF来定义数据和参数p（X，θ）的联合概率，其中X表示观测数据，θ ）表示未知参数。对于简单的正态分布，θ=（μ，σ2）。贝叶斯过程使用分配给未知参数的概率分布来估计参数，其被称为先验，以及似然方程。
+                  <a href="../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/xavier2016a-%E6%A4%8D%E7%89%A9%E8%82%B2%E7%A7%8D%E4%B8%AD%E7%9A%84%E7%BB%9F%E8%AE%A1%E9%BB%91%E7%AE%B1/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/diallel/xiang-li-2001-diallel-%E6%96%B9%E6%B3%95/">
+                <h2 class="post-title">Xiang-Li-2001-diallel-方法</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (80 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Xiang, B., &amp; Li, B. (2001). A new mixed analytical method for genetic analysis of diallel data. Can. J. Forest Res., 31(August), 2252–2259. <a href="http://doi.org/10.1139/cjfr-31-12-2252">http://doi.org/10.1139/cjfr-31-12-2252</a></p>
+</blockquote>
+
+<p>Diallel是一种用于作物和树木育种计划的流行的交配设计，但它的单一观察的独特特征具有两个相同主效应，一般组合能力（GCA）的水平，使得难以用标准统计程序进行分析。在本研究中开发了一种使用SAS PROC MIXED的新方法，用于分析来自diallel交配的遗传数据。首先用SAS PROC IML构建GCA效应的假变量，然后使用PROC MIXED程序估计方差分量并获得固定效应的BLUE（最佳线性未偏估计值）和随机遗传效应的BLUP（最佳线性无偏预测值） （GCA和特异性组合能力（SCA）效应）。该新方法还可用于使用BLUP方法预测个体育种值，将SAS IML应用于PROC MIXED提供的输出以计算后代测试中每个个体的育种值，针对固定效应例如测试位置进行调整。准确的BLUP预测，估计个体育种值的能力和易用性将使这种新方法对于分析树木育种数据特别有吸引力。</p>
+
+<hr />
+
+<p>双列交配设计，特别是一半或部分双列，广泛用于作物和树木育种计划（Griffing 1956; Hallauer和Miranda 1981; Zobel和Talbert 1984; Huber 1993; Yanchuk 1996; Li等人1996）。双交配是流行的，因为它可以产生关于亲本的一般组合能力（GCA），杂交的特异性组合能力（SCA）和其他遗传参数（如方差组分和遗传力估计）的遗传信息。信息和参数估计对于开发育种策略至关重要。根据具体设计，拨号交配还可以提供一个用于正向选择的纯种子代群体（Talbert 1979; Zobel和Talbert 1984）。
+虽然包括普通最小二乘法（OLS），一般最小二乘法（GLS），最佳线性预测（BLP）和最佳线性无偏预测（BLUP）的几种分析方法可用于二级测试的分析（Borralho 1995; White和Hodge 1988），使用这些统计工具仍然存在实际问题。 Diallel设计是独一无二的，每个观察包含两个相同的主效应的层次，这限制了许多现有的统计程序用于其分析（Johnson和King 1998）。虽然计算并不是简单的平衡数据（Griffin 1956），他们可以变得更加复杂的不平衡数据，即，当有缺失地块或缺失交叉（Garretsen和Keuls 1978; Dean 1988; Huber et al。 1992）。已经开发了一些用于某些用途的分析包，例如DIALL（Schaffer和Usanis 1969），DAG（Dean 1994），GAREML（Huber 1993）等。这些分析包通常需要以特定格式制备数据，选项用于混合模型分析，一些具有不友好的用户界面。其他限制包括这些包可以处理的数据大小有限，并且在定义分析模型和方差分量估计选项方面的灵活性较低。大多数这些包装不能用于估计个体繁殖值。统计分析系统（SAS）是用于统计分析的流行和强大的计算机程序，但是到目前为止，分析人员还没有能够直接使用它来分析diallel遗传数据。 Sanders（1987）提出使用虚拟变量来获得使用SAS程序（PROC GLM和PROC REG）的全同胞平均数据的期望效应的平方和。然而，这种方法不能直接估计方差分量，并且对于具有复杂设计或缺失观察的个体数据是不可行的。最近，Xu和Matheson（2000）也使用PROC GLM来估计GCA和SCA效应及其标准误差。虽然程序可以处理更复杂的情况，遗传效应必须被视为固定的，而且不能获得方差分量。 Johnson和King（1998）提出了一种使用方差分量程序（PROC VARCOMP;需要两次单独运行）的实用方法，以获得二分位数据的方差估计。他们的方法提供了平衡数据的无偏估计，但给出了不平衡数据的近似。另一个SAS程序（Diallel-SAS）由Zhang和Kang（1997）提出，用于处理涉及F1杂种的特殊拨号以及它们与作物种类中的作物和作物的相互作用。该程序是基于PROC GLM开发的，并且具有与基于VARCOMP的方法（Johnson和King 1998）类似的限制。虽然所有上述程序都使用虚拟变量方法，但上述方法都不使用最新的程序，如SAS中的混合模型程序（PROC MIXED）。有限的选择分析方法或模型选择是这些程序在实际数据分析中的常见问题。此外，这些方案中没有一个解决了BLUP分析父母育种价值或BLUP方法的混合模型中个体育种值的估计的问题。 SAS PROC MIXED为混合模型分析和BLUP预测提供了灵活性（Littell等人，1996），但是在线性模型中并入GCA效应的问题限制了其直接用于分析diallel数据。在这项研究中，我们开发基于BLUP的分析方法通过结合SAS PROC MIXED与SAS PROC IML来分析来自diallel交配设计的遗传数据。将所提出的方法与两个现有程序DIALL和GAREML进行比较。我们还描述了如何扩展该方法以估计个体育种值。由于SAS是森林搜索和育种计划中最常用的统计程序，它将大大简化diallel遗传分析的难度，提高遗传参数估计的准确性。从一系列进展测试中估计个体树育种值的能力将提高树木改良计划的选择效率，并提高遗传收益。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/diallel/yan2002-biplot/">
+                <h2 class="post-title">Yan2002-biplot</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (36 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Yan, W., and Hunt, L.A. 2002. Biplot analysis of diallel data. Crop Sci. 42(1): 21–30. doi:10.2135/cropsci2002.0021.</p>
+</blockquote>
+
+<p>双列交配已经用于遗传研究以确定重要性状在一组基因型之间的遗传，并且鉴定用于杂种或栽培品种发育的优良亲本。常规双列分析限于将数据的总变异分为每个基因型的一般组合能力（GCA）和每个杂交的特异性组合能力（SCA）。在本文中，我们制定了图形双列分析的双程方法。双图由由将测试器为中心的双列数据进行奇异值分解得到的前两个主分量（PC）构成。它通过数据的测试者模式显示最重要的条目，并允许以下信息可视地提取：（i）每个基因型的GCA; （ii）每种基因型的SCA; （iii）具有相似遗传学的父母组;和（iv）优良的杂种。此外，双份图允许关于基因型的遗传学的假说。使用三个公布的小麦（Triticum aestivum L.）和玉米（Zea mays L.）的双列数据集来证明双程图方法，并且提供了用于构建和解释双面图的详细程序。</p>
+
+<p>双列 CROSSES已被用于遗传研究以研究一组基因型中重要性状的遗传。具体来说，设计二级十字以研究亲本的GCA并鉴定用于杂种和栽培品种发育的优良亲本。双列数据的分析通常根据Griffing（1956）的方法进行，该方法将双列数据的总变化划分为父母的GCA和交叉的SCA。本文介绍了双列数据的视觉分析的双图方法。 biplot的概念是由Gabriel 1971开发的）以图形方式显示二级矩阵，其是通过将具有两个列的矩阵乘以具有两行的矩阵而产生的矩阵。这个概念的意义在于，如果一个双向数据集可以通过秩二矩阵足够近似，那么它可以图形显示和调查。 Bradu和Gabriel（1978）探讨了使用双点图作为诊断工具来选择适当的模型用于双向数据分析。从那时起，双图已经用于多环境试验（MET）数据分析。在分析安大略省冬小麦性能试验数据时，Yan（1999）和Yan et al。 （2000）提出了一个GGE双图，由前两个主要组件（PC1和PC2）构建，从PC分析以环境为中心的产量数据。它被称为GGE双斑，以强调它显示基因型主效应（G）和基因型X环境相互作用（GE），它们是与品种评价相关并且必须同时考虑的产量变异的两个来源（Gauch和Zobel，1996）。此前已经使用过这种双点图（Cooper等人，1997），但是Yan等人提出的方法学（2000）允许以下问题可视化处理：（i）确定在给定环境中最好的栽培品种; （ii）鉴定给定栽培品种的最适合的环境; （iii）在个别环境中比较任何一对品种;和（iv）每个环境和大环境差异的最佳栽培品种。后来，Yan et al。 （2001）开发了一种替代的GGE双作用，允许明确处理两个额外的问题：（i）基因型的平均产量和稳定性;和（ii）环境的辨别能力和代表性，这对于给定大环境下的品种和测试环境的视觉评价是重要的。虽然GGE双程数据方法开发用于MET数据分析，但它应该适用于假定逐个数据结构的所有类型的双向数据。在MET数据中，基因型是条目，环境是测试者。在双列数据中，每个基因型都是条目和测试者。我们的第一个目标是演示使用双屏幕双列数据解释。本文的另一个目的是提供用于构建和解释GGE双程序的方法的详细描述。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/diallel/yanchuk-1996-vd---va-/">
+                <h2 class="post-title">Yanchuk-1996-VD---VA-</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (32 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>Yanchuk AD. General and specific combining ability from disconnected partial diallels of coastal Douglas-fir. Silvae Genet. [Internet]. Sauerländer; 1996 [cited 2016 Apr 6];45:37–45. Available from: <a href="http://cat.inist.fr/?aModele=afficheN&amp;cpsidt=3049734">http://cat.inist.fr/?aModele=afficheN&amp;cpsidt=3049734</a></li>
+</ol>
+</blockquote>
+
+<p>在沿海道格拉斯 - 冷杉（Pseudotsuga menziesii var.menziesii DOUGL。）的4个不同实验系列中的36个6个母体半不连续双列交配中检查一般和特异性组合能力（分别为GCA和SCA），以检查2个遗传方差，GCA和SCA效应的分布，以及来自GCA和SCA对3种生长性状的遗传增益的估计。在每个系列中的11个不同测试位置，在每个双列的每个全同胞家族中测量约150棵树，在年龄7和身高和体积。所有系列和3个生长性状的<strong>SCA方差与GCA方差的平均百分比为36％，范围为19％至65％。从7岁到12岁的高度生长的GCA和SCA差异没有显着变化</strong>。双列集合效应通常可以忽略不计。从对diallel模型假设的理论考虑，加性和优势效应的明确分离（相对于GCA和SCA方差选择的假设）似乎是不可能的：效应受到群体中显性程度、上位性和连锁性的支配。然而，这些遗传细节没有表现出任何明显的模式或GCA和SCA效应之间的相关性。虽然<strong>这些结果证实了目前在道格拉斯冷杉育种中主要选择GCA的策略，但是在生产群体中有利用SCA方差的机会</strong>。精英生产种群的控制交配现在在沿海道格拉斯冷杉改良计划中是常见的，并且与指定父母的控制交叉可以i）在12年体积中将获益提高多达3.0％（假设竞争效应没有偏离体积估计）和ii）访问否则将被忽视的另外的父母集合。利用SCA的高度生长的收益较低，这反映了：i）与高度相关的较低SCA方差，或ii）竞争在年龄12（相对于高度）偏向上方体积SCA方差。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%A9%BA%E9%97%B4/yang2004-nna-lss-ar1%E8%B1%8C%E8%B1%86/">
+                <h2 class="post-title">Yang2004-NNA-LSS-AR1豌豆</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (83 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Yang RC, Ye TZ, Blade SF, Bandara M. Efficiency of Spatial Analyses of Field Pea Variety Trials. Crop Sci. 2004;44:49–55.   现在可以对邻近地块进行若干空间分析以提高品种试验的精度。这项研究的目的是评估三个常用的空间分析的效率，最近邻域调整（NNA），最小二乘平滑（LSS）和一阶自回归模型（AR1），从157 1997年至2001年在加拿大阿尔伯塔省不同生长地区进行的豌豆豌豆（豌豆豌豆）品种试验。所有试验均采用随机化完全区块（RCB）设计进行，三次或四次重复。完整的复制（块）种植在单个字段层中。来自157个试验的每一个的产量数据进行常规RCB分析和三个空间分析。与RCB分析相比，LSS，NNA和AR1分析分别去除了平均22％，16％和7％的残留变化，但是三个分析的去除量在试验中有很大不同。每个空间分析在1997年和1998年实现了更多的误差减少，其中试验包含比1999至2001年更大的块大小，其中试验包含更小的块大小。在涉及大量品种的大块尺寸中，空间变异去除的效率是巨大的。此外，LSS和NAN分析在这样的移除比AR1分析更有效。
+品种试验评价作物改良计划中不同种类的性能，并测试大量选择作为新品种的可能释放。随着目前北美和其他地区作物多样化的趋势（Blade等，2002），一些品种试验开始在新环境中测试非传统作物的注册品种。在任何情况下，对品种均值或品种差异的准确估计需要通过使用适当的实验设计或通过统计分析来控制由品种效应所忽略的误差变化。 RCB设计，由于其简单性，继续成为许多品种试验的流行选择。 RCB分析的有效性和效率取决于每个块内的地块是否具有相对均匀的生长条件（例如，土壤肥力和水分）。然而，在大于8到12个地块的块内的空间同质性很少发生在田间试验中（Stroup等人，1994）。因此，在涉及大量条目的多样化试验中，RCB设计的效率通常较差。不完全的块设计，例如格子或σ-设计可以具有更小的块，但是空间异质性可以持续在小块中。显然，这种基于设计的误差变化控制可能不足以消除品种试验中的所有空间趋势。 开发了利用绘图位置信息的不同的基于模型的分析，并应用于估计和校正块内和块之间的空间变化。这些空间分析包括NNA（Bartlett，1978; Wilkinson等，1983; Zimmerman和Harville，1991），LSS（Green等，1985）和空间自相关建模如AR1模型（Glee- son和Cullis，1987 ; Gilmour等人，1997）。经常评估相对于块设计的分析的不同空间分析的效率（Ball等人，1993; Brownie等人，1993; Clarke等人，1994; Stroup等人，1994; Grondona等人， ，1996; Wu et al。，1998; Helms et al。，1999），但是这种评价通常基于有限数目的田间试验。另一方面，其他研究（例如，Kempton和Howes，1981; Cullis和Gleeson，1989; Kempton等，1994）已经使用了大量的试验，但是集中在一个空间分析与常规RCB的比较分析。品种试验通常在多年的大量试验地点进行。空间变异性的模式和程度可能在不同环境之间变化很大，表明不同的空间分析在不同环境中消除空间异质性的能力可能不同。期望在包含不同环境的大量试验中评价不同空间分析的效率。 本文报告了相对于常规RCB分析的三个空间分析（NNA，LSS和AR1）的效率的评估，基于1997年至2001年在加拿大艾伯塔省不同生长区测试的157个豌豆品种试验。这些试验是1987年成立的阿尔伯塔田豌豆区域品种测试计划的一部分，该计划是为了向全省的当地豌豆生产者推荐注册品种进行多年和多地点测试（Park and Lopetinsky，1999）。
+方法 NNA 对于NNA分析，我们使用Papadakis程序的迭代一维修正（Wilkinson等人，1983）从每个图的任一侧的邻居计算趋势指数（怎么计算），但块效应（i）被保留。 因此，方程式中的Tij+εij。 [1]在NNA分析中成为βi+bXij +eij，其中Xij=（ei，j 1+ei，j 1）/ 2，b与协变量X ij相关的回归系数，eij Yij Y ij 平均值。 对于在块的任一端的边界小区，计算Xij作为一个相邻的残差。 每次迭代从新的趋势指数开始，该趋势指数是观察到的和调整后的品种与前一次迭代的差异。 迭代继续，直到两个连续迭代中的调整均值之间的差值可忽略。
+LSS 对于LSS分析（Green等人，1985），趋势效应Tij是在其第二差异为零的约束条件下估计的（Ti，j 1 2 Tij Ti，j 1 0）。进一步假设残差（εij）彼此不相关和具有趋势效应。必须选择适当的调谐常数（）以确保相邻图之间的不相关残差，同时保持平滑趋势。根据Clarke et al。 （1994）中，我们搜索在估计残差中给出接近零的串行相关性的值。当串行相关的绝对值为0.
+                  <a href="../../post/%E7%A9%BA%E9%97%B4/yang2004-nna-lss-ar1%E8%B1%8C%E8%B1%86/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/diallel/yao-2013-%E4%BA%A4%E9%85%8D%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%BD%B1%E5%93%8D-%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E7%9A%84%E5%BD%B1%E5%93%8D/">
+                <h2 class="post-title">Yao-2013-交配设计的影响-分析方法的影响</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (78 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>Yao WH, Zhang YD, Kang MS, Chen HM, Liu L, Yu LJ, et al. Diallel Analysis Models : A Comparison of Certain Genetic Statistics. 2013;1481–90.</li>
+</ol>
+</blockquote>
+
+<p>摘要：
+Diallel分析虽然很受欢迎，但也提出了关键问题：（i）来自具有相同和不同的亲本组的不同diallel方法的遗传统计数据是否提供相同或相似的信息？和（ii）在某些双列交配中缺少正反交（REC）和母本（MAT）效应的信息会使育种计划面临风险？为了回答这些问题，从具有12,10,8,6和4玉米（Zea mays L.）亲本的diallels计算一般（GCA）和特殊配合力（SCA），MAT和REC效应。我们发现，使用相同的系，Griffing方法1,2,3和4中GCA效应的正负及大小相似，高度相关，Griffing方法4与Gardner和Eberhart分析III（G＆EIII） 的结果也一致。来自Griffing的方法1至4的SCA效应是相关的。Griffing的方法4产生了与G＆EII和G＆EIII相同的SCA效应;来自Griffing<strong>方法1和2的SCA效应由于包括亲本系而偏高。Griffing的方法3（没有包括亲本）是所有六种方法中最好的方法;它给出了无偏的SCA估计和关于MAT和REC效应的信息</strong>。由于双列杂交中的品系数不同，遗传统计量可作为育种计划的参考，因为GCA和SCA效应的正负和大小几乎相同;然而，必须谨慎行事，因为检测到一些正负相反的效应。不提供REC和MAT信息的diallel方法可能会错过识别优势杂种。因为<strong>方法1和2提供了GCA和SCA效应的偏高估计，所以不推荐用于估计GCA和SCA效应</strong>。我们还得出结论，<strong>方法3是最好的diallel方法;它提供了SCA效应的无偏估计，并提供了关键的REC和MAT效应</strong>，这对于正确选择杂种开发中的父母本是有用的。</p>
+
+<hr />
+
+<p>Diallel交配设计通常由植物和动物育种者使用以产生可用于设计育种策略的遗传信息。作物育种者想知道从Griffing（1956）和Gardner和Eberhart（1966）开发的不同diallel方法获得的遗传参数或统计学以及从不同亲本品系数的diallel实验得到的结果是否相同，相似或不同。这样的信息不仅对研究人员选择最合适的diallel方法有用，而且对于确定其他diallel研究的结果是否可以作为参考在我们的自己的作物育种计划。几个与双列交配设计相关的关键研究（例如，Sprague和Tatum，1942; Anderson和Kempthorne，1954; Hayman，1954a，1954b; Griffing，1956）。Griffing（1956）描述了用于分析用于植物的四种不同双列交配的统计过程：方法1（亲本+ F1杂交+F1杂交反交），方法2（亲本+ F1杂交），方法3（F1杂交+ ，方法4（F1杂交）。 Griffing的方法清楚地定义了GCA和SCA，使得有可能了解统计模型并开发软件工具（Burow和Coors，1994; Magari和Kang，1994; Zhang和Kang，1997; Zhang等人，2005）。 因此，这些方法已被植物育种者广泛用于确定各种类型研究的GCA和SCA（Kauffman等，1982; Sughroue和Hallauer，1997; Fan等，2002; Melani和Carena，2005; Barata和Carena，2006）。
+与Gardner和Eberhart分析II（G＆EII）和分析III（G＆EIII）相关的Dialle1交配模型是用于配合力分析的另外的主要模型。尽管开发了G＆EI和改进的方法（Gardner和Eberhart，1966）以获得其他信息（例如，关于近交衰退，杂种优势，附加基因作用，显性和上位性），但这些方法没有被广泛采用，因为需要额外的资源来实施。由于更少的资源限制、在杂种优势评价中有优势，使得G＆EII和G＆EIII的在许多研究中得到应用（Wright，1985; Hallauer和Miranda，1988; Murray，2003; Segovia- Lerma等，2004; Farshadfar等，2012） 。 Mahgoub（2011）最近表明，当某系分别用作母本和父本时，GCA效应可以分为母本GCA效应（F_ GCA）和父本GCA效应（M_GCA）。他发现GCA代表F_GCA和M_GCA的平均值，而F_GCA和M_GCA之间的差异的平均值正好等于该系的母本（MAT）效应。 Mahgoub（2011）还表明，当将某系作为母本和父本分别使用时，SCA作用可以分为母本SCA（F_SCA）和父本SCA（M_SCA），并且F_SCA和M_SCA之间的差异的平均值等于REC。 SCA效应的这种划分提供了对于交配和它们的反交的SCA效应的精确估计。<strong>一些研究人员已经讨论了不同的diallel方法的优缺点（Chaudary等人，1977年; Baker，1978年; Singh和Paroda，1984年; Farshadfar等人，2012年）。 Chaudhary et al。 （1977）比较了全双列和部分双列的相对效率，并发现对于GCA和SCA效应的估计，半双列与全双列一样有效。</strong> Baker（1978）提供了公式，将从方法2和4，G＆EII和Hayman&rsquo;s diallel设计获得的各种类型的遗传统计量与G＆EIII生成的遗传统计量相关联。 Singh和Paroda（1984）的结论是G＆EII和G＆EIII提供了关于加性效应以及GCA和SCA对杂交杂种优势的平均和个体贡献的额外信息。 Farshadfar et al。 （2012）使用方法2和4，G＆EII，G＆EIII和Morley-Jones（1965）的方法，得出类似于Singh和Paroda（1984）的结论。
+双列交配设计是用于杂种优势群分类，近交系选择和杂种开发的非常有用的方法（Crossa等人，1990; Vasal等人，1992; Fan等人，2003a，2003b，2008; Chen等人， 2011）。 REC和MAT效应已经被证明对育种价值评估具有重大影响（Mahgoub，2011）。普通种群想要获得从方法1至4，G＆EII和G＆EIII获得的遗传统计的比较信息。遗传统计信息，如REC和MAT效应，应允许育种者设计适当的育种策略，从而提高其育种计划的效率。育种者还想知道当没有REC和MAT效应时，它们的育种程序的效率如何受到影响;例如，在方法2和4，G＆EII和G＆EIII中。本研究旨在回答这些问题。该研究使用涉及12,10,8,6和4父母的双列交配来估计GCA，SCA，REC和MAT效应，并在双列交配方法内和双列交配方法方法间进行比较。本研究的具体目标是（i）确定从方法1至4，G＆EII和G＆EIII获得的遗传统计量对于一个双列交配的特定数目的亲本系是否相同，相似或不同（ii）确定如果从玉米育种计划中具有不同数目的近交系的diallel实验的子集中获得的遗传统计数据是否类似，并且可以用作其他玉米育种程序中的参考; （iii）确定使用没有提供REC和MAT估计值的diallel方法是否可能对玉米或其他育种计划造成风险;和（iv）六种diallel相关方法中的哪一种应当是优选的以及原因。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%A9%BA%E9%97%B4/ye2008%E5%A4%9A%E7%82%B9-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90-%E8%8A%B1%E6%97%97%E6%9D%BEar1/">
+                <h2 class="post-title">Ye2008多点-空间分析-花旗松AR1</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (186 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Ye TZ, Jayawickrama KJS. Efficiency of using spatial analysis in first-generation coastal Douglas-fir progeny tests in the US Pacific Northwest. Tree Genet. Genomes. 2008;4:677–92.   基于来自美国太平洋西北45个第一代繁殖区的275道格拉斯冷杉[Pseudotsuga menziesii（Mirb。）Franco]后代试验的1,146个数据集，使用自回归误差结构对生长性状进行了单试验和跨试验空间分析。繁殖区域包括宽范围的纬度，经度和海拔。在不同的实验设计，性状，评估年龄和树间距之间比较了使用空间分析在减少由于地点异质性导致的变化、估计遗传参数和增加预测准确性方面的效率。利用空间分析有超过97％的数据集显示显着的模型改进，高度显示比直径或体积更多的改进。由于空间异质性，空间分析平均去除了14-34％的残差方差，导致育种值预测精度提高20％。由于空间调整，变异系数显着降低。空间分析前后的预测增益之间的秩相关性约为0.96，空间分析对前20％父母的平均预测增益几乎没有影响。由于空间调整，我们没有观察到改善的实质性地理趋势。跨地点空间分析对基因型与环境的相互作用几乎没有影响，但倾向于增加残差的试验异质性。比较和讨论了两种不同的跨试验空间分析方法。
+长期以来人们认识到，环境梯度或斑块（例如土壤肥力，土壤水分或地形）经常严重阻碍对林业田间试验的处理效果的可靠估计。试验通常用多个区组进行，其中实验单元组被排列，使得小区尽可能均匀。因此，它们的效率取决于每个重复区组具有均匀生长条件的程度。森林遗传测试通常涉及大量遗传条目，区组大小通常较大，难以确保块内均一性。田间试验中的地点变异性通常是空间连续的。许多研究已经证明，在相邻小区上进行的观测比随机观测更相近（Cliff和Ord 1981; Costa e Silva等人2001; Cullis和Gleeson 1989; Dutkowski等人2002,2006; Magnussen 1990， 1994; Smith 1938; Upton和Fingleton 1985）。例如，Fu et al。 （1999）显示道格拉斯杉木后代测试中的90％的位点显示出大的空间变异。
+区组内变异可能是由于竞争（Kempton 1982; Magnussen 1994），土壤肥力和水分的异质性（Pearce 1980），杂草或灌木，昆虫或疾病以及造林方面。这种空间异质性削弱了我们使用标准统计推断技术的能力，这些技术主要是针对从独立和相同分布的随机变量中提取的观察集。结果，当存在大的空间异质性时，识别遗传变异的能力和遗传值预测的准确度可能大大降低。
+空间分析已广泛用于农业田间测试，以估计和解释空间变异。已经提出并采用了许多方法来建模空间变化，例如最近邻域调整nearest neighbor adjustment（Bartlett 1978; Papadakis 1937; Wilkinson et al.1983; Zimmerman和Harville 1991），最小二乘平滑least squares smoothing（Green等人1985; Smith和Casler 2004; Yang等人2004），kriging（Bresler等人1981; Lopez和Arrue 1995）和post blocking（Dutkowski等人2002; Fu等人1999）。在这些方法中，通过可分离自回归（AR1⊗AR1）误差结构的空间自相关建模已经变得具有吸引力，并且通常用于农业品种试验分析（Braysher等人2001; Cullis和Gleeson 1991; Gilmour等人1997; Singh等人2003; Yang et al.
+                  <a href="../../post/%E7%A9%BA%E9%97%B4/ye2008%E5%A4%9A%E7%82%B9-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90-%E8%8A%B1%E6%97%97%E6%9D%BEar1/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+        </div>
+
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="../../page/33/">&larr; Newer Posts</a>
+              </li>
+            
+            
+              <li class="next">
+                <a href="../../page/35/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

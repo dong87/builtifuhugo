@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Dong&#39;s blog</title>
+  <meta property="og:title" content="Dong&#39;s blog" />
+  <meta name="twitter:title" content="Dong&#39;s blog" />
+  <meta name="description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta property="og:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="twitter:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../" />
+  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../">
+            <img class="avatar-img" src="../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Dong&#39;s blog</h1>
+                
+                  
+                    <hr class="small">
+                    <span class="page-subheading">Enterprising &amp; Concentrating欢迎光临！</span>
+                  
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div role="main" class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+          <div class="well">
+            
+
+<h2 id="front-page-content">Front Page Content</h2>
+
+<p><code>beautifulhugo</code> supports content on your front page. Edit <code>/content/_index.md</code> to change what appears here. Delete <code>/content/_index.md</code> if you don&rsquo;t want any content here.</p>
+
+          </div>
+        
+
+        <div class="posts-list">
+          
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%AB%9E%E4%BA%89/cappa-2008-%E7%AB%9E%E4%BA%89/">
+                <h2 class="post-title">Cappa-2008-竞争</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (71 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  
+
+<blockquote>
+<ol>
+<li>Cappa EP, Cantet RJC. Direct and competition additive effects in tree breeding: Bayesian estimation from an individual tree mixed model. Silvae Genet. 2008;57:45–56.</li>
+</ol>
+</blockquote>
+
+<p>引入具有附加直接和竞争效应的单个树模型来解释森林遗传学评价中的竞争效应。混合线性模型包括固定效应以及直接和竞争育种值加永久环境影响。通过“竞争强度”元素（IC）在竞争者树的表型中识别竞争效应，添加竞争效应或环境竞争效应，其是添加竞争效应的发生矩阵的非零元素。 IC是竞争个体的距离和数量的反函数，或者行 - 列或者对角线。 IC允许任何单个树的表型方差中的竞争效应的方差的标准化，使得该模型解释不相等数量的邻居。当忽略对行列设计和单树图设计的竞争效应时，使用半同胞之间的协方差来估计加性方差的表达式。使用贝叶斯方法通过Gibbs采样和受限最大似然程序（Bayesian method）通过Gibbs采样和受限最大似然程序（Bayesian method），使用在乳房高度生长的火炬松的数据集来估计直接和竞争效应的加性方差，两种效应之间的协方差以及永久环境效应的方差REML）通过期望最大化（EM）算法。当与这些模型的动物育种文献中报道的模型和IC相比时，没有检测到与所使用的模型和IC相关的收敛问题。估计参数的后验平均值（标准误差）为σ2Ad= 12.553（1.447），σ2Ac= 1.259（0.259），σAdAc= -3.126（0.492），σ2p= 1.186（0.289）和σ2e= 5.819（1.07）。从模型中退出永久环境竞争效应可能会偏向直接育种价值的预测。结果表明，选择增加直接生长，同时保持低水平的竞争是可行的。</p>
+
+<hr />
+
+<h2 id="介绍">介绍</h2>
+
+<p><strong>加性遗传方差是林木遗传改良中最重要的参数，因为它影响了选择的增益和精度</strong>。为了在估计加性变量时避免偏差，分析的统计模型应包括所有其他遗传变异来源以及所有可识别的环境影响。资源的树木竞争可能偏离竞争个体的育种价值估计（参见例如MAGNUSSEN，1993; FOSTER等人，1998; RADTKE等人，2003），通过诱导单个树或邻近图之间的负相关。<strong>竞争定义为由于相邻树木的基因型和空间排列（HINSON和HANSON，1962），植物所承受的压力，并且是由遗传和环境来源造成的（MAGNUSSEN，1989）</strong>。通常遗传学竞争效应在评估模型中没有考虑，尽管有证据存在（参见MAGNUSSEN，1993和FOSTER等，1998的讨论中的参考文献）。 CANNELL（1978）建议选择非竞争性基因型，以提高林木单位面积产量。如果对生长的直接影响与竞争效应负相关，这种育种策略是最有效的。在这种情况下，具有大的生长遗传潜力的植物倾向于诱导较少的竞争，使得树密度可以增加，并且作为这两个增加的结果，每单位面积的产量将增加。另一方面，如果直接和竞争效应之间的相关性是积极的，选择更高的增长将导致更有竞争力的个人。因此，每单位面积的总产量可能受影响，因为生长较快的个体会阻碍其邻居的生长，这反过来会降低总产量。与不存在竞争效应的模型相比，包含竞争的遗传效应导致在遗传评价模型中添加剂分散参数的数量增加。
+在一系列论文中，GRIFFING（1967,1968a，1968b）描述了包括个体或个体群体竞争的遗传效应的模型，并分析了使用这些模型对选择反应的后果。在这些模型中，个体的表型是其遗传效应（“直接遗传效应”）加上其他基因型的遗传贡献（“间接遗传效应”）的线性组合。虽然直接遗传效应在个体的表型中表达，但是间接遗传效应仅在另一个个体的表型中表达。间接影响的常见例子是哺乳动物中的母体效应（WILLHAM，1963; LYNCH和WALSH，1998，第23章），其在从出生到断奶的后代中表达。当观察树木的遗传评价时，竞争是一种间接遗传效应。 WRIGHT（1986）获得了GRIFFING（1967）模型中亲属之间协方差的表达式，包括直接和竞争效应的加性，优势和上位。对于单个性状个体树模型，必须估计22个遗传（共）方差分量：3个加性效应，3个优势效应和16个上位效应。尝试将具有所有22个参数的模型拟合到通常在树中常见的具有通常家庭关系（完全和半同胞）的数据似乎是没有希望的。相反，可能拟合加性效应，因为它只需要估计三个（共）方差分量加上误差项。 MUIR和SCHINCKEL（2002）描述了具有直接和竞争效果的动物模型。 VAN VLECK和CASSADY（2005）使用模拟和固定数量的竞争者，确定与关系的限制最大似然（REML，PATTERSON和THOMPSON，1971）是否可以解开直接和竞争遗传方差的协方差结构和协方差他们，而ARANGO et al。 （2005）试图在生长试验期间估计猪群体的三个（共）方差分量。两项研究的结果表明，存在于数据中的竞争个体之间的相加关系在解释信息以估计（共）方差分量时可能是必要的。 <strong>MUIR（2005）记录了具有竞争效应的混合模型方程来分析林木数据，但他忽略了不同数量竞争者（例如死亡率或稀疏）对估计竞争的加性遗传方差的影响。总而言之，当拟合具有竞争效应的模型时，必须报告色散参数估计的变异性的度量</strong>。
+<strong>REML的一个缺点是估计的可变性必须使用大样本理论通过边缘或受限似然的信息矩阵的逆来近似测量，因为没有解析解的方差的估计方程：REML估计量没有精确的抽样分布</strong>。从贝叶斯观点的REML可以看作是所有（共）方差分量的联合前向分布的模式，在使用一个平坦的先验分布参数之后（HARVILLE，1974）。或者，通过利用Gibbs采样器的完全贝叶斯方法，可以尝试通过利用与母体效应模型的相似性来估计加性直接和间接效应的（共）方差分量（SORENSEN和GIANOLA，2002 ，第13.3节）。吉布斯采样的基本原理由CASELLA和GEORGE（1992）讨论，而SORIA等（1998），GWAZE和WOOLLIAMS（2001），ZENG et al。 （2004）和CAPPA和CANTET（2006）开发了森林树木遗传改良采样器的一些应用。这项研究的目标是：1）引入一个加性遗传个体树模型，包括直接和竞争效应，考虑竞争树的数量和位置; 2）使用贝叶斯方法通过吉布斯采样器估计模型的色散参数（直接和竞争效应的加性方差，以及两种效应之间的协方差）。发展用13岁的马尾松的乳房高度的直径数据来说明。</p>
+
+<h2 id="该模型">该模型</h2>
+
+<h3 id="直接和竞争效应的育种价值">直接和竞争效应的育种价值</h3>
+
+<p>考虑一个主要受累加遗传效应影响的性状，具有直接和竞争性成分（WRIGHT，1986）。 WILLHAM（1963）为母体效应开发了具有间接成分的加性效应的联合遗传变异的动力学，并且WOLF（2003）在进化框架内对其进行了更广泛的讨论。让个体i的育种价值的直接成分为adi，并且使竞争育种值为aci。 aci的大小越大，树i所施加的竞争效果越高。树i（yij1..jm）的表型记录受到邻近树j（j = j1，j2，&hellip;，jm）的acj的影响，以类似于在后代表型中表达的母本效应的方式。因此，yij1..jmi取决于其邻居的acj，但不取决于其自己的aci。由于单个树遭受来自不止一个邻居的竞争，令mi是第i个树的竞争者的数量。对于规则网格中的人工林，最大值mi可以取为8.假设任何树都不与其最近邻居的其他树竞争（参见图1）。符号RC表示竞争者位于同一行或同一列中，并且在图1中用符号“↔”表示。同样，字母D表示对角线的竞争者，并且这些用图1中的对角箭头表示。例如，在图1中，树5的RC竞争者是植物2,4,6和8，而个体1,3,7和9是D的竞争者。
+从树j1，j2，&hellip;，jmi对植物i施加的总加性遗传竞争等于</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-5a432281dc3abd9a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />[1]
+元素fij被解释为acj（j = j1，j2，&hellip;，jm）对第i个相邻树（yij1 &hellip; jm）的表征施加的竞争强度（IC） 。为了获得IC值，应考虑这样的事实，即在没有近亲和竞争者之间的遗传关系的情况下，以及竞争者的数量</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%AB%9E%E4%BA%89/cappa-2016%E7%AB%9E%E4%BA%89%E6%95%88%E5%BA%94%E5%92%8C%E7%8E%AF%E5%A2%83%E5%BC%82%E8%B4%A8%E6%80%A7%E8%81%94%E5%90%88%E6%A8%A1%E5%9E%8B/">
+                <h2 class="post-title">Cappa-2016竞争效应和环境异质性联合模型</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (336 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Cappa EP, Stoehr MU, Xie C, Yanchuk AD. Identification and joint modeling of competition effects and environmental heterogeneity in three Douglas-fir ( Pseudotsuga menziesii var . menziesii ) trials. Tree Genet. Genomes [Internet]. Tree Genetics &amp; Genomes; 2016; Available from: http://dx.doi.org/10.1007/s11295-016-1061-4   摘要  模型方差矩阵以及扩散参数的指定，应该考虑负向竞争和正向竞争的相关。 花旗松， 3个地点、12a和35a树高胸径。 单株模型。 竞争效应和环境异质性模型——竞争+空间混合模型（CSM）。 同3个简单混合模型的扩散参数和BV做了比较。 强大的空间环境变异覆盖了竞争效应；35a胸径显示在遗传和环境水平很强的竞争效应，但不及树高。 CSM模型比简单模型拟合效果好；不考虑竞争和环境异质性会导致更低的加性遗传方差和更高的残差方差；不考虑竞争效应会高估环境异质性；忽略环境异质性会低估竞争效应。 &mdash;- 比较2个模型也可以根据估计的效应值作spearman相关。  前言  BV的BLUP在很大程度上取决于模型中效应间的相关结构有多好。 林木育种中，经常有一个由竞争引起的负相关结构，和一个由连续环境变异引起的正相关结构。竞争定义为植物遭受相邻植物基因型和空间布局造成的压力。关于树木的遗传评价，竞争是一种间接的遗传效应。 竞争效应会高估材积的SCA。 胸径和材积对密度和竞争相当敏感，树高则相对不受影响。 &gt;95%的一代子代测定林中发现很强的空间变异模式（多是在小尺度上）。 自相关系数大于0.3或小于-0.3用于确定在残差水平有显著的环境异质性和竞争效应。 使用了图形诊断工具——来自自回归模型的2维取样变异函数..  ##对沿海道格拉斯冷杉不列颠哥伦比亚树改良计划和结论的影响 在不列颠哥伦比亚省，增长预测和可允许切割确定的林分蓄积量基于立地指数，其由优势树的高度确定。 因此，我们基于高度进行早期选择，并将估计（或预测）的高度增益与旋转时的投影材积相结合（Xie and Yanchuk 2003）。 由于TH没有受到竞争的强烈影响，竞争对材积投影的影响通过早期选择和高度选择被最小化。 间接证据也来自我们实现的增益试验，其中12岁时的估计收益与基于后代测试的观察到的收益一致（Stoehr等人，2010）。
+                  <a href="../../post/%E7%AB%9E%E4%BA%89/cappa-2016%E7%AB%9E%E4%BA%89%E6%95%88%E5%BA%94%E5%92%8C%E7%8E%AF%E5%A2%83%E5%BC%82%E8%B4%A8%E6%80%A7%E8%81%94%E5%90%88%E6%A8%A1%E5%9E%8B/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/diallel/carson-1975-sca%E7%9A%84%E7%9B%B8%E5%AF%B9%E9%87%8D%E8%A6%81%E6%80%A7/">
+                <h2 class="post-title">Carson-1975-SCA的相对重要性</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (41 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Carson, M. J. (1975). Control-Pollinated Seed Orchards of Best General Combiners - a New Strategy for Radiata Pine Improvement. In Proceedings of the DSIR plant breeding symposium (pp. 144–149).</p>
+</blockquote>
+
+<p>来自两个北部中心北部站点上改良的辐射松的透射测试的结果表明，<strong>一般组合（GCA）效应对于树生长速率，茎形式和针对桃蚜的抗性的特定组合能力（SCA）效应更重要</strong>。<strong>这些结果支持当前使用良好隔离的开放授粉的克隆种子园的最佳一般配合力用于生产改良的辐射松树种子</strong>。质量控制授粉和植物繁殖将很快允许大规模生产杂交。<strong>鉴于SCA的中等水平和可以测试的有限数目的杂交，通过选择亲本GCA可以达到最大增益</strong>。
+亲代GCA估计先前已从自花授粉后代的试验中获得。将来，控制花粉授粉的杂交后代将用于父母的GCA排名。更大的遗传收益应当源于大规模生产最好的一般配合力，而不是最佳全同胞家系的选择和繁殖。</p>
+
+<hr />
+
+<p>引言新西兰辐射松的<strong>遗传改良是通过对优越树木的轮回选择和后代测试来实现的</strong>。候选树已经表型选择并测试了它们的一般组合能力（GCA）用于几种经济上重要的性状。在克隆种子园中建立了测试的克隆，以供应高达5000kg /年的用于森林植物的自花授粉辐射松籽。<strong>质量控制授粉和通过营养繁殖的幼苗繁殖可能很快使常规克隆种子园过时</strong>。新的对照 - 授粉种子果园将提供更快速的产生改良的种子和完全控制花粉系谱，并将允许父母选择强度高于常规果园可能。此外，可以产生一系列特殊用途的辐射品种以满足特定的场所要求（例如抗冻性），或者在特定木材或木材质量性状（例如高密度木材）中捕获大的遗传增益。育种改进的GCA，<strong>利用加性遗传方差，是大多数森林树木改良计划中使用的基本方法</strong>。<strong>加性和非加性遗传方差只能通过克隆选择和造林充分利用</strong>。通过再现测试的全同胞杂交（尽管在文献中已经得到了关注），可以在幼苗树中捕获来自非加性遗传方差的小部分潜在收益。非加性方差的这一部分称为特定组合能力（SCA）。<strong>具有大的特异性组合能力效应，对照授粉的种子园可以用于再现测试的杂交，产生比常规果园的后代可获得的更大的遗传增益</strong>。或者，可以设置对照授粉种子果园，以在最佳通用配合力之间进行杂交，仅依赖于GCA。选择的选择对于控制授粉种子的测试和生产具有重要的意义。在测试阶段，测试应该在筛选大量全同胞交叉或筛选亲本GCA性能方面是有效的。类似地，在对照 - 授粉的果园中的杂交可以遵循任何交配设计，但是使用最佳通用配合力的花粉混合物的多交叉设计可能是最实用的。森林研究所的辐射松改进计划很好地遵循测试交叉或一般组合选择选项。使用开放授粉后代测试常规地进行父母对GCA的后代测试。此外，先进一代育种群体以巢状二进制码的形式存在，或者可以提供关于特定杂交的信息的阶乘后代试验，以及关于父母的一些GCA信息。 Wilcox et al。 （1975）报道了从4×4-亲代因子实验的结果，5年时辐射松的活力对SCA的强烈影响的证据。<strong>严重近亲繁殖抑制对自交后代生长率的证明为控制这种性状的非加性方差的存在提供了支持证据（Wilcox，1983b）</strong>。然而，在对涉及四个雄性测试者和23个改进的辐射松群体（北卡罗莱纳州设计模型II）的母本的育种试验的分析中，<strong>Burdon（未公开结果）发现，SCA对生长速率的影响小于GCA效应（特别是随着树木变得越来越大），树形和抗病性状的SCA效应相对不重要</strong>。本文报告了diallel分析的结果，并比较了SCA和GCA的重要性。讨论了树种育种者在控制授粉的果园中重现测试的杂交或杂交通用配合力的选择之间的选择。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80/charlesworth-2009%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80/">
+                <h2 class="post-title">Charlesworth-2009近交衰退</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (80 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Charlesworth D, Charlesworth D, Willis JH, Willis JH. The genetics of inbreeding depression. Nat. Rev. Genet. [Internet]. 2009;10:783–96. Available from: http://www.ncbi.nlm.nih.gov/pubmed/19834483   适合度相关性状 生存，生长率和生育率。
+近交系数 个体中两个等位基因都来自祖先中的单个等位基因（即，它们通过下降*而相同）的概率。
+突变选择平衡 将有害等位基因引入群体和去除的突变之间的平衡的这种等位基因通过自然选择。结果是这样的突变以低频率存在，但是尽管选择，但是决不完全缺失。
+达尔文首先详细记录和量化了近交的有害影响，他进行了57个植物物种的实验，涉及自我受精和没有亲缘关系个体之间的异交1。达尔文*的努力研究的动机是解释为什么繁殖通过异交在自然中盛行，什么维持花的某些复杂的异交机制2，以及为什么许多植物物种具有防止自我受精的系统3。达尔文*的实验支持他的假设，自我受精必须强烈不利于后代产生，它降低了大多数研究物种的活力和生育力1。 {近亲繁殖降低许多植物和动物物种（包括人类）中的适合度相关性状（表1列出了一些非人类的例子）。主要异常在近交系（近亲）家庭中比在异交中更频繁。这些异常包括在生命早期致死的突变表型，例如植物中的氯霉素缺乏白化病幼苗和鱼中的发育缺陷或人类遗传疾病。即使没有明显的主要异常，近交繁殖抑制也可通过具有高近交系数的个体的较低的生育力，存活和生长速率来检测（BOX 1;表1）。 {实验生产的近交系中的个体的存活率和繁殖力常常如此之低，以至于许多这样的系已经灭绝。当存活系互交时，杂种*通常具有比其近交亲本更高的质量，并且经常超过几个字符的最佳亲本值。第一代杂交（F1）杂种的这种增加的性能被称为杂种优势或杂种优势。在许多作物中，对于经济利益的特征，例如耐旱性，抗病性和产量，已经广泛研究了杂种优势，并且这些特征中的一些对于自然种群中的适应性也可能是重要的。 {重要的是要了解这些影响的遗传基础。近亲繁殖抑制由个体的增加的纯合性引起，如图1所示。有两种遗传上不同的方式，其中增加纯合性可以降低适合度：增加纯合性部分隐性有害突变和增加杂合子优势（＆overdominance ）的基因位点等位基因的纯合性。有害等位基因通常以低频率存在于群体中（突变选择平衡），而基因座上的超量等位基因通过平衡选择（BOX 2）保持在中频。 （因为当近交系互交时，两种遗传机制也可能引起杂种优势（BOX 2;表2），理解基础遗传学对作物育种者至关重要。如果具有杂合子优势的位点是常见的（BOX 3），则在农业物种中的人工选择应当至少部分地选择表现出大量杂种优势的品系。具有高适合度的统一，高度杂合基因型的育种作物植物也是可取的，并且可能通过无性种子生产实现7。然而，如果作物中的杂种优势主要是由于残留突变，则有可能“清除”这些等位基因以产生高产量的无突变株。了解近亲繁殖抑制的遗传基础也可以帮助回答进化生物学中长期争论的问题，为什么遗传变异的适合度相关的特征存在于许多物种，包括人类8。
+近亲繁殖抑制可以通过直接实验或通过使用遗传标记间接检测近交的影响来检测。表中列出的许多方法检测近亲繁殖的不良影响（即，它们揭示和近交繁殖负荷），但不量化负荷或近亲繁殖抑制。为了评价给定的遗传模型是否能够解释所观察到的效应的大小并且比较物种或实验之间的效应的大小，量化近交程度及其效应是必要的。因此注意到提供近亲繁殖抑郁的定量估计的方法。在自然人口研究中，个体字符的度量常常被乘以估计总体适应度（假设不同生命阶段的遗传效应独立地起作用）。 *有单独的男性和女性花的植物。 ？汛是健身性状值减少的量度（BOX 1）。 ∫循环孤雌生殖是一年中的性和无性繁殖的交替，后者导致生成可以彼此交配的基因相同的男性和女性。 ||由单倍体配子体（通过有丝分裂）由同一配子体产生的雄性配子产生的雌性配子的受精，其产生完全纯合子合子。
+平衡选择选择“，例如在群体中保持遗传变异的杂合子优势和频率依赖性选择。
+清洗 减少近交种群中有害突变的频率，从而降低突变负荷（群体中存在有害突变）。
+平衡器股票 包含具有遗传标记的染色体和具有防止与其他排列的重组的反转的苍蝇菌株。这样的染色体用于育种具有提取的野生型染色体的储备物以用于纯合和杂合效应的估计。
+我们首先描述的证据表明自然人口包含有害的突变（突变负荷），然后解释如何几个参考基于杂种优势，包括基因表达研究，似乎支持超支的主要作用的研究也可以通过删除，突变。我们然后描述如何分子进化研究和精细映射的基因参与健身变异支持观点认为近交繁殖抑郁主要是由有害突变的累积效应在许多基因位点，可能有一些贡献从超基因在几个位点。
+有害隐性突变的证据 由于纯合性增加和交叉（杂种优势）的益处引起的近交繁殖抑制由一个或两个纯合子与杂合子相比通常较低的适应性产生。因此，两个（BOX 2）的遗传解释涉及等位基因的优势水平，“它们假设过度优势（杂合子优势），或部分或完全的隐性突变等位基因降低纯合适合度（图1）。由于许多提出的测试（见下文）不能区分基因组区域中的连锁有害突变和具有杂合子优势的单个基因座（图1），因此难以量化近交繁殖抑制或杂种优势的不同遗传贡献。 因此，通过整合来自遗传可控生物体而不是人类的遗传和种群结果来研究近亲繁殖抑制的遗传原因，尽管有兴趣了解适合和近亲繁殖效应的人类遗传变异的遗传基础（BOX 1）。一个有用的方法是测试是否突变可以解释观察到的近亲繁殖抑制的程度。因此，我们首先审查证据，证明对于健康有害的突变总是在人群中被发现，只要他们已经被测试。
+稀有隐性致死性果蝇的自然种群。有害突变肯定存在于自然种群中。在使用平衡器种群使整个染色体纯合以测试它们的存活力的实验中，天然果蝇黑素种群显示携带许多个别稀有，高度隐性和高度有害突变9，这与突变每种选择平衡一致。当在纯合子中分离自野生中取样的雄性的野生型第二或第三染色体约30％是致死的。从不同的野生个体分离的致死染色体的杂合子几乎总是可行的，
+框1 |如何检测和测量近亲繁殖抑郁症 在人类中，血友病对健康有不利影响;这种效果往往是一种 轻微，然而，因为人类的近亲繁殖程度低 弱效应57。尽管近交个体偶尔表现更好 “例如，与第二代表兄弟相比更亲密的冰岛家庭有更多的后代91”整体上，他们显示健身减少，包括死胎和婴儿死亡增加，出生缺陷92每94，可能降低生育后健康95。近亲繁殖抑郁症通常影响生育力44,96,97。 近亲繁殖抑制通常在可以的生物中进行研究 自我授粉，如自交相容的植物或雌雄同体动物，因为这里强烈的近交具有最强的效果。即使是单一代的自交通常超过一半的生活适合度在正常外交植物27,29,98和动物99。多代的近交，包括较温和的近亲繁殖，例如在小鼠或黑腹果蝇中的同胞交配，与远交的初始种群相比几乎总是降低适应性。近交种Caenorhabditis物种遭受严重的近交繁殖抑制100，多代强迫近亲繁殖未能使基因组的一些部分是纯合的，可能是因为这些区域携带有害的隐性突变10。 检测自我繁殖物种的近交衰退 在自生能力的生物体，例如植物和一些雌雄同体动物（例如蜗牛）中，近亲繁殖抑制可以简单地通过测量单个一代自体受精后个体的存活和/或繁殖进行研究，如达尔文*实验（表1）。种子通过自花受精和外交产生，并且种植 一起在同一罐中的配对试验中努力平衡b 生长环境的差异1。对后代进行与现在称为达尔文适应性密切相关的性状的评价：从合子或种子阶段到某些方便的后期生活阶段的生存或生育性状。这种性状的值经常减少 定量，其中w和w分别为 通过自我受精产生的异交后代和后代的价值。 在图中，a部分显示了具有不同杂交率的物种之间的健身相关性状的变化的实例：近交育种抑制是使用雌雄同株个体在开花植物Schiedea101的六个种中的自体受精来估计的。该图显示了具有更多近交的物种的近亲繁殖抑制的倾向，如所预测的（参见正文）。 检测异交物种的近交衰退 在越野物种（包括人类）中，可以将异交个体的适应性特征与通过近交系数测量的近交到不同已知程度的个体的适应性特征进行比较。 ＆近交繁殖载荷*，B被定义为随着近交系数增加（其确定基因组中纯合基因座的比例），适应度下降的速率。在图中，部分b显示了随近交系数增加的理论适应度下降（作为对数标度上的回归斜率测量）单一代的自我授粉给出后代的亲本系数为0.
+                  <a href="../../post/%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80/charlesworth-2009%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/chen2013-%E6%9D%82%E4%BC%98-%E6%A6%82%E5%BF%B5/">
+                <h2 class="post-title">Chen2013-杂优-概念</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (24 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Chen, Z. J. (2013). Genomic and epigenetic insights into the molecular bases of heterosis. Nature Reviews. Genetics, 14(7), 471–82. <a href="http://doi.org/10.1038/nrg3503">http://doi.org/10.1038/nrg3503</a></p>
+</blockquote>
+
+<p><code>杂种优势，也称为杂种活力，广泛存在于植物和动物中，但是这种现象的分子基础仍然难以捉摸</code>。最近使用转录组学，蛋白质组学，代谢组学，表观基因组学和系统生物学方法的杂交和异源多倍体研究提供了新的见解。新兴的基因组和表观遗传学观点表明，<code>杂种优势起源于亲本基因组之间的等位基因相互作用，导致促进生长，胁迫耐受性和杂种适应性的基因的改变的编程</code>。例如，杂合体和异源多倍体中关键调节基因的表观遗传修饰可以改变生理学和代谢的复杂调节网络，从而调节生物量并导致杂种优势。概念的进步可以通过操纵杂种优势帮助提高植物和动物的生产力。</p>
+
+<p>杂种通过在不同的品种，种族或植物或动物物种之间的交叉受精形成。约瑟夫·科勒勒特（1733-1806）记录，一些烟草杂交种超过他们的父母在生长vigour1。一个世纪后，在1876年，查尔斯·达尔文2系统地表征了超过60个植物物种的生长模式，并得出结论：“完全生长的杂交植物明显比自体受精的植物更高和更有活力。”现在是众所周知的杂交植物，例如玉米，或杂种动物，例如一些狗，比它们的父母更有力地且适应性地生长。对于含有多于两组染色体的异源多倍体植物，例如小麦和棉花，也是如此。这种现象被称为杂种优势或杂种优势。术语杂种优势首先由乔治·舒尔（George Shull）在1914年的讲座中提出，后来他说：“生物的生长速度，其生长的快速性，其高度和一般的健壮性，与生物体的不相似程度正相关配子通过其联合形成生物体。 “11他进一步指出，”虽然所有的杂种优势都是杂种优势，但不是所有的杂种优势都可以称为“杂种优势”。11杂种是一个更广泛的术语，包括体细胞杂种和杂合子，如单基因座杂种优势;然而，这些术语常常同义地使用。值得注意的是，在一些报告中，术语杂种优势限于作物或杂交生物体中与其近交亲本相比的杂种优势，而杂种优势适用于自然种群。在本评论中，我采用更广泛的术语“杂种优势”，但在描述特征时指“活力”。玉米的杂种改变了植物育种和生产。自从20世纪30年代开始使用杂种后，玉米的产量稳步增加了6倍或更多12,13。尽管其重要性，但是对于杂种优势的分子机制了解很少3-5,10。这次审查的重点是基因组，蛋白质组学，代谢，表观遗传和网络研究杂交和多倍体最近的调查结果，并突出了一些可测试的杂种优势模型。这些研究表明，单基因座方法研究杂种优势有局限性，并有转向分析它作为一个复杂的特征。对于相关主题，读者应该参考关于近交繁殖抑制14，杂种不相容性15,16和遗传3,4,7,10和代谢5,6,8模型的优良综述作物杂种优势17。尽管杂种优势已在植物中得到最广泛的研究，但也有人报道了高度和有争议的人类智力18-21，小鼠和农场动物中的生长和繁殖性状以及真菌中的应激反应25。因此，植物中发现的原则可能更广泛地适用于生物体。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E8%82%B2%E7%A7%8D/chen2016-%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/">
+                <h2 class="post-title">Chen2016-毕业论文</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (85 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Chen Z (2016) Quantitative Genetics of Norway Spruce in Sweden.
+ 实木和纸浆和纸制品的遗传改良相关的木材质量性状对于提高瑞典挪威云杉种植园的生产力和价值很重要。为了将木材质量性状纳入挪威云杉树育种计划，在大的挪威云杉种群中研究了实木和纤维性状的遗传参数。选择在瑞典南部测试的两个试验的524个半同胞家族来表征木材密度，微纤维角（MFA），弹性模量（MOE），径向纤维宽度（RFW），切向纤维宽度（TFW）的遗传变异，纤维壁厚度（FWT），纤维粗度（FC）和纤维长度（FL）。为了快速测量站立树的刚度（MOE）并且从增量芯精确地测量FL，开发了用于量化刚度的新的非破坏性方法和用于计算FL的新算法。 Pilodyn和声学Hitman测量的组合被发现准确地预测立​​树的刚度，并且使用预期最大化的新算法可以准确地估计FL。 为了改进挪威云杉的遗传参数估计和环境（G×E）相互作用的基因型，空间分析应用于145个子代试验，因子分析方法应用于20个半同胞子代试验。空间分析显着提高遗传力和育种价值预测的准确性。霜冻伤害可能是挪威云杉在南部和中部瑞典的树高的G×E相互作用的主要驱动力。木质性状表现出比生长性状更高的遗传性。然而，生长性状具有非常不利的与实木质量性状（0.54-0.75）的遗传相关性和与纤维性状性状（0.11-0.49）的弱到中度不利的遗传相关性。总之，基于直径的选择将对木材质量性状具有相当大的负面影响，对FL的负面影响可忽略或小，并且对FWT仅具有适度的影响。云杉育种推荐结合直径和刚度的选择指数，对FL的影响最小。应为挪威云杉育种计划确定适当的经济增长和僵硬性状的权重，以使挪威云杉的经济收益最大化。
+由于空间分析捕获整个试验中块（连续）和全球趋势（梯度）内的连续变化的能力，它在农业和林业田间试验中变得非常流行（Anekonda＆Libby，1996; Brownie＆Gumpertz，1997; Costa e Silva等人，2001; Cullis和Gleeson，1989; Cullis和Gleeson，1991; Cullis等人，1998; Dutkowski，2005; Dutkowski等人，2006; Fox等人，2007b; Fox等人， ，2007c; Gilmour等人，1997; Qiao等人，2000; Yang等人，2004; Ye＆Jayawickrama，2008）。在林业，几个空间分析方法已被引入，如postblocking（Dutkowski等人，2002;爱立信，1999; 爱立信，1997），最近邻调整（Anekonda＆利比，1996; Joyce等人，2002;赖特1978）和克里金（Hamann等人，2002; Zas，2006）。然而，使用的最常见的方法是实验设计特征加上可分离的一阶二维自回归残差形式的空间分量，如Gilmour等人所推荐的。（1997）。
+##4.7云杉试验的空间分析 空间建模已广泛用于减少环境变化并提高瑞典估计育种值（EBV）的准确性。由于这些原因，我们将空间分析应用于大型数据集（覆盖464个变量，与挪威云杉的九种类型在瑞典145个试验中相关）。方法和结果在第V页中详细描述，并在此概述。 包括空间分量显着改善了462个变量中的392个（88％）的模型的对数似然性。最大的改进是对于生长和木材质量性状：直径的98％，高度的99％和木材质量变量的100％具有显着的改进，以及实质性改进的比例（例如，对数似然的变化ΔLL ）也是最高的。对多种茎，昆虫损害和芽爆变量的改善最少和最弱，而空间元素适度地改善了枝，茎平直度和抗冻性模型。
+大块试验，其中块方差解释了大量的变化，倾向于提供对数似然的最大改进。块变异占282变量（65％）的总变异的&lt;10％，并且大多数非显着变量（10.3％）的数据主要从块变异分量小于10％的小型试验中收集。
+一般来说，空间分析减少了所有九种类型的性状的所有平均区组方差，但是减少量从芽爆发的45％到茎直径的86.1％变化很大，平均减少了66.2％。空间分析减少直径，高度和茎性状的块方差超过80％。例如，它将直径的平均块方差（Δε2）从13.4％减小到2.2％。然而，对于一些分支，直径，抗冻性和高度性状，例如两个（3.1％）分支变量和一个（4.8％）霜变量稍微增加块方差。
+空间分析对加性遗传方差（Δε2）有不一致的影响，一般根据其他报告（Dutkowski等人，2006; Dutkowski等人，2002; Ye和Jayawickrama，2008），尽管一些研究发现它增加了2（Anekonda＆Libby，1996; Ball et al。，1993; Hamann et al。，2002;Kusnandar＆Galwey，2000）。 Magnussen（1993，1994）发现，模拟导出的数据增加Δε2。 Dutkowski et al。 （2002）认为模拟研究中加性方差的一致性增加可能是由于模型中没有独立的误差项。
+拟合到空间模型中，所有九种类型的性状的遗传力估计值平均增加16.7％，并且94.7％的变量（从83％的昆虫损害变量到100％与形态，多茎，芽爆发有关的变量，木材质量性状）。最大的平均改善是直径和高度（分别为26.0％和34.2％）。据报道，空间模型的高度比道格拉斯冷杉的直径更高（Ye和Jayawickrama，2008）。基本和空间模型表明芽突变量的遗传性是相当大的（分别为0.78和0.81）。
+空间模型提高了六种性状（分枝，直径，昆虫，高度和木材质量）的育种值的平均准确性，但对于霜，多个茎和芽爆发性状减少了它们的平均准确性。然而，变化很小;最大的增加（昆虫损害，树木直径和高度性状）分别为4.96,1.76和1.56％。对于86.9,73.53和75％的病例，在空间中的树木直径，高度和木材性质的育种值预测的准确性分别高于基础模型。类似地，对于子代的育种值预测的准确性的增加对于树直径和高度是最高的（分别为3.60％和3.44％，在95.24％和81.76％的病例中）。 对于父母和后代，斯皮尔曼在基础和空间模型预测的育种值之间的等级相关性非常高; &gt; 0.94，除了木材质量的后代（尽管它们仍然高，例如0.89）。
+对于9种性状类型，估计的遗传增益的平均增加范围为父母为0％至6.24％，后代为0.43％至3.66％。空间模型提供了相对于基本模型，树木直径，高度和木材性质的估计增加（对于亲本为1.91％，4.24％和6.24％，对于后代分别为3.56％，4.24％和3.66％）的最大增加）。
+对于大多数检查的变量，空间一阶自相关是高的。列和行之间的平均自相关分别为0.76和0.79。自相关（在列和行之间）对于直径，高度和木材质量性状较高（&gt; 0.80），可能是因为这些性状受到微网站因素（例如土壤养分含量，土壤深度和水涝）的连续全局或局部变化的更大影响。
+我们发现生长和分支特征的自相关系数与树龄略有正相关，可能是因为瑞典挪威云杉试验的树木仍然太小（大多数年龄小于15岁），因为竞争往往表现在负自相关系数（Costa e Silva等，2013; Magnussen，1989; Reed＆Burkhart，1985）。 Fox等人的总结。 （Anekonda＆Libby，1996; Kuuluvainen et al。，1996; Magnussen，1994; Magnussen＆Yeatman，1987）证实了Reed和Burkhart（1985）的假设：在冠层闭合通常表现出积极的空间依赖性，而冠层关闭后的竞争可能导致负的空间依赖性，直到衰老，当展台往往再次显示积极的空间依赖性。我们仅在一个方向上检测到一个生长变量的（小）负自相关，表明在瑞典挪威云杉育种程序中遗传参数估计和早期选择的年龄可能没有竞争。叶和Jayawickrama（2008）认为自相关可能相对较弱，但仍然积极，当强大的空间关联和竞争存在。我们发现在12,16和20年龄的DBH的一个方向上的三个变量的&lt;0.
+                  <a href="../../post/%E8%82%B2%E7%A7%8D/chen2016-%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/chen2017-%E5%8A%A0%E6%80%A7g-by-e%E6%A8%A1%E5%BC%8F/">
+                <h2 class="post-title">Chen2017-加性G-BY-E模式</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (29 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Chen Z-Q, Karlsson B, Wu HX (2017) Patterns of additive genotype-by-environment interaction in tree height of Norway spruce in southern and central Sweden. Tree Genet Genomes 13:25. doi: 10.1007/s11295-017-1103-6</p>
+</blockquote>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/chen2017%E7%BA%A4%E7%BB%B4-%E6%AC%A7%E6%B4%B2%E4%BA%91%E6%9D%89/">
+                <h2 class="post-title">Chen2017纤维-欧洲云杉</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (72 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Chen Z-Q, Karlsson B, Mörling T, et al (2016) Genetic analysis of fiber dimensions and their correlation with stem diameter and solid-wood properties in Norway spruce. Tree Genet Genomes 12:123. doi: 10.1007/s11295-016-1065-0
+ 抽象 生长性状和实木之间的不良遗传相关性，以及纤维性状是针叶树育种计划中的关注点。为了评价选择对生长和固体木材性质对纤维尺寸的影响，我们调查了不同木纤维性状的早期选择的遗传和效率，以及它们与茎直径，木材密度，弹性模量（MOE）的相关性，微纤丝角（MFA）的挪威云杉（云杉 L）。该研究基于1990年在瑞典南部建立的两个大型开放授粉后代试验，其中包括来自524个家庭的材料，包括5618棵树。从每棵树采样两个增量芯。对于在径向（RFW）和切向（TFW）方向，纤维壁厚度（FWT）和纤维粗糙度（FC）的纤维宽度，使用SilviScan对环3-15确定从树干到树皮的径向变化。确定环8-11的纤维长度（FL）。基于环8-11使用关节位点数据的遗传性对于所有纤维维度性状是中等至高（0.24-0.51）。基于茎横截面平均值的遗传度从0.34变化到0.48，并在环6-9处达到平台。在具有环15处的横截面平均值的特定年龄的RFW，TFW，FWT和FC横截面平均值的“年龄”遗传相关性在环4-7处达到0.9。我们的研究结果表明密度和MOE与FC和FWT中，高积极的遗传相关性，中等和负RFW，低TFW和FL。几种选择方案的比较表明，当直径和MOE被共同考虑时达到最高的获利能力，在这种情况下，对任何纤维尺寸的影响是可忽略的。早期选择对于RFW的环5和对于TFW，FWT和FC的环8-10是高效的。
+关键词
+纤维尺寸年龄相关的年龄遗传的遗传相关性早期选择云杉挪威云杉 沟通由R.伯顿
+介绍 在挪威云杉（欧洲云杉（L.）H.岩溶。），茎的生长，直线度和分支角度通常评定为基于其经济价值繁育目标（Rosvall等，2011）。选育的增长是一个问题，因为它可能导致对实木和纤维尺寸（罗森博格和Cahalan不利影响1997年）。例如，负遗传相关通常年轮宽度之间观察到（如茎直径增长的量度）在挪威云杉（和木材密度或弹性模量（MOE）Chen等人2014年 ; Hannrup等人2004年 ;格兰斯等人2009 ;罗森博格和Cahalan 1997）和其他针叶树（Baltunis等人2007 ; Hong等2014 ; McLean等人2016 ; Wu等人2008）。
+生长和实木特性与纤维尺寸的遗传相关性已经受到较少的关注，因为纤维尺寸的确定是耗时和昂贵的。然而，树的生长和纤维维性状间的不利的遗传相关已经在各种针叶树种描述（Hong等2014 ; Lenz等人。2010 ;佐贝尔和杰特1995）。快速增长的树通常具有大的径向纤维宽度（RFW）和切向纤维宽度（TFW），以及低的纤维壁厚（FWT），这表现在低木材密度（Scallan和绿1974年）。例如，Hong et al。（2014年）报道分别RFW和联队，相关木材密度和FWT和较低（0.12 -0.18和）之间的高遗传相关（0.77），在40岁的苏格兰松树（樟子松属）树。在白云杉（云杉青冈（荞）沃斯），早材密度主要受FWT决定的，而晚材的密度主要受RFW决定（伦茨等2010）。
+在挪威云杉，生长或实木性能和纤维维度之间的遗传相关都使用两个19岁的克隆试验和一个40岁的全同胞子代试验进行了评估（Hannrup等，2004）。他们发现，密度一般与晚木FWT有显着的正相关，与早木FWT有非显着的遗传相关。然而，木材质量性状的试验的大的变化可以归因于与小群体大小（约200个个体）相关的典型的压制误差。因此，使用更多的实木和纤维性能更彻底的分析是使用涉及纸浆和纸张的加工和产品性能，考虑到个别纤维尺寸可以对纸浆和纸张的不同属性有很大的影响（Kibblewhite更大的数据集需要1999年 ;里德尔等人2005）。一个实例是纤维宽度和壁厚度之间的关系，其是指它们如何容易地塌陷成彼此一致并结合以形成纸张的平带，影响许多性能，例如片密度，强度和表面平滑度威默等人2002）。
+针叶树育种的另一个重要方面是减少育种周期，作为加速树木育种过程的一种手段。迄今为止，大多数研究都集中在早期选择增长和实木品质性状，而不是纤维特性（陈等人。2014年，香港等。2015年，库马尔和李2002 ;李和吴2005 ;吴等人2007）。此外，关于年龄相关性和纤维尺寸的早期选择效率的研究不太广泛，尽管它可以为设计纸浆和纸的有效树木育种程序提供基本信息。在挪威云杉现有研究已经报道了纤维长度（佛罗里达州），RFW，TFW，和固定台从髓到树皮表型变异（格尔2004年 ; Lundqvist的等人2002 ; Lundqvist的等人2005 ; Molteberg和Høibø 2007），而年龄-age纤维维度相关和早期选择效率已经估计仅在白云杉（Lenz等人2011），以及在辐射松（固-木材和纤维特性辐射松 D.
+                  <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/chen2017%E7%BA%A4%E7%BB%B4-%E6%AC%A7%E6%B4%B2%E4%BA%91%E6%9D%89/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/rcodes/clifford-attractors/">
+                <h2 class="post-title">Clifford-Attractors</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (105 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  library(Rcpp) library(ggplot2) library(dplyr) opt = theme(legend.position = &quot;none&quot;, panel.background = element_rect(fill=&quot;white&quot;), axis.ticks = element_blank(), panel.grid = element_blank(), axis.title = element_blank(), axis.text = element_blank()) cppFunction('DataFrame createTrajectory(int n, double x0, double y0, double a, double b, double c, double d) { // create the columns NumericVector x(n); NumericVector y(n); x[0]=x0; y[0]=y0; for(int i = 1; i &lt; n; ++i) { x[i] = sin(a*y[i-1])+c*cos(a*x[i-1]); y[i] = sin(b*x[i-1])+d*cos(b*y[i-1]); } // return a new data frame return DataFrame::create(_[&quot;x&quot;]= x, _[&quot;y&quot;]= y); } ') a=-1.
+                  <a href="../../post/rcodes/clifford-attractors/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/diallel/cockerham-1984%E6%98%BE%E6%80%A7%E5%AF%BC%E8%87%B4%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80-/">
+                <h2 class="post-title">Cockerham-1984显性导致近交衰退-</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (25 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>Cockerham CC, Weir BS. Covariances of relatives stemming from a population undergoing mixed self and random mating. Biometrics. 1984;40:157–64.</li>
+</ol>
+</blockquote>
+
+<p>我们考虑所有亲本和第一代亲戚的协方差在异交或自交的亲本群体中，这些过程是平衡的。 对于具有加性和显性效应的任何数目的等位基因和基因座的结果，用六个二次遗传分量表示，其系数由平衡群体的下降量度给出。 由于该交配系统的近交系数的变化，表达式包括基因座对亲属的方差和协方差的联合贡献。 通过包括全部的亲属，可以估计所有的二次分量。 在更一般的模型方面分析了Ghai（1982，Biometrics 38,87-92）对于在单个基因座处具有两个等位基因的协方差的复合函数的发现。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+        </div>
+
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="../../page/4/">&larr; Newer Posts</a>
+              </li>
+            
+            
+              <li class="next">
+                <a href="../../page/6/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

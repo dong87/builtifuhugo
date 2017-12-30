@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Grattapaglia-2011</title>
+  <meta property="og:title" content="Grattapaglia-2011" />
+  <meta name="twitter:title" content="Grattapaglia-2011" />
+  <meta name="description" content="Grattapaglia D, Resende M D V. 2011. Genomic selection in forest tree breeding. Tree Genetics and Genomes, 7(2): 241–255.
+ 基因组选择（GS）涉及基于基因组育种值的选择决策，所述基因组育种估计值作为捕获目标性状的大多数性状基因座（QTL）的全基因组标记物的影响的总和。 GS正在革新家畜的繁殖实践。同样的方法和概念可以很容易地应用于森林树种繁殖，其中长时代和晚期表达复杂特征也是一个挑战。森林中的GS具有额外的优点：可以容易地组装大量培训人群并且准确地表现出几种性状，并且经常地具有小的有效种群大小（N（e））的精英群体的连锁不平衡（LD）的程度可能很高用于高级林木育种计划。使用确定性方程来评估LD（由N（e）和间隔距离建模）的影响，训练集的大小，性状遗传力和QTL的数量对GS的预测精度的影响。结果表明，GS有可能从根本上提高树种育种的效率。当N（e）为30时，甚至在标记密度类似于2个标记/ cM的情况下，通过GS达到常规BLUP选择的基准精度，而对于较大的N（e），对于20个标记/ cM是必要的。通过GS将育种周期缩短50 {％}，提高了选择效率的100 {％}。随着科技进步的快速发展和基因分型成本的下降，我们的前瞻性乐观态度是，GS具有加快树种育种的潜力。然而，需要进一步的模拟研究和GS的概念验证实验，然后再建议实施
+介绍 通过标记辅助选择（MAS）加速育种的观点一直是几个林木基因组项目背后的主要理由和动力。完成繁殖周期需要很长一代，确定和维护大型后代试验所涉及的成本以及大多数目标性状的遗传力低是MAS战略可以帮助克服的障碍（Grattapaglia等1992; White et al。 2007; Williams and Neale 1992）。尽管MAS在森林中具有潜在的优势，但是在大多数操作性树种育种计划中的有用性早在基于今天仍然有效的大量思想观点的早期就被驳回（Strauss等，1992）。除了成本和技术上的缺点之外，关键的观点是标记 - 数量性状基因座（QTL）协会将被限制在特定的遗传背景下，这是由于大型随机交配林木树中可能发现的非常有限的连锁不平衡（LD）人口。尽管有怀疑态度，但是保持乐观的前景，早日取得进展，在大多数人工林树种中鉴定出一些性状的QTL。基于RFLP，RAPD，AFLP和微卫星标记的连锁图可以使这些首次尝试解剖各个组分的数量性状。几乎总是这些早期的研究显示显着的主要影响QTL（Grattapaglia等人2009; Kirst等人2004; Sewell和Neale 2000综述），其中许多可能由于Beavis效应预测的小样本量而被高估了影响（ Beavis 1998）。具有较大后代大小和更精确表型的研究越来越多地显示了QTL效应的数量和分布的不同图像（Brown等人2003; Dillen等人2008; Rae等人2008）。通常，随着每个家庭和更多家庭的更多个人被分析，检测能力增加，更多的QTL被发现，每个人的估计效果变小，并且这些影响在背景和环境之间的不一致性变得更加明显。此外，现在对于遗传模式和抽样策略的选择有更好的认识，以确保QTL研究中的足够力量。今天，为了避免模型选择的偏差，推荐使用贝叶斯方法，这样可以根据模型的不确定性，根据遗传结构的替代模型进行推理，根据其后验概率（Sillanpaa和Corander 2002）。随着QTL数量的增加控制每个性状，每个QTL具有小而不可预测的变化效应，实际上排除了为几种性状同时实施具有成本效益的MAS的可能性。这些也是作物植物的一般结论（Bernardo 2008），尽管基因基础和更长程度的LD原则上将促进MAS的成功应用。提出了林木中的关联遗传学（AG）作为克服基于QTL的MAS的内在限制的一种方法（Neale和Savolainen 2004）。这种方法非常适合于森林树木，通常被认为是具有高核苷酸多样性和低范围LD的大型随机交配非结构化群体。复杂性状对其各个成分的解剖将提供对育种有用的全人口标记特征关联。已经报道了与木材性状，抗病性和耐旱性相关的候选基因中的SNP（Eckert等人，2009a; Gonzalez-Martinez等人2008; Gonzalez-Martinez等人2007）。然而，每个个体关联的效应的程度很小，很少超过表型方差的5％。这些结果并不令人惊讶，符合人类（Visscher 2008），家畜（Goddard和Hayes 2009）以及作物植物（Buckler等人，2009）的更广泛和显着更强大的全基因组关联研究的发现。这些结果证实了数量性状的复杂性质，进一步挑战了将几个离散关联的结果直接应用于同时改进森林树木复杂性状的期望。除非MAS可以捕获目标性状的大部分表型变异，否则常规的定量遗传学方法可能更有效地促进育种。基于更有效的基因分型技术的可用性，几年前提出了基因组选择（GS）或全基因组选择方法，为MAS提供了一个新的范例（Meuwissen等，2001）。与常规MAS或AG继续进行的方式不同，其中首先发现了经过验证的标记 - 特征关联的子集，然后用于选择，GS侧重于预测性能，排除先前搜索的关联。在GS中，可以忽略QTL位置，但是需要足够的功率来检测QTL并将真实效应与噪声区分开来。因此，在构成“培训”或“发现”人口的个人数量（数百甚至数千）之间进行QTL检测。这些个体对于全基因组标记组进行基因分型，并针对目标性状进行表型化。从该数据集中，使用适当的方法和采样策略导出预测模型以避免过拟合。随后将该模型用于计算仅记录基因型的选择候选物的基因组预期育种值。 GS通常需要覆盖整个基因组的大量标记，其方法是所有相关基因组区域预期与至少一些基因分型标记物处于连锁不平衡。 GS目前是国内动物育种的热点话题，植物育种越来越多。几个报告通过对影响国内动物育种计划的基因组选择预测准确性的几个参数和分析程序的模拟研究分析了GS的前景（Calus et al。2008; Dekkers 2007; Long et al。2007; Muir 2007; Schaeffer 2006; Solberg等人2008）。最近的研究已经解决了更多的问题，例如跨多个种群的基因组预测的可靠性（de Roos et al。2009），GS在纯种和杂交种群中的应用（Ibanz-Escriche et al。2009; Toosi et al。 （Habier等，2009），育种计划中GS的不同测试策略（Sonesson和Meuwissen，2009），并且回顾了实际的收益超过常规后代测试全世界的奶牛（Hayes et al。，2009）。还报道了动物模型中GS的实证结果（Lee et al。2008; Legarra et al。2008），证实了积极的理论预期。 GS也吸引了作物的注意（Bernardo和Yu 2007; Heffner等人2009; Zhong et al。2009; Jannink et al。2010）和多年生植物育种者（Wong and Bernardo 2008），表明这项技术的良好前景不同的作物，虽然仍然缺乏植物实现收益的报告。多年生作物中的GS是非常有吸引力的，因为在选择低遗传性状时，每单位时间增加的增加和可能提高准确性的前景。 GS的准确性取决于四个参数：（1）标记和QTL之间的LD的程度，这取决于有效群体大小（Ne）和标记数量; （2）评估标记效应的训练集中具有表型和基因型的个体数量; （3）有关性状的遗传性;和（4）QTL效应的分布（基因座数和大小效应）。前两个在育种者的控制之下，其他的不是（Hayes等人2009）。考虑到森林中GS的前景时，特别重要的变数是LD的程度。由于近距离自然和近期驯化森林，据报道，LD已经扩展到短距离范围，通常小于200 bp的杨树和松属的自然种群（Ingvarsson 2008; Neale和Savolainen 2004）。在这样的人群中，将需要禁止数量的标记来执行具有可观选择精度的GS。然而，通过减少Ne（Hill 1981）可以增加标记和QTL之间的LD水平。 Ne的精英人群从20岁到100岁，经常被用于繁殖育种计划（White et al。2007），提供了更高的LD，这将有助于GS的应用。然而，长期收益的遗传多样性仍然维持在有效规模较大的人口中。这项工作的目的是通过确定性公式来评估上述四个参数对森林树种繁殖环境中GS的预测选择精度的影响。我们评估了训练集（N）的大小的影响， ，性状遗传力h2，g和QTL（NQTL）数量对于五种不同有效种群大小的预测精度，涵盖通常用于高级树种育种计划的大多数尺寸。最后，我们模拟基因组选择的选择效率的提高，与传统的最佳线性无偏预测（BLUP）的表型选择相比，完成繁殖周期所需的时间减少。">
+  <meta property="og:description" content="Grattapaglia D, Resende M D V. 2011. Genomic selection in forest tree breeding. Tree Genetics and Genomes, 7(2): 241–255.
+ 基因组选择（GS）涉及基于基因组育种值的选择决策，所述基因组育种估计值作为捕获目标性状的大多数性状基因座（QTL）的全基因组标记物的影响的总和。 GS正在革新家畜的繁殖实践。同样的方法和概念可以很容易地应用于森林树种繁殖，其中长时代和晚期表达复杂特征也是一个挑战。森林中的GS具有额外的优点：可以容易地组装大量培训人群并且准确地表现出几种性状，并且经常地具有小的有效种群大小（N（e））的精英群体的连锁不平衡（LD）的程度可能很高用于高级林木育种计划。使用确定性方程来评估LD（由N（e）和间隔距离建模）的影响，训练集的大小，性状遗传力和QTL的数量对GS的预测精度的影响。结果表明，GS有可能从根本上提高树种育种的效率。当N（e）为30时，甚至在标记密度类似于2个标记/ cM的情况下，通过GS达到常规BLUP选择的基准精度，而对于较大的N（e），对于20个标记/ cM是必要的。通过GS将育种周期缩短50 {％}，提高了选择效率的100 {％}。随着科技进步的快速发展和基因分型成本的下降，我们的前瞻性乐观态度是，GS具有加快树种育种的潜力。然而，需要进一步的模拟研究和GS的概念验证实验，然后再建议实施
+介绍 通过标记辅助选择（MAS）加速育种的观点一直是几个林木基因组项目背后的主要理由和动力。完成繁殖周期需要很长一代，确定和维护大型后代试验所涉及的成本以及大多数目标性状的遗传力低是MAS战略可以帮助克服的障碍（Grattapaglia等1992; White et al。 2007; Williams and Neale 1992）。尽管MAS在森林中具有潜在的优势，但是在大多数操作性树种育种计划中的有用性早在基于今天仍然有效的大量思想观点的早期就被驳回（Strauss等，1992）。除了成本和技术上的缺点之外，关键的观点是标记 - 数量性状基因座（QTL）协会将被限制在特定的遗传背景下，这是由于大型随机交配林木树中可能发现的非常有限的连锁不平衡（LD）人口。尽管有怀疑态度，但是保持乐观的前景，早日取得进展，在大多数人工林树种中鉴定出一些性状的QTL。基于RFLP，RAPD，AFLP和微卫星标记的连锁图可以使这些首次尝试解剖各个组分的数量性状。几乎总是这些早期的研究显示显着的主要影响QTL（Grattapaglia等人2009; Kirst等人2004; Sewell和Neale 2000综述），其中许多可能由于Beavis效应预测的小样本量而被高估了影响（ Beavis 1998）。具有较大后代大小和更精确表型的研究越来越多地显示了QTL效应的数量和分布的不同图像（Brown等人2003; Dillen等人2008; Rae等人2008）。通常，随着每个家庭和更多家庭的更多个人被分析，检测能力增加，更多的QTL被发现，每个人的估计效果变小，并且这些影响在背景和环境之间的不一致性变得更加明显。此外，现在对于遗传模式和抽样策略的选择有更好的认识，以确保QTL研究中的足够力量。今天，为了避免模型选择的偏差，推荐使用贝叶斯方法，这样可以根据模型的不确定性，根据遗传结构的替代模型进行推理，根据其后验概率（Sillanpaa和Corander 2002）。随着QTL数量的增加控制每个性状，每个QTL具有小而不可预测的变化效应，实际上排除了为几种性状同时实施具有成本效益的MAS的可能性。这些也是作物植物的一般结论（Bernardo 2008），尽管基因基础和更长程度的LD原则上将促进MAS的成功应用。提出了林木中的关联遗传学（AG）作为克服基于QTL的MAS的内在限制的一种方法（Neale和Savolainen 2004）。这种方法非常适合于森林树木，通常被认为是具有高核苷酸多样性和低范围LD的大型随机交配非结构化群体。复杂性状对其各个成分的解剖将提供对育种有用的全人口标记特征关联。已经报道了与木材性状，抗病性和耐旱性相关的候选基因中的SNP（Eckert等人，2009a; Gonzalez-Martinez等人2008; Gonzalez-Martinez等人2007）。然而，每个个体关联的效应的程度很小，很少超过表型方差的5％。这些结果并不令人惊讶，符合人类（Visscher 2008），家畜（Goddard和Hayes 2009）以及作物植物（Buckler等人，2009）的更广泛和显着更强大的全基因组关联研究的发现。这些结果证实了数量性状的复杂性质，进一步挑战了将几个离散关联的结果直接应用于同时改进森林树木复杂性状的期望。除非MAS可以捕获目标性状的大部分表型变异，否则常规的定量遗传学方法可能更有效地促进育种。基于更有效的基因分型技术的可用性，几年前提出了基因组选择（GS）或全基因组选择方法，为MAS提供了一个新的范例（Meuwissen等，2001）。与常规MAS或AG继续进行的方式不同，其中首先发现了经过验证的标记 - 特征关联的子集，然后用于选择，GS侧重于预测性能，排除先前搜索的关联。在GS中，可以忽略QTL位置，但是需要足够的功率来检测QTL并将真实效应与噪声区分开来。因此，在构成“培训”或“发现”人口的个人数量（数百甚至数千）之间进行QTL检测。这些个体对于全基因组标记组进行基因分型，并针对目标性状进行表型化。从该数据集中，使用适当的方法和采样策略导出预测模型以避免过拟合。随后将该模型用于计算仅记录基因型的选择候选物的基因组预期育种值。 GS通常需要覆盖整个基因组的大量标记，其方法是所有相关基因组区域预期与至少一些基因分型标记物处于连锁不平衡。 GS目前是国内动物育种的热点话题，植物育种越来越多。几个报告通过对影响国内动物育种计划的基因组选择预测准确性的几个参数和分析程序的模拟研究分析了GS的前景（Calus et al。2008; Dekkers 2007; Long et al。2007; Muir 2007; Schaeffer 2006; Solberg等人2008）。最近的研究已经解决了更多的问题，例如跨多个种群的基因组预测的可靠性（de Roos et al。2009），GS在纯种和杂交种群中的应用（Ibanz-Escriche et al。2009; Toosi et al。 （Habier等，2009），育种计划中GS的不同测试策略（Sonesson和Meuwissen，2009），并且回顾了实际的收益超过常规后代测试全世界的奶牛（Hayes et al。，2009）。还报道了动物模型中GS的实证结果（Lee et al。2008; Legarra et al。2008），证实了积极的理论预期。 GS也吸引了作物的注意（Bernardo和Yu 2007; Heffner等人2009; Zhong et al。2009; Jannink et al。2010）和多年生植物育种者（Wong and Bernardo 2008），表明这项技术的良好前景不同的作物，虽然仍然缺乏植物实现收益的报告。多年生作物中的GS是非常有吸引力的，因为在选择低遗传性状时，每单位时间增加的增加和可能提高准确性的前景。 GS的准确性取决于四个参数：（1）标记和QTL之间的LD的程度，这取决于有效群体大小（Ne）和标记数量; （2）评估标记效应的训练集中具有表型和基因型的个体数量; （3）有关性状的遗传性;和（4）QTL效应的分布（基因座数和大小效应）。前两个在育种者的控制之下，其他的不是（Hayes等人2009）。考虑到森林中GS的前景时，特别重要的变数是LD的程度。由于近距离自然和近期驯化森林，据报道，LD已经扩展到短距离范围，通常小于200 bp的杨树和松属的自然种群（Ingvarsson 2008; Neale和Savolainen 2004）。在这样的人群中，将需要禁止数量的标记来执行具有可观选择精度的GS。然而，通过减少Ne（Hill 1981）可以增加标记和QTL之间的LD水平。 Ne的精英人群从20岁到100岁，经常被用于繁殖育种计划（White et al。2007），提供了更高的LD，这将有助于GS的应用。然而，长期收益的遗传多样性仍然维持在有效规模较大的人口中。这项工作的目的是通过确定性公式来评估上述四个参数对森林树种繁殖环境中GS的预测选择精度的影响。我们评估了训练集（N）的大小的影响， ，性状遗传力h2，g和QTL（NQTL）数量对于五种不同有效种群大小的预测精度，涵盖通常用于高级树种育种计划的大多数尺寸。最后，我们模拟基因组选择的选择效率的提高，与传统的最佳线性无偏预测（BLUP）的表型选择相比，完成繁殖周期所需的时间减少。">
+  <meta name="twitter:description" content="Grattapaglia D, Resende M D V. 2011. Genomic selection in forest tree breeding. Tree Genetics and Genomes, 7(2): 241–255.
+ 基因组选择（GS）涉及基于基因组育种值的选择决策，所述基因组育种估计值作为捕获目标性状的大多数性状基因座（QTL）的全基因组标记物的影响的总和。 GS正在 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/gs/grattapaglia-2011/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/gs/grattapaglia-2011/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Grattapaglia-2011</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (107 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Grattapaglia-2011</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (107 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Grattapaglia D, Resende M D V. 2011. Genomic selection in forest tree breeding. Tree Genetics and Genomes, 7(2): 241–255.</p>
+</blockquote>
+
+<p>基因组选择（GS）涉及基于基因组育种值的选择决策，所述基因组育种估计值作为捕获目标性状的大多数性状基因座（QTL）的全基因组标记物的影响的总和。 GS正在革新家畜的繁殖实践。同样的方法和概念可以很容易地应用于森林树种繁殖，其中长时代和晚期表达复杂特征也是一个挑战。森林中的GS具有额外的优点：可以容易地组装大量培训人群并且准确地表现出几种性状，并且经常地具有小的有效种群大小（N（e））的精英群体的连锁不平衡（LD）的程度可能很高用于高级林木育种计划。使用确定性方程来评估LD（由N（e）和间隔距离建模）的影响，训练集的大小，性状遗传力和QTL的数量对GS的预测精度的影响。结果表明，GS有可能从根本上提高树种育种的效率。当N（e）为30时，甚至在标记密度类似于2个标记/ cM的情况下，通过GS达到常规BLUP选择的基准精度，而对于较大的N（e），对于20个标记/ cM是必要的。通过GS将育种周期缩短50 {％}，提高了选择效率的100 {％}。随着科技进步的快速发展和基因分型成本的下降，我们的前瞻性乐观态度是，GS具有加快树种育种的潜力。然而，需要进一步的模拟研究和GS的概念验证实验，然后再建议实施</p>
+
+<hr />
+
+<p>介绍
+通过标记辅助选择（MAS）加速育种的观点一直是几个林木基因组项目背后的主要理由和动力。完成繁殖周期需要很长一代，确定和维护大型后代试验所涉及的成本以及大多数目标性状的遗传力低是MAS战略可以帮助克服的障碍（Grattapaglia等1992; White et al。 2007; Williams and Neale 1992）。尽管MAS在森林中具有潜在的优势，但是在大多数操作性树种育种计划中的有用性早在基于今天仍然有效的大量思想观点的早期就被驳回（Strauss等，1992）。除了成本和技术上的缺点之外，关键的观点是标记 - 数量性状基因座（QTL）协会将被限制在特定的遗传背景下，这是由于大型随机交配林木树中可能发现的非常有限的连锁不平衡（LD）人口。尽管有怀疑态度，但是保持乐观的前景，早日取得进展，在大多数人工林树种中鉴定出一些性状的QTL。基于RFLP，RAPD，AFLP和微卫星标记的连锁图可以使这些首次尝试解剖各个组分的数量性状。几乎总是这些早期的研究显示显着的主要影响QTL（Grattapaglia等人2009; Kirst等人2004; Sewell和Neale 2000综述），其中许多可能由于Beavis效应预测的小样本量而被高估了影响（ Beavis 1998）。具有较大后代大小和更精确表型的研究越来越多地显示了QTL效应的数量和分布的不同图像（Brown等人2003; Dillen等人2008; Rae等人2008）。通常，随着每个家庭和更多家庭的更多个人被分析，检测能力增加，更多的QTL被发现，每个人的估计效果变小，并且这些影响在背景和环境之间的不一致性变得更加明显。此外，现在对于遗传模式和抽样策略的选择有更好的认识，以确保QTL研究中的足够力量。今天，为了避免模型选择的偏差，推荐使用贝叶斯方法，这样可以根据模型的不确定性，根据遗传结构的替代模型进行推理，根据其后验概率（Sillanpaa和Corander 2002）。随着QTL数量的增加控制每个性状，每个QTL具有小而不可预测的变化效应，实际上排除了为几种性状同时实施具有成本效益的MAS的可能性。这些也是作物植物的一般结论（Bernardo 2008），尽管基因基础和更长程度的LD原则上将促进MAS的成功应用。提出了林木中的关联遗传学（AG）作为克服基于QTL的MAS的内在限制的一种方法（Neale和Savolainen 2004）。这种方法非常适合于森林树木，通常被认为是具有高核苷酸多样性和低范围LD的大型随机交配非结构化群体。复杂性状对其各个成分的解剖将提供对育种有用的全人口标记特征关联。已经报道了与木材性状，抗病性和耐旱性相关的候选基因中的SNP（Eckert等人，2009a; Gonzalez-Martinez等人2008; Gonzalez-Martinez等人2007）。然而，每个个体关联的效应的程度很小，很少超过表型方差的5％。这些结果并不令人惊讶，符合人类（Visscher 2008），家畜（Goddard和Hayes 2009）以及作物植物（Buckler等人，2009）的更广泛和显着更强大的全基因组关联研究的发现。这些结果证实了数量性状的复杂性质，进一步挑战了将几个离散关联的结果直接应用于同时改进森林树木复杂性状的期望。<strong>除非MAS可以捕获目标性状的大部分表型变异，否则常规的定量遗传学方法可能更有效地促进育种</strong>。基于更有效的基因分型技术的可用性，几年前提出了基因组选择（GS）或全基因组选择方法，为MAS提供了一个新的范例（Meuwissen等，2001）。与常规MAS或AG继续进行的方式不同，其中首先发现了经过验证的标记 - 特征关联的子集，然后用于选择，GS侧重于预测性能，排除先前搜索的关联。在GS中，可以忽略QTL位置，但是需要足够的功率来检测QTL并将真实效应与噪声区分开来。因此，在构成“培训”或“发现”人口的个人数量（数百甚至数千）之间进行QTL检测。这些个体对于全基因组标记组进行基因分型，并针对目标性状进行表型化。从该数据集中，使用适当的方法和采样策略导出预测模型以避免过拟合。随后将该模型用于计算仅记录基因型的选择候选物的基因组预期育种值。 GS通常需要覆盖整个基因组的大量标记，其方法是所有相关基因组区域预期与至少一些基因分型标记物处于连锁不平衡。 GS目前是国内动物育种的热点话题，植物育种越来越多。几个报告通过对影响国内动物育种计划的基因组选择预测准确性的几个参数和分析程序的模拟研究分析了GS的前景（Calus et al。2008; Dekkers 2007; Long et al。2007; Muir 2007; Schaeffer 2006; Solberg等人2008）。最近的研究已经解决了更多的问题，例如跨多个种群的基因组预测的可靠性（de Roos et al。2009），GS在纯种和杂交种群中的应用（Ibanz-Escriche et al。2009; Toosi et al。 （Habier等，2009），育种计划中GS的不同测试策略（Sonesson和Meuwissen，2009），并且回顾了实际的收益超过常规后代测试全世界的奶牛（Hayes et al。，2009）。还报道了动物模型中GS的实证结果（Lee et al。2008; Legarra et al。2008），证实了积极的理论预期。 GS也吸引了作物的注意（Bernardo和Yu 2007; Heffner等人2009; Zhong et al。2009; Jannink et al。2010）和多年生植物育种者（Wong and Bernardo 2008），表明这项技术的良好前景不同的作物，虽然仍然缺乏植物实现收益的报告。多年生作物中的GS是非常有吸引力的，因为在选择低遗传性状时，每单位时间增加的增加和可能提高准确性的前景。 <strong>GS的准确性取决于四个参数：（1）标记和QTL之间的LD的程度，这取决于有效群体大小（Ne）和标记数量; （2）评估标记效应的训练集中具有表型和基因型的个体数量; （3）有关性状的遗传性;和（4）QTL效应的分布（基因座数和大小效应）</strong>。前两个在育种者的控制之下，其他的不是（Hayes等人2009）。考虑到森林中GS的前景时，特别重要的变数是LD的程度。由于近距离自然和近期驯化森林，据报道，LD已经扩展到短距离范围，通常小于200 bp的杨树和松属的自然种群（Ingvarsson 2008; Neale和Savolainen 2004）。在这样的人群中，将需要禁止数量的标记来执行具有可观选择精度的GS。然而，通过减少Ne（Hill 1981）可以增加标记和QTL之间的LD水平。 Ne的精英人群从20岁到100岁，经常被用于繁殖育种计划（White et al。2007），提供了更高的LD，这将有助于GS的应用。然而，长期收益的遗传多样性仍然维持在有效规模较大的人口中。这项工作的目的是通过确定性公式来评估上述四个参数对森林树种繁殖环境中GS的预测选择精度的影响。我们评估了训练集（N）的大小的影响， ，性状遗传力h2，g和QTL（NQTL）数量对于五种不同有效种群大小的预测精度，涵盖通常用于高级树种育种计划的大多数尺寸。最后，我们模拟基因组选择的选择效率的提高，与传统的最佳线性无偏预测（BLUP）的表型选择相比，完成繁殖周期所需的时间减少。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/grattapaglia2004-%E4%BA%B2%E5%AD%90%E9%89%B4%E5%AE%9A-ssr/" data-toggle="tooltip" data-placement="top" title="Grattapaglia2004-亲子鉴定-ssr">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/gs/gonz%C3%A1lez-2016-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" data-toggle="tooltip" data-placement="top" title="González-2016-神经网络">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

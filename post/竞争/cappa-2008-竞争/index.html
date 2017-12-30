@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Cappa-2008-竞争</title>
+  <meta property="og:title" content="Cappa-2008-竞争" />
+  <meta name="twitter:title" content="Cappa-2008-竞争" />
+  <meta name="description" content="Cappa EP, Cantet RJC. Direct and competition additive effects in tree breeding: Bayesian estimation from an individual tree mixed model. Silvae Genet. 2008;57:45–56.   引入具有附加直接和竞争效应的单个树模型来解释森林遗传学评价中的竞争效应。混合线性模型包括固定效应以及直接和竞争育种值加永久环境影响。通过“竞争强度”元素（IC）在竞争者树的表型中识别竞争效应，添加竞争效应或环境竞争效应，其是添加竞争效应的发生矩阵的非零元素。 IC是竞争个体的距离和数量的反函数，或者行 - 列或者对角线。 IC允许任何单个树的表型方差中的竞争效应的方差的标准化，使得该模型解释不相等数量的邻居。当忽略对行列设计和单树图设计的竞争效应时，使用半同胞之间的协方差来估计加性方差的表达式。使用贝叶斯方法通过Gibbs采样和受限最大似然程序（Bayesian method）通过Gibbs采样和受限最大似然程序（Bayesian method），使用在乳房高度生长的火炬松的数据集来估计直接和竞争效应的加性方差，两种效应之间的协方差以及永久环境效应的方差REML）通过期望最大化（EM）算法。当与这些模型的动物育种文献中报道的模型和IC相比时，没有检测到与所使用的模型和IC相关的收敛问题。估计参数的后验平均值（标准误差）为σ2Ad= 12.553（1.447），σ2Ac= 1.259（0.259），σAdAc= -3.126（0.492），σ2p= 1.186（0.289）和σ2e= 5.819（1.07）。从模型中退出永久环境竞争效应可能会偏向直接育种价值的预测。结果表明，选择增加直接生长，同时保持低水平的竞争是可行的。
+介绍 加性遗传方差是林木遗传改良中最重要的参数，因为它影响了选择的增益和精度。为了在估计加性变量时避免偏差，分析的统计模型应包括所有其他遗传变异来源以及所有可识别的环境影响。资源的树木竞争可能偏离竞争个体的育种价值估计（参见例如MAGNUSSEN，1993; FOSTER等人，1998; RADTKE等人，2003），通过诱导单个树或邻近图之间的负相关。竞争定义为由于相邻树木的基因型和空间排列（HINSON和HANSON，1962），植物所承受的压力，并且是由遗传和环境来源造成的（MAGNUSSEN，1989）。通常遗传学竞争效应在评估模型中没有考虑，尽管有证据存在（参见MAGNUSSEN，1993和FOSTER等，1998的讨论中的参考文献）。 CANNELL（1978）建议选择非竞争性基因型，以提高林木单位面积产量。如果对生长的直接影响与竞争效应负相关，这种育种策略是最有效的。在这种情况下，具有大的生长遗传潜力的植物倾向于诱导较少的竞争，使得树密度可以增加，并且作为这两个增加的结果，每单位面积的产量将增加。另一方面，如果直接和竞争效应之间的相关性是积极的，选择更高的增长将导致更有竞争力的个人。因此，每单位面积的总产量可能受影响，因为生长较快的个体会阻碍其邻居的生长，这反过来会降低总产量。与不存在竞争效应的模型相比，包含竞争的遗传效应导致在遗传评价模型中添加剂分散参数的数量增加。 在一系列论文中，GRIFFING（1967,1968a，1968b）描述了包括个体或个体群体竞争的遗传效应的模型，并分析了使用这些模型对选择反应的后果。在这些模型中，个体的表型是其遗传效应（“直接遗传效应”）加上其他基因型的遗传贡献（“间接遗传效应”）的线性组合。虽然直接遗传效应在个体的表型中表达，但是间接遗传效应仅在另一个个体的表型中表达。间接影响的常见例子是哺乳动物中的母体效应（WILLHAM，1963; LYNCH和WALSH，1998，第23章），其在从出生到断奶的后代中表达。当观察树木的遗传评价时，竞争是一种间接遗传效应。 WRIGHT（1986）获得了GRIFFING（1967）模型中亲属之间协方差的表达式，包括直接和竞争效应的加性，优势和上位。对于单个性状个体树模型，必须估计22个遗传（共）方差分量：3个加性效应，3个优势效应和16个上位效应。尝试将具有所有22个参数的模型拟合到通常在树中常见的具有通常家庭关系（完全和半同胞）的数据似乎是没有希望的。相反，可能拟合加性效应，因为它只需要估计三个（共）方差分量加上误差项。 MUIR和SCHINCKEL（2002）描述了具有直接和竞争效果的动物模型。 VAN VLECK和CASSADY（2005）使用模拟和固定数量的竞争者，确定与关系的限制最大似然（REML，PATTERSON和THOMPSON，1971）是否可以解开直接和竞争遗传方差的协方差结构和协方差他们，而ARANGO et al。 （2005）试图在生长试验期间估计猪群体的三个（共）方差分量。两项研究的结果表明，存在于数据中的竞争个体之间的相加关系在解释信息以估计（共）方差分量时可能是必要的。 MUIR（2005）记录了具有竞争效应的混合模型方程来分析林木数据，但他忽略了不同数量竞争者（例如死亡率或稀疏）对估计竞争的加性遗传方差的影响。总而言之，当拟合具有竞争效应的模型时，必须报告色散参数估计的变异性的度量。 REML的一个缺点是估计的可变性必须使用大样本理论通过边缘或受限似然的信息矩阵的逆来近似测量，因为没有解析解的方差的估计方程：REML估计量没有精确的抽样分布。从贝叶斯观点的REML可以看作是所有（共）方差分量的联合前向分布的模式，在使用一个平坦的先验分布参数之后（HARVILLE，1974）。或者，通过利用Gibbs采样器的完全贝叶斯方法，可以尝试通过利用与母体效应模型的相似性来估计加性直接和间接效应的（共）方差分量（SORENSEN和GIANOLA，2002 ，第13.3节）。吉布斯采样的基本原理由CASELLA和GEORGE（1992）讨论，而SORIA等（1998），GWAZE和WOOLLIAMS（2001），ZENG et al。 （2004）和CAPPA和CANTET（2006）开发了森林树木遗传改良采样器的一些应用。这项研究的目标是：1）引入一个加性遗传个体树模型，包括直接和竞争效应，考虑竞争树的数量和位置; 2）使用贝叶斯方法通过吉布斯采样器估计模型的色散参数（直接和竞争效应的加性方差，以及两种效应之间的协方差）。发展用13岁的马尾松的乳房高度的直径数据来说明。
+该模型 直接和竞争效应的育种价值 考虑一个主要受累加遗传效应影响的性状，具有直接和竞争性成分（WRIGHT，1986）。 WILLHAM（1963）为母体效应开发了具有间接成分的加性效应的联合遗传变异的动力学，并且WOLF（2003）在进化框架内对其进行了更广泛的讨论。让个体i的育种价值的直接成分为adi，并且使竞争育种值为aci。 aci的大小越大，树i所施加的竞争效果越高。树i（yij1..jm）的表型记录受到邻近树j（j = j1，j2，&hellip;，jm）的acj的影响，以类似于在后代表型中表达的母本效应的方式。因此，yij1..jmi取决于其邻居的acj，但不取决于其自己的aci。由于单个树遭受来自不止一个邻居的竞争，令mi是第i个树的竞争者的数量。对于规则网格中的人工林，最大值mi可以取为8.假设任何树都不与其最近邻居的其他树竞争（参见图1）。符号RC表示竞争者位于同一行或同一列中，并且在图1中用符号“↔”表示。同样，字母D表示对角线的竞争者，并且这些用图1中的对角箭头表示。例如，在图1中，树5的RC竞争者是植物2,4,6和8，而个体1,3,7和9是D的竞争者。 从树j1，j2，&hellip;，jmi对植物i施加的总加性遗传竞争等于
+[1] 元素fij被解释为acj（j = j1，j2，&hellip;，jm）对第i个相邻树（yij1 &hellip; jm）的表征施加的竞争强度（IC） 。为了获得IC值，应考虑这样的事实，即在没有近亲和竞争者之间的遗传关系的情况下，以及竞争者的数量">
+  <meta property="og:description" content="Cappa EP, Cantet RJC. Direct and competition additive effects in tree breeding: Bayesian estimation from an individual tree mixed model. Silvae Genet. 2008;57:45–56.   引入具有附加直接和竞争效应的单个树模型来解释森林遗传学评价中的竞争效应。混合线性模型包括固定效应以及直接和竞争育种值加永久环境影响。通过“竞争强度”元素（IC）在竞争者树的表型中识别竞争效应，添加竞争效应或环境竞争效应，其是添加竞争效应的发生矩阵的非零元素。 IC是竞争个体的距离和数量的反函数，或者行 - 列或者对角线。 IC允许任何单个树的表型方差中的竞争效应的方差的标准化，使得该模型解释不相等数量的邻居。当忽略对行列设计和单树图设计的竞争效应时，使用半同胞之间的协方差来估计加性方差的表达式。使用贝叶斯方法通过Gibbs采样和受限最大似然程序（Bayesian method）通过Gibbs采样和受限最大似然程序（Bayesian method），使用在乳房高度生长的火炬松的数据集来估计直接和竞争效应的加性方差，两种效应之间的协方差以及永久环境效应的方差REML）通过期望最大化（EM）算法。当与这些模型的动物育种文献中报道的模型和IC相比时，没有检测到与所使用的模型和IC相关的收敛问题。估计参数的后验平均值（标准误差）为σ2Ad= 12.553（1.447），σ2Ac= 1.259（0.259），σAdAc= -3.126（0.492），σ2p= 1.186（0.289）和σ2e= 5.819（1.07）。从模型中退出永久环境竞争效应可能会偏向直接育种价值的预测。结果表明，选择增加直接生长，同时保持低水平的竞争是可行的。
+介绍 加性遗传方差是林木遗传改良中最重要的参数，因为它影响了选择的增益和精度。为了在估计加性变量时避免偏差，分析的统计模型应包括所有其他遗传变异来源以及所有可识别的环境影响。资源的树木竞争可能偏离竞争个体的育种价值估计（参见例如MAGNUSSEN，1993; FOSTER等人，1998; RADTKE等人，2003），通过诱导单个树或邻近图之间的负相关。竞争定义为由于相邻树木的基因型和空间排列（HINSON和HANSON，1962），植物所承受的压力，并且是由遗传和环境来源造成的（MAGNUSSEN，1989）。通常遗传学竞争效应在评估模型中没有考虑，尽管有证据存在（参见MAGNUSSEN，1993和FOSTER等，1998的讨论中的参考文献）。 CANNELL（1978）建议选择非竞争性基因型，以提高林木单位面积产量。如果对生长的直接影响与竞争效应负相关，这种育种策略是最有效的。在这种情况下，具有大的生长遗传潜力的植物倾向于诱导较少的竞争，使得树密度可以增加，并且作为这两个增加的结果，每单位面积的产量将增加。另一方面，如果直接和竞争效应之间的相关性是积极的，选择更高的增长将导致更有竞争力的个人。因此，每单位面积的总产量可能受影响，因为生长较快的个体会阻碍其邻居的生长，这反过来会降低总产量。与不存在竞争效应的模型相比，包含竞争的遗传效应导致在遗传评价模型中添加剂分散参数的数量增加。 在一系列论文中，GRIFFING（1967,1968a，1968b）描述了包括个体或个体群体竞争的遗传效应的模型，并分析了使用这些模型对选择反应的后果。在这些模型中，个体的表型是其遗传效应（“直接遗传效应”）加上其他基因型的遗传贡献（“间接遗传效应”）的线性组合。虽然直接遗传效应在个体的表型中表达，但是间接遗传效应仅在另一个个体的表型中表达。间接影响的常见例子是哺乳动物中的母体效应（WILLHAM，1963; LYNCH和WALSH，1998，第23章），其在从出生到断奶的后代中表达。当观察树木的遗传评价时，竞争是一种间接遗传效应。 WRIGHT（1986）获得了GRIFFING（1967）模型中亲属之间协方差的表达式，包括直接和竞争效应的加性，优势和上位。对于单个性状个体树模型，必须估计22个遗传（共）方差分量：3个加性效应，3个优势效应和16个上位效应。尝试将具有所有22个参数的模型拟合到通常在树中常见的具有通常家庭关系（完全和半同胞）的数据似乎是没有希望的。相反，可能拟合加性效应，因为它只需要估计三个（共）方差分量加上误差项。 MUIR和SCHINCKEL（2002）描述了具有直接和竞争效果的动物模型。 VAN VLECK和CASSADY（2005）使用模拟和固定数量的竞争者，确定与关系的限制最大似然（REML，PATTERSON和THOMPSON，1971）是否可以解开直接和竞争遗传方差的协方差结构和协方差他们，而ARANGO et al。 （2005）试图在生长试验期间估计猪群体的三个（共）方差分量。两项研究的结果表明，存在于数据中的竞争个体之间的相加关系在解释信息以估计（共）方差分量时可能是必要的。 MUIR（2005）记录了具有竞争效应的混合模型方程来分析林木数据，但他忽略了不同数量竞争者（例如死亡率或稀疏）对估计竞争的加性遗传方差的影响。总而言之，当拟合具有竞争效应的模型时，必须报告色散参数估计的变异性的度量。 REML的一个缺点是估计的可变性必须使用大样本理论通过边缘或受限似然的信息矩阵的逆来近似测量，因为没有解析解的方差的估计方程：REML估计量没有精确的抽样分布。从贝叶斯观点的REML可以看作是所有（共）方差分量的联合前向分布的模式，在使用一个平坦的先验分布参数之后（HARVILLE，1974）。或者，通过利用Gibbs采样器的完全贝叶斯方法，可以尝试通过利用与母体效应模型的相似性来估计加性直接和间接效应的（共）方差分量（SORENSEN和GIANOLA，2002 ，第13.3节）。吉布斯采样的基本原理由CASELLA和GEORGE（1992）讨论，而SORIA等（1998），GWAZE和WOOLLIAMS（2001），ZENG et al。 （2004）和CAPPA和CANTET（2006）开发了森林树木遗传改良采样器的一些应用。这项研究的目标是：1）引入一个加性遗传个体树模型，包括直接和竞争效应，考虑竞争树的数量和位置; 2）使用贝叶斯方法通过吉布斯采样器估计模型的色散参数（直接和竞争效应的加性方差，以及两种效应之间的协方差）。发展用13岁的马尾松的乳房高度的直径数据来说明。
+该模型 直接和竞争效应的育种价值 考虑一个主要受累加遗传效应影响的性状，具有直接和竞争性成分（WRIGHT，1986）。 WILLHAM（1963）为母体效应开发了具有间接成分的加性效应的联合遗传变异的动力学，并且WOLF（2003）在进化框架内对其进行了更广泛的讨论。让个体i的育种价值的直接成分为adi，并且使竞争育种值为aci。 aci的大小越大，树i所施加的竞争效果越高。树i（yij1..jm）的表型记录受到邻近树j（j = j1，j2，&hellip;，jm）的acj的影响，以类似于在后代表型中表达的母本效应的方式。因此，yij1..jmi取决于其邻居的acj，但不取决于其自己的aci。由于单个树遭受来自不止一个邻居的竞争，令mi是第i个树的竞争者的数量。对于规则网格中的人工林，最大值mi可以取为8.假设任何树都不与其最近邻居的其他树竞争（参见图1）。符号RC表示竞争者位于同一行或同一列中，并且在图1中用符号“↔”表示。同样，字母D表示对角线的竞争者，并且这些用图1中的对角箭头表示。例如，在图1中，树5的RC竞争者是植物2,4,6和8，而个体1,3,7和9是D的竞争者。 从树j1，j2，&hellip;，jmi对植物i施加的总加性遗传竞争等于
+[1] 元素fij被解释为acj（j = j1，j2，&hellip;，jm）对第i个相邻树（yij1 &hellip; jm）的表征施加的竞争强度（IC） 。为了获得IC值，应考虑这样的事实，即在没有近亲和竞争者之间的遗传关系的情况下，以及竞争者的数量">
+  <meta name="twitter:description" content="Cappa EP, Cantet RJC. Direct and competition additive effects in tree breeding: Bayesian estimation from an individual tree mixed model. Silvae Genet. 2008;57:45–56.   引入具有附加直接和竞争效应的单个树模型来解释森林遗传学评价中的竞 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%AB%9E%E4%BA%89/cappa-2008-%E7%AB%9E%E4%BA%89/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%AB%9E%E4%BA%89/cappa-2008-%E7%AB%9E%E4%BA%89/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Cappa-2008-竞争</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (71 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Cappa-2008-竞争</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (71 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<ol>
+<li>Cappa EP, Cantet RJC. Direct and competition additive effects in tree breeding: Bayesian estimation from an individual tree mixed model. Silvae Genet. 2008;57:45–56.</li>
+</ol>
+</blockquote>
+
+<p>引入具有附加直接和竞争效应的单个树模型来解释森林遗传学评价中的竞争效应。混合线性模型包括固定效应以及直接和竞争育种值加永久环境影响。通过“竞争强度”元素（IC）在竞争者树的表型中识别竞争效应，添加竞争效应或环境竞争效应，其是添加竞争效应的发生矩阵的非零元素。 IC是竞争个体的距离和数量的反函数，或者行 - 列或者对角线。 IC允许任何单个树的表型方差中的竞争效应的方差的标准化，使得该模型解释不相等数量的邻居。当忽略对行列设计和单树图设计的竞争效应时，使用半同胞之间的协方差来估计加性方差的表达式。使用贝叶斯方法通过Gibbs采样和受限最大似然程序（Bayesian method）通过Gibbs采样和受限最大似然程序（Bayesian method），使用在乳房高度生长的火炬松的数据集来估计直接和竞争效应的加性方差，两种效应之间的协方差以及永久环境效应的方差REML）通过期望最大化（EM）算法。当与这些模型的动物育种文献中报道的模型和IC相比时，没有检测到与所使用的模型和IC相关的收敛问题。估计参数的后验平均值（标准误差）为σ2Ad= 12.553（1.447），σ2Ac= 1.259（0.259），σAdAc= -3.126（0.492），σ2p= 1.186（0.289）和σ2e= 5.819（1.07）。从模型中退出永久环境竞争效应可能会偏向直接育种价值的预测。结果表明，选择增加直接生长，同时保持低水平的竞争是可行的。</p>
+
+<hr />
+
+<h2 id="介绍">介绍</h2>
+
+<p><strong>加性遗传方差是林木遗传改良中最重要的参数，因为它影响了选择的增益和精度</strong>。为了在估计加性变量时避免偏差，分析的统计模型应包括所有其他遗传变异来源以及所有可识别的环境影响。资源的树木竞争可能偏离竞争个体的育种价值估计（参见例如MAGNUSSEN，1993; FOSTER等人，1998; RADTKE等人，2003），通过诱导单个树或邻近图之间的负相关。<strong>竞争定义为由于相邻树木的基因型和空间排列（HINSON和HANSON，1962），植物所承受的压力，并且是由遗传和环境来源造成的（MAGNUSSEN，1989）</strong>。通常遗传学竞争效应在评估模型中没有考虑，尽管有证据存在（参见MAGNUSSEN，1993和FOSTER等，1998的讨论中的参考文献）。 CANNELL（1978）建议选择非竞争性基因型，以提高林木单位面积产量。如果对生长的直接影响与竞争效应负相关，这种育种策略是最有效的。在这种情况下，具有大的生长遗传潜力的植物倾向于诱导较少的竞争，使得树密度可以增加，并且作为这两个增加的结果，每单位面积的产量将增加。另一方面，如果直接和竞争效应之间的相关性是积极的，选择更高的增长将导致更有竞争力的个人。因此，每单位面积的总产量可能受影响，因为生长较快的个体会阻碍其邻居的生长，这反过来会降低总产量。与不存在竞争效应的模型相比，包含竞争的遗传效应导致在遗传评价模型中添加剂分散参数的数量增加。
+在一系列论文中，GRIFFING（1967,1968a，1968b）描述了包括个体或个体群体竞争的遗传效应的模型，并分析了使用这些模型对选择反应的后果。在这些模型中，个体的表型是其遗传效应（“直接遗传效应”）加上其他基因型的遗传贡献（“间接遗传效应”）的线性组合。虽然直接遗传效应在个体的表型中表达，但是间接遗传效应仅在另一个个体的表型中表达。间接影响的常见例子是哺乳动物中的母体效应（WILLHAM，1963; LYNCH和WALSH，1998，第23章），其在从出生到断奶的后代中表达。当观察树木的遗传评价时，竞争是一种间接遗传效应。 WRIGHT（1986）获得了GRIFFING（1967）模型中亲属之间协方差的表达式，包括直接和竞争效应的加性，优势和上位。对于单个性状个体树模型，必须估计22个遗传（共）方差分量：3个加性效应，3个优势效应和16个上位效应。尝试将具有所有22个参数的模型拟合到通常在树中常见的具有通常家庭关系（完全和半同胞）的数据似乎是没有希望的。相反，可能拟合加性效应，因为它只需要估计三个（共）方差分量加上误差项。 MUIR和SCHINCKEL（2002）描述了具有直接和竞争效果的动物模型。 VAN VLECK和CASSADY（2005）使用模拟和固定数量的竞争者，确定与关系的限制最大似然（REML，PATTERSON和THOMPSON，1971）是否可以解开直接和竞争遗传方差的协方差结构和协方差他们，而ARANGO et al。 （2005）试图在生长试验期间估计猪群体的三个（共）方差分量。两项研究的结果表明，存在于数据中的竞争个体之间的相加关系在解释信息以估计（共）方差分量时可能是必要的。 <strong>MUIR（2005）记录了具有竞争效应的混合模型方程来分析林木数据，但他忽略了不同数量竞争者（例如死亡率或稀疏）对估计竞争的加性遗传方差的影响。总而言之，当拟合具有竞争效应的模型时，必须报告色散参数估计的变异性的度量</strong>。
+<strong>REML的一个缺点是估计的可变性必须使用大样本理论通过边缘或受限似然的信息矩阵的逆来近似测量，因为没有解析解的方差的估计方程：REML估计量没有精确的抽样分布</strong>。从贝叶斯观点的REML可以看作是所有（共）方差分量的联合前向分布的模式，在使用一个平坦的先验分布参数之后（HARVILLE，1974）。或者，通过利用Gibbs采样器的完全贝叶斯方法，可以尝试通过利用与母体效应模型的相似性来估计加性直接和间接效应的（共）方差分量（SORENSEN和GIANOLA，2002 ，第13.3节）。吉布斯采样的基本原理由CASELLA和GEORGE（1992）讨论，而SORIA等（1998），GWAZE和WOOLLIAMS（2001），ZENG et al。 （2004）和CAPPA和CANTET（2006）开发了森林树木遗传改良采样器的一些应用。这项研究的目标是：1）引入一个加性遗传个体树模型，包括直接和竞争效应，考虑竞争树的数量和位置; 2）使用贝叶斯方法通过吉布斯采样器估计模型的色散参数（直接和竞争效应的加性方差，以及两种效应之间的协方差）。发展用13岁的马尾松的乳房高度的直径数据来说明。</p>
+
+<h2 id="该模型">该模型</h2>
+
+<h3 id="直接和竞争效应的育种价值">直接和竞争效应的育种价值</h3>
+
+<p>考虑一个主要受累加遗传效应影响的性状，具有直接和竞争性成分（WRIGHT，1986）。 WILLHAM（1963）为母体效应开发了具有间接成分的加性效应的联合遗传变异的动力学，并且WOLF（2003）在进化框架内对其进行了更广泛的讨论。让个体i的育种价值的直接成分为adi，并且使竞争育种值为aci。 aci的大小越大，树i所施加的竞争效果越高。树i（yij1..jm）的表型记录受到邻近树j（j = j1，j2，&hellip;，jm）的acj的影响，以类似于在后代表型中表达的母本效应的方式。因此，yij1..jmi取决于其邻居的acj，但不取决于其自己的aci。由于单个树遭受来自不止一个邻居的竞争，令mi是第i个树的竞争者的数量。对于规则网格中的人工林，最大值mi可以取为8.假设任何树都不与其最近邻居的其他树竞争（参见图1）。符号RC表示竞争者位于同一行或同一列中，并且在图1中用符号“↔”表示。同样，字母D表示对角线的竞争者，并且这些用图1中的对角箭头表示。例如，在图1中，树5的RC竞争者是植物2,4,6和8，而个体1,3,7和9是D的竞争者。
+从树j1，j2，&hellip;，jmi对植物i施加的总加性遗传竞争等于</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-5a432281dc3abd9a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />[1]
+元素fij被解释为acj（j = j1，j2，&hellip;，jm）对第i个相邻树（yij1 &hellip; jm）的表征施加的竞争强度（IC） 。为了获得IC值，应考虑这样的事实，即在没有近亲和竞争者之间的遗传关系的情况下，以及竞争者的数量</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%AB%9E%E4%BA%89/cappa-2016%E7%AB%9E%E4%BA%89%E6%95%88%E5%BA%94%E5%92%8C%E7%8E%AF%E5%A2%83%E5%BC%82%E8%B4%A8%E6%80%A7%E8%81%94%E5%90%88%E6%A8%A1%E5%9E%8B/" data-toggle="tooltip" data-placement="top" title="Cappa-2016竞争效应和环境异质性联合模型">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/cappa-2007-p-spline/" data-toggle="tooltip" data-placement="top" title="Cappa-2007-p-spline">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

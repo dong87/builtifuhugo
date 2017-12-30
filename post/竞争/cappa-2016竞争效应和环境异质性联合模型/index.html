@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Cappa-2016竞争效应和环境异质性联合模型</title>
+  <meta property="og:title" content="Cappa-2016竞争效应和环境异质性联合模型" />
+  <meta name="twitter:title" content="Cappa-2016竞争效应和环境异质性联合模型" />
+  <meta name="description" content="Cappa EP, Stoehr MU, Xie C, Yanchuk AD. Identification and joint modeling of competition effects and environmental heterogeneity in three Douglas-fir ( Pseudotsuga menziesii var . menziesii ) trials. Tree Genet. Genomes [Internet]. Tree Genetics &amp; Genomes; 2016; Available from: http://dx.doi.org/10.1007/s11295-016-1061-4   摘要  模型方差矩阵以及扩散参数的指定，应该考虑负向竞争和正向竞争的相关。 花旗松， 3个地点、12a和35a树高胸径。 单株模型。 竞争效应和环境异质性模型——竞争&#43;空间混合模型（CSM）。 同3个简单混合模型的扩散参数和BV做了比较。 强大的空间环境变异覆盖了竞争效应；35a胸径显示在遗传和环境水平很强的竞争效应，但不及树高。 CSM模型比简单模型拟合效果好；不考虑竞争和环境异质性会导致更低的加性遗传方差和更高的残差方差；不考虑竞争效应会高估环境异质性；忽略环境异质性会低估竞争效应。 &mdash;- 比较2个模型也可以根据估计的效应值作spearman相关。  前言  BV的BLUP在很大程度上取决于模型中效应间的相关结构有多好。 林木育种中，经常有一个由竞争引起的负相关结构，和一个由连续环境变异引起的正相关结构。竞争定义为植物遭受相邻植物基因型和空间布局造成的压力。关于树木的遗传评价，竞争是一种间接的遗传效应。 竞争效应会高估材积的SCA。 胸径和材积对密度和竞争相当敏感，树高则相对不受影响。 &gt;95%的一代子代测定林中发现很强的空间变异模式（多是在小尺度上）。 自相关系数大于0.3或小于-0.3用于确定在残差水平有显著的环境异质性和竞争效应。 使用了图形诊断工具——来自自回归模型的2维取样变异函数..  ##对沿海道格拉斯冷杉不列颠哥伦比亚树改良计划和结论的影响 在不列颠哥伦比亚省，增长预测和可允许切割确定的林分蓄积量基于立地指数，其由优势树的高度确定。 因此，我们基于高度进行早期选择，并将估计（或预测）的高度增益与旋转时的投影材积相结合（Xie and Yanchuk 2003）。 由于TH没有受到竞争的强烈影响，竞争对材积投影的影响通过早期选择和高度选择被最小化。 间接证据也来自我们实现的增益试验，其中12岁时的估计收益与基于后代测试的观察到的收益一致（Stoehr等人，2010）。">
+  <meta property="og:description" content="Cappa EP, Stoehr MU, Xie C, Yanchuk AD. Identification and joint modeling of competition effects and environmental heterogeneity in three Douglas-fir ( Pseudotsuga menziesii var . menziesii ) trials. Tree Genet. Genomes [Internet]. Tree Genetics &amp; Genomes; 2016; Available from: http://dx.doi.org/10.1007/s11295-016-1061-4   摘要  模型方差矩阵以及扩散参数的指定，应该考虑负向竞争和正向竞争的相关。 花旗松， 3个地点、12a和35a树高胸径。 单株模型。 竞争效应和环境异质性模型——竞争&#43;空间混合模型（CSM）。 同3个简单混合模型的扩散参数和BV做了比较。 强大的空间环境变异覆盖了竞争效应；35a胸径显示在遗传和环境水平很强的竞争效应，但不及树高。 CSM模型比简单模型拟合效果好；不考虑竞争和环境异质性会导致更低的加性遗传方差和更高的残差方差；不考虑竞争效应会高估环境异质性；忽略环境异质性会低估竞争效应。 &mdash;- 比较2个模型也可以根据估计的效应值作spearman相关。  前言  BV的BLUP在很大程度上取决于模型中效应间的相关结构有多好。 林木育种中，经常有一个由竞争引起的负相关结构，和一个由连续环境变异引起的正相关结构。竞争定义为植物遭受相邻植物基因型和空间布局造成的压力。关于树木的遗传评价，竞争是一种间接的遗传效应。 竞争效应会高估材积的SCA。 胸径和材积对密度和竞争相当敏感，树高则相对不受影响。 &gt;95%的一代子代测定林中发现很强的空间变异模式（多是在小尺度上）。 自相关系数大于0.3或小于-0.3用于确定在残差水平有显著的环境异质性和竞争效应。 使用了图形诊断工具——来自自回归模型的2维取样变异函数..  ##对沿海道格拉斯冷杉不列颠哥伦比亚树改良计划和结论的影响 在不列颠哥伦比亚省，增长预测和可允许切割确定的林分蓄积量基于立地指数，其由优势树的高度确定。 因此，我们基于高度进行早期选择，并将估计（或预测）的高度增益与旋转时的投影材积相结合（Xie and Yanchuk 2003）。 由于TH没有受到竞争的强烈影响，竞争对材积投影的影响通过早期选择和高度选择被最小化。 间接证据也来自我们实现的增益试验，其中12岁时的估计收益与基于后代测试的观察到的收益一致（Stoehr等人，2010）。">
+  <meta name="twitter:description" content="Cappa EP, Stoehr MU, Xie C, Yanchuk AD. Identification and joint modeling of competition effects and environmental heterogeneity in three Douglas-fir ( Pseudotsuga menziesii var . menziesii ) trials. …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%AB%9E%E4%BA%89/cappa-2016%E7%AB%9E%E4%BA%89%E6%95%88%E5%BA%94%E5%92%8C%E7%8E%AF%E5%A2%83%E5%BC%82%E8%B4%A8%E6%80%A7%E8%81%94%E5%90%88%E6%A8%A1%E5%9E%8B/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%AB%9E%E4%BA%89/cappa-2016%E7%AB%9E%E4%BA%89%E6%95%88%E5%BA%94%E5%92%8C%E7%8E%AF%E5%A2%83%E5%BC%82%E8%B4%A8%E6%80%A7%E8%81%94%E5%90%88%E6%A8%A1%E5%9E%8B/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Cappa-2016竞争效应和环境异质性联合模型</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (336 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Cappa-2016竞争效应和环境异质性联合模型</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (336 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<ol>
+<li>Cappa EP, Stoehr MU, Xie C, Yanchuk AD. Identification and joint modeling of competition effects and environmental heterogeneity in three Douglas-fir ( Pseudotsuga menziesii var . menziesii ) trials. Tree Genet. Genomes [Internet]. Tree Genetics &amp; Genomes; 2016; Available from: <a href="http://dx.doi.org/10.1007/s11295-016-1061-4">http://dx.doi.org/10.1007/s11295-016-1061-4</a></li>
+</ol>
+</blockquote>
+
+<h2 id="摘要">摘要</h2>
+
+<ol>
+<li>模型方差矩阵以及扩散参数的指定，应该考虑负向竞争和正向竞争的相关。</li>
+<li>花旗松， 3个地点、12a和35a树高胸径。</li>
+<li>单株模型。</li>
+<li>竞争效应和环境异质性模型——竞争+空间混合模型（CSM）。</li>
+<li>同3个简单混合模型的扩散参数和BV做了比较。</li>
+<li>强大的空间环境变异覆盖了竞争效应；35a胸径显示在遗传和环境水平很强的竞争效应，但不及树高。</li>
+<li>CSM模型比简单模型拟合效果好；不考虑竞争和环境异质性会导致更低的加性遗传方差和更高的残差方差；不考虑竞争效应会高估环境异质性；忽略环境异质性会低估竞争效应。
+&mdash;-
+比较2个模型也可以根据估计的效应值作spearman相关。</li>
+</ol>
+
+<hr />
+
+<h2 id="前言">前言</h2>
+
+<ol>
+<li>BV的BLUP在很大程度上取决于模型中效应间的相关结构有多好。</li>
+<li>林木育种中，经常有一个由竞争引起的负相关结构，和一个由连续环境变异引起的正相关结构。竞争定义为植物遭受相邻植物基因型和空间布局造成的压力。关于树木的遗传评价，竞争是一种间接的遗传效应。</li>
+<li>竞争效应会高估材积的SCA。</li>
+<li>胸径和材积对密度和竞争相当敏感，树高则相对不受影响。</li>
+<li>&gt;95%的一代子代测定林中发现很强的空间变异模式（多是在小尺度上）。</li>
+<li>自相关系数大于0.3或小于-0.3用于确定在残差水平有显著的环境异质性和竞争效应。</li>
+<li>使用了图形诊断工具——来自自回归模型的2维取样变异函数..</li>
+</ol>
+
+<p>##对沿海道格拉斯冷杉不列颠哥伦比亚树改良计划和结论的影响
+在不列颠哥伦比亚省，增长预测和可允许切割确定的林分蓄积量基于<strong>立地指数，其由优势树的高度确定</strong>。 因此，我们基于高度进行早期选择，并将估计（或预测）的高度增益与旋转时的投影材积相结合（Xie and Yanchuk 2003）。 由于TH没有受到竞争的强烈影响，竞争对材积投影的影响通过早期选择和高度选择被最小化。 间接证据也来自我们实现的增益试验，其中12岁时的估计收益与基于后代测试的观察到的收益一致（Stoehr等人，2010）。</p>
+
+<p>介绍
+<strong>育种值（BV）的最佳线性无偏预测（BLUP）在很大程度上取决于模型中的效应之间的相关结构是如何规定的</strong>。在林木育种中，由于树木之间的竞争引起的往往存在负相关结构和由连续环境变化引起的正相关结构。竞争定义为植物由于基因型和相邻树木的空间排列而遭受的压力（Hinson和Hanson，1962），并且是由遗传和环境来源引起的（Magnussen，1989）。关于树木的遗传评价，竞争是间接遗传效应（Griffing 1967,1968a，b）。此外，由于土壤特性和地形取向的变化，在林业田间试验中通常存在两种类型的空间环境变化（或环境异质性）：全球趋势（或大规模变化）和局部趋势（或小 - 尺度变化）。在同一模型中指定两种结构（即竞争和环境异质性）由Costa e Silva和Kerr（2013）和后来在Cappa等人（2015a）使用替代公式。</p>
+
+<p>在沿海道格拉斯冷杉，Ye和Jayawickrama（2008）发现在一些后代试验中的直径和体积在15岁和20岁的强竞争。Yanchuk（1996）检查道格拉斯冷杉的总体高度在7岁的一般和具体的组合能力和12，以及12岁时的体积。他得出结论，在这些现场测试中的<strong>竞争效应可能会向上偏高12岁的体积的特定组合能力方差</strong>。相反，他没有在同一年龄的身高观察到这种现象。 Stoehr et al。 （2010）评估了三个遗传类别的间距和竞争的影响，从6个低海拔海岸道格拉斯冷杉在不列颠哥伦比亚省在3至12岁实现遗传增益试验。他们得出结论，直径和体积对间距和竞争相当fairly敏感，但高度相对不受影响。此外，在太平洋西北地区275个第一代子代试验的超过95％（Ye和Jayawickrama 2008）中发现了强烈的空间变异模式（主要是小规模），在不列颠哥伦比亚省的88个试验中超过90％ （Fu等人1999）。</p>
+
+<p>空间分析已应用于使用不同方法的道格拉斯冷杉基因试验（Thomson和El-Kassaby 1988; Fuet al.1999; Ye和Jayawickrama 2008）。然而，尽管对道格拉斯冷杉基因试验的生长性状有强烈的竞争影响证据（Yanchuk 1996; Yeand Jayawickrama 2008; Stoehr等人2010），没有这个物种的实证研究，只有少数在其他树种（Cappa和Cantet 2008; Costa e Silva等人2013）试图在个体树水平上分离遗传和非遗传竞争效应。此外，在道格拉斯冷杉和在农作物（Durban等人2001; Stringer等人2011; Hunt等人2013年）和树种的少数实证研究（Magnussen 1994; Resende等人2005年; Costa e Silva等人2013; Cappa等人2015a）共同考虑竞争（或间接遗传效应）和空间变异性。</p>
+
+<p>Cappa和Cantet（2007）通过在二维网格中将B样条函数作为随机变量（即，使用协方差结构用于随机结效应）来基于混合模型提出使用三次B样条的张量积。具有二维表面拟合的混合模型证明了其在适应环境异质性的复杂模式中的实用性（Cappa等人2015b）。 Muir（2005）推导出具有竞争效应的混合模型方程，以分析来自林木试验的数据，但他没有考虑在试验中改变竞争邻居的数量。 Cappa和Cantet（2008）还提出了混合线性模型，其包括直接和竞争加性遗传效应，以及环境竞争效应，其中邻居的竞争效应通过竞争力Bintensity表示在焦点树的表型中。 （我知道了）。 IC允许标准化竞争在表型方差内的影响的方差，使得​​该模型可以解释由于死亡率或边界位置的不相等的邻近数量。 <strong>Costa e Silva和Kerr（2013）扩展了IC的计算，以考虑不等的行间和列间距离</strong>。 Cappa et al。 （2015a）提出了具有附加的直接遗传效应，遗传和环境竞争效应的个体树混合模型的扩展。 （Cappa和Cantet 2008），通过纳入考虑环境异质性的二维平滑表面（Cappa和Cantet 2007）。作为沿海道格拉斯杉树改良计划的一部分，在1976年至1986年的8个系列中，在加拿大不列颠哥伦比亚省南部海岸建立了大量全同胞后代试验。<strong>由于大量的遗传条目，公认的环境异质性（Fu等人1999）和遗传竞争的证据（Yanchuk 1996）</strong>，这些数据为我们提供了一个很好的机会来识别和联合模拟竞争和空间异质性的影响。本研究的主要目的是（1）使用不同的诊断工具来识别和量化竞争在遗传和环境水平和环境异质性的影响; （2）应用Cappa等人提出的单树混合模型。 （2015a）用于估计遗传参数，共同考虑遗传和环境竞争效应和环境异质性; （3）将所有分散参数和联合模型预测的BV的估计结果与来自三个更简单的个体树混合模型的结果进行比较，即标准（无竞争和空间连续效应），竞争（Cappa和Cantet 2008）和空间（Cappa和Cantet 2007）;和（4）<strong>确定同时调整竞争遗传效应和环境异质性对道格拉斯杉木树育种计划中个体选择（前向选择）的影响</strong>。</p>
+
+<p>##材料与方法
+###遗传材料，试验描述和数量性状</p>
+
+<p>本研究中使用的数据来自不列颠哥伦比亚省沿海道格拉斯杉树改良计划。它们包括八个测试系列，具有各种数量的六个父母不连接的半双工。遗传材料的详细描述可以在Yanchuk（1996）中找到。 8个系列中的每个系列建立于1976年至1986年的11个不同地点（即总共88个测试地点）。它们沿不列颠哥伦比亚省南太平洋海岸和温哥华岛分布（Fu et al。1999）。在每个位点采用具有每个全同胞家族的四棵树行图的四个重复的随机完全区组设计，初始间距为3.0×3.0m。目前的研究使用来自系列3的三个后代测试位点的数据，其表现出最高的遗传力。这些试验建立在坎贝尔河（北纬50°24&rsquo;42“，西经126°09&rsquo;37”），弗莱特河（北纬48°39&rsquo;25“，西经128°05&rsquo;05”）和亚历山大Creek（Chilliwack）（北纬49°22&rsquo;15“，西经122°14&rsquo;07”）。使用生物地球生态系统分类（BEC）系统（Pojar等人，1987），分别确定这些位点为山崖非常潮湿的地点，亚甲板潮湿海洋地点和海洋非常潮湿的地点。在三个部位，在12岁和35岁时测量使用激光测高计的以厘米计的总高度（TH）和以毫米计的乳房直径（DBH）。所有三个部位在15岁时从四树到三树通过去除最短的树，绘制所有测试系列的标准做法。表1提供了关于三个试验的一些一般信息。
+###识别和量化竞争和环境异质性效应 （<strong>1.自回归参数；2.图形诊断</strong>）
+竞争和空间变异性的联合分析的中心第一步是预先分析以确定每个位点内两种效应的显着性。在这项研究中，我们使用几种诊断工具来识别和量化竞争效应（在遗传和环境水平）和环境异质性。首先，我们拟合了单树混合模型，其具有遗传群体和块的固定效应，图的随机效应，繁殖值和全同胞家族（参见下面的标准模型[1]），以及一阶的残差协方差结构使用ASReml程序（Gilmour等人2006）对行和列的自回归过程（AR（1）×AR（1）;自回归模型）。<strong>行和列的自相关参数的符号sign和幅度可以揭示残余水平和/或环境异质性的竞争效应的存在</strong>。 <strong>Dutkowski et al。 （2002）指出，环境异质性出现在自相关系数大于0.3，变得更明确0.6</strong>。 Resende et al。 （2005）指出，<strong>高（&gt; 0.3）的阳性自相关系数估计显示，环境异质性优于竞争</strong>，<strong>负（&lt;-0.3）自相关系数估计表明竞争效应可能在一起与环境异质性</strong>。因此，大于0.3和小于-0.3的自相关系数被用于识别残留水平上的主要环境异质性和竞争效应。此外，我们使用图形诊断工具，每个站点内的性状的每个组合的自回归模型的二维样本变异图，如Gilmour等人所建议的。 （1997）。另一方面，<strong>在全球趋势（即，高和正的自相关系数）中表示的强空间模式可以减小小规模（即局部趋势）和/或竞争效应中的空间模式的证据（例如，Kempton 1982; Brownie和Gumpertz 1997; Durban等人2001）</strong>。虽然同时自回归模型（如同等三阶自回归模型 -  EAR（3） - ）可以用于同时识别空间趋势和残余水平的竞争，我们拟合了自回归模型的去趋势数据，即，通过从原始表型数据中减去拟合的空间相关残差（Ye和Jayawickrama 2008）。第二，对于每个地点的每个特征组合，我们计算了拟合标准模型（参见公式[1]）后焦点树残差之间的Pearson相关系数和焦点树邻居的表型手段各种配置：（1）m（最大8）一阶相邻树（即，在对角线上并且在相同的种植行或列中彼此相邻），（2）它们（最大2） ，（3）它们（最大2）列相邻树，以及（4）它们（最大4）对角相邻树。<strong>统计上，两个相邻树之间的显着正（或负）相关性提供环境异质性（或竞争）的证据。然后，我们绘制这些残差相对于表型手段，如Durban等人所建议的。 （2001）</strong>。为了考虑竞争性个体的距离和数目，无论是行列式还是对角线，行，列和对角相邻树的表型手段的平均值乘以IC（Cappa和Cantet 2008）作为计算Pearson相关系数之前的权重。研究的生长性状（即DBH和TH）对最近的竞争比对早期年龄（Gould等人2011）更敏感，即在研究的整个生命期内的生长的总和。因此，我们计算了DBH（DBHgrowth）和TH（TH生长）的12岁和35岁之间的差异。最后，我们研究了直接和竞争加性相关（Cappa和Cantet 2008），以从竞争模型中研究遗传水平的竞争效应（参见竞争混合模型[2]）。两种类型的遗传效应（高于-0.3）之间的高和负相关表明强烈的遗传竞争（例如，Muir 2005）</p>
+
+<p>##结果与讨论
+###生存和增长
+在12岁时三个位点的总体平均存活率为94％，在35岁时略低（81％）（表1）。在这两个评估年龄，亚山门湿润海洋场所表现出demonstrate最高的生存率。在海洋非常潮湿的网站的树木在12岁时有最好的生长had teh best growth，但落后于lagged behind 35岁的山区非常湿的网站。
+###识别竞争和环境异质性
+在所研究的24个病例中的22个中检测到强的环境异质性（自相关系数&gt; 0.8）（表2）。<strong>拟合AR（1）×AR（1）模型后残差的样本变异图显示变异的空间模式通常是全局趋势</strong>（例如，补充图S1a）。对于三个位点的12岁和35岁的任何性状没有负自相关系数（表2）。一般来说，<strong>从12年到35年的行和列方向的自相关系数有所增加，这可能反映了良好地点生长的累积效应（Magnussen 1990）</strong>。然而，对于在亚山门潮湿海洋站点的DBH，柱<strong>自相关系数从12年到35年显着下降（从0.89到0.27），这可能是由于更强的负相关性表明竞争</strong>，由于在这个站点的更快的直径生长表格1）。<strong>强大的全球趋势可以掩盖小规模（即局部趋势）环境变化和竞争效应的模式</strong>（例如，Kempton 1982; Brownie和Gumpertz 1997; Durban等人，2001）。在这些主要的全球趋势从原始数据，即使用<strong>去趋势数据，相邻单元中的大多数自相关系数在两个方向上变为负</strong>（表2）。此外，<strong>在所有三个位点的35岁的DBH中显示出在行和列方向上的强竞争效应（负的自相关系数从-0.08至-0.38），表明竞争在小规模环境异质性方面是显着的</strong>。当使用去趋势数据时，在35℃时在亚山门潮湿海洋站点的性状TH也显示出在行（自相关系数-0.54）和列（自相关系数-0.81）方向上的强竞争效应。在补充图中给出了示出<strong>残余水平上的竞争效应的样本变异函数的示例</strong>。 S1b。这与Ye和Jayawickrama（2008）报道的结果一致，即在太平洋西北部的大多数道格拉斯杉木后代试验中，强烈的地上竞争从10〜15岁开始。 Ye和Jayawickrama（2008）在研究美国太平洋西北地区275道格拉斯杉木后代试验的AR（1）×AR（1）模型的效率时，还报道了在15或20年时的直径和体积负的相关系数。</p>
+
+<p>还计算了拟合标准模型之后的<strong>第i个焦树的残差和m（最大8）一阶相邻树的表型平均值之间的Pearson相关系数（表3;补充图S2）</strong>。估计的<strong>负相关性证实了35岁时DBH存在竞争</strong>在三个道格拉斯冷杉试验中，35岁时DBH存在竞争的自相关系数的趋势。平均相关系数的范围从-0.19到-0.36（补充图S2）。<strong>一般来说，第i个焦点树的残差和m（最大4）对角相邻树的表型平均值之间的Pearson相关性弱于第i个焦点树与m（最大2）行和列相邻树的平均值之间的相关性所有的性状组合，反映竞争可以变化作为焦点树和其邻居之间的距离的函数（补充图S2）</strong>。此外，35年龄DBH在山地湿润地点的平均Pearson相关性强于其他两个地点（表3;补充图S2），这可能是由于较快的直径生长（表1） 。当在聚焦树的表型值（而不是残差值）和表型手段之间计算Pearson相关系数时，获得相似的结果（即，跨组合性状和三个试验的高R2 = 0.96） （最大8）个相邻树（表3;补充图S3）。<strong>当Gould等人使用DBH和TH生长（即，12岁和35岁之间的这些性状的差异）作为反应变量时， （2011），Pearson相关系数更强，更负（结果未显示），表明随着树木变老（或更大），竞争变得更强烈</strong>。在早年，树木可以竞争水和营养，但在冠层关闭后，它们主要竞争光（brotherstone等人2011）。在我们的工作中，在CM和CSM模型中使用一阶相邻树;因此，隐含的假设是光是比水和营养物更重要的因素（Magnussen 1989）。这个假设可以被认为是合理的，因为如上所述，道格拉斯冷杉的冠状茎通常在太平洋西北地区10岁后开始（Ye和Jayawickrama 2008）。然而，在单树图或小行图设计（如本研究中使用的四树行图）中，这些资源的共享永远不可能相等，因为相互作用的植物在遗传上是不同的（Stringer等人2011）。<strong>相邻树之间的正相关表明，它们竞争力较弱，但在对其共享环境作出反应时更加合作，而负相关表明它们彼此竞争，因为一棵树的损失是另一棵树的损失。这两种类型的树被分类为两种类型的概念型，即作物基因型和竞争同种型（White et al。2007）</strong>。</p>
+
+<p>一般来说，第i个聚焦树的残差和m个一级相邻树（补充图S2）在行和列方向上的残差之间的自相关系数（表2）和Pearson相关系数的差异为小。然而，特别是在35岁时的DBH性状，这些差异遵循相同的趋势，较低的行数值比为列，除了DBH在submontane潮湿海上站点35岁，估计更小的自相关行（ 0.98）（0.27）。因此，观察到<strong>行之间的负自相关系数和残差Pearson相关系数之间比列之间的更强的趋势表明家庭间竞争（即来自不同家庭的树之间的竞争）通常比家庭内竞争更强烈（即，来自同一家庭的邻接树木之间的竞争）</strong>。然而，在道格拉斯冷杉和其他林木树种的研究结果又相当大的分歧表明，相邻树木之间的遗传相关性是否增加（Sakai et al。1968; Gould et al。2011）或减少（von Euler et al。1992; Boyden等人2008; St. Clair和Adams 1991）竞争的强度。</p>
+
+<p>当存在竞争时，<strong>它可能以残留和遗传水平存在</strong>（例如，Stringer等人2011; Brotherstoneetal。2011; Costa e Silva等人2013）。在12岁时，<strong>来自竞争模型的直接和竞争性加性遗传效应之间的相关性都是阳性的</strong>，而在35岁时，它们是阴性和强的（特别是对于DBH）。<strong>加性直接和竞争遗传效应之间的负相关表明在遗传水平上对有限资源的竞争，其中对其自身生长具有阳性遗传效应的个体平均对其邻近的生长具有负的可遗传效应</strong> -  bors（Costa e Silva et al。2013）。我们的工作是第一个应用竞争遗传模型进行基因试验的实证研究之一。因此，与其他森林研究进行比较是有限的。然而，对于DBH，本研究中估计的相关关系略低于Cappa和Cantet（2008）报道的13岁的Pinus taeda（-0.79）和3.5米×3.5米的树间距，以及Costa e Silva et al。 （2013年）为桉树（-0.92，平均2年和4年和种植间距5.0米×2.125米）。
+<strong>竞争反应的遗传基础取决于测量的性状（表达）（von Euler et al。1992）</strong>。正如我们所观察到的，在三个道格拉斯 - 冷杉试验中，<strong>在非遗传（即残留）和遗传水平上，DBH对竞争比TH更敏感</strong>。这些结果证实了来自道格拉斯冷杉（Ye and Jayawickrama 2008; Stoehr et al。2010）和其他林木物种的研究结果（Sakai等人1968; Magnussen 1989; Hannrup等人1998; Dutkowski等人2006 ）。关于森林遗传评价，<strong>Gould等（2011）建议，基于TH而不是DBH的选择可能有助于产生在不同竞争环境中具有一致性能的家庭</strong>。据报道，<strong>随着树木变老，竞争效应变得更强烈</strong>（例如，Kusnandar 2001; Stoehr et al。2010; Costa e Silva et al。2013）。在我们的研究中，我们观察到从12岁到35岁的竞争效应在三个位点的DBH和TH的去趋势表型值的普遍增加（表2和3;补充图S2），表明相互作用增加个体随时间的变化;因此，由于固有的更高的生长速率和/或更强的竞争优势，真正优越的树将比其它树发挥更好的优势（Stoehr等人，2010）。例如，去散列DBH数据的行和列的平均自相关系数在所有位点变得更负（表3）。 DBH的弱树（12岁）和强树（35岁）的树木竞争的存在也显示在补充图中。 S4用于三个试验。</p>
+
+<p>##模型比较
+<strong>当强竞争优于环境异质性（即35岁以上）时，CSM显示出比没有竞争和空间连续效应，或者单独这些效应中的任一个（即TM，CM，和SM;表4）的简单模型更好的拟合</strong>（即，更小的DIC）。唯一的例外the only exception 是在35岁的DBH在亚山人潮湿海上网站，其中CM是最适合的模型（表4）。<strong>一般说来</strong>，CSM是当竞争效应和环境异质性预期都很强时要选择模型。当存在竞争和环境空间效应时，类似的结果已经发表在作物物种（Stringer等人2011; Hunt等人2013）和林木物种（Resende等人2005和Costa e Silva等人2013）无论空间趋势是否主导竞争，反之亦然。</p>
+
+<p>然而，当竞争效应弱（例如，对于12岁时的所有性状和35岁时的TH;表3），模型的拟合在性状和年龄之间是不一致inconsistent的。对于TH在35岁时，TM是最好的在山区非常潮湿和submontane潮湿海上站点。在12岁时，TM在山麓非常潮湿的地方是DBH最好的，而在亚甲板潮湿海洋地区是TH的最好，而CM在海洋非常潮湿的地方是DBH最好的。<strong>这些结果的原因不清楚，但他们认为分析联合竞争和环境异质性效应的第一个重要步骤是确定这些效应的意义</strong>。通过模拟，Costa e Silva和Kerr（2013）比较了一个基本模型（在残差和遗传水平上不适合竞争），残差的空间自回归模型，遗传竞争模型和使用似然比检验的竞争空间模型。他们得出结论，<strong>检测正确模型的能力取决于给定生存水平的rAdAc，σ2Ac的量级和邻域内的遗传相关性水平</strong>。当rAdAc变得较低时，该能力似乎减小，对于给定量的rAdAc，σ2Ac降低，并且对于给定量的rAdAc和σ2Ac，相关性水平降低。此外，<strong>生存率的降低（从100到80％）似乎降低了检测给定遗传相关性的最适当模型的能力</strong>。在我们的研究中，在12岁时的所有性状和35岁时的TH都观察到低负（-0.07）和低至中等阳性（0.06至0.35）rAdAc值（即，在遗传水平上弱的可识别的竞争效应） ）。<strong>加性遗传相关性也相对较高（即，控制授粉与四个树行图匹配）。这些结果可能限制了确定用于联合建模这些性状的竞争和环境异质性效应的最佳模型的能力</strong>。此外，Cappa et al。 （2015a）也在一个模拟研究中得出结论，<strong>CSM的最差性能是在竞争效应弱的情况下</strong>。然而，35岁时DBH的rAdAc的强和负值（表3）确保CSM是该性状的最合适的模型。
+<strong>模型的适当选择可能受到竞争和环境效应在分析上的分离程度的影响</strong>（Durban et al。2001）。在35岁以上的情况下，由于两种过程都很强，并且被检测到在不同的空间尺度上运行，即小尺度的竞争效应和大尺度的环境异质性规模。基于竞争和环境异质性的鉴定和定量（表3总结）和DIC值（表4），我们仅保留35岁的DB以进行与同时调整竞争遗传的影响的研究相关的所有分析效应和环境异质性对方差分量和选择决策。
+##同时调整竞争和环境异质性对方差分量的影响
+表5和补充图中显示了σ2Ad，σ2Ac，rAdAc，σ2p，σ2f，σ2图，σ2b和σ2e的平均值和标准偏差。 S5。 TM产生的后验σ2Ad估计值小于从CSM对DBH估计值（从试验中的40.1％到50.6％），而σ2e估计值高于从CSM对DBH估计值（从试验中的17.9％到45.0％）。<strong>这种观察是由于竞争效应和环境异质性未完全由TM考虑</strong>。在模拟研究中，竞争优于环境趋势（即rAdAc = -0.9）和亲缘关系水平（全同胞交配设计和多树行图，即中等相关性水平）和相似的存活对于这项工作，Costa e Silva和Kerr（2013）在拟合基础模型时显示出较高的直接加性方差估计（约55％）和较低的误差方差估计（约48％）（参见Costa在Costa e Silva和Kerr 2013）。当在苏格兰的一个19岁的Sitka云杉克隆试验中研究直径时，brotherstone等人（2011）还报道了Bijma（2007）提出的简单竞争模型以及残差的AR（1）×AR（1）协方差结构后，σ2Ad增加了19.9％，σ2e减少了10.5％。在后一模型中有证据表明全球趋势，但这种影响没有正式说明。此外，来自CSM的σ2Ad的后验均值比对于DBH的SM估计的更高并且σ2e更小（表5;补充图S5）。因此，这些实证结果表明，通过<strong>不拟合竞争效应（即TM或SM），一致的降低导致σ2Ad的估计后验均值和σ2e的估计后验均值的增加</strong>（表5; S5）。由于这种性状的<strong>强遗传竞争效应（特别是当rAdAc强于-0.72时）</strong>，估计的方差分量（即σ2Ad和σ2e）中的这些变化模式可以通过负号和σAdAc的绝对值来解释相对于σ2c的小值，其给出两个记录之间的遗传协方差的表达式中的第二项比第三项更重的权重（参见Cappa和Cantet2008，p.52中的等式[26]）。然后，<strong>这些不考虑模型（即TM或SM）的（共）变量源（即σAdAc和σ2c）被吸收到误差项中并导致σ2e的增量</strong>。这种现象在多株小区场地设计中特别大（Cappa和Cantet 2008; Costa e Silva和Kerr 2013）。当将基础模型与适合竞争和空间的模型进行比较时，Costa e Silva和Kerr（2013）在比较具有和不具有拟合竞争遗传影响的模型时，通过Cappa和Cantet（2008）在火炬松试验数据中观察到类似的现象使用AR（1）×AR（1）残差结构的效果，以及Cappa等人（2015a）使用与Cappa和Cantet（2008）相同的经验数据集，当比较TMwith CMand CSM模型时。
+与来自CSM（表5;补充图S5）的估计相比，来自SM的σ2b的估计值被严重高估，这表明<strong>忽略遗传和环境竞争效应导致高估环境异质性</strong>。 Cappa et al。 （2015a）使用火炬松的经验数据集显示相同的结果，即SM产生的σ2b的估计高于CSM的。由于忽略了竞争效应，Costa e Silva和Kerr（2013）观察到了类似的趋势，相关残差效应的方差增加了大约65％（参见Costa e Silva和Kerr 2013）。
+CM产生后验σ2 Ad，σ2 Ac和σ2 p估计小于从CSM对于DBH估计的那些（对于σ2 Ad，σ2 Ac和σ2 p，从37.7至65.5％，从34.5至54.2％，从6.3至18.7％分别）。此外，来自CM的估计后验意味着rAdAc指示比从CSM估计的负相关的弱相关（表5;补充图S5）。当来自CM的估计相关性（rAdAc）较弱时，与CM和CSM的这些差异倾向于较大。例如，对于在试验山中非常潮湿的DBH，对于CM和CSM模型，估计的rAdAc分别为-0.32和-0.66（即，53.3％）。相反，对于在海洋非常湿的位点处的相同性状，这些值分别为CM和CSM的-0.72和-0.84（即，14.3％）。 因此，<strong>忽略环境异质性导致低估遗传和环境竞争效应</strong>。这些低估是最强的竞争效应（最后一列表3）。我们的结果与Durban等人报道的结果相似。 （2001），其中<strong>忽略生育率趋势导致竞争效应的低估</strong>，类似于Costa e Silva和Kerr（2013）的模拟结果（参见Costa e Silva和Kerr 2013年的图5和图6）。
+###同时调整竞争和环境异质性对选择的影响
+竞争和环境异质性可能影响遗传选择的有效性和效率。因此，从树种繁殖者的角度来看，一个相关的问题是<strong>来自TM的预测的树BV和来自CSM的预测的TBV是否导致不同的排名</strong>。在我们的研究中，<strong>这些预测的BVs之间的Spearman秩相关性是正的</strong>，并且从所有位点的DBH的中等到高（从0.58到0.95）。较低的相关值与最高σ2Ac和最高比率σ2Ac/σ2Ad直接相关，表明<strong>竞争遗传效应对TBV的强烈贡献导致排名的变化</strong>。事实上，正如我们的预期，Spearman将<strong>从TM估计的BV和来自CSM的直接BV之间的相关性高于来自CSM的TM和TBV之间的相关性</strong>。另外，来自TM和SM的BV之间的Spearman等级相关性总是非常高（从0.97到0.99，结果未显示），而在这些研究中，表明两个模型将导致类似的选择。假设100％生存和使用模拟数据与类似相关性和附加协方差矩阵的育种值（rAdAc从-0.3到-0.9和比率σ2Ac/σ2Ad = 10和50％），Costae Silvaand Kerr（2013）发现类似的Spearman来自基本模型的预测BV和来自包括竞争和空间效应的模型的TBV的相关性（参见Costa e Silva和Kerr 2013中的表3和4）。虽然我们的实证研究显示从TM的预测树BV和CSM的TBV之间的高相关性，绝​​对值改变。考虑到高和负的竞争BV，<strong>所选个体的TBV（对其群体的总遗传贡献）对于最简单的模型（即，TM）被高估</strong>。当在35岁时计算DBH的预测树BV和来自CSM的TBV之间的差异时，它们的分布非常偏斜，具有许多小的和大的正值（结果未显示）。这些结果证实了<strong>当森林遗传试验中存在遗传竞争和环境异质性时，目前在森林树木育种计划中使用的简单模型的低效性</strong>，并且强调CSM提供了一个更现实的预测未来性能，如由Brotherstone等人et al。 （2011）。此外，<strong>来自TM和CSM的前10％个体中的排名显示出差异</strong>。来自CSM的TM和TBV的BV之间的选择的树的前10％内的共同个体的比例在35岁时对于DBH从45.9变化到88.9％。这些差异表明更简单的模型可能对选择决定具有实质性直接影响和遗传进展。
+对沿海道格拉斯冷杉不列颠哥伦比亚树改良计划和结论的影响
+在不列颠哥伦比亚省，增长预测和可允许切割确定的立场量预测基于站点指数，其由优势树的高度确定。因此，我们基于高度进行早期选择，并将估计（或预测）的高度增益与旋转时的投影立体积相结合（Xie and Yanchuk 2003）。由于TH没有受到竞争的强烈影响，竞争对立体投影的影响通过早期选择和高度选择被最小化。间接证据也来自我们实现的增益试验，其中12岁时的估计收益与基于后代测试的观察到的收益一致（Stoehr等人，2010）。从当前研究中得出的结论和影响的总结如下：
+已经表明，竞争和环境异质性效应存在于相同的森林遗传道格拉斯杉木后代试验中。
+2.强烈的空间变异模式（主要是大规模的空间变异）产生正相关，隐藏了三个道格拉斯 - 冷杉进展试验中的竞争效应。
+虽然DBH在35岁时在遗传和环境水平上显示出强烈的竞争效应，但这些效应对于TH是弱的。
+通常，具有强竞争遗传效应，CSM给出了比更简单的模型（即TM，CM和SM）更好的拟合（更低的DIC值）。因此，我们建议在森林树木的分散参数和BVs的预测中使用CSMin。
+忽略遗传和环境竞争效应导致高估环境异质性，即SM产生比CSM更高的随机结方差估计值。
+忽略环境异质性导致低估遗传和环境竞争效应，即，CM产生较小的直接和竞争加性相关（从6.3到53.3％）和环境竞争差异估计（从6.3到29.4％）比CSM。
+7.来自CSM的TM和TBV估计的BV之间的DBH的Spearman相关性为中等至高（从0.58至0.95）。
+最后，这个经验实例证实了在Cappa等人的研究中获得的结果。 （2015a）使用火炬松后代试验的模拟和真实数据，并显示了同时会计竞争和空间效应的重要性，以了解两种现象的动态及其对遗传参数和预测BV的估计的影响在单森林遗传试验中。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/diallel/carson-1975-sca%E7%9A%84%E7%9B%B8%E5%AF%B9%E9%87%8D%E8%A6%81%E6%80%A7/" data-toggle="tooltip" data-placement="top" title="Carson-1975-SCA的相对重要性">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%AB%9E%E4%BA%89/cappa-2008-%E7%AB%9E%E4%BA%89/" data-toggle="tooltip" data-placement="top" title="Cappa-2008-竞争">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

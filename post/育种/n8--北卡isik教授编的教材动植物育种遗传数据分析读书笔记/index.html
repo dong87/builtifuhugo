@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>N8--北卡Isik教授编的教材《动植物育种遗传数据分析》读书笔记</title>
+  <meta property="og:title" content="N8--北卡Isik教授编的教材《动植物育种遗传数据分析》读书笔记" />
+  <meta name="twitter:title" content="N8--北卡Isik教授编的教材《动植物育种遗传数据分析》读书笔记" />
+  <meta name="description" content="Genetic Data Analysis for Plant and Animal Breeding
+  p.12 !I (整数变量) !A (字母编码变量) 树高等性状是响应变量，什么也不加
+ p.13 命令执行文件 (.as)有特殊的格式要求：
+ 整体均值或截距不会自动拟合，如果需要的话应该用mu。 units的意思会在第七章中介绍；如果固定和随机部分写在多行，应该用逗号，表示模型在后边继续。但是注意随机效应和残差方差结构间是没有逗号隔开的。 这里也讲到巢式与非巢式的区别（Hierarchical （Nested） and Factorial）：每个种源的母本是独特的，所以要嵌入种源。但是由于每个母本给的编码是独特的而且没有在其他种源中有重复，故而我们不需要在模型中用巢式代码了。 如果命令执行文件和数据在同一个文件夹中，直接输入文件名就可以了；而如果不在一个文件夹中，则要用!FOLDER控制符给出数据所在的路径，比如!FOLDER V:\Book\Book1_Examples\data。 建模是一个循环往复的过程，所以最好开始跑一个简单的，看看输出结果有没有什么问题，然后往模型中一次加一个项目。  p.14数据定义部分。
+ 定义的标签要和数据文件中的一致，语法格式是空格&#43;标签。 根据变量类型，因子变量用 *,!I,!A或水平的个数；协变量或响应变量空着或指定用1。 一行上可以放多个变量的定义。 常用的标记类型： *或n用于因子用顺序值编码，比如小区编码作1-12，可以用plot *或 plot 12。（如果用！I编码是有问题的！！） !A指的是因子用字母编码，比如我们有20个地点编码作“NC11”, “FL09”, 等,应该用: Site !A。你可能会在！A后给出水平的个数，但这不是必需的，除非水平数大于1000。如果大于1000，在!A后列一个近似的个数（要大于100）。 !I 因子是用数字编码的，但不是顺序整数，比如区组编码作11, 24, 49, 80，这时我们应该用!I。和！A类似，超过1000个水平就要列出实际的水平数，比如block !I 1200。 !CSKIP *c*，用于跳过不需要分析的数据。 !LL *c*，ASReml自定义把水平名字超过16个字符的截短，但如果不想截短的话，要加上!LL c，但是无论加不加这个控制符，最多20个字符才长度。 !SORT，加在因子的后面，强制对因子按水平排序。 !FILTER v [ !SELECT n] [!EXCLUDE n] ，类似R中的subset()。  p.">
+  <meta property="og:description" content="Genetic Data Analysis for Plant and Animal Breeding
+  p.12 !I (整数变量) !A (字母编码变量) 树高等性状是响应变量，什么也不加
+ p.13 命令执行文件 (.as)有特殊的格式要求：
+ 整体均值或截距不会自动拟合，如果需要的话应该用mu。 units的意思会在第七章中介绍；如果固定和随机部分写在多行，应该用逗号，表示模型在后边继续。但是注意随机效应和残差方差结构间是没有逗号隔开的。 这里也讲到巢式与非巢式的区别（Hierarchical （Nested） and Factorial）：每个种源的母本是独特的，所以要嵌入种源。但是由于每个母本给的编码是独特的而且没有在其他种源中有重复，故而我们不需要在模型中用巢式代码了。 如果命令执行文件和数据在同一个文件夹中，直接输入文件名就可以了；而如果不在一个文件夹中，则要用!FOLDER控制符给出数据所在的路径，比如!FOLDER V:\Book\Book1_Examples\data。 建模是一个循环往复的过程，所以最好开始跑一个简单的，看看输出结果有没有什么问题，然后往模型中一次加一个项目。  p.14数据定义部分。
+ 定义的标签要和数据文件中的一致，语法格式是空格&#43;标签。 根据变量类型，因子变量用 *,!I,!A或水平的个数；协变量或响应变量空着或指定用1。 一行上可以放多个变量的定义。 常用的标记类型： *或n用于因子用顺序值编码，比如小区编码作1-12，可以用plot *或 plot 12。（如果用！I编码是有问题的！！） !A指的是因子用字母编码，比如我们有20个地点编码作“NC11”, “FL09”, 等,应该用: Site !A。你可能会在！A后给出水平的个数，但这不是必需的，除非水平数大于1000。如果大于1000，在!A后列一个近似的个数（要大于100）。 !I 因子是用数字编码的，但不是顺序整数，比如区组编码作11, 24, 49, 80，这时我们应该用!I。和！A类似，超过1000个水平就要列出实际的水平数，比如block !I 1200。 !CSKIP *c*，用于跳过不需要分析的数据。 !LL *c*，ASReml自定义把水平名字超过16个字符的截短，但如果不想截短的话，要加上!LL c，但是无论加不加这个控制符，最多20个字符才长度。 !SORT，加在因子的后面，强制对因子按水平排序。 !FILTER v [ !SELECT n] [!EXCLUDE n] ，类似R中的subset()。  p.">
+  <meta name="twitter:description" content="Genetic Data Analysis for Plant and Animal Breeding
+  p.12 !I (整数变量) !A (字母编码变量) 树高等性状是响应变量，什么也不加
+ p.13 命令执行文件 (.as)有特殊的格式要求：
+ 整体均值或截距不会自动拟合，如果需要的话应该用mu。 units的意思会在第七章中介绍；如果固定和随机部分写在多行，应该用逗号，表示模型在后边继 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E8%82%B2%E7%A7%8D/n8--%E5%8C%97%E5%8D%A1isik%E6%95%99%E6%8E%88%E7%BC%96%E7%9A%84%E6%95%99%E6%9D%90%E5%8A%A8%E6%A4%8D%E7%89%A9%E8%82%B2%E7%A7%8D%E9%81%97%E4%BC%A0%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E8%82%B2%E7%A7%8D/n8--%E5%8C%97%E5%8D%A1isik%E6%95%99%E6%8E%88%E7%BC%96%E7%9A%84%E6%95%99%E6%9D%90%E5%8A%A8%E6%A4%8D%E7%89%A9%E8%82%B2%E7%A7%8D%E9%81%97%E4%BC%A0%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>N8--北卡Isik教授编的教材《动植物育种遗传数据分析》读书笔记</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (234 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>N8--北卡Isik教授编的教材《动植物育种遗传数据分析》读书笔记</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (234 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Genetic   Data    Analysis for Plant and Animal Breeding</p>
+</blockquote>
+
+<ul>
+<li><p>p.12
+!I (整数变量)
+!A (字母编码变量)
+树高等性状是响应变量，什么也不加</p></li>
+
+<li><p>p.13
+命令执行文件 (.as)有特殊的格式要求：</p>
+
+<ul>
+<li>整体均值或截距不会自动拟合，如果需要的话应该用<code>mu</code>。</li>
+<li><code>units</code>的意思会在第七章中介绍；如果固定和随机部分写在多行，应该用逗号，表示模型在后边继续。但是注意随机效应和残差方差结构间是没有逗号隔开的。</li>
+<li>这里也讲到巢式与非巢式的区别（<a href="http://www.jianshu.com/p/39576061fd8c">Hierarchical （Nested） and Factorial</a>）：每个种源的母本是独特的，所以要嵌入种源。但是由于每个母本给的编码是独特的而且没有在其他种源中有重复，故而我们不需要在模型中用巢式代码了。</li>
+<li>如果命令执行文件和数据在同一个文件夹中，直接输入文件名就可以了；而如果不在一个文件夹中，则要用!FOLDER控制符给出数据所在的路径，比如<code>!FOLDER V:\Book\Book1_Examples\data</code>。</li>
+<li>建模是一个循环往复的过程，所以最好开始跑一个简单的，看看输出结果有没有什么问题，然后往模型中一次加一个项目。</li>
+</ul></li>
+
+<li><p>p.14数据定义部分。</p>
+
+<ul>
+<li>定义的标签要和数据文件中的一致，语法格式是<code>空格+标签</code>。</li>
+<li>根据变量类型，因子变量用 <code>*,!I,!A</code>或水平的个数；协变量或响应变量空着或指定用<code>1</code>。</li>
+<li>一行上可以放多个变量的定义。</li>
+<li>常用的标记类型：</li>
+<li><code>*或n</code>用于因子用顺序值编码，比如小区编码作1-12，可以用plot *或 plot 12。（如果用！I编码是有问题的！！）</li>
+<li>!A指的是因子用字母编码，比如我们有20个地点编码作“NC11”, “FL09”, 等,应该用: Site !A。你可能会在！A后给出水平的个数，但这不是必需的，除非水平数大于1000。如果大于1000，在!A后列一个近似的个数（要大于100）。</li>
+<li>!I 因子是用数字编码的，但不是顺序整数，比如区组编码作11, 24, 49, 80，这时我们应该用!I。和！A类似，超过1000个水平就要列出实际的水平数，比如block !I 1200。</li>
+<li>!CSKIP *c*，用于跳过不需要分析的数据。</li>
+<li>!LL *c*，ASReml自定义把水平名字超过16个字符的截短，但如果不想截短的话，要加上!LL c，但是无论加不加这个控制符，最多20个字符才长度。</li>
+<li>!SORT，加在因子的后面，强制对因子按水平排序。</li>
+<li>!FILTER v [ !SELECT n] [!EXCLUDE n] ，类似<code>R</code>中的<code>subset()</code>。</li>
+</ul></li>
+
+<li><p>p.19工作控制符。</p>
+
+<ul>
+<li>!DOPATH n或DOPART n，多个模型时可以选择性地运行某一个。</li>
+<li>!MAXIT n ，默认10个。log-likelihood值&lt;0.002及单个方差变化小于1%，模型收敛。</li>
+<li>!CONTINUE ，如果不收敛，接着最近一次的参数运行。</li>
+<li>!DISPLAY n 画图。</li>
+<li>!OUTFOLDER [folder path ] 结果输出到非工作路径。必须放在工作文件的首行。</li>
+</ul></li>
+
+<li><p>p.22模型项目</p>
+
+<ul>
+<li>默认的随机效应和残差项的方差结构是idv（identical variance）</li>
+<li>at(site).block，给每个地点的区组指定一个独特的方差组分。at(site,i).block 给某个地点的区组指定一个独特的方差组分。</li>
+</ul></li>
+
+<li><p>p.41 Asreml中的循环。</p>
+
+<ul>
+<li>多性状，
+<code>
+!CYCLE height diameter volume
+$I ~ mu !r block*female 
+</code></li>
+<li>多个模型，
+<code>
+!CYCLE 1:3
+Title: Example of using CYCLE and DOPATH qualifiers
+treeid !A female !I male *prov !I block !I plot !Iheight diameter volume
+!OUTFOLDER V:\Book\Book1_Examples\dataPine_provenance.csv !SKIP 1 !DOPATH $I
+!PATH 1 #no block effect
+height ~ mu prov !r female
+!PATH 2 #block effect
+height ~ mu prov !r block female
+!PATH 3 # block and plot effects
+height ~ mu prov !r block*female
+</code></li>
+<li>多性状&amp;多模型
+<code>
+!CYCLE height;1 height;2 height;3 diameter;1 diameter;2 diameter;3volume;1 volume;2 volume;3
+Title: Example of CYCLE with two substitutions
+treeid !A female !I male !Iprov !I block !I plot !Iheight diameter volume !*10
+!FOLDER V:\Book\Book1_Examples\dataPine_provenance.csv !SKIP 1 !DOPATH $J
+!PATH 1 #no block effect
+$I ~ mu prov !r female
+!PATH 2 #block effect
+$I ~ mu prov !r block female
+!PATH 3 #block and provenance effects
+$I ~ mu prov !r block*female 
+</code>
+= 数据集小或者多性状模型，不容易收敛，用一些不同的方差-协方差初始值重复分析是一个好办法</li>
+</ul></li>
+</ul>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/n9--%E5%A4%9A%E4%BB%BB%E5%8A%A1%E9%AB%98%E6%96%AF%E8%BF%87%E7%A8%8B%E6%8E%A8%E6%96%AD%E5%A4%9A%E6%80%A7%E7%8A%B6%E5%92%8C%E5%A4%9A%E7%82%B9%E8%AF%95%E9%AA%8C%E4%B8%AD%E7%9A%84%E7%BC%BA%E5%A4%B1%E6%95%B0%E6%8D%AE/" data-toggle="tooltip" data-placement="top" title="N9--多任务高斯过程推断多性状和多点试验中的缺失数据">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/bayesian/n6--%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" data-toggle="tooltip" data-placement="top" title="N6--贝叶斯数据分析">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

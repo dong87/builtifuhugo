@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Habier2010-遗传关系信息对育种值的影响</title>
+  <meta property="og:title" content="Habier2010-遗传关系信息对育种值的影响" />
+  <meta name="twitter:title" content="Habier2010-遗传关系信息对育种值的影响" />
+  <meta name="description" content="Habier D, Tetens J, Seefried F-R, et al (2010) The impact of genetic relationship information on genomic breeding values in German Holstein cattle. Genet Sel Evol 42:5. doi: 10.1186&frasl;1297-9686-42-5
+ 抽象 背景 已经证明了单核苷酸多态性（SNPs）捕获的添加遗传关系对基因组育种值（GEBV）的准确性的影响，但最近对荷斯坦人群获得的数据的研究忽视了这一事实。然而，由于连锁不平衡（LD）的这种影响和GEBVs的准确性，这在几代人中相当持续，因此必须知道实施未来的育种计划。
+材料和方法 用于调查这些问题的数据集包括3,863名德国霍尔斯坦公牛，基因型为54,001个SNP，其系数和产妇偏差为牛奶产量，脂肪产量，蛋白质产量和体细胞评分。交叉验证方法适用，其中，所述最大附加遗传关系（一个最大值在训练和验证公牛之间）被控制。GEBV通过贝叶斯模型平均法（BayesB）和使用基因组关系矩阵（G-BLUP）的动物模型估计。通过使用GEBV的精度和基于谱系的BLUP-EBV的准确性的回归方法来估计由LD引起的GEBV的准确性。
+结果 Bayes B和G-BLUP获得的GEBVs的精度随着分析的所有性状的最大值的降低而降低。G-BLUP的精度衰减趋于较大，训练尺寸较小。贝叶斯B和G-BLUP之间的差异由于LD的准确性而变得明显，其中BayesB明显优于G-BLUP，训练规模越来越大。
+结论 当前选择候选人的GEBV精度因相对于训练数据的不同加性遗传关系而变化。未来候选人的准确度可能低于以前的研究报告，因为在应用GEBV选择时，近亲的信息将不可用。贝叶斯模型平均方法利用LD信息比G-BLUP好得多，因此是最有希望的方法。交叉验证应考虑数据中的家族结构，以便在动物和植物育种中实现基于长期基因的育种计划。
+背景 单核苷酸多态性（SNPs）的高通量基因分型的发展增强了使用全基因组密度标记数据进行家畜遗传改良。Meuwissen等 [ 1 ]提出了两步法预测基因组育种价值（GEBVs）：首先，①使用表型为数量性状（训练）的基因型个体估计SNP效应，然后②通过仅使用仅预测任何基因型个体的GEBV其SNP基因型和估计的SNP效应。这种对GEBVs的预测和选择被称为基因组选择（GS）。
+牛饲养者接受GS，从而减少产生间隔的潜力主要取决于GEBV的准确性。假设没有模拟分离，仅当SNP和数量性状基因座（QTL）之间存在连锁不平衡（LD）时，GEBV准确度高于标准基于谱系的BLUP-EBV的准确度。LD在这里被定义为可用数据集中所有个体的不同位点处的等位基因状态之间的依赖关系。在连锁平衡的情况下，GEBV的准确度不一定为零，但随着模型中拟合的SNP数量的增加，将接近基于谱系的BLUP-EBV的准确性。原因是，如Habier等人所证实的，SNP捕获添加遗传关系，而不考虑人群中LD的量。[ 2 ]和Gianola等人 [ 3 ]。在这些研究中以及在这里，加性遗传关系被定义为Malécot给出的两倍的coancestry系数[ 4 ]。请注意，这并不要求培训人员是相关的，只有GEBV估计的个人才与培训人员有关。这在本文的附加文件1中有详细的说明。在实践中，存在LD在牛种群[ 5，6，7 ]并因此两种类型的信息被用来估计GEBVs：LD和添加剂的亲缘关系。如果建立分离，则可以使用第三种类型的信息。然而，在这项研究中并没有模拟出分离。GEBVs的几代精度的持久性，并且因此GS的潜力，以减少未来表型[ 8，9 ]，在很大程度上取决于LD的量，这在远交种群来源于历史突变和漂移，共分离，迁移，选择和最近的漂移。在模拟中，Habier等 [ 2 ]估计仅由于LD（简而言之，LD的准确性）的GEBV的准确性，其显着小于由训练个体的后代的LD和加性遗传关系导致的GEBV精度，但是几代人相当持久。此外，通过用于估计SNP效应的统计学方法利用LD信息的能力各不相同。Meuwissen等 [ 1 ]提出了一种称为贝叶斯B的贝叶斯模型平均方法，其仅适用于马尔可夫链蒙特卡罗（MCMC）算法的每轮可用SNP中的一小部分，并且使用t分布式先验模拟SNP效应。他们进一步使用脊背回归BLUP（RR-BLUP），其适合所有SNP效应与正常的先验。Habier等人 [ 2 ]表明，贝叶斯B比RR-BLUP更能够利用LD信息，较少受加性遗传关系的影响。从真牛数据GEBVs的精度已经报道了来自北美[荷斯坦黑白花人口10 ]，澳大利亚，荷兰和新西兰[ 11，12 ]。在这些研究中，GEBV的牛奶性能，生育力和功能特征的准确度范围为0.">
+  <meta property="og:description" content="Habier D, Tetens J, Seefried F-R, et al (2010) The impact of genetic relationship information on genomic breeding values in German Holstein cattle. Genet Sel Evol 42:5. doi: 10.1186&frasl;1297-9686-42-5
+ 抽象 背景 已经证明了单核苷酸多态性（SNPs）捕获的添加遗传关系对基因组育种值（GEBV）的准确性的影响，但最近对荷斯坦人群获得的数据的研究忽视了这一事实。然而，由于连锁不平衡（LD）的这种影响和GEBVs的准确性，这在几代人中相当持续，因此必须知道实施未来的育种计划。
+材料和方法 用于调查这些问题的数据集包括3,863名德国霍尔斯坦公牛，基因型为54,001个SNP，其系数和产妇偏差为牛奶产量，脂肪产量，蛋白质产量和体细胞评分。交叉验证方法适用，其中，所述最大附加遗传关系（一个最大值在训练和验证公牛之间）被控制。GEBV通过贝叶斯模型平均法（BayesB）和使用基因组关系矩阵（G-BLUP）的动物模型估计。通过使用GEBV的精度和基于谱系的BLUP-EBV的准确性的回归方法来估计由LD引起的GEBV的准确性。
+结果 Bayes B和G-BLUP获得的GEBVs的精度随着分析的所有性状的最大值的降低而降低。G-BLUP的精度衰减趋于较大，训练尺寸较小。贝叶斯B和G-BLUP之间的差异由于LD的准确性而变得明显，其中BayesB明显优于G-BLUP，训练规模越来越大。
+结论 当前选择候选人的GEBV精度因相对于训练数据的不同加性遗传关系而变化。未来候选人的准确度可能低于以前的研究报告，因为在应用GEBV选择时，近亲的信息将不可用。贝叶斯模型平均方法利用LD信息比G-BLUP好得多，因此是最有希望的方法。交叉验证应考虑数据中的家族结构，以便在动物和植物育种中实现基于长期基因的育种计划。
+背景 单核苷酸多态性（SNPs）的高通量基因分型的发展增强了使用全基因组密度标记数据进行家畜遗传改良。Meuwissen等 [ 1 ]提出了两步法预测基因组育种价值（GEBVs）：首先，①使用表型为数量性状（训练）的基因型个体估计SNP效应，然后②通过仅使用仅预测任何基因型个体的GEBV其SNP基因型和估计的SNP效应。这种对GEBVs的预测和选择被称为基因组选择（GS）。
+牛饲养者接受GS，从而减少产生间隔的潜力主要取决于GEBV的准确性。假设没有模拟分离，仅当SNP和数量性状基因座（QTL）之间存在连锁不平衡（LD）时，GEBV准确度高于标准基于谱系的BLUP-EBV的准确度。LD在这里被定义为可用数据集中所有个体的不同位点处的等位基因状态之间的依赖关系。在连锁平衡的情况下，GEBV的准确度不一定为零，但随着模型中拟合的SNP数量的增加，将接近基于谱系的BLUP-EBV的准确性。原因是，如Habier等人所证实的，SNP捕获添加遗传关系，而不考虑人群中LD的量。[ 2 ]和Gianola等人 [ 3 ]。在这些研究中以及在这里，加性遗传关系被定义为Malécot给出的两倍的coancestry系数[ 4 ]。请注意，这并不要求培训人员是相关的，只有GEBV估计的个人才与培训人员有关。这在本文的附加文件1中有详细的说明。在实践中，存在LD在牛种群[ 5，6，7 ]并因此两种类型的信息被用来估计GEBVs：LD和添加剂的亲缘关系。如果建立分离，则可以使用第三种类型的信息。然而，在这项研究中并没有模拟出分离。GEBVs的几代精度的持久性，并且因此GS的潜力，以减少未来表型[ 8，9 ]，在很大程度上取决于LD的量，这在远交种群来源于历史突变和漂移，共分离，迁移，选择和最近的漂移。在模拟中，Habier等 [ 2 ]估计仅由于LD（简而言之，LD的准确性）的GEBV的准确性，其显着小于由训练个体的后代的LD和加性遗传关系导致的GEBV精度，但是几代人相当持久。此外，通过用于估计SNP效应的统计学方法利用LD信息的能力各不相同。Meuwissen等 [ 1 ]提出了一种称为贝叶斯B的贝叶斯模型平均方法，其仅适用于马尔可夫链蒙特卡罗（MCMC）算法的每轮可用SNP中的一小部分，并且使用t分布式先验模拟SNP效应。他们进一步使用脊背回归BLUP（RR-BLUP），其适合所有SNP效应与正常的先验。Habier等人 [ 2 ]表明，贝叶斯B比RR-BLUP更能够利用LD信息，较少受加性遗传关系的影响。从真牛数据GEBVs的精度已经报道了来自北美[荷斯坦黑白花人口10 ]，澳大利亚，荷兰和新西兰[ 11，12 ]。在这些研究中，GEBV的牛奶性能，生育力和功能特征的准确度范围为0.">
+  <meta name="twitter:description" content="Habier D, Tetens J, Seefried F-R, et al (2010) The impact of genetic relationship information on genomic breeding values in German Holstein cattle. Genet Sel Evol 42:5. doi: …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/gs/habier2010-%E9%81%97%E4%BC%A0%E5%85%B3%E7%B3%BB%E4%BF%A1%E6%81%AF%E5%AF%B9%E8%82%B2%E7%A7%8D%E5%80%BC%E7%9A%84%E5%BD%B1%E5%93%8D/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/gs/habier2010-%E9%81%97%E4%BC%A0%E5%85%B3%E7%B3%BB%E4%BF%A1%E6%81%AF%E5%AF%B9%E8%82%B2%E7%A7%8D%E5%80%BC%E7%9A%84%E5%BD%B1%E5%93%8D/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Habier2010-遗传关系信息对育种值的影响</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (79 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Habier2010-遗传关系信息对育种值的影响</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (79 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Habier D, Tetens J, Seefried F-R, et al (2010) The impact of genetic relationship information on genomic breeding values in German Holstein cattle. Genet Sel Evol 42:5. doi: 10.<sup>1186</sup>&frasl;<sub>1297</sub>-9686-42-5</p>
+</blockquote>
+
+<h1 id="抽象">抽象</h1>
+
+<p>背景
+已经证明了单核苷酸多态性（SNPs）捕获的添加遗传关系对基因组育种值（GEBV）的准确性的影响，但最近对荷斯坦人群获得的数据的研究忽视了这一事实。然而，由于连锁不平衡（LD）的这种影响和GEBVs的准确性，这在几代人中相当持续，因此必须知道实施未来的育种计划。</p>
+
+<p>材料和方法
+用于调查这些问题的数据集包括3,863名德国霍尔斯坦公牛，基因型为54,001个SNP，其系数和产妇偏差为牛奶产量，脂肪产量，蛋白质产量和体细胞评分。交叉验证方法适用，其中，所述最大附加遗传关系（一个最大值在训练和验证公牛之间）被控制。GEBV通过贝叶斯模型平均法（BayesB）和使用基因组关系矩阵（G-BLUP）的动物模型估计。通过使用GEBV的精度和基于谱系的BLUP-EBV的准确性的回归方法来估计由LD引起的GEBV的准确性。</p>
+
+<p>结果
+Bayes B和G-BLUP获得的GEBVs的精度随着分析的所有性状的最大值的降低而降低。G-BLUP的精度衰减趋于较大，训练尺寸较小。贝叶斯B和G-BLUP之间的差异由于LD的准确性而变得明显，其中BayesB明显优于G-BLUP，训练规模越来越大。</p>
+
+<p>结论
+当前选择候选人的GEBV精度因相对于训练数据的不同加性遗传关系而变化。未来候选人的准确度可能低于以前的研究报告，因为在应用GEBV选择时，近亲的信息将不可用。贝叶斯模型平均方法利用LD信息比G-BLUP好得多，因此是最有希望的方法。交叉验证应考虑数据中的家族结构，以便在动物和植物育种中实现基于长期基因的育种计划。</p>
+
+<h1 id="背景">背景</h1>
+
+<p>单核苷酸多态性（SNPs）的高通量基因分型的发展增强了使用全基因组密度标记数据进行家畜遗传改良。Meuwissen等 [ 1 ]提出了<strong>两步法</strong>预测基因组育种价值（GEBVs）：首先，①使用表型为数量性状（训练）的基因型个体估计SNP效应，然后②通过仅使用仅预测任何基因型个体的GEBV其SNP基因型和估计的SNP效应。这种对GEBVs的预测和选择被称为基因组选择（GS）。</p>
+
+<p>牛饲养者接受GS，从而<strong>减少产生间隔的潜力主要取决于GEBV的准确性</strong>。<strong>假设没有模拟分离，仅当SNP和数量性状基因座（QTL）之间存在连锁不平衡（LD）时，GEBV准确度高于标准基于谱系的BLUP-EBV的准确度</strong>。LD在这里被定义为可用数据集中所有个体的不同位点处的等位基因状态之间的依赖关系。<strong>在连锁平衡的情况下，GEBV的准确度不一定为零，但随着模型中拟合的SNP数量的增加，将接近基于谱系的BLUP-EBV的准确性</strong>。原因是，如Habier等人所证实的，<strong>SNP捕获添加遗传关系，而不考虑人群中LD的量</strong>。[ 2 ]和Gianola等人 [ 3 ]。在这些研究中以及在这里，加<strong>性遗传关系被定义为Malécot给出的两倍的coancestry系数</strong>[ 4 ]。请注意，这并不要求培训人员是相关的，只有GEBV估计的个人才与培训人员有关。这在本文的附加文件1中有详细的说明。在实践中，存在LD在牛种群[ 5，6，7 ]并因此两种类型的信息被用来估计GEBVs：LD和添加剂的亲缘关系。如果建立分离，则可以使用第三种类型的信息。然而，在这项研究中并没有模拟出分离。<strong>GEBVs的几代精度的持久性，并且因此GS的潜力，以减少未来表型[ 8，9 ]，在很大程度上取决于LD的量</strong>，这在远交种群来源于历史突变和漂移，共分离，迁移，选择和最近的漂移。在模拟中，Habier等 [ 2 ]估计仅由于LD（简而言之，LD的准确性）的GEBV的准确性，其显着小于由训练个体的后代的LD和加性遗传关系导致的GEBV精度，但是几代人相当持久。此外，通过用于估计SNP效应的统计学方法利用LD信息的能力各不相同。Meuwissen等 [ 1 ]提出了一种称为贝叶斯B的贝叶斯模型平均方法，其仅适用于马尔可夫链蒙特卡罗（MCMC）算法的每轮可用SNP中的一小部分，并且使用t分布式先验模拟SNP效应。他们进一步使用脊背回归BLUP（RR-BLUP），其适合所有SNP效应与正常的先验。Habier等人 [ 2 ]表明，贝<strong>叶斯B比RR-BLUP更能够利用LD信息</strong>，较少受加性遗传关系的影响。从真牛数据GEBVs的精度已经报道了来自北美[荷斯坦黑白花人口10 ]，澳大利亚，荷兰和新西兰[ 11，12 ]。在这些研究中，GEBV的牛奶性能，生育力和功能特征的<strong>准确度范围为0.63至0.84</strong>，并且<strong>取决于训练数据的大小，遗传力和SNP密度</strong>。这些精度确认那些在模拟中发现[ 1，2，13，14 ]相当不错，但相比于只适合可用的SNP如BayesB的一小部分的方法RR-BLUP只稍微逊色。VanRaden等 [ 10 ]和Hayes等人 [ 12 ]得出结论，与大多数模拟结果不同，只有少数QTL具有很大的效应，许多具有很小的效应有助于遗传变异。然而，这些研究并没有显示GEBV准确性对加性遗传关系的依赖性，这是训练中的亲属数量，与培养个体的关系程度[ 2 ]和遗传力的函数。因此，<strong>训练尺寸减小的精度较低[ 10]可能是培训中亲属数量较少的结果</strong>，这意味着由于LD和GS方法获得更多持久的准确性，最有可能利用LD信息仍然需要对真实的牛数据进行评估。更重要的是，<strong>必须知道GEBV准确度对加性遗传关系的依赖性以及由于LD引起的准确性</strong>，因为开发未来的育种计划，因为当GEBV应用于选择时，后代进行数量性状测试的亲属可能不可用动物早期的生命。本研究的目的是<strong>分析训练和验证数据集之间的加性遗传关系对GEBV的准确性的影响</strong>，并估计在德国荷斯坦弗里斯兰人群中LD的准确性。因此，估计了当前和未来选择候选人以及与人口无关的个人的GEBV的准确性。此外，基于LD的准确性，BayesB和RR-BLUP的比较将显示哪种统计模型有可能减少未来的表型。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%AB%9E%E4%BA%89/hadasch2017/" data-toggle="tooltip" data-placement="top" title="Hadasch2017">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/gwaze-2001-%E7%81%AB%E7%82%AC%E6%9D%BE-%E7%94%9F%E9%95%BF%E6%9D%90%E6%80%A7%E5%8F%82%E6%95%B0/" data-toggle="tooltip" data-placement="top" title="Gwaze-2001-火炬松-生长材性参数">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

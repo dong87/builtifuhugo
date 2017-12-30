@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Hadasch2017</title>
+  <meta property="og:title" content="Hadasch2017" />
+  <meta name="twitter:title" content="Hadasch2017" />
+  <meta name="description" content="Hadasch S, Piepho H P, Skaracis G N. 2017. Evaluating the competitive ability of durum wheat varieties. (i): 1–35.
+ 摘要当两个品种在邻近地块种植时，竞争资源如营养，水和太阳能。竞争中的两个品种的表现取决于他们的竞争能力，包括（i）各种品种抵御另一品种的抑制能力，（ii）抑制其他品种的能力。在本文中，使用线性混合模型来评估（i）和（ii）的竞争能力。此外，确定两个竞争品种的协同效应的措施，这表明是否提出了两个竞争品种的相互作用。为了说明，我们使用2006 - 2007年和2007 - 2008年期间收集的六个硬质小麦品种的收获数据，使用分割块设计，提供所有成对的竞争品种。通过提出的模型估算竞争能力可以证明有助于开发各种混合物的使用。这些混合物被证明能够在不同作物中竞争，甚至超过单一栽培。
+缩写： - 核心思想： - 通过在邻近地块种植小麦品种进行竞争评估 - 品种的竞争能力使用线性混合模型进行分类 - 使用混合模型，我们提出了一种测试两个品种的相互作用的措施 - 竞争能力可以用于鉴定可以在各种混合物中生长的品种
+引言当相邻地块生长不同的基因型竞争太阳能和土壤元素时，竞争是两大关键，对生长和发育至关重要。几位研究人员提到了燕麦和大麦（Aastveit等，1989），马铃薯（Connolly等1993），谷物玉米（David et al。2001），甜菜（B¨šchse2002）和小麦（Triticum aestivum） （Kempton等人，1986; Baker和Rossnagel 1988; Goldringer等人1994; Talbot等人1995; Clarke等人1998）。一般来说，作物的竞争发生在目标品种与杂草竞争时（Keddy et al。1994; Galon et al。2016; Jacob et al。2016），或者当目标品种与各种相同的品种竞争时（Baron et al 2015）。在Goldberg和Landa（1991）和Jacob等人（2016年），各种竞争能力被认为包括抑制其他品种（竞争效应）的能力和抵御相邻地块（竞争反应）的抑制能力。为了调查一组目标品种的竞争能力，这些可以在相邻的地块种植到一组竞争对手或不同密度的同一竞争对手。这种实验可以使用两因素布局进行，其中一个因素代表目标品种，另一个因素代表竞争对手。为了解释实验场地的空间效应，实验通常被设计为分块（条纹图）设计（Jacob等人，2016; Zerner等，2016）。在这样的设计中，杂草种类或与目标品种相同的物种可以用作竞争对手。在与杂草竞争的分析中，目标品种竞争能力（竞争效应）的不同测度，从回归斜率（Goldberg和Werner 1983）到调整平均值（Baron et al。2015; Jacob et al。2016）线性混合模型，已被提出。为了估计给定品种的竞争能力，目前还没有提出这样的措施。本文通过线性混合模型对六种不同硬质小麦品种（Triticum turgidum var durum）的竞争效应和竞争反应进行了评估。为此，我们使用以分裂块设计生长的六种不同的硬粒小麦品种（Triticum turgidum var durum）的产量数据。不同品种的竞争效应和竞争反应估计为品种竞争者组合调整方式的差异。此外，使用基于情节高度的协变量来调整高度差异的估计方法。在分析中考虑协变量时，由于高度差异引起的任何差异，对估计的竞争能力进行了调整。这样，可以评估不是由高度差异引起的竞争能力的一部分。本文用于说明在混合模型框架中估计品种竞争能力的选项。为了说明，我们在地中海地区使用了一项为期两年的硬粒小麦试验系列，代表了该谷物的主要种植区之一。">
+  <meta property="og:description" content="Hadasch S, Piepho H P, Skaracis G N. 2017. Evaluating the competitive ability of durum wheat varieties. (i): 1–35.
+ 摘要当两个品种在邻近地块种植时，竞争资源如营养，水和太阳能。竞争中的两个品种的表现取决于他们的竞争能力，包括（i）各种品种抵御另一品种的抑制能力，（ii）抑制其他品种的能力。在本文中，使用线性混合模型来评估（i）和（ii）的竞争能力。此外，确定两个竞争品种的协同效应的措施，这表明是否提出了两个竞争品种的相互作用。为了说明，我们使用2006 - 2007年和2007 - 2008年期间收集的六个硬质小麦品种的收获数据，使用分割块设计，提供所有成对的竞争品种。通过提出的模型估算竞争能力可以证明有助于开发各种混合物的使用。这些混合物被证明能够在不同作物中竞争，甚至超过单一栽培。
+缩写： - 核心思想： - 通过在邻近地块种植小麦品种进行竞争评估 - 品种的竞争能力使用线性混合模型进行分类 - 使用混合模型，我们提出了一种测试两个品种的相互作用的措施 - 竞争能力可以用于鉴定可以在各种混合物中生长的品种
+引言当相邻地块生长不同的基因型竞争太阳能和土壤元素时，竞争是两大关键，对生长和发育至关重要。几位研究人员提到了燕麦和大麦（Aastveit等，1989），马铃薯（Connolly等1993），谷物玉米（David et al。2001），甜菜（B¨šchse2002）和小麦（Triticum aestivum） （Kempton等人，1986; Baker和Rossnagel 1988; Goldringer等人1994; Talbot等人1995; Clarke等人1998）。一般来说，作物的竞争发生在目标品种与杂草竞争时（Keddy et al。1994; Galon et al。2016; Jacob et al。2016），或者当目标品种与各种相同的品种竞争时（Baron et al 2015）。在Goldberg和Landa（1991）和Jacob等人（2016年），各种竞争能力被认为包括抑制其他品种（竞争效应）的能力和抵御相邻地块（竞争反应）的抑制能力。为了调查一组目标品种的竞争能力，这些可以在相邻的地块种植到一组竞争对手或不同密度的同一竞争对手。这种实验可以使用两因素布局进行，其中一个因素代表目标品种，另一个因素代表竞争对手。为了解释实验场地的空间效应，实验通常被设计为分块（条纹图）设计（Jacob等人，2016; Zerner等，2016）。在这样的设计中，杂草种类或与目标品种相同的物种可以用作竞争对手。在与杂草竞争的分析中，目标品种竞争能力（竞争效应）的不同测度，从回归斜率（Goldberg和Werner 1983）到调整平均值（Baron et al。2015; Jacob et al。2016）线性混合模型，已被提出。为了估计给定品种的竞争能力，目前还没有提出这样的措施。本文通过线性混合模型对六种不同硬质小麦品种（Triticum turgidum var durum）的竞争效应和竞争反应进行了评估。为此，我们使用以分裂块设计生长的六种不同的硬粒小麦品种（Triticum turgidum var durum）的产量数据。不同品种的竞争效应和竞争反应估计为品种竞争者组合调整方式的差异。此外，使用基于情节高度的协变量来调整高度差异的估计方法。在分析中考虑协变量时，由于高度差异引起的任何差异，对估计的竞争能力进行了调整。这样，可以评估不是由高度差异引起的竞争能力的一部分。本文用于说明在混合模型框架中估计品种竞争能力的选项。为了说明，我们在地中海地区使用了一项为期两年的硬粒小麦试验系列，代表了该谷物的主要种植区之一。">
+  <meta name="twitter:description" content="Hadasch S, Piepho H P, Skaracis G N. 2017. Evaluating the competitive ability of durum wheat varieties. (i): 1–35.
+ 摘要当两个品种在邻近地块种植时，竞争资源如营养，水和太阳能。竞争中的两个品种的表现取决于他们的竞争能力，包括（i）各种品种抵御另一品种的抑制能力，（ii）抑制其他品种的 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%AB%9E%E4%BA%89/hadasch2017/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%AB%9E%E4%BA%89/hadasch2017/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Hadasch2017</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (69 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Hadasch2017</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (69 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Hadasch S, Piepho H P, Skaracis G N. 2017. Evaluating the competitive ability of durum wheat varieties. (i): 1–35.</p>
+</blockquote>
+
+<p>摘要当两个品种在邻近地块种植时，竞争资源如营养，水和太阳能。竞争中的两个品种的表现取决于他们的竞争能力，包括（i）各种品种抵御另一品种的抑制能力，（ii）抑制其他品种的能力。在本文中，使用线性混合模型来评估（i）和（ii）的竞争能力。此外，确定两个竞争品种的协同效应的措施，这表明是否提出了两个竞争品种的相互作用。为了说明，我们使用2006  -  2007年和2007  -  2008年期间收集的六个硬质小麦品种的收获数据，使用分割块设计，提供所有成对的竞争品种。通过提出的模型估算竞争能力可以证明有助于开发各种混合物的使用。这些混合物被证明能够在不同作物中竞争，甚至超过单一栽培。</p>
+
+<p>缩写： -
+核心思想： - 通过在邻近地块种植小麦品种进行竞争评估 - 品种的竞争能力使用线性混合模型进行分类 - 使用混合模型，我们提出了一种测试两个品种的相互作用的措施 - 竞争能力可以用于鉴定可以在各种混合物中生长的品种</p>
+
+<p>引言当相邻地块生长不同的基因型竞争太阳能和土壤元素时，竞争是两大关键，对生长和发育至关重要。几位研究人员提到了燕麦和大麦（Aastveit等，1989），马铃薯（Connolly等1993），谷物玉米（David et al。2001），甜菜（B¨šchse2002）和小麦（Triticum aestivum） （Kempton等人，1986; Baker和Rossnagel 1988; Goldringer等人1994; Talbot等人1995; Clarke等人1998）。一般来说，作物的竞争发生在目标品种与杂草竞争时（Keddy et al。1994; Galon et al。2016; Jacob et al。2016），或者当目标品种与各种相同的品种竞争时（Baron et al 2015）。在Goldberg和Landa（1991）和Jacob等人（2016年），各种竞争能力被认为包括抑制其他品种（竞争效应）的能力和抵御相邻地块（竞争反应）的抑制能力。为了调查一组目标品种的竞争能力，这些可以在相邻的地块种植到一组竞争对手或不同密度的同一竞争对手。这种实验可以使用两因素布局进行，其中一个因素代表目标品种，另一个因素代表竞争对手。为了解释实验场地的空间效应，实验通常被设计为分块（条纹图）设计（Jacob等人，2016; Zerner等，2016）。在这样的设计中，杂草种类或与目标品种相同的物种可以用作竞争对手。在与杂草竞争的分析中，目标品种竞争能力（竞争效应）的不同测度，从回归斜率（Goldberg和Werner 1983）到调整平均值（Baron et al。2015; Jacob et al。2016）线性混合模型，已被提出。为了估计给定品种的竞争能力，目前还没有提出这样的措施。本文通过线性混合模型对六种不同硬质小麦品种（Triticum turgidum var durum）的竞争效应和竞争反应进行了评估。为此，我们使用以分裂块设计生长的六种不同的硬粒小麦品种（Triticum turgidum var durum）的产量数据。不同品种的竞争效应和竞争反应估计为品种竞争者组合调整方式的差异。此外，使用基于情节高度的协变量来调整高度差异的估计方法。在分析中考虑协变量时，由于高度差异引起的任何差异，对估计的竞争能力进行了调整。这样，可以评估不是由高度差异引起的竞争能力的一部分。本文用于说明在混合模型框架中估计品种竞争能力的选项。为了说明，我们在地中海地区使用了一项为期两年的硬粒小麦试验系列，代表了该谷物的主要种植区之一。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E4%BD%9C%E5%9B%BE/hall2016-%E6%9E%97%E6%9C%A8qtl/" data-toggle="tooltip" data-placement="top" title="Hall2016-林木QTL">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/gs/habier2010-%E9%81%97%E4%BC%A0%E5%85%B3%E7%B3%BB%E4%BF%A1%E6%81%AF%E5%AF%B9%E8%82%B2%E7%A7%8D%E5%80%BC%E7%9A%84%E5%BD%B1%E5%93%8D/" data-toggle="tooltip" data-placement="top" title="Habier2010-遗传关系信息对育种值的影响">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

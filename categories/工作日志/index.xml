@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工作日志 on Dong&#39;s blog</title>
+    <link>/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/</link>
+    <description>Recent content in 工作日志 on Dong&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>youremail@domain.com (Leiming Dong)</managingEditor>
+    <webMaster>youremail@domain.com (Leiming Dong)</webMaster>
+    <lastBuildDate>Sun, 01 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2016-11-17</title>
+      <link>/post/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/2016-11-17/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/2016-11-17/</guid>
+      <description> 上午学习贝叶斯，资料是doing Bayesian data analysis。收到孙超的qq留言，下周二上午9:30汇报一下文章。 下午开始做PPT，将上次汇报的主要框架摘过来，补充一下新的结果，还得认真准备一下。 毕业论文综述的框架列一下，有时间就填空。  </description>
+    </item>
+    
+    <item>
+      <title>无标题文章</title>
+      <link>/post/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%BF%97/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

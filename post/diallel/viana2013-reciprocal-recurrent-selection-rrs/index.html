@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Viana2013-Reciprocal-recurrent-selection-(RRS)</title>
+  <meta property="og:title" content="Viana2013-Reciprocal-recurrent-selection-(RRS)" />
+  <meta name="twitter:title" content="Viana2013-Reciprocal-recurrent-selection-(RRS)" />
+  <meta name="description" content="Viana, J.M.S., DeLima, R.O., Mundim, G.B., Condé, A.B.T., and Vilarinho, A.A. 2013. Relative efficiency of the genotypic value and combining ability effects on reciprocal recurrent selection. Theor. Appl. Genet. 126(4): 889–899. doi:10.1007/s00122-012-2023-3.
+ 互惠反复选择（RRS）已经成功应用于玉米育种超过60年。我们的目标是评估基因型值的相对效率和一般和特定组合能力（GCA和SCA）对选择的影响。 GCA效应反映了亲本中有利基因的数量。 SCA效应主要反映了父母之间的基因频率的差异。我们模拟三个性状，三类人口，和10个周期的半和全同胞RRS。 RRS是一种用于群体内和群体间育种的高效过程，不管群体中的性状或分歧水平如何。当存在优势时，RRS增加了群体间杂交的杂种优势，并且其减少了群体中的近交衰减和群体和杂种中的遗传变异性。当没有优势且群体不发散时，RRS也确定群体分化。半同基因RRS，相当于基于GCA效应的选择，比基于基因型值的全同基因RRS更有效，不论种群的性状或改善水平如何。基于SCA效应的全同基RRS对于种群间和种群间育种是无效的。
+介绍 相互复发选择（RRS）由Comstock等人理想化（1949）作为两个群体之间杂种的育种过程。他们提出了interpopulation父系半同胞家系和S1子代重组的实验评估。他们的目标是提高一般和具体的组合能力。已显示RRS相对于玉米谷物产量，疾病和害虫抗性，对根和茎秆住宿的抗性和其它农艺性状改善了杂种和增加种群的杂种优势（Penny和Eberhart 1971; Eberhart等人1973 ; Souza 1987; Keeratinijakal和Lamkey 1993; Santos等人2007）。同样可以说RRS方法的修改（Rodriguez和Hallauer 1991; Butruille等人2004）。最重要的修改程序由Hallauer（1967），Lonnquist和Williams（1967），Hallauer和Eberhart（1970）和Russell和Eberhart（1975）提出。 Hallauer（1967）开发了一种用于连续评估近交种群间全同胞家族以获得杂种的方法。 Lonnquist和Williams（1967）提出评估插入全同系子代以开发姐妹系或修饰的杂种。 Hallauer和Eberhart（1970）提出用S1后代重建评估群体间全同胞家系。 Russell和Eberhart（1975）提出使用每个群体的近交系作为测试者。这个程序提供了一种有效的方式同时改善繁殖人口和发展精英单交叉。 无论家庭或测试者如何，RRS从第一个周期开始都是高效的。 Jenweerawat et al。 （2009）验证了Russell和Eberhart（1975）提出的修改过程提高了特定的合并能力。他们观察到前十个周期1玉米群体杂交体的谷粒产量大于前十个周期0群体间杂种的谷粒产量。同样的结论由Souza等人建立。 （2010）。该研究比较了来自每个群体的S3品系的玉米杂种的谷粒产量与商业单交叉。他们还观察到非加性效应对谷物产量的加和效应的相对重要性的增加。除了增加籽粒产量和杂种的杂交，Romay et al。 （2011）观察到一个群体中的谷物产量增加，其他群体没有变化，并且玉米中三个周期的全同胞RRS后近交繁殖抑制减少。 Keeratinijakal et al。 （1993）还观察到杂交种和一个群体的谷物产量增加，在玉米半周期RRS 11个周期后没有相关变化。他们还观察到杂种优势的增加。近亲繁殖抑制在一个群体中减少并且在群体交叉中增加。基于跨越评价，他们验证了一般合并能力得到提高。还进行了RRS程序之间的比较。然而，这些比较没有显示一致的结果。 Ordas et al。 （2012）比较了两种使用玉米全同胞后代的RRS方法。他们通过在选择中另外使用S2后代测试来修改全同基RRS。该改进方法成功地改善了人工地中海玉米螟虫侵袭条件下种群杂交的籽粒产量。在高侵染条件下没有变化。相反，标准程序未能在最佳侵染条件下提高群体杂交的产量，并且倾向于降低高侵染下的产量。 Rademacher et al。 （1999）比较半同源RRS和使用精英近交系作为测试者的修改过程。六个周期后，标准程序导致粮食产量的更大的群体间的增益。 Peiris和Hallauer（2005）基于模拟结果得出结论，半同胞RRS和全同源RRS是等效的，不管重组单位如何。基于选择强度，有效人群规模，完成选择周期所需的时间以及可用的财政和人力资源，他们得出结论，全同基RRS是更有效的方法。在Jones（1971）的模拟研究中，两种方案的相对效率取决于选择强度和环境方差。分子标记也被用来研究RRS对人群遗传多样性的影响。从6至12个循环的人群中分析简单序列重复（SSR），限制性片段长度多态性（RFLP）和扩增片段长度多态性（AFLP）位点，Solomon等人（2010），Hinze et al。 （2005），Butruille et al。 （2004）和Labate et al。 （1997）观察到等位基因数量的减少，群体内遗传变异性的减少，以及随着RRS程序的进展，群体间遗传分歧的增加。种群分化主要是在群体中固定的互补等位基因的结果（Solomon等人2010）。 Butruille et al。 （2004）也报道遗传漂移似乎没有阻碍选择反应。因此，对相互循环选择有广泛的理论和应用知识。我们旨在通过评估基因型值的相对效率和一般和特异性组合能力对选择的影响来增加这种广泛的知识。">
+  <meta property="og:description" content="Viana, J.M.S., DeLima, R.O., Mundim, G.B., Condé, A.B.T., and Vilarinho, A.A. 2013. Relative efficiency of the genotypic value and combining ability effects on reciprocal recurrent selection. Theor. Appl. Genet. 126(4): 889–899. doi:10.1007/s00122-012-2023-3.
+ 互惠反复选择（RRS）已经成功应用于玉米育种超过60年。我们的目标是评估基因型值的相对效率和一般和特定组合能力（GCA和SCA）对选择的影响。 GCA效应反映了亲本中有利基因的数量。 SCA效应主要反映了父母之间的基因频率的差异。我们模拟三个性状，三类人口，和10个周期的半和全同胞RRS。 RRS是一种用于群体内和群体间育种的高效过程，不管群体中的性状或分歧水平如何。当存在优势时，RRS增加了群体间杂交的杂种优势，并且其减少了群体中的近交衰减和群体和杂种中的遗传变异性。当没有优势且群体不发散时，RRS也确定群体分化。半同基因RRS，相当于基于GCA效应的选择，比基于基因型值的全同基因RRS更有效，不论种群的性状或改善水平如何。基于SCA效应的全同基RRS对于种群间和种群间育种是无效的。
+介绍 相互复发选择（RRS）由Comstock等人理想化（1949）作为两个群体之间杂种的育种过程。他们提出了interpopulation父系半同胞家系和S1子代重组的实验评估。他们的目标是提高一般和具体的组合能力。已显示RRS相对于玉米谷物产量，疾病和害虫抗性，对根和茎秆住宿的抗性和其它农艺性状改善了杂种和增加种群的杂种优势（Penny和Eberhart 1971; Eberhart等人1973 ; Souza 1987; Keeratinijakal和Lamkey 1993; Santos等人2007）。同样可以说RRS方法的修改（Rodriguez和Hallauer 1991; Butruille等人2004）。最重要的修改程序由Hallauer（1967），Lonnquist和Williams（1967），Hallauer和Eberhart（1970）和Russell和Eberhart（1975）提出。 Hallauer（1967）开发了一种用于连续评估近交种群间全同胞家族以获得杂种的方法。 Lonnquist和Williams（1967）提出评估插入全同系子代以开发姐妹系或修饰的杂种。 Hallauer和Eberhart（1970）提出用S1后代重建评估群体间全同胞家系。 Russell和Eberhart（1975）提出使用每个群体的近交系作为测试者。这个程序提供了一种有效的方式同时改善繁殖人口和发展精英单交叉。 无论家庭或测试者如何，RRS从第一个周期开始都是高效的。 Jenweerawat et al。 （2009）验证了Russell和Eberhart（1975）提出的修改过程提高了特定的合并能力。他们观察到前十个周期1玉米群体杂交体的谷粒产量大于前十个周期0群体间杂种的谷粒产量。同样的结论由Souza等人建立。 （2010）。该研究比较了来自每个群体的S3品系的玉米杂种的谷粒产量与商业单交叉。他们还观察到非加性效应对谷物产量的加和效应的相对重要性的增加。除了增加籽粒产量和杂种的杂交，Romay et al。 （2011）观察到一个群体中的谷物产量增加，其他群体没有变化，并且玉米中三个周期的全同胞RRS后近交繁殖抑制减少。 Keeratinijakal et al。 （1993）还观察到杂交种和一个群体的谷物产量增加，在玉米半周期RRS 11个周期后没有相关变化。他们还观察到杂种优势的增加。近亲繁殖抑制在一个群体中减少并且在群体交叉中增加。基于跨越评价，他们验证了一般合并能力得到提高。还进行了RRS程序之间的比较。然而，这些比较没有显示一致的结果。 Ordas et al。 （2012）比较了两种使用玉米全同胞后代的RRS方法。他们通过在选择中另外使用S2后代测试来修改全同基RRS。该改进方法成功地改善了人工地中海玉米螟虫侵袭条件下种群杂交的籽粒产量。在高侵染条件下没有变化。相反，标准程序未能在最佳侵染条件下提高群体杂交的产量，并且倾向于降低高侵染下的产量。 Rademacher et al。 （1999）比较半同源RRS和使用精英近交系作为测试者的修改过程。六个周期后，标准程序导致粮食产量的更大的群体间的增益。 Peiris和Hallauer（2005）基于模拟结果得出结论，半同胞RRS和全同源RRS是等效的，不管重组单位如何。基于选择强度，有效人群规模，完成选择周期所需的时间以及可用的财政和人力资源，他们得出结论，全同基RRS是更有效的方法。在Jones（1971）的模拟研究中，两种方案的相对效率取决于选择强度和环境方差。分子标记也被用来研究RRS对人群遗传多样性的影响。从6至12个循环的人群中分析简单序列重复（SSR），限制性片段长度多态性（RFLP）和扩增片段长度多态性（AFLP）位点，Solomon等人（2010），Hinze et al。 （2005），Butruille et al。 （2004）和Labate et al。 （1997）观察到等位基因数量的减少，群体内遗传变异性的减少，以及随着RRS程序的进展，群体间遗传分歧的增加。种群分化主要是在群体中固定的互补等位基因的结果（Solomon等人2010）。 Butruille et al。 （2004）也报道遗传漂移似乎没有阻碍选择反应。因此，对相互循环选择有广泛的理论和应用知识。我们旨在通过评估基因型值的相对效率和一般和特异性组合能力对选择的影响来增加这种广泛的知识。">
+  <meta name="twitter:description" content="Viana, J.M.S., DeLima, R.O., Mundim, G.B., Condé, A.B.T., and Vilarinho, A.A. 2013. Relative efficiency of the genotypic value and combining ability effects on reciprocal recurrent selection. Theor. …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/diallel/viana2013-reciprocal-recurrent-selection-rrs/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/diallel/viana2013-reciprocal-recurrent-selection-rrs/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Viana2013-Reciprocal-recurrent-selection-(RRS)</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (88 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Viana2013-Reciprocal-recurrent-selection-(RRS)</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (88 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Viana, J.M.S., DeLima, R.O., Mundim, G.B., Condé, A.B.T., and Vilarinho, A.A. 2013. Relative efficiency of the genotypic value and combining ability effects on reciprocal recurrent selection. Theor. Appl. Genet. 126(4): 889–899. doi:10.1007/s00122-012-2023-3.</p>
+</blockquote>
+
+<p>互惠反复选择（RRS）已经成功应用于玉米育种超过60年。我们的目标是评估基因型值的相对效率和一般和特定组合能力（GCA和SCA）对选择的影响。 GCA效应反映了亲本中有利基因的数量。 SCA效应主要反映了父母之间的基因频率的差异。我们模拟三个性状，三类人口，和10个周期的半和全同胞RRS。 RRS是一种用于群体内和群体间育种的高效过程，不管群体中的性状或分歧水平如何。当存在优势时，RRS增加了群体间杂交的杂种优势，并且其减少了群体中的近交衰减和群体和杂种中的遗传变异性。当没有优势且群体不发散时，RRS也确定群体分化。半同基因RRS，相当于基于GCA效应的选择，比基于基因型值的全同基因RRS更有效，不论种群的性状或改善水平如何。基于SCA效应的全同基RRS对于种群间和种群间育种是无效的。</p>
+
+<p>介绍
+相互复发选择（RRS）由Comstock等人理想化（1949）作为两个群体之间杂种的育种过程。他们提出了interpopulation父系半同胞家系和S1子代重组的实验评估。他们的目标是提高一般和具体的组合能力。已显示RRS相对于玉米谷物产量，疾病和害虫抗性，对根和茎秆住宿的抗性和其它农艺性状改善了杂种和增加种群的杂种优势（Penny和Eberhart 1971; Eberhart等人1973 ; Souza 1987; Keeratinijakal和Lamkey 1993; Santos等人2007）。同样可以说RRS方法的修改（Rodriguez和Hallauer 1991; Butruille等人2004）。最重要的修改程序由Hallauer（1967），Lonnquist和Williams（1967），Hallauer和Eberhart（1970）和Russell和Eberhart（1975）提出。 Hallauer（1967）开发了一种用于连续评估近交种群间全同胞家族以获得杂种的方法。 Lonnquist和Williams（1967）提出评估插入全同系子代以开发姐妹系或修饰的杂种。 Hallauer和Eberhart（1970）提出用S1后代重建评估群体间全同胞家系。 Russell和Eberhart（1975）提出使用每个群体的近交系作为测试者。这个程序提供了一种有效的方式同时改善繁殖人口和发展精英单交叉。
+无论家庭或测试者如何，RRS从第一个周期开始都是高效的。 Jenweerawat et al。 （2009）验证了Russell和Eberhart（1975）提出的修改过程提高了特定的合并能力。他们观察到前十个周期1玉米群体杂交体的谷粒产量大于前十个周期0群体间杂种的谷粒产量。同样的结论由Souza等人建立。 （2010）。该研究比较了来自每个群体的S3品系的玉米杂种的谷粒产量与商业单交叉。他们还观察到非加性效应对谷物产量的加和效应的相对重要性的增加。除了增加籽粒产量和杂种的杂交，Romay et al。 （2011）观察到一个群体中的谷物产量增加，其他群体没有变化，并且玉米中三个周期的全同胞RRS后近交繁殖抑制减少。 Keeratinijakal et al。 （1993）还观察到杂交种和一个群体的谷物产量增加，在玉米半周期RRS 11个周期后没有相关变化。他们还观察到杂种优势的增加。近亲繁殖抑制在一个群体中减少并且在群体交叉中增加。基于跨越评价，他们验证了一般合并能力得到提高。还进行了RRS程序之间的比较。然而，这些比较没有显示一致的结果。 Ordas et al。 （2012）比较了两种使用玉米全同胞后代的RRS方法。他们通过在选择中另外使用S2后代测试来修改全同基RRS。该改进方法成功地改善了人工地中海玉米螟虫侵袭条件下种群杂交的籽粒产量。在高侵染条件下没有变化。相反，标准程序未能在最佳侵染条件下提高群体杂交的产量，并且倾向于降低高侵染下的产量。 Rademacher et al。 （1999）比较半同源RRS和使用精英近交系作为测试者的修改过程。六个周期后，标准程序导致粮食产量的更大的群体间的增益。 Peiris和Hallauer（2005）基于模拟结果得出结论，半同胞RRS和全同源RRS是等效的，不管重组单位如何。基于选择强度，有效人群规模，完成选择周期所需的时间以及可用的财政和人力资源，他们得出结论，全同基RRS是更有效的方法。在Jones（1971）的模拟研究中，两种方案的相对效率取决于选择强度和环境方差。分子标记也被用来研究RRS对人群遗传多样性的影响。从6至12个循环的人群中分析简单序列重复（SSR），限制性片段长度多态性（RFLP）和扩增片段长度多态性（AFLP）位点，Solomon等人（2010），Hinze et al。 （2005），Butruille et al。 （2004）和Labate et al。 （1997）观察到等位基因数量的减少，群体内遗传变异性的减少，以及随着RRS程序的进展，群体间遗传分歧的增加。种群分化主要是在群体中固定的互补等位基因的结果（Solomon等人2010）。 Butruille et al。 （2004）也报道遗传漂移似乎没有阻碍选择反应。因此，对相互循环选择有广泛的理论和应用知识。我们旨在通过评估基因型值的相对效率和一般和特异性组合能力对选择的影响来增加这种广泛的知识。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/vidal2015-%E7%B3%BB%E8%B0%B1%E9%87%8D%E5%BB%BA-%E5%A4%9A%E7%B3%BB%E6%9D%82%E4%BA%A4/" data-toggle="tooltip" data-placement="top" title="Vidal2015-系谱重建-多系杂交">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/verbyla-1999-%E5%B9%B3%E6%BB%91%E6%A0%B7%E6%9D%A1/" data-toggle="tooltip" data-placement="top" title="Verbyla-1999-平滑样条">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

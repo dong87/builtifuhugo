@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>S5--最大似然估计（ML）和REML</title>
+  <meta property="og:title" content="S5--最大似然估计（ML）和REML" />
+  <meta name="twitter:title" content="S5--最大似然估计（ML）和REML" />
+  <meta name="description" content="A.F. Zuur et al., Mixed Effects Models and Extensions in Ecology with R, p116-119, chr 5.6
+ 当利用混合效应建模时，你会遇到诸如REML和ML这样的词汇。不像线性回归模型，就算你不知道背后的数学理论也可以照样使用。但是在混合效应建模中，你必须懂得一些相关的数学知识。所以REML是什么意思？它能干什么？ 第一个问题比较简单，REML限制性最大似然估计英文首字母的缩写。但是对于第二个问题，大多数教材在这点上就变得相当专业，或者解释得比较粗略，只是提到它是矫正自由度的一个神秘方法。而我们则选择尝试更为详细地解释它，所以需要利用矩阵代数的知识。但是为了理解REML，首先需要理解最大似然估计的原理，我们从这儿开始。如果你不熟悉矩阵代数，或者如果这一部分对数学水平的要求太高，我们仍建议你跳过这一部分。 我们首先回顾用于线性回归的最大似然，然后给出REML是如何用于矫正方差估计子的。 假设有一个线性回归模型模型中有3个未知参数α, β, and σ。为了简便，θ = (α, β, σ ) 。普通最小二乘是估计θ的一个方法。给出θ中每一个元素的表达式。利用线性回归获取方差估计的表达式是： （5.14） 我们给参数加了一个帽子^，表示它是估计值，n是观测值的个数。可以证明σ^是σ的无偏估计，意味着E（σ^）=σ。现在让我们看一看最大似然估计方法。假设Y_i服从正态分布，其密度函数为 因为我们也假设了Y_i是独立的，可以将Y1,Y2,&hellip;,Yn的联合密度函数写成单个密度曲线f1,f2,&hellip;,fn乘积的形式。这个乘积就叫做似然函数*L*。它是数据和θ的一个函数。问题是如何选择θ使L最高。为了简化，对L取自然对数，得到如下的log-似然方程式：
+我们需要最大化这个式子，问题就变成了对每一个参数偏导，令偏导数=0并求解。因为我们很容易计算，这些偏导数=0的式子称之为封闭解。对于线性混合模型我们将会看到开放解，意思是参数没有直接的解。 这里没有给出α和β估计子的式子，但对于方差我们得到： 注意这个式子与我们利用普通最小二乘得到的式子（5.14）非常相似。实际上，受到因子（n-2）/n的影响，利用最大似然得到的方差估计子是有偏的（S6. 回归分析为什么误差方差中自由度是n-2？）。如果线性回归模型含有*p*个解释变量，那么偏度是（n-p）/n。最大似然是有偏的的原因是它忽略了截距和斜率也被估计的事实。所以我们需要更好的ML估计子，而这正是REML所做的事情。 REML的工作如下：线性回归模型可以写成 ，这是简单的矩阵形式，Xi=（1 Xi），β的第一个元素是截距，第二个元素是原始的β。正态性假设意味着 （5.18）。 用ML估计子的问题是我们不得不估计式子（5.18）中β中的截距和斜率。显然，如果没有β，就能解决问题。为了消除β，可以找到一个维度n × (n – 2) 的特殊矩阵A，特殊指的是“与X&rsquo;正交”，然后用这个矩阵乘以Y=（*Y1*，&hellip;，*Yn*）&rsquo;之后再用ML估计。正交指的是如果A与X相乘，结果是0.因此，我们得到A&rsquo;×Y=A&rsquo;×X×β&#43;A&rsquo;×ε =0&#43;A&rsquo;×ε =A&rsquo;×ε 。现在A&rsquo;×Y的分布是 ，而不再依赖β。那么对A&rsquo;×Y进行似然估计就会得到σ 2的无偏估计子（5.14）。现在我们讨论REML如何应用到混合线性模型。我们的起点是边际模型 。故事又重新开始，如之前，我们可以写一个略微不同的log似然式子。未知参数是β和D及Σ中的元素，依然用θ 表示。似然函数： |Vi| 是Vi的行列式。对β求偏导并=0解方程。如之前讨论的例子，得到的参数是有偏的，因此我们需要REML。 总之，REML，就是用一个特殊的矩阵乘以Y，这样X×β就消去。然后用ML估计得到的参数估计子就是无偏的，并且与特定的矩阵相乘无关。因此，β的REML估计子与ML的估计子不同。如果相对于观测值的个数，固定协变量的个数很少，就没有太大的不同，相反有许多的固定协变量，情况就大不相同。">
+  <meta property="og:description" content="A.F. Zuur et al., Mixed Effects Models and Extensions in Ecology with R, p116-119, chr 5.6
+ 当利用混合效应建模时，你会遇到诸如REML和ML这样的词汇。不像线性回归模型，就算你不知道背后的数学理论也可以照样使用。但是在混合效应建模中，你必须懂得一些相关的数学知识。所以REML是什么意思？它能干什么？ 第一个问题比较简单，REML限制性最大似然估计英文首字母的缩写。但是对于第二个问题，大多数教材在这点上就变得相当专业，或者解释得比较粗略，只是提到它是矫正自由度的一个神秘方法。而我们则选择尝试更为详细地解释它，所以需要利用矩阵代数的知识。但是为了理解REML，首先需要理解最大似然估计的原理，我们从这儿开始。如果你不熟悉矩阵代数，或者如果这一部分对数学水平的要求太高，我们仍建议你跳过这一部分。 我们首先回顾用于线性回归的最大似然，然后给出REML是如何用于矫正方差估计子的。 假设有一个线性回归模型模型中有3个未知参数α, β, and σ。为了简便，θ = (α, β, σ ) 。普通最小二乘是估计θ的一个方法。给出θ中每一个元素的表达式。利用线性回归获取方差估计的表达式是： （5.14） 我们给参数加了一个帽子^，表示它是估计值，n是观测值的个数。可以证明σ^是σ的无偏估计，意味着E（σ^）=σ。现在让我们看一看最大似然估计方法。假设Y_i服从正态分布，其密度函数为 因为我们也假设了Y_i是独立的，可以将Y1,Y2,&hellip;,Yn的联合密度函数写成单个密度曲线f1,f2,&hellip;,fn乘积的形式。这个乘积就叫做似然函数*L*。它是数据和θ的一个函数。问题是如何选择θ使L最高。为了简化，对L取自然对数，得到如下的log-似然方程式：
+我们需要最大化这个式子，问题就变成了对每一个参数偏导，令偏导数=0并求解。因为我们很容易计算，这些偏导数=0的式子称之为封闭解。对于线性混合模型我们将会看到开放解，意思是参数没有直接的解。 这里没有给出α和β估计子的式子，但对于方差我们得到： 注意这个式子与我们利用普通最小二乘得到的式子（5.14）非常相似。实际上，受到因子（n-2）/n的影响，利用最大似然得到的方差估计子是有偏的（S6. 回归分析为什么误差方差中自由度是n-2？）。如果线性回归模型含有*p*个解释变量，那么偏度是（n-p）/n。最大似然是有偏的的原因是它忽略了截距和斜率也被估计的事实。所以我们需要更好的ML估计子，而这正是REML所做的事情。 REML的工作如下：线性回归模型可以写成 ，这是简单的矩阵形式，Xi=（1 Xi），β的第一个元素是截距，第二个元素是原始的β。正态性假设意味着 （5.18）。 用ML估计子的问题是我们不得不估计式子（5.18）中β中的截距和斜率。显然，如果没有β，就能解决问题。为了消除β，可以找到一个维度n × (n – 2) 的特殊矩阵A，特殊指的是“与X&rsquo;正交”，然后用这个矩阵乘以Y=（*Y1*，&hellip;，*Yn*）&rsquo;之后再用ML估计。正交指的是如果A与X相乘，结果是0.因此，我们得到A&rsquo;×Y=A&rsquo;×X×β&#43;A&rsquo;×ε =0&#43;A&rsquo;×ε =A&rsquo;×ε 。现在A&rsquo;×Y的分布是 ，而不再依赖β。那么对A&rsquo;×Y进行似然估计就会得到σ 2的无偏估计子（5.14）。现在我们讨论REML如何应用到混合线性模型。我们的起点是边际模型 。故事又重新开始，如之前，我们可以写一个略微不同的log似然式子。未知参数是β和D及Σ中的元素，依然用θ 表示。似然函数： |Vi| 是Vi的行列式。对β求偏导并=0解方程。如之前讨论的例子，得到的参数是有偏的，因此我们需要REML。 总之，REML，就是用一个特殊的矩阵乘以Y，这样X×β就消去。然后用ML估计得到的参数估计子就是无偏的，并且与特定的矩阵相乘无关。因此，β的REML估计子与ML的估计子不同。如果相对于观测值的个数，固定协变量的个数很少，就没有太大的不同，相反有许多的固定协变量，情况就大不相同。">
+  <meta name="twitter:description" content="A.F. Zuur et al., Mixed Effects Models and Extensions in Ecology with R, p116-119, chr 5.6
+ 当利用混合效应建模时，你会遇到诸如REML和ML这样的词汇。不像线性回归模型，就算你不知道背后的数学理论也可以照样使用。但是在混合效应建模中，你必须懂得一些相关的数学知识。所以REML是什么意思？它能干什么？ 第一个 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/stat/s5--%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1ml%E5%92%8Creml/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/stat/s5--%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1ml%E5%92%8Creml/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>S5--最大似然估计（ML）和REML</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (56 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>S5--最大似然估计（ML）和REML</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (56 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>A.F. Zuur et al., <em>Mixed Effects Models and Extensions in Ecology with R</em>, p116-119, chr 5.6</p>
+</blockquote>
+
+<p>当利用混合效应建模时，你会遇到诸如<strong>REML</strong>和<strong>ML</strong>这样的词汇。不像线性回归模型，就算你不知道背后的数学理论也可以照样使用。但是在混合效应建模中，你必须懂得一些相关的数学知识。所以REML是什么意思？它能干什么？
+第一个问题比较简单，REML限制性最大似然估计英文首字母的缩写。但是对于第二个问题，大多数教材在这点上就变得相当专业，或者解释得比较粗略，只是提到它是矫正自由度的一个神秘方法。而我们则选择尝试更为详细地解释它，所以需要利用矩阵代数的知识。但是为了理解REML，首先需要理解最大似然估计的原理，我们从这儿开始。如果你不熟悉矩阵代数，或者如果这一部分对数学水平的要求太高，我们仍建议你跳过这一部分。
+我们首先回顾用于线性回归的最大似然，然后给出REML是如何用于矫正方差估计子的。
+假设有一个线性回归模型<img src="http://upload-images.jianshu.io/upload_images/3289684-0db7e3ae6226351d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+模型中有3个未知参数α, β, and σ。为了简便，θ = (α, β, σ ) 。普通最小二乘是估计θ的一个方法。给出θ中每一个元素的表达式。利用线性回归获取方差估计的表达式是：
+<img src="http://upload-images.jianshu.io/upload_images/3289684-d9edcfc5add18482.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /><strong>（5.14）</strong>
+我们给参数加了一个帽子^，表示它是估计值，n是观测值的个数。可以证明σ^是σ的无偏估计，意味着E（σ^）=σ。现在让我们看一看最大似然估计方法。假设Y_i服从正态分布，其密度函数为
+<img src="http://upload-images.jianshu.io/upload_images/3289684-4c2a5bb931bedfb9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+因为我们也假设了Y_i是独立的，可以将Y1,Y2,&hellip;,Yn的联合密度函数写成单个密度曲线f1,f2,&hellip;,fn乘积的形式。这个乘积就叫做<strong>似然函数*L</strong>*。它是数据和θ的一个函数。问题是如何选择θ使L最高。为了简化，对L取自然对数，得到如下的log-似然方程式：</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-9563527fc24fa83f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+我们需要最大化这个式子，问题就变成了对每一个参数偏导，令偏导数=0并求解。因为我们很容易计算，这些偏导数=0的式子称之为<strong>封闭解</strong>。对于线性混合模型我们将会看到<strong>开放解</strong>，意思是参数没有直接的解。
+这里没有给出α和β估计子的式子，但对于方差我们得到：
+<img src="http://upload-images.jianshu.io/upload_images/3289684-61cabd3ef71b1ba5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+注意这个式子与我们利用普通最小二乘得到的式子（5.14）非常相似。实际上，受到因子（n-2）/n的影响，利用最大似然得到的方差估计子是有偏的（<a href="http://www.jianshu.com/p/66c643f89f32">S6. 回归分析为什么误差方差中自由度是n-2？</a>）。如果线性回归模型含有*p*个解释变量，那么偏度是（n-p）/n。<strong>最大似然是有偏的的原因是它忽略了截距和斜率也被估计的事实。所以我们需要更好的ML估计子，而这正是REML所做的事情</strong>。
+REML的工作如下：线性回归模型<img src="http://upload-images.jianshu.io/upload_images/3289684-0db7e3ae6226351d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />可以写成
+<img src="http://upload-images.jianshu.io/upload_images/3289684-b1604dff3a0237be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />，这是简单的矩阵形式，Xi=（1 Xi），β的第一个元素是截距，第二个元素是原始的β。正态性假设意味着
+<img src="http://upload-images.jianshu.io/upload_images/3289684-6c04857f17d78adc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /><strong>（5.18）</strong>。
+用ML估计子的问题是我们不得不估计式子（5.18）中β中的截距和斜率。显然，如果没有β，就能解决问题。为了消除β，可以找到一个维度n × (n – 2) 的特殊矩阵<strong>A</strong>，特殊指的是“与<strong>X&rsquo;</strong>正交”，然后用这个矩阵乘以<strong>Y</strong>=（*Y1*，&hellip;，*Yn*）&rsquo;之后再用ML估计。正交指的是如果A与X相乘，结果是0.因此，我们得到A&rsquo;×Y=A&rsquo;×X×β+A&rsquo;×ε =0+A&rsquo;×ε =A&rsquo;×ε 。现在A&rsquo;×Y的分布是
+<img src="http://upload-images.jianshu.io/upload_images/3289684-a9d2b5af1f90993a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />，而不再依赖β。那么对A&rsquo;×Y进行似然估计就会得到σ 2的无偏估计子（5.14）。现在我们讨论REML如何应用到混合线性模型。我们的起点是边际模型
+<img src="http://upload-images.jianshu.io/upload_images/3289684-2b54a43157f60659.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />。故事又重新开始，如之前，我们可以写一个略微不同的log似然式子。未知参数是β和D及Σ中的元素，依然用θ 表示。似然函数：
+<img src="http://upload-images.jianshu.io/upload_images/3289684-da4a52b1a18d6f0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+|Vi| 是Vi的行列式。对β求偏导并=0解方程。如之前讨论的例子，得到的参数是有偏的，因此我们需要REML。
+总之，<strong>REML，就是用一个特殊的矩阵乘以Y，这样X×β就消去。然后用ML估计得到的参数估计子就是无偏的，并且与特定的矩阵相乘无关</strong>。因此，β的REML估计子与ML的估计子不同。<strong>如果相对于观测值的个数，固定协变量的个数很少，就没有太大的不同，相反有许多的固定协变量，情况就大不相同。</strong></p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/stat/s6--%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%AF%E5%B7%AE%E6%96%B9%E5%B7%AE%E4%B8%AD%E8%87%AA%E7%94%B1%E5%BA%A6%E6%98%AFn-2/" data-toggle="tooltip" data-placement="top" title="S6--回归分析为什么误差方差中自由度是n-2？">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/stat/s4--%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" data-toggle="tooltip" data-placement="top" title="S4--线性回归模型">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

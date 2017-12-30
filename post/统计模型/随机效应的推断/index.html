@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>随机效应的推断</title>
+  <meta property="og:title" content="随机效应的推断" />
+  <meta name="twitter:title" content="随机效应的推断" />
+  <meta name="description" content="Butler D, Cullis BR, Gilmour a R, Gogel BJ (2009) Mixed models for S language environments.
+ 2.5随机效应的推断 2.5.1假设的测试 关于线性混合效应模型的方差参数的推论通常取决于从渐近结果导出的（RE）ML估计的近似分布。
+可以表明，REML估计的近似方差矩阵由期望信息矩阵的逆提供[Cox和Hinkley，1974，Section 4.8]。由于这个矩阵在asreml（）中不可用，我们用AI矩阵替换预期的信息矩阵。此外，REML估计是连续和渐近正常的，尽管在小样本中，这种近似似乎是不可靠的（见后文）。
+用于比较由REML拟合的嵌套模型的拟合的一般方法是REML似然比检验或REMLRT。 REMLRT仅在两个模型的固定效应相同时有效。在asreml（）中，这不仅需要相同的固定效应模型，而且需要相同的参数化，因为矩阵X&rsquo;X的对数决定因素不包括在REML对数似然中。 如果*lR2*是更一般模型的REML对数似然，并且*lR1*是受限模型的REML对数似然（即，在零假设下的REML对数似然），则REMLRT由下式给出
+（2.14）
+这是严格的积极。如果ri是在模型i中估计的参数的数量，则在限制模型下的REMLRT的渐近分布是χ2r2-r1。
+REMLRT是隐式双侧的，并且当测试涉及具有参数在参数空间的边界上的参数的假设时必须被调整。可以表明，对于单个方差分量，REMLRT的理论渐近分布是χ2变量的混合，其中混合概率为0.5，一个具有0自由度（尖峰在0），另一个具有1度自由。 REMLRT统计量（D）的近似P值为0.5（1-Pr（χ2≤d）），其中d是D的观测值。与3.84临界值相比，5％临界值为2.71值为χ21变量。用于k个方差分量为零的测试的REMLRT的分布或者涉及随机回归的测试涉及方差和协方差分量，涉及从0到k自由度的χ2变量的混合。详见Self and Liang [1987]。
+关于一般平衡设计中的方差分量的测试，例如平衡单向分类，可以从通常的方差分析中导出。可以表明，对于方差分量为零的REMLRT是关联项的F统计量的色调函数。 为了比较两个（或更多）非嵌套模型，我们可以对每个模型评估Akaike信息准则（AIC）或贝叶斯信息准则（BIC）。这些是由 AIC =-2ℓRi&#43; 2ti BIC =-2ℓRi&#43; tilogv（2.15） 其中ti是模型i中方差参数的数量，ν= n-p是剩余自由度。对每个模型计算AIC和BIC，并且选择具有最小值的模型作为优选模型。">
+  <meta property="og:description" content="Butler D, Cullis BR, Gilmour a R, Gogel BJ (2009) Mixed models for S language environments.
+ 2.5随机效应的推断 2.5.1假设的测试 关于线性混合效应模型的方差参数的推论通常取决于从渐近结果导出的（RE）ML估计的近似分布。
+可以表明，REML估计的近似方差矩阵由期望信息矩阵的逆提供[Cox和Hinkley，1974，Section 4.8]。由于这个矩阵在asreml（）中不可用，我们用AI矩阵替换预期的信息矩阵。此外，REML估计是连续和渐近正常的，尽管在小样本中，这种近似似乎是不可靠的（见后文）。
+用于比较由REML拟合的嵌套模型的拟合的一般方法是REML似然比检验或REMLRT。 REMLRT仅在两个模型的固定效应相同时有效。在asreml（）中，这不仅需要相同的固定效应模型，而且需要相同的参数化，因为矩阵X&rsquo;X的对数决定因素不包括在REML对数似然中。 如果*lR2*是更一般模型的REML对数似然，并且*lR1*是受限模型的REML对数似然（即，在零假设下的REML对数似然），则REMLRT由下式给出
+（2.14）
+这是严格的积极。如果ri是在模型i中估计的参数的数量，则在限制模型下的REMLRT的渐近分布是χ2r2-r1。
+REMLRT是隐式双侧的，并且当测试涉及具有参数在参数空间的边界上的参数的假设时必须被调整。可以表明，对于单个方差分量，REMLRT的理论渐近分布是χ2变量的混合，其中混合概率为0.5，一个具有0自由度（尖峰在0），另一个具有1度自由。 REMLRT统计量（D）的近似P值为0.5（1-Pr（χ2≤d）），其中d是D的观测值。与3.84临界值相比，5％临界值为2.71值为χ21变量。用于k个方差分量为零的测试的REMLRT的分布或者涉及随机回归的测试涉及方差和协方差分量，涉及从0到k自由度的χ2变量的混合。详见Self and Liang [1987]。
+关于一般平衡设计中的方差分量的测试，例如平衡单向分类，可以从通常的方差分析中导出。可以表明，对于方差分量为零的REMLRT是关联项的F统计量的色调函数。 为了比较两个（或更多）非嵌套模型，我们可以对每个模型评估Akaike信息准则（AIC）或贝叶斯信息准则（BIC）。这些是由 AIC =-2ℓRi&#43; 2ti BIC =-2ℓRi&#43; tilogv（2.15） 其中ti是模型i中方差参数的数量，ν= n-p是剩余自由度。对每个模型计算AIC和BIC，并且选择具有最小值的模型作为优选模型。">
+  <meta name="twitter:description" content="Butler D, Cullis BR, Gilmour a R, Gogel BJ (2009) Mixed models for S language environments.
+ 2.5随机效应的推断 2.5.1假设的测试 关于线性混合效应模型的方差参数的推论通常取决于从渐近结果导出的（RE）ML估计的近似分布。
+可以表明，REML估计的近似方差矩阵由期望信息矩阵的逆提供[Cox …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/%E9%9A%8F%E6%9C%BA%E6%95%88%E5%BA%94%E7%9A%84%E6%8E%A8%E6%96%AD/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/%E9%9A%8F%E6%9C%BA%E6%95%88%E5%BA%94%E7%9A%84%E6%8E%A8%E6%96%AD/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>随机效应的推断</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (41 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>随机效应的推断</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (41 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Butler D, Cullis BR, Gilmour a R, Gogel BJ (2009) Mixed models for S language environments.</p>
+</blockquote>
+
+<h2 id="2-5随机效应的推断">2.5随机效应的推断</h2>
+
+<h2 id="2-5-1假设的测试">2.5.1假设的测试</h2>
+
+<p>关于线性混合效应模型的方差参数的推论通常取决于从渐近结果导出的（RE）ML估计的近似分布。</p>
+
+<p>可以表明，<strong>REML估计的近似方差矩阵由期望信息矩阵的逆提供</strong>[Cox和Hinkley，1974，Section 4.8]。由于这个矩阵在asreml（）中不可用，我们<strong>用AI矩阵替换预期的信息矩阵</strong>。此外，REML估计是连续和渐近正常的，尽管在小样本中，这种近似似乎是不可靠的（见后文）。</p>
+
+<p>用于比较由REML拟合的嵌套模型的拟合的一般方法是<strong>REML似然比检验</strong>或REMLRT。 <strong>REMLRT仅在两个模型的固定效应相同时有效</strong>。在asreml（）中，这不仅需要相同的固定效应模型，而且需要相同的参数化，因为矩阵X&rsquo;X的对数决定因素不包括在REML对数似然中。
+如果*lR2*是更一般模型的REML对数似然，并且*lR1*是受限模型的REML对数似然（即，在零假设下的REML对数似然），则REMLRT由下式给出</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-55830b691dea9865.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="REMLRT.png" />（2.14）</p>
+
+<p>这是严格的积极。如果ri是在模型i中估计的参数的数量，则在限制模型下的REMLRT的渐近分布是χ2r2-r1。</p>
+
+<p><strong>REMLRT是隐式双侧的，并且当测试涉及具有参数在参数空间的边界上的参数的假设时必须被调整</strong>。可以表明，对于单个方差分量，REMLRT的理论渐近分布是χ2变量的混合，其中混合概率为0.5，一个具有0自由度（尖峰在0），另一个具有1度自由。
+REMLRT统计量（D）的近似P值为0.5（1-Pr（χ2≤d）），其中d是D的观测值。与3.84临界值相比，5％临界值为2.71值为χ21变量。用于k个方差分量为零的测试的REMLRT的分布或者涉及随机回归的测试涉及方差和协方差分量，涉及从0到k自由度的χ2变量的混合。详见Self and Liang [1987]。</p>
+
+<p>关于一般平衡设计中的方差分量的测试，例如平衡单向分类，可以从通常的方差分析中导出。可以表明，对于方差分量为零的REMLRT是关联项的F统计量的色调函数。
+为了比较两个（或更多）非嵌套模型，我们可以对每个模型评估Akaike信息准则（AIC）或贝叶斯信息准则（BIC）。这些是由
+AIC =-2ℓRi+ 2ti
+BIC =-2ℓRi+ tilogv（2.15）
+其中ti是模型i中方差参数的数量，ν= n-p是剩余自由度。对每个模型计算AIC和BIC，并且选择具有最小值的模型作为优选模型。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/2017-03-20-photoswipe-gallery-sample/" data-toggle="tooltip" data-placement="top" title="Photoswipe Gallery Sample">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/bayesian/%E9%98%88%E5%80%BC%E6%80%A7%E7%8A%B6-gibbs-blup/" data-toggle="tooltip" data-placement="top" title="阈值性状-Gibbs-BLUP">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

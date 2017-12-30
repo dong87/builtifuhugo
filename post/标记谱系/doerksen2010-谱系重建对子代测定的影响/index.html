@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Doerksen2010-谱系重建对子代测定的影响</title>
+  <meta property="og:title" content="Doerksen2010-谱系重建对子代测定的影响" />
+  <meta name="twitter:title" content="Doerksen2010-谱系重建对子代测定的影响" />
+  <meta name="description" content="Doerksen TK, Herbinger CM (2010) Impact of reconstructed pedigrees on progeny-test breeding values in red spruce. Tree Genet Genomes 6:591–600. doi: 10.1007/s11295-010-0274-1
+ 摘要 使用混合模型分析通过DNA标记重建的谱系分配聚合物（PMX）和开放授粉（OP）后代测试中的父系，以测试不等男性生殖成功和系谱错误对定量遗传参数的影响。重建的谱系在更大的PMX试验中增加了遗传力。增加的遗传性是由于将谱系添加到谱系本身，而不是通过指定确切的谱系校正雄性繁殖偏倚。删除假设的谱系误差对定量参数没有影响，因为误差的大小太小（PMX）或后代测试太小而不能可靠地检测方差分量（OP）。虽然在向后选择中没有优点，但是在系谱中具有指定父系的后代的增加的加性方差，遗传性和准确性应当允许对具有更大遗传获得的后代的正向选择和对于未来育种决定的完整控制。讨论了具有新遗传信息的一些可能的育种群体结构。
+介绍 传统上，森林遗传测试用于对父母进行排序以进行倒退选择。虽然前面的家庭内选择对于复发的人口改善是必要的，但是有一些控制是否应当直接在生产人群中使用前向选择的后代，因为它们的育种价值准确度较低（Ruotsalainen和Lindgren 1998; Burdon和Kumar 2004）。通过增加每个家族测试的同胞数目，克隆测试（Shaw和Hood 1985; Kumar 2006）或使用更有效的统计测试设计（John和Williams 1998），可以增加准确度，但这些必须在实施测试之前应用。或者，使用混合模型方法的定量数据的回溯分析可以通过调整微网站空间变化的记录（Joyce等人，2002）更有效地利用分配给育种程序的有限资源，通过环境相互作用鉴定基因型的因果来源变异（Frensham等人1998）或更好的建模真正的基础谱系结构。 多态性（PMX）和开放授粉（OP）森林遗传试验的后代通常被假定为半同胞相关（关系系数= r = 0.25），但是实际上存在更复杂的谱系作为雄性差异生殖成功（Wheeler等人2006; Doerksen和Herbinger 2008）和育种（Squillace 1974; Sorensen和White 1988）。雄性对系谱的未知贡献可以增加后代的遗传相关性，导致遗传变异和遗传性被过度估计（Squillace 1974）。相反，谱系误差导致加性遗传方差和遗传性被低估（Ericsson 1999）。
+在混合模型中处理个体作为随机效应（如最佳线性无偏预测（BLUP））允许对任何一般谱系进行建模，从而考虑个体之间的复杂关系（包括近亲繁殖）（Mrode 2006）。正确地考虑复杂谱系增加了遗传方差的比例，育种值的精确度（BV），从而增加了对轮回选择的选择的可信度（Bromley et al.2000; de Souza et al.2000; Durel et al.1998 ; Klein 1995; White and Hodge 1988）。
+在任何谱系中，个体之间的关系系数在分子关系矩阵（NRM）中指定，使用基于谱系记录的递归规则建立。然而，当部分（或全部）谱系未知时，DNA标记可用于重建或推断谱系中缺失的关系（Lambeth等人，2001）。 （Milner et al。2000; Dodds et al.">
+  <meta property="og:description" content="Doerksen TK, Herbinger CM (2010) Impact of reconstructed pedigrees on progeny-test breeding values in red spruce. Tree Genet Genomes 6:591–600. doi: 10.1007/s11295-010-0274-1
+ 摘要 使用混合模型分析通过DNA标记重建的谱系分配聚合物（PMX）和开放授粉（OP）后代测试中的父系，以测试不等男性生殖成功和系谱错误对定量遗传参数的影响。重建的谱系在更大的PMX试验中增加了遗传力。增加的遗传性是由于将谱系添加到谱系本身，而不是通过指定确切的谱系校正雄性繁殖偏倚。删除假设的谱系误差对定量参数没有影响，因为误差的大小太小（PMX）或后代测试太小而不能可靠地检测方差分量（OP）。虽然在向后选择中没有优点，但是在系谱中具有指定父系的后代的增加的加性方差，遗传性和准确性应当允许对具有更大遗传获得的后代的正向选择和对于未来育种决定的完整控制。讨论了具有新遗传信息的一些可能的育种群体结构。
+介绍 传统上，森林遗传测试用于对父母进行排序以进行倒退选择。虽然前面的家庭内选择对于复发的人口改善是必要的，但是有一些控制是否应当直接在生产人群中使用前向选择的后代，因为它们的育种价值准确度较低（Ruotsalainen和Lindgren 1998; Burdon和Kumar 2004）。通过增加每个家族测试的同胞数目，克隆测试（Shaw和Hood 1985; Kumar 2006）或使用更有效的统计测试设计（John和Williams 1998），可以增加准确度，但这些必须在实施测试之前应用。或者，使用混合模型方法的定量数据的回溯分析可以通过调整微网站空间变化的记录（Joyce等人，2002）更有效地利用分配给育种程序的有限资源，通过环境相互作用鉴定基因型的因果来源变异（Frensham等人1998）或更好的建模真正的基础谱系结构。 多态性（PMX）和开放授粉（OP）森林遗传试验的后代通常被假定为半同胞相关（关系系数= r = 0.25），但是实际上存在更复杂的谱系作为雄性差异生殖成功（Wheeler等人2006; Doerksen和Herbinger 2008）和育种（Squillace 1974; Sorensen和White 1988）。雄性对系谱的未知贡献可以增加后代的遗传相关性，导致遗传变异和遗传性被过度估计（Squillace 1974）。相反，谱系误差导致加性遗传方差和遗传性被低估（Ericsson 1999）。
+在混合模型中处理个体作为随机效应（如最佳线性无偏预测（BLUP））允许对任何一般谱系进行建模，从而考虑个体之间的复杂关系（包括近亲繁殖）（Mrode 2006）。正确地考虑复杂谱系增加了遗传方差的比例，育种值的精确度（BV），从而增加了对轮回选择的选择的可信度（Bromley et al.2000; de Souza et al.2000; Durel et al.1998 ; Klein 1995; White and Hodge 1988）。
+在任何谱系中，个体之间的关系系数在分子关系矩阵（NRM）中指定，使用基于谱系记录的递归规则建立。然而，当部分（或全部）谱系未知时，DNA标记可用于重建或推断谱系中缺失的关系（Lambeth等人，2001）。 （Milner et al。2000; Dodds et al.">
+  <meta name="twitter:description" content="Doerksen TK, Herbinger CM (2010) Impact of reconstructed pedigrees on progeny-test breeding values in red spruce. Tree Genet Genomes 6:591–600. doi: 10.1007/s11295-010-0274-1
+ 摘要 使用混合模型分析通过DNA标记重建的谱系分 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/doerksen2010-%E8%B0%B1%E7%B3%BB%E9%87%8D%E5%BB%BA%E5%AF%B9%E5%AD%90%E4%BB%A3%E6%B5%8B%E5%AE%9A%E7%9A%84%E5%BD%B1%E5%93%8D/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/doerksen2010-%E8%B0%B1%E7%B3%BB%E9%87%8D%E5%BB%BA%E5%AF%B9%E5%AD%90%E4%BB%A3%E6%B5%8B%E5%AE%9A%E7%9A%84%E5%BD%B1%E5%93%8D/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Doerksen2010-谱系重建对子代测定的影响</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (131 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Doerksen2010-谱系重建对子代测定的影响</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (131 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Doerksen TK, Herbinger CM (2010) Impact of reconstructed pedigrees on progeny-test breeding values in red spruce. Tree Genet Genomes 6:591–600. doi: 10.1007/s11295-010-0274-1</p>
+</blockquote>
+
+<p>摘要
+使用混合模型分析通过DNA标记重建的谱系分配聚合物（PMX）和开放授粉（OP）后代测试中的父系，以<strong>测试不等男性生殖成功和系谱错误对定量遗传参数的影响</strong>。<strong>重建的谱系在更大的PMX试验中增加了遗传力。增加的遗传性是由于将谱系添加到谱系本身，而不是通过指定确切的谱系校正雄性繁殖偏倚</strong>。<strong>删除假设的谱系误差对定量参数没有影响</strong>，因为误差的大小太小（PMX）或后代测试太小而不能可靠地检测方差分量（OP）。<strong>虽然在向后选择中没有优点，但是在系谱中具有指定父系的后代的增加的加性方差，遗传性和准确性应当允许对具有更大遗传获得的后代的正向选择</strong>和对于未来育种决定的完整控制。讨论了具有新遗传信息的一些可能的育种群体结构。</p>
+
+<hr />
+
+<p>介绍
+传统上，森林遗传测试用于对父母进行排序以进行倒退选择。虽然前面的家庭内选择对于复发的人口改善是必要的，但是有一些控制是否应当直接在生产人群中使用前向选择的后代，因为它们的育种价值准确度较低（Ruotsalainen和Lindgren 1998; Burdon和Kumar 2004）。通过增加每个家族测试的同胞数目，克隆测试（Shaw和Hood 1985; Kumar 2006）或使用更有效的统计测试设计（John和Williams 1998），可以增加准确度，但这些必须在实施测试之前应用。或者，使用混合模型方法的定量数据的回溯分析可以通过调整微网站空间变化的记录（Joyce等人，2002）更有效地利用分配给育种程序的有限资源，通过环境相互作用鉴定基因型的因果来源变异（Frensham等人1998）或更好的建模真正的基础谱系结构。
+多态性（PMX）和开放授粉（OP）森林遗传试验的后代通常被假定为半同胞相关（关系系数= r = 0.25），但是实际上存在更复杂的谱系作为雄性差异生殖成功（Wheeler等人2006; Doerksen和Herbinger 2008）和育种（Squillace 1974; Sorensen和White 1988）。<strong>雄性对系谱的未知贡献可以增加后代的遗传相关性，导致遗传变异和遗传性被过度估计</strong>（Squillace 1974）。相反，<strong>谱系误差导致加性遗传方差和遗传性被低估（Ericsson 1999）</strong>。</p>
+
+<p>在混合模型中处理个体作为随机效应（如最佳线性无偏预测（BLUP））允许对任何一般谱系进行建模，从而考虑个体之间的复杂关系（包括近亲繁殖）（Mrode 2006）。<strong>正确地考虑复杂谱系增加了遗传方差的比例，育种值的精确度（BV），从而增加了对轮回选择的选择的可信度（Bromley et al.2000; de Souza et al.2000; Durel et al.1998 ; Klein 1995; White and Hodge 1988）</strong>。</p>
+
+<p>在任何谱系中，个体之间的关系系数在分子关系矩阵（NRM）中指定，使用基于谱系记录的递归规则建立。然而，当部分（或全部）谱系未知时，DNA标记可用于重建或推断谱系中缺失的关系（Lambeth等人，2001）。 （Milner et al。2000; Dodds et al.2005），显性同胞分组（Wilson et al。2003）或估计的成对财政系数（参考文献[1]），基于遗传参数的BLUP / REML估计， Bernardo 1993，1994）导致更少的双参数和BV预测更接近真实的遗传值。研究的目的是（1）测试定量遗传参数是否由于差异的男性生殖成功和谱系误差而偏倚，之前在PMX和OP交配系统中用DNA标记重建的基因检测到（Doerksen和Herbinger 2008）（2）比较交配系统（PMX vs OP）和谱系类型（重建和半同胞）的BV预测，以及（3）讨论利用新血统信息的选择和育种策略选项。</p>
+
+<h2 id="讨论">讨论</h2>
+
+<p>###差别交配/自交
+母系育种值在交配系统内没有明显再排序，这是由于在半同胞家族或近亲繁殖中分配的父亲的频率较高，这导致更高的关系系数，原因有两个。首先，如果关系系数（r）不超过预期值0.25，则不能期望遗传参数的偏差。<strong>当每个半同胞家族有多个子代时，关系系数是全同胞对数与子代总数的函数（Jackson 1983）</strong>。根据这一点，当花粉亲本家族大小&gt; 2，或种子亲本597家族大小&lt;10时，本研究中的r可以仅略大于0.25（Jackson 1983）。这在OP中是可能的，其中每个半同胞家族有〜10个子代，而在PMX中不是，其中家族包含〜20个子代。然而，r增加主要发生在有限数量的OP家庭发生自交，因为自我与半同胞家族的所有其他成员有更高的关系系数（Squillace 1974）。这可能有助于OP中的遗传参数的偏差，但对BV的重新排序仅具有小的影响，而在PMX中，低估的平均值r将导致遗传性和遗传效应的仅轻微偏高的高估。</p>
+
+<p>其次，由于被鉴定为自交的后代的近亲繁殖抑制，母体育种价值没有降低。 <strong>OP测试中的自我并未显示近交衰退的事实可能是由于不正确的父亲分配</strong>。然而，苗圃中的不选择弱幼苗，在测量年龄时不选弱小的和（或）田地中的存活的会提高存活的自我的平均表现。在其他研究中，开放和受控交叉授粉的性能之间差的遗传相关性通常归因于由于非随机OP交配，相关个体的频率增加，由于优势导致的育种抑制（Sorensen和White 1988; Hodge等（1996））和（或）间产地杂交的优势（Hodge et al。1996）。在这项研究中，OP和PMX交配系统中父系BV之间差的相关性的原因似乎不是由于在被测试的后代中导致近亲繁殖抑制的相关交配/自交，因为在存活的后代中鉴定到很少的自交。相反，低相关性可能是由于OP父母对照OP种子果园父母的较窄地理样本与PMX母本父母的更广地理样本的交叉/测试。也就是说，在选择OP群体的正树的原产地中，在多个树皮中的差异性交配/近交可能产生了不明原因在种源中占主导地位。即使自交的速度会高得多，重建的家系将解释OP后代可能增加遗传力和遗传增益与没有自我的测试后代之间的真实关系。这是因为S1家族中添加的遗传方差比F1家族多1.5倍（Lindgren，1975; Falconer和Mackay，1996），其中S1选择在低遗传率时特别有效（Wright 1980）。一个明显的假设是，S1和F1后代的方差分量是均匀的，或者它们可以单独估计，因为S1后代通常会在生长阶段遭受近交衰退（Williams和Savolainen 1996）。在这项研究中，OP测试太小，无法解决这个问题。
+###谱系错误
+以前检测到的分子标记的谱系误差不具有对附加遗传方差的假设效应（Doerksen和Herbinger 2008）。在PMX测试中，三个合并的误差源（体积，外来花粉和母体身份混合）可能太小而不能影响方差结构。这与一个模拟研究形成对比，该研究报告了导致系谱错误低至2％的加性遗传方差降至等同于同时增加优势方差的水平（Ericsson 1999）。在本研究中，删除假设外国人（3％）和志愿者（&lt;1％）错误的可忽略的定量效应表明这些可能不是真正的家谱错误，而是基因型评分错误或标记中的突变。因此，封闭的PMX交配系统可能比单一基因座标记基因型更加健全。<strong>在PMX测试中检测到的最终假设的错误类型，母体身份混合，只能影响遗传增益，而不是加性遗传方差，因为将作出错误的亲本选择</strong>。也就是说，在子代测试和量化模型中，母系子代和父代子代关系仍然是正确的，但是在克隆果园中的向后选择将识别不正确的正树分枝。事实上，只有一个后代与这种母体基因型选择，因此增益的任何减少都将是最小的。<strong>在OP试验中观察到的假定的谱系误差在大小上类似于10％的谱系误差（Banos等人2001; Israel和Weller 2000; Visscher等人2002）报道低估了导致损失的加性遗传方差和偏倚育种值的选择反应</strong>。然而，在这项研究中，OP测试太小，不能可靠地测试其定量的遗传效应。这对于谱系的分子验证提出了挑战，因为基因分型相对昂贵，特别是如果结果不能在定量模型中验证。理论上，由于半同源模型中亲本的错误规定，遗传性的降低是实际遗传率的2倍（p = 1），其中p是错误率（Van Vleck 1970; Visscher等人，2002）。然而，已经强调的是，由于甚至高随机错误导致的遗传反应的丧失不会改变大家族中的亲本排序（Visscher等人，2002），如在该研究中发现的。
+###遗传增益，人口结构
+使用BP80谱系的遗传获益可以是半同源模型的实质，并且使用家庭约束提供了一种简单的方法来捕获这种增益，而在所选择的子代中没有大的共轭。例如，当应用家族约束时，近亲繁殖（±2％）与可实现的增益相比非常小。此外，如果对另外的生物性状（例如DBH）进行多变量选择，则近亲繁殖将进一步降低，因为如果两个性状之间的遗传相关性小于1，则将选择不同的个体亚群。如果育种和生产种群（种子园）是相同的群体，这将导致近亲繁殖抑制高度的可忽略。再次注意，使用half-sib模型参数选择个体后对个体进行基因分型的唯一好处是coancestry控制。如果家庭约束放松，更大的收益
+可以以牺牲共同利益为代价实现，可以用两种方式处理。首先，如果育种和生产群体是相同的群体，如核群体结构（James 1977; Cotterill 1989），可以使用优化最小的coancestry的最大遗传增益的算法（Brisbane和Gibson 1995 ; Lindgren和Mullin 1997）。其次，如果在多个系列的测试半同胞中实施谱系重建和选择，则由于对测试系列中遗传上优越的父系（例如在PMX中）的选择，共殖系统将不可避免地增加。在这种情况下，育种和生产群体可以通过对育种群体进行升高而保持分离。一个简单的结构可能是排序前两个或三个父亲的每一个，以便每个子行中的个体都作为半同胞（r = 0.25）相关，其后代将具有近交系数F = 0.125。这可能导致繁殖群体中的一些近亲繁殖抑制，当在生产种群（种子园）中杂交时将会恢复。在任一情况下，2030的目标有效群体大小被认为足够大以在单一性状的长期选择实验中平衡增益和共同体（Yanchuk 2001）。
+##结论
+在树木育种计划中使用回溯性谱系重建（和测试）开始获得认可，因为它减少了制造受控杂交的时间和负担，同时保持全系谱控制（Dodds等人2005; El-Kassaby等人2006） 。<strong>当在规定的时间内不能完成复杂的配合设计时，这变得特别有利，导致更长的生成间隔，从而减少每一代的增益（Cotterill 1986）</strong>。在这项研究中，利用重建的谱系的主要优点是通过家庭，前向选择捕获遗传增益。<strong>对于父母的BVs有偏见，具有强遗传效应的男性，在HS模型中未考虑的</strong>，将不得不在smallHS家族中频繁发生。<strong>应该使用高质量的重组系谱以避免对定量遗传参数的误解</strong>。谱系质量可以通过增加DNA标记的数量来提高，从而提高亲子鉴定的能力。然而，在发现谱系和数据成本的增加的功率之间存在权衡，直到基因分型变得非常便宜。将常规后代测试的成本转移到基因分型和重建种植的生产林的子代（种子果园后代）可能是一种证明额外费用的方法，直到基因分型变得更便宜。在移植后代测试中收集的任何数据仍然可以通过现有的和重建的谱系与现有的常规测试结合。或者，<strong>给定中等数量的标记，通过在贝叶斯框架中增加非遗传数据（Hadfield等人，2006），增加父亲分配的权力，基因分型成本可以保持不变。非遗传数据可以包括空间位置，繁殖力，开花同步（Burczyk等人，2002），花粉种群率/生存力或任何其他与成功相关的特征</strong>。当分类亲子关系不能绝对地赋予标记数据时，优雅的解决方案可能是指定分数亲代，然后使用平均关系矩阵（ARM）解决BLUP方程（Henderson 1988; Dodds等人2005），以解释不确定性谱系。然而，与使用标准NRM的容易性相比，当对于每个后代存在多个候选父亲时，分配概率，处理/存储谱系信息和构建平均关系矩阵变得有问题。没有由作者测试的软件允许ARM设置为遗传分析中的一个选项。在不同环境中处理作为单独的，相关性状的性状（Falconer和Mackay 1996; White和Hodge 1988）可能是一种灵活的方式来解释和加权不同的谱系和不同地点的定量信息。这将允许树改进合作社或个体成员在利益最大或其中需要最多信息的系谱重建中投资，例如在遗传力低的地点。在原始半同胞设计中使用完整系谱可实现的额外遗传增益可有助于恢复以前无法在经济上证明延续到晚期世代的计划。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/dungey2006-%E7%A1%AC%E5%BA%A6-%E8%BE%90%E5%B0%84%E6%9D%BE/" data-toggle="tooltip" data-placement="top" title="Dungey2006-硬度-辐射松">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/doerksen2008-%E9%9B%84%E6%80%A7%E7%B9%81%E6%AE%96%E6%88%90%E5%8A%9F%E7%8E%87%E5%92%8C%E7%B3%BB%E8%B0%B1%E9%94%99%E8%AF%AF/" data-toggle="tooltip" data-placement="top" title="Doerksen2008-雄性繁殖成功率和系谱错误">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

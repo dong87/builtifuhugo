@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Rakyan2011-表观基因组范围的关联研究</title>
+  <meta property="og:title" content="Rakyan2011-表观基因组范围的关联研究" />
+  <meta name="twitter:title" content="Rakyan2011-表观基因组范围的关联研究" />
+  <meta name="description" content="Rakyan VK, Down TA, Balding DJ, Beck S (2011) Epigenome-wide association studies for common human diseases. Nat Publ Gr 12:529–541. doi: 10.1038/nrg3000
+摘要| 尽管全基因组关联研究（GWAS）在鉴定与常见疾病相关的基因座方面的成功，但大部分的因果关系仍然不明。 基因组技术的最新进展使我们能够开始大规模研究人类疾病相关的表观遗传变异，特别是DNA甲基化的变异。 这种表观基因组范围的关联研究（EWAS）提供新的机会，但也产生在GWAS中未遇到的新挑战。 我们讨论EWAS设计，队列和样本选择，统计显着性和功效，混杂因素和随访研究。
+ 阐明人类复杂疾病（也可换成整个生物界所有有意义的性状）的遗传和非遗传决定因素是生物医学研究的主要挑战之一。近年来，全基因组关联研究（GWASs）已经为150多种疾病和其他性状发现了&gt; 800个SNP关联1。尽管对于任何人类复杂疾病还不知道完整的遗传基础，但是对外显子 - 并且最终完整的基因组 - 的确定有望识别大多数致病性遗传变异。然而，现在越来越感兴趣探索非遗传变异，包括表观遗传因素如何影响复杂的疾病病因2-4。 细胞的表观基因组是高度动态的，由遗传和环境因素的复杂相互作用控制5。正常细胞功能依赖于表观基因组稳态的维持，这进一步突出表现在表观基因组扰动和人类疾病，特别是癌症之间的许多报告的关联4。然而，迄今为止这种关联的大多数研究已经进行或者具有不足的基因组覆盖（例如，几十到几百个基因座），但是足够的样品量，或者具有更接近全基因组的覆盖度（数千个基因座）但样本量不足。因此，对于任何人类复杂疾病，我们仍然不知道可归因于个体间表观基因组变异的表型变异的比例。这个问题只能通过大规模，系统的表观基因组等价的GWAS-表观基因组范围的关联研究（EWASs）来阐明，如2008年首次提出的（参考文献6）。至少对于DNA甲基化（DNAm），现在可以获得在分辨率和通量上与高度成功的GWAS芯片直接相当的技术，其允许大约500,000（500K）SNP的基因分型。 但是，如何进行EWAS？除了GWAS和EWAS共有的考虑因素（例如，适当的技术和样品量），EWAS的设计在样品选择方面有特定的考虑。 DNAm模式对组织和发育阶段是特异性的，它们也随时间而变化。此外，EWAS关联可以是所涉及的表型的因果性和相应的 - 与GWAS的区别，提出了相当大的挑战。在这里，我们在设计和分析有效的EWAS的背景下讨论这些考虑，记住EWAS可能随着信息和经验的积累而演变，就像GWAS一样。
+表观遗传变异和复杂疾病 表观遗传信息的类型。哺乳动物中的表观遗传信息可以以多种形式传播，包括有丝分裂稳定的DNAm，组蛋白和非编码RNA（ncRNA）的翻译后修饰。对于DNAm，主要形式是在胞嘧啶 - 鸟嘌呤二核苷酸（CpG）的背景下胞嘧啶的甲基化。然而，最近的研究结果表明CpH甲基化（其中H = C / A / T）可能比以前更常见的7.8。由十一位易位（TET）甲基胞嘧啶双加氧酶催化，5-羟甲基化9,10胞嘧啶（hmC）是另一种形式的DNAm。虽然细节仍不清楚，越来越多的证据表明hmC在基因调控和分化中的作用11。组蛋白修饰包括（仅举几个）核心组蛋白的氨基末端尾中的一个或多个氨基酸的单 - ，二 - 或三甲基化，乙酰化和瓜氨酸化5。最近，已经发现ncRNA可以自我繁殖并且独立于下面的DNA而被传递;换句话说，他们可以“表观遗传”地传递监管信息12,13。这样的ncRNA包括短微小RNA（miRNA），PIWI相互作用RNA（piRNA）和大型基因间非编码RNA（lincRNA）等。 健康和疾病的表观遗传变异。考虑到二倍体人类表观基因组含有&gt; 108个Cs（其中&gt; 107个是CpG）和&gt; 108个组蛋白尾巴，所有潜在的变化，目前未知但是潜在的表观遗传标记的范围。最经研究的表观遗传标记是DNAm，BOX 1讨论DNAm变化的最常见的特征和背景。在单个CpG位点的DNAm变异被称为甲基化可变位置（MVP），其可以被认为是SNP14的表观遗传学等价物。很少，每个等位基因的仅两条DNA链之一上的CpG被甲基化。这被称为半甲基化，并且它可能反映在增殖细胞中DNAm维持中的复制后滞后。如果DNAm在多个相邻的CpG位点被改变，这被称为差异甲基化区（DMR）。 DMR在长度上变化相当大：它们通常&lt;1kb，但是它们可以超过1Mb15。 直到最近，MVP和DMR主要在核心启动子，CpG岛（CGI）和印迹差异甲基化区域（iDMR）的背景下进行研究;然而，越来越清楚的是DNAm是高度动态的，甚至在这些区域之外。例如，最近的一项研究发现，组织和癌症特异性DMRs优先发生在邻近CGI的区域 - 所谓的CGI海岸16。 DNAm还在沉默重复元件中具有关键作用，这也可能对疾病病因17,18造成影响。 DNAm变异在复杂疾病中的作用主要在癌症的背景中探讨，可以被认为是早期EWAS。这些研究的结果已被广泛讨论4,19，关键的一般结论是肿瘤发展与CGI的DNAm增加，重复元件的损失印迹和表观遗传重塑相关，特别是卫星DNA的DNAm损失20， 21。对于非恶性的，常见的复杂疾病，例如糖尿病或自身免疫，表观遗传组分仅刚刚开始研究。支持表观遗传组分参与这些疾病的观察包括以下。首先，对于任何复杂疾病的单卵双生子协调几乎从未100％。近来，对于系统性红斑狼疮22和自闭症谱系障碍23不一致的单性双胞胎的小规模EWAS已经在单卵型对中发现了疾病相关的表观遗传学差异。其次，几种复杂疾病（例如1型糖尿病）的发病率在一般人群中上升，并且在移民人口中经常改变，这表明非遗传因素的作用。第三，流行病学证据表明，在子宫或早期儿童环境中次优的可能对成年期的疾病结果（例如2型糖尿病）有影响，这种现象称为“发育重编程”（参考文献25）。目前，子宫环境的分子记忆的主要候选是表观遗传修饰，包括DNAm26-28。
+表观遗传变异作为疾病的结果或原因。如上所述，表观遗传变异可以是疾病的病因或可以作为疾病的结果而出现。作为疾病的结果，直接或间接可能出现表观遗传变异 - 其实例可包括自身免疫性疾病中免疫相关细胞的长期改变，2型糖尿病中改变的代谢调节或体细胞突变诱导的表观遗传改变癌症。然而，将其与导致疾病过程的表观遗传变异区分开并不是直截了当的（我们将在下面更详细地讨论），但是永远不是至关重要的;这是因为它将有助于阐明疾病相关变异的功能作用及其在诊断或治疗方面的潜在效用。实现这一目标的关键步骤是确定变异是否存在于任何明显的疾病迹象之前。在这方面，考虑如何在疾病之前出现这样的表观遗传变异是有用的。首先，它可以是遗传的，因此存在于所有组织中，包括胚系（即，跨代表观遗传），尽管这种现象的程度尚不完全清楚。第二，它可以随机出现，如果发生在早期（例如子宫内）发展中，则出现全身性[29,30]，或者可以局限于一个或几个组织31,32，如果它发生在出生后或在成人期间。第三，它可能是环境诱导，通过成人生活方式相关因素，如饮食或吸烟33，甚至在子宫内;即，发育重编程（如上所述）。 还有可能的是，潜在的基因型影响表观遗传变异，最近由几个研究表明34-39。含有影响甲基化状态的遗传变异的基因座被称为甲基化数量性状基因座（methQTLs）34。在大多数甲基喹唑啉酮中，与顺式基因型的相关性是最显着的。有一些证据表明遗传变异也可以影响反式的表观遗传状态，但这似乎不像顺式效应那样普遍。此外，重要的是要注意，在大多数这些以前的研究中，真正的致病性遗传变异没有明确地鉴定，并且大多数甲基化QTL在顺式基因型和表观基因型之间没有表现出严格的一对一关系;相反，指定的基因型产生增加的甲基化概率。 Feinberg和Irizarry2最近争论的小鼠和人类基因组中的遗传变异的存在，不改变平均表型，而是表型的变异性;这可以通过可变甲基化区域进行表观遗传学调节（VMR，参见框1）。 MetQTLs的存在为综合GWAS和EWAS揭示通过表观遗传变异发挥其功能的基因型提供了强有力的论证（稍后讨论）。 这些methQTLs也会影响等位基因特异性甲基化（ASM，参见BOX 1）。在这种情况下，稳态甲基化水平在同一细胞内的两个等位基因不同。然而，ASM也可以在没有任何特定基因型 - 表观遗传型相关性的情况下发生。例如，亲本印记，X染色体失活和一个等位基因的随机单等位基因甲基化都是ASM的实例，其不是由甲基化和非甲基化等位基因之间的基础基因型差异引起的。 最后，还值得考虑的是，在一些情况下，疾病相关的表观遗传变异可能在疾病发作之前出现，但可能不是疾病本身的原因。这种类型的epi现象可能是由于混杂，其中环境因素（如吸烟）或遗传变异诱导异常的表观遗传状态和疾病。 表观遗传变异和复杂疾病之间的这些潜在关系对EWAS的设计和分析有重要的影响。首先，它们将确定待采样的最相关的组织和细胞类型。第二，反向因果关系和混杂是EWAS设计的特殊问题。尽管有相当多的证据表明癌症中的表观遗传干扰4和其他非恶性疾病的新证据22,23,40-42，但是这些研究都没有能够最终区分因果性和后果性遗传变异：长期以来被认识的问题43 。虽然任何EWAS与疾病的关联都是潜在的进步，但是能够识别因果关系的方向将极大地帮助确定表观遗传变异的有用性，例如，疾病进展的标记，通过治疗逆转的目标与epi药物（即，对epi基因组有影响的药物），或通过监测药物诱导表观遗传变化的动力学的药物反应的措施。">
+  <meta property="og:description" content="Rakyan VK, Down TA, Balding DJ, Beck S (2011) Epigenome-wide association studies for common human diseases. Nat Publ Gr 12:529–541. doi: 10.1038/nrg3000
+摘要| 尽管全基因组关联研究（GWAS）在鉴定与常见疾病相关的基因座方面的成功，但大部分的因果关系仍然不明。 基因组技术的最新进展使我们能够开始大规模研究人类疾病相关的表观遗传变异，特别是DNA甲基化的变异。 这种表观基因组范围的关联研究（EWAS）提供新的机会，但也产生在GWAS中未遇到的新挑战。 我们讨论EWAS设计，队列和样本选择，统计显着性和功效，混杂因素和随访研究。
+ 阐明人类复杂疾病（也可换成整个生物界所有有意义的性状）的遗传和非遗传决定因素是生物医学研究的主要挑战之一。近年来，全基因组关联研究（GWASs）已经为150多种疾病和其他性状发现了&gt; 800个SNP关联1。尽管对于任何人类复杂疾病还不知道完整的遗传基础，但是对外显子 - 并且最终完整的基因组 - 的确定有望识别大多数致病性遗传变异。然而，现在越来越感兴趣探索非遗传变异，包括表观遗传因素如何影响复杂的疾病病因2-4。 细胞的表观基因组是高度动态的，由遗传和环境因素的复杂相互作用控制5。正常细胞功能依赖于表观基因组稳态的维持，这进一步突出表现在表观基因组扰动和人类疾病，特别是癌症之间的许多报告的关联4。然而，迄今为止这种关联的大多数研究已经进行或者具有不足的基因组覆盖（例如，几十到几百个基因座），但是足够的样品量，或者具有更接近全基因组的覆盖度（数千个基因座）但样本量不足。因此，对于任何人类复杂疾病，我们仍然不知道可归因于个体间表观基因组变异的表型变异的比例。这个问题只能通过大规模，系统的表观基因组等价的GWAS-表观基因组范围的关联研究（EWASs）来阐明，如2008年首次提出的（参考文献6）。至少对于DNA甲基化（DNAm），现在可以获得在分辨率和通量上与高度成功的GWAS芯片直接相当的技术，其允许大约500,000（500K）SNP的基因分型。 但是，如何进行EWAS？除了GWAS和EWAS共有的考虑因素（例如，适当的技术和样品量），EWAS的设计在样品选择方面有特定的考虑。 DNAm模式对组织和发育阶段是特异性的，它们也随时间而变化。此外，EWAS关联可以是所涉及的表型的因果性和相应的 - 与GWAS的区别，提出了相当大的挑战。在这里，我们在设计和分析有效的EWAS的背景下讨论这些考虑，记住EWAS可能随着信息和经验的积累而演变，就像GWAS一样。
+表观遗传变异和复杂疾病 表观遗传信息的类型。哺乳动物中的表观遗传信息可以以多种形式传播，包括有丝分裂稳定的DNAm，组蛋白和非编码RNA（ncRNA）的翻译后修饰。对于DNAm，主要形式是在胞嘧啶 - 鸟嘌呤二核苷酸（CpG）的背景下胞嘧啶的甲基化。然而，最近的研究结果表明CpH甲基化（其中H = C / A / T）可能比以前更常见的7.8。由十一位易位（TET）甲基胞嘧啶双加氧酶催化，5-羟甲基化9,10胞嘧啶（hmC）是另一种形式的DNAm。虽然细节仍不清楚，越来越多的证据表明hmC在基因调控和分化中的作用11。组蛋白修饰包括（仅举几个）核心组蛋白的氨基末端尾中的一个或多个氨基酸的单 - ，二 - 或三甲基化，乙酰化和瓜氨酸化5。最近，已经发现ncRNA可以自我繁殖并且独立于下面的DNA而被传递;换句话说，他们可以“表观遗传”地传递监管信息12,13。这样的ncRNA包括短微小RNA（miRNA），PIWI相互作用RNA（piRNA）和大型基因间非编码RNA（lincRNA）等。 健康和疾病的表观遗传变异。考虑到二倍体人类表观基因组含有&gt; 108个Cs（其中&gt; 107个是CpG）和&gt; 108个组蛋白尾巴，所有潜在的变化，目前未知但是潜在的表观遗传标记的范围。最经研究的表观遗传标记是DNAm，BOX 1讨论DNAm变化的最常见的特征和背景。在单个CpG位点的DNAm变异被称为甲基化可变位置（MVP），其可以被认为是SNP14的表观遗传学等价物。很少，每个等位基因的仅两条DNA链之一上的CpG被甲基化。这被称为半甲基化，并且它可能反映在增殖细胞中DNAm维持中的复制后滞后。如果DNAm在多个相邻的CpG位点被改变，这被称为差异甲基化区（DMR）。 DMR在长度上变化相当大：它们通常&lt;1kb，但是它们可以超过1Mb15。 直到最近，MVP和DMR主要在核心启动子，CpG岛（CGI）和印迹差异甲基化区域（iDMR）的背景下进行研究;然而，越来越清楚的是DNAm是高度动态的，甚至在这些区域之外。例如，最近的一项研究发现，组织和癌症特异性DMRs优先发生在邻近CGI的区域 - 所谓的CGI海岸16。 DNAm还在沉默重复元件中具有关键作用，这也可能对疾病病因17,18造成影响。 DNAm变异在复杂疾病中的作用主要在癌症的背景中探讨，可以被认为是早期EWAS。这些研究的结果已被广泛讨论4,19，关键的一般结论是肿瘤发展与CGI的DNAm增加，重复元件的损失印迹和表观遗传重塑相关，特别是卫星DNA的DNAm损失20， 21。对于非恶性的，常见的复杂疾病，例如糖尿病或自身免疫，表观遗传组分仅刚刚开始研究。支持表观遗传组分参与这些疾病的观察包括以下。首先，对于任何复杂疾病的单卵双生子协调几乎从未100％。近来，对于系统性红斑狼疮22和自闭症谱系障碍23不一致的单性双胞胎的小规模EWAS已经在单卵型对中发现了疾病相关的表观遗传学差异。其次，几种复杂疾病（例如1型糖尿病）的发病率在一般人群中上升，并且在移民人口中经常改变，这表明非遗传因素的作用。第三，流行病学证据表明，在子宫或早期儿童环境中次优的可能对成年期的疾病结果（例如2型糖尿病）有影响，这种现象称为“发育重编程”（参考文献25）。目前，子宫环境的分子记忆的主要候选是表观遗传修饰，包括DNAm26-28。
+表观遗传变异作为疾病的结果或原因。如上所述，表观遗传变异可以是疾病的病因或可以作为疾病的结果而出现。作为疾病的结果，直接或间接可能出现表观遗传变异 - 其实例可包括自身免疫性疾病中免疫相关细胞的长期改变，2型糖尿病中改变的代谢调节或体细胞突变诱导的表观遗传改变癌症。然而，将其与导致疾病过程的表观遗传变异区分开并不是直截了当的（我们将在下面更详细地讨论），但是永远不是至关重要的;这是因为它将有助于阐明疾病相关变异的功能作用及其在诊断或治疗方面的潜在效用。实现这一目标的关键步骤是确定变异是否存在于任何明显的疾病迹象之前。在这方面，考虑如何在疾病之前出现这样的表观遗传变异是有用的。首先，它可以是遗传的，因此存在于所有组织中，包括胚系（即，跨代表观遗传），尽管这种现象的程度尚不完全清楚。第二，它可以随机出现，如果发生在早期（例如子宫内）发展中，则出现全身性[29,30]，或者可以局限于一个或几个组织31,32，如果它发生在出生后或在成人期间。第三，它可能是环境诱导，通过成人生活方式相关因素，如饮食或吸烟33，甚至在子宫内;即，发育重编程（如上所述）。 还有可能的是，潜在的基因型影响表观遗传变异，最近由几个研究表明34-39。含有影响甲基化状态的遗传变异的基因座被称为甲基化数量性状基因座（methQTLs）34。在大多数甲基喹唑啉酮中，与顺式基因型的相关性是最显着的。有一些证据表明遗传变异也可以影响反式的表观遗传状态，但这似乎不像顺式效应那样普遍。此外，重要的是要注意，在大多数这些以前的研究中，真正的致病性遗传变异没有明确地鉴定，并且大多数甲基化QTL在顺式基因型和表观基因型之间没有表现出严格的一对一关系;相反，指定的基因型产生增加的甲基化概率。 Feinberg和Irizarry2最近争论的小鼠和人类基因组中的遗传变异的存在，不改变平均表型，而是表型的变异性;这可以通过可变甲基化区域进行表观遗传学调节（VMR，参见框1）。 MetQTLs的存在为综合GWAS和EWAS揭示通过表观遗传变异发挥其功能的基因型提供了强有力的论证（稍后讨论）。 这些methQTLs也会影响等位基因特异性甲基化（ASM，参见BOX 1）。在这种情况下，稳态甲基化水平在同一细胞内的两个等位基因不同。然而，ASM也可以在没有任何特定基因型 - 表观遗传型相关性的情况下发生。例如，亲本印记，X染色体失活和一个等位基因的随机单等位基因甲基化都是ASM的实例，其不是由甲基化和非甲基化等位基因之间的基础基因型差异引起的。 最后，还值得考虑的是，在一些情况下，疾病相关的表观遗传变异可能在疾病发作之前出现，但可能不是疾病本身的原因。这种类型的epi现象可能是由于混杂，其中环境因素（如吸烟）或遗传变异诱导异常的表观遗传状态和疾病。 表观遗传变异和复杂疾病之间的这些潜在关系对EWAS的设计和分析有重要的影响。首先，它们将确定待采样的最相关的组织和细胞类型。第二，反向因果关系和混杂是EWAS设计的特殊问题。尽管有相当多的证据表明癌症中的表观遗传干扰4和其他非恶性疾病的新证据22,23,40-42，但是这些研究都没有能够最终区分因果性和后果性遗传变异：长期以来被认识的问题43 。虽然任何EWAS与疾病的关联都是潜在的进步，但是能够识别因果关系的方向将极大地帮助确定表观遗传变异的有用性，例如，疾病进展的标记，通过治疗逆转的目标与epi药物（即，对epi基因组有影响的药物），或通过监测药物诱导表观遗传变化的动力学的药物反应的措施。">
+  <meta name="twitter:description" content="Rakyan VK, Down TA, Balding DJ, Beck S (2011) Epigenome-wide association studies for common human diseases. Nat Publ Gr 12:529–541. doi: 10.1038/nrg3000
+摘要| 尽管全基因组关联研究（GWAS）在鉴定与常见疾病相关的基因座方面的成功，但大部分的因果 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9/rakyan2011-%E8%A1%A8%E8%A7%82%E5%9F%BA%E5%9B%A0%E7%BB%84%E8%8C%83%E5%9B%B4%E7%9A%84%E5%85%B3%E8%81%94%E7%A0%94%E7%A9%B6/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9/rakyan2011-%E8%A1%A8%E8%A7%82%E5%9F%BA%E5%9B%A0%E7%BB%84%E8%8C%83%E5%9B%B4%E7%9A%84%E5%85%B3%E8%81%94%E7%A0%94%E7%A9%B6/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Rakyan2011-表观基因组范围的关联研究</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (132 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Rakyan2011-表观基因组范围的关联研究</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (132 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Rakyan VK, Down TA, Balding DJ, Beck S (2011) Epigenome-wide association studies for common human diseases. Nat Publ Gr 12:529–541. doi: 10.1038/nrg3000</p>
+
+<p>摘要| 尽管全基因组关联研究（GWAS）在鉴定与常见疾病相关的基因座方面的成功，但大部分的因果关系仍然不明。 基因组技术的最新进展使我们能够开始大规模研究人类疾病相关的表观遗传变异，特别是DNA甲基化的变异。 这种表观基因组范围的关联研究（EWAS）提供新的机会，但也产生在GWAS中未遇到的新挑战。 我们讨论EWAS设计，队列和样本选择，统计显着性和功效，混杂因素和随访研究。</p>
+</blockquote>
+
+<p><strong>阐明人类复杂疾病（也可换成整个生物界所有有意义的性状）的遗传和非遗传决定因素是生物医学研究的主要挑战之一</strong>。近年来，全基因组关联研究（GWASs）已经为150多种疾病和其他性状发现了&gt; 800个SNP关联1。<strong>尽管对于任何人类复杂疾病还不知道完整的遗传基础，但是对外显子 - 并且最终完整的基因组 - 的确定有望识别大多数致病性遗传变异</strong>。然而，现在越来越感兴趣探索<strong>非遗传变异</strong>，包括<strong>表观遗传因素如何影响复杂的疾病病因</strong>2-4。
+<strong>细胞的表观基因组是高度动态的，由遗传和环境因素的复杂相互作用控制5。正常细胞功能依赖于表观基因组稳态的维持，这进一步突出表现在表观基因组扰动和人类疾病，特别是癌症之间的许多报告的关联</strong>4。然而，迄今为止这种关联的大多数研究已经进行或者具有不足的基因组覆盖（例如，几十到几百个基因座），但是足够的样品量，或者具有更接近全基因组的覆盖度（数千个基因座）但样本量不足。因此，对于任何人类复杂疾病，我们仍然不知道可归因于个体间表观基因组变异的表型变异的比例。这个问题只能通过大规模，系统的表观基因组等价的GWAS-表观基因组范围的关联研究（EWASs）来阐明，如2008年首次提出的（参考文献6）。至少对于DNA甲基化（DNAm），现在可以获得在分辨率和通量上与高度成功的GWAS芯片直接相当的技术，其允许大约500,000（500K）SNP的基因分型。
+但是，如何进行EWAS？除了GWAS和EWAS共有的考虑因素（例如，适当的技术和样品量），EWAS的设计在样品选择方面有特定的考虑。 <strong>DNAm模式对组织和发育阶段是特异性的，它们也随时间而变化。</strong>此外，<strong>EWAS关联可以是所涉及的表型的因果性和相应的 - 与GWAS的区别，提出了相当大的挑战。</strong>在这里，我们在设计和分析有效的EWAS的背景下讨论这些考虑，<strong>记住EWAS可能随着信息和经验的积累而演变，就像GWAS一样。</strong></p>
+
+<h2 id="表观遗传变异和复杂疾病">表观遗传变异和复杂疾病</h2>
+
+<p><strong>表观遗传信息的类型。</strong>哺乳动物中的表观遗传信息可以以多种形式传播，包括有丝分裂稳定的DNAm，组蛋白和非编码RNA（ncRNA）的翻译后修饰。对于DNAm，主要形式是在<strong>胞嘧啶 - 鸟嘌呤二核苷酸（CpG）的背景下胞嘧啶的甲基化。</strong>然而，最近的研究结果表明CpH甲基化（其中H = C / A / T）可能比以前更常见的7.8。由十一位易位（TET）甲基胞嘧啶双加氧酶催化，5-羟甲基化9,10胞嘧啶（hmC）是另一种形式的DNAm。虽然细节仍不清楚，越来越多的证据表明hmC在基因调控和分化中的作用11。组蛋白修饰包括（仅举几个）核心组蛋白的氨基末端尾中的一个或多个氨基酸的单 - ，二 - 或三甲基化，乙酰化和瓜氨酸化5。最近，已经发现ncRNA可以自我繁殖并且独立于下面的DNA而被传递;换句话说，他们可以“表观遗传”地传递监管信息12,13。这样的ncRNA包括短微小RNA（miRNA），PIWI相互作用RNA（piRNA）和大型基因间非编码RNA（lincRNA）等。
+ 
+健康和疾病的表观遗传变异。考虑到二倍体人类表观基因组含有&gt; 108个Cs（其中&gt; 107个是CpG）和&gt; 108个组蛋白尾巴，所有潜在的变化，目前未知但是潜在的表观遗传标记的范围。最经研究的表观遗传标记是DNAm，BOX 1讨论DNAm变化的最常见的特征和背景。在单个CpG位点的DNAm变异被称为甲<strong>基化可变位置（MVP）</strong>，其可以被认为是SNP14的表观遗传学等价物。很少，每个等位基因的仅两条DNA链之一上的CpG被甲基化。这被称为半甲基化，并且它可能反映在增殖细胞中DNAm维持中的复制后滞后。如果DNAm在多个相邻的CpG位点被改变，这被称为<strong>差异甲基化区（DMR）</strong>。 DMR在长度上变化相当大：它们通常&lt;1kb，但是它们可以超过1Mb15。
+直到最近，MVP和DMR主要在核心启动子，CpG岛（CGI）和印迹差异甲基化区域（iDMR）的背景下进行研究;然而，<strong>越来越清楚的是DNAm是高度动态的，甚至在这些区域之外</strong>。例如，最近的一项研究发现，组织和癌症特异性DMRs优先发生在邻近CGI的区域 - 所谓的CGI海岸16。 <strong>DNAm还在沉默重复元件中具有关键作用</strong>，这也可能对疾病病因17,18造成影响。
+DNAm变异在复杂疾病中的作用主要在癌症的背景中探讨，可以被认为是早期EWAS。这些研究的结果已被广泛讨论4,19，<strong>关键的一般结论是肿瘤发展与CGI的DNAm增加，重复元件的损失印迹和表观遗传重塑相关，特别是卫星DNA的DNAm损失</strong>20， 21。<strong>对于非恶性的，常见的复杂疾病，例如糖尿病或自身免疫，表观遗传组分仅刚刚开始研究</strong>。支持表观遗传组分参与这些疾病的观察包括以下。首先，<strong>对于任何复杂疾病的单卵双生子协调几乎从未100％</strong>。近来，对于系统性红斑狼疮22和自闭症谱系障碍23不一致的单性双胞胎的小规模EWAS已经在单卵型对中发现了疾病相关的表观遗传学差异。其次，几种复杂疾病（例如1型糖尿病）的发病率在一般人群中上升，并且在移民人口中经常改变，这表明非遗传因素的作用。第三，<strong>流行病学证据表明，在子宫或早期儿童环境中次优的可能对成年期的疾病结果（例如2型糖尿病）有影响，这种现象称为“发育重编程”（参考文献25）</strong>。<strong>目前，子宫环境的分子记忆的主要候选是表观遗传修饰，包括DNAm26-28</strong>。</p>
+
+<p>表观遗传变异作为疾病的结果或原因。如上所述，<strong>表观遗传变异可以是疾病的病因或可以作为疾病的结果而出现。</strong>作为疾病的结果，直接或间接可能出现表观遗传变异 - 其实例可包括自身免疫性疾病中免疫相关细胞的长期改变，2型糖尿病中改变的代谢调节或体细胞突变诱导的表观遗传改变癌症。然而，将其与导致疾病过程的表观遗传变异区分开并不是直截了当的（我们将在下面更详细地讨论），但是永远不是至关重要的;这是因为它将有助于阐明疾病相关变异的功能作用及其在诊断或治疗方面的潜在效用。实现这一目标的关键步骤是确定变异是否存在于任何明显的疾病迹象之前。在这方面，考虑如何在疾病之前出现这样的表观遗传变异是有用的。首先，<strong>它可以是遗传的</strong>，因此存在于所有组织中，包括胚系（即，跨代表观遗传），尽管这种现象的程度尚不完全清楚。第二，<strong>它可以随机出现</strong>，如果发生在早期（例如子宫内）发展中，则出现全身性[29,30]，或者可以局限于一个或几个组织31,32，如果它发生在出生后或在成人期间。第三，<strong>它可能是环境诱导</strong>，通过成人生活方式相关因素，如饮食或吸烟33，甚至在子宫内;即，发育重编程（如上所述）。
+还有可能的是，<strong>潜在的基因型影响表观遗传变异</strong>，最近由几个研究表明34-39。含有影响甲基化状态的遗传变异的基因座被称为甲基化数量性状基因座（methQTLs）34。在大多数甲基喹唑啉酮中，与顺式基因型的相关性是最显着的。有一些证据表明遗传变异也可以影响反式的表观遗传状态，但这似乎不像顺式效应那样普遍。此外，重要的是要注意，在大多数这些以前的研究中，<strong>真正的致病性遗传变异没有明确地鉴定，并且大多数甲基化QTL在顺式基因型和表观基因型之间没有表现出严格的一对一关系;相反，指定的基因型产生增加的甲基化概率</strong>。 Feinberg和Irizarry2最近争论的<strong>小鼠和人类基因组中的遗传变异的存在，不改变平均表型，而是表型的变异性;这可以通过可变甲基化区域进行表观遗传学调节（VMR，参见框1）</strong>。 <strong>MetQTLs的存在为综合GWAS和EWAS揭示通过表观遗传变异发挥其功能的基因型提供了强有力的论证（稍后讨论）</strong>。
+<strong>这些methQTLs也会影响等位基因特异性甲基化（ASM，参见BOX 1）。在这种情况下，稳态甲基化水平在同一细胞内的两个等位基因不同</strong>。然而，<strong>ASM也可以在没有任何特定基因型 - 表观遗传型相关性的情况下发生</strong>。例如，<strong>亲本印记，X染色体失活和一个等位基因的随机单等位基因甲基化都是ASM的实例，其不是由甲基化和非甲基化等位基因之间的基础基因型差异引起的</strong>。
+最后，还值得考虑的是，<strong>在一些情况下，疾病相关的表观遗传变异可能在疾病发作之前出现，但可能不是疾病本身的原因</strong>。<strong>这种类型的epi现象可能是由于混杂，其中环境因素（如吸烟）或遗传变异诱导异常的表观遗传状态和疾病</strong>。
+表观遗传变异和复杂疾病之间的这些潜在关系对EWAS的设计和分析有重要的影响。首先，它们将<strong>确定待采样的最相关的组织和细胞类型</strong>。第二，反向因果关系和混杂是EWAS设计的特殊问题。尽管有相当多的证据表明癌症中的表观遗传干扰4和其他非恶性疾病的新证据22,23,40-42，但是这些研究都没有能够最终区分<strong>因果性和后果性遗传变异</strong>：长期以来被认识的问题43 。虽然任何EWAS与疾病的关联都是潜在的进步，但是能够识别因果关系的方向将极大地帮助确定表观遗传变异的有用性，例如，疾病进展的标记，通过治疗逆转的目标与epi药物（即，对epi基因组有影响的药物），或通过监测药物诱导表观遗传变化的动力学的药物反应的措施。</p>
+
+<h2 id="分析表观遗传变异">分析表观遗传变异</h2>
+
+<p>支持大规模GWAS的主要发展之一是引入强大但可负担的基因分析技术，特别是SNP阵列。只有最近有表观基因组分析技术达到大型EWAS变得可行的阶段。为了使这些研究成为可能，<strong>标记或分子必须是稳定的，适合于高通量分析，并且在常规临床样品中容易获得</strong>。自动化全基因组谱分析方法也必须可用。目前，<strong>DNAm（特别是CpG甲基化）是EWAS最合适的标记。其他表观遗传标记可能与DNAm一样重要（或更多），但是，在临床标本中既不容易获得，也不适于高通量加工</strong>。此外，在不同的表观遗传标记之间有许多完善的相关性，因此分析DNAm可以，虽然间接提供组蛋白修饰状态和RNA动力学的信息5。
+原则上，基于排序和基于阵列的分析技术可以用于EWAS。这两种技术的最常见的平台已被广泛审查44和独立基准45,46，并在BOX 2中列出。作为这种类型的研究的典型，选择取决于平衡覆盖，分辨率，准确性，特异性，吞吐量和成本47。最终，基于测序的技术可能占据主导地位，但我们认为，<strong>基于阵列的方法（如用于GWAS的方法）是目前最适合EWAS的方法</strong>。如BOX 2所述，有定制和现成平台的选项，涵盖上述选择。
+其中，最近发布的Illumina 450K Infinium Methylation BeadChip似乎是第一波EWAS最有希望的，提供了全基因组覆盖（&gt; 450K CpG位点），分辨率（单碱基对）和吞吐量（每个芯片12个样本和每次运行多达96个样本）。</p>
+
+<h2 id="研究ewas的设计">研究EWAS的设计</h2>
+
+<p>在本节中，我们讨论EWAS的最有信息的研究设计，关于研究主题的类型和解决反向因果关系的问题。图1示出了所讨论的四个示例的一些优点和缺点。</p>
+
+<p>回顾性（病例对照）。最常用的GWAS设计涉及基于其表型招募的不相关个体（例如，病例和对照）。许多病例对照样品已经可用，在一些情况下具有可以与表观基因组数据整合的基因型和表达数据。然而，<strong>回顾性研究不能确定确定的表观遗传变异是否归因于疾病相关的遗传差异，疾病后过程或疾病相关药物干预</strong>。使用病例对照研究来鉴定表观遗传变异和临床相关表型之间的关联的早期实例包括关于代谢功能障碍48和用他莫西芬治疗的研究49。</p>
+
+<p>父子孙对。这些可用于EWAS，其目的在于鉴定表观遗传标记的跨代传播（BOX 3）。最近已经证明，喂养F0代雄性小鼠高脂肪或低蛋白饮食从断奶到交配时间，结果F1代后代变化的代谢型胎儿28,50。由于精子将非常少的（如果有的话）细胞质材料传递给后代，这些实施例表明由F0雄性的<strong>次优饮食诱导的表观遗传变异体的跨代传播</strong>。<strong>使用亲代 - 后代三重体的表观基因组谱的类似策略可用于人类</strong>。例如，<strong>如果有证据表明父亲环境影响后代的表型结果，可以在后代中进行综合表观基因组和基因组谱，以鉴定改变的表观遗传变异。然后遗传信息可用于消除遗传修饰因子引起表观遗传变异的可能性。这样的研究设计将需要使用能够检测等位基因特异性差异的分析方法，需要足够的功率，并需要对父母环境暴露的可靠测量</strong>。</p>
+
+<p>单纯双胞胎。与感兴趣的疾病无关的单纯双胞胎代表了EWAS的有用资源，因为任何已鉴定的疾病相关的表观遗传变异体不能由种系遗传变异引起32,51。然而，除非双胞胎纵向招募，这是很少可能的，这些研究不能用于区分原因和后果的原因前面讨论的原因。招募大量不一致的同卵双胞胎为一个良好的研究是一个潜在的问题，但一些大型双资源可用（见更多信息）。</p>
+
+<p><strong>纵向队列。纵向队列设计在最初无疾病的人（理想地从出生）在多年的过程中，记录疾病事件和其他表型变化和采取生物样品</strong>。它们建立起来是昂贵的，但是许多这样的研究已经在进行，其中一些涉及用于EWAS的适当的组织（参见更多信息）。例如，英国1946年的出生队列52提供了超过5000个人的样本和数据（迄今为止）65年。与许多病例对照设计相比，这些研究的两个主要优点是避免了由于病例和对照的招募中的差异而导致的混杂以及由于在风险因子的测量中的病例对照差异而导致的偏差。<strong>纵向研究对于建立疾病相关表观遗传变异的时间起源和稳定性也是非常有价值的，从而有助于区分因果遗传变异与后果变异</strong>。<strong>如果还记录了环境影响，可以将这些影响与表观遗传变化相关联</strong>。
+纵向疾病不和谐单卵双胞胎队列将传达排除遗传影响疾病相关的外来遗传变异的额外优势，但这种队列很少可用于常见疾病的EWAS。以下讨论折衷的两阶段研究设计，其涉及用于发现阶段的疾病不一致的单合子双胞胎队列和用于复制阶段的不同的纵向队列。</p>
+
+<h2 id="ewas的组织选择">EWAS的组织选择</h2>
+
+<p>在GWAS中，大多数组织类型适合于鉴定种系遗传变异，通常使用<strong>从患者血液或血液细胞衍生的细胞系中提取的DNA</strong>。然而，疾病相关的表观遗传变异可以是组织特异性的。由于大多数EWAS使用活体个体，DNA样品只能从某些来源容易地获取，例如血液，颊，唾液，毛囊，尿和粪便。例如，血液和血液亚型与自身免疫性疾病或基于血液的癌症相关，并且如果表观遗传变异体存在于全体范围内，则任何组织都将足够（如果在早期胚胎发生中在发育重编程期间诱导的情况） 。然而，对于许多疾病，需要探索替代的组织来源。这些可以包括测定无细胞的血清DNA - 包括来自流入血液的增殖细胞的DNA（如对于大多数癌症发生的）或死后DNA，但是如果目的是建立因果关系，则后者是不太合适的选择。事实上，直到表观基因组谱可以以非侵入性方式（例如，通过成像技术53）和/或使用小组织生物体54常规执行，仍然是执行有效的挑战
+用于脑基础和某些其他疾病的EWAS。
+另一个重要问题是组织异质性。所有组织由多种细胞类型组成（例如，血液含有&gt; 50种不同的细胞类型）。如果疾病相关变异局限于仅代表抽样组织的一小部分的某种细胞类型，则可能无法检测到变异。疾病状态本身也可以改变组织中细胞类型的组成（例如，发炎组织将具有略微不同的细胞类型与非发炎组织的组成）。因此，测量的病例和对照之间的表观遗传学差异可能仅反映细胞类型组成的差异，而不是真实的表观遗传学差异。最后，血斑（或Guthrie）卡是另一个有价值的DNA来源。这些在出生后立即在许多发达国家常规使用脐带或脚跟血液。在几个国家已经建立了包括DNA和可能的其他组织的生物库，以及表型信息更多信息）。</p>
+
+<h2 id="ewas设计示例">EWAS设计示例</h2>
+
+<p>没有一个适合所有目的的EWA​​S设计;相反，最合适的设计取决于所需的结果。这可以从可以进行的许多可能的EWAS设计中的两个假设示例的形式来最好地示出。</p>
+
+<p>疾病风险表观遗传标记的EWAS。让我们假设我们有兴趣识别在自身免疫性疾病发作之前出现的DNAm变体。我们可以开始通过对与疾病不一致的单卵双胞胎进行全基因组DNAm分析来鉴定免疫效应细胞中疾病相关的MVP（即与疾病相关的血细胞亚群），这不是由于遗传变异。然后我们可以采取这些MVP，并在来自前瞻性队列的相同类型的免疫效应细胞中检测它们，以在疾病发生之前和之后取样的无关个体中的这些位点处观察DNAm。可以在疾病发作之前被验证的任何MVP因而是候选因果变化，并且不能归因于疾病后效应，例如长期药物或免疫相关效应。主要的随访研究可以包括与基因表达和其他表观遗传标记的相关性，以调查受影响的途径。总的来说，这个EWAS设计结合了来自两个独立队列的疾病相关组织的分析，允许发现和验证MVP并消除各种混杂因素。
+药物反应表观遗传标记的EWAS。几个癌症研究已确定可能潜在地用于监测疾病进展甚至对治疗的反应的表观遗传变异4。这些变体中的一些通过测定由原发性肿瘤脱落到患者血清中的DNA来检测，因此提供相对直接的评估进展的方法55。 EWAS还可以在药物治疗之前，期间和之后测量患有特定形式的癌症的单身病人的血清中的DNAm状态。这可能潜在识别预测对实时治疗的最佳反应的表观遗传标记。癌症相关的表观遗传变异体（即遗传或环境）的根本原因不需要知道，也不需要直接分析原发性肿瘤，因为该变异体是进展或反应的有效量度。</p>
+
+<p>##EWAS的统计考虑
+样本量大小和功效。在2005年，正如GWAS波即将破裂一样，Wang等人发表了一篇有影响的评论，争论大样本量来检测小的影响，他们强调了<strong>次要等位基因频率（MAF）和效应大小的作用在确定SNP关联测试的能力</strong>。他们还讨论了群体遗传学理论的MAF谱的预测与群体内的SNP以及预测效应大小分布的（限制的）理论和数据。相应的论证对于EWAS来说并不那么引人注目，但是相关的参数甚至更难以预测，因为数据和相关理论的缺乏。 DNA等位基因通常不会跨细胞变化，并且现在可以以低错误率进行分型。相比之下，<strong>甲基化状态可以是组织特异性的，并且可以在组织内的细胞，细胞内的等位基因（ASM）以及在罕见的情况下在等位基因内的DNA链（半甲基化）之间变化</strong>。因此，<strong>对于来自一个个体的组织样品，在CpG位点测量的甲基化状态在0和1之间，因为它是细胞，等位基因和链的平均值，并且由测量误差进一步模糊</strong>。在这里，我们使用关于DNAm变体的频谱的有限的可用信息，以及它们对常见疾病的效应大小，暂时提出在三种情况下的功率计算。目前尚不清楚拟议的情景是多么现实，但我们希望至少能够刺激对EWAS设计的这一重要方面的进一步讨论和调查。
+最近的甲基化分析报道，<strong>平均68％的CpG位点在人外周血单核细胞中甲基化</strong>57。在基因组上下文中存在巨大差异：<strong>高CpG密度区域中的CpG位点几乎总是未甲基化的，CGI和5&rsquo;-UTR也是如此。相比之下，3&rsquo;-UTR，内含子和重复元件主要是甲基化的。 ASM的速率估计在0.3％和0.6％之间（大于单独印记的比率）</strong>。<strong>发现半甲基化是罕见的（&lt;0.2％，其包括非CpG甲基化和不完全的bisulphite转化）</strong>。<strong>甲基化谱不对称：几乎没有接近100％甲基化的位点，但几乎完全未甲基化的位点并不罕见</strong>。
+在图1在图2a，b中，三种不同类别的个体（&rsquo;甲基化&rsquo;，&rsquo;中间&rsquo;和&rsquo;非甲基化&rsquo;）的假设甲基化谱已经组合以在病例和对照中产生总频率谱。这些形成了表1中报道的功效模拟的基础。病例和对照之间的平均甲基化率的差异提供了效应大小的流行概述，但它不反映甲基化谱的差异或其他特征的差异。它也不反映甲基化率的相对量级，而如果对照中罕见的表观基因型在病例中几乎不存在，则这可能比更常见的表观基因型的平均率的相同差异更重要。
+<strong>赔率比率是二元表型的遗传效应大小的公认的度量</strong>。如果我们认为病例（或对照）中某个位点的平均甲基化率代表在病例（或对照）组织样本中随机选择的DNA链的甲基化概率，则我们可以计算甲基化优势比（methor） 。该methOR与普通优势比相同，除了采样单元是DNA链而不是个体。因此，methOR是来自待甲基化的随机病例的组织样品中的随机DNA链的可能性，除以对照的相同几率。这提供了结合相对幅度的效应大小的测量，但是，与速率的平均差异一样，它也不允许甲基化谱的特征（例如其方差）的情况和对照之间的差异。至于其他比值比，methOR在前瞻性和回顾性研究中是可比的，其价值仅衡量关联，并不暗示因果关系。
+表1给出了来自图1的三组甲基化谱的基于模拟的功率估计。 2.他们有类似的甲基化，虽然病例对照差异的平均甲基化率是相同的a和b，但不是c。 a和b之间的功率值不同的事实强调了没有效应大小的单数量度，因为功率取决于病例和对照中的整个甲基化谱。然而，对于在我们的模拟中进行的逻辑回归分析，methOR给出了比速率差异更好的功率指导。当methOR为1.25左右时，800个病例+ 800个对照的样本量足以在情景c而不是a或b时在α= 10-6的显着性水平下实现80％的功率（参见下一节讨论基因组EWAS的广泛意义）。当methOR为约1.5时，400 + 400的样本大小对于b和c而不是α在α= 10-6处给出80％的功率。
+目前对于涉及疾病的表观遗传变异体的甲基化谱的实际差异知之甚少，并且关于样本大小的建议将需要与新出现的数据一起演变。最近关于吸烟对甲基化的影响的报告58鉴定了位于凝血因子II（凝血酶）受体样3（F2RL3）中的CpG位点处的一个强缔合，其中中值甲基化率为95％，从未吸烟， 83％为重度吸烟者，给出12％的差异和methOR = 2.7。甲基化状态在从未吸烟的人中比在重吸烟者（四分位数范围分别为0.94-0.96和0.78-0.88）不太可变。对于这样强烈的影响，65名重度吸烟者和56名非吸烟者的样本量足以检测这种关联。然而，已知吸烟是健康的最重要的环境因素之一，因此感兴趣的其他效应大小可能小得多。如果我们将1.5作为目标methOR值，那么追求具有少于400个案例和400个控制的EWAS似乎不具有成本效益，其中800个将优选实现良好的权力。这远远小于2000案例和控制，这成为威康信托案例控制联盟（WTCCC）研究59后GWAS的事实上的标准最低样本量，反映了EWAS和GWAS的效应大小不能直接比较的事实。似乎可能的是，效应大小和因此功率将根据基因组背景显着变化，在这种情况下，P值的全基因组排序不令人满意60和考虑功率的贝叶斯支持措施更合适。然而，目前仍有一些信息用于通知贝叶斯效应大小的先前分布。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/raley2003-%E6%A0%91%E9%AB%98%E6%98%AF%E9%80%89%E6%8B%A9%E6%A0%87%E5%87%86/" data-toggle="tooltip" data-placement="top" title="Raley2003-树高是选择标准">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/r8--%E6%95%B0%E6%8D%AE%E6%A1%86%E4%B8%AD%E6%8F%92%E5%85%A5%E8%A1%8C%E5%9C%A8r%E4%B8%AD/" data-toggle="tooltip" data-placement="top" title="R8--数据框中插入行在R中">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

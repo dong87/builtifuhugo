@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Holand2013-INLA</title>
+  <meta property="og:title" content="Holand2013-INLA" />
+  <meta name="twitter:title" content="Holand2013-INLA" />
+  <meta name="description" content="Holand AM, Steinsland I, Martino S, Jensen H. Animal models and integrated nested Laplace approximations. G3 (Bethesda). [Internet]. 2013;3:1241–51. Available from: http://www.g3journal.org/content/3/8/1241.short   动物模型是在进化生物学和动物育种中使用的广义线性混合模型，以鉴定性状的遗传部分。集成嵌套拉普拉斯逼近（INLA）是一种用于对分级高斯马尔可夫模型进行快速，基于非抽样的贝叶斯推理的方法。在本文中，我们证明了INLA方法可以用于许多版本的贝叶斯动物模型。我们使用INLA分析具有高斯，二项式和泊松似然性的合成案例研究和麻雀（Passer domesticus）群体病例研究的动物模型。使用马尔科夫链蒙特卡罗方法将推断结果与结果进行比较。对于模型选择，我们使用偏差信息标准（DIC）的差异。我们建议并展示如何通过将它们与模拟研究的抽样结果进行比较来评估DIC中的差异。我们还引入了一个R包，AnimalINLA，为使用INLA的贝叶斯动物模型容易和快速推理。
+为了估计不同种类性状的加性遗传方差（以及遗传力），生物学家和动物育种者经常使用称为动物模型的广义线性混合模型（GLMM）。在动物模型中，个体i的性状具有遗传部分ui。值ui被称为个体i的育种值。假设育种值是许多基因的影响的总和，并且来自中心极限定理，育种值被假定为具有由谱系给出的依赖性结构的高斯分布。自20世纪80年代初以来，动物育种者成功地使用了限制最大可能性（REML）的频率方法，例如增加牛的肉或牛奶产量（Simm1998）。然而，对REML的推论对于GLMM模型不是微不足道的。非高斯性状的模型在育种值和其他参数估计的不确定性方面尤其具有挑战性（Tempelman和Gianola 1994; Sorensen和Gianola 2002; Bolker等人2009; Fong等人2010）。流行的方法是用于计算育种值的最佳线性无偏预测（BLUP）（Henderson 1950）（Wilson等人2009）。然而，BLUP忽略了与估计相关的所有不确定性，并且不适合在进化问题中的假设检验**（Postma 2006; Wilson等人2009; Hadfield等人2010）。另一种方法是在贝叶斯框架中执行建模。所有参数都被认为是随机变量，并且（在理论上）直接考虑参数估计中的所有不确定性。这解决了推断非高斯性状的问题（Tempelman和Gianola 1994; Fong等人，2010），并解释了育种值的估计不确定性。此外，贝叶斯建模还解决了关于育种值分析的许多问题，在Postma（2006），Wilson等人（2009），和Hadfield et al。 （2010），因为育种值和育种值的功能（例如，孵化年份的平均育种值）被认为是随机变量，因此考虑不确定性和依赖性。贝叶斯框架的这种灵活性使得贝叶斯动物模型越来越受欢迎。它们从1990年代早期开始用于动物育种，而最近才引入进化生物学（Kruuk et al。2008; O&rsquo;Hara et al。2008; Ovaskainen et al。2008; Hadfield 2010; Steinsland and Jensen 2010） 。参见Gianola和Fernando（1986）和Sorensen和Gianola（2002）讨论贝叶斯动物模型。除了少数特殊情况，贝叶斯模型对于典型感兴趣的数量（例如，后期均值）没有闭合形式的分析表达式。因此，需要数值近似。贝叶斯模型的传统近似程序是马尔科夫链蒙特卡罗（MCMC）（Sorensen和Gianola 2002，Van De Wiel等人2013）。 MCMC是一种非常灵活的方法，可用于推断任何贝叶斯模型，我们可以得到任何随机变量或参数的后验估计;少量，共同或功能。建立一个好的MCMC算法（快速收敛，良好的混合，计算速度快）和评估它（收敛和混合）是一个非专家的挑战。最后，对于动物模型，这已经改善，因为现在有可用于在R中使用MCMC（MCMCglmm; Hadfield 2010）和BUGS（Lunn等人2000）推断这些模型的包。对于层级潜在高斯马尔科夫随机场模型，最近已经引入了基于非抽样的数值近似过程（Rue et al。2009）的集成嵌套拉普拉斯逼近（INLA）。使用INLA，我们可以计算所有参数和每个随机效应的边际后验，以及随机效应的线性组合的后验。 INLA基于直接数字积分而不是模拟。 Rue和Martino（2007）展示了几种模型和数据集，INLA比MCMC快得多，并且对于给定的计算预算更准确。更快的推理鼓励应用研究者探索更多的模型。此外，这也打开了新的机会进行模拟研究，例如可用于探索识别性问题和建立特定假设的测试。在GLMM之间执行模型选择不是一个简单的任务（Skrondal和Rabe-Hesketh 2004），并且使用偏差信息标准（DIC）的差异已被质疑（Fong等人2010）。我们建议使用模拟研究来评估DIC是否是模型选择的适当度量。快速模拟和推理方法对于计算可行的模拟研究至关重要。 INLA已被用于统计学的若干领域，例如生存分析（Martino等人2011），空间GLMM（Eidsvik等人2009）和疾病绘图（Roos和Held 2011，Schrödle等人2011）。本文通过证明这些模型适合INLA框架并且通过提供用于进行推断的R包，AnimalInLA，对高斯和几个非高斯动物模型的更简单和更快的贝叶斯推理做出贡献。在材料和方法部分，我们介绍案例研究中使用的数据。然后我们简要修改使用INLA的相关要求和INLA给出的可能性，并完全指定我们使用的动物模型。我们还提出了一个基于模拟的测试的框架DIC的差异的能力选择有遗传效应和没有遗传效应的模型。接下来，介绍了合成案例研究和麻雀案例研究的结果。使用INLA进行推理，在一些情况下，将结果与MCMC进行比较。文章以讨论和结论为结束，讨论了INLA框架在定量遗传学中的结果以及机会和局限性。">
+  <meta property="og:description" content="Holand AM, Steinsland I, Martino S, Jensen H. Animal models and integrated nested Laplace approximations. G3 (Bethesda). [Internet]. 2013;3:1241–51. Available from: http://www.g3journal.org/content/3/8/1241.short   动物模型是在进化生物学和动物育种中使用的广义线性混合模型，以鉴定性状的遗传部分。集成嵌套拉普拉斯逼近（INLA）是一种用于对分级高斯马尔可夫模型进行快速，基于非抽样的贝叶斯推理的方法。在本文中，我们证明了INLA方法可以用于许多版本的贝叶斯动物模型。我们使用INLA分析具有高斯，二项式和泊松似然性的合成案例研究和麻雀（Passer domesticus）群体病例研究的动物模型。使用马尔科夫链蒙特卡罗方法将推断结果与结果进行比较。对于模型选择，我们使用偏差信息标准（DIC）的差异。我们建议并展示如何通过将它们与模拟研究的抽样结果进行比较来评估DIC中的差异。我们还引入了一个R包，AnimalINLA，为使用INLA的贝叶斯动物模型容易和快速推理。
+为了估计不同种类性状的加性遗传方差（以及遗传力），生物学家和动物育种者经常使用称为动物模型的广义线性混合模型（GLMM）。在动物模型中，个体i的性状具有遗传部分ui。值ui被称为个体i的育种值。假设育种值是许多基因的影响的总和，并且来自中心极限定理，育种值被假定为具有由谱系给出的依赖性结构的高斯分布。自20世纪80年代初以来，动物育种者成功地使用了限制最大可能性（REML）的频率方法，例如增加牛的肉或牛奶产量（Simm1998）。然而，对REML的推论对于GLMM模型不是微不足道的。非高斯性状的模型在育种值和其他参数估计的不确定性方面尤其具有挑战性（Tempelman和Gianola 1994; Sorensen和Gianola 2002; Bolker等人2009; Fong等人2010）。流行的方法是用于计算育种值的最佳线性无偏预测（BLUP）（Henderson 1950）（Wilson等人2009）。然而，BLUP忽略了与估计相关的所有不确定性，并且不适合在进化问题中的假设检验**（Postma 2006; Wilson等人2009; Hadfield等人2010）。另一种方法是在贝叶斯框架中执行建模。所有参数都被认为是随机变量，并且（在理论上）直接考虑参数估计中的所有不确定性。这解决了推断非高斯性状的问题（Tempelman和Gianola 1994; Fong等人，2010），并解释了育种值的估计不确定性。此外，贝叶斯建模还解决了关于育种值分析的许多问题，在Postma（2006），Wilson等人（2009），和Hadfield et al。 （2010），因为育种值和育种值的功能（例如，孵化年份的平均育种值）被认为是随机变量，因此考虑不确定性和依赖性。贝叶斯框架的这种灵活性使得贝叶斯动物模型越来越受欢迎。它们从1990年代早期开始用于动物育种，而最近才引入进化生物学（Kruuk et al。2008; O&rsquo;Hara et al。2008; Ovaskainen et al。2008; Hadfield 2010; Steinsland and Jensen 2010） 。参见Gianola和Fernando（1986）和Sorensen和Gianola（2002）讨论贝叶斯动物模型。除了少数特殊情况，贝叶斯模型对于典型感兴趣的数量（例如，后期均值）没有闭合形式的分析表达式。因此，需要数值近似。贝叶斯模型的传统近似程序是马尔科夫链蒙特卡罗（MCMC）（Sorensen和Gianola 2002，Van De Wiel等人2013）。 MCMC是一种非常灵活的方法，可用于推断任何贝叶斯模型，我们可以得到任何随机变量或参数的后验估计;少量，共同或功能。建立一个好的MCMC算法（快速收敛，良好的混合，计算速度快）和评估它（收敛和混合）是一个非专家的挑战。最后，对于动物模型，这已经改善，因为现在有可用于在R中使用MCMC（MCMCglmm; Hadfield 2010）和BUGS（Lunn等人2000）推断这些模型的包。对于层级潜在高斯马尔科夫随机场模型，最近已经引入了基于非抽样的数值近似过程（Rue et al。2009）的集成嵌套拉普拉斯逼近（INLA）。使用INLA，我们可以计算所有参数和每个随机效应的边际后验，以及随机效应的线性组合的后验。 INLA基于直接数字积分而不是模拟。 Rue和Martino（2007）展示了几种模型和数据集，INLA比MCMC快得多，并且对于给定的计算预算更准确。更快的推理鼓励应用研究者探索更多的模型。此外，这也打开了新的机会进行模拟研究，例如可用于探索识别性问题和建立特定假设的测试。在GLMM之间执行模型选择不是一个简单的任务（Skrondal和Rabe-Hesketh 2004），并且使用偏差信息标准（DIC）的差异已被质疑（Fong等人2010）。我们建议使用模拟研究来评估DIC是否是模型选择的适当度量。快速模拟和推理方法对于计算可行的模拟研究至关重要。 INLA已被用于统计学的若干领域，例如生存分析（Martino等人2011），空间GLMM（Eidsvik等人2009）和疾病绘图（Roos和Held 2011，Schrödle等人2011）。本文通过证明这些模型适合INLA框架并且通过提供用于进行推断的R包，AnimalInLA，对高斯和几个非高斯动物模型的更简单和更快的贝叶斯推理做出贡献。在材料和方法部分，我们介绍案例研究中使用的数据。然后我们简要修改使用INLA的相关要求和INLA给出的可能性，并完全指定我们使用的动物模型。我们还提出了一个基于模拟的测试的框架DIC的差异的能力选择有遗传效应和没有遗传效应的模型。接下来，介绍了合成案例研究和麻雀案例研究的结果。使用INLA进行推理，在一些情况下，将结果与MCMC进行比较。文章以讨论和结论为结束，讨论了INLA框架在定量遗传学中的结果以及机会和局限性。">
+  <meta name="twitter:description" content="Holand AM, Steinsland I, Martino S, Jensen H. Animal models and integrated nested Laplace approximations. G3 (Bethesda). [Internet]. 2013;3:1241–51. Available from: …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/bayesian/holand2013-inla/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/bayesian/holand2013-inla/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Holand2013-INLA</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (67 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Holand2013-INLA</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (67 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<ol>
+<li>Holand AM, Steinsland I, Martino S, Jensen H. Animal models and integrated nested Laplace approximations. G3 (Bethesda). [Internet]. 2013;3:1241–51. Available from: <a href="http://www.g3journal.org/content/3/8/1241.short">http://www.g3journal.org/content/3/8/1241.short</a></li>
+</ol>
+</blockquote>
+
+<p>动物模型是在进化生物学和动物育种中使用的广义线性混合模型，以鉴定性状的遗传部分。集成嵌套拉普拉斯逼近（INLA）是一种用于对分级高斯马尔可夫模型进行快速，基于非抽样的贝叶斯推理的方法。在本文中，我们证明了INLA方法可以用于许多版本的贝叶斯动物模型。我们使用INLA分析具有高斯，二项式和泊松似然性的合成案例研究和麻雀（Passer domesticus）群体病例研究的动物模型。使用马尔科夫链蒙特卡罗方法将推断结果与结果进行比较。对于模型选择，我们使用偏差信息标准（DIC）的差异。我们建议并展示如何通过将它们与模拟研究的抽样结果进行比较来评估DIC中的差异。我们还引入了一个R包，AnimalINLA，为使用INLA的贝叶斯动物模型容易和快速推理。</p>
+
+<hr />
+
+<p>为了估计不同种类性状的加性遗传方差（以及遗传力），生物学家和动物育种者经常使用称为动物模型的广义线性混合模型（GLMM）。在动物模型中，<strong>个体i的性状具有遗传部分ui。值ui被称为个体i的育种值</strong>。<strong>假设育种值是许多基因的影响的总和，并且来自中心极限定理，</strong>育种值被假定为具有由谱系给出的依赖性结构的高斯分布<strong>。自20世纪80年代初以来，动物育种者成功地使用了限制最大可能性（REML）的频率方法，例如增加牛的肉或牛奶产量（Simm1998）。然而，</strong>对REML的推论对于GLMM模型不是微不足道的。非高斯性状的模型在育种值和其他参数估计的不确定性方面尤其具有挑战性<strong>（Tempelman和Gianola 1994; Sorensen和Gianola 2002; Bolker等人2009; Fong等人2010）。流行的方法是用于计算育种值的最佳线性无偏预测（BLUP）（Henderson 1950）（Wilson等人2009）。然而，</strong>BLUP忽略了与估计相关的所有不确定性，并且不适合在进化问题中的假设检验**（Postma 2006; Wilson等人2009; Hadfield等人2010）。另一种方法是在贝叶斯框架中执行建模。所有参数都被认为是随机变量，并且（在理论上）直接考虑参数估计中的所有不确定性。这解决了推断非高斯性状的问题（Tempelman和Gianola 1994; Fong等人，2010），并解释了育种值的估计不确定性。此外，贝叶斯建模还解决了关于育种值分析的许多问题，在Postma（2006），Wilson等人（2009），和Hadfield et al。 （2010），因为育种值和育种值的功能（例如，孵化年份的平均育种值）被认为是随机变量，因此考虑不确定性和依赖性。贝叶斯框架的这种灵活性使得贝叶斯动物模型越来越受欢迎。它们从1990年代早期开始用于动物育种，而最近才引入进化生物学（Kruuk et al。2008; O&rsquo;Hara et al。2008; Ovaskainen et al。2008; Hadfield 2010; Steinsland and Jensen 2010） 。参见Gianola和Fernando（1986）和Sorensen和Gianola（2002）讨论贝叶斯动物模型。除了少数特殊情况，贝叶斯模型对于典型感兴趣的数量（例如，后期均值）没有闭合形式的分析表达式。因此，需要数值近似。贝叶斯模型的传统近似程序是马尔科夫链蒙特卡罗（MCMC）（Sorensen和Gianola 2002，Van De Wiel等人2013）。 MCMC是一种非常灵活的方法，可用于推断任何贝叶斯模型，我们可以得到任何随机变量或参数的后验估计;少量，共同或功能。建立一个好的MCMC算法（快速收敛，良好的混合，计算速度快）和评估它（收敛和混合）是一个非专家的挑战。最后，对于动物模型，这已经改善，因为现在有可用于在R中使用MCMC（MCMCglmm; Hadfield 2010）和BUGS（Lunn等人2000）推断这些模型的包。对于层级潜在高斯马尔科夫随机场模型，最近已经引入了基于非抽样的数值近似过程（Rue et al。2009）的集成嵌套拉普拉斯逼近（INLA）。使用INLA，我们可以计算所有参数和每个随机效应的边际后验，以及随机效应的线性组合的后验。 INLA基于直接数字积分而不是模拟。 Rue和Martino（2007）展示了几种模型和数据集，INLA比MCMC快得多，并且对于给定的计算预算更准确。更快的推理鼓励应用研究者探索更多的模型。此外，这也打开了新的机会进行模拟研究，例如可用于探索识别性问题和建立特定假设的测试。在GLMM之间执行模型选择不是一个简单的任务（Skrondal和Rabe-Hesketh 2004），并且使用偏差信息标准（DIC）的差异已被质疑（Fong等人2010）。我们建议使用模拟研究来评估DIC是否是模型选择的适当度量。快速模拟和推理方法对于计算可行的模拟研究至关重要。 INLA已被用于统计学的若干领域，例如生存分析（Martino等人2011），空间GLMM（Eidsvik等人2009）和疾病绘图（Roos和Held 2011，Schrödle等人2011）。本文通过证明这些模型适合INLA框架并且通过提供用于进行推断的R包，AnimalInLA，对高斯和几个非高斯动物模型的更简单和更快的贝叶斯推理做出贡献。在材料和方法部分，我们介绍案例研究中使用的数据。然后我们简要修改使用INLA的相关要求和INLA给出的可能性，并完全指定我们使用的动物模型。我们还提出了一个基于模拟的测试的框架DIC的差异的能力选择有遗传效应和没有遗传效应的模型。接下来，介绍了合成案例研究和麻雀案例研究的结果。使用INLA进行推理，在一些情况下，将结果与MCMC进行比较。文章以讨论和结论为结束，讨论了INLA框架在定量遗传学中的结果以及机会和局限性。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/hong-2014-%E8%8B%8F%E6%A0%BC%E5%85%B0%E6%9D%BE-%E7%94%9F%E9%95%BF-%E6%9D%90%E6%80%A7/" data-toggle="tooltip" data-placement="top" title="Hong-2014-苏格兰松-生长-材性">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/hodge-2004-%E6%9C%A8%E6%A7%BF%E7%9A%84%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/" data-toggle="tooltip" data-placement="top" title="Hodge-2004-木槿的遗传参数估计">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

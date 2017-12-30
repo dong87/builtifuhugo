@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Dutkowski-2002-空间分析</title>
+  <meta property="og:title" content="Dutkowski-2002-空间分析" />
+  <meta name="twitter:title" content="Dutkowski-2002-空间分析" />
+  <meta name="description" content="Dutkowski GW, Silva JC e, Gilmour AR, Lopez GA. Spatial analysis methods for forest genetic trials. Can. J. For. Res. 2002;32:2201–14.   摘要：空间分析，使用残差的可分离自回归过程，越来越多地用于农业品种产量试验分析。variogram的解释已成为检测与试验行和列对准的全局趋势和“外部”变化的工具。我们将这种方法应用于使用单株加性遗传模型的五个选定的森林遗传试验。我们比较基本设计模型包含后阻塞post-blocking，残差的一阶自回归模型（AR1），具有独立误差项（AR1ÿ）的模型，组合的基础和自回归模型，仅在重复内的自回归模型和应用的自回归模型在小区水平。后封锁Post-blocking使对数似然相对于基本模型有显着的改善，但AR1ÿ模型更好。独立误差项对于单株加性遗传模型是必要的，以避免在AR1模型中的加性遗传方差的估计中的显着正偏差和模糊的变化模式。使用组合模型，消除了设计效果，或者它们的意义significance大大降低。将AR1ÿ模型应用于单株比它在小区水平或者在逐个重复的基础上应用它更好。在选择的遗传反应中实现的相对改善不超过6％。检查残差的空间分布和残差的变差图允许识别存在的空间模式。虽然附加的重要术语可以拟合一些空间模式的模型，并且在一些情况下获得稳定变异函数，但这导致遗传增益仅有微小的增加。推荐使用组合模型以实现对实验数据的改进分析。
+在森林遗传和农业品种试验中处理遗传变异性的通常方法是通过实验设计和相应的线性模型。传统的随机完全区区组（RCB）设计在很大程度上被更复杂sophisticated的循环和计算机生成的设计（Nguyen和Williams 1993）所取代，在重复和模型中使用不完全区组，使用区组间信息恢复的模型（Williams和Matheson 1994）。然而，即使使用复杂的设计，在设计单元边界和位置变化的实际模式之间可能存在不匹配。现场试验中的场地变异性可以是空间连续的，反映了基底土壤和微气候效应中的类似模式;不连续，反映栽培或测量效应;或随机的，因为微环境的异质性。空间连续变化可能在整个站点上显示为局部趋势local trend（斑块）或全局趋势global trend（梯度）。
+已经提出了许多分析方法来解释位点变异，并且在田间试验的分析中改进处理效果的估计。趋势面Trend surface analysis分析使用空间坐标的多项式函数来模拟环境变化（Kirk等人，1980; Tamura等人，1988; Liu和Burkhart 1994）。阻塞Post-blocking程序已经用于具有和没有设计结构的试验（Ericsson 1997）。费德勒（1998）提出了一种拟合实验设计特征以及区组内多项式的方法。
+在本文中，我们集中于使用测量单位之间的空间关系的相邻模型，通过与时间序列分析（Box和Jenkins 1970）类似的方式，其中数据与其邻居的（自动）相关。 Besag和Kempton（1986）使用一个空间维度的第一个差异来解释局部线性趋势。通过假设常数，他们的模型可以使用最大似然拟合，而不是使用邻域残差的一些函数（Papadakis 1937）或这种模型的迭代的简单协变量（Bartlett 1978; Wilkinson等人1983）。 Gleeson和Cullis（1987）使用一维上的残差的一阶自回归（AR1）函数和通过受限最大似然（REML）的估计的模型参数（Patterson和Thompson 1971）。在AR1中，单元之间的自相关（r（Xi，Xj））是它们的距离间隔的幂函数，使得r（Xi，Xj）=ρ| i-j |，其中i和j是空间坐标，ρ是自相关系数。
+Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1⊗AR1，其中⊗是Kronecker乘积）将其方法扩展到两个空间维度，使得r（Xi，jXk，l）=ρρrow ||。 || ik j l&ndash;用于具有col行（i，j）和列（k，l）坐标的绘图。他们还使用数据差分来解释全球趋势，并倡导使用空间相关图的模型拟合程序。 Zimmerman和Harville（1991）证明了许多这些方法之间的密切关系，并提出了一种方法，其中使用固定效应对全球趋势进行建模，并通过基于地统计应用的相关结构对局部趋势进行建模。应用AR1⊗AR1模型作为分析的起点，Gilmour et al。 （1997）和Cullis et al。 （1998）提出了一个模型拟合程序，其中样本变异图sample variogram用于检测总体趋势和“外部”效应（如收获方向）与试验的行或列对齐。一旦确定，添加适当的模型项以适应这些效应。通常，这些空间模型不保留实验设计特征，但Williams（1986）提出了一个模型，其中只有在同一个不完全区组中的小区之间空间关系被认为是维持实验设计的保留推理的益处。 空间方法在农业品种产量试验中的应用表明，与RCB或不完全区组分析相比，提高了处理估计（或差异）的准确性（或减少标准误差）。邻域分析将品种差异的方差平均减少了42％（Cullis和Gleeson 1989）。 Clarke和Baker（1996）表明，最小二乘平滑将差异的标准误差减少了一半之多，Grondona等人（1996）显示AR1 AR1模型将差异的标准误差平均减半。 森林基因试验与农业品种田间试验类似，因为存在需要计算的地点异质性。然而，有很多不同之处。林业试验通常比品种试验大得多，因为单个植物的大尺寸以及获得令人满意的家族估计所需的更高的重复。这个规模很大，而且林业土地通常是丘陵is often hilly，试验被现场和造林特征打破，这意味着林业测试中的环境变率可能更高。在林业试验中，对单个树木而不是地块进行测量，树种育种者希望从试验中的亲本和它们的后代中选择最好的个体进行交配，而不仅仅是进行品种比较。因此，树木之间的竞争可能比不同试验中的地区组间竞争更重要。在森林遗传试验中，空间分析方法已被用于研究位点变异的模式（Fu等人，1999），并已被证明可以提高估计产地效应的准确性（Hamann等人，2002），家庭或父母（Magnussen 1990; Costa e Silva等人2001; Hamann等人2002）或克隆（Anekonda和Libby 1996; Costa e Silva等人2001）。使用模拟数据，Magnussen（1993）报告，补片性导致对多重树木试验的加性遗传变异的正偏差估计，并且表明由空间自相关引起的偏差通过邻居调整而降低。老年试验中的竞争可能会减少由于趋势引起的积极自相关性，特别是对于直径和体积，因此Magnussen（1994）扩展了Papadakis（1937）方法以包括竞争。 在本研究中，我们将一些常规和空间分析方法与森林遗传试验分析进行比较，并应用Gilmour et al。 （1997）为农业品种的扩展空间模型开发。我们将模型应用于单个树木数据，而不是绘图手段，目的是改进对父母及其后代在试验中育种值的预测。我们在模型拟合标准，方差分量估计，预测遗传值的准确性和相关性以及选择的相对遗传收益方面比较方法。从这些分析中，我们制定了森林遗传试验的空间分析的标准方法，并与农业品种试验分析相对照。所示的实施例选自大量的试验数据，我们已经分析以显示在我们遇到的各种情况下方法的应用。">
+  <meta property="og:description" content="Dutkowski GW, Silva JC e, Gilmour AR, Lopez GA. Spatial analysis methods for forest genetic trials. Can. J. For. Res. 2002;32:2201–14.   摘要：空间分析，使用残差的可分离自回归过程，越来越多地用于农业品种产量试验分析。variogram的解释已成为检测与试验行和列对准的全局趋势和“外部”变化的工具。我们将这种方法应用于使用单株加性遗传模型的五个选定的森林遗传试验。我们比较基本设计模型包含后阻塞post-blocking，残差的一阶自回归模型（AR1），具有独立误差项（AR1ÿ）的模型，组合的基础和自回归模型，仅在重复内的自回归模型和应用的自回归模型在小区水平。后封锁Post-blocking使对数似然相对于基本模型有显着的改善，但AR1ÿ模型更好。独立误差项对于单株加性遗传模型是必要的，以避免在AR1模型中的加性遗传方差的估计中的显着正偏差和模糊的变化模式。使用组合模型，消除了设计效果，或者它们的意义significance大大降低。将AR1ÿ模型应用于单株比它在小区水平或者在逐个重复的基础上应用它更好。在选择的遗传反应中实现的相对改善不超过6％。检查残差的空间分布和残差的变差图允许识别存在的空间模式。虽然附加的重要术语可以拟合一些空间模式的模型，并且在一些情况下获得稳定变异函数，但这导致遗传增益仅有微小的增加。推荐使用组合模型以实现对实验数据的改进分析。
+在森林遗传和农业品种试验中处理遗传变异性的通常方法是通过实验设计和相应的线性模型。传统的随机完全区区组（RCB）设计在很大程度上被更复杂sophisticated的循环和计算机生成的设计（Nguyen和Williams 1993）所取代，在重复和模型中使用不完全区组，使用区组间信息恢复的模型（Williams和Matheson 1994）。然而，即使使用复杂的设计，在设计单元边界和位置变化的实际模式之间可能存在不匹配。现场试验中的场地变异性可以是空间连续的，反映了基底土壤和微气候效应中的类似模式;不连续，反映栽培或测量效应;或随机的，因为微环境的异质性。空间连续变化可能在整个站点上显示为局部趋势local trend（斑块）或全局趋势global trend（梯度）。
+已经提出了许多分析方法来解释位点变异，并且在田间试验的分析中改进处理效果的估计。趋势面Trend surface analysis分析使用空间坐标的多项式函数来模拟环境变化（Kirk等人，1980; Tamura等人，1988; Liu和Burkhart 1994）。阻塞Post-blocking程序已经用于具有和没有设计结构的试验（Ericsson 1997）。费德勒（1998）提出了一种拟合实验设计特征以及区组内多项式的方法。
+在本文中，我们集中于使用测量单位之间的空间关系的相邻模型，通过与时间序列分析（Box和Jenkins 1970）类似的方式，其中数据与其邻居的（自动）相关。 Besag和Kempton（1986）使用一个空间维度的第一个差异来解释局部线性趋势。通过假设常数，他们的模型可以使用最大似然拟合，而不是使用邻域残差的一些函数（Papadakis 1937）或这种模型的迭代的简单协变量（Bartlett 1978; Wilkinson等人1983）。 Gleeson和Cullis（1987）使用一维上的残差的一阶自回归（AR1）函数和通过受限最大似然（REML）的估计的模型参数（Patterson和Thompson 1971）。在AR1中，单元之间的自相关（r（Xi，Xj））是它们的距离间隔的幂函数，使得r（Xi，Xj）=ρ| i-j |，其中i和j是空间坐标，ρ是自相关系数。
+Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1⊗AR1，其中⊗是Kronecker乘积）将其方法扩展到两个空间维度，使得r（Xi，jXk，l）=ρρrow ||。 || ik j l&ndash;用于具有col行（i，j）和列（k，l）坐标的绘图。他们还使用数据差分来解释全球趋势，并倡导使用空间相关图的模型拟合程序。 Zimmerman和Harville（1991）证明了许多这些方法之间的密切关系，并提出了一种方法，其中使用固定效应对全球趋势进行建模，并通过基于地统计应用的相关结构对局部趋势进行建模。应用AR1⊗AR1模型作为分析的起点，Gilmour et al。 （1997）和Cullis et al。 （1998）提出了一个模型拟合程序，其中样本变异图sample variogram用于检测总体趋势和“外部”效应（如收获方向）与试验的行或列对齐。一旦确定，添加适当的模型项以适应这些效应。通常，这些空间模型不保留实验设计特征，但Williams（1986）提出了一个模型，其中只有在同一个不完全区组中的小区之间空间关系被认为是维持实验设计的保留推理的益处。 空间方法在农业品种产量试验中的应用表明，与RCB或不完全区组分析相比，提高了处理估计（或差异）的准确性（或减少标准误差）。邻域分析将品种差异的方差平均减少了42％（Cullis和Gleeson 1989）。 Clarke和Baker（1996）表明，最小二乘平滑将差异的标准误差减少了一半之多，Grondona等人（1996）显示AR1 AR1模型将差异的标准误差平均减半。 森林基因试验与农业品种田间试验类似，因为存在需要计算的地点异质性。然而，有很多不同之处。林业试验通常比品种试验大得多，因为单个植物的大尺寸以及获得令人满意的家族估计所需的更高的重复。这个规模很大，而且林业土地通常是丘陵is often hilly，试验被现场和造林特征打破，这意味着林业测试中的环境变率可能更高。在林业试验中，对单个树木而不是地块进行测量，树种育种者希望从试验中的亲本和它们的后代中选择最好的个体进行交配，而不仅仅是进行品种比较。因此，树木之间的竞争可能比不同试验中的地区组间竞争更重要。在森林遗传试验中，空间分析方法已被用于研究位点变异的模式（Fu等人，1999），并已被证明可以提高估计产地效应的准确性（Hamann等人，2002），家庭或父母（Magnussen 1990; Costa e Silva等人2001; Hamann等人2002）或克隆（Anekonda和Libby 1996; Costa e Silva等人2001）。使用模拟数据，Magnussen（1993）报告，补片性导致对多重树木试验的加性遗传变异的正偏差估计，并且表明由空间自相关引起的偏差通过邻居调整而降低。老年试验中的竞争可能会减少由于趋势引起的积极自相关性，特别是对于直径和体积，因此Magnussen（1994）扩展了Papadakis（1937）方法以包括竞争。 在本研究中，我们将一些常规和空间分析方法与森林遗传试验分析进行比较，并应用Gilmour et al。 （1997）为农业品种的扩展空间模型开发。我们将模型应用于单个树木数据，而不是绘图手段，目的是改进对父母及其后代在试验中育种值的预测。我们在模型拟合标准，方差分量估计，预测遗传值的准确性和相关性以及选择的相对遗传收益方面比较方法。从这些分析中，我们制定了森林遗传试验的空间分析的标准方法，并与农业品种试验分析相对照。所示的实施例选自大量的试验数据，我们已经分析以显示在我们遇到的各种情况下方法的应用。">
+  <meta name="twitter:description" content="Dutkowski GW, Silva JC e, Gilmour AR, Lopez GA. Spatial analysis methods for forest genetic trials. Can. J. For. Res. 2002;32:2201–14.   摘要：空间分析，使用残差的可分离自回归过程，越来越多地用于农业品种产量试验分析。variogram的解释已成为检测与试验行和列 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/dutkowski-2002-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/dutkowski-2002-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Dutkowski-2002-空间分析</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (254 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Dutkowski-2002-空间分析</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (254 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<ol>
+<li>Dutkowski GW, Silva JC e, Gilmour AR, Lopez GA. Spatial analysis methods for forest genetic trials. Can. J. For. Res. 2002;32:2201–14.</li>
+</ol>
+</blockquote>
+
+<p>摘要：空间分析，使用残差的可分离自回归过程，越来越多地用于农业品种产量试验分析。variogram的解释已成为检测与试验行和列对准的全局趋势和“外部”变化的工具。我们将这种方法应用于使用单株加性遗传模型的五个选定的森林遗传试验。我们比较基本设计模型包含后阻塞post-blocking，残差的一阶自回归模型（AR1），具有独立误差项（AR1ÿ）的模型，组合的基础和自回归模型，仅在重复内的自回归模型和应用的自回归模型在小区水平。后封锁Post-blocking使对数似然相对于基本模型有显着的改善，但<strong>AR1ÿ模型更好</strong>。独立误差项对于单株加性遗传模型是必要的，以避免在AR1模型中的加性遗传方差的估计中的显着正偏差和模糊的变化模式。使用组合模型，消除了设计效果，或者它们的意义significance大大降低。<strong>将AR1ÿ模型应用于单株比它在小区水平或者在逐个重复的基础上应用它更好</strong>。在选择的遗传反应中实现的相对改善不超过6％。<strong>检查残差的空间分布和残差的变差图允许识别存在的空间模式</strong>。虽然附加的重要术语可以拟合一些空间模式的模型，并且在一些情况下获得稳定变异函数，但这导致遗传增益仅有微小的增加。<strong>推荐使用组合模型以实现对实验数据的改进分析</strong>。</p>
+
+<hr />
+
+<p>在森林遗传和农业品种试验中处理遗传变异性的通常方法是通过实验设计和相应的线性模型。<strong>传统的随机完全区区组（RCB）设计在很大程度上被更复杂sophisticated的循环和计算机生成的设计（Nguyen和Williams 1993）所取代</strong>，在重复和模型中使用不完全区组，使用区组间信息恢复的模型（Williams和Matheson 1994）。然而，即使使用复杂的设计，在设计单元边界和位置变化的实际模式之间可能存在不匹配。现场试验中的场地变异性可以是空间连续的，反映了基底土壤和微气候效应中的类似模式;不连续，反映栽培或测量效应;或随机的，因为微环境的异质性。空间连续变化可能在整个站点上显示为局部趋势local trend（斑块）或全局趋势global trend（梯度）。</p>
+
+<p>已经提出了许多分析方法来解释位点变异，并且在田间试验的分析中改进处理效果的估计。趋势面Trend surface analysis分析使用空间坐标的多项式函数来模拟环境变化（Kirk等人，1980; Tamura等人，1988; Liu和Burkhart 1994）。<strong>阻塞Post-blocking程序已经用于具有和没有设计结构的试验（Ericsson 1997）</strong>。费德勒（1998）提出了一种拟合实验设计特征以及区组内多项式的方法。</p>
+
+<p>在本文中，我们集中于使用<strong>测量单位之间的空间关系的相邻模型，通过与时间序列分析（Box和Jenkins 1970）类似的方式，其中数据与其邻居的（自动）相关</strong>。 Besag和Kempton（1986）使用一个空间维度的第一个差异来解释局部线性趋势。通过假设常数，他们的模型可以使用最大似然拟合，而不是使用邻域残差的一些函数（Papadakis 1937）或这种模型的迭代的简单协变量（Bartlett 1978; Wilkinson等人1983）。 Gleeson和Cullis（1987）使用一维上的残差的一阶自回归（AR1）函数和通过受限最大似然（REML）的估计的模型参数（Patterson和Thompson 1971）。在AR1中，单元之间的自相关（r（Xi，Xj））是它们的距离间隔的幂函数，使得r（Xi，Xj）=ρ| i-j |，其中i和j是空间坐标，ρ是自相关系数。</p>
+
+<p>Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1⊗AR1，其中⊗是Kronecker乘积）将其方法扩展到两个空间维度，使得r（Xi，jXk，l）=ρρrow ||。 || ik j l&ndash;用于具有col行（i，j）和列（k，l）坐标的绘图。他们还使用数据差分来解释全球趋势，并倡导使用空间相关图的模型拟合程序。 Zimmerman和Harville（1991）证明了许多这些方法之间的密切关系，并提出了一种方法，其中使用固定效应对全球趋势进行建模，并通过基于地统计应用的相关结构对局部趋势进行建模。应用AR1⊗AR1模型作为分析的起点，Gilmour et al。 （1997）和Cullis et al。 （1998）提出了一个模型拟合程序，其中样本变异图sample variogram用于检测总体趋势和“外部”效应（如收获方向）与试验的行或列对齐。一旦确定，添加适当的模型项以适应这些效应。通常，这些空间模型不保留实验设计特征，但Williams（1986）提出了一个模型，其中只有在同一个不完全区组中的小区之间空间关系被认为是维持实验设计的保留推理的益处。
+<strong>空间方法在农业品种产量试验中的应用表明，与RCB或不完全区组分析相比，提高了处理估计（或差异）的准确性（或减少标准误差）</strong>。邻域分析将品种差异的方差平均减少了42％（Cullis和Gleeson 1989）。 Clarke和Baker（1996）表明，最小二乘平滑将差异的标准误差减少了一半之多，Grondona等人（1996）显示AR1 AR1模型将差异的标准误差平均减半。
+森林基因试验与农业品种田间试验类似，因为存在需要计算的地点异质性。然而，<strong>有很多不同之处。林业试验通常比品种试验大得多</strong>，因为单个植物的大尺寸以及获得令人满意的家族估计所需的更高的重复。这个规模很大，而且<strong>林业土地通常是丘陵is often hilly</strong>，试验被现场和造林特征打破，这意味着林业测试中的环境变率可能更高。在林业试验中，对单个树木而不是地块进行测量，树种<strong>育种者希望从试验中的亲本和它们的后代中选择最好的个体进行交配，而不仅仅是进行品种比较</strong>。因此，<strong>树木之间的竞争可能比不同试验中的地区组间竞争更重要</strong>。在森林遗传试验中，空间分析方法已被用于研究位点变异的模式（Fu等人，1999），并已被证明可以提高估计产地效应的准确性（Hamann等人，2002），家庭或父母（Magnussen 1990; Costa e Silva等人2001; Hamann等人2002）或克隆（Anekonda和Libby 1996; Costa e Silva等人2001）。使用模拟数据，Magnussen（1993）报告，补片性导致对多重树木试验的加性遗传变异的正偏差估计，并且表明<strong>由空间自相关引起的偏差通过邻居调整而降低</strong>。老年试验中的竞争可能会减少由于趋势引起的积极自相关性，特别是对于直径和体积，因此Magnussen（1994）扩展了Papadakis（1937）方法以包括竞争。
+在本研究中，我们将一些常规和空间分析方法与森林遗传试验分析进行比较，并应用Gilmour et al。 （1997）为农业品种的扩展空间模型开发。我们将模型应用于单个树木数据，而不是绘图手段，<strong>目的是改进对父母及其后代在试验中育种值的预测</strong>。我们在模型拟合标准，方差分量估计，预测遗传值的准确性和相关性以及选择的相对遗传收益方面比较方法。从这些分析中，我们制定了森林遗传试验的空间分析的标准方法，并与农业品种试验分析相对照。所示的实施例选自大量的试验数据，我们已经分析以显示在我们遇到的各种情况下方法的应用。</p>
+
+<h2 id="材料和方法">材料和方法</h2>
+
+<h3 id="数据集">数据集</h3>
+
+<p>本研究中使用的五个试验来自澳大利亚 ，葡萄牙和阿根廷，包括三个物种（表1）。大多数试验由开放授粉家庭控制，只有试验1具有高比例的对照 - 授粉家族。大多数试验还包括检查（通常是大量）种子。试验包括各种设计，地块大小和重复。在试验4和5中，证明部分地与家庭集合混淆，并且由于重复不连续，每个集合被视为不完全的块。生长在三个试验中在年龄（4或5岁）时在乳房高度的直径（DBH）测量，在一个试验中在14岁时测量。在一个试验中评价由于菌毛感染（Dothistroma pinii）引起的脱叶，并且在另一个试验中在主观四点量表上评价茎形式。对于分析，<strong>所有发育不良，死亡和缺失的树被视为缺失值</strong>。为了便于计算，增加了缺失值以创建一个完整的观察矩阵矩阵。缺失值的比例范围为2％至51％（表1）。
+一般统计模型
+对每个试验的个体树数据进行分析使用几种线性混合模型的一般形式：[1]
+y = Xb + Zu + e
+其中y是数据的向量，b是具有其设计矩阵X的固定效应的向量，u是具有其设计矩阵Z的随机效应的向量，e是残差的向量。通过求解混合模型方程（Henderson，1984）得到固定和随机效应解：
+其中R是残差的方差σV协方差矩阵，G是每个随机效应的方差σV协方差矩阵的直接和。假设残差是独立的，R被定义为Łme2I，但空间分析允许R具有基于e到空间相关（ξi）和空间独立（ζb）残差的分解的不同结构。对于包含空间相关残差的模型，我们使用协方差结构，假设在行和列中存在可分离的一阶自回归过程，其中R矩阵
+[3] RI= AR1 AR1（ŁmŁlrowŁl2Łi[（）？+ 2 col）]ŁmŁb
+其中ŁmŁi2是空间残差方差，ŁmŁb2是独立残差方差，I是单位矩阵，并且AR1（Ł1）表示对于大小为n的有序空间坐标具有以下形式的一阶自回归相关矩阵：</p>
+
+<p>其中Łl是自相关参数。然而，可以定义等价的线性模型，其中相同的结构被应用于有序的行和列效应，并且被包括在G而不是R中。</p>
+
+<h3 id="标准模型">标准模型</h3>
+
+<p>对于其适用的每个数据集，评估具有随机效应和R和G的定义的各种组合的一系列模型。模型如下。 （1）基础，其中安装了试验的实验设计特征。可能的模型是（i）随机化完全区组（RCB），其中重复和小区（适当时）作为随机效应（试验1ĄV3）和（ii）不完全区组（IB）拟合，被视为随机不完全区组效应（试验4和5）。
+（2）可拆分不完全区组（RIB），其中重复，不完全区组和小区作为随机效应拟合（仅试验3）。该设计是可解决的，因为试验也可以作为RCB设计来分析。
+（3）<strong>后区组（PB），其中除了基础（除试验3之外的所有试验）或RIB（试验3）模型，拟合新的随机不完全区组项。通过最大化不同可能区组大小的对数似然来确定新的不完全区组的大小。所尝试的区组大小是行和列的所有因子组合，高达20棵树的任意限制。在400种可能的组合中，只有一行乘一列的块大小不适合。区组系统的起源是第一行和第一列中的树。</strong>
+（4）自回归（AR1），其中省略了ζb，因此假设所有残差都是空间相关的（Łi）。
+（5）自回归加上独立误差（AR1Łb），其中假设残差为Ł和Łb的和。
+（6）组合（BaseAR1Łb），其中基本模型的实验设计特征和自回归加上独立误差项拟合在一起。
+（7）通过复制自回归（AR1ŁbRep），这与组合模型类似;然而，R矩阵被构造为使得在不同重复中的错误之间没有相关性，即使它们可以是空间相邻的。这与Wil- liams（1986）提出的线性方差加不完全区组模型模型类似。然而，我们在R中使用自回归协方差结构，而不是线性衰减模型。这个模型只适用于RCB设计试验。
+（8）小区自回归（PlotAR1Łb），类似于AR1Łb模型;然而，自回归协方差结构被应用于小区并且包括独立的小区误差项。该模型仅适用于多树图的试验。
+对于给定性状的所有模型拟合的效果如下。 （1）固定的遗传组效应说明了父母来源的任何差异。
+（2）单个树随机添加遗传效应，其中G包括分子关系矩阵（Henderson 1976），模拟了亲缘之间的遗传协方差。这允许同时估计试验中的树和其父母的育种值（Borralho 1995）。
+（3）对于未知亲本的检查批次的额外独立方差。虽然没有报道，这个术语被拟合，以避免由于在分子关系矩阵中包括检查树作为基树而导致的加性遗传变异的估计的偏差，当他们的实际关系未知时。由于检查树构成了相当大比例的数据，并且可以有助于估计环境影响，因此它们保留在数据集中。
+（4）在试验4和5中也拟合了随机集效应，但发现其不显着。
+（5）缺失值拟合为固定效应。
+方差参数和模型比较方差参数由REML估计。<strong>除拟合遗传方差外，所有非显着性（P&gt; 0.05）方差参数均从拟合模型中消除</strong>。<strong>使用单尾似然比检验（LRT）对于零为边界值的参数来判断它们的意义（Stram和Lee 1994）;否则，使用双尾试验。使用Akaike信息准则（Akaike 1973）来比较模型</strong>：
+[5] AIC =2ĄŃ（LOGLĄVp）
+其中LOGL是REML对数似然性，p是估计的参数数量。 <strong>AIC的较大值反映了更好的拟合</strong>。在区组模型的AIC的计算中允许两个自由度用于确定块大小。所有设计效果被随机拟合以允许使用AIC进行比较，因为只有当固定效应相同时才能比较模型。
+对选择的影响父和子的最佳线性无偏预测（BLUP）
+使用估计的方差参数从混合模型方程（方程2）的解中获得后代育种值。<strong>育种值的准确性估计（真育种值和预测育种值之间的相关性）在试验中为每个亲本和后代计算[6] rgg 6=？ 6 1 PEVŁm2a
+其中</strong>PEV是从混合模型方程（方程2）和6的系数矩阵的逆获得的预测误差方差**
+Łma2是估计的加性遗传方差</p>
+
+<p><strong>使用斯皮尔曼相关性来比较来自最佳标准模型的育种值与基础模型和扩展空间模型</strong>。选择的相对遗传增益被估计为由每个模型选择的前20％的父母和5％的后代对从更好的模型估计的值的增益的差异。</p>
+
+<h2 id="扩展空间模型">扩展空间模型</h2>
+
+<p>对于所有数据集，我们使用Gilmour等人（1997）的方法来导出扩展空间模型。这种方法使用压缩样本变差函数的透视图来检测和计算与行和（或）列对齐的全局趋势和外部变量。变差函数显示作为观测单位之间距离的函数的半变分。在我们的变差函数中，基于行和列的差异将残差分成组，以更好地检测与行和列对齐的效应。可以对模型残差组（Łi+Łb）as计算半变分</p>
+
+<p>Łhdd= row col 2ndd row col
+其中v是在行和列方向上的给定绝对距离d（称为滞后）的n对残差的平均半失真。如果存在空间上结构化的变化，其中靠近在一起的观察是相似的，则对于空间上接近但随距离增加的观察，半变异将是低的，直到差异是随机的和半变异平台。对于这种情况，变差函数应该从表示零滞后的独立误差方差的值（称为参数）上升到一个距离（称为范围）到高原（称为基石），其中误差是独立的。到达地坎的变差函数被称为是静止的，这是在模型中做出的假设。我们使用的软件通过将大于8的滞后聚集成大小为2,4,6,8等的滞后集来压缩较高滞后的变差函数。零滞后的半变异被显示为透视图的前沿。为了演示空间模式，自相关和变差函数之间的关系，使用蒙特卡罗模拟从AR1？ AR1过程，表型方差为40行40列网格。使用没有独立方差的ĄV0.9和0.9之间的行和列自相关的组合，并且对于0.3和0.9之间的行和列自相关，独立方差的比例在0和1之间变化。模拟基于方差σ协方差矩阵的Cholesky解。每个实现对随机数生成器使用相同的种子。如果没有空间结构（Łlrow= 0和Łlcol= 0），则在数据的颜色强度图中没有模式，并且样本变差函数是平坦的（图1，中心）。为了有一个可见的模式，但没有方向结构，Łlcol和Łlrow是相似的，随着它们增加（从中心的对角线），补丁出现在0.3，变得更明确0.6。变差函数是固定的，但随着增加，范围增加。通过0.9，（在该实现中）存在从地图的顶部到底部的整体趋势，并且变差函数不是固定的，因为该范围大于所使用的网格的尺寸。在存在竞争的地方，Łlcol和Łlrow是负的（从中心的对角线），并且日益明确定义的检查模式变得明显。
+当Łl为负时，其偶次幂为正，因此相邻值不相似，而偶数阶段相似。这导致在低滞后处具有交替的高和低值的变差函数，但是在较高的滞后处是平坦的，这是由于值的依赖性和滞后的平均。行或列效应发生在Ł1在一个方向上更强烈，并且变差函数在该方向上具有更长的范围。例如，当Łlcol为0.9，Łlrow为0时，相邻列中的值相似，因此行效应明显，列方向的变差函数未达到基底。 Łlcol和Łlrow组合的数据和变异函数具有来自每个方向的特征的组合。 AR1？ AR1过程是非常灵活的，因为它可以模拟局部和全球趋势，竞争，行或列效应。如果存在独立误差，则随着独立误差的比例增加，数据中的模式变得越来越不清楚，并且变差函数在零滞后（块金）形成不连续，然后变得完全平坦，具有高比例的独立变化（图2）。因此，我们使用只基于Ł的残差的变差函数和图，因为在我们的所有数据集中，ξb的高阶部分模糊了任何模式。在拟合扩展空间模型中，我们使用由AIC标识的最佳标准模型作为起点。在变差函数中，非平稳性检测到全局趋势，外部变异被识别为脉冲或脊。使用数据，残差和拟合效应的颜色强度图来检查不同的模型，并帮助建立关于可以包括以改进模型的其他效应的假设。通过将二次多项式拟合到空间坐标或者在行和列项之间没有相互作用的情况下，通过三次平滑样条来计算全局趋势（Verbyla等人，1997）。如果在拟合表面的变异函数或图谱中检测到其他效应，则拟合适当的固定或随机效应。为了获得一个简约的多边形模型，使用一个近似的增量Wald F统计量（Kenward和Roger 1997），最高阶非显着（P&gt; 0.05）多项式项被顺序丢弃。所有模型使用ASREML软件（Gilmour等人1999）进行拟合。计算机程序在FORTRAN-95中编写，用于控制ASREML运行以估计后区组的块大小，用于模拟和产生颜色强度图。这些FORTRAN程序可从第一作者请求。</p>
+
+<h2 id="结果">结果</h2>
+
+<h3 id="标准模型-1">标准模型</h3>
+
+<p>标准的Akaike信息准则（AIC）模型（表2）显示，RIB模型显着优于试验3的基础模型。区组模型在每种情况下都优于基础模型，并且优于试验3的RIB模型。AR1模型通常比基础模型（？AIC&gt; 50）好，除了在试验1的DBH，改善很小，试验4，其中AR1模型差得多。仅在试验1的脱叶，AR1模型好于区组后。在所有情况下，AR1Łb模型优于基础和AR1模型，并且在试验1中除了DBH之外的所有数据集的区组模型更好。组合模型是最好的整体，改进超过AR1Łb模型的三个数据集并在其他情况下减少到AR1×b模型，因为消除了非重要术语。组合模型仅比试验1的DBH的区组后模型略好。通过复制的自回归和图自回归模型在每种情况下比组合模型更差，并且不进一步考虑。
+最佳模型通常对拟合表面显示出平滑的图案，其反映了数据中所见的图案（图3）。在试验1中的例外是DBH，其中检查板模式在表面上占主导地位，在试验4中为形式，其中垂直条纹的组显而易见。来源于拟合表面上显示的后区组的块的边界通常比设计特征的那些更好地拟合图案，这说明区组后模型的更好的性能。
+扩展的空间模型试验1的AR1Łb模型的偏差的变异函数和残差图显示了全局趋势，通常在两个方向上都有所增加，并且在柱方向上有一个峰值（图3）。扩展空间模型以考虑这种全球趋势，通过跨行布置线性项和横跨列的样条，导致大部分固定的变异函数（图4）。然而，新的净表面（拟合的全局趋势加自回归残差）（图4）显示从AR1Łb模型表面的微小变化（图3）。对于试验1的DBH，BaseAR1Łb模型的变差函数显示了两个方向的交替脊（图3），因为空间项适合树木间竞争。由于竞争可能在表型水平上操作，所以不推广扩展的空间模型，因此其他模型更合适（例如，Besag和Kempton 1986; Magnussen 1989,1994）。试验2的DBH表面在最后一列中显示出明显更好的生长，这与试验的暴露边缘重合，这在变异图中反映为凸起边缘（图3）。对最后两列中的每一列添加固定效应是非常显着的（F = 67.4），并导致随后在行方向上拟合样条，并且沿着试验底部（F = 9.71）产生边缘效应。这导致了固定的变差函数和拟合表面更清楚地由这些边缘效应和在整个试验中差的性能的第二波谷控制（图4）。对于在试验3的DBH，变差函数由远角处的峰值（图3）控制，该峰值由快速生长的区域产生。尝试用多项式和样条模型化这种趋势没有给出明显的项，并且不能产生更稳定的变异函数。对于试验4的形式，清晰的柱效应导致具有在5个滞后的脊和在10个滞后的谷的变差函数（图3），这表明交替的五个柱的组。这些组与不完全的块边界重合，并代表评估表的单页。然而，评估是由一个人以蛇形方式评估每个单独的柱，这不能解释交替的五个柱。将此列分组作为随机效应拟合显着改进了模型（ΔAIC= 18），并且现在的变差函数指示平稳性（图4）。表面现在显示出这种柱组效应和斑块状图案的组合（图4）。试验5的DBH的AR1×b模型显示沿试验底部的显着较差生长的区域，其在数据中是明显的，并且在变异函数中反映为升高的边缘（图3）。由于这个边界被确定为一个老的栅栏线，超过它在一个老领域更有力的杂草导致较差的增长，我们把它作为一个固定的效果。高度显着（F = 49.2）;然而，没有实现稳定性，也没有表面（图4）显着不同于AR1Łb模型（图3）。尝试用多项式或样条对全局趋势建模不能产生重要的项或稳定的变异函数。</p>
+
+<h3 id="育种值预测的方差参数和准确性">育种值预测的方差参数和准确性</h3>
+
+<p>所有试验的所有模型的加性遗传方差（6Łma2）均显着（P &lt;0.05），尽管在试验2中仅有显着性（表3）。加性遗传方差显示从基础模型到PB，最佳标准和扩展空间模型没有一致的趋势。在四个实例中，6×2m的AR1模型显着增加。然而，这种增加显然是一个不适当的模型的假象，因为6Łma2再次与更好的AR1Łb模型下降。
+随机的树到树的变化扩大了加性的遗传方差，因为没有其他的项可以有效地解释它。设计效果在基础模型中显着（P &lt;0.05），除了试验1中的DBH。使用RIB模型，小区效应降低，并且所有设计效果显着降低或在PB模型中变得不显着。对于BaseAR1Łb模型，在三种情况下消除了所有的设计效果，并且只有小区效应保留在另外两个中，试验2中的小区方差大大减少。对于IB和PB模型，误差方差（6λme2）形式在试验4，在那里它是不变的。使用AR1模型，在行和列方向上的自相关性（6×1）是相似的，并且其中6个L / L接近1个（即，除试验1的DBH和试验4的形式之外的所有情况），6×m 1 2显着降低与基本模型的误差方差。对于AR1×b模型，存在的大部分误差方差在空间上是独立的，因为比率6/6×m×m×b×λ22在1.1至7.4的范围内（未示出）。在四个实例中，6×mλi2和6×λ只在AR1和AR1×b模型之间略有变化。然而，对于DBH在试验1和形式在试验4，6ŁmŁi2大幅度减少和6盎司更负面或积极，以及更不对称。这两个试验具有最高的6/6·m·m·r·υ22比率，省略AR1模型中的独立误差掩盖了实际的变异模式，如低AIC值所示（表2），并导致估计的空间参数（表3）。除了在试验4中的形式外，在最佳标准和扩展空间模型之间的残差方差和Łls水平降低，其中6×lrow下降，并且Łlcol增加以变得更类似，因为强柱6组效应被考虑。
+除了试验1的DBH，父母和子代育种值的准确度在基础和最佳标准模型之间增加，对于子代平均增加2.9％，对后代平均增加2.7％（表3）。当加性遗传方差用不适当的AR1模型膨胀时，精度也膨胀。最佳标准模型和扩展空间模型之间的精度没有一致的变化模型和相对遗传增益之间的育种值相关性基础和最佳标准模型之间的预测育种值存在小但一致的差异（表4）。如预期的，相关性都高于0.95（除了试验2），相对遗传增益大多小于6％。高于最佳标准模型的扩展空间模型几乎没有增益：父母增益通常为零，最大的后代增益约为1％。</p>
+
+<h2 id="讨论">讨论</h2>
+
+<p>在这些结果的基础上，我们提倡一个<strong>森林遗传试验的空间分析的初始联合模型，它为设计模型增加了自回归误差项，并保留了一个独立的误差项</strong>。在大多数情况下，这是一个相当好的模型，虽然选择的树中的差异不大，但模型确实改变了选择的树。虽然与我们尝试的替代模型没有太大的不同，但它很简单，<strong>不会增加加性方差</strong>。<strong>从组合模型中消除非显着效应可以将组合模型减少为没有设计效果术语的模型，但在少数情况下，它们被保留</strong>。虽然没有一个先验的方法来确定这可能是什么，我们的结果和Costa e Silva等人的结果。 （2001）提出，<strong>如果变化本质上是纯粹连续的，那么大多数设计效果将被大大减少，如果不消除</strong>。然而，<strong>当存在树间竞争或一些其他异常效应时，设计效果可能在自回归误差项的存在下保持显着</strong>。 Gilmour et al。 （1997）建议初始AR1？ AR1模型的农业品种试验田。早期农业品种试验通常是未复制的，并且可能没有保留的设计特征（例如，Cullis和Gleeson 1989; Cullis等人1998; Moreau等人1999）。然而，Qiao et al。 （2000）发现，在33个设计小麦中，大多数保留了设计特征，其他人也主张采用组合方法（Federer 1998）。需要一个独立的和自回归的错误。这些数据，以及Kusnandar和Galwey（2000）和Costa e Silva et al。 （2001）清楚地表明，<strong>在林业试验中，独立误差总是存在，是大的，并且说明它总是必要的</strong>。<strong>当拟合单个树添加遗传模型时，没有不相关的误差项，加性遗传方差可能大大膨胀，空间变异的实际模式可能被模糊</strong>。
+<strong>在实验单位为小区的多样性试验中，假设独立误差表示测量误差。如果它被建模，它通常是重要的但通常很小（Basford等人1996; Gilmour等人1997; Cullis等人1998）</strong>。在林业试验中，虽然可能存在测量误差，但是从树到树的变化也将是由于微型和非附加的遗传效应，在品种试验中使用的近交系中不存在的两个变化来源。由于大的独立误差在克隆试验（Costa e Silva等人，2001）和一系列类型的测量数据中仍然存在，这表明微网站变异是其主要原因。
+我们不主张在初始空间模型中检测到的趋势的进一步建模。虽然我们使用的工具大大有助于理解试验地点变异的性质，但是扩展空间模型需要大量的努力，并且不会大幅改变育种值或选择。我们在多样性试验中与这种努力相比的缺乏成功（Gilmour等人1997; Cullis等人1998; Qiao等人2000）可能是由于我们使用的阵列大小更大，林业试验的异质性越大并存在高比例的独立误差。此外，AR1？ AR1模型似乎是非常鲁棒，能够充分适应各种各样的情况，如图。 1演示。然而，一个不能教条;可以检测其他效应，并且在它们导致估计显着效应和育种值的变化时，应当考虑它们。
+不适合检测到的趋势可能会导致问题。与行或列对齐的全局趋势和效果将增大自相关，这可能掩盖了局部趋势。布朗尼和Gumpertz（1997）建议在模拟研究的基础上，如果存在，全球趋势应该拟合。不这样做可能导致精度的估计太小。另一方面，存在过拟合效应的危险并人为地降低精度的估计。虽然我们比较了大量的模型，包括大量的达到最佳的块大小后区组，我们的模型拟合（AIC）的度量不考虑多重比较。在空间分析中正确定义自由度的数量也有困难。然而，大的AIC与向设计模型添加自回归残差的差异以及结果与数据模式的一致性给出了我们所得出的结论的信心。
+以前的林业数据空间分析表明自相关性低。 Magnussen（1990）发现高度图的平均值在0和0.4之间的自相关性，在模拟研究中使用的值高达0.5（Magnussen 1993,1994）。 Anekonda和Libby（1996）发现多种克隆红木性状中的值高达0.4，Dutkowski et al。 （未发表的数据）发现，在桉树的斑块基底面积上高达0.25。然而，我们的高得多的自相关性与这些研究是一致的，因为它们是在不同的基础上计算的。我们的模型将独立误差与更小的自相关分量分离，而以前的研究使用了单个自相关误差。拟合没有独立误差项的家族模型（未示出）导致低得多的自相关。
+我们的研究结果表明，空间模型对添加性遗传方差没有一致的影响。这与Magnussen（1990）对小区数据的分析结果大致一致，但是与他的模拟结果（Magnussen 1993，1994）没有关系，这表明补片性增加了加性遗传方差。这可能再次是由于我们发现非常高的独立错误。
+在许多情况下，<strong>后区组比设计模型更好，证实了Fu等人的结果。 （1999）</strong>，他们发现行或列因子解释道格拉斯杉木后代试验的更多变化比复制。即使我们选择的一些案例显示模式对齐行或列，这将适合后区组，它也优于连续趋势主导的设计模型。然而，它不如组合模型那么好。当计算资源有限，并且正在进行大量的跨地点育种价值预测时（例如，Jarvis等人，1995），后区组可能是一种适当的方法。然而，这样的计算限制迅速减少，并且如果它们适用，则对于每个站点，可以简单地从数据中减去拟合的空间表面，以极大地简化跨站点预测。然而，这两种方法在任何位点的复制不足以适当地估计环境表面时可能是低效的。空间模型的多重比较中固有的问题也适用于我们已经使用的区组后过程。
+最后，通过在农业品种试验情况下的模拟证明了效率和有效性的确认（Lill et al。，1988; Baird and Mead 1991; Cullis et al。1992; Azais et al。1996; Brownie and Gumpertz 1997）以验证森林遗传试验。我们目前通过模拟假设更好地匹配我们发现的情况来看这些问题。</p>
+
+<h2 id="结论">结论</h2>
+
+<p>我们认为空间分析在森林遗传试验的分析中发挥重要作用。虽然本文提供的收益不大，但其他分析（Costa e Silva et al。2001）表明，可以取得更多的实质性收益。<strong>我们主张在单个树级的分析，保留设计效果，包括独立的误差项，而不是寻求扩展的空间模型</strong>。这种方法不同于主张农业品种田间试验，因为它们与森林遗传试验的不同。尽管使用空间分析的优点在于具有良好的设计，但是自回归误差结构通常比设计块更自然地适应空间变化。有很多试验设计有相对较大的块，它是至关重要的。即使对于设计良好的试验，添加空间术语也可以改进模型。空间分析显示迄今未知的趋势和提高对变异的理解的力量是一个额外的好处。理解变异的本质只能帮助我们设计，测量和分析试验。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/dutkowski2006-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" data-toggle="tooltip" data-placement="top" title="Dutkowski2006-空间分析">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/dutilleul-1993%E8%AE%B2%E8%A7%A3%E7%A9%BA%E9%97%B4%E5%BC%82%E8%B4%A8%E6%80%A7/" data-toggle="tooltip" data-placement="top" title="Dutilleul-1993讲解空间异质性">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Magnussen-1993-ARI-NN-</title>
+  <meta property="og:title" content="Magnussen-1993-ARI-NN-" />
+  <meta name="twitter:title" content="Magnussen-1993-ARI-NN-" />
+  <meta name="description" content="Magnussen S. Bias in genetic variance estimates due to spatial autocorrelation. Theor. Appl. Genet. 1993;86:349–55.   遗传田间试验分析的一个中心问题是“遗传”和“环境”效应的二分法，因为一个不能被定义为没有另一个。来自768,000个完全随机区组设计的模拟家族试验的结果表明，当表型观察与一级自回归（AR1）过程相容时，来自多单位小区设计的家族方差分量的估计中存在严重向上偏差。家族方差的膨胀，因此，加性遗传方差和狭义的个体遗传性在AR1过程中随着最近邻相关性（ρ）的增加而指数地进行。通货膨胀率的显着差异在各种小区配置中持续存在。在ρ= 0.2时，家庭差异的通货膨胀率达到48-73％。通货膨胀率与遗传性水平无关。修改的Papadakis最近邻（NN）调整程序测试他们消除家庭方差偏差的能力。基于Mead的植物间相互作用系数的NN-调整和来自Bartlett的同时自回归方案的NN-调整去除了由表型相关性引入的高达97％的偏差。 NN调整的估计比未调整的估计略高（5-8％）的相对误差。
+介绍 在田间试验中的最近邻（NN）共享一个共同的微环境，它倾向于使非竞争邻居的观察结果与随机选择的试验观察结果更相似（Cliff和Ord 1981; Upton和Fingleton 1985）。已知相邻实验单元之间缺乏独立性导致估计处理效果和处理对比的标准误差的偏差（Binns 1987; Kempton和Howes 1981; Magnussen 1990; Wilkinson等人1983）;它也膨胀了点间方差（Magnussen 1989a; Smitth 1938; Snedecor和Cochran 1971）。今天，田间试验的分析者喜欢大量的空间方法和[NN调整技术，可以提高现场实验的精度和精度（例如，Corllll和Anderson 1983; Cullis和Gleeson 1989; Ord 1975 ; Stein和Corsten 1991; Zimmerman和Harville 1991）。尽管这种进展和怀疑遗传学试验中空间相关观察的常规分析可能是灾难性的（Stroup和Mulitze 1991），但是很少有系统地量化NN相关观察对估计的影响的遗传变异。在这一领域取得进展的主要障碍是植根于任何试验中遗传和环境影响的混杂（Gregorius和Namkoong 1987）。估计的“遗传效应”以参考群体和参考环境为条件，反之亦然（Monserud和Rehfeldt 1990）。面对田间试验中一阶近邻之间的正相关，如何将表型观察分解成正交和无偏的“遗传”和“环境”效应的问题变得复杂。这里提出的研究旨在通过模拟建立表型一级自回归（ARI）过程对完全随机区组设计中家族方差分量估计的影响。经验相关模式似乎与这种类型的过程兼容（Besag和Kempton 1986; Binns 1987; Magnussen 1990）。模拟中包括的设计是在森林遗传学试验中最常遇到的那些，其中空间依赖性的问题是特别麻烦的，因为大量条目，斑块状微网格马赛克和测试的长时间允许出现明显的空间相互关系（Correll和Cellier 1987; Libby和Cockerham 1980; Stern 1965）。将引入可行的（不一定是最优的）NN调整程序的选择，并评估其消除由表型值的相关性引起的家族方差分量中的偏差的能力。">
+  <meta property="og:description" content="Magnussen S. Bias in genetic variance estimates due to spatial autocorrelation. Theor. Appl. Genet. 1993;86:349–55.   遗传田间试验分析的一个中心问题是“遗传”和“环境”效应的二分法，因为一个不能被定义为没有另一个。来自768,000个完全随机区组设计的模拟家族试验的结果表明，当表型观察与一级自回归（AR1）过程相容时，来自多单位小区设计的家族方差分量的估计中存在严重向上偏差。家族方差的膨胀，因此，加性遗传方差和狭义的个体遗传性在AR1过程中随着最近邻相关性（ρ）的增加而指数地进行。通货膨胀率的显着差异在各种小区配置中持续存在。在ρ= 0.2时，家庭差异的通货膨胀率达到48-73％。通货膨胀率与遗传性水平无关。修改的Papadakis最近邻（NN）调整程序测试他们消除家庭方差偏差的能力。基于Mead的植物间相互作用系数的NN-调整和来自Bartlett的同时自回归方案的NN-调整去除了由表型相关性引入的高达97％的偏差。 NN调整的估计比未调整的估计略高（5-8％）的相对误差。
+介绍 在田间试验中的最近邻（NN）共享一个共同的微环境，它倾向于使非竞争邻居的观察结果与随机选择的试验观察结果更相似（Cliff和Ord 1981; Upton和Fingleton 1985）。已知相邻实验单元之间缺乏独立性导致估计处理效果和处理对比的标准误差的偏差（Binns 1987; Kempton和Howes 1981; Magnussen 1990; Wilkinson等人1983）;它也膨胀了点间方差（Magnussen 1989a; Smitth 1938; Snedecor和Cochran 1971）。今天，田间试验的分析者喜欢大量的空间方法和[NN调整技术，可以提高现场实验的精度和精度（例如，Corllll和Anderson 1983; Cullis和Gleeson 1989; Ord 1975 ; Stein和Corsten 1991; Zimmerman和Harville 1991）。尽管这种进展和怀疑遗传学试验中空间相关观察的常规分析可能是灾难性的（Stroup和Mulitze 1991），但是很少有系统地量化NN相关观察对估计的影响的遗传变异。在这一领域取得进展的主要障碍是植根于任何试验中遗传和环境影响的混杂（Gregorius和Namkoong 1987）。估计的“遗传效应”以参考群体和参考环境为条件，反之亦然（Monserud和Rehfeldt 1990）。面对田间试验中一阶近邻之间的正相关，如何将表型观察分解成正交和无偏的“遗传”和“环境”效应的问题变得复杂。这里提出的研究旨在通过模拟建立表型一级自回归（ARI）过程对完全随机区组设计中家族方差分量估计的影响。经验相关模式似乎与这种类型的过程兼容（Besag和Kempton 1986; Binns 1987; Magnussen 1990）。模拟中包括的设计是在森林遗传学试验中最常遇到的那些，其中空间依赖性的问题是特别麻烦的，因为大量条目，斑块状微网格马赛克和测试的长时间允许出现明显的空间相互关系（Correll和Cellier 1987; Libby和Cockerham 1980; Stern 1965）。将引入可行的（不一定是最优的）NN调整程序的选择，并评估其消除由表型值的相关性引起的家族方差分量中的偏差的能力。">
+  <meta name="twitter:description" content="Magnussen S. Bias in genetic variance estimates due to spatial autocorrelation. Theor. Appl. Genet. 1993;86:349–55.   遗传田间试验分析的一个中心问题是“遗传”和“环境”效应的二分法，因为一个不能被定义为没有另一个。来自768,000个完全随机区组设计的模拟家族试验的结果表明，当表型 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/magnussen-1993-ari-nn-/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/magnussen-1993-ari-nn-/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Magnussen-1993-ARI-NN-</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (57 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Magnussen-1993-ARI-NN-</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (57 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<ol>
+<li>Magnussen S. Bias in genetic variance estimates due to spatial autocorrelation. Theor. Appl. Genet. 1993;86:349–55.</li>
+</ol>
+</blockquote>
+
+<p>遗传田间试验分析的一个中心问题是“遗传”和“环境”效应的二分法，因为一个不能被定义为没有另一个。来自768,000个完全随机区组设计的模拟家族试验的结果表明，<strong>当表型观察与一级自回归（AR1）过程相容时，来自多单位小区设计的家族方差分量的估计中存在严重向上偏差。家族方差的膨胀，因此，加性遗传方差和狭义的个体遗传性在AR1过程中随着最近邻相关性（ρ）的增加而指数地进行。通货膨胀率的显着差异在各种小区配置中持续存在。在ρ= 0.2时，家庭差异的通货膨胀率达到48-73％。通货膨胀率与遗传性水平无关</strong>。修改的Papadakis最近邻（NN）调整程序测试他们消除家庭方差偏差的能力。基于Mead的植物间相互作用系数的NN-调整和来自Bartlett的同时自回归方案的NN-调整去除了由表型相关性引入的高达97％的偏差。 NN调整的估计比未调整的估计略高（5-8％）的相对误差。</p>
+
+<hr />
+
+<p>介绍
+<strong>在田间试验中的最近邻（NN）共享一个共同的微环境，它倾向于使非竞争邻居的观察结果与随机选择的试验观察结果更相似（Cliff和Ord 1981; Upton和Fingleton 1985）</strong>。已知相邻实验单元之间缺乏独立性导致估计处理效果和处理对比的标准误差的偏差（Binns 1987; Kempton和Howes 1981; Magnussen 1990; Wilkinson等人1983）;它也膨胀了点间方差（Magnussen 1989a; Smitth 1938; Snedecor和Cochran 1971）。今天，<strong>田间试验的分析者喜欢大量的空间方法和[NN调整技术，可以提高现场实验的精度和精度（例如，Corllll和Anderson 1983; Cullis和Gleeson 1989; Ord 1975 ; Stein和Corsten 1991; Zimmerman和Harville 1991）</strong>。尽管这种进展和怀疑遗传学试验中空间相关观察的常规分析可能是灾难性的（Stroup和Mulitze 1991），但是很少有系统地量化NN相关观察对估计的影响的遗传变异。在这一领域取得进展的主要障碍是植根于任何试验中遗传和环境影响的混杂（Gregorius和Namkoong 1987）。估计的“遗传效应”以参考群体和参考环境为条件，反之亦然（Monserud和Rehfeldt 1990）。面对田间试验中一阶近邻之间的正相关，如何将表型观察分解成正交和无偏的“遗传”和“环境”效应的问题变得复杂。这里提出的研究旨在通过模拟建立表型一级自回归（ARI）过程对完全随机区组设计中家族方差分量估计的影响。经验相关模式似乎与这种类型的过程兼容（Besag和Kempton 1986; Binns 1987; Magnussen 1990）。模拟中包括的设计是在森林遗传学试验中最常遇到的那些，其中空间依赖性的问题是特别麻烦的，因为大量条目，<strong>斑块状微网格马赛克和测试的长时间允许出现明显的空间相互关系</strong>（Correll和Cellier 1987; Libby和Cockerham 1980; Stern 1965）。将引入可行的（不一定是最优的）NN调整程序的选择，并评估其消除由表型值的相关性引起的家族方差分量中的偏差的能力。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/diallel/mahgoub2011-%E6%AD%A3%E5%8F%8D%E4%BA%A4/" data-toggle="tooltip" data-placement="top" title="Mahgoub2011-正反交">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/magnussen-1990%E7%A9%BA%E9%97%B4%E6%A8%A1%E5%9E%8B-%E6%AF%94%E8%BE%83-/" data-toggle="tooltip" data-placement="top" title="Magnussen-1990空间模型-比较-">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

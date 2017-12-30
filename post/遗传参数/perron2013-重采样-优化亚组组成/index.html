@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Perron2013-重采样-优化亚组组成</title>
+  <meta property="og:title" content="Perron2013-重采样-优化亚组组成" />
+  <meta name="twitter:title" content="Perron2013-重采样-优化亚组组成" />
+  <meta name="description" content="Perron M, DeBlois J, Desponts M (2013) Use of resampling to assess optimal subgroup composition for estimating genetic parameters from progeny trials. Tree Genet Genomes 9:129–143. doi: 10.1007/s11295-012-0540-5
+ 摘要 在文献中广泛报道了基于样本数量减少的木材性状遗传参数估计，但很少有调查考虑了这些小群体对参数估计精度的影响。这项研究的目的是通过改变每个家庭的家庭数量或个人数量（树木）以及通过验证某些遗传参数的准确性（跨试验分析）来确定子群抽样的最佳策略。为了实现这一点，使用无替换（k01,000 /对变化因子）对包含两个针叶树种（Larix laricina和Picea mariana）的10年总高度的数据集进行模拟，以及木材密度的pilodyn测量对26岁的马来西亚人进行了评估。 SAS？9.2宏语言和程序用于估计具有不同减少采样的几个遗传参数的置信区间。模拟结果表明，减少每个家庭每个家庭的树木数量对遗传参数估计的数量和精度的影响比减少家庭数量，特别是对于高度和木材密度的半同胞遗传力和B型遗传相关性的影响更大。在评估木材性状，树种育种研究或规划森林树种的青少年追溯后代试验时，优先评估遗传参数准确性的最佳二次抽样策略应成为常见的做法。 关键词Bootstrap置信区间。森林树。遗传参数的准确性。模拟。木材特征。高度
+介绍 在全球范围内，许多树木改良计划处于第二或第三繁殖周期（例如，White等人2007）。在第一代，主要选择标准是增长，躯干直线度和适应性，主要是基于经济重要性，易于测量和后代试验的年龄。然而，如许多最近的研究（Blackburn et al。2010; Gapare et al。2010; Lenz et al。2010; P鈗ues et al。2010; Stackpole et al。2010）所述，木材性状在许多树中越来越受到关注改进计划。预计未来选择对木材性状的越来越多的直接选择（例如，Perron 2008; Apiolaza 2009）。 估计森林树木性状的遗传参数通常基于半同胞或全同族家庭的类内相关性（参见Cornelius 1994审查）。确切地说，这种估计方法至少需要100个基因（Lynch和Walsh 1998; White et al。2007）。近几十年来，对木性状的定量遗传学进行了许多研究。传统的方法是减少采样，因为评估木材性状大群体表型所需的成本和时间。已经使用许多不同的抽样策略来减少人口数量：家庭的随机亚群（例如，Greaves等人，1996; Bouffier等人，2008; El-Kassaby等人，2011），基于先前测量的分层亚群（例如，Wang等人1999; Kumar等人2006; Ukrainetz等人2008; Blackburn等人，2010），每个家庭使用较少的个体（树）（例如Zhang等人2004; Krakowski等人2005; Stackpole等等，2010），因为破坏性分析或与稀疏操作相关联，最后使用较少的块（Fries和Ericsson 2006; Li等人2007; Gapare等人，2010）。 据我们所知，尽管许多研究已经减少了采样来估计森林树木后代试验中木材性状的遗传参数，但只有Li et al。 （2007）已经检查了抽样子群的质量。这与对现场和交配设计的影响的大量调查（例如，Namkoong和Roberds 1974; Cotterill和James 1984; Huber等人1992; Isik等人2005; Gezan等人2006）和空间自相关（例如，Wright 1978; Magnussen 1993; Fu等人1999; Dutkowski等2006）对森林树木估计遗传参数的准确性。 因此，本研究的目的是（1）通过改变每户家庭和树木的数量来确定估计遗传参数所需的亚组的最佳尺寸和组成，（2）将不同的二次抽样策略与全部人口估计值进行比较，最后，（3）调查从各种亚组获得的估计遗传参数的准确性。为了实现这些目标，我们在两个针叶树种的后代试验中模拟了无替换（RRWR）的随机重采样，其中包含全群10年总高度测量值。对木材性状进行了额外的模拟，使用了在大型二次采样树上含有pilodyn木材密度测量的数据集。">
+  <meta property="og:description" content="Perron M, DeBlois J, Desponts M (2013) Use of resampling to assess optimal subgroup composition for estimating genetic parameters from progeny trials. Tree Genet Genomes 9:129–143. doi: 10.1007/s11295-012-0540-5
+ 摘要 在文献中广泛报道了基于样本数量减少的木材性状遗传参数估计，但很少有调查考虑了这些小群体对参数估计精度的影响。这项研究的目的是通过改变每个家庭的家庭数量或个人数量（树木）以及通过验证某些遗传参数的准确性（跨试验分析）来确定子群抽样的最佳策略。为了实现这一点，使用无替换（k01,000 /对变化因子）对包含两个针叶树种（Larix laricina和Picea mariana）的10年总高度的数据集进行模拟，以及木材密度的pilodyn测量对26岁的马来西亚人进行了评估。 SAS？9.2宏语言和程序用于估计具有不同减少采样的几个遗传参数的置信区间。模拟结果表明，减少每个家庭每个家庭的树木数量对遗传参数估计的数量和精度的影响比减少家庭数量，特别是对于高度和木材密度的半同胞遗传力和B型遗传相关性的影响更大。在评估木材性状，树种育种研究或规划森林树种的青少年追溯后代试验时，优先评估遗传参数准确性的最佳二次抽样策略应成为常见的做法。 关键词Bootstrap置信区间。森林树。遗传参数的准确性。模拟。木材特征。高度
+介绍 在全球范围内，许多树木改良计划处于第二或第三繁殖周期（例如，White等人2007）。在第一代，主要选择标准是增长，躯干直线度和适应性，主要是基于经济重要性，易于测量和后代试验的年龄。然而，如许多最近的研究（Blackburn et al。2010; Gapare et al。2010; Lenz et al。2010; P鈗ues et al。2010; Stackpole et al。2010）所述，木材性状在许多树中越来越受到关注改进计划。预计未来选择对木材性状的越来越多的直接选择（例如，Perron 2008; Apiolaza 2009）。 估计森林树木性状的遗传参数通常基于半同胞或全同族家庭的类内相关性（参见Cornelius 1994审查）。确切地说，这种估计方法至少需要100个基因（Lynch和Walsh 1998; White et al。2007）。近几十年来，对木性状的定量遗传学进行了许多研究。传统的方法是减少采样，因为评估木材性状大群体表型所需的成本和时间。已经使用许多不同的抽样策略来减少人口数量：家庭的随机亚群（例如，Greaves等人，1996; Bouffier等人，2008; El-Kassaby等人，2011），基于先前测量的分层亚群（例如，Wang等人1999; Kumar等人2006; Ukrainetz等人2008; Blackburn等人，2010），每个家庭使用较少的个体（树）（例如Zhang等人2004; Krakowski等人2005; Stackpole等等，2010），因为破坏性分析或与稀疏操作相关联，最后使用较少的块（Fries和Ericsson 2006; Li等人2007; Gapare等人，2010）。 据我们所知，尽管许多研究已经减少了采样来估计森林树木后代试验中木材性状的遗传参数，但只有Li et al。 （2007）已经检查了抽样子群的质量。这与对现场和交配设计的影响的大量调查（例如，Namkoong和Roberds 1974; Cotterill和James 1984; Huber等人1992; Isik等人2005; Gezan等人2006）和空间自相关（例如，Wright 1978; Magnussen 1993; Fu等人1999; Dutkowski等2006）对森林树木估计遗传参数的准确性。 因此，本研究的目的是（1）通过改变每户家庭和树木的数量来确定估计遗传参数所需的亚组的最佳尺寸和组成，（2）将不同的二次抽样策略与全部人口估计值进行比较，最后，（3）调查从各种亚组获得的估计遗传参数的准确性。为了实现这些目标，我们在两个针叶树种的后代试验中模拟了无替换（RRWR）的随机重采样，其中包含全群10年总高度测量值。对木材性状进行了额外的模拟，使用了在大型二次采样树上含有pilodyn木材密度测量的数据集。">
+  <meta name="twitter:description" content="Perron M, DeBlois J, Desponts M (2013) Use of resampling to assess optimal subgroup composition for estimating genetic parameters from progeny trials. Tree Genet Genomes 9:129–143. doi: …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/perron2013-%E9%87%8D%E9%87%87%E6%A0%B7-%E4%BC%98%E5%8C%96%E4%BA%9A%E7%BB%84%E7%BB%84%E6%88%90/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/perron2013-%E9%87%8D%E9%87%87%E6%A0%B7-%E4%BC%98%E5%8C%96%E4%BA%9A%E7%BB%84%E7%BB%84%E6%88%90/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Perron2013-重采样-优化亚组组成</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (86 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Perron2013-重采样-优化亚组组成</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (86 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Perron M, DeBlois J, Desponts M (2013) Use of resampling to assess optimal subgroup composition for estimating genetic parameters from progeny trials. Tree Genet Genomes 9:129–143. doi: 10.1007/s11295-012-0540-5</p>
+</blockquote>
+
+<h1 id="摘要">摘要</h1>
+
+<p>在文献中广泛报道了基于样本数量减少的木材性状遗传参数估计，但很少有调查考虑了这些小群体对参数估计精度的影响。这项研究的目的是通过改变每个家庭的家庭数量或个人数量（树木）以及通过验证某些遗传参数的准确性（跨试验分析）来确定子群抽样的最佳策略。为了实现这一点，使用无替换（k01,000 /对变化因子）对包含两个针叶树种（Larix laricina和Picea mariana）的10年总高度的数据集进行模拟，以及木材密度的pilodyn测量对26岁的马来西亚人进行了评估。 SAS？9.2宏语言和程序用于估计具有不同减少采样的几个遗传参数的置信区间。模拟结果表明，<strong>减少每个家庭每个家庭的树木数量对遗传参数估计的数量和精度的影响比减少家庭数量，特别是对于高度和木材密度的半同胞遗传力和B型遗传相关性的影响更大</strong>。在评估木材性状，树种育种研究或规划森林树种的青少年追溯后代试验时，优先评估遗传参数准确性的<strong>最佳二次抽样策略</strong>应成为常见的做法。
+关键词Bootstrap置信区间。森林树。遗传参数的准确性。模拟。木材特征。高度</p>
+
+<h1 id="介绍">介绍</h1>
+
+<p>在全球范围内，许多树木改良计划处于第二或第三繁殖周期（例如，White等人2007）。在第一代，主要选择标准是<strong>增长，躯干直线度和适应性</strong>，主要是基于<strong>经济重要性，易于测量和后代试验的年龄</strong>。然而，如许多最近的研究（Blackburn et al。2010; Gapare et al。2010; Lenz et al。2010; P鈗ues et al。2010; Stackpole et al。2010）所述，<strong>木材性状在许多树中越来越受到关注改进计划</strong>。预计未来选择对木材性状的越来越多的直接选择（例如，Perron 2008; Apiolaza 2009）。
+<strong>估计森林树木性状的遗传参数通常基于半同胞或全同族家庭的类内相关性</strong>（参见Cornelius 1994审查）。确切地说，<strong>这种估计方法至少需要100个基因</strong>（Lynch和Walsh 1998; White et al。2007）。近几十年来，对木性状的定量遗传学进行了许多研究。<strong>传统的方法是减少采样，因为评估木材性状大群体表型所需的成本和时间。</strong><strong>已经使用许多不同的抽样策略来减少人口数量</strong>：家庭的随机亚群（例如，Greaves等人，1996; Bouffier等人，2008; El-Kassaby等人，2011），基于先前测量的分层亚群（例如，Wang等人1999; Kumar等人2006; Ukrainetz等人2008; Blackburn等人，2010），每个家庭使用较少的个体（树）（例如Zhang等人2004; Krakowski等人2005; Stackpole等等，2010），因为破坏性分析或与稀疏操作相关联，最后使用较少的块（Fries和Ericsson 2006; Li等人2007; Gapare等人，2010）。
+据我们所知，<strong>尽管许多研究已经减少了采样来估计森林树木后代试验中木材性状的遗传参数，但只有Li et al。 （2007）已经检查了抽样子群的质量</strong>。这与对现场和交配设计的影响的大量调查（例如，Namkoong和Roberds 1974; Cotterill和James 1984; Huber等人1992; Isik等人2005; Gezan等人2006）和空间自相关（例如，Wright 1978; Magnussen 1993; Fu等人1999; Dutkowski等2006）对森林树木估计遗传参数的准确性。
+因此，本研究的目的是（1）<strong>通过改变每户家庭和树木的数量来确定估计遗传参数所需的亚组的最佳尺寸和组成</strong>，（2）将不同的二次抽样策略与全部人口估计值进行比较，最后，（3）调查从各种亚组获得的估计遗传参数的准确性。为了实现这些目标，我们在两个针叶树种的后代试验中模拟了无替换（RRWR）的随机重采样，其中包含全群10年总高度测量值。对木材性状进行了额外的模拟，使用了在大型二次采样树上含有pilodyn木材密度测量的数据集。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%97%A5%E6%9C%AC%E8%90%BD%E5%8F%B6%E6%9D%BE/philippe2016-%E6%9D%82%E7%A7%8D%E7%A7%8D%E5%AD%90%E5%9B%AD-%E6%9D%82%E7%A7%8D%E7%A7%8D%E5%AD%90%E6%AF%94%E4%BE%8B/" data-toggle="tooltip" data-placement="top" title="Philippe2016-杂种种子园-杂种种子比例">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/paul1997-%E5%85%8B%E9%9A%86-%E9%81%97%E4%BC%A0%E6%96%B9%E5%B7%AE%E9%9A%8F%E5%B9%B4%E9%BE%84%E7%9A%84%E5%8F%98%E5%8C%96/" data-toggle="tooltip" data-placement="top" title="Paul1997-克隆-遗传方差随年龄的变化">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

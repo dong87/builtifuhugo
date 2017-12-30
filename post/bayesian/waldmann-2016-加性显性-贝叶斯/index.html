@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Waldmann-2016-加性显性-贝叶斯</title>
+  <meta property="og:title" content="Waldmann-2016-加性显性-贝叶斯" />
+  <meta name="twitter:title" content="Waldmann-2016-加性显性-贝叶斯" />
+  <meta name="description" content="Waldmann P, Hallander J, Hoti F, Sillanpää MJ. Efficient Markov chain Monte Carlo implementation of Bayesian analysis of additive and dominance genetic variances in noninbred pedigrees. Genetics [Internet]. 2008 [cited 2016 Nov 14];179:1101–12. Available from: http://sci-hub.cc/http://www.genetics.org/content/179/2/1101.short  准确和快速计算定量遗传方差参数在自然和繁殖群体中都非常重要。对于具有复杂关系结构的实验设计，在统计模型中包括加性和显性方差分量可能是重要的。在这项研究中，我们引入了贝叶斯吉布斯抽样方法，用于估计传统的无穷小模型中的加性和显性遗传变异。该方法可以在没有近亲的情况下处理一般家系。为了优化计算时间和马尔可夫链蒙特卡罗（MCMC）链的良好混合，我们使用混合Gibbs采样器，其结合单个位点和封闭的Gibbs采样器。通过使用预转换变量，进一步改善了混合取样器的速度和单位点取样器的混合。从先前公布的苏格兰松（Pinus sylvestris L.）的双列后代测试和具有不同显性方差水平的两个大模拟数据集分析了两个性状（高度和树干直径）。我们还在后验预测损失法的基础上进行贝叶斯模型比较。结果表明，具有加性和显性分量的模型对于高度和直径以及具有高显性的模拟数据具有最佳拟合。对于具有低显性的模拟数据，我们需要一个信息，以避免显性方差分量被高估。苏格兰松林数据中的狭义遗传力估计与较早的结果相比较低，这是不奇怪的，因为显性方差的水平相当高，尤其是直径。通常，混合采样器比阻塞采样器快得多，并显示出比单位点采样器更好的混合特性。
+前言 与自然适应相关的多数性状和育种改良受许多基因（多基因性状; Lynch和Walsh 1998）的影响。在定量遗传学中，多基因性状的遗传变异通常被估计为加性遗传方差（和遗传力）。遗传力的估计具有根本重要性，因为这个比率影响可以预期在所考虑的群体中的自然和人工选择的反应（Falconer和Mackay 1996）。因此，相当关注用于估计育种值和遗传力的统计方法的发展（Henderson 1984; Searle等1992; Lynch和Walsh 1998）。 遗传方差可以进一步分成加性遗传成分和非累加遗传成分。显性方差由同一基因座处等位基因之间的相互作用引起，而上位方差由不同基因座处等位基因的相互作用引起。传统上，已经进行了复杂的交叉设计以估计显性和上位性方差，例如北卡罗来纳（NC）II设计和三重测试跨线; Kearsey和Pooni 1996; Lynch和Walsh 1998？.Henderson（1985a，b）表明基于多基因成分和谱系信息（通常称为动物或个体模型）的混合效应模型如何可用于推导非加性遗传效应和方差设计。由于加性，显性和上位性遗传效应在未选择的、连锁平衡的非近交群体中是不相关的（Cockerham 1954），理论上应该可以通过加性和显性关系矩阵的各种组合的乘法来估计所有这些遗传效应，在混合模型方程中使用这些。例如，加性 - 加性上位关系矩阵将通过两个附加遗传关系矩阵的元素方式乘法获得。不幸的是，在实践中，上位关系矩阵将是彼此的倍数，这可能导致统计模型中的参数的可识别性的顶点（对于关于可识别性的讨论，参见Gelfand和Sahu1999）。此外，应该注意包括支配因素，因为考虑的谱系可能太小，不能导致可识别的结果（Misztal 1997）。非加性遗传方差分量的估计是至关重要的几个原因。首先，它将产生更准确的统计估计，因此可以实施更准确的选择策略（Du和Heschele 2000）。这在附带实验设计中特别重要（Henderson 1985b）。在这种情况下，标准加性模型（假设残差与恒定方差不相关）可以产生加性遗传值的有偏估计，因为简单残差方差结构是错误的（Lynch和Walsh 1998）。已经发现非加性遗传效应可以对育种值的排名具有相当大的影响（Wall等人，2005）。第二，显性本身是有意义的，因为它与预期的近交衰退水平耦合（Cockerham andWeir 1984）。因此，没有显性作用不会有近交衰退，避免近亲繁殖在育种设计和保护计划中不太重要。 最近，从理论的角度来看，显性作用和上位性可以转化为瓶颈和近交的加性遗传方差（例如，Willis and Orr 1993; Wang et al.">
+  <meta property="og:description" content="Waldmann P, Hallander J, Hoti F, Sillanpää MJ. Efficient Markov chain Monte Carlo implementation of Bayesian analysis of additive and dominance genetic variances in noninbred pedigrees. Genetics [Internet]. 2008 [cited 2016 Nov 14];179:1101–12. Available from: http://sci-hub.cc/http://www.genetics.org/content/179/2/1101.short  准确和快速计算定量遗传方差参数在自然和繁殖群体中都非常重要。对于具有复杂关系结构的实验设计，在统计模型中包括加性和显性方差分量可能是重要的。在这项研究中，我们引入了贝叶斯吉布斯抽样方法，用于估计传统的无穷小模型中的加性和显性遗传变异。该方法可以在没有近亲的情况下处理一般家系。为了优化计算时间和马尔可夫链蒙特卡罗（MCMC）链的良好混合，我们使用混合Gibbs采样器，其结合单个位点和封闭的Gibbs采样器。通过使用预转换变量，进一步改善了混合取样器的速度和单位点取样器的混合。从先前公布的苏格兰松（Pinus sylvestris L.）的双列后代测试和具有不同显性方差水平的两个大模拟数据集分析了两个性状（高度和树干直径）。我们还在后验预测损失法的基础上进行贝叶斯模型比较。结果表明，具有加性和显性分量的模型对于高度和直径以及具有高显性的模拟数据具有最佳拟合。对于具有低显性的模拟数据，我们需要一个信息，以避免显性方差分量被高估。苏格兰松林数据中的狭义遗传力估计与较早的结果相比较低，这是不奇怪的，因为显性方差的水平相当高，尤其是直径。通常，混合采样器比阻塞采样器快得多，并显示出比单位点采样器更好的混合特性。
+前言 与自然适应相关的多数性状和育种改良受许多基因（多基因性状; Lynch和Walsh 1998）的影响。在定量遗传学中，多基因性状的遗传变异通常被估计为加性遗传方差（和遗传力）。遗传力的估计具有根本重要性，因为这个比率影响可以预期在所考虑的群体中的自然和人工选择的反应（Falconer和Mackay 1996）。因此，相当关注用于估计育种值和遗传力的统计方法的发展（Henderson 1984; Searle等1992; Lynch和Walsh 1998）。 遗传方差可以进一步分成加性遗传成分和非累加遗传成分。显性方差由同一基因座处等位基因之间的相互作用引起，而上位方差由不同基因座处等位基因的相互作用引起。传统上，已经进行了复杂的交叉设计以估计显性和上位性方差，例如北卡罗来纳（NC）II设计和三重测试跨线; Kearsey和Pooni 1996; Lynch和Walsh 1998？.Henderson（1985a，b）表明基于多基因成分和谱系信息（通常称为动物或个体模型）的混合效应模型如何可用于推导非加性遗传效应和方差设计。由于加性，显性和上位性遗传效应在未选择的、连锁平衡的非近交群体中是不相关的（Cockerham 1954），理论上应该可以通过加性和显性关系矩阵的各种组合的乘法来估计所有这些遗传效应，在混合模型方程中使用这些。例如，加性 - 加性上位关系矩阵将通过两个附加遗传关系矩阵的元素方式乘法获得。不幸的是，在实践中，上位关系矩阵将是彼此的倍数，这可能导致统计模型中的参数的可识别性的顶点（对于关于可识别性的讨论，参见Gelfand和Sahu1999）。此外，应该注意包括支配因素，因为考虑的谱系可能太小，不能导致可识别的结果（Misztal 1997）。非加性遗传方差分量的估计是至关重要的几个原因。首先，它将产生更准确的统计估计，因此可以实施更准确的选择策略（Du和Heschele 2000）。这在附带实验设计中特别重要（Henderson 1985b）。在这种情况下，标准加性模型（假设残差与恒定方差不相关）可以产生加性遗传值的有偏估计，因为简单残差方差结构是错误的（Lynch和Walsh 1998）。已经发现非加性遗传效应可以对育种值的排名具有相当大的影响（Wall等人，2005）。第二，显性本身是有意义的，因为它与预期的近交衰退水平耦合（Cockerham andWeir 1984）。因此，没有显性作用不会有近交衰退，避免近亲繁殖在育种设计和保护计划中不太重要。 最近，从理论的角度来看，显性作用和上位性可以转化为瓶颈和近交的加性遗传方差（例如，Willis and Orr 1993; Wang et al.">
+  <meta name="twitter:description" content="Waldmann P, Hallander J, Hoti F, Sillanpää MJ. Efficient Markov chain Monte Carlo implementation of Bayesian analysis of additive and dominance genetic variances in noninbred pedigrees. Genetics …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/bayesian/waldmann-2016-%E5%8A%A0%E6%80%A7%E6%98%BE%E6%80%A7-%E8%B4%9D%E5%8F%B6%E6%96%AF/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/bayesian/waldmann-2016-%E5%8A%A0%E6%80%A7%E6%98%BE%E6%80%A7-%E8%B4%9D%E5%8F%B6%E6%96%AF/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Waldmann-2016-加性显性-贝叶斯</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (185 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Waldmann-2016-加性显性-贝叶斯</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (185 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<ol>
+<li>Waldmann P, Hallander J, Hoti F, Sillanpää MJ. Efficient Markov chain Monte Carlo implementation of Bayesian analysis of additive and dominance genetic variances in noninbred pedigrees. Genetics [Internet]. 2008 [cited 2016 Nov 14];179:1101–12. Available from: <a href="http://sci-hub.cc/http://www.genetics.org/content/179/2/1101.short">http://sci-hub.cc/http://www.genetics.org/content/179/2/1101.short</a></li>
+</ol>
+
+<p>准确和快速计算定量遗传方差参数在自然和繁殖群体中都非常重要。对于具有复杂关系结构的实验设计，在统计模型中包括加性和显性方差分量可能是重要的。在这项研究中，我们引入了贝叶斯吉布斯抽样方法，用于估计传统的无穷小模型中的加性和显性遗传变异。该方法可以在没有近亲的情况下处理一般家系。为了优化计算时间和马尔可夫链蒙特卡罗（MCMC）链的良好混合，我们使用混合Gibbs采样器，其结合单个位点和封闭的Gibbs采样器。通过使用预转换变量，进一步改善了混合取样器的速度和单位点取样器的混合。从先前公布的苏格兰松（Pinus sylvestris L.）的双列后代测试和具有不同显性方差水平的两个大模拟数据集分析了两个性状（高度和树干直径）。我们还在后验预测损失法的基础上进行贝叶斯模型比较。结果表明，具有加性和显性分量的模型对于高度和直径以及具有高显性的模拟数据具有最佳拟合。对于具有低显性的模拟数据，我们需要一个信息，以避免显性方差分量被高估。<strong>苏格兰松林数据中的狭义遗传力估计与较早的结果相比较低，这是不奇怪的，因为显性方差的水平相当高，尤其是直径</strong>。通常，混合采样器比阻塞采样器快得多，并显示出比单位点采样器更好的混合特性。</p>
+
+<hr />
+
+<h1 id="前言">前言</h1>
+
+<p>与自然适应相关的多数性状和育种改良受许多基因（多基因性状; Lynch和Walsh 1998）的影响。在定量遗传学中，多基因性状的遗传变异通常被估计为加性遗传方差（和遗传力）。遗传力的估计具有根本重要性，因为这个比率影响可以预期在所考虑的群体中的自然和人工选择的反应（Falconer和Mackay 1996）。因此，相当关注用于估计育种值和遗传力的统计方法的发展（Henderson 1984; Searle等1992; Lynch和Walsh 1998）。
+遗传方差可以进一步分成加性遗传成分和非累加遗传成分。显性方差由同一基因座处等位基因之间的相互作用引起，而上位方差由不同基因座处等位基因的相互作用引起。传统上，<strong>已经进行了复杂的交叉设计以估计显性和上位性方差，例如北卡罗来纳（NC）II设计和三重测试跨线</strong>; Kearsey和Pooni 1996; Lynch和Walsh 1998？.Henderson（1985a，b）表明基于多基因成分和谱系信息（通常称为动物或个体模型）的混合效应模型如何可用于推导非加性遗传效应和方差设计。由于加性，显性和上位性遗传效应在未选择的、连锁平衡的非近交群体中是不相关的（Cockerham 1954），理论上应该可以通过加性和显性关系矩阵的各种组合的乘法来估计所有这些遗传效应，在混合模型方程中使用这些。例如，加性 - 加性上位关系矩阵将通过两个附加遗传关系矩阵的元素方式乘法获得。不幸的是，在实践中，上位关系矩阵将是彼此的倍数，这可能导致统计模型中的参数的可识别性的顶点（对于关于可识别性的讨论，参见Gelfand和Sahu1999）。此外，应该注意包括支配因素，因为考虑的谱系可能太小，不能导致可识别的结果（Misztal 1997）。<strong>非加性遗传方差分量的估计是至关重要的几个原因。首先，它将产生更准确的统计估计，因此可以实施更准确的选择策略（Du和Heschele 2000）。这在附带实验设计中特别重要（Henderson 1985b）</strong>。<strong>在这种情况下，标准加性模型（假设残差与恒定方差不相关）可以产生加性遗传值的有偏估计，因为简单残差方差结构是错误的（Lynch和Walsh 1998）</strong>。<strong>已经发现非加性遗传效应可以对育种值的排名具有相当大的影响（Wall等人，2005）</strong>。第二，<strong>显性本身是有意义的，因为它与预期的近交衰退水平耦合（Cockerham andWeir 1984）</strong>。因此，<strong>没有显性作用不会有近交衰退，避免近亲繁殖在育种设计和保护计划中不太重要</strong>。
+最近，从理论的角度来看，<strong>显性作用和上位性可以转化为瓶颈和近交的加性遗传方差</strong>（例如，Willis and Orr 1993; Wang et al.1998; Lopez-Fanjul et al.2002; Barton和Turelli 2004）。这些发现在一定程度上通过对模式生物的经验研究得到支持（例如Garcı&rsquo;a等人1994; Fernandez等人1995; Whitlock和Fowler 1999）。 Hallander和Waldmann（2007）研究了在对育种群体进行截短选择truncation selection时非加性遗传相互作用的重要性。他们发现<strong>非加性方差最初可以在截断选择期间转换为加性遗传方差</strong>（参见Fuerst等人1997）。然而，这些问题需要进一步调查与基于系谱的统计方法。
+贝叶斯统计方法已经在遗传学中变得非常流行（Gianola和Fernando 1986; Shoemaker等1999; Blasco2001; Walsh2001; Xu2003; Beaumont和Rannala 2004），因为<strong>后验分布以概率形式概括点估计周围的不确定性（准确性）</strong>。<strong>马尔科夫链蒙特卡罗（MCMC）方法，用于贝叶斯推理近似后验分布，受Gibbs采样算法发展的推推动（Geman和Geman 1984; Gelfand和Smith 1990），在1990年代上半年引入定量遗传学（Wang等人1993年; Sorensen等人1994年）。吉布斯采样已被用于推断许多不同的定量遗传参数，例如，在加性，永久环境和母体效应的后验估计，以及缺失数据的多变量数据集（Sorensen和Gianola 2002）。从方差分量模型的角度来看，已经为有限位点模型（Du和Hoeschele 2000）开发了说明显性和上位性的贝叶斯方法，它可以解释为对多元分量的有限位点近似。多因素成分也存在于一些Bayesian QTL作图方法中（Yi和Xu 2000; Lee和Van Der Werf 2006）。
+具有加性和显性分量的模型是否优于简单的加性模型，可以通过模型选择来评估。存在用于替代统计模型的模型选择分析的几种不同的方法。在频率统计中，似然比测试（RAT）和Akaike的信息标准（AIC）是最常见的，而Bayes因子，贝叶斯信息标准（BIC），偏离信息标准（DIC）和</strong>后验预测损失统计<strong>是贝叶斯文献的工具。</strong>最近对LRT和AIC的分析表明，这些方法可能在混合模型中产生不正确的结果<strong>（Crainiceanu和Ruppert 2004; Vaida和Blanchard 2005）。贝叶斯模型比较方法更一般，但也需要进一步评估。
+在本文中，我们制定了一种快速贝叶斯吉布斯采样方法，用于估计在无近亲动物（或个体）模型中的加性和显性遗传变异，应用于没有近亲的一般设计的实验。我们使用混合Gibbs采样器，其是快速但慢混合的单位点Gibbs采样算法（例如，Sorensen和Gianola 2002）和缓慢但快速混合的阻塞Gibbs采样算法（Carcı&rsquo;a-Corte&rsquo; s和Sorensen 1996）。我们的方法的新颖性是使用可变变换，其中新的变换变量的协方差结构（即，加性和显性关系矩阵的逆）是对角的，这大大加速了两个吉布斯采样器的计算并且改进了混合单站点吉布斯取样器。该方法适用于先前公布的苏格兰松（Scots pine）（Waldmann和Ericsson 2006）定量遗传研究的两个性状（高度和树干直径）的数据，以及来自具有高和低显性方差的大NCII设计的模拟数据。此外，我们</strong>使用后验预测损失标准来比较具有不同数量方差分量的模型**（Laud和Ibrahim 1995; Gelfand和Gosh 1998）。</p>
+
+<h1 id="结果">结果</h1>
+
+<p>在这项研究中，我们开发了一种有效的策略，通过使用贝叶斯推理和变量变换估计遗传参数包括显性方差。该方法在对实数和模拟数据进行评估时表现良好。此外，<strong>本研究中的狭义遗传率低于Waldmann和Ericsson（2006）对相同数据的纯加性模型所发现的</strong>。因此，根据实验设计和性状数据，有时重要的是估计加性和非加性遗传组分群体。另外，育种值的排名可能是非最佳的，遗传力估计可能被高估，有时相当大。</p>
+
+<h2 id="非加和遗传效应对育种的影响">非加和遗传效应对育种的影响：</h2>
+
+<p>在奶牛中，Wall et al。 （2005）调查了近亲繁殖，杂种显性，重组损失和迁移对生育力（适应度）性状和产奶量的影响。研究的目的之一是<strong>检查非加性效应是否改变了育种价值的估计和公牛的排名</strong>。他们报告说，<strong>非加性效应对生育性状和奶产量有影响，尽管不是非常显着</strong>。此外，<strong>如果包括非加性效应，公牛排名有差异，这导致一些个体的排名发生相当大的变化</strong>。<strong>在我们的研究中，加性遗传效应的排名在加性和加性加显性模型之间有显着的差异</strong>。对于前100名个体，选择非最佳候选者的风险高达21％（高度）和13％（直径）。<strong>这表明在育种计划中的个体的排名和选择中包括非加性效应可能是重要的，只要它们存在</strong>。此外，在模拟研究中（VaronaandMisztal 1999），显示与基于纯加成模型（在具有特定组合能力的谱系设计）中的选择相比，<strong>包括显性组分可以有助于选择≥10％的遗传应答的增加。选择反应的最高增加发生在加性遗传率低，显性遗传性高，选择强度低和全同胞高的比例（Varona和Misztal 1999）</strong>。来自苏格兰松分析的设计和结果与这些发现非常吻合，因此我们可以预期，<strong>包含该显性分量将增加该群体的后代中的选择反应，特别是如果育种目标是直径</strong>。</p>
+
+<h2 id="非加性遗传效应的实证估计">非加性遗传效应的实证估计：</h2>
+
+<p>Crnokrak和Roff（1995）在综合评论中检查了显性方差和选择之间的关联。他们的研究汇编表明，显性差异水平在野生物种的不同性状类别之间变化。显性对于生命史性状最高，对于生理性状略低，对于形态学性状最低（VD / VA = 1.17，VD / VA = 1.06，VD / VA = 0.19）。此外，他们发现国内物种的不同性状类别之间的显性差异水平没有总体趋势，但是VD / VA相对较高（在0.79和0.91之间）。在最近的一篇综述中，Roff和Emerson（2006）综合了线交叉实验的显性和上位性研究。他们发现，<strong>几乎所有的关于生命历史和形态特征的研究中都存在显性相互作用</strong>（分别为96.5％和97.4％）。但是，<strong>生命史特征中显性与加性效应的比率是形态性状的两倍</strong>。<strong>上位相互作用不如显性地位常见，但仍然在79.4和67.1％的生命历史和形态特征中发现</strong>。与显性的情况类似，<strong>上位性与加性效应的比率在生命历史上高于形态性状</strong>。
+&gt; 生活史性状被定义为与适合度恒定并直接相关的那些性状，例如生殖力，存活力，存活和发育时间。</p>
+
+<h2 id="林木中的非加性参数">林木中的非加性参数：</h2>
+
+<p>历史上，对于非加性方差分量的注意在林木育种中受到限制。不幸的是，许多关于森林中非加性方差分量的研究都是基于太小的数据集，因此我们将讨论限制在一些设计良好的实验中。 Fries和Ericsson（1998）估计了苏格兰松六种不同性状的显性方差，发现了高显性值，特别是树径（VD / VA = 2.80）。然而，他们无法估计树高的显性变化。在火炬松中，Jansson和Li（2004）估计特异性组合能力与一般组合能力的方差比ðs2SCA = s2GCAÞ在0.36的生长体积，而Balocchi等（1993）调查年龄趋势的高度和报告，VD / VA随时间变化0.20和4.42之间。在辐射松中，Wu和Matheson（2004,2005）估计s2 SCA = s2 GCA的树高分别为0.90和0.95.<strong>Wu和Matheson（2004）建议应采用特殊的交配设计，以利用非加性方差的育种目的</strong>，另一方面，Jansson和Li（2004）认为在育种计划中只应考虑加性方差。也在道格拉斯冷杉，Yanchuk（1996）使用大数据集来估计非加性方差。他们得出结论，与非加性方差相比，加性方差的水平平均高三倍，并且与树高相比，该直径具有更高水平的非加性方差。总之，与加性方差相比，显性水平似乎没有总体趋势，但它往往似乎至少存在一些显性。</p>
+
+<h2 id="统计问题">统计问题：</h2>
+
+<p>使用基于家系的模型来估计显性方差（通过相互作用因子）可能会得到有偏差的加性和显性方差估计，因为系谱中的信息不是同时使用的。在动物育种中使用基于血统的方法（即动物模型）若干次来估计显性方差（例如Hoeschele和​​Vanraden 1991; Misztal 1997）。通常，在非随机交配（例如，育种群体）的群体中进行遗传评价，其中动物模型考虑了多个世代的选择，不同于基于家系的方法（Kennedy等人，1988）。此外，使用基于家系的模型对一般和特定组合能力的估计将包括通常被忽略的高阶上位效应的一部分（Lynch和Walsh 1998）。结果，可能发生加性和显性方差的高估。
+在动物模型中，与观察的数量相比，要估计的随机效应的数量通常较大，导致过参数化的方程系统可能导致参数的不可识别性。如果在模型中拟合了几个遗传因素，这是特别具有挑战性的。可以通过向谱系添加额外的没有记录的世代来改善可识别性的问题。换句话说，<strong>使用复杂的谱系从加性分量中分离非加法方差分量是更有效的，因为非加性的相同下降矩阵趋向于在复杂谱系中具有比在简单谱系中更多的非零元素</strong>（Mao和Xu 2005） 。
+信息先验可以用于使参数在贝叶斯模型中更可识别（Gelfand和Sahu 1999; Sorensen和Gianola 2002）。在统计学中也众所周知的是，重复和相关的性状测量将减轻可识别性的问题。使用更经济的参数化也可以帮助，例如，父亲育种值表示非亲本育种值的父亲或减少的动物模型（Quaas和Pollak 1980）。或者，可以通过操纵动物模型的系数矩阵来减少方程的数量，这导致不对称的系数矩阵（参见Henderson 1984; Lynch和Walsh 1998）。最后，还可以对无穷位点模型使用有限位点近似来估计非加性参数（例如，Du和Hoeschele 2000）。然而，一般的缺点是估计值取决于使用的基因座的数量。
+我们使用后验预测损失标准来比较包括不同数量的随机遗传组分的模型。在频繁的统计学中，通常使用LRT进行遗传方差分量的假设检验，其评估简化模型是否给出与完整模型相同的数据拟合。一般来说，<strong>如果样本量较大，则该测试对于双侧假设表现良好，因为LRT的分布然后遵循卡方分布</strong>，渐进地。另一方面，<strong>当数据量增加时，所有假设最终变得具有统计意义（Sillanpa¨和Auranen 2004），对于方差分量等有界参数，空分布可能难以估计（Crainiceanu和Ruppert 2004）。因此，在这些情况下，使用卡方分布近似LRT的分布可能会给出不正确的结果</strong>。另一个常用的统计量是使用似然性（拟合优度）和对应于模型中参数（K）的数量的惩罚项的AIC。 K通常被计算为固定效应的设计矩阵的等级加上方差的数量。 Vaidaand Blanchard（2005）认为，当推理的焦点是混合模型中的随机效应时，K需要用一个称为有效参数数量的参数（其考虑了参数之间的相关性） 。有效参数的估计不是直接的，在我们的分析中没有执行。
+在贝叶斯分析中，贝叶斯因子已被用于在具有和不具有分子标记的动物模型中测试多基因遗传参数（Garcı&rsquo;a-Corte等人，2001）。然而，<strong>贝叶斯因子仅适用于具有完全适当先验的模型，并且对模型的参数化敏感</strong>。 DIC最近被提出作为一般模型选择标准，并已用于动物模型中的评估（例如，Rekaya等人2003）。 Sorensen和Waagepetersen（2003）提供了关于动物模型的不同贝叶斯模型比较标准的广泛讨论。在本研究中，在使用DIC的令人失望的初始实验之后，我们选择使用后验预测损失方法。苏格兰松数据的模型比较结果表明，包括加性和显性效应的模型应该优于减少的模型。模拟数据的分析也表明Dm工作，但是对方差分量的水平敏感，我们建议<strong>在小方差的情况下，用不同先验的几次运行估计这个统计量</strong>。
+Damgaard（2007）基于Mrode和Thompson（1989）的观点使用了一种育种价值转化，以获得适用于单站Gibbs采样的先验不相关育种值。在我们的方法开发过程中，我们尝试了类似的方法对于此处考虑的大型家系，但由于繁殖值的后验相关性太高而遇到混合问题（结果未显示）。为了克服这里的混合问题，我们提出了混合采样器。此外，我们不会在我们的转换中将方差分量重新调整为单位方差，因此我们不需要应用反向转换。 Chalh和El Gazzah（2004）提出了另外两种Gibbs加法和显性模型的抽样方法。第一种方法从仅具有加性（A）分量的动物模型获得估计，然后计算作为加性效应的直接函数的显性效应。第二种方法是基于修改来自动物模型的混合模型方程残差，只有附加（A）分量。与传统的加性加显性单站点吉布斯取样器相比，加速度是相当大的，但是需要进一步的比较分析关于混合性能</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/bayesian/waldmann2006-%E5%A4%9A%E6%80%A7%E7%8A%B6%E4%B8%AA%E4%BD%93%E6%A8%A1%E5%9E%8B-reml%E5%92%8Cgibbs%E7%9A%84%E6%AF%94%E8%BE%83/" data-toggle="tooltip" data-placement="top" title="Waldmann2006-多性状个体模型-reml和gibbs的比较">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/bayesian/waldmann-2009%E8%B4%9D%E5%8F%B6%E6%96%AF-winbugs-/" data-toggle="tooltip" data-placement="top" title="Waldmann-2009贝叶斯-WinBUGS-">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

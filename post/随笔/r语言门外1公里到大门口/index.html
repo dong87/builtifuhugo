@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>R语言门外1公里到大门口</title>
+  <meta property="og:title" content="R语言门外1公里到大门口" />
+  <meta name="twitter:title" content="R语言门外1公里到大门口" />
+  <meta name="description" content="R是非常容易入门的一个统计软件或语言，它是辅助工具，不是主体，应该配合统计相关内容一起学习。
+ 我第一次听说这个软件还是在浙林的时候，邬荣岭老师的讲座或是培训会议上。真正开始接触是2014年，因为要利用asreml去计算遗传参数。最高效的学习往往发生在你急需这些知识或技巧的时候，所以最好是手上有需要使用R的任务，当然在这之前可以熟悉一下简单的操作比如&#43;-*/、数据的导入。
+我主要用到的参考资料有 1. R语言实战（第2版）  R数据可视化手册——这是本工具书，查阅画图参数  华南农大林元震老师主编的r与asreml-r统计分析教程——主要是后边asreml-r部分，我觉得林老师参考了一些新西兰Canterbury大学Luis Apiolaza老师的ASReml Cookbook。Luis的个人网页也有一些有用的内容和Twitter。   林老师的这本书出到了第2版，比上一版厚了一倍，如果把程序输出结果拿掉能去掉一半的内容。这本书更像一本讲义或者是笔记，没有很多理论性的内容，通常只有一个简略的概念，一个样例和代码及太多的输出结果。所以这是本工具书，需要相关的代码直接翻书查找（高级代码还得去stackoverflow）。没有统计知识也是它的优点，你看不到容易恐惧的公式和推导，除了LMM那一丁点儿。另外一个优点是第7章——试验设计。《实战》没有这部分内容，也未见到有相关的R书籍。如果林老师下次能把试验设计交代得更细致一点，比如给个图就更好了。另一个特点还是遗传评估这一章，对于遗传育种专业并且需要进行参数估算的geneticist和breeder可以重点敲这一部分的代码。林老师还有一个非常重要的贡献在于他自己写了一部分批处理的函数AAfun，在处理数据时，尤其有较多的变量时会比较方便。除了这2章外，其余的内容在其他的R工具书中一般也都有涉及，所以拿这本书学习R也是合适的（但我首推的还是《实战》，无出其右者）。同样，这本书也事无巨细。达成一个目的途径很多，掌握自己最舒服的一个就可以了，其余的不感兴趣大可不必学习。
+所以，自认为一个入门者，以林老师的这本第2版，按照浓缩一下数据管理（导入、处理和导出）这一部分，给还未接触而又有必要学习的同仁铺点路，也给自己一个梳理复习的机会。
+21 July 2017 更新 第1章 R简介  简介不是重点，不用看。 Rstudio不是强烈建议要安装，而是必须安装！！！  ###第2章 基础语法 - 2.1 对象与变量 - 赋值符号&lt;-在Rstudio中的快捷键是&lsquo;Alt&rsquo;&#43;&lsquo;-&rsquo;。 - 2.1.1 变量创建 比如有树高和胸径要算材积指数，（当然在Excel中算好后导入也可以），学会方法一就够用了。给的例子是直接搬《实战》的，连数据都没改但书的架构为什么不借鉴一下？ - 2.1.2 变量命名用方法二names()，矩阵没有变量，行名和列名分别是rownames()和colnames()。 - 2.2 运算符为何不放在最前面？ - 2.3 表达式一看就会不是吗？有几个情况会用到表达式： 1. 写模型时 2. 画图涉及到公式时（需要在图上放拟合模型） 3. 构建关联矩阵时（model.matrix） - 2.4 NA是缺失值， NULL是空值。NULL在写函数时会很常用，比如要先建个空的向量或矩阵，然后循环把数值放进去。 - 2.5 控制结构 - 2.5.1 if/else写函数时比较常用，switch用的不多。 - 2.2.2 for循环是批量处理的关键函数，有人诟病因为它比较慢，但它的呈现非常直接，易读。当对象是list的时候用lapply则比for要好用很多。while也常用，比如迭代时。 - 2.6 自编函数是不是放在数据管理后面会更好？因为学习顺序是那样的，数据还不会导进去怎么会写函数？">
+  <meta property="og:description" content="R是非常容易入门的一个统计软件或语言，它是辅助工具，不是主体，应该配合统计相关内容一起学习。
+ 我第一次听说这个软件还是在浙林的时候，邬荣岭老师的讲座或是培训会议上。真正开始接触是2014年，因为要利用asreml去计算遗传参数。最高效的学习往往发生在你急需这些知识或技巧的时候，所以最好是手上有需要使用R的任务，当然在这之前可以熟悉一下简单的操作比如&#43;-*/、数据的导入。
+我主要用到的参考资料有 1. R语言实战（第2版）  R数据可视化手册——这是本工具书，查阅画图参数  华南农大林元震老师主编的r与asreml-r统计分析教程——主要是后边asreml-r部分，我觉得林老师参考了一些新西兰Canterbury大学Luis Apiolaza老师的ASReml Cookbook。Luis的个人网页也有一些有用的内容和Twitter。   林老师的这本书出到了第2版，比上一版厚了一倍，如果把程序输出结果拿掉能去掉一半的内容。这本书更像一本讲义或者是笔记，没有很多理论性的内容，通常只有一个简略的概念，一个样例和代码及太多的输出结果。所以这是本工具书，需要相关的代码直接翻书查找（高级代码还得去stackoverflow）。没有统计知识也是它的优点，你看不到容易恐惧的公式和推导，除了LMM那一丁点儿。另外一个优点是第7章——试验设计。《实战》没有这部分内容，也未见到有相关的R书籍。如果林老师下次能把试验设计交代得更细致一点，比如给个图就更好了。另一个特点还是遗传评估这一章，对于遗传育种专业并且需要进行参数估算的geneticist和breeder可以重点敲这一部分的代码。林老师还有一个非常重要的贡献在于他自己写了一部分批处理的函数AAfun，在处理数据时，尤其有较多的变量时会比较方便。除了这2章外，其余的内容在其他的R工具书中一般也都有涉及，所以拿这本书学习R也是合适的（但我首推的还是《实战》，无出其右者）。同样，这本书也事无巨细。达成一个目的途径很多，掌握自己最舒服的一个就可以了，其余的不感兴趣大可不必学习。
+所以，自认为一个入门者，以林老师的这本第2版，按照浓缩一下数据管理（导入、处理和导出）这一部分，给还未接触而又有必要学习的同仁铺点路，也给自己一个梳理复习的机会。
+21 July 2017 更新 第1章 R简介  简介不是重点，不用看。 Rstudio不是强烈建议要安装，而是必须安装！！！  ###第2章 基础语法 - 2.1 对象与变量 - 赋值符号&lt;-在Rstudio中的快捷键是&lsquo;Alt&rsquo;&#43;&lsquo;-&rsquo;。 - 2.1.1 变量创建 比如有树高和胸径要算材积指数，（当然在Excel中算好后导入也可以），学会方法一就够用了。给的例子是直接搬《实战》的，连数据都没改但书的架构为什么不借鉴一下？ - 2.1.2 变量命名用方法二names()，矩阵没有变量，行名和列名分别是rownames()和colnames()。 - 2.2 运算符为何不放在最前面？ - 2.3 表达式一看就会不是吗？有几个情况会用到表达式： 1. 写模型时 2. 画图涉及到公式时（需要在图上放拟合模型） 3. 构建关联矩阵时（model.matrix） - 2.4 NA是缺失值， NULL是空值。NULL在写函数时会很常用，比如要先建个空的向量或矩阵，然后循环把数值放进去。 - 2.5 控制结构 - 2.5.1 if/else写函数时比较常用，switch用的不多。 - 2.2.2 for循环是批量处理的关键函数，有人诟病因为它比较慢，但它的呈现非常直接，易读。当对象是list的时候用lapply则比for要好用很多。while也常用，比如迭代时。 - 2.6 自编函数是不是放在数据管理后面会更好？因为学习顺序是那样的，数据还不会导进去怎么会写函数？">
+  <meta name="twitter:description" content="R是非常容易入门的一个统计软件或语言，它是辅助工具，不是主体，应该配合统计相关内容一起学习。
+ 我第一次听说这个软件还是在浙林的时候，邬荣岭老师的讲座或是培训会议上。真正开始接触是2014年，因为要利用asreml去计算遗传参数。最高效的学习往往发生在你急需这些知识或技巧的时候，所以最好是手上有需要使用R的任务，当然在这之前可以熟悉一下简单的操作比如&#43;-*/、数据的导入。 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E9%9A%8F%E7%AC%94/r%E8%AF%AD%E8%A8%80%E9%97%A8%E5%A4%961%E5%85%AC%E9%87%8C%E5%88%B0%E5%A4%A7%E9%97%A8%E5%8F%A3/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E9%9A%8F%E7%AC%94/r%E8%AF%AD%E8%A8%80%E9%97%A8%E5%A4%961%E5%85%AC%E9%87%8C%E5%88%B0%E5%A4%A7%E9%97%A8%E5%8F%A3/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>R语言门外1公里到大门口</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (134 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>R语言门外1公里到大门口</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (134 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p><code>R</code>是非常容易入门的一个统计软件或语言，它是辅助工具，不是主体，应该配合统计相关内容一起学习。</p>
+</blockquote>
+
+<p>我第一次听说这个软件还是在浙林的时候，邬荣岭老师的讲座或是培训会议上。真正开始接触是2014年，因为要利用<code>asreml</code>去计算遗传参数。最高效的学习往往发生在你急需这些知识或技巧的时候，所以最好是手上有需要使用<code>R</code>的任务，当然在这之前可以熟悉一下简单的操作比如+-*/、数据的导入。</p>
+
+<p>我主要用到的参考资料有
+1. <strong>R语言实战（第2版）</strong>
+<img src="http://upload-images.jianshu.io/upload_images/3289684-3753a74a8635ae33.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Kabacoff - 2015 - R IN ACTION Data analysis and graphics with R.jpg" /></p>
+
+<ol>
+<li><p><strong>R数据可视化手册</strong>——这是本工具书，查阅画图参数
+<img src="http://upload-images.jianshu.io/upload_images/3289684-57a61b9e3e78386d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="R Graphics Cookbook.jpg" /></p></li>
+
+<li><p>华南农大林元震老师主编的<strong>r与asreml-r统计分析教程</strong>——主要是后边asreml-r部分，我觉得林老师参考了一些新西兰Canterbury大学Luis Apiolaza老师的<a href="http://uncronopio.org/ASReml/HomePage">ASReml Cookbook</a>。Luis的<a href="http://www.quantumforest.com/">个人网页</a>也有一些有用的内容和<a href="https://twitter.com/zentree">Twitter</a>。
+<img src="http://upload-images.jianshu.io/upload_images/3289684-d0f66ec3f00b9798.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="r与asreml-r统计分析教程（第1版）" /></p></li>
+</ol>
+
+<p>林老师的这本书出到了第2版，比上一版厚了一倍，如果把程序输出结果拿掉能去掉一半的内容。这本书更像一本讲义或者是笔记，没有很多理论性的内容，通常只有一个简略的概念，一个样例和代码及太多的输出结果。所以这是本工具书，需要相关的代码直接翻书查找（高级代码还得去<a href="https://stackoverflow.com/">stackoverflow</a>）。没有统计知识也是它的优点，你看不到容易恐惧的公式和推导，除了LMM那一丁点儿。另外一个优点是<strong>第7章——试验设计</strong>。《实战》没有这部分内容，也未见到有相关的<code>R</code>书籍。如果林老师下次能把<strong>试验设计</strong>交代得更细致一点，比如给个图就更好了。另一个特点还是<strong>遗传评估</strong>这一章，对于遗传育种专业并且需要进行参数估算的geneticist和breeder可以重点敲这一部分的代码。林老师还有一个非常重要的贡献在于他自己写了一部分批处理的函数<code>AAfun</code>，在处理数据时，尤其有较多的变量时会比较方便。除了这2章外，其余的内容在其他的<code>R</code>工具书中一般也都有涉及，所以拿这本书学习R也是合适的（但我首推的还是《实战》，无出其右者）。同样，这本书也事无巨细。达成一个目的途径很多，掌握自己最舒服的一个就可以了，其余的不感兴趣大可不必学习。</p>
+
+<p>所以，自认为一个入门者，以林老师的这本第2版，按照浓缩一下数据管理（导入、处理和导出）这一部分，给还未接触而又有必要学习的同仁铺点路，也给自己一个梳理复习的机会。</p>
+
+<hr />
+
+<h2 id="21-july-2017-更新">21 July 2017 更新</h2>
+
+<h3 id="第1章-r简介">第1章 R简介</h3>
+
+<ul>
+<li>简介不是重点，不用看。</li>
+<li><strong>Rstudio</strong>不是强烈建议要安装，而是<strong>必须安装！！！</strong></li>
+</ul>
+
+<p>###第2章 基础语法
+- 2.1 <strong>对象与变量</strong>
+- 赋值符号<code>&lt;-</code>在<code>Rstudio</code>中的快捷键是<strong>&lsquo;Alt&rsquo;+&lsquo;-&rsquo;</strong>。
+- 2.1.1 <strong>变量创建</strong> 比如有<strong>树高</strong>和<strong>胸径</strong>要算<strong>材积指数</strong>，（当然在Excel中算好后导入也可以），学会方法一就够用了。给的例子是直接搬《实战》的，连数据都没改但书的架构为什么不借鉴一下？
+- 2.1.2 <strong>变量命名</strong>用方法二<code>names()</code>，矩阵没有变量，行名和列名分别是<code>rownames()</code>和<code>colnames()</code>。
+- 2.2 <strong>运算符</strong>为何不放在最前面？
+- 2.3 <strong>表达式</strong>一看就会不是吗？有几个情况会用到表达式：
+   1. 写模型时
+   2. 画图涉及到公式时（需要在图上放拟合模型）
+   3. 构建关联矩阵时（<code>model.matrix</code>）
+- 2.4 NA是缺失值， NULL是空值。NULL在写函数时会很常用，比如要先建个空的向量或矩阵，然后循环把数值放进去。
+- 2.5 <strong>控制结构</strong>
+- 2.5.1 <code>if/else</code>写函数时比较常用，<code>switch</code>用的不多。
+- 2.2.2 <code>for</code>循环是批量处理的关键函数，有人诟病因为它比较慢，但它的呈现非常直接，易读。当对象是<code>list</code>的时候用<code>lapply</code>则比for要好用很多。<code>while</code>也常用，比如迭代时。
+- 2.6 <strong>自编函数</strong>是不是放在数据管理后面会更好？因为学习顺序是那样的，数据还不会导进去怎么会写函数？</p>
+
+<p>###第3章 数据创建
+- 3.1 <strong>数据类型</strong>以向量、矩阵、数据框和列表最常用，数组用的少（我没用过）。向量、矩阵和数据框不都是矩阵吗？搞得好复杂，对了还有一个叫scalar的东西，不就是维度不一样吗？列表在最开始学的时候比较让我迷糊，没有直观概念。可以这么说，列表是最general的类型，能装前面所有的类型，所以学的多了以后会偏爱列表，尤其是一个函数要返回多个内容，彼此类型又不一致时。
+- 3.1.6 <strong>因子</strong> 学过试验设计、做过ANOVA分析就知道什么是因子，就是变量是类别，没有顺序也不分大小。
+- 3.1.7 <strong>字符串</strong> 就是一种比较general的向量，文本分析或分析序列时会涉及到非常多的字符串操作比如拆分和合并（我在从文献中根据单词提取句子时，数据类型全是字符串）。
+- 3.1.8 <strong>日期</strong> 我处理的数据没有这个类型，所以跳过去吧。
+- 3.2 <strong>对象的模式和属性</strong> 变量应该是因子而不确定是否做过转换时会查看一下，不写高级函数一般不用。需要的话在<code>Rstudio</code>中可以直接查看。
+- 3.3 <strong>数据输入</strong> 学会一个<code>read.csv</code>就可以了，整那么复杂干啥？<code>read.csv</code>和<code>read.table</code>的区别是前者默认表头（header=T），并且不用<code>sep=','</code>，非常简便。所以请在导入R前把相应的Excel转换成<code>csv</code>格式。
+- 3.4 <strong>数据存储</strong> 这个分几种情况：
+   1. 处理了一些<code>csv</code>要导出来，用<code>write.csv</code>。
+   2. 不是表格的话可能要导成<code>txt</code>，用<code>write.table</code>，这个和<strong>导入</strong>数据用的函数是对应的。默认输出会加一列从1到n编码，不需要的话声明中加<code>row.name=F</code>。字符向量输出会加双引号，不需要的话加<code>quote=F</code>。
+   3. 同时保存多个文件，下次想直接导入用时可以导出成R自己的格式<code>.Rdata</code>，这个格式的文件也比较小，用<code>save()</code>而非<code>write</code>。</p>
+
+<hr />
+
+<h2 id="第4章-数据管理-数据操作比较恰当">第4章 数据管理（数据操作比较恰当）</h2>
+
+<blockquote>
+<p>这部分是整个数据分析流程中最繁琐与耗时的，要耐心要认真。</p>
+</blockquote>
+
+<ul>
+<li>4.1 <strong>数据（类型）转换</strong>和4.2 <strong>排序</strong>（略）</li>
+<li>- 可能会遇到这样一种情况，当列表中的每个元素</li>
+<li>4.3 <strong>数据合并</strong> 很多时候需要合并数据，我把我遇到的情况列在下边
+
+<ol>
+<li><strong>合并2个表格</strong>，比如你对同一块林子在2个时间分别做了调查，一般会有出入比如有的死了数据没录入，而数据分析时你得放到一起。放在Excel中肉眼匹配也可以，但<code>merge()</code>能节省许多的时间，允许取2者的交集或并集。举个例子：2个数据集<code>df05</code>和<code>df10</code>，<code>df_merge &lt;- merge(x = df05, y = df10, by.x = &quot;Treeid05&quot;, by.y = &quot;Treeid10&quot;)</code>，取2者并集加<code>all = T</code>，取<code>x</code>和2者的交集加<code>all.x = all</code>，取2这的共同交集加<code>all.x = all, all.y = all</code>。</li>
+<li><strong>合并1个字符串</strong>，1个字符串向量有多个元素，需要合并这些元素成1个用<code>paste()</code>，加<code>collapse = ''</code>，单引号中加需要的分隔符。</li>
+<li>一个指标输在多列，比如</li>
+</ol></li>
+</ul>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/stat/s1--%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%E7%9A%84%E6%96%B9%E6%B3%95/" data-toggle="tooltip" data-placement="top" title="S1--方差分析的方法">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/rcodes/r%E4%B8%AD%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%9C%B0%E5%AF%BC%E5%87%BA%E5%BE%88%E5%A4%A7%E7%9A%84character-#rstat%23/" data-toggle="tooltip" data-placement="top" title="R中如何快速地导出很大的character-#rstat#">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

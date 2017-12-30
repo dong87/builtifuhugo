@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Morota2014</title>
+  <meta property="og:title" content="Morota2014" />
+  <meta name="twitter:title" content="Morota2014" />
+  <meta name="description" content="Morota G, Boddhireddy P, Vukasinovic N, et al (2014) Kernel-based variance component estimation and whole-genome prediction of pre-corrected phenotypes and progeny tests for dairy cow health traits. Front Genet. doi: 10.3389/fgene.2014.00056 基于内核的方差分量估计和预校正表型的全基因组预测和奶牛健康特性的后代测试
+ 在未知基因作用的存在下的复杂性状表型的预测是动物，植物和人类中的持续挑战。期望开发不考虑遗传和环境架构而执行良好的灵活预测模型。可以以非显式方式解决非加性变化的方法正在为此目的而获得关注，并且特别地，半参数的基于内核的方法已经应用于各种数据集，大多提供令人鼓舞的结果。另一方面，当诸如估计育种值（EBV）的平滑值已被用作响应变量时，从这些方法获得的增益较小。然而，较少强调选择表型以用于基于核的全基因组预测。本研究旨在评估半参数和参数方法之间的差异，使用两种类型的反应变量和分子标记作为输入。用于乳牛健康性状的预校正的表型（PCP）和EBV用于该比较。我们观察到非加性遗传变异是PCP总遗传变异的主要贡献者，而加性是预期的EBV变异性的最大贡献者。在评估的内核中，非参数方法相对于其加性对应物产生了跨越性状的稍好的预测性能，而与所使用的响应变量的类型无关。这加强了这样的观点，即旨在捕获一组SNP和表型之间的非线性关系的非参数内核对复杂性状预测是吸引人的。然而，像过去的研究，PCP或EBV的预测相关性的增益不大。我们的结论是，在交叉验证框架中捕获非加性遗传变异，尤其是上位性变异仍然是一个重要的挑战，即使当它是重要的，似乎是奶牛的健康性状的情况。 介绍 在动物育种中，主要目标是在后代中获得经济上重要性状的遗传获益。在基因组时代，跨越整个基因组传播的密集分子遗传标记可以与现存信息（例如谱系）组合，以获得候选动物的遗传值的更准确的预测并做出选择决定。为此目的已经提出了整合所有可用的DNA标记信息的全基因组预测方法（Meuwissen等人，2001 ; Gianola等人，2003），并且这些现在广泛用于动物育种（例如de los Campos等人人，2013a。 ），并视为植物育种（一个行之有效的手段如矢和矶部，2012），预防医学和临床决策（例如，德洛斯坎波斯等人，2010年a。 ; 。巴斯克斯等，2012） 。 全基因组方法背后的主要理由是通过标记捕获信号，而不考虑单个标记的统计学显着性。越来越多的证据表明，复杂性状是基因组内大量遗传多态性所产生的协同作用力的产物（例如，Huang et al。，2012）。这重申了遗传相互作用是重要的，并且基因型和表型可以以非线性方式连接的观点，其可能不适于参数建模。这个问题与动物和植物育种领域特别相关，自20世纪初以来科学地处理复杂性状遗传学（Fisher，1918 ; Wright，2010）。虽然育种利用附加遗传，开发灵活的表型预测机器，表现良好，而不管基础遗传构成是理想的。此外，在模型中包含非加性效应可以增强育种值的预测能力。 Gianola等人 （2006） ; Gianola和van Kaam（2008年） ; Gianola等人（2010）为解决非加性变异的半参数全基因组回归方法奠定了基础，尽管以非显式的方式。贝叶斯核脊回归（一种形式的再现核Hilbert空间（RKHS）回归]和贝叶斯神经网络是迄今为止使用的两个主要平滑器。半参数方法比实际数据中的线性加法平滑剂提供了更大的预测能力，包括泽西牛（Gianola等人，2011），异种小鼠（Okut等人，2011），肉鸡。冈萨雷斯-雷西奥等，2008，2009 ; 龙等，2010）和小麦（Long等，2011A。 ; 。佩雷斯-罗德里格斯等人，2011）。在RKHS中，通常使用高斯内核作为基函数，以估计条件期望。其本质是通过在某一度量空间上的“空间”距离方面创建遗传相关性，将数十万个遗传标记聚集成n × n阶的正（半）确定核矩阵（n是表型的数目）。尽管系谱和基因组关系矩阵A和G分别是RKHS中的有效内核，但是通过A和G传达的相关性的进一步平滑可以在复杂基因作用下实现更好的预测。 另一方面，当使用预测传播能力（PTA）或估计育种值（EBV）作为响应变量时，从半参数方法获得的增益更小（Long等人，2011a ; Morota等人，2013）。因此，需要进一步研究以充分利用半参数全基因组回归的理论优势。目标表型的选择已在常规遗传评价方案（VanRaden和Wiggans，1991），基因组使能选择（Garrick等人，2009 ; Guo等人，2010 ;Ostersen等人，2011 ; Boddhireddy等人。）和数量性状基因座（QTL）作图（Thomsen等，2001），但主要是在加性遗传效应的背景下。这与牛奶的奶牛养殖特别相关，其中公牛不具有奶记录，并且大量使用人工授精和后代测试。例如，牛的EBV是来自所有可用亲属的记录的平滑加权平均值，假设附加遗传（传递规则在矩阵A中编码），并且子代产量偏差（DYD）是公牛的女儿性能的平均值，系统效应，以及女儿大坝的遗传效应。去回归证明（DRP）类似于DYD并且可以从EBV导出; 它消除父平均效应，并消除EBV固有的收缩。 可以想象，用于在内核上回归的响应变量的类型影响预测性能。例如，EBV主要编码添加的遗传效应，并且取决于目标性状的狭义遗传性。EBV的变化，特别是如果它具有高可靠性，预期主要反映添加的遗传组分，而预校正的表型（PCP）可能受到环境和遗传的其它变异来源的影响。 一个关注点是通过在进行基因组使能的预测之前拟合线性混合模型来预处理表型可能会破坏潜在的基因型 - 表型图。可能是，当应用于PCP时，内核方法相比于使用EBV作为响应变量时它们的参数对应物相对更好。毕竟，预测平均值（例如EBV）比预测表型更容易，因此当应用于PCP时，预测机器可能期望更大的差异。这项研究的目的是量化复杂性状遗传方差的类型和数量，并调查在应用于两种类型的反应变量：PCP和EBV，都源自原始表型的非参数和参数内核的预测性能之间的差异。 材料和方法 数据 全数据集包括在Illumina BovineSNP50 BeadChip上基因分型为54,609个全基因组SNP的4482头奶牛。EBV和PCP可用于六种健康性状：酮病（KET），移位皱胃（DA），保留胎盘（RP），跛行（LAME），子宫炎（METR）和临床乳腺炎（CM）。我们选择EBV是因为最近的一项研究（Boddhireddy等，2014）发现使用EBV获得的预测相关性始终大于使用解除EBV所获得的预测相关性。同样的研究表明，当估计EBV的准确度低时，预测相关性下降得更多，这是我们在本文中分析的健康性状的情况。此外，Guo et al。（2010）报告，解除EBV产生的可靠性略低于模拟数据。通过使用奇偶，群，年和季节效应作为解释变量将最小二乘模型拟合到原始二进制表型（存在或不存在）来获得PCP。类似地，通过使用A矩阵的最佳线性无偏预测（BLUP）预测EBV，考虑14,685只动物，平均追溯10代。具有两种基因型和表型的动物的数量在性状之间变化。所有动物对于每个性状具有EBV，而仅有2886,4227和3622个具有PCP的动物分别可用于KET，DA和RP。对于KET，DA，RP，LAME，METR和CM，这些EBV相关的可靠性的平均值分别为0.">
+  <meta property="og:description" content="Morota G, Boddhireddy P, Vukasinovic N, et al (2014) Kernel-based variance component estimation and whole-genome prediction of pre-corrected phenotypes and progeny tests for dairy cow health traits. Front Genet. doi: 10.3389/fgene.2014.00056 基于内核的方差分量估计和预校正表型的全基因组预测和奶牛健康特性的后代测试
+ 在未知基因作用的存在下的复杂性状表型的预测是动物，植物和人类中的持续挑战。期望开发不考虑遗传和环境架构而执行良好的灵活预测模型。可以以非显式方式解决非加性变化的方法正在为此目的而获得关注，并且特别地，半参数的基于内核的方法已经应用于各种数据集，大多提供令人鼓舞的结果。另一方面，当诸如估计育种值（EBV）的平滑值已被用作响应变量时，从这些方法获得的增益较小。然而，较少强调选择表型以用于基于核的全基因组预测。本研究旨在评估半参数和参数方法之间的差异，使用两种类型的反应变量和分子标记作为输入。用于乳牛健康性状的预校正的表型（PCP）和EBV用于该比较。我们观察到非加性遗传变异是PCP总遗传变异的主要贡献者，而加性是预期的EBV变异性的最大贡献者。在评估的内核中，非参数方法相对于其加性对应物产生了跨越性状的稍好的预测性能，而与所使用的响应变量的类型无关。这加强了这样的观点，即旨在捕获一组SNP和表型之间的非线性关系的非参数内核对复杂性状预测是吸引人的。然而，像过去的研究，PCP或EBV的预测相关性的增益不大。我们的结论是，在交叉验证框架中捕获非加性遗传变异，尤其是上位性变异仍然是一个重要的挑战，即使当它是重要的，似乎是奶牛的健康性状的情况。 介绍 在动物育种中，主要目标是在后代中获得经济上重要性状的遗传获益。在基因组时代，跨越整个基因组传播的密集分子遗传标记可以与现存信息（例如谱系）组合，以获得候选动物的遗传值的更准确的预测并做出选择决定。为此目的已经提出了整合所有可用的DNA标记信息的全基因组预测方法（Meuwissen等人，2001 ; Gianola等人，2003），并且这些现在广泛用于动物育种（例如de los Campos等人人，2013a。 ），并视为植物育种（一个行之有效的手段如矢和矶部，2012），预防医学和临床决策（例如，德洛斯坎波斯等人，2010年a。 ; 。巴斯克斯等，2012） 。 全基因组方法背后的主要理由是通过标记捕获信号，而不考虑单个标记的统计学显着性。越来越多的证据表明，复杂性状是基因组内大量遗传多态性所产生的协同作用力的产物（例如，Huang et al。，2012）。这重申了遗传相互作用是重要的，并且基因型和表型可以以非线性方式连接的观点，其可能不适于参数建模。这个问题与动物和植物育种领域特别相关，自20世纪初以来科学地处理复杂性状遗传学（Fisher，1918 ; Wright，2010）。虽然育种利用附加遗传，开发灵活的表型预测机器，表现良好，而不管基础遗传构成是理想的。此外，在模型中包含非加性效应可以增强育种值的预测能力。 Gianola等人 （2006） ; Gianola和van Kaam（2008年） ; Gianola等人（2010）为解决非加性变异的半参数全基因组回归方法奠定了基础，尽管以非显式的方式。贝叶斯核脊回归（一种形式的再现核Hilbert空间（RKHS）回归]和贝叶斯神经网络是迄今为止使用的两个主要平滑器。半参数方法比实际数据中的线性加法平滑剂提供了更大的预测能力，包括泽西牛（Gianola等人，2011），异种小鼠（Okut等人，2011），肉鸡。冈萨雷斯-雷西奥等，2008，2009 ; 龙等，2010）和小麦（Long等，2011A。 ; 。佩雷斯-罗德里格斯等人，2011）。在RKHS中，通常使用高斯内核作为基函数，以估计条件期望。其本质是通过在某一度量空间上的“空间”距离方面创建遗传相关性，将数十万个遗传标记聚集成n × n阶的正（半）确定核矩阵（n是表型的数目）。尽管系谱和基因组关系矩阵A和G分别是RKHS中的有效内核，但是通过A和G传达的相关性的进一步平滑可以在复杂基因作用下实现更好的预测。 另一方面，当使用预测传播能力（PTA）或估计育种值（EBV）作为响应变量时，从半参数方法获得的增益更小（Long等人，2011a ; Morota等人，2013）。因此，需要进一步研究以充分利用半参数全基因组回归的理论优势。目标表型的选择已在常规遗传评价方案（VanRaden和Wiggans，1991），基因组使能选择（Garrick等人，2009 ; Guo等人，2010 ;Ostersen等人，2011 ; Boddhireddy等人。）和数量性状基因座（QTL）作图（Thomsen等，2001），但主要是在加性遗传效应的背景下。这与牛奶的奶牛养殖特别相关，其中公牛不具有奶记录，并且大量使用人工授精和后代测试。例如，牛的EBV是来自所有可用亲属的记录的平滑加权平均值，假设附加遗传（传递规则在矩阵A中编码），并且子代产量偏差（DYD）是公牛的女儿性能的平均值，系统效应，以及女儿大坝的遗传效应。去回归证明（DRP）类似于DYD并且可以从EBV导出; 它消除父平均效应，并消除EBV固有的收缩。 可以想象，用于在内核上回归的响应变量的类型影响预测性能。例如，EBV主要编码添加的遗传效应，并且取决于目标性状的狭义遗传性。EBV的变化，特别是如果它具有高可靠性，预期主要反映添加的遗传组分，而预校正的表型（PCP）可能受到环境和遗传的其它变异来源的影响。 一个关注点是通过在进行基因组使能的预测之前拟合线性混合模型来预处理表型可能会破坏潜在的基因型 - 表型图。可能是，当应用于PCP时，内核方法相比于使用EBV作为响应变量时它们的参数对应物相对更好。毕竟，预测平均值（例如EBV）比预测表型更容易，因此当应用于PCP时，预测机器可能期望更大的差异。这项研究的目的是量化复杂性状遗传方差的类型和数量，并调查在应用于两种类型的反应变量：PCP和EBV，都源自原始表型的非参数和参数内核的预测性能之间的差异。 材料和方法 数据 全数据集包括在Illumina BovineSNP50 BeadChip上基因分型为54,609个全基因组SNP的4482头奶牛。EBV和PCP可用于六种健康性状：酮病（KET），移位皱胃（DA），保留胎盘（RP），跛行（LAME），子宫炎（METR）和临床乳腺炎（CM）。我们选择EBV是因为最近的一项研究（Boddhireddy等，2014）发现使用EBV获得的预测相关性始终大于使用解除EBV所获得的预测相关性。同样的研究表明，当估计EBV的准确度低时，预测相关性下降得更多，这是我们在本文中分析的健康性状的情况。此外，Guo et al。（2010）报告，解除EBV产生的可靠性略低于模拟数据。通过使用奇偶，群，年和季节效应作为解释变量将最小二乘模型拟合到原始二进制表型（存在或不存在）来获得PCP。类似地，通过使用A矩阵的最佳线性无偏预测（BLUP）预测EBV，考虑14,685只动物，平均追溯10代。具有两种基因型和表型的动物的数量在性状之间变化。所有动物对于每个性状具有EBV，而仅有2886,4227和3622个具有PCP的动物分别可用于KET，DA和RP。对于KET，DA，RP，LAME，METR和CM，这些EBV相关的可靠性的平均值分别为0.">
+  <meta name="twitter:description" content="Morota G, Boddhireddy P, Vukasinovic N, et al (2014) Kernel-based variance component estimation and whole-genome prediction of pre-corrected phenotypes and progeny tests for dairy cow health traits. …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/morota2014/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/morota2014/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Morota2014</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (297 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Morota2014</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (297 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Morota G, Boddhireddy P, Vukasinovic N, et al (2014) Kernel-based variance component estimation and whole-genome prediction of pre-corrected phenotypes and progeny tests for dairy cow health traits. Front Genet. doi: 10.3389/fgene.2014.00056
+基于内核的方差分量估计和预校正表型的全基因组预测和奶牛健康特性的后代测试</p>
+</blockquote>
+
+<p>在未知基因作用的存在下的复杂性状表型的预测是动物，植物和人类中的持续挑战。期望开发不考虑遗传和环境架构而执行良好的灵活预测模型。可以以非显式方式解决非加性变化的方法正在为此目的而获得关注，并且特别地，半参数的基于内核的方法已经应用于各种数据集，大多提供令人鼓舞的结果。另一方面，当诸如估计育种值（EBV）的平滑值已被用作响应变量时，从这些方法获得的增益较小。然而，较少强调选择表型以用于基于核的全基因组预测。本研究旨在评估半参数和参数方法之间的差异，使用两种类型的反应变量和分子标记作为输入。用于乳牛健康性状的预校正的表型（PCP）和EBV用于该比较。我们观察到非加性遗传变异是PCP总遗传变异的主要贡献者，而加性是预期的EBV变异性的最大贡献者。在评估的内核中，非参数方法相对于其加性对应物产生了跨越性状的稍好的预测性能，而与所使用的响应变量的类型无关。这加强了这样的观点，即旨在捕获一组SNP和表型之间的非线性关系的非参数内核对复杂性状预测是吸引人的。然而，像过去的研究，PCP或EBV的预测相关性的增益不大。我们的结论是，在交叉验证框架中捕获非加性遗传变异，尤其是上位性变异仍然是一个重要的挑战，即使当它是重要的，似乎是奶牛的健康性状的情况。
+介绍
+在动物育种中，主要目标是在后代中获得经济上重要性状的遗传获益。在基因组时代，跨越整个基因组传播的密集分子遗传标记可以与现存信息（例如谱系）组合，以获得候选动物的遗传值的更准确的预测并做出选择决定。为此目的已经提出了整合所有可用的DNA标记信息的全基因组预测方法（Meuwissen等人，2001 ; Gianola等人，2003），并且这些现在广泛用于动物育种（例如de los Campos等人人，2013a。 ），并视为植物育种（一个行之有效的手段如矢和矶部，2012），预防医学和临床决策（例如，德洛斯坎波斯等人，2010年a。 ; 。巴斯克斯等，2012） 。
+全基因组方法背后的主要理由是通过标记捕获信号，而不考虑单个标记的统计学显着性。越来越多的证据表明，复杂性状是基因组内大量遗传多态性所产生的协同作用力的产物（例如，Huang et al。，2012）。这重申了遗传相互作用是重要的，并且基因型和表型可以以非线性方式连接的观点，其可能不适于参数建模。这个问题与动物和植物育种领域特别相关，自20世纪初以来科学地处理复杂性状遗传学（Fisher，1918 ; Wright，2010）。虽然育种利用附加遗传，开发灵活的表型预测机器，表现良好，而不管基础遗传构成是理想的。此外，在模型中包含非加性效应可以增强育种值的预测能力。
+Gianola等人 （2006） ; Gianola和van Kaam（2008年） ; Gianola等人（2010）为解决非加性变异的半参数全基因组回归方法奠定了基础，尽管以非显式的方式。贝叶斯核脊回归（一种形式的再现核Hilbert空间（RKHS）回归]和贝叶斯神经网络是迄今为止使用的两个主要平滑器。半参数方法比实际数据中的线性加法平滑剂提供了更大的预测能力，包括泽西牛（Gianola等人，2011），异种小鼠（Okut等人，2011），肉鸡。冈萨雷斯-雷西奥等，2008，2009 ; 龙等，2010）和小麦（Long等，2011A。 ; 。佩雷斯-罗德里格斯等人，2011）。在RKHS中，通常使用高斯内核作为基函数，以估计条件期望。其本质是通过在某一度量空间上的“空间”距离方面创建遗传相关性，将数十万个遗传标记聚集成n × n阶的正（半）确定核矩阵（n是表型的数目）。尽管系谱和基因组关系矩阵A和G分别是RKHS中的有效内核，但是通过A和G传达的相关性的进一步平滑可以在复杂基因作用下实现更好的预测。
+另一方面，当使用预测传播能力（PTA）或估计育种值（EBV）作为响应变量时，从半参数方法获得的增益更小（Long等人，2011a ; Morota等人，2013）。因此，需要进一步研究以充分利用半参数全基因组回归的理论优势。目标表型的选择已在常规遗传评价方案（VanRaden和Wiggans，1991），基因组使能选择（Garrick等人，2009 ; Guo等人，2010 ;Ostersen等人，2011 ; Boddhireddy等人。）和数量性状基因座（QTL）作图（Thomsen等，2001），但主要是在加性遗传效应的背景下。这与牛奶的奶牛养殖特别相关，其中公牛不具有奶记录，并且大量使用人工授精和后代测试。例如，牛的EBV是来自所有可用亲属的记录的平滑加权平均值，假设附加遗传（传递规则在矩阵A中编码），并且子代产量偏差（DYD）是公牛的女儿性能的平均值，系统效应，以及女儿大坝的遗传效应。去回归证明（DRP）类似于DYD并且可以从EBV导出; 它消除父平均效应，并消除EBV固有的收缩。
+可以想象，用于在内核上回归的响应变量的类型影响预测性能。例如，EBV主要编码添加的遗传效应，并且取决于目标性状的狭义遗传性。EBV的变化，特别是如果它具有高可靠性，预期主要反映添加的遗传组分，而预校正的表型（PCP）可能受到环境和遗传的其它变异来源的影响。
+一个关注点是通过在进行基因组使能的预测之前拟合线性混合模型来预处理表型可能会破坏潜在的基因型 - 表型图。可能是，当应用于PCP时，内核方法相比于使用EBV作为响应变量时它们的参数对应物相对更好。毕竟，预测平均值（例如EBV）比预测表型更容易，因此当应用于PCP时，预测机器可能期望更大的差异。这项研究的目的是量化复杂性状遗传方差的类型和数量，并调查在应用于两种类型的反应变量：PCP和EBV，都源自原始表型的非参数和参数内核的预测性能之间的差异。
+材料和方法
+数据
+全数据集包括在Illumina BovineSNP50 BeadChip上基因分型为54,609个全基因组SNP的4482头奶牛。EBV和PCP可用于六种健康性状：酮病（KET），移位皱胃（DA），保留胎盘（RP），跛行（LAME），子宫炎（METR）和临床乳腺炎（CM）。我们选择EBV是因为最近的一项研究（Boddhireddy等，2014）发现使用EBV获得的预测相关性始终大于使用解除EBV所获得的预测相关性。同样的研究表明，当估计EBV的准确度低时，预测相关性下降得更多，这是我们在本文中分析的健康性状的情况。此外，Guo et al。（2010）报告，解除EBV产生的可靠性略低于模拟数据。通过使用奇偶，群，年和季节效应作为解释变量将最小二乘模型拟合到原始二进制表型（存在或不存在）来获得PCP。类似地，通过使用A矩阵的最佳线性无偏预测（BLUP）预测EBV，考虑14,685只动物，平均追溯10代。具有两种基因型和表型的动物的数量在性状之间变化。所有动物对于每个性状具有EBV，而仅有2886,4227和3622个具有PCP的动物分别可用于KET，DA和RP。对于KET，DA，RP，LAME，METR和CM，这些EBV相关的可靠性的平均值分别为0.21,0.35,0.24,0.28,0.49和0.23。不考虑单形标志物，并且具有小于0.05的次要等位基因频率（MAF）的SNP，导致用于分析的41,266个标志物。通过从具有边缘等位基因频率作为参数的伯努利分布中抽样等位基因，将缺失的基因型替换为基因座。松树研究表明，各种估算方法的预测是稳定的（Zapata-Valenzuela et al。，2013）。
+选择内核
+我们的目的是通过构建核心矩阵K捕获从基因型到表型的信号。考虑三个非参数和三个参数内核。非参数高斯核（GK）可以通过将一个SNP的矢量嵌入到欧几里德度量空间中来构建。与对应基因型的矢量两个个体之间的空间遗传距离点¯x 我和点¯x Ĵ由平方欧几里得范数给出ķ（点¯x 我，点¯xĴ）= EXP（-θ|| 点¯x 我 - 点¯x Ĵ || 2），其中正带宽参数θ控制函数的整体平滑性。这个核已知接近一个扩散核，后者定义在一个离散的非欧几里德度量空间（Morota et al。，2013）。我们构建了两种类型的高斯内核，它们在等位基因编码方面不同（Long等人，2011b）。加性高斯核（以下表示为GK A）以加性方式例如“aa”→0，“Aa”→1，“AA”→2基于编码标记基因型。类似地，编码基因型“aa” “Aa”和“AA”分别为-0.5,0.5和-0.5，导致优势高斯内核（GK D）。第三非参数的内核，旨在捕获由显性上位添加剂，是由（由元件元件）拍摄的Hadamard矩阵的乘积，即构成，GK 一个＃GKð，以下亨德森（1985） 。该参数化假定没有连接和连接平衡（LE）。关于参数内核，第一种方法是基于加性基因型矩阵（X A）的加性基因组关系矩阵G（VanRaden，2008）。随后，其霸主地位对口ð是通过构建标记基因型（之间的霸主地位对比得出点¯x Ð）。下显性和Hardy-Weinberg平衡，在一个轨迹（在期望和基因型变异点¯x 我）由2中给出p 我（1 - p 我）和2 p 我（1 - p 我）[1 - 2 p 我（ 1- p i）]，其中p i是参考等位基因的等位基因频率（Su等人，2012）。使用与上述相同的逻辑，通过优势上位核的添加剂的参数化版本由G＃D给出。前三个内核（GK A，GK D和GK A＃GKD）以非线性方式非标准地将标记结合到回归方程中，而其他三个内核具有参数解释，并且在加性或优势方面是线性的关系。
+贝叶斯内核回归
+程序如Morota et al。（2013年）。标准定量遗传学模型试图通过建立方程y = g +ε 将观测值（y）分离为遗传（g）和残余（ε）分量。剩余项ε可能包含模型误差和在分析中未考虑的环境影响。遗传信号被认为是未知的条件期望函数，在表示器定理下采用形式g = Kα（例如，de los Campos等人，2010b）。这里，ķ是上面讨论的内核和系数α中的一个，优化ℓ溶液（α|λ）=（Ý - ķ α）&rsquo;（Ý - ķ α）+λα&rsquo; ķ α。这相当于嵌合ý = ķ α+ε，具有α和ε以下独立Ñ（0，ķ -1 σ 2 α）和Ñ（0，我 σ 2 ε）分布，分别; λ是方差分量，σ的比值2 ε /σ 2 α。因此，在该特定RKHS回归模型的框架内，响应和核以线性方式链接，而SNP协变量线性或非线性地进入核。遗传值的预测由估计的条件期望函数给出G^=Kα^。
+所有未知项，包括方差分量，可以使用吉布斯采样从后验分布推断。使用自由度等于5的缩放逆卡方分布和与表型方差乘以0.5成比例的尺度参数作为两个方差参数的先验。我们采用了50,000次迭代的马尔科夫链，第一个20,000被丢弃为老化。稀释率为10，产生3000个样品用于每个感兴趣的参数的后推理。对于EBV，将与那些EBV相关的可靠性用作权重。
+内核重量
+通过如de los Campos等人提出的“核平均”（即，多核学习）来评估每个核的贡献。（2010b）。使用三个参数内核G，D和G＃D来量化可通过显性上位性引起的标记加性，优势和加性的方差的量，如在标准方差分量估计中。这里，“平均”内核K采用形式K=GσG2σ〜K2+DσD2σ〜K2+（（G＃＃D）σGD2σ〜K2，其中σ 2 ģ，σ 2 ð，σ 2 的GD是挂钩的内核方差分量ģ，ð和GD，分别与  σ〜2 ķ=σ 2 摹 +σ 2 ð +σ 2 GD。因此，σ 2 ģ /  σ〜2 ķ，σ 2 ð /  σ〜2 ķ，σ 2 GD /  σ〜2 K可以看作是内核对群体中标记的遗传变异的相对贡献。相应的权重越大，特定类型的遗传方差对整体变化的贡献越大。我们还通过拟合加权和优势内核来量化权重，以评估由于模型错误指定的潜在偏差。
+附加到高斯内核的带宽参数（θ）可以在贝叶斯MCMC采样框架内推断或在θ值的网格上进行评估。这里采用的方法是使用前面在MCMC上下文中描述的内核平均。使用带宽参数的“极值”值创建相同类型的两个非参数内核，使得相应内核的平均非对角元素的平均值分别为0.12和0.90。因此，创建的三个内核中的任何一个都基于个体之间的局部（0.12）和全局（0.90）相似性。参数内核不涉及此带宽参数。
+使用从R包BGLR（bglr.r-forge.r-project.org）获得的函数拟合RKHS回归模型。
+预测能力的评估
+使用10倍交叉验证（CV）通过将数据随机分成10个大约相等大小的不相交集来评估模型的预测能力。使用九组作为训练数据以预测剩余组中的动物的掩蔽表型（测试）。预测性能测量为测试集中的预测值和观察值之间的Pearson相关性。为了平滑CV分布的变异性，计算5个10倍CV的平均值。将非参数内核（GK A，GK D和GK A + GK D + GK A＃GK D）的三个组合和参数内核（G + D + G＃D）的三个组合的预测性能与基准内核G，其等效于基因组最佳线性无偏预测。
+结果
+12个响应变量中的成对相关性在图1中显示为热图。6个PCP，6个EBV和6对PCP和EBV在相同性状上的相关性分别在-0.03和0.21之间，-0.19和0.51之间，以及0.41和0.78之间。层次聚类，连接两个响应变量与预期相同的性状，六个性状聚集成两大群：（1）METR，RP和DA，和（2）LAME，CM和KET。
+图1</p>
+
+<p>图1.六种健康特征之间的相关性：酮症（KET），移位皱胃（DA），保留胎盘（RP），跛行（LAME），子宫炎（METR）和临床乳腺炎（CM）。变量名称后跟“_ebv”表示估计育种值（EBV）。
+估计方差分量的概要如表1所示。这里，V ģ，V ð，V GD，以及V ķ代表标记添加剂（σ 2 ģ），标显性（σ 2 ð），标添加剂由显性（σ 2 GD），和总标记遗传变异（  σ〜2 ķ =σ 2 ģ +σ 2 ð +σ 2 GD），分别与ħ 2估计广义遗传。KET的PCP的狭义遗传力估计（V G / V P）范围为0.05（RP）至0.09。这与关于健康性状的文献报道（例如，Heringstad等人，2005 ; Heringstad，2010 ;Koeck等人，2012）一致。我们观察到非加性遗传变异是PCP中遗传变异的主要来源，而加性对于EBV的变异性具有最大的贡献。通过优势上位性加上优势的加性对健康PCP的变化具有最大的贡献，这与基于谱系的分析（例如Hoeschele，1991 ; Palucci等，2007）一致，表明非加性遗传变异对于健身相关性状（例如，生育力）是重要的。对于所有PCP性状，非加性遗传方差的量大于加性方差。出乎意料地，对于DA，LAME，METR和CM的EBV，也捕获到相当大量的上位方差，其被认为是仅嵌入添加剂变异性。另一方面，上位性对KET和RP的EBV的贡献可忽略不计。一个原因是，基于标记的模型的方差的解释不应该与来自谱系数据的方差估计的解释相同。此外，这些EBV用于具有低狭义遗传性的健康性状，因此具有低可靠性。第三个原因是方差分区适用于平均值，产生的遗传变异贡献大于分区为单个记录时的贡献。广义遗传率的估计值对于PCP为0.33至0.52，对于EBV为0.29至0.78。如上所述，EBV之间的方差很小，因为这些是平均值。6个性状的EBV表型差异在0.0057和0.0157之间。因此，与使用PCP获得的分解相比，这放大了遗传变异的贡献。
+表格1</p>
+
+<p>表1.使用参数多内核的酮症（KET），移位皱胃（DA），保留胎盘（RP），跛行（LAME），子宫炎（METR）和临床乳腺炎（CM）的方差分量学习。
+表1中括号中的值是当只有加法和优势核被拟合时的估计权重（对总方差的贡献）。这样估计的所有优势内核权重对于PCP和EBV比在完全模型下略高或者相等。另一方面，PCP的两种内核模型中的估计权重较高，而对于EBV，观察到相反的趋势。通过比较完全模型和简化模型，我们注意到最上位信号来自残差方差。这表明模型不能通过优势从残差方差中分离加法，可能是因为G＃D中的大多数非对角元素是零，这接近于单位矩阵。在我们的数据集中，对于G，D和GD，非对角线的绝对值的平均值分别为0.02,0.01和0.0003 。图2描绘了从四个随机取样的动物取得的G，D和GD之间的关系的散点图。我们看到GD的绝对大多数非对角线分量集中在零附近。减轻这个问题的一种方法是使用更强烈相关的动物，使得G＃D的非对角线将更远离零。
+图2</p>
+
+<p>图2. 从四个随机抽样的动物取得的加性（G），优势（D）和由优势（GD）引起的加性的关系的散点图。
+我们观察到EBV的小的优势贡献，并发现G和D的相应元素之间的相关性为0.70。这种依赖性也在图2的第一行中突出显示。我们发现当使用更大数量的SNP构建D时，该核的非对角元素变得与G的那些更强烈相关。这在图3中示出，其中从该研究的随机取样基因型创建加性和优势核，其中当使用r2度量时，平均相邻连锁不平衡（LD）为0.18 。LE方案下的基因型通过计算机模拟产生，平均MAF为0.35。动物数量如本研究中所述固定（n = 4,482），同时将标记物的数目从150改变为40,000。在LD下，两个内核随着SNP数量的增加而变得更相似，这表明可能难以获得将标记方差分割为加性和支配分量，产生误导结果，除非内核以某种方式考虑比率p / n，标记的数量远大于动物的数量，p &gt;&gt; n。另一方面，当LD不存在时，加性和支配关系矩阵的非对角元素之间的相关性保持恒定在小的值。
+图3</p>
+
+<p>图3.加性基因组关系矩阵G和优势关系矩阵D的非对角元素之间的相关性，作为SNP数量的函数。从本研究（水平= LD）和通过轨迹（水平= LE）的计算机模拟基因座随机取样基因型，平均次要等位基因频率等于0.35。相邻标记之间的r 2连锁不平衡（LD）统计的平均值分别为0.18和0.008。
+表2显示了所使用的核的预测相关性。非参数内核GK A和GK ALL产生比所有性状的加性基因组BLUP（G）略微更好的预测性能，而不管使用的响应变量的类型。在大多数情况下，将三个参数内核（G，D和G＃D）拟合在一起给出比G单独更好的预测性能。总的来说，单独的高斯添加核，或三个非参数核（高斯加性，优势和加性通过优势）拟合联合提供最佳性能。从优势对比得到的高斯核不能很好地工作，除非高斯附加核被安装在一起。这些结果表明在PCP中存在显着的非加性遗传变异，并且利用非加性信息来源的内核可以提供更好的预测。非参数内核的表现优于参数对应的EBV。然而，使用非参数核的预测能力的增益对于PCP和EBV是相似的，至少通过相关性测量。这种增益是边际的，并且在性状上在0.01和0.03之间变化，表明非参数内核不能有效地利用PCP的非加性遗传变异的存在，至少对于这些性状。我们的观察与猪最近的研究一致，其中获得加性和非加性遗传变异，并且使用参数内核进行预测（Su等人，2012）。虽然这些作者报告了大的非加性遗传变异，使用基因组BLUP容纳添加剂，优势和通过附加上位性的添加剂产生与单独的添加剂基因组关系核相比的边际增益。如前所述，添加和优势内核通过构造相关，并且这两个内核也通过优势内核与添加剂强烈相关。这些观察表明，Kempthorne（1954）的LE假设被违反，并表明与参数化为三个遗传组分相比，旨在捕获总遗传变异的单个高斯核的使用可能优选用于预测目的。也许Su等人报道的方差分量估计（2012），并且在我们的研究中获得的值是不稳定的或由于参数内核之间缺乏正交性而向上偏移，并且如果是这种情况，则将不会利用旨在捕获非加性遗传变异的预测模型实现显着增益使用天真结构化的内核。由于EBV的方差分量比例的后密度是单峰的（图4），我们的情况可以排除具有不稳定估计的可能性。彼此“正交”的基因组关系内核可以增强预测能力，但是这样的内核不是直接构建的。
+表2</p>
+
+<p>表2.使用各种内核的酮症（KET），移位皱胃（DA），保留胎盘（RP），跛行（LAME），子宫炎（METR）和临床乳腺炎（CM）的预测相关性，交叉验证。
+图4</p>
+
+<p>图4.酮症（KET），移位皱胃（DA），保留胎盘（RP），跛行（LAME），子宫炎（METR）和临床乳腺炎（CM）的方差分量比率的后密度图。估计的育种值用作表型。
+讨论
+在验证数据集中恢复非加性遗传变异似乎是一个挑战，即使它存在，似乎是奶牛的健康性状的情况。我们观察到，非参数内核表现更好，而不管性状，但是从一个附加的基因组关系内核获得的预测增益很小。虽然从基因型到表型的映射可以用非参数核更准确地捕获，但是在CV中恢复非加性方差仍然是定量遗传学中的持续挑战。可以证明，使用环境信息，连同基因组数据，可以增强预测能力，特别是单个表型，如PCP。这是未来研究的一个重要主题。
+非加性遗传变异的量化精确地要求通过优势上位性核设置正交加性，优势和加性（Cockerham，1954）和无连锁和LE（Kempthorne，1954）的假设。然而，这在连锁不平衡和选择下是不可行的。因此，通过三个内核在本研究中获得的遗传方差分解应该作为近似，因为我们不能排除单个内核捕获多个遗传信息来源的可能性。
+在理论上，非加性遗传效应与基因组使能选择无关，至少对于大多数家畜物种。最近，Hansen（2013）从进化的角度认为功能上位在选择反应中发挥重要作用，挑战了Hill等人的主流观点。（2008）。虽然加性遗传效应预期在理想化条件下基于Fisher&rsquo;s基本定理来推动选择反应（Fisher，1930 ; Crow，2002），但明确地建模非加性效应可能需要适当估计育种值并正确排列候选亲本下一代。构建彼此可识别的四个正（半）明确矩阵（G，D，GD和I）似乎不可或缺地适当地分配遗传信号。另一种方法是建立GD = 点¯x AD 点¯x &lsquo; AD，其中点¯x AD是统治型矩阵的添加剂，但是这需要进行密集计算p ≈50000（徐2013）。
+重要的是注意高斯内核在内核和SNP代码之间构成非线性关系。如果这样的关系成立，如小麦平均谷物产量的情况（例如，Long等人，2011a ;Morota等人，2013），应该检测到一个优势。在这种情况下，从非参数核获得的平方预测相关的上限将是广义遗传性，与使用加性基因组关系核时的狭义遗传性相反（de los Campos等人，2013b）。
+众所周知，没有对所有情况表现最佳的通用预测机，并且所选择的方法取决于物种，目标性状和可能的环境情况。尽管如此，这是第一份使用半参数方法估计基于标记的非加性遗传变异和预测奶牛健康特性的报告。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/mucina1991-%E8%B6%8B%E5%8A%BF%E9%9D%A2%E4%B8%8E%E6%A0%B7%E6%9D%A1%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/" data-toggle="tooltip" data-placement="top" title="Mucina1991-趋势面与样条法的区别">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%AB%9E%E4%BA%89/montagnon2001-%E5%92%96%E5%95%A1%E7%AB%9E%E4%BA%89/" data-toggle="tooltip" data-placement="top" title="Montagnon2001-咖啡竞争">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

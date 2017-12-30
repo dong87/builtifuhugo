@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>cappa-2011-b-spline-</title>
+  <meta property="og:title" content="cappa-2011-b-spline-" />
+  <meta name="twitter:title" content="cappa-2011-b-spline-" />
+  <meta name="description" content="Cappa EP, Lstiburek M, Yanchuk AD, El-Kassaby YA. Two-dimensional penalized splines via Gibbs sampling to account for spatial variability in forest genetic trials with small amount of information available. Silvae Genet. 2011;60:25–35.   空间环境异质性是现场森林遗传试验的公知特征，即使在似乎均匀的条件和密集的场所管理下建立的小实验（&lt;1ha）中。在这样的试验中，通常假设任何简单类型的基于随机化理论的实验场设计作为完全随机设计（CRD），应该考虑任何小的位点变异性。然而，大多数已公布的结果表明，在这些类型的试验中存在通常存在于误差项中的空间变化的大分量。在这里我们应用二维平滑表面在单树混合模型中，使用线性，二次和三次B样条基数与行和列的不同和相等数目的结的张量积，以说明环境空间变异性两个相对较小（即576平方米和5,705平方米）森林遗传试验，具有大型多树连续地块构造。一般来说，考虑具有二维表面的位点变异性的模型显示偏离信息标准的值比经典RCD低。当相对少量的信息可用时，线性B样条基可以产生对环境变异性的合理描述。拟合平滑表面的混合模型导致误差方差（ƒƒ2e）的后验均值的减少，加性遗传方差（χ2a）和遗传力（h2HT）的后验均值的增加，增加了16.05％ 46.03％（对于亲本）或11.86％和44.68％（对于后代）的育种值的精确性。
+##介绍 空间环境异质性是现场森林遗传试验的公知特征（例如，DUTKOWSKI等人，2006; ZAS，2006; CAPPA和CANTET，2007; YE和JAYAWICKRAMA，2008; FINLEY等人，2009）。即使在似乎均匀的条件和强烈的场地管理下建立的小实验（&lt;1ha）也是如此（WOODS等，1995; SAENZ-ROMERO等，2001; JOYCE等，2002）。在这样的试验中，通常假定位点变异性的量（幅度和方向）最小，在实验单元（即，地块，树木或植物）中仅存在小的随机微位点变化。虽然完全随机设计（CRD）通常被认为足以揭示研究的变异来源之间的重要差异（LOO-DINKINS 1992），但在大多数情况下，存在于“误差项”中的变异量可能相当高EL-KASSABY和PARK，1993; REHFELDT，1995; KRAKOWSKI等，2005; ST.COLIR，2006）。虽然CRD的主要优点是更容易建立，但其分析的简单性，这种简单的实验设计不太可能解释大多数环境变化。为了减少环境变率的影响，统计学家，作物和树种育种者设计或采用了更有效的实验布局。随机完全块（RCB）或不完全块设计，试图先验地将站点的异质性分为均匀块。然而，设置这样的假设通常是不现实的或弱的，因为在同一块内进行的两个最远距离测量应当在理论上共享相同的方差，而两个块的边界上的相邻树的两个近距离测量被假定为随不同的幅度变化。这种差异的大小随着实验的大小的增加而增加。解决这个问题的一个策略是通过考虑实验的期望功率并将大小限制到最小来最小化实验的大小。不幸的是，在大多数情况下，即使在最有效的实验布局下，空间异质性在建立阶段是未知的，并且仅在评估阶段显露。因此，有必要在评价模型内对这种变异性进行后验建模。 空间模型允许通过包括两个主要部分来建模场地异质性;即“局部趋势”或小规模和“全球趋势”或大规模变化（GRONDONA等，1996）。已经开发了若干前后方法并应用于森林遗传试验以更准确地说明位点异质性。小规模空间异质性的影响通常通过将随机空间相关结构包括在模型中来解释。这样的残差矩阵被表示为行和列的一阶自回归残差的Kro-necker积（GILMOUR等人，1997）。此外，在森林遗传和其他试验中，小尺度空间变异性已用最近邻技术建模（MAGNUSSEN，1990; ANEKONDA和LIBBY，1996; JOYCE等，2002; KROON等，2008 ）或克里金（HAMANN等人，2002; ZAS，2006）。解释了大规模连续空间变化的一些方法已经通过后阻塞来建模（ERICSSON，1997; LOPEZ等，2002; GEZAN等，2006; KROON等，2008） （THOMSON和EL-KASSABY，1988; FEDERER，1998; SAENZ-ROMERO等，2001）或协变量或平滑样条函数（GILMOUR等人，1997; VERBY- LA等人，1999）。 GILMOUR at al。 （1997），在农业三年，和COSTA eSILVA等。 （2001）和DUTKOWSKI et al。 （2002）在林木场实验中，推荐通过固定或随机分类变量拟合可分离的二维自回归残差和一维的大规模变化（全局）来建模小规模变化（COSTA e SILVA et al。 2001），或包括空间坐标的固定效应作为多项式或三次平滑样条（DUTKOWSKI等人，2002）。然而，全球趋势加自回归残差的拟合没有成功或产生很少或没有改善，因此DUTKOWSKI等人（2006）建议保留空间模型中的设计项。此外，全局趋势的大部分通常存在于二维中，并且在一维中存在非随机函数，例如多项式（FEDER-ER，1998）或三次平滑样条（VERBYLA等，1999）解释空间协方差。此外，极其罕见的是，仅在行或列的方向上发现大规模连续空间变异性，并且必须考虑行和列之间的某种相互作用以考虑这种变化性（FEDERER， 1998）。为此，FEDERER（1998）提出了在行和列的多项式之间拟合相互作用。然而，当在极端拟合观察时，多项式做的不好;即极端观测在估计的参数中具有大的影响，并且对于更高次的多项式尤其如此。 花样作为多项式的替代方法，也被用于处理环境异质性（CAPPA和CANTET，2007）。样条是来自较低次多项式的段的分段多项式函数（GREEN和SILVERMAN，1994）。段连接的位置称为节点。样条能够以复杂的变化模式捕获数据中存在的大部分蜿蜒，而不会受到数值不稳定性的影响。特定类型的样条是“基本样条”（B样条），其是局部基函数，由通常为线性，二次或立方的度为d的多项式段组成，在连接点处具有d-1个连续导数，或结。 EILERS和MARX（1996）提出了在一个维度上具有等间距结的惩罚样条（P样条），引入影响B样条参数的第一或第二差异的惩罚。罚分控制拟合函数时的平滑度。 EILERS和MARX（2003）扩展了它们的方法，使用B样条的张量积来估计二维表面。应用于一个或两个维度（EILERS和MARX，1996; 2003），B样条函数的参数被视为固定效应;然而，样条与混合模型密切相关（RUPPERT et al。，2003; WAND，2003）。在最近的一项研究中，CAPPA和CANTET（2007）提出使用基于混合模型框架的三次B样条的张量积，将B样条函数参数作为随机变量进行处理（即，使用协方差结构随机结效应）在二维网格中。他们表明，该方法可以解释大规模连续空间变化的个别试验的森林遗传评价，使用贝叶斯技术通过吉布斯抽样，以推断模型的所有色散参数。 CAPPA等人（未出版）扩展了CAPPA和CANTET（2007）的方法，证明其在适应西方铁杉（Tsuga heterophylla（Raf。）Sarg。）的几个大型森林遗传学试验的空间异质性的复杂模式中的应用，树图设计。他们建模了不同的空间变异模式，包括：a）小规模变化，b）小规模变化以及一维（即横跨行或列）的大规模变化，以及c）小规模变化，两个维度（即，横跨行和列）的大规模变化。新的二维表面与“重复组”和不完全块“先验”设计相比，将十个位点的后验均值减少了3.">
+  <meta property="og:description" content="Cappa EP, Lstiburek M, Yanchuk AD, El-Kassaby YA. Two-dimensional penalized splines via Gibbs sampling to account for spatial variability in forest genetic trials with small amount of information available. Silvae Genet. 2011;60:25–35.   空间环境异质性是现场森林遗传试验的公知特征，即使在似乎均匀的条件和密集的场所管理下建立的小实验（&lt;1ha）中。在这样的试验中，通常假设任何简单类型的基于随机化理论的实验场设计作为完全随机设计（CRD），应该考虑任何小的位点变异性。然而，大多数已公布的结果表明，在这些类型的试验中存在通常存在于误差项中的空间变化的大分量。在这里我们应用二维平滑表面在单树混合模型中，使用线性，二次和三次B样条基数与行和列的不同和相等数目的结的张量积，以说明环境空间变异性两个相对较小（即576平方米和5,705平方米）森林遗传试验，具有大型多树连续地块构造。一般来说，考虑具有二维表面的位点变异性的模型显示偏离信息标准的值比经典RCD低。当相对少量的信息可用时，线性B样条基可以产生对环境变异性的合理描述。拟合平滑表面的混合模型导致误差方差（ƒƒ2e）的后验均值的减少，加性遗传方差（χ2a）和遗传力（h2HT）的后验均值的增加，增加了16.05％ 46.03％（对于亲本）或11.86％和44.68％（对于后代）的育种值的精确性。
+##介绍 空间环境异质性是现场森林遗传试验的公知特征（例如，DUTKOWSKI等人，2006; ZAS，2006; CAPPA和CANTET，2007; YE和JAYAWICKRAMA，2008; FINLEY等人，2009）。即使在似乎均匀的条件和强烈的场地管理下建立的小实验（&lt;1ha）也是如此（WOODS等，1995; SAENZ-ROMERO等，2001; JOYCE等，2002）。在这样的试验中，通常假定位点变异性的量（幅度和方向）最小，在实验单元（即，地块，树木或植物）中仅存在小的随机微位点变化。虽然完全随机设计（CRD）通常被认为足以揭示研究的变异来源之间的重要差异（LOO-DINKINS 1992），但在大多数情况下，存在于“误差项”中的变异量可能相当高EL-KASSABY和PARK，1993; REHFELDT，1995; KRAKOWSKI等，2005; ST.COLIR，2006）。虽然CRD的主要优点是更容易建立，但其分析的简单性，这种简单的实验设计不太可能解释大多数环境变化。为了减少环境变率的影响，统计学家，作物和树种育种者设计或采用了更有效的实验布局。随机完全块（RCB）或不完全块设计，试图先验地将站点的异质性分为均匀块。然而，设置这样的假设通常是不现实的或弱的，因为在同一块内进行的两个最远距离测量应当在理论上共享相同的方差，而两个块的边界上的相邻树的两个近距离测量被假定为随不同的幅度变化。这种差异的大小随着实验的大小的增加而增加。解决这个问题的一个策略是通过考虑实验的期望功率并将大小限制到最小来最小化实验的大小。不幸的是，在大多数情况下，即使在最有效的实验布局下，空间异质性在建立阶段是未知的，并且仅在评估阶段显露。因此，有必要在评价模型内对这种变异性进行后验建模。 空间模型允许通过包括两个主要部分来建模场地异质性;即“局部趋势”或小规模和“全球趋势”或大规模变化（GRONDONA等，1996）。已经开发了若干前后方法并应用于森林遗传试验以更准确地说明位点异质性。小规模空间异质性的影响通常通过将随机空间相关结构包括在模型中来解释。这样的残差矩阵被表示为行和列的一阶自回归残差的Kro-necker积（GILMOUR等人，1997）。此外，在森林遗传和其他试验中，小尺度空间变异性已用最近邻技术建模（MAGNUSSEN，1990; ANEKONDA和LIBBY，1996; JOYCE等，2002; KROON等，2008 ）或克里金（HAMANN等人，2002; ZAS，2006）。解释了大规模连续空间变化的一些方法已经通过后阻塞来建模（ERICSSON，1997; LOPEZ等，2002; GEZAN等，2006; KROON等，2008） （THOMSON和EL-KASSABY，1988; FEDERER，1998; SAENZ-ROMERO等，2001）或协变量或平滑样条函数（GILMOUR等人，1997; VERBY- LA等人，1999）。 GILMOUR at al。 （1997），在农业三年，和COSTA eSILVA等。 （2001）和DUTKOWSKI et al。 （2002）在林木场实验中，推荐通过固定或随机分类变量拟合可分离的二维自回归残差和一维的大规模变化（全局）来建模小规模变化（COSTA e SILVA et al。 2001），或包括空间坐标的固定效应作为多项式或三次平滑样条（DUTKOWSKI等人，2002）。然而，全球趋势加自回归残差的拟合没有成功或产生很少或没有改善，因此DUTKOWSKI等人（2006）建议保留空间模型中的设计项。此外，全局趋势的大部分通常存在于二维中，并且在一维中存在非随机函数，例如多项式（FEDER-ER，1998）或三次平滑样条（VERBYLA等，1999）解释空间协方差。此外，极其罕见的是，仅在行或列的方向上发现大规模连续空间变异性，并且必须考虑行和列之间的某种相互作用以考虑这种变化性（FEDERER， 1998）。为此，FEDERER（1998）提出了在行和列的多项式之间拟合相互作用。然而，当在极端拟合观察时，多项式做的不好;即极端观测在估计的参数中具有大的影响，并且对于更高次的多项式尤其如此。 花样作为多项式的替代方法，也被用于处理环境异质性（CAPPA和CANTET，2007）。样条是来自较低次多项式的段的分段多项式函数（GREEN和SILVERMAN，1994）。段连接的位置称为节点。样条能够以复杂的变化模式捕获数据中存在的大部分蜿蜒，而不会受到数值不稳定性的影响。特定类型的样条是“基本样条”（B样条），其是局部基函数，由通常为线性，二次或立方的度为d的多项式段组成，在连接点处具有d-1个连续导数，或结。 EILERS和MARX（1996）提出了在一个维度上具有等间距结的惩罚样条（P样条），引入影响B样条参数的第一或第二差异的惩罚。罚分控制拟合函数时的平滑度。 EILERS和MARX（2003）扩展了它们的方法，使用B样条的张量积来估计二维表面。应用于一个或两个维度（EILERS和MARX，1996; 2003），B样条函数的参数被视为固定效应;然而，样条与混合模型密切相关（RUPPERT et al。，2003; WAND，2003）。在最近的一项研究中，CAPPA和CANTET（2007）提出使用基于混合模型框架的三次B样条的张量积，将B样条函数参数作为随机变量进行处理（即，使用协方差结构随机结效应）在二维网格中。他们表明，该方法可以解释大规模连续空间变化的个别试验的森林遗传评价，使用贝叶斯技术通过吉布斯抽样，以推断模型的所有色散参数。 CAPPA等人（未出版）扩展了CAPPA和CANTET（2007）的方法，证明其在适应西方铁杉（Tsuga heterophylla（Raf。）Sarg。）的几个大型森林遗传学试验的空间异质性的复杂模式中的应用，树图设计。他们建模了不同的空间变异模式，包括：a）小规模变化，b）小规模变化以及一维（即横跨行或列）的大规模变化，以及c）小规模变化，两个维度（即，横跨行和列）的大规模变化。新的二维表面与“重复组”和不完全块“先验”设计相比，将十个位点的后验均值减少了3.">
+  <meta name="twitter:description" content="Cappa EP, Lstiburek M, Yanchuk AD, El-Kassaby YA. Two-dimensional penalized splines via Gibbs sampling to account for spatial variability in forest genetic trials with small amount of information …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/cappa-2011-b-spline-/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/cappa-2011-b-spline-/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>cappa-2011-b-spline-</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (259 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>cappa-2011-b-spline-</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (259 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<ol>
+<li>Cappa EP, Lstiburek M, Yanchuk AD, El-Kassaby YA. Two-dimensional penalized splines via Gibbs sampling to account for spatial variability in forest genetic trials with small amount of information available. Silvae Genet. 2011;60:25–35.</li>
+</ol>
+</blockquote>
+
+<p>空间环境异质性是现场森林遗传试验的公知特征，即使在似乎均匀的条件和密集的场所管理下建立的小实验（&lt;1ha）中。在这样的试验中，通常假设任何简单类型的基于随机化理论的实验场设计作为完全随机设计（CRD），应该考虑任何小的位点变异性。然而，大多数已公布的结果表明，在这些类型的试验中存在通常存在于误差项中的空间变化的大分量。在这里我们应用<strong>二维平滑表面在单树混合模型</strong>中，使用<strong>线性，二次和三次B样条基数与行和列的不同和相等数目的结的张量积</strong>，以说明环境空间变异性两个相对较小（即576平方米和5,705平方米）森林遗传试验，具有大型多树连续地块构造。一般来说，<strong>考虑具有二维表面的位点变异性的模型显示偏离信息标准的值比经典RCD低</strong>。当相对少量的信息可用时，<strong>线性B样条基可以产生对环境变异性的合理描述</strong>。<strong>拟合平滑表面的混合模型导致误差方差（ƒƒ2e）的后验均值的减少，加性遗传方差（χ2a）和遗传力（h2HT）的后验均值的增加，增加了16.05％ 46.03％（对于亲本）或11.86％和44.68％（对于后代）的育种值的精确性</strong>。</p>
+
+<hr />
+
+<p>##介绍
+空间环境异质性是现场森林遗传试验的公知特征（例如，DUTKOWSKI等人，2006; ZAS，2006; CAPPA和CANTET，2007; YE和JAYAWICKRAMA，2008; FINLEY等人，2009）。即使在似乎均匀的条件和强烈的场地管理下建立的小实验（&lt;1ha）也是如此（WOODS等，1995; SAENZ-ROMERO等，2001; JOYCE等，2002）。在这样的试验中，通常假定位点变异性的量（幅度和方向）最小，在实验单元（即，地块，树木或植物）中仅存在小的随机微位点变化。虽然完全随机设计（CRD）通常被认为足以揭示研究的变异来源之间的重要差异（LOO-DINKINS 1992），但在大多数情况下，存在于“误差项”中的变异量可能相当高EL-KASSABY和PARK，1993; REHFELDT，1995; KRAKOWSKI等，2005; ST.COLIR，2006）。虽然CRD的主要优点是更容易建立，但其分析的简单性，这种简单的实验设计不太可能解释大多数环境变化。为了减少环境变率的影响，统计学家，作物和树种育种者设计或采用了更有效的实验布局。随机完全块（RCB）或不完全块设计，试图先验地将站点的异质性分为均匀块。然而，设置这样的假设通常是不现实的或弱的，因为在同一块内进行的两个最远距离测量应当在理论上共享相同的方差，而两个块的边界上的相邻树的两个近距离测量被假定为随不同的幅度变化。这种差异的大小随着实验的大小的增加而增加。解决这个问题的一个策略是通过考虑实验的期望功率并将大小限制到最小来最小化实验的大小。不幸的是，在大多数情况下，即使在最有效的实验布局下，空间异质性在建立阶段是未知的，并且仅在评估阶段显露。因此，有必要在评价模型内对这种变异性进行后验建模。
+空间模型允许通过包括两个主要部分来建模场地异质性;即“局部趋势”或小规模和“全球趋势”或大规模变化（GRONDONA等，1996）。已经开发了若干前后方法并应用于森林遗传试验以更准确地说明位点异质性。小规模空间异质性的影响通常通过将随机空间相关结构包括在模型中来解释。这样的残差矩阵被表示为行和列的一阶自回归残差的Kro-necker积（GILMOUR等人，1997）。此外，在森林遗传和其他试验中，小尺度空间变异性已用最近邻技术建模（MAGNUSSEN，1990; ANEKONDA和LIBBY，1996; JOYCE等，2002; KROON等，2008 ）或克里金（HAMANN等人，2002; ZAS，2006）。解释了大规模连续空间变化的一些方法已经通过后阻塞来建模（ERICSSON，1997; LOPEZ等，2002; GEZAN等，2006; KROON等，2008） （THOMSON和EL-KASSABY，1988; FEDERER，1998; SAENZ-ROMERO等，2001）或协变量或平滑样条函数（GILMOUR等人，1997; VERBY- LA等人，1999）。 GILMOUR at al。 （1997），在农业三年，和COSTA eSILVA等。 （2001）和DUTKOWSKI et al。 （2002）在林木场实验中，推荐通过固定或随机分类变量拟合可分离的二维自回归残差和一维的大规模变化（全局）来建模小规模变化（COSTA e SILVA et al。 2001），或包括空间坐标的固定效应作为多项式或三次平滑样条（DUTKOWSKI等人，2002）。然而，全球趋势加自回归残差的拟合没有成功或产生很少或没有改善，因此DUTKOWSKI等人（2006）建议保留空间模型中的设计项。此外，全局趋势的大部分通常存在于二维中，并且在一维中存在非随机函数，例如多项式（FEDER-ER，1998）或三次平滑样条（VERBYLA等，1999）解释空间协方差。此外，极其罕见的是，仅在行或列的方向上发现大规模连续空间变异性，并且必须考虑行和列之间的某种相互作用以考虑这种变化性（FEDERER， 1998）。为此，FEDERER（1998）提出了在行和列的多项式之间拟合相互作用。然而，当在极端拟合观察时，多项式做的不好;即极端观测在估计的参数中具有大的影响，并且对于更高次的多项式尤其如此。
+花样作为多项式的替代方法，也被用于处理环境异质性（CAPPA和CANTET，2007）。样条是来自较低次多项式的段的分段多项式函数（GREEN和SILVERMAN，1994）。段连接的位置称为节点。样条能够以复杂的变化模式捕获数据中存在的大部分蜿蜒，而不会受到数值不稳定性的影响。特定类型的样条是“基本样条”（B样条），其是局部基函数，由通常为线性，二次或立方的度为d的多项式段组成，在连接点处具有d-1个连续导数，或结。 EILERS和MARX（1996）提出了在一个维度上具有等间距结的惩罚样条（P样条），引入影响B样条参数的第一或第二差异的惩罚。罚分控制拟合函数时的平滑度。 EILERS和MARX（2003）扩展了它们的方法，使用B样条的张量积来估计二维表面。应用于一个或两个维度（EILERS和MARX，1996; 2003），B样条函数的参数被视为固定效应;然而，样条与混合模型密切相关（RUPPERT et al。，2003; WAND，2003）。在最近的一项研究中，CAPPA和CANTET（2007）提出使用基于混合模型框架的三次B样条的张量积，将B样条函数参数作为随机变量进行处理（即，使用协方差结构随机结效应）在二维网格中。他们表明，该方法可以解释大规模连续空间变化的个别试验的森林遗传评价，使用贝叶斯技术通过吉布斯抽样，以推断模型的所有色散参数。 CAPPA等人（未出版）扩展了CAPPA和CANTET（2007）的方法，证明其在适应西方铁杉（Tsuga heterophylla（Raf。）Sarg。）的几个大型森林遗传学试验的空间异质性的复杂模式中的应用，树图设计。他们建模了不同的空间变异模式，包括：a）小规模变化，b）小规模变化以及一维（即横跨行或列）的大规模变化，以及c）小规模变化，两个维度（即，横跨行和列）的大规模变化。新的二维表面与“重复组”和不完全块“先验”设计相比，将十个位点的后验均值减少了3.4至48.2％。这导致h2的后验平均值从25.0增加到76.7％，并且对于亲本和后代育种值估计的精确度增加高达3.2％。
+不管在大型试验中实施的改进，B样条基的张量乘积对解释空间变异性的性能是未知的，具有有限的信息（即，更少数量的数据点，在行和列中，两个 - 可以估计尺寸表面）。使用两个不同的实验数据集的本研究的目的是研究使用B样条的张量积来表示相对较小（例如，576m 2和5,705m 2）的空间变化的表面拟合的效用，最先进的基因试验，具有先验简单的CRD和大的多树连续图配置。此外，我们扩展CAPPA和CANTET（2007）单树混合模型，使用立方B样条的张量乘积到单个树混合模型，其中线性，二次和三次B样条的张量乘积具有不同的节数行和列来模拟空间异质性。将包括拟合表面的混合模型的所有色散参数的所得到的估计最终与具有包括图到图的环境效应的单树模型的经典CRD分析的相应估计进行比较。</p>
+
+<p>##分析模型
+ 对两个数据集评估了几个单树添加模型。所有模型，包括总平均值的固定效应，具有协方差矩阵A 2 a的正态分布随机添加遗传效应（a，育种值），A是所有树中的附加关系矩阵（HENDERSON，1984）遗传方差（σ2a）和具有平均零和方差σ2e的正态分布随机误差（e）。经典的个体树模型还包括一个正态分布的随机效应项（p），均值为零，方差为σ2p。在其他模型中，为了解释空间变异性，根据CAPPA和CANTET（2007），我们使用线性，二次和三次B的张量积将古典模型扩展为具有二维表面的单树混合模型-splines。令Y是分别包含西部落叶松和苏格兰松树试验的HT的树个体观察值的行（R = 110）×列（C = 60或75）的顺序矩阵。为了将Y转换为向量，我们使用&rsquo;vec&rsquo;运算符（HARVILLE，1997;第339页），其中n（或R x C）x 1向量y是从Y：y = vec 。然后，在矩阵符号中，每个单树混合模型，具有平滑的表面以考虑空间变异性，可以被描述为
+y = + Bb + Zaa + e [1]
+其中B具有尺寸nx（nxr =行的节数x nxc =列的节数），并且等于B =（Br ?1&rsquo;nxc）＃（1&rsquo;nxr ?Bc），Bi（i = r或c）是包含以线性，二次或三次B样条基表示每行和每列所需的d + 1个非零B样条基的n×nxi阶矩阵。因此，为了在Bi（i = r或c）中表示作为B样条基函数的一行（或列），需要2个线性B样条基，或3个二次B样条基，或4个立方B-样条基，样条基。使用DE BOOR（1993）的递归算法进行Bi（i = r或c）系数的计算。符号？和＃分别表示矩阵的Kronecker和Hadamard乘积（HARVILLE，1997）。阶数（n×r×n×c）×1的参数向量b包含B样条的张量乘积的参数（即随机结效应，RKE）。随机向量b的分布使得b〜N（0，U≥2b）。标量α2 b是行和列的RKE的方差，阶数U（nxr x nxc）x（nxr x nxc）是B样条节的两个维数的协方差结构。在本研究中，我们选择由GREEN和SILVERMAN（1994;第13页）最初提出的三对角矩阵，然后由DURBAN等人使用。 （2001）以适应生育趋势。在CAPPA和CANTET（2007）中可以找到使用具有相等行数和列数的立方体B样条的张量积的二维表面（Bb）的更详细的解释。
+具有适用于西部落叶松和苏格兰松数据集的平滑表面（模型1）的单树混合模型的序列在行和列的节数以及基函数的拟合程度上不同。使用由M.WAND（参见RUPPERT，2002）建议的标准大约选择最小结节数，该标准选择每t次观察和t = min（r / 4（或c / 4），35）设置结。因此，对于西部落叶松和苏格兰松数据集，分别指定用于行的高达3节和4节以及用于列的高达2节和4节。线性（L），二次（Q）和三次（C）多项式段，即度数d = 1,2和3的基函数是供体。如在P-样条方法中，选择在行和列上相等间隔的结。
+残差的空间分析为了识别两个数据集中的空间模式，我们使用具有固定总平均值和随机的模型，检查了绘图平均值的残差的空间分布（即，来自给定家族图的所有树的平均值）家庭效应。应该注意的是，在这种情况下，由于两个试验中的家族的半同胞结构（不包括大批果园批次），所得到的残差仍然包含3/4的加性遗传方差。 HT残差的空间分布如图1a所示，其中颜色强度代表图中残差的大小：点越暗，残差越大（注意，图中的残差不是随机分布的，在两个实验领域）。此外，存在明显的证据表明在行或列上存在一些不同的残差图案，其指示在行和列位置之间的相互作用的存在以及对二维平滑的需要。
+贝叶斯推理和模型比较通过Gibbs采样的贝叶斯方法用于估计古典单树模型和所有具有平滑表面的模型[1]中的参数，遵循CAPPA和CANTET（2007）。对于所有参数选择共轭先验密度。为了反映固定效应的不确定性的先前状态，同时保持后验分布适当，我们选择？ 〜Np（0，K），其中K是具有大元素的对角矩阵（kii&gt; 108）。对于θ2p，θ2 b，θ2a和θ2 e的先验分布，我们使用具有赫泊尔（hipervariances）2p，β2b，α2a和α2e的缩放反相卡方和自由度ρp， b，θa和θe。因此，关节和条件后验密度对于α，p，b和a是高斯的，对于α2 p，β2 b，α2α和α2 e是缩放的卡方。
+在每次迭代结束时，对于经典的个体树模型，将HT的个体树狭义遗传率计算为h 2 HT，一个/？ a +？ p +？ e，其中〜2〜2〜2〜一个， ？ p，？ e是在给定迭代下采样的加法，图和误差〜2〜2〜2方差的值。对于具有平滑表面（模型1）的每个单树混合模型，h2HT被计算为h2HT =一个/？ a +？ e。 〜2〜2〜2绘制了一条10,10,000个样品的单个吉布斯链，并且前10,000次迭代作为老化被丢弃。另外100万个样本用于计算边缘后分布的总结。通过高斯核方法（SILVER-MAN，1986;第2章）估计所有参数的边际后密度。使用“Bayesian OutputAnálisis”（BOA版本1.0.1; SMITH，2003）对于从1到50的所有滞后计算自相关。平均值，模式，中值，标准偏差和95％高后密度区间（95％HPD）然后用自由软件R（http：//www.r- project.org/）下的个体边际后代的所有参数用BOA计算。
+计算偏差信息准则（DIC; SPIEGEL-HALTER等，2002）以比较每个模型的拟合。 DIC标准被定义为其中D  - （ΔM）是偏差的后验平均值，pD是“有效参数数量”。因此，DIC将模型拟合度（D  - （ΔM））与模型复杂度（pD）的测量结合起来。较小的DIC值表示更好的拟合和较低的模型复杂度。
+在CAPPA和CANTET（2006）中给出了在多特征个体树模型中计算DIC的数值细节。通过残差的空间模式和得到的估计表面之间的视觉比较提供了附加模型比较。最后，使用以下表达式计算育种值预测的准确度：其中PEV表示使用“最佳线性无偏预测因子”（BLUP）的预测育种值的“预测误差方差”（HEN-DERSON，1984）的父母和子女。还计算使用SAS的PROC CORR的Spearman秩相关，以比较在具有绘图至绘图环境效应的经典单树模型与具有二维表面的最佳单树模型之间预测育种值的排名是否不同。
+##讨论
+<strong>未考虑森林遗传试验的空间变异性导致估计遗传参数和预测育种值的偏差（Magnussen 1993，1994），因此选择的精确性降低，从而降低遗传增益</strong>。在当前的研究中，<strong>我们展示了如何使用B样条基的张量积，通过混合模型在Eilers和Marx的P样条的精神中拟合二维表面（1996，2003 ）</strong>。通过贝叶斯方法也获得了二维中的P-样条，如Lang和Brezger（2004）所示。这些作者将差异矩阵3视为一阶或二阶随机游走。我们的方法不同于他们在差异3的奇异矩阵通过在两个维度中的RKE的适当方差 - 协方差矩阵的替换。在这样做时，<strong>我们将B样条基的张量积扩展为单树混合模型，以解释大规模连续空间变异性。因此，模型包含沿着列和行的方向平滑的表面</strong>。 <strong>Gilmour at al。 （1997）通过拟合多项式或三次平滑样条来模拟农业试验的一个维度的大规模变化</strong>。然而，在树木种植在正方形或矩形的森林遗传试验中，全球趋势的很大一部分通常存在于两个方面。此外，非常罕见的是，仅在行或列的方向上发现大规模连续的空间变异性，并且必须考虑行和列之间的某种相互作用以解释这种变异性（Federer 1998 ）。虽然存在几种平滑的统计方法来捕获一维的变化的非近似性，但是二维中的方法不太丰富。为了这个目的，Federer（1998）提出了<strong>行和列的多项式之间的拟合相互作用</strong>。然而，当在极值拟合观察值时，多项式的工作做得很差。此外，数据的小变化在参数的估计值中产生显着的效果，并且对于更高级的多项式尤其如此。另外，应该选择多项式的范围，这反过来引入模型选择的问题。相反，我们提出使用P样条估计平滑表面。该方法是灵活的，因为<strong>B样条函数对数据是局部敏感的，并且在数字上有很好的条件</strong>。方差σ2 b用于平滑行和列的效果。在Eilers和Marx（2003）和Lang和Brezger（2004）的方法中，使用了行和列的不同方差。 Lang和Brezger（2004）进一步使用了分散参数的局部自适应估计。在未来的研究中，我们可以考虑平滑具有不同色散参数的行和列，尽管我们不清楚这种方法对于拟合的质量（即DIC的值）可能比我们更有利。 Eilers和Marx的P样条方法（1996，2003）包括使用具有等间距结的立方体B样条。在这种方法中，关键参数是惩罚或平滑因子？ （见方程2和5），并且样条中的结的数量对于拟合是不重要的，只要有“足够”多的（Eilers和Marx 1996; Cantet等人2005）。在P样条的混合模型方法中，？是等式2中的比率α2e=α2b（Cantet等人2005）。从表1可以看出，与其他方差分量相比，α2b（α的分母）的大小对结的数量敏感。已知的是，非常少的结的拟合产生偏差，其随着结的数量的增加而迅速减小（Ruppert 2002）。一旦达到最小数目，增加结的数目给出令人满意的拟合（Ruppert 2002）。 Cantet et al。 （2005）发现，对于具有20,40,60,80或120个等间距结的模型，改进的Akaike信息标准的值几乎相等。然而，方差分量的受限最大似然估计对于120节的某些模型没有收敛。对于达到120节的收敛的情况，对于没有记录数据的间隔的拟合存在一些不一致。可以得出结论，除了极端量之外，结的数量不是关键的，并且通常有几个结数产生类似的拟合并产生方差分量的类似估计。在当前的研究中，将节数从18减少到8产生了更平滑的表面（图3）。虽然模型用12？ 12节显示的DIC最小，DIC之间的差异在12个模型之间？ 12和18？ 18节很小。这也适用于从两个模型获得的h2DBH的估计：第三个小数位的差异。在P样条的混合模型方法中，RKE的协方差结构代替了方程中差异的任何奇异矩阵。在本研究中，Durban等人提出的三对角矩阵（2001）被选择来建模RKE之间的列和行的协方差。该公式比Cantet等人使用的密集相关结构更简单。 （2005）和Hyndman et al。 （2005），其中在所有RKE中存在完全依赖性。后者的协方差结构具有比Durban等人使用的更大的DIC。 （2001），如题为分析模型一节所述。然而，对于α2a（3.668,3.753和3.754），对于σ2e（10.994,10.76和10.275）和对于h2DBH（0.250,0.258和0.267），从具有协方差的模型结构使用Cantet等。 （2005），Hyndman et al。 （2005），和Durban et al。 （2001）。另一方面，来自这三种模型的β2b的估计值是非常不同的：11.931,1.611和22.317。这与Cantet等人获得的结果一致。 （2005）。在分析育种数据时，有一些使用B样条函数的一些例子。因此，动物育种者使用样条来模拟功能育种值（White等人1999; Bohmanova等人2005）或管理单位和时间的影响（Cantet等人2005）。在森林遗传育种中，Cornillon et al。 （2003）使用固定效应模型使用B-样条模型桉树克隆的时间功能育种值。 Magnussen和Yanchuk（1994）将样条函数拟合为观测数据，以便估计来自道格拉斯杉木的非记录时间的个体高度。然后将得到的数据用于预测非记录年龄的育种值和遗传分布参数。平滑表面的拟合对子球体试验在E. globulus subsp。球状体与B样条的张量乘积而不是先验块设计一致地增加了Δ2A和h2DBH的后验均值（表1）。结果与Zas（2006）的结果一致，Zas（2006）使用克里金法计算空间变异性，并且与Dutkowski等人的不同。 （2002,2006）。在后一种情况下，在调整AR（1）之后获得Δ2A的不一致估计。 AR（1）协方差结构到模型的残差。在我们的数据中，空间模型产生的估计的精度的增加，可以注意到在低得多的标准偏差和95％高后验概率密度间隔的较窄的值，当与估计从具有块的模型（表1）。此外，用空间模型计算的来自亲本和后代的育种值的准确度高于从具有块效应的模型估计的对应值（表2），这是由于估计的加性方差的增加和估计误差的降低方差（表1）。当与随机完全区块设计进行比较时，Costa e Silva等报道了空间模型的精度提高。 （2001）的树高和Zas（2006）的树径。 Costa e Silva et al。 （2001）分析了12项试验，发现父母和后代的预测加性效应的精确度提高了71％。此外，Zas（2006）报告了校正空间相关变异后，BLUP的家庭效应的准确性显着增加，从0.40-0.63增加到0.72-0.79。 <strong>Dutkowski等人发现精度的增益较小。 （2002,2006）</strong>，但仍然在空间模型的方向与模型的块。准确度增益的很大一部分是由于以下事实：<strong>并非所有的空间变异性都通过使用块设计（Singh等人2003）的变异性来解释为块间变异性，否则其将变为误差方差</strong>。因此，与使用模型的分析相比，显示大规模连续空间变化的数据分析（例如由可变深度的石油层引起的数据）通过空间模型将很可能提高选择的准确性。块。在当前的研究中，我们使用具有平滑表面的单树混合模型，模拟沿着站点的连续和永久的空间变异性。在森林遗传评价中，微地点水平的空间变异用最近邻的技术建模（Magnussen 1990; Costa e Silva et al.2001; Dutkowski et al.2002）或用克里金法（Hamann et al.2002 ; Zas 2006）。然而，<strong>植物间竞争可能是影响邻居之间相关性的小规模空间变异的另一个来源</strong>（Magnussen 1994）。混合模型6不考虑树木之间的遗传竞争，这可以偏向σ2A的估计（Cappa和Cantet 2007）。
+然而，分析中使用的树龄为6岁，因此竞争不强或不存在。对于在竞争效应相当大的年龄测量树木的情况，最好同时适应连续的空间变异和竞争的遗传效应。更重要的是，值得将本研究所提出的方法与其他空间技术通过计算机模拟进行比较，这是未来研究的主题。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/chen2017-gxe-%E6%AC%A7%E6%B4%B2%E4%BA%91%E6%9D%89-%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" data-toggle="tooltip" data-placement="top" title="chen2017-GxE-欧洲云杉-因子分析-空间分析">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/capitalize-on-%E5%88%A9%E7%94%A8%E8%8E%B7%E5%8F%96%E8%B5%84%E6%9C%AC/" data-toggle="tooltip" data-placement="top" title="capitalize-on-利用（获取资本）">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>chen2017-GxE-欧洲云杉-因子分析-空间分析</title>
+  <meta property="og:title" content="chen2017-GxE-欧洲云杉-因子分析-空间分析" />
+  <meta name="twitter:title" content="chen2017-GxE-欧洲云杉-因子分析-空间分析" />
+  <meta name="description" content="Chen Z Q, Karlsson B, Wu H X. 2017. Patterns of additive genotype-by-environment interaction in tree height of Norway spruce in southern and central Sweden. Tree Genetics and Genomes, 13(1): 25.
+ 摘要 在南部和中部的挪威云杉（云杉（L.）H. Karst。）的20个大型开放授粉后代试验中，研究了7至13岁时测定的树高基因型（GXE）相互作用。瑞典。使用空间调整数据和减少的动物模型的因子分析方法来探索GXE相互作用的模式。扩展因子分析使用三个因素捕获了93.0％的添加GXE相互作用方差。 5月和6月的平均日温度小于3.2 June解释了GXE相互作用的27.8％，与第一个因素中度相关，表明春季或秋季霜冻天气状况可能是挪威GXE相互作用的主要驱动因素云杉。聚类分析将20个试验分为6组或3组。两组集合反映了试验（气候）的地理位置和测试系列之间的遗传连通性，表明需要更多的具有更好连通性的试验来检查目前的育种或种子区划是否最佳。使用潜伏回归的家长稳定性可用于定位具有最高育种值的最佳父母，并且跨试验高度稳定。
+关键词云杉因子分析 。 MET。聚类分析 。 GXE互动
+介绍 根据光周期和温度梯度，挪威云杉[云杉（Karlsi）]的瑞典养殖策略将该国划分为22个育种区（人口），每个包括50个创始人（Danell 1993）。这种多重人口战略被认为是有效管理遗传多样性和适应未来气候变化，同时保持遗传增益。管理这么多种群的缺点是增加了成本（Rosvall等，2011）。而且，人口分割主要依据地理气候数据。同样，挪威云杉的部署也分为9个种子果园区域，以最大限度地适应和遗传增益。 为了优化瑞典育种计划的区域化，建议使用所有可接受的遗传连接的瑞典挪威云杉试验，以寻找目前育种和种子区划的生物学基础。柏林等（2014）分析了17项测试系列中每项试验的65项试验和估计遗传相关性，以探索基因型环境（GXE）相互作用模式。然而，没有观察到令人信服的GXE相互作用模式证明当前的繁殖和种子区划。 在瑞典的挪威云杉育种计划中，22个种群中的每一个都使用4个站点作为测试系列的后代试验。这些试验通常与遗传条目相关联。然而，测试系列之间的遗传连通性通常较差（Johnson 2004）。在每个繁殖区内，通常使用来自相同测试系列的树高的试验，发现具有高遗传相关性的低或中等的GXE相互作用。这归因于每个测试系列中的相对较小的地理区域（Berlin et al。，2014）。将不同的测试系列组合在相邻的育种区域中进行联合分析是非常需要的，以探索使用生物数据对繁殖区目前划定的有效性。 有许多传统的方法来分析GXE相互作用并检测模式，包括（1）方差分析（ANOVA），（2）主成分分析（PCA）和（3）线性回归（Freeman 1973）。这些方法并不总是足以解析具有缺失连接的复杂交互结构（Zobel等人，1988）。方差分析只能检验GXE的意义和GXE方差与遗传方差的相对大小，但不能对其模式提供任何见解; PCA只考虑GXE的乘法效应。线性回归方法结合了加法和乘法分量。还可以从这样的回归估计各种稳定性参数，以检查基因型/家系的稳定性和测试试验以推断相互作用的原因（Finlay和Wilkinson 1963; McKeand等人2003; Wu and Ying 1998）。对于林业中的多个现场后代试验，B型（Burdon 1977）之间的遗传相关性通常使用混合线性模型估计（Baltunis等，2010）。 20世纪80年代以来，采用奇异值分解（SVD）来描述GXE模式（Gauch 1992），最初在农艺作物中使用加性主效应和乘法相互作用模型（AMMI），后来在林业中。最近，引入了使用混合模型方法（因子分析法 - FA）的因子回归，以探索作物中多种环境试验的GXE模式（Burgue駉et al。2008; Fox et al。2007; Mathews et al 2007; Piepho 1998; Smith et al.">
+  <meta property="og:description" content="Chen Z Q, Karlsson B, Wu H X. 2017. Patterns of additive genotype-by-environment interaction in tree height of Norway spruce in southern and central Sweden. Tree Genetics and Genomes, 13(1): 25.
+ 摘要 在南部和中部的挪威云杉（云杉（L.）H. Karst。）的20个大型开放授粉后代试验中，研究了7至13岁时测定的树高基因型（GXE）相互作用。瑞典。使用空间调整数据和减少的动物模型的因子分析方法来探索GXE相互作用的模式。扩展因子分析使用三个因素捕获了93.0％的添加GXE相互作用方差。 5月和6月的平均日温度小于3.2 June解释了GXE相互作用的27.8％，与第一个因素中度相关，表明春季或秋季霜冻天气状况可能是挪威GXE相互作用的主要驱动因素云杉。聚类分析将20个试验分为6组或3组。两组集合反映了试验（气候）的地理位置和测试系列之间的遗传连通性，表明需要更多的具有更好连通性的试验来检查目前的育种或种子区划是否最佳。使用潜伏回归的家长稳定性可用于定位具有最高育种值的最佳父母，并且跨试验高度稳定。
+关键词云杉因子分析 。 MET。聚类分析 。 GXE互动
+介绍 根据光周期和温度梯度，挪威云杉[云杉（Karlsi）]的瑞典养殖策略将该国划分为22个育种区（人口），每个包括50个创始人（Danell 1993）。这种多重人口战略被认为是有效管理遗传多样性和适应未来气候变化，同时保持遗传增益。管理这么多种群的缺点是增加了成本（Rosvall等，2011）。而且，人口分割主要依据地理气候数据。同样，挪威云杉的部署也分为9个种子果园区域，以最大限度地适应和遗传增益。 为了优化瑞典育种计划的区域化，建议使用所有可接受的遗传连接的瑞典挪威云杉试验，以寻找目前育种和种子区划的生物学基础。柏林等（2014）分析了17项测试系列中每项试验的65项试验和估计遗传相关性，以探索基因型环境（GXE）相互作用模式。然而，没有观察到令人信服的GXE相互作用模式证明当前的繁殖和种子区划。 在瑞典的挪威云杉育种计划中，22个种群中的每一个都使用4个站点作为测试系列的后代试验。这些试验通常与遗传条目相关联。然而，测试系列之间的遗传连通性通常较差（Johnson 2004）。在每个繁殖区内，通常使用来自相同测试系列的树高的试验，发现具有高遗传相关性的低或中等的GXE相互作用。这归因于每个测试系列中的相对较小的地理区域（Berlin et al。，2014）。将不同的测试系列组合在相邻的育种区域中进行联合分析是非常需要的，以探索使用生物数据对繁殖区目前划定的有效性。 有许多传统的方法来分析GXE相互作用并检测模式，包括（1）方差分析（ANOVA），（2）主成分分析（PCA）和（3）线性回归（Freeman 1973）。这些方法并不总是足以解析具有缺失连接的复杂交互结构（Zobel等人，1988）。方差分析只能检验GXE的意义和GXE方差与遗传方差的相对大小，但不能对其模式提供任何见解; PCA只考虑GXE的乘法效应。线性回归方法结合了加法和乘法分量。还可以从这样的回归估计各种稳定性参数，以检查基因型/家系的稳定性和测试试验以推断相互作用的原因（Finlay和Wilkinson 1963; McKeand等人2003; Wu and Ying 1998）。对于林业中的多个现场后代试验，B型（Burdon 1977）之间的遗传相关性通常使用混合线性模型估计（Baltunis等，2010）。 20世纪80年代以来，采用奇异值分解（SVD）来描述GXE模式（Gauch 1992），最初在农艺作物中使用加性主效应和乘法相互作用模型（AMMI），后来在林业中。最近，引入了使用混合模型方法（因子分析法 - FA）的因子回归，以探索作物中多种环境试验的GXE模式（Burgue駉et al。2008; Fox et al。2007; Mathews et al 2007; Piepho 1998; Smith et al.">
+  <meta name="twitter:description" content="Chen Z Q, Karlsson B, Wu H X. 2017. Patterns of additive genotype-by-environment interaction in tree height of Norway spruce in southern and central Sweden. Tree Genetics and Genomes, 13(1): 25.
+ 摘要 在 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/chen2017-gxe-%E6%AC%A7%E6%B4%B2%E4%BA%91%E6%9D%89-%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/chen2017-gxe-%E6%AC%A7%E6%B4%B2%E4%BA%91%E6%9D%89-%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>chen2017-GxE-欧洲云杉-因子分析-空间分析</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (153 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>chen2017-GxE-欧洲云杉-因子分析-空间分析</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (153 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Chen Z Q, Karlsson B, Wu H X. 2017. Patterns of additive genotype-by-environment interaction in tree height of Norway spruce in southern and central Sweden. Tree Genetics and Genomes, 13(1): 25.</p>
+</blockquote>
+
+<h2 id="摘要">摘要</h2>
+
+<p>在南部和中部的挪威云杉（云杉（L.）H. Karst。）的20个大型开放授粉后代试验中，研究了7至13岁时测定的树高基因型（GXE）相互作用。瑞典。使用<strong>空间调整数据</strong>和减少的动物模型的<strong>因子分析</strong>方法来探索GXE相互作用的模式。扩展因子分析使用三个因素捕获了93.0％的添加GXE相互作用方差。 5月和6月的平均日温度小于3.2 June解释了GXE相互作用的27.8％，与第一个因素中度相关，表明春季或秋季霜冻天气状况可能是挪威GXE相互作用的主要驱动因素云杉。<strong>聚类分析</strong>将20个试验分为6组或3组。两组集合反映了试验（气候）的地理位置和测试系列之间的遗传连通性，表明需要更多的具有更好连通性的试验来检查目前的育种或种子区划是否最佳。使用<strong>潜伏回归</strong>的家长稳定性可用于定位具有最高育种值的最佳父母，并且跨试验高度稳定。</p>
+
+<p>关键词云杉因子分析 。 MET。聚类分析 。 GXE互动</p>
+
+<h2 id="介绍">介绍</h2>
+
+<p>根据光周期和温度梯度，挪威云杉[云杉（Karlsi）]的瑞典养殖策略将该国划分为22个育种区（人口），每个包括50个创始人（Danell 1993）。这种多重人口战略被认为是有效管理遗传多样性和适应未来气候变化，同时保持遗传增益。管理这么多种群的缺点是增加了成本（Rosvall等，2011）。而且，人口分割主要依据地理气候数据。同样，挪威云杉的部署也分为9个种子果园区域，以最大限度地适应和遗传增益。
+为了优化瑞典育种计划的区域化，建议使用所有可接受的遗传连接的瑞典挪威云杉试验，以寻找目前育种和种子区划的生物学基础。柏林等（2014）分析了17项测试系列中每项试验的65项试验和估计遗传相关性，以探索基因型环境（GXE）相互作用模式。然而，没有观察到令人信服的GXE相互作用模式证明当前的繁殖和种子区划。
+在瑞典的挪威云杉育种计划中，22个种群中的每一个都使用4个站点作为测试系列的后代试验。这些试验通常与遗传条目相关联。然而，测试系列之间的遗传连通性通常较差（Johnson 2004）。在每个繁殖区内，通常使用来自相同测试系列的树高的试验，发现具有高遗传相关性的低或中等的GXE相互作用。这归因于每个测试系列中的相对较小的地理区域（Berlin et al。，2014）。将不同的测试系列组合在相邻的育种区域中进行联合分析是非常需要的，以探索使用生物数据对繁殖区目前划定的有效性。
+有许多传统的方法来分析GXE相互作用并检测模式，包括（1）<strong>方差分析</strong>（ANOVA），（2）<strong>主成分分析</strong>（PCA）和（3）<strong>线性回归</strong>（Freeman 1973）。这些方法并不总是足以解析具有缺失连接的复杂交互结构（Zobel等人，1988）。<strong>方差分析只能检验GXE的意义和GXE方差与遗传方差的相对大小，但不能对其模式提供任何见解</strong>; <strong>PCA只考虑GXE的乘法效应</strong>。<strong>线性回归方法结合了加法和乘法分量。还可以从这样的回归估计各种稳定性参数，以检查基因型/家系的稳定性和测试试验以推断相互作用的原因</strong>（Finlay和Wilkinson 1963; McKeand等人2003; Wu and Ying 1998）。对于林业中的多个现场后代试验，B型（Burdon 1977）之间的遗传相关性通常使用混合线性模型估计（Baltunis等，2010）。 20世纪80年代以来，采用奇异值分解（SVD）来描述GXE模式（Gauch 1992），最初在农艺作物中使用<strong>加性主效应和乘法相互作用模型（AMMI）</strong>，后来在林业中。最近，引入了使用混合模型方法<strong>（因子分析法 -  FA）的因子回归</strong>，以探索作物中多种环境试验的GXE模式（Burgue駉et al。2008; Fox et al。2007; Mathews et al 2007; Piepho 1998; Smith et al.2001; Smith et al。2015）将下划线因素与GXE相互作用的原因联系起来。除了使用参数化方法分解GXE相互作用的线性和非线性固定和混合模型外，还有非参数方法来分析GXE，如<strong>多变量回归树（MRT）</strong>（Hamann等，2011）。对于具有许多性状的线性组合的指数选择，指数的GXE模式是每个性状（权重）和性状本身的相对重要性的函数（Namkoong 1985）。在林业中，多个<strong>回归和响应面</strong>也常用于检测人口变异与环境梯度之间的关系，以推断自适应变异来描述非线性GXE（Campbell和Sorensen 1978; Rehfeldt 1983; Wang et al。2010; Wu and Ying 2004）。
+Cullis等人（2014）总结了<strong>FA模型</strong>在多环境试验（MET）分析中的三个主要优点：（1）当MET增加时，不使用过多数量的方差参数来估计非结构化方差 - 协方差矩阵的能力; （2）可以使用适当的估计算法拟合GXE效应小于满秩方差结构;和（3）FA模型是多元回归和主成分分析的混合。可以很容易地使用图形工具（如Kempton 1984），回归图（Thompson et al。2003）和排列的列和列的估计遗传相关矩阵的热图来解释GXE交互的性质和程度使用聚类分析（Cullis等，2010）。
+FA模型在林业MET分析中也越来越受欢迎（Costa e Silva和Graudal 2008; Costa e Silva et al。2006; Cullis et al。2014; Hardner et al。2010; Ivkovi et al。2015）。 Costa e Silva et al。 （2006）成功地使用FA模型分析了15个桉树后代试验的胸高度（DBH）的茎直径。
+近来，<strong>空间分析模型</strong>广泛用于估计树种的遗传参数（Costa e Silva et al.2001; Dutkowski et al。2006; Fu et al。1999）。 Ye和Jayawickrama（2008）报道，空间分析通常可以增加遗传力，提高遗传参数估计的准确性。史密斯等人（2001）认为，使用FA模型和调整空间局部和全局现场趋势将提高MET分析结果。建议的方法已被用于澳大利亚辐射松（Pinus radiata）和桉树杂交（Eucalyptus camaldulensis Dehnh。XE。globulus Labill。和E. camaldulensisXE。grandis）的MET分析（Hardner et al。2010; Ivkovi et 2015年）。在20个全同胞辐射松后代试验中已经探索了一个清晰的GXE模式和一些GXE模式的原因（Ivkovi等人，2015）。
+在本文中，我们从总共146个挪威云杉试验中选出了20个相对良好的后代试验，以探索瑞典南部和中部的GXE模式。本研究的目的是（1）在三个种子园区内的六个试验系列中，对20个大型试验中的20个大型试验中估计加性遗传变异和遗传力遗传度，（2）估计试验之间的遗传相关性，（3）剖析GXE模式在瑞典南部和中部，（4）分析这些试验中选定的父母的稳定性。</p>
+
+<h2 id="材料和方法">材料和方法</h2>
+
+<h3 id="现场试验和测量">现场试验和测量</h3>
+
+<p>在六个测试系列中，瑞典的森林种植组织Skogfork在1986年至1996年间，在三个种子园区内种植了20个开放授粉后代试验（图1和表1）。试验的详细特征如表1所示。在试验系列1和2中使用了具有单树图的随机完全块设计（RCB），在另一个试验系列中使用了具有单树图的完全随机设计。这20项大型试验由于其相对较好的亲本关系而被选中。女性父母的数量从304到1389不等。树木的高度在7〜13岁时测量。</p>
+
+<h3 id="气候资料">气候资料</h3>
+
+<p>这20个试验的气候信息如表2所示。从气候数据库（<a href="http://luftweb.smhi.se/）下载了**从种植年份到高度测量年份**的**日平均气温和降水量**。计算了**平均年降水量（MAP）**，**平均降水生长季​​**（4月至10月）（MPGS），**年平均气温**（MAT），**年平均热量**（MAHT）高于5癈。为了估计低温（与霜冻相关）对云杉芽爆发的影响以及挪威云杉树木随之而来的增长，计算出**两个气候指数**，包括5月份日平均气温低于3.2">http://luftweb.smhi.se/）下载了**从种植年份到高度测量年份**的**日平均气温和降水量**。计算了**平均年降水量（MAP）**，**平均降水生长季​​**（4月至10月）（MPGS），**年平均气温**（MAT），**年平均热量**（MAHT）高于5癈。为了估计低温（与霜冻相关）对云杉芽爆发的影响以及挪威云杉树木随之而来的增长，计算出**两个气候指数**，包括5月份日平均气温低于3.2</a> of的天平均气温; 7月（MTMJ），9月和10月（MTSO）日平均气温低于1.3 of的平均天气温度。 MTMJ和MTSO分别代表春季和秋季的冷指数。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/circum-vent-%E7%BB%95%E5%BC%80~evade/" data-toggle="tooltip" data-placement="top" title="circum-vent-绕开~evade">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/cappa-2011-b-spline-/" data-toggle="tooltip" data-placement="top" title="cappa-2011-b-spline-">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

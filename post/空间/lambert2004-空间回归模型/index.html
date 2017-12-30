@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Lambert2004-空间回归模型</title>
+  <meta property="og:title" content="Lambert2004-空间回归模型" />
+  <meta name="twitter:title" content="Lambert2004-空间回归模型" />
+  <meta name="description" content="Lambert DM, Lowenberg-Deboer J, Bongiovanni R (2004) A comparison of four spatial regression models for yield monitor data: A case study from Argentina. Precis Agric 5:579–600. doi: 10.1007/s11119-004-6344-3
+ 数据分析和具体地点的建议之间的差距被认为是广泛采用精密农业技术的主要制约因素之一。这种差异部分是由于可用于理解作物GIS层的分析技术落后于数据收集和存储技术的发展的事实。产量监测，传感器和其他空间密集的农艺数据通常是自相关的，并且邻近观测之间的这种依赖违反了经典统计分析的假设。因此，估计的可靠性可能受到损害。空间回归分析是更充分地利用空间密集数据中包含的信息的一种方式。空间回归技术还可以调整由空间自相关引起的偏差和无效率。本文的目的是比较四个空间回归方法，在可变率技术的经济分析中明确纳入空间相关性：（1）从空间计量经济学文献中采用的回归方法; （2）多项式趋势回归法; （3）经典最近邻分析;和（4）地统计方法。分析中使用的数据来自1999年阿根廷科尔多瓦省的可变速率氮试验。空间回归方法提供了比普通最小二乘法更强的对氮的玉米产量响应的空间异质性的统计学证据。空间计量经济学分析可以在相对较小的数据集上实施，这些数据集没有足够的观测值来估计地统计学所需的半变异函数。最近邻和多项式趋势分析可以使用GIS软件中可用的普通最小二乘法来实现。这项研究的主要结果是，从这个可变速率氮试验的边际分析得出的结论是相似的每个空间回归模型，虽然每个模型中的空间过程的假设是完全不同的。
+介绍 精确农业（PA）已经捕获了生产者和农业企业的想象力，但采用相对较慢。对于2001年的收获，约34％的美国玉米地区是用装备有产量监测器的联合收割机收获的（Daberkow等人，2002），但是这些组合物中只有约三分之一配备有GPS接收器，制作收益率图。在2000年，大约11％的玉米，6％的大豆和4％的棉花地区使用可变施肥量施肥。根据作物，可变播种和农药施用量占地区面积的1％-3％。 Bullock等人（2002）确定了缺乏特定作物的作物反应信息，作为采用空间作物管理实践的限制因素。大多数可变速率输入应用程序仍然基于全场（WF）作物响应信息。 Bullock等人认为如果生产者可以更容易地收集和分析特定土壤，微气候和管理区的作物反应，则PA可能更有利可图，使用该技术改善环境绩效和食品安全的社会目标可以更多轻松实现。
+文献中报道的大部分作物反应信息已经用普通最小二乘法（OLS）和类似的统计工具分析。但基于OLS估计的产量响应函数的可靠性可以通过空间自相关数据进行比较（Kessler et al。，1998）。用于农艺和农场实验的古典统计假设观察是独立的。但是，在PA数据的情况下，这种独立性的假设是站不住脚的。例如，任何产量监测观测与其相邻观测值明显相关。因此，田间异质性可能是不成比例的，推断作物对变化肥率的反应可能会产生误导。
+农场试验研究表明，比较可变速率氮（VRN）与常规均匀施肥率的实验分析（Bongiovanni和Lowenberg-DeBoer，2002; Hurley et al。，2004.，Lambert et al。 ，2002）可能导致不准确的结论，即哪种输入管理策略最适合具有不同的，可识别的管理区的领域。在这些研究中，当考虑空间自相关时，开发了可变速率技术（VRT）获利性的更可靠的估计。开发方法以确定精确农业是否有利可行是一个关键步骤是开发一致和可靠的估计程序，考虑到PA数据的空间自相关性质。从经济角度看，更好的估计转化为更准确的评估特定于站点的管理盈利能力。空间依赖是一种特殊情况，其中每个位置的因变量或误差项与其他位置的因变量或误差项的观测值相关（Anselin，1992）。在多种背景下（例如，地理学，农学，区域经济学和地质学）已经开发了模型空间相关性的回归方法。本文的主要目的是比较对VRN的收益率，其中利率是基于使用不同空间回归技术估计的对氮的现场特定玉米产量响应。使用四个空间回归模型和普通最小二乘法（OLS）估计玉米产量反应异质性。
+比较的空间回归技术是：（i）限制最大似然（REML）地统计方法（Cressie，1993; Schabenberger和Pierce，2002）; （ii）使用多边形作为离散观察单位（或空间自回归，SAR）的空间回归方法（Anselin，1988）; （iii）多项式趋势（PTR）方法（Tamura等人，1988）;和（iv）由Papadakis（1937）首先建议的经典最近邻（NN）方法。每种方法不同地建模空间自相关。空间数据的估计技术之间的差异围绕着假设观测之间的关系是否被最好地描述为离散或连续关系（关于这种区别的细节，见Anselin，1988）。 SAR和NN方法假定空间相关性是特定点或多边形之间的离散关系。地质统计和PTR方法反映了它们在方法中的起源，用于映射和插值，假定空间结构在空间上是连续的。
+在1999 - 2000年作物季节数据分析中提出的经验结果和部分预算是使用替代空间回归方法时响应估计值有所不同的一个例子。然而，本案例研究的主要焦点是比较不同模型的空间相关性的替代回归方法，以及导出特定位点结果的方法。方法结果旨在作为将各种方法应用于相同数据时所发生的情况的示例。结果是确定方法之间的关键差异的一个步骤。
+理论 - 近邻法和空间回归法（NN） 农业中的经典实验设计是随机完全区块（RCB）。 RCB设计本质上是控制实验误差的策略。由Fisher在20世纪20年代开发，RCB被誉为农业试验中非均匀实验单位的校正，特别是关于展示不同土壤类型或排水特性的异质景观。 Papadakis（1937）通过引入最近邻法（NN）来回应费舍尔的阻塞方法。在该方法中，从处理块中的处理j中的子块i的单个子块（y ij）的实验结果从母块的总体处理平均值（y ij）中减去。子块和整个块值之间的差是yij的实验误差。在经典NN分析中，邻居被垂直地布置：每个观察具有四个邻居。因此，y ij的误差是其四个相邻的共享相同边界的误差项的平均值。 Stroup等人（1994）也将NN方法与标准阻断方法进行比较。使用网格实验设计，Vollmann et al。 （2000）使用经典的NN方法来识别大豆实验区之间的空间模式。他们发现大豆产量，种子蛋白质数量和种子大小受地块之间的空间异质性的影响。 Helms等人使用的迭代NN方法（1999）比较块处理和混合误差手段比较大豆品种的性能。使用方差分析（ANOVA），他们发现在减少由块内空间异质性引起的误差方面，经典阻塞和NN技术之间没有什么差别。 NN和经典实验设计之间的绘图方差估计的精度（纯误差）是相似的。 Brownie et al。 （1993）描述了NN模型：">
+  <meta property="og:description" content="Lambert DM, Lowenberg-Deboer J, Bongiovanni R (2004) A comparison of four spatial regression models for yield monitor data: A case study from Argentina. Precis Agric 5:579–600. doi: 10.1007/s11119-004-6344-3
+ 数据分析和具体地点的建议之间的差距被认为是广泛采用精密农业技术的主要制约因素之一。这种差异部分是由于可用于理解作物GIS层的分析技术落后于数据收集和存储技术的发展的事实。产量监测，传感器和其他空间密集的农艺数据通常是自相关的，并且邻近观测之间的这种依赖违反了经典统计分析的假设。因此，估计的可靠性可能受到损害。空间回归分析是更充分地利用空间密集数据中包含的信息的一种方式。空间回归技术还可以调整由空间自相关引起的偏差和无效率。本文的目的是比较四个空间回归方法，在可变率技术的经济分析中明确纳入空间相关性：（1）从空间计量经济学文献中采用的回归方法; （2）多项式趋势回归法; （3）经典最近邻分析;和（4）地统计方法。分析中使用的数据来自1999年阿根廷科尔多瓦省的可变速率氮试验。空间回归方法提供了比普通最小二乘法更强的对氮的玉米产量响应的空间异质性的统计学证据。空间计量经济学分析可以在相对较小的数据集上实施，这些数据集没有足够的观测值来估计地统计学所需的半变异函数。最近邻和多项式趋势分析可以使用GIS软件中可用的普通最小二乘法来实现。这项研究的主要结果是，从这个可变速率氮试验的边际分析得出的结论是相似的每个空间回归模型，虽然每个模型中的空间过程的假设是完全不同的。
+介绍 精确农业（PA）已经捕获了生产者和农业企业的想象力，但采用相对较慢。对于2001年的收获，约34％的美国玉米地区是用装备有产量监测器的联合收割机收获的（Daberkow等人，2002），但是这些组合物中只有约三分之一配备有GPS接收器，制作收益率图。在2000年，大约11％的玉米，6％的大豆和4％的棉花地区使用可变施肥量施肥。根据作物，可变播种和农药施用量占地区面积的1％-3％。 Bullock等人（2002）确定了缺乏特定作物的作物反应信息，作为采用空间作物管理实践的限制因素。大多数可变速率输入应用程序仍然基于全场（WF）作物响应信息。 Bullock等人认为如果生产者可以更容易地收集和分析特定土壤，微气候和管理区的作物反应，则PA可能更有利可图，使用该技术改善环境绩效和食品安全的社会目标可以更多轻松实现。
+文献中报道的大部分作物反应信息已经用普通最小二乘法（OLS）和类似的统计工具分析。但基于OLS估计的产量响应函数的可靠性可以通过空间自相关数据进行比较（Kessler et al。，1998）。用于农艺和农场实验的古典统计假设观察是独立的。但是，在PA数据的情况下，这种独立性的假设是站不住脚的。例如，任何产量监测观测与其相邻观测值明显相关。因此，田间异质性可能是不成比例的，推断作物对变化肥率的反应可能会产生误导。
+农场试验研究表明，比较可变速率氮（VRN）与常规均匀施肥率的实验分析（Bongiovanni和Lowenberg-DeBoer，2002; Hurley et al。，2004.，Lambert et al。 ，2002）可能导致不准确的结论，即哪种输入管理策略最适合具有不同的，可识别的管理区的领域。在这些研究中，当考虑空间自相关时，开发了可变速率技术（VRT）获利性的更可靠的估计。开发方法以确定精确农业是否有利可行是一个关键步骤是开发一致和可靠的估计程序，考虑到PA数据的空间自相关性质。从经济角度看，更好的估计转化为更准确的评估特定于站点的管理盈利能力。空间依赖是一种特殊情况，其中每个位置的因变量或误差项与其他位置的因变量或误差项的观测值相关（Anselin，1992）。在多种背景下（例如，地理学，农学，区域经济学和地质学）已经开发了模型空间相关性的回归方法。本文的主要目的是比较对VRN的收益率，其中利率是基于使用不同空间回归技术估计的对氮的现场特定玉米产量响应。使用四个空间回归模型和普通最小二乘法（OLS）估计玉米产量反应异质性。
+比较的空间回归技术是：（i）限制最大似然（REML）地统计方法（Cressie，1993; Schabenberger和Pierce，2002）; （ii）使用多边形作为离散观察单位（或空间自回归，SAR）的空间回归方法（Anselin，1988）; （iii）多项式趋势（PTR）方法（Tamura等人，1988）;和（iv）由Papadakis（1937）首先建议的经典最近邻（NN）方法。每种方法不同地建模空间自相关。空间数据的估计技术之间的差异围绕着假设观测之间的关系是否被最好地描述为离散或连续关系（关于这种区别的细节，见Anselin，1988）。 SAR和NN方法假定空间相关性是特定点或多边形之间的离散关系。地质统计和PTR方法反映了它们在方法中的起源，用于映射和插值，假定空间结构在空间上是连续的。
+在1999 - 2000年作物季节数据分析中提出的经验结果和部分预算是使用替代空间回归方法时响应估计值有所不同的一个例子。然而，本案例研究的主要焦点是比较不同模型的空间相关性的替代回归方法，以及导出特定位点结果的方法。方法结果旨在作为将各种方法应用于相同数据时所发生的情况的示例。结果是确定方法之间的关键差异的一个步骤。
+理论 - 近邻法和空间回归法（NN） 农业中的经典实验设计是随机完全区块（RCB）。 RCB设计本质上是控制实验误差的策略。由Fisher在20世纪20年代开发，RCB被誉为农业试验中非均匀实验单位的校正，特别是关于展示不同土壤类型或排水特性的异质景观。 Papadakis（1937）通过引入最近邻法（NN）来回应费舍尔的阻塞方法。在该方法中，从处理块中的处理j中的子块i的单个子块（y ij）的实验结果从母块的总体处理平均值（y ij）中减去。子块和整个块值之间的差是yij的实验误差。在经典NN分析中，邻居被垂直地布置：每个观察具有四个邻居。因此，y ij的误差是其四个相邻的共享相同边界的误差项的平均值。 Stroup等人（1994）也将NN方法与标准阻断方法进行比较。使用网格实验设计，Vollmann et al。 （2000）使用经典的NN方法来识别大豆实验区之间的空间模式。他们发现大豆产量，种子蛋白质数量和种子大小受地块之间的空间异质性的影响。 Helms等人使用的迭代NN方法（1999）比较块处理和混合误差手段比较大豆品种的性能。使用方差分析（ANOVA），他们发现在减少由块内空间异质性引起的误差方面，经典阻塞和NN技术之间没有什么差别。 NN和经典实验设计之间的绘图方差估计的精度（纯误差）是相似的。 Brownie et al。 （1993）描述了NN模型：">
+  <meta name="twitter:description" content="Lambert DM, Lowenberg-Deboer J, Bongiovanni R (2004) A comparison of four spatial regression models for yield monitor data: A case study from Argentina. Precis Agric 5:579–600. doi: …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/lambert2004-%E7%A9%BA%E9%97%B4%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/lambert2004-%E7%A9%BA%E9%97%B4%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Lambert2004-空间回归模型</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (173 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Lambert2004-空间回归模型</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (173 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Lambert DM, Lowenberg-Deboer J, Bongiovanni R (2004) A comparison of four spatial regression models for yield monitor data: A case study from Argentina. Precis Agric 5:579–600. doi: 10.1007/s11119-004-6344-3</p>
+</blockquote>
+
+<p>数据分析和具体地点的建议之间的差距被认为是广泛采用精密农业技术的主要制约因素之一。这种差异部分是由于可用于理解作物GIS层的分析技术落后于数据收集和存储技术的发展的事实。产量监测，传感器和其他空间密集的<strong>农艺数据通常是自相关的，并且邻近观测之间的这种依赖违反了经典统计分析的假设。因此，估计的可靠性可能受到损害。空间回归分析是更充分地利用空间密集数据中包含的信息的一种方式。空间回归技术还可以调整由空间自相关引起的偏差和无效率</strong>。本文的目的是比较四个空间回归方法，在可变率技术的经济分析中明确纳入空间相关性：（1）从空间计量经济学文献中采用的回归方法; （2）多项式趋势回归法; （3）经典最近邻分析;和（4）地统计方法。分析中使用的数据来自1999年阿根廷科尔多瓦省的可变速率氮试验。<strong>空间回归方法提供了比普通最小二乘法更强的对氮的玉米产量响应的空间异质性的统计学证据</strong>。空间计量经济学分析可以在相对较小的数据集上实施，这些数据集没有足够的观测值来估计地统计学所需的半变异函数。最近邻和多项式趋势分析可以使用GIS软件中可用的普通最小二乘法来实现。这项研究的主要结果是，从这个可变速率氮试验的边际分析得出的结论是相似的每个空间回归模型，虽然每个模型中的空间过程的假设是完全不同的。</p>
+
+<hr />
+
+<p>介绍
+精确农业（PA）已经捕获了生产者和农业企业的想象力，但采用相对较慢。对于2001年的收获，约34％的美国玉米地区是用装备有产量监测器的联合收割机收获的（Daberkow等人，2002），但是这些组合物中只有约三分之一配备有GPS接收器，制作收益率图。在2000年，大约11％的玉米，6％的大豆和4％的棉花地区使用可变施肥量施肥。根据作物，可变播种和农药施用量占地区面积的1％-3％。 Bullock等人（2002）确定了缺乏特定作物的作物反应信息，作为采用空间作物管理实践的限制因素。大多数可变速率输入应用程序仍然基于全场（WF）作物响应信息。 Bullock等人认为如果生产者可以更容易地收集和分析特定土壤，微气候和管理区的作物反应，则PA可能更有利可图，使用该技术改善环境绩效和食品安全的社会目标可以更多轻松实现。</p>
+
+<p><strong>文献中报道的大部分作物反应信息已经用普通最小二乘法（OLS）和类似的统计工具分析。但基于OLS估计的产量响应函数的可靠性可以通过空间自相关数据进行比较（Kessler et al。，1998）。用于农艺和农场实验的古典统计假设观察是独立的。但是，在PA数据的情况下，这种独立性的假设是站不住脚的。例如，任何产量监测观测与其相邻观测值明显相关。因此，田间异质性可能是不成比例的，推断作物对变化肥率的反应可能会产生误导。</strong></p>
+
+<p>农场试验研究表明，比较可变速率氮（VRN）与常规均匀施肥率的实验分析（Bongiovanni和Lowenberg-DeBoer，2002; Hurley et al。，2004.，Lambert et al。 ，2002）可能导致不准确的结论，即哪种输入管理策略最适合具有不同的，可识别的管理区的领域。在这些研究中，当考虑空间自相关时，开发了可变速率技术（VRT）获利性的更可靠的估计。开发方法以确定精确农业是否有利可行是一个关键步骤是开发一致和可靠的估计程序，考虑到PA数据的空间自相关性质。从经济角度看，更好的估计转化为更准确的评估特定于站点的管理盈利能力。空间依赖是一种特殊情况，其中每个位置的因变量或误差项与其他位置的因变量或误差项的观测值相关（Anselin，1992）。在多种背景下（例如，地理学，农学，区域经济学和地质学）已经开发了模型空间相关性的回归方法。本文的主要目的是比较对VRN的收益率，其中利率是基于使用不同空间回归技术估计的对氮的现场特定玉米产量响应。使用四个空间回归模型和普通最小二乘法（OLS）估计玉米产量反应异质性。</p>
+
+<p>比较的空间回归技术是：（i）限制最大似然（REML）地统计方法（Cressie，1993; Schabenberger和Pierce，2002）; （ii）使用多边形作为离散观察单位（或空间自回归，SAR）的空间回归方法（Anselin，1988）; （iii）多项式趋势（PTR）方法（Tamura等人，1988）;和（iv）由Papadakis（1937）首先建议的经典最近邻（NN）方法。每种方法不同地建模空间自相关。空间数据的估计技术之间的差异围绕着假设观测之间的关系是否被最好地描述为离散或连续关系（关于这种区别的细节，见Anselin，1988）。 SAR和NN方法假定空间相关性是特定点或多边形之间的离散关系。地质统计和PTR方法反映了它们在方法中的起源，用于映射和插值，假定空间结构在空间上是连续的。</p>
+
+<p>在1999  -  2000年作物季节数据分析中提出的经验结果和部分预算是使用替代空间回归方法时响应估计值有所不同的一个例子。然而，本案例研究的主要焦点是比较不同模型的空间相关性的替代回归方法，以及导出特定位点结果的方法。方法结果旨在作为将各种方法应用于相同数据时所发生的情况的示例。结果是确定方法之间的关键差异的一个步骤。</p>
+
+<hr />
+
+<p>理论
+- 近邻法和空间回归法（NN）
+农业中的经典实验设计是随机完全区块（RCB）。 RCB设计本质上是控制实验误差的策略。由Fisher在20世纪20年代开发，RCB被誉为农业试验中非均匀实验单位的校正，特别是关于展示不同土壤类型或排水特性的异质景观。 Papadakis（1937）通过引入最近邻法（NN）来回应费舍尔的阻塞方法。在该方法中，从处理块中的处理j中的子块i的单个子块（y ij）的实验结果从母块的总体处理平均值（y ij）中减去。子块和整个块值之间的差是yij的实验误差。在经典NN分析中，邻居被垂直地布置：每个观察具有四个邻居。因此，y ij的误差是其四个相邻的共享相同边界的误差项的平均值。
+Stroup等人（1994）也将NN方法与标准阻断方法进行比较。使用网格实验设计，Vollmann et al。 （2000）使用经典的NN方法来识别大豆实验区之间的空间模式。他们发现大豆产量，种子蛋白质数量和种子大小受地块之间的空间异质性的影响。 Helms等人使用的迭代NN方法（1999）比较块处理和混合误差手段比较大豆品种的性能。使用方差分析（ANOVA），他们发现在减少由块内空间异质性引起的误差方面，经典阻塞和NN技术之间没有什么差别。 NN和经典实验设计之间的绘图方差估计的精度（纯误差）是相似的。 Brownie et al。 （1993）描述了NN模型：</p>
+
+<p>其中Y是产量，l是总平均产量，sij是处理效果，zij是垂直于yij的最近邻残差的集合，h是产量yij和其zij近邻的残差之间的协方差的斜率系数。残差误差表示为rij = yij？ ^ Yk，其中^ Yk是处理k的总平均值。 yij的NN残差的平均值被确定为zij = jri;j≥1+ ji1 + j1j + j + 1; j = 4。 NN模型的结构如（1）中所示，是通常用于测试农场试验的治疗差异的熟悉的ANOVA模型的结构。方程（1）可以通过将zij插入到解释变量的nxk矩阵中而被推广到熟悉的回归模型中。这种重新说明是重要的，因为本研究的主要兴趣是估计位点特异性产量反应氮（N）。 NN模型变为y = Xb + hz + e，其中协方差参数h是残差的邻域的平均参数。等式（1）用OLS估计。</p>
+
+<ul>
+<li><p>多项式趋势回归和空间回归（PTR）
+<strong>Tamura et al。 （1988）提出了另一种替代方法，通过在熟悉的ANOVA模型中插入多项式趋势变量（Tij）来模拟空间依赖性。</strong>这种方法与城市和区域地理学中引起注意的空间扩展回归方法有些相关（Anselin，1988）。趋势面被引入到模型中以捕获观察之间的空间关系。这种方法假定省略空间依赖性与经济计量文献中省略的变量问题类似。通过在ANOVA模型中包括趋势变量来处理省略的变量问题。<strong>像Papadakis提出的NN方法一样，Tamura等人的PTR模型被开发以解决未通过常规阻塞技术处理的空间结构化误差过程。利用回归模型对多项式响应面的同时估计将由空间相关性引起的系统误差分量与eij的非系统部分分离开（Kirk等人，1980）。参数估计只针对剩余的随机分量eij。</strong>实际上，假设由多项式表达式指定的趋势面具有正确的规格，则将观察i与j相关的坐标系添加到以多项式表示的熟悉的回归模型y = Xb + e中消除了省略的变量问题。所讨论的省略的变量将是解释误差残差中的空间结构的变量。 PTR模型指定为
+其中Y为产量，l为总均值，sk为处理效应，T为多项式趋势，e为独立同分布（i.i.d）随机误差分量。二次趋势项估计为
+其中ui是观测值yij的笛卡尔（x，y）坐标的斜率系数。 （x，y）坐标表示为行/列对。与NN方法类似，PTR方法被开发用于控制空间依赖性的治疗效果的ANOVA。在本研究中，目的是确定在空间变化的地形上玉米对氮的边际响应的差异。为了实现这个目标，PTR模型重写为，然后用熟悉的回归估计
+方程y = xb + e，包括（x，y）坐标，它们的平方和它们在X中的相互作用。使用OLS估计模型。</p></li>
+
+<li><p>空间回归地质统计方法（REML）
+许多农学家使用地球统计工具来模拟作物和土壤空间关系。也许这是因为土壤科学与地质学之间的学科联系。最初，地统计学被开发用于通过观测之间的插值产生地图。<strong>为了便于绘制，地统计学假定空间变异性是由半变异函数模型化的距离的连续函数。</strong>在地统计框架中，在给定点的变量（例如，作物GIS中的层）之间的关系的推理测试已经发展相对最近。 Cressie（1993）介绍了REML地质统计方法。 Little et al。 （1996）和Schabenberger和Pierce（2002）阐述了这种方法，<strong>这需要估计经验半变异函数，然后在回归模型中使用半变异函数参数估计作为先验，以表征观察之间的空间相关性。</strong> Cressie（1993）和Schabenberger和Pierce（2002）概述的REML地质统计方法已用于分析小麦杂交试验（Stroup等，1994），北卡罗来纳州婴儿猝死综合征（SIDS）的模式分析（Cressie， 1993）和土壤中的重金属（Schabenberger和Pierce，2002）。 Lambert et al。 （2002）使用REML地质统计方法来分析产量监测数据。 Hurley et al。 （2004）采用了类似的方法结合地质统计学和回归技术来分析美国明尼苏达州的VRN玉米试验。他们估计土壤测试，地形图和玉米遥感信息的利润率，使用半变异函数进行模型空间误差过程。 Lark和Wheeler（2003）使用该模型的变体来估计欧洲的大麦产量响应。半变异函数是REML-地质统计回归模型的主干。
+半变异函数参数（范围，nugget和sill）被估计，然后用作先验模型回归协方差矩阵。回归模型与熟悉的模型y = Xb + e估计，但空间协方差（R）通过R = Var（e）建模，其中Var（e）
+2 + rs2F，F是N·N矩阵，其第i，j个元素由距离衰减函数表征，并且rn2和rs2是核函数和半变异函数估计，I是单位矩阵（Little等人， 1996）。 REML参数估计是针对空间自相关调整的估计广义最小二乘（EGLS）估计。如果空间相关性存在于OLS残差中，则基于OLS和REML模型的对数似然性的-2倍的差异的似然比（LR）测试（v2（2）变量）的零假设被拒绝et al。，1996）。在本研究中，OLS残差的鲁棒半变异函数（Cressie，1993）使用SAS中的VARIOGRAM程序（2000）进行估计。在Cressie（1993）之后，使用加权非线性最小二乘法（WNLS）来估计OLS残差的半变异函数。使用SAS（2000）中的MIXED过程估计REML回归。</p></li>
+
+<li><p>离散空间回归法（SAR）
+离散空间回归方法假定空间依赖是离散观察或多边形之间的关系。空间结构可以在因变量（例如，产量）或回归残差中找到。空间结构被建模，假设因变量或残差是相邻观测值的加权平均值的函数。这种方法已广泛用于流行病学，地理学和区域经济学。在农业中，数据的结构是类似的，但多边形通常是土壤类型或管理区域，而不是州，县，地区或社区。这种方法使用多边形数据，实现空间结构的同时最大似然估计和GIS层之间的关系。构造空间权重矩阵以识别数据集中的邻居。矩阵被设计为将诸如重力，熵或衰变的过程并入回归模型中（Anselin，1988）。以规则矩形网格排列的数据使用三个标准来定义：“bishop”，“rook”或“queen”。这些类描述了多边形之间的邻接级别或共同边界。根据Bongiovanni和Lowenberg-DeBoer（2000），本研究中的SAR回归使用“皇后”标准：单个网格单元具有与一个或多个其他单元共同的边界和角。在空间术语中，邻接性被定义为将一个细胞与另一个细胞分开的距离的函数。属于同一邻域的块共享相同的权重，覆盖整个网格的邻域的复合定义空间权重矩阵。该矩阵（W）是N·N，具有元素wij的正定矩阵，以及沿着对角线的零。在使用空间权重矩阵来估计回归模型中的空间效应之前，它们是行标准化的。这有助于比较邻域的空间特性。行中的每个元素都由行和除。 Anselin（1988）确定了两个一般模式，空间依赖可能表现在回归分析：空间滞后和空间误差。如果忽略空间误差过程，OLS估计是低效的，但仍然是无偏的。如果忽略空间滞后过程，那么OLS估计是不一致和有偏差的。当与相关联的空间矩阵相关地估计回归模型时，确定这些效应的存在。确定空间自相关的存在的第一步骤需要估计与相关联的空间矩阵组合的标准OLS模型y = Xb + e。通过将空间权重矩阵W结合到回归模型中，为滞后（误差）分类确定因变量yi（ei）与相邻yj（ej）之间的关系。对于滞后过程，模型回归模型变为y = qWy + Xb + e;其中q为相邻yj的自回归移动平均参数。空间误差模型被指定为y = xb + e，其中e = kWe + u，其中u表示良好行为，非异方差，不相关的误差。 bi是对空间自相关校正的EGLS估计。拉格朗日乘数测试（LM，作为v2（1）变量分布）可以用于检测OLS残差中空间相关性的存在。 LMerror测试的替代方案是残差遵循空间模式，而LMlag测试的替代方案是解释性和/或因变量的个体观察与给定邻域中相同变量的其他值的平均值相关的观察。拒绝LMlag测试的null意味着我们面临一个省略的变量问题; OLS估计是有偏差和不一致的。如果我们拒绝LMerror测试的null，我们面临一个效率问题; OLS估计没有偏差，但它们是低效的</p></li>
+</ul>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/lambeth2001-%E5%A4%9A%E7%B3%BB%E6%B7%B7%E5%90%88%E8%82%B2%E7%A7%8D-%E4%BA%B2%E6%9C%AC%E5%88%86%E6%9E%90-%E6%9B%BF%E4%BB%A3%E5%85%A8%E5%90%8C%E8%83%9E/" data-toggle="tooltip" data-placement="top" title="Lambeth2001-多系混合育种-亲本分析-替代全同胞">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/lmm-%E7%9A%84%E7%AE%80%E8%A6%81%E5%8E%86%E5%8F%B2%E7%90%86%E8%AE%BA%E5%92%8C%E8%BD%AF%E4%BB%B6/" data-toggle="tooltip" data-placement="top" title="LMM-的简要历史（理论和软件）">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

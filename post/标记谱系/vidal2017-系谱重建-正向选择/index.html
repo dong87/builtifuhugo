@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Vidal2017-系谱重建-正向选择</title>
+  <meta property="og:title" content="Vidal2017-系谱重建-正向选择" />
+  <meta name="twitter:title" content="Vidal2017-系谱重建-正向选择" />
+  <meta name="description" content="Vidal M, Plomion C, Raffin A, Harvengt L, Bouffier L (2017) Forward selection in a maritime pine polycross progeny trial using pedigree reconstruction. Ann For Sci 74(1). doi:10.1007/s13595-016-0596-8.   关键信息：分子标记用于海洋松（Pinus pinaster Ait。）多克隆试验中的父亲恢复，促进正向选择。通过比较遗传增益和多样性来评价种子果园建立的不同育种策略。这项工作为海洋松树育种开辟了新的视角。背景：多态性交配设计广泛用于林木育种，以评价父母育种值的反向选择。或者，多克隆后代试验可用于基于个体育种值和分子谱系分析选择最佳树。目的：本研究旨在测试这种海洋松树育种计划的前向选择策略。方法：在海洋松树多交叉试验中，具有更高的生长育性值和茎平直度的后代首先被预先选择，具有或没有相关性约束。在父亲恢复之后，预选的树根据它们的育种值进行排名，从恢复的完全谱系估计。最后，选择最佳候选人有三个不同的策略（前进，后退，混合）和三个级别的coancestry约束建立一个虚拟的克隆种子园。结果：对于大多数预选树木，成功恢复了完整的系谱。在两种预选策略之间的预期遗传增益没有显着差异，这两种预选策略对于相关性约束是不同的。前向选择的遗传增益略高于经典后向选择。结论：这项开创性的研究为在法国海洋松树育种计划中使用正向选择开辟了新的视角。
+##1简介 父母排名的子代测试广泛用于林木育种（Zobel和Talbert 1984）。在法国马尾松（Pinus pinaster Ait。）育种计划中，在过去20年中已经建立了多位点多克隆后代试验，用于评估育种值，并且将雌性亲本排序为反向选择。父母对其后代的表现的排名对于具有低遗传力的性状特别重要（Falconer和Mackay 1996），例如对林木感兴趣的许多性状（Burdon和Kumar 2004; Cornelius 1994; Paques 2013）。在这样的多克隆试验中，表型化以评价亲本育种值的后代不用于在育种群体中产生下一代（其实际上选自双亲杂交的后代）或包括在产量群体（商业种子园）中。
+缺乏关于男性父母的信息大大限制了对先进世代的选择。然而，分子遗传学的进展，如高度信息和成本效益的DNA标记的发展，已经使得新的方法可能在树种繁殖。一种这样的新方法，谱系重建，使得重建个体之间的系谱关系成为可能，为新的育种策略的发展提供机会。例如，可以通过开放授粉群体中的谱系恢复来替代受控杂交，用于估计遗传参数和在称为无繁殖育种的策略中预测育种值（El-Kassaby等人2011; El -Kassaby和Lstiburek 2009; Lstiburek等人2011）。这种方法可用于启动树木改良计划，而不需要初始的繁殖和测试周期（Lstiburek等人，2015）。另一种方法，使用亲本分析（PMX / WPA）进行聚合育种由Lambeth等人开发（2001），并结合控制交叉和谱系恢复。这些作者提出使用分子标记来鉴定潜在选择候选者的亲本，用于在育种程序中评估育种值和选择下一代的后代。根据所基因分型的后代集合，呈现三种不同的情景：（i）部分人群父亲分析（仅针对使用女性一般组合能力和个体表现作为选择标准的最佳后代的谱系分析）; （ii）全群体亲子分析（所有后代的谱系分析）;和（iii）完全人口父母分析（通过分子标记分析回收的女性和父母身份的身份，因为他们的身份没有记录在这种情况下以减少后勤成本）。 Lambeth et al。 （2001）声称，PMX / WPA是全同胞育种和检测系统的一个替代品。他们的方法有几个优点。对于给定数量的父母，Polymix杂交比全同基交叉更具成本效益。对于较少的杂交，它们导致更大数目的重组事件，并且与其他方法相比，更可靠地估计育种值，因为每个个体与更大数目的亲本杂交。如果用于多混杂杂交的花粉来自具有高育种值的树，则来自PMX / WPA的正向选择的遗传获得应当更大。因此，应该可以比使用经典反向选择获得的更快地部署该增益。此外，在基因分型阶段可以消除错误标记的克隆，潜在地提高选择效率。我们调查了使用前向选择策略在海洋松树多交叉试验与子代的亲本分析相关的可行性。应该注意的是，这种多交叉试验最初并未设计为进行前向选择，而是后向选择。正向选择可具有两个目标：募集下一代育种群体的最佳基因型和生产群体（例如克隆种子园（CSO））的形成。本研究的重点是选择CSO的构成。这里研究的前向选择策略的连续阶段如图1所示。在多交叉试验中使用两种不同的预选择选项（PS1）和（PS2）对关联性的约束来预选候选树。然后对预选的树进行单核苷酸多态性（SNP）标记的基因分型。一旦他们的完整家系恢复，最佳的个人被选择为CSO，使用三个级别的coancestry约束（无，状态数Ns = 10，Ns = 20）。然后，使用相同的三个级别的coancestry约束，在可能的遗传增益方面，将向前选择策略与向后和混合（即，两者的组合）选择策略进行比较。最后，在法国海洋松树育种计划的框架中考虑了优化用于建立CSO的预选和最终选择选项的方法。
+##4。讨论 本研究的主要目的是评估与现代海洋松树多体系后代试验中子代的亲本分析相关的前向选择的可行性，以加速育种周期。已经进行了一些理论研究，但是，据我们所知，这是多交联试验中的前向选择的实际研究的第一个实例。在生长性状和茎平直度的遗传增益的基础上，研究并比较了生产种群的正向和经典反向选择的不同选择（建立虚拟CSO）。下面讨论前向选择的各个阶段，以及关于PMX / WPA策略的一些考虑。">
+  <meta property="og:description" content="Vidal M, Plomion C, Raffin A, Harvengt L, Bouffier L (2017) Forward selection in a maritime pine polycross progeny trial using pedigree reconstruction. Ann For Sci 74(1). doi:10.1007/s13595-016-0596-8.   关键信息：分子标记用于海洋松（Pinus pinaster Ait。）多克隆试验中的父亲恢复，促进正向选择。通过比较遗传增益和多样性来评价种子果园建立的不同育种策略。这项工作为海洋松树育种开辟了新的视角。背景：多态性交配设计广泛用于林木育种，以评价父母育种值的反向选择。或者，多克隆后代试验可用于基于个体育种值和分子谱系分析选择最佳树。目的：本研究旨在测试这种海洋松树育种计划的前向选择策略。方法：在海洋松树多交叉试验中，具有更高的生长育性值和茎平直度的后代首先被预先选择，具有或没有相关性约束。在父亲恢复之后，预选的树根据它们的育种值进行排名，从恢复的完全谱系估计。最后，选择最佳候选人有三个不同的策略（前进，后退，混合）和三个级别的coancestry约束建立一个虚拟的克隆种子园。结果：对于大多数预选树木，成功恢复了完整的系谱。在两种预选策略之间的预期遗传增益没有显着差异，这两种预选策略对于相关性约束是不同的。前向选择的遗传增益略高于经典后向选择。结论：这项开创性的研究为在法国海洋松树育种计划中使用正向选择开辟了新的视角。
+##1简介 父母排名的子代测试广泛用于林木育种（Zobel和Talbert 1984）。在法国马尾松（Pinus pinaster Ait。）育种计划中，在过去20年中已经建立了多位点多克隆后代试验，用于评估育种值，并且将雌性亲本排序为反向选择。父母对其后代的表现的排名对于具有低遗传力的性状特别重要（Falconer和Mackay 1996），例如对林木感兴趣的许多性状（Burdon和Kumar 2004; Cornelius 1994; Paques 2013）。在这样的多克隆试验中，表型化以评价亲本育种值的后代不用于在育种群体中产生下一代（其实际上选自双亲杂交的后代）或包括在产量群体（商业种子园）中。
+缺乏关于男性父母的信息大大限制了对先进世代的选择。然而，分子遗传学的进展，如高度信息和成本效益的DNA标记的发展，已经使得新的方法可能在树种繁殖。一种这样的新方法，谱系重建，使得重建个体之间的系谱关系成为可能，为新的育种策略的发展提供机会。例如，可以通过开放授粉群体中的谱系恢复来替代受控杂交，用于估计遗传参数和在称为无繁殖育种的策略中预测育种值（El-Kassaby等人2011; El -Kassaby和Lstiburek 2009; Lstiburek等人2011）。这种方法可用于启动树木改良计划，而不需要初始的繁殖和测试周期（Lstiburek等人，2015）。另一种方法，使用亲本分析（PMX / WPA）进行聚合育种由Lambeth等人开发（2001），并结合控制交叉和谱系恢复。这些作者提出使用分子标记来鉴定潜在选择候选者的亲本，用于在育种程序中评估育种值和选择下一代的后代。根据所基因分型的后代集合，呈现三种不同的情景：（i）部分人群父亲分析（仅针对使用女性一般组合能力和个体表现作为选择标准的最佳后代的谱系分析）; （ii）全群体亲子分析（所有后代的谱系分析）;和（iii）完全人口父母分析（通过分子标记分析回收的女性和父母身份的身份，因为他们的身份没有记录在这种情况下以减少后勤成本）。 Lambeth et al。 （2001）声称，PMX / WPA是全同胞育种和检测系统的一个替代品。他们的方法有几个优点。对于给定数量的父母，Polymix杂交比全同基交叉更具成本效益。对于较少的杂交，它们导致更大数目的重组事件，并且与其他方法相比，更可靠地估计育种值，因为每个个体与更大数目的亲本杂交。如果用于多混杂杂交的花粉来自具有高育种值的树，则来自PMX / WPA的正向选择的遗传获得应当更大。因此，应该可以比使用经典反向选择获得的更快地部署该增益。此外，在基因分型阶段可以消除错误标记的克隆，潜在地提高选择效率。我们调查了使用前向选择策略在海洋松树多交叉试验与子代的亲本分析相关的可行性。应该注意的是，这种多交叉试验最初并未设计为进行前向选择，而是后向选择。正向选择可具有两个目标：募集下一代育种群体的最佳基因型和生产群体（例如克隆种子园（CSO））的形成。本研究的重点是选择CSO的构成。这里研究的前向选择策略的连续阶段如图1所示。在多交叉试验中使用两种不同的预选择选项（PS1）和（PS2）对关联性的约束来预选候选树。然后对预选的树进行单核苷酸多态性（SNP）标记的基因分型。一旦他们的完整家系恢复，最佳的个人被选择为CSO，使用三个级别的coancestry约束（无，状态数Ns = 10，Ns = 20）。然后，使用相同的三个级别的coancestry约束，在可能的遗传增益方面，将向前选择策略与向后和混合（即，两者的组合）选择策略进行比较。最后，在法国海洋松树育种计划的框架中考虑了优化用于建立CSO的预选和最终选择选项的方法。
+##4。讨论 本研究的主要目的是评估与现代海洋松树多体系后代试验中子代的亲本分析相关的前向选择的可行性，以加速育种周期。已经进行了一些理论研究，但是，据我们所知，这是多交联试验中的前向选择的实际研究的第一个实例。在生长性状和茎平直度的遗传增益的基础上，研究并比较了生产种群的正向和经典反向选择的不同选择（建立虚拟CSO）。下面讨论前向选择的各个阶段，以及关于PMX / WPA策略的一些考虑。">
+  <meta name="twitter:description" content="Vidal M, Plomion C, Raffin A, Harvengt L, Bouffier L (2017) Forward selection in a maritime pine polycross progeny trial using pedigree reconstruction. Ann For Sci 74(1). …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/vidal2017-%E7%B3%BB%E8%B0%B1%E9%87%8D%E5%BB%BA-%E6%AD%A3%E5%90%91%E9%80%89%E6%8B%A9/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/vidal2017-%E7%B3%BB%E8%B0%B1%E9%87%8D%E5%BB%BA-%E6%AD%A3%E5%90%91%E9%80%89%E6%8B%A9/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Vidal2017-系谱重建-正向选择</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (130 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Vidal2017-系谱重建-正向选择</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (130 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<ol>
+<li>Vidal M, Plomion C, Raffin A, Harvengt L, Bouffier L (2017) Forward selection in a maritime pine polycross progeny trial using pedigree reconstruction. Ann For Sci 74(1). doi:10.1007/s13595-016-0596-8.</li>
+</ol>
+</blockquote>
+
+<p>关键信息：分子标记用于海洋松（Pinus pinaster Ait。）多克隆试验中的父亲恢复，促进正向选择。<strong>通过比较遗传增益和多样性来评价种子果园建立的不同育种策略</strong>。这项工作为海洋松树育种开辟了新的视角。背景：多态性交配设计广泛用于林木育种，以评价父母育种值的反向选择。或者，多克隆后代试验可用于基于个体育种值和分子谱系分析选择最佳树。目的：本研究旨在测试这种海洋松树育种计划的前向选择策略。方法：在海洋松树多交叉试验中，具有更高的生长育性值和茎平直度的后代首先被预先选择，具有或没有相关性约束。在父亲恢复之后，预选的树根据它们的育种值进行排名，从恢复的完全谱系估计。最后，选择最佳候选人有三个不同的策略（前进，后退，混合）和三个级别的coancestry约束建立一个虚拟的克隆种子园。结果：对于大多数预选树木，成功恢复了完整的系谱。<strong>在两种预选策略之间的预期遗传增益没有显着差异</strong>，这两种预选策略对于相关性约束是不同的。<strong>前向选择的遗传增益略高于经典后向选择</strong>。结论：这项开创性的研究为在法国海洋松树育种计划中使用正向选择开辟了新的视角。</p>
+
+<p>##1简介
+父母排名的子代测试广泛用于林木育种（Zobel和Talbert 1984）。在法国马尾松（Pinus pinaster Ait。）育种计划中，在过去20年中已经建立了多位点多克隆后代试验，用于评估育种值，并且将雌性亲本排序为反向选择。父母对其后代的表现的排名对于具有低遗传力的性状特别重要（Falconer和Mackay 1996），例如对林木感兴趣的许多性状（Burdon和Kumar 2004; Cornelius 1994; Paques 2013）。在这样的多克隆试验中，表型化以评价亲本育种值的后代不用于在育种群体中产生下一代（其实际上选自双亲杂交的后代）或包括在产量群体（商业种子园）中。</p>
+
+<p>缺乏关于男性父母的信息大大限制了对先进世代的选择。然而，分子遗传学的进展，如高度信息和成本效益的DNA标记的发展，已经使得新的方法可能在树种繁殖。一种这样的新方法，谱系重建，使得重建个体之间的系谱关系成为可能，为新的育种策略的发展提供机会。例如，可以通过开放授粉群体中的谱系恢复来替代受控杂交，用于估计遗传参数和在称为无繁殖育种的策略中预测育种值（El-Kassaby等人2011; El -Kassaby和Lstiburek 2009; Lstiburek等人2011）。这种方法可用于启动树木改良计划，而不需要初始的繁殖和测试周期（Lstiburek等人，2015）。另一种方法，使用亲本分析（PMX / WPA）进行聚合育种由Lambeth等人开发（2001），并结合控制交叉和谱系恢复。这些作者提出使用分子标记来鉴定潜在选择候选者的亲本，用于在育种程序中评估育种值和选择下一代的后代。根据所基因分型的后代集合，呈现三种不同的情景：（i）部分人群父亲分析（仅针对使用女性一般组合能力和个体表现作为选择标准的最佳后代的谱系分析）; （ii）全群体亲子分析（所有后代的谱系分析）;和（iii）完全人口父母分析（通过分子标记分析回收的女性和父母身份的身份，因为他们的身份没有记录在这种情况下以减少后勤成本）。 Lambeth et al。 （2001）声称，PMX / WPA是全同胞育种和检测系统的一个替代品。他们的方法有几个优点。对于给定数量的父母，Polymix杂交比全同基交叉更具成本效益。对于较少的杂交，它们导致更大数目的重组事件，并且与其他方法相比，更可靠地估计育种值，因为每个个体与更大数目的亲本杂交。如果用于多混杂杂交的花粉来自具有高育种值的树，<strong>则来自PMX / WPA的正向选择的遗传获得应当更大。因此，应该可以比使用经典反向选择获得的更快地部署该增益</strong>。此外，在基因分型阶段可以消除错误标记的克隆，潜在地提高选择效率。我们调查了使用前向选择策略在海洋松树多交叉试验与子代的亲本分析相关的可行性。应该注意的是，这种多交叉试验最初并未设计为进行前向选择，而是后向选择。正向选择可具有两个目标：募集下一代育种群体的最佳基因型和生产群体（例如克隆种子园（CSO））的形成。本研究的重点是选择CSO的构成。这里研究的前向选择策略的连续阶段如图1所示。在多交叉试验中使用两种不同的预选择选项（PS1）和（PS2）对关联性的约束来预选候选树。然后对预选的树进行单核苷酸多态性（SNP）标记的基因分型。一旦他们的完整家系恢复，最佳的个人被选择为CSO，使用三个级别的coancestry约束（无，状态数Ns = 10，Ns = 20）。然后，使用相同的三个级别的coancestry约束，在可能的遗传增益方面，将向前选择策略与向后和混合（即，两者的组合）选择策略进行比较。最后，在法国海洋松树育种计划的框架中考虑了优化用于建立CSO的预选和最终选择选项的方法。</p>
+
+<p>##4。讨论
+本研究的主要目的是评估与现代海洋松树多体系后代试验中子代的亲本分析相关的前向选择的可行性，以加速育种周期。已经进行了一些理论研究，但是，据我们所知，这是多交联试验中的前向选择的实际研究的第一个实例。在生长性状和茎平直度的遗传增益的基础上，研究并比较了生产种群的正向和经典反向选择的不同选择（建立虚拟CSO）。下面讨论前向选择的各个阶段，以及关于PMX / WPA策略的一些考虑。</p>
+
+<h3 id="4-1多交叉试验中的预选选项">4.1多交叉试验中的预选选项</h3>
+
+<p>在子代试验中所有个体的基因分型目前太昂贵，因此预选树是在父亲恢复之前的必要步骤。该步骤必须为最终选择提供候选树，具有两个目标：最大化基因获取，同时限制候选者之间的相关性，以确保CSO群体包含足够的多样性。花粉供体的身份是未知的。
+因此，该方法的一个限制是，由于<strong>不准确的EBV估计（用部分谱系模型获得）</strong>，该组预选候选者可能不包括来自多克隆试验的一些最佳个体。然而，我们表明EBV之间的估计与部分和全家谱模型高度相关。因此，如果对所有的树确定了系谱，则基于它们的Index_FP的G2树的排名将相对类似于利用Index_PP获得的排序。<strong>候选树的预选可能影响CSO的最终遗传增益和多样性</strong>。因此，我们考虑了两个对比的预选选项，一个具有（PS2），另一个没有（PS1）对预选候选者之间的相关性的限制。在这项研究中，<strong>PS1或PS2的选择对最终选择几乎没有影响</strong>，因为这些选项在等同Ns值下产生相似的遗传增益，主要是因为预选个体的数量高，并且EBV中的偏差用部分&ndash;pedigreemodel是小的。在PS1和PS2中采样了相同数量的个体，但是如预期的那样，PS1的平均家系（根据完全的谱系信息计算）比PS2的高。因此，对于CSO中相等的遗传增益和多样性，PS1导致选择更大数目的不同基因型，每个克隆所需的分株数比PS2要少。因此，PS1更有逻辑效率，因为每棵树需要更少的接穗。因此，PS1似乎是我们育种计划最适当的预选方法，并且似乎没有必要对预选个体之间的相关性应用约束，只要预选足够的树。
+###4.2商业种子园的遗传获得和多样性
+目前大部分用于栽培的种植材料来自种子园。对于海滨松树，用于Gascat再造林的90％以上的幼苗是来自种子园的改良幼苗（GIS PMF 2014）。种子果园由选定的优良个体组成，其建立的主要目的是通过最大化遗传获得产生遗传改良的林木种子（Funda和El-Kassaby 2012）。因此，树种的挑战是创造种子果园，其中育种进程是最大的（最大性能），但具有足够的遗传多样性，以确保最终森林中的合理程度的遗传异质性（Hosius等人2000; Lindgren et al.2009; Stoehr et al.2004）。遗传多样性在森林生态系统的可持续性中起着重要作用，对于人们适应新的环境因素如气候变化和疾病至关重要（Hansen 2008; Johnson和Lipow 2002; Muller-Starck 1995）。在CSO中应当存在多少遗传多样性取决于旋转的长度和源自CSO的种植材料在其寿命期间需要适应的环境变化（Johnson和Lipow 2002）。约翰逊和Lipow表明，种子果园与25种不相关的选择包含约92％的自然种群的遗传变异，并且最低限度的20种不相关的选择应提供与收集的种子相同的风险水平而且，对于选择用于CSO的个体之间的相关性的限制可以限制繁殖抑制，对种植材料的性能具有潜在影响（Durel等人1996; Olsson等人2001; Stoehr等人2008）。然而，在第三代育种中，选择之间的多样性和相关性（在这里表示为群体共同体）的管理变得相对复杂。 OPSEL软件提出了一个最优选择，不能完全避免亲属关系，而是找到一组选择，在相关性约束下最大化增益（Mullin 2014）。在这项研究中，我们使用状态数Ns来量化CSO中的财政。 Ns是一个有用的参数，用于评估增益和多样性之间的折衷（Lindgren等人1997; Lindgren和Kang 1997; Lindgren和Mullin 1998）。对于人口普查大小为600（CSO中的分支总数），最小Ns设置为10或20。在法国海洋松树育种计划中，基于正向选择的CSO的建立可涉及来自几个多克隆后代试验的最佳G2树。我们的标准CSO面积至少为10公顷，因此需要约2400棵嫁接树。目前可用四个polycross试验进行正向选择，因此在这里考虑了在试验中提供600个分株的最佳基因型的选择。由于在不同多交联试验中使用的亲本之间的相关性，我们在Ns = 10时设定研究试验的多样性以确保获得所需的最小差异（如上所述，并且根据Johnson和Lipow 2002）在最后完成CSO。每个基因型的分株数量在正向选择方法中是有限的，因为每个选择的克隆由单个树（给出少量接穗）表示。相比之下，在向后选择中，所选择的亲本树经常在克隆档案中被嫁接几个重复。有效的营养繁殖方法（如微繁殖，体细胞胚胎发生或通过组织培养的微移植）的发展将增加可​​用于最佳基因型的分株数目，并且提供用于扩大遗传改良的种植材料的生产的有力工具（Bonga 2015; Lelu-Walter等人2013）。然而，这种方法尚未在这个物种中使用（因此在我们的选择中没有考虑）。无论使用哪种预选方案，正向选择导致比反向选择略高的遗传增益。应当记住，所研究的多相交叉试验不是考虑到前向选择而设计的。特别地，花粉混合物主要是随机组成，而不是基于高EBV。因此，在本试验中通过正向选择获得的预期遗传增益远不是最佳的。最后，在假定随机交配，等同繁殖成功，以及在CSO中没有花粉污染的假设下，估计生产群体的遗传获得和多样性。然而，许多因素可以影响果园种子的遗传质量。遗传获得和多样性取决于CSO中生殖成功的变化，繁殖物理学，花粉质量和污染，自体受精率，种子发芽和其他因素的同步性。许多研究已经表明，在期望和现实之间可能存在相当大的差距（Askew 1988; Burczyk等人1997; Edwards和ElKassaby 1996; Funda等人2009; Gomory等人2003; Hansen 2008; Kang和Lindgren 1998; Machanska等人2013; Matziris 1994; Na等人2015），使得难以预测遗传质量。此外，在遗传增益和多样性的估计中没有考虑到CSO的自交率和近亲繁殖程度。然而，绝对值在这里不是最重要的目的是比较不同的育种策略。
+###4.3实施aPMX / WPAstrategy？
+这项研究表明，与子代的分子谱系分析相关的前向选择在现实生活条件下是可行的。在这里分析的多交叉试验中，生产群体中的预期遗传增益不超过经典反向选择获得的遗传增益，主要是因为该多交叉试验不是为这种选择而设计的。实施PMX / WPA策略，如Lambeth等人提出的（2001）是一个更广泛的问题，因为最好的后代被选择用于下一代育种，而不仅仅是为了CSO。该策略具有明显的优势，包括仅需要一轮杂交（多交联），用于同时测试和正向选择的招聘。经典方法所需的许多昂贵的全同基因交叉被少数多态杂交（具有一个或几个不同的多重混合）替换，随后是基因分型和亲代恢复，以鉴定用于下一代育种的最佳后代。因此，这种方法比传统方法更容易实施，并且由于同时进行育种和测试，缩短了连续种子园的世代之间的间隔（图5）。在我们当前的育种周期中，由于技术和经济限制（每年可能的杂交数目），并且因为多克隆试验的结果用于选择全同胞交叉的亲本，所以在多杂交杂交之间存在时间滞后（对于亲本EBV估计）和全同胞交叉（用于选择下一代繁殖）。法国海洋松树育种计划的时间延迟估计约为12年。使用PMX / WPA策略将消除这种时间滞后（图5），加速繁殖周期。改进的种植材料可以更快地更新，并更好地适应不断变化的经济和环境背景。杂交也使用较小数目的杂交获得的全同胞家族的数目比用于全同胞设计的数目最大。然而，父母的组合不是精确选择的。因此，将它们的基因转移到下一个育种世代的亲本在一定程度上在选择时而不是在杂交时确定。然而，与没有育种方法的育种（来自开放授粉的谱系鉴定，而不是对照杂交）相反，潜在的父亲至少部分地通过选择多聚组分来选择。
+成功使用polymix育种和测试系统需要精确的谱系重建，男性生殖成功的小差异（以防止在最佳父亲比其他人更多地对后代贡献的情况下在预先选择的子集中管理共同体的困难）和低花粉污染率（因为只有具有全谱的树可以被选择）.Vidal et al。 （2015）最近表明，这些要求在这里研究的海洋松树polycross后代试验满足。需要额外的研究来优化多聚物试验设计（例如，多聚物的组成和数量）。在多聚物混合物中需要相对大量的具有低水平相关性和高EBV的花粉供体，以确保在多聚物混合物中存在足够的遗传多样性下一代繁殖人口。
+##5结论
+这项研究表明，用系谱重建的正向选择是可行的松树。对于大多数预选的（因而基因分型的）子代，完整的系谱被恢复，这是选择生产群体的先决条件。在分析的多克隆后代试验中，正向选择产生比经典后向选择略大的遗传增益（尽管没有优化多聚组合物）。在两个对比的预选择方案（有关和无关联的约束）之间没有观察到生产群体的预期遗传增益的主要差异。实施PMX / WPA策略，加快下一个繁殖群体的生产并减少工作量是可能的。然而，需要模拟研究来优化这种育种策略的一般设计，并且成本/效益分析应当以评估其经济效率，给定我们的海上松树育种计划的具体成本和时间组成部分。正向选择也为基因组选择提供了有利的背景。事实上，添加的遗传关系矩阵（源自谱系）可以用基因组关系矩阵代替，以改进EBV的估计并确保在育种程序中维持更高水平的遗传多样性。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/volker-2008%E7%A7%8D%E5%86%85-%E7%A7%8D%E9%97%B4-%E6%9D%82%E7%A7%8D%E4%BC%98%E5%8A%BF-%E6%A1%89%E6%A0%91/" data-toggle="tooltip" data-placement="top" title="Volker-2008种内-种间-杂种优势-桉树">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/vidal2015-%E7%B3%BB%E8%B0%B1%E9%87%8D%E5%BB%BA-%E5%A4%9A%E7%B3%BB%E6%9D%82%E4%BA%A4/" data-toggle="tooltip" data-placement="top" title="Vidal2015-系谱重建-多系杂交">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

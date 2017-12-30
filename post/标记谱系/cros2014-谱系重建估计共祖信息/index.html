@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Cros2014-谱系重建估计共祖信息</title>
+  <meta property="og:title" content="Cros2014-谱系重建估计共祖信息" />
+  <meta name="twitter:title" content="Cros2014-谱系重建估计共祖信息" />
+  <meta name="description" content="Cros D, Sánchez L, Cochard B, et al (2014) Estimation of genealogical coancestry in plant species using a pedigree reconstruction algorithm and application to an oil palm breeding population. Theor Appl Genet 127:981–994. doi: 10.1007/s00122-014-2273-3
+ 关键信息：通过模拟退火显性谱系重建提供了植物物种中的系谱共生的可靠估计，特别是当自交率低于0.6，使用实际数量的标记。家谱共生信息在植物育种中至关重要，可以估计遗传参数和育种价值。 Fernández和Toro（Mol Ecol 15：1657-1667,2006）从分子数据通过谱系重建估计谱系结构的方法仅限于具有单独性别的物种。在这项研究中，它扩展到植物，允许雌雄同体和单性，可能的自我。此外，还考虑了人口统计历史方面的一些改进。新方法使用模拟和实际数据集验证。模拟表明，30个微卫星的估计精度很高，自交率低于0.6的结果最好。在这些条件下，真实和估计的家谱共生之间的均方根误差（RMSE）很小（ 0.9）和低RMSE（ 0.9）。重建的系谱用于估计有效群体大小**。总而言之，这种方法给出了可靠的系谱结构估计。该策略在软件MOLCOANC 3.0中实现。
+介绍 对植物种群中个体之间遗传关系的了解对育种具有重要意义，因为它允许估计遗传参数（遗传和遗传相关性），育种值和有效群体大小。此外，需要这种信息来通过控制全球共同体来减少近亲繁殖和多样性损失的增加。这些值通常从家谱信息获得。然而，植物物种的育种种群的系谱可能完全或至少部分地由于各种原因是未知的。许多植物物种的育种包括不受控制的开放授粉或用花粉混合物控制的聚合，例如进行开放授粉或多交后代测试，如在饲料作物和林木中。缺失的谱系信息也可能是由于存在用于记录谱系的截止日期（即，谱系记录不是从不相关的创始者个体开始）和长育种周期。此外，育种程序包括许多易出错的步骤，包括授粉，种子准备，发芽，种植等。即使对于明确鉴定的亲本之间的受控杂交，也可能发生错误，导致幼虫后代（一个或两个亲本实际上未知）或污染（一些非法的个人在进程中）。这已经报道了很多次，例如在甘蔗（McIntyre和Jackson 2001），油棕（Corley 2005），道格拉斯冷杉和火炬松（Adams等1988）。此外，未知来源的个体可以进入育种群体，例如当来自另一育种程序时。 完全缺少谱系信息，小深度谱系或错误的谱系对育种程序有负面影响，通常是由于遗传参数和育种价值的错误估计。在diallel进程试验中，爱立信（1999）显示，0.5％的树种具有错误的谱系，足以向下偏移加性方差和遗传力估计。 Atkin等人（2009）发现，当在分析中使用更多谱系信息时，加性方差分量和育种值的准确度提高。在多克隆后代测试中，男性父母的未知相对贡献可能是有害的（Kumar等人2007），并且重建雄性亲本增加遗传获得（Doerksen和Herbinger 2010）。此外，假设新进入育种群体的个体与主要种群无关，如果实际存在共同的祖先来源，可能导致错误的管理决策。因此，对于具有对植物物种的繁殖种群的系谱的良好了解具有实质性的兴趣。特别是，这将导致对家谱共生的可靠估计，从而导致更好的育种管理。 Fernández和Toro（2006）提出了一种方法（FT方法），通过构建明确的虚拟谱系来估计当代基因型个体之间的家谱共生。通过模拟退火算法（Kirkpatrick等人，1983），FT找到产生具有相对于实际分子共同体矩阵或任何其他提供的相关性矩阵的最高相关性的家谱共谱矩阵的谱系。换句话说，FT将给定当前群体内的分子coancestries匹配到最可能的兼容系谱。几个参数有助于减少参数解决方案的空间，并找到更接近真正的人类的解决方案，如以前离散代的数量重建，最大数量的公牛和水坝在前几代，如果可用的话，已知的部分的血统。 FT相对于其他方法的优点（参见Blouin 2003; Butler等人2004; Pemberton 2008 for reviews）是其不需要知道基本群体中的真正等位基因频率（即，来自其中的基因型个体派生），并且基底群体中的Hardy-Weinberg和连锁平衡不是必需的。此外，它可以管理个人之间的相关性的任何程度的复杂性，并始终提供一致的关系，导致积极确定的基于谱系的coancestry矩阵。这项研究的目标是首先扩大FT方法的能力，以使其适合植物物种，其次，演示这些新的能力与模拟和真正的植物种群。 FT被开发用于雌雄异株，即具有单独性别的物种，特别是动物。因此，在FT的模拟血统中作为节点的任何虚拟祖先是男性或女性，不能同时存在。因此，自交，这在许多植物物种和它们的繁殖的工具是可能的是不可能的。我们将FT方法扩展到包括单系和雌雄同体，具有自交的可能性（即混合交配，其中一部分后代来自自体受精，剩余部分来自异交），当混合交配是自然重现模式，或者因为这是人为强迫繁殖的目的。具有自交的第一代是用户定义的参数，因此解释了在特定时间进入可以人工进行自体受精的育种程序的自然交叉受精物种的可能性。 FT方法的另一个限制是虚拟群体的大小在世代之间是恒定的。为了考虑人口统计历史的知识，我们使FT能够通过世代考虑可变数量的祖先。从相关创始人开始的可能性也被实施，因为它有助于获得更适合真实数据的解决方案。为了演示新方法的能力（之后的FT *），我们使用来自两个油棕（Elaeis guineensis）繁殖群体的混合交配物种和实际数据的模拟数据。关于模拟数据，我们评估了不同自交率，未知父母百分比和标记数量对方法的准确性的影响，以及偏离Hardy-Weinberg和连锁平衡的理想情况的影响。实际数据涉及Yangambi（非洲）和Deli（亚洲）油棕种群，目前正在进行重要的育种工作。 Yangamb人群用于验证FT *，因为血统是众所周知的创始人个人。对于Deli种群，谱系数据稀少，我们使用这个种群来说明利用FT *进行系谱重建的一个关键应用，通过由Gutiérrez等人开发的方法估计基于谱系的有效群体大小（Ne） 。 （2008,2009）和Cervantes et al。 （2011）。 Ne是油棕中感兴趣的参数，没有可用的估计值。这种物种是“暂时雌雄异育的”，在同一植物上的交替周期中产生雄性和雌性花序，导致同种异体繁殖模式。因此，自然不会发生在自然，但它已经被育种者在其系谱的某一点使用。因此，人为自交事件的程度的推断对于当前的繁殖群体管理是重要的。将重建系谱获得的Ne值与通过Hill（1981）和Waples（2006）方法获得的Ne值进行比较，该方法仅基于链接不平衡和独立于谱系数据。">
+  <meta property="og:description" content="Cros D, Sánchez L, Cochard B, et al (2014) Estimation of genealogical coancestry in plant species using a pedigree reconstruction algorithm and application to an oil palm breeding population. Theor Appl Genet 127:981–994. doi: 10.1007/s00122-014-2273-3
+ 关键信息：通过模拟退火显性谱系重建提供了植物物种中的系谱共生的可靠估计，特别是当自交率低于0.6，使用实际数量的标记。家谱共生信息在植物育种中至关重要，可以估计遗传参数和育种价值。 Fernández和Toro（Mol Ecol 15：1657-1667,2006）从分子数据通过谱系重建估计谱系结构的方法仅限于具有单独性别的物种。在这项研究中，它扩展到植物，允许雌雄同体和单性，可能的自我。此外，还考虑了人口统计历史方面的一些改进。新方法使用模拟和实际数据集验证。模拟表明，30个微卫星的估计精度很高，自交率低于0.6的结果最好。在这些条件下，真实和估计的家谱共生之间的均方根误差（RMSE）很小（ 0.9）和低RMSE（ 0.9）。重建的系谱用于估计有效群体大小**。总而言之，这种方法给出了可靠的系谱结构估计。该策略在软件MOLCOANC 3.0中实现。
+介绍 对植物种群中个体之间遗传关系的了解对育种具有重要意义，因为它允许估计遗传参数（遗传和遗传相关性），育种值和有效群体大小。此外，需要这种信息来通过控制全球共同体来减少近亲繁殖和多样性损失的增加。这些值通常从家谱信息获得。然而，植物物种的育种种群的系谱可能完全或至少部分地由于各种原因是未知的。许多植物物种的育种包括不受控制的开放授粉或用花粉混合物控制的聚合，例如进行开放授粉或多交后代测试，如在饲料作物和林木中。缺失的谱系信息也可能是由于存在用于记录谱系的截止日期（即，谱系记录不是从不相关的创始者个体开始）和长育种周期。此外，育种程序包括许多易出错的步骤，包括授粉，种子准备，发芽，种植等。即使对于明确鉴定的亲本之间的受控杂交，也可能发生错误，导致幼虫后代（一个或两个亲本实际上未知）或污染（一些非法的个人在进程中）。这已经报道了很多次，例如在甘蔗（McIntyre和Jackson 2001），油棕（Corley 2005），道格拉斯冷杉和火炬松（Adams等1988）。此外，未知来源的个体可以进入育种群体，例如当来自另一育种程序时。 完全缺少谱系信息，小深度谱系或错误的谱系对育种程序有负面影响，通常是由于遗传参数和育种价值的错误估计。在diallel进程试验中，爱立信（1999）显示，0.5％的树种具有错误的谱系，足以向下偏移加性方差和遗传力估计。 Atkin等人（2009）发现，当在分析中使用更多谱系信息时，加性方差分量和育种值的准确度提高。在多克隆后代测试中，男性父母的未知相对贡献可能是有害的（Kumar等人2007），并且重建雄性亲本增加遗传获得（Doerksen和Herbinger 2010）。此外，假设新进入育种群体的个体与主要种群无关，如果实际存在共同的祖先来源，可能导致错误的管理决策。因此，对于具有对植物物种的繁殖种群的系谱的良好了解具有实质性的兴趣。特别是，这将导致对家谱共生的可靠估计，从而导致更好的育种管理。 Fernández和Toro（2006）提出了一种方法（FT方法），通过构建明确的虚拟谱系来估计当代基因型个体之间的家谱共生。通过模拟退火算法（Kirkpatrick等人，1983），FT找到产生具有相对于实际分子共同体矩阵或任何其他提供的相关性矩阵的最高相关性的家谱共谱矩阵的谱系。换句话说，FT将给定当前群体内的分子coancestries匹配到最可能的兼容系谱。几个参数有助于减少参数解决方案的空间，并找到更接近真正的人类的解决方案，如以前离散代的数量重建，最大数量的公牛和水坝在前几代，如果可用的话，已知的部分的血统。 FT相对于其他方法的优点（参见Blouin 2003; Butler等人2004; Pemberton 2008 for reviews）是其不需要知道基本群体中的真正等位基因频率（即，来自其中的基因型个体派生），并且基底群体中的Hardy-Weinberg和连锁平衡不是必需的。此外，它可以管理个人之间的相关性的任何程度的复杂性，并始终提供一致的关系，导致积极确定的基于谱系的coancestry矩阵。这项研究的目标是首先扩大FT方法的能力，以使其适合植物物种，其次，演示这些新的能力与模拟和真正的植物种群。 FT被开发用于雌雄异株，即具有单独性别的物种，特别是动物。因此，在FT的模拟血统中作为节点的任何虚拟祖先是男性或女性，不能同时存在。因此，自交，这在许多植物物种和它们的繁殖的工具是可能的是不可能的。我们将FT方法扩展到包括单系和雌雄同体，具有自交的可能性（即混合交配，其中一部分后代来自自体受精，剩余部分来自异交），当混合交配是自然重现模式，或者因为这是人为强迫繁殖的目的。具有自交的第一代是用户定义的参数，因此解释了在特定时间进入可以人工进行自体受精的育种程序的自然交叉受精物种的可能性。 FT方法的另一个限制是虚拟群体的大小在世代之间是恒定的。为了考虑人口统计历史的知识，我们使FT能够通过世代考虑可变数量的祖先。从相关创始人开始的可能性也被实施，因为它有助于获得更适合真实数据的解决方案。为了演示新方法的能力（之后的FT *），我们使用来自两个油棕（Elaeis guineensis）繁殖群体的混合交配物种和实际数据的模拟数据。关于模拟数据，我们评估了不同自交率，未知父母百分比和标记数量对方法的准确性的影响，以及偏离Hardy-Weinberg和连锁平衡的理想情况的影响。实际数据涉及Yangambi（非洲）和Deli（亚洲）油棕种群，目前正在进行重要的育种工作。 Yangamb人群用于验证FT *，因为血统是众所周知的创始人个人。对于Deli种群，谱系数据稀少，我们使用这个种群来说明利用FT *进行系谱重建的一个关键应用，通过由Gutiérrez等人开发的方法估计基于谱系的有效群体大小（Ne） 。 （2008,2009）和Cervantes et al。 （2011）。 Ne是油棕中感兴趣的参数，没有可用的估计值。这种物种是“暂时雌雄异育的”，在同一植物上的交替周期中产生雄性和雌性花序，导致同种异体繁殖模式。因此，自然不会发生在自然，但它已经被育种者在其系谱的某一点使用。因此，人为自交事件的程度的推断对于当前的繁殖群体管理是重要的。将重建系谱获得的Ne值与通过Hill（1981）和Waples（2006）方法获得的Ne值进行比较，该方法仅基于链接不平衡和独立于谱系数据。">
+  <meta name="twitter:description" content="Cros D, Sánchez L, Cochard B, et al (2014) Estimation of genealogical coancestry in plant species using a pedigree reconstruction algorithm and application to an oil palm breeding population. Theor …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/cros2014-%E8%B0%B1%E7%B3%BB%E9%87%8D%E5%BB%BA%E4%BC%B0%E8%AE%A1%E5%85%B1%E7%A5%96%E4%BF%A1%E6%81%AF/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/cros2014-%E8%B0%B1%E7%B3%BB%E9%87%8D%E5%BB%BA%E4%BC%B0%E8%AE%A1%E5%85%B1%E7%A5%96%E4%BF%A1%E6%81%AF/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Cros2014-谱系重建估计共祖信息</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (70 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Cros2014-谱系重建估计共祖信息</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (70 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Cros D, Sánchez L, Cochard B, et al (2014) Estimation of genealogical coancestry in plant species using a pedigree reconstruction algorithm and application to an oil palm breeding population. Theor Appl Genet 127:981–994. doi: 10.1007/s00122-014-2273-3</p>
+</blockquote>
+
+<p>关键信息：通过模拟退火显性谱系重建提供了植物物种中的系谱共生的可靠估计，特别是当自交率低于0.6，使用实际数量的标记。<strong>家谱共生信息在植物育种中至关重要，可以估计遗传参数和育种价值</strong>。 <strong>Fernández和Toro（Mol Ecol 15：1657-1667,2006）从分子数据通过谱系重建估计谱系结构的方法仅限于具有单独性别的物种</strong>。在这项研究中，它扩展到植物，允许雌雄同体和单性，可能的自我。此外，还考虑了人口统计历史方面的一些改进。新方法使用模拟和实际数据集验证。模拟表明，<strong>30个微卫星的估计精度很高，自交率低于0.6的结果最好</strong>。在这些条件下，真实和估计的家谱共生之间的均方根误差（RMSE）很小（<0.07），尽管祖先的数量被高估，自交率可能有偏差。模拟还显示标记之间的连锁不平衡和从创始人群体的Hardy-Weinberg平衡的偏离不影响该方法的效率。实际油棕榈数据证实了模拟结果，真实和估计的家谱共生（> 0.9）和低RMSE（<0.08）之间高的相关性使用38标记。该方法适用于熟食数据稀缺的熟食油棕榈种群。**使用100个标记，估计的族谱库与使用分子系数的高度相关（> 0.9）<strong>。</strong>重建的系谱用于估计有效群体大小**。总而言之，这种方法给出了可靠的系谱结构估计。该策略在软件MOLCOANC 3.0中实现。</p>
+
+<hr />
+
+<p>介绍
+对植物种群中个体之间遗传关系的了解对育种具有重要意义，因为它允许估计遗传参数（遗传和遗传相关性），育种值和有效群体大小。此外，<strong>需要这种信息来通过控制全球共同体来减少近亲繁殖和多样性损失的增加</strong>。这些值通常从家谱信息获得。然而，植物物种的育种种群的<strong>系谱可能完全或至少部分地由于各种原因是未知的</strong>。许多植物物种的育种包括不受控制的开放授粉或用花粉混合物控制的聚合，例如进行开放授粉或多交后代测试，如在饲料作物和林木中。缺失的谱系信息也可能是由于存在用于记录谱系的截止日期（即，谱系记录不是从不相关的创始者个体开始）和长育种周期。此外，育种程序包括许多易出错的步骤，包括授粉，种子准备，发芽，种植等。即使对于明确鉴定的亲本之间的受控杂交，也可能发生错误，导致幼虫后代（一个或两个亲本实际上未知）或污染（一些非法的个人在进程中）。这已经报道了很多次，例如在甘蔗（McIntyre和Jackson 2001），油棕（Corley 2005），道格拉斯冷杉和火炬松（Adams等1988）。此外，未知来源的个体可以进入育种群体，例如当来自另一育种程序时。
+完全缺少谱系信息，小深度谱系或错误的谱系对育种程序有负面影响，通常是由于遗传参数和育种价值的错误估计。在diallel进程试验中，<strong>爱立信（1999）显示，0.5％的树种具有错误的谱系，足以向下偏移加性方差和遗传力估计</strong>。 <strong>Atkin等人（2009）发现，当在分析中使用更多谱系信息时，加性方差分量和育种值的准确度提高</strong>。在多克隆后代测试中，男性父母的未知相对贡献可能是有害的（Kumar等人2007），并且<strong>重建雄性亲本增加遗传获得</strong>（Doerksen和Herbinger 2010）。此外，<strong>假设新进入育种群体的个体与主要种群无关，如果实际存在共同的祖先来源，可能导致错误的管理决策</strong>。因此，对于具有对植物物种的繁殖种群的系谱的良好了解具有实质性的兴趣。特别是，这将导致对家谱共生的可靠估计，从而导致更好的育种管理。 Fernández和Toro（2006）提出了一种方法（FT方法），通过构建明确的虚拟谱系来估计当代基因型个体之间的家谱共生。通过模拟退火算法（Kirkpatrick等人，1983），FT找到产生具有相对于实际分子共同体矩阵或任何其他提供的相关性矩阵的最高相关性的家谱共谱矩阵的谱系。换句话说，FT将给定当前群体内的分子coancestries匹配到最可能的兼容系谱。几个参数有助于减少参数解决方案的空间，并找到更接近真正的人类的解决方案，如以前离散代的数量重建，最大数量的公牛和水坝在前几代，如果可用的话，已知的部分的血统。 FT相对于其他方法的优点（参见Blouin 2003; Butler等人2004; Pemberton 2008 for reviews）是其不需要知道基本群体中的真正等位基因频率（即，来自其中的基因型个体派生），并且基底群体中的Hardy-Weinberg和连锁平衡不是必需的。此外，它可以管理个人之间的相关性的任何程度的复杂性，并始终提供一致的关系，导致积极确定的基于谱系的coancestry矩阵。这项研究的目标是首先扩大FT方法的能力，以使其适合植物物种，其次，演示这些新的能力与模拟和真正的植物种群。 FT被开发用于雌雄异株，即具有单独性别的物种，特别是动物。因此，在FT的模拟血统中作为节点的任何虚拟祖先是男性或女性，不能同时存在。因此，自交，这在许多植物物种和它们的繁殖的工具是可能的是不可能的。我们将FT方法扩展到包括单系和雌雄同体，具有自交的可能性（即混合交配，其中一部分后代来自自体受精，剩余部分来自异交），当混合交配是自然重现模式，或者因为这是人为强迫繁殖的目的。具有自交的第一代是用户定义的参数，因此解释了在特定时间进入可以人工进行自体受精的育种程序的自然交叉受精物种的可能性。 FT方法的另一个限制是虚拟群体的大小在世代之间是恒定的。为了考虑人口统计历史的知识，我们使FT能够通过世代考虑可变数量的祖先。从相关创始人开始的可能性也被实施，因为它有助于获得更适合真实数据的解决方案。为了演示新方法的能力（之后的FT *），我们使用来自两个油棕（Elaeis guineensis）繁殖群体的混合交配物种和实际数据的模拟数据。关于模拟数据，我们评估了不同自交率，未知父母百分比和标记数量对方法的准确性的影响，以及偏离Hardy-Weinberg和连锁平衡的理想情况的影响。实际数据涉及Yangambi（非洲）和Deli（亚洲）油棕种群，目前正在进行重要的育种工作。 Yangamb人群用于验证FT *，因为血统是众所周知的创始人个人。对于Deli种群，谱系数据稀少，我们使用这个种群来说明利用FT *进行系谱重建的一个关键应用，通过由Gutiérrez等人开发的方法估计基于谱系的有效群体大小（Ne） 。 （2008,2009）和Cervantes et al。 （2011）。 Ne是油棕中感兴趣的参数，没有可用的估计值。这种物种是“暂时雌雄异育的”，在同一植物上的交替周期中产生雄性和雌性花序，导致同种异体繁殖模式。因此，自然不会发生在自然，但它已经被育种者在其系谱的某一点使用。因此，人为自交事件的程度的推断对于当前的繁殖群体管理是重要的。将重建系谱获得的Ne值与通过Hill（1981）和Waples（2006）方法获得的Ne值进行比较，该方法仅基于链接不平衡和独立于谱系数据。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/gs/crossa2010-gs-%E5%8F%82%E6%95%B0%E5%92%8C%E5%8D%8A%E5%8F%82%E6%95%B0%E6%A8%A1%E5%9E%8B/" data-toggle="tooltip" data-placement="top" title="Crossa2010-GS-参数和半参数模型">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/costa2010-%E8%BF%91%E4%BA%A4%E4%B8%8B%E7%9A%84%E9%81%97%E4%BC%A0%E5%8F%98%E5%BC%82%E5%92%8C%E4%BA%B2%E6%9C%AC%E8%A1%A8%E7%8E%B0/" data-toggle="tooltip" data-placement="top" title="Costa2010-近交下的遗传变异和亲本表现">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

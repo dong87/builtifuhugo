@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Varona1999预测亲本显性组合</title>
+  <meta property="og:title" content="Varona1999预测亲本显性组合" />
+  <meta name="twitter:title" content="Varona1999预测亲本显性组合" />
+  <meta name="description" content="Varona, L., and Misztal, I. 1999. Prediction of Parental Dominance Combinations for Planned Matings, Methodology, and Simulation Results. J. Dairy Sci. 82(10): 2186–2191. Elsevier. doi:10.3168/jds.S0022-0302(99)75463-9.
+ 优势信息的最佳使用需要一个交配系统，并为每一组准父母预测具体的组合能力。目前的评估程序仅为有限的父母提供这样的预测。描述一个程序，预测任何父母的具体组合能力。在这个过程中，对于每一组父母及其祖先，加性关系矩阵被创建为一个密集矩阵。然后使用该矩阵以稀疏矩阵形式创建父母优势矩阵，其中矩阵的行对应于已经可用的预测的所有父母组合。每一个新的预测都需要方程组解的方程组，左边是父母优势矩阵。在一个模拟研究中评估了占优势的交配系统的效率。模拟的数据文件在所选择的男性和女性的比例，通过胚胎移植产生的牛的比例以及加性和显性方差中变化。父本和父母只是基于附加的优点而被预先选定的，但是基于组合的加和优势优势来安排具体的交配。考虑到优势的选择响应从一代添加剂选择的响应从3.8增加到16.6％。当加性方差较小时，显性方差较大，加性选择强度较低，全同胞比例较大。在交配系统中使用优势是可行的，并导致对选择的额外遗传响应。 （关键词：优势，遗传反应，交配系统）
+介绍 数量性状的遗传变异可以分为加性和非加性效应（5）。在传统的选择方案中，加性的选择被用来改善家畜生产，选择的方法通常是基于BLUP（8）。在目前用于选择的模型中，非加性变异被忽略，因为在模型中包括这些效应的大计算需求，没有非加性遗传变异的证据，以及非加性关系的低发生率。 优势可以在选择模型中考虑。 Hoeschele和​​VanRaden（10）开发了一个程序，以相对较低的成本直接创建优势关系矩阵的逆矩阵。 Misztal（12）制定了计算优势解决方案的程序，其费用低于附加遗传评估的两倍。该过程与方法R（14）一起允许估计大数据集中的优势变异。随后的研究估计，在奶牛（13），肉牛（6）和猪（3）的类型和生产性状的表型变异的4％到12％处存在显性差异。在模型中包含显性可以提供对模型加性效应评估的边际改善（1,15），并允许通过使用特定组合能力的预测来选择个体之间的交配（4）。 组合能力的选择需要预测种群中所有可能父母的亲本组合。然而，根据目前的评估程序，只有与数据直接相关的父母组合是可用的（10,12）。这项研究的第一个目标是开发一个程序来预测以前计算的父母组合。 选择组合能力的增益取决于优势和其他方差，群体结构和选择强度。这种收益已经用父系模型（4）进行了研究，但与动物模型无关。第二个目标是通过用动物模型进行模拟来评估遗传反应的潜在增益。">
+  <meta property="og:description" content="Varona, L., and Misztal, I. 1999. Prediction of Parental Dominance Combinations for Planned Matings, Methodology, and Simulation Results. J. Dairy Sci. 82(10): 2186–2191. Elsevier. doi:10.3168/jds.S0022-0302(99)75463-9.
+ 优势信息的最佳使用需要一个交配系统，并为每一组准父母预测具体的组合能力。目前的评估程序仅为有限的父母提供这样的预测。描述一个程序，预测任何父母的具体组合能力。在这个过程中，对于每一组父母及其祖先，加性关系矩阵被创建为一个密集矩阵。然后使用该矩阵以稀疏矩阵形式创建父母优势矩阵，其中矩阵的行对应于已经可用的预测的所有父母组合。每一个新的预测都需要方程组解的方程组，左边是父母优势矩阵。在一个模拟研究中评估了占优势的交配系统的效率。模拟的数据文件在所选择的男性和女性的比例，通过胚胎移植产生的牛的比例以及加性和显性方差中变化。父本和父母只是基于附加的优点而被预先选定的，但是基于组合的加和优势优势来安排具体的交配。考虑到优势的选择响应从一代添加剂选择的响应从3.8增加到16.6％。当加性方差较小时，显性方差较大，加性选择强度较低，全同胞比例较大。在交配系统中使用优势是可行的，并导致对选择的额外遗传响应。 （关键词：优势，遗传反应，交配系统）
+介绍 数量性状的遗传变异可以分为加性和非加性效应（5）。在传统的选择方案中，加性的选择被用来改善家畜生产，选择的方法通常是基于BLUP（8）。在目前用于选择的模型中，非加性变异被忽略，因为在模型中包括这些效应的大计算需求，没有非加性遗传变异的证据，以及非加性关系的低发生率。 优势可以在选择模型中考虑。 Hoeschele和​​VanRaden（10）开发了一个程序，以相对较低的成本直接创建优势关系矩阵的逆矩阵。 Misztal（12）制定了计算优势解决方案的程序，其费用低于附加遗传评估的两倍。该过程与方法R（14）一起允许估计大数据集中的优势变异。随后的研究估计，在奶牛（13），肉牛（6）和猪（3）的类型和生产性状的表型变异的4％到12％处存在显性差异。在模型中包含显性可以提供对模型加性效应评估的边际改善（1,15），并允许通过使用特定组合能力的预测来选择个体之间的交配（4）。 组合能力的选择需要预测种群中所有可能父母的亲本组合。然而，根据目前的评估程序，只有与数据直接相关的父母组合是可用的（10,12）。这项研究的第一个目标是开发一个程序来预测以前计算的父母组合。 选择组合能力的增益取决于优势和其他方差，群体结构和选择强度。这种收益已经用父系模型（4）进行了研究，但与动物模型无关。第二个目标是通过用动物模型进行模拟来评估遗传反应的潜在增益。">
+  <meta name="twitter:description" content="Varona, L., and Misztal, I. 1999. Prediction of Parental Dominance Combinations for Planned Matings, Methodology, and Simulation Results. J. Dairy Sci. 82(10): 2186–2191. Elsevier. …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/varona1999%E9%A2%84%E6%B5%8B%E4%BA%B2%E6%9C%AC%E6%98%BE%E6%80%A7%E7%BB%84%E5%90%88/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/varona1999%E9%A2%84%E6%B5%8B%E4%BA%B2%E6%9C%AC%E6%98%BE%E6%80%A7%E7%BB%84%E5%90%88/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Varona1999预测亲本显性组合</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (34 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Varona1999预测亲本显性组合</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (34 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Varona, L., and Misztal, I. 1999. Prediction of Parental Dominance Combinations for Planned Matings, Methodology, and Simulation Results. J. Dairy Sci. 82(10): 2186–2191. Elsevier. doi:10.3168/jds.S0022-0302(99)75463-9.</p>
+</blockquote>
+
+<p>优势信息的最佳使用需要一个交配系统，并为每一组准父母预测具体的组合能力。目前的评估程序仅为有限的父母提供这样的预测。描述一个程序，预测任何父母的具体组合能力。在这个过程中，对于每一组父母及其祖先，加性关系矩阵被创建为一个密集矩阵。然后使用该矩阵以稀疏矩阵形式创建父母优势矩阵，其中矩阵的行对应于已经可用的预测的所有父母组合。每一个新的预测都需要方程组解的方程组，左边是父母优势矩阵。在一个模拟研究中评估了占优势的交配系统的效率。模拟的数据文件在所选择的男性和女性的比例，通过胚胎移植产生的牛的比例以及加性和显性方差中变化。父本和父母只是基于附加的优点而被预先选定的，但是基于组合的加和优势优势来安排具体的交配。考虑到优势的选择响应从一代添加剂选择的响应从3.8增加到16.6％。当加性方差较小时，显性方差较大，加性选择强度较低，全同胞比例较大。在交配系统中使用优势是可行的，并导致对选择的额外遗传响应。 （关键词：优势，遗传反应，交配系统）</p>
+
+<h2 id="介绍">介绍</h2>
+
+<p>数量性状的遗传变异可以分为加性和非加性效应（5）。在传统的选择方案中，加性的选择被用来改善家畜生产，选择的方法通常是基于BLUP（8）。在目前用于选择的模型中，非加性变异被忽略，因为在模型中包括这些效应的大计算需求，没有非加性遗传变异的证据，以及非加性关系的低发生率。
+优势可以在选择模型中考虑。 Hoeschele和​​VanRaden（10）开发了一个程序，以相对较低的成本直接创建优势关系矩阵的逆矩阵。 Misztal（12）制定了计算优势解决方案的程序，其费用低于附加遗传评估的两倍。该过程与方法R（14）一起允许估计大数据集中的优势变异。随后的研究估计，在奶牛（13），肉牛（6）和猪（3）的类型和生产性状的表型变异的4％到12％处存在显性差异。<strong>在模型中包含显性可以提供对模型加性效应评估的边际改善</strong>（1,15），并允许通过使用特定组合能力的预测来选择个体之间的交配（4）。
+组合能力的选择需要预测种群中所有可能父母的亲本组合。然而，根据目前的评估程序，只有与数据直接相关的父母组合是可用的（10,12）。这项研究的第一个目标是开发一个程序来预测以前计算的父母组合。
+<strong>选择组合能力的增益取决于优势和其他方差，群体结构和选择强度</strong>。这种收益已经用父系模型（4）进行了研究，但与动物模型无关。第二个目标是通过用动物模型进行模拟来评估遗传反应的潜在增益。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/velazco2017-spats/" data-toggle="tooltip" data-placement="top" title="Velazco2017-SpATS">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/type-b/" data-toggle="tooltip" data-placement="top" title="Type-B">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

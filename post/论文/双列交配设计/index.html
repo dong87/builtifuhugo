@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>双列交配设计</title>
+  <meta property="og:title" content="双列交配设计" />
+  <meta name="twitter:title" content="双列交配设计" />
+  <meta name="description" content="双列交配设计 尽管分子标记辅助选择以及“breeding without breeding”(El-Kassaby and Lstibůrek 2009)理论已被提出并应用于林木遗传改良，但常规的“测定-选择-测定”的轮回育种策略在过去乃至将来很长时间内仍然占据重要的地位。子代测定在常规林木遗传改良中起到至关重要的作用。获取子代材料的交配方法包括自由授粉和控制授粉。交配方法根据物种的特性还可以细分为许多设计类型(White et al. 2007)。其中，双列交配设计被广泛用于许多植物的遗传改良，其优点在于能同时提供用于选择的具有谱系的育种群体及亲本的子代测定，从而提供丰富而全面的遗传信息，比如能同时进行配合力分析（一般配合力和特殊配合力）、遗传参数估算以及杂种优势和自交衰退（包含自交的话）分析。这些信息是育种策略制定的必要条件。
+双列交配设计数据分析方法进展 Hayman (Hayman 1954a; b)和Jinks (Jinks 1954)开创了双列交配数据分析的先河。随后Griffing(Griffing 1956)提出了双列交配设计的4种方法（图 1）以及对应的统计模型，这些方法和统计模型在植物育种和遗传学研究中得到广泛应用(Evans et al. 1966; Borges 1987; Johnson and King 1998; Wu and Matheson 2001; Kumar and Wu 2003; Jansson and Li 2004; Kang et al. 2005; Huang et al. 2015; Zhang et al. 2016)。对于反交，Griffing(Griffing 1956)还定义了一个特殊的正反交效应。Cockerham(Cockerham 1963)建议将正反交均方分为母本和非母本均方。Cockerham和Weir(Cockerham and Weir 1977)（1977，模型c）及Keuls和Garretsen(Keuls and Garretsen 1977; Garretsen and Keuls 1978)又进一步通过定义反交GCA（RGCA）效应和反交SCA（RSCA）效应扩展了这种方法。在一些研究中已经提出了母本和非母本效应及其均方的估计((Evans et al. 1966; Stuthman et al.">
+  <meta property="og:description" content="双列交配设计 尽管分子标记辅助选择以及“breeding without breeding”(El-Kassaby and Lstibůrek 2009)理论已被提出并应用于林木遗传改良，但常规的“测定-选择-测定”的轮回育种策略在过去乃至将来很长时间内仍然占据重要的地位。子代测定在常规林木遗传改良中起到至关重要的作用。获取子代材料的交配方法包括自由授粉和控制授粉。交配方法根据物种的特性还可以细分为许多设计类型(White et al. 2007)。其中，双列交配设计被广泛用于许多植物的遗传改良，其优点在于能同时提供用于选择的具有谱系的育种群体及亲本的子代测定，从而提供丰富而全面的遗传信息，比如能同时进行配合力分析（一般配合力和特殊配合力）、遗传参数估算以及杂种优势和自交衰退（包含自交的话）分析。这些信息是育种策略制定的必要条件。
+双列交配设计数据分析方法进展 Hayman (Hayman 1954a; b)和Jinks (Jinks 1954)开创了双列交配数据分析的先河。随后Griffing(Griffing 1956)提出了双列交配设计的4种方法（图 1）以及对应的统计模型，这些方法和统计模型在植物育种和遗传学研究中得到广泛应用(Evans et al. 1966; Borges 1987; Johnson and King 1998; Wu and Matheson 2001; Kumar and Wu 2003; Jansson and Li 2004; Kang et al. 2005; Huang et al. 2015; Zhang et al. 2016)。对于反交，Griffing(Griffing 1956)还定义了一个特殊的正反交效应。Cockerham(Cockerham 1963)建议将正反交均方分为母本和非母本均方。Cockerham和Weir(Cockerham and Weir 1977)（1977，模型c）及Keuls和Garretsen(Keuls and Garretsen 1977; Garretsen and Keuls 1978)又进一步通过定义反交GCA（RGCA）效应和反交SCA（RSCA）效应扩展了这种方法。在一些研究中已经提出了母本和非母本效应及其均方的估计((Evans et al. 1966; Stuthman et al.">
+  <meta name="twitter:description" content="双列交配设计 尽管分子标记辅助选择以及“breeding without breeding”(El-Kassaby and Lstibůrek 2009)理论已被提出并应用于林木遗传改良，但常规的“测定-选择-测定”的轮回育种策略在过去乃至将来很长时间内仍然占据重要的地位。子代测定在常规林木遗传改良中起到至关重要的作用。获取子代材料的交配方法包括自由授粉和控制授粉。交配方法根据物种的特性还可以细分 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E8%AE%BA%E6%96%87/%E5%8F%8C%E5%88%97%E4%BA%A4%E9%85%8D%E8%AE%BE%E8%AE%A1/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E8%AE%BA%E6%96%87/%E5%8F%8C%E5%88%97%E4%BA%A4%E9%85%8D%E8%AE%BE%E8%AE%A1/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>双列交配设计</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (340 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>双列交配设计</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (340 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h2 id="双列交配设计">双列交配设计</h2>
+
+<p>尽管分子标记辅助选择以及“breeding without breeding”(El-Kassaby and Lstibůrek 2009)理论已被提出并应用于林木遗传改良，但常规的“测定-选择-测定”的轮回育种策略在过去乃至将来很长时间内仍然占据重要的地位。子代测定在常规林木遗传改良中起到至关重要的作用。获取子代材料的交配方法包括自由授粉和控制授粉。交配方法根据物种的特性还可以细分为许多设计类型(White et al. 2007)。其中，双列交配设计被广泛用于许多植物的遗传改良，其优点在于能同时提供用于选择的具有谱系的育种群体及亲本的子代测定，从而提供丰富而全面的遗传信息，比如能同时进行配合力分析（一般配合力和特殊配合力）、遗传参数估算以及杂种优势和自交衰退（包含自交的话）分析。这些信息是育种策略制定的必要条件。</p>
+
+<h3 id="双列交配设计数据分析方法进展">双列交配设计数据分析方法进展</h3>
+
+<p>Hayman (Hayman 1954a; b)和Jinks (Jinks 1954)开创了双列交配数据分析的先河。随后Griffing(Griffing 1956)提出了双列交配设计的4种方法（图 1）以及对应的统计模型，这些方法和统计模型在植物育种和遗传学研究中得到广泛应用(Evans et al. 1966; Borges 1987; Johnson and King 1998; Wu and Matheson 2001; Kumar and Wu 2003; Jansson and Li 2004; Kang et al. 2005; Huang et al. 2015; Zhang et al. 2016)。对于反交，Griffing(Griffing 1956)还定义了一个特殊的正反交效应。Cockerham(Cockerham 1963)建议将正反交均方分为母本和非母本均方。Cockerham和Weir(Cockerham and Weir 1977)（1977，模型c）及Keuls和Garretsen(Keuls and Garretsen 1977; Garretsen and Keuls 1978)又进一步通过定义反交GCA（RGCA）效应和反交SCA（RSCA）效应扩展了这种方法。在一些研究中已经提出了母本和非母本效应及其均方的估计((Evans et al. 1966; Stuthman et al. 1971; Pederson and Windham 1992; Wu and Matheson 2001))。将正反交效应分配到母本和非母本效应中有助于确定母本或核外因子是否参与性状的表达(Stuthman et al. 1971; Borges 1987; Wu and Zeng 2001)。
+此外，Gardner和Eberhart(Gardner and Eberhart 1966)开发了一些用于双列交配分析的模型（GE1-3）。尽管GE1方法也能够获得其他信息，例如近交衰退和杂种优势，但因为需要额外的资源来实现，这些方法没有被广泛采用。GE2中将SCA效应仅用于交配；将GCA效应剖分为两种效应，一种用于所有组合，一种用于交配(Gardner and Eberhart 1966)，这允许直接解释加性和非加性遗传效应。由于更少的资源限制、在杂种优势评价中有优势，使得GE2和GE3在许多研究中得到应用(Wright 1985; Hallauer et al. 1988; Murray et al. 2003; Segovia-Lerma et al. 2004; Farshadfar et al. 2012)。
+全双列交配设计中包含自交的育种项目较为少见，尤其是林木，因为许多树种较之作物存在更为严重的自交衰退(Williams and Savolainen 1996)。因此以往开发的统计模型及计算机程序并没有针对自交作专门的设计，比如Xiang和Li（2001）提出了一种基于REML的混合模型方法预测随机遗传效应，但只适用于方法4即不含自交的半双列。通常对于包含自交的实验软件也只是将自交当作普通的交配处理，比如Zhang和Kang开发是SAS程序以及后来更新的程序(Zhang and Kang 1997; Zhang et al. 2005)，而且使用ANOVA方法来估计方差分量。但是亲本对自交后代与异交后代的遗传效应应该会有差异，已经有报道证明包含自交会导致GCA和SCA效应值的高估(Yao et al. 2013)。Mohring(Möhring et al. 2011)等将常用的全双列及半双列混合模型方法扩展到包括自交的双列交配，并分别在统计分析软件SAS和Asreml中实现，但目前为止，该SAS程序只能进行方差估算而不能给出同样重要的效应值；可能是模型过于复杂以及我们的数据有较多缺失组合，Asreml代码也无法正常运行。因此还是采纳Yao等(Yao et al. 2013)的建议，在处理数据时去掉自交部分以获得最为准确的方差估计及育种值预测。
+方差分量是遗传参数中最为重要的部分。无论是遗传力、遗传增益的估计，还是育种值的预测，都是基于方差分量。其估算方法有许多种：方差分析（ANOVA），最大似然（ML）(Hartley and Rao 1967)，限制性最大似然（REML）(Patterson and Thompson 1971)，最小标准二次无偏估计（MINQUE）(Rao 1971)，亨德森方法三(Henderson 1953)等。当数据是平衡时，这些方法将给出相同且无偏的估计量。然而，田间试验获得的数据通常不平衡，不符ANOVA的假设，所得到的结果也是有偏的。而其余几种方法则能能利用不平衡数据估计方差分量。如今，REML已经成为建立混合模型的标准方法(Piepho et al. 2008)。特别是随着统计分析软件Asreml的普及和流行。贝叶斯方法也被用于估算遗传参数(Cappa and Cantet 2006; Waldmann 2009; Hallander et al. 2010)，但较少采用且结果通常与REML等频率学派方法结果较为一致(Waldmann et al. 2006)。</p>
+
+<h3 id="非加性变异的重要性">非加性变异的重要性</h3>
+
+<p>遗传变异包括三个组成部分：加性，显性和上位遗传变异(Falconer and Mackay 1996)。加性和显性变异可以通过双列交配测定，上位方差的量化则需要近交系（Wricke和Weber 1986），而构建林木自交系是不现实的。一些研究使用全同胞子代的无性系来代替自交系估算上位遗传方差组分(Paul et al. 1997; Isik et al. 2003, 2004, 2005; Costa E Silva et al. 2004; Kumar 2006; Baltunis et al. 2007a; b; Weng et al. 2008)。而目前日本落叶松中没有全同胞子代无性系群体，只能利用全双列估算加性和显性方差，忽略上位效应。
+林木遗传改良主要采用两大育种策略：（1）对GCA轮回选择，即在隔离较好的种子园中生产遗传改良的半同胞家系种子，但难以在主要育种群体中获得优势的遗传增益(White et al. 1993)；（2）选择特殊配合力高的交配组合生产全同胞种子，能够同时利用加性和显性方差。多数树种改良项目采用的是策略（1），这通常是合理的，因为大多数遗传研究支持了林木育种群体中存在加性遗传变异，如Zobel和Talbert (Zobel and Talbert 1984)，而且在较多情况下，非加性遗传方差（如显性变异）所占比例相对较小，不及加性方差重要(Carson 1975; Dieters et al. 1995)。然而，林木中关于非加性遗传变异的证据不够有说服力，研究之间的结果也不一致(Foster and Bridgwater 1986; F. C. Yeh 1987; Dieters et al. 1995; Yanchuk 1996; Paul et al. 1997; Wu and Matheson 2004)。此外，非加性遗传方差相对于加性遗传方差的重要性也随树龄变化。例如，在火炬松（Pinus taeda）中，发现非加性方差在早期增加，然后在晚龄下降(Byram and Lowe 1986; Balocchi et al. 1993)。湿地松中，在5岁时加性方差大约是显性方差的1.6倍，在11岁以后增加到2倍以上(Dieters et al. 1995)。相反，在黑云杉（Picea mariana）(Boyle 1987)和Sitka云杉（Picea sitchensis）(Samuel 1991)中则观察到了显性遗传方差随年龄增加的趋势。
+因此，估算非加性遗传方差的相对重要性以及重要性随年龄的变化是非常必要的，这些信息决定了该采用何种育种策略。不过，如Dieters(Dieters et al. 1995)所言，只要显性方差存在，可能需要对利用GCA轮回选择的育种策略进行一些改变。因为人工林的集成度很高，即使很小的增益也将具有相当大的经济价值。</p>
+
+<h3 id="正反交对遗传分析的影响">正反交对遗传分析的影响</h3>
+
+<p>全双列交配（Griffing的方法1和方法3）是最为理想的交配设计，因为利用这种设计能够获得正交和反交的数据，这些信息可以帮助育种人员更加充分地选择亲本，避免失去表现优良的交配组合。但全双列最大的缺点是需要完成的交配组合数目太大，尤其是亲本个数较多时，这对许多树种而言操作起来是非常困难的。待测定林木个体并不总是具有产生近似等量雄花或雌花的能力，个体之间的花期也总有早晚差异，并且生产可育种子的能力也有不同。比如日本落叶松种子园中存在较明显的大小年现象，而小年居多，完成一个全双列实验需要很长时间。总之由于各种原因，植物育种者难以在实验中包括全部正反交；有时交配组合可能完全失败或者可能没有产生足够数量的种子。此外，过多的交配组合产生的子代幼苗的测定还有可能受空间和其他资源的限制。因此育种人员非常关心的问题是，交配设计中要不要包含正交或反交？也就是采用半双列能否满足遗传测定的需要。如果反交效应不重要，那么不包含自交的半双列（Griffing的方法4）最适合于双列交配设计。相反，如果存在相当大的反交效应，则为了剖分来自GCA和SCA效应的反交效应，可能需要增加交配的数量(Wu and Matheson 2001)。正反交效应可以进一步分为母本和非母本效应(Cockerham and Weir 1977)。这种进一步的划分可以推断正反交效应的遗传原因。如果是由真正的遗传性母本效应引起的反交效应，它可能随着年龄而持续，并可能在生产群体中被利用。
+许多双列交配中检验并估计了正反交效应，但结果并不完全一致。日本落叶松中，对材性和生长性状的研究发现，正反交效应对树高有显著作用，但方差分量占比很低(Fukatsu et al. 2015)；在林木幼龄时发现对木材密度有作用，但随年龄增加作用消失(Fukatsu et al. 2013)。Wu(Wu and Matheson 2001)利用辐射松6×6半双列交配研究正反交效应对5个性状（DBH，干直度，分枝角，分枝大小和轮数）的重要性，正反交效应仅对分枝角是显着的。SAMUEL(Samuel 1991)发现15a生西加云杉的胸径存在正反交效应，但也只占表型方差的很小一部分。相反，对海岸松（Pinus pinaster Ait.）的一个抗性性状和胸径，正反交效应方差分别占总变异的37.4%和51.8%(Kleinhentz et al. 1998)。樟子松（Pinus sylvestris）的一个全双列材料的树高及树高增长量受显著的正反交效应影响(Dormling and Johnsen 1992)。在对玉米双列交配的一个更为详尽的研究中发现，包含正反交会极大地影响GCA和SCA效应的估计和杂种优势群的划分，并导致残差和GCA方差降低(Fan et al. 2014)。
+所以，无论何种变异来源，以及由此估算的遗传力等参数，在不同物种甚至不同的育种群体中，大小及趋势都没有统一的规律，这是由材料的遗传背景、试验设计以及环境差异造成的。因此对于任一育种群体都需要进行子代测定来估计遗传参数，而无法从其他试验中参考，进而针对性的制定合适的育种策略。</p>
+
+<h3 id="杂种优势和近交衰退分析及杂种优势预测">杂种优势和近交衰退分析及杂种优势预测</h3>
+
+<p>提高作物或林木的产量是育种的长期目标，用以满足不断增加的生活和生产需求。杂种优势广泛存在于植物和动物中，也称为杂种活力，被定义为杂交子代优于父母的表现。杂种优势的利用是杂交育种系统中选择效率的主要遗传组成，已经成为提高植物生产力的主要策略。与之相对的是近交衰退，是育种过程中极力避免的。
+杂种优势的估计一般通过进行全双列或不完全双列交配，根据所产生的F1的经济性状相对于亲本或对照的表现带来定量。然而这一过程需要测试许多个亲本组合以筛选最佳组合，时间和物力成本很高，尤其是对于世代周期很长的林木，非常有挑战性。因此利用各种方法预测杂种优势一直是近几十年广泛关注的课题(Smith et al. 1990; Cheres et al. 2000; Riedelsheimer et al. 2012; Xu et al. 2014; Zhao et al. 2015)。
+基于分子标记的亲本间遗传距离(GD，genetic distance)在预测杂种优势上取得了一些成功，则将在很大程度上提高杂交育种程序的效率。这种方法在作物中有着较为常见的应用。比如，在玉米种利用RFLP对12个近交系分析获得的GD和多数性状下F1的表现、SCA、中亲杂种优势（MPH）和高亲杂种优势（HPH）之间均发现发现显著正相关(Betrán et al. 2003)；使用RAPD和AFLP技术评估15个胡萝卜近交系和34个杂种F1的亲本GD与杂优关系，发现RAPD标记测定的GD和总产量的杂种优势以及AFLP标记测量的亲本的差异和市售产量的杂种优势之间发现显着的相关性(Jagosz 2011)。但是相反也有不能成功预测的案例：利用40个SSR标记对15个玉米近交系确定的GD与杂种优势的相关太弱，没有预测价值(Wegary et al. 2013)；对辣椒的一项研究表明利用AFLP测定的GD与中亲和高亲杂种优势的相关性对所有性状都不显着，除了果实直径，也被证明没有预测价值(Geleta et al. 2004)。而预测成功与否的主要原因是需要DNA标记与参与控制目标性状的基因之间存在连锁不平衡(Betrán et al. 2003)以及育种群体中基因频率差异(Falconer and Mackay 1996)，所以预测失败并不代表该方法不适合，而是没有使用有效的标记。
+落叶松种间杂种具有较好的生长表现，尤其是欧洲落叶松和日本落叶松间的杂交优势已有充分的报道(Miller and Thulin 1967; Paques 1992; Baltunis et al. 1998; Baltunis and Greenwood 1999; Philippe et al. 2016)。Arcade等(Arcade et al. 1996)利用RAPD标记估计了欧洲落叶松（L. decidua）和日本落叶松（L. kaempferi）一个12×12的析因交配亲本间的GD，发现对于生长性状和分枝夹角亲本GD与杂种表现之间有显著相关性，这些相关性也随树龄变化。然而，对于日本落叶松种内杂种优势尚未有报道，利用基于SSR的亲本GD预测杂种优势的方法能否用于本研究有待验证。
+与杂种优势相对的近交衰退是针叶树种中广泛存在的现象(Williams and Savolainen 1996)，因此多数针叶树遗传改良项目限制近交的发生，也极少有交配设计中包含自交。到目前为止，关于日本落叶松的自交衰退情况还知之甚少，其自交可育性如何，自交后代存活力及生长表现如何也是我们迫切关注的问题。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%9A%8F%E7%AC%94/%E5%8F%8D%E7%BF%BB/" data-toggle="tooltip" data-placement="top" title="反翻">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/stat/%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9F%A9%E9%98%B5%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%BB%93%E6%9E%84/" data-toggle="tooltip" data-placement="top" title="协方差矩阵，协方差结构">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

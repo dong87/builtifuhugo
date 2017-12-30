@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Mantel测试</title>
+  <meta property="og:title" content="Mantel测试" />
+  <meta name="twitter:title" content="Mantel测试" />
+  <meta name="description" content="概念  The Mantel test, named after Nathan Mantel, is a statistical test of the correlation between two matrices. The matrices must be of the same rank（2个相同满秩的方阵才可以）; in most applications, they are matrices of interrelations between the same vectors of objects. The test was first published by Nathan Mantel, a biostatistician at the National Institutes of Health, in 1967.[1] Accounts of it can be found in advanced statistics books (e.">
+  <meta property="og:description" content="概念  The Mantel test, named after Nathan Mantel, is a statistical test of the correlation between two matrices. The matrices must be of the same rank（2个相同满秩的方阵才可以）; in most applications, they are matrices of interrelations between the same vectors of objects. The test was first published by Nathan Mantel, a biostatistician at the National Institutes of Health, in 1967.[1] Accounts of it can be found in advanced statistics books (e.">
+  <meta name="twitter:description" content="概念  The Mantel test, named after Nathan Mantel, is a statistical test of the correlation between two matrices. The matrices must be of the same rank（2个相同满秩的方阵才可以）; in most applications, they are …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/mantel%E6%B5%8B%E8%AF%95/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/mantel%E6%B5%8B%E8%AF%95/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Mantel测试</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (360 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Mantel测试</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (360 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h1 id="概念">概念</h1>
+
+<blockquote>
+<p>The <strong>Mantel test</strong>, named after <a href="https://en.wikipedia.org/wiki/Nathan_Mantel">Nathan Mantel</a>, is a <a href="https://en.wikipedia.org/wiki/Statistics">statistical</a> test of the <a href="https://en.wikipedia.org/wiki/Correlation">correlation</a> between two <a href="https://en.wikipedia.org/wiki/Matrix_(mathematics)">matrices</a>. The matrices must be of the same <a href="https://en.wikipedia.org/wiki/Rank_of_a_matrix">rank</a>（2个相同满秩的方阵才可以）; in most applications, they are matrices of interrelations between the same <a href="https://en.wikipedia.org/wiki/Vector_space">vectors</a> of objects. The test was first published by <a href="https://en.wikipedia.org/wiki/Nathan_Mantel">Nathan Mantel</a>, a biostatistician at the <a href="https://en.wikipedia.org/wiki/National_Institutes_of_Health">National Institutes of Health</a>, in 1967.<a href="https://en.wikipedia.org/wiki/Mantel_test#cite_note-Mantel1967-1">[1]</a>
+ Accounts of it can be found in advanced statistics books (e.g., Sokal &amp; Rohlf 1995<a href="https://en.wikipedia.org/wiki/Mantel_test#cite_note-Sokal1995-2">[2]</a>).</p>
+</blockquote>
+
+<h1 id="如何在r中执行mantel测试">如何在R中执行Mantel测试？</h1>
+
+<p>Mantel测试测量通常包含距离测量的两个矩阵之间的相关性。 Mantel测试是一种测试空间自相关的方法。 在<strong>ade4</strong>库使用功能，我们可以在河进行Mantel检测要下载和加载这个库，输入<strong>install.packages（“ade4”），</strong>然后<strong>library(ade4)</strong>。 在其他R库中还有其他Mantel测试功能，我们对这个库的选择不应该被视为任何方式的认可。
+让我们看一个例子。 我们的数据集中， <strong>臭氧</strong> ，含有在聚合一个月以上洛杉矶地区32的位置臭氧测量。 该数据集包括的站号（ <strong>站</strong> ），车站的纬度和经度（<strong>纬度</strong>和<strong>经度</strong> ），最高8小时每日平均值<strong>（Av8top）</strong>的平均值。 我们将有兴趣测试是否距离较近的站相对于相距较远的站，臭氧测量的差异更小。 这些数据和其他空间数据集可以从伊利诺伊大学的空间分析实验室下载。 我们可以查看位置变量的摘要，以查看所考虑的位置范围。</p>
+
+<pre><code>ozone&lt;-read.table(&quot;http://www.ats.ucla.edu/stat/r/faq/ozone.csv&quot;, sep=&quot;,&quot;, header=T)
+head(ozone, n=10)
+
+Station   Av8top      Lat       Lon
+1       60 7.225806 34.13583 -117.9236
+2       69 5.899194 34.17611 -118.3153
+3       72 4.052885 33.82361 -118.1875
+4       74 7.181452 34.19944 -118.5347
+5       75 6.076613 34.06694 -117.7514
+6       84 3.157258 33.92917 -118.2097
+7       85 5.201613 34.01500 -118.0597
+8       87 4.717742 34.06722 -118.2264
+9       88 6.532258 34.08333 -118.1069
+10      89 7.540323 34.38750 -118.5347
+</code></pre>
+
+<p>要运行Mantel测试，我们需要生成两个距离矩阵：一个包含空间距离，一个包含在给定点的测量结果之间的距离。 在空间距离矩阵中，靠近在一起的点对的条目低于远离的点对的条目。 在测量的结果矩阵中，具有类似结果的位置对的条目低于具有不同结果的点对的条目。 我们今天使用<strong>DIST</strong>功能做的。 Mantel测试函数将需要此“距离”类的对象。</p>
+
+<pre><code>station.dists &lt;- dist(cbind(ozone$Lon, ozone$Lat))
+ozone.dists &lt;- dist(ozone$Av8top)
+
+as.matrix(station.dists)[1:5, 1:5]
+
+1         2         3         4         5
+1 0.0000000 0.3937326 0.4088031 0.6144127 0.1854888
+2 0.3937326 0.0000000 0.3749446 0.2206810 0.5743590
+3 0.4088031 0.3749446 0.0000000 0.5116772 0.4994034
+4 0.6144127 0.2206810 0.5116772 0.0000000 0.7944601
+5 0.1854888 0.5743590 0.4994034 0.7944601 0.0000000
+
+as.matrix(ozone.dists)[1:5, 1:5]
+
+1        2        3        4        5
+1 0.000000 1.326612 3.172921 0.044354 1.149193
+2 1.326612 0.000000 1.846309 1.282258 0.177419
+3 3.172921 1.846309 0.000000 3.128567 2.023728
+4 0.044354 1.282258 3.128567 0.000000 1.104839
+5 1.149193 0.177419 2.023728 1.104839 0.000000
+</code></pre>
+
+<p>这些是函数将要测试相关性的两个矩阵。 该测试包括计算矩阵中的条目的相关性，然后置换矩阵并且在每个置换下计算相同的测试统计量，并且将原始测试统计量与来自置换的测试统计量的分布进行比较以生成p值。 置换的数量定义了可以计算p值的精度。 进行Mantel检验的功能是<strong>mantel.rtest</strong>和必需的参数是两个距离矩阵。 排列数也可以由用户指定，但默认为99。</p>
+
+<pre><code>mantel.rtest(station.dists, ozone.dists, nrepet = 9999)
+
+Monte-Carlo test
+Observation: 0.1636308 
+Call: mantel.rtest(m1 = station.dists, m2 = ozone.dists, nrepet = 9999)
+Based on 9999 replicates
+Simulated p-value: 0.0312 
+</code></pre>
+
+<p>基于这些结果，我们可以拒绝零假设，这两个矩阵，空间距离和臭氧距离是无关的 ****其中α= 0.05。 观察到的相关性，r = 0.1636308，表明矩阵条目是正相关的。 因此，在彼此靠近而彼此远离的站之间通常看到较小的臭氧差异。 注意，由于该测试是基于随机排列，所以相同的代码将总是达到相同的观察到的相关性，但很少具有相同的p值。</p>
+
+<h1 id="代码">代码</h1>
+
+<pre><code>
+# Mantel test -------------------------------------------------------------
+
+# example from &quot;ape&quot;
+library(&quot;ape&quot;, lib.loc=&quot;D:/Program Files/R/R-3.1.2/library&quot;)
+
+q1 &lt;- matrix(runif(36), nrow = 12)
+q2 &lt;- matrix(runif(36), nrow = 6)
+mantel.test(q1, q2, graph = TRUE,
+            main = &quot;Mantel test: a random example with 6 X 6 matrices&quot;,
+            xlab = &quot;z-statistic&quot;, ylab = &quot;Density&quot;,
+            sub = &quot;The vertical line shows the observed z-statistic&quot;)
+
+# example from http://www.ats.ucla.edu/stat/r/faq/mantel_test.htm
+
+library(ade4)
+ozone&lt;-read.table(&quot;http://www.ats.ucla.edu/stat/r/faq/ozone.csv&quot;, sep=&quot;,&quot;, header=T)
+
+station.dists &lt;- dist(cbind(ozone$Lon, ozone$Lat))
+dim(station.dists)
+ozone.dists &lt;- dist(ozone$Av8top)
+
+as.matrix(station.dists)[1:5, 1:5]
+
+as.matrix(ozone.dists)[1:5, 1:5]
+
+# 2个结果不一样
+mantel.rtest(station.dists, ozone.dists, nrepet = 10000)
+mantel.test(as.matrix(station.dists), as.matrix(ozone.dists),nperm = 10000)
+</code></pre>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/marchal2017-%E6%9D%82%E7%A7%8D%E8%90%BD%E5%8F%B6%E6%9D%BE-%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/" data-toggle="tooltip" data-placement="top" title="Marchal2017-杂种落叶松-杂交优势">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/diallel/mahgoub2011-%E6%AD%A3%E5%8F%8D%E4%BA%A4/" data-toggle="tooltip" data-placement="top" title="Mahgoub2011-正反交">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

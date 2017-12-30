@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Ruotsalainen2001-育种群体中亲本的个数</title>
+  <meta property="og:title" content="Ruotsalainen2001-育种群体中亲本的个数" />
+  <meta name="twitter:title" content="Ruotsalainen2001-育种群体中亲本的个数" />
+  <meta name="description" content="Ruotsalainen S, Lindgren D (2001) Number of founders for a breeding population using variable parental contribution. For Genet 8(1):57–67.   这项研究考虑了一个可以获得大量后代测试加上树木的情况，其中最好的排名被用作下一代繁殖种群的创始人。问题是如何获得具有给定水平的遗传多样性的最大遗传增益。遗传多样性水平固定为同等贡献的家庭内选择所获得的水平，资源通过保持全部同胞家庭数量和规模不变而得以确定。通过确定性建模，建立育种群体的家庭间遗传收益最大化。这是通过选择更多的创始人而不是在同等的贡献的情况下进行的，并允许他们在下一代由一个，两个或三个后代取决于他们的育种价值。通过改变两个参数来研究可变贡献的影响：选择强度（测试加树数）和所得第二代繁殖群体的遗传多样性（状态数）。创造者人数相对于同等贡献增加20％至23％，当遗传多样性保持不变时，遗传增益最大。最佳创始人人数随测试加树数和状态数量的增加而增加。创始人贡献率最高的规模随测试加树木数量的增加和状态数量的减少而增加。通过可变贡献获得的额外遗传增益的数量越大，选择强度越小，状态数越少。在典型的情况下，家庭间遗传收益可以增加7％，创始人的数量增加22％，并允许他们对下一代作出不平等的贡献。大多数额外的遗传增益是在最初的几位创始人加入之后获得的。
+介绍 林木育种计划通常是通过选择一些父母 - 加上树木 - 从森林中进行测试和交配，然后从其后代中选出的。创始人的数量可以基于预测，以便将近亲繁殖和相关性保持在未来的可接受的低水平，遗传变异在如此高的水平上，未来的收益没有严重降低（WHITE 1992）。经济妥协和其他考虑也适用（LINDGREN 1991）。保留大型遗传多样性的重要性取决于育种计划的时间范围（WRAY＆GODDARD 1994）。针对几代人不断改进的育种计划，必须考虑遗传多样性，而不是短时间的计划。以最大化遗传多样性的方式利用预定数量的创始人的一种方式是使用家庭内部选择，并允许每个创始人对下一代作出同样的贡献。这种平衡的家庭内部选择程序可能最大限度地延长选择的长期限制（DEMPFLE 1975）。然而，这个结论最近被挑战（VILLANUEVA＆WOOLLIAMS 1997）。目前的瑞典森林树种育种计划可以描述为（主要）平衡的家庭内部选择程序（DANELL 1995，ROWALL et al。1998）。因此，基于家庭内部选择的平衡程序作为参考是有趣的。已经表明，为了在遗传多样性和遗传增益之间做出最佳的妥协，优选让最佳选择的基因型比下级更有贡献（LNDGREN1974，TORO＆NIETO 1984，LINDGREN1986， LINDGREN＆MATHESON1986，TORO＆PEREZ-ENCISO 1990）。处理遗传增益和多样性之间的权衡有几种可能性。一些方法就相关性的遗传增益确定成本，从而将两者的数量转换为相同的量表（LNDGREN1986，LINDGREN＆MATHESON1986，WKAY＆GODDARD 1994）。问题是找到进行转型所需的正确成本因素。 TORO和NIETO（1984）提出了一种选择创始人数量及其可变性的方法，使得有效的群体大小（因而遗传多样性）被最大化，具有给定的遗传增益。另一种解决方案是利用给定的遗传多样性来最大化遗传增益（LINDGREN等，1989，MEUWISSEN 1997）。种子果园中克隆的最佳比例与其育种价值呈线性关系（LINDGREN＆MATHESON，1986）。同样的关系也约有一个繁殖种群：每个家庭的最高排名表型应从家庭平均线性比例中选出，以便在给定的有效人口数量上获得最大收益（LINDGREN 1986，WEI＆LINDGREN 1995） 。在一些林木育种计划中，繁殖种群被分为几个遗传上不同的分数，对下一代来说，它们的遗传价值越高（例如WHITE等人，1993）。一个例子是开核培育策略，其中较高等级的树形成了比主要群体更密集的核（COTTERILL等人，1989）。本研究着重于一些可以进行交配的测试加树的情况，并且已经修复了所需的下一代育种种群规模和多样性。这项研究的目的是开发和分析一种明确的方法，用于决定在为第二代选择产生招聘人数时测试的加树应该做哪些贡献。在这种可变贡献方法中，搜索创始人的数量及其贡献的组合，使其具有给定的遗传多样性使遗传增益最大化">
+  <meta property="og:description" content="Ruotsalainen S, Lindgren D (2001) Number of founders for a breeding population using variable parental contribution. For Genet 8(1):57–67.   这项研究考虑了一个可以获得大量后代测试加上树木的情况，其中最好的排名被用作下一代繁殖种群的创始人。问题是如何获得具有给定水平的遗传多样性的最大遗传增益。遗传多样性水平固定为同等贡献的家庭内选择所获得的水平，资源通过保持全部同胞家庭数量和规模不变而得以确定。通过确定性建模，建立育种群体的家庭间遗传收益最大化。这是通过选择更多的创始人而不是在同等的贡献的情况下进行的，并允许他们在下一代由一个，两个或三个后代取决于他们的育种价值。通过改变两个参数来研究可变贡献的影响：选择强度（测试加树数）和所得第二代繁殖群体的遗传多样性（状态数）。创造者人数相对于同等贡献增加20％至23％，当遗传多样性保持不变时，遗传增益最大。最佳创始人人数随测试加树数和状态数量的增加而增加。创始人贡献率最高的规模随测试加树木数量的增加和状态数量的减少而增加。通过可变贡献获得的额外遗传增益的数量越大，选择强度越小，状态数越少。在典型的情况下，家庭间遗传收益可以增加7％，创始人的数量增加22％，并允许他们对下一代作出不平等的贡献。大多数额外的遗传增益是在最初的几位创始人加入之后获得的。
+介绍 林木育种计划通常是通过选择一些父母 - 加上树木 - 从森林中进行测试和交配，然后从其后代中选出的。创始人的数量可以基于预测，以便将近亲繁殖和相关性保持在未来的可接受的低水平，遗传变异在如此高的水平上，未来的收益没有严重降低（WHITE 1992）。经济妥协和其他考虑也适用（LINDGREN 1991）。保留大型遗传多样性的重要性取决于育种计划的时间范围（WRAY＆GODDARD 1994）。针对几代人不断改进的育种计划，必须考虑遗传多样性，而不是短时间的计划。以最大化遗传多样性的方式利用预定数量的创始人的一种方式是使用家庭内部选择，并允许每个创始人对下一代作出同样的贡献。这种平衡的家庭内部选择程序可能最大限度地延长选择的长期限制（DEMPFLE 1975）。然而，这个结论最近被挑战（VILLANUEVA＆WOOLLIAMS 1997）。目前的瑞典森林树种育种计划可以描述为（主要）平衡的家庭内部选择程序（DANELL 1995，ROWALL et al。1998）。因此，基于家庭内部选择的平衡程序作为参考是有趣的。已经表明，为了在遗传多样性和遗传增益之间做出最佳的妥协，优选让最佳选择的基因型比下级更有贡献（LNDGREN1974，TORO＆NIETO 1984，LINDGREN1986， LINDGREN＆MATHESON1986，TORO＆PEREZ-ENCISO 1990）。处理遗传增益和多样性之间的权衡有几种可能性。一些方法就相关性的遗传增益确定成本，从而将两者的数量转换为相同的量表（LNDGREN1986，LINDGREN＆MATHESON1986，WKAY＆GODDARD 1994）。问题是找到进行转型所需的正确成本因素。 TORO和NIETO（1984）提出了一种选择创始人数量及其可变性的方法，使得有效的群体大小（因而遗传多样性）被最大化，具有给定的遗传增益。另一种解决方案是利用给定的遗传多样性来最大化遗传增益（LINDGREN等，1989，MEUWISSEN 1997）。种子果园中克隆的最佳比例与其育种价值呈线性关系（LINDGREN＆MATHESON，1986）。同样的关系也约有一个繁殖种群：每个家庭的最高排名表型应从家庭平均线性比例中选出，以便在给定的有效人口数量上获得最大收益（LINDGREN 1986，WEI＆LINDGREN 1995） 。在一些林木育种计划中，繁殖种群被分为几个遗传上不同的分数，对下一代来说，它们的遗传价值越高（例如WHITE等人，1993）。一个例子是开核培育策略，其中较高等级的树形成了比主要群体更密集的核（COTTERILL等人，1989）。本研究着重于一些可以进行交配的测试加树的情况，并且已经修复了所需的下一代育种种群规模和多样性。这项研究的目的是开发和分析一种明确的方法，用于决定在为第二代选择产生招聘人数时测试的加树应该做哪些贡献。在这种可变贡献方法中，搜索创始人的数量及其贡献的组合，使其具有给定的遗传多样性使遗传增益最大化">
+  <meta name="twitter:description" content="Ruotsalainen S, Lindgren D (2001) Number of founders for a breeding population using variable parental contribution. For Genet 8(1):57–67.   这项研究考虑了一个可以获得大量后代测试加上树木的情况，其中最好的排名被用作下一代繁殖种群的创始人。问题是如何获得具有给 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E8%82%B2%E7%A7%8D/ruotsalainen2001-%E8%82%B2%E7%A7%8D%E7%BE%A4%E4%BD%93%E4%B8%AD%E4%BA%B2%E6%9C%AC%E7%9A%84%E4%B8%AA%E6%95%B0/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E8%82%B2%E7%A7%8D/ruotsalainen2001-%E8%82%B2%E7%A7%8D%E7%BE%A4%E4%BD%93%E4%B8%AD%E4%BA%B2%E6%9C%AC%E7%9A%84%E4%B8%AA%E6%95%B0/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Ruotsalainen2001-育种群体中亲本的个数</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (43 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Ruotsalainen2001-育种群体中亲本的个数</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (43 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<ol>
+<li>Ruotsalainen S, Lindgren D (2001) Number of founders for a breeding population using variable parental contribution. For Genet 8(1):57–67.</li>
+</ol>
+</blockquote>
+
+<p>这项研究考虑了一个可以获得大量后代测试加上树木的情况，其中最好的排名被用作下一代繁殖种群的创始人。问题是<strong>如何获得具有给定水平的遗传多样性的最大遗传增益。遗传多样性水平固定为同等贡献的家庭内选择所获得的水平</strong>，资源通过保持全部同胞家庭数量和规模不变而得以确定。通过确定性建模，建立育种群体的家庭间遗传收益最大化。这是通过选择更多的创始人而不是在同等的贡献的情况下进行的，并允许他们在下一代由一个，两个或三个后代取决于他们的育种价值。<strong>通过改变两个参数来研究可变贡献的影响：选择强度（测试加树数）和所得第二代繁殖群体的遗传多样性（状态数）</strong>。<strong>创造者人数相对于同等贡献增加20％至23％，当遗传多样性保持不变时，遗传增益最大</strong>。最佳创始人人数随测试加树数和状态数量的增加而增加。创始人贡献率最高的规模随测试加树木数量的增加和状态数量的减少而增加。通过可变贡献获得的额外遗传增益的数量越大，选择强度越小，状态数越少。在典型的情况下，家庭间遗传收益可以增加7％，创始人的数量增加22％，并允许他们对下一代作出不平等的贡献。大多数额外的遗传增益是在最初的几位创始人加入之后获得的。</p>
+
+<p>介绍
+林木育种计划通常是通过选择一些父母 - 加上树木 - 从森林中进行测试和交配，然后从其后代中选出的。创始人的数量可以基于预测，以便将近亲繁殖和相关性保持在未来的可接受的低水平，遗传变异在如此高的水平上，未来的收益没有严重降低（WHITE 1992）。经济妥协和其他考虑也适用（LINDGREN 1991）。保留大型遗传多样性的重要性取决于育种计划的时间范围（WRAY＆GODDARD 1994）。<strong>针对几代人不断改进的育种计划，必须考虑遗传多样性</strong>，而不是短时间的计划。以最大化遗传多样性的方式利用预定数量的创始人的一种方式是使用家庭内部选择，并允许每个创始人对下一代作出同样的贡献。这种平衡的家庭内部选择程序可能最大限度地延长选择的长期限制（DEMPFLE 1975）。然而，这个结论最近被挑战（VILLANUEVA＆WOOLLIAMS 1997）。目前的瑞典森林树种育种计划可以描述为（主要）平衡的家庭内部选择程序（DANELL 1995，ROWALL et al。1998）。因此，基于家庭内部选择的平衡程序作为参考是有趣的。已经表明，为了在遗传多样性和遗传增益之间做出最佳的妥协，优选让最佳选择的基因型比下级更有贡献（LNDGREN1974，TORO＆NIETO 1984，LINDGREN1986， LINDGREN＆MATHESON1986，TORO＆PEREZ-ENCISO 1990）。处理遗传增益和多样性之间的权衡有几种可能性。一些方法就相关性的遗传增益确定成本，从而将两者的数量转换为相同的量表（LNDGREN1986，LINDGREN＆MATHESON1986，WKAY＆GODDARD 1994）。问题是找到进行转型所需的正确成本因素。 TORO和NIETO（1984）提出了一种选择创始人数量及其可变性的方法，使得有效的群体大小（因而遗传多样性）被最大化，具有给定的遗传增益。另一种解决方案是利用给定的遗传多样性来最大化遗传增益（LINDGREN等，1989，MEUWISSEN 1997）。种子果园中克隆的最佳比例与其育种价值呈线性关系（LINDGREN＆MATHESON，1986）。同样的关系也约有一个繁殖种群：每个家庭的最高排名表型应从家庭平均线性比例中选出，以便在给定的有效人口数量上获得最大收益（LINDGREN 1986，WEI＆LINDGREN 1995） 。在一些林木育种计划中，繁殖种群被分为几个遗传上不同的分数，对下一代来说，它们的遗传价值越高（例如WHITE等人，1993）。一个例子是开核培育策略，其中较高等级的树形成了比主要群体更密集的核（COTTERILL等人，1989）。本研究着重于一些可以进行交配的测试加树的情况，并且已经修复了所需的下一代育种种群规模和多样性。这项研究的目的是开发和分析一种明确的方法，用于决定在为第二代选择产生招聘人数时测试的加树应该做哪些贡献。在这种可变贡献方法中，搜索创始人的数量及其贡献的组合，使其具有给定的遗传多样性使遗传增益最大化</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/rcodes/r%E4%B8%AD%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%9C%B0%E5%AF%BC%E5%87%BA%E5%BE%88%E5%A4%A7%E7%9A%84character-#rstat%23/" data-toggle="tooltip" data-placement="top" title="R中如何快速地导出很大的character-#rstat#">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E8%82%B2%E7%A7%8D/ruotsalainen2000a-%E5%88%86%E5%B1%82-%E4%BA%9A%E7%B3%BB-%E9%81%BF%E5%85%8D%E8%BF%91%E4%BA%A4/" data-toggle="tooltip" data-placement="top" title="Ruotsalainen2000a-分层-亚系-避免近交">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

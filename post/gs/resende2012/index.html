@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Resende2012</title>
+  <meta property="og:title" content="Resende2012" />
+  <meta name="twitter:title" content="Resende2012" />
+  <meta name="description" content="Resende M F R, Muñoz P, Acosta J J, et al. 2012. Accelerating the domestication of trees using genomic selection: accuracy of prediction models across ages and environments. New Phytologist, 193(3): 617–624.
+ ##概要
+•基因组选择越来越被认为是加速遗传改良的关键。然而，当在各个环境和年龄段使用时，如何保持准确的基因组选择预测模型是未知的。这种知识对于育种者在遗传改良中应用这一策略至关重要。 •在这里，我们评估了基因组选择的效用火炬松的群体℃。800个个体在四个位点上克隆并生长，并对4825个单核苷酸多态性（SNP）标记进行基因分型。使用基因组随机回归最佳线性无偏估计（BLUP）估计多个年龄的直径和高度的预测模型。 •预测模型的准确度范围为直径0.65〜0.75，高度为0.63〜0.74。使用基因组选择与表型选择相比，每单位时间的选择效率估计高53-112％，假设育种周期减少50％。只要在相同的繁殖区内使用，准确度在环境中保持很高。然而，早期生成的模型在6岁时不能很好地预测表型。 •这些结果表明，只要在相关选择年龄和估计的繁殖区内使用模型，可以通过将基因组选择纳入育种计划中来实现。
+##介绍
+全球粮食和纤维需求的不断增长（粮农组织，2002年）和气候变化越来越多的证据（IPCC，2007年），迫切需要开发适应现有和新型生物和非生物胁迫来源的更有生产力的种质资源。已经提出了标记辅助选择（MAS）作为加速植物遗传改良的方法（Lande＆Thompson，1990 ; Paterson 等人，1991），并且预期对于具有较长产生次数的物种特别有价值，显示出低遗传性和选择在生命周期晚期表现的性状。早期识别MAS的标记物主要依赖于从少量分离群体的分析得出的数量性状基因座（QTL）研究。然而，跨越不同遗传背景的标记和性状之间的弱连锁不平衡和QTL研究中捕获的狭窄等位基因范围限制了其在家庭内部选择策略中的使用（Strauss 等人，1992 ; Dekkers，2004 ; Grattapaglia＆Kirst，2008）。QTL方法的许多限制正在通过关联遗传学来克服。然而，由于数量性状通常受许多小效应基因座的控制（Visscher，2008 ; Buckler 等，2009），需要大量群体才能获得足够的统计学功能来检测所有相关的标记 - 特征关联（Long＆Langley，1999） - 非模式作物中许多现有的关联研究的局限性。已经在玉米和拟南芥（Kover et al。，2009 ; Tian et al。，2011）中建立了旨在实现高分辨率和统计学功能的群体，同时捕获广泛的等位基因变异。然而，它们的发展对许多作物而言是不实际的，特别是那些需要几年才能达到育龄的作物。
+基因组选择（GS）最近被提出作为替代MAS作物改良（Bernardo＆Yu，2007 ; Heffner 等，2009），在广泛应用于动物育种之后（Hayes et al。，2009 ; Daetwyler et al 。，2010 ; 海斯＆戈达德，2010）。基因组选择依赖于目标育种群体的足够大且有代表性的样品的表型和高密度基因分型，使得调节数量性状的大多数基因座与一种或多种分子标记物连锁不平衡。与MAS相反，在GS中，所有可用的遗传标记的效应在训练人群中同时进行估计，并且开发模型以预测子代后代的基因组育种价值（Meuwissen 等，2001）。在植物物种中，模拟表明GS相对于传统育种和标记辅助反复选择提供了更高的效率（Bernardo＆Yu，2007 ; Heffner et al。，2009 ; Grattapaglia＆Resende，2010 ; Iwata et al。，2011）。模拟还表明，预测模型的准确性主要取决于训练群体中连锁不平衡（LD）的水平 - 较高的LD提高了标记与数量性状基因座之间的联系的可能性。较大的培训群体还可以更准确地估计标记对表型的影响。最后，性状的遗传力和调控其变异的QTL的数量也影响模型的准确性，因为相对于更复杂的性状，更容易捕获更简单的遗传结构（即调节较大部分表型方差的较少基因座）。虽然标记密度，培养群体规模和性状遗传结构的重要性已经很好地建立，但仍然很大程度上未知在不同环境中保持准确的预测模型。此外，对于长寿多年生物种，在多个时代应用一种预测模型的适用性尚不清楚。以前在农林科学研究中的QTL研究表明，年龄和基因型×环境相互作用的影响很大程度上影响了复杂性状的遗传控制（Paterson et al。， 1991，2003 ; Kaya et al。，1999）。">
+  <meta property="og:description" content="Resende M F R, Muñoz P, Acosta J J, et al. 2012. Accelerating the domestication of trees using genomic selection: accuracy of prediction models across ages and environments. New Phytologist, 193(3): 617–624.
+ ##概要
+•基因组选择越来越被认为是加速遗传改良的关键。然而，当在各个环境和年龄段使用时，如何保持准确的基因组选择预测模型是未知的。这种知识对于育种者在遗传改良中应用这一策略至关重要。 •在这里，我们评估了基因组选择的效用火炬松的群体℃。800个个体在四个位点上克隆并生长，并对4825个单核苷酸多态性（SNP）标记进行基因分型。使用基因组随机回归最佳线性无偏估计（BLUP）估计多个年龄的直径和高度的预测模型。 •预测模型的准确度范围为直径0.65〜0.75，高度为0.63〜0.74。使用基因组选择与表型选择相比，每单位时间的选择效率估计高53-112％，假设育种周期减少50％。只要在相同的繁殖区内使用，准确度在环境中保持很高。然而，早期生成的模型在6岁时不能很好地预测表型。 •这些结果表明，只要在相关选择年龄和估计的繁殖区内使用模型，可以通过将基因组选择纳入育种计划中来实现。
+##介绍
+全球粮食和纤维需求的不断增长（粮农组织，2002年）和气候变化越来越多的证据（IPCC，2007年），迫切需要开发适应现有和新型生物和非生物胁迫来源的更有生产力的种质资源。已经提出了标记辅助选择（MAS）作为加速植物遗传改良的方法（Lande＆Thompson，1990 ; Paterson 等人，1991），并且预期对于具有较长产生次数的物种特别有价值，显示出低遗传性和选择在生命周期晚期表现的性状。早期识别MAS的标记物主要依赖于从少量分离群体的分析得出的数量性状基因座（QTL）研究。然而，跨越不同遗传背景的标记和性状之间的弱连锁不平衡和QTL研究中捕获的狭窄等位基因范围限制了其在家庭内部选择策略中的使用（Strauss 等人，1992 ; Dekkers，2004 ; Grattapaglia＆Kirst，2008）。QTL方法的许多限制正在通过关联遗传学来克服。然而，由于数量性状通常受许多小效应基因座的控制（Visscher，2008 ; Buckler 等，2009），需要大量群体才能获得足够的统计学功能来检测所有相关的标记 - 特征关联（Long＆Langley，1999） - 非模式作物中许多现有的关联研究的局限性。已经在玉米和拟南芥（Kover et al。，2009 ; Tian et al。，2011）中建立了旨在实现高分辨率和统计学功能的群体，同时捕获广泛的等位基因变异。然而，它们的发展对许多作物而言是不实际的，特别是那些需要几年才能达到育龄的作物。
+基因组选择（GS）最近被提出作为替代MAS作物改良（Bernardo＆Yu，2007 ; Heffner 等，2009），在广泛应用于动物育种之后（Hayes et al。，2009 ; Daetwyler et al 。，2010 ; 海斯＆戈达德，2010）。基因组选择依赖于目标育种群体的足够大且有代表性的样品的表型和高密度基因分型，使得调节数量性状的大多数基因座与一种或多种分子标记物连锁不平衡。与MAS相反，在GS中，所有可用的遗传标记的效应在训练人群中同时进行估计，并且开发模型以预测子代后代的基因组育种价值（Meuwissen 等，2001）。在植物物种中，模拟表明GS相对于传统育种和标记辅助反复选择提供了更高的效率（Bernardo＆Yu，2007 ; Heffner et al。，2009 ; Grattapaglia＆Resende，2010 ; Iwata et al。，2011）。模拟还表明，预测模型的准确性主要取决于训练群体中连锁不平衡（LD）的水平 - 较高的LD提高了标记与数量性状基因座之间的联系的可能性。较大的培训群体还可以更准确地估计标记对表型的影响。最后，性状的遗传力和调控其变异的QTL的数量也影响模型的准确性，因为相对于更复杂的性状，更容易捕获更简单的遗传结构（即调节较大部分表型方差的较少基因座）。虽然标记密度，培养群体规模和性状遗传结构的重要性已经很好地建立，但仍然很大程度上未知在不同环境中保持准确的预测模型。此外，对于长寿多年生物种，在多个时代应用一种预测模型的适用性尚不清楚。以前在农林科学研究中的QTL研究表明，年龄和基因型×环境相互作用的影响很大程度上影响了复杂性状的遗传控制（Paterson et al。， 1991，2003 ; Kaya et al。，1999）。">
+  <meta name="twitter:description" content="Resende M F R, Muñoz P, Acosta J J, et al. 2012. Accelerating the domestication of trees using genomic selection: accuracy of prediction models across ages and environments. New Phytologist, 193(3): …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/gs/resende2012/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/gs/resende2012/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Resende2012</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (99 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Resende2012</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (99 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Resende M F R, Muñoz P, Acosta J J, et al. 2012. Accelerating the domestication of trees using genomic selection: accuracy of prediction models across ages and environments. New Phytologist, 193(3): 617–624.</p>
+</blockquote>
+
+<p>##概要</p>
+
+<p>•基因组选择越来越被认为是加速遗传改良的关键。然而，当在各个环境和年龄段使用时，如何保持准确的基因组选择预测模型是未知的。这种知识对于育种者在遗传改良中应用这一策略至关重要。
+•在这里，我们评估了基因组选择的效用火炬松的群体℃。800个个体在四个位点上克隆并生长，并对4825个单核苷酸多态性（SNP）标记进行基因分型。使用基因组随机回归最佳线性无偏估计（BLUP）估计多个年龄的直径和高度的预测模型。
+•预测模型的准确度范围为直径0.65〜0.75，高度为0.63〜0.74。使用基因组选择与表型选择相比，每单位时间的选择效率估计高53-112％，假设育种周期减少50％。只要在相同的繁殖区内使用，准确度在环境中保持很高。然而，早期生成的模型在6岁时不能很好地预测表型。
+•这些结果表明，<strong>只要在相关选择年龄和估计的繁殖区内使用模型，可以通过将基因组选择纳入育种计划中来实现</strong>。</p>
+
+<p>##介绍</p>
+
+<p>全球粮食和纤维需求的不断增长（粮农组织，2002年）和气候变化越来越多的证据（IPCC，2007年），迫切需要开发适应现有和新型生物和非生物胁迫来源的更有生产力的种质资源。已经提出了标记辅助选择（MAS）作为加速植物遗传改良的方法（Lande＆Thompson，1990 ; Paterson 等人，1991），并且预期对于具有较长产生次数的物种特别有价值，显示出低遗传性和选择在生命周期晚期表现的性状。早期识别MAS的标记物主要依赖于从少量分离群体的分析得出的数量性状基因座（QTL）研究。然而，跨越不同遗传背景的标记和性状之间的弱连锁不平衡和QTL研究中捕获的狭窄等位基因范围限制了其在家庭内部选择策略中的使用（Strauss 等人，1992 ; Dekkers，2004 ; Grattapaglia＆Kirst，2008）。QTL方法的许多限制正在通过关联遗传学来克服。然而，由于数量性状通常受许多小效应基因座的控制（Visscher，2008 ; Buckler 等，2009），需要大量群体才能获得足够的统计学功能来检测所有相关的标记 - 特征关联（Long＆Langley，1999） - 非模式作物中许多现有的关联研究的局限性。已经在玉米和拟南芥（Kover et al。，2009 ; Tian et al。，2011）中建立了旨在实现高分辨率和统计学功能的群体，同时捕获广泛的等位基因变异。然而，它们的发展对许多作物而言是不实际的，特别是那些需要几年才能达到育龄的作物。</p>
+
+<p>基因组选择（GS）最近被提出作为替代MAS作物改良（Bernardo＆Yu，2007 ; Heffner 等，2009），在广泛应用于动物育种之后（Hayes et al。，2009 ; Daetwyler et al 。，2010 ; 海斯＆戈达德，2010）。<strong>基因组选择依赖于目标育种群体的足够大且有代表性的样品的表型和高密度基因分型，使得调节数量性状的大多数基因座与一种或多种分子标记物连锁不平衡。与MAS相反，在GS中，所有可用的遗传标记的效应在训练人群中同时进行估计，并且开发模型以预测子代后代的基因组育种价值（Meuwissen 等，2001）</strong>。在植物物种中，模拟表明GS相对于传统育种和标记辅助反复选择提供了更高的效率（Bernardo＆Yu，2007 ; Heffner et al。，2009 ; Grattapaglia＆Resende，2010 ; Iwata et al。，2011）。模拟还表明，<strong>预测模型的准确性主要取决于训练群体中连锁不平衡（LD）的水平 - 较高的LD提高了标记与数量性状基因座之间的联系的可能性</strong>。<strong>较大的培训群体还可以更准确地估计标记对表型的影响</strong>。最后，性状的遗传力和调控其变异的QTL的数量也影响模型的准确性，因为相对于更复杂的性状，更容易捕获更简单的遗传结构（即调节较大部分表型方差的较少基因座）。虽然标记密度，培养群体规模和性状遗传结构的重要性已经很好地建立，但仍然很大程度上未知在不同环境中保持准确的预测模型。此外，对于长寿多年生物种，<strong>在多个时代应用一种预测模型的适用性尚不清楚。以前在农林科学研究中的QTL研究表明，年龄和基因型×环境相互作用的影响很大程度上影响了复杂性状的遗传控制</strong>（Paterson et al。， 1991，2003 ; Kaya et al。，1999）。</p>
+
+<p>在这里，我们报告了在北美最经济和生态重要的树种之一的火炬松（Pinus taeda）的繁殖种群中基因组选择预测模型的开发。美国东南部有3000多万英亩的松树林（Wear et al。，2007） - 在这些立场上，火炬松是优势种，提供了美国60％以上的木材。然而，松树的繁殖是昂贵和耗时的，并且一个繁殖周期可以延长二十多年（White＆Carson，2004）。甚至使用先进的育种和繁殖方法的遗传改良方案也需要十多年才能完成育种周期，这主要是因为可靠的表型和选择发生所需的延长时间。基于GS预测模型的早期选择的并入可以实际上消除长期的现场测试。基因组选择也有望用于火炬松和其他针叶树的遗传改良，因为木材化学和物理性质的变化发生在幼体到成熟期，延缓了优良基因型的选择。在本研究中，我们开发了在多个位点测量的生长性状的基因组预测模型，以评估基因型对环境相互作用对其准确度的影响。培训群体也在多个年龄进行了测量，并且开发了模型以评估其在生命周期后期预测育种价值的价值。我们显示，尽管可以以中等到高精度预测乳房高度（DBH）和总高度（TH）的直径可遗传变异的很大比例，但是在不同气候区域和年龄段的模型的使用是有限的。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%AB%9E%E4%BA%89/resende2016-%E6%A1%89%E6%A0%91-%E6%97%A0%E6%80%A7%E7%B3%BB-%E7%AB%9E%E4%BA%89/" data-toggle="tooltip" data-placement="top" title="Resende2016-桉树-无性系-竞争">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%AB%9E%E4%BA%89/resende-2005-%E7%A9%BA%E9%97%B4%E7%AB%9E%E4%BA%89%E8%81%94%E5%90%88%E5%BB%BA%E6%A8%A1/" data-toggle="tooltip" data-placement="top" title="Resende-2005-空间&amp;竞争联合建模">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

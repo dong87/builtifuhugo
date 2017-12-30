@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>论文 on Dong&#39;s blog</title>
+    <link>/categories/%E8%AE%BA%E6%96%87/</link>
+    <description>Recent content in 论文 on Dong&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>youremail@domain.com (Leiming Dong)</managingEditor>
+    <webMaster>youremail@domain.com (Leiming Dong)</webMaster>
+    <lastBuildDate>Sun, 01 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/%E8%AE%BA%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>双列交配设计</title>
+      <link>/post/%E8%AE%BA%E6%96%87/%E5%8F%8C%E5%88%97%E4%BA%A4%E9%85%8D%E8%AE%BE%E8%AE%A1/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E8%AE%BA%E6%96%87/%E5%8F%8C%E5%88%97%E4%BA%A4%E9%85%8D%E8%AE%BE%E8%AE%A1/</guid>
+      <description>双列交配设计 尽管分子标记辅助选择以及“breeding without breeding”(El-Kassaby and Lstibůrek 2009)理论已被提出并应用于林木遗传改良，但常规的“测定-选择-测定”的轮回育种策略在过去乃至将来很长时间内仍然占据重要的地位。子代测定在常规林木遗传改良中起到至关重要的作用。获取子代材料的交配方法包括自由授粉和控制授粉。交配方法根据物种的特性还可以细分为许多设计类型(White et al. 2007)。其中，双列交配设计被广泛用于许多植物的遗传改良，其优点在于能同时提供用于选择的具有谱系的育种群体及亲本的子代测定，从而提供丰富而全面的遗传信息，比如能同时进行配合力分析（一般配合力和特殊配合力）、遗传参数估算以及杂种优势和自交衰退（包含自交的话）分析。这些信息是育种策略制定的必要条件。
+双列交配设计数据分析方法进展 Hayman (Hayman 1954a; b)和Jinks (Jinks 1954)开创了双列交配数据分析的先河。随后Griffing(Griffing 1956)提出了双列交配设计的4种方法（图 1）以及对应的统计模型，这些方法和统计模型在植物育种和遗传学研究中得到广泛应用(Evans et al. 1966; Borges 1987; Johnson and King 1998; Wu and Matheson 2001; Kumar and Wu 2003; Jansson and Li 2004; Kang et al. 2005; Huang et al. 2015; Zhang et al. 2016)。对于反交，Griffing(Griffing 1956)还定义了一个特殊的正反交效应。Cockerham(Cockerham 1963)建议将正反交均方分为母本和非母本均方。Cockerham和Weir(Cockerham and Weir 1977)（1977，模型c）及Keuls和Garretsen(Keuls and Garretsen 1977; Garretsen and Keuls 1978)又进一步通过定义反交GCA（RGCA）效应和反交SCA（RSCA）效应扩展了这种方法。在一些研究中已经提出了母本和非母本效应及其均方的估计((Evans et al. 1966; Stuthman et al.</description>
+    </item>
+    
+    <item>
+      <title>投稿</title>
+      <link>/post/%E8%AE%BA%E6%96%87/%E6%8A%95%E7%A8%BF/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E8%AE%BA%E6%96%87/%E6%8A%95%E7%A8%BF/</guid>
+      <description>New forests larch_rif@163.com larix9685
+the Forestry Industry Research Special Funds for Public Welfare Projects(201504104)
+Additional Information is Required for Submission. Please respond to the questions/statements below.
+ Have you submitted this manuscript elsewhere? NO.   The authors declare that:  The submitted work has not been published before (neither in English or any other language) and that the work is not under consideration for publication elsewhere.
+All data presented in the manuscript represent original research by the authors.</description>
+    </item>
+    
+    <item>
+      <title>空间分析在遗传测定中的应用</title>
+      <link>/post/%E8%AE%BA%E6%96%87/%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E5%9C%A8%E9%81%97%E4%BC%A0%E6%B5%8B%E5%AE%9A%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E8%AE%BA%E6%96%87/%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90%E5%9C%A8%E9%81%97%E4%BC%A0%E6%B5%8B%E5%AE%9A%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
+      <description>空间分析在遗传测定中的应用 概念与方法 在林木遗传改良计划中，需要尽可能精确地估计遗传参数和预测育种值，这取决于精心设计的子代（无性系）测定试验。与其他栽培植物相比，林木遗传试验林中易产生高度的环境异质性（(Libby et al. 1980)）。通常测定的家系个数及每个家系子代数目很大，比大多数栽培植物占据更多的空间，所以需要很大的面积（2-4公顷）才能满足需要。而试验林一般设置在丘陵地区和不规则地形上，原因是一方面低海拔平原地区不适宜像日本落叶松这样的树种生长，另一方面低坡度的土地主要用于耕地。丘陵等有坡度的地区必定存在空间环境异质性，比如坡上与坡下的土壤厚度、肥力、湿度等都有较大差异，甚至由于跨度较远同等坡位也存在明显的差异。 为了解决环境异质的问题，育种人员提出多种试验设计可能多地将林地内微环境变化进行分解（(Cochran and Cox 1957)）。最初在林业田间试验中使用了随机完全区组（RCB），但RCB设计的缺点是区组依然很大，控制效果较差（(Loo-Dinkins 1992; Magnussen 1993a)）。随后又引入包括不完全区组（IB）和行列设计以减小区组大小（(Patterson and Thompson 1971; Libby et al. 1980; Williams et al. 2002)）。但是不管何种设计都难以解释不断变化的环境因素Magnussen 1990，表型变异总有相当大比例的残差方差，这在很大程度上降低了测定的精度（(Loo-Dinkins 1992)）。空间分析则可以通过在测定林中模拟误差影响的空间分布，并分离空间相关的整体和局部变异与独立随机环境变化来改进遗传效应的估计。并且前人发现多数林木试验林中的环境整体上呈现连续和平滑变化适于进行空间分析（(Dutilleul and Sep 1993; Dutkowski et al. 2002; Ettema and Wardle 2002)）。因此空间分析正越来越多地被应用于林木遗传改良程序中。 试验林中的空间连续变异性有两个主要来源：小尺度的“局部趋势”，和大尺度的“整体趋势”。 在林木遗传试验中经常观察到这两个来源，或是单独存在，或是彼此组合（例如，(Fu et al. 1999; Costa e Silva et al. 2001; Dutkowski et al. 2002)。林木遗传试验中常用的空间分析方法如下： （1） 最近邻调整法（Nearest neighbor adjustment，NNA）。自从Papadakis的NNA开创性工作以来，该方法已经引起广泛关注(Bartlett 1978; Wilkinson et al. 1983)。其基本思想是通过从相邻小区中减去一些观测值的函数来调整小区值，基本上消除了局部趋势。Magnusse(Magnussen 1990)利用11个空间模型（包括NNA）对杰克松（Pinus banksiana）设置于3个地点50个全同胞家系的树高数据进行分析，多数模型会降低遗传效应和遗传力估计，认为仔细的林地规划和准备可以大大减少空间协方差和空间分析的需要，而林木遗传试验缺乏一个空间分析的因果关系不保证真正的处理效果。而在另外2个研究中，采用NNA则能够有效提升遗传力估计及选择效率，同时对育种值排名显示出相当大的影响(Anekonda and Libby 1996; Joyce et al. 2002)。 （2） Variography和Kriging。Kriging是NNA的延伸，它采用半变异函数对空间变异建模，并利用迭代的方法去除数据中的异质性(Zas 2006)。利用该方法，Hamann等(Hamann et al.</description>
+    </item>
+    
+    <item>
+      <title>第一章</title>
+      <link>/post/%E8%AE%BA%E6%96%87/%E7%AC%AC%E4%B8%80%E7%AB%A0/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E8%AE%BA%E6%96%87/%E7%AC%AC%E4%B8%80%E7%AB%A0/</guid>
+      <description>2.2.材料与方法 2.2.1植物材料与试验设计 从初级种子园中选择12个无性系，开展双列交配试验（包含自交）。共获得55个组合，包括8个自交、34对正反交和13个单交（交配设计见表1 - 1）。此外，同年收集12个亲本自由授粉种子。在苗圃中将种子育苗，培育2年后移植到试验林地（1988年）。试验林位于中国辽宁省抚顺市清原县大孤家镇林场（42.72°N，124.88°E），林地海拔约460 m。试验设计采用随机完全区组设计，5个重复，其中重复2和重复4分别包含4个和5个亚重复，密度2 × 2 m。每个组合及自由授粉家系获得的子代个数不完全一致，由于要将全部子代个体布置到林地内，所以小区的大小是变化的，总体上服从每行5株多列(1-3)。试验林四周设有保护行以避免边缘效应。每年进行常规抚育管理。为维持林地的生产力，2009年对试验林进行隔株间伐。 采集12个亲本的新鲜针叶，硅胶干燥，用于后续基因组DNA提取和遗传分析。 表1 - 1全双列交配设计 Table 1 – 1 A full diallel mating design used for the present Japanese larch improvement program
+注：⊙-自交；×-异交。
+2.2.2数据收集与清洗 分别在2005年和2014年树木休眠期，调查测定试验林内单株的树高（m）、胸径（cm），用H05、H14、DBH05和DBH14表示。树高和胸径分别用测高仪(Vertex Ⅲ, Haglof Company Group, Sweden)和围尺测定。而后利用树高和胸径计算每木的带皮材积指数（m3），用V05、V14表示。材积指数公式为V = H × D2 (1)。 在家系水平和重复水平检查各性状的极端异常值。极端异常值的定义为≤下四分位数减去3倍IQR（interquartile range）的数值，或≥上四分位加上3倍IQR的数值。而后去除极端异常小的数值，因为这些数值的观测个体可能是受压木、遭受严重病虫害或是所处环境条件很差，未能反映真实的生长潜力。 2.2.3 统计分析 因为Yao等(2013)发现使用家系模型分析包含自交的全双列会高估SCA效应，认为不含自交全双列是用于估计GCA和SCA效应的最佳交配设计。因此，在去除自交数据后进行遗传参数估计及遗传效应值预测。混合模型如下： y=Xb+Z_1 gm+Z_2 gd+Z_3 s+Z_4 r+Z_5 p+e 这里，响应变量y是单株表型值列向量。b是固定的重复效应列向量，gm (gd)是随机的亲本GCA效应向量，s是随机的交配组合SCA效应向量，r、p、e分别是随机的正反交效应、小区效应和残差向量。X和Z(Z1-Z5) 分别是将观测值关联到各自固定和随机效应上的设计矩阵。模型（2）中的随机效应假定期望为0并服从正态分布： A亲缘关系矩阵，I是单位矩阵，σ ̂_g^2，σ ̂_s^2，σ ̂_r^2，σ ̂_p^2和σ ̂e^2分别是随机效应gm(gd)，s，r，p，和e的方差估计。 方差估计由限制性最大似然估计（Restricted maximum likelihood，REML）方法获得。各方差的标准误由1阶泰勒展开式决定。利用似然比检验检验（LRT）各方差组分的统计显著性(α = 0.05)。通过解Henderson混合模型方程组(Henderson 1975)求得模型的解，即为包括育种值在内的随机效应值。 为比较各生长性状的相对遗传方差，利用公式(&amp;ldquo;CV&amp;rdquo; ) ̂&amp;ldquo;g&amp;rdquo; &amp;ldquo;=&amp;rdquo; √(&amp;ldquo;σ&amp;rdquo; ̂&amp;ldquo;a&amp;rdquo; ^&amp;ldquo;2&amp;rdquo; +4&amp;rdquo;σ&amp;rdquo; ̂&amp;ldquo;s&amp;rdquo; ^&amp;ldquo;2&amp;rdquo; )/&amp;ldquo;x&amp;rdquo; ̅ &amp;ldquo;×100%&amp;rdquo; (3)和(&amp;ldquo;CV&amp;rdquo; ) ̂&amp;ldquo;p&amp;rdquo; &amp;ldquo;=&amp;rdquo; √(&amp;ldquo;σ&amp;rdquo; ̂&amp;ldquo;P&amp;rdquo; ^&amp;ldquo;2&amp;rdquo; )/&amp;ldquo;x&amp;rdquo; ̅ &amp;ldquo;×100%&amp;rdquo; (4)，分别估计了加性遗传变异系数((&amp;ldquo;CV&amp;rdquo; ) ̂&amp;ldquo;g&amp;rdquo; )和表型变异系数((&amp;ldquo;CV&amp;rdquo; ) ̂&amp;ldquo;p&amp;rdquo; )。 &amp;ldquo;σ&amp;rdquo; ̂&amp;ldquo;a&amp;rdquo; ^&amp;ldquo;2&amp;rdquo; 和&amp;rdquo;σ&amp;rdquo; ̂&amp;ldquo;s&amp;rdquo; ^&amp;ldquo;2&amp;rdquo; 如上描述，&amp;rdquo;σ&amp;rdquo; ̂_&amp;ldquo;P&amp;rdquo; ^&amp;ldquo;2&amp;rdquo; 是表型方差估计值。x ̅是性状的均值。 狭义遗传力(h2)和广义遗传力(H2)分别按以下2个公式估计： h^2=(4σ_a^2)/(〖2σ〗_a^2+σ_s^2+σ_r^2+σ_p^2+σ_e^2 ) (4) H^2=(4(σ_a^2+σ_s^2))/(〖2σ〗_a^2+σ_s^2+σ_r^2+σ_p^2+σ_e^2 ) (5) 两性状（x、y）遗传相关系数（&amp;rdquo;r&amp;rdquo; _&amp;ldquo;A&amp;rdquo; ）计算公式为： &amp;ldquo;r&amp;rdquo; &amp;ldquo;A&amp;rdquo; &amp;ldquo;=&amp;rdquo; &amp;ldquo;σ&amp;rdquo; ̂(&amp;ldquo;a&amp;rdquo; _&amp;ldquo;x&amp;rdquo; &amp;ldquo;a&amp;rdquo; &amp;ldquo;y&amp;rdquo; )/√(&amp;ldquo;σ&amp;rdquo; ̂(&amp;ldquo;a&amp;rdquo; &amp;ldquo;x&amp;rdquo; )^&amp;ldquo;2&amp;rdquo; &amp;ldquo;σ&amp;rdquo; ̂(&amp;ldquo;a&amp;rdquo; _&amp;ldquo;y&amp;rdquo; )^&amp;ldquo;2&amp;rdquo; ) (7) 以上提及的分析均由ASReml-R 软件包3.</description>
+    </item>
+    
+    <item>
+      <title>系谱重建</title>
+      <link>/post/%E8%AE%BA%E6%96%87/%E7%B3%BB%E8%B0%B1%E9%87%8D%E5%BB%BA/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E8%AE%BA%E6%96%87/%E7%B3%BB%E8%B0%B1%E9%87%8D%E5%BB%BA/</guid>
+      <description>育种值的准确估计，能够提高植物遗传改良的效率，依赖于良好的交配设计和田间测定。自由授粉因其操作简便等特点，是林木育种中最常采用的交配设计，但与控制授粉相比，获得的育种值估计不够准确，原因有存在近交子代的可能，造成来自同一母本的子代不是真正意义上的半同胞。此外，种子园中的外源花粉污染也会造成育种值估计出现偏差（Squillace和Long 1981; Friedman and Adams 1985; Adams和Burczyk 2000）。</description>
+    </item>
+    
+    <item>
+      <title>间接遗传效应及对林木育种中选择的影响</title>
+      <link>/post/%E8%AE%BA%E6%96%87/%E9%97%B4%E6%8E%A5%E9%81%97%E4%BC%A0%E6%95%88%E5%BA%94%E5%8F%8A%E5%AF%B9%E6%9E%97%E6%9C%A8%E8%82%B2%E7%A7%8D%E4%B8%AD%E9%80%89%E6%8B%A9%E7%9A%84%E5%BD%B1%E5%93%8D/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E8%AE%BA%E6%96%87/%E9%97%B4%E6%8E%A5%E9%81%97%E4%BC%A0%E6%95%88%E5%BA%94%E5%8F%8A%E5%AF%B9%E6%9E%97%E6%9C%A8%E8%82%B2%E7%A7%8D%E4%B8%AD%E9%80%89%E6%8B%A9%E7%9A%84%E5%BD%B1%E5%93%8D/</guid>
+      <description>间接遗传效应及对林木育种中选择的影响 间接遗传效应 可遗传变异，即加性遗传方差，对选择精度和遗传增益有显著影响，在育种群体的遗传改良过程中至关重要（(Falconer and Mackay 1996)）。为避免在估计加性方差时产生偏差，分析采用的统计模型中应包括所有其他遗传变异来源以及所有可识别的环境因素。尽管经典的数量遗传模型已经使人们对遗传和选择响应有较为清晰的理解，但类似基因和基因型之间的差异以及环境的差异如何转化为表型变异的问题依旧充满挑战。随着统计模型及统计分析程序发展水平的逐渐提高，表型变异来源正被尽可能多的因素来解释，比如个体间的相互作用。个体间的相互作用又称为间接遗传效应，即个体的表型性状值可以取决于其他个体基因的表达(Griffing 1967; Wolf et al. 1998)。间接遗传效应广泛存在于自然界中，例如同种植物的相邻个体竞争相同的空间、光照或营养物质(Sakai 1955; Frank 2007; Karban 2008)。 林木个体捕获并利用有限资源的能力对其生长或繁殖极为重要（(Binkley et al. 2004)）。这种能力由林木自身和相邻树木的基因型以及空间排列决定（(Hinson and Hanson 1962)），因此林木间的竞争同样是由遗传和环境造成的（(Magnussen 1989)）。竞争可能引起个体间或邻近小区之间负向的协方差，进而造成个体育种值的估计不够准确（参见例如(Magnussen 1993; Foster et al. 1998; Radtke et al. 2003)）。尽管有许多报道证明竞争的存在(VONEULER et al. 1992; Magnussen 1993; Foster et al. 1998)，但通常在评估模型中没有包括遗传竞争效应。而林木又有世代较长及育种周期较长的特性，在育种中考虑竞争效应越发重要。因此关于林木育种群体中竞争的数量遗传学研究虽然较少，但正在引起育种工作者的重视。
+在林木遗传测定中的发展 在经典的数量遗传模型中，个体的表型是其遗传价值或育种值和残余不可遗传效应的总和。GRIFFING（(Griffing 1967, 1968a; 1968b)）引入间接遗传效应（IGE）的概念，并提出了包括个体或个体分组间竞争的遗传效应模型，而后分析了使用这些模型对选择响应的后果。在这些模型中，个体的表型是其遗传效应（“直接遗传效应”）加上其他基因型的遗传贡献（“间接遗传效应”）的线性组合。虽然直接遗传效应在个体的表型中表达，但是间接遗传效应仅在另一个个体的表型中表达。在这个意义上，对个体表型的遗传影响分为其基因的直接效应和属于个体间相互作用的个体基因的间接影响（(Moore et al. 1997; Wolf et al. 1998)）。已经提出了几种方法来调整林木遗传试验中的竞争效应：例如包括距离相关竞争指数（(Tuskan and McKinley 1984)）、高度差的角度法（(Magnussen 1989)）和迭代最近邻法（(Magnussen 1994)）。然而，这些方法只认为竞争存在于表型水平，但没有在单株水平上分离遗传和非遗传竞争效应的作用。VAN VLECK和CASSADY（(Van Vleck and Cassady 2005)）使用模拟和固定数量的竞争者来确定限制最大似然估计（REML，(PATTERSON H. D.; THOMPSON 1971)）能否解决直接和竞争遗传方差的协方差结构以及它们之间的协方差。这项研究的结果表明，竞争个体之间的加性关系在解释信息以估计（协）方差分量时可能是必要的。Muir（(Muir 2005)）在线性混合模型中包含了间接遗传效应IGE，并以林木育种为例，指出应根据将育种值与直接和间接（即竞争）效应相结合的指数来选择个体。虽然没有用实际林业数据验证，但是当使用来自日本鹌鹑的数据进行测试时，这些模型在某些情况下表明如果仅选择直接遗传效应可能会导致负选择反应。因此，林木中的人工选择方案可能是次优的，因为目前多数的性状改良的选择和育种策略中并没有考虑竞争能力的遗传基础。但他忽略了不同数量竞争者（例如邻近死亡或中心个体位于边缘）对估计竞争的加性遗传方差的影响。 较为完全的方法是在分析模型中对竞争和空间效应联合建模。同时考虑这2种因素的方法较早出现在农作物的研究中(Stringer and Cullis 2002)，随后Resende等（(Resende et al.</description>
+    </item>
+    
+  </channel>
+</rss>

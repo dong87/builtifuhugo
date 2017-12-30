@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Dong&#39;s blog</title>
+  <meta property="og:title" content="Dong&#39;s blog" />
+  <meta name="twitter:title" content="Dong&#39;s blog" />
+  <meta name="description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta property="og:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="twitter:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../" />
+  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../">
+            <img class="avatar-img" src="../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Dong&#39;s blog</h1>
+                
+                  
+                    <hr class="small">
+                    <span class="page-subheading">Enterprising &amp; Concentrating欢迎光临！</span>
+                  
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div role="main" class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+          <div class="well">
+            
+
+<h2 id="front-page-content">Front Page Content</h2>
+
+<p><code>beautifulhugo</code> supports content on your front page. Edit <code>/content/_index.md</code> to change what appears here. Delete <code>/content/_index.md</code> if you don&rsquo;t want any content here.</p>
+
+          </div>
+        
+
+        <div class="posts-list">
+          
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/isik-2003-additive-dominance-epistatic-%E5%85%8B%E9%9A%86/">
+                <h2 class="post-title">Isik-2003-additive,-dominance,-epistatic-克隆</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (85 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Isik F, Li B, Frampton J. Estimates of additive, dominance and epistatic genetic variances from a clonally replicated test of loblolly pine. For. Sci. Society of American Foresters; 2003;49:77–88.   摘要：9个全同胞家系使用由三个雌性和三个雄性火腿（Pinus taeda L.）亲本组成的因子交配设计产生。将全同胞苗和相同家系的克隆种植在阿拉巴马州和佛罗里达州的两个试验地点。对于1至6岁的生长性状和梭形锈病发生率，估计加性，优势和上位性遗传变异。上位性变异在生长性状中没有显着作用，但加性基因作用是火炬松的遗传变异的主要来源。高度，直径和体积的优势方差在早期可以忽略不计，但在6岁时尤为明显，尤其是体积。梭形锈病发生率似乎部分在加性和上位性基因作用下，家族中克隆之间的遗传差异占总变异的48.6％。克隆的块内方差总是小于相同全同胞家系的幼苗的方块内方差。克隆复制的子代测试可以为火炬松树改良计划提供特殊的优势，因为它们将通过减少微环境变化和更好地估计遗传参数来显着提高测试效率。这可以提供更大的遗传增益，特别是对梭形锈的发生。讨论了小亲本大小和违反遗传模型假设的潜在影响。生长性状和梭形锈病发生率之间的负加性和非加性遗传相关性是令人鼓舞的，用于在相同的周期选择期间快速和同时改善性状。
+遗传变异可以分为加性，优势和上位方差（Falconer和Mackay 1996，第122-131页）。基因的加性效应是代代累积的，是大多数植物育种计划所利用的遗传变异的主要来源。数量遗传学家一般认为基因座处的等位基因（主导）之间的相互作用，特别是基因座之间等位基因的相互作用（上位性）（Lynch和Walsh 1998，第82-92页）。上位性的Igno-rance在森林树木中是特别常见的，因为统计能力和将非传统方差分为其组分所需的实验方法的实质性限制（Foster和Shaw 1988）。然而，根据所涉及的基因频率，上位相互作用可以大大增加基因方差的加性和/或优势成分估计（Lynch和Walsh 1998，第82-92页）。相当多的理论和经验研究已经表明上位在进化和物种形成，杂种优势和多态性中起核心作用（Weller 1976，Wright 1980，Minvielle 1987，Lynch和Walsh 1998，第86-92页）。基于基因相互作用水平的两种估计方法已经被提出来从森林树种的其他遗传方差分量中分离上位性方差。 Foster和Shaw（1988）估计了使用亲戚中预期的协方差的克隆复制实验的上位方差。他们的模型假设上位性主要来自较高水平的位点相互作用。相比之下，Wu（1996）提出的模型是基于这样的假设，即数量性状的上位仅限于一对数量 - 性状基因座（QTL）之间的相互作用。如果低阶基因相互作用具有主要影响，则加性方差主要由二阶和三阶加法外推遗传方差膨胀。类似地，优势差异部分地受到上位性遗传变异的部分污​​染（Foster 1990，Mullin and Park 1992，Wu 1996）。另一方面，当低阶交互相对较大时，总上位方差将被低估（Mullin等人，1992，Wu 1996）。每个模型都有自己的精度优势，取决于假设和上位性所涉及的主要基因的数量。然而，与Wu的方法相比，Foster和Shaw的方法更容易应用。后一种方法需要在同一基因测试中测试具有同胞和克隆的亲本。 在文献中有相当多的研究报道了与许多QTL相比较的关于几个QTL（例如，Doabley和Stec 1991，Paterson等人1991，Bradshaw和Stettler 1995，Wilcox等人1996）的对比结果（例如，Paterson等人1988，Paterson等人1990，Long等人1995，Amerson等人1997，Kao等人1999，Kaya等人1999），影响实验室动物和作物的数量性状。当影响性状的QTL的数量是未知的或难以确定时，可以使用两种方法（Wu 1996）。当森林树木的高度和直径生长被认为是多基因性状时，可以放松对遗传方差分量的估计的假设（Mullin等人，1992）。存在许多关于植物和实验动物的研究，其显示数量性状由许多基因座处的基因控制（Falconer和Mackay 1996，第100-104页，Miklas等人1999，Frewen等人2000）。 Marques et al。 （1999）假设三个QTL的死亡率，九个偶然生根，四个石化（存活的无根切割），一个为发芽能力，四个为不定根生的稳定性。在火炬松中，检测到13个不同的高度增量和8个不同的直径增量QTL（Kaya等人，1999）。关于上位性方差对总遗传变异及其对火炬松生长的影响的贡献知之甚少。使用两个4×4因子交配设计和复制克隆测试火炬松，Paul等人。 （1997）报告了1龄时的上位性遗传变异，但不是2至5岁的一个阶乘。在同一研究中，在其他因子中五个之中的两个年龄检测到上位性遗传变异。 Foster（1990）报道了火炬松根生根的非常高的附加遗传控制和上位性基因效应。然而，在黑云杉（云杉）中，5％高度生长的遗传变异的36％是由于上位方差，并且来自克隆选择的遗传增益通过捕获上位方差而高得多（Mullin等人，1992）。在同一研究中，高度的加性遗传方差在5和10之间从66％降低到38％，而优势和上位性遗传部分分别从3％增加到13％和31％增加到49％（Mullin和Park 1994）。 对于树育种计划重要的性状的加性和非加性遗传方差的水平对育种策略的决定具有重大影响（Stonecypher和McCullough 1986，Foster and Shaw 1987）。此外，设计高效的部署策略非常重要。例如，受控授粉家庭作为幼苗或根茎切割的部署将足以使用加性遗传变异，但是为了更充分地利用优势和上位性遗传方差，将需要克隆部署。火炬松是美国南部最具经济重要性的林木树种，在过去二十年中，它已经研究了其根系切屑的传播。根部火炬松的技术已经取得进展，使得美国南部的几个林业组织已经开始了中试根切割生产（Goldfarb等人1998，Frampton等人2000）。已经报道了根瘤切割材料的许多潜在益处，包括均匀性，梭形锈病（Cronartium quercuum sp。fusiforme）的较低发生率和更大的遗传增益（Foster and Anderson 1989，Frampton等人2000，McRae等人1993）。提出了基于克隆复制的遗传测试的树改良程序以改善梭形生锈抗性（Foster and Shaw 1987）。根切技术还可以将遗传方差划分为其组成部分，并在部署计划中利用非加性遗传方差来增加树木改良计划的收益（Foster and Shaw 1988）。对于火炬松，仍然缺乏关于非加性遗传变异，特别是上位性遗传变异对生长和梭形锈病的贡献的信息。一些研究报道了家系内克隆在生长性状，抗病锈病和火炬松中根冠直径方面的显着差异（Foster et al。，1985，Foster 1988，Paul et al。1997）。然而，据我们所知，从相同家系的幼苗和克隆估计的遗传变异的比较在文献中没有进行，这可以进一步洞察经济上重要性状的遗传基础。对火炬松的非加性遗传变异的估计可能有助于开发更有效的育种策略以最大化增益（McKeand等人，1986）。使用全同胞苗和克隆部署在相同的田间测试，派生自因子交配设计，本研究的目的是1.
+                  <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/isik-2003-additive-dominance-epistatic-%E5%85%8B%E9%9A%86/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/isik2004-%E5%85%8B%E9%9A%86-%E6%95%88%E7%8E%87/">
+                <h2 class="post-title">Isik2004-克隆-效率</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (127 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Isik, F., Li, B., Frampton, J., &amp; Goldfarb, B. (2004). Efficiency of Seedlings and Rooted Cuttings for Testing and Selection in Pinus taeda. Forest Science, 50(1), 44–53. http://doi.org/10.1007/s10310-008-0074-8
+ 估计了针对火炬松的杂交种群的多聚体，克隆的多聚体，全同胞和克隆的全同胞测试和选择选择的预测的遗传学益处。来自克隆测试的体积的遗传性大大大于来自幼苗的遗传学测试。克隆的选择具有比籽苗松树taeda L.选项更高的预期遗传增益，即使调整了他们更长的繁殖周期和更高的测试成本。这主要是由于家族选择克隆的测试选项的更高的遗传收益。来自家庭内选择的polymix和克隆的polymix的调整的遗传增益分别是0.27和0.36％每年。增加每个克隆的分株数目不增加遗传增益，但增益对家族中的克隆选择比率敏感。当每个家庭测试的树木数量固定为90棵树时，所有克隆/种群组合比种子选择产生更大的家庭收益。由用于估计一般结合能力的多聚合物育种和来自克隆复制的全同胞家族的克隆选择组成的互补育种策略似乎比目前使用的基于幼苗的测试系统更有效地改善火炬松。
+目前最多的林业改良计划利用苗木用于测试和选择，即使是相对先进的改进周期。随着技术的进步，无性繁殖林木，克隆复制的遗传测试相对于幼苗后代测试的潜在好处需要检查。在火炬松（Pinus taeda L.）的情况下，已经开发了以合理百分比生根茎切屑的程序（Goldfarb等人1997，Frampton等人1999），并且可以用于克隆家族内的个体用于评估和在遗传田间试验中的选择。对于这个物种，以前的研究已经证明，种子的生长与来自幼体种植植物的根茎切割的生长没有不同，尽管幼苗具有显着较大的梭形锈病的发生率（由Cronartium quercuum [Berk。] Miyabe ex Shirai f。sp。fusiforme [Cumm。] Burds。et Snow）（Frampton等人2000）。此外，已报道了根茎切割和火炬松幼苗之间的类似家庭分级。种子和根切割全同胞家系育种值之间的相关性分别为高度和梭形锈发生率的0.80和0.87（Frampton等人2000）。 理论上，克隆的营养繁殖体提供比一组幼苗后代更有效和精确的遗传信息（Burdon和Shelbourne 1974）。这是因为，对于克隆复制，对一个家族中的每种基因型采样微环境变异。对于克隆而言，在相同位点测试的相同火炬松种的幼苗的田间变异中已报告了小的方差变化（Isik等人2003）。使用幼苗测试，家族内选择是基于在一个环境中单个树的表型值，而在克隆测试中，家族内选择是基于使用7.5年生放射松（Pinus radiata D.Don。）后代试验的遗传参数，Shelbourne（1992）显示了克隆育种群体对种子选择的优越性，基于多位置克隆试验，Paul等（1997）建议家系中的家系和克隆方法结合对火炬松有效，在同一研究中，全同胞火炬松家系中克隆的遗传变异与女性加男性方差一样高身高5岁。在另一项关于用于本研究的树木的研究中，由于家族中的克隆的方差分别解释了茎体积和梭形锈病发生率的总方差的6.9和48.6％（Isik等人2003）。 来自遗传田间试验的育种值和遗传增益估计的精确度部分取决于遗传力，一个指示树的表型值的可靠性以预测其育种值的参数（Falconer和Mackay 1996，第160-161页） 。低个体树的遗传力是大多数森林树种中经济上重要的性状的常见现象（Zobel和Talbert 1984，pp.129-130，Cornelius 1994）。热带松（Pinus taeda L.），一种经济上重要的物种，也不例外。对于火炬松的生长性状，特别是从幼苗试验（Lambeth等，1983，Balocchi等，1993，Li等，1996）已经报道了接近零或弱的单棵树的遗传力。如果非加性遗传方差低并且没有顶突，则从克隆后代的测试中选择可以更有效，特别是当遗传性低时（Shelbourne 1992）。 相同育种群体的扦插和幼苗的效率通常在相同的田间实验中没有进行比较。大多数关于从不同育种和测试选项估计遗传增益的研究是基于模拟或基于一种类型的植物材料（例如，幼苗或插枝）。在最近的火炬松研究中，从同一田间试验估计了9个全同胞家系的幼苗和克隆的遗传差异（Isik et al。2003）。克隆（带根的插条）比幼苗具有更大的加性遗传方差和更小的体积内方差变化。使用Isik等人的遗传参数（2003），我们（1）比较了单个树，家庭，家庭内和克隆平均遗传力，（2）比较了测试和选择的效率与幼苗和克隆的预测遗传增益，和（3）的分株数和克隆选择对遗传增益的强度。
+材料和方法 Anderson et al。 （1999），Frampton et al。 （2000），和Isik et al。 （2003）报告了关于交配设计，根茎切屑的扩展，测试的建立和设计以及本研究的数据收集的详细信息。简言之，使用由三个不相关的雌性和无关的雄性亲本组成的因子交配设计来产生9个全同胞家庭的火炬松。来自每个家庭的茎切根植根，并且在1990年产生6至9个克隆。 将相同家系的带根切割和全同胞幼苗移植在两个测试位点，一个在佛罗里达州，一个在阿拉巴马州。在每个测试点有六个块。在分裂图设计中将每个块分割成两个主图。相同家系的幼苗和根切头是主要的地块。每个小区的幼苗由两个全同胞树组成，而一个克隆的小区有两个分株。在研究中使用代表9个全同胞家族的74个克隆。在六个生长季节后测量树高，直径和梭形锈发生率。
+                  <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/isik2004-%E5%85%8B%E9%9A%86-%E6%95%88%E7%8E%87/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/isik2005a-%E5%85%8B%E9%9A%86%E6%9E%97%E4%B8%9A/">
+                <h2 class="post-title">Isik2005a-克隆林业</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (85 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Isik, F., Goldfarb, B., LeBude, A., Li, B., &amp; McKeand, S. (2005). Predicted genetic gains and testing efficiency from two loblolly pine clonal trials. Canadian Journal of Forest Research, 35(7), 1754–1766. http://doi.org/10.1139/x05-064
+ 使用来自火炬松（Pinus taeda L.）的8个全同胞家族的450个克隆的生根切割在两个位点建立克隆田间试验。在四个生长季节后测量高度，存活，梭形锈病感染（由Cronartium quercuum（Berk）Miyabe ex Shirai f.sp.fusiforme引起），直径和直径。在所有研究的性状中，全同胞家族和家族中的克隆之间存在显着差异。估计克隆装置（0.50至0.75）对于生长性状的适度高的家族内重复能力和对梭形锈病感染的克隆装置的非常高的家族内重复性（0.94）。当选择最佳的8个克隆而不考虑家族结构时，在两个位点处的体积产量比未改良的幼苗的体积产量高52％。从四个家族中的每一个中选择最好的两个克隆仅产生比上述情况略低的估计遗传增益。在南卡罗来纳州位点的克隆中纺锤状锈菌感染的概率为0.08至0.93。预测的抗锈性遗传增益对选择强度相对不敏感，因为存在许多具有高表观抗性的克隆。可靠地表征一个位点上的性能所需的每个克隆的分株数量估计在4和6之间。这些结果有助于估计从克隆林获得的收益，并将帮助指导克隆测试和选择计划。讨论了克隆林业和成本问题的实施。
+引言 使用营养繁殖从精英基因型为再造林生产种植资源可以提高最佳种植园生产力和质量（Zobel 1992）。使用营养繁殖的两种策略是常见的（Frampton等人2000）：（1）将有限数量的来自已知遗传价值的杂交亲本的全同胞种子倍增（增加），和（2）从家族内选择克隆用于乘法和部署。后一种方法通常被称为克隆林，这个术语假定克隆的性能以前已被评估并且被发现是合乎需要的（Libby和Ahuja 1993）。在美国东南部使用根茎干切片或体细胞胚胎发生对于无性系林业有很大的兴趣（Stelzer和Goldfarb 1997）。 目前，用于鉴定上级克隆的最可靠的方法是评估重复实地测试中的性能。理论方法已被用于确定克隆数目和每个克隆的分株数目之间的测试努力的最佳分布（Shaw和Hood 1985; Russell和Libby 1986）和不同环境中克隆性能的评估（Burdon和Shelbourne 1974 ）。 Frampton和Foster（1990）审查了使用营养繁殖体用于不同测试目标的方法，包括繁殖体类型的比较，克隆性能的评价，通过环境相互作用的克隆评估和遗传参数的估计。此外，已经报道了用于包含若干树种中的克隆的经验性试验的结果，包括辐射松D.Don（例如Burdon 1976; Burdon等人1992），Eucalyptus grandis W.Hill ex Maiden（Osorio等人， 2003），Larix laricina（Du Roi）K.Koch（Park和Fowler 1987），Picea mariana（Mill。）BSP（Mullin等人1992），Tsuga heterophylla Sarg。 （Foster et al.1985），Populus nigra L.
+                  <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/isik2005a-%E5%85%8B%E9%9A%86%E6%9E%97%E4%B8%9A/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/gs/isik2014-%E6%9E%97%E6%9C%A8%E4%B8%AD%E7%9A%84gs/">
+                <h2 class="post-title">Isik2014-林木中的GS</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (53 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Isik F (2014) Genomic selection in forest tree breeding: The concept and an outlook to the future. New For 45:379–401. doi: 10.1007/s11056-014-9422-z</p>
+</blockquote>
+
+<p>##树育种计划中的谱系重建
+在过去十年中微卫星和SNP标记的发现为生物学家研究<strong>遗传，进化历史，近亲繁殖，基因流动和野生和驯化种群的保护</strong>提供了新的机会（Blouin 2003; Pemberton 2008）。<strong>相关性（亲属关系）和父母分配的估计尤其受欢迎（Blouin 2003）</strong>。亲属关系是亲属共享的等位基因（基因）频率的度量。共享的等位基因或者被假定为通过血统相同（从相同的祖先遗传）或者由状态相同（来自相同的基因座，但不一定来自相同的祖先）（Falconer和Mackay 1996）。父母分析或谱系重建涉及将个体分配给父亲或/和母亲。微卫星标记对于亲本分析是优选的，因为这些标记是信息性的（多等位基因，意味着它们具有超过两种形式的基因），共显性（杂合个体可以与纯合个体区分）和可靠的（Jones等人。2010）。虽然不是信息性的，双等位基因SNP标记（具有两种形式的基因）近年来已经变得流行，因为它们容易生产并且更便宜。基于模拟数据，安德森和加尔萨（2006）建议60-100单核苷酸多态性可能允许精确的谱系重建的成千上万的个体。有大量的统计方法开发用于从DNA标记的亲缘关系和亲本分析;包括父母排斥，分配和父母重建（Jones和Ardren 2003; Jones等人2010）。使用DNA标记来校正系谱错误，重建完全的系谱，并评估家庭和自然种群的森林树木的遗传多样性近年来已引起广泛关注（Moriguchi等人2004; Kumar等人2007; El-Kassaby和Lstibu˚rek2009; Hansen和McKinney 2010; Grattapaglia等人2004; Doerksen和Herbinger 2010）。我只强调了一些与本节中的育种和选择相关的，因为大多数研究中使用的方法非常相似，如果不是相同的。 Lambeth等人首次提出了种系重建以减少林木育种中受控交叉努力的概念。 （2001）。在研究中，个体使用来自大量树的混合花粉交配，并且使用DNA标记构建完全系谱。作者将此系统称为具有亲本分析的多重混合育种。在具有45种选择的火炬松第三代育种群体中评价该系统的可行性。结论是，使用亲子分析的多聚体育种可能是火腿松中全同胞育种和测试系统的可行替代方案。列出的潜在关键优势是：更简单和更便宜的育种和测试，校正系谱误差，并因此获得更大的遗传增益。使用微卫星标记鉴定来自一个桉树种子亲本和六个桉叶花粉亲本的杂种种子园的优良后代（Grattapaglia等人2004）。来自6年龄架的总共14个微卫星标记和256个子代用于分析。作者报告29％的花粉污染。基于完全谱系构建和256棵树的表型分析，挑选具有差的一般结合能力的花粉亲本。在种子园中剩余的选择的后代用于建立新的种植园。与之相比，在褪色贫瘠花粉的父母之前，在2-4龄的新站中报道了大约24％的遗传增益。
+El-Kassaby及其同事进一步发展了使用几个物种的真实数据的想法，称为“无育种育种”（El-Kassaby和Lstibu˚rek2009; El-Kassaby等人2010，2011）。 El-Kassaby和Lstibu˚rek（2009）使用风花授粉苗代替控制杂交育种，报道了花旗松（Pseudotsuga menziesii）大规模作业后代试验中完全谱系重建的效用，对150个杂交三个不同的位置。他们建议，通过谱系重建，育种周期可以缩短4年，与常规育种相比，可以捕获75-85％的选择遗传反应。在西部落叶松（Larix occidentalis Nutt。）中，利用41个选择的种子园中15个亲本的风花授粉后代评估完全谱系重建对方差分量的影响和BV的准确性（El-Kassaby等人2011 ）。作者得出结论，<strong>在风花授粉后代测试中，加性遗传方差和遗传力都向上膨胀，因为一部分后代可能不是真正的半同胞</strong>。
+使用六个微卫星标记构建来自Abies nordmanniana开放授粉后代试验的596个个体的谱系（Hansen和McKinney 2010）。树发源于种子果园与23克隆。作者报道，<strong>平均约84％的树是真正的半同胞，其余的是全同胞或部分近交</strong>，添加遗传关系为0.29。然而，假设整个个体作为半同胞（默认假设）不显着影响BV的方差分量或精度。在云杉中，<strong>进行系谱分析以确定开放授粉家系中的雄性能育性并纠正系谱错误（Doerksen和Herbinger 2010）。作者观察到了构建完全系谱的遗传性增加，但没有看到对方差组分和对亲本BV的准确性的显着影响</strong>。
+母亲分析和指纹不是MAS或GS的替代工具，但是我们应该期望他们可能在管理树木育种计划中发挥作用。林<strong>木育种者可以使用小数目（\ 200）的SNP标记来校正系谱误差，以估计花粉污染的量并测量遗传多样性</strong>。<strong>更常见的应用是使用从许多树中收集的混合花粉来交叉母本，并在后代测试中重建完全的系谱（例如Lambeth等人2001，El-Kassaby和Lstibu˚rek2009）。这样的策略可以减少育种努力并且可以改善每个育种周期的遗传获得</strong>。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/isik%E4%B9%A6%E4%B8%AD%E7%9A%84%E9%94%99%E8%AF%AF/">
+                <h2 class="post-title">Isik书中的错误</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (31 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <ul>
+<li>p169 formula 6.16, the direct product result is wrong.</li>
+<li>p73 library(reshape2) here is useless and it will be great if you introduce the direct sum in <code>R</code>  (e.g. matrixcalc::direct.sum(I, G)).</li>
+<li>p</li>
+</ul>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/gs/iwata2011-%E6%97%A5%E6%9C%AC%E6%9F%B3%E6%9D%89/">
+                <h2 class="post-title">Iwata2011-日本柳杉</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (72 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Iwata H, Hayashi T, Tsumura Y. 2011. Prospects for genomic selection in conifer breeding: A simulation study of Cryptomeria japonica. Tree Genetics and Genomes, 7(4): 747–758.
+ 基因组选择（GS）可以是针叶育种中的强大技术，因为针叶树具有长的产生间隔，延长的评估时间和繁殖投入的高成本。为了阐明GS对针叶育种的潜力，我们在有和没有GS的情况下模拟了60年生日本柳杉育种计划。在针叶树中，连锁不平衡（LD）的快速衰减可能对施用GS构成严重障碍。为了克服这个障碍，我们提出了一个想法，利用已经在针叶树中普遍使用的种子园系统，因为某些程度的LD存在于种子园中有限数量的精英树的后代中。用于模拟的基本种群包括来自25个精英树的后代。结果表明，GSB在前30年没有模型更新优于表型选择育种（PSB），但在GSB中获得的遗传增益在60年来均小于PSB。然而，60年来，GSB的模型更新优于PSB。 GSB 60年代取得的模型更新所获得的遗传增益几乎是PSB的两倍。 GSB优于PSB的优势胜出，即使是低遗传多基因性状。有效GS所需标记的数量是一个现实的水平（例如，每1 cM中一个），尽管更高的标记密度产生更高的选择精度。这些结果表明GS可用于日本柳杉育种。然而，更新预测模型对于获得巨大的遗传增益是必不可少的。
+介绍 新的基因组技术如高通量分子标记可以通过增加遗传增益和缩短生成间期来增强树种育种计划的各个阶段，最终导致直接基于基因型的遗传改良而不是仅仅基于传统方法表型（White et al。2007）。标记辅助选择（MAS）是基因组技术的潜在应用，可以根据其分子标记基因型选择具有所需性状的树木。尽管MAS的使用在植物育种中不断增加，但一般来说，大多数应用被限制在简单的单基因型（Heffner et al。，2009）。 MAS的两个主要限制是（1）双亲数量性状基因座（QTL）作图研究的结果不容易转化为育种应用，（2）用于鉴定目标基因座和实施MAS的统计学方法已经不足以改善多基因性状因此限制了MAS的应用范围，使其受到几种大效应基因而不是许多小作用基因控制的性状的影响（Heffner et al。，2009）。作为两种缺陷的解决方案，由Meuwissen等人提出的基因组选择（GS） （2001）（这是一种在预测中结合了整个基因组的所有标记信息的MAS的形式）已经在植物育种中引起越来越多的关注（Heffner等人2009; Jannink等人，2010; Grattapaglia和Resende 2010）以及非动物繁殖Hayes等人2009）。在基因组选择中，用于预测未知基因型育种值的全基因组标记多态性与与目标性状相关的QTL的连锁不平衡（LD）具有捕获性状的整个遗传变异。模拟研究（例如，Meuwissen等人2001; Zhong等人，2009）表明，可以用标记数据单独预测育种值，表明即使没有表型记录，也可以有效地选择育种品系。事实上，GS特别适用于可以结合技术来加速育种计划的发展进程，因为选择可以在早期发育阶段完成而不测量表型价值（Goddard和Hayes 2007）。表型选择（PS）在针叶育种计划中需要很长时间和广泛的空间。因此，GS可能会大大降低成本并加快选择所需的时间。 Wong和Bernardo（2008）在油棕榈进行了GS模拟，其中PS需要19周年，GS需要6年。他们得出结论，GS在人口规模较小时的单位成本和时间增长方面优于标记辅助反复选择和PS。这一结果强烈地鼓励了针叶树育种中的GS，尽管在模拟中使用的一些育种方案对于针叶树育种是不切实际的（例如，一个基本种群是由两个近交系的创建者生成的）。 Grattapaglia和Resende（2010）采用确定性方法来评估影响森林树种繁殖中GS的准确性的因素，表明GS具有从根本上提高树木繁殖效率的潜力。然而，他们的模拟使用了一个确定性方程，它是基于关于遗传模型和人口历史的一些假设。例如，假设育种群体中的LD建立在Sved方程之后（Sved 1971），尽管对于大多数针叶树种来说这个假设可能是不切实际的。即使在可以获得小型繁殖种群的物种中，假设仍然是不切实际的，因为需要多代代使得LD遵循Sved方程。他们还评估了GS在一代中的效率，尽管GS的选择精度可能随着周期性选择而衰减。因此，需要进一步的模拟研究来验证针叶树育种中GS的潜力。 日本柳杉是日本经济上重要的针叶树，日本全部人为森林中有45％属于这一物种。由于日本柳杉木材的重要性，对该物种进行了广泛的遗传育种研究（例如，Ohba 1993; Yoshimaru et al.1998; Kuramotoet al.2000; Taniet al.2003; Moriguchi et al.2005; Ujino -Iharaetal.2005; Tsumura等人2007）。实际上，日本柳杉每周期的表型选择需要至少20年，尽管只需3年才能使用赤霉素处理来推进一代（Hashizume 1959; Taira等人1999; Honma等2006）。戈达德（Haydard）和海斯（Hayes）（2007）提出，这种情况可能使GS非常有效。然而，在针叶树种类如日本柳杉中，由于其极大的基因组大小（&gt; 5.
+                  <a href="../../post/gs/iwata2011-%E6%97%A5%E6%9C%AC%E6%9F%B3%E6%9D%89/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/jagosz-2011-%E8%83%A1%E8%90%9D%E5%8D%9C/">
+                <h2 class="post-title">Jagosz-2011-胡萝卜</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (51 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Jagosz B., 2011 The relationship between heterosis and genetic distances based on RAPD and AFLP markers in carrot. Plant Breed. 130: 574–579.</p>
+</blockquote>
+
+<p>这项研究的目的是估计胡萝卜杂种中的杂种优势与其父母的遗传距离之间的相关性。实验材料由15个近交系和34个杂种组成。评价产量性状（总产量和可销售产量）以及质量特性（胡萝卜素，干物质，总糖，单糖和硝酸盐）。使用中和高亲本杂种优势的两个测量来计算杂种。使用RAPD和AFLP技术计算品系间的遗传距离。对总产量和可市场产量发现显着的杂种优势。杂交品种的优质化合物的含量通常具有中亲值。<code>使用RAPD标记测量的品系之间的分子距离和总产量的杂交杂种优势以及使用AFLP标记测量的亲本的差异和可市售产量的杂种优势之间发现显着的相关性。这似乎有助于通过估计亲本之间的遗传距离的胡萝卜杂交产量预测</code>。进行这项研究是因为杂种优势预测的可能性将允许降低成本和更好地鉴定优质胡萝卜杂交种。</p>
+
+<p>胡萝卜是全世界种植的伞形科最重要的蔬菜。胡萝卜种植者的主要目的是提高根产量和营养品质（Rubatzky等1999）。今天，胡萝卜育种方法基于杂交种，作为开放授粉品种的替代品。近交系的产生揭示严重的近交系抑制，其不能使杂交的亲本不能生产。胡萝卜杂种可以是高度均匀的单交叉以及不太均匀但更有力的三向交叉。有价值的亲本品系的育种涉及长时间的大量杂交组合的测试和选择。对于大多数蔬菜品种，<code>胡萝卜的产量测量是基于可销售的，而不是总产量，其还包含由于尺寸，形状，颜色和疾病或栓接不当而被消费者认为不能接受的根</code>（Peterson和Simon 1986 ，Simon等人2008）。通常，在胡萝卜根产量的情况下，杂交优势（其遗传基础仍然不为人所知）在交叉不相关的近交系之后发生（Timin和Vasilevskii 1995，Duan等人1996，Suh等人1999），而对于质量性状，研究人员主要报道缺乏杂种优势（Michalik等人1988，Gauciene等人1999，Santos和Simon 2006，Chira等人2008）。
+许多研究者广泛研究了亲本遗传距离和杂交杂种之间的相关性。一些人认为近交系的分子发散可能是杂种表现的良好预测因子。 Betran等报道了这种观点。 （2003）和Reif et al。 （2003）对于玉米产量和Krystkowiak et al。 （2009）的小麦技术性状。 <code>Cheres等人还发现亲本的遗传距离和杂种杂种优势之间的显着相关性。 （2000）对于向日葵，Jordan et al。 （2003）for sorghum and Legesse et al。 （2008）的玉米，但他们没有确认遗传标记的杂种优势预测的有用性</code>。使用遗传距离的杂交性能预测在蔬菜中比在经济上重要的物种更少被普遍研究。<code>由Geleta等人提供的研究（2004）和Montforte et al。 （2005）证明了胡椒果实直径和瓜果形状的杂种杂种优势和亲本遗传多样性之间的正相关</code>。关于胡萝卜中分子多样性和杂种优势之间的相关性的报道在现有文献中没有发现。本研究的目的是，首先，估计杂种对胡萝卜根的产量和质量性状的杂种优势效应;第二，测量使用RAPD和AFLP标记确定的近交系的遗传距离，最后，研究F1杂交的杂种优势和亲本的遗传距离之间的相关性。该研究调查了在分子水平上的线的分歧是否可用于预测混合物性能。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/bayesian/jags/">
+                <h2 class="post-title">Jags</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (80 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>e Silva FF, Viana JMS, Faria VR, de Resende MDV. Bayesian inference of mixed models in quantitative genetics of crop species. Theor. Appl. Genet. 2013;126:1749–61.</li>
+</ol>
+</blockquote>
+
+<p>本研究的目的是实施一个贝叶斯框架，用于作物品种育种中的混合模型分析，并利用信息先验启发的替代品。用爆米花种群中前两个半同胞选择周期说明了年际作物育种中遗传评价的贝叶斯推理。贝叶斯框架基于Just Another Gibbs Sampler软件和R2jags软件包。对于第一周期，使用方差分量的逆的非信息先验和基于荟萃分析的信息先验。对于第二周期，使用非信息先验和信息先验，其被定义为来自第一周期的非信息性和信息性分析的后验。关于第一周期，从荟萃分析中使用信息性先验提供了相对于仅针对谷物产量的非信息先验的分析的明显不同的结果。关于第二个循环，膨胀体积和籽粒产量的结果显示三个分析之间的差异。非信息性和信息性先验分析之间的差异限于方差分量和遗传性。这些分析的预测育种值之间的相关性几乎是完美的。</p>
+
+<hr />
+
+<p>介绍
+最好的线性无偏预测（BLUP）（Henderson 1974）已经广泛用于动物和林业育种计划中的遗传评估。估计方差分量的常用方法是限制最大似然（REML）（Patterson和Thompson 1971）。贝叶斯预测的遗传变异和育种价值也已被大量采用（Sorensen 2009; Blasco 2001）。事实上，贝叶斯推理在遗传学和育种中具有额外的相关应用，例如使用全基因组密度标记图谱（Meuwissen等人，2001），数量性状基因座定位（Bink等人，2008）的预测育种值，群体结构分析（Pritchard等人2000），关联作图（Marttinen和Corander 2010）以及推断基因表达和调节的水平（Beaumont和Rannala 2004）。只有最近才有年度作物育种者认识到BLUP或贝叶斯分析的遗传评估的优势，如基于不平衡数据的优越方法的方差分量估计，使用谱系信息和历史数据以提高预测准确度，以及可能性包括关于待估计参数的先前信息（Piepho等人2008; Bauer等人2009; Viana等人2012a）。 Bauer等人（2006），Flachenecker et al。 （2006），Oakey et al。 （2007），Viana et al。 （2010a，2011a）等人已经证明了BLUP在复发的群体间和群体间育种程序中以及在纯/自交系的发育中的功效。混合模型在年度作物育种中的贝叶斯推理研究很少。 Mathew et al。 （2012）观察到，<strong>方差分量的贝叶斯估计与模拟数据的REML估计相比更准确，并且与大麦田间数据的REML估计一样准确</strong>。此外，<strong>贝叶斯和BLUP预测的准确性是相等的</strong>。 Bauer等人（2009）分析了田间和弹簧条线的模拟数据，考虑了基因型对环境的相互作用效应和系谱信息。一般来说，<strong>当性状的遗传率高时，贝叶斯推理和BLUP导致类似的育种价值预测。然而，贝叶斯方法对于低遗传性状优良（表现更好）</strong>。幸运的是，所有用于动物和林业育种的遗传评估的贝叶斯分析适合于年度作物育种。 Waldmann和Ericsson（2006）拟合了一个多特征个体模型，用于部分拨号分析场地和来自苏ots松后代的模拟数据。在两个数据集中的REML和Gibbs取样估计之间观察到差异。作者认为<strong>REML估计是准确的，吉布斯取样的后验分布模式可能会高估，取决于遗传性</strong>。使用相同的数据集，Waldmann et al。 （2008）拟合了基于关系矩阵变换的加性优势模型。具有高优势，加性优势模型具有最佳拟合。在低优势的情况下，需要一个信息先验，以避免高估主导方差。 REML和吉布斯采样估计同意良好，贝叶斯和BLUP预测显示类似的准确性。<strong>与BLUP分析相比，贝叶斯方法具有一些优点，例如在选择样本数据和未知参数的分布方面的灵活性以及结合关于模型的参数的先验知识的可能性</strong>（Sorensen 2009; Blasco 2001）。尽管后一个优势在文献中被广泛提及为贝叶斯推理的一个潜在的有吸引力的特征（Beaumont和Rannala 2004），但在动物和植物育种的实践中却没有得到重视，因为缺乏这样的情况：这种现有知识可以自然地并入。在我们看来，背景信息的结合代表了贝叶斯分析在作物品种育种中的特殊特征，因为选择周期的概念表征了信息先验的自然机制。这是因为<strong>来自给定周期的感兴趣参数的后验分布（例如方差分量）可以用作下一周期的分析中的先验分布，从而形成知识更新系统</strong>。在混合模型的贝叶斯推理的计算特征方面，广泛使用了使用马尔可夫链蒙特卡罗（MCMC）算法的统计工具，例如吉布斯采样器，在动物育种中尤其如此。在这些工具中，包括MTGSAM Van Tassell和Van Vleck 1996）和gibbsf90（Misztal等人，2002）仅可用于具有一个育种值载体的加性模型，例如个体和半同胞家族模型。此外，这些软件在选择数据和参数的分布方面没有灵活性，这阻止了使用非正态数据分布和信息先验分布。 R（RDevelopment核心团队2012）包<strong>MCMCglmm（Hadfield 2010），其理论背景由Hadfield和Nakagawa（Hadfield和Nakagaw 2010）详细描述，是一个更灵活的工具</strong>。该软件包提供了多种数据分发选项，包括单向离散分布和多元离散分布，并允许更改不同类别的先前分布的超参数。此外，它允许通过使用谱系语句包含附加关系矩阵。然而，类似于MTGSAM和gibbsf90，<strong>MCMCglmm不能解决包括显性或多于一个遗传随机效应作为配子模型的模型</strong>。这个问题的一个有吸引力的解决方案是使用软件<strong>WinBUGS（Lunn等人2009）贝叶斯编程环境。它相对于前面提到的模型和分布是高度灵活的，只需要数据列表，似然函数和先验分布的规范</strong>。 Damgaard（2007），Waldmann（2009）和Hallander et al。 （2010）在本软件中对动物和林业育种数据实施了混合模型分析。 Hallander等人提出的方法（2010）是一种非常灵活的贝叶斯分析，允许推断具有大量遗传参数的线性混合模型。此外，他们的方法减少了大型家系的计算需求。<strong>虽然WinBUGS的灵活性是无可争议的，但它不允许直接处理事件和关系矩阵</strong>。这些限制使得必须使用基于代数符号的间接方法，使得代码复杂并且对许多用户不利。一个有趣的替代方案是<strong>Just Another Gibbs Sampler（JAGS）软件（Plummer 2012），它具有与WinBUGS相同的灵活性和设施，但具有允许矩阵语言编程的优点</strong>。本研究的目的是实施一个贝叶斯框架，用于在作物品种育种中进行混合模型分析，并利用替代品进行信息先验引出。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/gs/jannink2010b-%E6%A4%8D%E7%89%A9%E7%BB%BC%E8%BF%B0/">
+                <h2 class="post-title">Jannink2010b-植物综述</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (35 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  
+
+<blockquote>
+<p>Jannink J-L, Lorenz A J, Iwata H. 2010. Genomic selection in plant breeding: from theory to practice. Briefings in Functional Genomics, 9(2): 166–177.</p>
+</blockquote>
+
+<p>我们直观地认为，我们所经历的DNA标记信息的成本急剧下降，应该能够在提高产量，质量和生物和非生物胁迫耐受性的同时加速作物品种的交付中立即获益。<strong>但这些特征是复杂的，受到许多基因的影响，每个基因的作用都很小。传统的标记辅助选择对于这些特征是无效的</strong>。然而，基因组选择（GS）的引入已经转移了这一范式。 GS不会试图识别与特征显着相关的个体位点，而是使用所有标记数据作为性能的预测因子，从而提供更准确的预测。选择可以基于GS预测，可能导致更快速和更低的成本收益来自育种。本文的目的是审查GS的基本方面，并总结近期理论，模拟和实证研究的重要回馈信息。然后我们期待并考虑围绕方法问题的研究需求以及GS对长期选择的影响。</p>
+
+<h2 id="引言">引言</h2>
+
+<p>预测二十多年来，分子标记技术将重塑繁殖计划，促进选择的快速增长[1,2]。然而，目前，标记辅助选择（MAS）未能显着改善多基因性状[3,4]。虽然MAS已经有效地操纵具有已知与标记相关的大效应等位基因[5]，但是当许多等位基因具有小的效应分离并且没有实质的，可靠的效果可以被鉴定时，已经处于僵局​​[6]。传统MAS的弱点来自MAS将业务划分为两个组成部分，首先识别QTL，然后估计其影响。 QTL鉴定方法可以使MAS不适合作物改良：（i）可以使用不代表性的两性种群，并且在任何情况下不具有与整个育种计划相同的等位基因多样性和相位水平[7,8]; （ii）产生这种人口的必要性是昂贵的，使得人口可能很小，因此力量不足; （iii）确认发现是有必要的，需要额外的努力; （iv）QTL识别与估计的分离意味着估计效应将有偏差[9-11]，并且由于使用严格的显着阈值，小效应QTL将被完全错过[12]。
+已经提出了直接应用于育种种群的关联定位（AM），以减轻QTL鉴定中双亲种群缺乏相关性[13]，并且QTL已经以这种方式进行了绘制[14,15]。这种做法永远不会保留偏见效应估计的缺点，因此线路性能预测不佳[12,16]
+这个困境的解决方案不在于寻求与单一大效应相关的单一标记，而是以低成本评估许多标记的开发能力。添加这种能力的新型统计方法，可以同时估计所有标记效应，并获得基因组选择（GS; [16]）。 GS使用已经基因型和表型的个体的“培训群体”来开发一个模型，该模型从未经测试的个体的“候选群体”获取基因型数据，并产生基因组估计的育种值（GEBV）。这些GEBVs并没有说明基因基因的功能，但它们是理想的选择标准。在植物育种条件下，未经测试的个体将属于更广泛的种群，定义为作物种类或作为整体的育种计划。在模拟研究中，仅基于个体基因型的GEBV已经非常准确[16-18]。这些准确性已经在奶牛[19-21]，小鼠[22,23]和玉米，大麦和拟南芥的双亲种群的实证研究中取得了进展[24]。鉴于减少基因分型成本和停滞或增加的表型成本，以及在育种周期早些时候选择个体的能力，GS正在对动物[19,25]和植物[26,27]进行繁殖。在这方面，本文的目的是回顾GS的基本方面，并总结近期理论，模拟和实证研究中的重要回馈信息。然后，我们期待并考虑围绕最佳预测方法，大多数信息化培训群体设计和GS对长期选择的影响的问题的研究需求。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/diallel/jansson-li-2004%E6%98%BE%E6%80%A7-%E5%8A%A0%E6%80%A7-%E4%B8%8D%E8%BF%9E%E7%BB%AD-/">
+                <h2 class="post-title">Jansson-Li-2004显性-加性-不连续-</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (74 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Jansson G, Li B. Genetic gains of full-sib families from disconnected diallels in loblolly pine. Silvae Genet. Frankfurt am Main: JD Sauerlander, 1957-; 2004;53:60–4.   利用NCSU-工业树木改良合作数据库分析火炬松（Pinus taeda L.）育种计划的第二周期的育种值，以估计遗传增益并比较全同胞开发的不同策略。在用于火炬松的不连续的半双列交配设计中，每个diallel内的六个亲本杂交以产生15个全同胞家系，用于通用组合能力（GCA）和特异性组合能力（SCA）估计。亲本在不连续的diallels之间从来没有交配，并且SCA和全同胞家庭育种价值不能直接估计。使用在大西洋沿岸地区火炬松的60个双列交配的GCA和SCA估计，在这项研究中，在不连续双列交配中对全同胞家系估计遗传增益，然后与我们选择的潜在增益进行比较基于一个地理区域内所有父母的GCA值的全同胞家系的父母。由于发现显性方差远小于加性方差，SCA对全同基因遗传增益的贡献相对较小。通过在地理区域内交配来自不同双列交配的最佳GCA亲本，比仅选择在diallels内的那些，获得更高的全同胞遗传增益。随着选择的全同胞的数量增加，差异增加。来自不同选择方案的结果，利用各种选择强度和相关性管理，表明基于一个地理区域内所有父母的GCA进行选择将导致火腿松的全同胞家系的更高的遗传获益。全同胞家庭的开发对于在火炬松育种计划中获得更高的遗传学益处是非常重要的。但他们不是由于SCA贡献，而是由于最佳父母在创建这些全同胞交配的高GCA。基于本研究的数据，家庭和克隆开发的策略非常有吸引力。
+介绍 北卡罗来纳州立大学 - 工业树木改良合作组织（NCSU-ICTIP）在美国东南部参与了火炬松（Pinus taeda L.）的遗传改良48年（LI等，1996; MCKEAND等等人，1997）。通过前2个周期的育种计划，已经从开放授粉种子园获得了基本的遗传收益（LI等，1999）。火炬松育种程序的第一个周期开始于20世纪50年代后期，种子园在1969年开始种植转基因种子，并且自20世纪80年代初以来一直为种植提供足够的种子需求。第二轮种子园是在20世纪70年代后期从第一代后代试验中选择建立的，并且在20世纪80年代末开始种子。来自第一代种子园的开放授粉树的产量比每英亩产生的收获量多7-12％（TALBERT，1982），而在所有地区，第二周种子园 - 比第一代增益额外增加7％至18％的容量增益（LI et al。，1999）。对于这样一个大规模的树木改良计划，即使小的遗传收益也会导致巨大的经济收益（WEIR，1973）。 虽然开放授粉种子主要利用加性遗传方差，对两个育种周期的森林生产力产生了重大影响，但风花授粉种子园的低效率限制了火炬松的遗传收益育种计划。潜在收益的低效率和损失主要是由于在开放授粉种子园中的高水平的花粉污染，以及典型种子园中的低选择强度和不能利用非加性遗传方差。因此，通过受控授粉来开发全同胞家系通过消除花粉污染，增加生产种群的选择强度和捕获非加性遗传方差，可能具有最大化遗传增益的巨大潜力。 由NCSU-ICTIP进行的第二周期火炬松培育的交配设计是不连续具有6个亲本和15个杂交的半双列/每个diallel，即每个亲本由5个全同基因杂交表示（图1）。选择此设计以限制每个亲本的杂交数目，但仍然产生关于育种群体中所有亲本的一般组合能力（GCA）的信息。使用分离的diallels来最大化在育种群体中选择的不相关家系的数目（TALBERT，1979）。该设计显示了育种和测试的效率，因为父母可以根据其生殖成熟度分组为双列，可以在短时间内进行交配，并且可以快速建立子代测试，并且可管理的大小（TALBERT， 1979）。 虽然这个设计已经为所有父母生成有用的GCA值，但是在不连续的diallels中的许多父母从来没有跨过。因此，SCA估计只针对每个双列内的全同胞，并且对于其他可能的全同胞在diallel中没有直接的SCA估计。虽然SCA的非加性遗传成分经常被发现不如火炬松生长性状的加性遗传方差重要（BALOCCHI et al。，1993; MCKEAND and BRIDGWATER，1986; FOSTER，1986）从不连续双列交配估计的显性方差占总遗传变异的20％至40％（LI等，1996; XIANG等，2003a）。基于遗传方差分量估计，XIANG et al。 （2003b）证明，通过大量生产最佳全同胞家系，部分捕获非加性的遗传组分，可以实现额外的和显着的遗传增益；或通过最佳全同胞家系中最好的单株的营养繁殖捕获所有非加性成分。例如，基于总遗传组分的全同胞选择具有最大的遗传增益，随后是中亲全同胞选择（加性方差）和半同胞家系选择;全同胞选择比半同源家系选择产生40％的遗传增益（XIANG等，2003b）。 基于NCSU-ICTIP数据库的GCA和SCA估计，可以直接估计在不连续的双列中的全同胞家系的遗传增益，然后与如果我们选择全同胞家系的父母所预期的潜在获益相比较在育种计划中跨越双列交配的所有参与者的GCA值。不同于基于参数的预测遗传增益（XIANG等，2003b），这些估计与6岁时实现的增加相似，因为它们基于BLUP分析和未改进的检验批调整的育种值（XIANG和LI ，2001）。因此，SCA可以容易地在生产群体中用于捕获遗传增益，其限制是SCA估计仅在diallels中可用**。 这项研究集中在几个关键问题。开发策略的相对优势是仅使用在不连续的diallels中可用的最好的全同胞族？如果可以在基于GCA的整个区域内产生全同胞家系，有或没有SCA调整，可能获得多少附加收益（如果有的话）？当在火炬松中进行受控交配和全同胞部署时，这些是最大化遗传增益的重要考虑因素。这项研究评估了部署全同胞家庭的最大增益在火炬松育种计划的战略。我们将从测试的全同胞家系获得的遗传增益与基于该区域内良好的GCA估计可从全同胞家系获得的潜在获益进行比较。
+讨论 这项研究的目的是评估部署全同胞家系在火腿松培育计划中获得最高收益的策略。将观察到的全同胞家系的增益与基于该区域内良好GCA估计的全同胞家系可获得的潜在获益进行比较。基于NCSU-ICTIP数据库的参数估计显示GCA效应比火炬松SCA效应显着更重要，至少对于生长性状。 XIANG等人（2003b）发现类似的结果，即来自第二代后代测试的加性遗传变异比显性方差更重要，使用来自三个地理区域的火花松的数据子集。显性优于加性方差的相对重要性随时间稍有变化，但总是在总遗传方差的20％至40％内（XIANG等人，2003a; XIANG等人，2003b）。在我们的研究中，包括在沿海地区研究的所有双列交配，显性方差相对于加性方差相对较小，即36％（表1）。因此，基于在同一双列交配内具有高GCA值的亲本的选择，基于在断开的双列交配中的全同胞家族的实现增益的选择仅给出增益的小增加。基于一个地理区域内所有亲本的GCA获得的收益比测试全同胞家系的选择限制高。增益低增加的一个原因可能是当仅在双列交配内进行选择时有限数量的可用全同基交配的结果。增益差异随选择的杂交数目的增加而增加（图3）。当选择5和25个全同胞家系之间时，潜在增益可能增加8％至11％。 SCA可以通过使用在diallels内可用的SCA估计直接用于部署。基于参数估计和类似于我们的结果，XIANG et al。 （2003b）发现选择最佳全同胞家系，从而捕获SCA，与选择中亲值相比，提高约20％的增益。然而，如果我们仅在双列交配盘内选择，选择强度较低。因此，SCA效应不能补偿可以通过基于中亲值的交配获得的更高选择强度获得的增益。 基于全同胞交配的选择仅对GCA值，没有对每个亲本的杂交数量的任何限制，导致相同的高等级亲本被包括在许多杂交中。有10个交配，一个父代表8个交配，20个交配，一个父代表示13个交配。另一方面，限制性选择可以是在一定程度上降低风险并增加生产人群的遗传多样性的一种方式。例如，如果由于某种原因，一个国家应该容易受到种植园中有害生物的攻击，限制性选择可通过在生产人群中包括更多的父母来提供更好的缓冲。改进的线性部署（LINDGREN，1974），其中最好的遗传材料被更加集中地使用，可以是通过使用最好的亲本更密集地保持高增益的方式，但是在一定程度上使用更多的亲本，从而增加遗传多样性。在我们的计算中，我们只使用无关父亲之间的交配，以减少可能与近亲交配的风险。在这项研究中，相关性非常低，很少有交配被排除，因为，但有可能相关性可能是未来生成中较大的因素。 鉴于SCA的适度水平和可以测试的有限数量的杂交，通过在火炬松育种计划中选择亲本GCA，可以获得最大收益。更大的遗传收益应该源于大规模生产最好的一般配合力，而不是最佳全同胞家系的选择和增殖。 CARSON（1986）基于新西兰樟子松的研究得出结论，通过最佳通用配合力之间的杂交生产改良种子是优化来自对照 - 授粉种子园的收益的有效和有效的策略。 &gt; SCA可通过质量控制授粉或营养繁殖技术如根茎切割或体细胞胚发生来捕获。全同胞家族可以大规模生产，这也可以增加寻找非加性效应的动机。 XIANG等人（2003b）表明，通过在最佳全同胞家族中通过最佳单个树的营养繁殖保持所有非加性成分，可以实现额外和显着的增益。
+                  <a href="../../post/diallel/jansson-li-2004%E6%98%BE%E6%80%A7-%E5%8A%A0%E6%80%A7-%E4%B8%8D%E8%BF%9E%E7%BB%AD-/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+        </div>
+
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="../../page/15/">&larr; Newer Posts</a>
+              </li>
+            
+            
+              <li class="next">
+                <a href="../../page/17/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

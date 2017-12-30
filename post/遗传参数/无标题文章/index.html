@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>无标题文章</title>
+  <meta property="og:title" content="无标题文章" />
+  <meta name="twitter:title" content="无标题文章" />
+  <meta name="description" content="抽象 关键信息通过使用因子分析模型，建模加性基因型环境相互作用最好。通过多种环境和异种植物种类，使用减少的动物模型便于计算。摘要有效的植物育种策略的发展需要了解基因型环境相互作用的规模和结构。该信息可以从多环境试验的表型数据的适当的线性混合模型分析中获得。已知使用因子分析模型进行基因型环境影响，为获得所有试验对之间遗传相关性的估计提供了可靠，简约和整体的方法。当对于异交物种进行育种时，重点是估计通过在分析中包括谱系信息而实现的附加遗传相关性和效应。在环境数量中等到大的情况下，在这种设置中使用因子分析模型可能是计算上禁止的。在本文中，我们提出了一种方法，使用近似的减少的动物模型来克服与因子分析模型相关的加性基因型环境影响相关的计算问题。该方法使用位于新西兰和澳大利亚东南部环境中的77个试验的马尾松辐射繁殖数据集，以及315,581棵树的谱系信息。使用这种方法，我们证明了在dbh的性状存在显着的添加基因型环境相互作用。这一发现对育种和部署策略有潜在的重大影响。虽然我们的方法已经开发用于林木育种计划，但它直接适用于其他异交植物，包括甘蔗，玉米和许多园艺作物。
+介绍 植物改良计划遗传获益的关键决定因素之一是对个体遗传价值的准确预测。遗传价值在植物育种环境中的定义需要仔细考虑，因为它不仅取决于感兴趣的特征，而且还取决于目标环境。在林木育种计划中，精英种质的部署将发生在一个明确定义但异质的目标环境中。例如，Radiata Pine Breeding Company（RPBC）计划旨在培育和提供新西兰，新南威尔斯州和塔斯马尼亚州中南部地区部署的种质资源。知情的育种策略和精选种质的选择需要彻底检查基因型（GXE）相互作用的程度和性质。
+用于评估GXE的表型小组是所谓的多环境试验（MET）。 METs由多年生长的（遗传）试验和放置在目标环境中的位置组成。用于分析植物改良的全效（即一阶段）混合模式方法MET数据集在澳大利亚得到广泛应用（Cullis等，2010）。这些方法通常基于Smith等人的方法。 （2001），其适应试验设计的所有方面，并允许残差方差结构的复杂建模。史密斯等人的关键方面（2001）方法是使用因子分析（FA）模型来建模GXE效应的方差结构。史密斯等人（2001）最初只考虑模拟总体基因型环境影响，其中谱系信息不包括在分析中。 Burgueno等人（2011）展示了FA模型在土豆，玉米和小麦中使用六种METs建模GXE的效用。这些MET数据集中的每一个具有少量的基因型和相对较少的环境，但是当存在复杂的GXE时，它们能够证明FA模型与其他模型的优势。 Oakey等人（2006年，2007年）扩大了史密斯等人的方法。 （2001）将单一和多环境试验环境中的加法和非加性效应建模。 Cullis等人（2010年）将这些扩展应用于对一系列油菜育种试验的产量和油料数据的分析。 在具有高度不平衡性的大型MET数据集的分析中使用FA模型的许多优点之一是能够在不使用过多数量的方差参数的情况下充分捕获经常复杂的方差结构（Kelly et al。 2007）。随着环境数量t的变大，非结构化方差模型（即t（t &#43; 1）/ 2）的方差参数数量增加到不可接受的高水平，因此考虑拟合具有中等到大t和差连接性的MET数据集的非结构化方差模型。 Baltunis等人（2010），Raymond（2011），Apiolaza（2012）最近考虑了分析中度至低连通性和中等t = 8,26和18的树种MET数据集。使用t（t-1）/ 2对双变量非结构化方差模型建模添加基因型环境效应的方差结构。这种方法本质上是低效的，在很大程度上是不知情的，并且经常导致不可忽视的环境（即大于1或小于-1）之间的估计遗传相关性。 使用FA模型的另一个优点是，如果实现了适当的估计算法，则可以适应GXE效应小于满秩方差结构的（并非不常见的）情况。在包含血统信息的情况下，如果没有谱系信息或剩余的GXE效应，在GXE效应的FA模型的情况下，Thompson等人的方法（2003）。 Kelly等人扩展了这种方法（2009）对于加法GXE效应的FA模型的情况。 在分析树种MET数据集时，FA模型的采用有限。 Costa e Silva et al。 （2006）使用FA模型分析了在澳大利亚四个州建立的涉及15个桉树球根子代试验的MET数据集在胸部高度测量的茎直径（DBH）。他们分别使用1号和2号的FA模型，分别在环境影响的次种族和种族之内。这些模型提供了很好的适应方差结构，并证明了两组效应的实质GXE的存在，估计的遗传相关性分别为-0.23至1.00和0.25至1.00。 Hardner等人（2010）也使用FA模型分析了一个MET数据集中的DBH分析，该数据包括澳大利亚21个盐水环境中播种的841个桉树杂种克隆。他们分别通过环境影响将家庭FA模型和家庭内基因型拟合。由于家庭数量少（8），尝试适应高阶FA方差模型失败。然而，家庭影响基因型的FA模型显示出显着的GXE，估计的遗传相关性在-0.53到0.99之间。 Zapata-Valenzuela（2012）在具有16个环境和463个克隆的火炬松上的MET数据集的分析中，使用FA1模型进行环境效应的加性遗传变异结构。他们研究了另外两种方差模型，即复合对称和异方差共同相关模型。虽然没有正式的模型选择方法，FA模型与其他两个模型相比提供了一个合适的改进。 FA模型的主要优点之一是其与多元回归和主成分分析的联系。 FA模型可以被形成为对（未知）环境协变量（即因子负荷）的遗传效应的随机遗传回归，每个基因型具有不同的斜率（因子得分）。这种回归被称为潜在回归模型，关于斜率分布的简单假设，剩余项导致环境遗传协方差矩阵的FA方差结构。环境协变量可以旋转为正交，导致所谓的主成分溶液。这样就可以使用图形化工具（例如，Kempton 1984），潜在回归图（Thompson et al。2003）以及环境遗传相关矩阵与列和列之间估计的热图进行有意义的检查。使用聚类或混合模型方法（Cullis等人，2010）。 Hardner等人（2010）用环境影响来研究家族内基因型的GXE，证明环境之间有明显的等级变化。 本文的目的是提出一种方法，用于使用具有中等数量至大量试验的MET数据集来研究异交植物物种中的加性基因型 - 环境相互作用。我们用RPBC育种计划的例子说明了该方法，其中包括t = 77个关于315,581棵树的谱系信息的试验。 Cullis等人的方法（2010）对于这种尺寸的数据集将是计算上禁止的，因为它将涉及21e6级的混合模型方程组（MME）的集合。我们提出了一种基于Quass和Pollack的减少动物模型的方法（1980）。我们所谓的近似减少的动物模型导致了MME的维度的显着降低，并且用于估计方差参数，包括与FA模型相关联的方差参数，以及随机效应的预测，包括两者的育种值向后和向前选择。">
+  <meta property="og:description" content="抽象 关键信息通过使用因子分析模型，建模加性基因型环境相互作用最好。通过多种环境和异种植物种类，使用减少的动物模型便于计算。摘要有效的植物育种策略的发展需要了解基因型环境相互作用的规模和结构。该信息可以从多环境试验的表型数据的适当的线性混合模型分析中获得。已知使用因子分析模型进行基因型环境影响，为获得所有试验对之间遗传相关性的估计提供了可靠，简约和整体的方法。当对于异交物种进行育种时，重点是估计通过在分析中包括谱系信息而实现的附加遗传相关性和效应。在环境数量中等到大的情况下，在这种设置中使用因子分析模型可能是计算上禁止的。在本文中，我们提出了一种方法，使用近似的减少的动物模型来克服与因子分析模型相关的加性基因型环境影响相关的计算问题。该方法使用位于新西兰和澳大利亚东南部环境中的77个试验的马尾松辐射繁殖数据集，以及315,581棵树的谱系信息。使用这种方法，我们证明了在dbh的性状存在显着的添加基因型环境相互作用。这一发现对育种和部署策略有潜在的重大影响。虽然我们的方法已经开发用于林木育种计划，但它直接适用于其他异交植物，包括甘蔗，玉米和许多园艺作物。
+介绍 植物改良计划遗传获益的关键决定因素之一是对个体遗传价值的准确预测。遗传价值在植物育种环境中的定义需要仔细考虑，因为它不仅取决于感兴趣的特征，而且还取决于目标环境。在林木育种计划中，精英种质的部署将发生在一个明确定义但异质的目标环境中。例如，Radiata Pine Breeding Company（RPBC）计划旨在培育和提供新西兰，新南威尔斯州和塔斯马尼亚州中南部地区部署的种质资源。知情的育种策略和精选种质的选择需要彻底检查基因型（GXE）相互作用的程度和性质。
+用于评估GXE的表型小组是所谓的多环境试验（MET）。 METs由多年生长的（遗传）试验和放置在目标环境中的位置组成。用于分析植物改良的全效（即一阶段）混合模式方法MET数据集在澳大利亚得到广泛应用（Cullis等，2010）。这些方法通常基于Smith等人的方法。 （2001），其适应试验设计的所有方面，并允许残差方差结构的复杂建模。史密斯等人的关键方面（2001）方法是使用因子分析（FA）模型来建模GXE效应的方差结构。史密斯等人（2001）最初只考虑模拟总体基因型环境影响，其中谱系信息不包括在分析中。 Burgueno等人（2011）展示了FA模型在土豆，玉米和小麦中使用六种METs建模GXE的效用。这些MET数据集中的每一个具有少量的基因型和相对较少的环境，但是当存在复杂的GXE时，它们能够证明FA模型与其他模型的优势。 Oakey等人（2006年，2007年）扩大了史密斯等人的方法。 （2001）将单一和多环境试验环境中的加法和非加性效应建模。 Cullis等人（2010年）将这些扩展应用于对一系列油菜育种试验的产量和油料数据的分析。 在具有高度不平衡性的大型MET数据集的分析中使用FA模型的许多优点之一是能够在不使用过多数量的方差参数的情况下充分捕获经常复杂的方差结构（Kelly et al。 2007）。随着环境数量t的变大，非结构化方差模型（即t（t &#43; 1）/ 2）的方差参数数量增加到不可接受的高水平，因此考虑拟合具有中等到大t和差连接性的MET数据集的非结构化方差模型。 Baltunis等人（2010），Raymond（2011），Apiolaza（2012）最近考虑了分析中度至低连通性和中等t = 8,26和18的树种MET数据集。使用t（t-1）/ 2对双变量非结构化方差模型建模添加基因型环境效应的方差结构。这种方法本质上是低效的，在很大程度上是不知情的，并且经常导致不可忽视的环境（即大于1或小于-1）之间的估计遗传相关性。 使用FA模型的另一个优点是，如果实现了适当的估计算法，则可以适应GXE效应小于满秩方差结构的（并非不常见的）情况。在包含血统信息的情况下，如果没有谱系信息或剩余的GXE效应，在GXE效应的FA模型的情况下，Thompson等人的方法（2003）。 Kelly等人扩展了这种方法（2009）对于加法GXE效应的FA模型的情况。 在分析树种MET数据集时，FA模型的采用有限。 Costa e Silva et al。 （2006）使用FA模型分析了在澳大利亚四个州建立的涉及15个桉树球根子代试验的MET数据集在胸部高度测量的茎直径（DBH）。他们分别使用1号和2号的FA模型，分别在环境影响的次种族和种族之内。这些模型提供了很好的适应方差结构，并证明了两组效应的实质GXE的存在，估计的遗传相关性分别为-0.23至1.00和0.25至1.00。 Hardner等人（2010）也使用FA模型分析了一个MET数据集中的DBH分析，该数据包括澳大利亚21个盐水环境中播种的841个桉树杂种克隆。他们分别通过环境影响将家庭FA模型和家庭内基因型拟合。由于家庭数量少（8），尝试适应高阶FA方差模型失败。然而，家庭影响基因型的FA模型显示出显着的GXE，估计的遗传相关性在-0.53到0.99之间。 Zapata-Valenzuela（2012）在具有16个环境和463个克隆的火炬松上的MET数据集的分析中，使用FA1模型进行环境效应的加性遗传变异结构。他们研究了另外两种方差模型，即复合对称和异方差共同相关模型。虽然没有正式的模型选择方法，FA模型与其他两个模型相比提供了一个合适的改进。 FA模型的主要优点之一是其与多元回归和主成分分析的联系。 FA模型可以被形成为对（未知）环境协变量（即因子负荷）的遗传效应的随机遗传回归，每个基因型具有不同的斜率（因子得分）。这种回归被称为潜在回归模型，关于斜率分布的简单假设，剩余项导致环境遗传协方差矩阵的FA方差结构。环境协变量可以旋转为正交，导致所谓的主成分溶液。这样就可以使用图形化工具（例如，Kempton 1984），潜在回归图（Thompson et al。2003）以及环境遗传相关矩阵与列和列之间估计的热图进行有意义的检查。使用聚类或混合模型方法（Cullis等人，2010）。 Hardner等人（2010）用环境影响来研究家族内基因型的GXE，证明环境之间有明显的等级变化。 本文的目的是提出一种方法，用于使用具有中等数量至大量试验的MET数据集来研究异交植物物种中的加性基因型 - 环境相互作用。我们用RPBC育种计划的例子说明了该方法，其中包括t = 77个关于315,581棵树的谱系信息的试验。 Cullis等人的方法（2010）对于这种尺寸的数据集将是计算上禁止的，因为它将涉及21e6级的混合模型方程组（MME）的集合。我们提出了一种基于Quass和Pollack的减少动物模型的方法（1980）。我们所谓的近似减少的动物模型导致了MME的维度的显着降低，并且用于估计方差参数，包括与FA模型相关联的方差参数，以及随机效应的预测，包括两者的育种值向后和向前选择。">
+  <meta name="twitter:description" content="抽象 关键信息通过使用因子分析模型，建模加性基因型环境相互作用最好。通过多种环境和异种植物种类，使用减少的动物模型便于计算。摘要有效的植物育种策略的发展需要了解基因型环境相互作用的规模和结构。该信息可以从多环境试验的表型数据的适当的线性混合模型分析中获得。已知使用因子分析模型进行基因型环境影响，为获得所有试验对之间遗传相关性的估计提供了可靠，简约和整体的方法。当对于异交物种进行育种时，重点是估计通 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>无标题文章</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (48 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>无标题文章</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (48 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h2 id="抽象">抽象</h2>
+
+<p><strong><em>关键信息</em></strong>通过使用<strong>因子分析模型</strong>，建模加性基因型环境相互作用最好。通过多种环境和异种植物种类，使用减少的动物模型便于计算。<strong><em>摘要</em></strong><strong>有效的植物育种策略的发展需要了解基因型环境相互作用的规模和结构</strong>。该信息可以从多环境试验的表型数据的适当的线性混合模型分析中获得。已知使用因子分析模型进行基因型环境影响，为获得所有试验对之间遗传相关性的估计提供了可靠，简约和整体的方法。<strong>当对于异交物种进行育种时，重点是估计通过在分析中包括谱系信息而实现的附加遗传相关性和效应</strong>。在环境数量中等到大的情况下，在这种设置中使用因子分析模型可能是计算上禁止的。在本文中，我们<strong>提出了一种方法，使用近似的减少的动物模型来克服与因子分析模型相关的加性基因型环境影响相关的计算问题</strong>。该方法使用位于新西兰和澳大利亚东南部环境中的77个试验的马尾松辐射繁殖数据集，以及315,581棵树的谱系信息。使用这种方法，我们证明了在<strong>dbh的性状存在显着的添加基因型环境相互作用</strong>。<strong>这一发现对育种和部署策略有潜在的重大影响</strong>。虽然我们的方法已经开发用于林木育种计划，但它直接适用于其他异交植物，包括甘蔗，玉米和许多园艺作物。</p>
+
+<h2 id="介绍">介绍</h2>
+
+<p>植物改良计划遗传获益的关键决定因素之一是对个体遗传价值的准确预测。遗传价值在植物育种环境中的定义需要仔细考虑，因为它不仅取决于感兴趣的特征，而且还取决于目标环境。在林木育种计划中，精英种质的部署将发生在一个明确定义但异质的目标环境中。例如，Radiata Pine Breeding Company（RPBC）计划旨在培育和提供新西兰，新南威尔斯州和塔斯马尼亚州中南部地区部署的种质资源。知情的育种策略和精选种质的选择需要彻底检查基因型（GXE）相互作用的程度和性质。</p>
+
+<p>用于评估GXE的表型小组是所谓的多环境试验（MET）。 METs由多年生长的（遗传）试验和放置在目标环境中的位置组成。用于分析植物改良的全效（即一阶段）混合模式方法MET数据集在澳大利亚得到广泛应用（Cullis等，2010）。这些方法通常基于Smith等人的方法。 （2001），其适应试验设计的所有方面，并允许残差方差结构的复杂建模。史密斯等人的关键方面（2001）方法是使用因子分析（FA）模型来建模GXE效应的方差结构。史密斯等人（2001）最初只考虑模拟总体基因型环境影响，其中谱系信息不包括在分析中。 Burgueno等人（2011）展示了FA模型在土豆，玉米和小麦中使用六种METs建模GXE的效用。这些MET数据集中的每一个具有少量的基因型和相对较少的环境，但是当存在复杂的GXE时，它们能够证明FA模型与其他模型的优势。 Oakey等人（2006年，2007年）扩大了史密斯等人的方法。 （2001）将单一和多环境试验环境中的加法和非加性效应建模。 Cullis等人（2010年）将这些扩展应用于对一系列油菜育种试验的产量和油料数据的分析。
+在具有高度不平衡性的大型MET数据集的分析中使用FA模型的许多优点之一是能够在不使用过多数量的方差参数的情况下充分捕获经常复杂的方差结构（Kelly et al。 2007）。随着环境数量t的变大，非结构化方差模型（即t（t + 1）/ 2）的方差参数数量增加到不可接受的高水平，因此考虑拟合具有中等到大t和差连接性的MET数据集的非结构化方差模型。 Baltunis等人（2010），Raymond（2011），Apiolaza（2012）最近考虑了分析中度至低连通性和中等t = 8,26和18的树种MET数据集。使用t（t-1）/ 2对双变量非结构化方差模型建模添加基因型环境效应的方差结构。这种方法本质上是低效的，在很大程度上是不知情的，并且经常导致不可忽视的环境（即大于1或小于-1）之间的估计遗传相关性。
+使用FA模型的另一个优点是，如果实现了适当的估计算法，则可以适应GXE效应小于满秩方差结构的（并非不常见的）情况。在包含血统信息的情况下，如果没有谱系信息或剩余的GXE效应，在GXE效应的FA模型的情况下，Thompson等人的方法（2003）。 Kelly等人扩展了这种方法（2009）对于加法GXE效应的FA模型的情况。
+在分析树种MET数据集时，FA模型的采用有限。 Costa e Silva et al。 （2006）使用FA模型分析了在澳大利亚四个州建立的涉及15个桉树球根子代试验的MET数据集在胸部高度测量的茎直径（DBH）。他们分别使用1号和2号的FA模型，分别在环境影响的次种族和种族之内。这些模型提供了很好的适应方差结构，并证明了两组效应的实质GXE的存在，估计的遗传相关性分别为-0.23至1.00和0.25至1.00。
+Hardner等人（2010）也使用FA模型分析了一个MET数据集中的DBH分析，该数据包括澳大利亚21个盐水环境中播种的841个桉树杂种克隆。他们分别通过环境影响将家庭FA模型和家庭内基因型拟合。由于家庭数量少（8），尝试适应高阶FA方差模型失败。然而，家庭影响基因型的FA模型显示出显着的GXE，估计的遗传相关性在-0.53到0.99之间。
+Zapata-Valenzuela（2012）在具有16个环境和463个克隆的火炬松上的MET数据集的分析中，使用FA1模型进行环境效应的加性遗传变异结构。他们研究了另外两种方差模型，即复合对称和异方差共同相关模型。虽然没有正式的模型选择方法，FA模型与其他两个模型相比提供了一个合适的改进。
+FA模型的主要优点之一是其与多元回归和主成分分析的联系。 FA模型可以被形成为对（未知）环境协变量（即因子负荷）的遗传效应的随机遗传回归，每个基因型具有不同的斜率（因子得分）。这种回归被称为潜在回归模型，关于斜率分布的简单假设，剩余项导致环境遗传协方差矩阵的FA方差结构。环境协变量可以旋转为正交，导致所谓的主成分溶液。这样就可以使用图形化工具（例如，Kempton 1984），潜在回归图（Thompson et al。2003）以及环境遗传相关矩阵与列和列之间估计的热图进行有意义的检查。使用聚类或混合模型方法（Cullis等人，2010）。 Hardner等人（2010）用环境影响来研究家族内基因型的GXE，证明环境之间有明显的等级变化。
+本文的目的是提出一种方法，用于使用具有中等数量至大量试验的MET数据集来研究异交植物物种中的加性基因型 - 环境相互作用。我们用RPBC育种计划的例子说明了该方法，其中包括t = 77个关于315,581棵树的谱系信息的试验。 Cullis等人的方法（2010）对于这种尺寸的数据集将是计算上禁止的，因为它将涉及21e6级的混合模型方程组（MME）的集合。我们提出了一种基于Quass和Pollack的减少动物模型的方法（1980）。我们所谓的近似减少的动物模型导致了MME的维度的显着降低，并且用于估计方差参数，包括与FA模型相关联的方差参数，以及随机效应的预测，包括两者的育种值向后和向前选择。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%9A%8F%E7%AC%94/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/" data-toggle="tooltip" data-placement="top" title="无标题文章">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/" data-toggle="tooltip" data-placement="top" title="无标题文章">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

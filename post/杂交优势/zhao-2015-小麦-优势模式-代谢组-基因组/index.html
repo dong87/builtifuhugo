@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Zhao-2015-小麦-优势模式-代谢组-基因组</title>
+  <meta property="og:title" content="Zhao-2015-小麦-优势模式-代谢组-基因组" />
+  <meta name="twitter:title" content="Zhao-2015-小麦-优势模式-代谢组-基因组" />
+  <meta name="description" content="Zhao Y, Li Z, Liu G, Jiang Y, Maurer HP, Würschum T, et al. Genome-based establishment of a high-yielding heterotic pattern for hybrid wheat breeding. Proc. Natl. Acad. Sci. U. S. A. [Internet]. 2015;112:15624–9. Available from: http://www.pnas.org/content/112/51/15624.abstract   杂交育种有助于提高产量和稳定性。在实施杂交育种中最重要的一个要素是识别高产量的杂种优势模式。我们已经开发了一种用于鉴定包含以下元素的杂交育种的杂种优势模式的三步策略。首先，使用基因组预测编译全杂交表现矩阵。第二，基于开发的模拟退火算法来搜索高产杂种优势模式。第三，通过估计关于确定的基本群体的杂种优势模式的有用性，选择限制和代表性来评估所鉴定的杂种优势模式的长期成功。这个三步方法成功地实施并使用包括1,604个杂交体和它们的135个亲本的表型和基因组小麦数据集进行评估。基于代谢组学的预测的集成不如基因组预测那么强大。我们显示基于确定的杂种优势模式的杂交小麦育种可以通过利用杂种优势提高粮食产量，增强轮回选择收益。我们的策略代表了杂交育种的关键一步，与自花授粉作物有关，目前正在从纯种到高产和有活力的杂交品种。
+杂交育种是自交物种中的一种潜在的破坏性技术，可以提高每面积产量（3）并提高产量稳定性。后者对于气候智能型农业和低产量环境特别重要。小麦杂种目前仅在全球种植面积的&lt;1％上栽培，主要是因为未能实施成本有效的杂交种子生产系统，这是建立竞争性杂交育种程序（5）所需的。最近，在开发替代的，更经济可行的杂交系统，例如潜在细胞质雄性不育系统的功能表征（6）中已经取得了相当大的进展。此外，概念证明研究已经证明了使用分裂基因系统用于杂交小麦生产（5），并且用于生产非遗传修饰的杂种玉米的转基因构建体驱动系统已经被解除管制（7），这也是小麦感兴趣的。因此，预计经济上可行的杂交小麦生产的障碍可以在未来10 - 15年克服（8）。杂交小麦育种的成功关键取决于合适的种质聚集成杂种优势群体和确定高产杂种优势模式（5）。杂种群是当与来自另一个遗传不同种质组的个体交配时显示相似杂交表现的一组基因型（9）。在其杂交中表达显着的杂交表现的两个杂种优势群的特定对被称为杂种模式。通过利用杂种优势群内产生的遗传变异来改善杂种模式（10）。育种杂种以这样的方式促进父母之间的遗传分歧（11），优化杂种优势和杂交表现的利用，并简化了优良的单个杂交的鉴定（12）。 用于美国玉米带玉米育种的杂种优势模式，杂交育种的摇篮，最初并不存在（11）。种质不被构建成杂种群体，但是随着单交杂种的引入，根据生产性状（例如种子产量）将可获得的近交系群集成雌性群体和雄性群体。随着杂交育种的进行，雄性和雌性群体共同发育和分化（13），最有可能是由于优势或超优势引起的数量性状基因座（QTL）等位基因的差异固定（14）。玉米杂交种在美国玉米带的巨大成功刺激了对其他几种杂交作物（包括向日葵，糖用甜菜和黑麦）的杂交育种计划的启动。通过在田间试验中测试潜在亲本品系的杂交组合，凭经验建立这些第二代杂种作物的杂种模式。然而，重要的是，因为所有成对的单交的数量是父母数量的二次函数，所以评估所有杂交组合在田间试验对大多数作物是难以管理的。因此，杂交育种程序中潜在亲本的配合力的图片总是不完整的。 已经提出了在没有详尽杂交方案的情况下改进配合力的总体视图的各种方法。基于分子标记的遗传距离已经被推广作为杂种优势和最终杂交表现的代表，尽管对于不相关亲本系不是这样（12）。或者，全基因组方法可用于预测杂交表现（3,10,14）。基因组预测对于谷物产量的复杂性状特别有希望，因为谱系信息，共分离和标记物与QTL之间的连锁不平衡是共同利用的。到目前为止，基因组预测还没有用于鉴定杂种优势组的杂交育种。 当所有成对单交的杂交表现的数据可用时，需要有效的算法来筛选过多的潜在分组，以鉴定最有希望的杂种优势模式。对于该搜索已经建议了扩展枚举算法（15），但是这种类型的算法对于大群体来说计算量太大。此外，优化的杂种表现侧重于短期成功的杂种优势模式。这种短期成功主要通过高选择强度（16）和杂种优势组中较少的精英基础个体。相比之下，长期选择增益受益于遗传方差，这与大的杂种优势模式的有效群体大小相关联。因此，在寻找杂种优势模式时需要最大化高短期选择收益而不迅速减少遗传方差的标准，但是这些方法还没有到位。 在这里我们报告一个统一的数量遗传框架，以确定一个有前途的杂种优势模式考虑短期和长期选择收益。为了证明这个框架的范围，我们组装了迄今为止记录的最大的表型，代谢组学和基因组杂交小麦数据集，包括从一组不同的135个中欧精英品系建立的1,604个单交。我们首先评估基于基因组和代谢组学的杂种预测的潜力，以导出鉴定杂种优势组所需的数据。然后我们应用我们的基因组预测模型来预测所有9,045可能独特的单交杂种的表现。这些数据用于识别具有可变种群大小的杂种优势模式，最大化杂种表现，根据开发的模拟退火算法确定。然后我们研究了几个参数的稳定性，以判断所选择的杂种优势模式的长期潜力。小麦已经成功地用于证明这里提出的原则，但是开发的定量遗传框架也一般适用于其他自耕作物。">
+  <meta property="og:description" content="Zhao Y, Li Z, Liu G, Jiang Y, Maurer HP, Würschum T, et al. Genome-based establishment of a high-yielding heterotic pattern for hybrid wheat breeding. Proc. Natl. Acad. Sci. U. S. A. [Internet]. 2015;112:15624–9. Available from: http://www.pnas.org/content/112/51/15624.abstract   杂交育种有助于提高产量和稳定性。在实施杂交育种中最重要的一个要素是识别高产量的杂种优势模式。我们已经开发了一种用于鉴定包含以下元素的杂交育种的杂种优势模式的三步策略。首先，使用基因组预测编译全杂交表现矩阵。第二，基于开发的模拟退火算法来搜索高产杂种优势模式。第三，通过估计关于确定的基本群体的杂种优势模式的有用性，选择限制和代表性来评估所鉴定的杂种优势模式的长期成功。这个三步方法成功地实施并使用包括1,604个杂交体和它们的135个亲本的表型和基因组小麦数据集进行评估。基于代谢组学的预测的集成不如基因组预测那么强大。我们显示基于确定的杂种优势模式的杂交小麦育种可以通过利用杂种优势提高粮食产量，增强轮回选择收益。我们的策略代表了杂交育种的关键一步，与自花授粉作物有关，目前正在从纯种到高产和有活力的杂交品种。
+杂交育种是自交物种中的一种潜在的破坏性技术，可以提高每面积产量（3）并提高产量稳定性。后者对于气候智能型农业和低产量环境特别重要。小麦杂种目前仅在全球种植面积的&lt;1％上栽培，主要是因为未能实施成本有效的杂交种子生产系统，这是建立竞争性杂交育种程序（5）所需的。最近，在开发替代的，更经济可行的杂交系统，例如潜在细胞质雄性不育系统的功能表征（6）中已经取得了相当大的进展。此外，概念证明研究已经证明了使用分裂基因系统用于杂交小麦生产（5），并且用于生产非遗传修饰的杂种玉米的转基因构建体驱动系统已经被解除管制（7），这也是小麦感兴趣的。因此，预计经济上可行的杂交小麦生产的障碍可以在未来10 - 15年克服（8）。杂交小麦育种的成功关键取决于合适的种质聚集成杂种优势群体和确定高产杂种优势模式（5）。杂种群是当与来自另一个遗传不同种质组的个体交配时显示相似杂交表现的一组基因型（9）。在其杂交中表达显着的杂交表现的两个杂种优势群的特定对被称为杂种模式。通过利用杂种优势群内产生的遗传变异来改善杂种模式（10）。育种杂种以这样的方式促进父母之间的遗传分歧（11），优化杂种优势和杂交表现的利用，并简化了优良的单个杂交的鉴定（12）。 用于美国玉米带玉米育种的杂种优势模式，杂交育种的摇篮，最初并不存在（11）。种质不被构建成杂种群体，但是随着单交杂种的引入，根据生产性状（例如种子产量）将可获得的近交系群集成雌性群体和雄性群体。随着杂交育种的进行，雄性和雌性群体共同发育和分化（13），最有可能是由于优势或超优势引起的数量性状基因座（QTL）等位基因的差异固定（14）。玉米杂交种在美国玉米带的巨大成功刺激了对其他几种杂交作物（包括向日葵，糖用甜菜和黑麦）的杂交育种计划的启动。通过在田间试验中测试潜在亲本品系的杂交组合，凭经验建立这些第二代杂种作物的杂种模式。然而，重要的是，因为所有成对的单交的数量是父母数量的二次函数，所以评估所有杂交组合在田间试验对大多数作物是难以管理的。因此，杂交育种程序中潜在亲本的配合力的图片总是不完整的。 已经提出了在没有详尽杂交方案的情况下改进配合力的总体视图的各种方法。基于分子标记的遗传距离已经被推广作为杂种优势和最终杂交表现的代表，尽管对于不相关亲本系不是这样（12）。或者，全基因组方法可用于预测杂交表现（3,10,14）。基因组预测对于谷物产量的复杂性状特别有希望，因为谱系信息，共分离和标记物与QTL之间的连锁不平衡是共同利用的。到目前为止，基因组预测还没有用于鉴定杂种优势组的杂交育种。 当所有成对单交的杂交表现的数据可用时，需要有效的算法来筛选过多的潜在分组，以鉴定最有希望的杂种优势模式。对于该搜索已经建议了扩展枚举算法（15），但是这种类型的算法对于大群体来说计算量太大。此外，优化的杂种表现侧重于短期成功的杂种优势模式。这种短期成功主要通过高选择强度（16）和杂种优势组中较少的精英基础个体。相比之下，长期选择增益受益于遗传方差，这与大的杂种优势模式的有效群体大小相关联。因此，在寻找杂种优势模式时需要最大化高短期选择收益而不迅速减少遗传方差的标准，但是这些方法还没有到位。 在这里我们报告一个统一的数量遗传框架，以确定一个有前途的杂种优势模式考虑短期和长期选择收益。为了证明这个框架的范围，我们组装了迄今为止记录的最大的表型，代谢组学和基因组杂交小麦数据集，包括从一组不同的135个中欧精英品系建立的1,604个单交。我们首先评估基于基因组和代谢组学的杂种预测的潜力，以导出鉴定杂种优势组所需的数据。然后我们应用我们的基因组预测模型来预测所有9,045可能独特的单交杂种的表现。这些数据用于识别具有可变种群大小的杂种优势模式，最大化杂种表现，根据开发的模拟退火算法确定。然后我们研究了几个参数的稳定性，以判断所选择的杂种优势模式的长期潜力。小麦已经成功地用于证明这里提出的原则，但是开发的定量遗传框架也一般适用于其他自耕作物。">
+  <meta name="twitter:description" content="Zhao Y, Li Z, Liu G, Jiang Y, Maurer HP, Würschum T, et al. Genome-based establishment of a high-yielding heterotic pattern for hybrid wheat breeding. Proc. Natl. Acad. Sci. U. S. A. [Internet]. …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/zhao-2015-%E5%B0%8F%E9%BA%A6-%E4%BC%98%E5%8A%BF%E6%A8%A1%E5%BC%8F-%E4%BB%A3%E8%B0%A2%E7%BB%84-%E5%9F%BA%E5%9B%A0%E7%BB%84/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/zhao-2015-%E5%B0%8F%E9%BA%A6-%E4%BC%98%E5%8A%BF%E6%A8%A1%E5%BC%8F-%E4%BB%A3%E8%B0%A2%E7%BB%84-%E5%9F%BA%E5%9B%A0%E7%BB%84/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Zhao-2015-小麦-优势模式-代谢组-基因组</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (45 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Zhao-2015-小麦-优势模式-代谢组-基因组</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (45 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<ol>
+<li>Zhao Y, Li Z, Liu G, Jiang Y, Maurer HP, Würschum T, et al. Genome-based establishment of a high-yielding heterotic pattern for hybrid wheat breeding. Proc. Natl. Acad. Sci. U. S. A. [Internet]. 2015;112:15624–9. Available from: <a href="http://www.pnas.org/content/112/51/15624.abstract">http://www.pnas.org/content/112/51/15624.abstract</a></li>
+</ol>
+</blockquote>
+
+<p>杂交育种有助于提高产量和稳定性。在实施杂交育种中最重要的一个要素是识别高产量的杂种优势模式。我们已经开发了一种用于鉴定包含以下元素的杂交育种的杂种优势模式的三步策略。首先，使用基因组预测编译全杂交表现矩阵。第二，基于开发的模拟退火算法来搜索高产杂种优势模式。第三，通过估计关于确定的基本群体的杂种优势模式的有用性，选择限制和代表性来评估所鉴定的杂种优势模式的长期成功。这个三步方法成功地实施并使用包括1,604个杂交体和它们的135个亲本的表型和基因组小麦数据集进行评估。<strong>基于代谢组学的预测的集成不如基因组预测那么强大</strong>。我们显示基于确定的杂种优势模式的杂交小麦育种可以通过利用杂种优势提高粮食产量，增强轮回选择收益。我们的策略代表了杂交育种的关键一步，与自花授粉作物有关，目前正在从纯种到高产和有活力的杂交品种。</p>
+
+<hr />
+
+<p>杂交育种是自交物种中的一种潜在的破坏性技术，可以提高每面积产量（3）并提高产量稳定性。后者对于气候智能型农业和低产量环境特别重要。小麦杂种目前仅在全球种植面积的&lt;1％上栽培，主要是因为未能实施成本有效的杂交种子生产系统，这是建立竞争性杂交育种程序（5）所需的。最近，在开发替代的，更经济可行的杂交系统，例如潜在细胞质雄性不育系统的功能表征（6）中已经取得了相当大的进展。此外，概念证明研究已经证明了使用分裂基因系统用于杂交小麦生产（5），并且用于生产非遗传修饰的杂种玉米的转基因构建体驱动系统已经被解除管制（7），这也是小麦感兴趣的。因此，预计经济上可行的杂交小麦生产的障碍可以在未来10  -  15年克服（8）。杂交小麦育种的成功关键取决于合适的种质聚集成杂种优势群体和确定高产杂种优势模式（5）。杂种群是当与来自另一个遗传不同种质组的个体交配时显示相似杂交表现的一组基因型（9）。在其杂交中表达显着的杂交表现的两个杂种优势群的特定对被称为杂种模式。通过利用杂种优势群内产生的遗传变异来改善杂种模式（10）。育种杂种以这样的方式促进父母之间的遗传分歧（11），优化杂种优势和杂交表现的利用，并简化了优良的单个杂交的鉴定（12）。
+用于美国玉米带玉米育种的杂种优势模式，杂交育种的摇篮，最初并不存在（11）。种质不被构建成杂种群体，但是随着单交杂种的引入，根据生产性状（例如种子产量）将可获得的近交系群集成雌性群体和雄性群体。随着杂交育种的进行，雄性和雌性群体共同发育和分化（13），最有可能是由于优势或超优势引起的数量性状基因座（QTL）等位基因的差异固定（14）。玉米杂交种在美国玉米带的巨大成功刺激了对其他几种杂交作物（包括向日葵，糖用甜菜和黑麦）的杂交育种计划的启动。通过在田间试验中测试潜在亲本品系的杂交组合，凭经验建立这些第二代杂种作物的杂种模式。然而，重要的是，因为所有成对的单交的数量是父母数量的二次函数，所以评估所有杂交组合在田间试验对大多数作物是难以管理的。因此，杂交育种程序中潜在亲本的配合力的图片总是不完整的。
+已经提出了在没有详尽杂交方案的情况下改进配合力的总体视图的各种方法。基于分子标记的遗传距离已经被推广作为杂种优势和最终杂交表现的代表，尽管对于不相关亲本系不是这样（12）。或者，全基因组方法可用于预测杂交表现（3,10,14）。基因组预测对于谷物产量的复杂性状特别有希望，因为谱系信息，共分离和标记物与QTL之间的连锁不平衡是共同利用的。到目前为止，基因组预测还没有用于鉴定杂种优势组的杂交育种。
+当所有成对单交的杂交表现的数据可用时，需要有效的算法来筛选过多的潜在分组，以鉴定最有希望的杂种优势模式。对于该搜索已经建议了扩展枚举算法（15），但是这种类型的算法对于大群体来说计算量太大。此外，优化的杂种表现侧重于短期成功的杂种优势模式。这种短期成功主要通过高选择强度（16）和杂种优势组中较少的精英基础个体。相比之下，长期选择增益受益于遗传方差，这与大的杂种优势模式的有效群体大小相关联。因此，在寻找杂种优势模式时需要最大化高短期选择收益而不迅速减少遗传方差的标准，但是这些方法还没有到位。
+在这里我们报告一个统一的数量遗传框架，以确定一个有前途的杂种优势模式考虑短期和长期选择收益。为了证明这个框架的范围，我们组装了迄今为止记录的最大的表型，代谢组学和基因组杂交小麦数据集，包括从一组不同的135个中欧精英品系建立的1,604个单交。我们首先评估基于基因组和代谢组学的杂种预测的潜力，以导出鉴定杂种优势组所需的数据。然后我们应用我们的基因组预测模型来预测所有9,045可能独特的单交杂种的表现。这些数据用于识别具有可变种群大小的杂种优势模式，最大化杂种表现，根据开发的模拟退火算法确定。然后我们研究了几个参数的稳定性，以判断所选择的杂种优势模式的长期潜力。小麦已经成功地用于证明这里提出的原则，但是开发的定量遗传框架也一般适用于其他自耕作物。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/diallel/zhu1996-minque-%E6%96%B9%E5%B7%AE%E4%BC%B0%E7%AE%97/" data-toggle="tooltip" data-placement="top" title="Zhu1996-MINQUE-方差估算">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/diallel/zhang2005-diallel-sas05/" data-toggle="tooltip" data-placement="top" title="Zhang2005-DIALLEL-SAS05">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

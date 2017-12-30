@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Jones2010-亲子分析的方法指导</title>
+  <meta property="og:title" content="Jones2010-亲子分析的方法指导" />
+  <meta name="twitter:title" content="Jones2010-亲子分析的方法指导" />
+  <meta name="description" content="Jones A G, Small C M, Paczolt K A, et al. 2010. A practical guide to methods of parentage analysis. Molecular Ecology Resources, 10(1): 6–30.
+ 使用分子技术进行亲子鉴定分析是十多年来蓬勃发展的科学。最重要的技术突破是将微卫星标记引入分子生态学，伴随着对分析生殖数据的统计技术的扩散和改进。在过去几年中，我们看到在与父母分析有关的一些领域取得稳步进展，成功研究的前景继续改善。在这里，我们为有兴趣在天然或人工生物群体中进行亲子鉴别分析的科学家提供更新的指南，特别关注实施各种分析方法的计算机软件包。我们对文献的调查显示，在大多数类型的亲子研究的分析中，有一些成功的方法表现非常好。然而，特定的实验设计或研究系统可以受益于一些较不知名的可用计算机软件包。总的来说，我们发现，在大多数系统中，父母分析是可行和令人满意的，我们尝试提供一个简单的路线图，帮助其他科学家浏览统计技术的混乱地形。
+##介绍 亲子分析是分子生态研究的基石。亲子模式在不同的生态和进化主题的研究中起着核心作用，如性别选择（Yezerinac et al。1995; Jones＆Avise 1997a，b），散布和招募模式（Dow＆Ashley 1996; Hardesty et al ，2006），数量遗传参数的估计（Kruuk等人2000; Garant＆Kruuk 2005）和保护生物学（Haig 1998; Planes等人，2009）。然而，父母分析仍然是一个相对较年轻的学科。分子生态学革命大概开始于是在20世纪60年代后期，同时也出现了同型酶电泳（Hubby＆Lewontin 1966）。在分子生态学的早期阶段，母体分析几乎是不可能的，有一些显着的例外（Ellstrand 1984; Gowaty＆Karlin 1984），因为基于蛋白质的标记物的多态性特征水平低。父母的研究开始变得越来越多，发现DNA探针可以用于人类和其他生物体，以揭示微卫星位点的变异，这种技术称为ĄĄDNA指纹印迹（Jeffreys等，1985）。这种多基因座DNA指纹图谱被禽类行为生态学家（Burke＆Bruford，1987）迅速采用，导致对超外交配的巨大洞察（Westneat＆Sherman 1997; Petrie＆Kempenaers 1998）。然而，技术和统计方面的限制减慢了DNA和指纹图谱在鸟类和哺乳动物之外的传播。 DNA指纹图谱发展几年后，微卫星标记（Tautz 1989）的发现（Tautz 1989）也被称为简单序列重复，使分类门广泛开放，开始了目前黄金时代的分析。引入微卫星标记物导致完整的亲本分析检测，因为它们是第一个易于测定的单基因座，共显性，高变量标记（Avise 2004; Pemberton 2009）。即使多基因座DNA指纹图谱在方法上相对简单，从统计学角度来看，条带模式非常难以处理，因此，对于任何特定群体，不同类别的亲属之间的共享谱带的预期数量必须校准亲本分析或物种。另一方面，微卫星遵循了孟德尔分离规则，已经开发了与父母分析相关的统计理论的关键部分（Thompson 1975,1976a; Meagher 1986; Meagher＆Thompson 1986; Devlin等1988 ）。因此，母体分析领域对微型卫星进行了智力准备，大量的实证问题正在等待答案。在这次审查中，我们探讨了从微卫星为基础的亲子鉴定分析初期回答几个关键问题的距离。例如，微卫星仍然是选择的标志？什么样的抽样策略产生最好的结果？什么类型的育儿分析技术适用于给定的系统？父母分析中剩下的挑战还有哪些？
+##亲子分析的6种方法 - Exclusion – - Categorical Allocation – - Fractional Allocation – - Full Probability Parentage Analysis – - Parental Reconstruction – - Sibship Reconstruction –">
+  <meta property="og:description" content="Jones A G, Small C M, Paczolt K A, et al. 2010. A practical guide to methods of parentage analysis. Molecular Ecology Resources, 10(1): 6–30.
+ 使用分子技术进行亲子鉴定分析是十多年来蓬勃发展的科学。最重要的技术突破是将微卫星标记引入分子生态学，伴随着对分析生殖数据的统计技术的扩散和改进。在过去几年中，我们看到在与父母分析有关的一些领域取得稳步进展，成功研究的前景继续改善。在这里，我们为有兴趣在天然或人工生物群体中进行亲子鉴别分析的科学家提供更新的指南，特别关注实施各种分析方法的计算机软件包。我们对文献的调查显示，在大多数类型的亲子研究的分析中，有一些成功的方法表现非常好。然而，特定的实验设计或研究系统可以受益于一些较不知名的可用计算机软件包。总的来说，我们发现，在大多数系统中，父母分析是可行和令人满意的，我们尝试提供一个简单的路线图，帮助其他科学家浏览统计技术的混乱地形。
+##介绍 亲子分析是分子生态研究的基石。亲子模式在不同的生态和进化主题的研究中起着核心作用，如性别选择（Yezerinac et al。1995; Jones＆Avise 1997a，b），散布和招募模式（Dow＆Ashley 1996; Hardesty et al ，2006），数量遗传参数的估计（Kruuk等人2000; Garant＆Kruuk 2005）和保护生物学（Haig 1998; Planes等人，2009）。然而，父母分析仍然是一个相对较年轻的学科。分子生态学革命大概开始于是在20世纪60年代后期，同时也出现了同型酶电泳（Hubby＆Lewontin 1966）。在分子生态学的早期阶段，母体分析几乎是不可能的，有一些显着的例外（Ellstrand 1984; Gowaty＆Karlin 1984），因为基于蛋白质的标记物的多态性特征水平低。父母的研究开始变得越来越多，发现DNA探针可以用于人类和其他生物体，以揭示微卫星位点的变异，这种技术称为ĄĄDNA指纹印迹（Jeffreys等，1985）。这种多基因座DNA指纹图谱被禽类行为生态学家（Burke＆Bruford，1987）迅速采用，导致对超外交配的巨大洞察（Westneat＆Sherman 1997; Petrie＆Kempenaers 1998）。然而，技术和统计方面的限制减慢了DNA和指纹图谱在鸟类和哺乳动物之外的传播。 DNA指纹图谱发展几年后，微卫星标记（Tautz 1989）的发现（Tautz 1989）也被称为简单序列重复，使分类门广泛开放，开始了目前黄金时代的分析。引入微卫星标记物导致完整的亲本分析检测，因为它们是第一个易于测定的单基因座，共显性，高变量标记（Avise 2004; Pemberton 2009）。即使多基因座DNA指纹图谱在方法上相对简单，从统计学角度来看，条带模式非常难以处理，因此，对于任何特定群体，不同类别的亲属之间的共享谱带的预期数量必须校准亲本分析或物种。另一方面，微卫星遵循了孟德尔分离规则，已经开发了与父母分析相关的统计理论的关键部分（Thompson 1975,1976a; Meagher 1986; Meagher＆Thompson 1986; Devlin等1988 ）。因此，母体分析领域对微型卫星进行了智力准备，大量的实证问题正在等待答案。在这次审查中，我们探讨了从微卫星为基础的亲子鉴定分析初期回答几个关键问题的距离。例如，微卫星仍然是选择的标志？什么样的抽样策略产生最好的结果？什么类型的育儿分析技术适用于给定的系统？父母分析中剩下的挑战还有哪些？
+##亲子分析的6种方法 - Exclusion – - Categorical Allocation – - Fractional Allocation – - Full Probability Parentage Analysis – - Parental Reconstruction – - Sibship Reconstruction –">
+  <meta name="twitter:description" content="Jones A G, Small C M, Paczolt K A, et al. 2010. A practical guide to methods of parentage analysis. Molecular Ecology Resources, 10(1): 6–30.
+ 使用分子技术进行亲子鉴定分析是十多年来蓬勃发展的科学。最重要的技术突破是将微卫星标记引入分子生态学，伴随着对分析生 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/jones2010-%E4%BA%B2%E5%AD%90%E5%88%86%E6%9E%90%E7%9A%84%E6%96%B9%E6%B3%95%E6%8C%87%E5%AF%BC/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/jones2010-%E4%BA%B2%E5%AD%90%E5%88%86%E6%9E%90%E7%9A%84%E6%96%B9%E6%B3%95%E6%8C%87%E5%AF%BC/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Jones2010-亲子分析的方法指导</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (87 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Jones2010-亲子分析的方法指导</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (87 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Jones A G, Small C M, Paczolt K A, et al. 2010. A practical guide to methods of parentage analysis. Molecular Ecology Resources, 10(1): 6–30.</p>
+</blockquote>
+
+<p>使用分子技术进行亲子鉴定分析是十多年来蓬勃发展的科学。最重要的技术突破是将微卫星标记引入分子生态学，伴随着对分析生殖数据的统计技术的扩散和改进。在过去几年中，我们看到在与父母分析有关的一些领域取得稳步进展，成功研究的前景继续改善。在这里，我们为有兴趣在天然或人工生物群体中进行亲子鉴别分析的科学家提供更新的指南，特别关注实施各种分析方法的计算机软件包。我们对文献的调查显示，在大多数类型的亲子研究的分析中，有一些成功的方法表现非常好。然而，特定的实验设计或研究系统可以受益于一些较不知名的可用计算机软件包。总的来说，我们发现，在大多数系统中，父母分析是可行和令人满意的，我们尝试提供一个简单的路线图，帮助其他科学家浏览统计技术的混乱地形。</p>
+
+<hr />
+
+<p>##介绍
+<strong>亲子分析是分子生态研究的基石。亲子模式在不同的生态和进化主题的研究中起着核心作用，如性别选择（Yezerinac et al。1995; Jones＆Avise 1997a，b），散布和招募模式（Dow＆Ashley 1996; Hardesty et al ，2006），数量遗传参数的估计（Kruuk等人2000; Garant＆Kruuk 2005）和保护生物学（Haig 1998; Planes等人，2009）</strong>。然而，父母分析仍然是一个相对较年轻的学科。分子生态学革命大概开始于是在20世纪60年代后期，同时也出现了同型酶电泳（Hubby＆Lewontin 1966）。在分子生态学的早期阶段，母体分析几乎是不可能的，有一些显着的例外（Ellstrand 1984; Gowaty＆Karlin 1984），因为基于蛋白质的标记物的多态性特征水平低。父母的研究开始变得越来越多，发现DNA探针可以用于人类和其他生物体，以揭示微卫星位点的变异，这种技术称为ĄĄDNA指纹印迹（Jeffreys等，1985）。这种多基因座DNA指纹图谱被禽类行为生态学家（Burke＆Bruford，1987）迅速采用，导致对超外交配的巨大洞察（Westneat＆Sherman 1997; Petrie＆Kempenaers 1998）。然而，技术和统计方面的限制减慢了DNA和指纹图谱在鸟类和哺乳动物之外的传播。 DNA指纹图谱发展几年后，微卫星标记（Tautz 1989）的发现（Tautz 1989）也被称为简单序列重复，使分类门广泛开放，开始了目前黄金时代的分析。引入微卫星标记物导致完整的亲本分析检测，因为它们是第一个易于测定的单基因座，共显性，高变量标记（Avise 2004; Pemberton 2009）。即使多基因座DNA指纹图谱在方法上相对简单，从统计学角度来看，条带模式非常难以处理，因此，对于任何特定群体，不同类别的亲属之间的共享谱带的预期数量必须校准亲本分析或物种。另一方面，微卫星遵循了孟德尔分离规则，已经开发了与父母分析相关的统计理论的关键部分（Thompson 1975,1976a; Meagher 1986; Meagher＆Thompson 1986; Devlin等1988 ）。因此，母体分析领域对微型卫星进行了智力准备，大量的实证问题正在等待答案。在这次审查中，我们探讨了从微卫星为基础的亲子鉴定分析初期回答几个关键问题的距离。例如，微卫星仍然是选择的标志？什么样的抽样策略产生最好的结果？什么类型的育儿分析技术适用于给定的系统？父母分析中剩下的挑战还有哪些？</p>
+
+<hr />
+
+<p>##亲子分析的6种方法
+- Exclusion –
+- Categorical Allocation –
+- Fractional Allocation –
+- Full Probability Parentage Analysis –
+- Parental Reconstruction –
+- Sibship Reconstruction –</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/joyce-2002-nn-%E9%BB%91%E4%BA%91%E6%9D%89/" data-toggle="tooltip" data-placement="top" title="Joyce-2002-NN-黑云杉">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/diallel/johnson-1998%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95-/" data-toggle="tooltip" data-placement="top" title="Johnson-1998数据处理方法-">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Iwata2011-日本柳杉</title>
+  <meta property="og:title" content="Iwata2011-日本柳杉" />
+  <meta name="twitter:title" content="Iwata2011-日本柳杉" />
+  <meta name="description" content="Iwata H, Hayashi T, Tsumura Y. 2011. Prospects for genomic selection in conifer breeding: A simulation study of Cryptomeria japonica. Tree Genetics and Genomes, 7(4): 747–758.
+ 基因组选择（GS）可以是针叶育种中的强大技术，因为针叶树具有长的产生间隔，延长的评估时间和繁殖投入的高成本。为了阐明GS对针叶育种的潜力，我们在有和没有GS的情况下模拟了60年生日本柳杉育种计划。在针叶树中，连锁不平衡（LD）的快速衰减可能对施用GS构成严重障碍。为了克服这个障碍，我们提出了一个想法，利用已经在针叶树中普遍使用的种子园系统，因为某些程度的LD存在于种子园中有限数量的精英树的后代中。用于模拟的基本种群包括来自25个精英树的后代。结果表明，GSB在前30年没有模型更新优于表型选择育种（PSB），但在GSB中获得的遗传增益在60年来均小于PSB。然而，60年来，GSB的模型更新优于PSB。 GSB 60年代取得的模型更新所获得的遗传增益几乎是PSB的两倍。 GSB优于PSB的优势胜出，即使是低遗传多基因性状。有效GS所需标记的数量是一个现实的水平（例如，每1 cM中一个），尽管更高的标记密度产生更高的选择精度。这些结果表明GS可用于日本柳杉育种。然而，更新预测模型对于获得巨大的遗传增益是必不可少的。
+介绍 新的基因组技术如高通量分子标记可以通过增加遗传增益和缩短生成间期来增强树种育种计划的各个阶段，最终导致直接基于基因型的遗传改良而不是仅仅基于传统方法表型（White et al。2007）。标记辅助选择（MAS）是基因组技术的潜在应用，可以根据其分子标记基因型选择具有所需性状的树木。尽管MAS的使用在植物育种中不断增加，但一般来说，大多数应用被限制在简单的单基因型（Heffner et al。，2009）。 MAS的两个主要限制是（1）双亲数量性状基因座（QTL）作图研究的结果不容易转化为育种应用，（2）用于鉴定目标基因座和实施MAS的统计学方法已经不足以改善多基因性状因此限制了MAS的应用范围，使其受到几种大效应基因而不是许多小作用基因控制的性状的影响（Heffner et al。，2009）。作为两种缺陷的解决方案，由Meuwissen等人提出的基因组选择（GS） （2001）（这是一种在预测中结合了整个基因组的所有标记信息的MAS的形式）已经在植物育种中引起越来越多的关注（Heffner等人2009; Jannink等人，2010; Grattapaglia和Resende 2010）以及非动物繁殖Hayes等人2009）。在基因组选择中，用于预测未知基因型育种值的全基因组标记多态性与与目标性状相关的QTL的连锁不平衡（LD）具有捕获性状的整个遗传变异。模拟研究（例如，Meuwissen等人2001; Zhong等人，2009）表明，可以用标记数据单独预测育种值，表明即使没有表型记录，也可以有效地选择育种品系。事实上，GS特别适用于可以结合技术来加速育种计划的发展进程，因为选择可以在早期发育阶段完成而不测量表型价值（Goddard和Hayes 2007）。表型选择（PS）在针叶育种计划中需要很长时间和广泛的空间。因此，GS可能会大大降低成本并加快选择所需的时间。 Wong和Bernardo（2008）在油棕榈进行了GS模拟，其中PS需要19周年，GS需要6年。他们得出结论，GS在人口规模较小时的单位成本和时间增长方面优于标记辅助反复选择和PS。这一结果强烈地鼓励了针叶树育种中的GS，尽管在模拟中使用的一些育种方案对于针叶树育种是不切实际的（例如，一个基本种群是由两个近交系的创建者生成的）。 Grattapaglia和Resende（2010）采用确定性方法来评估影响森林树种繁殖中GS的准确性的因素，表明GS具有从根本上提高树木繁殖效率的潜力。然而，他们的模拟使用了一个确定性方程，它是基于关于遗传模型和人口历史的一些假设。例如，假设育种群体中的LD建立在Sved方程之后（Sved 1971），尽管对于大多数针叶树种来说这个假设可能是不切实际的。即使在可以获得小型繁殖种群的物种中，假设仍然是不切实际的，因为需要多代代使得LD遵循Sved方程。他们还评估了GS在一代中的效率，尽管GS的选择精度可能随着周期性选择而衰减。因此，需要进一步的模拟研究来验证针叶树育种中GS的潜力。 日本柳杉是日本经济上重要的针叶树，日本全部人为森林中有45％属于这一物种。由于日本柳杉木材的重要性，对该物种进行了广泛的遗传育种研究（例如，Ohba 1993; Yoshimaru et al.1998; Kuramotoet al.2000; Taniet al.2003; Moriguchi et al.2005; Ujino -Iharaetal.2005; Tsumura等人2007）。实际上，日本柳杉每周期的表型选择需要至少20年，尽管只需3年才能使用赤霉素处理来推进一代（Hashizume 1959; Taira等人1999; Honma等2006）。戈达德（Haydard）和海斯（Hayes）（2007）提出，这种情况可能使GS非常有效。然而，在针叶树种类如日本柳杉中，由于其极大的基因组大小（&gt; 5.">
+  <meta property="og:description" content="Iwata H, Hayashi T, Tsumura Y. 2011. Prospects for genomic selection in conifer breeding: A simulation study of Cryptomeria japonica. Tree Genetics and Genomes, 7(4): 747–758.
+ 基因组选择（GS）可以是针叶育种中的强大技术，因为针叶树具有长的产生间隔，延长的评估时间和繁殖投入的高成本。为了阐明GS对针叶育种的潜力，我们在有和没有GS的情况下模拟了60年生日本柳杉育种计划。在针叶树中，连锁不平衡（LD）的快速衰减可能对施用GS构成严重障碍。为了克服这个障碍，我们提出了一个想法，利用已经在针叶树中普遍使用的种子园系统，因为某些程度的LD存在于种子园中有限数量的精英树的后代中。用于模拟的基本种群包括来自25个精英树的后代。结果表明，GSB在前30年没有模型更新优于表型选择育种（PSB），但在GSB中获得的遗传增益在60年来均小于PSB。然而，60年来，GSB的模型更新优于PSB。 GSB 60年代取得的模型更新所获得的遗传增益几乎是PSB的两倍。 GSB优于PSB的优势胜出，即使是低遗传多基因性状。有效GS所需标记的数量是一个现实的水平（例如，每1 cM中一个），尽管更高的标记密度产生更高的选择精度。这些结果表明GS可用于日本柳杉育种。然而，更新预测模型对于获得巨大的遗传增益是必不可少的。
+介绍 新的基因组技术如高通量分子标记可以通过增加遗传增益和缩短生成间期来增强树种育种计划的各个阶段，最终导致直接基于基因型的遗传改良而不是仅仅基于传统方法表型（White et al。2007）。标记辅助选择（MAS）是基因组技术的潜在应用，可以根据其分子标记基因型选择具有所需性状的树木。尽管MAS的使用在植物育种中不断增加，但一般来说，大多数应用被限制在简单的单基因型（Heffner et al。，2009）。 MAS的两个主要限制是（1）双亲数量性状基因座（QTL）作图研究的结果不容易转化为育种应用，（2）用于鉴定目标基因座和实施MAS的统计学方法已经不足以改善多基因性状因此限制了MAS的应用范围，使其受到几种大效应基因而不是许多小作用基因控制的性状的影响（Heffner et al。，2009）。作为两种缺陷的解决方案，由Meuwissen等人提出的基因组选择（GS） （2001）（这是一种在预测中结合了整个基因组的所有标记信息的MAS的形式）已经在植物育种中引起越来越多的关注（Heffner等人2009; Jannink等人，2010; Grattapaglia和Resende 2010）以及非动物繁殖Hayes等人2009）。在基因组选择中，用于预测未知基因型育种值的全基因组标记多态性与与目标性状相关的QTL的连锁不平衡（LD）具有捕获性状的整个遗传变异。模拟研究（例如，Meuwissen等人2001; Zhong等人，2009）表明，可以用标记数据单独预测育种值，表明即使没有表型记录，也可以有效地选择育种品系。事实上，GS特别适用于可以结合技术来加速育种计划的发展进程，因为选择可以在早期发育阶段完成而不测量表型价值（Goddard和Hayes 2007）。表型选择（PS）在针叶育种计划中需要很长时间和广泛的空间。因此，GS可能会大大降低成本并加快选择所需的时间。 Wong和Bernardo（2008）在油棕榈进行了GS模拟，其中PS需要19周年，GS需要6年。他们得出结论，GS在人口规模较小时的单位成本和时间增长方面优于标记辅助反复选择和PS。这一结果强烈地鼓励了针叶树育种中的GS，尽管在模拟中使用的一些育种方案对于针叶树育种是不切实际的（例如，一个基本种群是由两个近交系的创建者生成的）。 Grattapaglia和Resende（2010）采用确定性方法来评估影响森林树种繁殖中GS的准确性的因素，表明GS具有从根本上提高树木繁殖效率的潜力。然而，他们的模拟使用了一个确定性方程，它是基于关于遗传模型和人口历史的一些假设。例如，假设育种群体中的LD建立在Sved方程之后（Sved 1971），尽管对于大多数针叶树种来说这个假设可能是不切实际的。即使在可以获得小型繁殖种群的物种中，假设仍然是不切实际的，因为需要多代代使得LD遵循Sved方程。他们还评估了GS在一代中的效率，尽管GS的选择精度可能随着周期性选择而衰减。因此，需要进一步的模拟研究来验证针叶树育种中GS的潜力。 日本柳杉是日本经济上重要的针叶树，日本全部人为森林中有45％属于这一物种。由于日本柳杉木材的重要性，对该物种进行了广泛的遗传育种研究（例如，Ohba 1993; Yoshimaru et al.1998; Kuramotoet al.2000; Taniet al.2003; Moriguchi et al.2005; Ujino -Iharaetal.2005; Tsumura等人2007）。实际上，日本柳杉每周期的表型选择需要至少20年，尽管只需3年才能使用赤霉素处理来推进一代（Hashizume 1959; Taira等人1999; Honma等2006）。戈达德（Haydard）和海斯（Hayes）（2007）提出，这种情况可能使GS非常有效。然而，在针叶树种类如日本柳杉中，由于其极大的基因组大小（&gt; 5.">
+  <meta name="twitter:description" content="Iwata H, Hayashi T, Tsumura Y. 2011. Prospects for genomic selection in conifer breeding: A simulation study of Cryptomeria japonica. Tree Genetics and Genomes, 7(4): 747–758.
+ 基因组选择（GS）可以是针叶育种中的强大技术， …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/gs/iwata2011-%E6%97%A5%E6%9C%AC%E6%9F%B3%E6%9D%89/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/gs/iwata2011-%E6%97%A5%E6%9C%AC%E6%9F%B3%E6%9D%89/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Iwata2011-日本柳杉</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (72 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Iwata2011-日本柳杉</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (72 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Iwata H, Hayashi T, Tsumura Y. 2011. Prospects for genomic selection in conifer breeding: A simulation study of Cryptomeria japonica. Tree Genetics and Genomes, 7(4): 747–758.</p>
+</blockquote>
+
+<p>基因组选择（GS）可以是针叶育种中的强大技术，因为针叶树具有长的产生间隔，延长的评估时间和繁殖投入的高成本。为了阐明GS对针叶育种的潜力，我们在有和没有GS的情况下模拟了60年生日本柳杉育种计划。<strong>在针叶树中，连锁不平衡（LD）的快速衰减可能对施用GS构成严重障碍</strong>。为了克服这个障碍，我们提出了一个想法，<strong>利用已经在针叶树中普遍使用的种子园系统，因为某些程度的LD存在于种子园中有限数量的精英树的后代中</strong>。用于模拟的基本种群包括来自25个精英树的后代。结果表明，GSB在前30年没有模型更新优于表型选择育种（PSB），但在GSB中获得的遗传增益在60年来均小于PSB。然而，60年来，GSB的模型更新优于PSB。 GSB 60年代取得的模型更新所获得的遗传增益几乎是PSB的两倍。 GSB优于PSB的优势胜出，即使是低遗传多基因性状。有效GS所需标记的数量是一个现实的水平（例如，每1 cM中一个），尽管更高的标记密度产生更高的选择精度。这些结果表明GS可用于日本柳杉育种。然而，更新预测模型对于获得巨大的遗传增益是必不可少的。</p>
+
+<h2 id="介绍">介绍</h2>
+
+<p>新的基因组技术如高通量分子标记可以通过增加遗传增益和缩短生成间期来增强树种育种计划的各个阶段，最终导致直接基于基因型的遗传改良而不是仅仅基于传统方法表型（White et al。2007）。标记辅助选择（MAS）是基因组技术的潜在应用，可以根据其分子标记基因型选择具有所需性状的树木。尽管MAS的使用在植物育种中不断增加，但一般来说，大多数应用被限制在简单的单基因型（Heffner et al。，2009）。 <strong>MAS的两个主要限制是（1）双亲数量性状基因座（QTL）作图研究的结果不容易转化为育种应用，（2）用于鉴定目标基因座和实施MAS的统计学方法已经不足以改善多基因性状因此限制了MAS的应用范围，使其受到几种大效应基因而不是许多小作用基因控制的性状的影响（Heffner et al。，2009）</strong>。作为两种缺陷的解决方案，由Meuwissen等人提出的基因组选择（GS） （2001）（这是一种在预测中结合了整个基因组的所有标记信息的MAS的形式）已经在植物育种中引起越来越多的关注（Heffner等人2009; Jannink等人，2010; Grattapaglia和Resende 2010）以及非动物繁殖Hayes等人2009）。在基因组选择中，用于预测未知基因型育种值的全基因组标记多态性与与目标性状相关的QTL的连锁不平衡（LD）具有捕获性状的整个遗传变异。模拟研究（例如，Meuwissen等人2001; Zhong等人，2009）表明，可以用标记数据单独预测育种值，表明即使没有表型记录，也可以有效地选择育种品系。事实上，GS特别适用于可以结合技术来加速育种计划的发展进程，因为选择可以在早期发育阶段完成而不测量表型价值（Goddard和Hayes 2007）。表型选择（PS）在针叶育种计划中需要很长时间和广泛的空间。因此，GS可能会大大降低成本并加快选择所需的时间。 Wong和Bernardo（2008）在油棕榈进行了GS模拟，其中PS需要19周年，GS需要6年。他们得出结论，<strong>GS在人口规模较小时的单位成本和时间增长方面优于标记辅助反复选择和PS</strong>。这一结果强烈地鼓励了针叶树育种中的GS，尽管在模拟中使用的一些育种方案对于针叶树育种是不切实际的（例如，一个基本种群是由两个近交系的创建者生成的）。 Grattapaglia和Resende（2010）采用确定性方法来评估影响森林树种繁殖中GS的准确性的因素，表明GS具有从根本上提高树木繁殖效率的潜力。然而，他们的模拟使用了一个确定性方程，它是基于关于遗传模型和人口历史的一些假设。例如，假设育种群体中的LD建立在Sved方程之后（Sved 1971），尽管对于大多数针叶树种来说这个假设可能是不切实际的。即使在可以获得小型繁殖种群的物种中，假设仍然是不切实际的，因为需要多代代使得LD遵循Sved方程。他们还评估了GS在一代中的效率，尽管GS的选择精度可能随着周期性选择而衰减。因此，需要进一步的模拟研究来验证针叶树育种中GS的潜力。
+日本柳杉是日本经济上重要的针叶树，日本全部人为森林中有45％属于这一物种。由于日本柳杉木材的重要性，对该物种进行了广泛的遗传育种研究（例如，Ohba 1993; Yoshimaru et al.1998; Kuramotoet al.2000; Taniet al.2003; Moriguchi et al.2005; Ujino -Iharaetal.2005; Tsumura等人2007）。实际上，日本柳杉每周期的表型选择需要至少20年，尽管只需3年才能使用赤霉素处理来推进一代（Hashizume 1959; Taira等人1999; Honma等2006）。戈达德（Haydard）和海斯（Hayes）（2007）提出，这种情况可能使GS非常有效。然而，在针叶树种类如日本柳杉中，由于其极大的基因组大小（&gt; 5.0×109bp），大量有效种群大小，并且由于其短暂的历史，LD在其基因组中迅速衰变（Gupta等人，2005）的驯养和育种（Neale和Savolainen 2004）。 <strong>LD的快速衰减可能会对日本柳杉育种计划中GS的用途构成严重威胁，因为捕获控制目标性状的QTL变异可能需要大量标记物</strong>。针叶树种子园系统已被用于育种计划。种子园系统被设计成通过在种子园中种植的精英树之间的随机相互交配来产生具有高育种价值的种子（即子代）。一些种子种子的后代种植在实验领域，随后进一步选择下一代精英树。在种子园种子中，由于在种子园发生遗传瓶颈，LD增加（种子园中使用的精英树通常是几十个）。因此，如果我们能够使用种子园后代来建立一个GS预测模型，那么我们可以从LD的群体增长中受益。通常，在实验领域种植的后代的表型数据已经可用，特别是与经济上重要的性状相关的表型数据。因此，我们可以使用后代的基因型和表型数据快速构建GS预测模型，并开始使用种子 园后代种群作为育种基础种群进行GS育种。由于复发选择引起的遗传瓶颈，进一步的益处也可能来自于LD越来越多。
+本研究的目的是（1）评估基于从种子园生产的实验田间种群收集的记录建立GS预测模型的育种系统的效率，（2）优化频率和时间建立GS预测模型，增加60多年的遗传增益，（3）阐明几个因素的影响，即性状遗传力，有效QTL数量和标记密度对遗传增益的影响在60年代，通过使用日本柳杉作为模型的模拟研究。将讨论在日本柳杉育种计划中应用GS的观点。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/jagosz-2011-%E8%83%A1%E8%90%9D%E5%8D%9C/" data-toggle="tooltip" data-placement="top" title="Jagosz-2011-胡萝卜">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%9A%8F%E7%AC%94/isik%E4%B9%A6%E4%B8%AD%E7%9A%84%E9%94%99%E8%AF%AF/" data-toggle="tooltip" data-placement="top" title="Isik书中的错误">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

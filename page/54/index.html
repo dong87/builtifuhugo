@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Dong&#39;s blog</title>
+  <meta property="og:title" content="Dong&#39;s blog" />
+  <meta name="twitter:title" content="Dong&#39;s blog" />
+  <meta name="description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta property="og:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="twitter:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../" />
+  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../">
+            <img class="avatar-img" src="../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Dong&#39;s blog</h1>
+                
+                  
+                    <hr class="small">
+                    <span class="page-subheading">Enterprising &amp; Concentrating欢迎光临！</span>
+                  
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div role="main" class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+          <div class="well">
+            
+
+<h2 id="front-page-content">Front Page Content</h2>
+
+<p><code>beautifulhugo</code> supports content on your front page. Edit <code>/content/_index.md</code> to change what appears here. Delete <code>/content/_index.md</code> if you don&rsquo;t want any content here.</p>
+
+          </div>
+        
+
+        <div class="posts-list">
+          
+          
+            <article class="post-preview">
+              <a href="../../post/stat/%E7%A9%BA%E9%97%B4%E8%87%AA%E7%9B%B8%E5%85%B3/">
+                <h2 class="post-title">空间自相关</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (74 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  https://github.com/famuvie/breedR/wiki/Overview#hierarchical-and-factorial-models
+ 概念 环境因素影响响应值，造成距离更近的个体之间比距离远的个体间更相似。它会影响估计值和估计精度。这是试验要随机到空间区组中去的原因。
+残差图 空间自相关的诊断（残差变异函数variograms of residuals）  Isotropic variogram： 不考虑方向The empirical isotropic variogram is built by aggregating all the pairs of points separated by (h),no matter the direction.  - Row/Column variogram: 行列The empirical row/col variogram is built by aggregating all the pairs of points separated by exactly (x) rows and (y) columns.
+ Anisotropic variogram:方向相同 The empirical anisotropic variogram is built by aggregating all the pairs of points in the same direction separated by x.
+                  <a href="../../post/stat/%E7%A9%BA%E9%97%B4%E8%87%AA%E7%9B%B8%E5%85%B3/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E8%AE%BA%E6%96%87/%E7%AC%AC%E4%B8%80%E7%AB%A0/">
+                <h2 class="post-title">第一章</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 6 minutes (1198 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  2.2.材料与方法 2.2.1植物材料与试验设计 从初级种子园中选择12个无性系，开展双列交配试验（包含自交）。共获得55个组合，包括8个自交、34对正反交和13个单交（交配设计见表1 - 1）。此外，同年收集12个亲本自由授粉种子。在苗圃中将种子育苗，培育2年后移植到试验林地（1988年）。试验林位于中国辽宁省抚顺市清原县大孤家镇林场（42.72°N，124.88°E），林地海拔约460 m。试验设计采用随机完全区组设计，5个重复，其中重复2和重复4分别包含4个和5个亚重复，密度2 × 2 m。每个组合及自由授粉家系获得的子代个数不完全一致，由于要将全部子代个体布置到林地内，所以小区的大小是变化的，总体上服从每行5株多列(1-3)。试验林四周设有保护行以避免边缘效应。每年进行常规抚育管理。为维持林地的生产力，2009年对试验林进行隔株间伐。 采集12个亲本的新鲜针叶，硅胶干燥，用于后续基因组DNA提取和遗传分析。 表1 - 1全双列交配设计 Table 1 – 1 A full diallel mating design used for the present Japanese larch improvement program
+注：⊙-自交；×-异交。
+2.2.2数据收集与清洗 分别在2005年和2014年树木休眠期，调查测定试验林内单株的树高（m）、胸径（cm），用H05、H14、DBH05和DBH14表示。树高和胸径分别用测高仪(Vertex Ⅲ, Haglof Company Group, Sweden)和围尺测定。而后利用树高和胸径计算每木的带皮材积指数（m3），用V05、V14表示。材积指数公式为V = H × D2 (1)。 在家系水平和重复水平检查各性状的极端异常值。极端异常值的定义为≤下四分位数减去3倍IQR（interquartile range）的数值，或≥上四分位加上3倍IQR的数值。而后去除极端异常小的数值，因为这些数值的观测个体可能是受压木、遭受严重病虫害或是所处环境条件很差，未能反映真实的生长潜力。 2.2.3 统计分析 因为Yao等(2013)发现使用家系模型分析包含自交的全双列会高估SCA效应，认为不含自交全双列是用于估计GCA和SCA效应的最佳交配设计。因此，在去除自交数据后进行遗传参数估计及遗传效应值预测。混合模型如下： y=Xb+Z_1 gm+Z_2 gd+Z_3 s+Z_4 r+Z_5 p+e 这里，响应变量y是单株表型值列向量。b是固定的重复效应列向量，gm (gd)是随机的亲本GCA效应向量，s是随机的交配组合SCA效应向量，r、p、e分别是随机的正反交效应、小区效应和残差向量。X和Z(Z1-Z5) 分别是将观测值关联到各自固定和随机效应上的设计矩阵。模型（2）中的随机效应假定期望为0并服从正态分布： A亲缘关系矩阵，I是单位矩阵，σ ̂_g^2，σ ̂_s^2，σ ̂_r^2，σ ̂_p^2和σ ̂e^2分别是随机效应gm(gd)，s，r，p，和e的方差估计。 方差估计由限制性最大似然估计（Restricted maximum likelihood，REML）方法获得。各方差的标准误由1阶泰勒展开式决定。利用似然比检验检验（LRT）各方差组分的统计显著性(α = 0.05)。通过解Henderson混合模型方程组(Henderson 1975)求得模型的解，即为包括育种值在内的随机效应值。 为比较各生长性状的相对遗传方差，利用公式(&ldquo;CV&rdquo; ) ̂&ldquo;g&rdquo; &ldquo;=&rdquo; √(&ldquo;σ&rdquo; ̂&ldquo;a&rdquo; ^&ldquo;2&rdquo; +4&rdquo;σ&rdquo; ̂&ldquo;s&rdquo; ^&ldquo;2&rdquo; )/&ldquo;x&rdquo; ̅ &ldquo;×100%&rdquo; (3)和(&ldquo;CV&rdquo; ) ̂&ldquo;p&rdquo; &ldquo;=&rdquo; √(&ldquo;σ&rdquo; ̂&ldquo;P&rdquo; ^&ldquo;2&rdquo; )/&ldquo;x&rdquo; ̅ &ldquo;×100%&rdquo; (4)，分别估计了加性遗传变异系数((&ldquo;CV&rdquo; ) ̂&ldquo;g&rdquo; )和表型变异系数((&ldquo;CV&rdquo; ) ̂&ldquo;p&rdquo; )。 &ldquo;σ&rdquo; ̂&ldquo;a&rdquo; ^&ldquo;2&rdquo; 和&rdquo;σ&rdquo; ̂&ldquo;s&rdquo; ^&ldquo;2&rdquo; 如上描述，&rdquo;σ&rdquo; ̂_&ldquo;P&rdquo; ^&ldquo;2&rdquo; 是表型方差估计值。x ̅是性状的均值。 狭义遗传力(h2)和广义遗传力(H2)分别按以下2个公式估计： h^2=(4σ_a^2)/(〖2σ〗_a^2+σ_s^2+σ_r^2+σ_p^2+σ_e^2 ) (4) H^2=(4(σ_a^2+σ_s^2))/(〖2σ〗_a^2+σ_s^2+σ_r^2+σ_p^2+σ_e^2 ) (5) 两性状（x、y）遗传相关系数（&rdquo;r&rdquo; _&ldquo;A&rdquo; ）计算公式为： &ldquo;r&rdquo; &ldquo;A&rdquo; &ldquo;=&rdquo; &ldquo;σ&rdquo; ̂(&ldquo;a&rdquo; _&ldquo;x&rdquo; &ldquo;a&rdquo; &ldquo;y&rdquo; )/√(&ldquo;σ&rdquo; ̂(&ldquo;a&rdquo; &ldquo;x&rdquo; )^&ldquo;2&rdquo; &ldquo;σ&rdquo; ̂(&ldquo;a&rdquo; _&ldquo;y&rdquo; )^&ldquo;2&rdquo; ) (7) 以上提及的分析均由ASReml-R 软件包3.
+                  <a href="../../post/%E8%AE%BA%E6%96%87/%E7%AC%AC%E4%B8%80%E7%AB%A0/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/%E7%B3%BB%E8%B0%B1%E6%9E%84%E5%BB%BA%E4%B8%AD%E5%BE%AE%E5%8D%AB%E6%98%9F%E5%92%8Csnp%E7%9A%84%E7%89%B9%E7%82%B9/">
+                <h2 class="post-title">系谱构建中微卫星和SNP的特点</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (108 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Pemberton J . 2008. Wild pedigrees: the way forward. Proceedings of the Royal Society B: Biological Sciences, 275(1635): 613–621.
+  SSR 微卫星是多年来推断亲缘关系常用的标记（Parker et al。1998; Jones＆Ardren 2003）。它具有其他标记类型不具备的特点：单座位信息，共显性，由于低频下的许多等位基因导致的高变异性，通过自动化的高通量潜力和适于对从野生种群获得的法医样品的分析的短DNA片段。识别新物种的微卫星标记是通过从头发现或利用其跨物种效用。现在通常获得用于亲本分析的基因型只是时间和金钱的问题。 【缺点】有时，微卫星很难找到或者多态性差。基因分型易于发生突变（分型错误），且有明显比例的基因座具有分离无效等位基因（Dakin＆Avise 2004），所有这些都可能引起假亲本排除。影响长期研究的技术问题是微卫星等位基因大小在检测平台之间变化。
+ SNP 未来，单核苷酸多态性（SNPs）可能常用于自然种群的谱系重建。 虽然与微型卫星相比信息量少得多，但它们存在大量数据，并且与微型卫星相比潜在的误差更小。 因此，识别个体和亲本的能力可能非常高（Anderson＆Garza 2006）。 目前已经为动物和人类开发了单核苷酸多态性的panel，并且研究证实了它们与标准微卫星相比的有用性（例如Phillips等人2007; Rohrer等人2007）。
+   Berger-Wolf T Y, Sheikh S I, DasGupta B, et al. 2007. Reconstructing sibling relationships in wild populations. Bioinformatics, 23(13).
+ 与显性标记如AFLP和ISSR不同，微卫星等位基因是共显性的，因此每个基因座的基因型和等位基因频率的推断是直接的。 对于不受大规模基因组计划影响的物种，SNPs的开发比微卫星开发更加困难和昂贵。 更重要的是，识别相关个体的能力主要取决于每个基因座的等位基因数及其杂合度，微卫星在两个方面明显优于其他标记，5-20等位基因和杂合度&gt; 0.700是典型的，如 许多野生种群。
+ Trong T Q, van Bers N, Crooijmans R, et al.
+                  <a href="../../post/%E9%9A%8F%E7%AC%94/%E7%B3%BB%E8%B0%B1%E6%9E%84%E5%BB%BA%E4%B8%AD%E5%BE%AE%E5%8D%AB%E6%98%9F%E5%92%8Csnp%E7%9A%84%E7%89%B9%E7%82%B9/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E8%AE%BA%E6%96%87/%E7%B3%BB%E8%B0%B1%E9%87%8D%E5%BB%BA/">
+                <h2 class="post-title">系谱重建</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (8 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p>育种值的准确估计，能够提高植物遗传改良的效率，依赖于良好的交配设计和田间测定。自由授粉因其操作简便等特点，是林木育种中最常采用的交配设计，但与控制授粉相比，获得的育种值估计不够准确，原因有存在近交子代的可能，造成来自同一母本的子代不是真正意义上的半同胞。此外，种子园中的外源花粉污染也会造成育种值估计出现偏差（Squillace和Long 1981; Friedman and Adams 1985; Adams和Burczyk 2000）。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/%E7%BA%B8%E7%89%8C%E5%B1%8B-%E8%8B%B1%E6%96%87%E5%AD%97%E5%B9%95-%E5%89%A7%E6%9C%AC-s1-s5-txt-%E4%B8%8B%E8%BD%BD/">
+                <h2 class="post-title">纸牌屋-英文字幕-剧本-S1-S5-txt-下载</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (4 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p><a href="https://zh.wikipedia.org/zh-cn/%E7%BA%B8%E7%89%8C%E5%B1%8B">纸牌屋</a>是部好剧，是很好的英文学习素材。网上只能找到<a href="http://www.zimuzu.tv/">字幕</a>，但并没有现成的纯文本可供下载，因此从字幕文件中抓取出来，并在这里分享。希望对你有用。</p>
+</blockquote>
+
+<p>度盘<a href="http://pan.baidu.com/s/1hsiQawc">下载链接</a> 密码: gwf9</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/%E7%BA%BF%E6%80%A7%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8Blmm/">
+                <h2 class="post-title">线性混合模型LMM</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (35 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  
+
+<h2 id="线性混合模型基础">线性混合模型基础</h2>
+
+<p><strong>线性混合模型（LMM）</strong>是遗传评估中必用的统计模型，用以将群体中每个个体的观测值按照潜在影响因素进行分解。决定观测值的大小和幅度受2个参数（均值和方差）控制，反过来说也可以。一般我们更关注方差，围绕方差的运算与处理也更为复杂，所以能够将LMM中涉及的方差们的关系搞明白，就大体能理解这些没什么亲和力的模型们了。通常在介绍这一部分内容时，很容易让人发蒙，因为太抽象了，全是符号，所以前提是必须对数学这门外语有一定了解，就是一门外语啊。比如告诉我一个矩阵的维度是4×5，我头脑里有概念，这是小学的数学知识学得好，但你告诉我它的维度是n×p，我的CPU和GPU就不太够用了，所以得像学习英语一样，方法+重复才是硬道理。</p>
+
+<p>如果知道了这些方差们的具体数值，求算各个因素的系数（我们最终要的是这个）就相对容易多了。但这些方差是怎么计算的？一般会告诉采用了什么方法（REML用的多），但这又是什么我想很多人想知道但没人教，所以一直糊涂着，只停留在会用的地步，当然会处理数据也够用。我很有兴趣，但到今天我也不全会，也没有能力在<code>R</code>中实现，原因是没那个功底，不会矩阵求导，盼望有一天谁来引领一下，但这不是刚需，因此参数求解就停在这里了。下面就我了解的知识对LMM做2部分的介绍，主要目的是自我梳理，学识有限，错误难免。</p>
+
+<h3 id="1-lmm的形式">1. LMM的形式</h3>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-137c6954d8975b8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+这是基本形式，更复杂的都是在其基础上演变出来的。</p>
+
+<p>式子里一共有6个字母，4个小写，2个大写。小写是向量（1维矩阵），大写是矩阵。这几个字母的意思分别是：</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">字母</th>
+<th>名称</th>
+<th>维度</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">y</td>
+<td>观测值</td>
+<td>n×1</td>
+</tr>
+
+<tr>
+<td align="left">b</td>
+<td>固定效应（p个水平）</td>
+<td>p×1</td>
+</tr>
+
+<tr>
+<td align="left">a</td>
+<td>随机效应（q个水平）</td>
+<td>q×1</td>
+</tr>
+
+<tr>
+<td align="left">e</td>
+<td>随机残差</td>
+<td>n×1</td>
+</tr>
+
+<tr>
+<td align="left">X</td>
+<td>固定效应设计矩阵</td>
+<td>n×p</td>
+</tr>
+
+<tr>
+<td align="left">Z</td>
+<td>随机效应设计矩阵</td>
+<td>n×q</td>
+</tr>
+</tbody>
+</table>
+
+<p>有几个假设</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-abc2692b7c726f04.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>意思是a和e这2个向量的参数（均值和方差），均值都是0，方差分别是G和R，协方差是0（彼此独立，没有线性关系）。G和R具体又是什么？
+<img src="http://upload-images.jianshu.io/upload_images/3289684-f1d006b08e18fa41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />，
+<img src="http://upload-images.jianshu.io/upload_images/3289684-72ceccb21c11e509.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />。*A*是随机效应中q个水平之间的关系矩阵（分子关系矩阵），如果水平间不相关（独立），那么就等同于单位矩阵*I*。这里只假设a是1个效应，a也可以是含有多个效应的列向量；同样，在某些情况下，也可以继续分解R。此外，观测值的期望是<strong>E(y)=Xb</strong>，方差（marginal）<strong>var(y)=V=ZGZ^T+R</strong>。期望比较容易理解，方差为何是这个形式？G左右为何乘以Z？很多材料没有给详细的推导式子。Mrode（2013，p35）中：</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-9fa74adafa220543.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<p>总之，一个普通LMM中的元素就这么多，了解了这些内容，才有可能看懂后续的似然函数以及参数具体的ML或REML过程。</p>
+
+<h3 id="2-reml过程-待更">2. REML过程（待更）</h3>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%8A%95%E7%A8%BF%E6%8A%80%E5%B7%A7/%E8%87%B4%E8%B0%A2/">
+                <h2 class="post-title">致谢</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (80 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  I am grateful to two anonymous referees for useful comments on an earlier version of this manuscript. We would like to thank Drs. Peter Clarke, Steen Magnussen, and John King for their stimulating discussion on the research; Dr. William Wingle for his excellent help in the data analyses with his UNCERT program; and Dr. Rowland Burdon for his constructive comments on the early version of the manuscript. This research is financially supported by Forest Renewal BC research grant No.
+                  <a href="../../post/%E6%8A%95%E7%A8%BF%E6%8A%80%E5%B7%A7/%E8%87%B4%E8%B0%A2/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/%E8%88%AC%E8%8B%A5%E6%B3%A2%E7%BD%97%E8%9C%9C%E5%A4%9A%E5%BF%83%E7%BB%8F/">
+                <h2 class="post-title">般若波罗蜜多心经</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (24 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p><img src="http://upload-images.jianshu.io/upload_images/3289684-938f93cfa96e2dba.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+观自在菩萨，行深般若波罗蜜多时，照见五蕴皆空，度一切苦厄。
+舍利子，色不异空，空不异色，色即是空，空即是色，受想行识，亦复如是。
+舍利子，是诸法空相，不生不灭，不垢不净，不增不减。
+是故空中无色，无受想行识，无眼耳鼻舍身意，无色声香味触法。无眼界，乃至无意识界；无无明，亦无无明尽；乃至无老死，亦无老死尽。无苦集灭道，无智亦无得。以无所得故，菩提萨埵。依般若波罗蜜多故，心无挂碍，无挂碍故，无有恐惧。远离颠倒梦想，究竟涅槃。三世诸佛，依般若波罗蜜多故，得阿诺多罗三藐三菩提。故知般若波罗蜜多，是大神咒，是大明咒，是无上咒，是无等等咒，能除一切苦，真实不虚。故说般若波罗蜜多咒，即说咒曰：揭谛揭谛，波罗揭谛，波罗僧揭谛，菩提萨摩耶。</p>
+
+<hr />
+
+<p>观自在菩萨，行深般若波罗蜜多时，照见五蕴皆空，度一切苦厄。
+舍利子，色不异空，空不异色，色即是空，空即是色。受想行识，亦复如是。
+舍利子，是诸法空相，不生不灭，不垢不净，不增不减。
+是故空中无色，无受想行识，无眼耳鼻舍身意，无色声香味触法。无眼界，乃至无意识界；无无明，亦无无明尽；乃至无老死，亦无老死尽。无苦集灭道，无智亦无得，以无所得故，菩提萨埵。依般若波罗蜜多故，心无挂碍，无挂碍故，无有恐惧。远离颠倒梦想，究竟涅槃。三世诸佛，依般若波罗蜜多故，得阿诺多罗三藐三菩提。故知般若波罗蜜多，是大神咒，是大明咒，是无上咒，是无等等咒。能除一切苦，真实不虚。故说般若波罗蜜多咒，即说咒曰：揭谛揭谛，波罗揭谛，波罗僧揭谛，菩提萨摩耶。</p>
+
+<hr />
+
+<p>观自在菩萨，行深般若波罗蜜多时，照见五蕴皆空，度一切苦厄。
+舍利子，色不异空，空不异色，色即是空，空即是色，受想行识，亦复如是。
+舍利子，是诸法空相，不生不灭，不垢不净，不增不减。
+是故空中无色，无受想行识，无眼耳鼻舍身意，无色声香味触法。无眼界，乃至无意识界；无无明，亦无无明尽；乃至无老死，亦无老死尽。无苦集灭道，无智亦无得，以无所得故，菩提萨埵。依般若波罗蜜多故，心无挂碍，无挂碍故，无有恐惧。远离颠倒梦想，究竟涅槃。三世诸佛，依般若波罗蜜多故，得阿诺多罗三藐三菩提。故知般若波罗蜜多，是大神咒，是大明咒，是无上咒，是无等等咒。能除一切苦，真实不虚。故说般若波罗蜜多咒，即说咒曰：揭谛揭谛，波罗揭谛，波罗僧揭谛，菩提萨摩耶。</p>
+
+<hr />
+
+<p>觀自在菩薩，行深般若波羅蜜多時，照見五蘊皆空，度一切苦厄。
+舍利子，色不異空，空不異色，色即是空，空即是色，受想行識，亦復如是。
+舍利子，是諸法空相，不生不滅，不垢不淨，不增不減。
+是故空中無色，無受想行識，無眼耳鼻舌身意，無色聲香味觸法。無眼界，乃至無意識界，無無明，亦無無明盡，乃至無老死，亦無老死盡。無恐集滅道，無智亦無得，以無所得故，菩提薩埵。依般若波羅蜜多故，心無掛礙，無掛礙故，無有恐懼。遠離顛倒夢想，究竟涅槃。三世諸佛，依般若波羅蜜多故，得阿諾多羅三藐三菩提。故知般若波羅蜜多，是大神咒，是大明咒，是無上咒，是無等等咒。能除一切苦，真實不虛。故說般若波羅蜜多咒，即說咒曰：揭諦揭諦，波羅揭諦，波羅僧揭諦，菩提薩摩耶。</p>
+
+<hr />
+
+<p>觀自在菩薩，行深般若波羅蜜多時，照見五蘊皆空，度一切苦厄。
+舍利子，色不異空，空不異色，色即是空，空即是色，受想行識，亦復如是。
+舍利子，是諸法空相，不生不滅，不垢不淨，不增不減。
+是故空中無色，無受想行識，無眼耳鼻舌身意，無色聲香味觸法。無眼界，乃至無意識界，無無明，亦無無明盡，乃至無老死，亦無老死盡。無恐集滅道，無智亦無得，以無所得故，菩提薩埵。依般若波羅蜜多故，心無掛礙，無掛礙故，無有恐懼。遠離顛倒夢想，究竟涅槃。三世諸佛，依般若波羅蜜多故，得阿諾多羅三藐三菩提。故知般若波羅蜜多，是大神咒，是大明咒，是無上咒，是無等等咒，能除一切苦，真實不虛。故說般若波羅蜜多咒，即說咒曰：揭諦揭諦，波羅揭諦，波羅僧揭諦，菩提薩摩耶。</p>
+
+<hr />
+
+<p>觀自在菩薩，行深般若波羅蜜多時，照見五蘊皆空，度一切苦厄。
+舍利子，色不異空，空不異色，色即是空，空即是色，受想行識，亦復如是。
+舍利子，是諸法空相，不生不滅，不垢不淨，不增不減。
+是故空中無色，無受想行識，無眼耳鼻舌身意，無色聲香味觸法。無眼界，乃至無意識界，無無明，亦無無明盡，乃至無老死，亦無老死盡。無恐集滅道，無智亦無得，以無所得故，菩提薩埵。依般若波羅蜜多故，心無掛礙，無掛礙故，無有恐懼。遠離顛倒夢想，究竟涅槃。三世諸佛，依般若波羅蜜多故，得阿諾多羅三藐三菩提。故知般若波羅蜜多，是大神咒，是大明咒，是無上咒，是無等等咒，能除一切苦，真實不虛。故說般若波羅蜜多咒，即說咒曰：揭諦揭諦，波羅揭諦，波羅僧揭諦，菩提薩摩耶。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/%E8%90%BD%E5%8F%B6%E6%9D%BE/">
+                <h2 class="post-title">落叶松</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (33 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p>Hybrid vigor is well documented for larch (Miller and Thulin 1967, Carter et al. 1981, Riemenschneider and Nienstaedt 1983, Einspahr et al. 1984, Carter and Selin 1987, Matyssek and Schulze 1987, Paques 1992).</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/rcodes/%E8%A1%A5%E5%85%85cf29%E8%87%AA%E7%94%B1%E6%8E%88%E7%B2%89%E5%AD%90%E4%BB%A3-%E5%B9%B6plot/">
+                <h2 class="post-title">补充CF29自由授粉子代-并plot</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (119 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  source(&quot;D:/Sync/R/rcodes/generate_label_df.r&quot;) com&lt;-unique(df$com) # here must be df not df.rm.self com&lt;-as.character(com) com&lt;-unique(df$com) # here must be df not df.rm.self com&lt;-as.character(com) com comcom&lt;-read.csv(&quot;comcom.growth.csv&quot;) setwd(&quot;D:/Sync/R/8801/fullsib/160620&quot;) comcom&lt;-read.csv(&quot;comcom.growth.csv&quot;) comcom&lt;-as.matrix(comcom) pdf(&quot;grow.performance.1205.pdf&quot;,paper=&quot;a4&quot;, width = 0, height = 9,family=&quot;Times&quot;,pointsize = 10) par(mfrow=c(3,3),mar = c(6, 4, .5, .5),las=2) for (i in 1:nrow(comcom)){ df.com&lt;-df[df$com %in% com[comcom[i,]],] df.com$com&lt;-factor(df.com$com) X&lt;-names(df.com) for (j in 12:length(X)){ data.i&lt;-df.com[, X[j]] model=lm(data.i ~ df.com$com ) ANOVA=aov(model) TUKEY &lt;- TukeyHSD(x=ANOVA, 'df.com$com', conf.level=0.99) # a&lt;-TUKEY$`df.com$com`[,c(1,4)] # colnames(a)&lt;-c(paste(X[j],&quot;diff&quot;,sep = &quot;_&quot;),&quot;p adj&quot;) # write.
+                  <a href="../../post/rcodes/%E8%A1%A5%E5%85%85cf29%E8%87%AA%E7%94%B1%E6%8E%88%E7%B2%89%E5%AD%90%E4%BB%A3-%E5%B9%B6plot/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+        </div>
+
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="../../page/53/">&larr; Newer Posts</a>
+              </li>
+            
+            
+              <li class="next">
+                <a href="../../page/55/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>cros2015-利用SSR进行的GS</title>
+  <meta property="og:title" content="cros2015-利用SSR进行的GS" />
+  <meta name="twitter:title" content="cros2015-利用SSR进行的GS" />
+  <meta name="description" content="Cros, D., Denis, M., Sánchez, L., Cochard, B., Flori, A., Durand-Gasselin, T., Nouy, B., Omoré, A., Pomiès, V., Riou, V., Suryana, E., and Bouvet, J.-M. 2015. Genomic selection prediction accuracy in a perennial crop: case study of oil palm (Elaeis guineensis Jacq.). Theor. Appl. Genet. 128(3): 397–410. doi:10.1007/s00122-014-2439-z.
+ 摘要 关键信息基因组选择在经验上对于油棕榈树中的互惠选择具有重要价值，因为它可以解释家族效应和孟德尔抽样术语，尽管人口少，标记密度低。摘要基因组选择（GS）可以增加植物的遗传增益。在多年生作物中，这主要是通过缩短育种周期和增加选择强度来预期的，尽管经常有少量的培训人群，但这要求选择候选人具有足够的GS准确性。我们的目标是获得世界主要油料作物油棕榈（Elaeis guineensis）GS精度的首次经验估计。我们使用两个父母人口参与传统互惠选择（熟食店和B组），每个131人，用265 SSR基因分型。当预测八个产量性状的非后代测试个体的育种值时，我们估计了种群内的GS精度。我们使用三种方法对训练集和五种统计方法进行抽样以估计基因组育种值。**结果显示，GS可以解释B组中的家庭影响和孟德尔抽样条件，但仅限于Deli中的家庭影响。据推测，这种群体之间的差异源于其对比的育种历史。 GS精度范围为-0.41〜0.94，与训练和测试集之间的关系呈正相关。使用所谓的CDmean标准进行优化的训练集给出了从0.49（B组果肉比）到0.94（B组果实重量）的最高精度。统计方法不影响准确性。最后，通过将GS应用于主要的产量性状，可以预先选择B组进行后代测试，因此增加了选择强度。我们的研究结果对于人口少，育种周期长或有效规模缩小的育种计划是有价值的。
+介绍 基因组选择（GS）是标记辅助选择的一种形式，可以改善植物和动物的育种方案。它依靠密集的全基因组标记覆盖率从所有标记的联合分析中产生基因组估计育种值（GEBV）。 GEBV是通过总结标记效应的估计或通过实现的加性关系矩阵标记来获得的。该模型使用具有已知表型和基因型（训练集）的个体进行校准，并随后用于在仅仅基因分型（测试集）（Meuwissen等2001）的不同组选择候选物上产生GEBV。取决于育种系统，由于GS与传统选择相比具有更高的准确性，所以预计每年的遗传增益会增加，选择候选物的早期测试（特别是当常规选择涉及子代测试时）和/或更高选择强度（特别是当表型是限制因素时）。估计GEBV的统计学方法使用两种类型的信息：训练和测试集之间的加性遗传关系以及标记和QTL之间的LD（Habier等，2007,2010）。因此，GEBV隐含地考虑了个体育种价值的两个部分，即其父母的平均值（家庭影响）和孟德尔抽样词（家庭内影响）。孟德尔抽样术语起源于父母配子的随机抽样。它代表了个体的附加价值与其父母的平均育种价值之间的偏差（Daetwyler et al.2007,2013）。作为GEBV与真实育种值之间相关性的GS的准确性受标记与数量性状位点（QTL）之间的连锁不平衡（LD），培养与测试组之间的关系，训练组中个体的数量估计GEBV的统计学方法，性状遗传力以及潜在的QTL效应分布（Lorenz et al。2011; Grattapaglia 2014）。
+目前，很少有实证研究评估了具有长周期（&gt; 10年）的植物物种的GS潜力（参见Grattapaglia 2014; Isik 2014的评论），而据我们所知，Zapata-Valenzuela等人（2012）用有限数量的表型个体评估了GS。油棕（Elaeis guineensis）是一种二倍体，雌雄异株，同种异型的多年生作物，由于其传统的育种体系，具有很高的GS潜力。这是世界主要的石油作物，产量超过5500万吨（2013年美国农业部），预计到2050年棕榈油的需求量可能会达到1.">
+  <meta property="og:description" content="Cros, D., Denis, M., Sánchez, L., Cochard, B., Flori, A., Durand-Gasselin, T., Nouy, B., Omoré, A., Pomiès, V., Riou, V., Suryana, E., and Bouvet, J.-M. 2015. Genomic selection prediction accuracy in a perennial crop: case study of oil palm (Elaeis guineensis Jacq.). Theor. Appl. Genet. 128(3): 397–410. doi:10.1007/s00122-014-2439-z.
+ 摘要 关键信息基因组选择在经验上对于油棕榈树中的互惠选择具有重要价值，因为它可以解释家族效应和孟德尔抽样术语，尽管人口少，标记密度低。摘要基因组选择（GS）可以增加植物的遗传增益。在多年生作物中，这主要是通过缩短育种周期和增加选择强度来预期的，尽管经常有少量的培训人群，但这要求选择候选人具有足够的GS准确性。我们的目标是获得世界主要油料作物油棕榈（Elaeis guineensis）GS精度的首次经验估计。我们使用两个父母人口参与传统互惠选择（熟食店和B组），每个131人，用265 SSR基因分型。当预测八个产量性状的非后代测试个体的育种值时，我们估计了种群内的GS精度。我们使用三种方法对训练集和五种统计方法进行抽样以估计基因组育种值。**结果显示，GS可以解释B组中的家庭影响和孟德尔抽样条件，但仅限于Deli中的家庭影响。据推测，这种群体之间的差异源于其对比的育种历史。 GS精度范围为-0.41〜0.94，与训练和测试集之间的关系呈正相关。使用所谓的CDmean标准进行优化的训练集给出了从0.49（B组果肉比）到0.94（B组果实重量）的最高精度。统计方法不影响准确性。最后，通过将GS应用于主要的产量性状，可以预先选择B组进行后代测试，因此增加了选择强度。我们的研究结果对于人口少，育种周期长或有效规模缩小的育种计划是有价值的。
+介绍 基因组选择（GS）是标记辅助选择的一种形式，可以改善植物和动物的育种方案。它依靠密集的全基因组标记覆盖率从所有标记的联合分析中产生基因组估计育种值（GEBV）。 GEBV是通过总结标记效应的估计或通过实现的加性关系矩阵标记来获得的。该模型使用具有已知表型和基因型（训练集）的个体进行校准，并随后用于在仅仅基因分型（测试集）（Meuwissen等2001）的不同组选择候选物上产生GEBV。取决于育种系统，由于GS与传统选择相比具有更高的准确性，所以预计每年的遗传增益会增加，选择候选物的早期测试（特别是当常规选择涉及子代测试时）和/或更高选择强度（特别是当表型是限制因素时）。估计GEBV的统计学方法使用两种类型的信息：训练和测试集之间的加性遗传关系以及标记和QTL之间的LD（Habier等，2007,2010）。因此，GEBV隐含地考虑了个体育种价值的两个部分，即其父母的平均值（家庭影响）和孟德尔抽样词（家庭内影响）。孟德尔抽样术语起源于父母配子的随机抽样。它代表了个体的附加价值与其父母的平均育种价值之间的偏差（Daetwyler et al.2007,2013）。作为GEBV与真实育种值之间相关性的GS的准确性受标记与数量性状位点（QTL）之间的连锁不平衡（LD），培养与测试组之间的关系，训练组中个体的数量估计GEBV的统计学方法，性状遗传力以及潜在的QTL效应分布（Lorenz et al。2011; Grattapaglia 2014）。
+目前，很少有实证研究评估了具有长周期（&gt; 10年）的植物物种的GS潜力（参见Grattapaglia 2014; Isik 2014的评论），而据我们所知，Zapata-Valenzuela等人（2012）用有限数量的表型个体评估了GS。油棕（Elaeis guineensis）是一种二倍体，雌雄异株，同种异型的多年生作物，由于其传统的育种体系，具有很高的GS潜力。这是世界主要的石油作物，产量超过5500万吨（2013年美国农业部），预计到2050年棕榈油的需求量可能会达到1.">
+  <meta name="twitter:description" content="Cros, D., Denis, M., Sánchez, L., Cochard, B., Flori, A., Durand-Gasselin, T., Nouy, B., Omoré, A., Pomiès, V., Riou, V., Suryana, E., and Bouvet, J.-M. 2015. Genomic selection prediction accuracy in …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/gs/cros2015-%E5%88%A9%E7%94%A8ssr%E8%BF%9B%E8%A1%8C%E7%9A%84gs/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/gs/cros2015-%E5%88%A9%E7%94%A8ssr%E8%BF%9B%E8%A1%8C%E7%9A%84gs/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>cros2015-利用SSR进行的GS</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (84 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>cros2015-利用SSR进行的GS</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (84 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Cros, D., Denis, M., Sánchez, L., Cochard, B., Flori, A., Durand-Gasselin, T., Nouy, B., Omoré, A., Pomiès, V., Riou, V., Suryana, E., and Bouvet, J.-M. 2015. Genomic selection prediction accuracy in a perennial crop: case study of oil palm (Elaeis guineensis Jacq.). Theor. Appl. Genet. 128(3): 397–410. doi:10.1007/s00122-014-2439-z.</p>
+</blockquote>
+
+<h2 id="摘要">摘要</h2>
+
+<p><strong>关键信息</strong><strong>基因组选择在经验上对于油棕榈树中的互惠选择具有重要价值，因为</strong>它可以解释家族效应和孟德尔抽样术语<strong>，尽管人口少，标记密度低。</strong>摘要<strong>基因组选择（GS）可以增加植物的遗传增益。在多年生作物中，这主要是通</strong>过缩短育种周期和增加选择强度<strong>来预期的，尽管经常有少量的培训人群，但这要求选择候选人具有足够的GS准确性。我们的目标是获得世界主要油料作物油棕榈（Elaeis guineensis）GS精度的首次经验估计。我们使用两个父母人口参与传统互惠选择（熟食店和B组），每个131人，用265 SSR基因分型。当预测八个产量性状的非后代测试个体的育种值时，我们估计了种群内的GS精度。</strong>我们使用三种方法对训练集和五种统计方法进行抽样以估计基因组育种值。**结果显示，GS可以解释B组中的家庭影响和孟德尔抽样条件，但仅限于Deli中的家庭影响。据推测，这种群体之间的差异源于其对比的育种历史。 GS精度范围为-0.41〜0.94，与训练和测试集之间的关系呈正相关。使用所谓的CDmean标准进行优化的训练集给出了从0.49（B组果肉比）到0.94（B组果实重量）的最高精度。统计方法不影响准确性。最后，通过将GS应用于主要的产量性状，可以预先选择B组进行后代测试，因此增加了选择强度。我们的研究结果对于人口少，育种周期长或有效规模缩小的育种计划是有价值的。</p>
+
+<hr />
+
+<h2 id="介绍">介绍</h2>
+
+<p>基因组选择（GS）是标记辅助选择的一种形式，可以改善植物和动物的育种方案。它依靠密集的全基因组标记覆盖率从所有标记的联合分析中产生<strong>基因组估计育种值（GEBV）</strong>。 <strong>GEBV是通过总结标记效应的估计或通过实现的加性关系矩阵标记来获得的</strong>。该模型使用具有已知表型和基因型（训练集）的个体进行校准，并随后用于在仅仅基因分型（测试集）（Meuwissen等2001）的不同组选择候选物上产生GEBV。取决于育种系统，由于<strong>GS与传统选择相比具有更高的准确性，所以预计每年的遗传增益会增加</strong>，选择候选物的早期测试（特别是当常规选择涉及子代测试时）和/或更高选择强度（特别是当表型是限制因素时）。<strong>估计GEBV的统计学方法使用两种类型的信息：训练和测试集之间的加性遗传关系以及标记和QTL之间的LD（Habier等，2007,2010）</strong>。因此，<strong>GEBV隐含地考虑了个体育种价值的两个部分，即其父母的平均值（家庭影响）和孟德尔抽样词（家庭内影响）</strong>。<strong>孟德尔抽样术语起源于父母配子的随机抽样。它代表了个体的附加价值与其父母的平均育种价值之间的偏差（Daetwyler et al.2007,2013）</strong>。作为GEBV与真实育种值之间相关性的GS的准确性受标记与数量性状位点（QTL）之间的连锁不平衡（LD），培养与测试组之间的关系，训练组中个体的数量估计GEBV的统计学方法，性状遗传力以及潜在的QTL效应分布（Lorenz et al。2011; Grattapaglia 2014）。</p>
+
+<p>目前，很少有实证研究评估了具有长周期（&gt; 10年）的植物物种的GS潜力（参见Grattapaglia 2014; Isik 2014的评论），而据我们所知，Zapata-Valenzuela等人（2012）用有限数量的表型个体评估了GS。油棕（Elaeis guineensis）是一种二倍体，雌雄异株，同种异型的多年生作物，由于其传统的育种体系，具有很高的GS潜力。这是世界主要的石油作物，产量超过5500万吨（2013年美国农业部），预计到2050年棕榈油的需求量可能会达到1.2-1.65亿吨（Corley2009），预计将进一步大幅增加。目前，油棕遗传改良通常基于20世纪50年代设计的相互循环选择（RRS）方案（Gascon和de Berchoux，1964）。它依赖于两个种群，即Deli（来自亚洲）和B组（非洲种群的混合），作为商业杂种的父母。在表型上，这些人口不同，德利生产少量大束和乙组大量小束。此外，他们有不同的历史：德利的创始人（4）比B组（15？0）要少，并被提交给更多世代的选择，近亲交配和遗传漂变，因为德利斯创建者在1848年种植，B组创始人被收集在二十世纪上半叶。此外，在两个群体中所应用的群体选择在强度，兴趣特性等方面都存在差异.RRS方案旨在提高油产量，这是群数，群体重量和果实到群体的函数，果肉 - 果肉比和油 - 果肉比。从两个种群的全同胞家系中取样的候选棕榈在Deli B组杂交中进行后代测试，并在广泛的田间试验中进行评估，以获得可靠的估计育种值（EBV，所有产量的准确度在0.80和0.90之间组件）。在每个亲本种群中选择最好的个体来生产下一代和商业杂交种。因此，传统的油棕育种既昂贵又耗时，育种周期长（20年左右，性成熟期3岁左右），受试者数量有限。因此，私人油棕育种部门正在寻求实际实施GS，从而增加每年的遗传增益率。在这个物种中，主要的GS挑战是尽可能地获得足够高的GEBV准确性，以允许在尚未被子代测试的个体中进行选择，尽管可获得小的训练集（每个种群和世代&lt;200个经后代测试的个体）。越来越多的转录组学研究（如Tranbarger等2011; Dussert等2013; Tee等2013）和全基因组序列现在可用的事实（Singh et al。2013）将促进大量的SNP标记，这反过来将提高GS应用程序。因此油棕因此可以成为植物中GS的典型物种，特别是对于繁殖周期长和/或表型记录有限的物种。
+在油棕中研究GS潜力的唯一研究是Wong和Bernardo（2008）的模拟，其结果是令人鼓舞的。然而，由于模拟的繁殖种群是由两个自交系之间的杂种自交而产生的，而实际繁殖种群则更为复杂，因此其结果可能不易被推广。因此，实证研究似乎是必要的。</p>
+
+<p>我们的目标是通过使用该物种可用的最大的EBV和基因型数据集获得第一次GS准确性的经验估计来评估GS在当前油棕RRS育种方面的潜力。具体而言，我们调查了Deli和B群体的人口内GS策略（详见图1）。为此目的，我们使用微卫星（SSR）基因型个体和从人群后代测试获得的减量EBV（DEBV）。在每个人群中，为了评估GS的预测准确性，进行了交叉验证，作为预测未经后代测试的个体的育种值的能力。我们旨在量化四个参数对GS精度的影响：（1）训练和测试集之间的关系：我们用三种方法根据它们的遗传关系定义训练和测试集; （2）性状的遗传结构，为此我们图1倒位复发选择（RRS，左）与倒易复发基因组选择（GS，右）。常规RRS的一个周期需要20年，因为在对最可遗传性状，后代测试和所选个体之间的重组进行后代测试之前进行预选。对于GS来说，24年足以完成两个周期，第一个周期用于校准GS模型的18年（不再需要预选可遗传性状），6年完成第二个周期，仅用标记进行选择。对于GS，可以选择未经后代测试并且属于与培训个体或下一代相同代的个体。填充块个体后代测试（RRS）或后代测试和基因分型（GS）。虚线块表型个体（遗传试验）。空白块阻止个体基因分型，但没有后代测试。 GS的虚线应用研究了八个产量性状; （3）用于估计GEBV的统计学方法：我们比较了5种已知根据性状的遗传结构而表现不同的统计学方法; （4）人口：我们的研究包括德利和B组人口，假设他们的对比历史会导致遗传差异如LD概况和遗传结构的性状。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/cur-tail-curt-short-%E7%BC%A9%E5%87%8F~limitcircumscribeconfineshorten/" data-toggle="tooltip" data-placement="top" title="cur-tail-curt-=short-缩减~limit，circumscribe，confine，shorten">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/coroll-ary-%E6%8E%A8%E8%AE%BA~inference/" data-toggle="tooltip" data-placement="top" title="coroll-ary-推论~inference">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

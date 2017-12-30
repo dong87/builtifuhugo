@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Funda2009-种子园多样性和增益的优化</title>
+  <meta property="og:title" content="Funda2009-种子园多样性和增益的优化" />
+  <meta name="twitter:title" content="Funda2009-种子园多样性和增益的优化" />
+  <meta name="description" content="Funda T, Lstibůrek M, Lachout P, Klápště J, El-Kassaby YA (2009) Optimization of combined genetic gain and diversity for collection and deployment of seed orchard crops. Tree Genet Genomes 5(4):583–593.   种子园作物的遗传收获和多样性取决于父母数量，育种价值和相关性，园内授粉效率和花粉污染程度。这些参数可以通过改变克隆表现（例如，线性展开），在通过遗传变薄的果园发育过程中或通过选择性收获在操作中进行操作。由于已知克隆繁殖力在年内和年内都有变化，所以每种种子作物都具有独特的遗传组成，因此每年应对作物进行处理。在这里，我们提出一个优化协议，通过选择满足两个参数的作物子集，使作物在任何所需遗传多样性方面的遗传增益最大化。遗传增益在每个克隆的种子锥生产设置的生物学极限内最大化，有效种群大小用作遗传多样性的代理，因此考虑克隆之间的任何关系。使用第一代西部落叶松种子果园的3年生殖产量数据进行了优化，并在各种情景下进行了测试，包括实际的雄性和雌性生殖产量，男性生殖产量假设等于雌性或女性的功能克隆代表此外，在补充模拟中，将各种级别的共同分配给果园的克隆。优化后，所有解决方案都有效地创建了具有不同增益和多样性水平的定制种苗，并提供了估计多年来剩余的“未使用”种子的复合种苗遗传特性的方法。
+介绍 种子果园是针叶树种的基本改良方案的主要运输工具，其中平衡增益和多样性是一个主要问题。种子果园作物的遗传增益（遗传价值）主要取决于所选择的亲本的遗传优势，其对所得种子作物的实际配子贡献以及来自外来花粉源（花粉）的基因流量水平污染）和它们各自的遗传质量（Stoehr等人1998; Lindgren等人2004; Slavov等人2005）。种子作物的遗传多样性受到父母生殖力变化的程度（对所得种子作物的父母不平等贡献）的影响很大的影响（谢等人1994; Kjar 1996; Burczyk和Chalupka 1997）以及亲缘关系的水平在果园家长中（Lindgren和Mullin，1998）。理论上，对于一定数量的无关和非近交基因型的最大遗传多样性在所有对种子作物贡献同等的同时获得，取决于高育种值父母的比例贡献（注意，最大增益只能是从最好的克隆获得;然而，这不是种子果园的目标）。生殖编排“果园生殖活动的时间，持续时间和程度”，因为它影响了种子园内的父母间的排卵模式，以及花粉污染，最终导致遗传所得种子作物的组成（El-Kassaby等人1984; El-Kassaby和Ritland 1986; Matziris 1994，Burczyk和Chalupka 1997）。在果园中的配子贡献的变化可能导致最有生产力的基因型（Kjar 1996），共同祖先的积累，以及最终对遗传多样性的侵蚀（Lindgren等，1996）的过度表达。因此，在估计遗传增益和多样性时，应考虑果园家长之间的繁殖力变异（Kang and El-Kassaby，2002）。实际上，种子果园的繁殖力变化非常普遍，是由以下原因造成的：（1）在果园建立过程中不平等的父母代表（例如，线性部署，其中父母在果园种群中线性代表与育种成比例价值观）（Lindgren和Matheson，1986），（2）果园发育过程中的死亡率（El-Kassaby和Cook 1994）和（3）父母繁殖产量的简单差异（Sitka云杉：El-Kassaby和Reynolds（1990）;道格拉斯冷杉：El-Kassaby和Askew（1991）和El-Kassaby等人（1990）; loblolly pine：Askew（1988）; radiata pine：Griffin（1982）; Japanese red pine：Kang（2000）松：康等（2004））。可以使用从低成本/低精度到相对高成本/高准确度的不同方法估计家长配子贡献。前者包括对生殖频繁产量变异性和种子生产的非典型评估（Woods 2005），而后者利用在同功酶或DNA标记物上显示的变异（Roberds等人1991; Xie和Knowles 1992; Moriguchi等人2004; Slavov et al。2005; Funda et al。2008）。在现有果园遗传变薄的情况下，可以通过在线性部署后不同父母代表（Lindgren和Matheson，1986）在果园建立种植园果实的遗传增益（响应）和多样性（即反向比例去除低繁殖 - 价值父母; Bondesson和Lindgren 1993），或通过实践选择种子锥收获（即从具有较高育种价值的父母收集种子锥; Lindgren和El-Kassaby 1989; Kang等人2001）。假设无关和非近亲的父母，种子作物的遗传多样性在同等的亲本配子产量下是最大的;然而，女性和男性生育率变化的大小以及其相关性的方向以及强度都强烈地影响了这些做法（Kang and El-Kassaby，2002）。大多数种子果园的变异研究表明，男性和女性的生殖产量与弱相关（Nikkanen和Velling 1987; Caron and Powell 1989; Kjar 1996; Kang 2000）或独立性（Savolainen等1993; Kang and Lindgren 1998,1999; Kang等人2004）。因此，基于单一性别（如种子生产）估计遗传多样性的常见做法往往不准确（Kang和Lindgren，1999）。上述审查意味着种子果园作物的遗传增益和多样性在任何一年内都是独一无二的，因此果园的生殖产量评估及其操作能够每年更好地进行。这项研究的目的是通过优化父母的贡献来开发一种最大化现有果园作物选定部分的遗传价值的模型。它旨在说明父母之间的相关性，这是随着先进的种子果树建立而变得越来越重要的问题。在动物育种中已经证明了相关性的必要性（例如，Meuwissen 1997），并且在从森林生产种群部署生殖材料时也应谨慎考虑。西兰落叶松（Larix occidentalis Nutt）种子园的生殖产量数据用于说明拟议方法，并对三种不同情景进行了测试：（a）雄性和雌性繁殖力相等（即女性与男性之间存在完全相关性， （参见Lindgren等人2004; Prescher等人2006））; （b）男性与父母代表成比例（每个克隆的分株数）成比例; （c）实际的男女生殖生产数据（Stoehr等，2004）。在目前的研究中，提出了在单一优化步骤中组合上述要素的新方法。优化导致在考虑实际的男性和女性生殖产出，亲本育种价值，共同祖先和所需遗传多样性水平后，确定最佳克隆繁殖产出比例。">
+  <meta property="og:description" content="Funda T, Lstibůrek M, Lachout P, Klápště J, El-Kassaby YA (2009) Optimization of combined genetic gain and diversity for collection and deployment of seed orchard crops. Tree Genet Genomes 5(4):583–593.   种子园作物的遗传收获和多样性取决于父母数量，育种价值和相关性，园内授粉效率和花粉污染程度。这些参数可以通过改变克隆表现（例如，线性展开），在通过遗传变薄的果园发育过程中或通过选择性收获在操作中进行操作。由于已知克隆繁殖力在年内和年内都有变化，所以每种种子作物都具有独特的遗传组成，因此每年应对作物进行处理。在这里，我们提出一个优化协议，通过选择满足两个参数的作物子集，使作物在任何所需遗传多样性方面的遗传增益最大化。遗传增益在每个克隆的种子锥生产设置的生物学极限内最大化，有效种群大小用作遗传多样性的代理，因此考虑克隆之间的任何关系。使用第一代西部落叶松种子果园的3年生殖产量数据进行了优化，并在各种情景下进行了测试，包括实际的雄性和雌性生殖产量，男性生殖产量假设等于雌性或女性的功能克隆代表此外，在补充模拟中，将各种级别的共同分配给果园的克隆。优化后，所有解决方案都有效地创建了具有不同增益和多样性水平的定制种苗，并提供了估计多年来剩余的“未使用”种子的复合种苗遗传特性的方法。
+介绍 种子果园是针叶树种的基本改良方案的主要运输工具，其中平衡增益和多样性是一个主要问题。种子果园作物的遗传增益（遗传价值）主要取决于所选择的亲本的遗传优势，其对所得种子作物的实际配子贡献以及来自外来花粉源（花粉）的基因流量水平污染）和它们各自的遗传质量（Stoehr等人1998; Lindgren等人2004; Slavov等人2005）。种子作物的遗传多样性受到父母生殖力变化的程度（对所得种子作物的父母不平等贡献）的影响很大的影响（谢等人1994; Kjar 1996; Burczyk和Chalupka 1997）以及亲缘关系的水平在果园家长中（Lindgren和Mullin，1998）。理论上，对于一定数量的无关和非近交基因型的最大遗传多样性在所有对种子作物贡献同等的同时获得，取决于高育种值父母的比例贡献（注意，最大增益只能是从最好的克隆获得;然而，这不是种子果园的目标）。生殖编排“果园生殖活动的时间，持续时间和程度”，因为它影响了种子园内的父母间的排卵模式，以及花粉污染，最终导致遗传所得种子作物的组成（El-Kassaby等人1984; El-Kassaby和Ritland 1986; Matziris 1994，Burczyk和Chalupka 1997）。在果园中的配子贡献的变化可能导致最有生产力的基因型（Kjar 1996），共同祖先的积累，以及最终对遗传多样性的侵蚀（Lindgren等，1996）的过度表达。因此，在估计遗传增益和多样性时，应考虑果园家长之间的繁殖力变异（Kang and El-Kassaby，2002）。实际上，种子果园的繁殖力变化非常普遍，是由以下原因造成的：（1）在果园建立过程中不平等的父母代表（例如，线性部署，其中父母在果园种群中线性代表与育种成比例价值观）（Lindgren和Matheson，1986），（2）果园发育过程中的死亡率（El-Kassaby和Cook 1994）和（3）父母繁殖产量的简单差异（Sitka云杉：El-Kassaby和Reynolds（1990）;道格拉斯冷杉：El-Kassaby和Askew（1991）和El-Kassaby等人（1990）; loblolly pine：Askew（1988）; radiata pine：Griffin（1982）; Japanese red pine：Kang（2000）松：康等（2004））。可以使用从低成本/低精度到相对高成本/高准确度的不同方法估计家长配子贡献。前者包括对生殖频繁产量变异性和种子生产的非典型评估（Woods 2005），而后者利用在同功酶或DNA标记物上显示的变异（Roberds等人1991; Xie和Knowles 1992; Moriguchi等人2004; Slavov et al。2005; Funda et al。2008）。在现有果园遗传变薄的情况下，可以通过在线性部署后不同父母代表（Lindgren和Matheson，1986）在果园建立种植园果实的遗传增益（响应）和多样性（即反向比例去除低繁殖 - 价值父母; Bondesson和Lindgren 1993），或通过实践选择种子锥收获（即从具有较高育种价值的父母收集种子锥; Lindgren和El-Kassaby 1989; Kang等人2001）。假设无关和非近亲的父母，种子作物的遗传多样性在同等的亲本配子产量下是最大的;然而，女性和男性生育率变化的大小以及其相关性的方向以及强度都强烈地影响了这些做法（Kang and El-Kassaby，2002）。大多数种子果园的变异研究表明，男性和女性的生殖产量与弱相关（Nikkanen和Velling 1987; Caron and Powell 1989; Kjar 1996; Kang 2000）或独立性（Savolainen等1993; Kang and Lindgren 1998,1999; Kang等人2004）。因此，基于单一性别（如种子生产）估计遗传多样性的常见做法往往不准确（Kang和Lindgren，1999）。上述审查意味着种子果园作物的遗传增益和多样性在任何一年内都是独一无二的，因此果园的生殖产量评估及其操作能够每年更好地进行。这项研究的目的是通过优化父母的贡献来开发一种最大化现有果园作物选定部分的遗传价值的模型。它旨在说明父母之间的相关性，这是随着先进的种子果树建立而变得越来越重要的问题。在动物育种中已经证明了相关性的必要性（例如，Meuwissen 1997），并且在从森林生产种群部署生殖材料时也应谨慎考虑。西兰落叶松（Larix occidentalis Nutt）种子园的生殖产量数据用于说明拟议方法，并对三种不同情景进行了测试：（a）雄性和雌性繁殖力相等（即女性与男性之间存在完全相关性， （参见Lindgren等人2004; Prescher等人2006））; （b）男性与父母代表成比例（每个克隆的分株数）成比例; （c）实际的男女生殖生产数据（Stoehr等，2004）。在目前的研究中，提出了在单一优化步骤中组合上述要素的新方法。优化导致在考虑实际的男性和女性生殖产出，亲本育种价值，共同祖先和所需遗传多样性水平后，确定最佳克隆繁殖产出比例。">
+  <meta name="twitter:description" content="Funda T, Lstibůrek M, Lachout P, Klápště J, El-Kassaby YA (2009) Optimization of combined genetic gain and diversity for collection and deployment of seed orchard crops. Tree Genet Genomes …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E8%82%B2%E7%A7%8D/funda2009-%E7%A7%8D%E5%AD%90%E5%9B%AD%E5%A4%9A%E6%A0%B7%E6%80%A7%E5%92%8C%E5%A2%9E%E7%9B%8A%E7%9A%84%E4%BC%98%E5%8C%96/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E8%82%B2%E7%A7%8D/funda2009-%E7%A7%8D%E5%AD%90%E5%9B%AD%E5%A4%9A%E6%A0%B7%E6%80%A7%E5%92%8C%E5%A2%9E%E7%9B%8A%E7%9A%84%E4%BC%98%E5%8C%96/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Funda2009-种子园多样性和增益的优化</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (95 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Funda2009-种子园多样性和增益的优化</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (95 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<ol>
+<li>Funda T, Lstibůrek M, Lachout P, Klápště J, El-Kassaby YA (2009) Optimization of combined genetic gain and diversity for collection and deployment of seed orchard crops. Tree Genet Genomes 5(4):583–593.</li>
+</ol>
+</blockquote>
+
+<p><strong>种子园作物的遗传收获和多样性取决于父母数量，育种价值和相关性，园内授粉效率和花粉污染程度</strong>。这些参数可以通过改变克隆表现（例如，线性展开），在通过遗传变薄的果园发育过程中或通过选择性收获在操作中进行操作。由于已知克隆繁殖力在年内和年内都有变化，所以每种种子作物都具有独特的遗传组成，因此每年应对作物进行处理。在这里，我们提出一个优化协议，通过选择满足两个参数的作物子集，使作物在任何所需遗传多样性方面的遗传增益最大化。遗传增益在每个克隆的种子锥生产设置的生物学极限内最大化，有效种群大小用作遗传多样性的代理，因此考虑克隆之间的任何关系。使用第一代西部落叶松种子果园的3年生殖产量数据进行了优化，并在各种情景下进行了测试，包括实际的雄性和雌性生殖产量，男性生殖产量假设等于雌性或女性的功能克隆代表此外，在补充模拟中，将各种级别的共同分配给果园的克隆。优化后，所有解决方案都有效地创建了具有不同增益和多样性水平的定制种苗，并提供了估计多年来剩余的“未使用”种子的复合种苗遗传特性的方法。</p>
+
+<p>介绍
+<strong>种子果园是针叶树种的基本改良方案的主要运输工具，其中平衡增益和多样性是一个主要问题。种子果园作物的遗传增益（遗传价值）主要取决于所选择的亲本的遗传优势，其对所得种子作物的实际配子贡献以及来自外来花粉源（花粉）的基因流量水平污染）和它们各自的遗传质量（Stoehr等人1998; Lindgren等人2004; Slavov等人2005）</strong>。<strong>种子作物的遗传多样性受到父母生殖力变化的程度（对所得种子作物的父母不平等贡献）的影响很大的影响（谢等人1994; Kjar 1996; Burczyk和Chalupka 1997）以及亲缘关系的水平在果园家长中（Lindgren和Mullin，1998）</strong>。理论上，对于一定数量的无关和非近交基因型的最大遗传多样性在所有对种子作物贡献同等的同时获得，取决于高育种值父母的比例贡献（注意，<strong>最大增益只能是从最好的克隆获得;然而，这不是种子果园的目标</strong>）。生殖编排“果园生殖活动的时间，持续时间和程度”，因为它影响了种子园内的父母间的排卵模式，以及花粉污染，最终导致遗传所得种子作物的组成（El-Kassaby等人1984; El-Kassaby和Ritland 1986; Matziris 1994，Burczyk和Chalupka 1997）。在果园中的配子贡献的变化可能导致最有生产力的基因型（Kjar 1996），<strong>共同祖先的积累，以及最终对遗传多样性的侵蚀（Lindgren等，1996）的过度表达</strong>。因此，在估计遗传增益和多样性时，应考虑果园家长之间的繁殖力变异（Kang and El-Kassaby，2002）。实际上，种子果园的繁殖力变化非常普遍，是由以下原因造成的：（1）在果园建立过程中不平等的父母代表（例如，线性部署，其中父母在果园种群中线性代表与育种成比例价值观）（Lindgren和Matheson，1986），（2）果园发育过程中的死亡率（El-Kassaby和Cook 1994）和（3）父母繁殖产量的简单差异（Sitka云杉：El-Kassaby和Reynolds（1990）;道格拉斯冷杉：El-Kassaby和Askew（1991）和El-Kassaby等人（1990）; loblolly pine：Askew（1988）; radiata pine：Griffin（1982）; Japanese red pine：Kang（2000）松：康等（2004））。可以使用从低成本/低精度到相对高成本/高准确度的不同方法估计家长配子贡献。前者包括对生殖频繁产量变异性和种子生产的非典型评估（Woods 2005），而后者利用在同功酶或DNA标记物上显示的变异（Roberds等人1991; Xie和Knowles 1992; Moriguchi等人2004; Slavov et al。2005; Funda et al。2008）。在现有果园遗传变薄的情况下，可以通过在线性部署后不同父母代表（Lindgren和Matheson，1986）在果园建立种植园果实的遗传增益（响应）和多样性（即反向比例去除低繁殖 - 价值父母; Bondesson和Lindgren 1993），或通过实践选择种子锥收获（即从具有较高育种价值的父母收集种子锥; Lindgren和El-Kassaby 1989; Kang等人2001）。假设无关和非近亲的父母，种子作物的遗传多样性在同等的亲本配子产量下是最大的;然而，女性和男性生育率变化的大小以及其相关性的方向以及强度都强烈地影响了这些做法（Kang and El-Kassaby，2002）。大多数种子果园的变异研究表明，男性和女性的生殖产量与弱相关（Nikkanen和Velling 1987; Caron and Powell 1989; Kjar 1996; Kang 2000）或独立性（Savolainen等1993; Kang and Lindgren 1998,1999; Kang等人2004）。因此，基于单一性别（如种子生产）估计遗传多样性的常见做法往往不准确（Kang和Lindgren，1999）。上述审查意味着种子果园作物的遗传增益和多样性在任何一年内都是独一无二的，因此果园的生殖产量评估及其操作能够每年更好地进行。这项研究的目的是通过优化父母的贡献来开发一种最大化现有果园作物选定部分的遗传价值的模型。它旨在说明父母之间的相关性，这是随着先进的种子果树建立而变得越来越重要的问题。在动物育种中已经证明了相关性的必要性（例如，Meuwissen 1997），并且在从森林生产种群部署生殖材料时也应谨慎考虑。西兰落叶松（Larix occidentalis Nutt）种子园的生殖产量数据用于说明拟议方法，并对三种不同情景进行了测试：（a）雄性和雌性繁殖力相等（即女性与男性之间存在完全相关性， （参见Lindgren等人2004; Prescher等人2006））; （b）男性与父母代表成比例（每个克隆的分株数）成比例; （c）实际的男女生殖生产数据（Stoehr等，2004）。在目前的研究中，提出了在单一优化步骤中组合上述要素的新方法。优化导致在考虑实际的男性和女性生殖产出，亲本育种价值，共同祖先和所需遗传多样性水平后，确定最佳克隆繁殖产出比例。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E8%82%B2%E7%A7%8D/funda2011-%E5%88%A9%E7%94%A8%E7%B3%BB%E8%B0%B1%E9%87%8D%E5%BB%BA%E7%A1%AE%E5%AE%9A%E4%BA%B2%E6%9C%AC%E7%94%9F%E6%AE%96%E6%8A%95%E8%B5%84%E5%92%8C%E6%88%90%E5%8A%9F%E6%98%AF%E5%90%A6%E4%B8%80%E8%87%B4/" data-toggle="tooltip" data-placement="top" title="Funda2011-利用系谱重建确定亲本生殖投资和成功是否一致">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/diallel/fukatsu-2013-%E5%AF%86%E5%BA%A6-%E5%8F%8C%E5%88%97-%E6%97%A5%E6%9C%AC%E8%90%BD%E5%8F%B6%E6%9D%BE-/" data-toggle="tooltip" data-placement="top" title="Fukatsu-2013-密度-双列-日本落叶松-">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

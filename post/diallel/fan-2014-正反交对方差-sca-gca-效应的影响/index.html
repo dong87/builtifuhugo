@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Fan-2014-正反交对方差-SCA-GCA-效应的影响</title>
+  <meta property="og:title" content="Fan-2014-正反交对方差-SCA-GCA-效应的影响" />
+  <meta name="twitter:title" content="Fan-2014-正反交对方差-SCA-GCA-效应的影响" />
+  <meta name="description" content="Fan XM, Zhang YD, Yao WH, Bi YQ, Liu L, Chen HM, et al. Reciprocal diallel crosses impact combining ability, variance estimation, and heterotic group classification. Crop Sci. 2014;54:89–97.   诸如以下问题经常出现：“正反交是否应包括在双列交配中？”和“如果包含是否会影响谷物产量（GY），一般配合力（GCA）和特殊配合力（SCA）效应，以及（Zea mays L.）中杂种优势群的分类？”我们在三种环境中评估了12-亲本玉米双列杂交（Griffing的方法3和方法4），以确定（i）是否正反交影响杂交的GY和GCA和SCA效应，（ii）是否正反交在双列杂交分析中影响GCA和SCA和残差方差估计，以及（iii）是否正反交影响玉米杂种群分类。结果表明，在双列交配中包含正反交极大地影响GY和GCA和SCA效应的估计。在随机效应模型的假设下，正反交的包含导致残差和GCA方差降低，并且SCA方差随着双列交配中亲本品系数量的增加而增加。因为包含正反交影响GY和SCA估计，正反交将对玉米杂种优势群分类具有很大影响。玉米杂种优势群的划分在包括和不包括正反交时的结果差异很大。基于我们来自中国西南的数据集，三个杂种优势组似乎是提高玉米育种效率的理想数字。
+Griffing（1956）描述了用于分析四种不同的diallel交配设计（方法1，方法2，方法3和方法4）的统计模型。因为有明确的一般配合力（GCA）和特殊配合力（SCA）效应和正反交效应（REC）和容易理解的统计模型以及分析双列交配数据的软件（Burow和Coors，1994 ; Magari和Kang，1994; Zhang和Kang，1997; Zhang et al。，2005），Möhringet al。 （2011）最近开发了基于限制最大似然（REML）的双列交配分析方法和SAS软件（SAS版本9.2; SAS研究所，2009），从一些双列交配实验估计GCA，SCA，REC和其他相关组分的方差。模型和SAS软件使得研究人员（例如，Yao等人，2013）估计不同diallel方法之间的相关遗传方差。 Griffing的方法已经在植物育种者中变得流行，以确定玉米中的GCA和SCA效应（Zhang等人，1997; Kang等人，1999,2005; Phumichai等人，2008; Yao等人，2013） （Ragsdale和Smith，2007; Zwart et al。，2008; Yang和Gai，2009; Velu et al。，2011; Berger et al。，2012）。 GCA和SCA效应进一步用于遗传多样性评价，近交系选择，杂种优势模式分类，杂种优势估计和杂种开发（Sughroue和Hallauer，1997; Fan等，2002; Melani和Carena，2005; Barata和Carena，2006）。
+正反交包括在Griffing的方法1和方法3中，其允许计算REC以及母本效应（MAT）和非母本效应（NMAT）（Zhang和Kang，1997; Zhang等人，2005）。然而，由于各种原因，植物育种者可能不总是能够在实验中包括正反交。有时，正反交可能完全失败或者可能没有产生足够数量的种子，并且其他时候，它们决定是否包括正反交可能取决于空间和其他资源的限制。在作物如玉米，其中谷物产量（GY）主要由胚乳决定，正反交是重要的，并且至关重要的是知道在双列交配中包含正反交F1交配与否对产量有何影响。 Mahgoub（2011）和Yao et al。 （2013）报告了RECs强烈影响SCA效应的估计。当一个品系用作母本与其用于父本时，SCA效应不同（Mahgoub，2011）。 REC显示对杂交产量的测定有重大影响（Yao et al。，2013）。 SCA效应，谱系和GY信息（Kauffman等人，1982; Fan等人，2001,2009; Menkir等人，2004）以及分子标记技术（Fan等人， 2004; Barata和Carena，2006; Yao等，2009; Delucchi等，2012）经常用于玉米杂种优势群分类。 Fan et al。 （2001）使用diallel设计来研究10个玉米品系的配合力，其中5个来自国际玉米和小麦改良中心（CIMMYT），其他5个是中国广泛使用的品系。根据SCA和GY，他们将线CML171，CML161和CML166分成一个杂种群，将Chang 631 / o2和Zhongxi 096 / o2分成第二杂种群，将Qi1 205株分成第三杂种群。 Yao et al。 （2009）使用简单序列重复（SSR）标记以及GY和谱系信息将27个近交系分成三个杂种优势组，A，B和C.">
+  <meta property="og:description" content="Fan XM, Zhang YD, Yao WH, Bi YQ, Liu L, Chen HM, et al. Reciprocal diallel crosses impact combining ability, variance estimation, and heterotic group classification. Crop Sci. 2014;54:89–97.   诸如以下问题经常出现：“正反交是否应包括在双列交配中？”和“如果包含是否会影响谷物产量（GY），一般配合力（GCA）和特殊配合力（SCA）效应，以及（Zea mays L.）中杂种优势群的分类？”我们在三种环境中评估了12-亲本玉米双列杂交（Griffing的方法3和方法4），以确定（i）是否正反交影响杂交的GY和GCA和SCA效应，（ii）是否正反交在双列杂交分析中影响GCA和SCA和残差方差估计，以及（iii）是否正反交影响玉米杂种群分类。结果表明，在双列交配中包含正反交极大地影响GY和GCA和SCA效应的估计。在随机效应模型的假设下，正反交的包含导致残差和GCA方差降低，并且SCA方差随着双列交配中亲本品系数量的增加而增加。因为包含正反交影响GY和SCA估计，正反交将对玉米杂种优势群分类具有很大影响。玉米杂种优势群的划分在包括和不包括正反交时的结果差异很大。基于我们来自中国西南的数据集，三个杂种优势组似乎是提高玉米育种效率的理想数字。
+Griffing（1956）描述了用于分析四种不同的diallel交配设计（方法1，方法2，方法3和方法4）的统计模型。因为有明确的一般配合力（GCA）和特殊配合力（SCA）效应和正反交效应（REC）和容易理解的统计模型以及分析双列交配数据的软件（Burow和Coors，1994 ; Magari和Kang，1994; Zhang和Kang，1997; Zhang et al。，2005），Möhringet al。 （2011）最近开发了基于限制最大似然（REML）的双列交配分析方法和SAS软件（SAS版本9.2; SAS研究所，2009），从一些双列交配实验估计GCA，SCA，REC和其他相关组分的方差。模型和SAS软件使得研究人员（例如，Yao等人，2013）估计不同diallel方法之间的相关遗传方差。 Griffing的方法已经在植物育种者中变得流行，以确定玉米中的GCA和SCA效应（Zhang等人，1997; Kang等人，1999,2005; Phumichai等人，2008; Yao等人，2013） （Ragsdale和Smith，2007; Zwart et al。，2008; Yang和Gai，2009; Velu et al。，2011; Berger et al。，2012）。 GCA和SCA效应进一步用于遗传多样性评价，近交系选择，杂种优势模式分类，杂种优势估计和杂种开发（Sughroue和Hallauer，1997; Fan等，2002; Melani和Carena，2005; Barata和Carena，2006）。
+正反交包括在Griffing的方法1和方法3中，其允许计算REC以及母本效应（MAT）和非母本效应（NMAT）（Zhang和Kang，1997; Zhang等人，2005）。然而，由于各种原因，植物育种者可能不总是能够在实验中包括正反交。有时，正反交可能完全失败或者可能没有产生足够数量的种子，并且其他时候，它们决定是否包括正反交可能取决于空间和其他资源的限制。在作物如玉米，其中谷物产量（GY）主要由胚乳决定，正反交是重要的，并且至关重要的是知道在双列交配中包含正反交F1交配与否对产量有何影响。 Mahgoub（2011）和Yao et al。 （2013）报告了RECs强烈影响SCA效应的估计。当一个品系用作母本与其用于父本时，SCA效应不同（Mahgoub，2011）。 REC显示对杂交产量的测定有重大影响（Yao et al。，2013）。 SCA效应，谱系和GY信息（Kauffman等人，1982; Fan等人，2001,2009; Menkir等人，2004）以及分子标记技术（Fan等人， 2004; Barata和Carena，2006; Yao等，2009; Delucchi等，2012）经常用于玉米杂种优势群分类。 Fan et al。 （2001）使用diallel设计来研究10个玉米品系的配合力，其中5个来自国际玉米和小麦改良中心（CIMMYT），其他5个是中国广泛使用的品系。根据SCA和GY，他们将线CML171，CML161和CML166分成一个杂种群，将Chang 631 / o2和Zhongxi 096 / o2分成第二杂种群，将Qi1 205株分成第三杂种群。 Yao et al。 （2009）使用简单序列重复（SSR）标记以及GY和谱系信息将27个近交系分成三个杂种优势组，A，B和C.">
+  <meta name="twitter:description" content="Fan XM, Zhang YD, Yao WH, Bi YQ, Liu L, Chen HM, et al. Reciprocal diallel crosses impact combining ability, variance estimation, and heterotic group classification. Crop Sci. 2014;54:89–97.   诸如以下问题经 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/diallel/fan-2014-%E6%AD%A3%E5%8F%8D%E4%BA%A4%E5%AF%B9%E6%96%B9%E5%B7%AE-sca-gca-%E6%95%88%E5%BA%94%E7%9A%84%E5%BD%B1%E5%93%8D/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/diallel/fan-2014-%E6%AD%A3%E5%8F%8D%E4%BA%A4%E5%AF%B9%E6%96%B9%E5%B7%AE-sca-gca-%E6%95%88%E5%BA%94%E7%9A%84%E5%BD%B1%E5%93%8D/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Fan-2014-正反交对方差-SCA-GCA-效应的影响</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (100 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Fan-2014-正反交对方差-SCA-GCA-效应的影响</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (100 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<ol>
+<li>Fan XM, Zhang YD, Yao WH, Bi YQ, Liu L, Chen HM, et al. Reciprocal diallel crosses impact combining ability, variance estimation, and heterotic group classification. Crop Sci. 2014;54:89–97.</li>
+</ol>
+</blockquote>
+
+<p>诸如以下问题经常出现：“正反交是否应包括在双列交配中？”和“如果包含是否会影响谷物产量（GY），一般配合力（GCA）和特殊配合力（SCA）效应，以及（Zea mays L.）中杂种优势群的分类？”我们在三种环境中评估了12-亲本玉米双列杂交（Griffing的方法3和方法4），以确定（i）是否正反交影响杂交的GY和GCA和SCA效应，（ii）是否正反交在双列杂交分析中影响GCA和SCA和残差方差估计，以及（iii）是否正反交影响玉米杂种群分类。结果表明，在双列交配中包含正反交极大地影响GY和GCA和SCA效应的估计。在随机效应模型的假设下，正反交的包含导致残差和GCA方差降低，并且SCA方差随着双列交配中亲本品系数量的增加而增加。因为包含正反交影响GY和SCA估计，正反交将对玉米杂种优势群分类具有很大影响。玉米杂种优势群的划分在包括和不包括正反交时的结果差异很大。基于我们来自中国西南的数据集，三个杂种优势组似乎是提高玉米育种效率的理想数字。</p>
+
+<hr />
+
+<p>Griffing（1956）描述了用于分析四种不同的diallel交配设计（方法1，方法2，方法3和方法4）的统计模型。因为有明确的一般配合力（GCA）和特殊配合力（SCA）效应和正反交效应（REC）和容易理解的统计模型以及分析双列交配数据的软件（Burow和Coors，1994 ; Magari和Kang，1994; Zhang和Kang，1997; Zhang et al。，2005），Möhringet al。 （2011）最近开发了基于限制最大似然（REML）的双列交配分析方法和SAS软件（SAS版本9.2; SAS研究所，2009），从一些双列交配实验估计GCA，SCA，REC和其他相关组分的方差。模型和SAS软件使得研究人员（例如，Yao等人，2013）估计不同diallel方法之间的相关遗传方差。 Griffing的方法已经在植物育种者中变得流行，以确定玉米中的GCA和SCA效应（Zhang等人，1997; Kang等人，1999,2005; Phumichai等人，2008; Yao等人，2013） （Ragsdale和Smith，2007; Zwart et al。，2008; Yang和Gai，2009; Velu et al。，2011; Berger et al。，2012）。 GCA和SCA效应进一步用于遗传多样性评价，近交系选择，杂种优势模式分类，杂种优势估计和杂种开发（Sughroue和Hallauer，1997; Fan等，2002; Melani和Carena，2005; Barata和Carena，2006）。</p>
+
+<p>正反交包括在Griffing的方法1和方法3中，其允许计算REC以及母本效应（MAT）和非母本效应（NMAT）（Zhang和Kang，1997; Zhang等人，2005）。然而，由于各种原因，植物育种者可能不总是能够在实验中包括正反交。有时，正反交可能完全失败或者可能没有产生足够数量的种子，并且其他时候，它们决定是否包括正反交可能取决于空间和其他资源的限制。在作物如玉米，其中谷物产量（GY）主要由胚乳决定，正反交是重要的，并且至关重要的是知道在双列交配中包含正反交F1交配与否对产量有何影响。 Mahgoub（2011）和Yao et al。 （2013）报告了RECs强烈影响SCA效应的估计。当一个品系用作母本与其用于父本时，SCA效应不同（Mahgoub，2011）。 REC显示对杂交产量的测定有重大影响（Yao et al。，2013）。
+SCA效应，谱系和GY信息（Kauffman等人，1982; Fan等人，2001,2009; Menkir等人，2004）以及分子标记技术（Fan等人， 2004; Barata和Carena，2006; Yao等，2009; Delucchi等，2012）经常用于玉米杂种优势群分类。 Fan et al。 （2001）使用diallel设计来研究10个玉米品系的配合力，其中5个来自国际玉米和小麦改良中心（CIMMYT），其他5个是中国广泛使用的品系。根据SCA和GY，他们将线CML171，CML161和CML166分成一个杂种群，将Chang 631 / o2和Zhongxi 096 / o2分成第二杂种群，将Qi1 205株分成第三杂种群。 Yao et al。 （2009）使用简单序列重复（SSR）标记以及GY和谱系信息将27个近交系分成三个杂种优势组，A，B和C. Menkir et al. （2004）使用两个测试人员代表燧石和凹陷杂种优势模式来测试38个热带玉米自交系。两个测试者基于SCA和GY成功地将38个测试的近交系中的23个分成两个杂种群。 Barata和Carena（2006）进行了一项类似的研究，将13个精英北达科他州玉米自交系分类到目前的美国玉米带杂种优势群体。此外，他们在一个diallel实验中评估了SSR和SCA加GY方法之间分类的一致性。结果表明，<strong>遗传上相似种质的杂种组不能用分子标记准确和可靠地鉴定。因此，建议广泛的现场评估，将不相关的玉米近交系分配到杂种优势群。</strong>
+Mahgoub（2011）最近报道了MAT如何影响GCA效应，以及REC如何影响Griffing的方法1和方法3中的SCA效应。这项研究理论上证明了REC如何影响SCA，玉米杂种优势组分类的关键遗传统计量。上述研究均没有报道正反交或REC对杂种群体分类的影响。还有很多问题需要回答正反交和REC。例如，（i）如何在二进制文件中包含正反交交叉影响GCA和SCA效应及其方差估计？ （ii）如何在二元组中包含正反交交叉影响玉米杂种群体分类？ （iii）相互交叉对杂交的GY的影响有多重要？因此，本研究的具体目标是确定（i）包含相互以提高杂种的GY有多重要，（ii）正反交如何影响GCA和SCA效应及其方差估计，以及（iii）玉米杂种群体分类将受到包含或排除正反交的影响。回答这些问题应有助于植物育种者选择最合适的玉米育种设计，获得可靠的遗传信息，提高育种效率和生产力。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/gs/fe2016-%E9%BB%91%E9%BA%A6%E8%8D%89-%E5%9F%BA%E5%9B%A0%E7%BB%84%E9%A2%84%E6%B5%8B%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7/" data-toggle="tooltip" data-placement="top" title="Fe2016-黑麦草-基因组预测的准确性">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/ericsson-1997-%E5%90%8E%E5%8C%BA%E7%BB%84/" data-toggle="tooltip" data-placement="top" title="Ericsson-1997-后区组">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

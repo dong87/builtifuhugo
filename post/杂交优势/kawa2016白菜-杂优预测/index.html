@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Kawa2016白菜-杂优预测</title>
+  <meta property="og:title" content="Kawa2016白菜-杂优预测" />
+  <meta name="twitter:title" content="Kawa2016白菜-杂优预测" />
+  <meta name="description" content="Kawamura K., Kawanabe T., Shimizu M., Nagano A. J., Saeki N., Okazaki K., Kaji M., Dennis E. S., Osabe K., Fujimoto R., 2016 Genetic distance of inbred lines of Chinese cabbage and its relationship to heterosis. Plant Gene 5: 1–7.
+ 大白菜（Brassica rapa L.变种pekinensis）是亚洲的一种重要菜。大多数日本大白菜的商业栽培品种使用F1杂交种子生产系统，因为产生高产量栽培品种。期望一种用于预测亲代中的杂交性能的有效方法，并且亲本系之间的遗传距离可以是杂交中杂种优势水平的良好指示。关于亲本候选近交系之间的遗传关系的信息对于品种保护是有用的。可用于评估近交系纯度的DNA标记物的数量在芜菁中有限。这项研究的目的是使用DNA标记来评估近交系之间的遗传距离，以检查早期发育和产量杂种优势，以便开发选择最佳亲本品系以产生杂种的方法。我们筛选高度多态性SSR和CAPS标记，以评估近交系的遗传一致性和表征其遗传关系。我们检查了大白菜32 F1杂交种的早期大小和产量杂种优势。在播种后21天和收获的生物量之间的叶片大小之间的中亲本杂种优势具有中等相关性，但是在最佳亲本杂种优势中不存在。相反，遗传距离和中亲或最佳亲本杂种优势之间没有相关性，表明遗传距离不能预测杂种优势表型。
+1.介绍甘蓝包含商业上重要的蔬菜作物 包括大白菜（北美白菜），白菜（中华白菜）和小松（var.perviridis），根菜类包括芜菁（var.lapa）和油菜（var.perifera）。大白菜形成有大淡绿色的叶子和宽白色尾标的头并且是在亚洲的一重要菜。由于大白菜（Chiifu-401-42）的基因组序列已经释放，芜菁与模式植物拟南芥（The Brassica rapa Genome Sequencing Project Consortium，2011）有关，所以详细的遗传和进化研究已成为可能。
+在日本，大白菜的大多数商业栽培品种是F1水稻，因为它们具有农业效益，例如高产量，胁迫耐受性，抗病性和一致的表型。杂交育种来自杂种优势或杂交优势的发现，杂交优势被定义为杂交植物优于父母的性能（Crow，1998）。当育种F1杂交品种时，育种者开发精品纯品系（近交系）作为杂种生产的亲本。发展近交系作为亲本候选者需要大约五至七代基于与育种目的有关的性状的自交和选择。近交系的所有可能组合的杂交的杂种水平用于鉴定F1杂种代的合适的亲本。因为混合生产可能是昂贵，耗时和劳动密集型的，所以期望用于预测亲本世代中的杂交性能的有效方法。遗传距离和杂种优势之间的关系是有争议的（Barth et al。，2003; Dreisigacker et al。，2005; Flint-Garcia et al。，2009; Geleta et al。 。，2004; Meyer et al。，2004; Yu et al。，2005）。关于亲本候选近交系之间的遗传关系的信息也可用于品种保护。存在各种类型的DNA标记，例如裂解扩增多态性序列（CAPS），扩增片段长度多态性（AFLP），随机扩增多态性DNA（RAPD），简单序列重复（SSR），单核苷酸多态性（SNP）插入/缺失多态性（InDel）标记。 SSR标记已被广泛使用，因为高多态性，重复性，共显性遗传和全基因组覆盖。此外，SSR标记物仅需要少量的PCR用于PCR，并且可以用于高通量分析。 SSR标记已广泛用于检测遗传多样性和制备遗传连锁图谱，许多SSR标记可用于芸苔属（Guo等人，2014; Hatakeyama等人，2010; Lowe等人，2004; Pino Del Carpio等人2011; Ramchiary等人，2011; Suwabe等人，2002; Suwabe等人，2006）。测序技术使得我们能够容易地鉴定SNP，并且SNP在芜菁基因组中广泛扩散（Metzker，2010; Rafalski，2002）。在编码区域通过RNA测序（RNA-seq）检测的SNP用于开发基于基因的标记（Paritosh等，2013）。限制性位点相关DNA测序（RAD-seq），其中侧翼区从特异性限制性位点测序，可用于开发DNA标记和高通量基因分型（Baird等人，2008）。这项研究的目的是审查使用DNA标记来增强育种的可能性。我们专注于遗传距离和杂种优势之间的关系。我们确定高度多态性DNA标记计算遗传距离或评估大白菜近交系纯合性，并检查由DNAmarkers计算的杂种优势和遗传距离之间的关系。在这项研究中获得的信息将有助于在芸苔的育种。">
+  <meta property="og:description" content="Kawamura K., Kawanabe T., Shimizu M., Nagano A. J., Saeki N., Okazaki K., Kaji M., Dennis E. S., Osabe K., Fujimoto R., 2016 Genetic distance of inbred lines of Chinese cabbage and its relationship to heterosis. Plant Gene 5: 1–7.
+ 大白菜（Brassica rapa L.变种pekinensis）是亚洲的一种重要菜。大多数日本大白菜的商业栽培品种使用F1杂交种子生产系统，因为产生高产量栽培品种。期望一种用于预测亲代中的杂交性能的有效方法，并且亲本系之间的遗传距离可以是杂交中杂种优势水平的良好指示。关于亲本候选近交系之间的遗传关系的信息对于品种保护是有用的。可用于评估近交系纯度的DNA标记物的数量在芜菁中有限。这项研究的目的是使用DNA标记来评估近交系之间的遗传距离，以检查早期发育和产量杂种优势，以便开发选择最佳亲本品系以产生杂种的方法。我们筛选高度多态性SSR和CAPS标记，以评估近交系的遗传一致性和表征其遗传关系。我们检查了大白菜32 F1杂交种的早期大小和产量杂种优势。在播种后21天和收获的生物量之间的叶片大小之间的中亲本杂种优势具有中等相关性，但是在最佳亲本杂种优势中不存在。相反，遗传距离和中亲或最佳亲本杂种优势之间没有相关性，表明遗传距离不能预测杂种优势表型。
+1.介绍甘蓝包含商业上重要的蔬菜作物 包括大白菜（北美白菜），白菜（中华白菜）和小松（var.perviridis），根菜类包括芜菁（var.lapa）和油菜（var.perifera）。大白菜形成有大淡绿色的叶子和宽白色尾标的头并且是在亚洲的一重要菜。由于大白菜（Chiifu-401-42）的基因组序列已经释放，芜菁与模式植物拟南芥（The Brassica rapa Genome Sequencing Project Consortium，2011）有关，所以详细的遗传和进化研究已成为可能。
+在日本，大白菜的大多数商业栽培品种是F1水稻，因为它们具有农业效益，例如高产量，胁迫耐受性，抗病性和一致的表型。杂交育种来自杂种优势或杂交优势的发现，杂交优势被定义为杂交植物优于父母的性能（Crow，1998）。当育种F1杂交品种时，育种者开发精品纯品系（近交系）作为杂种生产的亲本。发展近交系作为亲本候选者需要大约五至七代基于与育种目的有关的性状的自交和选择。近交系的所有可能组合的杂交的杂种水平用于鉴定F1杂种代的合适的亲本。因为混合生产可能是昂贵，耗时和劳动密集型的，所以期望用于预测亲本世代中的杂交性能的有效方法。遗传距离和杂种优势之间的关系是有争议的（Barth et al。，2003; Dreisigacker et al。，2005; Flint-Garcia et al。，2009; Geleta et al。 。，2004; Meyer et al。，2004; Yu et al。，2005）。关于亲本候选近交系之间的遗传关系的信息也可用于品种保护。存在各种类型的DNA标记，例如裂解扩增多态性序列（CAPS），扩增片段长度多态性（AFLP），随机扩增多态性DNA（RAPD），简单序列重复（SSR），单核苷酸多态性（SNP）插入/缺失多态性（InDel）标记。 SSR标记已被广泛使用，因为高多态性，重复性，共显性遗传和全基因组覆盖。此外，SSR标记物仅需要少量的PCR用于PCR，并且可以用于高通量分析。 SSR标记已广泛用于检测遗传多样性和制备遗传连锁图谱，许多SSR标记可用于芸苔属（Guo等人，2014; Hatakeyama等人，2010; Lowe等人，2004; Pino Del Carpio等人2011; Ramchiary等人，2011; Suwabe等人，2002; Suwabe等人，2006）。测序技术使得我们能够容易地鉴定SNP，并且SNP在芜菁基因组中广泛扩散（Metzker，2010; Rafalski，2002）。在编码区域通过RNA测序（RNA-seq）检测的SNP用于开发基于基因的标记（Paritosh等，2013）。限制性位点相关DNA测序（RAD-seq），其中侧翼区从特异性限制性位点测序，可用于开发DNA标记和高通量基因分型（Baird等人，2008）。这项研究的目的是审查使用DNA标记来增强育种的可能性。我们专注于遗传距离和杂种优势之间的关系。我们确定高度多态性DNA标记计算遗传距离或评估大白菜近交系纯合性，并检查由DNAmarkers计算的杂种优势和遗传距离之间的关系。在这项研究中获得的信息将有助于在芸苔的育种。">
+  <meta name="twitter:description" content="Kawamura K., Kawanabe T., Shimizu M., Nagano A. J., Saeki N., Okazaki K., Kaji M., Dennis E. S., Osabe K., Fujimoto R., 2016 Genetic distance of inbred lines of Chinese cabbage and its relationship to …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/kawa2016%E7%99%BD%E8%8F%9C-%E6%9D%82%E4%BC%98%E9%A2%84%E6%B5%8B/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/kawa2016%E7%99%BD%E8%8F%9C-%E6%9D%82%E4%BC%98%E9%A2%84%E6%B5%8B/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Kawa2016白菜-杂优预测</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (82 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Kawa2016白菜-杂优预测</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (82 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Kawamura K., Kawanabe T., Shimizu M., Nagano A. J., Saeki N., Okazaki K., Kaji M., Dennis E. S., Osabe K., Fujimoto R., 2016 Genetic distance of inbred lines of Chinese cabbage and its relationship to heterosis. Plant Gene 5: 1–7.</p>
+</blockquote>
+
+<p>大白菜（Brassica rapa L.变种pekinensis）是亚洲的一种重要菜。大多数日本大白菜的商业栽培品种使用F1杂交种子生产系统，因为产生高产量栽培品种。<code>期望一种用于预测亲代中的杂交性能的有效方法，并且亲本系之间的遗传距离可以是杂交中杂种优势水平的良好指示</code>。关于亲本候选近交系之间的遗传关系的信息对于品种保护是有用的。可用于评估近交系纯度的DNA标记物的数量在芜菁中有限。这项研究的目的是使用DNA标记来评估近交系之间的遗传距离，以检查早期发育和产量杂种优势，以便开发选择最佳亲本品系以产生杂种的方法。<code>我们筛选高度多态性SSR和CAPS标记，以评估近交系的遗传一致性和表征其遗传关系</code>。我们检查了大白菜32 F1杂交种的早期大小和产量杂种优势。在播种后21天和收获的生物量之间的<code>叶片大小之间的中亲本杂种优势具有中等相关性，但是在最佳亲本杂种优势中不存在</code>。相反，<code>遗传距离和中亲或最佳亲本杂种优势之间没有相关性，表明遗传距离不能预测杂种优势表型</code>。</p>
+
+<hr />
+
+<p>1.介绍甘蓝包含商业上重要的蔬菜作物
+包括大白菜（北美白菜），白菜（中华白菜）和小松（var.perviridis），根菜类包括芜菁（var.lapa）和油菜（var.perifera）。大白菜形成有大淡绿色的叶子和宽白色尾标的头并且是在亚洲的一重要菜。由于大白菜（Chiifu-401-42）的基因组序列已经释放，芜菁与模式植物拟南芥（The Brassica rapa Genome Sequencing Project Consortium，2011）有关，所以详细的遗传和进化研究已成为可能。</p>
+
+<p>在日本，大白菜的大多数商业栽培品种是F1水稻，因为它们具有农业效益，例如高产量，胁迫耐受性，抗病性和一致的表型。杂交育种来自杂种优势或杂交优势的发现，杂交优势被定义为杂交植物优于父母的性能（Crow，1998）。当育种F1杂交品种时，育种者开发精品纯品系（近交系）作为杂种生产的亲本。发展近交系作为亲本候选者需要大约五至七代基于与育种目的有关的性状的自交和选择。近交系的所有可能组合的杂交的杂种水平用于鉴定F1杂种代的合适的亲本。因为混合生产可能是昂贵，耗时和劳动密集型的，所以期望用于预测亲本世代中的杂交性能的有效方法。遗传距离和杂种优势之间的关系是有争议的（Barth et al。，2003; Dreisigacker et al。，2005; Flint-Garcia et al。，2009; Geleta et al。 。，2004; Meyer et al。，2004; Yu et al。，2005）。关于亲本候选近交系之间的遗传关系的信息也可用于品种保护。存在各种类型的DNA标记，例如裂解扩增多态性序列（CAPS），扩增片段长度多态性（AFLP），随机扩增多态性DNA（RAPD），简单序列重复（SSR），单核苷酸多态性（SNP）插入/缺失多态性（InDel）标记。 SSR标记已被广泛使用，因为高多态性，重复性，共显性遗传和全基因组覆盖。此外，SSR标记物仅需要少量的PCR用于PCR，并且可以用于高通量分析。 SSR标记已广泛用于检测遗传多样性和制备遗传连锁图谱，许多SSR标记可用于芸苔属（Guo等人，2014; Hatakeyama等人，2010; Lowe等人，2004; Pino Del Carpio等人2011; Ramchiary等人，2011; Suwabe等人，2002; Suwabe等人，2006）。测序技术使得我们能够容易地鉴定SNP，并且SNP在芜菁基因组中广泛扩散（Metzker，2010; Rafalski，2002）。在编码区域通过RNA测序（RNA-seq）检测的SNP用于开发基于基因的标记（Paritosh等，2013）。限制性位点相关DNA测序（RAD-seq），其中侧翼区从特异性限制性位点测序，可用于开发DNA标记和高通量基因分型（Baird等人，2008）。这项研究的目的是审查使用DNA标记来增强育种的可能性。我们专注于遗传距离和杂种优势之间的关系。我们确定高度多态性DNA标记计算遗传距离或评估大白菜近交系纯合性，并检查由DNAmarkers计算的杂种优势和遗传距离之间的关系。在这项研究中获得的信息将有助于在芸苔的育种。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/diallel/khiabani2015-%E5%B0%8F%E9%BA%A6/" data-toggle="tooltip" data-placement="top" title="Khiabani2015-小麦">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/kassaby2009-breeding-without-breeding/" data-toggle="tooltip" data-placement="top" title="Kassaby2009-Breeding-without-breeding">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

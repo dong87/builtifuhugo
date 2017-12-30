@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>正则表达式学习笔记-#正则表达式#-#regex#</title>
+  <meta property="og:title" content="正则表达式学习笔记-#正则表达式#-#regex#" />
+  <meta name="twitter:title" content="正则表达式学习笔记-#正则表达式#-#regex#" />
+  <meta name="description" content="title: &ldquo;正则表达式学习笔记&rdquo; author: &ldquo;Dong Lei-ming&rdquo; date: &ldquo;2017年10月28日&rdquo;
+output: html_document  如果需要从文本文件中识别具有一定模式的字符串时，学一点正则表达式比一个个查找-复制粘贴效率要高得多。
+ 我常用的能够通过正则表达式进行检索的软件有：Notepad&#43;&#43;和Filelocator。用Notepad的机会更多一些。转入正题： 比如我有一串字符：
+Aoli|XP_011119616.1,Aoli|XP_011122673.1,Aoli|XP_011128430.1,Bbas|XP_008594286.1,Bbas|XP_008594329.1,Bbas|XP_008595160.1, Bbas|XP_008596935.1,Bbas|XP_008597129.1,Bbas|XP_008597693.1,Bbas|XP_008598495.1,Bbas|XP_008600657.1,Bbas|XP_008600739.1, Bbas|XP_008601538.1,Bbas|XP_008603064.1,Bbas|XP_008603175.1,Bbas|XP_008603621.1,Chig|XP_018154735.1,Chig|XP_018155044.1, Chig|XP_018155047.1,Chig|XP_018153301.1,Chig|XP_018151759.1,Chig|XP_018164608.1,Chig|XP_018152642.1,Chig|XP_018152650.1, Chig|XP_018150745.1,Chig|XP_018151082.1,Chig|XP_018151207.1,Chig|XP_018151210.1,Chig|XP_018151211.1,Chig|XP_018151295.1, Chig|XP_018151323.1,Chig|XP_018151575.1,Chig|XP_018151609.1,Chig|XP_018151641.1,Chig|XP_018163482.1,Chig|XP_018150468.1  我需要把|连同之前的字符都去掉，如果手动删除或是用空值一组一组地替换是非常繁琐的，数据量非常大时成本很高。而如果采用正则表达式则是几秒钟的事：查找\w*\|，然后替换框里空着，全部替换就可以了（Fig 1），Amazing！
+匹配字符  .，句点代表除换行符外的所有字符。比如a..b能匹配类似a alb，A18|B，ATP-b。不区分大小写，当然也可以区分，下同。 [...]，代表字符集。a[rl_]b匹配arb，AlB，A_b。 \d， 代表数字。XP_\d匹配XP_0，XP_0，&hellip;，XP_9。 \D， 代表非数字。 \s， 代表空白字符。a\sb匹配a b。 \S， 代表非空白字符。 \w， 代表字母和数字。[a-z0-9]。 \w， 代表非字母和数字。 \b， 代表边界，如\b love，不会匹配alove之类的单词。 \r\n，这是Notepad里替换换换行符的字符串，有时会用到，非常方便！比如(\r\n){2}能替换空行，类似Word里的^p^p。  匹配字符的次数  *，≥0次。 &#43;，≥1次。 ?，匹配问号前一个字符前面的全部字符含有或不含问号前这个字符，比较难理解，试一下就知道了。kdheo?，问号前一个字符是o，o前面的全部字符是kdhe，kdheo?匹配kdheo（含o）或kdhe（不含o）。 {}，花括号里是匹配前一个字符的次数1-9，也可以是个范围{1,5}。  逻辑匹配 想要同时匹配多个字符串时用逻辑字符|，如blue|Blue，能忽略blue首字母的大小写。 以含有多个字符的字符串为单位进行处理时要用圆括号()括起来。
+一个例子 有这样一串字符：
+[1] &quot;db&quot; &quot;G.clavigera&quot; &quot;F.graminearum&quot; &quot;M.oryzae&quot; &quot;Z.tritici&quot; &quot;C.higginsianum&quot; [7] &quot;V.dahliae&quot; &quot;C.militaris&quot; &quot;B.bassiana&quot; &quot;M.">
+  <meta property="og:description" content="title: &ldquo;正则表达式学习笔记&rdquo; author: &ldquo;Dong Lei-ming&rdquo; date: &ldquo;2017年10月28日&rdquo;
+output: html_document  如果需要从文本文件中识别具有一定模式的字符串时，学一点正则表达式比一个个查找-复制粘贴效率要高得多。
+ 我常用的能够通过正则表达式进行检索的软件有：Notepad&#43;&#43;和Filelocator。用Notepad的机会更多一些。转入正题： 比如我有一串字符：
+Aoli|XP_011119616.1,Aoli|XP_011122673.1,Aoli|XP_011128430.1,Bbas|XP_008594286.1,Bbas|XP_008594329.1,Bbas|XP_008595160.1, Bbas|XP_008596935.1,Bbas|XP_008597129.1,Bbas|XP_008597693.1,Bbas|XP_008598495.1,Bbas|XP_008600657.1,Bbas|XP_008600739.1, Bbas|XP_008601538.1,Bbas|XP_008603064.1,Bbas|XP_008603175.1,Bbas|XP_008603621.1,Chig|XP_018154735.1,Chig|XP_018155044.1, Chig|XP_018155047.1,Chig|XP_018153301.1,Chig|XP_018151759.1,Chig|XP_018164608.1,Chig|XP_018152642.1,Chig|XP_018152650.1, Chig|XP_018150745.1,Chig|XP_018151082.1,Chig|XP_018151207.1,Chig|XP_018151210.1,Chig|XP_018151211.1,Chig|XP_018151295.1, Chig|XP_018151323.1,Chig|XP_018151575.1,Chig|XP_018151609.1,Chig|XP_018151641.1,Chig|XP_018163482.1,Chig|XP_018150468.1  我需要把|连同之前的字符都去掉，如果手动删除或是用空值一组一组地替换是非常繁琐的，数据量非常大时成本很高。而如果采用正则表达式则是几秒钟的事：查找\w*\|，然后替换框里空着，全部替换就可以了（Fig 1），Amazing！
+匹配字符  .，句点代表除换行符外的所有字符。比如a..b能匹配类似a alb，A18|B，ATP-b。不区分大小写，当然也可以区分，下同。 [...]，代表字符集。a[rl_]b匹配arb，AlB，A_b。 \d， 代表数字。XP_\d匹配XP_0，XP_0，&hellip;，XP_9。 \D， 代表非数字。 \s， 代表空白字符。a\sb匹配a b。 \S， 代表非空白字符。 \w， 代表字母和数字。[a-z0-9]。 \w， 代表非字母和数字。 \b， 代表边界，如\b love，不会匹配alove之类的单词。 \r\n，这是Notepad里替换换换行符的字符串，有时会用到，非常方便！比如(\r\n){2}能替换空行，类似Word里的^p^p。  匹配字符的次数  *，≥0次。 &#43;，≥1次。 ?，匹配问号前一个字符前面的全部字符含有或不含问号前这个字符，比较难理解，试一下就知道了。kdheo?，问号前一个字符是o，o前面的全部字符是kdhe，kdheo?匹配kdheo（含o）或kdhe（不含o）。 {}，花括号里是匹配前一个字符的次数1-9，也可以是个范围{1,5}。  逻辑匹配 想要同时匹配多个字符串时用逻辑字符|，如blue|Blue，能忽略blue首字母的大小写。 以含有多个字符的字符串为单位进行处理时要用圆括号()括起来。
+一个例子 有这样一串字符：
+[1] &quot;db&quot; &quot;G.clavigera&quot; &quot;F.graminearum&quot; &quot;M.oryzae&quot; &quot;Z.tritici&quot; &quot;C.higginsianum&quot; [7] &quot;V.dahliae&quot; &quot;C.militaris&quot; &quot;B.bassiana&quot; &quot;M.">
+  <meta name="twitter:description" content="title: &ldquo;正则表达式学习笔记&rdquo; author: &ldquo;Dong Lei-ming&rdquo; date: &ldquo;2017年10月28日&rdquo;
+output: html_document  如果需要从文本文件中识别具有一定模式的字符串时，学一点正则表达式比一个个查找-复制粘贴效率要高得多。
+ 我常用的能够通过正则表达式进行检索的软件 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E9%9A%8F%E7%AC%94/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E9%9A%8F%E7%AC%94/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>正则表达式学习笔记-#正则表达式#-#regex#</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (87 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>正则表达式学习笔记-#正则表达式#-#regex#</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (87 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<hr />
+
+<p>title: &ldquo;正则表达式学习笔记&rdquo;
+author: &ldquo;Dong Lei-ming&rdquo;
+date: &ldquo;2017年10月28日&rdquo;</p>
+
+<h2 id="output-html-document">output: html_document</h2>
+
+<blockquote>
+<p>如果需要从文本文件中识别具有一定模式的字符串时，学一点正则表达式比一个个查找-复制粘贴效率要高得多。</p>
+</blockquote>
+
+<p>我常用的能够通过正则表达式进行检索的软件有：Notepad++和Filelocator。用Notepad的机会更多一些。转入正题：
+比如我有一串字符：</p>
+
+<pre><code>Aoli|XP_011119616.1,Aoli|XP_011122673.1,Aoli|XP_011128430.1,Bbas|XP_008594286.1,Bbas|XP_008594329.1,Bbas|XP_008595160.1,
+Bbas|XP_008596935.1,Bbas|XP_008597129.1,Bbas|XP_008597693.1,Bbas|XP_008598495.1,Bbas|XP_008600657.1,Bbas|XP_008600739.1,
+Bbas|XP_008601538.1,Bbas|XP_008603064.1,Bbas|XP_008603175.1,Bbas|XP_008603621.1,Chig|XP_018154735.1,Chig|XP_018155044.1,
+Chig|XP_018155047.1,Chig|XP_018153301.1,Chig|XP_018151759.1,Chig|XP_018164608.1,Chig|XP_018152642.1,Chig|XP_018152650.1,
+Chig|XP_018150745.1,Chig|XP_018151082.1,Chig|XP_018151207.1,Chig|XP_018151210.1,Chig|XP_018151211.1,Chig|XP_018151295.1,
+Chig|XP_018151323.1,Chig|XP_018151575.1,Chig|XP_018151609.1,Chig|XP_018151641.1,Chig|XP_018163482.1,Chig|XP_018150468.1
+</code></pre>
+
+<p>我需要把<code>|</code>连同之前的字符都去掉，如果手动删除或是用空值一组一组地替换是非常繁琐的，数据量非常大时成本很高。而如果采用正则表达式则是几秒钟的事：查找<code>\w*\|</code>，然后替换框里空着，全部替换就可以了（Fig 1），Amazing！</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-e3b38112a6024a88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Fig 1" /></p>
+
+<h2 id="匹配字符">匹配字符</h2>
+
+<ul>
+<li><code>.</code>，句点代表除换行符外的所有字符。比如<code>a..b</code>能匹配类似<code>a alb</code>，<code>A18|B</code>，<code>ATP-b</code>。不区分大小写，当然也可以区分，下同。</li>
+<li><code>[...]</code>，代表字符集。<code>a[rl_]b</code>匹配<code>arb</code>，<code>AlB</code>，<code>A_b</code>。</li>
+<li><code>\d</code>， 代表数字。<code>XP_\d</code>匹配<code>XP_0</code>，<code>XP_0</code>，&hellip;，<code>XP_9</code>。</li>
+<li><code>\D</code>， 代表非数字。</li>
+<li><code>\s</code>， 代表空白字符。<code>a\sb</code>匹配<code>a b</code>。</li>
+<li><code>\S</code>， 代表非空白字符。</li>
+<li><code>\w</code>， 代表字母和数字。[a-z0-9]。</li>
+<li><code>\w</code>， 代表非字母和数字。</li>
+<li><code>\b</code>， 代表边界，如<code>\b love</code>，不会匹配<code>alove</code>之类的单词。</li>
+<li><code>\r\n</code>，这是Notepad里替换换换行符的字符串，有时会用到，非常方便！比如<code>(\r\n){2}</code>能替换空行，类似Word里的<code>^p^p</code>。</li>
+</ul>
+
+<h2 id="匹配字符的次数">匹配字符的次数</h2>
+
+<ul>
+<li><code>*</code>，≥0次。</li>
+<li><code>+</code>，≥1次。</li>
+<li><code>?</code>，匹配问号前一个字符前面的全部字符含有或不含问号前这个字符，比较难理解，试一下就知道了。<code>kdheo?</code>，问号前一个字符是<code>o</code>，<code>o</code>前面的全部字符是<code>kdhe</code>，<code>kdheo?</code>匹配<code>kdheo（含o）</code>或<code>kdhe（不含o）</code>。</li>
+<li><code>{}</code>，花括号里是匹配前一个字符的次数1-9，也可以是个范围{1,5}。</li>
+</ul>
+
+<h2 id="逻辑匹配">逻辑匹配</h2>
+
+<p>想要同时匹配多个字符串时用逻辑字符<code>|</code>，如<code>blue|Blue</code>，能忽略blue首字母的大小写。
+以含有多个字符的字符串为单位进行处理时要用圆括号<code>()</code>括起来。</p>
+
+<h2 id="一个例子">一个例子</h2>
+
+<p>有这样一串字符：</p>
+
+<pre><code>[1] &quot;db&quot;               &quot;G.clavigera&quot;      &quot;F.graminearum&quot;    &quot;M.oryzae&quot;         &quot;Z.tritici&quot;        &quot;C.higginsianum&quot;  
+ [7] &quot;V.dahliae&quot;        &quot;C.militaris&quot;      &quot;B.bassiana&quot;       &quot;M.anisopliae&quot;     &quot;M.robertsii&quot;      &quot;M.libera&quot;        
+[13] &quot;S.insectorum&quot;     &quot;A.oligospora&quot;     &quot;D.haptotyla&quot;      &quot;E.vermicola&quot;      &quot;H.minnesotensis&quot;  &quot;D.coniospora&quot;    
+[19] &quot;P.chlamydosporia&quot; &quot;O.piceae&quot;         &quot;S.schenckii&quot;      &quot;S.brasiliensis&quot; 
+</code></pre>
+
+<p>特点是有<code>方括号</code>， 方括号括起来的<code>数字</code>且位数不等，有<code>空格</code>且空格的个数不等，还有<code>换行符</code>。
+我想要的是保留引号中的内容（连同引号），之间用逗点隔开，放到一行中。
+具体步骤：
+1. 去掉方括号及其中的数字，表达式为<code>\[[0-9]+\]</code>；
+1. 去掉换行符，表达式为<code>\r\n</code>；
+1. 去掉空格，表达式为<code>\s+</code>，替换为<code>,</code>，然后去掉两头多于的逗点即可。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%9A%8F%E7%AC%94/%E6%AD%A3%E5%90%91%E5%92%8C%E5%8F%8D%E5%90%91%E9%81%97%E4%BC%A0%E6%96%B9%E6%B3%95/" data-toggle="tooltip" data-placement="top" title="正向和反向遗传方法">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E8%82%B2%E7%A7%8D/%E6%AC%A7%E6%B4%B2%E8%90%BD%E5%8F%B6%E6%9D%BE%E6%94%B9%E8%89%AF%E5%9B%9B/" data-toggle="tooltip" data-placement="top" title="欧洲——落叶松改良（四）">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

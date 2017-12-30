@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Posts</title>
+  <meta property="og:title" content="Posts" />
+  <meta name="twitter:title" content="Posts" />
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/" />
+  <link rel="alternate" href="../../../post/index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  <header class="header-section ">
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Posts</h1>
+              <hr class="small">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    
+  <div class="container" role="main">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="../../../post/%E8%82%B2%E7%A7%8D/ruotsalainen1998-%E5%90%91%E5%90%8E-%E5%90%91%E5%89%8D%E9%80%89%E6%8B%A9/">
+                <h2 class="post-title">Ruotsalainen1998-向后-向前选择</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>Ruotsalainen S, Lindgren D (1998) Predicting genetic gain of backward and forward selection in forest tree breeding. Silvae Genet 47(1):42–50.</li>
+</ol>
+</blockquote>
+
+<p>抽象
+在几个林木繁殖操作中，使用向后或向前选择，尽管两者的适当组合可能更有利。使用基于定量遗传理论的计算，比较了各个家庭的后向和前向选择的相对优点。在落后选择中，母亲是以她的后代为依据，在选择中，最好的后代是从母亲和孩子的家庭中选出的。比较了天然林和后代试验（后者是后代大小的函数）的一系列遗传力和选择强度。
+选择更高的母亲队伍是更有利的。根据参数值的组合，在1％至57％的顶级家庭中，后向选择优于开放授粉后代的正向选择。森林中高度的选择，低的生殖力和小的后代大小有利于落后选择。具有加树父亲的家庭的向后选择对于超过百分之几的家庭通常不利。只有当遗传力很低时，可能会选择10％的顶级母亲。
+计算结果表明，对于最优秀的家庭应用向后选择和并排排列较低的家庭的前向选择往往是最佳的。然而，差异往往很小，其​​他的考虑也可能更为重要。
+关键词：向后选择，前向选择，育种策略，选择强度，后代大小，遗传力，遗传增益。
+介绍
+针对父母排名的后代检测是动物和植物育种中常用的方法。后代测试可以用于几个目的，该术语可以有不同的含义。在这项研究中，它被用作父母排名的同义词（LINDGREN，1991）。<strong>在森林树种育种中，后代测试通常被认为是整个过程的基本部分（ZOBEL和TALBERT，1984）</strong>。用于通过种植果园获得额外的遗传增益，并建立具有顶级克隆的种子果园。后代检测也被认为是先进生殖繁殖的必要条件，因为最佳加树的后代是下一代育种的基础材料（正向选择）。根据其后代（落后选择）的表现，对父母进行排名对于具有低遗传度的人物（FALCONER和MACKEY，1996）尤为重要，林木繁殖中许多重要人物的情况（WRIGHT，1976， CORNELIUS，1994）。森林树种长期以来一直意识到后向选择和前进选择的选择;对于不同的替代方案（FALCONER和MACKEY，1996），增益可能会有很大差异。然而，育种者认为它是一种“或”或“决定”，并没有意识到他们可以为不同的家庭使用不同的选择。
+许多树种育种计划中的原始想法是使用表型选择的加树的后代测试仅用于家长排名。第二代育种的基础材料是通过交叉最佳排名加上树木（WERNER等人，1981; Pitkantahtayksen metsanjalos-tusohjelma，1989）创造的。这项计划也已经实施，例如英国的Sitka云杉（LEE，1993）。然而，出现的问题是在长期的育种中是否使用测试后代的树木或其后代。在某些情况下，来自加树的后代中的表型选择实际上可能是有利的选择（SPANOS等，1997）。
+LINDGREN（1986）指出，作为一般原则，最好的后代测试的基因型应该向后选择，而另一些则是前进的。这是由于大多数森林树种育种病例中最好的基因型与被认为具有相当低的育种价值的个体相配。因此，后代平均比最好的父母本身具有较低的育种价值。差异随父母遗传价值的增加而增加，而家庭内选择增益则与父母的价值无关。因此，通过选择后代中最好的个体获得的收益变得越来越难以与母体育种价值一致增加的差异平衡。因此，落后选择是排名最高的父母最有利的方法。一个原因是选择向后并不意味着引入新的遗传关系，而是保持最佳创始人的基因质量完好无损。
+本研究的目的是开发一种比较反向选择和个体基因型前向选择作为其等级的函数的方法，并为这些选择方案之间的比较创造更坚实的理论依据。该研究还对前后选择增益差异的大小进行了评估，并确定哪些因素影响后向选择和前向选择的平衡。</p>
+
+<p>##方法
+2.1。选择替代品进行比较
+2.1.1。向后选择（BACKW）
+反向选择（即重选）意味着接受最佳加树作为下一代繁殖群体（种子果园中的分株）或繁殖种群的父母（从而创建一个新的后代，作为资源，进一步选择），基于后代测试的结果。只要方法健全，并对正加树的育种价值进行准确预测，那么已经用于子代测试的材料或实验布局是没有意义的。用于排列加树的后代不用于创造下一代繁殖种群，而是基于作为最高等级和树之间的杂交的后代。
+2.1.2。开放授粉后代的前向选择（FORW0）
+开放授粉的种子被广泛使用，便宜且经常迅速可用的材料用于森林的后代测试。它可以从原始的加树或其移植物收集（ZOBEL和TALBERT，1984）。一个开放的花粉家族的成员被认为是真正的半同胞。然而，这个假设的微小偏差可能不会对模型产生任何明显的影响。而不是通过排名最好的树木，而是选择其公开授粉后代的最佳个体。降低获得的遗传增益的未经改进的花粉是使用开放授粉材料进行正向选择的主要缺点。对于一种风花授粉的普通树种，如苏格兰松，即使在成熟的种子果园，高度的背景授粉似乎也不可避免（HARJU，1995）。
+2.1.3。来自多边形后代的前向选择（FORW +）
+在某些情况下，使用从正树（polycross）收集的花粉的混合物创建的材料进行后代测试。在这种情况下，假设花粉亲本平均具有与种子母体一样高的遗传价值。因此，多交叉后代中的前向选择将导致比开放授粉后代中的选择更高的遗传增益。种子果园的开放授粉材料有时可以在遗传上与多交叉材料相同。如果所讨论的物种是异国情调的，或者背景授粉可以忽略不计的这样低的丰度，这是真实的（例如，SHELBOURNE，1992）。有时可以通过使用位于温室中的种子果园来防止背景授粉。由于自交被排除并且不同的花粉混合以获得相等的贡献，因此对于后代测试来说，受控多交叉仍然更可靠。然而，父亲是未知的，因此几个选择可能具有相同的父亲，并且不知道父亲的亲属的表型（例如，选择的半同胞）不能用于增加选择的育种值的准确性。来自多交叉后代的选择的遗传获益给出了与已知父母的受控杂交将获得的增益的显着迹象。</p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/%E8%82%B2%E7%A7%8D/ruotsalainen1998-%E6%AD%A3%E5%90%91%E5%92%8C%E5%8F%8D%E5%90%91%E9%80%89%E6%8B%A9/">
+                <h2 class="post-title">Ruotsalainen1998-正向和反向选择</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  
+
+<blockquote>
+<p>Ruotsalainen S, Lindgren D. 1998. Predicting genetic gain of backward and forward selection in forest tree breeding. Silvae Genetica, 47(1): 42–50.</p>
+</blockquote>
+
+<h2 id="摘要">摘要</h2>
+
+<p>在几个林木繁殖操作中，使用向后或向前选择，尽管两者的适当组合可能更有利。使用基于定量遗传理论的计算，比较了各个家庭的后向和前向选择的相对优点。在反向选择中，母亲是根据她的后代选择的，而在正向选择中，最好的后代是从母亲和她的孩子组成的家庭中选出来的。比较了天然林和后代测试中的一系列遗传力和选择强度（后者是子代大小的函数）。
+选择落后的母亲队伍越高越好。根据参数值的组合，在1％至57％的顶级家庭中，向后选择优于开放授粉后代的正向选择。森林中高度选择，遗传力低，后代小，有利于落后选择。对父亲父亲的家庭的向后选择对于超过百分之几的家庭通常是不利的。只有遗​​传力低下，才能选择10％的高级母亲。
+计算结果表明，对于最优秀的家庭应用向后选择和并排排列较低的家庭的前向选择往往是最佳的。然而，差异往往很小，其​​他的考虑也可能更为重要。
+关键词：向后选择，前向选择，育种策略，选择强度，后代规模，遗传力，遗传增益。
+FDC：165.3; 165.6。</p>
+
+<h2 id="介绍">介绍</h2>
+
+<p>针对父母排名的后代检测是动物和植物育种中常用的方法。后代测试可以用于几个目的，该术语可以有不同的含义。在这项研究中，它被用作父母排名的同义词（LINDGREN，1991）。在森林树种育种中，后代测试通常被视为整个程序的基本部分（ZOBEL和TALBERT，1984）。用于通过种植果园获得额外的遗传增益，并建立具有顶级克隆的种子果园。后代检测也被认为是先进生殖繁殖的必要条件，因为最佳加树的后代是下一代育种的基础材料（正向选择）。根据其后代（落后选择）的表现对父母进行排名对于具有低遗传度的人物（FALCONER和MACKEY，1996）尤其重要，如森林树种繁殖中的许多重要角色（WRIGHT，1976，CORNELIUS， 1994年）。森林树种长期以来一直意识到后向选择和前进选择的选择;对于不同的替代方案（FALCONER和MACKEY，1996），增益可能会有很大差异。然而，育种者认为它是一个“任一/或”的决定，并没有意识到他们可以为不同的家庭使用不同的选择。
+许多树种育种计划的原始想法是使用表型选择的加树的后代测试仅用于家长排名。第二代育种的基础是通过交叉最好的排名树（WERNER et al。，1981;Pitkäntähtäyksenmetsänjalostusohjelma，1989）创建的。这项计划也已经实施，例如英国的Sitka云杉（LEE，1993）。然而，出现的问题是在长期的育种中是否使用测试后代的树木或其后代。在某些情况下，来自加树的后代中的表型选择实际上可能是有利的选择（SPANOS等，1997）。
+LINDGREN（1986）指出，作为一般原则，最好的后代测试的基因型应该被向后选择，而另一些则是前进的。这是由于大多数森林树种育种病例中最佳基因型与被认为具有相当低的育种价值的个体相配的事实所致。因此，后代平均比最佳父母本身具有较低的育种价值。差异随着父母遗传价值的增加而增加，而家庭内选择增益则与父母的价值无关。因此，通过选择子代中最好的个体获得的收益变得越来越难以与母体育种价值一致增加的差异平衡。因此，反向选择是排名最好的父母最有利的方法。一个原因是选择向后并不意味着引入新的遗传关系，而是保持最佳创始人的基因质量完好无损。
+本研究的目的是开发一种比较反向选择和个体基因型前向选择作为其等级的函数的方法，并为这些选择方案之间的比较创造更坚实的理论依据。该研究还对前后选择增益差异的大小进行了评估，并确定了哪些因素影响了向后和向前选择之间的平衡。</p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/%E8%82%B2%E7%A7%8D/ruotsalainen2000a-%E5%88%86%E5%B1%82-%E4%BA%9A%E7%B3%BB-%E9%81%BF%E5%85%8D%E8%BF%91%E4%BA%A4/">
+                <h2 class="post-title">Ruotsalainen2000a-分层-亚系-避免近交</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>Ruotsalainen S, Lindgren D (2000) Stratified sublining: a new option for structuring breeding populations. Can J For Res 30(4):596–604.</li>
+</ol>
+</blockquote>
+
+<p>当将繁殖种群构建成子系统时，常规方法是将父母随机分配给子系，以使每个子系具有大致相同的遗传价值。通过使用确定性无穷小模型，我们研究了一种替代的分层次序系统，其中，根据其育种值，最初由父母的正分类分组形成子系。通过评估每种方法可以提供的种子果园的遗传质量来比较分类和随机分配到子系统。通过从每个子系中首先选出最佳个体，然后从它们给出最佳比例来建立种子果园。分层次序中亚组间差异越大，导致种子果实的遗传增益高于随机亚基。对于所研究的案例，<strong>分层次数比随机次数更多地获得了遗传增益</strong>，超过15％以上，成为值得进一步考虑和研究的有意思的替代方案。</p>
+
+<p>引言
+在先进的树种育种中，育种人口中的树木之间的相关性不可避免地会增加。如果种植的树木受到近亲繁殖的抑制（Lundkvist et al。，1987; Williams and Savolainen，1996），这可能导致种植园的增长损失。<strong>自交通常不是一个严重的问题，因为隐性基因的更高的纯合子导致合子的死亡率;然而，这种相同的机制不能有效地防止由较少相关的交配引起的近亲繁殖。这在未来的种子园有可能成为一个严重的问题</strong>。将繁殖种群（感染条件）划分为繁殖分化的亚系是避免育种的有害影响的方法（例如McKeand和Beineke 1980; van Buijtenen 1984; Zobel和Talbert 1984; White 1992）。繁殖种群中的所有交配都严格地在子系统内，使得子系统保持不相关。这导致繁殖群体中近亲繁殖的积累更快，如果它作为一个单一的交错群体保持。即使果园的父母本身是高度近亲的，用任何一个子系的单一（顶级）类型建立的种子果园将产生完全非近交种子（没有自交）。因此，繁殖种群中的子系数可能取决于种子果园所需的不相关克隆的数量。建议的分支线数通常在15到30之间，但<strong>只有两个可能就足够了</strong>，如果通过控制授粉进行种子生产（Burdon 1986; White 1992）。子系的大小取决于近亲繁殖抑制的程度和繁殖计划的时间范围。通常，子系由1540基因型组成（Burdon et al。，1977; White 1992）;然而，还有使用更小的子系统的建议，例如McKeand和Bridgwater（1998）提出的四个。通常通过将选定的树木随机分配给育种群体中的子系统来完成针对某一生态生态区域的某些生态系统区域或某些其他特定育种对象的森林树种育种。目标是不同的分公司在遗传上处于同一水平。事实上，有时候这已经被包括在子系统的定义中（Burdon和Namkoong 1983）。如果对群体的划分旨在导致群体的不同遗传价值，则可以将其视为更多的是高等级养殖种群结构的问题（Cotterill等人1989; Cramer和Kannenberg 1992; White et al.1993 ），或更一般地，在繁殖周期中对群体层次进行微调。
+可以使用正分类交配（PAM）来增加群体的变异，从而使选择更有效（Falconer和Mackay 1996; Rosvall 1999）。如果用单对交配完成，也可以将其视为根据树木的繁殖价值将群体划分为大小二的子系统。然而，在继续的PAM中，每一代的分割线都被破坏了。一个有趣的问题是，当PAM和亚精细化相结合时，遗传增益受到影响，从而根据遗传价值进行修整，并将子系列保留几代？〃在本研究中，我们评估分层的后果育种人口根据育种价值观，使亚系代表不同的遗传水平。在我们的层次化方法中，子系统彼此间完全不相关，其主要目的是通过提供无关的种子果树父母来防止繁殖种群中的近亲繁殖。这是一个基线特征（Burdon和Namkoong 1983; White 1992）。
+这项研究的目的是提出一种基于分层次序的育种策略，并将其与通过其支持的种子果园的遗传价值的传统平行次序策略进行比较</p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/%E8%82%B2%E7%A7%8D/ruotsalainen2001-%E8%82%B2%E7%A7%8D%E7%BE%A4%E4%BD%93%E4%B8%AD%E4%BA%B2%E6%9C%AC%E7%9A%84%E4%B8%AA%E6%95%B0/">
+                <h2 class="post-title">Ruotsalainen2001-育种群体中亲本的个数</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>Ruotsalainen S, Lindgren D (2001) Number of founders for a breeding population using variable parental contribution. For Genet 8(1):57–67.</li>
+</ol>
+</blockquote>
+
+<p>这项研究考虑了一个可以获得大量后代测试加上树木的情况，其中最好的排名被用作下一代繁殖种群的创始人。问题是<strong>如何获得具有给定水平的遗传多样性的最大遗传增益。遗传多样性水平固定为同等贡献的家庭内选择所获得的水平</strong>，资源通过保持全部同胞家庭数量和规模不变而得以确定。通过确定性建模，建立育种群体的家庭间遗传收益最大化。这是通过选择更多的创始人而不是在同等的贡献的情况下进行的，并允许他们在下一代由一个，两个或三个后代取决于他们的育种价值。<strong>通过改变两个参数来研究可变贡献的影响：选择强度（测试加树数）和所得第二代繁殖群体的遗传多样性（状态数）</strong>。<strong>创造者人数相对于同等贡献增加20％至23％，当遗传多样性保持不变时，遗传增益最大</strong>。最佳创始人人数随测试加树数和状态数量的增加而增加。创始人贡献率最高的规模随测试加树木数量的增加和状态数量的减少而增加。通过可变贡献获得的额外遗传增益的数量越大，选择强度越小，状态数越少。在典型的情况下，家庭间遗传收益可以增加7％，创始人的数量增加22％，并允许他们对下一代作出不平等的贡献。大多数额外的遗传增益是在最初的几位创始人加入之后获得的。</p>
+
+<p>介绍
+林木育种计划通常是通过选择一些父母 - 加上树木 - 从森林中进行测试和交配，然后从其后代中选出的。创始人的数量可以基于预测，以便将近亲繁殖和相关性保持在未来的可接受的低水平，遗传变异在如此高的水平上，未来的收益没有严重降低（WHITE 1992）。经济妥协和其他考虑也适用（LINDGREN 1991）。保留大型遗传多样性的重要性取决于育种计划的时间范围（WRAY＆GODDARD 1994）。<strong>针对几代人不断改进的育种计划，必须考虑遗传多样性</strong>，而不是短时间的计划。以最大化遗传多样性的方式利用预定数量的创始人的一种方式是使用家庭内部选择，并允许每个创始人对下一代作出同样的贡献。这种平衡的家庭内部选择程序可能最大限度地延长选择的长期限制（DEMPFLE 1975）。然而，这个结论最近被挑战（VILLANUEVA＆WOOLLIAMS 1997）。目前的瑞典森林树种育种计划可以描述为（主要）平衡的家庭内部选择程序（DANELL 1995，ROWALL et al。1998）。因此，基于家庭内部选择的平衡程序作为参考是有趣的。已经表明，为了在遗传多样性和遗传增益之间做出最佳的妥协，优选让最佳选择的基因型比下级更有贡献（LNDGREN1974，TORO＆NIETO 1984，LINDGREN1986， LINDGREN＆MATHESON1986，TORO＆PEREZ-ENCISO 1990）。处理遗传增益和多样性之间的权衡有几种可能性。一些方法就相关性的遗传增益确定成本，从而将两者的数量转换为相同的量表（LNDGREN1986，LINDGREN＆MATHESON1986，WKAY＆GODDARD 1994）。问题是找到进行转型所需的正确成本因素。 TORO和NIETO（1984）提出了一种选择创始人数量及其可变性的方法，使得有效的群体大小（因而遗传多样性）被最大化，具有给定的遗传增益。另一种解决方案是利用给定的遗传多样性来最大化遗传增益（LINDGREN等，1989，MEUWISSEN 1997）。种子果园中克隆的最佳比例与其育种价值呈线性关系（LINDGREN＆MATHESON，1986）。同样的关系也约有一个繁殖种群：每个家庭的最高排名表型应从家庭平均线性比例中选出，以便在给定的有效人口数量上获得最大收益（LINDGREN 1986，WEI＆LINDGREN 1995） 。在一些林木育种计划中，繁殖种群被分为几个遗传上不同的分数，对下一代来说，它们的遗传价值越高（例如WHITE等人，1993）。一个例子是开核培育策略，其中较高等级的树形成了比主要群体更密集的核（COTTERILL等人，1989）。本研究着重于一些可以进行交配的测试加树的情况，并且已经修复了所需的下一代育种种群规模和多样性。这项研究的目的是开发和分析一种明确的方法，用于决定在为第二代选择产生招聘人数时测试的加树应该做哪些贡献。在这种可变贡献方法中，搜索创始人的数量及其贡献的组合，使其具有给定的遗传多样性使遗传增益最大化</p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/rcodes/r%E4%B8%AD%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%9C%B0%E5%AF%BC%E5%87%BA%E5%BE%88%E5%A4%A7%E7%9A%84character-#rstat%23/">
+                <h2 class="post-title">R中如何快速地导出很大的character-#rstat#</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>今天要将句子库导出，方便用filelocator查询，但<code>write.table</code>实在低消，需要将character分割，而且分割得太大的话总是内存不够。<code>data.table</code>中的<code>fwrite()</code>能够苗存，太牛了。</p>
+</blockquote>
+
+<pre><code># library(data.table)
+db &lt;- list(db)
+setDT(db)
+fwrite(db, &quot;./result/sent.txt&quot;, quote = F, row.names= F)
+</code></pre>
+
+<p>from: <a href="https://stackoverflow.com/questions/37068537/exporting-large-character-vector-as-csv-file-in-r">https://stackoverflow.com/questions/37068537/exporting-large-character-vector-as-csv-file-in-r</a></p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/%E9%9A%8F%E7%AC%94/r%E8%AF%AD%E8%A8%80%E9%97%A8%E5%A4%961%E5%85%AC%E9%87%8C%E5%88%B0%E5%A4%A7%E9%97%A8%E5%8F%A3/">
+                <h2 class="post-title">R语言门外1公里到大门口</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  R是非常容易入门的一个统计软件或语言，它是辅助工具，不是主体，应该配合统计相关内容一起学习。
+ 我第一次听说这个软件还是在浙林的时候，邬荣岭老师的讲座或是培训会议上。真正开始接触是2014年，因为要利用asreml去计算遗传参数。最高效的学习往往发生在你急需这些知识或技巧的时候，所以最好是手上有需要使用R的任务，当然在这之前可以熟悉一下简单的操作比如+-*/、数据的导入。
+我主要用到的参考资料有 1. R语言实战（第2版）  R数据可视化手册——这是本工具书，查阅画图参数  华南农大林元震老师主编的r与asreml-r统计分析教程——主要是后边asreml-r部分，我觉得林老师参考了一些新西兰Canterbury大学Luis Apiolaza老师的ASReml Cookbook。Luis的个人网页也有一些有用的内容和Twitter。   林老师的这本书出到了第2版，比上一版厚了一倍，如果把程序输出结果拿掉能去掉一半的内容。这本书更像一本讲义或者是笔记，没有很多理论性的内容，通常只有一个简略的概念，一个样例和代码及太多的输出结果。所以这是本工具书，需要相关的代码直接翻书查找（高级代码还得去stackoverflow）。没有统计知识也是它的优点，你看不到容易恐惧的公式和推导，除了LMM那一丁点儿。另外一个优点是第7章——试验设计。《实战》没有这部分内容，也未见到有相关的R书籍。如果林老师下次能把试验设计交代得更细致一点，比如给个图就更好了。另一个特点还是遗传评估这一章，对于遗传育种专业并且需要进行参数估算的geneticist和breeder可以重点敲这一部分的代码。林老师还有一个非常重要的贡献在于他自己写了一部分批处理的函数AAfun，在处理数据时，尤其有较多的变量时会比较方便。除了这2章外，其余的内容在其他的R工具书中一般也都有涉及，所以拿这本书学习R也是合适的（但我首推的还是《实战》，无出其右者）。同样，这本书也事无巨细。达成一个目的途径很多，掌握自己最舒服的一个就可以了，其余的不感兴趣大可不必学习。
+所以，自认为一个入门者，以林老师的这本第2版，按照浓缩一下数据管理（导入、处理和导出）这一部分，给还未接触而又有必要学习的同仁铺点路，也给自己一个梳理复习的机会。
+21 July 2017 更新 第1章 R简介  简介不是重点，不用看。 Rstudio不是强烈建议要安装，而是必须安装！！！  ###第2章 基础语法 - 2.1 对象与变量 - 赋值符号&lt;-在Rstudio中的快捷键是&lsquo;Alt&rsquo;+&lsquo;-&rsquo;。 - 2.1.1 变量创建 比如有树高和胸径要算材积指数，（当然在Excel中算好后导入也可以），学会方法一就够用了。给的例子是直接搬《实战》的，连数据都没改但书的架构为什么不借鉴一下？ - 2.1.2 变量命名用方法二names()，矩阵没有变量，行名和列名分别是rownames()和colnames()。 - 2.2 运算符为何不放在最前面？ - 2.3 表达式一看就会不是吗？有几个情况会用到表达式： 1. 写模型时 2. 画图涉及到公式时（需要在图上放拟合模型） 3. 构建关联矩阵时（model.matrix） - 2.4 NA是缺失值， NULL是空值。NULL在写函数时会很常用，比如要先建个空的向量或矩阵，然后循环把数值放进去。 - 2.5 控制结构 - 2.5.1 if/else写函数时比较常用，switch用的不多。 - 2.2.2 for循环是批量处理的关键函数，有人诟病因为它比较慢，但它的呈现非常直接，易读。当对象是list的时候用lapply则比for要好用很多。while也常用，比如迭代时。 - 2.6 自编函数是不是放在数据管理后面会更好？因为学习顺序是那样的，数据还不会导进去怎么会写函数？
+                  <a href="../../../post/%E9%9A%8F%E7%AC%94/r%E8%AF%AD%E8%A8%80%E9%97%A8%E5%A4%961%E5%85%AC%E9%87%8C%E5%88%B0%E5%A4%A7%E9%97%A8%E5%8F%A3/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/stat/s1--%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%E7%9A%84%E6%96%B9%E6%B3%95/">
+                <h2 class="post-title">S1--方差分析的方法</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  Venkateswarlu K., 1997 Estimation of Variance Components Based on a Diallel Model Involving Maternal and Maternal Interaction Effects. Biometrical J. 39: 287–295.
+ There are several methods available in the literature for the estimation of variance components. These are: 1. Analysis of Variance (ANOVA), 2. Maximum Likelihood (ML) (HARTLEY and RAO, 1967), 3. Restricted Maximum Likelihood (REML) (PATTERSON and THOMPSON, 1971; CORBEIL and SEARLE, 1976), 4. Minimum Norm Quadratic Unbiased Estimation (MINQUE) (RAo,1971a, 1971b), 5.
+                  <a href="../../../post/stat/s1--%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%E7%9A%84%E6%96%B9%E6%B3%95/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/stat/s3--%E5%8A%A0%E6%80%A7%E6%A8%A1%E5%9E%8B-additive-model/">
+                <h2 class="post-title">S3--加性模型-additive-model</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>A.F. Zuur et al., <em>Mixed Effects Models and Extensions in Ecology with R</em>, p36, chr 3.2</p>
+</blockquote>
+
+<p>当线性模型的种种条件不能满足时，就要考虑用平滑性模型来替代。平滑性模型可以对非线性关系建模，也被称之作<strong>加性模型</strong>。加性模型是一般加性模型（<strong>GAM</strong>）的一类，是具有高斯分布的一般加性模型。
+*<strong>Y_i* = *α* + *β* × *X_i* + *ε_i</strong>*</p>
+
+<p>线性模型中最重要的是参数<strong>β</strong>，加性模型中是利用一个平滑函数将<strong>Yi </strong>和<strong>Xi </strong>连接起来。即：
+ ​<strong>Y_i* = *α* + *f* (<em>X_i</em>) + *ε_i</strong>
+​用平滑曲线*<strong>f *(*X</strong>i*)<strong>替代了线性模型中的</strong>*β × Xi ***。</p>
+
+<p>线性模型​给了我们一个方程Y和X之间的关系用参数<strong><em>β </em></strong>量化。<strong>GAM</strong>中没有这样的方程，只有一个平滑函数，唯一能做的是把它画出来。这不是说不能用于预测了，同样可以，只是没了方程而已。置信区间变成了置信带。
+<img src="http://upload-images.jianshu.io/upload_images/3289684-309f9b612c52f319?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/stat/s4--%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/">
+                <h2 class="post-title">S4--线性回归模型</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  
+
+<blockquote>
+<p>A.F. Zuur et al., <em>Mixed Effects Models and Extensions in Ecology with R</em>, p17-25, chr 2.2-2.3</p>
+</blockquote>
+
+<h1 id="1-模型">1.模型</h1>
+
+<p>*<strong>Y_i* = *α* + *β* × *X_i* + *ε_i</strong>**</p>
+
+<p><strong><em>ε_i</em></strong>包含不能解释的信息，并且*ε_i *∼ <em>N</em>(0*,σ^*2)。
+用样本估计​***α <strong><em>和</em></strong>β*<strong>的置信区间，</strong>置信区间<strong>告诉我们如果重复实验很多次，​</strong>*α <strong><em>和</em></strong>β<strong><em> 的真值落入该区间的可能性。
+估计参数​</em></strong>α <strong><em>和</em></strong>β*<strong>需要假设：</strong>正态、同质性<strong>，固定的X，</strong>独立性**及特定而正确的模型。
+正态是指对任何X，对应的Y们服从正态分布。同质性是指对于全部的X，对应的Y的高斯密度曲线们都是一样的（下图）。
+<img src="http://upload-images.jianshu.io/upload_images/3289684-afa72cf8bc2ee55d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<h1 id="2-模型验证">2.模型验证</h1>
+
+<p><strong>模型验证</strong>过程，就是验证一系列的假设。
+因中心极限定理的缘故，有人说正态性的验证不是一个严重的问题(Sokal andRohlf, 1995; Zar, 1999)。甚至有人说如果样本量够大，正态验证不是必要的(Fitzmaurice et al., 2004)。
+对于每个X值处的<strong>正态验证</strong>，需要对X值处Y值们做直方图。但通常每个X那里没有足够的Y，在这种情况下，最好的做法是把全部的残差混起来做一个直方图。这样做保证了残差的正态性，但我们并不能因此得出整个群体的Y是服从正态分布的。很多时候我们对Y画一个直方图来判断其正态与否，但这是有前提的：在每一个X处都有重复的观测值。否则不能单单根据观测值的直方图来判定其正态性，而是应该<strong>利用一个模型，检查残差的分布情况</strong>。
+​<strong>同质性</strong>是要求在每一个X值处，观测值有相同的分散程度。这样判断有点主观，Barlett’s test是客观的方法，但软件要求数据要正态分布，这是有问题的，而且​​​​​Barlett’s test对非正态数据的同质性非常敏感，所以只靠图检残差分布是否一致是更好的选择。严重的异质性是非常要命的。转换数据可以部分解决，但缺点是会改变之间的关系。
+<strong>独立性</strong>的验证是最重要的，因为它能使一些重要的检验如<em>F</em>-test和<em>t</em>-test无效。不独立是指X处的Y值受到另一个X变量的影响​。
+在相信获得的<em>F</em>-statistic​并利用5%拒绝水平前，需要确信所有的模型假设都是有效的。标准的模型验证图有<strong>（1）残差vs拟合值验证同质性，（2）QQ或直方图验证正态性，（3）残差vs每个自变量检验独立性</strong>。
+<img src="http://upload-images.jianshu.io/upload_images/3289684-2fb1816bb8bbe1da?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/stat/s5--%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1ml%E5%92%8Creml/">
+                <h2 class="post-title">S5--最大似然估计（ML）和REML</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>A.F. Zuur et al., <em>Mixed Effects Models and Extensions in Ecology with R</em>, p116-119, chr 5.6</p>
+</blockquote>
+
+<p>当利用混合效应建模时，你会遇到诸如<strong>REML</strong>和<strong>ML</strong>这样的词汇。不像线性回归模型，就算你不知道背后的数学理论也可以照样使用。但是在混合效应建模中，你必须懂得一些相关的数学知识。所以REML是什么意思？它能干什么？
+第一个问题比较简单，REML限制性最大似然估计英文首字母的缩写。但是对于第二个问题，大多数教材在这点上就变得相当专业，或者解释得比较粗略，只是提到它是矫正自由度的一个神秘方法。而我们则选择尝试更为详细地解释它，所以需要利用矩阵代数的知识。但是为了理解REML，首先需要理解最大似然估计的原理，我们从这儿开始。如果你不熟悉矩阵代数，或者如果这一部分对数学水平的要求太高，我们仍建议你跳过这一部分。
+我们首先回顾用于线性回归的最大似然，然后给出REML是如何用于矫正方差估计子的。
+假设有一个线性回归模型<img src="http://upload-images.jianshu.io/upload_images/3289684-0db7e3ae6226351d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+模型中有3个未知参数α, β, and σ。为了简便，θ = (α, β, σ ) 。普通最小二乘是估计θ的一个方法。给出θ中每一个元素的表达式。利用线性回归获取方差估计的表达式是：
+<img src="http://upload-images.jianshu.io/upload_images/3289684-d9edcfc5add18482.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /><strong>（5.14）</strong>
+我们给参数加了一个帽子^，表示它是估计值，n是观测值的个数。可以证明σ^是σ的无偏估计，意味着E（σ^）=σ。现在让我们看一看最大似然估计方法。假设Y_i服从正态分布，其密度函数为
+<img src="http://upload-images.jianshu.io/upload_images/3289684-4c2a5bb931bedfb9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+因为我们也假设了Y_i是独立的，可以将Y1,Y2,&hellip;,Yn的联合密度函数写成单个密度曲线f1,f2,&hellip;,fn乘积的形式。这个乘积就叫做<strong>似然函数*L</strong>*。它是数据和θ的一个函数。问题是如何选择θ使L最高。为了简化，对L取自然对数，得到如下的log-似然方程式：</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-9563527fc24fa83f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+我们需要最大化这个式子，问题就变成了对每一个参数偏导，令偏导数=0并求解。因为我们很容易计算，这些偏导数=0的式子称之为<strong>封闭解</strong>。对于线性混合模型我们将会看到<strong>开放解</strong>，意思是参数没有直接的解。
+这里没有给出α和β估计子的式子，但对于方差我们得到：
+<img src="http://upload-images.jianshu.io/upload_images/3289684-61cabd3ef71b1ba5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+注意这个式子与我们利用普通最小二乘得到的式子（5.14）非常相似。实际上，受到因子（n-2）/n的影响，利用最大似然得到的方差估计子是有偏的（<a href="http://www.jianshu.com/p/66c643f89f32">S6. 回归分析为什么误差方差中自由度是n-2？</a>）。如果线性回归模型含有*p*个解释变量，那么偏度是（n-p）/n。<strong>最大似然是有偏的的原因是它忽略了截距和斜率也被估计的事实。所以我们需要更好的ML估计子，而这正是REML所做的事情</strong>。
+REML的工作如下：线性回归模型<img src="http://upload-images.jianshu.io/upload_images/3289684-0db7e3ae6226351d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />可以写成
+<img src="http://upload-images.jianshu.io/upload_images/3289684-b1604dff3a0237be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />，这是简单的矩阵形式，Xi=（1 Xi），β的第一个元素是截距，第二个元素是原始的β。正态性假设意味着
+<img src="http://upload-images.jianshu.io/upload_images/3289684-6c04857f17d78adc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /><strong>（5.18）</strong>。
+用ML估计子的问题是我们不得不估计式子（5.18）中β中的截距和斜率。显然，如果没有β，就能解决问题。为了消除β，可以找到一个维度n × (n – 2) 的特殊矩阵<strong>A</strong>，特殊指的是“与<strong>X&rsquo;</strong>正交”，然后用这个矩阵乘以<strong>Y</strong>=（*Y1*，&hellip;，*Yn*）&rsquo;之后再用ML估计。正交指的是如果A与X相乘，结果是0.因此，我们得到A&rsquo;×Y=A&rsquo;×X×β+A&rsquo;×ε =0+A&rsquo;×ε =A&rsquo;×ε 。现在A&rsquo;×Y的分布是
+<img src="http://upload-images.jianshu.io/upload_images/3289684-a9d2b5af1f90993a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />，而不再依赖β。那么对A&rsquo;×Y进行似然估计就会得到σ 2的无偏估计子（5.14）。现在我们讨论REML如何应用到混合线性模型。我们的起点是边际模型
+<img src="http://upload-images.jianshu.io/upload_images/3289684-2b54a43157f60659.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />。故事又重新开始，如之前，我们可以写一个略微不同的log似然式子。未知参数是β和D及Σ中的元素，依然用θ 表示。似然函数：
+<img src="http://upload-images.jianshu.io/upload_images/3289684-da4a52b1a18d6f0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+|Vi| 是Vi的行列式。对β求偏导并=0解方程。如之前讨论的例子，得到的参数是有偏的，因此我们需要REML。
+总之，<strong>REML，就是用一个特殊的矩阵乘以Y，这样X×β就消去。然后用ML估计得到的参数估计子就是无偏的，并且与特定的矩阵相乘无关</strong>。因此，β的REML估计子与ML的估计子不同。<strong>如果相对于观测值的个数，固定协变量的个数很少，就没有太大的不同，相反有许多的固定协变量，情况就大不相同。</strong></p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+        </div>
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="../../../post/page/27/">&larr; Newer Posts</a>
+              </li>
+            
+            
+              <li class="next">
+                <a href="../../../post/page/29/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../post/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

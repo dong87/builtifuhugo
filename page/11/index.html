@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Dong&#39;s blog</title>
+  <meta property="og:title" content="Dong&#39;s blog" />
+  <meta name="twitter:title" content="Dong&#39;s blog" />
+  <meta name="description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta property="og:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="twitter:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../" />
+  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../">
+            <img class="avatar-img" src="../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Dong&#39;s blog</h1>
+                
+                  
+                    <hr class="small">
+                    <span class="page-subheading">Enterprising &amp; Concentrating欢迎光临！</span>
+                  
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div role="main" class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+          <div class="well">
+            
+
+<h2 id="front-page-content">Front Page Content</h2>
+
+<p><code>beautifulhugo</code> supports content on your front page. Edit <code>/content/_index.md</code> to change what appears here. Delete <code>/content/_index.md</code> if you don&rsquo;t want any content here.</p>
+
+          </div>
+        
+
+        <div class="posts-list">
+          
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/fuentes-utrilla2017-rad-qtl-gs-%E8%A5%BF%E5%8A%A0%E4%BA%91%E6%9D%89/">
+                <h2 class="post-title">Fuentes-Utrilla2017-RAD-QTL-GS-西加云杉</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (155 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Fuentes-Utrilla P, et al. (2017) QTL analysis and genomic selection using RADseq derived markers in Sitka spruce: the potential utility of within family data. Tree Genet Genomes 13(2):33.   摘要 Sitka云杉（云杉坐落（Bong。）Carr）是英国最常见的商业种植园物种，基于传统线的育种计划自20世纪60年代初开始运行。 40年的旋转长度使得育种者基于与最终选择相关的性状，在年龄较小时采用间接选择过程，但是仍然在20年以下，产生间隔不可能减少太多。最近在动物育种中进行地理选择的成功发展已经使树种育种者考虑这种技术的应用。在本研究中，开发了一种RAD序列测定法作为研究非模型物种中分子育种潜力的方法。 DNA是从英国一个地点的单一全同胞家族中生长的近500个克隆复制的树中提取的。该技术证明了在鉴定132个5年芽爆发的QTL和6年高度的2个QTL中是成功的。此外，通过基因组选择预测表型的准确度惊人地高，分别在0.62和0.59。敏感性分析与200后代发现只有轻微下降的相关值（0.54和0.38），虽然当培训人口减少到50个后代预测值进一步下降（0.33和0.25）。这证明了对Sitka云杉育种中基因组选择的潜在用途的令人鼓舞的首次调查。作者研究如何避免与有效群体大小和连锁不平衡相关的问题，并建议将基因组选择纳入动态育种计划的实用方法。
+关键词Sitka云杉。基因组选择。 RADseq。分子育种。高度。芽爆
+##介绍
+Sitka云杉（云杉云杉（Bong。）Carr）是当地的狭窄范围的海岸线沿太平洋西北部的海岸伸展近3,000 km从阿拉斯加中部到北加利福尼亚。该物种在北欧的种植园林中发挥重要作用（Hermann 1987），并且是目前在英国和爱尔兰种植最广泛的针叶树，在那里它占有超过100万公顷的土地。它还对丹麦，法国和最近的瑞典（Lee等人2013）的林业作出了商业贡献。在其本地范围内和超出其本地范围，它主要用于建筑木材和木浆（Bousquet等人2007）。英国有一个活跃的Sitka云杉育种计划，其主要目标是通过选择父母结合良好的生长率，提高茎平直度，分枝质量，增加建筑级木材工业的旋转结束价值和木材刚度（Lee和Connolly 2010）。 基因试验中Sitka云杉的最终选择目标是最终旋转量和优质建筑级木材的比例增加。为了加速基因试验中的选择过程，育种者采用间接选择。这涉及在年轻时基于与最终选择目标很好相关的性状进行选择。例如，Sitka云杉的6年高度是最终旋转体积的代用品，Pilodyn炮的针深度在12-15岁时与中旋木整体树木密度相关，这是木材强度的一个很好的指标（Lee et al.2002a，b）。间接选择自1963年开始实施以来取得了一些成功，并且在基于早期后代测试数据（反向选择）的重新选择上级亲本树方面取得了良好进展，以构建第一代育种人口。在一些物种中，在后代试验（前向选择）中的早期间接选择以及技术的发展，例如从那些选择将接枝接枝到已建立的成熟树的上冠区（称为顶端嫁接; Goading等人，1999）后续移植物的化学处理已经提高了开花的年龄，进一步降低了产生间隔。 树种繁殖者一直在寻找方法来减少操作成本和生成间隔。分子工具为降低完成这些选择周期所需的成本和时间提供了一个潜在的解决方案，在过去十年中，林木树种的开发受到了相当大的兴趣和一些显着的进步。除了减少育种周期的长度外，分子方法可以提供增加选择强度和减少现场测试工作的机会（Grattapaglia，2014）。早期的试图使用涉及与表型性状的关联研究中的遗传标记没有履行他们在森林树木中的目标候选基因或发展密集的SNP面板在全基因组关联研究（GWAS; Beaulieu等2011）。这是因为（i）这些方法只解释了研究中性状变异的一小部分，（ii）鉴定的关联在群体或环境中不能很好地转移（Pelgas et al。2011; Ritland et al。2011） 。这一经验反映了在涉及家畜的更大的全基因组关联研究中发现的那些（Houston等人2008），但是是一个例外（Meuwissen等人2016）。由于这些原因，树种繁殖者发现GWAS技术没有什么实际用途，虽然它们有助于确定QTL和科学界仍然感兴趣的因果性方差。 最近，重点转向了首先由Meuwissen等人提出的地理选择（GS）的概念。 （2001）用于动物育种。 GS技术未提出验证与致病变体相关的标记，而是同时使用所有SNP标记以最大化估计的估计值的准确性。 GS使用“训练”群体，其使用大量标记进行基因分型并对感兴趣的性状表型。然后，这些数据用于基于群体中个体之间的基因组关系的构建来创建预测模型（G-BLUP），其然后可以用于预测仅存在SNP基因型信息的个体的育种值。这种方法的益处是，一旦获得了一组SNP标记，GS可以用于任何性状，即它不涉及性状特异性标记，例如在GWAS中使用的那些。 GS方法是有吸引力的，因为它有提高选择精度和促进更大的选择强度，同时大大减少生成间隔的潜力（Grattapaglia和Resende 2011）。 Beaulieu等人的GS研究（2014）显示，少于2000人的训练集可以提供与传统的基于田间的开放授粉白色云杉（P. glauca）家族的评估相当的预测准确性。 GWAS和GS方法的先决条件是大量SNP标记的可用性。对于家畜，广泛的国际测序计划促进了大规模的SNP发现，并且这些标记的可用性使得能够开发出范围从60k的猪到超过700k的牛和绵羊的范围的SNP板（Van Raden等人2013）。这样的面板也已经在作物植物中开发，目前60k SNP阵列可用于水稻和玉米（Gupta等人2008）。相比之下，针叶树测序由于其基因组的大尺寸和高度重复的性质而具有挑战性。最近公布的白云杉（Birol等人2013和挪威云杉（Picea abies; Nystedt等人2013）的基因组草图每个估计为〜20Gb长，与人类基因组的〜3Gb相比（Venter等人2001 ）和485Mb（Tuskan等人2006）。 Sitka云杉只有有限的测序工作，这阻碍了实施GS的必要基因组工具的开发。 在尚未获得组装的基因组序列的物种中，诸如在RAD测序中使用的表达文库（Restriction-site Associated DNA Sequencing或RADseq; Davey等人2011）提供了相对便宜的替代方法，用于鉴定GWAS和GS方法所需的大量SNP（Andrews等人，2016）。到目前为止，RADseq已经应用于树种，如桉树和挪威云杉以及多年生植物如草（Grattapaglia et al。2011; Slavov et al。2014）。 即使具有足够大小的适当设计的SNP文库以应对大型针叶树基因组，实施也存在进一步的挑战。 Neale和Savolainen（2004）提出，由于它们相对较大的有效种群大小（Ne），一些针叶树种群中的位点之间的连锁不平衡（LD）将仅比家养的家畜种群延伸相对较短的距离。这导致得出结论，GS仅可能在其中Ne大大减少的群体中成功，例如高度选择的育种子群体或种子园。 （Thavamanikumar et al。2013，Beaulieu et al。2014）。然而，森林树木对家畜的一个优点是，可以通过受控授粉产生非常大的全同胞家系，然后收集大量的锥体和种子。在单个全同胞家族中，LD延伸长距离，与开放授粉群体相反，这可以用于开发GS的操作方法，以选择家族中的个体。 在松属（Resende等人2012a和2012b）和几种桉树物种（Resende等人2012c）中基于林木树种的初步实验来测试GS在估计一系列选择的育种值方面的表现使用具有有效有效群体大小的群体，数千个标记和大的训练群体的森林树木的性状。例如，使用基于32个亲本的61个全同基因交叉的群体，训练800或951个个体和约4,853个SNP标记的群体Resende等人（2012a和b）获得了in藜九个选择性状的预测精度在0.
+                  <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/fuentes-utrilla2017-rad-qtl-gs-%E8%A5%BF%E5%8A%A0%E4%BA%91%E6%9D%89/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/diallel/fukatsu-2013-%E5%AF%86%E5%BA%A6-%E5%8F%8C%E5%88%97-%E6%97%A5%E6%9C%AC%E8%90%BD%E5%8F%B6%E6%9D%BE-/">
+                <h2 class="post-title">Fukatsu-2013-密度-双列-日本落叶松-</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (39 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>Fukatsu E, Tsubomura M, Fujisawa Y, Nakada R. Genetic improvement of wood density and radial growth in Larix kaempferi: Results from a diallel mating test. Ann. For. Sci. 2013;70:451–9.</li>
+</ol>
+</blockquote>
+
+<p>背景
+木材密度是木材质量的重要组成部分，因此评估其是否可以进行遗传改良很重要。
+目的和方法
+ 我们通过记录年度生长环的成分，评估了Larix kaempferi木材密度遗传改良的潜力。使用基于六株优树的完全双列交配测试。树木29岁。通过软X射线光密度法记录木材密度，计算遗传参数和遗传增益。
+ 结果
+ 成熟木材的木材密度是高度遗传的，在25岁时达到最大遗传力（0.78）。SCA和正反交效应显示非常低的方差。总体木材密度的年龄相关性非常高（&gt; 0.94）。总体木材密度和基底横截面积之间的遗传相关性在10岁后是阳性的。在6岁时的早期选择将占根据木材密度在28岁时直接选择的遗传获得的69％。</p>
+
+<p>结论
+ 木材密度的遗传改良可以通过大规模选择和同时选择径向增量在日本落叶松中实现;可以在这个物种中实现木材密度的早期选择。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E8%82%B2%E7%A7%8D/funda2009-%E7%A7%8D%E5%AD%90%E5%9B%AD%E5%A4%9A%E6%A0%B7%E6%80%A7%E5%92%8C%E5%A2%9E%E7%9B%8A%E7%9A%84%E4%BC%98%E5%8C%96/">
+                <h2 class="post-title">Funda2009-种子园多样性和增益的优化</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (95 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>Funda T, Lstibůrek M, Lachout P, Klápště J, El-Kassaby YA (2009) Optimization of combined genetic gain and diversity for collection and deployment of seed orchard crops. Tree Genet Genomes 5(4):583–593.</li>
+</ol>
+</blockquote>
+
+<p><strong>种子园作物的遗传收获和多样性取决于父母数量，育种价值和相关性，园内授粉效率和花粉污染程度</strong>。这些参数可以通过改变克隆表现（例如，线性展开），在通过遗传变薄的果园发育过程中或通过选择性收获在操作中进行操作。由于已知克隆繁殖力在年内和年内都有变化，所以每种种子作物都具有独特的遗传组成，因此每年应对作物进行处理。在这里，我们提出一个优化协议，通过选择满足两个参数的作物子集，使作物在任何所需遗传多样性方面的遗传增益最大化。遗传增益在每个克隆的种子锥生产设置的生物学极限内最大化，有效种群大小用作遗传多样性的代理，因此考虑克隆之间的任何关系。使用第一代西部落叶松种子果园的3年生殖产量数据进行了优化，并在各种情景下进行了测试，包括实际的雄性和雌性生殖产量，男性生殖产量假设等于雌性或女性的功能克隆代表此外，在补充模拟中，将各种级别的共同分配给果园的克隆。优化后，所有解决方案都有效地创建了具有不同增益和多样性水平的定制种苗，并提供了估计多年来剩余的“未使用”种子的复合种苗遗传特性的方法。</p>
+
+<p>介绍
+<strong>种子果园是针叶树种的基本改良方案的主要运输工具，其中平衡增益和多样性是一个主要问题。种子果园作物的遗传增益（遗传价值）主要取决于所选择的亲本的遗传优势，其对所得种子作物的实际配子贡献以及来自外来花粉源（花粉）的基因流量水平污染）和它们各自的遗传质量（Stoehr等人1998; Lindgren等人2004; Slavov等人2005）</strong>。<strong>种子作物的遗传多样性受到父母生殖力变化的程度（对所得种子作物的父母不平等贡献）的影响很大的影响（谢等人1994; Kjar 1996; Burczyk和Chalupka 1997）以及亲缘关系的水平在果园家长中（Lindgren和Mullin，1998）</strong>。理论上，对于一定数量的无关和非近交基因型的最大遗传多样性在所有对种子作物贡献同等的同时获得，取决于高育种值父母的比例贡献（注意，<strong>最大增益只能是从最好的克隆获得;然而，这不是种子果园的目标</strong>）。生殖编排“果园生殖活动的时间，持续时间和程度”，因为它影响了种子园内的父母间的排卵模式，以及花粉污染，最终导致遗传所得种子作物的组成（El-Kassaby等人1984; El-Kassaby和Ritland 1986; Matziris 1994，Burczyk和Chalupka 1997）。在果园中的配子贡献的变化可能导致最有生产力的基因型（Kjar 1996），<strong>共同祖先的积累，以及最终对遗传多样性的侵蚀（Lindgren等，1996）的过度表达</strong>。因此，在估计遗传增益和多样性时，应考虑果园家长之间的繁殖力变异（Kang and El-Kassaby，2002）。实际上，种子果园的繁殖力变化非常普遍，是由以下原因造成的：（1）在果园建立过程中不平等的父母代表（例如，线性部署，其中父母在果园种群中线性代表与育种成比例价值观）（Lindgren和Matheson，1986），（2）果园发育过程中的死亡率（El-Kassaby和Cook 1994）和（3）父母繁殖产量的简单差异（Sitka云杉：El-Kassaby和Reynolds（1990）;道格拉斯冷杉：El-Kassaby和Askew（1991）和El-Kassaby等人（1990）; loblolly pine：Askew（1988）; radiata pine：Griffin（1982）; Japanese red pine：Kang（2000）松：康等（2004））。可以使用从低成本/低精度到相对高成本/高准确度的不同方法估计家长配子贡献。前者包括对生殖频繁产量变异性和种子生产的非典型评估（Woods 2005），而后者利用在同功酶或DNA标记物上显示的变异（Roberds等人1991; Xie和Knowles 1992; Moriguchi等人2004; Slavov et al。2005; Funda et al。2008）。在现有果园遗传变薄的情况下，可以通过在线性部署后不同父母代表（Lindgren和Matheson，1986）在果园建立种植园果实的遗传增益（响应）和多样性（即反向比例去除低繁殖 - 价值父母; Bondesson和Lindgren 1993），或通过实践选择种子锥收获（即从具有较高育种价值的父母收集种子锥; Lindgren和El-Kassaby 1989; Kang等人2001）。假设无关和非近亲的父母，种子作物的遗传多样性在同等的亲本配子产量下是最大的;然而，女性和男性生育率变化的大小以及其相关性的方向以及强度都强烈地影响了这些做法（Kang and El-Kassaby，2002）。大多数种子果园的变异研究表明，男性和女性的生殖产量与弱相关（Nikkanen和Velling 1987; Caron and Powell 1989; Kjar 1996; Kang 2000）或独立性（Savolainen等1993; Kang and Lindgren 1998,1999; Kang等人2004）。因此，基于单一性别（如种子生产）估计遗传多样性的常见做法往往不准确（Kang和Lindgren，1999）。上述审查意味着种子果园作物的遗传增益和多样性在任何一年内都是独一无二的，因此果园的生殖产量评估及其操作能够每年更好地进行。这项研究的目的是通过优化父母的贡献来开发一种最大化现有果园作物选定部分的遗传价值的模型。它旨在说明父母之间的相关性，这是随着先进的种子果树建立而变得越来越重要的问题。在动物育种中已经证明了相关性的必要性（例如，Meuwissen 1997），并且在从森林生产种群部署生殖材料时也应谨慎考虑。西兰落叶松（Larix occidentalis Nutt）种子园的生殖产量数据用于说明拟议方法，并对三种不同情景进行了测试：（a）雄性和雌性繁殖力相等（即女性与男性之间存在完全相关性， （参见Lindgren等人2004; Prescher等人2006））; （b）男性与父母代表成比例（每个克隆的分株数）成比例; （c）实际的男女生殖生产数据（Stoehr等，2004）。在目前的研究中，提出了在单一优化步骤中组合上述要素的新方法。优化导致在考虑实际的男性和女性生殖产出，亲本育种价值，共同祖先和所需遗传多样性水平后，确定最佳克隆繁殖产出比例。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E8%82%B2%E7%A7%8D/funda2011-%E5%88%A9%E7%94%A8%E7%B3%BB%E8%B0%B1%E9%87%8D%E5%BB%BA%E7%A1%AE%E5%AE%9A%E4%BA%B2%E6%9C%AC%E7%94%9F%E6%AE%96%E6%8A%95%E8%B5%84%E5%92%8C%E6%88%90%E5%8A%9F%E6%98%AF%E5%90%A6%E4%B8%80%E8%87%B4/">
+                <h2 class="post-title">Funda2011-利用系谱重建确定亲本生殖投资和成功是否一致</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (142 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Funda T, et al. (2011) Congruence between parental reproductive investment and success determined by DNA-based pedigree reconstruction in conifer seed orchards. Can J For Res Can Rech For 41(2):380–389.   种子果园的父母繁殖成功通常通过对种子和花粉锥生产（生殖投资）的调查进行评估。虽然这种方法的可靠性受到质疑，但其速度和轻松度使其成为为种子果园作物的遗传质量和数量提供近似估计值的首选方法。在本研究中，来自三个种子果园（大麦松（Pinus contorta Dougl。ex。Loud。var。latifolia Engelm。），Douglas-fir（Pseudotsuga menziesii（Mirb。）Franco）的各种女性和男性表型评估方法的生殖投资数据， ，西部落叶松（Larix occidentalis Nutt。））与基于DNA指纹图谱和亲本分析的繁殖成功估算进行比较。评估了使用生殖投资作为估算种子作物体积遗传价值和多样性（由有效父母数量衡量）的生殖成功的代表。回归分析表明，表型评估方法反映了真正的父母繁殖成功，并且种子和花粉锥体积生产的估计分别似乎是女性和男性生殖成功的最适当指标。虽然女性男性调查方法的最佳组合产生了父母有效数量的估计，遗传价值估计与基于DNA的遗传价值估计相似，突显了其对生育力变异评估的鲁棒性。
+简介 森林经常性选择计划通过两个独特的流程实现目标，即育种和生产。通过古典三个步骤，杂交，测试和选择育种，导致鉴定精英个体进一步繁殖或建立生产种群（种子果园）（Namkoong等人，1988）。种子果园专门用于包装饲养所获得的遗传收益，保持可接受的遗传多样性水平，并为未来森林提供增益和多样性（El-Kassaby 2000）。随着育种计划的进步，获得了更高的收益，更多的重点是管理遗传多样性，以平衡不可避免的共同繁殖和与驯化过程相关的遗传多样性的不可避免的减少（El-Kassaby 2000）。预计种子果园可以作为封闭，完美的人口达到Hardy -Weinberg预期的效果，因此种子作物的等位基因和基因型频率代表其亲本种群（Eriksson等，1973）。这种理想条件很少遇到;然而，种子果园种群已经被证明是强大的，并且即使在这些偏差的情况下也获得了实质性的增益（El-Kassaby 1989; Xiang et al。2003）。估计种子果园的生殖成功率（男性和男性），花粉污染的比率和遗传质量，并且在实践时补充大量授粉的有效性（El-Kassaby等，1993）对于计算作物遗传参数，即增益和多样性（Stoehr et al。2004）。女性生殖成功的评估通常使用各种强度的视觉调查来进行，其应用于单个克隆基础，包括种子锥的数量，体积或质量和（或）每个锥体的种子数量或填充种子数量Griffin 1982; Byram等人1986; El-Kassaby 1989; Kang和El-Kassaby 2002; Stoehr等人2004）。另一方面，基于视觉调查的男性生殖成功也更难评估（Schmidtling 1983; Schoen and Stewart，1986,1987; Schoen等，1986; Denti and Schoen 1988; Roberds et al.
+                  <a href="../../post/%E8%82%B2%E7%A7%8D/funda2011-%E5%88%A9%E7%94%A8%E7%B3%BB%E8%B0%B1%E9%87%8D%E5%BB%BA%E7%A1%AE%E5%AE%9A%E4%BA%B2%E6%9C%AC%E7%94%9F%E6%AE%96%E6%8A%95%E8%B5%84%E5%92%8C%E6%88%90%E5%8A%9F%E6%98%AF%E5%90%A6%E4%B8%80%E8%87%B4/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E8%82%B2%E7%A7%8D/funda2012-%E7%A7%8D%E5%AD%90%E5%9B%AD%E9%81%97%E4%BC%A0/">
+                <h2 class="post-title">Funda2012-种子园遗传</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (221 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Funda T, El-Kassaby YA (2012) Seed orchard genetics. CAB Rev Perspect Agric Vet Sci Nutr Nat Resour 7(JUNE 2012):1–23.   种子果园代表了树木育种与造林活动之间的联系。它们的遗传效率至关重要，因为它决定了未来林木种植园的遗传增益和多样性的程度。鉴于其重要性，种子果园遗传学已经得到了更多的科学和管理审查。事实上，影响种子果园遗传效率的所有方面已经进行了深入的调查，包括其生物学模型，为改善作物遗传质量而制定和实施的基础假设和管理方法。在这次审查中，我们从树种改良周期中的种子果园位置，群体遗传模型和影响该模型的生物因素开始，系统地解决这些问题。即生殖投入和成功，生殖物候，近亲繁殖，基因流动，最后是种子的生物学。审查管理实践，包括在成立阶段（果园规模，设计，父母数量及其代表）实施的管理措施，以及为加强作物管理（皇冠管理，补充大规模授粉，开花延迟，选择性种子收获和设计师生产）作物）。讨论了这些问题的遗传后果。本文的目的是对每个树木改良提供系统的这一重要组成部分进行最先进的审查，并促进和鼓励目前和将来的种子果园进一步研究和开发。
+森林树木改良 有必要提供森林树木改良的概况，使种子果园及其功能的作用放在正确的上下文中。森林树木改良是通常和经常应用于林木种群现有天然遗传变异的繁殖和造林活动的结合，以增加人工再生林及其产品的经济价值[1]。与我们今天所知道的现代化的有意思和有组织的树木改良不同，农业作物和动物的养殖和驯化（至少在其非结构形式）已经在地球上发生了几千年，直到20世纪50年代才开始[2]。这种重大的延误有两个主要后果：第一，遗传操纵使得大多数森林树木种群大部分不受影响，其次，允许树木种植者利用其他领域积累的丰富的知识和经验[3]。大力发展树木改良活动，目的是立即满足高品质木材产品的需求，无需对未来的生产进行规划。在应用非常严格的选择（即只选择最小的一小部分）的情况下，可以迅速有效地实现合理的收益;然而，这种短期思维最终被放弃，因为它将为未来的改进留下太浅的遗传基础，特别是当短期计划被转换为长期的工作时[4]。 大多数长期的树木改良计划可以使用循环选择育种周期[5]的框架进行描述，其中包括两个独立但不相互排斥的育种和生产阶段[1]。这些阶段紧密相连，其主要目标是获得和保留广泛的遗传基础，同时将所需特征与合适的高品质，适应力强的树相结合，这对未来的世代来说将是有价值的[1]。前一阶段包括：根据具体标准，在天然林林场，人工种植园或先进的遗传改良中选择最理想的个体，以确保满足定义的育种目标，育种，其中涉及到在这些中产生受控杂交选择的个体允许提取执行第二轮育种所需的遗传参数，以及（iii）测试，通过测试其后代或后代本身（即向后和向前选择）来评估所选树的遗传质量。在后期阶段，育种工作被包装在种子作物中，并被交付用于生产新的，经遗传改良的林分或种植园。树木改良方案极为依赖资源和长期努力;因此，探索能够提供可接受和令人满意的收益的较不需要的替代方法（例如[6]）至关重要。
+群体描述 树木改良计划包含各种种群。根据白俄罗斯[5]和后来的修改的概念框架[7]，这些群体由他们的功能定义，而不是他们的身体外观，遗传构成或位置（事实上，一些功能上不同的群体可能在物理上重叠[ 7]）。最明显的特征之一是在繁殖周期中使用的群体与用于生产用于经营种植园的遗传改良材料的种群（例如[2,8]）分离，如图1所示。 1。 选择个人进入育种计划的群体称为基数[1]，或称为来源[9]群体。由于这两个术语都可以互换使用（例如，前者被用于育种计划的任何起始材料，而不管其遗传背景如何[10]，Ruotsalainen [7]提出了通过使用创始人和招聘人数，创始群体由选择在野生森林中的个体组成，没有先前的育种历史，通常使用个体树选择方法[11]，而招聘人数在功能上是相同的，但起源于因此，创始群体可以被视为特殊的第一代招募群体，其中包含被认为是无关和非近交的个体，同样地，基因资源种群以天然植物或克隆的形式定义档案，但其主要目的是保留现有遗传遗传，即基因保护，而不是被考虑给出了一个改进方案[12]。 在每一代，候选人[13]或选定群体[5]是从从基地或招募群体中抽取的表型优越的个体的选定子集建立的。这个群体通常群体普查数字比基数群体低几个数量级，但其遗传构成预计将具有足够的潜力，为下一代所需的特征带来收益。这些选择的树木的实际遗传优势是根据后代在后代测试中的表现进行评估[14]，这代表了所有方案的重要组成部分，并为其他目的排除低等级的父母从育种和生产群体。 因此，育种群体是通过后代测试证明其理想的遗传品质的所选择的个体的一部分，并将作为后代的父母。在建立之间，通过强烈的选择差异获得高收益，即基础群体的平均值与育种群体之间的差异，以及通过保留足够的遗传变异来维持足够的遗传变异个体在育种群体中，使未来的进步得到保证[1]。在任何繁殖一代的任何阶段，繁殖种群可以由来自外部来源的材料补充，例如基因资源种群或另一种正在进行的育种计划。补充材料称为输注群体[5]，这一步通常在选择之前进行，以使材料适合于给定的改进计划目标。 独立于所有种群，繁殖周期特别在于生产群体，有时也称为部署群体。它是繁殖种群的高度选择的子集，不管其进步水平（即第一次或高级繁殖周期）通常包括几十个最好的个体，仅专注于生产转基因种子（种子园）或营养繁殖体（粪便床）用于操作再造林计划**[15]。 虽然生产群体的建立有时被认为是在建立运营种植园之前的每个树木改良周期的最后一步（例如[1,5]），但是，El-Kassaby [15]也强调了考虑种子收获等其他因素的重要性，处理，储存实践，种子萌发差异，林业苗圃细化和淘汰。 El-Kassaby [15]证实了这些因素对再生材料的遗传增益和多样性都有显着的影响。以下部分概述了与本论文方面相关的一些管理实践。
+##种子园
+种子果园是迄今为止世界上最常用的有性繁殖林业生产种群。它们由选定的遗传优异候选父母或其后代组成，其主要目标是产生一致，丰富且易于收获的遗传改良种子的产量（例如[16,17]）。种子果园代表了树木育种与随后的造林活动之间的联系[15,18]，因为育种工作被包装成改良的种子作物，随后以基因改良的幼苗形式转化为经营林业[19]。根据Schreiner [20]，最早的种子果园成立于1880年，由荷兰殖民者在Java中传播本地植物Cinchona ledgeriana;然而，在大约七十年后，当通过选择和育种获得实质性改善的证据变得明显时，这一概念的使用并没有普及[16,21]。除了本身的遗传改良外，种子生物也用于生产适合特定环境的种子[22]。 可以根据育种的生成和/或所用植物材料的种类幼苗或克隆来分类种子园[12]。第一代果园种植了根据林分或未经改良种植园（即创始人种群）的表型选择的父母，其遗传价值在很大程度上是未知的。通过从后代测试获得的结果（即向后选择），可以通过粗劣的父母（早期出版的文献也称为第1.5代果园）来改进这些果园。随着育种计划的进行，使用来自精英基因型（或其公开授粉的后代与随后重建父系亲本的[6,23]）之间的受控杂交的个体建立了先进的发育果园，以获得增加的遗传增益）。这些前进和后退选择方案的有效性，包括两者的组合，以前已被评估[2426]。 关于使用的材料，使用加树的后代（来自开放授粉的母亲半兄弟或来自受控杂交的全兄弟姐妹）建立幼苗种子果园，而克隆建立的种子果园使用营养繁殖体，例如移植物，切片或从树上收集或栽培的组织培养苗[1，27]。种子种子园通常包含更广泛的遗传基因，因为参与交配的个体数量较多（公开授粉的后代的雄性成分通常是未知的）;另一方面，由于他们的血统尚未完全知晓，因此预计遗传增益较低[28]。种子种子园的使用仅限于桉树，黑云杉，一些松树和硬木等早开花种子[29]，或者是像道格拉斯冷杉那样遭受接穗根不相容的种子[30]。 Baradat [31]提出了一种替代种子果园，称为多交种子果园。在多交叉种子果园中，经过遗传测试的加树在多交叉交配设计之后被交叉，而不是被植物繁殖，并且它们的种类然后用作种子果园建立的材料。然而，绝大多数的种子是克隆的，平均由30个50个不同的亲本组成，每个父母由一个或多个营养繁殖的单位/拷贝代表，称为分株。 已经建立种子果园，假设它们将作为封闭，完美，泛泛的群体发挥作用[32];换句话说，它们既不具有对随机交配的遗传和行为限制，因此所有个体分株都将具有与所有其他分株（包括自身）相匹配的机会。如果这一假设成立，那么在没有诸如迁移，选择，突变和随机遗传漂移等扰动力的情况下，后代群体中的等位基因和基因型频率都将反映出亲本群体的频率[33,34]。因此，在上一个育种周期中获得的遗传增益将有效地传播到下一代，即种子作物[35]。并不奇怪，这一假设被认为是太乐观了，而且期望与现实有很大差异[18,3641]，使得种子作物的实际遗传质量不可预测。
+##遗传质量
+遗传质量是一个相当普遍的表达，其使用模糊，可以从多个角度来看待服务于某一目的。例如，Hunt et al。 [42]得出结论，唯一有意义的遗传质量定义是个体对总体适应度的育种价值。在这种情况下，总体适应度是个人产生的后代人数，相对于其他个人在群体中产生的平均数[43]。亨特等人[42]还指出，在一些群体遗传学研究中，只有一个或几个健身成分被用作遗传质量的指标，因为它们被认为与总适应度正相关。虽然个体的遗传质量主要与其后代的存活率有关（换句话说，当个体具有相对于具有不同基因型个体的适应度增加的基因型时，个体具有较高的遗传品质[44]），在森林树种繁殖中，这个概念是不够的，因为它只是需要考虑的许多方面之一。生产种子产量，森林苗圃种子萌发和幼苗生存 在经营种植园中是很重要的，但是森林树木改良计划中的遗传品质和一般的育种方式却以不同的方式相当理解：反映出饲养者的观点，可以容易地量化并与自然比较，创始人。在这种情况下，质量这个术语实际上体现了遗传增益和遗传多样性两个组成部分，它们以相反的方向起作用，这意味着只能以牺牲另一方为代价增加。平衡这些关键变量一直是植物和动物育种的广泛研究的主题[4551]，尽管Rosvall [52]指出，鉴于育种计划的复杂性和各种方法的实施，这不是一个简单的任务[ 53,54]。
+##遗传增益
+树种育种者正在考虑的大多数表型特征是多基因性质，并且遵循定量的遗传模式，其中环境可能是主要因素。这些性状被称为定量或连续性状，因为它们受许多较小影响的基因的控制，并且由于与基因与环境的相互作用，它们产生连续的表型变异性[55]。数量性状的遗传增益的本质在于对选择的反应（R），这是所选择的父母的后代与由于选择产生的父母代的平均值之间的偏差。可以表示为R = bop S，其中bop是父母的春季回归，S是选择差异，即所选父母的平均优势。只要没有非遗传因素的父母子代相似性，并没有自然选择，回归可以由狭义遗传力（h2）代替，这是加性遗传方差与总表型方差的比率，前一个方程得到更熟悉的形式R = S h2。 为了使育种者量化他们的改进计划的成功，必须使用育种价值观来评估所选择的父母的优势，相对于原始群体。育种价值是个体携带的所有数量性状基因座的平均效应之和（总和在每个基因座上的一对等位基因和影响感兴趣的性状的所有基因座上），或更实际地，它是基于其后代的实地绩效。育种价值观可以与所讨论的特征相同的绝对单位表示，也可以在标准化后表示为与种群平均值的偏差。然后，遗传增益等于生产群体中所有个体的平均育种价值，在随机交配假设下传到下一代。在种子果园中，以类似的方式计算潜在或预期的遗传增益，但育种值通过亲代表示（即表示特定亲本的分株数）进行加权[56]。然而，通过种子作物实现的实际遗传增益是未知的，可能与预期值有显着差异[57]，取决于父母繁殖成功的变化以及花粉污染的大小和质量[58,59]。遗传增益（DG）计算为DG = PN×p，其中x和p分别表示育种值和父母i的繁殖成功，N是种子果园种群中个体的数量。
+##遗传多样性
+                  <a href="../../post/%E8%82%B2%E7%A7%8D/funda2012-%E7%A7%8D%E5%AD%90%E5%9B%AD%E9%81%97%E4%BC%A0/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/gaspar2009-%E5%88%86%E5%AD%90%E6%A0%87%E8%AE%B0%E4%BC%B0%E8%AE%A1%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/">
+                <h2 class="post-title">Gaspar2009-分子标记估计遗传参数</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (96 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Gaspar MJJ, De-Lucas AI, Alía R, et al (2009) Use of molecular markers for estimating breeding parameters: A case study in a Pinus pinaster Ait. progeny trial. Tree Genet Genomes 5:609–616. doi: 10.1007/s11295-009-0213-1
+ 遗传改良计划的管理基于遗传参数及其关系的知识以确定遗传增益。对于有效的子代测试方案和用于估计任何数量性状的加性方差分量，需要知道共祖系数（θ）。当使用开放授粉的家庭时，大多数作者认为幼苗是半同胞关系，但这并不总是真实的。我们的目的是估计存在于海松中的家族的共同系数的平均值。 （海洋或群松）后代试验，来源于在克隆种子园中收集的种子，并研究如何偏离θ= 0.125的标准假设影响遗传力估计。五个高度多态性微卫星标记在来自子代试验的五个家族的子样本的125个后代中得分。在这个后代试验中存在的家族的共同系数的平均值为0.130。未调节的和调整的遗传力估计之间的差异在木密度（分别为0.609和0.586）比直径（分别为0.166和0.154）更明显。我们的结论是，在试验中，遗传性估计中由于包括全同胞的相关误差，当假设开放授粉同胞之间的标准系数为0.250时，其低，并且该结果相对于数量是鲁棒的的家庭抽样，给定无差别的估计的同胞家庭中后代的平均关系。
+松属pinaster Ait。 （海洋或群松）是西南欧洲的一个重要商业物种。在葡萄牙，P。pinaster是最重要的本地物种之一，覆盖1Mha，它是纸浆和造纸工业的长纤维的唯一来源，并且是固体锯材行业的主要来源。从1980年代初开始，正在为这个物种开发树木改良计划，基于选择的加树，建立第一代种子园和开放传粉后代测试（Aguiar et al。2003），目的是增加体积每公顷和茎形式的质量。后代测试允许估计遗传参数并提供关于物种响应选择的能力的信息，并且因此通知该物种的部署策略（Zobel和Talbert 1984）。
+　为了估计遗传方差分量，有必要在所测试的个体之间建立关系结构（Falconer和Mackay 1996; Lynch和Walsh 1997）。我们关注二倍体个体的相关性或关系系数（r）的传统群体遗传定义，这是公司系数（θ）的两倍（Lynch和Walsh 1997; Wright 1976）。由于容易的操作管理和简单的计算（Borralho，1994），特别是在第一代育种计划或在自然种群中收集种子的生态研究中，开放授粉家族经常用于林木后代试验。风花授粉家族成员之间的遗传相关性通常假定在数学上等于半同胞之间的协方差，等于0.25（Falconer和Mackay 1996）。这包括假设家庭是真正的半同胞家庭，即收集后代的雌性树是不相关的，杂交是基于高有效数量的无关的雄性，并且没有自体受精（Borralho 1994）。然而，由于父母之间的不相关性，花粉的非临界贡献或自交后代的发生，这些假设通常不被满足（Borralho 1994; Hansen和Kjaer 2006）。这种不符合假设的情况也意味着，当家庭包括一部分全同胞的家庭差异组成部分被非加性效应夸大。随机交配和panmitic平衡假设对于自然种群和在许多情况下对种子园来说通常是不现实的（El-Kassaby和Ritland 1986）。例如，针叶树中的几个研究已经证明，不是种子果园（SO）内的所有克隆对下一代产生相同的贡献（Goto等人2002; Hansen和Kjaer 2006; Moriguchi等人2005; Plomion等人。2001）。在这些条件下，使用r = 0.25将导致加性遗传方差的有偏估计（Squillace 1974）。根据Askew和El-Kassaby（1994），任何取决于风花授粉后代估计遗传参数的测试程序都必须谨慎地评估决定后代之间关系的因素。在育种计划中使用分子标记技术进行亲本分析可以提供关于共同系数的这些不确定性的解，因为它们提供了推断个体之间的关系结构的平均值（Blouin 2003; Lynch和Ritland 1999）。用于获得相关性的精确估计的一些优选的遗传标记是来自核或叶绿体基因组的微卫星标记（Gerber等人2000; Moriguchi等人2005），因为它们通常在每个基因座上显示许多等位基因（Lynch和Ritland 1999），并且是共显性的（Hardy 2003）。在松树中，叶绿体微卫星是单倍体和父系遗传。因为它们不重组，所以可以将多个叶绿体片段组合在单倍型中，从而提供理想用于花粉流研究的父本标记，因为它们允许直接鉴定父本配子（Plomion等人2001; Robledo-Arnuncio等人2004）这项工作是估计存在于源自在克隆种子园（CSO）中收集的种子的后代试验中的家系的共同系数（θ）的平均值，并研究以什么方式偏离θ= 0.
+                  <a href="../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/gaspar2009-%E5%88%86%E5%AD%90%E6%A0%87%E8%AE%B0%E4%BC%B0%E8%AE%A1%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/gauzere-2016-%E9%83%A8%E5%88%86%E5%88%86%E5%9E%8B-%E4%BC%B0%E8%AE%A1-%E9%81%97%E4%BC%A0%E5%92%8C%E6%AF%8D%E6%9C%AC%E5%86%B3%E5%AE%9A%E5%9B%A0%E5%AD%90-%E9%80%82%E5%BA%94%E6%80%A7%E6%80%A7%E7%8A%B6-%E5%B1%B1%E6%A5%82/">
+                <h2 class="post-title">Gauzere-2016-部分分型-估计-遗传和母本决定因子-适应性性状-山楂</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (131 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Gauzere J, Klein EK, Brendel O, Davi H, Oddou-Muratorio S. Using partial genotyping to estimate the genetic and maternal determinants of adaptive traits in a progeny trial of Fagus sylvatica. Tree Genet. Genomes [Internet]. Tree Genetics &amp; Genomes; 2016;12:115. Available from: http://link.springer.com/10.1007/s11295-016-1062-3   了解表型变异的决定因素对于评估性状在不断变化的环境中进化的能力至关重要。在树木中，表型方差的遗传成分最常根据母亲后代测试进行估计。然而，缺乏关于父亲关系的知识妨碍了加性遗传和母体效应的准确估计。在这里，我们调查如何不同的方法包含父亲相关性允许估计遗传力和适应性性状的天然群体中的山楂的母亲决定因素，呈现非随机交配。在苗圃中的60个母体家庭中测量了12个潜在的适应性功能性状。我们在13个微卫星标记基因分型子代和所有潜在的繁殖成年个体，以推断父系关系，并估计母系之间和之间的平均相关性。然后将这种相关性信息用于家族和动物模型中以评估表型方差的组分。所有研究的性状表现出显着的遗传变异和中度遗传。母体效应检测直径增量，茎体积和芽爆发。家庭和动物模型的比较表明，不平衡的交配系统导致在后代试验中只有轻微的偏离母亲家庭假设。然而，忽视显着的母体效应导致对遗传力的高估。总的来说，我们强调了使用多态分子标记来准确分析树兄弟设计的相关性模式分析的有用性。
+监测适应遗传多样性对于评估自然种群的短期进化潜力至关重要，并提供相关的保护或管理指南（Hansen et al。2012; Lef`evre et al。2014）。在群体的进化潜能的代理中，加性遗传方差（VA）测量直接可用于选择的性状变异。通常，VA通过总表型方差（VP）进行标准化，以得到在性状，群体和物种之间可比较的进化参数，称为遗传力（h2; Falconer和MacKay 1996）。评估由于环境或遗传效应对关键功能性状的表型方差的比例对于通知机械和物种分布模型（Benito Garzon et al。2011; Oneyetal。2013）以及更一般地，性状数据库也具有重要意义。然而，对于树种，我们关于功能性性状变异的决定因素的知识仍然有限（例如，起源测试长期以来主要集中在具有农业价值的性状：生长，木材质量性状）。值得注意的是，虽然母体对幼苗性状表达的影响经常报道（主要是通过植物中的种子质量; Roach和Wulff 1987，Johnsen等人1995和Brousseau等人2013），但这些影响对表型决定性的相对重要性很少量化。然而，这种环境母体决定论可以在自然群体在不断变化的环境中的短期进化反应中发挥关键作用（作为塑料反应的替代; Kuijper和Hoyle 2015）。 虽然对动物自然种群的研究强调了利用异质关系关系来研究复杂性状决定论（例如优势或母体效应; Kruuk和Hadfield 2007）的兴趣，但是异质关联性仍然通常被视为植物螺杆 - ies。事实上，树木定量遗传学的经典方法包括抽样开放授粉（OP）家族和使用所谓的家庭模型，这依赖于同质相关性关系的假设（即家庭只由一半sibs，HS或全同胞，FS; Gauzere等人2013b）。这种经典的混合效应模型框架阻止了对母体或非加性参数的简单和准确的估计。在这种情况下，分离VA与其他变量组分的正确方法是使用（i）双亲交叉设计为交配可以容易控制的物种（例如Hodge等人1996在桉树物种）或）种子特征（例如每个家族的平均种子重量）或母本栖息地描述作为定量遗传模型中的协变量（Scotti等人2010; Brousseau等人2013）。然而，后一种方法（ii）不允许评估由环境母体效应解释的表型方差的实际比例。除了难以估计产妇或非加性方差分量，离开家庭假设也可能损害VA和h2的准确估计。在几个种子园试验中证明有效性是有效的（Hodge等人1996; Gaspar等人。 2009; Hansen和Nielsen 2010），其在树木自然种群中的相关性是有问题的。事实上，由于有限的基因流或开花不同步，混合交配系统（自交和异交）和不等的繁殖力（在Gauzere等人2013b中列出的离群），已知树自然群体呈现分类交配。预期在自然群体中产生的不可忽略的隐性遗传结构导致对VA和h2的过度估计（个体比HS更关联; Gaspar等人2009，Scotti等人2010，Gauzere等人2013b）和强烈影响群体适应潜力。将这些差异考虑到定量遗传估计中的最广泛使用的方法之一是根据家族中的平均相对度系数（ρw）来调整家族模型估计值，期望从关于物种的主题系统的经验知识Squillace 1974; Gauzere et al。2013b）。 非模型物种的多态性分子标记（如微卫星标记）的容易开发现在提供了改进在定量遗传模型中使用的相关性信息的机会。分子标记可以用于通过亲本分析或谱系重建重建系谱关系方法（Marshall等人1998; Fernandez和Toro 2006），或估计遗传相关性系数（例如Loiselle等人1995）。相关性信息然后可以通知基于个体的混合模型，称为“动物”模型（Henderson 1984）。在后代试验中，亲缘关系估计也可以容易地用于分析花粉池结构和估计交配系统参数（例如自交率，雄性生殖成功; Hansen和Nielsen 2010，Vidal等人2015）。然而，群体和定量遗传研究往往是分离的，而群体遗传分析可以提供信息：（i）在估计VA和h2中可能遇到的与HS假设的潜在偏离，以及（ii）进化潜力的群体。尽管这些最近的进展，野生的定量遗传研究在动物中比在植物物种中更发达。事实上，整个后代试验的基因分型及其潜在的亲代表示植物定量遗传学的强烈的实验限制（因为大规模试验和人口规模和高移民率; Stinchcombe 2014）。然而，很少有研究调查了增加基因分型努力的成本效益比，以获得方差或育种价值估计的准确性（但见El-Kassaby等人2011）。最近，Gauzere et al。 （2016）表明，在几个多态性标记的子代试验中，每个家族的子代的子集的基因分型允许在存在来自HSassumptions的共抑制时在VA和h2上减少偏差。本研究提出通过构建杂交相关矩阵优化基因型信息的使用，包括基因型后代的重建的成对系谱关系和非基因型后代的基于平均基于标记的相关系数。本研究的目的是第一次应用这个新方法在一个真实的数据集。山楂树sylvatica L是其中一个主要林木种类在欧洲。尽管它的生态和经济重要性，我们对其特征变异的决定因素的了解仍然有限（但见Kramer 2004，Bontemps等人2016）。 F.
+                  <a href="../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/gauzere-2016-%E9%83%A8%E5%88%86%E5%88%86%E5%9E%8B-%E4%BC%B0%E8%AE%A1-%E9%81%97%E4%BC%A0%E5%92%8C%E6%AF%8D%E6%9C%AC%E5%86%B3%E5%AE%9A%E5%9B%A0%E5%AD%90-%E9%80%82%E5%BA%94%E6%80%A7%E6%80%A7%E7%8A%B6-%E5%B1%B1%E6%A5%82/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/geleta-2004-%E8%BE%A3%E6%A4%92-aflp-%E6%9D%82%E4%BC%98%E9%A2%84%E6%B5%8B/">
+                <h2 class="post-title">Geleta-2004-辣椒-aflp-杂优预测</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (43 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Geleta LF, Labuschagne MT, Viljoen CD. Relationship between heterosis and genetic distance based on morphological traits and AFLP markers in pepper. Plant Breed. [Internet]. 2004;123:467–73. Available from: <a href="http://doi.wiley.com/10.1111/j.1439-0523.2004.01017.x">http://doi.wiley.com/10.1111/j.1439-0523.2004.01017.x</a></p>
+</blockquote>
+
+<p><code>遗传多样性被认为是选择杂交育种的亲本的标准之一</code>。本研究进行了评估七个胡椒栽培品种之间的遗传分歧和评估杂种优势和父母遗传距离之间的关系。在温室和田间对21个F1杂交体和7个亲本进行15个形态特征的评价。使用六个扩增片段长度多态性（AFLP）引物组合检查亲本的DNA多态性。使用两个遗传距离度量的聚类分析将七个亲本分组。对于大多数字符，观察到中等和高亲本杂种优势。大多数杂种优于亲本系果实产量，早熟和植物高度。形态学和基于AFLP的距离测量足够有效，以将胡椒基因型分配到杂种优势组。形态学距离与中亲属杂种优势的相关性对于开花和成熟的天数是显着的，表明早期可以从亲本系的形态学距离预测。然而，<code>AFLP测量的遗传距离与中高和高亲本杂种优势的相关性对所有字符都不显着，除了果实直径，并且被证明没有预测价值</code></p>
+
+<hr />
+
+<p>鉴定产生优异产量的杂交体的亲本组合是开发杂种中最重要的步骤。然而，这是任何杂交育种程序中最昂贵和耗时的步骤之一，因为有必要跨越可用的近交系并在广泛的产量试验中评价杂种。因此，由于空间限制，可以评价由相对少量的近交亲本产生的有限数量的杂种（Bernardo 1992）。<code>具有更高的一般组合能力和大的遗传距离的亲本产生具有更好产量性能的杂种（Cox和Murphy 1990，Diers等1996）。基因组研究的进展已经产生了利用分子标记在作物育种计划中预测杂交性能的兴趣。关于杂种性能的形态学和分子标记遗传多样性研究已在几种作物中得到证实。在小麦杂交（Cox和Murphy 1990）和苜蓿（Riday et al。2003）中报道了形态遗传距离和杂种优势之间的正相关</code>。玉米，水稻和油籽油菜的调查表明，父母的分子遗传多样性与杂种表现显着相关，并且可以使用分子标记预测产量杂种优势（Diers et al。1996，Riaz et al.2001，Betran et al。 2003）。除了鉴定潜在高产杂交种，遗传距离测量有助于为杂种群体分配新的纯品系。杂种已经记录在热和甜辣椒中，并且杂种在全世界的农民中越来越受欢迎（Berke 2000）。由杂种种子生长的胡椒是高度均匀的，通常产量更高。这激发了对开发胡椒中杂交种的兴趣。然而，使用分子标记来测量亲本之间的杂交产量和杂种优势的估计的等位基因差异在胡椒中没有报道。因此，本研究的目的是测量七个父系之间的形态特征和扩增片段长度多态性（AFLP）基于标记的遗传多样性，并评估遗传距离与其衍生的杂种的性能之间的关系。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/stat/genome-wide-association-studies-and-genomic-prediction/">
+                <h2 class="post-title">Genome-Wide-Association-Studies-and-Genomic-Prediction</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (34 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  
+
+<h1 id="第三章">第三章</h1>
+
+<h2 id="1-1-frequentist-measures-of-evidence">1.1 Frequentist Measures of Evidence</h2>
+
+<p>频率或非贝叶斯统计学家将概率视为限制重复事件的频率。 频繁者将认为未知参数具有真实值（仅仅，而不是概率分布），并且基于在假设重复样本下的统计的频率分布进行推断。频率统计学家不喜欢在贝叶斯统计中使用的先验概率分布的主观性。 然而，大多数实践的频率统计学家事实上对未知参数（例如，混合模型中的随机效应）使用先验概率分布，并且使用先验信息（例如，如果他们对于在接受之前需要较低阈值的效果更加怀疑 ）。 频率工作者使用p值，定义为测试统计量在假设复制下在零假设下比观测值更极端的概率</p>
+
+<h2 id="1-2-bayesian-measures-of-evidence">1.2 Bayesian Measures of Evidence</h2>
+
+<p>贝叶斯统计是基于概率理论的统计学[17]。概率理论是在不确定性下作出决策的唯一可靠的方法。尽管使用了几个世纪，但没有更好的方法被证明。概率模型（其中通常所有信息都是“先验”信息）被广泛使用（例如，在人工智能领域）。贝叶斯统计可以被认为是概率建模的一种特殊情况，其中除了先前的信息之外，还可以获得与生成数据的过程的模型一起的数据。贝叶斯统计学家使用概率理论来建模不确定性。贝叶斯定理用于将由概率分布表示的先验信息与生成数据的过程的数据和模型相结合，由似然函数表示。
+注意：概率论的贝叶斯概念通常被认为与基于限制重复事件的概率的频率概率论不同。然而，概率论基本上是唯一的 - 这两种理论都满足概率理论的基本公理，因此基本上是相同的。如果无限重复事件序列可用，贝叶斯概率具有相同的限制频率解释。频率论者否认可以为先验信息构建概率模型，同时使用概率模型来确定可能性，其选择通常具有更宽的效应。贝叶斯方法的一个有力的论据是，在实践中，重复事件是假设的并且在实践中不可用，并且只有观察到的数据可用和相关。在统计学中，我们给出观测数据y，并且有兴趣了解未知参数θ。给定关于由概率分布πðθ表示的θ的先验知识和定义所观察数据的概率分布的似然函数fΘyjθ，贝叶斯定理给出了后验分布gðθj的表达式。贝叶斯定理[17]从条件概率的基本属性：对于任何事件A，B：</p>
+
+<h1 id="2-power-calculations">2 Power Calculations</h1>
+
+<h2 id="2-1-traditional-power-calculations-power">2.1 Traditional Power Calculations Power</h2>
+
+<p><strong>POWER</strong>是用所使用的标准检测指定效应的概率。 传统的power计算得出用p≤α检测一个效应的概率，对于给定的效果大小。
+*F*检验
+考虑一个ANOVA模型，对于被测试的效应具有v1自由度，以及对于误差具有v2自由度。 在零假设下，F统计量具有（中心）F分布。 在替代假设下，F统计量具有非中心F分布。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%A9%BA%E9%97%B4/gezan-2006-post-hoc-blocking-%E4%B8%80%E7%A7%8D%E5%90%8E%E9%AA%8C%E5%8C%BA%E7%BB%84%E8%AE%BE%E8%AE%A1/">
+                <h2 class="post-title">Gezan-2006-Post-hoc-blocking-一种后验区组设计</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (87 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Gezan SA, Huber DA, White TL. Post hoc blocking to improve heritability and precision of best linear unbiased genetic predictions. Can. J. For. Res. [Internet]. 2006;36:2141–7. Available from: http://www.scopus.com/inward/record.url?eid=2-s2.0-33845624230&amp;partnerID=40&amp;md5=6bce3998c32880cd3b835c9e958863f3   在具有三种不同环境模式的单树小区中总共256个“种植的”克隆模拟单个位点克隆试验：仅补丁（PATCH），仅梯度（GRAD）和两个组分（ALL）。分析了几个模拟实验设计（随机完全区组设计;具有4,8,16和32个不完整区组的不完全区组设计;以及行 - 列设计），并且与随机化完全区组相同的设计的事后阻塞进行比较。此外，在事实之后叠加了两个不完整的块设计（64和128块）以检查极小的块。为了选择最佳拟合，研究了对数似然性和差异的平均标准误差（SED）的性能，并与平均个体广义遗传率进行比较。使用事后阻塞，使用很少的努力获得统计效率（或精确度）的改善。事后阻塞的结果是有希望的，与预设的局部控制相比可以忽略不计。事后最佳设计是行列（对于ALL和PATCH）和不完全区组具有八个块（对于GRAD）。此外，真实值和预测值（CORR）之间的平均相关性显示极小块的效率降低，但是随着块大小减小，没有观察到遗传方差的降低。模型选择的两个标准（对数似然性和SED）显示与平均CORR相似的趋势，并且推荐使用它们的使用。 ©2006 NRC。
+引言 &gt; - 随机完全区组RCB 传统上，在森林试验中，随机完全区组（RCB）设计受到青睐。当重复（或块）变异性相对较小时，RCB设计是有效的，这种情况在森林地区很少发生，或者仅在相对较小的重复中发生（Costa e Silva et al。2001）。 - 不完全区组设计（IB） 其将完整的复制物细分为更趋向于更均匀的较小隔室（即，不完全区组）。对于这些设计，几个作者报告了与RCB相比更高的效率（Fu等人1998,1999; Gezan等人2006a）。 - 行列设计（R-C） R-C设计由John和Williams（1995）详细描述，并且通常比IB设计产生更高的效率（Lin等人1993; Qiao等人2000; Gezan等人2006a）。
+林业和农作物中的来源，品种和家庭的遗传检测通常是一个漫长的过程，并且经常是任何一个遗传改良计划中最昂贵的活动之一（Zobel和Talbert 1984）。适当选择实验设计和统计分析可以显着提高育种价值的预测和有效利用现有资源。传统上，在森林试验中，随机完全区组（RCB）设计受到青睐。当重复（或块）变异性相对较小时，RCB设计是有效的，这种情况在森林地区很少发生，或者仅在相对较小的重复中发生（Costa e Silva et al。2001）。因为大量的遗传实体通常一起测试，所以一个好的替代方案是实施不完全区组设计（IB），其将完整的复制物细分为更趋向于更均匀的较小隔室（即，不完全区组）。对于这些设计，几个作者报告了与RCB相比更高的效率（Fu等人1998,1999; Gezan等人2006a）。也可以使用行列设计（R-C）同时实现双向阻塞。这些R-C设计由John和Williams（1995）详细描述，并且通常比IB设计产生更高的效率（Lin等人1993; Qiao等人2000; Gezan等人2006a）。 拟合最好的线性模型，充分描述试验数据以及随机和固定效应的适当规范是至关重要的。在文献中，有几种技术可用于改进统计分析，例如 （i）空间模型（Gilmour等人，1997）; （ii）最近邻法（Vollmann et al。1996）;和 （iii）包括协变量和其他因素来处理缺失值（Cochran 1957）或妨害效应（Gilmour等人，1997）。 这些是后验分析的例子。在这些选项中，拟合不同于原始实验设计的扩展线性模型，其旨在对在测试建立时未被注意或未被控制的元素建模。另一种后验技术，称为事后阻塞，也可以容易地实现。该方法包括在原始田间设计顶部加上一个阻塞结构，并拟合一个线性模型，好像阻塞效应存在于原始设计中一样。通常，IB设计适合于更简单的设计（例如，RCB）上，但是R-C也可以叠加。这种技术最初由Patterson和Hunter（1983）提出作为一种工具，用于低成本地评价潜在实验设计的效率。尽管如此，一些作者已经成功地使用事后阻断来增加遗传性和遗传效应预测的精确度，用于最终分析（Ericsson 1997; Dutkowski et al.
+                  <a href="../../post/%E7%A9%BA%E9%97%B4/gezan-2006-post-hoc-blocking-%E4%B8%80%E7%A7%8D%E5%90%8E%E9%AA%8C%E5%8C%BA%E7%BB%84%E8%AE%BE%E8%AE%A1/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+        </div>
+
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="../../page/10/">&larr; Newer Posts</a>
+              </li>
+            
+            
+              <li class="next">
+                <a href="../../page/12/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

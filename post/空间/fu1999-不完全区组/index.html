@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Fu1999-不完全区组</title>
+  <meta property="og:title" content="Fu1999-不完全区组" />
+  <meta name="twitter:title" content="Fu1999-不完全区组" />
+  <meta name="description" content="Fu Y-B, Yanchuk AD, Namkoong G (1999) Incomplete block designs for genetic testing: some practical considerations. Can J For Res 29:1871–1878. doi: 10.1139/x99-176
+ 在具有各种环境变化模式的测试位点上模拟用于评估家族和克隆性能的全同胞子代和克隆试验，以检查在不同设计参数（恒定区块大小，可变区段大小）下随机化不完全区段设计（ICB）块形状和取向，以及族尺寸）。模拟显示固定大小5-20的块在移除大多数位点变异在每个家庭三个幼苗的120个全同胞家庭的测试中是有效的。当块被认为是随机的时，块大小的轻微变化不会影响平均估计的精度。在消除一个方向上的斑块变化和梯度时，方块比列或行块更有效。固定大小的块10，家庭规模从3增加到12（以家庭人数为代价，从120下降到30）将家庭平均对比的平均方差降低了75％;大多数这种减少（&gt; 50％）是在每个家庭6棵幼苗实现。在全同胞子代和克隆试验之间的平均估计精度的差异相对于设计参数和所检测的位点变异的模式是小的
+在森林树木后代试验中使用随机不完全块设计（ICB）可以导致估计家庭手段的统计效率在家庭选择方面取得相当大的进步（Barnes和Schweppen- Hauser 1979; Barnes等人1992a，1992b ; Williams和Matheson 1994; Fu等人1998）。测试点往往很大，通常是高度异质性的（Fu等人1999a），并且使用较小的块可以允许从实验误差中去除更多的位点变化。然而，获得多少取决于许多因素，包括位点变异的性质，阻断类型和死亡率（参见Magnussen 1993a; Fu等人1999b）。在真实的后代试验中，环境变化的真实模式在建立之前从未知道，这使得选择最佳ICB困难，即使不是不可能。这个实际问题，如果没有得到充分解决，可以减少实施国际商品机构的效率和其他利益的假定增长。对于潜在的新测试站点的常见方法是在块状和梯度方面的变化模式，然后基于该评估（或投影）选择有效的设计，确定最佳设计参数并执行适当的字段布局。例如，如果期望在行方向上的梯度，则可以考虑单向区组设计，例如α设计（一类广义网格设计; Patterson和Williams 1976）并且采用列块。如果梯度存在于行和列方向，则可以考虑拉伸的行和列设计（John和Williams 1998）。如果期望大的块尺寸，则块大小和形状可以相应地调整。然而，在实践中，最佳投影可能不总是实现，并且所使用的设计参数可能不一定是最优的。虽然预测主要取决于树种繁殖者的经验，但最佳设计参数和场布局的选择只能通过一些有关小区组效应和场址变化性质之间的关系的知识来做出。通过分析手段来形成这些关系是极其困难的，因为场地变化的模式是动态和复杂的。然而，可以模拟场地变化的复杂模式，并使用计算机模拟来说明它们。在本文中，我们利用计算机模拟探讨了在一些模式的位点变化下小区组的有效性，希望能更好地解决与在林木后代试验中实施ICB相关的实际问题。这些问题包括块大小，块形状，块方向和族大小的选择。以前的研究可以在林业文献中找到（Wright和Freeland 1960; Conkle 1963; Johnstone和Samuel 1974; Libby和Cockerham 1980; Lee 1983; Lambeth等人1983; Cotterill和James 1984; Correll和Cellier 1987; Loo-Dinkins和Tauer 1987; McCutchan等人1989; Haapanen 1992），但大多数没有考虑位点变异的性质。即使考虑位点变异，研究通常是位点特异性的（例如，Lambeth等人1983; Correll和Cellier 1987; Loo-Dinkins和Tauer 1987）。此外，大多数研究涉及随机完全区块设计（RCB），其中通常使用超过150个树木的四到六个区块（Magnussen 1993a）。使用这种在正方形或在测试位置上的矩形布置的大块（面积为0.25-0.5ha），例如，可以预期区组的取向在去除位置变化方面可能不重要。然而，当使用小于20棵树的块时，这种期望可能不总是成立。虽然从大区组得到的信息仍然有用，但是检查小区组的有效性可能更有建设性。这项研究的目的是通过一系列的计算机模拟，检查不同的设计参数（恒定块大小;可变块大小，块形状，方向和家庭大小）对统计效率的影响估计家庭手段。考虑了全同胞子代和克隆试验，两者都具有单树图。应用地统计空间模型来指定跨测试位点的环境变化的斑块和系统模式。模拟数据用SAS®PROC MIXED（SAS Institute Inc 1995）分析，允许REML估计块和误差方差分量用于估计家庭均值。将具有不同设计参数的ICB与估计的家庭平均对比进行比较。">
+  <meta property="og:description" content="Fu Y-B, Yanchuk AD, Namkoong G (1999) Incomplete block designs for genetic testing: some practical considerations. Can J For Res 29:1871–1878. doi: 10.1139/x99-176
+ 在具有各种环境变化模式的测试位点上模拟用于评估家族和克隆性能的全同胞子代和克隆试验，以检查在不同设计参数（恒定区块大小，可变区段大小）下随机化不完全区段设计（ICB）块形状和取向，以及族尺寸）。模拟显示固定大小5-20的块在移除大多数位点变异在每个家庭三个幼苗的120个全同胞家庭的测试中是有效的。当块被认为是随机的时，块大小的轻微变化不会影响平均估计的精度。在消除一个方向上的斑块变化和梯度时，方块比列或行块更有效。固定大小的块10，家庭规模从3增加到12（以家庭人数为代价，从120下降到30）将家庭平均对比的平均方差降低了75％;大多数这种减少（&gt; 50％）是在每个家庭6棵幼苗实现。在全同胞子代和克隆试验之间的平均估计精度的差异相对于设计参数和所检测的位点变异的模式是小的
+在森林树木后代试验中使用随机不完全块设计（ICB）可以导致估计家庭手段的统计效率在家庭选择方面取得相当大的进步（Barnes和Schweppen- Hauser 1979; Barnes等人1992a，1992b ; Williams和Matheson 1994; Fu等人1998）。测试点往往很大，通常是高度异质性的（Fu等人1999a），并且使用较小的块可以允许从实验误差中去除更多的位点变化。然而，获得多少取决于许多因素，包括位点变异的性质，阻断类型和死亡率（参见Magnussen 1993a; Fu等人1999b）。在真实的后代试验中，环境变化的真实模式在建立之前从未知道，这使得选择最佳ICB困难，即使不是不可能。这个实际问题，如果没有得到充分解决，可以减少实施国际商品机构的效率和其他利益的假定增长。对于潜在的新测试站点的常见方法是在块状和梯度方面的变化模式，然后基于该评估（或投影）选择有效的设计，确定最佳设计参数并执行适当的字段布局。例如，如果期望在行方向上的梯度，则可以考虑单向区组设计，例如α设计（一类广义网格设计; Patterson和Williams 1976）并且采用列块。如果梯度存在于行和列方向，则可以考虑拉伸的行和列设计（John和Williams 1998）。如果期望大的块尺寸，则块大小和形状可以相应地调整。然而，在实践中，最佳投影可能不总是实现，并且所使用的设计参数可能不一定是最优的。虽然预测主要取决于树种繁殖者的经验，但最佳设计参数和场布局的选择只能通过一些有关小区组效应和场址变化性质之间的关系的知识来做出。通过分析手段来形成这些关系是极其困难的，因为场地变化的模式是动态和复杂的。然而，可以模拟场地变化的复杂模式，并使用计算机模拟来说明它们。在本文中，我们利用计算机模拟探讨了在一些模式的位点变化下小区组的有效性，希望能更好地解决与在林木后代试验中实施ICB相关的实际问题。这些问题包括块大小，块形状，块方向和族大小的选择。以前的研究可以在林业文献中找到（Wright和Freeland 1960; Conkle 1963; Johnstone和Samuel 1974; Libby和Cockerham 1980; Lee 1983; Lambeth等人1983; Cotterill和James 1984; Correll和Cellier 1987; Loo-Dinkins和Tauer 1987; McCutchan等人1989; Haapanen 1992），但大多数没有考虑位点变异的性质。即使考虑位点变异，研究通常是位点特异性的（例如，Lambeth等人1983; Correll和Cellier 1987; Loo-Dinkins和Tauer 1987）。此外，大多数研究涉及随机完全区块设计（RCB），其中通常使用超过150个树木的四到六个区块（Magnussen 1993a）。使用这种在正方形或在测试位置上的矩形布置的大块（面积为0.25-0.5ha），例如，可以预期区组的取向在去除位置变化方面可能不重要。然而，当使用小于20棵树的块时，这种期望可能不总是成立。虽然从大区组得到的信息仍然有用，但是检查小区组的有效性可能更有建设性。这项研究的目的是通过一系列的计算机模拟，检查不同的设计参数（恒定块大小;可变块大小，块形状，方向和家庭大小）对统计效率的影响估计家庭手段。考虑了全同胞子代和克隆试验，两者都具有单树图。应用地统计空间模型来指定跨测试位点的环境变化的斑块和系统模式。模拟数据用SAS®PROC MIXED（SAS Institute Inc 1995）分析，允许REML估计块和误差方差分量用于估计家庭均值。将具有不同设计参数的ICB与估计的家庭平均对比进行比较。">
+  <meta name="twitter:description" content="Fu Y-B, Yanchuk AD, Namkoong G (1999) Incomplete block designs for genetic testing: some practical considerations. Can J For Res 29:1871–1878. doi: 10.1139/x99-176
+ 在具有各种环境变化模式的测试位点上模拟用于评估家族和克隆性能的全同胞子 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/fu1999-%E4%B8%8D%E5%AE%8C%E5%85%A8%E5%8C%BA%E7%BB%84/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/fu1999-%E4%B8%8D%E5%AE%8C%E5%85%A8%E5%8C%BA%E7%BB%84/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Fu1999-不完全区组</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (66 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Fu1999-不完全区组</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (66 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Fu Y-B, Yanchuk AD, Namkoong G (1999) Incomplete block designs for genetic testing: some practical considerations. Can J For Res 29:1871–1878. doi: 10.1139/x99-176</p>
+</blockquote>
+
+<p>在具有各种环境变化模式的测试位点上模拟用于评估家族和克隆性能的全同胞子代和克隆试验，以检查在不同设计参数（恒定区块大小，可变区段大小）下随机化不完全区段设计（ICB）块形状和取向，以及族尺寸）。<code>模拟显示固定大小5-20的块在移除大多数位点变异在每个家庭三个幼苗的120个全同胞家庭的测试中是有效的。当块被认为是随机的时，块大小的轻微变化不会影响平均估计的精度。在消除一个方向上的斑块变化和梯度时，方块比列或行块更有效</code>。固定大小的块10，家庭规模从3增加到12（以家庭人数为代价，从120下降到30）将家庭平均对比的平均方差降低了75％;大多数这种减少（&gt; 50％）是在每个家庭6棵幼苗实现。在全同胞子代和克隆试验之间的平均估计精度的差异相对于设计参数和所检测的位点变异的模式是小的</p>
+
+<p><code>在森林树木后代试验中使用随机不完全块设计（ICB）可以导致估计家庭手段的统计效率在家庭选择方面取得相当大的进步（Barnes和Schweppen- Hauser 1979; Barnes等人1992a，1992b ; Williams和Matheson 1994; Fu等人1998）。测试点往往很大，通常是高度异质性的（Fu等人1999a），并且使用较小的块可以允许从实验误差中去除更多的位点变化。然而，获得多少取决于许多因素，包括位点变异的性质，阻断类型和死亡率（参见Magnussen 1993a; Fu等人1999b）</code>。在真实的后代试验中，环境变化的真实模式在建立之前从未知道，这使得选择最佳ICB困难，即使不是不可能。这个实际问题，如果没有得到充分解决，可以减少实施国际商品机构的效率和其他利益的假定增长。对于潜在的新测试站点的常见方法是在块状和梯度方面的变化模式，然后基于该评估（或投影）选择有效的设计，确定最佳设计参数并执行适当的字段布局。例如，如果期望在行方向上的梯度，则可以考虑单向区组设计，例如α设计（一类广义网格设计; Patterson和Williams 1976）并且采用列块。如果梯度存在于行和列方向，则可以考虑拉伸的行和列设计（John和Williams 1998）。如果期望大的块尺寸，则块大小和形状可以相应地调整。然而，在实践中，最佳投影可能不总是实现，并且所使用的设计参数可能不一定是最优的。虽然预测主要取决于树种繁殖者的经验，但最佳设计参数和场布局的选择只能通过一些有关小区组效应和场址变化性质之间的关系的知识来做出。通过分析手段来形成这些关系是极其困难的，因为场地变化的模式是动态和复杂的。然而，可以模拟场地变化的复杂模式，并使用计算机模拟来说明它们。在本文中，我们利用计算机模拟探讨了在一些模式的位点变化下小区组的有效性，希望能更好地解决与在林木后代试验中实施ICB相关的实际问题。这些问题包括块大小，块形状，块方向和族大小的选择。以前的研究可以在林业文献中找到（Wright和Freeland 1960; Conkle 1963; Johnstone和Samuel 1974; Libby和Cockerham 1980; Lee 1983; Lambeth等人1983; Cotterill和James 1984; Correll和Cellier 1987; Loo-Dinkins和Tauer 1987; McCutchan等人1989; Haapanen 1992），但大多数没有考虑位点变异的性质。即使考虑位点变异，研究通常是位点特异性的（例如，Lambeth等人1983; Correll和Cellier 1987; Loo-Dinkins和Tauer 1987）。此外，大多数研究涉及随机完全区块设计（RCB），其中通常使用超过150个树木的四到六个区块（Magnussen 1993a）。使用这种在正方形或在测试位置上的矩形布置的大块（面积为0.25-0.5ha），例如，可以预期区组的取向在去除位置变化方面可能不重要。然而，当使用小于20棵树的块时，这种期望可能不总是成立。虽然从大区组得到的信息仍然有用，但是检查小区组的有效性可能更有建设性。这项研究的目的是通过一系列的计算机模拟，检查不同的设计参数（恒定块大小;可变块大小，块形状，方向和家庭大小）对统计效率的影响估计家庭手段。考虑了全同胞子代和克隆试验，两者都具有单树图。应用地统计空间模型来指定跨测试位点的环境变化的斑块和系统模式。模拟数据用SAS®PROC MIXED（SAS Institute Inc 1995）分析，允许REML估计块和误差方差分量用于估计家庭均值。将具有不同设计参数的ICB与估计的家庭平均对比进行比较。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/fuentes-utrilla2017-/" data-toggle="tooltip" data-placement="top" title="Fuentes-Utrilla2017-">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/fries1998-%E9%83%A8%E5%88%86%E5%8F%8C%E5%88%97-%E5%BF%83%E6%9D%90%E5%BD%A2%E6%88%90-%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/" data-toggle="tooltip" data-placement="top" title="Fries1998-部分双列-心材形成-遗传参数">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

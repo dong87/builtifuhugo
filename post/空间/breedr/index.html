@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>breedR</title>
+  <meta property="og:title" content="breedR" />
+  <meta name="twitter:title" content="breedR" />
+  <meta name="description" content="概述 FacundoMu oz编辑本页 on 3 Dec 2015
+BreedR功能映射 
+简介 功能 推理 具有非结构化随机效应的线性混合模型 加性遗传效应 空间自相关 竞争 通用组件 预测 一些更多的功能
+ ## 简介
+ 什么是breedR R-包执行统计模型专门适用于森林遗传资源分析师。 最终混合模型 ，但不一定容易实现和使用 breedR充当其提供装置在接口 - 结合任意数量的这些模型作为一个较大的组件模型 - 自动计算从几个输入参数， 发病率和协方差矩阵 - 拟合模型 - 绘图数据和结果，并进行模型诊断
+## 安装 - 项目网页http://famuvie.github.io/breedR/ - 将该URL设置为一个包的库.Rprofile （在网络上有详细说明） - install.packages(&#39;breedR&#39;) - 不可能使用CRAN，由于闭源BLUPF90 方案
+ GitHub的开发网址https://github.com/famuvie/breedR  if( !require(devtools) ) install.packages(&#39;devtools&#39;) devtools::install_github(&#39;famuvie/breedR&#39;)   ## 在哪里找到帮助 - 包装的帮助： help(package = breedR) - 帮助页面?remlf90 - 代码演示demo(topic, package = &lsquo;breedR&rsquo;)(省略topic 的列表） - 插图vignette(package = &lsquo;breedR&rsquo;) （PKG和wiki）">
+  <meta property="og:description" content="概述 FacundoMu oz编辑本页 on 3 Dec 2015
+BreedR功能映射 
+简介 功能 推理 具有非结构化随机效应的线性混合模型 加性遗传效应 空间自相关 竞争 通用组件 预测 一些更多的功能
+ ## 简介
+ 什么是breedR R-包执行统计模型专门适用于森林遗传资源分析师。 最终混合模型 ，但不一定容易实现和使用 breedR充当其提供装置在接口 - 结合任意数量的这些模型作为一个较大的组件模型 - 自动计算从几个输入参数， 发病率和协方差矩阵 - 拟合模型 - 绘图数据和结果，并进行模型诊断
+## 安装 - 项目网页http://famuvie.github.io/breedR/ - 将该URL设置为一个包的库.Rprofile （在网络上有详细说明） - install.packages(&#39;breedR&#39;) - 不可能使用CRAN，由于闭源BLUPF90 方案
+ GitHub的开发网址https://github.com/famuvie/breedR  if( !require(devtools) ) install.packages(&#39;devtools&#39;) devtools::install_github(&#39;famuvie/breedR&#39;)   ## 在哪里找到帮助 - 包装的帮助： help(package = breedR) - 帮助页面?remlf90 - 代码演示demo(topic, package = &lsquo;breedR&rsquo;)(省略topic 的列表） - 插图vignette(package = &lsquo;breedR&rsquo;) （PKG和wiki）">
+  <meta name="twitter:description" content="概述 FacundoMu oz编辑本页 on 3 Dec 2015
+BreedR功能映射 
+简介 功能 推理 具有非结构化随机效应的线性混合模型 加性遗传效应 空间自相关 竞争 通用组件 预测 一些更多的功能
+ ## 简介
+ 什么是breedR R-包执行统计模型专门适用于森林遗传资源分析师。 最终混合模型 ，但不一定容易实现和使用 breedR充当其提供装置在接口 - 结合任意数量的这些模型作为 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/breedr/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/breedr/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>breedR</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 11 minutes (2310 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>breedR</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 11 minutes (2310 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h2 id="概述">概述</h2>
+
+<p>FacundoMu oz编辑本页 on 3 Dec 2015</p>
+
+<hr />
+
+<p>BreedR功能映射
+<a href="https://github.com/famuvie/breedR/wiki/img/breedR_functionality.png"><img src="https://raw.githubusercontent.com/wiki/famuvie/breedR/img/breedR_functionality.png" alt="" /></a></p>
+
+<hr />
+
+<p><a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=https://github.com/famuvie/breedR/wiki/Overview&amp;usg=ALkJrhjJByvjVJuoCu9yIkaM1cqvKUZosA#intro">简介</a>
+<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=https://github.com/famuvie/breedR/wiki/Overview&amp;usg=ALkJrhjJByvjVJuoCu9yIkaM1cqvKUZosA#functionality">功能</a>
+<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=https://github.com/famuvie/breedR/wiki/Overview&amp;usg=ALkJrhjJByvjVJuoCu9yIkaM1cqvKUZosA#inference">推理</a>
+<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=https://github.com/famuvie/breedR/wiki/Overview&amp;usg=ALkJrhjJByvjVJuoCu9yIkaM1cqvKUZosA#linear-mixed-models-with-unstructured-random-effects">具有非结构化随机效应的线性混合模型</a>
+<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=https://github.com/famuvie/breedR/wiki/Overview&amp;usg=ALkJrhjJByvjVJuoCu9yIkaM1cqvKUZosA#additive-genetic-effect">加性遗传效应</a>
+<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=https://github.com/famuvie/breedR/wiki/Overview&amp;usg=ALkJrhjJByvjVJuoCu9yIkaM1cqvKUZosA#spatial-autocorrelation">空间自相关</a>
+<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=https://github.com/famuvie/breedR/wiki/Overview&amp;usg=ALkJrhjJByvjVJuoCu9yIkaM1cqvKUZosA#competition">竞争</a>
+<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=https://github.com/famuvie/breedR/wiki/Overview&amp;usg=ALkJrhjJByvjVJuoCu9yIkaM1cqvKUZosA#generic-component">通用组件</a>
+<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=https://github.com/famuvie/breedR/wiki/Overview&amp;usg=ALkJrhjJByvjVJuoCu9yIkaM1cqvKUZosA#prediction">预测</a>
+<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=https://github.com/famuvie/breedR/wiki/Overview&amp;usg=ALkJrhjJByvjVJuoCu9yIkaM1cqvKUZosA#some-more-features">一些更多的功能</a></p>
+
+<p> ## 简介</p>
+
+<p> 什么是<strong>breedR</strong>
+R-包执行<strong>统计模型</strong>专门适用于森林遗传资源分析师。
+最终<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=https://en.wikipedia.org/wiki/Mixed_model&amp;usg=ALkJrhg6YtoN0f9IsYR4r0HCY-0mxseSfw">混合模型</a> ，但不一定容易实现和使用
+<strong>breedR</strong>充当其提供装置在<strong>接口</strong>
+- <strong>结合</strong>任意数量的这些模型作为一个较大的<strong>组件</strong>模型
+- 自动计算从几个输入参数， <strong>发病率</strong>和<strong>协方差矩阵</strong>
+- <strong>拟合</strong>模型
+- 绘图数据和结果，并进行<strong>模型诊断</strong></p>
+
+<p>## 安装
+- 项目网页<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=http://famuvie.github.io/breedR/&amp;usg=ALkJrhj4QE8sctSKWWLSC5jaL3K0r2s4Ww">http://famuvie.github.io/breedR/</a>
+ - 将该URL设置为一个包的库<code>.Rprofile</code>
+ （在网络上有详细说明）
+ - <code>install.packages('breedR')</code>
+ - 不可能使用CRAN，由于闭源<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=http://nce.ads.uga.edu/wiki/doku.php&amp;usg=ALkJrhhJVQSpuKjZqb5iCsYfZXUuFvN4iw">BLUPF90
+</a>方案</p>
+
+<ul>
+<li>GitHub的开发网址<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=https://github.com/famuvie/breedR&amp;usg=ALkJrhj0cxLOb3dHt2wLEJLaYTe2O9oyCA">https://github.com/famuvie/breedR</a>
+
+<ul>
+<li><code>if( !require(devtools) ) install.packages('devtools')</code></li>
+<li><code>devtools::install_github('famuvie/breedR')</code></li>
+</ul></li>
+</ul>
+
+<p>## 在哪里找到帮助
+- 包装的帮助： help(package = breedR)
+ - 帮助页面?remlf90
+ - 代码演示demo(topic, package = &lsquo;breedR&rsquo;)(省略topic
+的列表）
+ - 插图vignette(package = &lsquo;breedR&rsquo;) （PKG和wiki）</p>
+
+<ul>
+<li><p><a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=https://github.com/famuvie/breedR/wiki&amp;usg=ALkJrhijo4igW7clkD1pyFoyzw7xmsUldg">维基页面</a></p>
+
+<ul>
+<li>指南，教程，常见问题</li>
+</ul></li>
+
+<li><p>邮件列表<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=http://groups.google.com/group/breedr&amp;usg=ALkJrhjtpesdc-ypw_E5ZxWNs4ZF0OZZ4g">http://groups.google.com/group/breedr</a></p>
+
+<ul>
+<li>关于使用和界面的问题和辩论</li>
+</ul></li>
+
+<li><p><a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=https://github.com/famuvie/breedR/issues&amp;usg=ALkJrhjsHOoF9e3kunRNufSG1PSKDh59Ag">问题页面</a></p>
+
+<ul>
+<li>错误报告</li>
+<li>功能请求</li>
+</ul></li>
+</ul>
+
+<p>## 执照
+<img src="https://github.com/famuvie/breedR/wiki/img/gpl-v3-logo.png" alt="GPL-3" />
+<strong>breedR</strong>是FOSS。 授权<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=http://www.gnu.org/licenses/gpl-3.0.html&amp;usg=ALkJrhiMElhgBJ1L8GE4rXUAJnJ2Eu02Xg">GPL-3</a>RShowDoc(&lsquo;LICENSE&rsquo;, package = &lsquo;breedR&rsquo;)</p>
+
+<p>您可以<strong>使用</strong>为任何目的<strong>分发</strong> <strong>breedR</strong>
+您可以<strong>修改</strong>它来满足您的需求我们鼓励！
+请考虑提供您的改进
+你可以在GPL下<strong>发布</strong>您<strong>的</strong>修改后的版本</p>
+
+<p>然而<strong>，breedR</strong>使（重症）使用的<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=http://nce.ads.uga.edu/wiki/doku.php&amp;usg=ALkJrhhJVQSpuKjZqb5iCsYfZXUuFvN4iw">BLUPF90
+</a> Fortran程序，这是*免费*的，但不是<strong>免费</strong>的（记得CRAN？）套件</p>
+
+<p> ## 路线图| 未来发展
+- 贝叶斯推理</p>
+
+<ul>
+<li><p>多特征支持</p></li>
+
+<li><p>基因型（\ times）环境交互</p></li>
+
+<li><p>支持纵向数据</p></li>
+</ul>
+
+<h2 id="功能">功能</h2>
+
+<p><a href="https://raw.githubusercontent.com/wiki/famuvie/breedR/img/breedR_functionality.png"><img src="https://github.com/famuvie/breedR/wiki/img/breedR_functionality_crop.png" alt="" /></a></p>
+
+<p> ## 推理</p>
+
+<p> ### 频率
+- 目前，只有<strong>频率论推断</strong>是通过方差分量估计REML支持。
+- 该功能remlf90()为<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=http://nce.ads.uga.edu/wiki/doku.php&amp;usg=ALkJrhhJVQSpuKjZqb5iCsYfZXUuFvN4iw">BLUPF90
+</a> Fortran程序套件重的REMLF90和AIREMLF90功能提供了两个接口。
+- 键入?remlf90对语法的详细信息</p>
+
+<p>### 贝叶斯
+- 这是在明年的路线图
+- 将使用吉布斯采样来自<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=http://nce.ads.uga.edu/wiki/doku.php&amp;usg=ALkJrhhJVQSpuKjZqb5iCsYfZXUuFvN4iw">BLUPF90
+</a> ，也可能<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=http://www.r-inla.org/&amp;usg=ALkJrhgcfuDaKriFw63HH310umeJowDmvw">INLA
+</a></p>
+
+<ul>
+<li>该<strong>接口</strong>将改变一点，从拟合分离模型指定</li>
+</ul>
+
+<p>## 具有非结构化随机效应的线性混合模型</p>
+
+<p>### 示例数据集
+### 简单的Provenance测试</p>
+
+<p> ## 初始方差规范
+为了避免该通知， *所有*方差分量的初始值必须使用参数进行明确var.ini</p>
+
+<p>虽然在大多数情况下结果根本不会改变，但我们鼓励为方差分量给出明确的初始值。 特别是当有人估计可能是<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=http://nce.ads.uga.edu/wiki/doku.php%3Fid%3Dreadme.reml&amp;usg=ALkJrhgbSPss4xpTGG2d_vhIxL8Xo8u7pQ#does_remlf90_always_converge">假象</a> 。 这也可用于检查对初始值的灵敏度。</p>
+
+<p>## 探索结果
+摘要（RES）</p>
+
+<ul>
+<li>需要注意的是AI-REML，已经使用默认。</li>
+<li>您也可以指定method = &lsquo;em&rsquo; 。</li>
+<li>了解<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=https://github.com/famuvie/breedR/wiki/Available-components-and-inference-methods&amp;usg=ALkJrhglfltZ_LRQ_KmK8ooJrmKGx7S4eQ">差异</a> 。</li>
+</ul>
+
+<p>## 进一步*提取*功能
+ fixef（RES）</p>
+
+<p>ranef（RES）</p>
+
+<p> ## 进一步*提取*功能</p>
+
+<p><img src="https://github.com/famuvie/breedR/wiki/Overview_files/figure-markdown_github/extraction-2-1.png" alt="" /></p>
+
+<p>## 分层和阶乘模型
+在蓝桉， <strong>家庭</strong> （ mum
+ ） *嵌套*在<strong>源</strong>中（ gg
+ ）</p>
+
+<p>这是编纂的问题：</p>
+
+<p>嵌套因素
+gg
+妈妈</p>
+
+<p>一个
+1</p>
+
+<p>一个
+2</p>
+
+<p>B
+3</p>
+
+<p>B
+4</p>
+
+<p>交叉因素
+gg
+妈妈</p>
+
+<p>一个
+1</p>
+
+<p>一个
+2</p>
+
+<p>B
+1</p>
+
+<p>B
+2</p>
+
+<p> 型号规格
+否则，在这两种情况下，我们以相同的方式指定模型：</p>
+
+<p>随机 =〜GG + 因子 （ 妈妈 ）＃注意，妈妈是数字</p>
+
+<p>此外，这种方法可以处理不平衡和混合设计</p>
+
+<p> 互动
+标准R
+符号：</p>
+
+<p>随机 =〜GG * 因子 （ 妈妈 ）</p>
+
+<p>尚未提供（功能要求？）</p>
+
+<p>解决方法：手动构建交互变量</p>
+
+<p>例如： gg
+和block
+被划掉因素</p>
+
+<p>DAT &lt; -变换（ 蓝桉 ，  互动 = 系数 （GG：BL）） 随机 =〜GG + BL + 互动</p>
+
+<p> 练习| 分层和阶乘模型
+使用remlf90()
+和蓝桉的数据集，以适应
+采用分层模型mum
+ <strong>在</strong> gg</p>
+
+<p>使用因子模型gg
+和bl</p>
+
+<p>探索的结果summary()</p>
+
+<p>是家庭（ mum
+ ）的影响<strong>有关</strong> ？
+有相互作用的之间的任何证据gg
+和bl
+ ？</p>
+
+<p> 分层和阶乘模型＃1 | 配件模型
+ res.h &lt; - remlf90（ 固定 = phe_X〜1，  随机 =〜 因子 （ 妈妈 ）+ GG，  数据 = 桉 ）</p>
+
+<p>＃互动变量 globulus.f &lt; -变换（ 蓝桉 ，  gg_bl = 系数 （GG：BL）） res.f &lt; - remlf90（ 固定 = phe_X〜1，  随机 =〜GG + BL + gg_bl，  数据 = globulus.f）</p>
+
+<p> 分层和阶乘模型＃2 | 分层模型
+家庭效果不是很<strong>重要的</strong> ，在解释方差计
+然而，模型有点好一点（AIC，logLik）</p>
+
+<p>摘要（RES）</p>
+
+<h2 id="linear-mixed-model-with-pedigree-and-spatial-effects-fit-by-ai-remlf90-ver-1-122-data-globulus-aic-bic-loglik-5864-5874-2930-parameters-of-special-components-variance-components-estimated-variances-se-gg-2-857-1-3584-residual-17-695-0-7888-fixed-effects-value-se-intercept-14-799-0-4911">Linear Mixed Model with pedigree and spatial effects fit by AI-REMLF90 ver. 1.122 ## Data: globulus ## AIC BIC logLik ## 5864 5874 -2930 ## ## Parameters of special components: ## ## ## Variance components: ## Estimated variances SE ## gg 2.857 1.3584 ## Residual 17.695 0.7888 ## ## Fixed effects: ## value se ## Intercept 14.799 0.4911</h2>
+
+<p>摘要（res.h）</p>
+
+<h2 id="linear-mixed-model-with-pedigree-and-spatial-effects-fit-by-ai-remlf90-ver-1-122-data-globulus-aic-bic-loglik-5857-5872-2926-parameters-of-special-components-variance-components-estimated-variances-se-factor-mum-0-8955-0-4177-gg-2-0540-1-1706-residual-17-0770-0-7819-fixed-effects-value-se-intercept-14-973-0-4702">Linear Mixed Model with pedigree and spatial effects fit by AI-REMLF90 ver. 1.122 ## Data: globulus ## AIC BIC logLik ## 5857 5872 -2926 ## ## Parameters of special components: ## ## ## Variance components: ## Estimated variances SE ## factor(mum) 0.8955 0.4177 ## gg 2.0540 1.1706 ## Residual 17.0770 0.7819 ## ## Fixed effects: ## value se ## Intercept 14.973 0.4702</h2>
+
+<p> 分层和阶乘模型＃3 | 因子模型
+看起来像<strong>块</strong>和<strong>源</strong>之间的相互作用可以忽略不计
+（除了它根本没有意义，甚至不会被考虑在一开始的事实）
+与没有交互的模型进行比较</p>
+
+<p>摘要（res.f）</p>
+
+<h2 id="linear-mixed-model-with-pedigree-and-spatial-effects-fit-by-ai-remlf90-ver-1-122-data-globulus-f-aic-bic-loglik-5752-5772-2872-parameters-of-special-components-variance-components-estimated-variances-se-gg-3-10970-1-4329-bl-2-57280-1-0606-gg-bl-0-02912-0-2713-residual-15-19800-0-7159-fixed-effects-value-se-intercept-14-764-0-653">Linear Mixed Model with pedigree and spatial effects fit by AI-REMLF90 ver. 1.122 ## Data: globulus.f ## AIC BIC logLik ## 5752 5772 -2872 ## ## Parameters of special components: ## ## ## Variance components: ## Estimated variances SE ## gg 3.10970 1.4329 ## bl 2.57280 1.0606 ## gg_bl 0.02912 0.2713 ## Residual 15.19800 0.7159 ## ## Fixed effects: ## value se ## Intercept 14.764 0.653</h2>
+
+<p>##结果无交互 res.f0 &lt; - remlf90（ 固定 = phe_X〜1，  随机 =〜GG + BL，  数据 = 桉 ）膏（“AIC：&rsquo;圆（extractAIC（res.f0））  “logLik：&rsquo;圆（logLik（res.f0）））</p>
+
+<h2 id="1-aic-5750-loglik-2872">[1] &ldquo;AIC: 5750 logLik: -2872&rdquo;</h2>
+
+<p> 添加剂遗传效应
+<img src="https://github.com/famuvie/breedR/wiki/img/pedigree-background.png" alt="谱系" /></p>
+
+<p> 什么是加性遗传效应
+在<strong>个人层面上</strong>随机效应</p>
+
+<p>基于<strong>系谱</strong></p>
+
+<p>从自己的<strong>育种值</strong>和亲属的表型BLUP</p>
+
+<p>代表遗传价值的<strong>添加剂组分</strong></p>
+
+<p>更一般：
+家庭效应是一种特殊情况
+占一代以上
+混合关系</p>
+
+<p>更灵活：允许选择家庭中的个人</p>
+
+<p> 指定<em>血统</em>
+A 3列data.frame
+或matrix
+与每一个人及其父母码</p>
+
+<p>一个<strong>家庭</strong>的影响是很容易转化为谱系：
+使用<strong>家庭代码</strong>作为一个虚构<strong>母亲</strong>的身份
+用0
+或NA
+作为<strong>未知父亲</strong>代码</p>
+
+<p>自
+爸
+妈妈</p>
+
+<p>69
+0
+64</p>
+
+<p>70
+0
+41</p>
+
+<p>71
+0
+56</p>
+
+<p>72
+0
+55</p>
+
+<p>73
+0
+22</p>
+
+<p>74
+0
+50</p>
+
+<p> 拟合的<em>动物模型</em>
+ res.animal &lt; - remlf90（ 固定 = phe_X〜1，  随机 =〜GG，  遗传 = 名单 （ 型号 =&lsquo;add_animal&rsquo;，  系谱 = 桉 [1：3]，  ID =&lsquo;自我&rsquo;），  数据 = 桉 ）</p>
+
+<p> 动物模型：结果
+gg
+解释几乎表型变异的相同量</p>
+
+<p>在（添加剂） genetic
+效应解释了以前的剩余方差的<strong>一部分</strong></p>
+
+<p><strong>遗传</strong>是自动计算的[H ^ 2 = \压裂{\ sigma_a ^ 2} {\ sigma<em>a ^ 2 + \ {sigma</em> GG} ^ 2 + \西格马^ 2}]</p>
+
+<p>摘要（res.animal）</p>
+
+<h2 id="linear-mixed-model-with-pedigree-and-spatial-effects-fit-by-ai-remlf90-ver-1-122-data-globulus-aic-bic-loglik-5857-5872-2926-parameters-of-special-components-variance-components-estimated-variances-se-gg-2-356-1-249-genetic-3-632-1-649-residual-14-271-1-561-estimate-se-heritability-0-1795-0-08253-fixed-effects-value-se-intercept-14-797-0-47">Linear Mixed Model with pedigree and spatial effects fit by AI-REMLF90 ver. 1.122 ## Data: globulus ## AIC BIC logLik ## 5857 5872 -2926 ## ## Parameters of special components: ## ## ## Variance components: ## Estimated variances SE ## gg 2.356 1.249 ## genetic 3.632 1.649 ## Residual 14.271 1.561 ## ## Estimate SE ## Heritability 0.1795 0.08253 ## ## Fixed effects: ## value se ## Intercept 14.797 0.47</h2>
+
+<p> 提取预测育种值
+ ##预测育种值 ＃为完全血统首先，和观察个人 ＃通过与关联矩阵的矩阵乘法 PBV.full &lt; - ranef（res.animal）$ 遗传 PBV &lt; - model.matrix（res.animal）$ 遗传 ％*％PBV.full ＃预测遗传值vs. ＃表型。 ＃注意：拟合= mu + PBV qplot（装（res.animal），phe_X，  数据 = 桉 ）+  geom_abline（INT = 0，  斜率 = 1，  COL =“灰色”）</p>
+
+<p><img src="https://github.com/famuvie/breedR/wiki/Overview_files/figure-markdown_github/PBV-1.png" alt="" /></p>
+
+<p> 处理家谱
+谱系需要满足一定条件</p>
+
+<p>如果没有<strong>，breedR</strong>自动完成，重新编码和排序</p>
+
+<p>如果重新编码是必要的<strong>，breedR</strong>因为你需要检索结果时要小心发出警告</p>
+
+<p>请参见本<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=https://github.com/famuvie/breedR/wiki/Handling-pedigrees&amp;usg=ALkJrhjmzGmv0dzMh1pe1T5kMP5PJ9FYdQ">指南</a>了解更多详情</p>
+
+<p> 空间自相关
+<img src="https://github.com/famuvie/breedR/wiki/img/spatial-background.png" alt="空间" /></p>
+
+<p> 什么是空间自相关
+任何LMM的<strong>残留物</strong>必须是<strong>噪音</strong></p>
+
+<p>然而，大多数时候还存在影响该响应<strong>环境因子</strong></p>
+
+<p>这会导致观察是相互接近<strong>更趋于</strong>相似，以至于观察是远</p>
+
+<p>这就是所谓的<strong>空间自相关</strong></p>
+
+<p>它可能影响估计及其准确性</p>
+
+<p>这就是为什么实验随机分为空间<strong>块</strong></p>
+
+<p> 诊断空间自相关| 残差空间图
+您可以plot()
+的各种模型组件的空间布局（如残渣）</p>
+
+<p>看起来像<strong>独立的</strong>高斯观测（即噪声）？</p>
+
+<p>你看到背景中的任何<strong>信号</strong> ？</p>
+
+<p>##因为坐标没有 ##在他们之前通过 ##必须明确提供。坐标（res.animal）&lt; -  桉 [，C（&rsquo;X&rsquo;，&rsquo;Y&rsquo;）]图（res.animal，“渣油”）</p>
+
+<p><img src="https://github.com/famuvie/breedR/wiki/Overview_files/figure-markdown_github/animal-residuals-1.png" alt="" /></p>
+
+<p> 诊断空间自相关| 残差的变异函数
+绘制与<strong>残差的变差</strong> variogram()</p>
+
+<p>变差函数（res.animal）</p>
+
+<p><img src="https://github.com/famuvie/breedR/wiki/Overview_files/figure-markdown_github/genetic_variogram-1.png" alt="" /></p>
+
+<p> 解释变差函数
+各向同性变差函数：[\ gamma（h）= \ frac12 V [Z（\ mathbf {u}） - Z（\ mathbf {v}）]，\ quad \ text {dist}（\ mathbf {u}，\ mathbf { v}）= h]</p>
+
+<p><strong>经验</strong>各向同性变差是由聚集<strong>所有对</strong>由（H）分开的点， <strong>不论方向</strong>构建。
+<img src="https://github.com/famuvie/breedR/wiki/Overview_files/figure-markdown_github/variogram-isotropic-1.png" alt="" />
+<img src="https://github.com/famuvie/breedR/wiki/Overview_files/figure-markdown_github/variogram-circle-1.png" alt="" /></p>
+
+<p> 解释变差函数
+行/列变异函数：[\ gamma（x，y）= \ frac12 V [Z（\ mathbf {u}）-Z（\ mathbf {v}）]，\ quad \ text {dist}（\ mathbf {u} ，\ mathbf {v}）=（x，y）]</p>
+
+<p><strong>实证</strong>行/列变差函数是通过聚集<strong>所有对</strong>正好（X）行（Y）列分隔点的建造。
+<img src="https://github.com/famuvie/breedR/wiki/Overview_files/figure-markdown_github/variogram-heat-1.png" alt="" />
+<img src="https://github.com/famuvie/breedR/wiki/Overview_files/figure-markdown_github/variogram-rect-1.png" alt="" /></p>
+
+<p> 解释变差函数
+各向异性变异函数：[\ gamma（\ mathbf {x}）= \ frac12 V [Z（\ mathbf {u}） - Z（\ mathbf {v}）] \ quad \ mathbf {u} = \ mathbf { \ pm \ mathbf {x}]</p>
+
+<p><strong>实证</strong>各向异性变差函数是通过聚集<strong>所有的</strong>点<strong>对</strong> <strong>由</strong>分隔<strong>同一方向</strong>建（| \ mathbf {X} |）。
+<img src="https://github.com/famuvie/breedR/wiki/Overview_files/figure-markdown_github/variogram-anisotropic-1.png" alt="" />
+<img src="https://github.com/famuvie/breedR/wiki/Overview_files/figure-markdown_github/variogram-direction-1.png" alt="" /></p>
+
+<p> 会计空间自相关
+包括在模型中的显式<strong>空间效果</strong></p>
+
+<p>即，与特定的协方差结构的<strong>随机效应</strong>反映个体之间的空间关系</p>
+
+<p><strong>块</strong>的作用，是一个非常特殊的案例：
+它是从开始设计的，可能使用先验知识
+推出块之间的<strong>独立</strong>影响
+大多数邻居在同一块内（即共享相同的效果）</p>
+
+<p> 该blocks
+模型
+ ＃遗传组分（DRY） gen.globulus &lt; - 列表 （ 型号 =&lsquo;add_animal&rsquo;，  系谱 = 桉 [1：3]，  ID =&lsquo;自我&rsquo;） res.blk &lt; - remlf90（ 固定 = phe_X〜1，  随机 =〜GG，  遗传 = gen.globulus，  空间 = 名单 （ 型号 =&lsquo;块&rsquo;，  坐标 = 桉 [，C（&rsquo;X&rsquo;，&rsquo;Y&rsquo;）]  ID =&lsquo;BL&rsquo;），  数据 = 桉 ）</p>
+
+<p>该blocks
+空间模型<strong>相当于</strong> random = ~ bl
+ ，但是：指定coord
+方便绘图（还记得吗？）
+blocks
+的行为与预期，即使bl
+是不是一个<strong>因素</strong></p>
+
+<p> 动物空间模型：结果
+摘要（res.blk）</p>
+
+<h2 id="linear-mixed-model-with-pedigree-and-spatial-effects-fit-by-ai-remlf90-ver-1-122-data-globulus-aic-bic-loglik-5734-5753-2863-parameters-of-special-components-spatial-n-blocks-15-variance-components-estimated-variances-se-gg-2-385-1-274-genetic-5-275-1-836-spatial-2-650-1-081-residual-10-279-1-601-estimate-se-heritability-0-2556-0-08989-fixed-effects-value-se-intercept-14-762-0-6342">Linear Mixed Model with pedigree and spatial effects fit by AI-REMLF90 ver. 1.122 ## Data: globulus ## AIC BIC logLik ## 5734 5753 -2863 ## ## Parameters of special components: ## spatial: n.blocks: 15 ## ## Variance components: ## Estimated variances SE ## gg 2.385 1.274 ## genetic 5.275 1.836 ## spatial 2.650 1.081 ## Residual 10.279 1.601 ## ## Estimate SE ## Heritability 0.2556 0.08989 ## ## Fixed effects: ## value se ## Intercept 14.762 0.6342</h2>
+
+<p>现在加性遗传方差和遗传力增加了！ （（3.6）和（0.18）之前）</p>
+
+<p> 残差的变异函数
+<img src="https://github.com/famuvie/breedR/wiki/Overview_files/figure-markdown_github/genetic-spatial_variogram-1.png" alt="" />
+似乎保留一些块内空间自相关</p>
+
+<p> B-Splines模型
+从<strong>基</strong>函数的线性组合构建的连续及平滑的空间面
+系数被建模为随机效应</p>
+
+<p>##使用<code>em'方法！</code>ai`不喜欢样条 res.spl &lt; - remlf90（ 固定 = phe_X〜1，  随机 =〜GG，  遗传 = gen.globulus，  空间 = 名单 （ 型号 =&lsquo;样条&rsquo;，  坐标 = 桉 [，C（&rsquo;X&rsquo;，&rsquo;Y&rsquo;）]），  数据 = 桉 ， 方法 =&lsquo;时间&rsquo;）</p>
+
+<p> 自回归模型
+在行和列上的一阶自回归处理的可分离克罗内克乘积</p>
+
+<p>res.ar1 &lt; - remlf90（ 固定 = phe_X〜1，  随机 =〜GG，  遗传 = gen.globulus，  空间 = 名单 （ 型号 =&lsquo;AR&rsquo;，  坐标 = 桉 [，C（&rsquo;X&rsquo;，&rsquo;Y&rsquo;）]），  数据 = 桉 ）</p>
+
+<p> 模型残差的变化
+我们通过保持规模compare.plots()</p>
+
+<p>compare.plots（  列表 （<code>动物 模型 仅仅</code>=图（res.animal，“残差”），  <code>动物 / 块 模型</code>=图（res.blk，“残差”），  <code>动物 / 样条 模型</code>=图（res.spl，“残差”），  <code>动物 / AR1 模型</code>=图（res.ar1，&rsquo;残差&rsquo;）））</p>
+
+<p><img src="https://github.com/famuvie/breedR/wiki/Overview_files/figure-markdown_github/change-residuals-1.png" alt="" /></p>
+
+<p> 空间分量的比较
+ compare.plots（ 列表 （ 块 =图（res.blk， 键入 =&lsquo;空间&rsquo;），  = 样条曲线（res.spl， 键入 =&lsquo;空间&rsquo;），  AR1xAR1 =图（res.ar1， 键入 =&lsquo;空间&rsquo;）））</p>
+
+<p><img src="https://github.com/famuvie/breedR/wiki/Overview_files/figure-markdown_github/spatial-components-1.png" alt="" /></p>
+
+<p> 未观察位置的空间效应的预测
+类型fullspatial
+填充孔（如果可能）</p>
+
+<p>见?plot.remlf90</p>
+
+<p>compare.plots（ 列表 （ 块 =图（res.blk， 键入 =&lsquo;fullspatial&rsquo;），  = 样条曲线（res.spl， 键入 =&lsquo;fullspatial&rsquo;），  AR1xAR1 =图（res.ar1， 键入 =&lsquo;fullspatial&rsquo;）））</p>
+
+<p><img src="https://github.com/famuvie/breedR/wiki/Overview_files/figure-markdown_github/spatial-fullcomponents-1.png" alt="" /></p>
+
+<p> 空间参数| 一节的数splines
+模型
+可以通过修改基函数的数量来控制空间表面的平滑度</p>
+
+<p>这是直接由在每个维<strong>节</strong> （NOK） <strong>的数目</strong>来确定</p>
+
+<p>n.knots
+可以<strong>用作</strong>在<strong>一个额外的参数</strong> spatial
+作为大小为2的数字矢量的效果。</p>
+
+<p>否则，通过在给定的函数确定breedR.getOption(&lsquo;splines.nok&rsquo;)</p>
+
+<p><img src="https://github.com/famuvie/breedR/wiki/Overview_files/figure-markdown_github/determine-nknots-1.png" alt="" /></p>
+
+<p> 空间参数| 一个自回归参数AR
+模型
+类似地，对所述*斑块* AR
+效果可以通过对每个维自回归参数来控制</p>
+
+<p>rho
+ <strong>可以作为一个额外的参数</strong>在spatial
+效果大小为2的数字矢量</p>
+
+<p>缺省情况下<strong>，breedR</strong>运行在由值从所产生的网格中的所有组合breedR.getOption(&lsquo;ar.eval&rsquo;)
+和返回一个具有最大似然</p>
+
+<p>它也返回组合的全表和可能性res$rho</p>
+
+<p> 练习| 调整空间参数
+调整参数：
+模型splines
+ ： n.knots</p>
+
+<p>型号AR
+ ： rho</p>
+
+<p>增加节点数的splines
+模型，看看它是否提高了合适</p>
+
+<p>可视化装配的数似然AR
+模型</p>
+
+<p>优化电网各地最有可能的值，并利用改装rho = rho.grid
+ ，其中</p>
+
+<p>rho.grid &lt; - 。expand.grid（rho_r = SEQ（7，95， 长度 = 4），  rho_c = SEQ（7。95， 长度 = 4））</p>
+
+<ul>
+<li>What are now the most likely parameters?</li>
+</ul>
+
+<p> 空间＃1 | 增加B样条模型nok</p>
+
+<p>nok
+分别为（6,6），在默认情况下（见summary()</p>
+
+<p>res.spl99 &lt; - remlf90（ 固定 = phe_X〜1， 随机 =〜GG，  遗传 = gen.globulus，  空间 = 名单 （ 型号 =&lsquo;样条&rsquo;，  坐标 = 桉 [，C（&rsquo;X&rsquo;，&rsquo;Y&rsquo;）]  n.knots = C（9,9）），  数据 = 桉 ， 方法 =&lsquo;时间&rsquo;）</p>
+
+<p>摘要（res.spl）</p>
+
+<h2 id="linear-mixed-model-with-pedigree-and-spatial-effects-fit-by-remlf90-ver-1-79-data-globulus-aic-bic-loglik-5685-unknown-2838-parameters-of-special-components-spatial-n-knots-12-12-variance-components-estimated-variances-gg-2-568-genetic-4-500-spatial-4-200-residual-10-070-fixed-effects-value-se-intercept-14-479-0-9163">Linear Mixed Model with pedigree and spatial effects fit by REMLF90 ver. 1.79 ## Data: globulus ## AIC BIC logLik ## 5685 unknown -2838 ## ## Parameters of special components: ## spatial: n.knots: 12 12 ## ## Variance components: ## Estimated variances ## gg 2.568 ## genetic 4.500 ## spatial 4.200 ## Residual 10.070 ## ## Fixed effects: ## value se ## Intercept 14.479 0.9163</h2>
+
+<p>摘要（res.spl99）</p>
+
+<h2 id="linear-mixed-model-with-pedigree-and-spatial-effects-fit-by-remlf90-ver-1-79-data-globulus-aic-bic-loglik-5681-unknown-2836-parameters-of-special-components-spatial-n-knots-15-15-variance-components-estimated-variances-gg-2-510-genetic-4-651-spatial-3-490-residual-9-552-fixed-effects-value-se-intercept-14-611-0-6947">Linear Mixed Model with pedigree and spatial effects fit by REMLF90 ver. 1.79 ## Data: globulus ## AIC BIC logLik ## 5681 unknown -2836 ## ## Parameters of special components: ## spatial: n.knots: 15 15 ## ## Variance components: ## Estimated variances ## gg 2.510 ## genetic 4.651 ## spatial 3.490 ## Residual 9.552 ## ## Fixed effects: ## value se ## Intercept 14.611 0.6947</h2>
+
+<p> 空间＃2 | 可视化对数似然
+ qplot（rho_r，rho_c，  填写 = loglik，  GEOM =&lsquo;砖&rsquo;，  数据 = res.ar1 $ RHO）</p>
+
+<p><img src="https://github.com/famuvie/breedR/wiki/Overview_files/figure-markdown_github/spatial-exercise-2-1.png" alt="" />
+rho_r
+rho_c
+loglik</p>
+
+<p>-0.8
+-0.8
+-2925.646</p>
+
+<p>-0.2
+-0.8
+-2925.646</p>
+
+<p>0.2
+-0.8
+-2925.646</p>
+
+<p>0.8
+-0.8
+-2925.636</p>
+
+<p>-0.8
+-0.2
+-2925.647</p>
+
+<p>-0.2
+-0.2
+-2925.645</p>
+
+<p>0.2
+-0.2
+-2925.023</p>
+
+<p>0.8
+-0.2
+-2876.893</p>
+
+<p>-0.8
+0.2
+-2925.646</p>
+
+<p>-0.2
+0.2
+-2925.645</p>
+
+<p>0.2
+0.2
+-2871.691</p>
+
+<p>0.8
+0.2
+-2849.814</p>
+
+<p>-0.8
+0.8
+-2925.645</p>
+
+<p>-0.2
+0.8
+-2890.606</p>
+
+<p>0.2
+0.8
+-2860.981</p>
+
+<p>0.8
+0.8
+-2828.017</p>
+
+<p> 空间＃3 | 优化网格
+ rho.grid &lt; - 。expand.grid（rho_r = SEQ（7，95， 长度 = 4），  rho_c = SEQ（7。95， 长度 = 4）） res.ar.grid &lt; - remlf90（ 固定 = phe_X〜GG，  遗传 = 名单 （ 型号 =&lsquo;add_animal&rsquo;，  系谱 = 桉 [1：3]，  ID =&lsquo;自我&rsquo;），  空间 = 名单 （ 型号 =&lsquo;AR&rsquo;，  坐标 = 桉 [，C（&rsquo;X&rsquo;，&rsquo;Y&rsquo;）]  RHO = rho.grid）  数据 = 桉 ）摘要（res.ar.grid）</p>
+
+<h2 id="linear-mixed-model-with-pedigree-and-spatial-effects-fit-by-ai-remlf90-ver-1-122-data-globulus-aic-bic-loglik-5603-5617-2798-parameters-of-special-components-spatial-rho-0-8666667-0-7833333-variance-components-estimated-variances-se-genetic-5-090-1-715-spatial-4-984-1-053-residual-7-583-1-499-estimate-se-heritability-0-2878-0-09383-fixed-effects-value-se-gg-1-13-351-0-7195-gg-2-14-331-0-9112-gg-3-15-945-0-7698-gg-4-11-585-0-9394-gg-5-15-913-0-8200-gg-6-9-593-1-6964-gg-7-13-761-1-5681-gg-8-15-521-0-7486-gg-9-16-302-0-8260-gg-10-12-684-1-1531-gg-11-16-459-0-9849-gg-12-16-801-1-1412-gg-13-15-783-1-5665-gg-14-14-211-0-6486">Linear Mixed Model with pedigree and spatial effects fit by AI-REMLF90 ver. 1.122 ## Data: globulus ## AIC BIC logLik ## 5603 5617 -2798 ## ## Parameters of special components: ## spatial: rho: 0.8666667 0.7833333 ## ## Variance components: ## Estimated variances SE ## genetic 5.090 1.715 ## spatial 4.984 1.053 ## Residual 7.583 1.499 ## ## Estimate SE ## Heritability 0.2878 0.09383 ## ## Fixed effects: ## value se ## gg.1 13.351 0.7195 ## gg.2 14.331 0.9112 ## gg.3 15.945 0.7698 ## gg.4 11.585 0.9394 ## gg.5 15.913 0.8200 ## gg.6 9.593 1.6964 ## gg.7 13.761 1.5681 ## gg.8 15.521 0.7486 ## gg.9 16.302 0.8260 ## gg.10 12.684 1.1531 ## gg.11 16.459 0.9849 ## gg.12 16.801 1.1412 ## gg.13 15.783 1.5665 ## gg.14 14.211 0.6486</h2>
+
+<p> 竞争</p>
+
+<p> 理论模型
+<img src="https://github.com/famuvie/breedR/wiki/img/competition_model.png" alt="竞争模式" />
+每个人有<strong>两个</strong> （未知）育种值（BV）</p>
+
+<p>在direct
+ BV影响其<strong>自身的</strong>表型，而competition
+ BV影响其<strong>neghbours“（</strong>作为国王的动作）</p>
+
+<p>相邻的效果competition
+ BVS由它们的和<strong>由</strong> （1 / D ^ \阿尔法），其中（\阿尔法） <strong>加权</strong>定是称为调谐参数decay</p>
+
+<p>每组BVS的被建模为与由<strong>系谱</strong>和独立<strong>方差</strong> （\西格马^ 2_a）给出的结构矩阵和零均值<strong>随机效应</strong> （\西格马^ 2_c）</p>
+
+<p>这两个随机效应与<strong>相关</strong>联合建模（\ RHO）</p>
+
+<p> 永久环境效应（pec）
+<strong>环境</strong> （而非遗传）的基础上<strong>可选</strong>的效果</p>
+
+<p>塑造为在同一（加权）方式影响<strong>相邻</strong>树木单个<strong>独立的</strong>随机效应</p>
+
+<p> 数据模拟
+<strong>breedR</strong>实现了便捷的数据集<strong>模拟器</strong>这使类似的语法。
+见?simulation
+了语法的详细信息</p>
+
+<p>＃模拟参数 grid.size &lt; - C（X = 20，Y = 25）＃COLS /行 坐标 &lt; - expand.grid（sapply（grid.size，  SEQ）） NOBS &lt; - PROD（grid.size） Nparents &lt; - C（ 妈妈 = 20， 爸爸 = 20） sigma2_a &lt; - 2＃直接加根变种 sigma2_c &lt; - 1＃compet添加根变种 RHO &lt; - - 。  7＃发电机科尔可怕-COMP sigma2_s &lt; - 1＃空间变异 sigma2_p &lt; - 。  5＃佩奇方差 sigma2 &lt; - 。  5＃剩余方差 小号 &lt; - 矩阵 （C（sigma2_a，  RHO *开方（sigma2_a * sigma2_c）  RHO *开方（sigma2_a * sigma2_c）  sigma2_c）  2，2） set.seed（12345） SIMDAT &lt; - 品种表型  固定 = C（ 测试版 = 10）  遗传 = 名单 （ 型号 =“竞争”，  Nparents = Nparents，  sigma2_a = S，  check.factorial = FALSE，  PEC = sigma2_p）  空间 = 名单 （ 型号 =&lsquo;AR&rsquo;，  grid.size = grid.size，  RHO = C（3，8），  sigma2_s = sigma2_s）  residual.variance = sigma2  ） ##删除创始人 DAT &lt; -集（SIMDAT，  ！  （is.na（SIMDAT $ 陛下 ）  ＆is.na（SIMDAT $ 坝 ）））</p>
+
+<p> 拟合竞争模型
+系统时间（  res.comp &lt; - remlf90（ 固定 型 = 1〜，  遗传 = 名单 （ 型号 =“竞争”，  系谱 = 逸 [1：3]，  ID =&lsquo;自我&rsquo;，  坐标 = DAT [，C（&rsquo;X&rsquo;，&rsquo;Y&rsquo;）]  competition_decay = 1，  PEC = 列表 （ 存在 = TRUE）），  空间 = 名单 （ 型号 =&lsquo;AR&rsquo;，  坐标 = DAT [，C（&rsquo;X&rsquo;，&rsquo;Y&rsquo;）]  RHO = C（3，8）），  数据 = DAT，  方法 =&lsquo;时间&rsquo;）＃AI 发散  ）</p>
+
+<h2 id="user-system-elapsed-106-632-0-248-106-854">user system elapsed ## 106.632 0.248 106.854</h2>
+
+<p> 真实估计参数</p>
+
+<p>真正
+估计</p>
+
+<p>直接
+2.0
+2.50</p>
+
+<p>竞争。
+1.0
+1.03</p>
+
+<p>相关。
+-0.7
+-0.76</p>
+
+<p>空间
+1.0
+1.24</p>
+
+<p>佩克
+0.5
+0.20</p>
+
+<p>剩余的
+0.5
+0.17</p>
+
+<p><img src="https://github.com/famuvie/breedR/wiki/Overview_files/figure-markdown_github/competition-results-plot-1.png" alt="" /></p>
+
+<p> 练习| 竞争模式
+绘制真实vs预测：
+直接和竞争育种价值
+空间效应
+pec效果</p>
+
+<p>绘制残差及其变差函数
+你认为残差是独立的吗？
+你将如何改进分析？</p>
+
+<p> 竞争＃1 | 真实与预测分量
+ ##计算观察的预测效果 ##通过矩阵乘法的相关矩阵和BLUP PRED &lt; - 列表 （） ZD &lt; - model.matrix（res.comp）$&lsquo;genetic_direct“ 预计值 $ 直接 &lt; - 间Zd％*％ranef（res.comp）$&lsquo;genetic_direct“ ＃＃ 小心！  对于竞争效果你需要使用发病率 ##矩阵的直接遗传效应，得到自己的价值。 ##否则，你会得到邻域的预测效果 ##个人。 预计值 $ 补偿 &lt; - 间Zd％*％ranef（res.comp）$&lsquo;genetic_competition“ 预计值 $ PEC &lt; - model.matrix（res.comp）$ PEC％*％ranef（res.comp）$ PEC</p>
+
+<p> 竞争＃1 | 真实与预测分量
+ comp.pred &lt; -  rbind（  data.frame（  组件 =“直接BV”，  真 = $ 逸 BV1，  预测 = $ pred的 直接 ）  data.frame（  组件 =&lsquo;竞争BV“，  真 = $ 逸 BV2，  预测 = $ PRED COMP），  data.frame（  组件 =“PEC”，  真 = $ 逸 佩奇 ，  预测 = as.vector（pred的 $ PEC））） ggplot（comp.pred，  AES（ 诚然 ， 预测 ））+  geom_point（）+  geom_abline（INT = 0，SL = 1，  COL =&lsquo;深灰&rsquo;）+  facet_grid（〜 组件 ）</p>
+
+<p><img src="https://github.com/famuvie/breedR/wiki/Overview_files/figure-markdown_github/competition-exercise-1bis-1.png" alt="" />
+永久环境竞争效应的前提不是很大&hellip;</p>
+
+<p> 竞争＃2 | 残差图及其变差函数
+图（res.comp， 键入 =“渣油”）变差函数（res.comp）</p>
+
+<p><img src="https://github.com/famuvie/breedR/wiki/Overview_files/figure-markdown_github/competition-exercise-2-1.png" alt="" /><img src="https://github.com/famuvie/breedR/wiki/Overview_files/figure-markdown_github/competition-exercise-2-2.png" alt="" /></p>
+
+<p> 通用组件</p>
+
+<p> 通用模型
+此附加的组件允许引入<strong>任意</strong>发病及协方差矩阵（Z）和（\ Sigma）的随机效应（\ psi）的：
+[\ begin {aligned} y =＆\ mu + X \ beta + Z \ psi + \ varepsilon \ \ psi \ sim＆N（0，\ sigma_ \ psi ^ 2 \ Sigma_ \ psi）\ \ varepsilon \ sim＆N （0，\ sigma_ \ varepsilon ^ 2）\ end {aligned}]</p>
+
+<p> 实现通用组件
+ ##使用泛型拟合块效果 inc.mat &lt; - model.matrix（〜0 + BL 桉 ） cov.mat &lt; -诊断（NLEVELS（$ 桉 BL）） res.blg &lt; - remlf90（ 固定 = phe_X〜GG，  通用 = 列表 （ 块 = 列表 （inc.mat，  cov.mat））  数据 = 桉 ）</p>
+
+<p> 结果示例</p>
+
+<h2 id="linear-mixed-model-with-pedigree-and-spatial-effects-fit-by-ai-remlf90-ver-1-122-data-globulus-aic-bic-loglik-5691-5701-2844-parameters-of-special-components-variance-components-estimated-variances-se-block-2-592-1-0640-residual-15-208-0-6825-fixed-effects-value-se-gg-1-13-534-0-6222-gg-2-14-030-0-8464-gg-3-16-106-0-5513-gg-4-11-854-0-6824-gg-5-15-883-0-5863-gg-6-10-220-1-3041-gg-7-13-995-1-0894-gg-8-15-728-0-5410-gg-9-16-478-0-5969-gg-10-12-843-1-1225-gg-11-16-744-0-6151-gg-12-17-002-0-8464-gg-13-16-297-1-0894-gg-14-14-429-0-4730">Linear Mixed Model with pedigree and spatial effects fit by AI-REMLF90 ver. 1.122 ## Data: globulus ## AIC BIC logLik ## 5691 5701 -2844 ## ## Parameters of special components: ## ## ## Variance components: ## Estimated variances SE ## block 2.592 1.0640 ## Residual 15.208 0.6825 ## ## Fixed effects: ## value se ## gg.1 13.534 0.6222 ## gg.2 14.030 0.8464 ## gg.3 16.106 0.5513 ## gg.4 11.854 0.6824 ## gg.5 15.883 0.5863 ## gg.6 10.220 1.3041 ## gg.7 13.995 1.0894 ## gg.8 15.728 0.5410 ## gg.9 16.478 0.5969 ## gg.10 12.843 1.1225 ## gg.11 16.744 0.6151 ## gg.12 17.002 0.8464 ## gg.13 16.297 1.0894 ## gg.14 14.429 0.4730</h2>
+
+<p> 预测</p>
+
+<p> 未观察树的预测值
+可以预测<strong>未测量树</strong>的育种值</p>
+
+<p>或死亡树（或假设情景）的预期表型，</p>
+
+<p>从协变量，空间结构和谱系收集信息</p>
+
+<p>简单地<strong>包括</strong>在与设置为响应数据集<strong>的个人</strong> NA</p>
+
+<p> 留一交叉验证
+重新拟合模拟的比赛数据，删除一个测量</p>
+
+<p>之后，用自己的真实的模拟值进行比较的<strong>不可测</strong>个人的预测值</p>
+
+<p>rm.idx &lt; - 8 rm.exp &lt; -带（DAT [rm.idx，]，  表型 - 渣油 ） dat.loo &lt; - DAT dat.loo [rm.idx，&rsquo;型&rsquo;] &lt; - NA</p>
+
+<p>真正
+Pred.loo</p>
+
+<p>直接BV
+-1.48
+0.11</p>
+
+<p>竞争BV
+0.46
+0.36</p>
+
+<p>exp。 表型
+6.80
+9.90</p>
+
+<p> 练习| 交叉验证
+扩展最后一个表，将预测值与完整数据集包括在一起</p>
+
+<p>随机删除1/10的表型，并预测他们的预期表型
+参数估计是否变化过大？</p>
+
+<p>相对于真实值计算预测的均方根误差（RMSE）</p>
+
+<p> 交叉验证＃1 | 包括全部数据的预测
+ pred.BV.mat &lt; -与（ranef（res.comp）  cbind（<code>genetic_direct</code>，``genetic_competition）） valid.pred $ Pred.full &lt; - Ç 机（ZD [rm.idx，]％。*％pred.BV.mat， 装（res.comp）rm.idx]）</p>
+
+<p>真正
+Pred.full
+Pred.loo</p>
+
+<p>直接BV
+-1.48
+-1.30
+0.11</p>
+
+<p>竞争BV
+0.46
+0.99
+0.36</p>
+
+<p>exp。 表型
+6.80
+7.29
+9.90</p>
+
+<p> 交叉验证＃2 | 对1/10的观察结果进行交叉验证
+ rm.idx &lt; -样品（nrow（DAT），nrow（DAT）/ 10） dat.cv &lt; - DAT dat.cv [rm.idx，&rsquo;型&rsquo;] &lt; - NA ##重新拟合模型和构建表</p>
+
+<p>完全估计
+CV.estimated</p>
+
+<p>直接
+2.50
+2.69</p>
+
+<p>竞争。
+1.03
+0.86</p>
+
+<p>相关。
+-0.76
+-0.80</p>
+
+<p>空间
+1.24
+1.03</p>
+
+<p>佩克
+0.20
+0.51</p>
+
+<p>剩余的
+0.17
+0.14</p>
+
+<p> 交叉验证＃3 | 预测的MSE
+ true.exp.cv &lt; -带（DAT [rm.idx，]， 表型 - 渣油 ）轮（SQRT（平均（（嵌合（res.comp.cv）[rm.idx] - true.exp.cv）^ 2）），2）</p>
+
+<h2 id="1-1-5">[1] 1.5</h2>
+
+<p> 一些更多的功能</p>
+
+<p> Metagene接口
+我们已经从使用模拟数据<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=en&amp;tl=zh-CN&amp;u=http://www.igv.fi.cnr.it/noveltree/&amp;usg=ALkJrhjjydPIm7nBwelQtlOaPIiufehe8w">metagene
+</a>软件</p>
+
+<p>如果你模拟数据，导入的结果read.metagene()</p>
+
+<p>使用了几种常用方法metagene
+对象：
+summary()
+ plot()
+ as.data.frame()</p>
+
+<p>再加上一些更具体的metagene
+的功能：b.values()
+ get.ntraits()
+ ngenerations()
+ nindividuals()
+ get.pedigree()</p>
+
+<p>空间布置的具体功能：coordinates()
+提取坐标
+sim.spatial()
+模拟了一些空间自相关</p>
+
+<p> 模拟框架
+该功能breedR.sample.phenotype()
+模拟来自所有<strong>breedR</strong>可用的模型结构数据集</p>
+
+<p>限制：只有一代，随机创始人的交配</p>
+
+<p>见?simulation
+详情</p>
+
+<p> 远程计算
+<strong>如果</strong>通过<strong>SSH</strong>访问<strong>Linux</strong>服务器，可以远程进行计算
+利用更多的<strong>内存</strong>或<strong>更快</strong>的处理器</p>
+
+<p><strong>并行</strong>作业</p>
+
+<p>而装修款免费<strong>本地资源</strong></p>
+
+<p>见?remote
+详情</p>
+
+<p> 软件包选项
+<strong>breedR</strong>功能的配置选项列表</p>
+
+<p>使用breedR.setOption(&hellip;)
+当前使sesion期间更改的选项</p>
+
+<p>永久设置选项在文件$HOME/.breedRrc</p>
+
+<p>看?breedR.option
+详情</p>
+
+<p>breedR.getOption（）</p>
+
+<h2 id="ar-eval-1-0-8-0-2-0-2-0-8-breedr-bin-1-home-facu-work-proyectos-2013-t4f-bin-progsf9">$ar.eval ## [1] -0.8 -0.2 0.2 0.8 ## ## $breedR.bin ## [1] &ldquo;/home/facu/Work/Proyectos/2013.T4F/bin/PROGSF9</h2>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/diallel/burow1994-diallel-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F/" data-toggle="tooltip" data-placement="top" title="burow1994-diallel-计算机程序">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/rcodes/bivariate-model-using-bayesian-by-luis-a--apiolazarlm-zentree--14h/" data-toggle="tooltip" data-placement="top" title="bivariate-model-using-bayesian-by-Luis-A--Apiolaza{RLM}-@zentree--14h">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

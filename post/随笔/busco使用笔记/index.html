@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>BUSCO使用笔记</title>
+  <meta property="og:title" content="BUSCO使用笔记" />
+  <meta name="twitter:title" content="BUSCO使用笔记" />
+  <meta name="description" content="在ubuntu系统上跑 參考使用指南
+安裝BUSCO 下載 https://gitlab.com/ezlab/busco 安裝sudo python setup.py install
+怎麼都搞成繁體字了？
+安裝下面3個軟件，後2個需要安裝，安裝方法見各自的readme文件  NCBI BLAST&#43; [NB: please see release note 2.0.1 below] https://ftp.ncbi.nlm.nih.gov/blast/executables/blast&#43;/LATEST这个包中包含各种比对需要的工具  HMMER (HMMER v3.1b2) http://hmmer.org/  Augustus (&gt; 3.2.1) (only used for assessing genomes) http://bioinf.uni-greifswald.de/augustus/
+配置config.ini文件 BUSCO目錄下有config文件夾，將其中的config.ini.default拷貝並重命名爲config.ini，打開後修改，把所有的默認路徑如/home/osboxes/BUSCOVM/augustus/augustus-3.2.2/，都替換成實際的路徑，比如我的/home/larix/下载/augustus/
+export AUGUSTUS_CONFIG_PATH=&quot;/path/to/AUGUSTUS/augustus-3.2.3/config/&quot; 這裏的路徑替換成實際的，否則報錯 準備自己的數據和匹配數據庫 自己的數據指的是組裝好的fasta文件，數據庫要從http://busco.ezlab.org/ 下載對應的，放在電腦中的位置可以自定義，運行時給清楚就可以了。
+run 基因組據裝評估 先把路徑cd到BUSCO文件夾，然後輸入 python scripts/run_BUSCO.py -i SEQUENCE_FILE -o OUTPUT_NAME -l LINEAGE -m geno SEQUENCE_FILE-你組裝好的基因組文件 OUTPUT_NAME-給定一個輸出名 LINEAGE-要匹配的數據庫 geno-指定是基因組評估
+我的python scripts/run_BUSCO.py -i /home/larix/下载/myproject/zglk_fungi.genome_contigs.fasta -o ev_genome -l ascomycota_odb9 -m geno 我的匹配數據庫放在了BUSCO文件夾中。">
+  <meta property="og:description" content="在ubuntu系统上跑 參考使用指南
+安裝BUSCO 下載 https://gitlab.com/ezlab/busco 安裝sudo python setup.py install
+怎麼都搞成繁體字了？
+安裝下面3個軟件，後2個需要安裝，安裝方法見各自的readme文件  NCBI BLAST&#43; [NB: please see release note 2.0.1 below] https://ftp.ncbi.nlm.nih.gov/blast/executables/blast&#43;/LATEST这个包中包含各种比对需要的工具  HMMER (HMMER v3.1b2) http://hmmer.org/  Augustus (&gt; 3.2.1) (only used for assessing genomes) http://bioinf.uni-greifswald.de/augustus/
+配置config.ini文件 BUSCO目錄下有config文件夾，將其中的config.ini.default拷貝並重命名爲config.ini，打開後修改，把所有的默認路徑如/home/osboxes/BUSCOVM/augustus/augustus-3.2.2/，都替換成實際的路徑，比如我的/home/larix/下载/augustus/
+export AUGUSTUS_CONFIG_PATH=&quot;/path/to/AUGUSTUS/augustus-3.2.3/config/&quot; 這裏的路徑替換成實際的，否則報錯 準備自己的數據和匹配數據庫 自己的數據指的是組裝好的fasta文件，數據庫要從http://busco.ezlab.org/ 下載對應的，放在電腦中的位置可以自定義，運行時給清楚就可以了。
+run 基因組據裝評估 先把路徑cd到BUSCO文件夾，然後輸入 python scripts/run_BUSCO.py -i SEQUENCE_FILE -o OUTPUT_NAME -l LINEAGE -m geno SEQUENCE_FILE-你組裝好的基因組文件 OUTPUT_NAME-給定一個輸出名 LINEAGE-要匹配的數據庫 geno-指定是基因組評估
+我的python scripts/run_BUSCO.py -i /home/larix/下载/myproject/zglk_fungi.genome_contigs.fasta -o ev_genome -l ascomycota_odb9 -m geno 我的匹配數據庫放在了BUSCO文件夾中。">
+  <meta name="twitter:description" content="在ubuntu系统上跑 參考使用指南
+安裝BUSCO 下載 https://gitlab.com/ezlab/busco 安裝sudo python setup.py install
+怎麼都搞成繁體字了？
+安裝下面3個軟件，後2個需要安裝，安裝方法見各自的readme文件  NCBI BLAST&#43; [NB: please see release note 2.0.1 below] …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E9%9A%8F%E7%AC%94/busco%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E9%9A%8F%E7%AC%94/busco%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>BUSCO使用笔记</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 5 minutes (963 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>BUSCO使用笔记</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 5 minutes (963 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>在ubuntu系统上跑
+參考使用指南</p>
+
+<h2 id="安裝busco">安裝BUSCO</h2>
+
+<p>下載 <a href="https://gitlab.com/ezlab/busco">https://gitlab.com/ezlab/busco</a>
+安裝<code>sudo python setup.py install</code></p>
+
+<p>怎麼都搞成繁體字了？</p>
+
+<h2 id="安裝下面3個軟件-後2個需要安裝-安裝方法見各自的readme文件">安裝下面3個軟件，後2個需要安裝，安裝方法見各自的readme文件</h2>
+
+<p> NCBI BLAST+ [NB: please see release note 2.0.1 below]
+<a href="https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST这个包中包含各种比对需要的工具">https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST这个包中包含各种比对需要的工具</a>
+ HMMER (HMMER v3.1b2)
+<a href="http://hmmer.org/">http://hmmer.org/</a>
+ Augustus (&gt; 3.2.1) (only used for assessing genomes)
+<a href="http://bioinf.uni-greifswald.de/augustus/">http://bioinf.uni-greifswald.de/augustus/</a></p>
+
+<h2 id="配置config-ini文件">配置config.ini文件</h2>
+
+<p>BUSCO目錄下有config文件夾，將其中的config.ini.default拷貝並重命名爲config.ini，打開後修改，把所有的默認路徑如<code>/home/osboxes/BUSCOVM/augustus/augustus-3.2.2/</code>，都替換成實際的路徑，比如我的<code>/home/larix/下载/augustus/</code></p>
+
+<h2 id="export-augustus-config-path-path-to-augustus-augustus-3-2-3-config-這裏的路徑替換成實際的-否則報錯">export <code>AUGUSTUS_CONFIG_PATH=&quot;/path/to/AUGUSTUS/augustus-3.2.3/config/&quot;</code> 這裏的路徑替換成實際的，否則報錯</h2>
+
+<h2 id="準備自己的數據和匹配數據庫">準備自己的數據和匹配數據庫</h2>
+
+<p>自己的數據指的是組裝好的fasta文件，數據庫要從<a href="http://busco.ezlab.org/">http://busco.ezlab.org/</a> 下載對應的，放在電腦中的位置可以自定義，運行時給清楚就可以了。</p>
+
+<h2 id="run">run</h2>
+
+<h3 id="基因組據裝評估">基因組據裝評估</h3>
+
+<p>先把路徑cd到BUSCO文件夾，然後輸入
+<code>python scripts/run_BUSCO.py -i SEQUENCE_FILE -o OUTPUT_NAME -l LINEAGE -m geno</code>
+SEQUENCE_FILE-你組裝好的基因組文件
+OUTPUT_NAME-給定一個輸出名
+LINEAGE-要匹配的數據庫
+geno-指定是基因組評估</p>
+
+<p>我的<code>python scripts/run_BUSCO.py -i /home/larix/下载/myproject/zglk_fungi.genome_contigs.fasta -o ev_genome -l ascomycota_odb9 -m geno</code>
+我的匹配數據庫放在了BUSCO文件夾中。</p>
+
+<p>回車後程序會進入運行階段
+給一個樣例</p>
+
+<pre><code>root@larix:/home/larix/下载/busco-master-e83a6c94101511484799f9770cdfc148559b136
+d# python scripts/run_BUSCO.py -i /home/larix/下载/myproject/sequence.fasta -o genome -l fungi_odb9 -m geno
+INFO	****************** Start a BUSCO 3.0.2 analysis, current time: 07/23/2017 14:44:33 ******************
+INFO	Configuration loaded from /home/larix/下载/busco-master-e83a6c94101511484799f9770cdfc148559b136d/scripts/../config/config.ini
+INFO	Init tools...
+INFO	Check dependencies...
+INFO	Check input file...
+INFO	To reproduce this run: python scripts/run_BUSCO.py -i /home/larix/下载/myproject/sequence.fasta -o genome -l fungi_odb9/ -m genome -c 1 -sp aspergillus_nidulans
+INFO	Mode is: genome
+INFO	The lineage dataset is: fungi_odb9 (eukaryota)
+INFO	Temp directory is ./tmp/
+INFO	****** Phase 1 of 2, initial predictions ******
+INFO	****** Step 1/3, current time: 07/23/2017 14:44:34 ******
+INFO	Create blast database...
+INFO	[makeblastdb]	Building a new DB, current time: 07/23/2017 14:44:35
+INFO	[makeblastdb]	New DB name:   /home/larix/下载/busco-master-e83a6c94101511484799f9770cdfc148559b136d/tmp/genome_2557368148
+INFO	[makeblastdb]	New DB title:  /home/larix/下载/myproject/sequence.fasta
+INFO	[makeblastdb]	Sequence type: Nucleotide
+INFO	[makeblastdb]	Keep Linkouts: T
+INFO	[makeblastdb]	Keep MBits: T
+INFO	[makeblastdb]	Maximum file size: 1000000000B
+INFO	[makeblastdb]	Adding sequences from FASTA; added 1 sequences in 0.142315 seconds.
+INFO	[makeblastdb]	1 of 1 task(s) completed at 07/23/2017 14:44:35
+INFO	Running tblastn, writing output to /home/larix/下载/busco-master-e83a6c94101511484799f9770cdfc148559b136d/run_genome/blast_output/tblastn_genome.tsv...
+INFO	[tblastn]	1 of 1 task(s) completed at 07/23/2017 14:44:40
+INFO	****** Step 2/3, current time: 07/23/2017 14:44:40 ******
+INFO	Maximum number of candidate contig per BUSCO limited to: 3
+INFO	Getting coordinates for candidate regions...
+INFO	Pre-Augustus scaffold extraction...
+INFO	Running Augustus prediction using aspergillus_nidulans as species:
+INFO	[augustus]	Please find all logs related to Augustus errors here: /home/larix/下载/busco-master-e83a6c94101511484799f9770cdfc148559b136d/run_genome/augustus_output/augustus.log
+INFO	[augustus]	7 of 69 task(s) completed at 07/23/2017 14:45:02
+INFO	[augustus]	14 of 69 task(s) completed at 07/23/2017 14:45:27
+INFO	[augustus]	21 of 69 task(s) completed at 07/23/2017 14:45:49
+INFO	[augustus]	28 of 69 task(s) completed at 07/23/2017 14:46:04
+INFO	[augustus]	35 of 69 task(s) completed at 07/23/2017 14:46:25
+INFO	[augustus]	42 of 69 task(s) completed at 07/23/2017 14:46:42
+INFO	[augustus]	49 of 69 task(s) completed at 07/23/2017 14:46:56
+INFO	[augustus]	56 of 69 task(s) completed at 07/23/2017 14:47:50
+INFO	[augustus]	63 of 69 task(s) completed at 07/23/2017 14:48:07
+INFO	[augustus]	69 of 69 task(s) completed at 07/23/2017 14:48:18
+INFO	Extracting predicted proteins...
+INFO	****** Step 3/3, current time: 07/23/2017 14:48:18 ******
+INFO	Running HMMER to confirm orthology of predicted proteins:
+INFO	[hmmsearch]	7 of 69 task(s) completed at 07/23/2017 14:48:19
+INFO	[hmmsearch]	14 of 69 task(s) completed at 07/23/2017 14:48:19
+INFO	[hmmsearch]	21 of 69 task(s) completed at 07/23/2017 14:48:19
+INFO	[hmmsearch]	28 of 69 task(s) completed at 07/23/2017 14:48:20
+INFO	[hmmsearch]	35 of 69 task(s) completed at 07/23/2017 14:48:20
+INFO	[hmmsearch]	42 of 69 task(s) completed at 07/23/2017 14:48:20
+INFO	[hmmsearch]	49 of 69 task(s) completed at 07/23/2017 14:48:20
+INFO	[hmmsearch]	56 of 69 task(s) completed at 07/23/2017 14:48:20
+INFO	[hmmsearch]	63 of 69 task(s) completed at 07/23/2017 14:48:21
+INFO	[hmmsearch]	69 of 69 task(s) completed at 07/23/2017 14:48:21
+INFO	Results:
+INFO	C:6.6%[S:6.6%,D:0.0%],F:3.4%,M:90.0%,n:290
+INFO	19 Complete BUSCOs (C)
+INFO	19 Complete and single-copy BUSCOs (S)
+INFO	0 Complete and duplicated BUSCOs (D)
+INFO	10 Fragmented BUSCOs (F)
+INFO	261 Missing BUSCOs (M)
+INFO	290 Total BUSCO groups searched
+INFO	****** Phase 2 of 2, predictions using species specific training ******
+INFO	****** Step 1/3, current time: 07/23/2017 14:48:21 ******
+INFO	Extracting missing and fragmented buscos from the ancestral_variants file...
+INFO	Running tblastn, writing output to /home/larix/下载/busco-master-e83a6c94101511484799f9770cdfc148559b136d/run_genome/blast_output/tblastn_genome_missing_and_frag_rerun.tsv...
+INFO	[tblastn]	1 of 1 task(s) completed at 07/23/2017 14:49:00
+INFO	Maximum number of candidate contig per BUSCO limited to: 3
+INFO	Getting coordinates for candidate regions...
+INFO	****** Step 2/3, current time: 07/23/2017 14:49:00 ******
+INFO	Training Augustus using Single-Copy Complete BUSCOs:
+INFO	Converting predicted genes to short genbank files at 07/23/2017 14:49:00...
+INFO	All files converted to short genbank files, now running the training scripts at 07/23/2017 14:49:01...
+INFO	Pre-Augustus scaffold extraction...
+INFO	Re-running Augustus with the new metaparameters, number of target BUSCOs: 271
+INFO	[augustus]	7 of 61 task(s) completed at 07/23/2017 14:49:15
+INFO	[augustus]	13 of 61 task(s) completed at 07/23/2017 14:49:29
+INFO	[augustus]	19 of 61 task(s) completed at 07/23/2017 14:49:43
+INFO	[augustus]	25 of 61 task(s) completed at 07/23/2017 14:50:02
+INFO	[augustus]	31 of 61 task(s) completed at 07/23/2017 14:50:19
+INFO	[augustus]	37 of 61 task(s) completed at 07/23/2017 14:51:08
+INFO	[augustus]	43 of 61 task(s) completed at 07/23/2017 14:51:24
+INFO	[augustus]	49 of 61 task(s) completed at 07/23/2017 14:51:46
+INFO	[augustus]	55 of 61 task(s) completed at 07/23/2017 14:52:07
+INFO	[augustus]	61 of 61 task(s) completed at 07/23/2017 14:52:26
+INFO	Extracting predicted proteins...
+INFO	****** Step 3/3, current time: 07/23/2017 14:52:27 ******
+INFO	Running HMMER to confirm orthology of predicted proteins:
+INFO	[hmmsearch]	6 of 59 task(s) completed at 07/23/2017 14:52:27
+INFO	[hmmsearch]	12 of 59 task(s) completed at 07/23/2017 14:52:27
+INFO	[hmmsearch]	18 of 59 task(s) completed at 07/23/2017 14:52:27
+INFO	[hmmsearch]	24 of 59 task(s) completed at 07/23/2017 14:52:27
+INFO	[hmmsearch]	30 of 59 task(s) completed at 07/23/2017 14:52:27
+INFO	[hmmsearch]	36 of 59 task(s) completed at 07/23/2017 14:52:27
+INFO	[hmmsearch]	42 of 59 task(s) completed at 07/23/2017 14:52:28
+INFO	[hmmsearch]	48 of 59 task(s) completed at 07/23/2017 14:52:28
+INFO	[hmmsearch]	54 of 59 task(s) completed at 07/23/2017 14:52:28
+INFO	[hmmsearch]	59 of 59 task(s) completed at 07/23/2017 14:52:28
+INFO	Results:
+INFO	C:6.6%[S:6.6%,D:0.0%],F:3.4%,M:90.0%,n:290
+INFO	19 Complete BUSCOs (C)
+INFO	19 Complete and single-copy BUSCOs (S)
+INFO	0 Complete and duplicated BUSCOs (D)
+INFO	10 Fragmented BUSCOs (F)
+INFO	261 Missing BUSCOs (M)
+INFO	290 Total BUSCO groups searched
+INFO	BUSCO analysis done. Total running time: 474.648495913 seconds
+INFO	Results written in /home/larix/下载/busco-master-e83a6c94101511484799f9770cdfc148559b136d/run_genome/
+</code></pre>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/diallel/balocchi-1993-vd---va%E9%9A%8F%E6%97%B6%E9%97%B40-20-4-42/" data-toggle="tooltip" data-placement="top" title="Balocchi-1993-VD---VA随时间0-20-4-42">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/avendano2005/" data-toggle="tooltip" data-placement="top" title="Avendano2005">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

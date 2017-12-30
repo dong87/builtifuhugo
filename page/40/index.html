@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Dong&#39;s blog</title>
+  <meta property="og:title" content="Dong&#39;s blog" />
+  <meta name="twitter:title" content="Dong&#39;s blog" />
+  <meta name="description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta property="og:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="twitter:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../" />
+  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../">
+            <img class="avatar-img" src="../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Dong&#39;s blog</h1>
+                
+                  
+                    <hr class="small">
+                    <span class="page-subheading">Enterprising &amp; Concentrating欢迎光临！</span>
+                  
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div role="main" class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+          <div class="well">
+            
+
+<h2 id="front-page-content">Front Page Content</h2>
+
+<p><code>beautifulhugo</code> supports content on your front page. Edit <code>/content/_index.md</code> to change what appears here. Delete <code>/content/_index.md</code> if you don&rsquo;t want any content here.</p>
+
+          </div>
+        
+
+        <div class="posts-list">
+          
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/dis-semin-ate-semin-seed%E6%95%A3%E5%B8%83/">
+                <h2 class="post-title">dis-semin-ate-semin-=seed散布</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (137 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific research documents, whether they are published or not. (Cappa, Yanchuk, Cartwright, 2012) A regular selection program based on additive genetic performance will normally result in a comparable genetic improvement after a short period of repeated selection, and may then continue beyond the results obtained in the present cross experiment without the complications caused by the laborious dissemination procedures required by a crossbreeding program and the problems caused by a possibly increased environmental sensitivity in the hybrids.
+                  <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/dis-semin-ate-semin-seed%E6%95%A3%E5%B8%83/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/ef-fic-acy-%E5%8A%9F%E6%95%88~effectiveness-power/">
+                <h2 class="post-title">ef-fic-acy-功效~effectiveness-power</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (71 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  We discuss these considerations and additionally emphasize the utility of supplemental nongenetic data for increasing the efficacy of pedigree analysis. (Wilson, Ferguson, 2002) This patch size is entirely dependent on the efficacy of the global trend model. (Dutkowski et al., 2006) Support is also provided by a selection experiment designed to assess the efficacy of directional selection as a means to improve resin production in P. elliottii. (Roberds et al.
+                  <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/ef-fic-acy-%E5%8A%9F%E6%95%88~effectiveness-power/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/entail-~-necessitate-%E9%9C%80%E8%A6%81%E8%95%B4%E5%90%AB/">
+                <h2 class="post-title">entail-~-necessitate-需要，蕴含</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (60 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <ul>
+<li>However, one should also be aware that QTL mapping studies for disease resistance traits frequently <strong>entail</strong> interspecies hybrid crosses. (Hall, Hallingback, Wu, 2016)</li>
+<li>At the other extreme, pedigree data also <strong>entail</strong> real challenges. (Cantor, Lange, Sinsheimer, 2010)</li>
+<li>Shifts in elevation also <strong>entail</strong> adaptation, which might occur more readily, because the proximity of populations facilitates gene migration. (Davis, Shaw, Tx, 2001)</li>
+</ul>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/escal-ate-escal-ladder%E9%80%90%E6%AD%A5%E5%A2%9E%E5%BC%BA/">
+                <h2 class="post-title">escal-ate-escal-=ladder逐步增强</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (86 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  This focus is expanding now to include more routine evaluations of physical and chemical wood components in light of the escalating interest in Populus biomass energy feedstock and the advent of increasingly affordable and reliable assessment methods. (Hidalgo et al., 2010) In addition, as climate change escalates, reduced methane emissions from cattle and sheep will be a critical goal. (Hayes, Lewin, Goddard, 2013) These concurrent escalations have resulted in the challenge of analyzing larger and larger data sets using more and more complex methods.
+                  <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/escal-ate-escal-ladder%E9%80%90%E6%AD%A5%E5%A2%9E%E5%BC%BA/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/ex-pos-ition-pos-put~interpretation%E8%A7%A3%E9%87%8A%E9%98%90%E8%BF%B0/">
+                <h2 class="post-title">ex-pos-ition-pos-=put~interpretation解释阐述</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (94 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  For a more detailed exposition of the theory of LMMs, the reader is referred to the monographs by, e.g., Searle et al. (Casella, Fienberg, Olkin, 2013) For simplicity of exposition, some of our equations consider the case of a single block of plots, but extension to several blocks is straightforward and is, in fact, used in the examples. (Piepho, Richter, Williams, 2008) Nevertheless, we also explain all main results and techniques in verbal form, such that practitioners who do not want to study the mathematics in all detail can follow the exposition.
+                  <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/ex-pos-ition-pos-put~interpretation%E8%A7%A3%E9%87%8A%E9%98%90%E8%BF%B0/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/exposed-to-%E6%8E%A5%E8%A7%A6%E6%9A%B4%E9%9C%B2%E4%BA%8E%E5%A4%84%E4%BA%8E%E5%8F%97%E5%88%B0/">
+                <h2 class="post-title">exposed-to-接触，暴露于，处于，受到</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (207 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  As the vast majority of studies shows that deleterious recessive alleles, not overdominant alleles, are most important in causing ID (Crow 1993; Ritland 1996); selfing greatly increases the chance for these alleles to form homozygotes and, therefore, to be exposed to selection. (Wang, Hagqvist, Tigerstedt, 1999) An attempt was made in eqs. 8 and 9 to derive average relatedness of the gene pool of the seed crop when the orchard is exposed to pollen contamination.
+                  <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/exposed-to-%E6%8E%A5%E8%A7%A6%E6%9A%B4%E9%9C%B2%E4%BA%8E%E5%A4%84%E4%BA%8E%E5%8F%97%E5%88%B0/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/bayesian/fbayesb-/">
+                <h2 class="post-title">fBayesB-</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (22 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+</blockquote>
+
+<p>包括在贝叶斯方法中用于基于全基因组标记的遗传值的预测的非加性遗传效应</p>
+
+<p>抽象</p>
+
+<p>背景
+分子标记信息是绘制关于遗传和表型变异之间的关系的推论的常见来源。遗传效应通常被建模为加性作用标记等位基因效应。生物作用的真正模式当然可以不同于这个平常的假设。更好地理解复杂性状的遗传结构的一种可能性是包括等位基因的基因座内（显性）和基因座间（上位）相互作用以及当将模型拟合到性状时的加性遗传效应。存在几种贝叶斯MCMC方法用于遗传效应的全基因组估计，具有高准确性的遗传值预测。包括成千上万个位点的成对相互作用可能超出这种采样算法的范围，因为然后将同时估计数百万个效应，导致几个月的计算时间。当研究上位性时需要替代性解决策略。</p>
+
+<p>方法
+我们扩展了一个快速贝叶斯方法（fBayesB），这是以前提出的纯粹的加性模型，包括非加性效应。 fBayesB方法用于在模拟数据集的基础上估计遗传效应。模拟不同的情景以研究预测精度的损失，如果上位性效应未被模拟但是被建模，反之亦然。</p>
+
+<p>结果
+如果模拟23个QTL以引起加性和显性效应，则fBayesB和常规MCMC采样器BayesB在基于包括加性和显性效应的模型的遗传值预测和方差分量估计偏差方面产生类似的结果。将fBayesB应用于具有上位性的数据，当所有成对相互作用被建模时，准确度可以提高5％。如果遗传变异扩散超过230个QTL，精确度降低20％以上。在这种情况下，基于建模只有加性和显性效应的准确性一般优于包括上位效应的复杂模型。</p>
+
+<p>结论
+该模拟研究表明，fBayesB方法对于遗传值预测是方便的。共同估计加性和非加性效应（特别是显性）对预测的准确性和分配到加性遗传来源的遗传变异的比例具有合理的影响。</p>
+
+<hr />
+
+<p>1背景</p>
+
+<p><strong>分子标记信息通常用于推断关于各种物种的遗传和表型变异之间的关系</strong>，例如。人[1]，奶牛[2]或小鼠[3]。<strong>假设数量性状基因座（QTL）和标记之间的连锁不平衡（LD），可以估计遗传效应并解释为由邻近标记捕获的QTL效应</strong>。如果育种值是焦点，遗传效应通常被建模为加性作用标记等位基因效应（例如[4,5]）。生物作用的模式当然可以不同于纯加成性的假设。更好地理解复杂性状的遗传结构的一种可能性是在将模型拟合到性状时包括等位基因的基因座内（显性）和基因座间（上位）相互作用。最近已经研究了非加性效应对遗传变异的重要性。关于非加性效应的知识对于受益于例如杂种显性效应[6]是必要的，特别是对于杂交育种方案（家禽，植物等）。通常，可以预期的是，如果对非加性效应进行另外建模，则遗传值的预测，特别是其加性部分的预测得到改善。例如，Lee等人[7]报道当在小鼠中研究表型涂层颜色（+ 17％的准确性）或CD8 +细胞的百分比（+ 2％的准确性）时，<strong>与单纯加性遗传模型相比，当包括显性效应时，预测的准确度显着增加。然而，增加的上位性在这种情况下没有贡献准确性</strong>。在大豆重组近交系的实例中[8]，在上位模型下预测的准确度增加了一倍以上。即使非加性效应可能发生在基因作用的水平，当基因处于极端频率时，大多数遗传变异可能被赋予加性效应[9]。例如上位性参与调节复杂性状的程度是未知的，但关于它的知识可以用于推断生物学机制和重建生物学途径[10]。 Carlborg等人[11]在关于对鸡生长差异的非加性影响的第一个研究中，估计10％的早期生长（性状Gr18）的遗传变异是由于显性，甚至70％由于上位性。这个例子显示了相互作用位点的重要性，虽然可以假设高估上位性效应，一种已知为单个位点的Beavis效应的现象[12]。由于这个实验是基于十分不同的线，需要进一步的研究来找到证据的交互基因在纯种。</p>
+
+<p>不同的方法可用于模拟加性和非加性遗传效应。在QTL检测的方面，可以使用例如方差分量法来进行基因组扫描以揭示遗传效应[13,14]。如果加性和非加性效应要在整个基因组上同时建模，我们必须知道“p大于n”的问题，意味着有更多的参数比观察。为了应对一体化的局面，Xu提出了一种贝叶斯方法[15]，它与BayesA [4]和一个经验贝叶斯方法[16]加性剂标记效应。通常用于估计加性效应的贝叶斯方法应用需要大量计算时间的马尔科夫链蒙特卡罗（MCMC）模拟，但是他们在预测遗传值的准确性方面说服他们。特别地，<strong>BayesB方法[4]优于其他方法，例如脊回归和偏最小二乘[17,18,19]</strong>。如果包括进一步的非加性效应，MCMC采样方法可能在高标记密度下崩溃。作为一种替代方法，贝叶斯方法是可用的，应用分析导出的后验密度的标记效应，而不是其样品[20]。这种方法（称为fBayesB）显示出略微不太准确，因为在迭代过程中，一次仅研究单个标记物效应，而针对所有其他先前估计的效应校正表型的载体。 fBayesB策略比使用MCMC的传统贝叶斯方法快得多。这种解决方法提供了另外考虑全基因组相互作用效应和用合理的计算努力来估计它们的可能性。</p>
+
+<p>本研究的目的是探讨非加性效应对牲畜种群遗传价值预测的影响。当加性和非加性效应联合涉及将模型拟合到性状时，旨在改进的加性效应的估计和更好的遗传值的预测。由于旨在估计任意群体中的非加性效应的方法刚刚出现，因此使用模拟来验证这些方法是特别重要的。因此，通过这项研究，我们追求方法方面，从而组合事实，有助于解释在实际数据中获得的结果在未来的工作。我们认为加性，显性和成对地上位效应捕获在分布在整个基因组的双等位基因标记。统计建模的细节在本文的第一部分。我们扩展了快速贝叶斯方法（fBayesB），它是在纯加和性下开发的[20]，包括非加性效应。 fBayesB用于在类似于奶牛群体的模拟数据集的基础上估计遗传效应。模拟不同的情景以研究预测精度的损失，如果上位性效应未被模拟但是被建模，反之亦然。在第二部分，我们总结了分析模拟数据的结果。确定在标志物效应的全基因组估计后分配给每种遗传效应的遗传变异的量。为了简要说明该方法在实践中的行为，我们还将fBayesB应用于实际数据示例。在第三部分，我们概述了通过fBayesB方法估计非加性效应的一些约束，并讨论其他解决策略。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/far-reaching-%E6%B7%B1%E8%BF%9C%E7%9A%84/">
+                <h2 class="post-title">far-reaching-深远的</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (52 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <ul>
+<li>Genetic improvement of these traits will have <strong>far-reaching effects</strong> on the profitability and sustainability of US livestock production. (Taylor, Taylor, Decker, 2016)</li>
+<li>Knowledge about the genetic mechanisms for biological shape has <strong>far-reaching implications</strong> for a range spectrum of scientific disciplines including anthropology, agriculture, developmental biology, evolution and biomedicine. (Fu et al., 2010)</li>
+</ul>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-5b6e57c04b477737.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="far-reaching深远的.png" /></p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/feed-stock-%E5%8E%9F%E6%96%99/">
+                <h2 class="post-title">feed-stock-原料</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (190 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  The extent of genetic diversity detected and core germplasm of CPT identified in this study could be selected and used for tree breeding, germplasm conservation and suitable feed stock for biofuel. (Sharma et al., 2017) Short-rotation tree crops such as eucalypt plantations, are the feed stocks not only of the pulp and paper industry (Clarke 2009; Cotterill and Brolin 1997; Paues 1999), but are also seen as the basis of new industries replacing the use of fossil hydrocarbons for energy and industrial organic chemicals (Bozell 2010).
+                  <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/feed-stock-%E5%8E%9F%E6%96%99/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/rcodes/from-dynamicwebpaigerlm-dynamicwebpaige--/">
+                <h2 class="post-title">from-DynamicWebPaige{RLM}-@DynamicWebPaige--</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (30 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <pre><code>df &lt;- expand.grid(x = 1:10, y=1:10)
+df$angle &lt;- runif(100, 0, 2*pi)
+df$speed &lt;- runif(100, 0, sqrt(0.1 * df$x))
+
+ggplot(df, aes(x, y)) +
+  geom_point() +
+  geom_spoke(aes(angle = angle, radius = speed))
+</code></pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-c0db22acd0c85c43.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="DOFHn4pUIAIfHyh.jpg" /></p>
+
+                
+              </div>
+
+              
+            </article>
+          
+        </div>
+
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="../../page/39/">&larr; Newer Posts</a>
+              </li>
+            
+            
+              <li class="next">
+                <a href="../../page/41/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

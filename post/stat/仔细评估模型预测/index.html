@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>仔细评估模型预测</title>
+  <meta property="og:title" content="仔细评估模型预测" />
+  <meta name="twitter:title" content="仔细评估模型预测" />
+  <meta name="description" content="仔细评估模型预测 2016年12月2日 由约翰·摩
+（本文首次发表于的R -赢矢量博客 ，并亲切地促进了R-博客）
+有一件事我教的是：评估回归模型的性能时， 你不应该使用关联作为你的分数 。 这是因为相关性告诉你结果的重新缩放是否有用，但是你想知道手中的结果是否真的有用。 例如：火星气候轨道器软件在磅-秒为单位期待的命令发出推力命令，发动机是在牛顿秒为单位 。 这两个量通过1.4881639的常数比相关，因此以磅 - 秒为单位测量的任何值与以牛顿 - 秒为单位的相同测量值具有1.0的相关性。 然而，一个不是另一个，区别是为什么火星气候轨道器“遇到火星在低于预期的高度和由于大气压力分解。 需要毫无意外地引发了与计算相关相关的隐式重新缩放方便的直接F-测试是我们提供的原因之一SIGR [- R库。 然而，即使事情可能变得混乱。
+
+请阅读一个讨厌的小例子。
+考虑以下“无害数据帧”。
+d &lt;-data.frame（prediction = c（0,0，-1，-2,0,0，-1，-2）， actual = c（2,3,1,2,2,3,1,2））
+检查“的质量推荐的测试prediction 相关的”，“ actual ”是F-检验（这是测试stats::lm 使用）。 我们可以直接运行该测试sigr （假设我们已经安装包），如下所示：
+sigr :: formatFTest（d，&rsquo;prediction&rsquo;，&rsquo;actual&rsquo;，format =&lsquo;html&rsquo;）$ formatStr
+F测试总结*：（R 2  = -16，F（1,6）=* - *5.6，P* = NS）。 sigr 报告的R平方-16（请参阅这里的R平方的一些讨论）。 这可能是混乱的，但它正确传达我们没有模式，实际上是“ prediction ”是比只使用平均（一个非常传统的空模型）差。 然而， cor.test 似乎认为“ prediction ”是一个可用的模型：
+cor.test（d $ prediction，d $ actual） Pearson的乘积矩相关 data：d $ prediction和d $ actual t = 1.">
+  <meta property="og:description" content="仔细评估模型预测 2016年12月2日 由约翰·摩
+（本文首次发表于的R -赢矢量博客 ，并亲切地促进了R-博客）
+有一件事我教的是：评估回归模型的性能时， 你不应该使用关联作为你的分数 。 这是因为相关性告诉你结果的重新缩放是否有用，但是你想知道手中的结果是否真的有用。 例如：火星气候轨道器软件在磅-秒为单位期待的命令发出推力命令，发动机是在牛顿秒为单位 。 这两个量通过1.4881639的常数比相关，因此以磅 - 秒为单位测量的任何值与以牛顿 - 秒为单位的相同测量值具有1.0的相关性。 然而，一个不是另一个，区别是为什么火星气候轨道器“遇到火星在低于预期的高度和由于大气压力分解。 需要毫无意外地引发了与计算相关相关的隐式重新缩放方便的直接F-测试是我们提供的原因之一SIGR [- R库。 然而，即使事情可能变得混乱。
+
+请阅读一个讨厌的小例子。
+考虑以下“无害数据帧”。
+d &lt;-data.frame（prediction = c（0,0，-1，-2,0,0，-1，-2）， actual = c（2,3,1,2,2,3,1,2））
+检查“的质量推荐的测试prediction 相关的”，“ actual ”是F-检验（这是测试stats::lm 使用）。 我们可以直接运行该测试sigr （假设我们已经安装包），如下所示：
+sigr :: formatFTest（d，&rsquo;prediction&rsquo;，&rsquo;actual&rsquo;，format =&lsquo;html&rsquo;）$ formatStr
+F测试总结*：（R 2  = -16，F（1,6）=* - *5.6，P* = NS）。 sigr 报告的R平方-16（请参阅这里的R平方的一些讨论）。 这可能是混乱的，但它正确传达我们没有模式，实际上是“ prediction ”是比只使用平均（一个非常传统的空模型）差。 然而， cor.test 似乎认为“ prediction ”是一个可用的模型：
+cor.test（d $ prediction，d $ actual） Pearson的乘积矩相关 data：d $ prediction和d $ actual t = 1.">
+  <meta name="twitter:description" content="仔细评估模型预测 2016年12月2日 由约翰·摩
+（本文首次发表于的R -赢矢量博客 ，并亲切地促进了R-博客）
+有一件事我教的是：评估回归模型的性能时， 你不应该使用关联作为你的分数 。 这是因为相关性告诉你结果的重新缩放是否有用，但是你想知道手中的结果是否真的有用。 例如：火星气候轨道器软件在磅-秒为单位期待的命令发出推力命令，发动机是在牛顿秒为单位 。 这两个量通过1.4881639的常数 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/stat/%E4%BB%94%E7%BB%86%E8%AF%84%E4%BC%B0%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/stat/%E4%BB%94%E7%BB%86%E8%AF%84%E4%BC%B0%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>仔细评估模型预测</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (259 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>仔细评估模型预测</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (259 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h1 id="仔细评估模型预测">仔细评估模型预测</h1>
+
+<p>2016年12月2日
+由<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://www.r-bloggers.com/author/john-mount/&amp;usg=ALkJrhgpabWaldAK7-rLFQkAyyOvFbvv_Q">约翰·摩</a></p>
+
+<p>（本文首次发表于<strong><a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=http://www.win-vector.com/blog/2016/12/be-careful-evaluating-model-predictions/&amp;usg=ALkJrhjC7hOgU-eCIZz1-ZyD-MHJrO0E6A">的R -赢矢量博客</a></strong> ，并亲切地促进了<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://www.r-bloggers.com/&amp;usg=ALkJrhh9QRXZoGql6hhBy5vw745BLoKI0w">R-博客）</a></p>
+
+<p>有一件事我教的是：评估回归模型的性能时， <a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=http://www.win-vector.com/blog/2013/02/dont-use-correlation-to-track-prediction-performance/&amp;usg=ALkJrhgWvRFTWHjtdzvhMJfi_sIvU9ad3A">你不应该使用关联作为你的分数</a> 。
+这是因为相关性告诉你结果的重新缩放是否有用，但是你想知道手中的结果是否真的有用。 例如：火星气候轨道器软件<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://en.wikipedia.org/wiki/Mars_Climate_Orbiter&amp;usg=ALkJrhiseY_dZaRz0MFwfg8Y4qXS9buKnA">在磅-秒为单位期待的命令发出推力命令，发动机是在牛顿秒为单位</a> 。 这两个量通过1.4881639的常数比相关，因此以磅 - 秒为单位测量的任何值与以牛顿 - 秒为单位的相同测量值具有1.0的相关性。 然而，一个不是另一个，区别是为什么火星气候轨道器“遇到火星在低于预期的高度和由于大气压力分解。
+需要毫无意外地引发了与计算相关相关的隐式重新缩放方便的直接F-测试是我们提供的原因之一<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://github.com/WinVector/sigr&amp;usg=ALkJrhh_UFbIgBME-9cMuEsyo43YDUth4Q">SIGR</a> [- <a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://cran.r-project.org/&amp;usg=ALkJrhjCBORAsqvv_0smYbpI5SUGkLLbOQ">R</a>库。 然而，即使事情可能变得混乱。</p>
+
+<p><a href="https://i0.wp.com/commons.wikimedia.org/wiki/File:%22USE_PROPER_TOOLS_FOR_THE_JOB_-_TAKE_CARE_OF_THEM%22_-_NARA_-_515954.jpg?ssl=1"><img src="https://i0.wp.com/www.win-vector.com/blog/wp-content/uploads/2016/11/NewImage-8.png?resize=393%2C512" alt="NewImage.png" /></a></p>
+
+<p>请阅读一个讨厌的小例子。</p>
+
+<p>考虑以下“无害数据帧”。</p>
+
+<p>d &lt;-data.frame（prediction = c（0,0，-1，-2,0,0，-1，-2），  actual = c（2,3,1,2,2,3,1,2））</p>
+
+<p>检查“的质量推荐的测试prediction
+相关的”，“ actual
+ ”是F-检验（这是测试stats::lm
+使用）。 我们可以直接运行该测试sigr
+ （假设我们已经安装包），如下所示：</p>
+
+<p>sigr :: formatFTest（d，&rsquo;prediction&rsquo;，&rsquo;actual&rsquo;，format =&lsquo;html&rsquo;）$ formatStr</p>
+
+<p><strong>F测试</strong>总结*：（R 2
+<em> = </em>-16，F（1,6）=* - *5.6，P* = NS）。 </p>
+
+<p>sigr
+报告的R平方-16（请参阅<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=http://www.win-vector.com/blog/2011/11/correlation-and-r-squared/&amp;usg=ALkJrhjzk3x6L9MulmAHWQ0YT4uDTi07LA">这里</a>的R平方的一些讨论）。 这可能是混乱的，但它正确传达我们没有模式，实际上是“ prediction
+ ”是比只使用平均（一个非常传统的空模型）差。
+然而， cor.test
+似乎认为“ prediction
+ ”是一个可用的模型：</p>
+
+<p>cor.test（d $ prediction，d $ actual）  Pearson的乘积矩相关 data：d $ prediction和d $ actual t = 1.1547，df = 6，p值= 0.2921备选假设：真相关不等于0 95％的置信区间：  -0.3977998 0.8697404样本估计： 科尔  0.4264014</p>
+
+<p>这是所有的预测，其中sum((d$actual-d$prediction)^2)==66
+比大sum((d$actual-mean(d$actual))^2)==4
+ 。 我们专注于影响措施（如R平方），因为我们可以通过添加更多的数据行来驱动p值。 我们的观点是：使用这个模型比使用实际（2）的平均值作为常数预测器更糟糕。 在我看来，这不是一个好的预测。 和lm
+似乎同样兴奋的“ prediction
+ ”。</p>
+
+<p>summary（lm（actual〜prediction，data = d））呼叫： lm（公式=实际预测，数据= d）残留： 最小1Q中位数3Q最大  -0.90909 -0.43182 0.09091 0.52273 0.72727 系数： 估计标准 误差t值Pr（&gt; | t |）  （截距）2.2727 0.3521 6.455 0.000655 <strong><em>预测值0.3636 0.3149 1.155 0.292121  &mdash; &mdash; Signif。 代码：0&rsquo;</em></strong>&lsquo;0.001&rsquo;*<em>&lsquo;0.01&rsquo;</em>&lsquo;0.05&rsquo;。  0.1“1残余标准误差：在6自由度上为0.7385多次R平方：0.1818，调整R平方：0.04545  F统计：1.333对1和6DF，p-值：0.2921</p>
+
+<p>一个理由不相信lm
+的结果是没有得分“质量prediction
+ ”。 它拿下的质量“ 0.3636*prediction + 2.2727
+ ”。它可以是“案件0.3636*prediction + 2.2727
+ ”实际上是一个很好的预测。 但 这并不能帮助我们，如果是“ prediction
+ ”即将展现在我们的老板或投产。 我们可以*尝试*通过坚持以缓解这种lm
+尽量呆在通过关闭拦截更接近原始或使用“偏移0+
+ ”符号。 这看起来像下面。</p>
+
+<p>summary（lm（actual〜0 + prediction，data = d））呼叫： lm（公式=实际〜0 +预测，数据= d）残留： 最小1Q中位数3Q最大  0.00 0.00 1.00 2.25 3.00 系数： 估计标准 误差t值Pr（&gt; | t |）预测-1.0000 0.6094 -1.641 0.145残余标准误差：1.927在7自由度上多次R平方：0.2778，调整R平方：0.1746  F统计：2.692对1和7DF，p-值：0.1448</p>
+
+<p>即使是lm(0+)
+的调整后的预测是不好的，因为我们看到如下：</p>
+
+<p>d $ lmPred &lt;-predict（lm（actual〜0 + prediction，data = d）） sum（（d $ actual-d $ lmPred）^ 2） [1] 26</p>
+
+<p>是的， lm(0+)
+找到了一种方法，提高了预测; 但是改进的预测仍然非常糟糕（比使用良好选择的常数更差）。 它是很难说“ -prediction
+ ”是同一型号为“ prediction
+ ”。
+现在sigr
+是相当新的代码，因此它是一个有点大胆的说，这是正确的，当它与标准方法不同意。 然而sigr
+就在这种情况下。 标准方法没有那么多错误，因为两个原因：
+他们正在回答不同的问题。 F检验旨在检查手中的预测是否好; “cor.test
+ ”和“ lm %&gt;% summary
+ ”被设计为检查预测的任何重新缩放是实际上良好。 这些是不同的问题。 使用“ cor.test
+”或“ lm %&gt;% summary
+ ”来测试潜在变量的工具是一个不错的主意。 在这些测试中隐藏的重新处理与稍后在模型中使用变量一致。使用它们来评分应该直接使用的模型结果是错误的。
+从标准R代码的角度来看，什么是正确的“空模型”是不明显的。还记得我们最初的观点：对质量的措施lm(0+)
+的设计，看看如何lm(0+)
+工作。 这意味着lm(0+)
+得分它的输出（而不是它的输入）的质量，它得到信贷的预测翻转迹象。 它也认为自然零模型是一个它可以形成没有可变驱动效应。 由于在这些模型中没有拦截或“DC-术语”（由“引发0+
+ ”符号）盛大平均不被视为一个似是而非的空模式，因为它是不是在建模情况的概念空间lm
+被提交。 或者从help(summary.lm)
+ R ^ 2，&rsquo;由模型解释的方差分数&rsquo;， R ^ 2 = 1-Sum（R [i] ^ 2）/ Sum（（y [i] -y *）^ 2） 其中y *是y [i]的平均值，否则为0。</p>
+
+<p>我承认，这*是*非常令人困惑。 但它对应于文档，从建模的角度来看是有意义的。 它是正确的。 空模型从平均值到零的无声切换在其定义的上下文中是有意义的。对于测试我们的预测没有意义，但是这只是使用正确的F检验而不是试图攻击的另一个原因“ cor.test
+ ”或“ lm(0+) %&gt;% summary
+”来计算它。
+而这正是sigr
+大概是：标准测试（使用R
+提供的实现）略有不同的调用约定，以便更好地意向文件（在我们的情况下，几乎总是测量模型，从模型构建单独的质量）。 它是一个新的库，所以它还没有实现其目标所需的文档，但我们最终会到达那里。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/%E4%BB%A3%E6%9B%BF/" data-toggle="tooltip" data-placement="top" title="代替">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%9A%8F%E7%AC%94/%E4%B8%8D%E5%AE%8C%E5%85%A8%E5%8C%BA%E7%BB%84%E8%AE%BE%E8%AE%A1/" data-toggle="tooltip" data-placement="top" title="不完全区组设计">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

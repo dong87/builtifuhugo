@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>无标题文章</title>
+  <meta property="og:title" content="无标题文章" />
+  <meta name="twitter:title" content="无标题文章" />
+  <meta name="description" content="摘要 本文以1988年建造的由94个自由授粉家系和来自12×12全双列交配的55个全同胞家系组成的日本落叶松子代测定林为对象，利用全同胞材料研究开展经济性状（生长、材性）的配合力分析、遗传参数估计、杂种优势和自交衰退分析以及利用基于分子标记的亲本遗传距离预测杂种优势；利用全部子代材料和单株混合线性模型了解测定林中的环境变异趋势，并采用空间模型1阶自回归（AR）和3次B样条（Spline）解析这些变异从而提高育种效率；加入部分利用分子标记重建是系谱信息，研究其对遗传参数估计的影响和对育种的意义；利用19a生生长数据研究测定林内的竞争效应强度，以及竞争效应在育种值估计中起到的作用。旨在为日本落叶松遗传改良策略的制定和二代优树的选择奠定基础。主要研究结果如下： 一般配合力（GCA）和特殊配合力（SCA）效应对各生长性状有显著作用，SCA在19a生时起主导地位，28a生时其重要性有所下降，最佳育种策略是优良亲本种子园结合杂优组合中优良个体无性系。小区和残差方差占比很大，狭义和广义遗传力均较低（0.01-0.08, 0.04-0.14）。正反交效应只对28a生树高作用显著，交配设计中不含反交导致GCA、SCA方差和遗传力估计偏高，但对育种值排名影响不大，半双列交配设计即能满足遗传测定的需要。 部分组合表现出较高的杂种优势是后续理想的育种材料。75%亲本无显著自交衰退，且自交子代存活率与其它类型无显著差异，短期内无需顾虑近交衰退。基于17个EST-SSR的亲本遗传距离与SCA和杂种优势无显著的相关关系，该方法没有成功预测杂种优势。 生长性状存在明显的空间异质性，在只含试验设计的基础模型和空间模型中AR模型表现最好。对于多数性状从AR模型估计的加性遗传方差相对于基础模型略有下降，残差方差也均有减少，小区方差则减少了80%之多。AR模型给出的狭义遗传力最高，H19、H28、DBH28和V28分别增加了18.9%、26.9%、41.7%和17.6%。空间模型中的亲本和子代育种值精度略高于（28a生时）或近等于基础模型；AR模型中的生长性状亲本育种值精度变幅为0.52-0.59，略高于子代的0.50-0.54；材性性状的亲本和子代育种值精度分别约0.73和0.85，均高于生长性状。材性则受环境变异影响较小，空间效应多不显著，采用常规分析即可。 系谱重建对拟合模型的AIC（Akaike information criterion）值没有影响，对遗传参数估计和育种值精度的影响因性状而异。补充更多系谱信息后，材性性状的遗传力和遗传增益有显著提升；生长性状H28遗传力增加，而DBH19和V19的遗传力下降但育种值精度升高，对遗传增益无明显作用。建议将对自由授粉材料的系谱重建纳入常规遗传测定分析中。 竞争分析发现，19a生时试验林内个体间高生长呈协作关系，但胸径和材积则表现出显著的竞争效应。对于3个性状，竞争模型得到的直接加性遗传方差（σ_Ad^2）均高于基础模型，分别高出73%、205%和93%；胸径和材积的残差方差（σ_e^2）相对于基础模型的分别下降了8%和6%，但相反树高则增加了11%。在竞争模型中加入AR空间效应后，胸径和材积的σ_Ad^2和σ_e^2的差异进一步加大，σ_Ad^2比竞争模型分别增加了6%和27%，σ_e^2分别下降了5%和9%；直接竞争遗传方差（σ_Ac^2）分别增加了23%和4%。因此不考虑竞争效应的模型给出的方差估计有较大偏差。尽管来自基础模型和含有竞争效应的模型胸径的育种值之间显著正相关，但相关系数不高（0.50和0.38）；按照5%的强度选优时，基础模型与竞争模型和竞争空间联合中的共有个体的比例分别只有39.1%和24.7%，表明竞争与空间效应对选优有极大影响，从而影响遗传改良进程。 关键词：落叶松；遗传改良；双列交配；杂种优势；系谱重建；空间分析；竞争分析">
+  <meta property="og:description" content="摘要 本文以1988年建造的由94个自由授粉家系和来自12×12全双列交配的55个全同胞家系组成的日本落叶松子代测定林为对象，利用全同胞材料研究开展经济性状（生长、材性）的配合力分析、遗传参数估计、杂种优势和自交衰退分析以及利用基于分子标记的亲本遗传距离预测杂种优势；利用全部子代材料和单株混合线性模型了解测定林中的环境变异趋势，并采用空间模型1阶自回归（AR）和3次B样条（Spline）解析这些变异从而提高育种效率；加入部分利用分子标记重建是系谱信息，研究其对遗传参数估计的影响和对育种的意义；利用19a生生长数据研究测定林内的竞争效应强度，以及竞争效应在育种值估计中起到的作用。旨在为日本落叶松遗传改良策略的制定和二代优树的选择奠定基础。主要研究结果如下： 一般配合力（GCA）和特殊配合力（SCA）效应对各生长性状有显著作用，SCA在19a生时起主导地位，28a生时其重要性有所下降，最佳育种策略是优良亲本种子园结合杂优组合中优良个体无性系。小区和残差方差占比很大，狭义和广义遗传力均较低（0.01-0.08, 0.04-0.14）。正反交效应只对28a生树高作用显著，交配设计中不含反交导致GCA、SCA方差和遗传力估计偏高，但对育种值排名影响不大，半双列交配设计即能满足遗传测定的需要。 部分组合表现出较高的杂种优势是后续理想的育种材料。75%亲本无显著自交衰退，且自交子代存活率与其它类型无显著差异，短期内无需顾虑近交衰退。基于17个EST-SSR的亲本遗传距离与SCA和杂种优势无显著的相关关系，该方法没有成功预测杂种优势。 生长性状存在明显的空间异质性，在只含试验设计的基础模型和空间模型中AR模型表现最好。对于多数性状从AR模型估计的加性遗传方差相对于基础模型略有下降，残差方差也均有减少，小区方差则减少了80%之多。AR模型给出的狭义遗传力最高，H19、H28、DBH28和V28分别增加了18.9%、26.9%、41.7%和17.6%。空间模型中的亲本和子代育种值精度略高于（28a生时）或近等于基础模型；AR模型中的生长性状亲本育种值精度变幅为0.52-0.59，略高于子代的0.50-0.54；材性性状的亲本和子代育种值精度分别约0.73和0.85，均高于生长性状。材性则受环境变异影响较小，空间效应多不显著，采用常规分析即可。 系谱重建对拟合模型的AIC（Akaike information criterion）值没有影响，对遗传参数估计和育种值精度的影响因性状而异。补充更多系谱信息后，材性性状的遗传力和遗传增益有显著提升；生长性状H28遗传力增加，而DBH19和V19的遗传力下降但育种值精度升高，对遗传增益无明显作用。建议将对自由授粉材料的系谱重建纳入常规遗传测定分析中。 竞争分析发现，19a生时试验林内个体间高生长呈协作关系，但胸径和材积则表现出显著的竞争效应。对于3个性状，竞争模型得到的直接加性遗传方差（σ_Ad^2）均高于基础模型，分别高出73%、205%和93%；胸径和材积的残差方差（σ_e^2）相对于基础模型的分别下降了8%和6%，但相反树高则增加了11%。在竞争模型中加入AR空间效应后，胸径和材积的σ_Ad^2和σ_e^2的差异进一步加大，σ_Ad^2比竞争模型分别增加了6%和27%，σ_e^2分别下降了5%和9%；直接竞争遗传方差（σ_Ac^2）分别增加了23%和4%。因此不考虑竞争效应的模型给出的方差估计有较大偏差。尽管来自基础模型和含有竞争效应的模型胸径的育种值之间显著正相关，但相关系数不高（0.50和0.38）；按照5%的强度选优时，基础模型与竞争模型和竞争空间联合中的共有个体的比例分别只有39.1%和24.7%，表明竞争与空间效应对选优有极大影响，从而影响遗传改良进程。 关键词：落叶松；遗传改良；双列交配；杂种优势；系谱重建；空间分析；竞争分析">
+  <meta name="twitter:description" content="摘要 本文以1988年建造的由94个自由授粉家系和来自12×12全双列交配的55个全同胞家系组成的日本落叶松子代测定林为对象，利用全同胞材料研究开展经济性状（生长、材性）的配合力分析、遗传参数估计、杂种优势和自交衰退分析以及利用基于分子标记的亲本遗传距离预测杂种优势；利用全部子代材料和单株混合线性模型了解测定林中的环境变异趋势，并采用空间模型1阶自回归（AR）和3次B样条（Spline）解析这些变 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>无标题文章</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (11 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>无标题文章</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (11 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>摘要
+本文以1988年建造的由94个自由授粉家系和来自12×12全双列交配的55个全同胞家系组成的日本落叶松子代测定林为对象，利用全同胞材料研究开展经济性状（生长、材性）的配合力分析、遗传参数估计、杂种优势和自交衰退分析以及利用基于分子标记的亲本遗传距离预测杂种优势；利用全部子代材料和单株混合线性模型了解测定林中的环境变异趋势，并采用空间模型1阶自回归（AR）和3次B样条（Spline）解析这些变异从而提高育种效率；加入部分利用分子标记重建是系谱信息，研究其对遗传参数估计的影响和对育种的意义；利用19a生生长数据研究测定林内的竞争效应强度，以及竞争效应在育种值估计中起到的作用。旨在为日本落叶松遗传改良策略的制定和二代优树的选择奠定基础。主要研究结果如下：
+    一般配合力（GCA）和特殊配合力（SCA）效应对各生长性状有显著作用，SCA在19a生时起主导地位，28a生时其重要性有所下降，最佳育种策略是优良亲本种子园结合杂优组合中优良个体无性系。小区和残差方差占比很大，狭义和广义遗传力均较低（0.01-0.08, 0.04-0.14）。正反交效应只对28a生树高作用显著，交配设计中不含反交导致GCA、SCA方差和遗传力估计偏高，但对育种值排名影响不大，半双列交配设计即能满足遗传测定的需要。
+    部分组合表现出较高的杂种优势是后续理想的育种材料。75%亲本无显著自交衰退，且自交子代存活率与其它类型无显著差异，短期内无需顾虑近交衰退。基于17个EST-SSR的亲本遗传距离与SCA和杂种优势无显著的相关关系，该方法没有成功预测杂种优势。
+    生长性状存在明显的空间异质性，在只含试验设计的基础模型和空间模型中AR模型表现最好。对于多数性状从AR模型估计的加性遗传方差相对于基础模型略有下降，残差方差也均有减少，小区方差则减少了80%之多。AR模型给出的狭义遗传力最高，H19、H28、DBH28和V28分别增加了18.9%、26.9%、41.7%和17.6%。空间模型中的亲本和子代育种值精度略高于（28a生时）或近等于基础模型；AR模型中的生长性状亲本育种值精度变幅为0.52-0.59，略高于子代的0.50-0.54；材性性状的亲本和子代育种值精度分别约0.73和0.85，均高于生长性状。材性则受环境变异影响较小，空间效应多不显著，采用常规分析即可。
+    系谱重建对拟合模型的AIC（Akaike information criterion）值没有影响，对遗传参数估计和育种值精度的影响因性状而异。补充更多系谱信息后，材性性状的遗传力和遗传增益有显著提升；生长性状H28遗传力增加，而DBH19和V19的遗传力下降但育种值精度升高，对遗传增益无明显作用。建议将对自由授粉材料的系谱重建纳入常规遗传测定分析中。
+    竞争分析发现，19a生时试验林内个体间高生长呈协作关系，但胸径和材积则表现出显著的竞争效应。对于3个性状，竞争模型得到的直接加性遗传方差（σ_Ad^2）均高于基础模型，分别高出73%、205%和93%；胸径和材积的残差方差（σ_e^2）相对于基础模型的分别下降了8%和6%，但相反树高则增加了11%。在竞争模型中加入AR空间效应后，胸径和材积的σ_Ad^2和σ_e^2的差异进一步加大，σ_Ad^2比竞争模型分别增加了6%和27%，σ_e^2分别下降了5%和9%；直接竞争遗传方差（σ_Ac^2）分别增加了23%和4%。因此不考虑竞争效应的模型给出的方差估计有较大偏差。尽管来自基础模型和含有竞争效应的模型胸径的育种值之间显著正相关，但相关系数不高（0.50和0.38）；按照5%的强度选优时，基础模型与竞争模型和竞争空间联合中的共有个体的比例分别只有39.1%和24.7%，表明竞争与空间效应对选优有极大影响，从而影响遗传改良进程。
+关键词：落叶松；遗传改良；双列交配；杂种优势；系谱重建；空间分析；竞争分析</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/" data-toggle="tooltip" data-placement="top" title="无标题文章">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/" data-toggle="tooltip" data-placement="top" title="无标题文章">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

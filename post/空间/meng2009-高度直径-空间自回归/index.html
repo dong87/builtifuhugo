@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Meng2009-高度直径-空间自回归</title>
+  <meta property="og:title" content="Meng2009-高度直径-空间自回归" />
+  <meta name="twitter:title" content="Meng2009-高度直径-空间自回归" />
+  <meta name="description" content="Meng Q, Cieszewski CJ, Strub MR, Borders BE (2009) Spatial regression modeling of tree height–diameter relationships. Can J For Res 39:2283–2293. doi: 10.1139/X09-136
+ 树高 - 直径关系通常使用线性或非线性模型进行研究，但是外部变量，特别是空间自相关和树直径或高度的因变量，在高度 - 直径建模中通常不被考虑。本研究探讨了三种类型的空间回归模型 - 空间滞后模型，空间误差模型和空间Durbin过程模型。使用空间回归模型来模拟高度 - 直径关系，以研究空间依赖性和空间自相关性的影响以及由相邻树生成的外生变量的作用。案例研究1显示，空间滞后模型应用于分析高度 - 直径关系，其中作为外生变量的相邻树木的高度和内源性变量DBH显着影响高度生长。案例研究2显示空间误差模型表现得比其他模型更好，高度增长不仅受到其内生变量直径的影响，而且受到空间变化并导致残差空间自相关的未观测变量的影响。空间回归模型是高度 - 直径模型的一种方法，其提供对内生变量直径，外生变量高度和（或）相邻树木的直径以及局部变化但未观察到的环境或生态变量如何促进高度增长的了解。
+在森林库存中建模高度 - 直径关系是重要的，空间自相关是直径，高度和木材体积估计的关键因素，因为它直接连接树木之间的竞争和相互作用。虽然可以通过应用一些线性或非线性模型而不考虑空间相关性来计算直径，高度或木材体积的边际估计，但是将忽略树木之间的竞争和相互作用的一些重要方面，从而影响我们对生长和产量的观点也是整个森林生态系统的重要组成部分。此外，Openshaw和Taylor（1979）能够证明空间自相关性直接影响结果统计，并且如果我们忽略空间自相关，模型参数的标准误差的估计将是有偏差的。当空间中任何一点的值取决于周围点的值时，存在空间自相关。正空间自相关意味着类似的值被聚类，而负空间自相关表示非常不同的值被聚类。空间自相关是地理现象的一个重要属性，也是地理学第一定律的核心：“一切都与一切有关，但邻近的事物比遥远的事物更相关”（Tobler 1970）。空间自相关和空间回归对于经典统计测试是有问题的（Haining 1990; Legendre 1993）。树木是地面上的地理现象的一个例子，空间自相关存在于直径，高度和木材体积之间，并影响树木的生长和产量。因此，在估计树木生长时必须考虑空间自相关性。生长和产量的估计通常需要多变量模型。使用经典线性回归和方差分析（ANOVA），假设响应变量是独立的，即假定残差是独立分布的;然而，“一个茎的特征与相邻茎的特征相关”（Bullock和Burkhart 2005）。普通最小二乘估计和方差分析可能会夸大t和F统计的显着性，而事实上，它们可能根本不显着。与时间自相关不同，一个点处的空间变量的值可以与其在一定距离内的所有周围点的值相关，并且随着与点的距离增加，相关度减小。空间自相关是空间变量的一个重要方面（Anselin和Griffith 1988）。当空间自相关被测试并且真正存在时，它可以在回归模型中以两种方式处理。当处理非常大的数据集时，我们可以生成彼此之间足够的稀疏随机样本点，使得它们之间的空间自相关性足够小以至于被忽略，然后可以使用这些点拟合模型（Meng等人。2004）。然而，当使用稀疏采样点时，在微观和竞争的空间自相关以及相邻物体之间的相互作用被忽略。另一方面，如果在模型拟合中必须考虑空间结构和空间分布，如果可用数据集不太大，我们可以建立一个包含空间自相关的回归模型。空间回归模型反映了空间结构过程，并被设计用于建模空间依赖性和自相关。树变量的空间变化是由自然环境因素和森林林分的空间结构引起的。许多研究已经意识到空间模式影响多样性和密度，树木之间的竞争，生长和死亡率（Kuuluvainen和Pukkala 1987; Kenkel 1988; Newton和Jolliffe 1998）。直到最近，站点间的变异或空间异质性的影响才被忽略（Garcı&rsquo;a1994; Bullock和Burkhart 2005）。空间自相关和空间依赖性通常由变量的空间结构引起（Legendre等人2002; Wagner和Fortin 2005）。空间自相关和空间依赖通常不考虑建模高度直径，尽管许多森林科学家已经应用它们来分析树变量的空间变化（Reed和Burkhart 1985; Biondi等人1994; Meng等人2007a）。空间自回归模型通常包括空间滞后模型，空间误差模型和空间Durbin过程模型，可以直接将个体树变量及其空间结构纳入建模。将空间自相关和空间依赖性纳入回归模型中有理论和方法动机（Anselin 1999; Schabenberger和Gotway 2005）。例如，将空间自相关结合到模型中可以帮助了解邻居效应和树木之间的直接相互作用如何影响树木的生长和生长模式。在方法上，地理信息系统及其与定量空间分析的耦合提供了将空间依赖性和空间自相关性纳入经典回归分析的工具。研究结果如下： （1）通过比较替代线性高度直径模型选择合适的线性方程;然后基于所选择的线性模型，研究空间回归模型来建模高度 - 直径关系。 （2）空间自相关被纳入基于空间计量经济学方法的回归模型。探讨了经典线性模型和空间模型之间的概念比较。讨论高度 - 直径和外生变量的空间回归模型的建模高度 - 直径关系的建模。 （3）在经典线性回归模型和空间回归模型之间比较模型诊断和性能。最后，讨论了空间回归模型在林业中的意义和潜在应用。">
+  <meta property="og:description" content="Meng Q, Cieszewski CJ, Strub MR, Borders BE (2009) Spatial regression modeling of tree height–diameter relationships. Can J For Res 39:2283–2293. doi: 10.1139/X09-136
+ 树高 - 直径关系通常使用线性或非线性模型进行研究，但是外部变量，特别是空间自相关和树直径或高度的因变量，在高度 - 直径建模中通常不被考虑。本研究探讨了三种类型的空间回归模型 - 空间滞后模型，空间误差模型和空间Durbin过程模型。使用空间回归模型来模拟高度 - 直径关系，以研究空间依赖性和空间自相关性的影响以及由相邻树生成的外生变量的作用。案例研究1显示，空间滞后模型应用于分析高度 - 直径关系，其中作为外生变量的相邻树木的高度和内源性变量DBH显着影响高度生长。案例研究2显示空间误差模型表现得比其他模型更好，高度增长不仅受到其内生变量直径的影响，而且受到空间变化并导致残差空间自相关的未观测变量的影响。空间回归模型是高度 - 直径模型的一种方法，其提供对内生变量直径，外生变量高度和（或）相邻树木的直径以及局部变化但未观察到的环境或生态变量如何促进高度增长的了解。
+在森林库存中建模高度 - 直径关系是重要的，空间自相关是直径，高度和木材体积估计的关键因素，因为它直接连接树木之间的竞争和相互作用。虽然可以通过应用一些线性或非线性模型而不考虑空间相关性来计算直径，高度或木材体积的边际估计，但是将忽略树木之间的竞争和相互作用的一些重要方面，从而影响我们对生长和产量的观点也是整个森林生态系统的重要组成部分。此外，Openshaw和Taylor（1979）能够证明空间自相关性直接影响结果统计，并且如果我们忽略空间自相关，模型参数的标准误差的估计将是有偏差的。当空间中任何一点的值取决于周围点的值时，存在空间自相关。正空间自相关意味着类似的值被聚类，而负空间自相关表示非常不同的值被聚类。空间自相关是地理现象的一个重要属性，也是地理学第一定律的核心：“一切都与一切有关，但邻近的事物比遥远的事物更相关”（Tobler 1970）。空间自相关和空间回归对于经典统计测试是有问题的（Haining 1990; Legendre 1993）。树木是地面上的地理现象的一个例子，空间自相关存在于直径，高度和木材体积之间，并影响树木的生长和产量。因此，在估计树木生长时必须考虑空间自相关性。生长和产量的估计通常需要多变量模型。使用经典线性回归和方差分析（ANOVA），假设响应变量是独立的，即假定残差是独立分布的;然而，“一个茎的特征与相邻茎的特征相关”（Bullock和Burkhart 2005）。普通最小二乘估计和方差分析可能会夸大t和F统计的显着性，而事实上，它们可能根本不显着。与时间自相关不同，一个点处的空间变量的值可以与其在一定距离内的所有周围点的值相关，并且随着与点的距离增加，相关度减小。空间自相关是空间变量的一个重要方面（Anselin和Griffith 1988）。当空间自相关被测试并且真正存在时，它可以在回归模型中以两种方式处理。当处理非常大的数据集时，我们可以生成彼此之间足够的稀疏随机样本点，使得它们之间的空间自相关性足够小以至于被忽略，然后可以使用这些点拟合模型（Meng等人。2004）。然而，当使用稀疏采样点时，在微观和竞争的空间自相关以及相邻物体之间的相互作用被忽略。另一方面，如果在模型拟合中必须考虑空间结构和空间分布，如果可用数据集不太大，我们可以建立一个包含空间自相关的回归模型。空间回归模型反映了空间结构过程，并被设计用于建模空间依赖性和自相关。树变量的空间变化是由自然环境因素和森林林分的空间结构引起的。许多研究已经意识到空间模式影响多样性和密度，树木之间的竞争，生长和死亡率（Kuuluvainen和Pukkala 1987; Kenkel 1988; Newton和Jolliffe 1998）。直到最近，站点间的变异或空间异质性的影响才被忽略（Garcı&rsquo;a1994; Bullock和Burkhart 2005）。空间自相关和空间依赖性通常由变量的空间结构引起（Legendre等人2002; Wagner和Fortin 2005）。空间自相关和空间依赖通常不考虑建模高度直径，尽管许多森林科学家已经应用它们来分析树变量的空间变化（Reed和Burkhart 1985; Biondi等人1994; Meng等人2007a）。空间自回归模型通常包括空间滞后模型，空间误差模型和空间Durbin过程模型，可以直接将个体树变量及其空间结构纳入建模。将空间自相关和空间依赖性纳入回归模型中有理论和方法动机（Anselin 1999; Schabenberger和Gotway 2005）。例如，将空间自相关结合到模型中可以帮助了解邻居效应和树木之间的直接相互作用如何影响树木的生长和生长模式。在方法上，地理信息系统及其与定量空间分析的耦合提供了将空间依赖性和空间自相关性纳入经典回归分析的工具。研究结果如下： （1）通过比较替代线性高度直径模型选择合适的线性方程;然后基于所选择的线性模型，研究空间回归模型来建模高度 - 直径关系。 （2）空间自相关被纳入基于空间计量经济学方法的回归模型。探讨了经典线性模型和空间模型之间的概念比较。讨论高度 - 直径和外生变量的空间回归模型的建模高度 - 直径关系的建模。 （3）在经典线性回归模型和空间回归模型之间比较模型诊断和性能。最后，讨论了空间回归模型在林业中的意义和潜在应用。">
+  <meta name="twitter:description" content="Meng Q, Cieszewski CJ, Strub MR, Borders BE (2009) Spatial regression modeling of tree height–diameter relationships. Can J For Res 39:2283–2293. doi: 10.1139/X09-136
+ 树高 - 直径关系通常使用线性或非线性模型进行研究，但是外部变 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/meng2009-%E9%AB%98%E5%BA%A6%E7%9B%B4%E5%BE%84-%E7%A9%BA%E9%97%B4%E8%87%AA%E5%9B%9E%E5%BD%92/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/meng2009-%E9%AB%98%E5%BA%A6%E7%9B%B4%E5%BE%84-%E7%A9%BA%E9%97%B4%E8%87%AA%E5%9B%9E%E5%BD%92/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Meng2009-高度直径-空间自回归</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (69 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Meng2009-高度直径-空间自回归</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (69 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Meng Q, Cieszewski CJ, Strub MR, Borders BE (2009) Spatial regression modeling of tree height–diameter relationships. Can J For Res 39:2283–2293. doi: 10.1139/X09-136</p>
+</blockquote>
+
+<p>树高 - 直径关系通常使用线性或非线性模型进行研究，但是外部变量，特别是空间自相关和树直径或高度的因变量，在高度 - 直径建模中通常不被考虑。本研究探讨了三种类型的空间回归模型 - 空间滞后模型，空间误差模型和空间Durbin过程模型。使用空间回归模型来模拟高度 - 直径关系，以研究空间依赖性和空间自相关性的影响以及由相邻树生成的外生变量的作用。案例研究1显示，空间滞后模型应用于分析高度 - 直径关系，其中作为外生变量的相邻树木的高度和内源性变量DBH显着影响高度生长。案例研究2显示空间误差模型表现得比其他模型更好，高度增长不仅受到其内生变量直径的影响，而且受到空间变化并导致残差空间自相关的未观测变量的影响。空间回归模型是高度 - 直径模型的一种方法，其提供对内生变量直径，外生变量高度和（或）相邻树木的直径以及局部变化但未观察到的环境或生态变量如何促进高度增长的了解。</p>
+
+<p><code>在森林库存中建模高度 - 直径关系是重要的，空间自相关是直径，高度和木材体积估计的关键因素，因为它直接连接树木之间的竞争和相互作用</code>。虽然可以通过应用一些线性或非线性模型而不考虑空间相关性来计算直径，高度或木材体积的边际估计，但是将忽略树木之间的竞争和相互作用的一些重要方面，从而影响我们对生长和产量的观点也是整个森林生态系统的重要组成部分。此外，Openshaw和Taylor（1979）能够证明空间自相关性直接影响结果统计，<code>并且如果我们忽略空间自相关，模型参数的标准误差的估计将是有偏差的。当空间中任何一点的值取决于周围点的值时，存在空间自相关</code>。正空间自相关意味着类似的值被聚类，而负空间自相关表示非常不同的值被聚类。空间自相关是地理现象的一个重要属性，也是地理学第一定律的核心：“一切都与一切有关，但邻近的事物比遥远的事物更相关”（Tobler 1970）。空间自相关和空间回归对于经典统计测试是有问题的（Haining 1990; Legendre 1993）。树木是地面上的地理现象的一个例子，空间自相关存在于直径，高度和木材体积之间，并影响树木的生长和产量。因此，在估计树木生长时必须考虑空间自相关性。生长和产量的估计通常需要多变量模型。使用经典线性回归和方差分析（ANOVA），假设响应变量是独立的，即假定残差是独立分布的;然而，“一个茎的特征与相邻茎的特征相关”（Bullock和Burkhart 2005）。<code>普通最小二乘估计和方差分析可能会夸大t和F统计的显着性，而事实上，它们可能根本不显着</code>。<code>与时间自相关不同，一个点处的空间变量的值可以与其在一定距离内的所有周围点的值相关，并且随着与点的距离增加，相关度减小。空间自相关是空间变量的一个重要方面（Anselin和Griffith 1988）</code>。当空间自相关被测试并且真正存在时，它可以在回归模型中以两种方式处理。当处理非常大的数据集时，我们可以生成彼此之间足够的稀疏随机样本点，使得它们之间的空间自相关性足够小以至于被忽略，然后可以使用这些点拟合模型（Meng等人。2004）。然而，当使用稀疏采样点时，在微观和竞争的空间自相关以及相邻物体之间的相互作用被忽略。另一方面，如果在模型拟合中必须考虑空间结构和空间分布，如果可用数据集不太大，我们可以建立一个包含空间自相关的回归模型。空间回归模型反映了空间结构过程，并被设计用于建模空间依赖性和自相关。树变量的空间变化是由自然环境因素和森林林分的空间结构引起的。许多研究已经意识到空间模式影响多样性和密度，树木之间的竞争，生长和死亡率（Kuuluvainen和Pukkala 1987; Kenkel 1988; Newton和Jolliffe 1998）。直到最近，站点间的变异或空间异质性的影响才被忽略（Garcı&rsquo;a1994; Bullock和Burkhart 2005）。空间自相关和空间依赖性通常由变量的空间结构引起（Legendre等人2002; Wagner和Fortin 2005）。<code>空间自相关和空间依赖通常不考虑建模高度直径</code>，尽管许多森林科学家已经应用它们来分析树变量的空间变化（Reed和Burkhart 1985; Biondi等人1994; Meng等人2007a）。<code>空间自回归模型通常包括空间滞后模型，空间误差模型和空间Durbin过程模型，可以直接将个体树变量及其空间结构纳入建模</code>。将空间自相关和空间依赖性纳入回归模型中有理论和方法动机（Anselin 1999; Schabenberger和Gotway 2005）。例如，<code>将空间自相关结合到模型中可以帮助了解邻居效应和树木之间的直接相互作用如何影响树木的生长和生长模式</code>。在方法上，地理信息系统及其与定量空间分析的耦合提供了将空间依赖性和空间自相关性纳入经典回归分析的工具。研究结果如下：
+（1）通过比较替代线性高度直径模型选择合适的线性方程;然后基于所选择的线性模型，研究空间回归模型来建模高度 - 直径关系。
+（2）空间自相关被纳入基于空间计量经济学方法的回归模型。探讨了经典线性模型和空间模型之间的概念比较。讨论高度 - 直径和外生变量的空间回归模型的建模高度 - 直径关系的建模。
+（3）在经典线性回归模型和空间回归模型之间比较模型诊断和性能。最后，讨论了空间回归模型在林业中的意义和潜在应用。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/misztal2013-%E7%94%B1%E8%B0%B1%E7%B3%BB%E4%BF%A1%E6%81%AF%E5%92%8C%E6%A0%87%E8%AE%B0%E4%BF%A1%E6%81%AF%E5%BE%97%E5%88%B0h%E7%9F%A9%E9%98%B5/" data-toggle="tooltip" data-placement="top" title="Misztal2013-由谱系信息和标记信息得到H矩阵">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/diallel/mckeand2008-%E4%B8%8D%E8%BF%9E%E7%BB%AD%E5%8F%8C%E5%88%97-%E7%81%AB%E7%82%AC%E6%9D%BE%E5%8F%82%E6%95%B0/" data-toggle="tooltip" data-placement="top" title="Mckeand2008-不连续双列-火炬松参数">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

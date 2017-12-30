@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Costa-Silva-2001-空间分析</title>
+  <meta property="og:title" content="Costa-Silva-2001-空间分析" />
+  <meta name="twitter:title" content="Costa-Silva-2001-空间分析" />
+  <meta name="description" content="Costa e Silva J, Dutkowski GW, Gilmour AR. Analysis of early tree height in forest genetic trials is enhanced by including a spatially correlated residual. Can. J. For. Res. [Internet]. 2001;31:1887–93. Available from: http://www.ingentaconnect.com/content/nrc/cjfr/2001/00000031/00000011/art00004   本研究探讨了12个森林遗传试验中除了传统的随机完全区块（RCB）分析之外，包括空间相关残差的混合线性模型的使用。来自三种物种（云杉（Ponga sitchensis（Bong。）Carr。，Pinus pinaster Ait。和Pinus radiata D.Don）的后代和克隆测试的早期高度数据的分析显示，在所有试验中存在显着的空间变异。添加基本​​的一阶可分离自回归误差项比RCB模型更有效地建模空间变化，并大大减少了块和图的方差。没有证据表明需要扩展空间建模。空间分析大大提高了遗传价值估计在一些试验的准确性，并伴随着遗传条目的排名的大变化和相对于RCB分析的选择的更大的收益。
+树木改良计划依靠复制的田间测试来估计遗传参数和评估证据，家庭和个人。在许多这样的试验中，条目的数量很大，并且种植场所是可变的。这限制了测试区分遗传它们的环境影响的能力。场地变异性反映了土壤属性（如土壤肥力，水分，质地和深度）等因素的空间性质。气候，地形和风暴。环境异质性可以表现为随机微位点差异，斑块和梯度在站点域。通常这些类型的变异性看起来似乎 - 虽然可能是主导的。最近。在6至12年的66道格拉斯 - 冷杉子代试验中测量的树高的研究中，翅片等。 （1999）显示90％的网站展示大的空间变化与梯度和斑块。因此。选择合适的试验地点和使用有效的实验设计和分析，以适应林木遗传评价的环境变异性（Loo-Dinkins 1992; Magnussen 1993）。 通常用于森林遗传试验的田间试验设计包括随机完全区块（RCB）分裂图和不完全块设计（Loo-Dinkins 1992; Williams和Matheson 1994）。当块体内的环境相当均匀时，RCB设计是有效的，块之间的变化解释了现场测试的协同变异性。然而，在林地步道，其中块通常很大。环境变异性可能很大，降低了这些分析识别遗传变异和降低遗传价值估计的准确性的能力。条目的数量大，并且环境是高度异质的，在不完全块设计中减小块大小可以增加RCB设计的精度（Cochran和Cos 1957; Patterson等人1978; Williams and Matheson 1994; Fu等人， 1998）。 空间或相邻模型已经在农业田间试验的分析中变得流行（Lilt等人1988; Cullis和Gleeson 1989,1991; Zimmemian和Harville 1991：Brownie ct at 1993; Grondona等人1996，Brownie和Gumpertz 1997; t3ilmour ct at.">
+  <meta property="og:description" content="Costa e Silva J, Dutkowski GW, Gilmour AR. Analysis of early tree height in forest genetic trials is enhanced by including a spatially correlated residual. Can. J. For. Res. [Internet]. 2001;31:1887–93. Available from: http://www.ingentaconnect.com/content/nrc/cjfr/2001/00000031/00000011/art00004   本研究探讨了12个森林遗传试验中除了传统的随机完全区块（RCB）分析之外，包括空间相关残差的混合线性模型的使用。来自三种物种（云杉（Ponga sitchensis（Bong。）Carr。，Pinus pinaster Ait。和Pinus radiata D.Don）的后代和克隆测试的早期高度数据的分析显示，在所有试验中存在显着的空间变异。添加基本​​的一阶可分离自回归误差项比RCB模型更有效地建模空间变化，并大大减少了块和图的方差。没有证据表明需要扩展空间建模。空间分析大大提高了遗传价值估计在一些试验的准确性，并伴随着遗传条目的排名的大变化和相对于RCB分析的选择的更大的收益。
+树木改良计划依靠复制的田间测试来估计遗传参数和评估证据，家庭和个人。在许多这样的试验中，条目的数量很大，并且种植场所是可变的。这限制了测试区分遗传它们的环境影响的能力。场地变异性反映了土壤属性（如土壤肥力，水分，质地和深度）等因素的空间性质。气候，地形和风暴。环境异质性可以表现为随机微位点差异，斑块和梯度在站点域。通常这些类型的变异性看起来似乎 - 虽然可能是主导的。最近。在6至12年的66道格拉斯 - 冷杉子代试验中测量的树高的研究中，翅片等。 （1999）显示90％的网站展示大的空间变化与梯度和斑块。因此。选择合适的试验地点和使用有效的实验设计和分析，以适应林木遗传评价的环境变异性（Loo-Dinkins 1992; Magnussen 1993）。 通常用于森林遗传试验的田间试验设计包括随机完全区块（RCB）分裂图和不完全块设计（Loo-Dinkins 1992; Williams和Matheson 1994）。当块体内的环境相当均匀时，RCB设计是有效的，块之间的变化解释了现场测试的协同变异性。然而，在林地步道，其中块通常很大。环境变异性可能很大，降低了这些分析识别遗传变异和降低遗传价值估计的准确性的能力。条目的数量大，并且环境是高度异质的，在不完全块设计中减小块大小可以增加RCB设计的精度（Cochran和Cos 1957; Patterson等人1978; Williams and Matheson 1994; Fu等人， 1998）。 空间或相邻模型已经在农业田间试验的分析中变得流行（Lilt等人1988; Cullis和Gleeson 1989,1991; Zimmemian和Harville 1991：Brownie ct at 1993; Grondona等人1996，Brownie和Gumpertz 1997; t3ilmour ct at.">
+  <meta name="twitter:description" content="Costa e Silva J, Dutkowski GW, Gilmour AR. Analysis of early tree height in forest genetic trials is enhanced by including a spatially correlated residual. Can. J. For. Res. [Internet]. …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/costa-silva-2001-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/costa-silva-2001-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Costa-Silva-2001-空间分析</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (97 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Costa-Silva-2001-空间分析</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (97 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<ol>
+<li>Costa e Silva J, Dutkowski GW, Gilmour AR. Analysis of early tree height in forest genetic trials is enhanced by including a spatially correlated residual. Can. J. For. Res. [Internet]. 2001;31:1887–93. Available from: <a href="http://www.ingentaconnect.com/content/nrc/cjfr/2001/00000031/00000011/art00004">http://www.ingentaconnect.com/content/nrc/cjfr/2001/00000031/00000011/art00004</a></li>
+</ol>
+</blockquote>
+
+<p>本研究探讨了12个森林遗传试验中除了传统的随机完全区块（RCB）分析之外，包括空间相关残差的混合线性模型的使用。来自三种物种（云杉（Ponga sitchensis（Bong。）Carr。，Pinus pinaster Ait。和Pinus radiata D.Don）的后代和克隆测试的早期高度数据的分析显示，在所有试验中存在显着的空间变异。<strong>添加基本​​的一阶可分离自回归误差项比RCB模型更有效地建模空间变化，并大大减少了块和图的方差</strong>。没有证据表明需要扩展空间建模。空间分析大大提高了遗传价值估计在一些试验的准确性，并伴随着遗传条目的排名的大变化和相对于RCB分析的选择的更大的收益。</p>
+
+<p>树木改良计划依靠复制的田间测试来估计遗传参数和评估证据，家庭和个人。在许多这样的试验中，条目的数量很大，并且种植场所是可变的。这限制了测试区分遗传它们的环境影响的能力。场地变异性反映了土壤属性（如土壤肥力，水分，质地和深度）等因素的空间性质。气候，地形和风暴。环境异质性可以表现为随机微位点差异，斑块和梯度在站点域。通常这些类型的变异性看起来似乎 - 虽然可能是主导的。最近。在6至12年的66道格拉斯 - 冷杉子代试验中测量的树高的研究中，翅片等。 （1999）显示90％的网站展示大的空间变化与梯度和斑块。因此。选择合适的试验地点和使用有效的实验设计和分析，以适应林木遗传评价的环境变异性（Loo-Dinkins 1992; Magnussen 1993）。
+通常用于森林遗传试验的田间试验设计包括随机完全区块（RCB）分裂图和不完全块设计（Loo-Dinkins 1992; Williams和Matheson 1994）。<strong>当块体内的环境相当均匀时，RCB设计是有效的，块之间的变化解释了现场测试的协同变异性。然而，在林地步道，其中块通常很大。环境变异性可能很大，降低了这些分析识别遗传变异和降低遗传价值估计的准确性的能力。条目的数量大，并且环境是高度异质的，在不完全块设计中减小块大小可以增加RCB设计的精度（Cochran和Cos 1957; Patterson等人1978; Williams and Matheson 1994; Fu等人， 1998）</strong>。
+空间或相邻模型已经在农业田间试验的分析中变得流行（Lilt等人1988; Cullis和Gleeson 1989,1991; Zimmemian和Harville 1991：Brownie ct at 1993; Grondona等人1996，Brownie和Gumpertz 1997; t3ilmour ct at.1997; Cutlis et at.1998; Qiao et at.2000）。这些通过使用各种相关结构来给出更有效的分析，以模拟与现场中的实验单元的位置相关的变化。梯度和（或）贴片的存在诱导相邻实验单元之间的时间关联。假设更接近数据中的实际相关结构的残差协方差结构的分析将导致用于估计治疗效果的提高的效率和精度。这是在所引用的参考文献中针对特定试验和农业田间实验的一系列试验所证明的。 <strong>Federer（199b）主张基于拟合多项式响应曲面的数据的空间模型，但Gilmour（2000）认为这样的模型很少被证明</strong>
+<strong>Magnusseo（1990）将空间方法引入森林遗传测试的树高分析中，报告了全同胞家系之间的差异的标准误差减少了5-20％，显着治疗差异的数量增加了从RCB分析获得的结果</strong>。 Kusnadar和Galwey J2000）报道，空间模型给出了比海滨松（Pins rims.iter Ait。）单个树生长数据的不完全块模型显着更好的拟合。
+森林基因试验倾向于与农业领域的差异有以下特点：
+实验单位：对单个树进行测量，而不是对许多植物进行测量，尽管绘图方法通常用于估计遗传参数。
+试验规模：林业试验总面积和实验单位数量往往较大
+复制：林业试验往往有更多的重复，以补偿每个地块的植物数量较少。
+场地一致性：林业试验通常生长在丘陵地带，其比农业径迹地点不均匀
+布局：物理站点功能通常排除使用常规网格的林业步道。
+抽样：随着时间的推移，可能在农业试验中进行重复抽样，而农业试验通常是为了产量而采收
+遗传材料：农业步道通常是近交系，而林业试验可能有更多样的遗传材料。
+竞争：在单个树级别的数据分析的结果是竞争可能产生空间相邻数据值之间的负相关</p>
+
+<p>这些差异意味着林业试验固有地具有更环境的变化，分析的挑战是尽可能多地调整该变化的任何系统组成部分。
+我们的目的是探索使用空间模型分析来自后代和克隆森林遗传测试的高度数据。我们总结了12个试验与RCB分析的空间分析结果，模型拟合信息，变量参数估计，预测遗传值的准确性和秩变化，以及选择的相对遗传增益。我们讨论这些分析中涉及的问题，特别强调空间模型与林业试验和农作物间的差异</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/costa2010-%E8%BF%91%E4%BA%A4%E4%B8%8B%E7%9A%84%E9%81%97%E4%BC%A0%E5%8F%98%E5%BC%82%E5%92%8C%E4%BA%B2%E6%9C%AC%E8%A1%A8%E7%8E%B0/" data-toggle="tooltip" data-placement="top" title="Costa2010-近交下的遗传变异和亲本表现">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%AB%9E%E4%BA%89/costa-2013-%E7%AB%9E%E4%BA%89-tgg/" data-toggle="tooltip" data-placement="top" title="Costa-2013-竞争-TGG">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

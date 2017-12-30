@@ -180,8 +180,8 @@
         <div class="posts-list">
           
             <article class="post-preview">
-              <a href="../../post/%E9%9A%8F%E7%AC%94/%E5%88%B0%E5%BA%95%E6%98%AF%E5%9B%BA%E5%AE%9A%E8%BF%98%E6%98%AF%E9%9A%8F%E6%9C%BA/">
-                <h2 class="post-title">到底是固定还是随机？</h2>
+              <a href="../../post/%E9%9A%8F%E7%AC%94/busco%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">
+                <h2 class="post-title">BUSCO使用笔记</h2>
 
                 
               </a>
@@ -191,10 +191,333 @@
               </p>
               <div class="post-entry">
                 
-                  一个效应到底应该当做固定还是随机通常令人困惑。如果已有惯例，例如父本、家系效应一般当做随机，而重复、性别当做固定，照搬就是。相反，对另外一些效应的处理如果没有多少文献支撑，就有点让人模棱两可。总不能没有规则地按照自己的喜好吧？Smith（2001）给了一个明确的信息，即在需要预测一个效应的未来表现时要随机，否则要固定，并举例说要预测品种（variety）的未来表现，而不希望预测环境效应。这样这个问题就很明确了。原文如下：
- Smith A, Cullis B, Gilmour A. 2001. The Analysis of Crop Variety Evaluation Data in Australia. Australian &amp; New Zealand Journal of Statistics, 43(2): 129–145.
-One possibly contentious issue is the choice between fixed and random effects in the analysis. The standard text-book notion of effects being random if they have been sampled from a population and fixed if attention is confined only to those effects in the model (see Searle, 1971, for example) is unhelpful and can lead to a circular argument.
-                  <a href="../../post/%E9%9A%8F%E7%AC%94/%E5%88%B0%E5%BA%95%E6%98%AF%E5%9B%BA%E5%AE%9A%E8%BF%98%E6%98%AF%E9%9A%8F%E6%9C%BA/" class="post-read-more">[Read More]</a>
+                  在ubuntu系统上跑 參考使用指南
+安裝BUSCO 下載 https://gitlab.com/ezlab/busco 安裝sudo python setup.py install
+怎麼都搞成繁體字了？
+安裝下面3個軟件，後2個需要安裝，安裝方法見各自的readme文件  NCBI BLAST+ [NB: please see release note 2.0.1 below] https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST这个包中包含各种比对需要的工具  HMMER (HMMER v3.1b2) http://hmmer.org/  Augustus (&gt; 3.2.1) (only used for assessing genomes) http://bioinf.uni-greifswald.de/augustus/
+配置config.ini文件 BUSCO目錄下有config文件夾，將其中的config.ini.default拷貝並重命名爲config.ini，打開後修改，把所有的默認路徑如/home/osboxes/BUSCOVM/augustus/augustus-3.2.2/，都替換成實際的路徑，比如我的/home/larix/下载/augustus/
+export AUGUSTUS_CONFIG_PATH=&quot;/path/to/AUGUSTUS/augustus-3.2.3/config/&quot; 這裏的路徑替換成實際的，否則報錯 準備自己的數據和匹配數據庫 自己的數據指的是組裝好的fasta文件，數據庫要從http://busco.ezlab.org/ 下載對應的，放在電腦中的位置可以自定義，運行時給清楚就可以了。
+run 基因組據裝評估 先把路徑cd到BUSCO文件夾，然後輸入 python scripts/run_BUSCO.py -i SEQUENCE_FILE -o OUTPUT_NAME -l LINEAGE -m geno SEQUENCE_FILE-你組裝好的基因組文件 OUTPUT_NAME-給定一個輸出名 LINEAGE-要匹配的數據庫 geno-指定是基因組評估
+我的python scripts/run_BUSCO.py -i /home/larix/下载/myproject/zglk_fungi.genome_contigs.fasta -o ev_genome -l ascomycota_odb9 -m geno 我的匹配數據庫放在了BUSCO文件夾中。
+                  <a href="../../post/%E9%9A%8F%E7%AC%94/busco%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/isik%E4%B9%A6%E4%B8%AD%E7%9A%84%E9%94%99%E8%AF%AF/">
+                <h2 class="post-title">Isik书中的错误</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <ul>
+<li>p169 formula 6.16, the direct product result is wrong.</li>
+<li>p73 library(reshape2) here is useless and it will be great if you introduce the direct sum in <code>R</code>  (e.g. matrixcalc::direct.sum(I, G)).</li>
+<li>p</li>
+</ul>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/library-genesis-sci-hub-cc/">
+                <h2 class="post-title">Library-Genesis-(sci-hub-cc)</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <p><a href="http://gen.lib.rus.ec/">http://gen.lib.rus.ec</a> 
+<a href="http://www.libgen.io/">http://www.libgen.io/</a> （以上两个是主链接，主链常常会死掉，随时替换） 点击title选择下载的mirrors： &mdash;-暂时可用&mdash;- Libgen <a href="http://libgen.net/">http://libgen.net</a>
+<a href="b-ok.org">b-ok.org</a>
+Ed2K和Magnet用迅雷等下载工具下载（速度慢） 
+&mdash;-暂不可用&mdash;-
+<a href="http://en.bookfi.org/">http://en.bookfi.org/</a>
+ <a href="http://libgen.info/">http://libgen.info/</a>
+ <a href="http://www.libgen.info/">http://www.libgen.info</a>
+ <a href="http://vnuki.org/library/">http://vnuki.org/library/</a> 
+<a href="http://noads.libgen.info/">http://noads.libgen.info/</a> </p>
+
+<p>论文下载： <a href="http://sci-hub.cc/">http://sci-hub.cc/</a> 
+<a href="http://www.toukey.com/">http://www.toukey.com</a></p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/opennlp-part-of-speech-pos-tags--penn-english-treebank/">
+                <h2 class="post-title">OpenNLP-Part-of-Speech-(POS)-Tags--Penn-English-Treebank</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  CC Coordinating conjunction
+CD Cardinal number
+DT Determiner EX Existential there FW Foreign word IN Preposition or subordinating conjunction JJ Adjective JJR Adjective, comparative JJS Adjective, superlative LS List item marker MD Modal NN Noun, singular or mass NNS Noun, plural NNP Proper noun, singular NNPS Proper noun, plural PDT Predeterminer POS Possessive ending PRP Personal pronoun PRP$ Possessive pronoun RB Adverb RBR Adverb, comparative RBS Adverb, superlative RP Particle SYM Symbol TO to UH Interjection VB Verb, base form VBD Verb, past tense VBG Verb, gerund or present participle VBN Verb, past participle VBP Verb, non­3rd person singular present VBZ Verb, 3rd person singular present WDT Wh­determiner WP Wh­pronoun WP$ Possessive wh­pronoun WRB Wh­adverb
+                  <a href="../../post/%E9%9A%8F%E7%AC%94/opennlp-part-of-speech-pos-tags--penn-english-treebank/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/pdf%E6%96%87%E7%8C%AE%E6%96%87%E6%A1%A3%E5%BC%95%E7%94%A8%E6%8F%92%E5%85%A5%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B9%A0mendeley/">
+                <h2 class="post-title">PDF文献文档引用插入管理学习&amp;mendeley</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <p>不念到大二，很少接触到PDF文档。能读到博士，过手或过眼的有大几千份。PDF文档多了，管理起来很麻烦。有些文档从网上下载的时候，很少能有个正常的名字，从新命名并服从管理也是一件麻烦的事。当然不写论文，这都能忍。我最开始接触这类软件也并不是要使用它们的管理功能，而是较为次要的论文文献引用插入。
+        我用的第一个是Endnote，一个非常伟大的收费软件，伴随了我几乎整个硕士阶段。能用它从谷歌学术里直接导入引用条目；Alt+2的快捷插入真的很快捷。当我长久不写论文，只看文献的时候，还是用手动的办法去命名，去分组。有一天，我想把谷歌学术里一个关键词的搜索结果全部导出来的时候，用endnote就比较费时。学习使用R的时间久了，就发现很多类似的事情可以用几个函数解决。不是说人变懒了，而是说聪明的人类总是能开发一些偷懒的办法。chrome类型的浏览器能够安装zotero的插件，能够把一整页的搜索结果导入到软件里，是不是非常称心？如果有PDF的链接还能把PDF导入进去，是不是很满意？但是zotero的管理和插入功能有些欠缺，不及mendeley。
+        我认为用mendeley的人比较牛，但是独用用不如分享方便更多的人。mendeley的第一个好处是免费，不像endnote，不过这个在中国不叫事儿。mendeley的word插入快捷键组合是Alt+m。你知道endnote里也很快捷，但是要先在endnote里选中，再切到word中Alt+2，这样你就得先在endnote里搜。mendeley是怎么干的？不用切换，快捷键会召唤一个条框，输入关键词比如作者，自动给出候选，这一方面就节省了不少时间。mendeley能导入endnote，能导入zotero，反过来endnote不行。就这一条就可以放弃endnote。mendeley的期刊模板更新非常及时，endnote有些杂志的要滞后好几年。
+        最重要的一部分，文献管理和学习。endnote能直接导入PDF，根据doi等信息识别出题目等。mendeley的识别效率更高，作者，时间和期刊一般都能给出来，年代久远的容易出错。开头提到一个文献命名的问题，mendeley里有非常好的解决方案，它能自动从新命名，可以自定义格式比如 作者+时间+title或者时间+期刊名+title，是不是很膜拜。不过mendeley的界面是英文的，一般人不知道怎么设置：Tools&gt;Options&gt;File organizer，3个都勾上，自己摸索吧。还有一个功能我个人非常欣赏，就是PDF文档内的全局搜索，唯有感谢那些想要“偷懒”而又有能力把懒偷到手的人，感谢。世事艰难，愿我们互相帮扶。</p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/r%E8%AF%AD%E8%A8%80%E9%97%A8%E5%A4%961%E5%85%AC%E9%87%8C%E5%88%B0%E5%A4%A7%E9%97%A8%E5%8F%A3/">
+                <h2 class="post-title">R语言门外1公里到大门口</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  R是非常容易入门的一个统计软件或语言，它是辅助工具，不是主体，应该配合统计相关内容一起学习。
+ 我第一次听说这个软件还是在浙林的时候，邬荣岭老师的讲座或是培训会议上。真正开始接触是2014年，因为要利用asreml去计算遗传参数。最高效的学习往往发生在你急需这些知识或技巧的时候，所以最好是手上有需要使用R的任务，当然在这之前可以熟悉一下简单的操作比如+-*/、数据的导入。
+我主要用到的参考资料有 1. R语言实战（第2版）  R数据可视化手册——这是本工具书，查阅画图参数  华南农大林元震老师主编的r与asreml-r统计分析教程——主要是后边asreml-r部分，我觉得林老师参考了一些新西兰Canterbury大学Luis Apiolaza老师的ASReml Cookbook。Luis的个人网页也有一些有用的内容和Twitter。   林老师的这本书出到了第2版，比上一版厚了一倍，如果把程序输出结果拿掉能去掉一半的内容。这本书更像一本讲义或者是笔记，没有很多理论性的内容，通常只有一个简略的概念，一个样例和代码及太多的输出结果。所以这是本工具书，需要相关的代码直接翻书查找（高级代码还得去stackoverflow）。没有统计知识也是它的优点，你看不到容易恐惧的公式和推导，除了LMM那一丁点儿。另外一个优点是第7章——试验设计。《实战》没有这部分内容，也未见到有相关的R书籍。如果林老师下次能把试验设计交代得更细致一点，比如给个图就更好了。另一个特点还是遗传评估这一章，对于遗传育种专业并且需要进行参数估算的geneticist和breeder可以重点敲这一部分的代码。林老师还有一个非常重要的贡献在于他自己写了一部分批处理的函数AAfun，在处理数据时，尤其有较多的变量时会比较方便。除了这2章外，其余的内容在其他的R工具书中一般也都有涉及，所以拿这本书学习R也是合适的（但我首推的还是《实战》，无出其右者）。同样，这本书也事无巨细。达成一个目的途径很多，掌握自己最舒服的一个就可以了，其余的不感兴趣大可不必学习。
+所以，自认为一个入门者，以林老师的这本第2版，按照浓缩一下数据管理（导入、处理和导出）这一部分，给还未接触而又有必要学习的同仁铺点路，也给自己一个梳理复习的机会。
+21 July 2017 更新 第1章 R简介  简介不是重点，不用看。 Rstudio不是强烈建议要安装，而是必须安装！！！  ###第2章 基础语法 - 2.1 对象与变量 - 赋值符号&lt;-在Rstudio中的快捷键是&lsquo;Alt&rsquo;+&lsquo;-&rsquo;。 - 2.1.1 变量创建 比如有树高和胸径要算材积指数，（当然在Excel中算好后导入也可以），学会方法一就够用了。给的例子是直接搬《实战》的，连数据都没改但书的架构为什么不借鉴一下？ - 2.1.2 变量命名用方法二names()，矩阵没有变量，行名和列名分别是rownames()和colnames()。 - 2.2 运算符为何不放在最前面？ - 2.3 表达式一看就会不是吗？有几个情况会用到表达式： 1. 写模型时 2. 画图涉及到公式时（需要在图上放拟合模型） 3. 构建关联矩阵时（model.matrix） - 2.4 NA是缺失值， NULL是空值。NULL在写函数时会很常用，比如要先建个空的向量或矩阵，然后循环把数值放进去。 - 2.5 控制结构 - 2.5.1 if/else写函数时比较常用，switch用的不多。 - 2.2.2 for循环是批量处理的关键函数，有人诟病因为它比较慢，但它的呈现非常直接，易读。当对象是list的时候用lapply则比for要好用很多。while也常用，比如迭代时。 - 2.6 自编函数是不是放在数据管理后面会更好？因为学习顺序是那样的，数据还不会导进去怎么会写函数？
+                  <a href="../../post/%E9%9A%8F%E7%AC%94/r%E8%AF%AD%E8%A8%80%E9%97%A8%E5%A4%961%E5%85%AC%E9%87%8C%E5%88%B0%E5%A4%A7%E9%97%A8%E5%8F%A3/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/sra%E4%B8%8A%E4%BC%A0%E5%9F%BA%E5%9B%A0%E7%BB%84%E6%95%B0%E6%8D%AE/">
+                <h2 class="post-title">SRA上传基因组数据</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <ol>
+<li>打开<a href="https://www.ncbi.nlm.nih.gov/">ncbi</a>并登陆。
+<img src="http://upload-images.jianshu.io/upload_images/3289684-b0300a79450dc894.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="HOME.png" /></li>
+<li>点击数据库下拉选择SRA，并search。
+<img src="http://upload-images.jianshu.io/upload_images/3289684-6b70f47fe235aa07.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="SRA.png" /></li>
+<li>在SRA页面，点击<a href="https://www.ncbi.nlm.nih.gov/Traces">Trace Archive</a>。
+<img src="http://upload-images.jianshu.io/upload_images/3289684-587d2c10cf85396e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="SRA_main.png" /></li>
+<li>在submit下拉条目下选择tracking并点击。
+<img src="http://upload-images.jianshu.io/upload_images/3289684-0a9e416027e04164.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="SRA_sub.png" /></li>
+<li>能看到之前提交的项目，点击项目名称。在相应的experiment下建立new run就可以了。
+*Alias*是本次run的名字，最好加入你要上传文件的部分名字便于区分。选好文件类型后，输入文件名和md号保存后，然后在filezilla中上传。</li>
+</ol>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/sra%E6%8F%90%E4%BA%A4%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">
+                <h2 class="post-title">SRA提交快速入门</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  SRA提交快速入门
+接受的数据 提交步骤 人类数据 宏基因组数据 用于存储和更新SRA数据的选项 提交门户（SP）与序列阅读存档（SRA） [开始提交
+](https://www.ncbi.nlm.nih.gov/sra/docs/submit/#ui-ncbiinpagenav-heading-9) [更新SRA数据（研究或提交）
+](https://www.ncbi.nlm.nih.gov/sra/docs/submit/#ui-ncbiinpagenav-heading-10) [联系SRA工作人员
+](https://www.ncbi.nlm.nih.gov/sra/docs/submit/#ui-ncbiinpagenav-heading-11)
+[去：
+](https://www.ncbi.nlm.nih.gov/sra/docs/submit/#) 接受的数据
+[图片上传中。。。（1）] 该SRA接受
+基因数据和相关的质量分数
+通过新一代测序技术生产。 请参考我们的
+[文件格式指南
+](https://www.ncbi.nlm.nih.gov/sra/docs/submitformats)。
+[去：
+](https://www.ncbi.nlm.nih.gov/sra/docs/submit/#) 提交步骤
+[登录或注册NCBI帐户
+](https://www.ncbi.nlm.nih.gov/account/) 注册您的项目和生物样品： [图片上传中。。。（2）]注册您的
+项目
+在
+[BioProject数据库
+](https://www.ncbi.nlm.nih.gov/bioproject/) [[图片上传中。。。（3）]](https://www.ncbi.nlm.nih.gov/sra/docs/submitbio) 注册您的
+生物样品
+的
+[生物标本数据库
+](https://www.ncbi.nlm.nih.gov/biosample/) [[图片上传中。。。（4）]](https://www.ncbi.nlm.nih.gov/sra/docs/submitbio)
+创建SRA数据提交并上传序列数据文件：
+提交
+SRA元数据
+ -这会将你的项目中，采样点/实验和文件名信息
+[图片上传中。。。（5）] 上传
+序列数据文件
+ [在提交门户
+[图片上传中。。。（6）]](https://www.ncbi.nlm.nih.gov/sra/docs/submitspfiles)（
+[基本FTP和Aspera的使用帮助
+[图片上传中。。。（7）]](https://www.ncbi.nlm.nih.gov/sra/docs/submitfiles)）
+[图片上传中。。。（8）] 如果您是通过dbGaP或GEO数据库在提出意见请参阅
+[dbGaP提交指南
+](https://www.ncbi.nlm.nih.gov/sra/docs/submitdbgap)和
+[GEO提交指南
+](https://www.ncbi.nlm.nih.gov/sra/docs/submitgeo)分别。
+[去：
+](https://www.ncbi.nlm.nih.gov/sra/docs/submit/#) 人类数据
+[图片上传中。。。（9）] 在将人员数据存入公共SRA数据库之前，请确保您已经同意捐赠个人，以便在不受保护的数据库中提供此数据。 不要将用于dbGaP提交的无用的人力数据传输到公共SRA数据库。 请参考我们的
+[dbGaP提交指南
+](https://www.ncbi.nlm.nih.gov/sra/docs/submitdbgap)。
+[去：
+                  <a href="../../post/%E9%9A%8F%E7%AC%94/sra%E6%8F%90%E4%BA%A4%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/java%E7%9A%84%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                <h2 class="post-title">java的系统环境配置</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>一定要把这些步骤认真地从头到尾运行一遍</p>
+</blockquote>
+
+<p>第二步：配置环境变量</p>
+
+<p>当我们安装好JDK后，就要配置环境变量了。一般来说，我们会配置这三个环境变量：</p>
+
+<p>JAVA_HOME 配置 JDK 安装路径
+PATH 配置 JDK 命令文件的位置
+CLASSPATH 配置类库文件的位置
+步骤一：右击计算机，选择属性</p>
+
+<p>步骤二：打开高级系统设置</p>
+
+<p>步骤三：选择高级</p>
+
+<p>步骤四：选择环境变量</p>
+
+<p>步骤五：在系统变量里配置JAVA_HOME</p>
+
+<p>点击系统变量下的新建</p>
+
+<p>变量名填JAVA_HOME</p>
+
+<p>变量值填JDK的安装路径（若是默认安装路径，打开计算机-&gt;C盘-&gt;Program Files-&gt;Java-&gt;jdk1.7.0.13(或者其他版本)，拷贝路径就可以了）</p>
+
+<p>点击确定</p>
+
+<p>步骤六：在在系统变量里配置PATH变量</p>
+
+<p>系统变量默认里有Path变量，找到它，点击编辑</p>
+
+<p>在变量值最前面添加指定jdk命令文件的位置（jdk1.7.0.13-&gt;bin目录，拷贝路径）</p>
+
+<p>将路径添加到Path变量值前面用;和后面的路径隔开</p>
+
+<p>步骤七:配置CLASSPATH变量</p>
+
+<p>点击系统变量下的新建</p>
+
+<p>变量名填CLASSPATH</p>
+
+<p>变量值填JDK的安装路径（若是默认安装路径，打开计算机-&gt;C盘-&gt;Program Files-&gt;Java-&gt;jdk1.7.0.13(或者其他版本)-&gt;lib目录，拷贝路径就可以了）</p>
+
+<p>点击确定</p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+                <h2 class="post-title">linux常用命令</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  foxit的安装 终端取得root权限后，cd到安装文件所在文件夹，./FoxitReader.enu.setup.2.4.1.0609\(r08f07f8\).x64.run
+Ubuntu 文件夹右小角有锁的问题解决 有锁，普通用户就不能操作该文件夹。 解决办法： sudo chmod -R 777 路径(文件夹或文件)
+typora的安装 # add Typora's repository sudo add-apt-repository 'deb https://typora.io ./linux/' sudo apt-get update # install typora sudo apt-get install typora   ubuntu 14.04 软件中心闪退解决方案 sudo apt-get update sudo apt-get dist-upgrade sudo apt-get install &ndash;reinstall software-center
+ 无法获得锁 /var/lib/apt/lists/lock - open (11 资源临时不可用) 方法二（亲测可以用）：sudo rm /var/lib/apt/lists/lock
+   df -hl 删除文件夹 rm -r myfolder rm -r ./genome/run_Beauveria_bassiana_genome/ 移动文件夹 mv .
+                  <a href="../../post/%E9%9A%8F%E7%AC%94/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="post-read-more">[Read More]</a>
                 
               </div>
 
@@ -203,6 +526,15 @@ One possibly contentious issue is the choice between fixed and random effects in
             </article>
           
         </div>
+        
+          <ul class="pager main-pager">
+            
+            
+              <li class="next">
+                <a href="../../categories/%E9%9A%8F%E7%AC%94/page/2/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
         
       </div>
     </div>

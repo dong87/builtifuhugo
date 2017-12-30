@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Yan2002-biplot</title>
+  <meta property="og:title" content="Yan2002-biplot" />
+  <meta name="twitter:title" content="Yan2002-biplot" />
+  <meta name="description" content="Yan, W., and Hunt, L.A. 2002. Biplot analysis of diallel data. Crop Sci. 42(1): 21–30. doi:10.2135/cropsci2002.0021.
+ 双列交配已经用于遗传研究以确定重要性状在一组基因型之间的遗传，并且鉴定用于杂种或栽培品种发育的优良亲本。常规双列分析限于将数据的总变异分为每个基因型的一般组合能力（GCA）和每个杂交的特异性组合能力（SCA）。在本文中，我们制定了图形双列分析的双程方法。双图由由将测试器为中心的双列数据进行奇异值分解得到的前两个主分量（PC）构成。它通过数据的测试者模式显示最重要的条目，并允许以下信息可视地提取：（i）每个基因型的GCA; （ii）每种基因型的SCA; （iii）具有相似遗传学的父母组;和（iv）优良的杂种。此外，双份图允许关于基因型的遗传学的假说。使用三个公布的小麦（Triticum aestivum L.）和玉米（Zea mays L.）的双列数据集来证明双程图方法，并且提供了用于构建和解释双面图的详细程序。
+双列 CROSSES已被用于遗传研究以研究一组基因型中重要性状的遗传。具体来说，设计二级十字以研究亲本的GCA并鉴定用于杂种和栽培品种发育的优良亲本。双列数据的分析通常根据Griffing（1956）的方法进行，该方法将双列数据的总变化划分为父母的GCA和交叉的SCA。本文介绍了双列数据的视觉分析的双图方法。 biplot的概念是由Gabriel 1971开发的）以图形方式显示二级矩阵，其是通过将具有两个列的矩阵乘以具有两行的矩阵而产生的矩阵。这个概念的意义在于，如果一个双向数据集可以通过秩二矩阵足够近似，那么它可以图形显示和调查。 Bradu和Gabriel（1978）探讨了使用双点图作为诊断工具来选择适当的模型用于双向数据分析。从那时起，双图已经用于多环境试验（MET）数据分析。在分析安大略省冬小麦性能试验数据时，Yan（1999）和Yan et al。 （2000）提出了一个GGE双图，由前两个主要组件（PC1和PC2）构建，从PC分析以环境为中心的产量数据。它被称为GGE双斑，以强调它显示基因型主效应（G）和基因型X环境相互作用（GE），它们是与品种评价相关并且必须同时考虑的产量变异的两个来源（Gauch和Zobel，1996）。此前已经使用过这种双点图（Cooper等人，1997），但是Yan等人提出的方法学（2000）允许以下问题可视化处理：（i）确定在给定环境中最好的栽培品种; （ii）鉴定给定栽培品种的最适合的环境; （iii）在个别环境中比较任何一对品种;和（iv）每个环境和大环境差异的最佳栽培品种。后来，Yan et al。 （2001）开发了一种替代的GGE双作用，允许明确处理两个额外的问题：（i）基因型的平均产量和稳定性;和（ii）环境的辨别能力和代表性，这对于给定大环境下的品种和测试环境的视觉评价是重要的。虽然GGE双程数据方法开发用于MET数据分析，但它应该适用于假定逐个数据结构的所有类型的双向数据。在MET数据中，基因型是条目，环境是测试者。在双列数据中，每个基因型都是条目和测试者。我们的第一个目标是演示使用双屏幕双列数据解释。本文的另一个目的是提供用于构建和解释GGE双程序的方法的详细描述。">
+  <meta property="og:description" content="Yan, W., and Hunt, L.A. 2002. Biplot analysis of diallel data. Crop Sci. 42(1): 21–30. doi:10.2135/cropsci2002.0021.
+ 双列交配已经用于遗传研究以确定重要性状在一组基因型之间的遗传，并且鉴定用于杂种或栽培品种发育的优良亲本。常规双列分析限于将数据的总变异分为每个基因型的一般组合能力（GCA）和每个杂交的特异性组合能力（SCA）。在本文中，我们制定了图形双列分析的双程方法。双图由由将测试器为中心的双列数据进行奇异值分解得到的前两个主分量（PC）构成。它通过数据的测试者模式显示最重要的条目，并允许以下信息可视地提取：（i）每个基因型的GCA; （ii）每种基因型的SCA; （iii）具有相似遗传学的父母组;和（iv）优良的杂种。此外，双份图允许关于基因型的遗传学的假说。使用三个公布的小麦（Triticum aestivum L.）和玉米（Zea mays L.）的双列数据集来证明双程图方法，并且提供了用于构建和解释双面图的详细程序。
+双列 CROSSES已被用于遗传研究以研究一组基因型中重要性状的遗传。具体来说，设计二级十字以研究亲本的GCA并鉴定用于杂种和栽培品种发育的优良亲本。双列数据的分析通常根据Griffing（1956）的方法进行，该方法将双列数据的总变化划分为父母的GCA和交叉的SCA。本文介绍了双列数据的视觉分析的双图方法。 biplot的概念是由Gabriel 1971开发的）以图形方式显示二级矩阵，其是通过将具有两个列的矩阵乘以具有两行的矩阵而产生的矩阵。这个概念的意义在于，如果一个双向数据集可以通过秩二矩阵足够近似，那么它可以图形显示和调查。 Bradu和Gabriel（1978）探讨了使用双点图作为诊断工具来选择适当的模型用于双向数据分析。从那时起，双图已经用于多环境试验（MET）数据分析。在分析安大略省冬小麦性能试验数据时，Yan（1999）和Yan et al。 （2000）提出了一个GGE双图，由前两个主要组件（PC1和PC2）构建，从PC分析以环境为中心的产量数据。它被称为GGE双斑，以强调它显示基因型主效应（G）和基因型X环境相互作用（GE），它们是与品种评价相关并且必须同时考虑的产量变异的两个来源（Gauch和Zobel，1996）。此前已经使用过这种双点图（Cooper等人，1997），但是Yan等人提出的方法学（2000）允许以下问题可视化处理：（i）确定在给定环境中最好的栽培品种; （ii）鉴定给定栽培品种的最适合的环境; （iii）在个别环境中比较任何一对品种;和（iv）每个环境和大环境差异的最佳栽培品种。后来，Yan et al。 （2001）开发了一种替代的GGE双作用，允许明确处理两个额外的问题：（i）基因型的平均产量和稳定性;和（ii）环境的辨别能力和代表性，这对于给定大环境下的品种和测试环境的视觉评价是重要的。虽然GGE双程数据方法开发用于MET数据分析，但它应该适用于假定逐个数据结构的所有类型的双向数据。在MET数据中，基因型是条目，环境是测试者。在双列数据中，每个基因型都是条目和测试者。我们的第一个目标是演示使用双屏幕双列数据解释。本文的另一个目的是提供用于构建和解释GGE双程序的方法的详细描述。">
+  <meta name="twitter:description" content="Yan, W., and Hunt, L.A. 2002. Biplot analysis of diallel data. Crop Sci. 42(1): 21–30. doi:10.2135/cropsci2002.0021.
+ 双列交配已经用于遗传研究以确定重要性状在一组基因型之间的遗传，并且鉴定用于杂种或栽培品种发育的优良亲本。常规双列分析限于将数据的总变异分为每个基因型的一般组合能 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/diallel/yan2002-biplot/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/diallel/yan2002-biplot/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Yan2002-biplot</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (36 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Yan2002-biplot</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (36 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Yan, W., and Hunt, L.A. 2002. Biplot analysis of diallel data. Crop Sci. 42(1): 21–30. doi:10.2135/cropsci2002.0021.</p>
+</blockquote>
+
+<p>双列交配已经用于遗传研究以确定重要性状在一组基因型之间的遗传，并且鉴定用于杂种或栽培品种发育的优良亲本。常规双列分析限于将数据的总变异分为每个基因型的一般组合能力（GCA）和每个杂交的特异性组合能力（SCA）。在本文中，我们制定了图形双列分析的双程方法。双图由由将测试器为中心的双列数据进行奇异值分解得到的前两个主分量（PC）构成。它通过数据的测试者模式显示最重要的条目，并允许以下信息可视地提取：（i）每个基因型的GCA; （ii）每种基因型的SCA; （iii）具有相似遗传学的父母组;和（iv）优良的杂种。此外，双份图允许关于基因型的遗传学的假说。使用三个公布的小麦（Triticum aestivum L.）和玉米（Zea mays L.）的双列数据集来证明双程图方法，并且提供了用于构建和解释双面图的详细程序。</p>
+
+<p>双列 CROSSES已被用于遗传研究以研究一组基因型中重要性状的遗传。具体来说，设计二级十字以研究亲本的GCA并鉴定用于杂种和栽培品种发育的优良亲本。双列数据的分析通常根据Griffing（1956）的方法进行，该方法将双列数据的总变化划分为父母的GCA和交叉的SCA。本文介绍了双列数据的视觉分析的双图方法。 biplot的概念是由Gabriel 1971开发的）以图形方式显示二级矩阵，其是通过将具有两个列的矩阵乘以具有两行的矩阵而产生的矩阵。这个概念的意义在于，如果一个双向数据集可以通过秩二矩阵足够近似，那么它可以图形显示和调查。 Bradu和Gabriel（1978）探讨了使用双点图作为诊断工具来选择适当的模型用于双向数据分析。从那时起，双图已经用于多环境试验（MET）数据分析。在分析安大略省冬小麦性能试验数据时，Yan（1999）和Yan et al。 （2000）提出了一个GGE双图，由前两个主要组件（PC1和PC2）构建，从PC分析以环境为中心的产量数据。它被称为GGE双斑，以强调它显示基因型主效应（G）和基因型X环境相互作用（GE），它们是与品种评价相关并且必须同时考虑的产量变异的两个来源（Gauch和Zobel，1996）。此前已经使用过这种双点图（Cooper等人，1997），但是Yan等人提出的方法学（2000）允许以下问题可视化处理：（i）确定在给定环境中最好的栽培品种; （ii）鉴定给定栽培品种的最适合的环境; （iii）在个别环境中比较任何一对品种;和（iv）每个环境和大环境差异的最佳栽培品种。后来，Yan et al。 （2001）开发了一种替代的GGE双作用，允许明确处理两个额外的问题：（i）基因型的平均产量和稳定性;和（ii）环境的辨别能力和代表性，这对于给定大环境下的品种和测试环境的视觉评价是重要的。虽然GGE双程数据方法开发用于MET数据分析，但它应该适用于假定逐个数据结构的所有类型的双向数据。在MET数据中，基因型是条目，环境是测试者。在双列数据中，每个基因型都是条目和测试者。我们的第一个目标是演示使用双屏幕双列数据解释。本文的另一个目的是提供用于构建和解释GGE双程序的方法的详细描述。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/diallel/yanchuk-1996-vd---va-/" data-toggle="tooltip" data-placement="top" title="Yanchuk-1996-VD---VA-">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/diallel/xiang-li-2001-diallel-%E6%96%B9%E6%B3%95/" data-toggle="tooltip" data-placement="top" title="Xiang-Li-2001-diallel-方法">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

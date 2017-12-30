@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Ye2008多点-空间分析-花旗松AR1</title>
+  <meta property="og:title" content="Ye2008多点-空间分析-花旗松AR1" />
+  <meta name="twitter:title" content="Ye2008多点-空间分析-花旗松AR1" />
+  <meta name="description" content="Ye TZ, Jayawickrama KJS. Efficiency of using spatial analysis in first-generation coastal Douglas-fir progeny tests in the US Pacific Northwest. Tree Genet. Genomes. 2008;4:677–92.   基于来自美国太平洋西北45个第一代繁殖区的275道格拉斯冷杉[Pseudotsuga menziesii（Mirb。）Franco]后代试验的1,146个数据集，使用自回归误差结构对生长性状进行了单试验和跨试验空间分析。繁殖区域包括宽范围的纬度，经度和海拔。在不同的实验设计，性状，评估年龄和树间距之间比较了使用空间分析在减少由于地点异质性导致的变化、估计遗传参数和增加预测准确性方面的效率。利用空间分析有超过97％的数据集显示显着的模型改进，高度显示比直径或体积更多的改进。由于空间异质性，空间分析平均去除了14-34％的残差方差，导致育种值预测精度提高20％。由于空间调整，变异系数显着降低。空间分析前后的预测增益之间的秩相关性约为0.96，空间分析对前20％父母的平均预测增益几乎没有影响。由于空间调整，我们没有观察到改善的实质性地理趋势。跨地点空间分析对基因型与环境的相互作用几乎没有影响，但倾向于增加残差的试验异质性。比较和讨论了两种不同的跨试验空间分析方法。
+长期以来人们认识到，环境梯度或斑块（例如土壤肥力，土壤水分或地形）经常严重阻碍对林业田间试验的处理效果的可靠估计。试验通常用多个区组进行，其中实验单元组被排列，使得小区尽可能均匀。因此，它们的效率取决于每个重复区组具有均匀生长条件的程度。森林遗传测试通常涉及大量遗传条目，区组大小通常较大，难以确保块内均一性。田间试验中的地点变异性通常是空间连续的。许多研究已经证明，在相邻小区上进行的观测比随机观测更相近（Cliff和Ord 1981; Costa e Silva等人2001; Cullis和Gleeson 1989; Dutkowski等人2002,2006; Magnussen 1990， 1994; Smith 1938; Upton和Fingleton 1985）。例如，Fu et al。 （1999）显示道格拉斯杉木后代测试中的90％的位点显示出大的空间变异。
+区组内变异可能是由于竞争（Kempton 1982; Magnussen 1994），土壤肥力和水分的异质性（Pearce 1980），杂草或灌木，昆虫或疾病以及造林方面。这种空间异质性削弱了我们使用标准统计推断技术的能力，这些技术主要是针对从独立和相同分布的随机变量中提取的观察集。结果，当存在大的空间异质性时，识别遗传变异的能力和遗传值预测的准确度可能大大降低。
+空间分析已广泛用于农业田间测试，以估计和解释空间变异。已经提出并采用了许多方法来建模空间变化，例如最近邻域调整nearest neighbor adjustment（Bartlett 1978; Papadakis 1937; Wilkinson et al.1983; Zimmerman和Harville 1991），最小二乘平滑least squares smoothing（Green等人1985; Smith和Casler 2004; Yang等人2004），kriging（Bresler等人1981; Lopez和Arrue 1995）和post blocking（Dutkowski等人2002; Fu等人1999）。在这些方法中，通过可分离自回归（AR1⊗AR1）误差结构的空间自相关建模已经变得具有吸引力，并且通常用于农业品种试验分析（Braysher等人2001; Cullis和Gleeson 1991; Gilmour等人1997; Singh等人2003; Yang et al.">
+  <meta property="og:description" content="Ye TZ, Jayawickrama KJS. Efficiency of using spatial analysis in first-generation coastal Douglas-fir progeny tests in the US Pacific Northwest. Tree Genet. Genomes. 2008;4:677–92.   基于来自美国太平洋西北45个第一代繁殖区的275道格拉斯冷杉[Pseudotsuga menziesii（Mirb。）Franco]后代试验的1,146个数据集，使用自回归误差结构对生长性状进行了单试验和跨试验空间分析。繁殖区域包括宽范围的纬度，经度和海拔。在不同的实验设计，性状，评估年龄和树间距之间比较了使用空间分析在减少由于地点异质性导致的变化、估计遗传参数和增加预测准确性方面的效率。利用空间分析有超过97％的数据集显示显着的模型改进，高度显示比直径或体积更多的改进。由于空间异质性，空间分析平均去除了14-34％的残差方差，导致育种值预测精度提高20％。由于空间调整，变异系数显着降低。空间分析前后的预测增益之间的秩相关性约为0.96，空间分析对前20％父母的平均预测增益几乎没有影响。由于空间调整，我们没有观察到改善的实质性地理趋势。跨地点空间分析对基因型与环境的相互作用几乎没有影响，但倾向于增加残差的试验异质性。比较和讨论了两种不同的跨试验空间分析方法。
+长期以来人们认识到，环境梯度或斑块（例如土壤肥力，土壤水分或地形）经常严重阻碍对林业田间试验的处理效果的可靠估计。试验通常用多个区组进行，其中实验单元组被排列，使得小区尽可能均匀。因此，它们的效率取决于每个重复区组具有均匀生长条件的程度。森林遗传测试通常涉及大量遗传条目，区组大小通常较大，难以确保块内均一性。田间试验中的地点变异性通常是空间连续的。许多研究已经证明，在相邻小区上进行的观测比随机观测更相近（Cliff和Ord 1981; Costa e Silva等人2001; Cullis和Gleeson 1989; Dutkowski等人2002,2006; Magnussen 1990， 1994; Smith 1938; Upton和Fingleton 1985）。例如，Fu et al。 （1999）显示道格拉斯杉木后代测试中的90％的位点显示出大的空间变异。
+区组内变异可能是由于竞争（Kempton 1982; Magnussen 1994），土壤肥力和水分的异质性（Pearce 1980），杂草或灌木，昆虫或疾病以及造林方面。这种空间异质性削弱了我们使用标准统计推断技术的能力，这些技术主要是针对从独立和相同分布的随机变量中提取的观察集。结果，当存在大的空间异质性时，识别遗传变异的能力和遗传值预测的准确度可能大大降低。
+空间分析已广泛用于农业田间测试，以估计和解释空间变异。已经提出并采用了许多方法来建模空间变化，例如最近邻域调整nearest neighbor adjustment（Bartlett 1978; Papadakis 1937; Wilkinson et al.1983; Zimmerman和Harville 1991），最小二乘平滑least squares smoothing（Green等人1985; Smith和Casler 2004; Yang等人2004），kriging（Bresler等人1981; Lopez和Arrue 1995）和post blocking（Dutkowski等人2002; Fu等人1999）。在这些方法中，通过可分离自回归（AR1⊗AR1）误差结构的空间自相关建模已经变得具有吸引力，并且通常用于农业品种试验分析（Braysher等人2001; Cullis和Gleeson 1991; Gilmour等人1997; Singh等人2003; Yang et al.">
+  <meta name="twitter:description" content="Ye TZ, Jayawickrama KJS. Efficiency of using spatial analysis in first-generation coastal Douglas-fir progeny tests in the US Pacific Northwest. Tree Genet. Genomes. 2008;4:677–92.   基于来自美国太平洋西北45个第一代 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/ye2008%E5%A4%9A%E7%82%B9-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90-%E8%8A%B1%E6%97%97%E6%9D%BEar1/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/ye2008%E5%A4%9A%E7%82%B9-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90-%E8%8A%B1%E6%97%97%E6%9D%BEar1/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Ye2008多点-空间分析-花旗松AR1</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (186 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Ye2008多点-空间分析-花旗松AR1</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (186 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<ol>
+<li>Ye TZ, Jayawickrama KJS. Efficiency of using spatial analysis in first-generation coastal Douglas-fir progeny tests in the US Pacific Northwest. Tree Genet. Genomes. 2008;4:677–92.</li>
+</ol>
+</blockquote>
+
+<p>基于来自美国太平洋西北45个第一代繁殖区的275道格拉斯冷杉[Pseudotsuga menziesii（Mirb。）Franco]后代试验的1,146个数据集，使用<strong>自回归误差结构对生长性状进行了单试验和跨试验空间分析</strong>。繁殖区域包括宽范围的纬度，经度和海拔。在不同的实验设计，性状，评估年龄和树间距之间比较了使用空间分析在减少由于地点异质性导致的变化、估计遗传参数和增加预测准确性方面的效率。<strong>利用空间分析有超过97％的数据集显示显着的模型改进，高度显示比直径或体积更多的改进。由于空间异质性，空间分析平均去除了14-34％的残差方差，导致育种值预测精度提高20％</strong>。由于空间调整，变异系数显着降低。<strong>空间分析前后的预测增益之间的秩相关性约为0.96，空间分析对前20％父母的平均预测增益几乎没有影响。由于空间调整，我们没有观察到改善的实质性地理趋势。跨地点空间分析对基因型与环境的相互作用几乎没有影响，但倾向于增加残差的试验异质性</strong>。比较和讨论了两种不同的跨试验空间分析方法。</p>
+
+<hr />
+
+<p>长期以来人们认识到，环境梯度或斑块（例如土壤肥力，土壤水分或地形）经常严重阻碍对林业田间试验的处理效果的可靠估计。试验通常用多个区组进行，其中实验单元组被排列，使得小区尽可能均匀。因此，它们的效率取决于每个重复区组具有均匀生长条件的程度。森林遗传测试通常涉及大量遗传条目，区组大小通常较大，难以确保块内均一性。田间试验中的地点变异性通常是空间连续的。许多研究已经证明，在相邻小区上进行的观测比随机观测更相近（Cliff和Ord 1981; Costa e Silva等人2001; Cullis和Gleeson 1989; Dutkowski等人2002,2006; Magnussen 1990， 1994; Smith 1938; Upton和Fingleton 1985）。例如，Fu et al。 （1999）显示道格拉斯杉木后代测试中的90％的位点显示出大的空间变异。</p>
+
+<p>区组内变异可能是由于竞争（Kempton 1982; Magnussen 1994），土壤肥力和水分的异质性（Pearce 1980），杂草或灌木，昆虫或疾病以及造林方面。这种空间异质性削弱了我们使用<strong>标准统计推断技术</strong>的能力，<strong>这些技术主要是针对从独立和相同分布的随机变量中提取的观察集</strong>。结果，当存在大的空间异质性时，识别遗传变异的能力和遗传值预测的准确度可能大大降低。</p>
+
+<p>空间分析已广泛用于农业田间测试，以估计和解释空间变异。已经提出并采用了许多方法来建模空间变化，例如<strong>最近邻域调整nearest neighbor adjustment</strong>（Bartlett 1978; Papadakis 1937; Wilkinson et al.1983; Zimmerman和Harville 1991），<strong>最小二乘平滑least squares smoothing</strong>（Green等人1985; Smith和Casler 2004; Yang等人2004），<strong>kriging</strong>（Bresler等人1981; Lopez和Arrue 1995）和<strong>post blocking</strong>（Dutkowski等人2002; Fu等人1999）。在这些方法中，通过可分离<strong>自回归（AR1⊗AR1）误差结构的空间自相关</strong>建模已经变得具有吸引力，并且通常用于农业品种试验分析（Braysher等人2001; Cullis和Gleeson 1991; Gilmour等人1997; Singh等人2003; Yang et al.2004）。例如，Grondona et al。 （1996）分析了35个使用这种模型的谷物产量试验，发现在行和列方向上的自回归模型是最常见的最佳模型。</p>
+
+<p>森林遗传测试通常建立在多个测试点，有时是几年，被称为多环境试验（MET）。重要的是调查应用空间分析从METs收集的数据的效率，并探讨如何通过空间分析的误差减少的作用影响基因型与环境的相互作用（Cullis等人1998年;史密斯等人2001年史密斯和Casler 2004; Yang等人2004）。与单试验分析不同，试验中的局部空间趋势和试验之间的残留异质性可能需要在MET中联合建模。许多研究表明，在森林遗传测试中，空间分析去除微环境异质性和提高处理估计的准确性是有效的（Costa e Silva et al.2001; Dutkowski et al.2002; 2006; Magnussen 1990; Zas 2006）。然而，这些研究都是基于单试验空间分析。直到最近，对于使用空间分析的METs的有效性了解甚少。此外，林业试验通常在丘陵地带生长。空间变异性的模式和程度可能在不同环境之间变化很大，表明应用空间分析的有效性可能不同于在不同环境中消除空间异质性的能力。将期望评估跨越包括不同环境，实验设计，性状，年龄等的大量试验的空间分析的效率。除了例如Dutkowski等人的很少例外。 （2006），大多数已发表的研究都是基于非常有限个数的田间试验。</p>
+
+<p>西北树改良合作组织（NWTIC）的成员拥有自由授粉后代测试，覆盖北美太平洋西北地区的各种环境，可获得5至20岁的生长数据。这些测试的大量试验和各种设计，性状，年龄，大小和树间距允许对位点空间异质性和空间分析的有效性的彻底检查。在这项研究中，我们评估了相对于经典分析的空间分析（即AR1⊗AR1模型）的相对效率，基于来自在45个第一代繁殖区测试的275个道格拉斯 - 冷杉子代试验的1,146个数据集。我们将空间模型应用于单试验分析和组合MET分析，目的是了解（1）空间变异性模式，（2）控制位点变异的相对效率，（3）遗传参数的变化和育种的准确性价值预测，和（4）空间异质性的地理模式。还对MET数据的两种空间分析方法进行了比较和讨论。</p>
+
+<p>##讨论
+已经报道，<strong>大块空间异质性在大块设计中更加明显，并且不完全块设计在控制位点变异方面优于完全块设计</strong>（Cochran and Cox 1957; Fu 2003; Fu et al.1998; Williams et al。 2002）。在太平洋西北地区的合作第一代后代试验中，大多数试验以重复集（R / S）或集合设计（S / R）形式建立。测试家庭被分配为25/50族的R / S和100〜400族的S / R。虽然存在一些缺点，例如缺乏连接的集合，R / S比S / R有更小的重复大小和更好的局部环境控制（这是他们被广泛使用的原因）。我们的研究结果表明，<strong>空间分析可以有效地减少空间异质性</strong>的S / R和R / S，和S / R平均收到比空间分析比R / S更高的改进。然而，改进的统计工具从来没有补偿在使用差的设计进行实验时损失的精度。正如Dutkowski et al。 （2006），<strong>使用良好的设计总是建议避免治疗和错误效应的可能混淆</strong>。我们发现，具有斑块结构的试验在模型拟合中比具有全局梯度的试验获得了更多的改善。几个模拟研究已经证明<strong>阻塞技术在控制梯度方面比在补丁方面更有效</strong>（Fu等人1998; Salvador等人2006）。因此，具有斑块模式的大规模试验通常在基础模型中很难拟合，并且预期通过空间分析具有大的AIC和s2RES减少。在我们的研究中，在空间分析之前，s2RES的平均比例为梯度的65％和贴片的78％，并且在空间分析后，模型中保留了重复效应，两者减少到52％。 s2RESþs2REP的减少量在这两种类型的空间结构之间相当匹配。这可能意味着<strong>自回归模型的有效性本质上类似于补丁和渐变</strong>，虽然它被设计来建模补丁空间表面。 <strong>Dutkowski et al。 （2002）也提到自回归模型是灵活的表面，它适合和有效的当地趋势和全球趋势</strong>。在10岁及以上时，空间自相关系数（ρ）随树间距而增加。与小树间隔相关联的小ρ值可能是由于树木之间的竞争。竞争往往在邻近单元之间产生负的空间自相关（Kempton 1982; Magnussen 1989; Reed和Burkhart 1985）。然而，我们发现，在这项研究中只有几个负ρ值。当强的空间关联和竞争共存时，它可能观察到相对较小但仍然是正的ρ值。随着时间的推移，空间自相关也增加。这种现象可能反映了良好试验点对树木生长的累积效应（Magnussen 1990）。通过消除空间异质性，<strong>高度显示比直径更多的改进</strong>。在其中在15岁时测量高度和直径的166个试验中，138个高度的AIC减少（&gt; 20％）显示出比直径大得多。在仅七种情况下，直径比高度具有更大的AIC减小（&lt;15％）。这与<strong>Dutkowski等人报道的结果不同。 （2006）其中在模型改进中高度和直径之间通常没有很大差异</strong>。在他们的研究中，在8岁或以下测量生长性状。大多数树木都很小，可能没有进入站立发展的竞争阶段。相反，在太平洋西北部的大多数道格拉斯杉木后代测试中，冠状闭合通常发生于10〜15岁。预期树木之间的强地上竞争，使空间模式更复杂，并减少自相关性（Fox et al.2001; Reed and Burkhart 1985）。正如Dutkowski et al。 （2006），<strong>自回归模型不可能是竞争的最佳模型</strong>。高度的大模型改进可以由高度比直径受密度和树木竞争影响小的事实贡献。</p>
+
+<p>估计的遗传方差分量s2增加或减少绝对或相对值，没有一致的模式。这通常与Dutkowski等人的观察一致。 （2006）。虽然在10岁及以上时高度的s2A几乎没有变化，但是对于直径发现总体轻微的增加。在文献中已经报道了关于s2A的变化的不同结果。一些研究表明一致的减少（例如，Joyce等人2002）或不一致的改变（例如，Costa e Silva等人2001; Dutkowski等人2002），但是大多数其他研究报告了s2A的增加（例如， Anekonda和Libby 1996; Belletal.1993; Hamannetal.2002; Kusnandar和Galwey 2000; Zas 2006）。虽然不可能清楚地分离为遗传和环境效应，但是空间分析预期更好地估计s2A通过消除空间异质性。这是因为当使用假设独立性的方法（例如，RCB分析; Besag和Kempton 1986）时，空间相关数据可能提供治疗效果和方差分量的不准确估计。然而，一些模拟表明空间调整的数据可能高估s2A多单位图设计（Loo-Dinkins1992; Loo-Dinkins等人1990; Magnussen 1993）。这对于空间分析的自信使用仍然是一个有趣和重要的问题。</p>
+
+<p>这个大系列的道格拉斯杉木后代试验允许我们探索地方空间异质性的可能地理模式。这并不奇怪，我们没有找到强烈的地理模式。由于太平洋西北地区的地形，道格拉斯 - 冷杉后代试验通常建立在有土壤环境梯度和斑块型微网格模式的斜坡或地形上。网站变异性通常是特定的，随着时间的推移是动态的，并且甚至在两个附近的测试站点之间有很大差异。这意味着空间分析的效率也可能是位点特异性的。毫不奇怪，类似于单试验分析，我们的研究表明，MET数据的空间分析具有明显更好的模型拟合，并提供比经典非空间模型更准确的育种值预测。虽然空间模型（模型3）对基因型与环境的相互作用几乎没有影响（ΔrB≤0.04），但我们发现残余方差的试验异质性从基础模型增加到空间模型。 Hill（1984）提到方差异质性导致从更多变化的环境中选择更大部分的个体。因此，当方差异质性被不正确地建模时，在具有大差异的环境中存在过度评价优越个体的倾向（Costa e Silva等人，2005）。这种效应将被包括在模型中的空间分量加强。虽然MET分析中的模型3可以联合模拟试验中的局部空间趋势和试验中的残留异质性，但是在模型拟合中存在一些计算挑战。首先，与其中约99％的模型收敛的单试验分析不同，空间MET分析（模型3）的收敛频率低。我们的初步研究显示了收敛的一些困难，特别是在拟合个别树空间模型时，每个MET有五个或更多的试验。已经有一些关于ASReml中使用的“平均信息”（AI）算法未能收敛的报告，特别是涉及多个随机效应，多个性状或“坏”起始值的分析（Meyer 2006; Smith等人2001） 。第二，通常需要大量的计算时间和计算机内存来分析包含大量试验的MET数据。 MET分析中的模型2是模型3的近似，并且由于其高计算效率和收敛率而适合于MET数据的规则空间分析。我们的研究结果表明，两个模型在遗传力估计，育种价值预测的准确性，预测遗传收益，父母和后代的排名非常相似。然而，模型2具有比模型3相对更高的估计G×E（即，逐个家庭）方差分量。在大麦数据的效率研究中，Cullis等人（1998）也报道了两阶段空间模型的G×E方差分量大于一阶段空间模型的方差分量。由于模型2中使用的数据是通过每次试验的空间残差预先调整的，因此可以预期合并分析中残余自由度的减少，并且可能低估合并的残差方差。由于模型之间家族与残差的相似比率，可能在模型2中高估了家庭对试验的相互作用。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E8%82%B2%E7%A7%8D/yousry--fikret-2014%E5%BD%93%E4%BB%A3%E6%9E%97%E6%9C%A8%E8%82%B2%E7%A7%8D%E7%9A%84%E8%BF%9B%E5%B1%95/" data-toggle="tooltip" data-placement="top" title="Yousry-&amp;-Fikret-2014当代林木育种的进展">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/diallel/yao-2013-%E4%BA%A4%E9%85%8D%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%BD%B1%E5%93%8D-%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E7%9A%84%E5%BD%B1%E5%93%8D/" data-toggle="tooltip" data-placement="top" title="Yao-2013-交配设计的影响-分析方法的影响">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

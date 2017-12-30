@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Dong&#39;s blog</title>
+  <meta property="og:title" content="Dong&#39;s blog" />
+  <meta name="twitter:title" content="Dong&#39;s blog" />
+  <meta name="description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta property="og:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="twitter:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../" />
+  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../">
+            <img class="avatar-img" src="../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Dong&#39;s blog</h1>
+                
+                  
+                    <hr class="small">
+                    <span class="page-subheading">Enterprising &amp; Concentrating欢迎光临！</span>
+                  
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div role="main" class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+          <div class="well">
+            
+
+<h2 id="front-page-content">Front Page Content</h2>
+
+<p><code>beautifulhugo</code> supports content on your front page. Edit <code>/content/_index.md</code> to change what appears here. Delete <code>/content/_index.md</code> if you don&rsquo;t want any content here.</p>
+
+          </div>
+        
+
+        <div class="posts-list">
+          
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/lstiburek2015a-bwb/">
+                <h2 class="post-title">Lstiburek2015a-bwb</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (70 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Lstibůrek M, Hodge GR, Lachout P (2015) Uncovering genetic information from commercial forest plantations—making up for lost time using “Breeding without Breeding.” Tree Genet Genomes 11:55. doi: 10.1007/s11295-015-0881-y
+ 摘要 提出了无育种育种的应用（BwB），从现有种植园中发现或提取遗传信息，利用谱系重建和BLUP预测育种价值，识别遗传优良个体。重点是在开展运营育种计划时使用该方法来规避第一个育种和测试周期，但也可以应用于更先进的树木改良计划。进行了一项模拟研究，以检查BwB方法中使用的三种概念人群的不同大小，并将使用该方法获得的遗传成果与全同胞育种和测试策略如果已经开始实现的遗传成果进行比较几年前。 BwB方法基于具有相对较少数量的树（从1,200至3600）的谱系重建，其包括大小为NR = 600至3,000的随机选择的亚群，以及大小NT = 600（根据表型单独在5,940至23,760棵树中预选）。随着重建的谱系，进行表型数据的组合的REML / BLUP分析来预测育种值，并且进行线性优化以进行最终选择以最大化增益，同时约束与给定有效群体大小的相关性Ne = 5,10，或20.结果表明，BwB战略可以实现相当程度的遗传增益，相当于使用全同步策略可以实现的收益的80％至98％。 关键词谱系重建BLUP。树繁殖。育种策略
+介绍 树是长寿的生物，因此经常需要数年才能达到繁殖成熟度。商业林业还涉及时间跨度远远大于大多数作物植物或动物的时间长度：桉树的8年旋转长度被认为是相当快的，温带和亚热带松树的15至25年是非常常见的，而树种来自北方气候可能有30至80年的旋转，甚至更长。因此，树木育种是一项长期的工作。 传统上，在商业种植园中，通过在自然景观或外来种植园物种中进行群众选择来启动树木育种计划。有时，育种者将直接从天然植物或种植园中选定的树种种子，但经常选择的树木被种植在种子果园或繁殖植物园中，随后等待数年，直到种子收集才能完成。通过种子，育种者通常会建立一系列具有良好结构的交配设计的复制后代测试，并再次等待几年的树木达到可以获得有意义的数据的年龄（例如，4至20年，具体取决于该物种）（White等人2007）。 二十多年来，遗传学家已经知道分子标记数据可能用于估计相关性（例如，Queller和Goodnight 1989）。分子遗传学的进展，特别是高度信息的DNA标记如微卫星（SSR）和单核苷酸多态性（SNPs）的发展，引入了新的树种育种方法的可能性。这些新方法之一是谱系重建，其是使用分子数据来确定个体群体之间的家谱关系（例如，Meagher和Thompson 1986）。 树种育种者提出了许多方法，可以在运营育种计划中使用谱系重建。例如，Lambeth等人（2001）引入了一种称为Polymix Breeding with Parental Analysis的测试策略。该策略的动机是，花粉组合的育种比全同质育种更具成本效益，随后可以使用该标记来识别潜在选择候选者的男性父母，以控制相关性，或识别男性父母的所有后代，以产生一个完整的同胞交配系。 El-Kassaby等人（2007）和El-Kassaby和Lstibrek（2009）将这一想法扩展到开放授粉的种群，指出即使是自然交配和家庭规模不同，家谱重建也可用于估计遗传参数并预测育种价值。他们的重点在于，育种者可以在不产生任何杂交的情况下获得遗传利益，他们称这种方法是无育种的BBreed（BwB）。 Hansen和McKinney（2010）将这种方法应用于从具有99个克隆的种子果园中产生的Abies nordmanniana的商业种植。使用一组12个SSR标记，以及父母的基因型信息，他们能够为80％置信水平的98％的后代分配亲本（双亲）。 Hansen和McKinney称他们的方法Bquasi-field测试，^强调，育种者可以使用血统重建方法创建像正常的后代测试数据。 在本研究中，我们将讨论一种从现有种植园发现或提取血统信息并预测育种价值并鉴定遗传优势个体的方法。具体来说，我们试图描述一个BwB如何处理一个特定物种的常规种植园，以启动一个运营的育种计划。实际上，这种方法可以用来规避森林树木改良计划中的第一个繁殖和测试周期。目标是勾画一种可以实现绝大多数遗传增益的方法，如果一个全面的传统选择和育种计划已经在几年前开始，那么这种遗传增益将会发生。首先简要概述概念思想，然后进行彻底的定量遗传分析。
+BwB方法概要 假设我们有一种商业利益，这种物种的一些种植园，没有遗传测试。此外，假设种植园的父母是未知的，即不能用于育种或果园，并且不能用于基因分型。目的是从商业种植园提取生殖检测数据，进行遗传评估（育种价值预测），以进行选择。该过程涉及三个概念群体：BwB群体和该群体的两个子集，随机亚群和顶表型子群体。该过程概述如下。 1.测量和/或检查NBwB大小的整个BwB群体，这将是物种种植基地的一个子集。 2.确定一个最大表型亚种群的NT，由BwB群体中最好的表型组成。这些树将是最终的选择候选人，并提供高选择差异。 3.从BwB群体中选择大小为NR的随机子群体。随机亚群的目的是提供家庭手段估计数据（或相当于亲本育种值）的数据。 4.使用分子标记基因型信息作为组合全系谱重建（NR + NT）的随机和顶表型亚种群。 5.进行REML-BLUP评估（利用系谱和表型测量）预测组合随机和顶表型亚群的育种值（BV）。 将从BwB方法获得的遗传收益与可从大规模全同胞育种和测试策略中获得的遗传成果进行比较。我们不打算提出以下描述的特定全同步测试策略在效率方面是最佳的;相反，我们只是想将BwB策略与大量全面的全同步测试工作进行比较，从而导致良好的遗传增益。 本研究的具体目标是： 1.
+                  <a href="../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/lstiburek2015a-bwb/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/lstiburek2015a-%E5%88%A9%E7%94%A8bwb%E8%A1%A5%E5%85%85%E7%BC%BA%E5%A4%B1%E7%9A%84%E4%BF%A1%E6%81%AF/">
+                <h2 class="post-title">Lstiburek2015a-利用bwb补充缺失的信息</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (222 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Lstibůrek M, Hodge GR, Lachout P (2015) Uncovering genetic information from commercial forest plantations—making up for lost time using “Breeding without Breeding.” Tree Genet Genomes. doi: 10.1007/s11295-015-0881-y
+ 提议使用Breeding without Breeding（BwB）来从现有种植园中揭示或提取遗传信息，使用谱系重建和BLUP来预测育种值并鉴定遗传上的个体。重点是在一个操作育种计划开始使用该方法以绕开育种和测试的第一个周期，但它也可以应用于更先进的树木改良计划。进行了模拟研究以检查在BwB方法中使用的三个概念群体的不同大小，并且比较使用该方法获得的遗传增益与如果已经开始的全同胞育种和测试策略将获得的遗传增益年前。 BwB方法基于具有相对少数的树（从1,200至3,600）的谱系重建，所述树由随机选择的大小为NR = 600至3,000的亚群和大小为NT = 1的顶表型亚群组成， 600（基于表型单独在5,940至23,760棵树中预选）。使用重建的谱系，进行表型数据的组合REML / BLUP分析以预测育种值，并且进行线性优化以进行最终选择以最大化增益，同时约束与给定有效群体大小N e = 5的相关性，10或20.结果表明，BwB策略可以实现高水平的遗传增益，相当于使用全同胞策略可以实现的增益的80％至98％。
+介绍
+树是长寿的有机体，因此经常需要几年才能达到繁殖成熟。商业林业还涉及比大多数作物植物或动物长得多的时间：对于桉树的8年轮伐长度被认为相当快，对于温带和亚热带松树的15年至25年是非常普遍的，并且树种北方气候可以有30到80年的轮伐，甚至更长。因此，树木育种是一项长期的努力。 传统上，树木育种计划是通过在自然林中进行大规模选择或在商业种植园中为外来种植物种开始的。有时，育种者将直接从自然林或种植园中选择的树上收集种子，但是经常将选择的树嫁接在种子园或育种树木中，随后等待若干年，直到可以进行种子收集。使用这种种子，育种者通常建立大量重复的进展测试，结构良好的交配设计，并再次等待一些年的树木达到可以获得有意义的数据的年龄（例如，4至20年，取决于物种）（White et al。2007）。 二十多年来，遗传学家已经知道潜在地使用分子标记数据来估计亲缘关系（例如，Queller和Goodnight 1989）。分子遗传学的进展，特别是高度信息的DNA标记如微卫星（SSR）和单核苷酸多态性（SNP）的发展，已经引入了树种繁殖的新方法的可能性。这些新方法之一是系谱重建，其是使用分子数据来确定个体群体之间的系谱关系（例如，Meagher和Thompson 1986）。 树种繁殖者提出了一系列方法，家谱重建可用于作业育种计划。例如，Lambeth et al。 （2001）引入了一项名为Polymix Breeding with Parental Analysis的测试策略。该策略背后的动机是花粉组合的育种将比全同胞育种更有成本效益，并且标记随后可用于鉴定潜在选择候选者的男性亲本，以便控制相关性，或鉴定所有后代的雄性亲本以产生全同胞配偶系谱。 El-Kassaby et al。 （2007）和El-Kassaby和Lstibuchrek（2009）将这个想法扩展到开放授粉群体，指出即使是自然交配和家庭大小不同，系谱重建也可用于估计遗传参数和预测育种值。他们的重点是，育种者可以在不做任何交叉的情况下获得遗传获益，他们称这种方法没有育种 育种^（BwB）。 Hansen和McKinney（2010）已经将这种方法应用于从具有99个克隆的种子园产生的Abies nordmanniana的商业种植。使用一组12个SSR标记物，以及关于亲本的基因型信息，他们能够以98％的置信水平为98％的后代分配亲本（双亲）。 Hansen和McKinney称他们的方法Bquasi现场测试，强调，育种者可以创建类似正常的子代测试数据使用谱系重建方法。 在当前的研究中，我们将讨论从现有种植园中发现或提取谱系信息，预测育种值和鉴定遗传优势个体的方法。具体来说，我们试图描述如何对特定物种的种植园进行BwB方法来启动操作育种计划。实际上，这种方法可用于规避森林树木改良计划中的育种和测试的第一个周期。目标是概述一种方法，如果一个全面的传统选择和育种计划已经开始多年，将实现大部分的遗传获益。首先，我们简要概述概念思想，然后进行彻底的定量遗传分析。
+BwB方法概述 假设我们有一个商业利益的物种，这个物种的一些种植园，没有遗传测试。此外，假设种植园的亲本是未知的，即不能用于育种或果园，并且不可用于基因分型。目的是从商业种植园提取Bprogeny检验数据，并进行遗传评价（育种值的预测）以用于选择的目的。 该过程涉及三个概念种群：BwB种群和该种群的两个子集，随机亚群和顶表型亚群。该过程概述如下。
+                  <a href="../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/lstiburek2015a-%E5%88%A9%E7%94%A8bwb%E8%A1%A5%E5%85%85%E7%BC%BA%E5%A4%B1%E7%9A%84%E4%BF%A1%E6%81%AF/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/lstiburek2017-%E5%A4%A9%E7%84%B6%E7%BE%A4%E4%BD%93%E4%B8%AD%E7%8E%B0%E5%AE%9E%E9%81%97%E4%BC%A0%E5%8A%9B%E7%9A%84%E8%AE%A1%E7%AE%97/">
+                <h2 class="post-title">Lstiburek2017-天然群体中现实遗传力的计算</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (52 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Lstibůrek, M., Bittner, V., Hodge, G.R., Picek, J., and Mackay, T.F.C. 2017. Estimating Realized Heritability in Panmictic Populations. Genetics (November): genetics.300508.2017. doi:10.1534/genetics.117.300508.</p>
+</blockquote>
+
+<p>##摘要
+狭义遗传力（h2）是定量遗传学中的一个关键概念，它表示观察到的从父母传递到后代的表型变异的比例。 h2决定了亲属之间的相似性以及对人工和自然选择的反应速度。用于估计h2的经典方法使用具有已知相关性的个体的随机样本，以及当被称为实现遗传性时对人工选择的响应。在这里，我们提出了一个估计实现h2的方法，基于一个简单的随机交配人口评估，没有人为操纵的人口结构，并导出估计的标准误差。这种方法可以适用于任何人口的表型片段（例如，排名前列的父母和子女），而不是随机抽样。因此，它可以应用于非纯种随机交配群体，其中亲缘关系由p选择的亲本和子代中的分子标记确定，因此大大节省了基因分型成本。此外，我们通过随机模拟来评估该方法，并如数学推导所预期的那样，它提供了对h2的无偏估计。我们将我们的方法与利用Galton的人体高度数据集的回归和最大似然方法进行了比较，所有三种方法提供了相同的结果。
+关键词数量遗传学;哈代 - 温伯格平衡;流行的人口</p>
+
+<hr />
+
+<p>狭义遗传力（h2）是数量遗传学中的一个关键概念。 h2在技术上定义为加性遗传方差（育种值的方差）与总表型方差（h2 = a2 / p2）之比，并且表示可从一代传播到数量性状的表型变异的分数下一个。 <strong>h2确定亲属之间的相似程度和对人工和自然选择的反应速度</strong>;因此，估计h2往往是应用动植物育种计划和进化遗传学研究的第一步。 <strong>h2也是从分子标记数据（基因组预测）预测表型准确性的上限</strong>，因此是精准医学中人类常见疾病的必要知识（Yang et al。2010）。
+由于h2决定亲属之间的相似程度，所以用于估计h2的经典方法使用观察到的紧密相关个体之间的表型相关性以及它们的平均相关系数来估计h2。一种这样的经典方法是对中亲本表型值（后代 - 亲本回归）的后代表型值的回归，其中回归系数b提供对h2的无偏估计。其他经典方法包括全半同胞和半同胞的方差分析，以及使用基于最大似然的方法分析亲缘关系不同的亲属。这些方法需要设计实验，其中通过交配特定的雄性和雌性来构建家系，或者利用至少一个亲本已知的天然交配。这些设计可以通过操纵家庭数量和家庭规模来最大限度地提高样本量约束条件下h2估计的精度。
+但是，这些设计并不总是适用的。例如，在自然人群中通常不知道谱系。在这种情况下，可以使用分子标记来估计h2以重新构建谱系（Aykanat等，2014; Lynch和Walsh，1998）。然而，随后是基于重构谱系的方差分量分析，如同为设计实验所做的那样，因此还需要对群体的大型随机样本进行基因分型。最近，已经在使用全基因组标记回归为大量分子标记进行基因分型的个体群体中估计了“基因组遗传力”（Yang等，2010）。基因组遗传力是遗传变异的一部分，可以通过标记回归来解释，只有当所有的致病变异体被基因分型时，例如序列数据，才会等同于真正的h2;或当真正的因果变体与标记完全连锁不平衡时（de los Campos et al。2015）。用于估计h2的所有基于标记的方法的主要缺点是基因分型的花费，因此可以降低这种成本的方法是合乎需要的。
+在这里，我们提出了一种方法来估计自然人口的h2与h2的概念有关。传统上，通过将选择响应（R）与选择差分（S）进行比较来估计实现的h2。 h2，R / S的估计需要特定的交配。我们在这里展示，实现的h2概念可以推广到一个随机交配的自然种群，其中数量性状的表型值已经为父母和子代世代进行了评分。 h2是由来自定义的表型范围的后代的比例估计的（例如，顶端p后代），其由来自相同定义的表型范围的p父母产生。因此，只需要从表型分布的相同截短的部分确定选择的p个父母子代和p个子代的相关性，从而大大节省了基因分型成本。当然，需要假设DNA标记的中性（例如高度多态的SSR）来估计截断子集内的谱系。假设这种方法，我们推导出h2估计值及其相关的标准误差。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%A9%BA%E9%97%B4/lu2011-%E9%AB%98%E5%BA%A6%E7%9B%B4%E5%BE%84-%E7%A9%BA%E9%97%B4%E8%87%AA%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/">
+                <h2 class="post-title">Lu2011-高度直径-空间自回归模型</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (69 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Lu JF, Zhang LJ (2011) Modeling and Prediction of Tree Height Diameter Relationships Using Spatial Autoregressive Models. For Sci 57:252–264.</p>
+</blockquote>
+
+<p>应用三个空间自回归模型模拟树高直径关系，包括空间滞后模型spatial lag model（SLM），空间误差模型（SEM）和空间Durbin模型（SDM），以普通最小二乘法（OLS）使用五个空间权重矩阵来评估不同加权方案对模型拟合的影响。显然，在这些空间自回归模型中，不同的空间权重矩阵方案强烈影响模型拟合和参数估计。我们发现<strong>变差函数或地质统计权重矩阵优于其他空间权重矩阵，如邻接，逆距离和局部G（i）*统计</strong>。此外，空间自回归模型用于预测未取样位置的树高。结果表明，三个空间自回归模型超过OLS模型不仅在模型拟合和减少空间依赖，而且在模型预测。一般来说，<code>SDM和SEM执行显着优于SLM，而在模型拟合和预测的每个方面，SDM略好于SEM</code>。然而，如果模型结构的复杂性是一个问题，具有地质统计权重矩阵的SEM是对SDM的合理选择，因为SEM提供接近OLS模型的模型系数估计，这使得对模型的解释和理解更多更轻松。</p>
+
+<p><code>空间依赖性或自相关性是林业和生态学中的常见现象，因为植物群落中的相邻个体往往更相似（由于微环境斑块）或更不相似（由于竞争）（Legendre和Legendre 1998， Fox et al.2001，Kissling and Carl 2008）</code>。众所周知，<code>观测之间的空间自相关会导致经典统计方法的问题，例如方差分析和普通最小二乘法（OLS）回归，这两者都假设独立分布的模型误差（Legendre 1993）</code>。当响应变量空间自相关时，独立性的假设通常是无效的，并且自相关的协变量的影响往往被夸大（Gumpertz等人1997）。两种类型的空间自相关可以区分，取决于内生过程还是外部过程产生空间结构（Legendre和Legendre 1998，Fortin和Dale 2005）。在内生过程的情况下，空间模式通常由作为响应变量本身的固有属性的因素（即固有空间自相关）生成。另一方面，空间自相关可以通过与感兴趣的响应变量无关的外生过程（即，诱导的空间依赖性）来诱导（Fortin和Dale 2005）。
+空间建模已成为近年来森林和生态建模的重要组成部分，因为研究人员已经意识到植物和/或树木社区中空间模式的存在。由初始建立模式，微环境条件，气候因素和竞争植被造成的复杂的历史和环境马赛克可能导致不同森林中的各种空间组成和结构（Moeur 1993，Rouvinen和Kuuluvainen 1997）。树木的空间分布强烈影响树木的大小，生长，冠状结构和形态（et al。，1988，Miller and Weiner 1989，Weiner 1990，Newton and Jolliffe 1998，Dovciak et al。2001）。事实上，已经对森林内部和内部的空间自相关进行了研究（例如，Beaulieu和Lowell 1994，Zhang等人2005）。存在许多处理生态数据中的空间自相关的方法（Cressie 1993，Diniz-Filho等人2003，Fortin和Dale 2005，Rangel等人2006），例如空间自回归模型（Overmars等人2003 ，Kissling和Carl 2008）和线性混合模型（Zhang et al.2005,2009）。空间自回归模型可以使用不同的模型规范来处理内生和外生过程。<strong>常用的空间自回归模型包括一阶空间自回归模型，混合回归空间模型和回归模型与空间自相关干扰（LeSage 1998）。后两者通常分别称为空间滞后模型（SLM）和空间误差模型（SEM）。还有空间Durbin模型（SDM），其包括滞后响应变量和滞后解释变量。 SLM假设内生过程（固有的空间自相关）只发生在响应变量中，SEM假设外源过程（诱导的空间依赖性）只发生在模型误差项中，SDM假设响应和解释中的内生过程变量。</strong>统计测试可用于验证手头数据中存在哪些过程，包括拉格朗日乘数测试（LeSage 1998），Moran&rsquo;s I测试（Anselin和Griffith 1988）和Geary&rsquo;s C（Dormann等人2007）。同时，Anselin（1995）认识到，发现个体聚类中心成为全球空间自相关的一个问题。因此，已经开发了空间自相关（LISA）的局部指标，并且可以用于测试每个位置处的空间自相关。此外，空间相关图可用于测量一系列空间尺度上的空间自相关（Overmars等人，2003）。空间权重矩阵（W）是空间数据分析和建模中的关键要素，因为它用作数据中空间依赖性的形式表达，并表示相邻观测之间的空间结构或关系（Anselin和Griffith 1988）。即使许多研究人员认为W是空间依赖的理论概念，他们通常使用空间权重矩阵作为经验方便（Getis和Aldstadt 2004）。典型的众所周知的加权方案包括空间邻接邻居，增加到功率的反转距离，共享边界的长度除以周长，作为第n个最近邻居距离的带宽，排序的距离，等于某些常数的观测的受限权重，距离，n个近邻，带宽距离衰减，高斯距离衰减和“三维立体”距离下降函数（Getis和Aldstadt 2004）。 Getis和Aldstadt（2004）使用局部统计量Gi *构建了一个新的空间权重矩阵，并表明该矩阵在一系列模拟实验中表现得比其他众所周知的矩阵更好。 Kissling和Carl（2008）证明了空间权重矩阵对拟合空间自回归模型的影响。到目前为止，大多数空间建模研究主要集中在估计模型系数和空间自回归参数以及去除或减少模型残差中的空间自相关。然而，森林和生态建模者没有通过空间自回归模型对非抽样地点的模型预测给予很多关注，而且几乎没有应用地理统计学来进行林业中的插值（Flannigan和Wotton，1989年，Tuominen等人，2003年）。在本研究中，我们尝试将不同规格的空间自回归模型（包括SLM，SEM和SDM）应用于树木的高度 - 直径关系，使用示例森林评估各种空间权重矩阵对模型拟合和性能的影响绘制和评估不同规格的空间自回归模型的未抽样位置的树高的模型预测。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/rcodes/m3m4%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83_2016-10-21-11-22-10-cst_/">
+                <h2 class="post-title">M3M4模型比较_2016-10-21-11-22-10-CST_</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 4 minutes (826 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  &ldquo;2016-10-21 11:22:10 CST&rdquo; 上午对8801fs去掉hs的M3和M4做了模型比较，具体代码如下：
+ # -------- Sys.time() # [1] &quot;2016-10-21 08:26:31 CST&quot; setwd(&quot;D:/Sync/Dlm_wk/8801M3M4/data&quot;) library(asreml) pincalc&lt;-dget(&quot;D:/Sync/R/pin.R&quot;) options(digits = 3) load(&quot;D:/Sync/Dlm_wk/8801M3M4/data/dlm.8801.RData&quot;) str(df.rm.self) # 'data.frame':	1251 obs. of 26 variables: # $ TreeId : int 3141 3142 3143 3144 3145 3146 3147 3148 3149 3150 ... # $ Mum : Factor w/ 12 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,..: 10 10 10 10 10 10 10 10 10 10 ... # $ Dad : Factor w/ 12 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,.
+                  <a href="../../post/rcodes/m3m4%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83_2016-10-21-11-22-10-cst_/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E8%A1%A8%E8%BE%BE%E8%B0%B1/macosko2015-%E5%8D%95%E7%BB%86%E8%83%9E%E8%A1%A8%E8%BE%BE%E8%B0%B1/">
+                <h2 class="post-title">Macosko2015-单细胞表达谱</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (36 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>Macosko EZ, et al. (2015) Highly parallel genome-wide expression profiling of individual cells using nanoliter droplets. Cell 161(5):1202–1214.</li>
+</ol>
+</blockquote>
+
+<p>概要
+细胞，生物结构和功能的基本单位在类型和状态上有广泛的变化。单细胞基因组学可以表征细胞识别和功能，但容易程度和量表的局限性已经消除了其广泛应用。在这里我们描述了Drop-seq，它是通过将数千个单个细胞分离成纳米尺寸的水滴，将不同的条形码与每个细胞的RNA相关联并将它们排列在一起的策略。 Drop-seq同时记录来自数千个单个细胞的mRNA转录，同时记住转录本的细胞。我们分析了44,808只小鼠视网膜细胞的转录组，并确定了39个转录不同的细胞群，为已知的视网膜细胞类型和新型候选细胞亚型创建了分子基因表达图谱。 Drop-seq将通过在单细胞分辨率下进行常规转录谱分析来加速生物发现。</p>
+
+<p>介绍
+个体细胞是组织，器官和组织的组成部分。每个组织包含许多类型的细胞，每种类型的细胞可以在生物学状态之间切换。在大多数生物系统中，我们对细胞多样性的认识是不完整的;例如，脑的细胞类型复杂性是未知的，并且被广泛争议（Luo et al。，2008; Petilla Interneuron Nomencla Group，et al。，2008）。<strong>要了解复杂组织的工作原理，了解每种细胞类型的功能能力和反应是非常重要的。每个细胞功能的主要决定因素是其转录程序</strong>。最近的进展现在使单个细胞的mRNA-seq分析（Tang等人，2009）。然而，制备用于分析的细胞的方法在实践中已经适用于刚刚狩猎（Hashimshony等人，2012; Picelli等人，2013）或（自动化）几千个细胞（Jaitin等通常在通过流分选（Shalek等，2013）或微流体学（Shalek等人，2014）首先分离细胞之后，然后分别扩增每个细胞的转录组。在不同的条件和扰动下，需要快速，可扩展的方法来表征具有许多细胞类型和状态的复杂组织。在这里，我们描述了Drop-seq，一种通过将细胞封装在微小液滴中用于平行分析来分析数千个单个细胞中的mRNA表达的方法。通过在微流体装置（Thorsen等人，2001; Umbanhowar等人，2000）中精确地组合水和油流形成的液滴 - 纳升级水性隔室已被用作PCR的微小反应室（Hindson等人，2011; Vogelstein和Kinzler，1999）和逆转录（Beer等人，2008）。我们在这里寻求使用液滴将细胞分隔成纳米尺寸的反应室，以分析其所有RNA。使用液滴进行转录组学的一个基本挑战是保留每个mRNA转录本所分离的细胞同一性的分子记忆。为了实现这一点，我们开发了一种分子条形码策略来记住每个mRNA的起始细胞。我们批判性地评估Drop-seq，然后用它来细胞周期细胞状态。当将其应用于复合神经组织，小鼠视网膜，并从44,808个细胞谱鉴定了39个不同的群体，每个对应于一个或一组密切相关的细胞类型。我们的研究结果表明，大规模的单细胞分析可以帮助我们深入了解复杂组织和细胞群的生物学。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/madhibha-2013%E7%A7%8D%E9%97%B4%E6%9D%82%E7%A7%8D-%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0-%E6%A1%89%E6%A0%91/">
+                <h2 class="post-title">Madhibha-2013种间杂种-遗传参数-桉树</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (90 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Madhibha T, Murepa R, Musokonyi C, Gapare W. Genetic parameter estimates for interspecific Eucalyptus hybrids and implications for hybrid breeding strategy. New For. 2013;44:63–84.   津巴布韦林业委员会启动了桉树与E.tereticornis（G 9 T）和E. camaldulensis（G 9 C）的杂交育种计划，以便为在大桉树边缘的地区提供合适的基因型的干旱和霜冻。在四个地点建立了共七个混合试验，代表低至中等降雨量。女性父母来自大羚羊预先选定的批量生产。在试验中没有包括作为对照的纯种，并允许估计杂种活力。在种植后18和43个月评估存活，生长和茎平直度。各个地区的所有杂交种的存活率一般都在80％以上。 G 9 C杂种表现优于G 9 T杂种，在43个月时平均高度显示20％的差异。雌性和雄性方差通常不显着（P [0.05]），在一些情况下，估计值为0.这并不出乎意料，因为杂交种的亲本预先选择优势高度，乳房直径（DBH）纯种。优势对表型方差（Δd2）的比率对于所有杂种的所有性状是显着的（P &lt;0.05）。在43个月高度和DBH之间的特征性状优势相关性（rD）通常较大且为正，高于0.6。 B型优势相关（rBD）提示基因型 - 环境相互作用的证据（G 9 E），但是一个高海拔位点对观察到的G 9 E贡献最大。如果这些结果在具有后代的更大的交配设计中得到证实在多个地点建立，似乎对于巨桉9桉和巨桉9桉混杂的最合适的育种策略可以是利用加性和优势遗传方差的一种，例如互逆循环选择（RRS ）方案或具有前向选择的RRS
+杂交已经被用作改善热带和亚热带地区许多商业上重要的植物物种的生长，繁殖和加工特征的工具（例如Dieters等人1995; Griffin等人2000; Dungey 2001; Potts和Dungey 2001）。与纯物种杂交优势的可能解释包括：（1）杂种优势（例如，Nikles和Griffin 1992）（2）互补性（例如，从经济或管理的角度，杂种中的性状的中间表达是优越的，这些性状在祖先物种中的极端表达）（例如，Nicholas 1987）和（3）通过在回交或高级代（即复合）杂种内的重组和选择开发更大的等位基因多样性（例如，Falconer和Mackay 1996; Kerr等人2004b; Potts and Dungey 2004）。混合活力已被桉树中的一些研究人员广泛报道（例如，Gwazeet al.2000; Vigneron等人2000; Potts and Dungey 2004; Retif and Stanger 2009）。如果互补是混合优势的关键，那么定义目标环境是至关重要的（Martı&rsquo;n1989; Nikles和Griffin 1992）。互补性的经典实例是在刚果Brazaville（Vigneron等人2000）和巴西（Campinhos和Ikemori 1989）中使用桉草9桉杂交种。刚果的高湿度允许发展白ker和叶真菌，其中巨桉是高度易感的，尽管是更受欢迎的物种，由于其通常快速生长，抄纸潜力和适于制浆。在巴西的巨桉和桉树的早期种植中，库克也造成了严重的损失。桉草属赋予杂种中的抗病性。因此，杂交优势似乎是加性遗传性状（即抗性9生长）的乘法效应的结果（Vigneron等人2000）。有一些证据表明，在津巴布韦测试的一些桉树杂交种群可以胜过大多数纯种（Gwaze et al。2000）。例如，在降雨量较少的地方，最具生产力的杂交大桉（E.
+                  <a href="../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/madhibha-2013%E7%A7%8D%E9%97%B4%E6%9D%82%E7%A7%8D-%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0-%E6%A1%89%E6%A0%91/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%A9%BA%E9%97%B4/magnussen-1990%E7%A9%BA%E9%97%B4%E6%A8%A1%E5%9E%8B-%E6%AF%94%E8%BE%83-/">
+                <h2 class="post-title">Magnussen-1990空间模型-比较-</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (63 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>Magnussen S. Application and Comparison of Spatial Models in Analyzing Tree Genetics Field Trials. Can. J. For. Res. 1990;20:536–46.</li>
+</ol>
+</blockquote>
+
+<p>采用1个经典模型和11个最近邻空间过程模型分析了三个亲本源的所有可能的组合和三个站点上生长的杰克松[Pinus banksiana]全同胞家系的树高。考虑到在三个位置中的两个上的无效观察（残差）之间的显着的邻域相关性，认为具有空间相互作用项的经典线性模型的扩展是必要的。空间和时间相关性的强度和程度以视觉和表格形式显示。在全同胞家系树高的两个估计之间的显着差异中，11个空间模型中只有4个提供了显着的减少（5-20​​％）。在家庭层面，空间调整平均为1-3％，少数家庭调整超过10％。空间协方差的累积（时间）效应在调整和观察家庭均值之间的秩相关性中得到证明。当调整方差分量和遗传力与未调整对应物进行比较时，没有获得简单的趋势，但大多数模型倾向于减少遗传效应和降低遗传力。结论是，<strong>虽然空间分析为实验者提供了一个有吸引力的工具，森林遗传试验缺乏一个因果关系假说需要模型搜索，而不保证真正的处理效果。空间分析为需要收集额外的站点信息以提供更强大的分析提供了很好的指标。仔细的规划和集中的场地准备可以大大减少空间协方差和空间分析的需要。</strong></p>
+
+<hr />
+
+<p>在重复区组内的环境梯度（物理因素，地形等）和相邻处理单元之间的竞争对大多数田间试验中处理效果的可靠（精确）估计造成严重的障碍（Binns1987; Correll和Cellier1987; H位hn1973; Loo一DinkinsandTauer1987;改善这种效应的最有效的对策之一是使用<strong>不完全区组设计（Cochran和Cox 1957）</strong>，或者是减少小区大小以及由此的区组大小（Cochran和Cox 1957; Cotterill和James1984; Lambeth和Gladstone1983; Libbyand Cockerham 1980; Loo一DinkinsandTauer1987; Wrightand Freeland1960）。然而，**减少小区大小不可避免地增加了接受不同处理的植物之间的相互作用，以及在植物间竞争的情况下，对于效率较低的设计（CochranandCox1957; H让hn1974; Magnussen1989a）。林木的遗传测定尤其要面对有这种性质的问题。森林50115中的区块微环境模式和大量遗传项目entries具有复杂的实验设计。</p>
+
+<p>虽然各种网格和不完全块设计 1937）已经大大改善了情况，持续的问题仍然是由于森林和swith中的空间过程的强时间修改发出的环境梯度短距离（CorrellandCellier 1987; LepsandKindlmann1987; Loo•DinkinsandTauer 1987; ModjeskaandRawlings1983; Stern1965; Reedand Burkhart1985）。均匀性试验（Love1936; ModjeskaandRawlings 1983; Smith1938; Stern1968）经常证明，在相邻地块上进行的观测更接近于随机观测，是正空间协方差的指示。空间协方差的存在可能导致严重违反独立观察的假设，这是方差分析的基石（Searle1987）。在存在显着空间分布的情况下，将普通最小二乘法应用于数据集协方差或自相关，因为它们通常被称为（Cliffandord1981），可能在效应和方差分量的估计中引入严重的精度损失（BesagandKempton1986）。因此，在分析方法中可以减少精确度的损失观测值的空间相关性（即观测值的不确定性）（Magnussen 1989a）。幸运的是，在过去二十年中，我们在能力建模和统计分析空间环境变化方面取得了快速发展（Bartlett 1978; Besag1974; BesagandKempton1986; Cliffandord 1981; DraperandGuttmann1980; Greenetal.1985; KemptonandHowes1981; Wilkinsonetal.1983）。
+本研究说明，通过适当的模型选择，最近邻（NN）分析可以减少来自加拿大安大略省三个森林遗传学试验的数据的空间自相关的影响。在这项研究中共分析了11个空间模型，并与经典的双向方差分析进行比较。选择的模型代表了所有各种类型的可能在林业试验中有用的空间模型。提出几个模型的目的是双重的：第一，提高实地实验者关于可能强大的模型的意识，其中许多仍然没有被广泛接受，第二，证明模型选择是重要的。模型选择在森林遗传学试验中是特别困难的，其中效应和处理之间没有明确的区别，并且遗传效应不能无错误地估计。这些独特的问题倾向于模糊模型类型之间的联系。因此，在森林遗传学试验中需要对各种模型类型进行明显的非关键测试。模型的详细或彻底的统计描述超出了本研究的范围。展示了分析模型选择对遗传变异和遗传力估计的影响。
+高度增长数据，遗传标识符（标签）和空间位置（绘图，行和列数）是可用于空间分析的唯一信息来源。因此，每个空间模型的优点的评价限于误差方差的大小，对遗传变异的影响和治疗差异的显着性。其他有价值的标准，如适合生物现实，固体变异的映射和可解释的生物参数，由于缺乏适当的数据，不能成为评价的一部分。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%A9%BA%E9%97%B4/magnussen-1993-ari-nn-/">
+                <h2 class="post-title">Magnussen-1993-ARI-NN-</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (57 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>Magnussen S. Bias in genetic variance estimates due to spatial autocorrelation. Theor. Appl. Genet. 1993;86:349–55.</li>
+</ol>
+</blockquote>
+
+<p>遗传田间试验分析的一个中心问题是“遗传”和“环境”效应的二分法，因为一个不能被定义为没有另一个。来自768,000个完全随机区组设计的模拟家族试验的结果表明，<strong>当表型观察与一级自回归（AR1）过程相容时，来自多单位小区设计的家族方差分量的估计中存在严重向上偏差。家族方差的膨胀，因此，加性遗传方差和狭义的个体遗传性在AR1过程中随着最近邻相关性（ρ）的增加而指数地进行。通货膨胀率的显着差异在各种小区配置中持续存在。在ρ= 0.2时，家庭差异的通货膨胀率达到48-73％。通货膨胀率与遗传性水平无关</strong>。修改的Papadakis最近邻（NN）调整程序测试他们消除家庭方差偏差的能力。基于Mead的植物间相互作用系数的NN-调整和来自Bartlett的同时自回归方案的NN-调整去除了由表型相关性引入的高达97％的偏差。 NN调整的估计比未调整的估计略高（5-8％）的相对误差。</p>
+
+<hr />
+
+<p>介绍
+<strong>在田间试验中的最近邻（NN）共享一个共同的微环境，它倾向于使非竞争邻居的观察结果与随机选择的试验观察结果更相似（Cliff和Ord 1981; Upton和Fingleton 1985）</strong>。已知相邻实验单元之间缺乏独立性导致估计处理效果和处理对比的标准误差的偏差（Binns 1987; Kempton和Howes 1981; Magnussen 1990; Wilkinson等人1983）;它也膨胀了点间方差（Magnussen 1989a; Smitth 1938; Snedecor和Cochran 1971）。今天，<strong>田间试验的分析者喜欢大量的空间方法和[NN调整技术，可以提高现场实验的精度和精度（例如，Corllll和Anderson 1983; Cullis和Gleeson 1989; Ord 1975 ; Stein和Corsten 1991; Zimmerman和Harville 1991）</strong>。尽管这种进展和怀疑遗传学试验中空间相关观察的常规分析可能是灾难性的（Stroup和Mulitze 1991），但是很少有系统地量化NN相关观察对估计的影响的遗传变异。在这一领域取得进展的主要障碍是植根于任何试验中遗传和环境影响的混杂（Gregorius和Namkoong 1987）。估计的“遗传效应”以参考群体和参考环境为条件，反之亦然（Monserud和Rehfeldt 1990）。面对田间试验中一阶近邻之间的正相关，如何将表型观察分解成正交和无偏的“遗传”和“环境”效应的问题变得复杂。这里提出的研究旨在通过模拟建立表型一级自回归（ARI）过程对完全随机区组设计中家族方差分量估计的影响。经验相关模式似乎与这种类型的过程兼容（Besag和Kempton 1986; Binns 1987; Magnussen 1990）。模拟中包括的设计是在森林遗传学试验中最常遇到的那些，其中空间依赖性的问题是特别麻烦的，因为大量条目，<strong>斑块状微网格马赛克和测试的长时间允许出现明显的空间相互关系</strong>（Correll和Cellier 1987; Libby和Cockerham 1980; Stern 1965）。将引入可行的（不一定是最优的）NN调整程序的选择，并评估其消除由表型值的相关性引起的家族方差分量中的偏差的能力。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/diallel/mahgoub2011-%E6%AD%A3%E5%8F%8D%E4%BA%A4/">
+                <h2 class="post-title">Mahgoub2011-正反交</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (50 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Mahgoub, G. M. a. (2011). Partitioning of General and Specific Combining Ability Effects for Estimating Maternal and Reciprocal Effects. Journal of Agricultural Science, 3(2), 213–222. <a href="http://doi.org/10.5539/jas.v3n2p213">http://doi.org/10.5539/jas.v3n2p213</a></p>
+</blockquote>
+
+<p>一般和特定的组合能力效应根据所提出的模型进行划分，以评估每个亲本在其杂交组合中用作雌性或雄性时的一般和特异性组合能力效应。一个工作示例包括八个父母之间的全双工，使用所有可能的混合组合。本研究的目的是：（1）比较分配前后的GCA和SCA效应，（2）评价每个亲本作为雄性或雌性亲本的交叉组合的相对贡献（3） ）以GCA和SCA效应的形式估计母体效应，以及（4）估计母体和互惠效应之间的关系。结果显示，根据Griffing方法估计的GCA效应等于当分配后其在其杂交组合中用作雄性和雌性时每个亲本的GCA效应的平均值。此外，<code>女性和男性GCA效应之间的差异的平均值将提供母体效应的精确估计</code>。这将证明母体效应对有利的等位基因提供精确的估计，其主要是加性的。根据Griffing方法计算的SCA效应是每个交叉及其倒数的SCA效应的平均值。根据提出的模型，每个交叉的SCA效应与其互逆的平均值等于相互效应。这将证明，<code>相互效应提供了核和细胞质基因之间的相互作用的精确估计，因为在交叉的核内部的男性和女性等位基因之间的相互作用类似于其相互杂交</code>。</p>
+
+<hr />
+
+<p>1.介绍
+已经证明，diallel杂交对于植物育种者在作出关于使用的育种系统类型的决定和选择显示最大成功希望的育种材料（Gardner和Eberhart，1966）中具有相当大的价值。 Widstrom et al。 （1992）报道了特异性组合能力效应的透析评估提供：1）关于要暴露于相互循环选择程序的配对群体的信息; 2）选择配对群体提取新的和高性能近交系的基础。
+Griffing（1956）定义了二叶十字，其已经广泛用于植物育种。然而，一般和特异性组合能力效应通常基于亲本在其杂交组合中用作雌性或雄性时的平均效应，假设它们可能类似于Yates（1947）提出的相似性。 Griffing的方法1和3，其中包括交叉和它们的倒数，固定模型，每个交叉组合只估计一个GCA效应值和一个SCA效应值。当这个特定的亲本用作雄性或备选地雌性时，这些估计的效应不分开地显示每个亲本对交叉组合的贡献。
+一般和特定组合能力效果的分区将提供关于每个父母在其混合组合中用作女性或男性时的附加信息（Mahgoub，2004）。它应该也提供关于父母之间的最佳组合之间的相互作用的性质的精确信息。因此，提出的模型如下：
+这证明了交叉的SCA效应与其倒数之间的差异的平均值正好等于估计的互惠效应。因此，这种差异为互惠效应提供了精确的估计。这表明每个交叉和其倒数之间SCA效应的差异提供了可能存在于核基因和细胞质基因之间的相互作用的精确估计。这证明SCA效应的分配向植物育种者提供了关于估计核和细胞质基因之间的相互作用的大小的另外的信息。因此，预期估计的相互效应将低估在交叉和其相互的SCA效应方面可能存在的真正差异。特定的合并能力效应提供了优势效应的估计。因此，<code>在SCA效应方面，交叉和其倒数之间可能存在的真正差异显示并表达了核基因和细胞质基因之间有多少相互作用</code>。
+因此，s之间的平均差？和s ??? =如上文方法1中所示的估计的相互效应。这将证明交叉与其倒数的相互作用效应之间的差异主要是由于如上所述的核和细胞质基因之间的相互作用。雌性亲本的细胞质可以代表不同的环境，其从一个亲本到另一个亲本不同，并且因此与核基因不同地相互作用。 Cooper等报道了核和细胞质基因之间的相互作用（1990）; Singh和Brown（1991）; Ekiz和Konzak（1991a，b和c）; Maan（1992）; ＆Voluevich和Buloichik（1992）。
+提高用于估计GCA和SCA效应的统计模型的精度可以提供用于选择育种方法的精确工具以及在互惠循环选择程序中使用的配对群体。
+本研究的目的是：（1）比较分配前后的GCA和SCA效应，（2）评价每个亲本作为雄性或雌性亲本用于其交叉组合的相对贡献， （3）估计母亲和GCA效应之间的关系，（4）估计SCA效应，相互效应和核和细胞质基因之间的相互作用之间的关系。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+        </div>
+
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="../../page/19/">&larr; Newer Posts</a>
+              </li>
+            
+            
+              <li class="next">
+                <a href="../../page/21/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

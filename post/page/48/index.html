@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Posts</title>
+  <meta property="og:title" content="Posts" />
+  <meta name="twitter:title" content="Posts" />
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/" />
+  <link rel="alternate" href="../../../post/index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  <header class="header-section ">
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Posts</h1>
+              <hr class="small">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    
+  <div class="container" role="main">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="../../../post/rcodes/%E4%B8%80%E4%B8%AA%E5%8F%96%E4%BB%A3cat%E7%9A%84%E5%87%BD%E6%95%B0/">
+                <h2 class="post-title">一个取代`cat`的函数</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <pre><code>msg(
+    cli::rule(
+      center = paste0(crayon::bold(&quot;Number &quot;), crayon::red(length(sentList)), &quot; --- &quot;,
+                      crayon::bold(&quot;Time &quot;), crayon::green(round(elapsed_time[3],2), &quot;s&quot;))
+    ),
+    startup = TRUE
+  )
+</code></pre>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-abe7131ea4f95cef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tidyverse.png" /></p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-821371a6edb8e60a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="dword.png" /></p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/%E9%9A%8F%E7%AC%94/%E4%B8%8D%E5%AE%8C%E5%85%A8%E5%8C%BA%E7%BB%84%E8%AE%BE%E8%AE%A1/">
+                <h2 class="post-title">不完全区组设计</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  林木子代测定林田间试验较常采用随机完全区组设计（RCB）和不完全区组设计（IB）。在R中利用agricolae包能够实现RCB设计，对于后者则只能进行平衡不完全区组设计（BIB）。BIB要求bkvrλ全为整数，b是区组数、k是区组大小即小区数、v是处理数比如家系个数、r是重复次数，λ=r(k-1)/(v-1)，对于测定处理较多的材料不能满足λ为整数这个限制。ibd这个包开发者说能够实现不平衡IB设计，但同样在处理较多时给不出设计结果。最终在网页找到方法，函数的代码如下
+incomplete.block.design &lt;- function(number.alternatives, number.blocks, alternatives.per.block, n.repeats = 1000){ # Check that the parameters are appropriate # Sawtooth recommends that number.blocks &gt;= 3 * number.alternatives / alternatives.per.block if (number.blocks &lt; 3 * number.alternatives / alternatives.per.block) warning(&quot;It is recomended that number.blocks &gt;= 3 * number.alternatives / alternatives.per.block&quot;); library(AlgDesign) best.result = NULL best.D = -Inf for (i in 1:n.repeats){ alg.results &lt;- optBlock(~.,withinData=factor(1:number.alternatives),blocksizes=rep(alternatives.per.block,number.blocks), nRepeats=5000) #BIB if (alg.results$D &gt; best.D){ best.result = alg.results best.D = alg.
+                  <a href="../../../post/%E9%9A%8F%E7%AC%94/%E4%B8%8D%E5%AE%8C%E5%85%A8%E5%8C%BA%E7%BB%84%E8%AE%BE%E8%AE%A1/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/stat/%E4%BB%94%E7%BB%86%E8%AF%84%E4%BC%B0%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/">
+                <h2 class="post-title">仔细评估模型预测</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  仔细评估模型预测 2016年12月2日 由约翰·摩
+（本文首次发表于的R -赢矢量博客 ，并亲切地促进了R-博客）
+有一件事我教的是：评估回归模型的性能时， 你不应该使用关联作为你的分数 。 这是因为相关性告诉你结果的重新缩放是否有用，但是你想知道手中的结果是否真的有用。 例如：火星气候轨道器软件在磅-秒为单位期待的命令发出推力命令，发动机是在牛顿秒为单位 。 这两个量通过1.4881639的常数比相关，因此以磅 - 秒为单位测量的任何值与以牛顿 - 秒为单位的相同测量值具有1.0的相关性。 然而，一个不是另一个，区别是为什么火星气候轨道器“遇到火星在低于预期的高度和由于大气压力分解。 需要毫无意外地引发了与计算相关相关的隐式重新缩放方便的直接F-测试是我们提供的原因之一SIGR [- R库。 然而，即使事情可能变得混乱。
+
+请阅读一个讨厌的小例子。
+考虑以下“无害数据帧”。
+d &lt;-data.frame（prediction = c（0,0，-1，-2,0,0，-1，-2）， actual = c（2,3,1,2,2,3,1,2））
+检查“的质量推荐的测试prediction 相关的”，“ actual ”是F-检验（这是测试stats::lm 使用）。 我们可以直接运行该测试sigr （假设我们已经安装包），如下所示：
+sigr :: formatFTest（d，&rsquo;prediction&rsquo;，&rsquo;actual&rsquo;，format =&lsquo;html&rsquo;）$ formatStr
+F测试总结*：（R 2  = -16，F（1,6）=* - *5.6，P* = NS）。 sigr 报告的R平方-16（请参阅这里的R平方的一些讨论）。 这可能是混乱的，但它正确传达我们没有模式，实际上是“ prediction ”是比只使用平均（一个非常传统的空模型）差。 然而， cor.test 似乎认为“ prediction ”是一个可用的模型：
+cor.test（d $ prediction，d $ actual） Pearson的乘积矩相关 data：d $ prediction和d $ actual t = 1.
+                  <a href="../../../post/stat/%E4%BB%94%E7%BB%86%E8%AF%84%E4%BC%B0%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/%E4%BB%A3%E6%9B%BF/">
+                <h2 class="post-title">代替</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <p><img src="http://upload-images.jianshu.io/upload_images/3289684-e309077f1cd39dc3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="代替.png" /></p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/%E9%9A%8F%E7%AC%94/%E5%85%B1%E7%A5%96%E7%B3%BB%E6%95%B0%E7%9B%B8%E5%85%B3%E7%B3%BB%E6%95%B0%E5%92%8C%E8%BF%91%E4%BA%A4%E7%B3%BB%E6%95%B0/">
+                <h2 class="post-title">共祖系数、相关系数和近交系数</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Pemberton J . 2008. Wild pedigrees: the way forward. Proceedings of the Royal Society B: Biological Sciences, 275(1635): 613–621.
+这三者能解决进化遗传学中的许多问题</p>
+</blockquote>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-275ae6467146c9ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/r%E8%AE%B0%E5%BD%95%E6%9C%AC/%E5%86%99%E5%A5%BDr%E4%BB%A3%E7%A0%81/">
+                <h2 class="post-title">写好R代码</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  
+
+<h1 id="写好r代码和写好-https-www-rstudio-com-rviews-2016-12-02-writing-good-r-code-and-writing-well"><a href="https://www.rstudio.com/rviews/2016/12/02/writing-good-r-code-and-writing-well/">写好R代码和写好</a></h1>
+
+<blockquote>
+<p>约瑟夫·里克特</p>
+</blockquote>
+
+<p>如果你渴望写出好的R代码，你可能会发现偶尔花一些时间阅读关于写作：阅读关于编写R代码，阅读关于写你写的R代码是有帮助的。 （如果你写了一些优秀的R代码，你很可能有机会写它。）
+对于阅读关于编写好的R代码，一个开始的地方可能是许多R风格指南之一。 哈德利韦翰包括<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=http://adv-r.had.co.nz/Style.html&amp;usg=ALkJrhizzsiQlpOOrr60_Pa74aaPNVHMRg">风格指南</a>在他的预研书是短暂的甜蜜，并根据唯一略显不足简洁<a href="https://google.github.io/styleguide/Rguide.xml">谷歌的ř风格指南</a> 。 也看看格雷厄姆·威廉姆斯<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=http://handsondatascience.com/StyleO.pdf&amp;usg=ALkJrhjw_Vs6Z2cD0hs3YtzZRoKaHf7-jg">共享R代码里面-在风格</a> ，混合教程/风格指南这是他的一部分<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=http://togaware.com/onepager/&amp;usg=ALkJrhgIBS7oJXwVSTUQ-xeuQh5KIxd7rA">HandsOnDataScience</a>工作正在进行中。 在他的优雅介绍中，Graham写道：
+&gt; 数据科学家编写程序以多种方式摄取，管理，转移，可视化，分析和建模数据。 它是一种艺术，能够通过语言来传达我们的探索和理解，尽管是一种编程语言。 当然，我们的程序必须可以由计算机执行，但计算机不关心我们的程序，除了它们在语法上是正确的。 我们的重点应该是让他人阅读和理解我们通过我们的计划提出的叙述。</p>
+
+<p>沿着这些线路，洛朗·加托提供在他二十页教程“，在清洁，优雅的语法方面更好- [R编程&hellip;&hellip;”他的想法<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://www.bioconductor.org/help/course-materials/2013/CSAMA2013/friday/afternoon/R-programming.pdf&amp;usg=ALkJrhhRpZdEdcNRrTiSI3Ay2y3scV7DEQ">写出更好的R代码里面</a> 。
+如果你是刚开始写R功能，你可能会发现Slawa Rokicki的岗位上<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=https://www.r-bloggers.com/how-to-write-and-debug-an-r-function/&amp;usg=ALkJrhgM2PKne0ibM7am-jDHqbamUKcBGg">如何编写和调试R函数</a>或卡斯马Shalizi的写了<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf&amp;usg=ALkJrhhm_IIWVWFe72caTMKYiFymaU90Jw">写作r函数</a>很有帮助。 如果你这样做不厌其烦通过这些风格指南之一工作，请坚持至少老程序员季奥米季斯Spinellis“的第一条规则<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=http://www.informit.com/articles/article.aspx%3Fp%3D2223710&amp;usg=ALkJrhgz8CWhCREq7Hh6ruFVdaIGzpKWGw">15规则编写质量代码</a> 。
+最后，我要认真对待格雷厄姆威廉姆斯：编程是一种沟通的艺术，我相信，实践这个艺术也可能涉及偶尔写有吸引力的叙述关于程序。 这里有一些简短但有价值的指南，写得很好。 威廉·辛塞尔是解释清楚和不受影响的写作艺术的主人。他<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=http://www.openculture.com/2015/05/10-writing-tips-from-legendary-writing-teacher-william-zinsser.html&amp;usg=ALkJrhhg8qQ4C7qR0aBdTG1n-Fp7VPTZBQ">10写作技巧</a>可能会导致您花一些时间与他的书。 另外值得一看是从写作技巧， <a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=http://blog.uncollege.org/learn-to-write-well&amp;usg=ALkJrhhMle28yq5AhhvhEUpWiZEZ6VhwgQ">摩根Ostrowsky</a> ， <a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=http://writetodone.com/how-to-write-well-self-editing-tips/&amp;usg=ALkJrhjaOGi8bnDEVih0QPNib_zQzvwGbA">CS莱金</a> ，以及<a href="https://translate.googleusercontent.com/translate_c?depth=1&amp;hl=en&amp;ie=UTF8&amp;prev=_t&amp;rurl=translate.google.com&amp;sl=auto&amp;tl=zh-CN&amp;u=http://learning.blogs.nytimes.com/2012/09/20/writing-rules-advice-from-the-new-york-times-on-writing-well/%3F_r%3D0&amp;usg=ALkJrhgQU7v1PZCve1PIiR5q1tGRpihxYg">纽约时报“的</a>阿曼达·克里斯蒂·布朗和Katherine舒尔滕。 这四个写作教练中的三个建议愿意的作家阅读，阅读广泛超出他们的专业领域，并阅读大师。 关于这个建议，我发现这个短小说由小说家雅各·马特尔鼓舞。</p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/%E9%9A%8F%E7%AC%94/%E5%87%A0%E7%A7%8D%E5%B8%B8%E8%A7%81%E9%92%88%E5%8F%B6%E6%A0%91%E7%9A%84%E4%B8%AD%E8%8B%B1%E6%8B%89%E4%B8%81%E5%90%8D/">
+                <h2 class="post-title">几种常见针叶树的中英&amp;拉丁名</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <table>
+<thead>
+<tr>
+<th>英文名</th>
+<th>拉丁名</th>
+<th>直译</th>
+<th>中文名</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Scots pine</td>
+<td><em>Pinus sylvestris</em></td>
+<td>苏格兰松</td>
+<td>樟子松/欧洲赤松</td>
+</tr>
+
+<tr>
+<td>Douglas fir</td>
+<td><em>Pseudotsuga menziesii</em></td>
+<td>道格拉斯冷杉</td>
+<td>花旗松</td>
+</tr>
+
+<tr>
+<td>Norway spruce</td>
+<td><em>Picea abies</em></td>
+<td>挪威云杉</td>
+<td>欧洲云杉</td>
+</tr>
+
+<tr>
+<td>Slash pine</td>
+<td><em>Pinus elliotii</em></td>
+<td>沼泽松</td>
+<td>湿地松</td>
+</tr>
+
+<tr>
+<td>Loblolly pine</td>
+<td><em>Pinus taeda</em></td>
+<td>NA</td>
+<td>火炬松</td>
+</tr>
+</tbody>
+</table>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/%E9%9A%8F%E7%AC%94/%E5%88%B0%E5%BA%95%E6%98%AF%E5%9B%BA%E5%AE%9A%E8%BF%98%E6%98%AF%E9%9A%8F%E6%9C%BA/">
+                <h2 class="post-title">到底是固定还是随机？</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  一个效应到底应该当做固定还是随机通常令人困惑。如果已有惯例，例如父本、家系效应一般当做随机，而重复、性别当做固定，照搬就是。相反，对另外一些效应的处理如果没有多少文献支撑，就有点让人模棱两可。总不能没有规则地按照自己的喜好吧？Smith（2001）给了一个明确的信息，即在需要预测一个效应的未来表现时要随机，否则要固定，并举例说要预测品种（variety）的未来表现，而不希望预测环境效应。这样这个问题就很明确了。原文如下：
+ Smith A, Cullis B, Gilmour A. 2001. The Analysis of Crop Variety Evaluation Data in Australia. Australian &amp; New Zealand Journal of Statistics, 43(2): 129–145.
+One possibly contentious issue is the choice between fixed and random effects in the analysis. The standard text-book notion of effects being random if they have been sampled from a population and fixed if attention is confined only to those effects in the model (see Searle, 1971, for example) is unhelpful and can lead to a circular argument.
+                  <a href="../../../post/%E9%9A%8F%E7%AC%94/%E5%88%B0%E5%BA%95%E6%98%AF%E5%9B%BA%E5%AE%9A%E8%BF%98%E6%98%AF%E9%9A%8F%E6%9C%BA/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/stat/%E5%8D%8A%E5%8F%82%E6%95%B0%E6%A8%A1%E5%9E%8B/">
+                <h2 class="post-title">半参数模型</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  
+
+<blockquote>
+<p>Kosorok MR (2008) Introduction to empirical processes and semiparametric inference, 1st edn. Springer</p>
+</blockquote>
+
+<h2 id="3-1半参数模型和效率">3.1半参数模型和效率</h2>
+
+<p><strong>统计模型</strong>是在样本空间*X*上的概率测量{P∈<em>P</em>}的集合。这样的模型可以以P = {Pθ：θ∈Θ}的形式表示，其中θ是一些参数空间。 半参数模型是其中Θ具有一个或多个无限维分量的统计模型。 例如，线性回归模型的参数空间（1.1），其中
+Y = β&rsquo;Z + e
+由两个分量组成，即p维欧氏空间的子集（对于回归参数β）和（e，Z）的所有联合分布函数的无限维空间。半参数推理的目的是建立用于评估半参数模型参数的最佳估计量和测试统计量。</p>
+
+<hr />
+
+<h2 id="学习资料-http-bbs-pinggu-org-forum-php-mod-forumdisplay-fid-65-filter-typeid-typeid-467-参数-非参-半参模型-http-bbs-pinggu-org-thread-2163476-1-1-html"><a href="http://bbs.pinggu.org/forum.php?mod=forumdisplay&amp;fid=65&amp;filter=typeid&amp;typeid=467">[学习资料]</a> <a href="http://bbs.pinggu.org/thread-2163476-1-1.html">参数、非参、半参模型</a></h2>
+
+<p>参数回归是我们最长用的模型。与参数回归相对的非参数回归，这种模型对变量分布等假定并不是很严等，因此可以说扩展了参数回归的应用范围。但是<strong>非参数回归的局限性在于，在存在较多的解释变量时，很容易出现所谓的“维度灾难”，像方差的急剧增大等现象</strong>。这类模型包括<strong>实例回归，局部加权回归（LOESS）和样条回归</strong>。<strong>非参数方法一般适用于低维空间（较少的解释变量）。该局部加权回归曲线是利用点附近的点信息，使用的点信息越多，曲线与拟合直线越接近；使用的点信息越少，与散点越吻合。在变量间非线性关联较强的情况下，相比普通回归，通常更稳健一些</strong>。
+    介于参数回归与非参回归之间的就是半参数模型，这种模型结合了前面两种参数模型的诸多优点，例如使用的连接函数、分析形式多样化，而且光滑参数值的确认均可以使用广义交叉验证技术。其应用情景首先是因变量在不符合正态分布时，该模型的结果仍然很稳定，我们可以选择不同的分布形式等。非参数模型的另一个典型应用是可以对具有截尾数据的资料进行生存预测。例如，普通生存分析，并没有很好的解决多解释变量的情况，并且对分布有特定的需求，而且当相关假定违反时，往往会对模型产生很大的影响，半参数生存分析回归模型克服了上述参数法的诸多局限，可以灵活地处理许多未知分布与不服从参数分布类型的资料。
+    另外，一个比较容易混淆的是广义可加模型（使用连接函数的可加模型），与广义线性模型很相似，主要使用非参估计的方法。
+<img src="http://upload-images.jianshu.io/upload_images/3289684-6ea8f79e2c264a2a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/%E7%A9%BA%E9%97%B4/%E5%8D%8A%E5%8F%98%E5%BC%82%E5%87%BD%E6%95%B0variogram/">
+                <h2 class="post-title">半变异函数variogram</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Lu JF, Zhang LJ (2011) Modeling and Prediction of Tree Height Diameter Relationships Using Spatial Autoregressive Models. For Sci 57:252–264.</p>
+</blockquote>
+
+<p>我们发现<strong>变差函数或地质统计权重矩阵优于其他空间权重矩阵，如邻接，逆距离和局部G（i）*统计</strong></p>
+
+<blockquote>
+<ol>
+<li>Hamann A, Namkoong G, Koshy MP. Improving precision of breeding values by removing spatially autocorrelated variation in forestry field experiments. Silvae Genet. Sauerl{ä}nder; 2002;51:210–5.</li>
+</ol>
+</blockquote>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+        </div>
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="../../../post/page/47/">&larr; Newer Posts</a>
+              </li>
+            
+            
+              <li class="next">
+                <a href="../../../post/page/49/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../post/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

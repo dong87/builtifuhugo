@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Wolak2012-Nadiv-非加性关联矩阵-动物模型</title>
+  <meta property="og:title" content="Wolak2012-Nadiv-非加性关联矩阵-动物模型" />
+  <meta name="twitter:title" content="Wolak2012-Nadiv-非加性关联矩阵-动物模型" />
+  <meta name="description" content="Wolak ME (2012) Nadiv: An R package to create relatedness matrices for estimating non-additive genetic variances in animal models. Methods Ecol Evol 3:792–796. doi: 10.1111/j.2041-210X.2012.00213.x
+ 通过采用“动物模型”，在动物育种科学中具有长期和久经考验的历史的混合效应模型，提出了野生种群数量性状进化研究的重大进展 （Henderson 1984; Lynch＆Walsh 1998; Kruuk 2004）。动物模型的优点 ** 使用亲戚之间的相似性来阐明在种群水平上的表型变异的基本遗传基础，该方法（1）使研究人员能够控制（或研究自己）混杂因素，因为环境或其他不可遗传 （2）在遗传参数的估计中同时利用超过亲代或后代或半同胞和完全同源的额外关系，从而增加能够研究的群体和生物体的类型，和（3）群体内无偏选择 （Lynch＆Walsh 1998; Kruuk 2004）**。 数量性状的表型方差可以分解为加性遗传，非加性遗传和环境变异来源。 非加性遗传方差可以进一步细分为优势和上位方差。 加性，显性和上位性遗传变异与个体通过在相同基因座有后裔相同的等位基因，在相同基因座的两个等位基因或不同基因座的等位基因相同的概率成比例。 如果人们知道群体中的所有关系（即谱系），则可以在动物模型中估计上述遗传变异。 非加性遗传变异在生态和进化分析中很少被评估（但见Crnokrak＆Roff 1995; Waldmann 2001），尽管动物和植物育种领域已经估计了这些遗传变异超过二十年（例如， Hoeschele 1991; Tempelman＆Burn-side 1991）。 这可能是，部分是因为非加性遗传效应被认为在预测中等大小野生种群的进化轨迹（Fisher 1958）没有什么重要性。 此外，对野生生物的研究通常在群体中具有低数量的个体，特别是与在动物育种中经常处理的数量相比。 这是有问题的，因为具有太少个体的数据集不包括在动物模型中包括太多随机效应（Kruuk 2004），并且已经显示对于优势方差的估计是有问题的（Misztal 1997）。然而，如果存在优势遗传效应，但不包括在动物模型中，则它们可能偏向于加性遗传效应的预测以及加性遗传方差的估计（Lynch＆Walsh 1998; Ovaskainen，Cano＆Merila 2008; Waldmann等人2008;但参见Misztal，Lawlor＆Fernando 1997）。另外，非加性效应对于许多进化假说是中心关注的，例如：优势和上位性预期对健身的变化有实质性贡献（Wright 1929; Haldane 1932; Fisher 1958; Crnokrak＆Roff 1995;Merila¨＆Sheldon 1999）;非加性方差可以确定加性遗传方差在瓶颈后增加的程度（Cockerham＆Tachida 1988; Goodnight 1988; Willis＆Orr 1993; Barton＆Turelli 2004）;上位性可以在过程中形成累加的遗传效应和变异，例如突变和选择（Gavrilets 1993; Hermisson，Hansen＆Wagner 2003; Carter，Hermisson＆Hansen 2005），其具有对性别和重组进展的影响（Charles-worth 1990）;上位性通过Dobzhansky-Muller不兼容性的演化在物种形成中是不可或缺的一部分（Crow＆Kimura 1970; Orr 1995; Welch 2004）;健身相关性状之间的遗传相关性的符号可能取决于优势方差的量（Curtsinger，Service＆Prout 1994; Roff 1997;Merila¨＆Sheldon 1999）;支配地位可能导致近亲繁殖抑制或杂种优势（Roff 1997），特别是在保护关注的小群体中（Waldmann等人2008）;和性联合优势效应可能在性二倍性性状的演变中发挥作用（Fairb-airn＆Roff 2006）。 除了由于总体大小的结果不能获得非加性方差的有意义的估计（参见下面的“抽样协方差和置信区间”），在动物模型中包括优势和上位性的下一个挑战是构建非加性遗传关系矩阵（即优势矩阵D和三个上位上位性矩阵：通过加性AA的加性，通过优势AD的加性和通过优势DD-的优势，其中加性遗传关系矩阵由A和黑体字表示，大写字母表示矩阵）。另一个挑战是获得这些矩阵的逆，这是解决动物模型中的方程组所需要的。虽然构建必要的矩阵逆过程已经制定出来（例如Hoeschele＆VanRaden 1991），只有添加的逆矩阵的创建已经被并入大多数生态学家和进化生物学家使用的软件：ASReml（Gilmour et al。2009） ，MCMCglmm（Hadfield 2010）和WOMBAT（Meyer 2007）。本研究给出了在广泛使用的统计程序R（R Development Core Team，2011）中实现的软件包nadiv（Non-Additive InVerses）的概述，其可以用于构建优势和上位性遗传相关矩阵及其逆矩阵。倒位随后可用于各种动物模型软件程序中用于数量性状的单变量或多变量分析。下面，示例简要地演示了使用nadiv的模拟数据setwarcolak的主要功能。">
+  <meta property="og:description" content="Wolak ME (2012) Nadiv: An R package to create relatedness matrices for estimating non-additive genetic variances in animal models. Methods Ecol Evol 3:792–796. doi: 10.1111/j.2041-210X.2012.00213.x
+ 通过采用“动物模型”，在动物育种科学中具有长期和久经考验的历史的混合效应模型，提出了野生种群数量性状进化研究的重大进展 （Henderson 1984; Lynch＆Walsh 1998; Kruuk 2004）。动物模型的优点 ** 使用亲戚之间的相似性来阐明在种群水平上的表型变异的基本遗传基础，该方法（1）使研究人员能够控制（或研究自己）混杂因素，因为环境或其他不可遗传 （2）在遗传参数的估计中同时利用超过亲代或后代或半同胞和完全同源的额外关系，从而增加能够研究的群体和生物体的类型，和（3）群体内无偏选择 （Lynch＆Walsh 1998; Kruuk 2004）**。 数量性状的表型方差可以分解为加性遗传，非加性遗传和环境变异来源。 非加性遗传方差可以进一步细分为优势和上位方差。 加性，显性和上位性遗传变异与个体通过在相同基因座有后裔相同的等位基因，在相同基因座的两个等位基因或不同基因座的等位基因相同的概率成比例。 如果人们知道群体中的所有关系（即谱系），则可以在动物模型中估计上述遗传变异。 非加性遗传变异在生态和进化分析中很少被评估（但见Crnokrak＆Roff 1995; Waldmann 2001），尽管动物和植物育种领域已经估计了这些遗传变异超过二十年（例如， Hoeschele 1991; Tempelman＆Burn-side 1991）。 这可能是，部分是因为非加性遗传效应被认为在预测中等大小野生种群的进化轨迹（Fisher 1958）没有什么重要性。 此外，对野生生物的研究通常在群体中具有低数量的个体，特别是与在动物育种中经常处理的数量相比。 这是有问题的，因为具有太少个体的数据集不包括在动物模型中包括太多随机效应（Kruuk 2004），并且已经显示对于优势方差的估计是有问题的（Misztal 1997）。然而，如果存在优势遗传效应，但不包括在动物模型中，则它们可能偏向于加性遗传效应的预测以及加性遗传方差的估计（Lynch＆Walsh 1998; Ovaskainen，Cano＆Merila 2008; Waldmann等人2008;但参见Misztal，Lawlor＆Fernando 1997）。另外，非加性效应对于许多进化假说是中心关注的，例如：优势和上位性预期对健身的变化有实质性贡献（Wright 1929; Haldane 1932; Fisher 1958; Crnokrak＆Roff 1995;Merila¨＆Sheldon 1999）;非加性方差可以确定加性遗传方差在瓶颈后增加的程度（Cockerham＆Tachida 1988; Goodnight 1988; Willis＆Orr 1993; Barton＆Turelli 2004）;上位性可以在过程中形成累加的遗传效应和变异，例如突变和选择（Gavrilets 1993; Hermisson，Hansen＆Wagner 2003; Carter，Hermisson＆Hansen 2005），其具有对性别和重组进展的影响（Charles-worth 1990）;上位性通过Dobzhansky-Muller不兼容性的演化在物种形成中是不可或缺的一部分（Crow＆Kimura 1970; Orr 1995; Welch 2004）;健身相关性状之间的遗传相关性的符号可能取决于优势方差的量（Curtsinger，Service＆Prout 1994; Roff 1997;Merila¨＆Sheldon 1999）;支配地位可能导致近亲繁殖抑制或杂种优势（Roff 1997），特别是在保护关注的小群体中（Waldmann等人2008）;和性联合优势效应可能在性二倍性性状的演变中发挥作用（Fairb-airn＆Roff 2006）。 除了由于总体大小的结果不能获得非加性方差的有意义的估计（参见下面的“抽样协方差和置信区间”），在动物模型中包括优势和上位性的下一个挑战是构建非加性遗传关系矩阵（即优势矩阵D和三个上位上位性矩阵：通过加性AA的加性，通过优势AD的加性和通过优势DD-的优势，其中加性遗传关系矩阵由A和黑体字表示，大写字母表示矩阵）。另一个挑战是获得这些矩阵的逆，这是解决动物模型中的方程组所需要的。虽然构建必要的矩阵逆过程已经制定出来（例如Hoeschele＆VanRaden 1991），只有添加的逆矩阵的创建已经被并入大多数生态学家和进化生物学家使用的软件：ASReml（Gilmour et al。2009） ，MCMCglmm（Hadfield 2010）和WOMBAT（Meyer 2007）。本研究给出了在广泛使用的统计程序R（R Development Core Team，2011）中实现的软件包nadiv（Non-Additive InVerses）的概述，其可以用于构建优势和上位性遗传相关矩阵及其逆矩阵。倒位随后可用于各种动物模型软件程序中用于数量性状的单变量或多变量分析。下面，示例简要地演示了使用nadiv的模拟数据setwarcolak的主要功能。">
+  <meta name="twitter:description" content="Wolak ME (2012) Nadiv: An R package to create relatedness matrices for estimating non-additive genetic variances in animal models. Methods Ecol Evol 3:792–796. doi: 10.1111/j.2041-210X.2012.00213.x
+ 通 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/wolak2012-nadiv-%E9%9D%9E%E5%8A%A0%E6%80%A7%E5%85%B3%E8%81%94%E7%9F%A9%E9%98%B5-%E5%8A%A8%E7%89%A9%E6%A8%A1%E5%9E%8B/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/wolak2012-nadiv-%E9%9D%9E%E5%8A%A0%E6%80%A7%E5%85%B3%E8%81%94%E7%9F%A9%E9%98%B5-%E5%8A%A8%E7%89%A9%E6%A8%A1%E5%9E%8B/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Wolak2012-Nadiv-非加性关联矩阵-动物模型</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (105 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Wolak2012-Nadiv-非加性关联矩阵-动物模型</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (105 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Wolak ME (2012) Nadiv: An R package to create relatedness matrices for estimating non-additive genetic variances in animal models. Methods Ecol Evol 3:792–796. doi: 10.1111/j.2041-210X.2012.00213.x</p>
+</blockquote>
+
+<p>通过采用<strong>“动物模型”</strong>，在动物育种科学中具有长期和久经考验的历史的混合效应模型，提出了野生种群数量性状进化研究的重大进展 （Henderson 1984; Lynch＆Walsh 1998; Kruuk 2004）。<em>动物模型的优点</em> ** 使用亲戚之间的相似性来阐明在种群水平上的表型变异的基本遗传基础，该方法（1）使研究人员能够控制（或研究自己）混杂因素，因为环境或其他不可遗传 （2）在遗传参数的估计中同时利用超过亲代或后代或半同胞和完全同源的额外关系，从而增加能够研究的群体和生物体的类型，和（3）群体内无偏选择 （Lynch＆Walsh 1998; Kruuk 2004）**。
+<strong>数量性状的表型方差可以分解为加性遗传，非加性遗传和环境变异来源。 非加性遗传方差可以进一步细分为优势和上位方差。 加性，显性和上位性遗传变异与个体通过在相同基因座有后裔相同的等位基因，在相同基因座的两个等位基因或不同基因座的等位基因相同的概率成比例。 如果人们知道群体中的所有关系（即谱系），则可以在动物模型中估计上述遗传变异。</strong>
+非加性遗传变异在生态和进化分析中很少被评估（但见Crnokrak＆Roff 1995; Waldmann 2001），尽管动物和植物育种领域已经估计了这些遗传变异超过二十年（例如， Hoeschele 1991; Tempelman＆Burn-side 1991）。 这可能是，部分是因为非加性遗传效应被认为在预测中等大小野生种群的进化轨迹（Fisher 1958）没有什么重要性。 此外，对野生生物的研究通常在群体中具有低数量的个体，特别是与在动物育种中经常处理的数量相比。 这是有问题的，<strong>因为具有太少个体的数据集不包括在动物模型中包括太多随机效应（Kruuk 2004），并且已经显示对于优势方差的估计是有问题的（Misztal 1997）</strong>。然而，<strong>如果存在优势遗传效应，但不包括在动物模型中，则它们可能偏向于加性遗传效应的预测以及加性遗传方差的估计</strong>（Lynch＆Walsh 1998; Ovaskainen，Cano＆Merila 2008; Waldmann等人2008;但参见Misztal，Lawlor＆Fernando 1997）。另外，<strong>非加性效应对于许多进化假说是中心关注的</strong>，例如：优势和上位性预期对健身的变化有实质性贡献（Wright 1929; Haldane 1932; Fisher 1958; Crnokrak＆Roff 1995;Merila¨＆Sheldon 1999）;非加性方差可以确定加性遗传方差在瓶颈后增加的程度（Cockerham＆Tachida 1988; Goodnight 1988; Willis＆Orr 1993; Barton＆Turelli 2004）;上位性可以在过程中形成累加的遗传效应和变异，例如突变和选择（Gavrilets 1993; Hermisson，Hansen＆Wagner 2003; Carter，Hermisson＆Hansen 2005），其具有对性别和重组进展的影响（Charles-worth 1990）;上位性通过Dobzhansky-Muller不兼容性的演化在物种形成中是不可或缺的一部分（Crow＆Kimura 1970; Orr 1995; Welch 2004）;健身相关性状之间的遗传相关性的符号可能取决于优势方差的量（Curtsinger，Service＆Prout 1994; Roff 1997;Merila¨＆Sheldon 1999）;支配地位可能导致近亲繁殖抑制或杂种优势（Roff 1997），特别是在保护关注的小群体中（Waldmann等人2008）;和性联合优势效应可能在性二倍性性状的演变中发挥作用（Fairb-airn＆Roff 2006）。
+除了由于总体大小的结果不能获得非加性方差的有意义的估计（参见下面的“抽样协方差和置信区间”），<strong>在动物模型中包括优势和上位性的下一个挑战是构建非加性遗传关系矩阵（即优势矩阵D和三个上位上位性矩阵：通过加性AA的加性，通过优势AD的加性和通过优势DD-的优势，其中加性遗传关系矩阵由A和黑体字表示，大写字母表示矩阵）。另一个挑战是获得这些矩阵的逆，这是解决动物模型中的方程组所需要的</strong>。虽然构建必要的矩阵逆过程已经制定出来（例如Hoeschele＆VanRaden 1991），只有添加的逆矩阵的创建已经被并入大多数生态学家和进化生物学家使用的软件：ASReml（Gilmour et al。2009） ，MCMCglmm（Hadfield 2010）和WOMBAT（Meyer 2007）。本研究给出了在广泛使用的统计程序R（R Development Core Team，2011）中实现的软件包nadiv（Non-Additive InVerses）的概述，其可以用于构建优势和上位性遗传相关矩阵及其逆矩阵。倒位随后可用于各种动物模型软件程序中用于数量性状的单变量或多变量分析。下面，示例简要地演示了使用nadiv的模拟数据setwarcolak的主要功能。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/gs/wolc2016-%E5%A4%A7%E6%95%88%E5%BA%94qtl-bayesb%E5%92%8Cbayesc%E4%BC%98%E4%BA%8Egblup%E6%A3%80%E6%B5%8B/" data-toggle="tooltip" data-placement="top" title="Wolc2016-大效应QTL-BayesB和BayesC优于GBLUP检测">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/williams-1996%E8%87%AA%E4%BA%A4-%E9%92%88%E5%8F%B6%E6%A0%91-%E8%82%B2%E7%A7%8D%E7%AD%96%E7%95%A5/" data-toggle="tooltip" data-placement="top" title="Williams-1996自交-针叶树-育种策略">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

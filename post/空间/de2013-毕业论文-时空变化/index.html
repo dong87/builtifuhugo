@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>De2013-毕业论文-时空变化</title>
+  <meta property="og:title" content="De2013-毕业论文-时空变化" />
+  <meta name="twitter:title" content="De2013-毕业论文-时空变化" />
+  <meta name="description" content="De Faveri J (2013) Spatial and temporal modelling for perennial crop variety selection trials.
+ 1.3.1现场试验的空间分析 品种选择领域试验通常涉及在潜在的大和可变试验区域评价许多品种。在分析来自这些现场试验的数据时，需要对空间变异进行建模，以便估计准确的品种效应。空间变异长期以来一直被认为是一个重要的问题。经典的Fisherian方法（Brien＆Bailey，2006及其中的参考文献）试图通过仔细选择试验地点，应用随机化地块到品种以及包括变化来源来最小化该领域中空间变化的影响在试验设计中进行分析。这种随机化方法通常不足以建模所有空间变异源，并且常常有必要在随机化模型上建立包括设计组件之上和之上的术语。已经提出了许多方法来解释空间变化，包括最早的方法，其中在分析中使用相邻地图产量作为协变量（参见Bartlett，1978）。 Wilkinson et al。 （1983）提出了一个显着的改进，具有平滑趋势加独立误差模型，通过减少数据消除趋势。 Green等人也使用通过邻近地块去除趋势。 （1985）和Besag＆Kempton（1986）。已经有许多其他方法来进行空间分析，包括Gleeson＆Cullis（1987）的一维模型，其中使用时间序列模型对趋势进行建模，并且由Cullis和Gleeson（1991）使用可分离的相关结构。 Gilmour et al。 （1997）扩展了Cullis和Gleeson（1991）的方法，通过确定要建模的空间变化的三个主要组成部分，即局部和全局平滑空间趋势和外部变化。局部平滑趋势的产生是因为来自接近的地块的数据更加类似于那些区域，并且可能反映例如土壤水分，生育力或深度的变化。全局趋势反映了字段中的非平稳趋势，并且通常与字段的行或列对齐。外部变异经常由管理实践或实验程序产生，例如蛇形收获。为了模拟全球趋势和外部变量Gilmour et al。 （1997）将多项式或样条函数（Verbyla等人，1999）映射到行或列坐标。他们使用残差的协方差结构建模局部趋势。正是这种全球趋势和局部趋势的分离，这是先前的空间分析方法的重要延伸。 Gilmour et al。 （1997）提出了一个混合模型的数据y（一个n×1矢量）从一个单独的eld试验组成的r列，c列（数据排列为列中的行）数组中的n绘图如下 全局和外部变化的来源可以包括在u和/或τ中（1.3.1）。为了确定适当的空间相关结构并识别全局和外部变化，Gilmour et al。 （1997）使用诊断工具，如样品变异图和残差图（残差对行（或列）数）。变差图显示给定距离间隔的图对的残差的半方差（将在后续章节中进一步详细讨论）。尽管Gilmour等人（1997）包括由于管理过程，外部和局部变化或相关性而发生的基于模型的变化组件，它们省略了现场试验设计中固有的变量。随机化和基于模型的组件的组合现在被认为是优选的并且适合于分析（Beeck等人，2010）。而Gilmour等人的空间分析方法（1997）现在常规用于年度田间作物的分析，它们在分析多年生作物的数据中的使用并不那么普遍。一般来说，已经尝试了更简单的方法来解释多年生作物的空间变化，例如在Smith＆Casler（2004）和Smith＆Kearney（2002）中，其中使用的方法基于由Papadakis引入的最近邻分析在1937年（见Bartlett，1978年的审查）。例外包括Stringer＆Cullis（2002）和Smith et al。 （2007）其中Gilmour等人的空间分析技术（1997）适用于甘蔗选择试验，Costa e Silva et al。 （2001），Dutkowski et al。 （2002）和Hardner et al。 （2010），其中上述空间分析方法已被用于森林遗传试验。 1.3.2多环境试验（METs） 通常植物品种改良计划涉及在一些试验地点的老化试验中评价新品种。这些试验称为MET。已经提出了许多方法用于分析一年生作物中的MET。早期方法基于ANOVA方法，其不能通过环境（GxE）相互作用来了解基因型（或品种）。其他允许调查GxE的早期方法包括对环境变量使用基于回归的方法（例如Knight，1970），并且使用品种产量对每个环境中所有品种的平均产量的回归（例如Finlay和Wilkinson，1963） 。混合模型方法已经变得流行，因为它们可以容易地处理不完整的数据（其中并非所有品种在所有环境中都生长），并且它们可以在试验变化内适当地建模。 Smith等人（2005）提供了对这种分析多环境试验（METs）的方法的综述。两阶段方法经常用于分析MET数据。这涉及首先对每个试验分别估计多样性方法，然后将它们组合起来进行总体分析。整体分析可以使用例如混合模型方法（Cullis等人，1996a，Cullis等人，1996b，Frensham等人，1997）或混合模型，例如AMMI（Additive Mainects and Multiplicative Interaction ）模型（1992）。这两个阶段方法是对来自所有试验的单个图谱数据的总体分析的近似，并且如果试验中存在空间变化或试验之间的误差方差的异质性，则可能不提供良好的近似。 Cullis et al。 （1998）提出了一个更全面的综合空间MET分析，其中分析单个地块数据，并为每个试验的单独的空间建模和单独的误差方差做出了补偿。 一些作者建议使用因子分析（fa）模型来建模GxE效应（例如Smith等人，2001，Piepho，1997，Thompson等人，2003）。 Smith等人（2001）扩展了Cullis等人的空间MET分析方法。 （1998）包括因子分析模型，以将不同环境中的变量效应建模为一系列乘法项，并提供对完全非结构化方差协方差矩阵的简约近似。 Smith等人（2001）提出了一个混合模型，用于使用以下符号对来自一系列MET试验的观察结果进行建模。他们考虑了m个品种生长的t试验的数据。 立方平滑样条 立方平滑样条提供了建模纵向数据的灵活方法。将三次平滑样条作为线性混合模型（Verbyla等人，1999）的能力意味着它们是随时间从多个收获建模品种选择数据的理想方法。 Green＆Silverman（1994）讨论了三次平滑样条的性质。总之，假设有实数t 1，。 。 。 ，tn在区间[a，b]上，其中a &lt;t1 &lt;t2。 。 。 &lt;tn &lt;b。如果f sat是以下条件，则函数f在间隔[a，b]上被定义为三次样条。首先，f是每个间隔[a，t1），[t1，t2），&hellip;的三次多项式。 。 。 ，（tn，b），其次，三次多项式截面在点ti处连接在一起，使得函数f，它的rst和二阶导数在每个ti和整个间隔[a，b] on [a，b]是一个三次样条，具有加性质，它的二阶和三阶导数在端点a和b为零，这意味着当样条通过端点时样条是线性的，如果自然三次样条f被定义在设计点t1，&hellip;，tn（称为节），使得fi = f（ti），并且在结点的样条的二阶导数由下式给出：γi= f“ ＆Silverman（1994）表明，给定矢量f =（f1 &hellip; fn）T和γ=（γ2&hellip;γn-1），可以在除ti之外的点处计算样条。">
+  <meta property="og:description" content="De Faveri J (2013) Spatial and temporal modelling for perennial crop variety selection trials.
+ 1.3.1现场试验的空间分析 品种选择领域试验通常涉及在潜在的大和可变试验区域评价许多品种。在分析来自这些现场试验的数据时，需要对空间变异进行建模，以便估计准确的品种效应。空间变异长期以来一直被认为是一个重要的问题。经典的Fisherian方法（Brien＆Bailey，2006及其中的参考文献）试图通过仔细选择试验地点，应用随机化地块到品种以及包括变化来源来最小化该领域中空间变化的影响在试验设计中进行分析。这种随机化方法通常不足以建模所有空间变异源，并且常常有必要在随机化模型上建立包括设计组件之上和之上的术语。已经提出了许多方法来解释空间变化，包括最早的方法，其中在分析中使用相邻地图产量作为协变量（参见Bartlett，1978）。 Wilkinson et al。 （1983）提出了一个显着的改进，具有平滑趋势加独立误差模型，通过减少数据消除趋势。 Green等人也使用通过邻近地块去除趋势。 （1985）和Besag＆Kempton（1986）。已经有许多其他方法来进行空间分析，包括Gleeson＆Cullis（1987）的一维模型，其中使用时间序列模型对趋势进行建模，并且由Cullis和Gleeson（1991）使用可分离的相关结构。 Gilmour et al。 （1997）扩展了Cullis和Gleeson（1991）的方法，通过确定要建模的空间变化的三个主要组成部分，即局部和全局平滑空间趋势和外部变化。局部平滑趋势的产生是因为来自接近的地块的数据更加类似于那些区域，并且可能反映例如土壤水分，生育力或深度的变化。全局趋势反映了字段中的非平稳趋势，并且通常与字段的行或列对齐。外部变异经常由管理实践或实验程序产生，例如蛇形收获。为了模拟全球趋势和外部变量Gilmour et al。 （1997）将多项式或样条函数（Verbyla等人，1999）映射到行或列坐标。他们使用残差的协方差结构建模局部趋势。正是这种全球趋势和局部趋势的分离，这是先前的空间分析方法的重要延伸。 Gilmour et al。 （1997）提出了一个混合模型的数据y（一个n×1矢量）从一个单独的eld试验组成的r列，c列（数据排列为列中的行）数组中的n绘图如下 全局和外部变化的来源可以包括在u和/或τ中（1.3.1）。为了确定适当的空间相关结构并识别全局和外部变化，Gilmour et al。 （1997）使用诊断工具，如样品变异图和残差图（残差对行（或列）数）。变差图显示给定距离间隔的图对的残差的半方差（将在后续章节中进一步详细讨论）。尽管Gilmour等人（1997）包括由于管理过程，外部和局部变化或相关性而发生的基于模型的变化组件，它们省略了现场试验设计中固有的变量。随机化和基于模型的组件的组合现在被认为是优选的并且适合于分析（Beeck等人，2010）。而Gilmour等人的空间分析方法（1997）现在常规用于年度田间作物的分析，它们在分析多年生作物的数据中的使用并不那么普遍。一般来说，已经尝试了更简单的方法来解释多年生作物的空间变化，例如在Smith＆Casler（2004）和Smith＆Kearney（2002）中，其中使用的方法基于由Papadakis引入的最近邻分析在1937年（见Bartlett，1978年的审查）。例外包括Stringer＆Cullis（2002）和Smith et al。 （2007）其中Gilmour等人的空间分析技术（1997）适用于甘蔗选择试验，Costa e Silva et al。 （2001），Dutkowski et al。 （2002）和Hardner et al。 （2010），其中上述空间分析方法已被用于森林遗传试验。 1.3.2多环境试验（METs） 通常植物品种改良计划涉及在一些试验地点的老化试验中评价新品种。这些试验称为MET。已经提出了许多方法用于分析一年生作物中的MET。早期方法基于ANOVA方法，其不能通过环境（GxE）相互作用来了解基因型（或品种）。其他允许调查GxE的早期方法包括对环境变量使用基于回归的方法（例如Knight，1970），并且使用品种产量对每个环境中所有品种的平均产量的回归（例如Finlay和Wilkinson，1963） 。混合模型方法已经变得流行，因为它们可以容易地处理不完整的数据（其中并非所有品种在所有环境中都生长），并且它们可以在试验变化内适当地建模。 Smith等人（2005）提供了对这种分析多环境试验（METs）的方法的综述。两阶段方法经常用于分析MET数据。这涉及首先对每个试验分别估计多样性方法，然后将它们组合起来进行总体分析。整体分析可以使用例如混合模型方法（Cullis等人，1996a，Cullis等人，1996b，Frensham等人，1997）或混合模型，例如AMMI（Additive Mainects and Multiplicative Interaction ）模型（1992）。这两个阶段方法是对来自所有试验的单个图谱数据的总体分析的近似，并且如果试验中存在空间变化或试验之间的误差方差的异质性，则可能不提供良好的近似。 Cullis et al。 （1998）提出了一个更全面的综合空间MET分析，其中分析单个地块数据，并为每个试验的单独的空间建模和单独的误差方差做出了补偿。 一些作者建议使用因子分析（fa）模型来建模GxE效应（例如Smith等人，2001，Piepho，1997，Thompson等人，2003）。 Smith等人（2001）扩展了Cullis等人的空间MET分析方法。 （1998）包括因子分析模型，以将不同环境中的变量效应建模为一系列乘法项，并提供对完全非结构化方差协方差矩阵的简约近似。 Smith等人（2001）提出了一个混合模型，用于使用以下符号对来自一系列MET试验的观察结果进行建模。他们考虑了m个品种生长的t试验的数据。 立方平滑样条 立方平滑样条提供了建模纵向数据的灵活方法。将三次平滑样条作为线性混合模型（Verbyla等人，1999）的能力意味着它们是随时间从多个收获建模品种选择数据的理想方法。 Green＆Silverman（1994）讨论了三次平滑样条的性质。总之，假设有实数t 1，。 。 。 ，tn在区间[a，b]上，其中a &lt;t1 &lt;t2。 。 。 &lt;tn &lt;b。如果f sat是以下条件，则函数f在间隔[a，b]上被定义为三次样条。首先，f是每个间隔[a，t1），[t1，t2），&hellip;的三次多项式。 。 。 ，（tn，b），其次，三次多项式截面在点ti处连接在一起，使得函数f，它的rst和二阶导数在每个ti和整个间隔[a，b] on [a，b]是一个三次样条，具有加性质，它的二阶和三阶导数在端点a和b为零，这意味着当样条通过端点时样条是线性的，如果自然三次样条f被定义在设计点t1，&hellip;，tn（称为节），使得fi = f（ti），并且在结点的样条的二阶导数由下式给出：γi= f“ ＆Silverman（1994）表明，给定矢量f =（f1 &hellip; fn）T和γ=（γ2&hellip;γn-1），可以在除ti之外的点处计算样条。">
+  <meta name="twitter:description" content="De Faveri J (2013) Spatial and temporal modelling for perennial crop variety selection trials.
+ 1.3.1现场试验的空间分析 品种选择领域试验通常涉及在潜在的大和可变试验区域评价许多品种。在分析来自这些现场试验的数据时，需要对空间变异进行建模，以便估计准确的品种效应。空间变异长期以来一直被认为是一个重要 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/de2013-%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87-%E6%97%B6%E7%A9%BA%E5%8F%98%E5%8C%96/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/de2013-%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87-%E6%97%B6%E7%A9%BA%E5%8F%98%E5%8C%96/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>De2013-毕业论文-时空变化</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (94 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>De2013-毕业论文-时空变化</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (94 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>De Faveri J (2013) Spatial and temporal modelling for perennial crop variety selection trials.</p>
+</blockquote>
+
+<p>1.3.1现场试验的空间分析
+品种选择领域试验通常涉及在潜在的<strong>大和可变试验区域</strong>评价许多品种。在分析来自这些现场试验的数据时，需要对空间变异进行建模，以便估计准确的品种效应。空间变异长期以来一直被认为是一个重要的问题。经典的Fisherian方法（Brien＆Bailey，2006及其中的参考文献）试图通过仔细选择试验地点，<strong>应用随机化地块到品种以及包括变化来源来最小化该领域中空间变化的影响在试验设计中进行分析</strong>。<strong>这种随机化方法通常不足以建模所有空间变异源</strong>，并且常常有必要在随机化模型上建立包括设计组件之上和之上的术语。已经提出了许多方法来解释空间变化，包括最早的方法，其中在分析中使用相邻地图产量作为协变量（参见Bartlett，1978）。 Wilkinson et al。 （1983）提出了一个显着的改进，具有平滑趋势加独立误差模型，通过减少数据消除趋势。 Green等人也使用通过邻近地块去除趋势。 （1985）和Besag＆Kempton（1986）。已经有许多其他方法来进行空间分析，包括Gleeson＆Cullis（1987）的一维模型，其中使用时间序列模型对趋势进行建模，并且由Cullis和Gleeson（1991）使用可分离的相关结构。 Gilmour et al。 （1997）扩展了Cullis和Gleeson（1991）的方法，通过确定要建模的空间变化的三个主要组成部分，即局部和全局平滑空间趋势和外部变化。<strong>局部平滑趋势的产生是因为来自接近的地块的数据更加类似于那些区域，并且可能反映例如土壤水分，生育力或深度的变化</strong>。全局趋势反映了字段中的非平稳趋势，并且通常与字段的行或列对齐。外部变异经常由管理实践或实验程序产生，例如蛇形收获。为了模拟全球趋势和外部变量Gilmour et al。 （1997）将多项式或样条函数（Verbyla等人，1999）映射到行或列坐标。他们使用残差的协方差结构建模局部趋势。正是这种全球趋势和局部趋势的分离，这是先前的空间分析方法的重要延伸。 Gilmour et al。 （1997）提出了一个混合模型的数据y（一个n×1矢量）从一个单独的eld试验组成的r列，c列（数据排列为列中的行）数组中的n绘图如下
+全局和外部变化的来源可以包括在u和/或τ中（1.3.1）。为了确定适当的空间相关结构并识别全局和外部变化，Gilmour et al。 （1997）使用诊断工具，如样品变异图和残差图（残差对行（或列）数）。变差图显示给定距离间隔的图对的残差的半方差（将在后续章节中进一步详细讨论）。尽管Gilmour等人（1997）包括由于管理过程，外部和局部变化或相关性而发生的基于模型的变化组件，它们省略了现场试验设计中固有的变量。随机化和基于模型的组件的组合现在被认为是优选的并且适合于分析（Beeck等人，2010）。而Gilmour等人的空间分析方法（1997）现在常规用于年度田间作物的分析，它们在分析多年生作物的数据中的使用并不那么普遍。一般来说，已经尝试了更简单的方法来解释多年生作物的空间变化，例如在Smith＆Casler（2004）和Smith＆Kearney（2002）中，其中使用的方法基于由Papadakis引入的最近邻分析在1937年（见Bartlett，1978年的审查）。例外包括Stringer＆Cullis（2002）和Smith et al。 （2007）其中Gilmour等人的空间分析技术（1997）适用于甘蔗选择试验，Costa e Silva et al。 （2001），Dutkowski et al。 （2002）和Hardner et al。 （2010），其中上述空间分析方法已被用于森林遗传试验。
+1.3.2多环境试验（METs）
+通常植物品种改良计划涉及在一些试验地点的老化试验中评价新品种。这些试验称为MET。已经提出了许多方法用于分析一年生作物中的MET。早期方法基于ANOVA方法，其不能通过环境（GxE）相互作用来了解基因型（或品种）。其他允许调查GxE的早期方法包括对环境变量使用基于回归的方法（例如Knight，1970），并且使用品种产量对每个环境中所有品种的平均产量的回归（例如Finlay和Wilkinson，1963） 。混合模型方法已经变得流行，因为它们可以容易地处理不完整的数据（其中并非所有品种在所有环境中都生长），并且它们可以在试验变化内适当地建模。 Smith等人（2005）提供了对这种分析多环境试验（METs）的方法的综述。两阶段方法经常用于分析MET数据。这涉及首先对每个试验分别估计多样性方法，然后将它们组合起来进行总体分析。整体分析可以使用例如混合模型方法（Cullis等人，1996a，Cullis等人，1996b，Frensham等人，1997）或混合模型，例如AMMI（Additive Mainects and Multiplicative Interaction ）模型（1992）。这两个阶段方法是对来自所有试验的单个图谱数据的总体分析的近似，并且如果试验中存在空间变化或试验之间的误差方差的异质性，则可能不提供良好的近似。 Cullis et al。 （1998）提出了一个更全面的综合空间MET分析，其中分析单个地块数据，并为每个试验的单独的空间建模和单独的误差方差做出了补偿。
+一些作者建议使用因子分析（fa）模型来建模GxE效应（例如Smith等人，2001，Piepho，1997，Thompson等人，2003）。 Smith等人（2001）扩展了Cullis等人的空间MET分析方法。 （1998）包括因子分析模型，以将不同环境中的变量效应建模为一系列乘法项，并提供对完全非结构化方差协方差矩阵的简约近似。 Smith等人（2001）提出了一个混合模型，用于使用以下符号对来自一系列MET试验的观察结果进行建模。他们考虑了m个品种生长的t试验的数据。
+立方平滑样条
+立方平滑样条提供了建模纵向数据的灵活方法。将三次平滑样条作为线性混合模型（Verbyla等人，1999）的能力意味着它们是随时间从多个收获建模品种选择数据的理想方法。 Green＆Silverman（1994）讨论了三次平滑样条的性质。总之，假设有实数t 1，。 。 。 ，tn在区间[a，b]上，其中a &lt;t1 &lt;t2。 。 。 &lt;tn &lt;b。如果f sat是以下条件，则函数f在间隔[a，b]上被定义为三次样条。首先，f是每个间隔[a，t1），[t1，t2），&hellip;的三次多项式。 。 。 ，（tn，b），其次，三次多项式截面在点ti处连接在一起，使得函数f，它的rst和二阶导数在每个ti和整个间隔[a，b] on [a，b]是一个三次样条，具有加性质，它的二阶和三阶导数在端点a和b为零，这意味着当样条通过端点时样条是线性的，如果自然三次样条f被定义在设计点t1，&hellip;，tn（称为节），使得fi = f（ti），并且在结点的样条的二阶导数由下式给出：γi= f“ ＆Silverman（1994）表明，给定矢量f =（f1 &hellip; fn）T和γ=（γ2&hellip;γn-1），可以在除ti之外的点处计算样条。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/gs/deloscampos2009-%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" data-toggle="tooltip" data-placement="top" title="DeLosCampos2009-回归模型">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/stat/data-analysis-for-the-life-sciences-with-r/" data-toggle="tooltip" data-placement="top" title="Data-Analysis-for-the-Life-Sciences-with-R">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

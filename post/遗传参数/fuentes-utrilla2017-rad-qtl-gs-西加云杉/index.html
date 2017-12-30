@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Fuentes-Utrilla2017-RAD-QTL-GS-西加云杉</title>
+  <meta property="og:title" content="Fuentes-Utrilla2017-RAD-QTL-GS-西加云杉" />
+  <meta name="twitter:title" content="Fuentes-Utrilla2017-RAD-QTL-GS-西加云杉" />
+  <meta name="description" content="Fuentes-Utrilla P, et al. (2017) QTL analysis and genomic selection using RADseq derived markers in Sitka spruce: the potential utility of within family data. Tree Genet Genomes 13(2):33.   摘要 Sitka云杉（云杉坐落（Bong。）Carr）是英国最常见的商业种植园物种，基于传统线的育种计划自20世纪60年代初开始运行。 40年的旋转长度使得育种者基于与最终选择相关的性状，在年龄较小时采用间接选择过程，但是仍然在20年以下，产生间隔不可能减少太多。最近在动物育种中进行地理选择的成功发展已经使树种育种者考虑这种技术的应用。在本研究中，开发了一种RAD序列测定法作为研究非模型物种中分子育种潜力的方法。 DNA是从英国一个地点的单一全同胞家族中生长的近500个克隆复制的树中提取的。该技术证明了在鉴定132个5年芽爆发的QTL和6年高度的2个QTL中是成功的。此外，通过基因组选择预测表型的准确度惊人地高，分别在0.62和0.59。敏感性分析与200后代发现只有轻微下降的相关值（0.54和0.38），虽然当培训人口减少到50个后代预测值进一步下降（0.33和0.25）。这证明了对Sitka云杉育种中基因组选择的潜在用途的令人鼓舞的首次调查。作者研究如何避免与有效群体大小和连锁不平衡相关的问题，并建议将基因组选择纳入动态育种计划的实用方法。
+关键词Sitka云杉。基因组选择。 RADseq。分子育种。高度。芽爆
+##介绍
+Sitka云杉（云杉云杉（Bong。）Carr）是当地的狭窄范围的海岸线沿太平洋西北部的海岸伸展近3,000 km从阿拉斯加中部到北加利福尼亚。该物种在北欧的种植园林中发挥重要作用（Hermann 1987），并且是目前在英国和爱尔兰种植最广泛的针叶树，在那里它占有超过100万公顷的土地。它还对丹麦，法国和最近的瑞典（Lee等人2013）的林业作出了商业贡献。在其本地范围内和超出其本地范围，它主要用于建筑木材和木浆（Bousquet等人2007）。英国有一个活跃的Sitka云杉育种计划，其主要目标是通过选择父母结合良好的生长率，提高茎平直度，分枝质量，增加建筑级木材工业的旋转结束价值和木材刚度（Lee和Connolly 2010）。 基因试验中Sitka云杉的最终选择目标是最终旋转量和优质建筑级木材的比例增加。为了加速基因试验中的选择过程，育种者采用间接选择。这涉及在年轻时基于与最终选择目标很好相关的性状进行选择。例如，Sitka云杉的6年高度是最终旋转体积的代用品，Pilodyn炮的针深度在12-15岁时与中旋木整体树木密度相关，这是木材强度的一个很好的指标（Lee et al.2002a，b）。间接选择自1963年开始实施以来取得了一些成功，并且在基于早期后代测试数据（反向选择）的重新选择上级亲本树方面取得了良好进展，以构建第一代育种人口。在一些物种中，在后代试验（前向选择）中的早期间接选择以及技术的发展，例如从那些选择将接枝接枝到已建立的成熟树的上冠区（称为顶端嫁接; Goading等人，1999）后续移植物的化学处理已经提高了开花的年龄，进一步降低了产生间隔。 树种繁殖者一直在寻找方法来减少操作成本和生成间隔。分子工具为降低完成这些选择周期所需的成本和时间提供了一个潜在的解决方案，在过去十年中，林木树种的开发受到了相当大的兴趣和一些显着的进步。除了减少育种周期的长度外，分子方法可以提供增加选择强度和减少现场测试工作的机会（Grattapaglia，2014）。早期的试图使用涉及与表型性状的关联研究中的遗传标记没有履行他们在森林树木中的目标候选基因或发展密集的SNP面板在全基因组关联研究（GWAS; Beaulieu等2011）。这是因为（i）这些方法只解释了研究中性状变异的一小部分，（ii）鉴定的关联在群体或环境中不能很好地转移（Pelgas et al。2011; Ritland et al。2011） 。这一经验反映了在涉及家畜的更大的全基因组关联研究中发现的那些（Houston等人2008），但是是一个例外（Meuwissen等人2016）。由于这些原因，树种繁殖者发现GWAS技术没有什么实际用途，虽然它们有助于确定QTL和科学界仍然感兴趣的因果性方差。 最近，重点转向了首先由Meuwissen等人提出的地理选择（GS）的概念。 （2001）用于动物育种。 GS技术未提出验证与致病变体相关的标记，而是同时使用所有SNP标记以最大化估计的估计值的准确性。 GS使用“训练”群体，其使用大量标记进行基因分型并对感兴趣的性状表型。然后，这些数据用于基于群体中个体之间的基因组关系的构建来创建预测模型（G-BLUP），其然后可以用于预测仅存在SNP基因型信息的个体的育种值。这种方法的益处是，一旦获得了一组SNP标记，GS可以用于任何性状，即它不涉及性状特异性标记，例如在GWAS中使用的那些。 GS方法是有吸引力的，因为它有提高选择精度和促进更大的选择强度，同时大大减少生成间隔的潜力（Grattapaglia和Resende 2011）。 Beaulieu等人的GS研究（2014）显示，少于2000人的训练集可以提供与传统的基于田间的开放授粉白色云杉（P. glauca）家族的评估相当的预测准确性。 GWAS和GS方法的先决条件是大量SNP标记的可用性。对于家畜，广泛的国际测序计划促进了大规模的SNP发现，并且这些标记的可用性使得能够开发出范围从60k的猪到超过700k的牛和绵羊的范围的SNP板（Van Raden等人2013）。这样的面板也已经在作物植物中开发，目前60k SNP阵列可用于水稻和玉米（Gupta等人2008）。相比之下，针叶树测序由于其基因组的大尺寸和高度重复的性质而具有挑战性。最近公布的白云杉（Birol等人2013和挪威云杉（Picea abies; Nystedt等人2013）的基因组草图每个估计为〜20Gb长，与人类基因组的〜3Gb相比（Venter等人2001 ）和485Mb（Tuskan等人2006）。 Sitka云杉只有有限的测序工作，这阻碍了实施GS的必要基因组工具的开发。 在尚未获得组装的基因组序列的物种中，诸如在RAD测序中使用的表达文库（Restriction-site Associated DNA Sequencing或RADseq; Davey等人2011）提供了相对便宜的替代方法，用于鉴定GWAS和GS方法所需的大量SNP（Andrews等人，2016）。到目前为止，RADseq已经应用于树种，如桉树和挪威云杉以及多年生植物如草（Grattapaglia et al。2011; Slavov et al。2014）。 即使具有足够大小的适当设计的SNP文库以应对大型针叶树基因组，实施也存在进一步的挑战。 Neale和Savolainen（2004）提出，由于它们相对较大的有效种群大小（Ne），一些针叶树种群中的位点之间的连锁不平衡（LD）将仅比家养的家畜种群延伸相对较短的距离。这导致得出结论，GS仅可能在其中Ne大大减少的群体中成功，例如高度选择的育种子群体或种子园。 （Thavamanikumar et al。2013，Beaulieu et al。2014）。然而，森林树木对家畜的一个优点是，可以通过受控授粉产生非常大的全同胞家系，然后收集大量的锥体和种子。在单个全同胞家族中，LD延伸长距离，与开放授粉群体相反，这可以用于开发GS的操作方法，以选择家族中的个体。 在松属（Resende等人2012a和2012b）和几种桉树物种（Resende等人2012c）中基于林木树种的初步实验来测试GS在估计一系列选择的育种值方面的表现使用具有有效有效群体大小的群体，数千个标记和大的训练群体的森林树木的性状。例如，使用基于32个亲本的61个全同基因交叉的群体，训练800或951个个体和约4,853个SNP标记的群体Resende等人（2012a和b）获得了in藜九个选择性状的预测精度在0.">
+  <meta property="og:description" content="Fuentes-Utrilla P, et al. (2017) QTL analysis and genomic selection using RADseq derived markers in Sitka spruce: the potential utility of within family data. Tree Genet Genomes 13(2):33.   摘要 Sitka云杉（云杉坐落（Bong。）Carr）是英国最常见的商业种植园物种，基于传统线的育种计划自20世纪60年代初开始运行。 40年的旋转长度使得育种者基于与最终选择相关的性状，在年龄较小时采用间接选择过程，但是仍然在20年以下，产生间隔不可能减少太多。最近在动物育种中进行地理选择的成功发展已经使树种育种者考虑这种技术的应用。在本研究中，开发了一种RAD序列测定法作为研究非模型物种中分子育种潜力的方法。 DNA是从英国一个地点的单一全同胞家族中生长的近500个克隆复制的树中提取的。该技术证明了在鉴定132个5年芽爆发的QTL和6年高度的2个QTL中是成功的。此外，通过基因组选择预测表型的准确度惊人地高，分别在0.62和0.59。敏感性分析与200后代发现只有轻微下降的相关值（0.54和0.38），虽然当培训人口减少到50个后代预测值进一步下降（0.33和0.25）。这证明了对Sitka云杉育种中基因组选择的潜在用途的令人鼓舞的首次调查。作者研究如何避免与有效群体大小和连锁不平衡相关的问题，并建议将基因组选择纳入动态育种计划的实用方法。
+关键词Sitka云杉。基因组选择。 RADseq。分子育种。高度。芽爆
+##介绍
+Sitka云杉（云杉云杉（Bong。）Carr）是当地的狭窄范围的海岸线沿太平洋西北部的海岸伸展近3,000 km从阿拉斯加中部到北加利福尼亚。该物种在北欧的种植园林中发挥重要作用（Hermann 1987），并且是目前在英国和爱尔兰种植最广泛的针叶树，在那里它占有超过100万公顷的土地。它还对丹麦，法国和最近的瑞典（Lee等人2013）的林业作出了商业贡献。在其本地范围内和超出其本地范围，它主要用于建筑木材和木浆（Bousquet等人2007）。英国有一个活跃的Sitka云杉育种计划，其主要目标是通过选择父母结合良好的生长率，提高茎平直度，分枝质量，增加建筑级木材工业的旋转结束价值和木材刚度（Lee和Connolly 2010）。 基因试验中Sitka云杉的最终选择目标是最终旋转量和优质建筑级木材的比例增加。为了加速基因试验中的选择过程，育种者采用间接选择。这涉及在年轻时基于与最终选择目标很好相关的性状进行选择。例如，Sitka云杉的6年高度是最终旋转体积的代用品，Pilodyn炮的针深度在12-15岁时与中旋木整体树木密度相关，这是木材强度的一个很好的指标（Lee et al.2002a，b）。间接选择自1963年开始实施以来取得了一些成功，并且在基于早期后代测试数据（反向选择）的重新选择上级亲本树方面取得了良好进展，以构建第一代育种人口。在一些物种中，在后代试验（前向选择）中的早期间接选择以及技术的发展，例如从那些选择将接枝接枝到已建立的成熟树的上冠区（称为顶端嫁接; Goading等人，1999）后续移植物的化学处理已经提高了开花的年龄，进一步降低了产生间隔。 树种繁殖者一直在寻找方法来减少操作成本和生成间隔。分子工具为降低完成这些选择周期所需的成本和时间提供了一个潜在的解决方案，在过去十年中，林木树种的开发受到了相当大的兴趣和一些显着的进步。除了减少育种周期的长度外，分子方法可以提供增加选择强度和减少现场测试工作的机会（Grattapaglia，2014）。早期的试图使用涉及与表型性状的关联研究中的遗传标记没有履行他们在森林树木中的目标候选基因或发展密集的SNP面板在全基因组关联研究（GWAS; Beaulieu等2011）。这是因为（i）这些方法只解释了研究中性状变异的一小部分，（ii）鉴定的关联在群体或环境中不能很好地转移（Pelgas et al。2011; Ritland et al。2011） 。这一经验反映了在涉及家畜的更大的全基因组关联研究中发现的那些（Houston等人2008），但是是一个例外（Meuwissen等人2016）。由于这些原因，树种繁殖者发现GWAS技术没有什么实际用途，虽然它们有助于确定QTL和科学界仍然感兴趣的因果性方差。 最近，重点转向了首先由Meuwissen等人提出的地理选择（GS）的概念。 （2001）用于动物育种。 GS技术未提出验证与致病变体相关的标记，而是同时使用所有SNP标记以最大化估计的估计值的准确性。 GS使用“训练”群体，其使用大量标记进行基因分型并对感兴趣的性状表型。然后，这些数据用于基于群体中个体之间的基因组关系的构建来创建预测模型（G-BLUP），其然后可以用于预测仅存在SNP基因型信息的个体的育种值。这种方法的益处是，一旦获得了一组SNP标记，GS可以用于任何性状，即它不涉及性状特异性标记，例如在GWAS中使用的那些。 GS方法是有吸引力的，因为它有提高选择精度和促进更大的选择强度，同时大大减少生成间隔的潜力（Grattapaglia和Resende 2011）。 Beaulieu等人的GS研究（2014）显示，少于2000人的训练集可以提供与传统的基于田间的开放授粉白色云杉（P. glauca）家族的评估相当的预测准确性。 GWAS和GS方法的先决条件是大量SNP标记的可用性。对于家畜，广泛的国际测序计划促进了大规模的SNP发现，并且这些标记的可用性使得能够开发出范围从60k的猪到超过700k的牛和绵羊的范围的SNP板（Van Raden等人2013）。这样的面板也已经在作物植物中开发，目前60k SNP阵列可用于水稻和玉米（Gupta等人2008）。相比之下，针叶树测序由于其基因组的大尺寸和高度重复的性质而具有挑战性。最近公布的白云杉（Birol等人2013和挪威云杉（Picea abies; Nystedt等人2013）的基因组草图每个估计为〜20Gb长，与人类基因组的〜3Gb相比（Venter等人2001 ）和485Mb（Tuskan等人2006）。 Sitka云杉只有有限的测序工作，这阻碍了实施GS的必要基因组工具的开发。 在尚未获得组装的基因组序列的物种中，诸如在RAD测序中使用的表达文库（Restriction-site Associated DNA Sequencing或RADseq; Davey等人2011）提供了相对便宜的替代方法，用于鉴定GWAS和GS方法所需的大量SNP（Andrews等人，2016）。到目前为止，RADseq已经应用于树种，如桉树和挪威云杉以及多年生植物如草（Grattapaglia et al。2011; Slavov et al。2014）。 即使具有足够大小的适当设计的SNP文库以应对大型针叶树基因组，实施也存在进一步的挑战。 Neale和Savolainen（2004）提出，由于它们相对较大的有效种群大小（Ne），一些针叶树种群中的位点之间的连锁不平衡（LD）将仅比家养的家畜种群延伸相对较短的距离。这导致得出结论，GS仅可能在其中Ne大大减少的群体中成功，例如高度选择的育种子群体或种子园。 （Thavamanikumar et al。2013，Beaulieu et al。2014）。然而，森林树木对家畜的一个优点是，可以通过受控授粉产生非常大的全同胞家系，然后收集大量的锥体和种子。在单个全同胞家族中，LD延伸长距离，与开放授粉群体相反，这可以用于开发GS的操作方法，以选择家族中的个体。 在松属（Resende等人2012a和2012b）和几种桉树物种（Resende等人2012c）中基于林木树种的初步实验来测试GS在估计一系列选择的育种值方面的表现使用具有有效有效群体大小的群体，数千个标记和大的训练群体的森林树木的性状。例如，使用基于32个亲本的61个全同基因交叉的群体，训练800或951个个体和约4,853个SNP标记的群体Resende等人（2012a和b）获得了in藜九个选择性状的预测精度在0.">
+  <meta name="twitter:description" content="Fuentes-Utrilla P, et al. (2017) QTL analysis and genomic selection using RADseq derived markers in Sitka spruce: the potential utility of within family data. Tree Genet Genomes 13(2):33.   摘要 Sitka云 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/fuentes-utrilla2017-rad-qtl-gs-%E8%A5%BF%E5%8A%A0%E4%BA%91%E6%9D%89/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/fuentes-utrilla2017-rad-qtl-gs-%E8%A5%BF%E5%8A%A0%E4%BA%91%E6%9D%89/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Fuentes-Utrilla2017-RAD-QTL-GS-西加云杉</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (155 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Fuentes-Utrilla2017-RAD-QTL-GS-西加云杉</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (155 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<ol>
+<li>Fuentes-Utrilla P, et al. (2017) QTL analysis and genomic selection using RADseq derived markers in Sitka spruce: the potential utility of within family data. Tree Genet Genomes 13(2):33.</li>
+</ol>
+</blockquote>
+
+<p>摘要
+Sitka云杉（云杉坐落（Bong。）Carr）是英国最常见的商业种植园物种，基于传统线的育种计划自20世纪60年代初开始运行。 40年的旋转长度使得育种者基于与最终选择相关的性状，在年龄较小时采用间接选择过程，但是仍然在20年以下，产生间隔不可能减少太多。最近在动物育种中进行地理选择的成功发展已经使树种育种者考虑这种技术的应用。在本研究中，开发了一种RAD序列测定法作为研究非模型物种中分子育种潜力的方法。 DNA是从英国一个地点的单一全同胞家族中生长的近500个克隆复制的树中提取的。该技术证明了在鉴定132个5年芽爆发的QTL和6年高度的2个QTL中是成功的。此外，通过基因组选择预测表型的准确度惊人地高，分别在0.62和0.59。敏感性分析与200后代发现只有轻微下降的相关值（0.54和0.38），虽然<strong>当培训人口减少到50个后代预测值进一步下降（0.33和0.25）</strong>。这证明了对Sitka云杉育种中基因组选择的潜在用途的令人鼓舞的首次调查。作者研究<strong>如何避免与有效群体大小和连锁不平衡相关的问题，并建议将基因组选择纳入动态育种计划的实用方法</strong>。</p>
+
+<p>关键词Sitka云杉。基因组选择。 RADseq。分子育种。高度。芽爆</p>
+
+<hr />
+
+<p>##介绍</p>
+
+<p>Sitka云杉（云杉云杉（Bong。）Carr）是当地的狭窄范围的海岸线沿太平洋西北部的海岸伸展近3,000 km从阿拉斯加中部到北加利福尼亚。该物种在北欧的种植园林中发挥重要作用（Hermann 1987），并且是目前在英国和爱尔兰种植最广泛的针叶树，在那里它占有超过100万公顷的土地。它还对丹麦，法国和最近的瑞典（Lee等人2013）的林业作出了商业贡献。在其本地范围内和超出其本地范围，它主要用于建筑木材和木浆（Bousquet等人2007）。英国有一个活跃的Sitka云杉育种计划，其主要目标是通过选择父母结合良好的生长率，提高茎平直度，分枝质量，增加建筑级木材工业的旋转结束价值和木材刚度（Lee和Connolly 2010）。
+基因试验中Sitka云杉的最终选择目标是最终旋转量和优质建筑级木材的比例增加。为了加速基因试验中的选择过程，育种者采用间接选择。这涉及在年轻时基于与最终选择目标很好相关的性状进行选择。例如，Sitka云杉的6年高度是最终旋转体积的代用品，<strong>Pilodyn炮的针深度在12-15岁时与中旋木整体树木密度相关，这是木材强度的一个很好的指标（Lee et al.2002a，b）</strong>。间接选择自1963年开始实施以来取得了一些成功，并且在基于早期后代测试数据（反向选择）的重新选择上级亲本树方面取得了良好进展，以构建第一代育种人口。在一些物种中，在后代试验（前向选择）中的早期间接选择以及技术的发展，例如从那些选择将接枝接枝到已建立的成熟树的上冠区（称为顶端嫁接; Goading等人，1999）后续移植物的化学处理已经提高了开花的年龄，进一步降低了产生间隔。
+树种繁殖者一直在寻找方法来减少操作成本和生成间隔。分子工具为降低完成这些选择周期所需的成本和时间提供了一个潜在的解决方案，在过去十年中，林木树种的开发受到了相当大的兴趣和一些显着的进步。<strong>除了减少育种周期的长度外，分子方法可以提供增加选择强度和减少现场测试工作的机会（Grattapaglia，2014）</strong>。<strong>早期的试图使用涉及与表型性状的关联研究中的遗传标记没有履行他们在森林树木中的目标候选基因或发展密集的SNP面板在全基因组关联研究（GWAS; Beaulieu等2011）</strong>。这是因为（i）这些方法只解释了研究中性状变异的一小部分，（ii）鉴定的关联在群体或环境中不能很好地转移（Pelgas et al。2011; Ritland et al。2011） 。这一经验反映了在涉及家畜的更大的全基因组关联研究中发现的那些（Houston等人2008），但是是一个例外（Meuwissen等人2016）。由于这些原因，<strong>树种繁殖者发现GWAS技术没有什么实际用途，虽然它们有助于确定QTL和科学界仍然感兴趣的因果性方差</strong>。
+最近，重点转向了首先由Meuwissen等人提出的地理选择（GS）的概念。 （2001）用于动物育种。 GS技术未提出验证与致病变体相关的标记，而是同时使用所有SNP标记以最大化估计的估计值的准确性。 GS使用“训练”群体，其使用大量标记进行基因分型并对感兴趣的性状表型。然后，这些数据用于基于群体中个体之间的基因组关系的构建来创建预测模型（G-BLUP），其然后可以用于预测仅存在SNP基因型信息的个体的育种值。这种方法的益处是，一旦获得了一组SNP标记，GS可以用于任何性状，即它不涉及性状特异性标记，例如在GWAS中使用的那些。
+GS方法是有吸引力的，因为它有提高选择精度和促进更大的选择强度，同时大大减少生成间隔的潜力（Grattapaglia和Resende 2011）。 Beaulieu等人的GS研究（2014）显示，少于2000人的训练集可以提供与传统的基于田间的开放授粉白色云杉（P. glauca）家族的评估相当的预测准确性。
+GWAS和GS方法的先决条件是大量SNP标记的可用性。对于家畜，广泛的国际测序计划促进了大规模的SNP发现，并且这些标记的可用性使得能够开发出范围从60k的猪到超过700k的牛和绵羊的范围的SNP板（Van Raden等人2013）。这样的面板也已经在作物植物中开发，目前60k SNP阵列可用于水稻和玉米（Gupta等人2008）。相比之下，针叶树测序由于其基因组的大尺寸和高度重复的性质而具有挑战性。最近公布的白云杉（Birol等人2013和挪威云杉（Picea abies; Nystedt等人2013）的基因组草图每个估计为〜20Gb长，与人类基因组的〜3Gb相比（Venter等人2001 ）和485Mb（Tuskan等人2006）。 Sitka云杉只有有限的测序工作，这阻碍了实施GS的必要基因组工具的开发。
+<strong>在尚未获得组装的基因组序列的物种中，诸如在RAD测序中使用的表达文库（Restriction-site Associated DNA Sequencing或RADseq; Davey等人2011）提供了相对便宜的替代方法，用于鉴定GWAS和GS方法所需的大量SNP（Andrews等人，2016）</strong>。到目前为止，<strong>RADseq已经应用于树种，如桉树和挪威云杉以及多年生植物如草（Grattapaglia et al。2011; Slavov et al。2014）</strong>。
+即使具有足够大小的适当设计的SNP文库以应对大型针叶树基因组，实施也存在进一步的挑战。 Neale和Savolainen（2004）提出，<strong>由于它们相对较大的有效种群大小（Ne），一些针叶树种群中的位点之间的连锁不平衡（LD）将仅比家养的家畜种群延伸相对较短的距离</strong>。这导致得出结论，<strong>GS仅可能在其中Ne大大减少的群体中成功，例如高度选择的育种子群体或种子园</strong>。 （Thavamanikumar et al。2013，Beaulieu et al。2014）。然而，森林树木对家畜的一个优点是，可以通过受控授粉产生非常大的全同胞家系，然后收集大量的锥体和种子。<strong>在单个全同胞家族中，LD延伸长距离，与开放授粉群体相反，这可以用于开发GS的操作方法，以选择家族中的个体</strong>。
+在松属（Resende等人2012a和2012b）和几种桉树物种（Resende等人2012c）中基于林木树种的初步实验来测试GS在估计一系列选择的育种值方面的表现使用具有有效有效群体大小的群体，数千个标记和大的训练群体的森林树木的性状。例如，<strong>使用基于32个亲本的61个全同基因交叉的群体，训练800或951个个体和约4,853个SNP标记的群体Resende等人（2012a和b）</strong>获得了in藜九个选择性状的预测精度在0.17-0.74之间。虽然<strong>当模型应用于一个新的，不相关的人口时，预测准确性急剧下降</strong>，基因组区域的性状位置是一致的，建议负责的基因座保守两个人口。 GS在森林树木中的一个感知好处是能够实践多个性状选择。这是因为GS可以用于估计每个选择性状的个体育种值，然后如果需要可以将其组合成单个总体选择指数。
+这项研究通过以下方式研究西特卡云杉的基因组方法的潜力：</p>
+
+<p>一世。探索使用RAD测序技术开发一种在动物饲养中具有实用价值的SNP小组的可行性;
+ii。应用GWAS方法鉴定潜在的数量性状基因座（QTL）6年高度和5年芽爆发;
+iii。使用GS方法估计家庭内选择的准确性;
+iv。讨论这些基因组方法如何应用于非模型物种。</p>
+
+<h2 id="材料和方法">材料和方法</h2>
+
+<p>样品收集</p>
+
+<p>在2005年春季，森林研究（FR）建立了大型Sitka云杉实地试验，包括来自三个全同胞家庭的相同的1500个后代，克隆地在英国的三个气候对照地点复制。在下文中，术语“后代”将代表基因型，并且分株将代表后代的克隆拷贝。三个全同胞家庭是基于涉及六个不相关的父母的交叉
+从森林研究Sitka云杉繁殖人口。每个位点被分成四个完全随机化的嵌段，每个单独的后代在单个位点由四个分株表示，每个嵌段一个嵌段;所有三个地点共有12个分株。本研究集中在位于西南（SW）英格兰（纬度50.59N;经度4.06W;海拔140m;累积温度高于5℃（AT5）1,769）的单个站点的这些全同胞家系中的一个。</p>
+
+<p>###性状评估</p>
+
+<p>根据Krutzsch（1973），在其第五个生长季节开始时，测量在SW英格兰位置的1,500个后代中的每一个的四个分株的（i）1至8级发芽的定时，和（ii）高度（cm）。对于芽爆，在三周时间内三次评估试验中的所有分株，并且在分析中使用在脱发中提供最大分数方差的时机。死亡率低（0.2年或120棵树，五年; 0.3％或130棵树六年），没有任何一个后代在其四个代表性分株中有超过一个损失。</p>
+
+<p>###在Sitka云杉的RADseq</p>
+
+<p>从每个基因型的一个代表性分株的针中提取DNA。将来自每个样品的针（100mg）精细切碎并置于含有两个不锈钢球轴承（3mm）的2ml Eppendorf管中。将样品在液氮中冷冻，使用Reitch混合器研磨机研磨成非常细的粉末并储存在-80℃。使用Qiagen DNeasy Plant微型试剂盒提取DNA。以多种不同方式修饰Qiagen方案以最大化DNA产量。<strong>对于裂解步骤，使用600μl裂解缓冲液，并将孵育期延长至45分钟。对于中和步骤，使用195μl中和缓冲液，冰上的时间增加至20分钟。将洗脱温育增加至15分钟，将洗脱产物再施加到柱上并第二次旋转</strong>。使用PicoGreen分光光度计（Invitrogen）检查DNA提取的质量和浓度，仅将含有至少2.5μgDNA的那些提取物用于RAD分析。</p>
+
+<p>###一级消化：选择限制酶</p>
+
+<p>RADseq研究的第一步是选择最合适的限制酶，因为这决定了获得的遗传标记的数目。所有基因分型项目在有限的预算内操作，因此合适的限制酶的选择涉及基因分型的标记数目，复制的个体数目和每个基因型每个基因型所需的覆盖深度之间的必要折衷。因此，进行了一项初步研究以通知选择限制性酶，其中使用以下四种限制酶消化两个亲本的DNA和来自全同胞家族的20个后代：两个8碱基对（bp）（Sbf1和SgrA1）和两个6-bp（PstI和XmaI）。使用Etter等人描述的方法（2011）使用300至700-bp的大小范围选择为每种酶制备RADseq文库。为了更好地覆盖亲本，我们使用亲本DNA相对于后代DNA的量的5倍的比率，以便使亲本样品的Illumina读数的数量相比于每个后代的数量增加5倍。在Illumina HiSeq 2000仪器的高输出泳道中对RADseq文库进行测序。来自四种酶的文库在单独的泳道中测序，由于在第一泳道中观察到的读数低于预期的数目，所以用于与PstI相关的文库的另外的泳道。</p>
+
+<h3 id="第二消化rad-sd-radseq">第二消化RAD（SD-RADseq）</h3>
+
+<p>在所测试的四种酶中，6-bp PstI酶（限制性位点CTGCAG）最接近提供我们的目标数目的可绘制标记，但其超过约24％（结果未显示）。为了进一步减少标记的数目，开发了一种新的复杂性降低步骤，其中用PstI进行初级消化的产物用另外的酶进行第二次消化。由于文库中最小的DNA片段长度为300 bp，因此选择额外的酶是因为它将在限制位点之前的第一个300 bp内切割24％的标记，以便除去这些片段图书馆。为了保守，长度降低到250-bp。
+通过选择最合适的第二限制性内切酶实现这种减少的技术涉及提取与文库中所有个体相关的每个标记的配对末端读取，并使用IDBA-UD（Peng等人2012 ），最小重叠群大小为700-bp。然后我们使用来自EMBOSS套件（Rice等人2000）的应用限制，检查所有商业上可获得的限制性内切酶在第一个250bp内的切割位点的频率，排除那些在所使用的任何RAD衔接头中具有切割位点的位点。选择酶“Alw1”（限制性位点GGATC），因为其显示在24.6％的配对末端重叠群中的第一250bp内存在切割位点（参见“结果”）。
+为了测试使用Alw1酶的标记物总数的减少，基于仅两个亲本创建了新的RADseq文库。通过用AlwI限制酶在37℃下消化新的Pst1 RADseq文库30分钟，接着在65℃下进行10分钟的热灭活步骤，制备第二消化（SD）RADseq文库。为了降低测序成本，在Illumina MiSeq运行（50-bp单端（SE））中对第二消化文库进行测序。我们评估了AlwI SD-RADseq文库的有效性：首先，通过对来自PstI RADseq子集的读数进行RADseq分析（如下所述），获得了我们参考的50-bp未分化分离标记组修剪至50-bp;第二，用相同的参数获得运行RADseq分析的亲本的AlwI SD-RADSeq标记;最后，我们将观察到的SD-RADSeq消化的亲本的RADSeq标记物与来自未消化的亲本的标记物的目录作图，并计数未消化的标记物的数目。
+随后，使用这种二次消化过程，对来自全同胞家族的622个随机选择的子代进行RADseq。每个Illumina HiSeq 2000泳道（High Output，SBS chemistry v1）检测总共48个后代。每个样品的成本进一步降低了50 bp的单端读取，而不是用于试点库的100bp配对端。
+RADseq数据的处理
+使用具有参数-fuzzy_MIDs（这允许条形码中的一个碱基不匹配）的软件RADtools v1.2.4（Baxter等人2011）解码文库内的每个样品的RADseq读数。在进一步分析之前，使用scythe v0.994（Buffalo 2014）从读取中移除Illumina衔接子，并使用Sickle v1.33（Joshi和Fass，2011）以最小质量阈值Q20过滤读数。从试验研究图谱中读取的数据被修剪为96bp，以去除最后几个循环，其中读取质量在Illumina较长读数中下降，但在SD-RADseq文库中未经修剪为50bp（循环质量保持高读长度）。使用Stacks软件v0.9996（Catchen等人2011）进行RADseq标记物的从头聚类和样品基因分型。首先，使用ustack模块将每个样品的RADseq读数分组为“堆叠”的读数（大致对应于标记物），在标记之间最多有两个SNP（参数-M = 2中的平衡物），去细胞化-d）启用，并且每个堆栈（-m）的最小读取数量对于pilotstudy来说是两个.m = 2的值以将PCR和排序错误分组成堆栈为代价使堆栈的数量最大化，但是对于导频我们对于最终的SD-RADseq文库，我们在后代中使用了m = 2的值，但是对于亲本m = 12（去除来自PCR的低覆盖度标记）使用模板cstack从父对象的堆栈中构建标记目录，其中样本标签或等位基因之间的最大错配数为零（-n = 0）;这是Catchen等（2011）对于F1假试验交叉的推荐值。使用基因型模块比较每个样品中的标志物与目录中的等位基因，选择出现在min中的标志物来计算基因型 - 四个子代样本的样本（-r = 4），最小堆叠深度为5个读数（-t = 5），以及用于B花授粉的地图类型选项-CP。基因型以JoinMap 3格式（Van Ooijen和Voorrips，2001）导出用于连锁图谱分析。
+###质量控制和链接图
+通过“Stacks”软件检测到一组34,347个标记。在过滤出显示非孟德尔分离的证据的那些标记物和那些在超过300个个体中缺失的那些标记物后，该数目减少到8,397。使用实施最小重组方法的定制软件（Olson和Boehnke 1990）获得每组的连锁群和图谱。通过使用JoinMap 3（Van Ooijen和Voorrips，2001）重复分析来证实连锁群，其中8,132个标记物被连接到12个连锁群中。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/diallel/fukatsu-2013-%E5%AF%86%E5%BA%A6-%E5%8F%8C%E5%88%97-%E6%97%A5%E6%9C%AC%E8%90%BD%E5%8F%B6%E6%9D%BE-/" data-toggle="tooltip" data-placement="top" title="Fukatsu-2013-密度-双列-日本落叶松-">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E5%BE%85%E8%AF%BB%E8%AF%BB%E6%96%87%E7%8C%AE/fuentes-utrilla2017-/" data-toggle="tooltip" data-placement="top" title="Fuentes-Utrilla2017-">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

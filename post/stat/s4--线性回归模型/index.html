@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>S4--线性回归模型</title>
+  <meta property="og:title" content="S4--线性回归模型" />
+  <meta name="twitter:title" content="S4--线性回归模型" />
+  <meta name="description" content="  A.F. Zuur et al., Mixed Effects Models and Extensions in Ecology with R, p17-25, chr 2.2-2.3
+ 1.模型 *Y_i* = *α* &#43; *β* × *X_i* &#43; *ε_i**
+ε_i包含不能解释的信息，并且*ε_i *∼ N(0*,σ^*2)。 用样本估计​***α 和β*的置信区间，置信区间告诉我们如果重复实验很多次，​*α 和β 的真值落入该区间的可能性。 估计参数​α 和β*需要假设：正态、同质性，固定的X，独立性**及特定而正确的模型。 正态是指对任何X，对应的Y们服从正态分布。同质性是指对于全部的X，对应的Y的高斯密度曲线们都是一样的（下图）。 2.模型验证 模型验证过程，就是验证一系列的假设。 因中心极限定理的缘故，有人说正态性的验证不是一个严重的问题(Sokal andRohlf, 1995; Zar, 1999)。甚至有人说如果样本量够大，正态验证不是必要的(Fitzmaurice et al., 2004)。 对于每个X值处的正态验证，需要对X值处Y值们做直方图。但通常每个X那里没有足够的Y，在这种情况下，最好的做法是把全部的残差混起来做一个直方图。这样做保证了残差的正态性，但我们并不能因此得出整个群体的Y是服从正态分布的。很多时候我们对Y画一个直方图来判断其正态与否，但这是有前提的：在每一个X处都有重复的观测值。否则不能单单根据观测值的直方图来判定其正态性，而是应该利用一个模型，检查残差的分布情况。 ​同质性是要求在每一个X值处，观测值有相同的分散程度。这样判断有点主观，Barlett’s test是客观的方法，但软件要求数据要正态分布，这是有问题的，而且​​​​​Barlett’s test对非正态数据的同质性非常敏感，所以只靠图检残差分布是否一致是更好的选择。严重的异质性是非常要命的。转换数据可以部分解决，但缺点是会改变之间的关系。 独立性的验证是最重要的，因为它能使一些重要的检验如F-test和t-test无效。不独立是指X处的Y值受到另一个X变量的影响​。 在相信获得的F-statistic​并利用5%拒绝水平前，需要确信所有的模型假设都是有效的。标准的模型验证图有（1）残差vs拟合值验证同质性，（2）QQ或直方图验证正态性，（3）残差vs每个自变量检验独立性。 ">
+  <meta property="og:description" content="  A.F. Zuur et al., Mixed Effects Models and Extensions in Ecology with R, p17-25, chr 2.2-2.3
+ 1.模型 *Y_i* = *α* &#43; *β* × *X_i* &#43; *ε_i**
+ε_i包含不能解释的信息，并且*ε_i *∼ N(0*,σ^*2)。 用样本估计​***α 和β*的置信区间，置信区间告诉我们如果重复实验很多次，​*α 和β 的真值落入该区间的可能性。 估计参数​α 和β*需要假设：正态、同质性，固定的X，独立性**及特定而正确的模型。 正态是指对任何X，对应的Y们服从正态分布。同质性是指对于全部的X，对应的Y的高斯密度曲线们都是一样的（下图）。 2.模型验证 模型验证过程，就是验证一系列的假设。 因中心极限定理的缘故，有人说正态性的验证不是一个严重的问题(Sokal andRohlf, 1995; Zar, 1999)。甚至有人说如果样本量够大，正态验证不是必要的(Fitzmaurice et al., 2004)。 对于每个X值处的正态验证，需要对X值处Y值们做直方图。但通常每个X那里没有足够的Y，在这种情况下，最好的做法是把全部的残差混起来做一个直方图。这样做保证了残差的正态性，但我们并不能因此得出整个群体的Y是服从正态分布的。很多时候我们对Y画一个直方图来判断其正态与否，但这是有前提的：在每一个X处都有重复的观测值。否则不能单单根据观测值的直方图来判定其正态性，而是应该利用一个模型，检查残差的分布情况。 ​同质性是要求在每一个X值处，观测值有相同的分散程度。这样判断有点主观，Barlett’s test是客观的方法，但软件要求数据要正态分布，这是有问题的，而且​​​​​Barlett’s test对非正态数据的同质性非常敏感，所以只靠图检残差分布是否一致是更好的选择。严重的异质性是非常要命的。转换数据可以部分解决，但缺点是会改变之间的关系。 独立性的验证是最重要的，因为它能使一些重要的检验如F-test和t-test无效。不独立是指X处的Y值受到另一个X变量的影响​。 在相信获得的F-statistic​并利用5%拒绝水平前，需要确信所有的模型假设都是有效的。标准的模型验证图有（1）残差vs拟合值验证同质性，（2）QQ或直方图验证正态性，（3）残差vs每个自变量检验独立性。 ">
+  <meta name="twitter:description" content="  A.F. Zuur et al., Mixed Effects Models and Extensions in Ecology with R, p17-25, chr 2.2-2.3
+ 1.模型 *Y_i* = *α* &#43; *β* × *X_i* &#43; *ε_i**
+ε_i包含不能解释的信息，并且*ε_i *∼ N(0*,σ^*2)。 用样本估计​***α 和β*的置信区间，置信区间告诉我们如 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/stat/s4--%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/stat/s4--%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>S4--线性回归模型</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (52 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>S4--线性回归模型</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (52 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>A.F. Zuur et al., <em>Mixed Effects Models and Extensions in Ecology with R</em>, p17-25, chr 2.2-2.3</p>
+</blockquote>
+
+<h1 id="1-模型">1.模型</h1>
+
+<p>*<strong>Y_i* = *α* + *β* × *X_i* + *ε_i</strong>**</p>
+
+<p><strong><em>ε_i</em></strong>包含不能解释的信息，并且*ε_i *∼ <em>N</em>(0*,σ^*2)。
+用样本估计​***α <strong><em>和</em></strong>β*<strong>的置信区间，</strong>置信区间<strong>告诉我们如果重复实验很多次，​</strong>*α <strong><em>和</em></strong>β<strong><em> 的真值落入该区间的可能性。
+估计参数​</em></strong>α <strong><em>和</em></strong>β*<strong>需要假设：</strong>正态、同质性<strong>，固定的X，</strong>独立性**及特定而正确的模型。
+正态是指对任何X，对应的Y们服从正态分布。同质性是指对于全部的X，对应的Y的高斯密度曲线们都是一样的（下图）。
+<img src="http://upload-images.jianshu.io/upload_images/3289684-afa72cf8bc2ee55d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+<h1 id="2-模型验证">2.模型验证</h1>
+
+<p><strong>模型验证</strong>过程，就是验证一系列的假设。
+因中心极限定理的缘故，有人说正态性的验证不是一个严重的问题(Sokal andRohlf, 1995; Zar, 1999)。甚至有人说如果样本量够大，正态验证不是必要的(Fitzmaurice et al., 2004)。
+对于每个X值处的<strong>正态验证</strong>，需要对X值处Y值们做直方图。但通常每个X那里没有足够的Y，在这种情况下，最好的做法是把全部的残差混起来做一个直方图。这样做保证了残差的正态性，但我们并不能因此得出整个群体的Y是服从正态分布的。很多时候我们对Y画一个直方图来判断其正态与否，但这是有前提的：在每一个X处都有重复的观测值。否则不能单单根据观测值的直方图来判定其正态性，而是应该<strong>利用一个模型，检查残差的分布情况</strong>。
+​<strong>同质性</strong>是要求在每一个X值处，观测值有相同的分散程度。这样判断有点主观，Barlett’s test是客观的方法，但软件要求数据要正态分布，这是有问题的，而且​​​​​Barlett’s test对非正态数据的同质性非常敏感，所以只靠图检残差分布是否一致是更好的选择。严重的异质性是非常要命的。转换数据可以部分解决，但缺点是会改变之间的关系。
+<strong>独立性</strong>的验证是最重要的，因为它能使一些重要的检验如<em>F</em>-test和<em>t</em>-test无效。不独立是指X处的Y值受到另一个X变量的影响​。
+在相信获得的<em>F</em>-statistic​并利用5%拒绝水平前，需要确信所有的模型假设都是有效的。标准的模型验证图有<strong>（1）残差vs拟合值验证同质性，（2）QQ或直方图验证正态性，（3）残差vs每个自变量检验独立性</strong>。
+<img src="http://upload-images.jianshu.io/upload_images/3289684-2fb1816bb8bbe1da?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/stat/s5--%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1ml%E5%92%8Creml/" data-toggle="tooltip" data-placement="top" title="S5--最大似然估计（ML）和REML">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/stat/s3--%E5%8A%A0%E6%80%A7%E6%A8%A1%E5%9E%8B-additive-model/" data-toggle="tooltip" data-placement="top" title="S3--加性模型-additive-model">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

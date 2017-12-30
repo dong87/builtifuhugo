@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Stefanova-2009-半变异函数诊断空间变异</title>
+  <meta property="og:title" content="Stefanova-2009-半变异函数诊断空间变异" />
+  <meta name="twitter:title" content="Stefanova-2009-半变异函数诊断空间变异" />
+  <meta name="description" content="Stefanova KT, Smith AB, Cullis BR (2009) Enhanced Diagnostics for the Spatial Analysis of Field Trials. J Agric Biol Environ Stat 14:392–410. doi: 10.1198/jabes.2009.07098 增强的现场试验空间分析诊断
+ 我们报告了使用Gilmour，Cullis和Verbyla提出的技术的一系列均匀性场试验的分析。特别是，我们澄清样本变差函数的作用，并提出一系列增强的图形诊断以帮助空间建模过程。我们强调与常见的农艺实践相关的外来变异的存在，例如蛇纹石收获。 关键词：农艺实践;覆盖间隔;混合模型;残余最大似然;空间模型;变异图。
+1.引言
+Gilmour，Cullis和Verbyla（1997）提出了扩展Cullis和Gleeson（1991）二维空间分析的现场试验分析方法。他们表明，分析人员需要确定空间变异的来源和原因。他们认为，这将导致对数据的更清晰的理解，以及对应该确定的模型类型的自然选择。他们的方法承认存在三种主要类型的空间变化：平滑的局部趋势反映短期空间相关性，整个领域的平滑的全球趋势，以及与试验管理相关的外部变化。 虽然现场技术已经改善，但仍然检测到外部变化的情况。这种变化通常与蛇形收获（即，在交替方向上收获图的排），不准确的图修剪方法（导致不等长的图）或使用同时播种几个图的多孔播种机相关。历史上，许多技术人员和植物育种者认为，以蛇形模式收获地块更容易;然而，空间分析表明，这种做法可能导致外部变化，这可能使分析复杂化，并潜在地降低选择的效率。这种做法仍然在一些澳大利亚植物改良计划中使用，例如西澳大利亚州。如Gilmour，Cullis和Verbyla（1997）所示，也广泛使用的多叶种子播种机可导致不同的播种深度或不同地块之间的不同通道。 空间分析已经常规地用于在澳大利亚的植物品种评价试验的分析一段时间，并且最近已被海外采用。我们知道它被植物育种研究所和公司在墨西哥，阿根廷和美国北部使用。空间变异的适当建模在早期试验中特别重要，其中仅在具有有限复制的少数位置（通常对于许多测试线仅有一个重复）评估大量线。品种效应的有效估计依赖于图误差方差模型的适当选择。 Gilmour，Cullis和Verbyla（1997）提出了一种建模的顺序方法，从一个试验性的，可能的空间模型开始，并使用图形和形式诊断来修正这个模型。样本变异函数在这种方法中起着关键作用，但可能难以解释。这个问题由于样本变异函数缺少正式的推理工具而加剧，其抽样分布是相当难以处理的（见Diggle和Verbyla 1998）。 在本文中，我们介绍了来自西澳大利亚的几组均匀性数据的分析。我们的目标是加强对数据驱动建模的需求，而不是单个基于距离的空间模型的自动配置。 Gilmour，Cullis和Verbyla（1997）在多样化试验数据的背景下显示了这一点，识别了平滑生育趋势之外的模型变化。在这篇文章中，我们消除任何对使用均匀性数据集的这种外部变化的现实的怀疑。建模方法需要工具来诊断外部变量的存在，并评估模型的平滑趋势的充分性。 Gilmour，Cullis和Verbyla（1997）提出使用样本变差函数为这一点，但后来的经验表明，解释可能是困难的，这可能导致模型选择的不确定性。 Gilmour et al。 （1999）表达了类似的观点，表明样本变差函数是一个有用的工具，但可能是模糊的。在本文中，我们对样本变差函数进行了改进，目的是提高解释的容易性和清晰度。 文章的结构安排如下。在第2节中，我们描述均匀性数据，在第3节，我们简要回顾了统计模型和诊断工具。在第4节中，我们给出了所有数据集的分析结果。详细介绍了两个试验的分析，以加强Gilmour，Cullis和Verbyla（1997）描述的建模过程。
+##2.均匀性数据的描述 这些数据涉及在西澳各地进行的七个实验实验。三个试验播种羽扇豆（cv。Tanjil），其他四个是小麦试验（cv。westonia）。表1提供了试验的简要描述。每个试验被认为是由两个因子，行和列索引的矩形矩阵阵列。所有试验包括25排，12（小麦）或6（羽扇豆）柱。地块大小是10 m×1 m为羽扇豆试验，5 m×1.25 m为小麦试验。羽扇豆的收获面积为8m×1m，小麦的收获面积为3m×1.25m。管理实践通常与行和列对齐。例如，通过横穿柱子，即沿着行之间的路径行驶来播种试验。操作者以蛇形方式完成这个过程;也就是说，锥形播种机在一个方向上被驱动，直到它到达该行的末端，然后沿相反的方向返回。这些方向标记为东（E）和西（W）。试验用播种两个地块的锥形播种机播种。锥形播种机的两侧标记为左（L）和右（R）。表2列出了这些试验的完整播种模式。试验也以蛇形方式收获，类似于播种过程。表2还给出了每排（东或西）的收获方向。协变量定义为播种方向（sdir），锥形播种机侧（锥体）和收获方向（hdir）。
+##3.统计方法的回顾
+###3.1扩展的空间模型 在这里，我们提出了一个来自小型田地实验的数据模型，包括除了由自然变异引起的额外变异来源。该模型将误差变化分解为三个分量：全局变化，外部变化和局部（空间）变化。我们假设有n = rc图的产量数据，其中r和c分别是行和列的数量。在这些试验中，图是连续的;也就是说，它们由单个数组组成。扩展到几个单独的数组或不规则数组是直接的。表示绘图产量的向量yi（si），i = 1，&hellip;，n，其中{si}是绘图质心的笛卡尔坐标的两个单元格矢量（Zimmerman和Harville 1991）。在由相等尺寸的矩形单个阵列的地块组成的现场试验 并且等间距，行和列数可以用作笛卡尔坐标。 y的模型是 y =Xτ&#43; Zu &#43;ξ&#43;η（3.1） 要么 y =Xτ&#43; Zu &#43; e， 其中e =ξ&#43;η是绘图误差的向量，τ（t×1）是设计矩阵X（n×t）的固定效应的向量，u（b×1） Z（n×b），ξ（n×1）是空间相关随机误差向量，η（n×1）是具有成对独立元素的均值0随机向量。后者通常在地质统计学文献中被称为测量误差或块效应。我们进一步假设（u，ξ，η）是成对独立的。注意，这个模型可以通过省略u和ξ或η来简化。 我们假设随机分量的联合分布在方程（3.">
+  <meta property="og:description" content="Stefanova KT, Smith AB, Cullis BR (2009) Enhanced Diagnostics for the Spatial Analysis of Field Trials. J Agric Biol Environ Stat 14:392–410. doi: 10.1198/jabes.2009.07098 增强的现场试验空间分析诊断
+ 我们报告了使用Gilmour，Cullis和Verbyla提出的技术的一系列均匀性场试验的分析。特别是，我们澄清样本变差函数的作用，并提出一系列增强的图形诊断以帮助空间建模过程。我们强调与常见的农艺实践相关的外来变异的存在，例如蛇纹石收获。 关键词：农艺实践;覆盖间隔;混合模型;残余最大似然;空间模型;变异图。
+1.引言
+Gilmour，Cullis和Verbyla（1997）提出了扩展Cullis和Gleeson（1991）二维空间分析的现场试验分析方法。他们表明，分析人员需要确定空间变异的来源和原因。他们认为，这将导致对数据的更清晰的理解，以及对应该确定的模型类型的自然选择。他们的方法承认存在三种主要类型的空间变化：平滑的局部趋势反映短期空间相关性，整个领域的平滑的全球趋势，以及与试验管理相关的外部变化。 虽然现场技术已经改善，但仍然检测到外部变化的情况。这种变化通常与蛇形收获（即，在交替方向上收获图的排），不准确的图修剪方法（导致不等长的图）或使用同时播种几个图的多孔播种机相关。历史上，许多技术人员和植物育种者认为，以蛇形模式收获地块更容易;然而，空间分析表明，这种做法可能导致外部变化，这可能使分析复杂化，并潜在地降低选择的效率。这种做法仍然在一些澳大利亚植物改良计划中使用，例如西澳大利亚州。如Gilmour，Cullis和Verbyla（1997）所示，也广泛使用的多叶种子播种机可导致不同的播种深度或不同地块之间的不同通道。 空间分析已经常规地用于在澳大利亚的植物品种评价试验的分析一段时间，并且最近已被海外采用。我们知道它被植物育种研究所和公司在墨西哥，阿根廷和美国北部使用。空间变异的适当建模在早期试验中特别重要，其中仅在具有有限复制的少数位置（通常对于许多测试线仅有一个重复）评估大量线。品种效应的有效估计依赖于图误差方差模型的适当选择。 Gilmour，Cullis和Verbyla（1997）提出了一种建模的顺序方法，从一个试验性的，可能的空间模型开始，并使用图形和形式诊断来修正这个模型。样本变异函数在这种方法中起着关键作用，但可能难以解释。这个问题由于样本变异函数缺少正式的推理工具而加剧，其抽样分布是相当难以处理的（见Diggle和Verbyla 1998）。 在本文中，我们介绍了来自西澳大利亚的几组均匀性数据的分析。我们的目标是加强对数据驱动建模的需求，而不是单个基于距离的空间模型的自动配置。 Gilmour，Cullis和Verbyla（1997）在多样化试验数据的背景下显示了这一点，识别了平滑生育趋势之外的模型变化。在这篇文章中，我们消除任何对使用均匀性数据集的这种外部变化的现实的怀疑。建模方法需要工具来诊断外部变量的存在，并评估模型的平滑趋势的充分性。 Gilmour，Cullis和Verbyla（1997）提出使用样本变差函数为这一点，但后来的经验表明，解释可能是困难的，这可能导致模型选择的不确定性。 Gilmour et al。 （1999）表达了类似的观点，表明样本变差函数是一个有用的工具，但可能是模糊的。在本文中，我们对样本变差函数进行了改进，目的是提高解释的容易性和清晰度。 文章的结构安排如下。在第2节中，我们描述均匀性数据，在第3节，我们简要回顾了统计模型和诊断工具。在第4节中，我们给出了所有数据集的分析结果。详细介绍了两个试验的分析，以加强Gilmour，Cullis和Verbyla（1997）描述的建模过程。
+##2.均匀性数据的描述 这些数据涉及在西澳各地进行的七个实验实验。三个试验播种羽扇豆（cv。Tanjil），其他四个是小麦试验（cv。westonia）。表1提供了试验的简要描述。每个试验被认为是由两个因子，行和列索引的矩形矩阵阵列。所有试验包括25排，12（小麦）或6（羽扇豆）柱。地块大小是10 m×1 m为羽扇豆试验，5 m×1.25 m为小麦试验。羽扇豆的收获面积为8m×1m，小麦的收获面积为3m×1.25m。管理实践通常与行和列对齐。例如，通过横穿柱子，即沿着行之间的路径行驶来播种试验。操作者以蛇形方式完成这个过程;也就是说，锥形播种机在一个方向上被驱动，直到它到达该行的末端，然后沿相反的方向返回。这些方向标记为东（E）和西（W）。试验用播种两个地块的锥形播种机播种。锥形播种机的两侧标记为左（L）和右（R）。表2列出了这些试验的完整播种模式。试验也以蛇形方式收获，类似于播种过程。表2还给出了每排（东或西）的收获方向。协变量定义为播种方向（sdir），锥形播种机侧（锥体）和收获方向（hdir）。
+##3.统计方法的回顾
+###3.1扩展的空间模型 在这里，我们提出了一个来自小型田地实验的数据模型，包括除了由自然变异引起的额外变异来源。该模型将误差变化分解为三个分量：全局变化，外部变化和局部（空间）变化。我们假设有n = rc图的产量数据，其中r和c分别是行和列的数量。在这些试验中，图是连续的;也就是说，它们由单个数组组成。扩展到几个单独的数组或不规则数组是直接的。表示绘图产量的向量yi（si），i = 1，&hellip;，n，其中{si}是绘图质心的笛卡尔坐标的两个单元格矢量（Zimmerman和Harville 1991）。在由相等尺寸的矩形单个阵列的地块组成的现场试验 并且等间距，行和列数可以用作笛卡尔坐标。 y的模型是 y =Xτ&#43; Zu &#43;ξ&#43;η（3.1） 要么 y =Xτ&#43; Zu &#43; e， 其中e =ξ&#43;η是绘图误差的向量，τ（t×1）是设计矩阵X（n×t）的固定效应的向量，u（b×1） Z（n×b），ξ（n×1）是空间相关随机误差向量，η（n×1）是具有成对独立元素的均值0随机向量。后者通常在地质统计学文献中被称为测量误差或块效应。我们进一步假设（u，ξ，η）是成对独立的。注意，这个模型可以通过省略u和ξ或η来简化。 我们假设随机分量的联合分布在方程（3.">
+  <meta name="twitter:description" content="Stefanova KT, Smith AB, Cullis BR (2009) Enhanced Diagnostics for the Spatial Analysis of Field Trials. J Agric Biol Environ Stat 14:392–410. doi: 10.1198/jabes.2009.07098 增强的现场试验空间分析诊断
+ 我们报告了使 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E7%A9%BA%E9%97%B4/stefanova-2009-%E5%8D%8A%E5%8F%98%E5%BC%82%E5%87%BD%E6%95%B0%E8%AF%8A%E6%96%AD%E7%A9%BA%E9%97%B4%E5%8F%98%E5%BC%82/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E7%A9%BA%E9%97%B4/stefanova-2009-%E5%8D%8A%E5%8F%98%E5%BC%82%E5%87%BD%E6%95%B0%E8%AF%8A%E6%96%AD%E7%A9%BA%E9%97%B4%E5%8F%98%E5%BC%82/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Stefanova-2009-半变异函数诊断空间变异</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (278 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Stefanova-2009-半变异函数诊断空间变异</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 2 minutes (278 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Stefanova KT, Smith AB, Cullis BR (2009) Enhanced Diagnostics for the Spatial Analysis of Field Trials. J Agric Biol Environ Stat 14:392–410. doi: 10.1198/jabes.2009.07098
+增强的现场试验空间分析诊断</p>
+</blockquote>
+
+<p>我们报告了使用Gilmour，Cullis和Verbyla提出的技术的一系列均匀性场试验的分析。特别是，我们澄清样本变差函数的作用，并提出一系列增强的图形诊断以帮助空间建模过程。我们强调与常见的农艺实践相关的外来变异的存在，例如蛇纹石收获。
+关键词：农艺实践;覆盖间隔;混合模型;残余最大似然;空间模型;变异图。</p>
+
+<hr />
+
+<p>1.引言</p>
+
+<p>Gilmour，Cullis和Verbyla（1997）提出了扩展Cullis和Gleeson（1991）二维空间分析的现场试验分析方法。他们表明，<strong>分析人员需要确定空间变异的来源和原因</strong>。他们认为，<strong>这将导致对数据的更清晰的理解，以及对应该确定的模型类型的自然选择</strong>。他们的方法承认存在三种主要类型的空间变化：<strong>平滑的局部趋势反映短期空间相关性，整个领域的平滑的全球趋势，以及与试验管理相关的外部变化</strong>。
+虽然现场技术已经改善，但仍然检测到外部变化的情况。这种变化通常与蛇形收获（即，在交替方向上收获图的排），不准确的图修剪方法（导致不等长的图）或使用同时播种几个图的多孔播种机相关。历史上，许多技术人员和植物育种者认为，以蛇形模式收获地块更容易;然而，空间分析表明，这种做法可能导致外部变化，这可能使分析复杂化，并潜在地降低选择的效率。这种做法仍然在一些澳大利亚植物改良计划中使用，例如西澳大利亚州。如Gilmour，Cullis和Verbyla（1997）所示，也广泛使用的多叶种子播种机可导致不同的播种深度或不同地块之间的不同通道。
+空间分析已经常规地用于在澳大利亚的植物品种评价试验的分析一段时间，并且最近已被海外采用。我们知道它被植物育种研究所和公司在墨西哥，阿根廷和美国北部使用。空间变异的适当建模在早期试验中特别重要，其中仅在具有有限复制的少数位置（通常对于许多测试线仅有一个重复）评估大量线。品种效应的有效估计依赖于图误差方差模型的适当选择。 Gilmour，Cullis和Verbyla（1997）提出了<strong>一种建模的顺序方法，从一个试验性的，可能的空间模型开始，并使用图形和形式诊断来修正这个模型</strong>。<strong>样本变异函数在这种方法中起着关键作用，但可能难以解释</strong>。这个问题由于样本变异函数缺少正式的推理工具而加剧，其抽样分布是相当难以处理的（见Diggle和Verbyla 1998）。
+在本文中，我们介绍了来自西澳大利亚的几组均匀性数据的分析。我们的目标是加强对数据驱动建模的需求，而不是单个基于距离的空间模型的自动配置。 Gilmour，Cullis和Verbyla（1997）在多样化试验数据的背景下显示了这一点，识别了平滑生育趋势之外的模型变化。在这篇文章中，我们消除任何对使用均匀性数据集的这种外部变化的现实的怀疑。建模方法需要工具来诊断外部变量的存在，并评估模型的平滑趋势的充分性。 Gilmour，Cullis和Verbyla（1997）提出使用样本变差函数为这一点，但后来的经验表明，解释可能是困难的，这可能导致模型选择的不确定性。 Gilmour et al。 （1999）表达了类似的观点，表明<strong>样本变差函数是一个有用的工具，但可能是模糊的</strong>。在本文中，我们对样本变差函数进行了改进，目的是提高解释的容易性和清晰度。
+文章的结构安排如下。在第2节中，我们描述均匀性数据，在第3节，我们简要回顾了统计模型和诊断工具。在第4节中，我们给出了所有数据集的分析结果。详细介绍了两个试验的分析，以加强Gilmour，Cullis和Verbyla（1997）描述的建模过程。</p>
+
+<p>##2.均匀性数据的描述
+这些数据涉及在西澳各地进行的七个实验实验。三个试验播种羽扇豆（cv。Tanjil），其他四个是小麦试验（cv。westonia）。表1提供了试验的简要描述。每个试验被认为是由两个因子，行和列索引的矩形矩阵阵列。所有试验包括25排，12（小麦）或6（羽扇豆）柱。地块大小是10 m×1 m为羽扇豆试验，5 m×1.25 m为小麦试验。羽扇豆的收获面积为8m×1m，小麦的收获面积为3m×1.25m。管理实践通常与行和列对齐。例如，通过横穿柱子，即沿着行之间的路径行驶来播种试验。操作者以蛇形方式完成这个过程;也就是说，锥形播种机在一个方向上被驱动，直到它到达该行的末端，然后沿相反的方向返回。这些方向标记为东（E）和西（W）。试验用播种两个地块的锥形播种机播种。锥形播种机的两侧标记为左（L）和右（R）。表2列出了这些试验的完整播种模式。试验也以蛇形方式收获，类似于播种过程。表2还给出了每排（东或西）的收获方向。协变量定义为播种方向（sdir），锥形播种机侧（锥体）和收获方向（hdir）。</p>
+
+<p>##3.统计方法的回顾</p>
+
+<p>###3.1扩展的空间模型
+在这里，我们提出了一个来自小型田地实验的数据模型，包括除了由自然变异引起的额外变异来源。<strong>该模型将误差变化分解为三个分量：全局变化，外部变化和局部（空间）变化</strong>。我们假设有n = rc图的产量数据，其中r和c分别是行和列的数量。在这些试验中，图是连续的;也就是说，它们由单个数组组成。扩展到几个单独的数组或不规则数组是直接的。表示绘图产量的向量yi（si），i = 1，&hellip;，n，其中{si}是绘图质心的笛卡尔坐标的两个单元格矢量（Zimmerman和Harville 1991）。在由相等尺寸的矩形单个阵列的地块组成的现场试验
+并且等间距，行和列数可以用作笛卡尔坐标。 y的模型是
+y =Xτ+ Zu +ξ+η（3.1）
+要么
+y =Xτ+ Zu + e，
+其中e =ξ+η是绘图误差的向量，τ（t×1）是设计矩阵X（n×t）的固定效应的向量，u（b×1） Z（n×b），<strong>ξ（n×1）是空间相关随机误差向量</strong>，η（n×1）是具有成对独立元素的均值0随机向量。后者通常在地质统计学文献中被称为<strong>测量误差或块效应</strong>。我们进一步假设（u，ξ，η）是成对独立的。注意，这个模型可以通过省略u和ξ或η来简化。
+我们假设随机分量的联合分布在方程（3.1），（u，ξ，η）是高斯分布，平均值为0，方差矩阵
+其中ψ=σ2 /σ2和σ2是测量误差的方差分量，γ是对应于u中可能的子向量的方差分量比的向量，ρ是空间相关参数的向量。那么y的边际分布
+需要R和G的形式来完成y的边缘分布的规定。 <strong>ξ，表示局部空间变化的向量或“局部趋势”的模型可以从可分离过程的类中选择</strong>（Martin 1990; Cullis和Gleeson 1991）。或者，<strong>可以使用在地质统计学中使用并由Cressie（1991）和Zimmerman和Harville（1991）讨论的协方差模型。但是这些模型通常是各向同性的</strong>，Cullis和Gleeson（1991）和Gilmour，Cullis和Verbyla（1997）已经表明，各向异性模型往往被推荐用于模拟实验中的方差结构。此外，可分离性的假设导致计算机时间的显着节省。<strong>由于大规模和小规模空间不均匀性而对变化建模类似于地质统计学中的建模趋势。在这种情况下，趋势被建模为空间协方差和/或空间坐标的确定性函数的混合（Cressie 1991）。因此，我们可以包括X中的空间坐标的多项式函数。我们还可以通过在X和Z中包括适当的项来使用平滑样条</strong>，如Verbyla等人详细讨论的。 （1999）。
+通常在Z中存在几个随机项。这些效应通常被假定为在项之间和项内是不相关的，使得G是包括缩放的单位矩阵的块对角矩阵。</p>
+
+<p>###3.2在建模过程中使用的诊断和测试
+空间建模过程通过省略等式1中的η开始。 （使得e =ξ），并且假设误差分量的方差模型是涉及用于行和列（指定为AR1×AR1）的一阶自回归模型的可分离过程。然后，来自该模型的残差为识别全局和外部变化以及评估局部趋势的方差结构的充分性提供了基础。
+除了用于检查标准线性模型中的分布假设的通常的诊断工具之外，我们还具有检查误差的假设方差（或相关性）模型的充分性的额外复杂性。我们专注于以下关键问题：
+1.全球变化和/或非稳态的存在
+2.存在外部变异，通常与行和列相关联
+3.相关模型对局部趋势的充分性
+4.需要测量误差分量。
+我们使用几个诊断工具来检查这些问题。首先，我们检查残差的图，其是残差对行（列）数的条件关于列（行）的图。检查这个图经常揭示数据异常和全球趋势的存在。
+下一个图形诊断涉及样本变异函数。首先，我们记得数据（以及误差）由一组n个笛卡尔坐标si索引，其中sri =（six，siy）r。因此，误差向量e的元素ei由ei（si）给出。此外，我们定义图i和j之间的位移矢量为lij = | si-sj |。
+对于随机过程E（s），变差函数定义为
+ω（s，t）= 1 V（s，t）= 1 var [E（s）
+其中s，t都是包含x和y坐标的矢量，V（·，·）是E（·）的协方差函数。在大多数应用中，我们假设E（·）是静止的，在这种情况下ω（s，t）=ω（s-t），并且在变差函数和相关函数ρ（l）即
+ω（1）=σ2（1-ρ（1））。
+从观察到的残差对之间的半平方差（也称为半变量）计算样本变异图，
+vij = 1 [ei（si）-ej（sj）] 2，∀i，j = 1，&hellip;， i / = j。
+当e是高斯分布时，vij的抽样分布是
+ vij
+〜χ，
+ω（si，sj）1</p>
+
+<p>使得对于ω（si，sj）vij是不偏置的。
+在大多数现场实验中，将有许多具有相同绝对位移的vij，因为这些图以规则阵列排列。也就是说，位移矢量lij = si-sj的分量的绝对值取值0，d1，2d1，&hellip;，（r-1）d1和0，d2，2d2，&hellip;， c-1）d2，其中d1和d2是绘图尺寸。
+样本变差函数被作为三元组（x，y，z）=（| lij x |，| lijy |，v¯ij），其中lij x = six_sjx，lijy = siy -sjy是行和列位移vij是具有相同绝对位移的vij的样本均值。 （参见Haskard，Cullis和Verbyla 2007对于变异函数的更一般的解释。）我们选择将样本变异函数呈现为截断的样本变异函数，作为在每个平均值中具有大于约30对的三元组的透视图。实际上，我们用估计e  - 替换真实残差e的向量（更多细节见Gilmour，Cullis和Verbyla 1997）。
+Gilmour，Cullis和Verbyla（1997）以非正式的方式使用样本变异函数，并依赖于对修正模型的后续正式测试以支持视觉解释。全局和/或外来变异的存在通常在样本变异函数中产生非常独特的模式。意识到这些模式可以帮助建模过程。这些模式在第4节中详细讨论。
+在这里我们提出一种增强诊断，以辅助解释。我们考虑样本变异函数的两个“面”，即，对应于零行/列位移的切片，用大约95％的点覆盖间隔增加。我们将行面定义为对应于零列位移的切片，并且将列面定义为对应于零行位移的切片。覆盖间隔通过以与Atkinson（1985）报道的方式类似的方式通过模拟当前模型来获得，该方法构造用于半正态图的包络。过程中的步骤如下：
+1.将线性混合模型拟合到观察数据以获得方差参数和固定效应的估计。用σ2，γ0，ρ0，ψ0和τ0表示这些。计算行和列面的样本变量坐标。相关联的矢量由vro和vco表示，每个具有由位移值的数量（分别对于行和列面的r和c）给出的长度。
+给定步骤1中的方差参数的估计，模拟随机效应的值。因此，通过从分布N（0，σ2G（γ0））采样来生成u <em>;通过从N（0，σ2Σ（ρo））采样来生成ξ</em>;并通过从N（0，σ2ψoI）采样来生成η*。因此，生成的数据具有形式
+y * =Xτo + Zu * +ξ* +η*。
+然后将混合模型应用于生成的数据，并计算由vr *和vc *表示的行和列面的关联样本变量坐标。
+3.重复步骤2大量（N）次以获得变量坐标vr * ik（对于i = 1，&hellip;，r和k = 1，&hellip;，N）和vc * jk 1，&hellip;，c，k = 1，&hellip;，N）。对于</p>
+
+<p>行面，计算第i个位移的平均值为.N</p>
+
+<p>vr * ik</p>
+
+<p>/ N。</p>
+
+<p>还计算每个位移的2.5％和97.5％百分位数。对柱面也这样做。最后，绘制观察到的变异图面以及来自模拟的均值和百分位数。
+在这项工作中，我们选择了基于N = 1000模拟的覆盖区间;然而，基于较少模拟（低至N = 100）的间隔足以用作此处检查的数据集大小的诊断工具。
+<strong>在概念上，也可以用覆盖间隔来增大样本变差函数的完整三维图，但是这可能是压倒性的</strong>。因此，我们使用面孔的覆盖区间，<strong>并建议除了三维样本变差函数之外检查这些图形</strong>。<strong>重要的是观察后者，而不注意变差函数的面</strong>。面部将警告从业者潜在的问题，但是这些不可能是真实的，除非发现在整个三维变差函数中一致地发生。如果不使用覆盖区间，可能会完全错过一些效果。
+通过标准或非标准限制最大似然（REML）比率检验（REMLRT）提供具有嵌套方差结构但相同固定效应模型的模型的正式检验。例如，REMLRT可以用于测试与外部变化相关的随机效应的显着性。在这些情况下，零假设规定了感兴趣的设计因子的方差分量为0.这不包括两个嵌套模型之间的REML对数似然的变化的D = -2倍的标准结果，其中存在减少一个方差参数分布为χ2渐近。 Stram和Lee（1994）的结果可用于这些情况。 REMLRT统计量D的近似p值为0.5（1-Pr（χ2≤d）），其中d是D的观测值。ψ&gt; 0的测量误差方差也使用该结果。使用D的标准渐近分布来执行空间相关参数的零值的测试。可以使用基于Wald统计的近似F检验来测试涉及固定效应的假设。我们使用Kenward和Roger的方法计算分母自由度（1997）。在单自由度对比的情况下，我们可以报告近似的t统计量（F统计量的平方根）。
+包括测量误差项的强统计和生物学原因（Wilkinson等人，1983）。这个术语隐含在Wilkinson等人的原始趋势加误差模型中。 （1983）和Besag和Kempton（1986）。 Cullis et al。 （1998）证明包括测量误差项（η在等式（3.1））不一定增加计算负荷，虽然当自回归相关参数小时存在可识别性的问题。
+在这项工作中的所有分析使用ASReml-R（Butler等人2007）进行。</p>
+
+<p>##4.实施例</p>
+
+<p>###4.1 WHEAT试验
+在这里我们提出了小麦试验的空间分析结果。详细描述了Wongan Hills研究站（指定为WH-W试验）的试验的建模过程。选择该试验是因为它说明了锥形播种机对空间变化的影响。总结了其他试验的结果。
+表3提供了WH-W试验的模型序列的概述。我们开始用一个可分离的过程建模空间变化，包括行和列的第一阶自回归模型。这是Gilmour，Cullis和Verbyla（1997）使用的模型，我们发现<strong>这对于模拟局部趋势很有用</strong>。
+图1中每列的残差相对于行数的图示表明在第4列（第7和17行）和第12列（第6和16行）中有些不寻常的数据点。<strong>在线性混合模型中对异常值的正式测试是一个困难的问题</strong>，是正在进行的研究的主题。对于我们的例子，<strong>数据被检查对场记录，并发现是正确的，因此保留在数据集中作进一步分析</strong>。存在外来变异的指示，特别是产量相对于行数的线性增加;然而，对于这些数据，使用样本变异函数更容易识别变异。图2给出了表3中提出的三个模型的样本变异函数。这里我们首先关注部分（a）中描述的模型1的变异函数。对应于局部趋势的AR1×AR1模型的理论变差函数是平滑的，并且在x和y方向上以指数方式增加到过程的方差的公共基底（asymptote）。样本变异图显示出与此形式的明显偏离。行的模型的不适当性清楚地示出在图3（a）中。样本变异图看起来与模型1的1000次模拟的平均值非常不同。它在多个位移处落在95％覆盖范围之外。关键特征是<strong>随着行方向（x）上的位移增加，半变化的稳定增加[图2（a）和3（a）]。这个特性通常意味着在残差中存在线性漂移</strong>。模型2包括行数收益的线性回归，以说明这种全球趋势。相关的近似Wald t检验非常显着（p &lt;0.001）。
+来自模型1的样本变差函数也具有特有的<strong>锯齿形外观[图2（a）和3（a）]，表示循环行效应</strong>。为了帮助识别模式及其可能的原因，将表中指定为ran（row）的随机行因子添加到模型2。
+图4绘制了来自模型3的预测行效应。用与特定行相关的锥因子的水平来标记效应。对于用锥形播种机的左侧播种的地块，存在明显的产量损失。传统上假设该效应是平均0高斯过程的独立实现，阻塞因子，例如完全块设计中的复制和可解决的不完全块设计的复制内的块。对于这里的阻塞因子（即行），对效应的公共均值的假设是清楚的是不合适的。对于锥形播种机的每一侧有单独的平均值。因此，我们需要在这个模型中的固定锥因子。
+模型4包括锥作为因子。这种效应的近似Wald t-statistic非常显着（p &lt;0.001）。图2（b）显示了来自该模型的残差的样本变差函数。大多数外来变化已经被去除，包括两个项，lin（row）和cone。模型4a用于测试随机行项的显着性，现在表示未被锥效应考虑的残余行变化。
+即使这不是高度显着（p = 0.07），它仍然保留在模型中。
+对变异图的仔细检查表明柱效应仍然可能存在于来自该模型的残差中。为了看到这一点，我们考虑误差过程的理论变差函数，它是三个独立随机项的和，
+eij = ri + cj +δij，</p>
+
+<p>其中eij是绘图（i，j）的误差，ri是行i的效果，cj是列j的效果，δij是残差。如果我们将这些项的方差分量表示为σ2，σ2，</p>
+
+<p>和σ2</p>
+
+<p>r c</p>
+
+<p>因此，如果存在行效应，则当x = 0时减小半变量，并且如果存在列效应，则当y = 0时减少半变量。
+图2（b）中的样本变差函数表明任何行位移的半变化从零到非零列位移的跳跃，这表示随机列效应。通过检查对应于零柱位移的样品变差函数的面（图3（b）），更容易看到效果。样本变异函数的曲线（约0.03）远低于模拟的平均值（0.04），位于覆盖区间的下边界。这表明随机列效应。注意，这些效应的方差分量的估计可以作为基值的差值，即0.01。
+模型5包括随机列效应。与模型4相比，REML对数似然值有显着增加。来自模型5的残差的样本变量图（如图2（c）所示）与局部趋势的方差模型的理论变量图合理一致。样本变异图[图3（c）和（f）]的面与来自模拟的平均值良好一致，并且处于95％覆盖区间内。对于局部趋势的空间相关性参数的REML估计很小（表4），如在样本变异函数中所反映的。线（行）和锥的固定效应是显着的。
+表4和表5显示了每个小麦试验的最终空间模型的方差参数的REML估计值和固定效应的广义最小二乘估计值。与行和列相关的全局和外部变化存在于所有试验中。锥形播种机的效果对于两个试验是明显的，而对于KT-W，观察到收获方向的显着效果。 KT-W，MD-W和ND-W的局部趋势的空间相关性较强。包括测量误差仅对KT-W是有必要的，REML对数似然性的增加为7.65单位（p &lt;0.001）。图5绘制了来自具有（a）和没有（b）测量误差项的最终空间模型的残差的y = 0的半变量。具有测量误差的模型的绘图误差e由两个分量的和给出;见等式（3.1）。覆盖间隔和来自1000次模拟的平均值叠加在图上。 （a）中的样本变异函数看起来与模拟的平均值非常不同，而（b）显示出改善的一致性。</p>
+
+<p>##4.2 LUPIN试验
+我们现在详细描述在Wongan山研究站的试验的分析。
+我们总结了来自表6，7和8中所有羽扇豆试验分析的结果。
+表6给出了适用于WH-L的模型序列的概述。建模过程开始于定义AR1×AR1模型，没有测量误差，如前所述。图6（a）示出了来自模型1的残差的样本变差函数，指示存在系统行效应。该特征支配对应于零列位移的变差函数和面（图7（a））。如在WH-W的分析中，将随机行因子添加到模型1以研究这些效应的性质。
+图8绘制了来自模型2的预测行效应对行数的图。这些点用每排的收获方向标记（见表2）。收获方向的影响是清楚的，虽然这个图表明该效果可能不一致的整个试验。这是完全可能的，因为收获方向的效果主要是收获期间不完全谷物恢复的结果。试验地点的坡度，盛行的风向和作物倒伏的程度均可影响收获期间谷物的恢复。选择试验地点是合理的，如果当时的风力强度被认为是一个问题，则停止采伐。尽管有这些预防措施，在东风方向收获的地块与在西风方向收获的地块之间的产量差异为约0.22t / ha（参见表8），代表试验平均产量的13％。
+模型3包括收获方向作为固定因子。相关的近似Wald检验是显着的（p &lt;0.001）。来自该模型的残差的样本变量图[图6（b）]示出当y = 0（列效应）和当x = 0（行效应）时随机效应减少的一些证据。使用样本变差函数的面更好地说明这些效应。在图7（b）和（e）中，样本变异图的基石远低于模拟的平均值，并且接近覆盖区间的下边界。附加的，相当奇怪的特征是样品变差函数在行方向上的锯齿性质[图6（b）和7（b）]。这表明对于局部趋势需要不同的相关模型。 AR1×AR1模型不能充分解释y = 0的模式。
+模型4包括行和列效应，并使用AR2×AR1模型用于局部趋势。 REML对数似然增加了22.2单位。我们将模型4（a），（b）和（c）与模型4进行比较，以分别评估与列，行和AR2×AR1过程相关的每个附加方差参数对局部趋势的贡献。 AR2×AR1模型明显优于AR1×AR1模型[模型4和4（c）的比较]。行的方差分量是重要的[模型4与模型4（b）]，而列的方差分量在5％水平[模型4与模型4（a）]不显着，但保留在模型中。图6（c）给出了来自该模型的残差的样本变差函数。对于零列位移的变差函数的面[图7（c）]表明，用于行的AR（2）处理比AR（1）处理更合适，其中样本变差函数现在表现出与模拟的手段。来自该模型[图7（c）和（f）]的变异函数的两个面显示与95％覆盖区间内的平均值和位置良好一致。
+表7示出了模型4的方差参数的REML估计。自回归参数指示与滞后1相关（0.188 = 0.094 /（1-0.499））相比的滞后2相关的强度（0.517 = 0.499 + 0.0942 / 1〜0.499））。对于差异的合理解释是收获方向的影响是瞬时的，并且可以反映坡度或作物倒伏的局部变化。因此，相邻地块的谷物恢复是负相关的，这抵消了从平滑生育趋势的积极关联。缺乏有效数据可用于保证更复杂的空间方差模型（参见Box和Jenkins 1970，pp。121-122）。
+表7和表8总结了所有羽扇豆试验的最终空间模型的方差参数的REML估计和固定效应的广义最小二乘估计。如在小麦试验中，对所有试验检测到全局和外来变异。收获方向的影响对所有试验都是显着的。此外，在MG-L，对于图4，图8，&hellip;分开的半变异性持续减小。这对应于用锥形种子播种机的同一侧播种并且在相同方向上的图。因此，我们包括列，播种方向和锥形播种机之间的随机三向相互作用，以解释这种影响（见表7）。在这种情况下，高阶自回归移动平均模型可能证明是有用的。</p>
+
+<p>##讨论</p>
+
+<p>本文提出的例子强调需要一个建模方法来分析现场试验。我们发现<strong>无法使用单个平滑空间模型充分建模的外来变化的明确证据</strong>。如在Gilmour，Cullis和Verbyla（1997）的工作中，变化与已知来源相关，即与田行和列对齐的农艺实践。
+在提出使用数据驱动建模时，我们注意到<strong>诊断的需要，这将有助于适当的模型选择和防止过度配置</strong>。 Gilmour，Cullis和Verbyla（1997）建议检查样本变异函数，但我们后来发现，没有经验的用户可能很难解释这些。在本文中，我们通过以更正式的方式检查样本变差函数来解决这个问题，<strong>用大约95％的覆盖间隔扩大变差函数的面。这是一个重要的增强，导致更容易和更知情的模型选择</strong>。在确定了适应外部和全局变化的看似最终模型之后，可以考虑对固定空间趋势的充分性的正式诊断。 Cullis，McGilchrist和Gleeson（1991）获得了大量样本分布的现场实验误差诊断。这项工作可以扩展到样本变差函数，以获得大样本置信区间，从而执行形式测试。
+这些例子的分析表明，某些农艺实践的使用如何使建模过程复杂化。不是依赖于分析调整和随机近似，优选避免使用它们。即使这是可能的，仍然可以预期到外部变化。这对实验实验的设计有影响。例如，Eccleston和Chan（1998）提出了一种方法，可以适应几个变异源，包括随机行和列效应和平滑的空间趋势，Cullis，Smith和Coombes（2006）考虑了具有预定空间相关结构。
+观察到非平滑外部变化和平滑空间趋势的规律性需要使用建模方法进行分析。非常乐观的期望一个单一的随机模型来充分模拟在现场试验数据中可能出现的所有变化来源。一旦外来变化已经适应，协调变量结构的平滑空间趋势的选择可能有点问题。由Cullis和Gleeson（1991）和Gilmour，Cullis和Verbyla（1997）提出的可分离静止过程的性能是众所周知的。与替代模型比较的基础，如Besag和Higdon（1999）的非稳定模型，但是还不清楚。这可能是一个进一步研究的主题，虽然空间变化的平滑分量的模型的选择可能没有实际影响。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/steffenrem2016--%E6%9D%90%E6%80%A7%E5%92%8C%E6%8A%97%E6%80%A7/" data-toggle="tooltip" data-placement="top" title="Steffenrem2016--材性和抗性">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/stackpole2011-%E6%A1%89%E6%A0%91-%E5%8C%96%E5%AD%A6%E7%BB%84%E6%88%90-%E9%81%97%E4%BC%A0%E5%8F%98%E5%BC%82/" data-toggle="tooltip" data-placement="top" title="Stackpole2011-桉树-化学组成-遗传变异">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

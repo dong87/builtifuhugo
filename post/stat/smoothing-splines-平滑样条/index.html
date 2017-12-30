@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Smoothing-Splines-平滑样条</title>
+  <meta property="og:title" content="Smoothing-Splines-平滑样条" />
+  <meta name="twitter:title" content="Smoothing-Splines-平滑样条" />
+  <meta name="description" content="Wang Y. Smoothing Splines: Methods and Applications (Chapman &amp; Hall CRC Monographs on Statistics &amp; Applied Probability) [Internet]. 1st ed. Chapman and Hall/CRC; 2011. Available from: http://gen.lib.rus.ec/book/index.php?md5=2EFF745DDEB91107DC1030287CB70BED   前言 统计分析通常涉及建立检查依赖变量和自变量之间的关系的数学模型。这本书是关于一般类的强大而灵活的建模技术，即样条平滑。平滑样条模型的研究近年来引起了人们的极大关注，并且该方法已经在许多领域得到广泛应用。本书提供了一些基本平滑样条线模型的介绍，包括多项式，周期，球面，薄板，L-和部分样条，以及更高级模型的概述，包括平滑样条线ANOVA，扩展和广义平滑样条ANOVA，矢量样条，非参数非线性回归，半参数回归和半参数混合效应模型。还介绍了模型选择和推理的方法。本书中非参数/半参数线性/非线性固定/混合平滑样条模型的一般形式为估计，推理和软件实现提供了统一的框架。本书借鉴了再现核Hilbert空间（RKHS）的理论，以统一的方式呈现各种平滑样条模型。另一方面，在RKHS和正则化的背景下的平滑样条的主题通常被认为是技术和困难的。我的主要目标之一是使基于RKHS的高级平滑样条法更易于从业者和学生访问。考虑到这一点，本书侧重于方法，计算，实现，软件和应用。它为RKHS提供了温和的介绍，将理论保持在最低水平，并提供了有关如何使用RKHS构建样条模型的细节。用户友好的软件是任何统计方法的常规使用的关键。 R中的辅助库实现本书中提出的用于拟合各种非参数/半参数线性/非线性固定/混合平滑样条模型的方法。辅助库可以在http://www.r-project.org获得。大部分的说明是基于对实例的分析。 这些示例不是形式分析，而是用于说明样条平滑方法的功能和多样性。所有数据分析在R中执行，其中大多数使用辅助库中的函数。与本书相关的所有示例和进一步发展的代码将公布在网页http://www.pstat.ucsb.edu/faculty/yuedong/book.html 本书面向那些想了解平滑样条曲线的人。它可以是需要先进和灵活的建模技术的统计学家和科学家的参考书。它也可以作为一个高级研究生课程的文本。事实上，第1章到第4章的主题在加州大学圣塔芭芭拉分校和中国科学技术大学的四分之一课程中讨论。我确实幸运地学到了平滑样条 GraceWahba，他的先驱工作为许多研究工作铺平了道路，使本书成为可能。我非常感谢我的前学生和合作者Chunlei Ke开发的辅助包。特别感谢刘安娜仔细阅读草稿，纠正了许多错误。几个人帮助我写了这本书的各个阶段：创业，郭文生，大卫恒克利，平马和温迪迈林。我必须感谢我的编辑David Grubbes的耐心和鼓励。最后，我要感谢几位研究人员分享他们的数据集以纳入本书;他们被引用到他们的数据被引入。
+第1章简介 1.1参数和非参数回归 回归分析构建检验因变量与一个或多个自变量的关系的数学模型。这些模型可以用于预测自变量的未观察值和/或未来值的响应。在简单情况下，从属变量y和独立变量x都是标量变量，给定对于i = 1，&hellip;的观察值（xi，yi）。 。 。 ，n，回归模型关联依赖和自变量如下： 其中f是回归函数，ei是具有共同方差σ2的零均值独立随机误差。回归分析的目的是构建f的模型，并基于噪声数据进行估计。 例如，对于黄石国家公园的老忠实喷泉，考虑使用先前喷发的长度预测下一次喷发的等待时间的问题。图1.1（a）显示了来自旧忠实喷泉的272次观测的等待时间到下一次喷发（y =等待）对先前喷发持续时间（x =持续时间）的散点图。目标是建立一个数学模型，将等待时间与先前喷发的持续时间相关联。第一次尝试可能是通过直线近似回归函数f 最小二乘直线拟合如图1.1（a）所示。没有明显的缺乏适应的迹象。此外，在图1.1（b）中的残差图中没有明显的可见趋势。通常f在x中是非线性的。处理非线性关系的常见方法是通过阶m的多项式近似f 图1.2显示了模拟摩托车碰撞实验对冲击头盔的功效的加速度（y =加速度）对冲击后时间（x =时间）的散点图。很明显，直线不能解释加速度和时间之间的关系。多元醇，m = 1，。 。 。 ，20被拟合到数据，并且图1.2示出了由Akaike的信息标准（AIC）选择的最佳拟合。在范围的两端的拟合曲线中存在波浪。即使考虑到高达20阶的多项式，拟合仍然不能完全令人满意。与线性回归模型（1.2）不同，除了小m，模型（1.3）中的系数不再有很好的解释。 一般来说，参数回归模型假定f的形式是已知的，除了有限多个未知参数。 f的具体形式可以来自科学理论和/或在一些简化假设下的力学近似。这些假设可能太限制，并且对于一些应用，近似可能太粗糙。不适当的模型可能导致系统偏差和误导性结论。在实践中，应该总是检查函数f的假设形式。 获得f的特定功能形式通常是困难的，即使不是不可能的。非参数回归模型不采用预定义形式。相反，它对f的定性性质做出假设。例如，可以愿意假设f是“平滑的”，其不会减少到具有有限数量的参数的特定形式。相反，它通常导致一些无限维函数集合。非参数回归的基本思想是让数据自己说话。这就是让数据决定哪个函数最适合，而不在f上强加任何特定的形式。因此，非参数方法通常更灵活。它们可以揭示数据中可能被遗漏的结构。 为了说明，我们将三次样条拟合到间歇数据。三次样条是一个特殊的非参数回归模型，将在1.2节中介绍。对来自线性模型（1.2）的残差的三次样条拟合显示出图1.3（a）中的非零趋势。这提出了一个简单的线性回归模型是否适合间歇泉数据的问题。对原始数据的三次样条拟合如图1.3（b）所示。它揭示了在自变量中有两个聚类，并且每个聚类可能需要不同的线性模型。第2.10,3.8和3.9节包含对间歇泉数据的更多分析。摩托车数据的三次样条拟合如图1.4所示。它比多项式模型更好地拟合数据。第2.10,3.8,5.4.1和6.4节包含了对摩托车数据的更多分析。 上述简单的说明表明，非参数回归技术可以应用于回归分析中的不同步骤：数据探索，建模，测试参数模型和诊断。事实上，如整个书中所示，样条平滑是用于建立统计模型以利用数据中的结构的强大且通用的工具。
+1.2多项式样条 多项式（1.3）是一个全局模型，使其对局部变化的适应性较差。个人观察可能对偏远地区的适应有不当影响。例如，在摩托车数据中，平均函数的行为从一个区域到另一个区域急剧变化。 这些局部变化导致在多项式拟合的范围的两端的振荡。克服这种限制的一个自然方法是使用分段多项式，多项式样条曲线的基本思想。令a &lt;t1 &lt;&hellip; &lt;tk &lt;b是称为节点的固定点。令t0 = a和tk &#43; 1 = b。粗略地说，多项式样条是在结处平滑连接在一起的分段多项式。形式上，阶数r的多项式样条是[a，b]，f（t）上的实值函数，使得 （i）f是阶数r on [ti，ti &#43; 1）的分段多项式，i = 0,1，&hellip;， 。 。 ，k; （ii）f具有r -2个连续导数，并且（r -1）st导数是具有节点跳跃的阶跃函数 现在考虑甚至表示为r = 2m的订单。如果除了（i）和（ii）之外，函数f是2m的自然多项式样条，其满足自然边界条件 （iii）f（j）（a）= f（j）（b）= 0，j = m。 。 。 ，2m-1。 自然边界条件意味着f是在两个外部子间隔[a，t1]和[tk，b]上的阶m的多项式。用节点t1，表示2m的自然多项式样条函数空间。 。 。 ，tk作为NS2m（t1，&hellip;，tk）。一种被称为回归样条的方法是使用多项式样条或自然多项式样条近似f。为了获得良好的效果，需要决定结的数量和位置。本书涵盖了一种称为平滑样条的不同方法。它从f的一个明确定义的模型空间开始，并引入一个惩罚，以防止过度拟合。我们现在描述这种多项式样条的方法。考虑回归模型（1.">
+  <meta property="og:description" content="Wang Y. Smoothing Splines: Methods and Applications (Chapman &amp; Hall CRC Monographs on Statistics &amp; Applied Probability) [Internet]. 1st ed. Chapman and Hall/CRC; 2011. Available from: http://gen.lib.rus.ec/book/index.php?md5=2EFF745DDEB91107DC1030287CB70BED   前言 统计分析通常涉及建立检查依赖变量和自变量之间的关系的数学模型。这本书是关于一般类的强大而灵活的建模技术，即样条平滑。平滑样条模型的研究近年来引起了人们的极大关注，并且该方法已经在许多领域得到广泛应用。本书提供了一些基本平滑样条线模型的介绍，包括多项式，周期，球面，薄板，L-和部分样条，以及更高级模型的概述，包括平滑样条线ANOVA，扩展和广义平滑样条ANOVA，矢量样条，非参数非线性回归，半参数回归和半参数混合效应模型。还介绍了模型选择和推理的方法。本书中非参数/半参数线性/非线性固定/混合平滑样条模型的一般形式为估计，推理和软件实现提供了统一的框架。本书借鉴了再现核Hilbert空间（RKHS）的理论，以统一的方式呈现各种平滑样条模型。另一方面，在RKHS和正则化的背景下的平滑样条的主题通常被认为是技术和困难的。我的主要目标之一是使基于RKHS的高级平滑样条法更易于从业者和学生访问。考虑到这一点，本书侧重于方法，计算，实现，软件和应用。它为RKHS提供了温和的介绍，将理论保持在最低水平，并提供了有关如何使用RKHS构建样条模型的细节。用户友好的软件是任何统计方法的常规使用的关键。 R中的辅助库实现本书中提出的用于拟合各种非参数/半参数线性/非线性固定/混合平滑样条模型的方法。辅助库可以在http://www.r-project.org获得。大部分的说明是基于对实例的分析。 这些示例不是形式分析，而是用于说明样条平滑方法的功能和多样性。所有数据分析在R中执行，其中大多数使用辅助库中的函数。与本书相关的所有示例和进一步发展的代码将公布在网页http://www.pstat.ucsb.edu/faculty/yuedong/book.html 本书面向那些想了解平滑样条曲线的人。它可以是需要先进和灵活的建模技术的统计学家和科学家的参考书。它也可以作为一个高级研究生课程的文本。事实上，第1章到第4章的主题在加州大学圣塔芭芭拉分校和中国科学技术大学的四分之一课程中讨论。我确实幸运地学到了平滑样条 GraceWahba，他的先驱工作为许多研究工作铺平了道路，使本书成为可能。我非常感谢我的前学生和合作者Chunlei Ke开发的辅助包。特别感谢刘安娜仔细阅读草稿，纠正了许多错误。几个人帮助我写了这本书的各个阶段：创业，郭文生，大卫恒克利，平马和温迪迈林。我必须感谢我的编辑David Grubbes的耐心和鼓励。最后，我要感谢几位研究人员分享他们的数据集以纳入本书;他们被引用到他们的数据被引入。
+第1章简介 1.1参数和非参数回归 回归分析构建检验因变量与一个或多个自变量的关系的数学模型。这些模型可以用于预测自变量的未观察值和/或未来值的响应。在简单情况下，从属变量y和独立变量x都是标量变量，给定对于i = 1，&hellip;的观察值（xi，yi）。 。 。 ，n，回归模型关联依赖和自变量如下： 其中f是回归函数，ei是具有共同方差σ2的零均值独立随机误差。回归分析的目的是构建f的模型，并基于噪声数据进行估计。 例如，对于黄石国家公园的老忠实喷泉，考虑使用先前喷发的长度预测下一次喷发的等待时间的问题。图1.1（a）显示了来自旧忠实喷泉的272次观测的等待时间到下一次喷发（y =等待）对先前喷发持续时间（x =持续时间）的散点图。目标是建立一个数学模型，将等待时间与先前喷发的持续时间相关联。第一次尝试可能是通过直线近似回归函数f 最小二乘直线拟合如图1.1（a）所示。没有明显的缺乏适应的迹象。此外，在图1.1（b）中的残差图中没有明显的可见趋势。通常f在x中是非线性的。处理非线性关系的常见方法是通过阶m的多项式近似f 图1.2显示了模拟摩托车碰撞实验对冲击头盔的功效的加速度（y =加速度）对冲击后时间（x =时间）的散点图。很明显，直线不能解释加速度和时间之间的关系。多元醇，m = 1，。 。 。 ，20被拟合到数据，并且图1.2示出了由Akaike的信息标准（AIC）选择的最佳拟合。在范围的两端的拟合曲线中存在波浪。即使考虑到高达20阶的多项式，拟合仍然不能完全令人满意。与线性回归模型（1.2）不同，除了小m，模型（1.3）中的系数不再有很好的解释。 一般来说，参数回归模型假定f的形式是已知的，除了有限多个未知参数。 f的具体形式可以来自科学理论和/或在一些简化假设下的力学近似。这些假设可能太限制，并且对于一些应用，近似可能太粗糙。不适当的模型可能导致系统偏差和误导性结论。在实践中，应该总是检查函数f的假设形式。 获得f的特定功能形式通常是困难的，即使不是不可能的。非参数回归模型不采用预定义形式。相反，它对f的定性性质做出假设。例如，可以愿意假设f是“平滑的”，其不会减少到具有有限数量的参数的特定形式。相反，它通常导致一些无限维函数集合。非参数回归的基本思想是让数据自己说话。这就是让数据决定哪个函数最适合，而不在f上强加任何特定的形式。因此，非参数方法通常更灵活。它们可以揭示数据中可能被遗漏的结构。 为了说明，我们将三次样条拟合到间歇数据。三次样条是一个特殊的非参数回归模型，将在1.2节中介绍。对来自线性模型（1.2）的残差的三次样条拟合显示出图1.3（a）中的非零趋势。这提出了一个简单的线性回归模型是否适合间歇泉数据的问题。对原始数据的三次样条拟合如图1.3（b）所示。它揭示了在自变量中有两个聚类，并且每个聚类可能需要不同的线性模型。第2.10,3.8和3.9节包含对间歇泉数据的更多分析。摩托车数据的三次样条拟合如图1.4所示。它比多项式模型更好地拟合数据。第2.10,3.8,5.4.1和6.4节包含了对摩托车数据的更多分析。 上述简单的说明表明，非参数回归技术可以应用于回归分析中的不同步骤：数据探索，建模，测试参数模型和诊断。事实上，如整个书中所示，样条平滑是用于建立统计模型以利用数据中的结构的强大且通用的工具。
+1.2多项式样条 多项式（1.3）是一个全局模型，使其对局部变化的适应性较差。个人观察可能对偏远地区的适应有不当影响。例如，在摩托车数据中，平均函数的行为从一个区域到另一个区域急剧变化。 这些局部变化导致在多项式拟合的范围的两端的振荡。克服这种限制的一个自然方法是使用分段多项式，多项式样条曲线的基本思想。令a &lt;t1 &lt;&hellip; &lt;tk &lt;b是称为节点的固定点。令t0 = a和tk &#43; 1 = b。粗略地说，多项式样条是在结处平滑连接在一起的分段多项式。形式上，阶数r的多项式样条是[a，b]，f（t）上的实值函数，使得 （i）f是阶数r on [ti，ti &#43; 1）的分段多项式，i = 0,1，&hellip;， 。 。 ，k; （ii）f具有r -2个连续导数，并且（r -1）st导数是具有节点跳跃的阶跃函数 现在考虑甚至表示为r = 2m的订单。如果除了（i）和（ii）之外，函数f是2m的自然多项式样条，其满足自然边界条件 （iii）f（j）（a）= f（j）（b）= 0，j = m。 。 。 ，2m-1。 自然边界条件意味着f是在两个外部子间隔[a，t1]和[tk，b]上的阶m的多项式。用节点t1，表示2m的自然多项式样条函数空间。 。 。 ，tk作为NS2m（t1，&hellip;，tk）。一种被称为回归样条的方法是使用多项式样条或自然多项式样条近似f。为了获得良好的效果，需要决定结的数量和位置。本书涵盖了一种称为平滑样条的不同方法。它从f的一个明确定义的模型空间开始，并引入一个惩罚，以防止过度拟合。我们现在描述这种多项式样条的方法。考虑回归模型（1.">
+  <meta name="twitter:description" content="Wang Y. Smoothing Splines: Methods and Applications (Chapman &amp; Hall CRC Monographs on Statistics &amp; Applied Probability) [Internet]. 1st ed. Chapman and Hall/CRC; 2011. Available from: …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/stat/smoothing-splines-%E5%B9%B3%E6%BB%91%E6%A0%B7%E6%9D%A1/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/stat/smoothing-splines-%E5%B9%B3%E6%BB%91%E6%A0%B7%E6%9D%A1/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Smoothing-Splines-平滑样条</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (102 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Smoothing-Splines-平滑样条</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (102 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<ol>
+<li>Wang Y. Smoothing Splines: Methods and Applications (Chapman &amp; Hall CRC Monographs on Statistics &amp; Applied Probability) [Internet]. 1st ed. Chapman and Hall/CRC; 2011. Available from: <a href="http://gen.lib.rus.ec/book/index.php?md5=2EFF745DDEB91107DC1030287CB70BED">http://gen.lib.rus.ec/book/index.php?md5=2EFF745DDEB91107DC1030287CB70BED</a></li>
+</ol>
+</blockquote>
+
+<h2 id="前言">前言</h2>
+
+<p>统计分析通常涉及建立检查依赖变量和自变量之间的关系的数学模型。这本书是关于一般类的强大而灵活的建模技术，即<strong>样条平滑</strong>。平滑样条模型的研究近年来引起了人们的极大关注，并且该方法已经在许多领域得到广泛应用。本书提供了一些基本平滑样条线模型的介绍，包括多项式，周期，球面，薄板，L-和部分样条，以及更高级模型的概述，包括平滑样条线ANOVA，扩展和广义平滑样条ANOVA，矢量样条，非参数非线性回归，半参数回归和半参数混合效应模型。还介绍了模型选择和推理的方法。本书中非参数/半参数线性/非线性固定/混合平滑样条模型的一般形式为估计，推理和软件实现提供了统一的框架。本书借鉴了再现核Hilbert空间（RKHS）的理论，以统一的方式呈现各种平滑样条模型。另一方面，在RKHS和正则化的背景下的平滑样条的主题通常被认为是技术和困难的。我的主要目标之一是使基于RKHS的高级平滑样条法更易于从业者和学生访问。考虑到这一点，本书侧重于方法，计算，实现，软件和应用。它为RKHS提供了温和的介绍，将理论保持在最低水平，并提供了有关如何使用RKHS构建样条模型的细节。用户友好的软件是任何统计方法的常规使用的关键。
+R中的辅助库实现本书中提出的用于拟合各种非参数/半参数线性/非线性固定/混合平滑样条模型的方法。辅助库可以在<a href="http://www.r-project.org获得。大部分的说明是基于对实例的分析。">http://www.r-project.org获得。大部分的说明是基于对实例的分析。</a>
+这些示例不是形式分析，而是用于说明样条平滑方法的功能和多样性。所有数据分析在R中执行，其中大多数使用辅助库中的函数。与本书相关的所有示例和进一步发展的代码将公布在网页<a href="http://www.pstat.ucsb.edu/faculty/yuedong/book.html">http://www.pstat.ucsb.edu/faculty/yuedong/book.html</a>
+本书面向那些想了解平滑样条曲线的人。它可以是需要先进和灵活的建模技术的统计学家和科学家的参考书。它也可以作为一个高级研究生课程的文本。事实上，第1章到第4章的主题在加州大学圣塔芭芭拉分校和中国科学技术大学的四分之一课程中讨论。我确实幸运地学到了平滑样条
+GraceWahba，他的先驱工作为许多研究工作铺平了道路，使本书成为可能。我非常感谢我的前学生和合作者Chunlei Ke开发的辅助包。特别感谢刘安娜仔细阅读草稿，纠正了许多错误。几个人帮助我写了这本书的各个阶段：创业，郭文生，大卫恒克利，平马和温迪迈林。我必须感谢我的编辑David Grubbes的耐心和鼓励。最后，我要感谢几位研究人员分享他们的数据集以纳入本书;他们被引用到他们的数据被引入。</p>
+
+<h2 id="第1章简介">第1章简介</h2>
+
+<h3 id="1-1参数和非参数回归">1.1参数和非参数回归</h3>
+
+<p>回归分析构建检验因变量与一个或多个自变量的关系的数学模型。这些模型可以用于预测自变量的未观察值和/或未来值的响应。在简单情况下，从属变量y和独立变量x都是标量变量，给定对于i = 1，&hellip;的观察值（xi，yi）。 。 。 ，n，回归模型关联依赖和自变量如下：
+其中f是回归函数，ei是具有共同方差σ2的零均值独立随机误差。回归分析的目的是构建f的模型，并基于噪声数据进行估计。
+例如，对于黄石国家公园的老忠实喷泉，考虑使用先前喷发的长度预测下一次喷发的等待时间的问题。图1.1（a）显示了来自旧忠实喷泉的272次观测的等待时间到下一次喷发（y =等待）对先前喷发持续时间（x =持续时间）的散点图。目标是建立一个数学模型，将等待时间与先前喷发的持续时间相关联。第一次尝试可能是通过直线近似回归函数f
+最小二乘直线拟合如图1.1（a）所示。没有明显的缺乏适应的迹象。此外，在图1.1（b）中的残差图中没有明显的可见趋势。通常f在x中是非线性的。处理非线性关系的常见方法是通过阶m的多项式近似f
+图1.2显示了模拟摩托车碰撞实验对冲击头盔的功效的加速度（y =加速度）对冲击后时间（x =时间）的散点图。很明显，直线不能解释加速度和时间之间的关系。多元醇，m = 1，。 。 。 ，20被拟合到数据，并且图1.2示出了由Akaike的信息标准（AIC）选择的最佳拟合。在范围的两端的拟合曲线中存在波浪。即使考虑到高达20阶的多项式，拟合仍然不能完全令人满意。与线性回归模型（1.2）不同，除了小m，模型（1.3）中的系数不再有很好的解释。
+一般来说，<strong>参数回归模型假定f的形式是已知的，除了有限多个未知参数。 f的具体形式可以来自科学理论和/或在一些简化假设下的力学近似。这些假设可能太限制，并且对于一些应用，近似可能太粗糙。不适当的模型可能导致系统偏差和误导性结论。在实践中，应该总是检查函数f的假设形式</strong>。
+<strong>获得f的特定功能形式通常是困难的，即使不是不可能的。非参数回归模型不采用预定义形式。相反，它对f的定性性质做出假设。例如，可以愿意假设f是“平滑的”，其不会减少到具有有限数量的参数的特定形式。相反，它通常导致一些无限维函数集合。非参数回归的基本思想是让数据自己说话。这就是让数据决定哪个函数最适合，而不在f上强加任何特定的形式。因此，非参数方法通常更灵活。它们可以揭示数据中可能被遗漏的结构</strong>。
+为了说明，我们将三次样条拟合到间歇数据。<strong>三次样条是一个特殊的非参数回归模型</strong>，将在1.2节中介绍。对来自线性模型（1.2）的残差的三次样条拟合显示出图1.3（a）中的非零趋势。这提出了一个简单的线性回归模型是否适合间歇泉数据的问题。对原始数据的三次样条拟合如图1.3（b）所示。它揭示了在自变量中有两个聚类，并且每个聚类可能需要不同的线性模型。第2.10,3.8和3.9节包含对间歇泉数据的更多分析。摩托车数据的三次样条拟合如图1.4所示。它比多项式模型更好地拟合数据。第2.10,3.8,5.4.1和6.4节包含了对摩托车数据的更多分析。
+上述简单的说明表明，<strong>非参数回归技术可以应用于回归分析中的不同步骤：数据探索，建模，测试参数模型和诊断</strong>。事实上，如整个书中所示，样条平滑是用于建立统计模型以利用数据中的结构的强大且通用的工具。</p>
+
+<h3 id="1-2多项式样条">1.2多项式样条</h3>
+
+<p><strong>多项式（1.3）是一个全局模型，使其对局部变化的适应性较差</strong>。个人观察可能对偏远地区的适应有不当影响。例如，在摩托车数据中，平均函数的行为从一个区域到另一个区域急剧变化。
+这些局部变化导致在多项式拟合的范围的两端的振荡。克服这种限制的一个自然方法是使用分段多项式，多项式样条曲线的基本思想。令a &lt;t1 &lt;&hellip; &lt;tk &lt;b是称为节点的固定点。令t0 =
+a和tk + 1 = b。粗略地说，<strong>多项式样条是在结处平滑连接在一起的分段多项式</strong>。形式上，阶数r的多项式样条是[a，b]，f（t）上的实值函数，使得
+（i）f是阶数r on [ti，ti + 1）的分段多项式，i = 0,1，&hellip;， 。 。 ，k;
+（ii）f具有r -2个连续导数，并且（r -1）st导数是具有节点跳跃的阶跃函数
+现在考虑甚至表示为r = 2m的订单。如果除了（i）和（ii）之外，函数f是2m的自然多项式样条，其满足自然边界条件
+（iii）f（j）（a）= f（j）（b）= 0，j = m。 。 。 ，2m-1。
+自然边界条件意味着f是在两个外部子间隔[a，t1]和[tk，b]上的阶m的多项式。用节点t1，表示2m的自然多项式样条函数空间。 。 。 ，tk作为NS2m（t1，&hellip;，tk）。一种被称为回归样条的方法是使用多项式样条或自然多项式样条近似f。为了获得良好的效果，需要决定结的数量和位置。本书涵盖了一种称为平滑样条的不同方法。它从f的一个明确定义的模型空间开始，并引入一个惩罚，以防止过度拟合。我们现在描述这种多项式样条的方法。考虑回归模型（1.1）。假设f是“平滑的”。具体来说，假设f∈Wm2[a，b]其中为Sobolev空间。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/stackpole2011-%E6%A1%89%E6%A0%91-%E5%8C%96%E5%AD%A6%E7%BB%84%E6%88%90-%E9%81%97%E4%BC%A0%E5%8F%98%E5%BC%82/" data-toggle="tooltip" data-placement="top" title="Stackpole2011-桉树-化学组成-遗传变异">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/slavov2005-%E8%8A%B1%E7%B2%89%E6%B1%A1%E6%9F%93/" data-toggle="tooltip" data-placement="top" title="Slavov2005-花粉污染">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

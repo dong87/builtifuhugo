@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Mohring2011-双列交配模型</title>
+  <meta property="og:title" content="Mohring2011-双列交配模型" />
+  <meta name="twitter:title" content="Mohring2011-双列交配模型" />
+  <meta name="description" content="Möhring, J., Melchinger, A.E., and Piepho, H.P. 2011. Reml-based diallel analysis. Crop Sci. 51(2): 470–478. doi:10.2135/cropsci2010.05.0272.
+ 双列分析可以根据模型和实验设计给出不同的结果。缺少一个统一的框架来通过混合模型包来拟合和比较不同的模型。因此，我们提出一个通用双列模型和遗传方差协方差结构变得等价于其他常用双列模型所需的额外限制。我们讨论常用模型的定义和要求与一般模型相比，并提供对三个真实数据集的分析。如果关于遗传方差 - 协方差结构的假设未被满足，则当使用随机遗传效应时获得一般和特定组合能力效应的偏向方差分量估计。我们在统计软件包SAS和ASReml中实现了一个通用双列模型，并给出详细的程序代码。如果没有关于基因型的遗传模型的先验信息可用，则一般模型可以用于利用标准统计软件容易地分析所有的双列设计。
+ 双列交配设计广泛应用到植物育种中，能够评估育种群体中亲本的表现，并能发现最优潜力（the most promising）的交配组合。 按照（depending on）目的和假设，遗传效应可以做固定也可以作随机。 当有$n$个亲本，会得到$n^2$个combination，这些combination可以分成*n(n-1)*个cross，包括正反交和n个自交(selfed parents)。 对于完全近交的亲本，亲本与自交的亲本是遗传一致的。 根据测定哪些combination，Griffing分成4种实验方法。 对这4种方法的统计分析，可以基于不同的模型，利用ANOVA，OLS，MINQUE，和REML。 对于reciprocal crosses，griffing定义了一个specific reciprocal （RSCA） 效应。cockerman等扩展了这个方法，通过定义reciprocal GCA （RGCA） 效应和reciprocal SCA （RSCA）效应。hayman 假设了一个平均显性离差deviation或者杂种优势效应，定义作自交亲本和crosses均值之间的差值。 gardner只对crosses定义了SCA效应，GCA效应分成2个效应，一个是全部combination，一个是只有crosses。这允许一个直接解释作加性和非加性遗传效应。 对于方法4，所以模型结果一致，对于有自交或正反交的方法，结果彼此不同，也不清楚哪个最好。  双列交配方案广泛用于植物育种，以评估父母的性能并找出遗传池中最有希望的杂交。根据目的和假设，遗传效应可以作为固定或随机的。对于n个父母，双列内父母的n2个组合是可能的。 n2个双列组合可以分为n（n-1）个交配，包括反交和n个自交父母。在完全近交的亲本的情况下，亲本和自交的亲本在遗传上相同。根据测试这些组合中的哪一种，Griffin（1956a）区分了四种不同的实验方法。或者，可以通过省略相互交配（方法2）或自交亲本（方法3）或两者（方法4），仅使用一部分组合。一些或所有四种类型的双列的统计分析可以基于不同的模型（Hayman，1954; Griffi ng 1956a; Morley-Jones，1965; Gardner和Eberhart，1966; Cock- erham和Weir，1977; Walters和Morton， 1978）使用方差分析（ANOVA）表（Griffin ng 1956a），基于普通最小二乘法（Gardner和Eberhart 1966），MINQUE（Zhu和Weir，1996a）和REML的顺序模型拟合（Xiang和Li，2001） 。 Griffi ng（1956a）建议基于提供一般组合能力（GCA）和特异性组合能力（SCA）估计的杂交的性能的ANOVA框架。对于交配十字，他定义了一个特定的互逆（RSCA）效应。 Cockerham和Weir（1977，模型c）和Keuls和Garretsen（1977）通过定义反交GCA（RGCA）效应和反交SCA（RSCA）效应扩展了这种方法。 Hayman（1954）假定平均优势偏差或杂种优势效应（Gardner和Eberhart，1966）被定义为自交父母和交配的平均值之间的差异。 Gardner和Eberhart（1966，分析II，GE2）将SCA效应定义为仅用于杂交，GCA效应分为两种效应，一种用于所有组合，一种用于交配。这允许直接解释作为附加和非附加遗传效应。对于方法4，所有讨论的模型产生相同的参数定义;对于自交父母或相互交配的方法，模型彼此不同，并且不清楚哪个模型是最好的。 这篇论文对双列交配的随机遗传效应模型进行了新的研究。我们建议的混合模型不涉及任何新的遗传效应，但它通用的其他模型以前引入的效果的定义，从而提供一个统一的框架，使用混合模型软件包实施双列分析。为此，我们将公开的方法3和4的混合模型方法扩展到随机遗传效应情况下所有四种方法的双列。我们将显示Griffi ng（1956a），Gardner和Eberhart（1966）和Hayman（1954）隐含使用的不同遗传模型可以被理解为一般模型的特殊情况。此外，我们将演示如何在SAS（SAS Institute Inc.">
+  <meta property="og:description" content="Möhring, J., Melchinger, A.E., and Piepho, H.P. 2011. Reml-based diallel analysis. Crop Sci. 51(2): 470–478. doi:10.2135/cropsci2010.05.0272.
+ 双列分析可以根据模型和实验设计给出不同的结果。缺少一个统一的框架来通过混合模型包来拟合和比较不同的模型。因此，我们提出一个通用双列模型和遗传方差协方差结构变得等价于其他常用双列模型所需的额外限制。我们讨论常用模型的定义和要求与一般模型相比，并提供对三个真实数据集的分析。如果关于遗传方差 - 协方差结构的假设未被满足，则当使用随机遗传效应时获得一般和特定组合能力效应的偏向方差分量估计。我们在统计软件包SAS和ASReml中实现了一个通用双列模型，并给出详细的程序代码。如果没有关于基因型的遗传模型的先验信息可用，则一般模型可以用于利用标准统计软件容易地分析所有的双列设计。
+ 双列交配设计广泛应用到植物育种中，能够评估育种群体中亲本的表现，并能发现最优潜力（the most promising）的交配组合。 按照（depending on）目的和假设，遗传效应可以做固定也可以作随机。 当有$n$个亲本，会得到$n^2$个combination，这些combination可以分成*n(n-1)*个cross，包括正反交和n个自交(selfed parents)。 对于完全近交的亲本，亲本与自交的亲本是遗传一致的。 根据测定哪些combination，Griffing分成4种实验方法。 对这4种方法的统计分析，可以基于不同的模型，利用ANOVA，OLS，MINQUE，和REML。 对于reciprocal crosses，griffing定义了一个specific reciprocal （RSCA） 效应。cockerman等扩展了这个方法，通过定义reciprocal GCA （RGCA） 效应和reciprocal SCA （RSCA）效应。hayman 假设了一个平均显性离差deviation或者杂种优势效应，定义作自交亲本和crosses均值之间的差值。 gardner只对crosses定义了SCA效应，GCA效应分成2个效应，一个是全部combination，一个是只有crosses。这允许一个直接解释作加性和非加性遗传效应。 对于方法4，所以模型结果一致，对于有自交或正反交的方法，结果彼此不同，也不清楚哪个最好。  双列交配方案广泛用于植物育种，以评估父母的性能并找出遗传池中最有希望的杂交。根据目的和假设，遗传效应可以作为固定或随机的。对于n个父母，双列内父母的n2个组合是可能的。 n2个双列组合可以分为n（n-1）个交配，包括反交和n个自交父母。在完全近交的亲本的情况下，亲本和自交的亲本在遗传上相同。根据测试这些组合中的哪一种，Griffin（1956a）区分了四种不同的实验方法。或者，可以通过省略相互交配（方法2）或自交亲本（方法3）或两者（方法4），仅使用一部分组合。一些或所有四种类型的双列的统计分析可以基于不同的模型（Hayman，1954; Griffi ng 1956a; Morley-Jones，1965; Gardner和Eberhart，1966; Cock- erham和Weir，1977; Walters和Morton， 1978）使用方差分析（ANOVA）表（Griffin ng 1956a），基于普通最小二乘法（Gardner和Eberhart 1966），MINQUE（Zhu和Weir，1996a）和REML的顺序模型拟合（Xiang和Li，2001） 。 Griffi ng（1956a）建议基于提供一般组合能力（GCA）和特异性组合能力（SCA）估计的杂交的性能的ANOVA框架。对于交配十字，他定义了一个特定的互逆（RSCA）效应。 Cockerham和Weir（1977，模型c）和Keuls和Garretsen（1977）通过定义反交GCA（RGCA）效应和反交SCA（RSCA）效应扩展了这种方法。 Hayman（1954）假定平均优势偏差或杂种优势效应（Gardner和Eberhart，1966）被定义为自交父母和交配的平均值之间的差异。 Gardner和Eberhart（1966，分析II，GE2）将SCA效应定义为仅用于杂交，GCA效应分为两种效应，一种用于所有组合，一种用于交配。这允许直接解释作为附加和非附加遗传效应。对于方法4，所有讨论的模型产生相同的参数定义;对于自交父母或相互交配的方法，模型彼此不同，并且不清楚哪个模型是最好的。 这篇论文对双列交配的随机遗传效应模型进行了新的研究。我们建议的混合模型不涉及任何新的遗传效应，但它通用的其他模型以前引入的效果的定义，从而提供一个统一的框架，使用混合模型软件包实施双列分析。为此，我们将公开的方法3和4的混合模型方法扩展到随机遗传效应情况下所有四种方法的双列。我们将显示Griffi ng（1956a），Gardner和Eberhart（1966）和Hayman（1954）隐含使用的不同遗传模型可以被理解为一般模型的特殊情况。此外，我们将演示如何在SAS（SAS Institute Inc.">
+  <meta name="twitter:description" content="Möhring, J., Melchinger, A.E., and Piepho, H.P. 2011. Reml-based diallel analysis. Crop Sci. 51(2): 470–478. doi:10.2135/cropsci2010.05.0272.
+ 双列分析可以根据模型和实验设计给出不同的结果。缺少一个统一的框架来通过混合模型包来拟合和比较不同的模型。因此，我们 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/diallel/mohring2011-%E5%8F%8C%E5%88%97%E4%BA%A4%E9%85%8D%E6%A8%A1%E5%9E%8B/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/diallel/mohring2011-%E5%8F%8C%E5%88%97%E4%BA%A4%E9%85%8D%E6%A8%A1%E5%9E%8B/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Mohring2011-双列交配模型</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (115 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Mohring2011-双列交配模型</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (115 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Möhring, J., Melchinger, A.E., and Piepho, H.P. 2011. Reml-based diallel analysis. Crop Sci. 51(2): 470–478. doi:10.2135/cropsci2010.05.0272.</p>
+</blockquote>
+
+<p>双列分析可以根据模型和实验设计给出不同的结果。缺少一个统一的框架来通过混合模型包来拟合和比较不同的模型。因此，我们提出一个通用双列模型和遗传方差协方差结构变得等价于其他常用双列模型所需的额外限制。我们讨论常用模型的定义和要求与一般模型相比，并提供对三个真实数据集的分析。如果关于遗传方差 - 协方差结构的假设未被满足，则当使用随机遗传效应时获得一般和特定组合能力效应的偏向方差分量估计。我们在统计软件包SAS和ASReml中实现了一个通用双列模型，并给出详细的程序代码。如果没有关于基因型的遗传模型的先验信息可用，则一般模型可以用于利用标准统计软件容易地分析所有的双列设计。</p>
+
+<hr />
+
+<ul>
+<li>双列交配设计广泛应用到植物育种中，能够评估育种群体中亲本的表现，并能发现最优潜力（the most promising）的交配组合。</li>
+<li>按照（depending on）目的和假设，遗传效应可以做固定也可以作随机。</li>
+<li>当有<code>$n$</code>个亲本，会得到<code>$n^2$</code>个combination，这些combination可以分成*n(n-1)*个cross，包括正反交和n个自交(selfed parents)。</li>
+<li>对于完全近交的亲本，亲本与自交的亲本是遗传一致的。</li>
+<li>根据测定哪些combination，Griffing分成4种实验方法。</li>
+<li>对这4种方法的统计分析，可以基于不同的模型，利用ANOVA，OLS，MINQUE，和REML。</li>
+<li>对于reciprocal crosses，griffing定义了一个<strong>specific reciprocal （RSCA）</strong> 效应。cockerman等扩展了这个方法，通过定义<strong>reciprocal GCA （RGCA）</strong> 效应和reciprocal SCA （RSCA）效应。hayman 假设了一个平均显性离差deviation或者杂种优势效应，定义作自交亲本和crosses均值之间的差值。</li>
+<li>gardner只对crosses定义了SCA效应，GCA效应分成2个效应，一个是全部combination，一个是只有crosses。这允许一个直接解释作加性和非加性遗传效应。</li>
+<li>对于方法4，所以模型结果一致，对于有自交或正反交的方法，结果彼此不同，也不清楚哪个最好。</li>
+</ul>
+
+<hr />
+
+<p>双列交配方案广泛用于植物育种，以评估父母的性能并找出遗传池中最有希望的杂交。根据目的和假设，遗传效应可以作为固定或随机的。对于n个父母，双列内父母的n2个组合是可能的。 n2个双列组合可以分为n（n-1）个交配，包括反交和n个自交父母。<strong>在完全近交的亲本的情况下，亲本和自交的亲本在遗传上相同</strong>。根据测试这些组合中的哪一种，Griffin（1956a）区分了四种不同的实验方法。或者，可以通过省略相互交配（方法2）或自交亲本（方法3）或两者（方法4），仅使用一部分组合。一些或所有四种类型的双列的统计分析可以基于不同的模型（Hayman，1954; Griffi ng 1956a; Morley-Jones，1965; Gardner和Eberhart，1966; Cock- erham和Weir，1977; Walters和Morton， 1978）使用方差分析（ANOVA）表（Griffin ng 1956a），基于普通最小二乘法（Gardner和Eberhart 1966），MINQUE（Zhu和Weir，1996a）和REML的顺序模型拟合（Xiang和Li，2001） 。 Griffi ng（1956a）建议基于提供一般组合能力（GCA）和特异性组合能力（SCA）估计的杂交的性能的ANOVA框架。对于交配十字，他定义了一个特定的互逆（RSCA）效应。 Cockerham和Weir（1977，模型c）和Keuls和Garretsen（1977）通过定义反交GCA（RGCA）效应和反交SCA（RSCA）效应扩展了这种方法。 Hayman（1954）假定平均优势偏差或杂种优势效应（Gardner和Eberhart，1966）被定义为自交父母和交配的平均值之间的差异。 Gardner和Eberhart（1966，分析II，GE2）将SCA效应定义为仅用于杂交，GCA效应分为两种效应，一种用于所有组合，一种用于交配。这允许直接解释作为附加和非附加遗传效应。对于方法4，所有讨论的模型产生相同的参数定义;对于自交父母或相互交配的方法，模型彼此不同，并且不清楚哪个模型是最好的。
+这篇论文对双列交配的随机遗传效应模型进行了新的研究。我们建议的混合模型不涉及任何新的遗传效应，但它通用的其他模型以前引入的效果的定义，从而提供一个统一的框架，使用混合模型软件包实施双列分析。为此，我们将公开的方法3和4的混合模型方法扩展到随机遗传效应情况下所有四种方法的双列。我们将显示Griffi ng（1956a），Gardner和Eberhart（1966）和Hayman（1954）隐含使用的不同遗传模型可以被理解为一般模型的特殊情况。此外，我们将演示如何在SAS（SAS Institute Inc.，2009）和ASReml（Gilmour，2006）等统计软件中实现该通用模型及其特殊情况。给定这种方法，在混合模型方法中混合模型到复杂块结构，空间误差结构和异质方差的拟合是直接的。在本文的后面，我们将演示文献中描述的三个数据集的实现（Hayman，1954; Lonnquist和Gardner，1961; Fischer等，2009）</p>
+
+<h2 id="讨论">讨论</h2>
+
+<p>可以使用基于REML的具有随机或固定遗传效应的混合模型包来分析所有交配设计的双列盘（Griffing的方法1至4）。遗传效应是固定的还是随机的取决于分析的目的（Smith等，2001），并且对于方程1和3确定的固定遗传效应没有限制。混合模型方法允许处理具有异质方差以及缺失数据的复杂块和错误结构。在所有实例中，自交亲本的估计平均杂种优势效应或单独平均值是显着的，这与Singh和Paroda（1984）一致。发现GCA效应和自交亲本的相应效应之间的高相关性，因此自交配偶的效应可用于通过BLUP获得关于其GCA效应的其他信息，其基本上相当于GCA的指数选择。在所有示例中，违反了Griffi ng和Gardner和Eberhart模型中方差 - 协方差结构的限制性假设，如AIC中一般模型（模型3）的更好的fi所示。这可能意味着当使用以前的模型时，方差分量估计是有偏差的。对于具有大量父节点的双列s，通常可以由数据支持虚拟模型，因此是优选的。
+不同方法和模型的可用软件公布的SAS宏双列-SAS（Zhang和Kang，1997）计算Griffin ng的四种方法的ANOVA表，从而基于固定效应假设计算遗传效应。他们更新的宏DIAL-LEL-SAS05（Zhang等人，2005）也允许来自多个环境的数据，但它最多限于12个父母和RCBD。对更多父母的扩展是直接的，但是对于更多父母需要额外的编程。 Wu和Matheson（2001）根据GE2和GE3提供了两个SAS宏（DIAFIXED和DIARAND），它们使用常数常数方法计算遗传效应或方差分量的估计值，也用于不完全数据。两种方法都使用ANOVA方法来估计方差分量，但是限制最大似然（REML）已经成为建立混合模型的标准方法（Piepho等人，2008）。 Xiang和Li（2001）提出了一种基于REML的混合模型方法，用于随机遗传效应，但只适用于方法4.与Griffin分析相比，这种方法给出了相同的结果。他们还展示了如何在SAS中实现这个模型。 Isik等人（2005）通过包括固定双列效应扩展了两个未连接的双列s的模型。 Zhu和Weir（1994，1996a，1996b）使用MINQUE（Rao，1970,1971）和REML解决了方法1和3的混合模型方程的随机遗传效应。他们定义了他们自己的模型，1994）或扩展的Griffing模型来估计性别连锁和母体效应（Zhu和Weir，1996a）或使用Cockdogham和Weir（1977）提出的生物模型（也参见Zhu和Weir，1996b）。为了估计母体，细胞质和性别相关的效应，他们使用略有不同的男性和女性后代的设计为每个交配或与额外的基因型F2和反交F2。我们的模型很容易沿着相同的线延伸，但这不是在这里。 Davik和Honne（2005）分析了使用ASReml（Gilmour，2006）在具有随机遗传效应的六个环境中生长的不完全二聚体（方法3）。他们发现没有相互效应，从模型中降低了效果，所以他们的最终模型可以与方法4分析相媲美。
+异质差异和现场实验设计基于ANOVA的分析已经提出假设RCBD。双列盘通常包括许多十字，因此RCBD可能不是有效的设计。具有不完全阻塞的设计，如α设计，更合适（Piepho和Williams，2006）。提出了用于估计GCA效应的最佳不完全设计（例如，由Gupta和Kageyama，1994; Dey和Midha，1996）。 Chai和Mukerjee（1999）发表了关于GCA和SCA效应的优化设计。此外，一系列实验通常显示方差的异质性，这需要在统计分析中加以考虑。此外，空间方法可用于获得更有效的分析（Davik和Honne，2005）。由于每个试验具有更复杂的实验设计和更复杂的误差模型，通过基于REML的混合模型包最方便地进行分析。
+模型限制使用模型3，我们提出了一个灵活的混合模型框架，为Griffi ng（1956a）中的所有方法提供分析。提出的模型可以通过在方差之间添加约束或通过将参数设置为零来限制到Griffing，Gardner和Eberhart等模型。所需的限制来自为自交父母和杂交假设的遗传模型。遗传模型总是基于一些定量遗传假设;即不存在上位性，二倍体分离和独立的基因作用，这通常不能实现（Gilbert，1958; Baker，1978）。遗传模型通常允许方差分量作为加性和主导方差的直接解释。如果没有自交亲本用于估计GCA和SCA方差分量，上位性不存在，父母是近交的，则基本群体的加性方差为σ22gca，优势方差为σ2sca（Griffing，1956b; Kempthorne和Curnow，1961）。对于上位效应，σ22gca和σ2sca由于上位方差分量高估了加性和主导变量。我们的一般模型中的遗传效应没有具体的解释作为遗传添加剂和非加性效应，如加德纳和Eberhart（1966）或其他论文。因此，我们的方法的优点是不是基于强大的遗传假设，如二倍体分离或缺乏上位性效应。它旨在将一个合理灵活的模型作为参考点，并使用所有可用信息来估计效应和方差分量。如果存在关于模型的先验信息（即，已知的遗传模型），则其他更受限的模型可能是优选的，并且实际上可以通过如本文中所示的基于似然的方法与我们的更一般的模型进行比较。这些例子表明，更严格的模型可能不总是被数据所证实。在固定遗传效应的假设下，Singh和Paroda（1984）用Morley-Jones（1965）和Walters和Morton（1978）的模型比较了Griffin和Gardner和Eberhart的模型，偏爱加德纳和埃伯特的模型。 Morley-Jones的模型与Hayman（1954）的模型相同，而Walters和Morton通过略微改变自我父母的效应定义来修改Hayman的模型，但是这种修改在统计学上是不可接受的（Wright，1985） 。 Singh和Paroda偏爱Gardner和Eberhart模型的原因可能是Griffing模型中自交父母的SCA效应与Griffin模型中的杂种优势效应混淆（Gardner和Eberhart，1966; Singh和Paroda，1984） 。
+包括父母在方差 - 在双列s的组件估计是否selfed父母应该用于双列分析是一个有争议的事情。 Griffin（1956b），Wricke和Weber（1986：125）和Zhang和Kang（1997，表1）指出，估计方差分量对于包括自交父母的方法1和2是无用的。吉尔伯特（1958）讨论了费雪之后的格里菲恩语。正如Singh和Singh（1984）所指出的，Singh和Paroda（1984）错误地得出结论，自我家长效应的包含可能导致估计的GCA和SCA效应的偏差。 Wright（1985）提出使用自交父母，如果参考人口是后代，否则如果参考人口是祖先，则不应使用自交父母。在祖先参考人群的情况下，Pooni et al。 （1984）表明方法1的方差分量估计可以解释为加性和优势方差，而方法2至4只给出一个近似。 Baker（1978）提出计算平均方差只是因为与父母中没有上位性和不相关基因的模型假设的困难。 Murray et al。 （2003）提出，与GE3相比，来自GE2的估计的有用性降低，因为来自交配和自交父母的观察对自交父母的影响的影响。相比之下，Curnow（1980）指出，使用两种类型的信息（即，作为自交父母的性能和作为父亲的性能）具有增加选择增益的潜力。他还讨论了在选择指数中加权两个信息来源的可能性。使用选择索引与使用BLUP基本相同（Piepho等人，2008）。在最坏的情况下，自我养育的父母没有提供信息。在这种情况下，GCA和自我父母效应之间的相关性为零。我们的研究结果表明GCA效应和自生父母效应之间的高但不完全的相关性，这是根据Hayes和Paroda（1974），解释了GCA效应和自交亲本效应之间的不完全相关性的标准的遗传组成 -  ents。如果隐性基因使基因型的性状发生变化，则预期不完全相关。包括自私父母的影响需要适当分配自交父母和交配的随机效应，因此说明这些属于两个不同的随机效应群体。可以通过直接估计两种效应之间的相关性来使用信息。
+每个杂交一个以上的子代如果测试了每个杂交超过一个基因型，可以假定杂交内的方差。如果在不同的相关群体或亲本之间进行杂交，则可以预期杂交在杂交中是异质的。此外，相关的父母导致杂交的近交减少，从而减少杂种优势效应（Frisch et al。，2010）。用于估计相关亲本杂交平均值的最简单方法是杂种优势效应对近交系数的回归。可以使用贝叶斯方法，假设每个杂交的遗传方差的分布（Edwards和Jannink，2006; Theobald等人，2002）。另一种方法使用关于父母或群体的关系的信息来修改杂交中的遗传方差。可以假定与高度相关的亲本的杂交具有比无关亲本的杂交更小的遗传方差。分子关系矩阵A中的谱系信息或标记信息，即亲属矩阵K（Yu等人，2006）可以用于估计关系。类似的基于标记的方法也用于基因组选择（Piepho，2009）。
+扩展用于多变量双列分析
+多变量分析在混合模型包中是可能的，如SAS和ASReml。对于单变量分析中的每个随机效应，需要所讨论的效应的方差的Kronecker积和p性状的非结构化p×p方差 - 协方差结构（Henderson和Quaas，1976）。我们提出的模型的关键点是非结构化2×2方差协方差结构的效应gcak和Lk与σ2gca和σ2L作为对角元素和单独的协方差。一个选择是使用具有三个因素的Kronecker产品。这是可能在ASReml，但不是在SAS，据我们所知。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E8%82%B2%E7%A7%8D/mohring2015-%E5%8C%BA%E7%BB%84%E9%97%B4%E4%BF%A1%E6%81%AF/" data-toggle="tooltip" data-placement="top" title="Mohring2015-区组间信息">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/mohring-2009-%E6%A4%8D%E7%89%A9%E7%94%B0%E9%97%B4%E8%AF%95%E9%AA%8C-2%E9%98%B6%E6%AE%B5%E5%88%86%E6%9E%90/" data-toggle="tooltip" data-placement="top" title="Mohring-2009-植物田间试验-2阶段分析">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

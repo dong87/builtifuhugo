@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Nirea2012-非随机交配对基因组和BLUP选择方案的影响</title>
+  <meta property="og:title" content="Nirea2012-非随机交配对基因组和BLUP选择方案的影响" />
+  <meta name="twitter:title" content="Nirea2012-非随机交配对基因组和BLUP选择方案的影响" />
+  <meta name="description" content="Nirea K G, Sonesson A K, Woolliams J A, et al. 2012. Effect of non-random mating on genomic and BLUP selection schemes. Genetics Selection Evolution, 44(1): 11. 非随机交配对基因组和BLUP选择方案的影响
+ 抽象
+背景 交配对对基因库的长期不平等贡献的风险是可以表达有害的隐性基因。通过适当地设计和优化育种方案，即通过改进选择和交配程序，可以减轻这种后果。
+方法 我们研究了不同信息来源的交配设计，随机，最小co ry和祖先贡献的最小协方差对近端繁殖率和遗传增益的影响，即同胞测试或自己的表现记录，不同的遗传评估方法，即BLUP或基因组选择，以及不同的家庭结构，即阶乘或成对。
+结果 结果表明，交配设计下近亲繁殖率的差异存在于具有成对家系结构的方案中，最小化方案对于产生较低的近亲繁殖率更为有效。具体来说，在使用同胞测试记录和BLUP评估的方案中观察到近亲繁殖率的显着降低。然而，由于阶乘家族结构，交配设计的近交繁殖率差异较小。此外，非随机交配在使用基因组评估的育种方案中只有很小的影响，无论信息来源如何。
+结论 得出的结论是，当BLUP用于遗传评估或者当群体的大小很小时，最小co ry仍然是有效的交配设计，而使用基因组评价的方案中非随机交配的效果更小。
+背景
+选择和亲本交配模式是育种计划的两个主要组成部分，必须针对遗传增益（ΔG）和近亲繁殖率（ΔF）进行优化。在文献中，几个选择和配合设计已经报道了旨在达到高ΔG和/或低ΔF[ 1，2 ]，由于高ΔF表示用于育种计划的长期成功的风险。虽然对选择程序[共识3，4 ]，许多配合设计已被开发出来，大多旨在避免了比平均更相关父母的配合[ 1，5，6，7 ]。
+分娩交配包括从父母父母身上生产半同胞，牺牲全部同胞，同时保护父母的子女数目[ 8 ]。以最小的交感（MC），交配对之间的关​​系被最小化以最小化后代近亲繁殖[ 9 ]; 具有补偿性交配，具有少量选择的同胞的父母优选地与具有大量选择的同胞的父母相配合[ 10 ]。最近，Henryon 等 [ 2 ]通过最小化祖先贡献（MCAC）之间的协方差来考虑交配动物，这使得祖先贡献中的未来变化的影响不太相互依赖，并且有利于选择具有来自祖先的最佳贡献的动物。所有这些交配方案已经显示出增加的遗传增益和/或减少近亲繁殖的一些益处，但文献中报道的比较没有在任何明显优异的交配设计上得出结论，部分是因为在每次比较中仅考虑有限数量的交配设计。
+上述所有研究都使用依赖于表型或与系谱相结合的评估方法来提供最佳的线性无偏估计（BLUP）估计育种值（EBV）。最近，在动物育种中引入了基因组评估的概念[ 11 ]，其中选择候选物的总遗传价值的预测是基于密集的基因分型数据和SNP效应的估计，其由基因型和表型培养计算来自所选人群的一组人。这种方法的一个报告的好处是，由于对孟德尔采样项的预测得到改进，EBV的准确性增加。结果是选择方案中可以减少ΔF[ 12 ]，因为它减少了对家庭信息的重视，并增加了对个人本身的价值。因此，鉴于基因组选择（GS）的方法学发展，现在是重新审视非随机交配的好处的时候了。
+因此，本研究旨在评估遗传评估方法与非随机交配设计之间的相互作用及其对ΔF和ΔG的影响。它比较了成对与因子家族结构和性能测试与同胞测试的影响，他们的信息来源，候选人的候选人和同胞分别不同。这种结构和测试设计是水产养殖育种计划中的常见变种。">
+  <meta property="og:description" content="Nirea K G, Sonesson A K, Woolliams J A, et al. 2012. Effect of non-random mating on genomic and BLUP selection schemes. Genetics Selection Evolution, 44(1): 11. 非随机交配对基因组和BLUP选择方案的影响
+ 抽象
+背景 交配对对基因库的长期不平等贡献的风险是可以表达有害的隐性基因。通过适当地设计和优化育种方案，即通过改进选择和交配程序，可以减轻这种后果。
+方法 我们研究了不同信息来源的交配设计，随机，最小co ry和祖先贡献的最小协方差对近端繁殖率和遗传增益的影响，即同胞测试或自己的表现记录，不同的遗传评估方法，即BLUP或基因组选择，以及不同的家庭结构，即阶乘或成对。
+结果 结果表明，交配设计下近亲繁殖率的差异存在于具有成对家系结构的方案中，最小化方案对于产生较低的近亲繁殖率更为有效。具体来说，在使用同胞测试记录和BLUP评估的方案中观察到近亲繁殖率的显着降低。然而，由于阶乘家族结构，交配设计的近交繁殖率差异较小。此外，非随机交配在使用基因组评估的育种方案中只有很小的影响，无论信息来源如何。
+结论 得出的结论是，当BLUP用于遗传评估或者当群体的大小很小时，最小co ry仍然是有效的交配设计，而使用基因组评价的方案中非随机交配的效果更小。
+背景
+选择和亲本交配模式是育种计划的两个主要组成部分，必须针对遗传增益（ΔG）和近亲繁殖率（ΔF）进行优化。在文献中，几个选择和配合设计已经报道了旨在达到高ΔG和/或低ΔF[ 1，2 ]，由于高ΔF表示用于育种计划的长期成功的风险。虽然对选择程序[共识3，4 ]，许多配合设计已被开发出来，大多旨在避免了比平均更相关父母的配合[ 1，5，6，7 ]。
+分娩交配包括从父母父母身上生产半同胞，牺牲全部同胞，同时保护父母的子女数目[ 8 ]。以最小的交感（MC），交配对之间的关​​系被最小化以最小化后代近亲繁殖[ 9 ]; 具有补偿性交配，具有少量选择的同胞的父母优选地与具有大量选择的同胞的父母相配合[ 10 ]。最近，Henryon 等 [ 2 ]通过最小化祖先贡献（MCAC）之间的协方差来考虑交配动物，这使得祖先贡献中的未来变化的影响不太相互依赖，并且有利于选择具有来自祖先的最佳贡献的动物。所有这些交配方案已经显示出增加的遗传增益和/或减少近亲繁殖的一些益处，但文献中报道的比较没有在任何明显优异的交配设计上得出结论，部分是因为在每次比较中仅考虑有限数量的交配设计。
+上述所有研究都使用依赖于表型或与系谱相结合的评估方法来提供最佳的线性无偏估计（BLUP）估计育种值（EBV）。最近，在动物育种中引入了基因组评估的概念[ 11 ]，其中选择候选物的总遗传价值的预测是基于密集的基因分型数据和SNP效应的估计，其由基因型和表型培养计算来自所选人群的一组人。这种方法的一个报告的好处是，由于对孟德尔采样项的预测得到改进，EBV的准确性增加。结果是选择方案中可以减少ΔF[ 12 ]，因为它减少了对家庭信息的重视，并增加了对个人本身的价值。因此，鉴于基因组选择（GS）的方法学发展，现在是重新审视非随机交配的好处的时候了。
+因此，本研究旨在评估遗传评估方法与非随机交配设计之间的相互作用及其对ΔF和ΔG的影响。它比较了成对与因子家族结构和性能测试与同胞测试的影响，他们的信息来源，候选人的候选人和同胞分别不同。这种结构和测试设计是水产养殖育种计划中的常见变种。">
+  <meta name="twitter:description" content="Nirea K G, Sonesson A K, Woolliams J A, et al. 2012. Effect of non-random mating on genomic and BLUP selection schemes. Genetics Selection Evolution, 44(1): 11. 非随机交配对基因组和BLUP选择方案的影响
+ 抽象
+背景 交配对对基因库的长期 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/gs/nirea2012-%E9%9D%9E%E9%9A%8F%E6%9C%BA%E4%BA%A4%E9%85%8D%E5%AF%B9%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%92%8Cblup%E9%80%89%E6%8B%A9%E6%96%B9%E6%A1%88%E7%9A%84%E5%BD%B1%E5%93%8D/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/gs/nirea2012-%E9%9D%9E%E9%9A%8F%E6%9C%BA%E4%BA%A4%E9%85%8D%E5%AF%B9%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%92%8Cblup%E9%80%89%E6%8B%A9%E6%96%B9%E6%A1%88%E7%9A%84%E5%BD%B1%E5%93%8D/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Nirea2012-非随机交配对基因组和BLUP选择方案的影响</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (64 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Nirea2012-非随机交配对基因组和BLUP选择方案的影响</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (64 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Nirea K G, Sonesson A K, Woolliams J A, et al. 2012. Effect of non-random mating on genomic and BLUP selection schemes. Genetics Selection Evolution, 44(1): 11.
+非随机交配对基因组和BLUP选择方案的影响</p>
+</blockquote>
+
+<p>抽象</p>
+
+<p>背景
+交配对对基因库的长期不平等贡献的风险是可以表达有害的隐性基因。通过适当地设计和优化育种方案，即通过改进选择和交配程序，可以减轻这种后果。</p>
+
+<p>方法
+我们研究了不同信息来源的交配设计，随机，最小co ry和祖先贡献的最小协方差对近端繁殖率和遗传增益的影响，即同胞测试或自己的表现记录，不同的遗传评估方法，即BLUP或基因组选择，以及不同的家庭结构，即阶乘或成对。</p>
+
+<p>结果
+结果表明，交配设计下近亲繁殖率的差异存在于具有成对家系结构的方案中，最小化方案对于产生较低的近亲繁殖率更为有效。具体来说，在使用同胞测试记录和BLUP评估的方案中观察到近亲繁殖率的显着降低。然而，由于阶乘家族结构，交配设计的近交繁殖率差异较小。此外，非随机交配在使用基因组评估的育种方案中只有很小的影响，无论信息来源如何。</p>
+
+<p>结论
+得出的结论是，当BLUP用于遗传评估或者当群体的大小很小时，最小co ry仍然是有效的交配设计，而使用基因组评价的方案中非随机交配的效果更小。</p>
+
+<p>背景</p>
+
+<p>选择和亲本交配模式是育种计划的两个主要组成部分，必须针对遗传增益（ΔG）和近亲繁殖率（ΔF）进行优化。在文献中，几个选择和配合设计已经报道了旨在达到高ΔG和/或低ΔF[ 1，2 ]，由于高ΔF表示用于育种计划的长期成功的风险。虽然对选择程序[共识3，4 ]，许多配合设计已被开发出来，大多旨在避免了比平均更相关父母的配合[ 1，5，6，7 ]。</p>
+
+<p>分娩交配包括从父母父母身上生产半同胞，牺牲全部同胞，同时保护父母的子女数目[ 8 ]。以最小的交感（MC），交配对之间的关​​系被最小化以最小化后代近亲繁殖[ 9 ]; 具有补偿性交配，具有少量选择的同胞的父母优选地与具有大量选择的同胞的父母相配合[ 10 ]。最近，Henryon 等 [ 2 ]通过最小化祖先贡献（MCAC）之间的协方差来考虑交配动物，这使得祖先贡献中的未来变化的影响不太相互依赖，并且有利于选择具有来自祖先的最佳贡献的动物。所有这些交配方案已经显示出增加的遗传增益和/或减少近亲繁殖的一些益处，但文献中报道的比较没有在任何明显优异的交配设计上得出结论，部分是因为在每次比较中仅考虑有限数量的交配设计。</p>
+
+<p>上述所有研究都使用依赖于表型或与系谱相结合的评估方法来提供最佳的线性无偏估计（BLUP）估计育种值（EBV）。最近，在动物育种中引入了基因组评估的概念[ 11 ]，其中选择候选物的总遗传价值的预测是基于密集的基因分型数据和SNP效应的估计，其由基因型和表型培养计算来自所选人群的一组人。这种方法的一个报告的好处是，由于对孟德尔采样项的预测得到改进，EBV的准确性增加。结果是选择方案中可以减少ΔF[ 12 ]，因为它减少了对家庭信息的重视，并增加了对个人本身的价值。因此，鉴于基因组选择（GS）的方法学发展，现在是重新审视非随机交配的好处的时候了。</p>
+
+<p>因此，本研究旨在评估遗传评估方法与非随机交配设计之间的相互作用及其对ΔF和ΔG的影响。它比较了成对与因子家族结构和性能测试与同胞测试的影响，他们的信息来源，候选人的候选人和同胞分别不同。这种结构和测试设计是水产养殖育种计划中的常见变种。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/gs/omalley1994-mas-%E6%9E%97%E6%9C%A8/" data-toggle="tooltip" data-placement="top" title="OMalley1994-MAS-林木">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%AB%9E%E4%BA%89/newton1998-%E9%BB%91%E4%BA%91%E6%9D%89%E6%9E%97%E4%B8%AD-%E7%A7%8D%E5%86%85%E7%AB%9E%E4%BA%89/" data-toggle="tooltip" data-placement="top" title="Newton1998-黑云杉林中-种内竞争">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

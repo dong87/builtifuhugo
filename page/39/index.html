@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Dong&#39;s blog</title>
+  <meta property="og:title" content="Dong&#39;s blog" />
+  <meta name="twitter:title" content="Dong&#39;s blog" />
+  <meta name="description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta property="og:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="twitter:description" content="Front Page Content beautifulhugo supports content on your front page. Edit /content/_index.md to change what appears here. Delete /content/_index.md if you don&rsquo;t want any content here.">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../" />
+  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../">
+            <img class="avatar-img" src="../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>Dong&#39;s blog</h1>
+                
+                  
+                    <hr class="small">
+                    <span class="page-subheading">Enterprising &amp; Concentrating欢迎光临！</span>
+                  
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div role="main" class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+          <div class="well">
+            
+
+<h2 id="front-page-content">Front Page Content</h2>
+
+<p><code>beautifulhugo</code> supports content on your front page. Edit <code>/content/_index.md</code> to change what appears here. Delete <code>/content/_index.md</code> if you don&rsquo;t want any content here.</p>
+
+          </div>
+        
+
+        <div class="posts-list">
+          
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/coroll-ary-%E6%8E%A8%E8%AE%BA~inference/">
+                <h2 class="post-title">coroll-ary-推论~inference</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (88 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  A corollary is that obtaining GS model accuracy beyond that of pedigree-based models would likely necessitate increasing genome coverage by a factor of at least 10X to 100X of that used herein, resulting in the use of a very large number of markers, likely in the hundreds of thousands. In parallel, inbreeding experiments have been conducted as a corollary with an interpretation as being the opposing effect of heterosis. A corollary of this problem is that lack of dynamic consistency makes any kind of individual differences analysis uninterpretable.
+                  <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/coroll-ary-%E6%8E%A8%E8%AE%BA~inference/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/gs/cros2015-%E5%88%A9%E7%94%A8ssr%E8%BF%9B%E8%A1%8C%E7%9A%84gs/">
+                <h2 class="post-title">cros2015-利用SSR进行的GS</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (84 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Cros, D., Denis, M., Sánchez, L., Cochard, B., Flori, A., Durand-Gasselin, T., Nouy, B., Omoré, A., Pomiès, V., Riou, V., Suryana, E., and Bouvet, J.-M. 2015. Genomic selection prediction accuracy in a perennial crop: case study of oil palm (Elaeis guineensis Jacq.). Theor. Appl. Genet. 128(3): 397–410. doi:10.1007/s00122-014-2439-z.
+ 摘要 关键信息基因组选择在经验上对于油棕榈树中的互惠选择具有重要价值，因为它可以解释家族效应和孟德尔抽样术语，尽管人口少，标记密度低。摘要基因组选择（GS）可以增加植物的遗传增益。在多年生作物中，这主要是通过缩短育种周期和增加选择强度来预期的，尽管经常有少量的培训人群，但这要求选择候选人具有足够的GS准确性。我们的目标是获得世界主要油料作物油棕榈（Elaeis guineensis）GS精度的首次经验估计。我们使用两个父母人口参与传统互惠选择（熟食店和B组），每个131人，用265 SSR基因分型。当预测八个产量性状的非后代测试个体的育种值时，我们估计了种群内的GS精度。我们使用三种方法对训练集和五种统计方法进行抽样以估计基因组育种值。**结果显示，GS可以解释B组中的家庭影响和孟德尔抽样条件，但仅限于Deli中的家庭影响。据推测，这种群体之间的差异源于其对比的育种历史。 GS精度范围为-0.41〜0.94，与训练和测试集之间的关系呈正相关。使用所谓的CDmean标准进行优化的训练集给出了从0.49（B组果肉比）到0.94（B组果实重量）的最高精度。统计方法不影响准确性。最后，通过将GS应用于主要的产量性状，可以预先选择B组进行后代测试，因此增加了选择强度。我们的研究结果对于人口少，育种周期长或有效规模缩小的育种计划是有价值的。
+介绍 基因组选择（GS）是标记辅助选择的一种形式，可以改善植物和动物的育种方案。它依靠密集的全基因组标记覆盖率从所有标记的联合分析中产生基因组估计育种值（GEBV）。 GEBV是通过总结标记效应的估计或通过实现的加性关系矩阵标记来获得的。该模型使用具有已知表型和基因型（训练集）的个体进行校准，并随后用于在仅仅基因分型（测试集）（Meuwissen等2001）的不同组选择候选物上产生GEBV。取决于育种系统，由于GS与传统选择相比具有更高的准确性，所以预计每年的遗传增益会增加，选择候选物的早期测试（特别是当常规选择涉及子代测试时）和/或更高选择强度（特别是当表型是限制因素时）。估计GEBV的统计学方法使用两种类型的信息：训练和测试集之间的加性遗传关系以及标记和QTL之间的LD（Habier等，2007,2010）。因此，GEBV隐含地考虑了个体育种价值的两个部分，即其父母的平均值（家庭影响）和孟德尔抽样词（家庭内影响）。孟德尔抽样术语起源于父母配子的随机抽样。它代表了个体的附加价值与其父母的平均育种价值之间的偏差（Daetwyler et al.2007,2013）。作为GEBV与真实育种值之间相关性的GS的准确性受标记与数量性状位点（QTL）之间的连锁不平衡（LD），培养与测试组之间的关系，训练组中个体的数量估计GEBV的统计学方法，性状遗传力以及潜在的QTL效应分布（Lorenz et al。2011; Grattapaglia 2014）。
+目前，很少有实证研究评估了具有长周期（&gt; 10年）的植物物种的GS潜力（参见Grattapaglia 2014; Isik 2014的评论），而据我们所知，Zapata-Valenzuela等人（2012）用有限数量的表型个体评估了GS。油棕（Elaeis guineensis）是一种二倍体，雌雄异株，同种异型的多年生作物，由于其传统的育种体系，具有很高的GS潜力。这是世界主要的石油作物，产量超过5500万吨（2013年美国农业部），预计到2050年棕榈油的需求量可能会达到1.
+                  <a href="../../post/gs/cros2015-%E5%88%A9%E7%94%A8ssr%E8%BF%9B%E8%A1%8C%E7%9A%84gs/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/cur-tail-curt-short-%E7%BC%A9%E5%87%8F~limitcircumscribeconfineshorten/">
+                <h2 class="post-title">cur-tail-curt-=short-缩减~limit，circumscribe，confine，shorten</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (95 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Adverse genetic correlations can curtail breeding progress as, for example, a negative genetic correlation between growth and wood density would make it more difficult to select concurrently for improvement in both traits. (Costa e Silva et al., 2008) The review effectively curtailed the breeding activities in the public sector, especially of the major crops. (Acquaah, 2012) While hybrids are less utilized in more temperate zones, eucalypt hybridization programs involving controlled crossing were undertaken early in countries such as Russia and France, but hybrid development was curtailed by extreme frosts.
+                  <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/cur-tail-curt-short-%E7%BC%A9%E5%87%8F~limitcircumscribeconfineshorten/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/curb-curv--prav--circ-%E5%BC%AF%E6%9B%B2%E5%BC%95%E7%94%B3%E4%B8%BA%E5%8F%98%E6%80%81%E5%A0%95%E8%90%BD%E6%8A%91%E5%88%B6depression/">
+                <h2 class="post-title">curb-curv-,-prav-,-circ-弯曲，引申为变态、堕落；抑制depression</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (84 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Further development and application of genomic technology for conservation management purposes is urgently needed to help curb the accelerating extinction crisis. (Luikart et al., 2003) Finally, sterility will help curb genetic pollution. (Burley, Evans, Youngquist, 2004) In the coming week, Mr. Trump is also expected to sign a similar order directing Mr. Pruitt to begin the lengthy legal process of withdrawing and rewriting Mr. Obama&rsquo;s signature 2015 climate change regulation, aimed at curbing emissions of planet-warming greenhouse gases from coal-fired power plants.
+                  <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/curb-curv--prav--circ-%E5%BC%AF%E6%9B%B2%E5%BC%95%E7%94%B3%E4%B8%BA%E5%8F%98%E6%80%81%E5%A0%95%E8%90%BD%E6%8A%91%E5%88%B6depression/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/dampen-damp-down-%E6%8A%91%E5%88%B6%E5%87%8F%E9%80%80/">
+                <h2 class="post-title">dampen,-damp-down-抑制、减退</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (122 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  However, diameter growth, and hence basal area growth, are subject to competitive influences, which can either dampen or accentuate provenance differences depending on plot sizes or presence-absence of surround plantings. (Burdon, Low, 1991) Mature tree hybrid experiment results were similar to those of the seedling experiment, but with a dampening of differences caused by low nutrient availability and possibly age effects. (El-Kassaby, Lindgren, 2007) Even if initial survival is poor in one year the effects are damped down by the fact that one year’s planting is not normally a discrete crop with respect to felling plans.
+                  <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/dampen-damp-down-%E6%8A%91%E5%88%B6%E5%87%8F%E9%80%80/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/de-line-ate-%E6%8F%8F%E7%BB%98~de-scrib-e/">
+                <h2 class="post-title">de-line-ate-描绘~de-scrib-e</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (99 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  It has been suggested that association studies aimed at delineating the genetic architecture of complex traits could gain in resolution and power by including fine-scale CNV information (Schlattl et al., 2011). (Parent et al., 2015) The information available from omics research can enable us to assess multiple features of complex systems at various levels of biological organization, from the cell to the whole organism within a defined and fully delineated framework.
+                  <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/de-line-ate-%E6%8F%8F%E7%BB%98~de-scrib-e/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/de-tri-ment-tri-rub%E8%BD%AC%E6%91%A9%E6%93%A6%E6%8D%9F%E5%AE%B3to-the-detriment-of/">
+                <h2 class="post-title">de-tri-ment-tri-=rub转、摩擦【损害】to-the-detriment-of</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (90 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Generally, adverse genetic correlations have been reported between growth and wood properties (Loo et al. 1984; Williams and Megraw 1994; Cumbie 2002; Hannrup et al.2004; Li et al. 2007), indicating that selecting parents for growth probably will be to the detriment of wood quality and vice versa. (Antony et al., 2014) Competition, a detrimental fitness effect from other individuals, is one such associative effect, where the contribution from conspecifics is to lower fitness.
+                  <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/de-tri-ment-tri-rub%E8%BD%AC%E6%91%A9%E6%93%A6%E6%8D%9F%E5%AE%B3to-the-detriment-of/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/deem-to-be-%E8%A7%86%E4%B8%BA/">
+                <h2 class="post-title">deem-to-be-视为</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (80 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Environments are deemed to be a random effect, as they were chosen to represent a roughly random sample of a population of environments. (Klisz et al., 2017) If GEI is deemed to be negligible, then selected genotypes could be used for plantations to produce uniform wood under different environmental conditions (e.g. (Gapare et al., 2010) The candidate models should include all covariance structures deemed to be scientifically plausible in the context of the data being analyzed.
+                  <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/deem-to-be-%E8%A7%86%E4%B8%BA/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/di-vid-end-vid-cut-%E5%88%86%E7%BA%A2%E7%9B%8A%E5%A4%84/">
+                <h2 class="post-title">di-vid-end-vid-=cut,-分红，益处</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (56 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <ul>
+<li>Since pedigree errors reduce rates of genetic gain, the ability to correct pedigree mistakes is a virtually zero cost <strong>dividend</strong> of genomic selection programs. (Weller, 2015)</li>
+<li>On the other hand, application of the additive genetic model in selective breeding of livestock has produced remarkable <strong>dividends</strong>, as shown in Dekkers and Hospital (2002). (Gianola, Fernando, Stella, 2006)</li>
+</ul>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/difficult-with/">
+                <h2 class="post-title">difficult-with</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (97 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Although diallel designs are difficult with forest trees, because of the problems of quickly completing all possible combinations of control crosses, they have been attempted by several workers (2, 3, 23, 107, 156). (Libby, Stettler, Seitz, 1969) Restriction fragment length polymorphism (RFLP) analysis and gene iso-lation are significantly more difficult with large genomes. (Neale et al., 1994) Accurate estimation of relatedness requires many marker loci and is, therefore, difficult with microsatellites.
+                  <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/difficult-with/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+        </div>
+
+        
+          <ul class="pager main-pager">
+            
+              <li class="previous">
+                <a href="../../page/38/">&larr; Newer Posts</a>
+              </li>
+            
+            
+              <li class="next">
+                <a href="../../page/40/">Older Posts &rarr;</a>
+              </li>
+            
+          </ul>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Gezan的毕业论文</title>
+  <meta property="og:title" content="Gezan的毕业论文" />
+  <meta name="twitter:title" content="Gezan的毕业论文" />
+  <meta name="description" content="Gezan SA (2005) Optimal design and analysis of clonal forestry trials using simulated data. University of Florida
+ 使用模拟数据的克隆森林实验设计的比较 介绍 森林树木的遗传现场测试对树木改良至关重要，用于估计遗传参数和评估原产地，家庭和个人。森林树木的遗传测试是一个耗时的过程，通常是改进计划中最昂贵的活动（Zobel和Talbert 1984，第232页）。因此，主要关心的是通过有效地分配资源来最大化利益（Namkoong，1979，第117页）。在林业试验中常见的是研究大量遗传项目（例如家族或克隆）的性能，这意味着需要相对大的测试位点或每个位点使用更少的重复。因为用于田间实验的森林场所通常是固有可变的，所以难以找到最佳场所。这种环境异质性的存在使得由于树木对树木变化与其他更大规模环境影响的混杂而导致的残余方差膨胀;并因此降低了使用简单实验设计的益处（Grondona等人1996）。
+场内变异性是由自然因素如土壤，小气候，地形，风和方面的变化引起的。此外，其他形式的异质性可能源于机械，stock质量或种植技术。由地形或水分产生的一些条件可能容易识别，但更常见的是，环境异质性仅在事实之后被识别为对环境条件的差异响应。整个场地的梯度，局部斑块和随机微网格方差是常见的变异性类型，这些来源可能单独或组合出现（Costa e Silva et al。2001），某些来源在特定地理区域更常见。
+有三个阶段可以进行遗传测试的优化：1）实验设计和规划; 2）实施;和3）统计分析。传统上，森林遗传试验采用随机完全区块设计（RCB）或最近的不完全区块设计（IB）。当复制品中的网站相对均匀时，RCB是最有效的，这在森林地区很少发生（Costa e Silva et al。2001）。通过在完全复制（IB设计）中并入不完全的块来减小单元的尺寸允许更好地控制站点异质性，因为更小的块趋向于比更大的块更不可变;因此，IB设计具有提高RCB精度的潜力（Cochran和Cox1957，第386页; Williams等人2002，第120页）。对于几种环境条件下的模拟森林遗传试验，Fu et al。 （1998）报道了IB对RCB的效率提高了42％。在相关研究中Fu et al。 （1999a）发现，对于每个不完全块，使用5至20个图可以控制大部分的位点内变化，在使用方块而不是行或列块的情况下具有更好的结果。 另一个实验选项是行列设计（John和Williams 1995，第87页）。当实验单元位于二维阵列中时，可以同时实现对应于实验的行和列的两个阻塞因子（而不是IB中的一个）。当使用行 - 列设计时，预期效率更高（Lin等人1993; Williams和John 1996）。 Qiao et al。 （2000），使用几个小麦育种试验，报告的效率超过RCB 11％的行列设计相比，IB的8％增加。
+克隆林是许多广泛种植的商业树种的新实践，例如松属（Pinus spp。），桉属（Eucalyptus spp。），杨属（Populus spp。 （Carson 1986; Elridge et al.1993，p.230; Ritchie 1992）。对无性系林业的兴趣来自其额外的好处，如能够获得更大的遗传收益;捕获更大部分的非附加遗传变异和基因型x环境相互作用的潜力;增加种植和产品一致性;并通过减少育种和测试周期加速使用树木改良的结果（Libby 1977; Zobel和Talbert 1984，第311页）。
+在农学和林业文献中，有几个研究比较通过实际或模拟数据集的繁殖实验的设计和分析替代方案。在森林遗传学中，少数模拟研究报告了一些未来测试的指南。 Fu et al。 （1998）表明-设计是IB设计的最有效的安排。对于所研究的大多数环境条件，它们优于用于估计家族均值的RCB设计，但是随着缺失观察的水平增加，IB对RCB的益处减小（Fu等人1999b）。在设计的相关研究中，Fu et al。 （1999a）报告，当建立单树图以估计家系和克隆平均值时，较小的不完全块对于显着斑块更有效。 这些研究为遗传实验的设计提供了重要的指导;然而，几个感兴趣的问题仍有待回答：单树图是否比多树图更有效？关于IB设计，​​行列设计有多好（或更坏）？有最佳不完全块大小吗？如何在不同的实验设计下分配表型方差？此外，在先前的模拟研究中通常筛选有限数目的克隆并将遗传条目作为线性模型中的固定效应来处理。在本研究中，假定遗传条目是随机的，允许估计遗传力和对一系列模拟条件的克隆遗传值的预测。">
+  <meta property="og:description" content="Gezan SA (2005) Optimal design and analysis of clonal forestry trials using simulated data. University of Florida
+ 使用模拟数据的克隆森林实验设计的比较 介绍 森林树木的遗传现场测试对树木改良至关重要，用于估计遗传参数和评估原产地，家庭和个人。森林树木的遗传测试是一个耗时的过程，通常是改进计划中最昂贵的活动（Zobel和Talbert 1984，第232页）。因此，主要关心的是通过有效地分配资源来最大化利益（Namkoong，1979，第117页）。在林业试验中常见的是研究大量遗传项目（例如家族或克隆）的性能，这意味着需要相对大的测试位点或每个位点使用更少的重复。因为用于田间实验的森林场所通常是固有可变的，所以难以找到最佳场所。这种环境异质性的存在使得由于树木对树木变化与其他更大规模环境影响的混杂而导致的残余方差膨胀;并因此降低了使用简单实验设计的益处（Grondona等人1996）。
+场内变异性是由自然因素如土壤，小气候，地形，风和方面的变化引起的。此外，其他形式的异质性可能源于机械，stock质量或种植技术。由地形或水分产生的一些条件可能容易识别，但更常见的是，环境异质性仅在事实之后被识别为对环境条件的差异响应。整个场地的梯度，局部斑块和随机微网格方差是常见的变异性类型，这些来源可能单独或组合出现（Costa e Silva et al。2001），某些来源在特定地理区域更常见。
+有三个阶段可以进行遗传测试的优化：1）实验设计和规划; 2）实施;和3）统计分析。传统上，森林遗传试验采用随机完全区块设计（RCB）或最近的不完全区块设计（IB）。当复制品中的网站相对均匀时，RCB是最有效的，这在森林地区很少发生（Costa e Silva et al。2001）。通过在完全复制（IB设计）中并入不完全的块来减小单元的尺寸允许更好地控制站点异质性，因为更小的块趋向于比更大的块更不可变;因此，IB设计具有提高RCB精度的潜力（Cochran和Cox1957，第386页; Williams等人2002，第120页）。对于几种环境条件下的模拟森林遗传试验，Fu et al。 （1998）报道了IB对RCB的效率提高了42％。在相关研究中Fu et al。 （1999a）发现，对于每个不完全块，使用5至20个图可以控制大部分的位点内变化，在使用方块而不是行或列块的情况下具有更好的结果。 另一个实验选项是行列设计（John和Williams 1995，第87页）。当实验单元位于二维阵列中时，可以同时实现对应于实验的行和列的两个阻塞因子（而不是IB中的一个）。当使用行 - 列设计时，预期效率更高（Lin等人1993; Williams和John 1996）。 Qiao et al。 （2000），使用几个小麦育种试验，报告的效率超过RCB 11％的行列设计相比，IB的8％增加。
+克隆林是许多广泛种植的商业树种的新实践，例如松属（Pinus spp。），桉属（Eucalyptus spp。），杨属（Populus spp。 （Carson 1986; Elridge et al.1993，p.230; Ritchie 1992）。对无性系林业的兴趣来自其额外的好处，如能够获得更大的遗传收益;捕获更大部分的非附加遗传变异和基因型x环境相互作用的潜力;增加种植和产品一致性;并通过减少育种和测试周期加速使用树木改良的结果（Libby 1977; Zobel和Talbert 1984，第311页）。
+在农学和林业文献中，有几个研究比较通过实际或模拟数据集的繁殖实验的设计和分析替代方案。在森林遗传学中，少数模拟研究报告了一些未来测试的指南。 Fu et al。 （1998）表明-设计是IB设计的最有效的安排。对于所研究的大多数环境条件，它们优于用于估计家族均值的RCB设计，但是随着缺失观察的水平增加，IB对RCB的益处减小（Fu等人1999b）。在设计的相关研究中，Fu et al。 （1999a）报告，当建立单树图以估计家系和克隆平均值时，较小的不完全块对于显着斑块更有效。 这些研究为遗传实验的设计提供了重要的指导;然而，几个感兴趣的问题仍有待回答：单树图是否比多树图更有效？关于IB设计，​​行列设计有多好（或更坏）？有最佳不完全块大小吗？如何在不同的实验设计下分配表型方差？此外，在先前的模拟研究中通常筛选有限数目的克隆并将遗传条目作为线性模型中的固定效应来处理。在本研究中，假定遗传条目是随机的，允许估计遗传力和对一系列模拟条件的克隆遗传值的预测。">
+  <meta name="twitter:description" content="Gezan SA (2005) Optimal design and analysis of clonal forestry trials using simulated data. University of Florida
+ 使用模拟数据的克隆森林实验设计的比较 介绍 森林树木的遗传现场测试对树木改良至关重要，用于估计遗传参数和评估原产地，家庭和个人。森林树木的遗传测试是一个耗时的过程，通常是 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E8%82%B2%E7%A7%8D/gezan%E7%9A%84%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E8%82%B2%E7%A7%8D/gezan%E7%9A%84%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Gezan的毕业论文</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (185 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Gezan的毕业论文</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (185 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>Gezan SA (2005) Optimal design and analysis of clonal forestry trials using simulated data. University of Florida</p>
+</blockquote>
+
+<h2 id="使用模拟数据的克隆森林实验设计的比较">使用模拟数据的克隆森林实验设计的比较</h2>
+
+<h3 id="介绍">介绍</h3>
+
+<p>森林树木的遗传现场测试对树木改良至关重要，用于估计遗传参数和评估原产地，家庭和个人。森林树木的遗传测试是一个耗时的过程，通常是改进计划中最昂贵的活动（Zobel和Talbert 1984，第232页）。因此，主要关心的是通过有效地分配资源来最大化利益（Namkoong，1979，第117页）。在林业试验中常见的是研究大量遗传项目（例如家族或克隆）的性能，这意味着需要相对大的测试位点或每个位点使用更少的重复。因为用于田间实验的森林场所通常是固有可变的，所以难以找到最佳场所。这种环境异质性的存在使得由于树木对树木变化与其他更大规模环境影响的混杂而导致的残余方差膨胀;并因此降低了使用简单实验设计的益处（Grondona等人1996）。</p>
+
+<p>场内变异性是由自然因素如土壤，小气候，地形，风和方面的变化引起的。此外，其他形式的异质性可能源于机械，stock质量或种植技术。由地形或水分产生的一些条件可能容易识别，但更常见的是，环境异质性仅在事实之后被识别为对环境条件的差异响应。整个场地的梯度，局部斑块和随机微网格方差是常见的变异性类型，这些来源可能单独或组合出现（Costa e Silva et al。2001），某些来源在特定地理区域更常见。</p>
+
+<p>有三个阶段可以进行遗传测试的优化：1）实验设计和规划; 2）实施;和3）统计分析。传统上，森林遗传试验采用随机完全区块设计（RCB）或最近的不完全区块设计（IB）。当复制品中的网站相对均匀时，RCB是最有效的，这在森林地区很少发生（Costa e Silva et al。2001）。通过在完全复制（IB设计）中并入不完全的块来减小单元的尺寸允许更好地控制站点异质性，因为更小的块趋向于比更大的块更不可变;因此，<strong>IB设计具有提高RCB精度的潜力</strong>（Cochran和Cox1957，第386页; Williams等人2002，第120页）。对于几种环境条件下的模拟森林遗传试验，Fu et al。 （1998）报道了IB对RCB的效率提高了42％。在相关研究中Fu et al。 （1999a）发现，对于每个不完全块，使用5至20个图可以控制大部分的位点内变化，在使用方块而不是行或列块的情况下具有更好的结果。
+另一个实验选项是行列设计（John和Williams 1995，第87页）。当实验单元位于二维阵列中时，可以同时实现对应于实验的行和列的两个阻塞因子（而不是IB中的一个）。当使用行 - 列设计时，预期效率更高（Lin等人1993; Williams和John 1996）。 Qiao et al。 （2000），使用几个小麦育种试验，报告的效率超过RCB 11％的行列设计相比，IB的8％增加。</p>
+
+<p>克隆林是许多广泛种植的商业树种的新实践，例如松属（Pinus spp。），桉属（Eucalyptus spp。），杨属（Populus spp。 （Carson 1986; Elridge et al.1993，p.230; Ritchie 1992）。<strong>对无性系林业的兴趣来自其额外的好处，如能够获得更大的遗传收益;捕获更大部分的非附加遗传变异和基因型x环境相互作用的潜力;增加种植和产品一致性;并通过减少育种和测试周期加速使用树木改良的结果</strong>（Libby 1977; Zobel和Talbert 1984，第311页）。</p>
+
+<p>在农学和林业文献中，有几个研究比较通过实际或模拟数据集的繁殖实验的设计和分析替代方案。在森林遗传学中，少数模拟研究报告了一些未来测试的指南。 Fu et al。 （1998）表明-设计是IB设计的最有效的安排。对于所研究的大多数环境条件，它们优于用于估计家族均值的RCB设计，但是随着缺失观察的水平增加，IB对RCB的益处减小（Fu等人1999b）。在设计的相关研究中，Fu et al。 （1999a）报告，当建立单树图以估计家系和克隆平均值时，较小的不完全块对于显着斑块更有效。
+这些研究为遗传实验的设计提供了重要的指导;然而，几个感兴趣的问题仍有待回答：单树图是否比多树图更有效？关于IB设计，​​行列设计有多好（或更坏）？有最佳不完全块大小吗？如何在不同的实验设计下分配表型方差？此外，在先前的模拟研究中通常筛选有限数目的克隆并将遗传条目作为线性模型中的固定效应来处理。在本研究中，假定遗传条目是随机的，允许估计遗传力和对一系列模拟条件的克隆遗传值的预测。</p>
+
+<p>本研究集中于确定“最佳”或“接近最佳”实验设计，用于估计遗传参数和实现林业克隆试验的最大遗传增益。本研究通过使用以不同模式的环境变异性创建的模拟数据，探讨在单个位点上测试的不相关克隆组。特别地，这些模拟的目的是调查遗传参数的估计的结果1）使用单树或四树行图; 2）使用完全随机化，随机化的完整块，不同大小的不完全块或行 - 列设计; 3）没有死亡率，25％死亡率;和4）种植在具有不同环境模式的表面变化的位点（仅斑块，仅梯度，以及斑块和梯度）。</p>
+
+<h2 id="第3章-通过改进的设计和分析试验的分析实现更高的遗产">第3章 通过改进的设计和分析试验的分析实现更高的遗产</h2>
+
+<h3 id="介绍-1">介绍</h3>
+
+<p>对于任何操作育种计划，遗传测试是最重要和最昂贵的活动之一。几个替代品可用于实验设计。当块（或复制）相对均匀时，广泛使用的随机完全区段设计（RCB）是最有效的，这通常仅在小复制品中出现（Costa e Silva等人，2001）。使用大量的处理（例如，家庭和克隆），不完全块（IB）的使用可以显着提高效率（Fu等人1998; Fu等人1999a），特别是当存在大量环境变异性时，不能正确指定重复序列的取向（Lin et al。1993）。此外，如John和Williams（1995，第87页）详细描述的，实验单元的行和列位置可以用于同时实现两个阻塞因子并产生行列设计（R-C）。这些设计已经证明比其他常见设计更高的效率（Lin et al。1993; Williams和John 1996）。拉丁化很少被用作提高估计治疗效果的效率的设计技术。当随机化受到限制时，设计被称为“拉丁化”，使得用于相同处理的实验单元的位置被迫对实验区域的不同区域进行采样。这通过定义跨越多个重复的长块（例如行或列）来实现，确保治疗遍布整个测试位点（John和Williams 1995，第87-88页）。
+对克隆林的增加的兴趣由通过使用测试的克隆部署到操作种植园可以获得的更高的遗传增益产生。一些益处包括捕获非加性遗传效应的可能性，使用更大量的基因型x环境相互作用，以及增加种植和产品一致性（Zobel和Talbert 1984，第311页）。
+克隆测试的现场实验特别具有挑战性，因为需要评估大量的基因型，这意味着需要大的测试区域。相对均匀的区域很难找到，因为森林地点倾向于具有通常以斑块，梯度或两者的形式表示的高环境变异性，以及相当多的随机微网站噪声（Costa e Silva等人，2001）。因此，当设计，实施和分析克隆试验时，位点异质性是一个重要的考虑因素。选择适当的实验设计以及线性模型的正确规范可以在预测的遗传值，遗传性和选择的获得的精度上产生显着的改进。
+在文献中可获得用于克隆测试的几个建议，并且一般来说，最佳设计将使用每个克隆每个位点1至6个分株，并且测试的克隆数目将被最大化，同时利用尽可能少的分株（Shaw和Hood 1985; Russell和Libby 1986; Loo-Dinkins等人1990; Russell和Loo-Dinkins 1993）。然而，在单个或多个位点上定义最佳设计，家族数目，每个家族的克隆和每个克隆的分株的困难仍然存在。此外，不清楚哪种分析方法是优选的。
+在第2章中，我们在几个实验设计和3种不同的环境表面模式下模拟单中心克隆试验，以确定估计遗传参数的适当条件。该研究表明，单树图（STP）实验比所有设计和条件模拟的四树行图更有效地预测克隆值。这项新研究仅考虑STP实验，旨在确定不同设计和分析选项对克隆值的预测和某些遗传组分的精确度的影响。特别地，目的是确定1）哪些实验设计，包括拉丁化，最大化广义遗传性，并因此，从克隆选择获得？ 2）哪些模式的环境或空间变异性产生高或低的遗传？ 3）每个克隆使用不同数目的分株的影响是什么？和4）Dickerson的置信区间的近似方法与经验估计有多接近？</p>
+
+<h2 id="第4章-育种试验中考虑空间变异">第4章 育种试验中考虑空间变异</h2>
+
+<h2 id="介绍-2">介绍</h2>
+
+<p>在农业或林业试验中发现的环境异质性的量和类型极大地影响在处理的比较中获得的统计精度。随着同质性降低，治疗效果估计的误差方差增加，因此，更难以检测治疗之间的差异。影响位点变异性的许多自然和人为因素，例如土壤，地形，风力，机械或种植技术通常在测试建立之后被检测到，使得难以实现最佳设计并且最小化由于位点变异的实验误差的部分（Fu et al.1999）。这种环境或空间变异性通常表示为梯度，斑块或两者的组合，以及随机微网站差异（Costa e Silva et al。2001）。</p>
+
+<p>适当的治疗随机化足以确保通过重复的测试和取样，获得治疗效果的无偏估计，并且假设检验是有效的（Grondona和Cressie 1991; Brownie等人1993）。然而，在环境异质性，为特定数据集的分析获得的估计是高度可变的。这种情况可以通过使用适当的实验设计和统计分析来改进。随机完全块，不完全块和行列设计构成控制空间变异性的经典方法，并且被认为是“先验”技术，因为它们是在设计阶段实现的。另一组技术（“后验”）处理统计分析，其将实验单元（图，树或植物）的x和y坐标并入线性模型中以考虑物理接近。
+大多数空间数据的统计分析基于空间变异性的两个主要组成部分（Grondona et al。1996）：1）<strong>全球趋势或大规模变化;和2）局部趋势或小规模变化</strong>。第一分量对应于场梯度，其可以通过以下来建模：i）合并设计效果（例如，复制，块，行，列等）; ii）使用x和y位置作为线性模型中的一个或多个固定效应来描述连续数学函数;或，iii）计算协变量以调整每个观察值。一些最常见的选择是1）多项式回归（Brownie et al。1993）; 2）三次平滑样条（Durban等人1999; Verbyla等人1999）; 3）最近邻分析（Bartlett 1978; Brownie等人1993; Vollmann等人1996）;和4）移动平均值（Townley-Smith和Hurd 1973）。特别感兴趣的是最近邻技术，其中存在多个变量。然而，大多数对应于Papadakis方法（Atkinson 1969）的修改，其基于使用从相邻图的残差平均获得的一个或多个协变量;这些残差是通过拟合完全随机或随机的完全区组设计而获得的。原始方法使用右侧和左侧一个图的残差平均值;因此，称为EW调整。考虑到具有2,4,8或甚至24个相邻图的协变量的不同定义的几种修改（Brownie等人1993; Stroup等人1994; Vollman等人1996）。此外，Bartlett（1978）建议执行迭代的Papadakis方法，重复计算残差。类似于Papadakis的方法是基于原始测量，而不是残差是移动平均分析。这里，“局部”平均值由多个相邻图表计算并用作协变量（Townley-Smith和Hurd，1973）。</p>
+
+<p>可以通过考虑由实验单元之间的物理接近度产生的某种形式的空间相关性的误差结构的规范来建模经常被识别为场表面上的<strong>多个碎片的空间变异性（局部趋势）</strong>的第二分量。用于建模全局趋势的大多数技术（如上所述）假定来自线性模型的残差或误差是独立的，并且具有公共方差的相同分布。在空间相关下，误差方差 - 协方差矩阵具有非零非对角元素，其假定为实验单元之间的距离的函数。
+几个相关的误差模型是可用的（Cressie 1993; Littell等人1996），允许在假设和协方差结构的大量灵活性;然而，<strong>不同的误差结构倾向于产生类似的结果</strong>（Zimmerman和Harville 1991）。第一阶可分离自回归误差结构已经在几个农学和林业试验中成功使用（Grondona等人1996; Gilmour等人1997; Qiao等人2000; Sarker等人2001; Costa e Silva等人2001 ; Dutkowski等人2002）。该模式考虑两个垂直相关（一个用于行，另一个用于列方向），并且等价于可分离指数地统计模型。</p>
+
+<p>有时，在误差结构中包括块金参数，以模拟如果在相同位置进行重复测量（Cressie，1993），允许对潜在微网站变异性或测量误差建模的情况下发生的预期可变性。
+最后，有可能同时适应全局和局部趋势，存在多种技术组合。因为许多这些选项产生类似的结果，所以更难以选择一个合适的模型，使用一些统计和图形工具（例如，样本变异函数）似乎特别有用（Gilmour等人1997）。</p>
+
+<p>品种的现场测试对遗传改良计划的进展至关重要，并且是昂贵和耗时的活动。因此，资源的分配和使用最佳可得的统计技术来获得遗传参数（如遗传力和育种值）的精确估计是至关重要的。由于要研究的大量品种或处理，需要相对大的测试区域。这些区域通常具有大量的环境异质性，其膨胀残余误差方差。因此，控制这种可变性是重要的，并且需要使用更复杂的实验设计或空间统计分析的实施。
+这项研究的目标是量化实施一系列“先验”和“后验”统计技术的效率，以说明空间变异性，并且在这些技术之间区分一系列条件的简约和全局性能。具体地，将所选择的技术阵列与用于比较和预测治疗效果的精度的改进进行比较。这通过使用在具有不同异质性模式的环境（仅仅片状，仅仅梯度，和两种类型）上在单个位点上测试的不相关基因型（或处理）的集合的模拟现场试验来实现。这些模式是使用梯度的多项式函数和补丁的AR1AR1错误结构生成的。所选择的技术包括1）通过使用传统的实验设计（完全随机化，随机化完全块，不完全块和行列）或多项式模型来建模全局趋势; 2）单独或与上述全球趋势的一些规格相结合拟合AR1AR1误差结构（有和没有块）;和3）实施Papadakis和移动平均法的几个变体。</p>
+
+<h2 id="第5章-后期锁定-以提高遗产和价值预测">第5章 后期锁定，以提高遗产和价值预测</h2>
+
+<h3 id="介绍-3">介绍</h3>
+
+<p>对林业和农作物的原产地，品种和家庭的遗传检测通常是一个漫长的过程，常常是任何遗传改良计划中最昂贵的活动之一（Zobel和Talbert 1984，第232页）。适当选择实验设计和统计分析可以在预测育种值和有效利用现有资源方面产生相当大的改进。
+传统上，在森林试验中，随机完全区段（RCB）设计受到青睐。当复制（或块）变异性相对较小时，RCB设计是有效的，这种情况在森林地区很少见，或者只在相对较小的复制品中才会发生（Costa e Silva et al。2001）。由于大量的遗传实体通常一起测试，一个好的替代方案是实施不完全的嵌段设计（IB），其将完整的复制物细分为趋向于更均匀的较小隔室（即不完全嵌段）。对于这些设计，一些作者报道了与RCB相比更高的效率（Fu等人1998; Fu等人1999; see Chapter 2）。也可以使用行列设计（R-C）同时实现双向阻塞。这些R-C设计由John和Williams（1995，第87页）详细描述，并且通常产生比IB设计更高的效率（Lin等人1993; Qiao等人2000;也参见第2章）。</p>
+
+<p>拟合最好的线性模型，充分描述试验数据以及随机和固定效应的适当规范是至关重要的。在文献中，有几种技术可用于改进统计分析，例如1）空间模型（Gilmour等人1997;第4章）; 2）最近邻法（Vollmann et al。1996;第4章）;和3）包括协变量和其他因素来处理缺失值（Cochran 1957）或讨厌效应（Gilmour等人，1997）。这些是“后验”分析的例子。在这些选项中，拟合不同于原始实验设计的扩展线性模型，其目的是对在测试建立时未被注意或未被控制的元素建模。
+另一种称为事后阻塞的“后验”技术也可以容易地实现。该方法包括在原始场设计的顶部上叠加阻塞结构，并且拟合线性模型，如同在原始设计中存在阻塞效应一样。通常，IB设计被安装在更简单的设计（例如，RCB）上，但是R-C也可以被叠加。这种技术最初由Patterson和Hunter（1983）提出作为一种工具，用于廉价地评估潜在实验设计的效率。然而，一些作者已经使用post-hoc阻断成功地增加遗传性和遗传效应的预测的精确度用于最终分析（Ericsson 1997; Dutkowski等人2002; Lopez等人2002）。
+实现事后阻塞的主要问题是确定要叠加的不完全块的特性。如果使用大的不完全块，块将继续是高度异质的。另一方面，小的不完全块通过捕获环境表面的较小区域（或补片）应当显着地减少残余变异性。但是如果块大小变得太小，则在同一块中一起发生的处理较少;因此，它们的差的标准误差可以相当大。此外，根据爱立信（1997），对于小块，部分治疗（或遗传）变异性可以被块方差吸收，因为两个良好（或坏的）基因型在同一块中一起发生的机会增加。另一个问题是不完全块的形状;然而，可以遵循用于设计实验的一般准则。例如，应该优选尽可能接近正方形并且使块主轴垂直于主场梯度定向的形状（Zobel和Talbert 1984，第248页）。
+本研究使用模拟单站点克隆试验和3种不同的环境模式来了解使用事后阻塞在估计遗传力和预测育种价值中的后果和定义未来策略。具体来说，目标是1）研究使用事后阻塞对几个实验设计，表面图案和数量的分布; 2）验证随着不完全块变小，遗传方差的潜在减少; 3）比较用于选择合适的阻断结构的不同策略或标准的性能;和4）讨论与实施事后阻塞相关的统计和实际问题。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/gs/gianola2006-%E5%8D%8A%E5%8F%82%E6%95%B0/" data-toggle="tooltip" data-placement="top" title="Gianola2006-半参数">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/gezan2017-gxe-%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95-%E7%81%AB%E7%82%AC%E6%9D%BE%E5%85%8B%E9%9A%86/" data-toggle="tooltip" data-placement="top" title="Gezan2017-GxE-统计方法-火炬松克隆">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

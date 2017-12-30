@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Mohring2015-区组间信息</title>
+  <meta property="og:title" content="Mohring2015-区组间信息" />
+  <meta name="twitter:title" content="Mohring2015-区组间信息" />
+  <meta name="description" content="Möhring, J., Williams, E., and Piepho, H.P. 2015. Inter-block information: to recover or not to recover it? Theor. Appl. Genet. 128(8): 1541–1554. Springer Berlin Heidelberg. doi:10.1007/s00122-015-2530-0.
+ ##摘要 关键信息：比较使用固定或随机块效应处理差异的标准误差与Kackar和Harville的近似值有助于在现场实验分析中选择块的最佳假设。摘要：区组设计在植物育种田间试验中很常见。根据方差估计的精度，通过随机块效应恢复块间信息可能是值得的。实践中的一个挑战是决定何时应该追回信息。为了研究这个问题，我们分析了一系列甜菜试验，设计为固定或随机块效应。另外，假定为设计或部分复制设计的小型试验是假设固定或随机块效应而被模拟和分析的。九个决策规则，包括Kackar？Harville调整，被用来选择关于块效应的更好的假设。一般来说，使用Kackar-arville调节效果很好，推荐用于部分复制的设计。对于设计，对于具有四个或更多块的设计，使用块间信息是优选的。
+##介绍 为了控制植物育种田间试验的田间可变性，几乎总是使用某种区组（John and Williams 1995）。由于处理的数量通常很高，因此通常优先选择不完全区组设计，如α-design（Patterson和Williams 1976）或部分重复（p-rep）设计（Cullis et al.2006; Williams et al。2011,2014） 。在实验室实验中经常使用相同的不完全区组结构，例如，如果不是所有样品都可以在一个微量滴定板上或在一天内测量。如果假设区块效应是随机抽取来自某些可能的区块效应的母体群体，或者如果存在基础的随机化过程来分配处理块（Calinski和Kageyama，2000）是合理的，则将区块作为随机因子允许恢复块间​​信息（Yates 1940）。对于已知的差异，这样的组合分析加权块间和块内处理信息是最好的。为了更好的可读性，我们在整篇文章中将处理信息简单地表示为“信息”，因为我们的主要目的是评估处理效果。此外，为了简洁起见，我们表示假设随机块效应的分析，并因此将组块间信息恢复为组合分析。组合分析中的权重基于估计的方差。如果这种综合分析的处理效果的标准误差估计值像方差估计值一样是已知常数的话。问题在于这些权重会低估真实的标准误差，因为忽略估计方差的误差，从而忽略块间和块内信息的权重误差（Mead et al。2012）。具体而言，当块的数量小并且块方差大时，块方差的估计可能是如此不精确以至于不能以足够的精度来确定权重以恢复块间信息是值得的（Casella 2008; Mead et al。2012）。 实践中的问题是决定什么时候恢复块间信息是值得的。显然，在这方面，所有的精度估计都不是一个有用的指导。可以证明，即使在恢复不合理的情况下，组合分析的这些估计标准误差总是小于块内分析的估计标准误差（Kenward和Roger，1997）。为了避免低效的组合分析，Mead（1988）和van Eeuwijk（1995）提出，估计块方差至少需要10个自由度。 根据平衡不完全区组合（BIB）设计的综合处理效果估计量的分布特性，Graybill和Deal（1959）提出，对于样本量超过10的情况，综合分析的估计是可取的。注意到对于BIB设计，​​相对的块内和块间信息根据比率b2E / 2（1-E）被分割，其中E是效率因子，b2和2分别是块和误差方差，Mead等人。 （2012;第9章）提出，至少有4％的信息需要在区块之间进行。因此，根据这个规则，当效率因子低（低于0.8）并且块间误差方差比小于4时，恢复是值得的。由（t）（rk）给出的BIB设计的效率因子E，在一个区块中两个处理一起发生的次数在哪里，t，r和k分别是每个区块的处理，复制和绘图的数量。 BIB设计的处理差异的方差与具有相同数量的实验单位和相同的误差方差的随机完全区组设计的差异的比率（John和Williams 1995;第2章）。实际上，这意味着块间分析只有在块大小介于2和4之间时才会被使用，并且由于区组引起的误差方差的减小是很小的（Mead et al。2012）。 对于其他设计，关于恢复联锁信息的决定更加困难（Mead et al。2012）。 Kackar和Harville（1984）提出了基于一阶泰勒展开的标准误差估计的一般性调整，该估计考虑了权重的误差，并且通常导致标准误差估计值的膨胀，与从a假设已知差异的组合分析。 Kenward和Roger（1997）也将这种方法用于混合模型中固定效应的小样本推断，在一些混合模型包中实现后，这种方法已经非常流行。作者提出只有当Kackar  arville校正后处理差异标准误差（s.e.d.）小于相应的估计值时，才能恢复阻滞信息。从固定块效应的分析。虽然这种方法具有很大的实际吸引力，但它的经验表现似乎没有系统地进行调查。 本文试图采用残差最大似然法（REML; Patterson and Thompson，1971）作为方差的估计方法，尝试两种分析（有和没有恢复）的方法，然后选择一种基于一个合适的决策规则，旨在确定较小的sed我们将使用Kackar arville调整和替代决策规则来评估决策规则。我们考虑了一系列由甜菜和模拟单一试验可解析的不完全块设计和部分复制设计的小型单一试验设计。 “材料和方法”部分首先描述了一系列甜菜试验的动机，然后概述了我们的模拟方法。给出了所研究设计的数据模拟分析模型和九种不同的决策规则。然后我们比较这些基于处理差异均方差（MSED）的规则和在模拟中正确选择模型的概率。本文最后讨论了结果和我们的主要结论。">
+  <meta property="og:description" content="Möhring, J., Williams, E., and Piepho, H.P. 2015. Inter-block information: to recover or not to recover it? Theor. Appl. Genet. 128(8): 1541–1554. Springer Berlin Heidelberg. doi:10.1007/s00122-015-2530-0.
+ ##摘要 关键信息：比较使用固定或随机块效应处理差异的标准误差与Kackar和Harville的近似值有助于在现场实验分析中选择块的最佳假设。摘要：区组设计在植物育种田间试验中很常见。根据方差估计的精度，通过随机块效应恢复块间信息可能是值得的。实践中的一个挑战是决定何时应该追回信息。为了研究这个问题，我们分析了一系列甜菜试验，设计为固定或随机块效应。另外，假定为设计或部分复制设计的小型试验是假设固定或随机块效应而被模拟和分析的。九个决策规则，包括Kackar？Harville调整，被用来选择关于块效应的更好的假设。一般来说，使用Kackar-arville调节效果很好，推荐用于部分复制的设计。对于设计，对于具有四个或更多块的设计，使用块间信息是优选的。
+##介绍 为了控制植物育种田间试验的田间可变性，几乎总是使用某种区组（John and Williams 1995）。由于处理的数量通常很高，因此通常优先选择不完全区组设计，如α-design（Patterson和Williams 1976）或部分重复（p-rep）设计（Cullis et al.2006; Williams et al。2011,2014） 。在实验室实验中经常使用相同的不完全区组结构，例如，如果不是所有样品都可以在一个微量滴定板上或在一天内测量。如果假设区块效应是随机抽取来自某些可能的区块效应的母体群体，或者如果存在基础的随机化过程来分配处理块（Calinski和Kageyama，2000）是合理的，则将区块作为随机因子允许恢复块间​​信息（Yates 1940）。对于已知的差异，这样的组合分析加权块间和块内处理信息是最好的。为了更好的可读性，我们在整篇文章中将处理信息简单地表示为“信息”，因为我们的主要目的是评估处理效果。此外，为了简洁起见，我们表示假设随机块效应的分析，并因此将组块间信息恢复为组合分析。组合分析中的权重基于估计的方差。如果这种综合分析的处理效果的标准误差估计值像方差估计值一样是已知常数的话。问题在于这些权重会低估真实的标准误差，因为忽略估计方差的误差，从而忽略块间和块内信息的权重误差（Mead et al。2012）。具体而言，当块的数量小并且块方差大时，块方差的估计可能是如此不精确以至于不能以足够的精度来确定权重以恢复块间信息是值得的（Casella 2008; Mead et al。2012）。 实践中的问题是决定什么时候恢复块间信息是值得的。显然，在这方面，所有的精度估计都不是一个有用的指导。可以证明，即使在恢复不合理的情况下，组合分析的这些估计标准误差总是小于块内分析的估计标准误差（Kenward和Roger，1997）。为了避免低效的组合分析，Mead（1988）和van Eeuwijk（1995）提出，估计块方差至少需要10个自由度。 根据平衡不完全区组合（BIB）设计的综合处理效果估计量的分布特性，Graybill和Deal（1959）提出，对于样本量超过10的情况，综合分析的估计是可取的。注意到对于BIB设计，​​相对的块内和块间信息根据比率b2E / 2（1-E）被分割，其中E是效率因子，b2和2分别是块和误差方差，Mead等人。 （2012;第9章）提出，至少有4％的信息需要在区块之间进行。因此，根据这个规则，当效率因子低（低于0.8）并且块间误差方差比小于4时，恢复是值得的。由（t）（rk）给出的BIB设计的效率因子E，在一个区块中两个处理一起发生的次数在哪里，t，r和k分别是每个区块的处理，复制和绘图的数量。 BIB设计的处理差异的方差与具有相同数量的实验单位和相同的误差方差的随机完全区组设计的差异的比率（John和Williams 1995;第2章）。实际上，这意味着块间分析只有在块大小介于2和4之间时才会被使用，并且由于区组引起的误差方差的减小是很小的（Mead et al。2012）。 对于其他设计，关于恢复联锁信息的决定更加困难（Mead et al。2012）。 Kackar和Harville（1984）提出了基于一阶泰勒展开的标准误差估计的一般性调整，该估计考虑了权重的误差，并且通常导致标准误差估计值的膨胀，与从a假设已知差异的组合分析。 Kenward和Roger（1997）也将这种方法用于混合模型中固定效应的小样本推断，在一些混合模型包中实现后，这种方法已经非常流行。作者提出只有当Kackar  arville校正后处理差异标准误差（s.e.d.）小于相应的估计值时，才能恢复阻滞信息。从固定块效应的分析。虽然这种方法具有很大的实际吸引力，但它的经验表现似乎没有系统地进行调查。 本文试图采用残差最大似然法（REML; Patterson and Thompson，1971）作为方差的估计方法，尝试两种分析（有和没有恢复）的方法，然后选择一种基于一个合适的决策规则，旨在确定较小的sed我们将使用Kackar arville调整和替代决策规则来评估决策规则。我们考虑了一系列由甜菜和模拟单一试验可解析的不完全块设计和部分复制设计的小型单一试验设计。 “材料和方法”部分首先描述了一系列甜菜试验的动机，然后概述了我们的模拟方法。给出了所研究设计的数据模拟分析模型和九种不同的决策规则。然后我们比较这些基于处理差异均方差（MSED）的规则和在模拟中正确选择模型的概率。本文最后讨论了结果和我们的主要结论。">
+  <meta name="twitter:description" content="Möhring, J., Williams, E., and Piepho, H.P. 2015. Inter-block information: to recover or not to recover it? Theor. Appl. Genet. 128(8): 1541–1554. Springer Berlin Heidelberg. …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E8%82%B2%E7%A7%8D/mohring2015-%E5%8C%BA%E7%BB%84%E9%97%B4%E4%BF%A1%E6%81%AF/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E8%82%B2%E7%A7%8D/mohring2015-%E5%8C%BA%E7%BB%84%E9%97%B4%E4%BF%A1%E6%81%AF/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Mohring2015-区组间信息</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (69 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Mohring2015-区组间信息</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (69 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p>Möhring, J., Williams, E., and Piepho, H.P. 2015. Inter-block information: to recover or not to recover it? Theor. Appl. Genet. 128(8): 1541–1554. Springer Berlin Heidelberg. doi:10.1007/s00122-015-2530-0.</p>
+</blockquote>
+
+<p>##摘要
+关键信息：比较使用固定或随机块效应处理差异的标准误差与Kackar和Harville的近似值有助于在现场实验分析中选择块的最佳假设。摘要：区组设计在植物育种田间试验中很常见。根据方差估计的精度，通过随机块效应恢复块间信息可能是值得的。实践中的一个挑战是决定何时应该追回信息。为了研究这个问题，我们分析了一系列甜菜试验，设计为固定或随机块效应。另外，假定为设计或部分复制设计的小型试验是假设固定或随机块效应而被模拟和分析的。九个决策规则，包括Kackar？Harville调整，被用来选择关于块效应的更好的假设。一般来说，使用Kackar-arville调节效果很好，推荐用于部分复制的设计。对于设计，对于具有四个或更多块的设计，使用块间信息是优选的。</p>
+
+<hr />
+
+<p>##介绍
+为了控制植物育种田间试验的田间可变性，几乎总是使用某种区组（John and Williams 1995）。由于处理的数量通常很高，因此通常优先选择<strong>不完全区组设计，如α-design</strong>（Patterson和Williams 1976）或<strong>部分重复（p-rep）设计</strong>（Cullis et al.2006; Williams et al。2011,2014） 。在实验室实验中经常使用相同的不完全区组结构，例如，如果不是所有样品都可以在一个微量滴定板上或在一天内测量。如果假设区块效应是随机抽取来自某些可能的区块效应的母体群体，或者如果存在基础的随机化过程来分配处理块（Calinski和Kageyama，2000）是合理的，则<strong>将区块作为随机因子允许恢复块间​​信息</strong>（Yates 1940）。<strong>对于已知的差异，这样的组合分析加权块间和块内处理信息是最好的</strong>。为了更好的可读性，我们在整篇文章中将处理信息简单地表示为“信息”，因为我们的主要目的是评估处理效果。此外，为了简洁起见，我们表示假设随机块效应的分析，并因此将组块间信息恢复为组合分析。组合分析中的权重基于估计的方差。如果这种综合分析的处理效果的标准误差估计值像方差估计值一样是已知常数的话。问题在于这些权重会低估真实的标准误差，因为忽略估计方差的误差，从而忽略块间和块内信息的权重误差（Mead et al。2012）。具体而言，当块的数量小并且块方差大时，块方差的估计可能是如此不精确以至于不能以足够的精度来确定权重以恢复块间信息是值得的（Casella 2008; Mead et al。2012）。
+实践中的问题是决定什么时候恢复块间信息是值得的。显然，在这方面，所有的精度估计都不是一个有用的指导。可以证明，即使在恢复不合理的情况下，组合分析的这些估计标准误差总是小于块内分析的估计标准误差（Kenward和Roger，1997）。为了避免低效的组合分析，Mead（1988）和van Eeuwijk（1995）提出，估计块方差至少需要10个自由度。
+根据平衡不完全区组合（BIB）设计的综合处理效果估计量的分布特性，Graybill和Deal（1959）提出，对于样本量超过10的情况，综合分析的估计是可取的。注意到对于BIB设计，​​相对的块内和块间信息根据比率b2E / 2（1-E）被分割，其中E是效率因子，b2和2分别是块和误差方差，Mead等人。 （2012;第9章）提出，至少有4％的信息需要在区块之间进行。因此，根据这个规则，当效率因子低（低于0.8）并且块间误差方差比小于4时，恢复是值得的。由（t）（rk）给出的BIB设计的效率因子E，在一个区块中两个处理一起发生的次数在哪里，t，r和k分别是每个区块的处理，复制和绘图的数量。 BIB设计的处理差异的方差与具有相同数量的实验单位和相同的误差方差的随机完全区组设计的差异的比率（John和Williams 1995;第2章）。实际上，这意味着块间分析只有在块大小介于2和4之间时才会被使用，并且由于区组引起的误差方差的减小是很小的（Mead et al。2012）。
+对于其他设计，关于恢复联锁信息的决定更加困难（Mead et al。2012）。 Kackar和Harville（1984）提出了基于一阶泰勒展开的标准误差估计的一般性调整，该估计考虑了权重的误差，并且通常导致标准误差估计值的膨胀，与从a假设已知差异的组合分析。 Kenward和Roger（1997）也将这种方法用于混合模型中固定效应的小样本推断，在一些混合模型包中实现后，这种方法已经非常流行。作者提出只有当Kackar </s> arville校正后处理差异标准误差（s.e.d.）小于相应的估计值时，才能恢复阻滞信息。从固定块效应的分析。虽然这种方法具有很大的实际吸引力，但它的经验表现似乎没有系统地进行调查。
+本文试图采用残差最大似然法（REML; Patterson and Thompson，1971）作为方差的估计方法，尝试两种分析（有和没有恢复）的方法，然后选择一种基于一个合适的决策规则，旨在确定较小的sed我们将使用Kackar arville调整和替代决策规则来评估决策规则。我们考虑了一系列由甜菜和模拟单一试验可解析的不完全块设计和部分复制设计的小型单一试验设计。 “材料和方法”部分首先描述了一系列甜菜试验的动机，然后概述了我们的模拟方法。给出了所研究设计的数据模拟分析模型和九种不同的决策规则。然后我们比较这些基于处理差异均方差（MSED）的规则和在模拟中正确选择模型的概率。本文最后讨论了结果和我们的主要结论。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/%E7%AB%9E%E4%BA%89/montagnon2001-%E5%92%96%E5%95%A1%E7%AB%9E%E4%BA%89/" data-toggle="tooltip" data-placement="top" title="Montagnon2001-咖啡竞争">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/diallel/mohring2011-%E5%8F%8C%E5%88%97%E4%BA%A4%E9%85%8D%E6%A8%A1%E5%9E%8B/" data-toggle="tooltip" data-placement="top" title="Mohring2011-双列交配模型">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

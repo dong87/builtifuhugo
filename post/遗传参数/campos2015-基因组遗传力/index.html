@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Campos2015-基因组遗传力</title>
+  <meta property="og:title" content="Campos2015-基因组遗传力" />
+  <meta name="twitter:title" content="Campos2015-基因组遗传力" />
+  <meta name="description" content="de los Campos, G., Sorensen, D., and Gianola, D. 2015. Genomic Heritability: What Is It? PLOS Genet. 11(5): e1005048. doi:10.1371/journal.pgen.1005048.
+ 摘要 全基因组回归方法越来越多地用于分析和预测复杂的性状和疾病。在人类遗传学中，这些方法通常用于推断遗传参数，例如个体之间的遗传变异的数量或者可以通过分子标记的回归来解释的表型变异的比例。即使数据分析通常采用的一些假设与重要的定量遗传概念不一致，情况也是如此。在本文中，我们发展的理论，导致高维基因组回归中出现的参数的精确定义; 我们专注于所谓的基因组遗传力：可以通过对一组标记进行线性回归来解释（在群体中）的性状的方差比例。我们提出了一个定义这个参数是在经典的定量遗传学理论框架，并表明基因组遗传力和性状遗传力参数是相等的，只有当所有的因果变种是键入。此外，我们讨论了定义为定量遗传参数的基因组方差和基因组遗传度如何与通常用于推论的统计模型的参数相关，并且指示使用模拟进一步评估的潜在的推论性问题。当在分析中使用的大部分标记在具有QTL的LE中时，似然函数可能被错误指定。这可能导致相当大的有限样本偏差，并且可能缺乏可能性（或贝叶斯）估计的一致性。如果样本中的个体相关性较远且连锁不平衡跨越较短的区域，则可能会遇到这种情况。这种偏见并不否定使用全基因组回归模型作为预测机器; 然而，我们的研究结果表明，当使用基于标记的回归来推断群体参数，如基因组遗传力时，需要谨慎。
+作者摘要
+全基因组回归（WGR）方法被越来越多地用于推断方差比例，这可以通过大量标记的线性回归来解释，称为“基因组遗传性”。然而，WGR中涉及的统计学假设与重要的数量遗传学概念有些不一致。我们认为，显示用于数据分析的统计模型的参数通常与感兴趣的定量遗传参数具有微小的关系。我们还使用模拟来研究基于可能性估计的偏差程度。我们得出结论：在某些情况下，估计值可能会有相当大的有限样本偏差; 因此，在解释来自WGR模型的参数估计时，需要谨慎行事。
+介绍 全基因组回归（WGR）方法[ 1 ]越来越多地用于分析和预测复杂性状，定量或分类。这些方法首先在植物和动物育种预测开发（例如，[ 2，3 ]）。最近，出现了增加的兴趣在使用用于推断方差可以由线性回归的标记物组上进行说明的比例，或“基因组遗传力” [WGR方法4 - 6]。预测和推理是两个不同的问题，一个可能产生好的（例如，无偏和精确的）参数估计的模型可能具有相对较差的预测性能，反之亦然。WGR方法中的大多数方法学研究是在动物育种中开发的，重点在于预测。不幸的是，对WGR模型估计的推断性质知之甚少。例如，目前还不清楚常用的基于似然的（或贝叶斯）方差分量估计量或基因组遗传度估计总体参数是否一致[ 7 ]。
+在大量的标记信息可用之前，遗传分析（如遗传力估计）主要基于混合效应线性模型应用于家庭数据[ 8 ]。在所谓的无穷小模型中，亲缘关系是用家系来评估的，模型的核心要素是基因型值是由大量基因座上的等位基因的小的加性效应引起的。许多研究已经调查了无穷小模型的拟合的质量，以实验[ 9，10 ]和模拟家庭数据[ 11]。这些研究大多认为加法无穷小模型是一个有用的抽象，除了涉及一些大的非加性位点的情况。因此，至少在一些操作层面上，对于家庭信息来说，生成数据的模型与用于分析的模型之间的区别似乎并不重要。
+对大量基因座的基因型信息的可用性已经使得可以评估名义上无关个体[间亲缘关系9 - 13 ]。在这种情况下，由于标记和数量性状位点（QTL）之间的不完全连锁不平衡（LD），标记和因果位点的等位基因共享模式可能会有很大的不同[ 6]。因此，数据生成过程和用于数据分析的模型或工具模型之间的区别必须明确：在工具模型中，使用基因型信息来代替作为经典模型基础的因果基因型定量遗传学理论。因此，澄清仪器模型的参数（例如，基因组或SNP方差）与经典的定量遗传参数（例如，遗传方差）之间的联系是至关重要的。
+杨等人。（2010）[ 4 ]提出使用G-BLUP方法[ 2 ]，一种特殊类型的WGR，应用于涉及远亲的数据，用于估计由多元线性回归所占的方差比例。不明原因遗传方差的比例可以解释为“缺失遗传力”，这在概念上可以归因于标记和QTL之间的不完全的LD。使用WGR方法Yang等人 （2010）发现，人类身高遗传力的大约一半被普通的SNP所捕获。其他研究，如[ 6]已经使用模拟和实际数据证实了杨的结果。最近，在所有因果变种被假定包括在标记组中的情况下，已经使用WGR进行估计，并且已经提出了各种建议以获得与基于系谱的更接近的基因组遗传性的推断[ 5 ]。
+在迄今已发布的复杂性状的基因组分析的文献[ 4 - 6，14 ]，遗传参数已经基于用于数据分析的仪器模型的统计假设定义的。尽管在统计模型和数量遗传学理论中，基因型和效应的处理方式有一个关键的区别，但事实并非如此。在遗传值后者，个体间的差异在QTL [归因于对象到对象上的差异等位基因含量15 - 17]。因此遗传变异源于QTL基因型的变异。在这个框架中，在任何一个人口中，等位基因对性状的影响（例如，等位基因替换的平均效应）是固定的数量，例如[ 16 ]第112-113页。另一方面，在仪器回归模型中，基因型被视为固定的变异来源于标记效应的不确定性（所谓的“标记效应的方差”）。基因型及其效应的这一关键差异具有重要的后果，我们将在本文中进一步探讨。">
+  <meta property="og:description" content="de los Campos, G., Sorensen, D., and Gianola, D. 2015. Genomic Heritability: What Is It? PLOS Genet. 11(5): e1005048. doi:10.1371/journal.pgen.1005048.
+ 摘要 全基因组回归方法越来越多地用于分析和预测复杂的性状和疾病。在人类遗传学中，这些方法通常用于推断遗传参数，例如个体之间的遗传变异的数量或者可以通过分子标记的回归来解释的表型变异的比例。即使数据分析通常采用的一些假设与重要的定量遗传概念不一致，情况也是如此。在本文中，我们发展的理论，导致高维基因组回归中出现的参数的精确定义; 我们专注于所谓的基因组遗传力：可以通过对一组标记进行线性回归来解释（在群体中）的性状的方差比例。我们提出了一个定义这个参数是在经典的定量遗传学理论框架，并表明基因组遗传力和性状遗传力参数是相等的，只有当所有的因果变种是键入。此外，我们讨论了定义为定量遗传参数的基因组方差和基因组遗传度如何与通常用于推论的统计模型的参数相关，并且指示使用模拟进一步评估的潜在的推论性问题。当在分析中使用的大部分标记在具有QTL的LE中时，似然函数可能被错误指定。这可能导致相当大的有限样本偏差，并且可能缺乏可能性（或贝叶斯）估计的一致性。如果样本中的个体相关性较远且连锁不平衡跨越较短的区域，则可能会遇到这种情况。这种偏见并不否定使用全基因组回归模型作为预测机器; 然而，我们的研究结果表明，当使用基于标记的回归来推断群体参数，如基因组遗传力时，需要谨慎。
+作者摘要
+全基因组回归（WGR）方法被越来越多地用于推断方差比例，这可以通过大量标记的线性回归来解释，称为“基因组遗传性”。然而，WGR中涉及的统计学假设与重要的数量遗传学概念有些不一致。我们认为，显示用于数据分析的统计模型的参数通常与感兴趣的定量遗传参数具有微小的关系。我们还使用模拟来研究基于可能性估计的偏差程度。我们得出结论：在某些情况下，估计值可能会有相当大的有限样本偏差; 因此，在解释来自WGR模型的参数估计时，需要谨慎行事。
+介绍 全基因组回归（WGR）方法[ 1 ]越来越多地用于分析和预测复杂性状，定量或分类。这些方法首先在植物和动物育种预测开发（例如，[ 2，3 ]）。最近，出现了增加的兴趣在使用用于推断方差可以由线性回归的标记物组上进行说明的比例，或“基因组遗传力” [WGR方法4 - 6]。预测和推理是两个不同的问题，一个可能产生好的（例如，无偏和精确的）参数估计的模型可能具有相对较差的预测性能，反之亦然。WGR方法中的大多数方法学研究是在动物育种中开发的，重点在于预测。不幸的是，对WGR模型估计的推断性质知之甚少。例如，目前还不清楚常用的基于似然的（或贝叶斯）方差分量估计量或基因组遗传度估计总体参数是否一致[ 7 ]。
+在大量的标记信息可用之前，遗传分析（如遗传力估计）主要基于混合效应线性模型应用于家庭数据[ 8 ]。在所谓的无穷小模型中，亲缘关系是用家系来评估的，模型的核心要素是基因型值是由大量基因座上的等位基因的小的加性效应引起的。许多研究已经调查了无穷小模型的拟合的质量，以实验[ 9，10 ]和模拟家庭数据[ 11]。这些研究大多认为加法无穷小模型是一个有用的抽象，除了涉及一些大的非加性位点的情况。因此，至少在一些操作层面上，对于家庭信息来说，生成数据的模型与用于分析的模型之间的区别似乎并不重要。
+对大量基因座的基因型信息的可用性已经使得可以评估名义上无关个体[间亲缘关系9 - 13 ]。在这种情况下，由于标记和数量性状位点（QTL）之间的不完全连锁不平衡（LD），标记和因果位点的等位基因共享模式可能会有很大的不同[ 6]。因此，数据生成过程和用于数据分析的模型或工具模型之间的区别必须明确：在工具模型中，使用基因型信息来代替作为经典模型基础的因果基因型定量遗传学理论。因此，澄清仪器模型的参数（例如，基因组或SNP方差）与经典的定量遗传参数（例如，遗传方差）之间的联系是至关重要的。
+杨等人。（2010）[ 4 ]提出使用G-BLUP方法[ 2 ]，一种特殊类型的WGR，应用于涉及远亲的数据，用于估计由多元线性回归所占的方差比例。不明原因遗传方差的比例可以解释为“缺失遗传力”，这在概念上可以归因于标记和QTL之间的不完全的LD。使用WGR方法Yang等人 （2010）发现，人类身高遗传力的大约一半被普通的SNP所捕获。其他研究，如[ 6]已经使用模拟和实际数据证实了杨的结果。最近，在所有因果变种被假定包括在标记组中的情况下，已经使用WGR进行估计，并且已经提出了各种建议以获得与基于系谱的更接近的基因组遗传性的推断[ 5 ]。
+在迄今已发布的复杂性状的基因组分析的文献[ 4 - 6，14 ]，遗传参数已经基于用于数据分析的仪器模型的统计假设定义的。尽管在统计模型和数量遗传学理论中，基因型和效应的处理方式有一个关键的区别，但事实并非如此。在遗传值后者，个体间的差异在QTL [归因于对象到对象上的差异等位基因含量15 - 17]。因此遗传变异源于QTL基因型的变异。在这个框架中，在任何一个人口中，等位基因对性状的影响（例如，等位基因替换的平均效应）是固定的数量，例如[ 16 ]第112-113页。另一方面，在仪器回归模型中，基因型被视为固定的变异来源于标记效应的不确定性（所谓的“标记效应的方差”）。基因型及其效应的这一关键差异具有重要的后果，我们将在本文中进一步探讨。">
+  <meta name="twitter:description" content="de los Campos, G., Sorensen, D., and Gianola, D. 2015. Genomic Heritability: What Is It? PLOS Genet. 11(5): e1005048. doi:10.1371/journal.pgen.1005048.
+ 摘要 全基因组回归方法越来越多地用于分析和预测复杂的性状和疾病。在人类遗传学中，这些方法通常用 …">
+  <meta name="author" content="Leiming Dong"/>
+  <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:image" content="/img/red-paint.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@username" />
+  <meta name="twitter:creator" content="@username" />
+  <meta property="og:url" content="/post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/campos2015-%E5%9F%BA%E5%9B%A0%E7%BB%84%E9%81%97%E4%BC%A0%E5%8A%9B/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Dong&#39;s blog" />
+
+  <meta name="generator" content="Hugo 0.31.1" />
+  <link rel="canonical" href="../../../post/%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/campos2015-%E5%9F%BA%E5%9B%A0%E7%BB%84%E9%81%97%E4%BC%A0%E5%8A%9B/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../../css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="../../../css/codeblock.css" />
+  <link rel="stylesheet" href="../../../css/highlight.min.css" />
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../">Dong&#39;s blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="../../../">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="../../../post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="../../../post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="../../../post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="../../../page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="../../../tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Dong&#39;s blog" href="../../../">
+            <img class="avatar-img" src="../../../img/red-paint.jpg" alt="Dong&#39;s blog" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 data-img-src-1="/img/triangle.jpg" data-img-desc-1="Triangle"></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Campos2015-基因组遗传力</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (69 words)
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Campos2015-基因组遗传力</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (69 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<blockquote>
+<p>de los Campos, G., Sorensen, D., and Gianola, D. 2015. Genomic Heritability: What Is It? PLOS Genet. 11(5): e1005048. doi:10.1371/journal.pgen.1005048.</p>
+</blockquote>
+
+<h2 id="摘要">摘要</h2>
+
+<p><strong>全基因组回归</strong>方法越来越多地用于分析和预测复杂的性状和疾病。在人类遗传学中，这些方法通常用于推断遗传参数，例如<strong>个体之间的遗传变异的数量或者可以通过分子标记的回归来解释的表型变异的比例</strong>。即使数据分析通常采用的一些假设与重要的定量遗传概念不一致，情况也是如此。在本文中，我们发展的理论，导致高维基因组回归中出现的参数的精确定义; 我们专注于所谓的<strong>基因组遗传力</strong>：可以<strong>通过对一组标记进行线性回归来解释（在群体中）的性状的方差比例</strong>。我们提出了一个定义这个参数是在经典的定量遗传学理论框架，并表明<strong>基因组遗传力和性状遗传力参数是相等的</strong>，只有当所有的因果变种是键入。此外，我们讨论了定义为定量遗传参数的基因组方差和基因组遗传度如何与通常用于推论的统计模型的参数相关，并且指示使用模拟进一步评估的潜在的推论性问题。<strong>当在分析中使用的大部分标记在具有QTL的LE中时，似然函数可能被错误指定。这可能导致相当大的有限样本偏差，并且可能缺乏可能性（或贝叶斯）估计的一致性。如果样本中的个体相关性较远且连锁不平衡跨越较短的区域，则可能会遇到这种情况</strong>。这种偏见并不否定使用全基因组回归模型作为预测机器; 然而，我们的研究结果表明，<strong>当使用基于标记的回归来推断群体参数，如基因组遗传力时，需要谨慎。</strong></p>
+
+<p>作者摘要</p>
+
+<p>全基因组回归（WGR）方法被越来越多地用于推断方差比例，这可以通过大量标记的线性回归来解释，称为“基因组遗传性”。然而，WGR中涉及的统计学假设与重要的数量遗传学概念有些不一致。我们认为，显示用于数据分析的统计模型的参数通常与感兴趣的定量遗传参数具有微小的关系。我们还使用模拟来研究基于可能性估计的偏差程度。我们得出结论：在某些情况下，估计值可能会有相当大的有限样本偏差; 因此，在解释来自WGR模型的参数估计时，需要谨慎行事。</p>
+
+<hr />
+
+<h2 id="介绍">介绍</h2>
+
+<p>全基因组回归（WGR）方法[ 1 ]越来越多地用于分析和预测复杂性状，定量或分类。这些方法首先在植物和动物育种预测开发（例如，[ 2，3 ]）。最近，出现了增加的兴趣在使用用于<strong>推断方差可以由线性回归的标记物组上进行说明的比例，或“基因组遗传力” [WGR方法4 - 6]</strong>。预测和推理是两个不同的问题，一个可能产生好的（例如，无偏和精确的）参数估计的模型可能具有相对较差的预测性能，反之亦然。WGR方法中的大多数方法学研究是在动物育种中开发的，<strong>重点在于预测</strong>。不幸的是，<strong>对WGR模型估计的推断性质知之甚少</strong>。例如，<strong>目前还不清楚常用的基于似然的（或贝叶斯）方差分量估计量或基因组遗传度估计总体参数是否一致</strong>[ 7 ]。</p>
+
+<p>在大量的标记信息可用之前，遗传分析（如遗传力估计）主要基于混合效应线性模型应用于家庭数据[ 8 ]。在所谓的无穷小模型中，亲缘关系是用家系来评估的，模型的核心要素是基因型值是由大量基因座上的等位基因的小的加性效应引起的。许多研究已经调查了无穷小模型的拟合的质量，以实验[ 9，10 ]和模拟家庭数据[ 11]。这些研究大多认为加法无穷小模型是一个有用的抽象，除了涉及一些大的非加性位点的情况。因此，至少在一些操作层面上，<strong>对于家庭信息来说，生成数据的模型与用于分析的模型之间的区别似乎并不重要</strong>。</p>
+
+<p>对大量基因座的基因型信息的可用性已经使得可以评估名义上无关个体[间亲缘关系9 - 13 ]。在这种情况下，<strong>由于标记和数量性状位点（QTL）之间的不完全连锁不平衡（LD），标记和因果位点的等位基因共享模式可能会有很大的不同</strong>[ 6]。<strong>因此，数据生成过程和用于数据分析的模型或工具模型之间的区别必须明确</strong>：在工具模型中，使用基因型信息来代替作为经典模型基础的因果基因型定量遗传学理论。因此，<strong>澄清仪器模型的参数（例如，基因组或SNP方差）与经典的定量遗传参数（例如，遗传方差）之间的联系是至关重要的</strong>。</p>
+
+<p>杨等人。（2010）[ 4 ]提出使用G-BLUP方法[ 2 ]，一种特殊类型的WGR，应用于涉及远亲的数据，用于<strong>估计由多元线性回归所占的方差比例</strong>。<strong>不明原因遗传方差的比例可以解释为“缺失遗传力”，这在概念上可以归因于标记和QTL之间的不完全的LD</strong>。使用WGR方法Yang等人 （2010）发现，人类身高遗传力的大约一半被普通的SNP所捕获。其他研究，如[ 6]已经使用模拟和实际数据证实了杨的结果。最近，在所有因果变种被假定包括在标记组中的情况下，已经使用WGR进行估计，并且已经提出了各种建议以获得与基于系谱的更接近的基因组遗传性的推断[ 5 ]。</p>
+
+<p>在迄今已发布的复杂性状的基因组分析的文献[ 4 - 6，14 ]，遗传参数已经基于用于数据分析的仪器模型的统计假设定义的。尽管在统计模型和数量遗传学理论中，基因型和效应的处理方式有一个关键的区别，但事实并非如此。在遗传值后者，个体间的差异在QTL [归因于对象到对象上的差异等位基因含量15 - 17]。因此遗传变异源于QTL基因型的变异。在这个框架中，在任何一个人口中，等位基因对性状的影响（例如，等位基因替换的平均效应）是固定的数量，例如[ 16 ]第112-113页。另一方面，在仪器回归模型中，基因型被视为固定的变异来源于标记效应的不确定性（所谓的“标记效应的方差”）。基因型及其效应的这一关键差异具有重要的后果，我们将在本文中进一步探讨。</p>
+
+<p>本文的一个重要贡献是建立一个理论，旨在使用基因组数据（标记，序列）作为解释变量对回归模型中出现的参数进行精确定义。我们的方法是在经典的数量遗传学范式内构建的。我们讨论这些“工具模型参数”如何与基础概念QTL模型的“结构参数”相关。我们还介绍了程式化的案例，阐明了仪器模型参数的解释。最后，我们讨论潜在的估计问题，并提供一套有限的模拟，其中评估了基于可能性估计的一些统计特性。</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/bayesian/cappa-2006-%E8%B4%9D%E5%8F%B6%E6%96%AF-%E5%A4%9A%E6%80%A7%E7%8A%B6%E5%8D%95%E6%A0%AA%E6%A8%A1%E5%9E%8B-%E5%85%B1%E8%BD%ADgibbs/" data-toggle="tooltip" data-placement="top" title="Cappa-2006-贝叶斯-多性状单株模型-共轭Gibbs">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="../../../post/%E7%AB%9E%E4%BA%89/camerlink-2013-%E7%AB%9E%E4%BA%89-%E7%8C%AA/" data-toggle="tooltip" data-placement="top" title="Camerlink-2013-竞争-猪">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:youremail@domain.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/username" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;username" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/username" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/username" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/username" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://reddit.com/u/username" title="Reddit">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/username" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xing.com/profile/username" title="Xing">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/XXXXXXX/username" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.snapchat.com/add/username" title="Snapchat">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-snapchat-ghost fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/username" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/user/username" title="Youtube">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://soundcloud.com/username" title="SoundCloud">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://open.spotify.com/user/username" title="Spotify">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-spotify fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://username.bandcamp.com/" title="Bandcamp">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-bandcamp fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://itch.io/profile/username" title="Itch.io">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-gamepad fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://vk.com/username" title="VK">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://paypal.me/username" title="PayPal">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/username" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="../../../index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="yourwebsite.com">Leiming Dong</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="../../../">Dong&#39;s blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.31.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../../../js/main.js"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="../../../js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+
