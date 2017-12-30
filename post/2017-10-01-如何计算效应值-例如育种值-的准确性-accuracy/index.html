@@ -131,10 +131,10 @@ $(document).ready(function () {
 <p><span class="math inline">\(\sigma_a^2\)</span>是加性方差。</p>
 <p>预测差值的标准误（<em>SED</em>）是可以从<code>Asreml</code>中直接得到的，与_PEV_的关系是：</p>
 <p><span class="math display">\[
-SED=\sqrt{\hat Var(BLUP.differences)}=\sqrt{\hat Var(\hat Y_i-\hat Y_{i^`})}=\sqrt{2\hat Var(\hat Y)_i}=\sqrt{2PEV}
+SED=\sqrt{\hat Var(BLUP.differences)}=\sqrt{\hat Var(\hat Y_i-\hat Y_{i^ \prime})}=\sqrt{2\hat Var(\hat Y)_i}=\sqrt{2PEV}
 \]</span></p>
 <p><code>我不知道上面这个公式怎么推导的。</code> 所以有</p>
-<p><span class="math display">\[PEV=(SED)^2 /2=\hat Var(BLUP.differences)/2\]</span></p>
+<p><span class="math display">\[PEV=(SED)^{2}/2=\hat Var(BLUP.differences)/2\]</span></p>
 <p>如果没有Asreml可能需要更底层的计算（比如手动），这时_PEV_的计算更直观些： <span class="math display">\[PEV=Var(\hat u-u)=diag(C^{22})\sigma_e^2=d_i\sigma_e^2=(1-r^2)\sigma_u^2\]</span> 于是有 <span class="math display">\[r^2=1-diag(C^{22})\frac{\sigma_e^2}{\sigma_u^2}\]</span></p>
 <p><span class="math inline">\(C^{22}\)</span>是方程组关联矩阵的逆矩阵的右下角块，<span class="math inline">\(d_i\)</span>是块中的对角线元素。具体可查看<a href="https://pan.baidu.com/s/1hrDRLeG">Pro. Isik编写的教材P84</a>和<a href="https://pan.baidu.com/s/1nvmT47n">Mrode, 2014的书P44</a>。</p>
 <p>从_PEV_就可以得到我们需要的准确性和可靠性值了。</p>

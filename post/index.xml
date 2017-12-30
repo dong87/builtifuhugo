@@ -37,9 +37,9 @@ _PEV_是prediction error variances的缩写，意思是预测误差方差，预�
 $$PEV=var(\hat g-g)=(1-r_{\hat g,g}^2)\sigma_a^2$$
 $\sigma_a^2$是加性方差。
 预测差值的标准误（_SED_）是可以从Asreml中直接得到的，与_PEV_的关系是：
-$$ SED=\sqrt{\hat Var(BLUP.differences)}=\sqrt{\hat Var(\hat Yi-\hat Y{i^`})}=\sqrt{2\hat Var(\hat Y)_i}=\sqrt{2PEV} $$
+$$ SED=\sqrt{\hat Var(BLUP.differences)}=\sqrt{\hat Var(\hat Yi-\hat Y{i^ \prime})}=\sqrt{2\hat Var(\hat Y)_i}=\sqrt{2PEV} $$
 我不知道上面这个公式怎么推导的。 所以有
-$$PEV=(SED)^2 /2=\hat Var(BLUP.differences)/2$$
+$$PEV=(SED)^{2}/2=\hat Var(BLUP.differences)/2$$
 在很长时间里我不知道（或者说模糊地知道）accuracy是怎么实现的。我知道公式，但在软件里分别和公式组分对应的部分是什么却不是很清楚，当然写这篇文字的时候是确定的。具体实现的途径有2：
  一是利用Asreml中的prediction直接得到_SED_后，再根据公式4得出PEV
 fm_pred &amp;lt;- predict(fm_asr, classify = &amp;quot;Fam&amp;quot;) #fm_asr是asreml()输出的对象， Fam是随机效应变量 SED &amp;lt;- fm_pred$predictions$avsed  二是逐步得到_PEV_，每个预测值都有一个_PEV_，是预测值_SE_平方的均值，所以从预测函数得到的对象中提取出_SE_平方后再平均即可
