@@ -212,49 +212,6 @@
           
           
             <article class="post-preview">
-              <a href="../../post/bayesian/hallander-2016%E8%B4%9D%E5%8F%B6%E6%96%AF-%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0-%E5%A4%9A%E5%8F%98%E9%87%8F/">
-                <h2 class="post-title">Hallander-2016贝叶斯-遗传参数-多变量</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (74 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  <blockquote>
-<ol>
-<li>Hallander J, Waldmann P, Wang C, Sillanpää MJ. Bayesian inference of genetic parameters based on conditional decompositions of multivariate normal distributions. Genetics [Internet]. 2010 [cited 2016 Nov 14];185:645–54. Available from: <a href="http://www.genetics.org/cgi/doi/10.1534/genetics.110.114249">http://www.genetics.org/cgi/doi/10.1534/genetics.110.114249</a></li>
-</ol>
-</blockquote>
-
-<p>人们广泛认识到，混合线性模型是用于在复杂谱系的分析中的参数估计的重要工具，其包括谱系和基因组信息，并且其中相互依赖的遗传因子通常假定遵循高维的多变量正态分布。我们已经开发了一种基于多变量正态分布的条件单变量分布产物的贝叶斯统计方法。这个过程允许在用户友好的计算机软件包WinBUGS内对复杂谱系的计算要求的遗传评价。为了证明和评价该方法的灵活性，我们分析了两个示例性家系：包括加性和显性多基因关系的苏格兰松（Pinus sylvestris L.）的大的非种系谱系和模拟的系谱，其中基于计算的基因组关系密集标记图。分析表明，我们的方法是快速的，并提供准确的估计，因此它应该是一个有用的工具，用于快速，可靠地估计复杂谱系的遗传参数。</p>
-
-<hr />
-
-<p><strong>遗传学的大量努力一直致力于揭示定量或复杂性状的基础遗传结构</strong>。传统上，多态模型已广泛用于估计天然和繁殖种群的遗传变异和育种值，其中无数的基因被假定为用于感兴趣的性状（Bulmer 1971; Falconer和Mackay 1996）。<strong>数量性状的遗传方差可以分解为对应于单个等位基因的影响的加性部分和由于等位基因之间的相互作用而是非加性的部分</strong>。<strong>注意力一般集中在加性遗传方差（和遗传力）的估计，因为加性变异与通过育种者方程选择的反应成正比</strong>（FalconerandMackay1996，第11章）。<strong>然而，为了准确地估计加性遗传变异和遗传力，在遗传评价中识别潜在的非加性来源可能是重要的</strong>（Misztal 1997; Ovaskainenet al。2008; Waldmannet al。2008），特别是如果被分析的谱系包含大比例的全同胞和克隆（LynchandWalsh1998，第145页）。使用谱系和表型信息（即动物模型（Henderson 1984））的多源模型是用于估计遗传参数的选择模型在育种和自然种群中（Abney等人2000; Sorensen和Gianola 2002; O9Hara等人2008）。
-分子技术的最近突破使得有可能创建全基因组单核苷酸多态性（SNP）图。这些图谱已经帮助揭示了大量的负责性状表达的新基因座，并且提供了关于数量性状的遗传结构的一般见解（例如，Valdar等人2006; Visscher 2008; Flint和Mackay 2009）。这些见解有助于在计算人类的疾病风险时，尝试提高育种计划的产量，以及在评估保护计划的相关性时。例如，在小鼠（Valdar等人2006），鸡（Muir等人2008）和奶牛（VanRaden等人2008）中，可以快速且相对便宜地对对科学和农业重要的许多物种的高密度SNP进行评分等人2009）。
-在繁殖种群的分析中，包含密集标记数据与模拟中的传统表型模型相比，提高了遗传评价的预测能力（即可靠性）（Meuwissen等人2001; Calus等人2008 ; Hayes等人2009）和当使用真实数据时（Legarra等人2008; VanRaden等人2009; Gonza&rsquo;lez-Recio等人2009）.<strong>Meuwissen等人（2001）建议所有标记的影响应首先估计，然后相加，以获得基因组估计育种值（GEBV）。还提出了一种替代方法，其中所有标记物用于计算基因组关系矩阵（代替加性多基​​因关系矩阵）（例如，Villanueva等人2005; VanRaden 2008; Hayes等人2009）;然后将该矩阵结合到统计分析中以估计GEBV。两种方法的比较（VanRaden 2008）在个体等位基因的作用小的情况下产生类似的GEBV估计。此外，如果不是所有谱系成员都具有标记信息，则可以计算来自基因型和未基因型个体的组合关系矩阵;这已显示增加GEBV的准确性（Legarra等人2009; Misztal等人2009）</strong>。<strong>纳入标记信息的另一个合理的选择是在家族中使用低密度SNP板，并追踪来自高密度基因型祖先的SNP的影响，如Habier等人所建议的。 （2009）和Weigel et al。 （2009）</strong>。然而，需要快速和强大的计算机算法，其可以<strong>在数量性状的分析中尽可能有效地使用标记信息，以从全基因组标记数据获得精确的GEBV</strong>。
-本研究描述了一种将一般关系纳入遗传评价程序的高效贝叶斯方法的开发。该方法基于将多变量正态分布表示为一维正态分布的乘积，每个正则分布都取决于下降变量 -  bles。当评价自然和繁殖种群的遗传参数时，高维分布通常用作各种遗传效应的先验分布，如加性多基因效应（Wang等，1993），多变量加性多基因效应Tassell和Van Vleck 1996），以及通过同样矩阵的数量性状基因座（QTL）效应（Yi和Xu 2000）。采用贝叶斯框架来获得所有未知参数的后验分布，通过使用软件包WinBUGS中的马尔科夫链蒙特卡罗（MCMC）采样算法来估计。（Lunn等人，2000，2009）。通过执行先前的计算的简单单变量条件分布的因式分解产物，MCMC估计程序的计算时间大大减少。这个特征允许对多基因模型和基因组关系模型的快速干扰。此外，分解允许不同程度的近交，因为正确的遗传协方差结构可以推断到分析中。在本文中，我们测试了两个以前发表的谱系数据集的方法：来自Scots pine的大型谱系的表型数据，加入和优势遗传关系的信息（Waldmann等人2008）;和从模拟动物群体的全基因组扫描获得的基因组信息（Lund等人2009）。</p>
-
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
               <a href="../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/hallingback2013-%E6%AF%94%E8%BE%83op%E4%B8%8Ecp/">
                 <h2 class="post-title">Hallingback2013-比较OP与CP</h2>
                 
@@ -566,6 +523,61 @@
 <p>基因组选择（GS）的模拟和实证研究显示足以产生快速遗传增益的准确性。然而，随着GS方法的普及，已经提出了许多模型，并且没有比较分析来确定最有希望的模型。使用8种小麦（Triticum aestivum L.），大麦（Hordeum vulgare L.），拟南芥（L.）Heynh。和玉米（Zea mays L.）数据集，目前可用的GS模型与几种机器学习的预测能力通过比较精确度，基因组估计育种值（GEBV）和每种模型的标记效应来评估方法。虽然对于许多模型观察到类似的精度水平，但过度拟合的程度随着计算时间和标记效应估计的分布而变化很大。我们的比较表明，植物育种计划中的GS可以基于减少的一组模型，例如贝叶斯拉索，加权贝叶斯收缩回归（wBSR，贝叶斯B的快速版本）和随机森林（RF）（一种机器学习方法，可以捕获非加性效应）。测试不同型号的线性组合以及装袋和增压方法，但它们没有提高精度。这项研究还显示数据集中的亚群之间的准确性差异不能总是由表型方差和大小的差异来解释。这里测试的经验数据集的广泛多样性增加了GS可以增加单位时间和成本的遗传增益。</p>
 
 <p>基因组选择（GS）概念涵盖广泛的方法。它们的共同特征是通过在单个步骤中同时估计标记效应来估计基于全基因组基因型的数量性状的育种值的能力。这个概念首先由Meuwissen等人提出。 （2001）以及几个新的统计模型。此后，还提出了更多的模型。模拟和实证研究表明，<strong>GS可以大大加快繁殖周期，保持育种计划内的遗传多样性，并增加遗传获得超越表型选择或数量性状基因座（QTL）方法</strong>。然而，重要的是确定使用高通量分子标记技术和先前可用的表型记录以加快单位时间和成本的遗传增益的最佳方法和统计程序。最近有几个关于植物育种中的GS的综述，特别是Heff ner等人（2009），Jannink et al。 （2010），徐和胡（2010）和Lorenz等（2011年）。对植物或初步建议模型的比较预先掌握能力的研究较少。 Lorenzana和Bernardo（2009）表明，在双亲种群的情况下，他们测试的模型的预测能力（脊回归和经验贝叶斯[E-Bayes] [Xu，2007]）是非常相似的。 Heff ner et al。 （2011）比较了多品种小麦（Triticum aestivum L.）种群的几种预测能力模型。 Crossa等人（2010）着重于贝叶斯Lass（BL）和再生核希尔伯特空间（RKHS）模型，以评估小麦和玉米（Zea mays L.）GS的改进。我们在本研究中的目标是彻底比较迄今发布的所有模型，以及以前未对GS评估的几种机器学习程序，使用与多种物种，性状和数据集相同的评估方法。另外，上述引用的模型比较研究都没有测量每个模型的过度水平，这也是量化的重要因素。还应该强调的是，对于给定的准确度，模型对QTL效应分布采用不同的假设，导致不同的标记效应分布。因此，即使它们具有相同的预测能力，两个模型可能会产生不同的基因组估计育种值（GEBV），并且沿着基因组发挥不同的选择压力。我们的目标是确定最有希望的模型，为育种计划中GS方法的实施提供一些建议，并获得模型相似性和不相似性的经验证据。</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/stat/hierarchical-nested-and-factorial/">
+                <h2 class="post-title">Hierarchical-（Nested）-and-Factorial</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (50 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  
+
+<h2 id="hierarchical-and-factorial-models">Hierarchical and Factorial models</h2>
+
+<p>In globulus, the <strong>family</strong> (mum) is *nested* within the <strong>provenance</strong> (gg)</p>
+
+<p>This is a matter of codification:</p>
+
+<pre><code>Nested factors （Hierarchical models）
+gg	mum
+A	1
+A	2
+B	3
+B	4
+
+Crossed factors （Factorial models）
+gg	mum
+A	1
+A	2
+B	1
+B	2
+</code></pre>
+
+<blockquote>
+<p>分层（hierarchical）与巢式（nested）意思是一致的；cross与析因（factorial）是一致的。</p>
+</blockquote>
 
                 
               </div>

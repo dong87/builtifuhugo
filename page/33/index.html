@@ -212,51 +212,6 @@
           
           
             <article class="post-preview">
-              <a href="../../post/bayesian/waldmann-2006-reml-vs--bayesian-%E5%A4%9A%E6%80%A7%E7%8A%B6/">
-                <h2 class="post-title">Waldmann-2006-REML-VS--Bayesian-多性状</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (66 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  <blockquote>
-<ol>
-<li>Waldmann P, Ericsson ÆT, Ericsson T. Comparison of REML and Gibbs sampling estimates of multi-trait genetic parameters in Scots pine. Theor. Appl. Genet. 2006;112:1441–51.</li>
-</ol>
-</blockquote>
-
-<p>摘要
-多性状（协）方差估计是植物和动物育种的重要课题。在这项研究中，我们比较了从限制最大似然（REML）和贝叶斯Gibbs抽样的模拟数据和三个性状（直径，高度和分支角度）从26年的部分双列子代测试的苏格兰松（樟子松L.）。基于模拟数据的结果，我们可以得出结论，<strong>REML估计是准确的，但是吉布斯采样的后验分布的模式可以高估，取决于遗传力的水平</strong>。后代的平均值和中位数显着高于遗传力的预期值。用Δ法计算的置信区间向下偏移。最高概率密度（HPD）间隔提供更好的间隔估计，但可以在较低水平上稍微偏置。对于苏格兰松数据，发现REML和吉布斯样本估计之间存在类似的差异。我们得出结论，需要进一步的模拟研究，以评估不同先验对遗传个体模型中（共）方差分量的影响。</p>
-
-<hr />
-
-<p>介绍
-在最佳效益的育种中，通常存在受到最大关注的主要关键性状。然而，还有其他经常值得考虑的特征，因为它们在关键特征或其特性受到影响的情况下对最终或未来结果做出贡献。实例是家畜的健康性状和木材生产树的树干质量性状，其中数量生产能力通常是育种的主要特征。具有一定重要性的所有性状的有利发展需要用于同时评估的方法，例如长期以来在育种工业中已经使用的多特征限制最大似然（REML）协方差估计（例如Meyer和Thompson 1986; Meyer 1991 ）。主要目的是揭示相互关系是有利还是不利于未来选择（即，根据研究的目的评估性状是正相关还是负相关）。多特征“动物（或树或个体）模型”由Henderson和Quaas（1976）在定量遗传学中引入。<strong>基于个体模型的技术在估计方差分量和预测育种值方面比传统的基于家庭的方法更好，因为它们可以使用来自谱系的所有信息，并且对通过选择引入的偏差较不敏感</strong>（Sorensen和Kennedy 1984; Henderson 1986; Borralho 1995）。
-历史上，大多数分析在定量遗传学已经用古典（也称为频率）ANOVA方法进行。概率在这里从在相同条件下假设地重复实验大量次的框架下观察。现在，<strong>ANOVA方法已经在很大程度上被REML方法取代，用于估计（共）方差分量和使用（近似）最佳线性无偏预测器（BLUP）预测育种值</strong>。最初由Patterson和Thompson（1971）描述的用于非平衡混合模型的REML方法已经广泛用于动物育种。然而，REML方法需要一种迭代技术，通常倾向于在计算上非常苛刻，特别是对于多变量数据集，因此已经投入了大量的努力来开发更有效的算法。已经开发了用于多特征模型中的REML估计的各种计算程序，例如， （Meyer 1991），期望最大化（EM）方法（Misztal和Perez-Encisco 1993）和平均信息（AI）方法（Jensen等人，1996）。通常，<strong>这些REML方法使用迭代算法来找到似然的最大值。遗憾的是，尽管很容易获得所得参数估计值（方差分量）的估计值，但是要计算这些参数函数的可靠置信区间要困难得多</strong>（Harville和Fenech，1985; Burch和Iyer 1997; Soria等人1998）。
-计算能力的当前进步实际上导致了在遗传学中统计方法的发展中的贝叶斯革命（Shoemaker等人1999; Sorensen和Gianola 2002; Xu 2003; Beaumont和Rannala 2004）。<strong>在贝叶斯范式中，概率可以被理解为对不确定性或信念程度的度量。贝叶斯方法在复杂情况下特别有用，并且通常比普通频率方法更容易解释。鉴于许多遗传问题的复杂性，很明显贝叶斯方法可以大大有助于改进分析</strong>。贝叶斯马尔科夫链蒙特卡罗（MCMC）方法在1990年代上半年在定量遗传学中被引入（Wang等人1993; Sorensen等人1994），通过吉布斯采样程序的发展促进（Geman和Geman 1984; Gelfand和Smith 1990）。<strong>吉布斯采样器连续地从模型中的所有参数的条件分布中采样，以便产生边际后验分布的随机样本，其是贝叶斯推理的目标。吉布斯取样已经在动物育种中广泛实施，并且已经开发了用于多特征评价的不同算法</strong>（例如Jensen等人1994; van Tassel和Van Vleck 1996）。然而，在植物应用中的吉布斯取样仍然很少（例如Soria等人1998; Gwaze和Woolliams 2001; Zeng等人2004; Waldmann等人2005）。
-这项研究的主要目标是比较REML和吉布斯抽样估计的遗传参数从多个性状个别树模型。这些方法适用于来自瑞典北部的苏格兰松（Pinus sylvestris L.）二年级后代试验的模拟数据和数据，测量三种性状（博尔直径，树高和分枝角）。我们将分析限制为加性模型，因为加性组分最容易应用于基于有性繁殖群体的轮回选择的实际育种。</p>
-
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
               <a href="../../post/bayesian/waldmann-2009%E8%B4%9D%E5%8F%B6%E6%96%AF-winbugs-/">
                 <h2 class="post-title">Waldmann-2009贝叶斯-WinBUGS-</h2>
                 
@@ -576,6 +531,43 @@ Papadakis方法的许多理论讨论集中在固定模型上。我们认为这�
                   Williams CG, Savolainen O. Inbreeding depression in conifers: Implications for breeding strategy. For. Sci. [Internet]. 1996 [cited 2016 Dec 9];42:102–17. Available from: http://sci-hub.cc/http://www.ingentaconnect.com/content/saf/fs/1996/00000042/00000001/art00014   使用自交作为针叶树的育种工具是有争议的;本主题通过基于广泛的植物和动物的遗传模型，理论和实验结果的回顾来解决。一些支持性证据可从针叶树研究获得。对于大多数针叶树，自交不会是减少有害等位基因的小亚群或精英品系中的近交繁殖抑制的最佳方法;同胞或随机交配是针叶树驯化的早期几代的更好的选择。可能的例外是具有少数致死等位基因的针叶树种。已经研究了很少有机体具有比针叶树更致死的当量，因此最初需要更慢的近交比自交，以防止对低后代存活和成年繁殖力的大损失。近交育种群体还将需要大量的复制品系和每个重复的后代，因为预期每条品系的灭绝概率高。像玉米一样，很少有价值的品系会在最初几代自交。如果近亲繁殖抑制是基于有害突变，则假定其对有害等位基因的严格选择（清除）而下降。在初始清洗阶段之后，自交将是有效的。自交的优点包括完美的分类交配，增加系之间的选择效率和增加系内的均匀性。针叶树近亲繁殖抑制的理论预测已超过实验。操作育种计划不会提供关于近亲繁殖抑制变化的所需数据，但是育种策略的近亲繁殖假设必须通过实验进行测试。我们主张使用实验近交种群研究直接使用近亲繁殖抑制作为育种方法。它提供了第一手的结果，并为长期人口管理决策提供了信心。最大的价值是揭示不可预见的问题，防止不可逆转的错误。作为一个例子，我们概述了快速循环的实验近交种群为松属taeda L的计划，其结合早期选择，快速筛查成年繁殖力和传统遗传测试。近亲繁殖抑郁研究是长期人口管理成功的关键。它已经变得更强大与集成的经典遗传学 - 分子方法，加速育种技术和计算机模拟模型。 使用自交而不是温和形式的近亲繁殖或甚至随机交配在精英育种品系中的问题是相关和及时的。现代高级代针对育种策略依赖于细分的育种群体（例如，Lowe和van Buijtenen 1981，Barnes 1984，Cotterill等人1988，Dean 1990，Namkoong和Kang 1990，McKeand和Bridgwater 1993，Williams和Hamrick 1996）。近交是对育种群体的控制（参见Lindgren和Gregorius 1976的综述），但没有直接用作育种方法。在较小程度上，许多程序中商业规模的控制授粉种子的新选择具有间接刺激对近交系的兴趣。这种生产果园设计使得可以使用少至两个不相关的选择，并仍然产生异型种子用于再造林（参见Williams和Askew 1993中的综述）。在所有情况下，种植的种子被假定为异型杂交，这里的近交的主题仅在育种群体内是相关的。自交作为林木的育种工具，首先是在30年前，使用玉米的经验作为证明（Righter 1960）。 Righter建议开发针叶树自交系和种植园林杂交种子生产，尽管他还指出延迟开花和繁殖能力丧失是潜在的障碍。他的想法没有实施，因为相关的育种计划正处于初期阶段，当时少数的近亲繁殖研究报告了自交种子死亡率高。全世界的早期针叶树项目被管理为近亲繁殖回避，并依赖于开放式生产种子园。然而，优选单一的大的繁殖群体，尽管如今更常使用群体细分策略（参见White 1993，Williams和Hamrick 1995中的综述）。玉米（Zea mays L.）杂交生产的成功是针叶树自交的一个很好的理由。玉米杂种生产开始于Jones（1917）首次在玉米自交系之间表现出杂种优势。到了20世纪20年代，美国农业部利用已经被驯化数千年的这种异花授粉的种子开始了强化玉米自交程序。这个计划需要非常大的繁殖群体，因为繁殖能力和产量低导致只有一小部分可接受的选择（Lindstrom 1939）。据估计，在1939年之前，实际上筛选了超过100,000条系，其中97％在1至3代自交后丢失。在保留的系中，对于一种或多种性状（包括产量）都是有缺陷的（Lindstrom，939，Hallauer和Miranda 1981，第321页）。玉米生育力的丧失是主要障碍，即使种子生产有强烈的方向选择。美国玉米方案中的自我普遍存在，因为与同胞交配相比，它需要更少的时间来开发真正的育种品系（Stringfield 1974，也参见图1）。这不是最有效的手段，玉米的外来或野生亲缘的改良依赖于同胞 - 在自交前交配。否则，如果最初使用自我训练，适当度会大大降低（Goodman 1992）。玉米成功不直接转化为针叶树。对于玉米，粮食产量既是适合性状，又是具有直接经济价值的性状，因此粮食产量的选择是选择继续繁殖。对于针叶树，生殖能力和生存也是适应性特征，但它们没有直接的经济价值。具有经济价值的针叶树性状包括木材质量和生长。对于针叶树，使用育种将意味着重点转移到选择适当的性状，如繁殖能力和生存，可能牺牲直接经济价值的性状。
 Use of selfing as a breeding tool for conifers is controversial; this topic is addressed with a review of genetic models, theory, and experimental results based on a wide range of plants and animals.
                   <a href="../../post/%E6%9D%82%E4%BA%A4%E4%BC%98%E5%8A%BF/williams-1996%E8%87%AA%E4%BA%A4-%E9%92%88%E5%8F%B6%E6%A0%91-%E8%82%B2%E7%A7%8D%E7%AD%96%E7%95%A5/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/wolak2012-nadiv-%E9%9D%9E%E5%8A%A0%E6%80%A7%E5%85%B3%E8%81%94%E7%9F%A9%E9%98%B5-%E5%8A%A8%E7%89%A9%E6%A8%A1%E5%9E%8B/">
+                <h2 class="post-title">Wolak2012-Nadiv-非加性关联矩阵-动物模型</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (105 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Wolak ME (2012) Nadiv: An R package to create relatedness matrices for estimating non-additive genetic variances in animal models. Methods Ecol Evol 3:792–796. doi: 10.1111/j.2041-210X.2012.00213.x</p>
+</blockquote>
+
+<p>通过采用<strong>“动物模型”</strong>，在动物育种科学中具有长期和久经考验的历史的混合效应模型，提出了野生种群数量性状进化研究的重大进展 （Henderson 1984; Lynch＆Walsh 1998; Kruuk 2004）。<em>动物模型的优点</em> ** 使用亲戚之间的相似性来阐明在种群水平上的表型变异的基本遗传基础，该方法（1）使研究人员能够控制（或研究自己）混杂因素，因为环境或其他不可遗传 （2）在遗传参数的估计中同时利用超过亲代或后代或半同胞和完全同源的额外关系，从而增加能够研究的群体和生物体的类型，和（3）群体内无偏选择 （Lynch＆Walsh 1998; Kruuk 2004）**。
+<strong>数量性状的表型方差可以分解为加性遗传，非加性遗传和环境变异来源。 非加性遗传方差可以进一步细分为优势和上位方差。 加性，显性和上位性遗传变异与个体通过在相同基因座有后裔相同的等位基因，在相同基因座的两个等位基因或不同基因座的等位基因相同的概率成比例。 如果人们知道群体中的所有关系（即谱系），则可以在动物模型中估计上述遗传变异。</strong>
+非加性遗传变异在生态和进化分析中很少被评估（但见Crnokrak＆Roff 1995; Waldmann 2001），尽管动物和植物育种领域已经估计了这些遗传变异超过二十年（例如， Hoeschele 1991; Tempelman＆Burn-side 1991）。 这可能是，部分是因为非加性遗传效应被认为在预测中等大小野生种群的进化轨迹（Fisher 1958）没有什么重要性。 此外，对野生生物的研究通常在群体中具有低数量的个体，特别是与在动物育种中经常处理的数量相比。 这是有问题的，<strong>因为具有太少个体的数据集不包括在动物模型中包括太多随机效应（Kruuk 2004），并且已经显示对于优势方差的估计是有问题的（Misztal 1997）</strong>。然而，<strong>如果存在优势遗传效应，但不包括在动物模型中，则它们可能偏向于加性遗传效应的预测以及加性遗传方差的估计</strong>（Lynch＆Walsh 1998; Ovaskainen，Cano＆Merila 2008; Waldmann等人2008;但参见Misztal，Lawlor＆Fernando 1997）。另外，<strong>非加性效应对于许多进化假说是中心关注的</strong>，例如：优势和上位性预期对健身的变化有实质性贡献（Wright 1929; Haldane 1932; Fisher 1958; Crnokrak＆Roff 1995;Merila¨＆Sheldon 1999）;非加性方差可以确定加性遗传方差在瓶颈后增加的程度（Cockerham＆Tachida 1988; Goodnight 1988; Willis＆Orr 1993; Barton＆Turelli 2004）;上位性可以在过程中形成累加的遗传效应和变异，例如突变和选择（Gavrilets 1993; Hermisson，Hansen＆Wagner 2003; Carter，Hermisson＆Hansen 2005），其具有对性别和重组进展的影响（Charles-worth 1990）;上位性通过Dobzhansky-Muller不兼容性的演化在物种形成中是不可或缺的一部分（Crow＆Kimura 1970; Orr 1995; Welch 2004）;健身相关性状之间的遗传相关性的符号可能取决于优势方差的量（Curtsinger，Service＆Prout 1994; Roff 1997;Merila¨＆Sheldon 1999）;支配地位可能导致近亲繁殖抑制或杂种优势（Roff 1997），特别是在保护关注的小群体中（Waldmann等人2008）;和性联合优势效应可能在性二倍性性状的演变中发挥作用（Fairb-airn＆Roff 2006）。
+除了由于总体大小的结果不能获得非加性方差的有意义的估计（参见下面的“抽样协方差和置信区间”），<strong>在动物模型中包括优势和上位性的下一个挑战是构建非加性遗传关系矩阵（即优势矩阵D和三个上位上位性矩阵：通过加性AA的加性，通过优势AD的加性和通过优势DD-的优势，其中加性遗传关系矩阵由A和黑体字表示，大写字母表示矩阵）。另一个挑战是获得这些矩阵的逆，这是解决动物模型中的方程组所需要的</strong>。虽然构建必要的矩阵逆过程已经制定出来（例如Hoeschele＆VanRaden 1991），只有添加的逆矩阵的创建已经被并入大多数生态学家和进化生物学家使用的软件：ASReml（Gilmour et al。2009） ，MCMCglmm（Hadfield 2010）和WOMBAT（Meyer 2007）。本研究给出了在广泛使用的统计程序R（R Development Core Team，2011）中实现的软件包nadiv（Non-Additive InVerses）的概述，其可以用于构建优势和上位性遗传相关矩阵及其逆矩阵。倒位随后可用于各种动物模型软件程序中用于数量性状的单变量或多变量分析。下面，示例简要地演示了使用nadiv的模拟数据setwarcolak的主要功能。</p>
+
                 
               </div>
 

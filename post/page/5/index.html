@@ -180,28 +180,6 @@
         <div class="posts-list">
           
             <article class="post-preview">
-              <a href="../../../post/%E7%A9%BA%E9%97%B4/cappa-2007-p-spline/">
-                <h2 class="post-title">Cappa-2007-p-spline</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  Cappa EP, Cantet RJC. Bayesian estimation of a surface to account for a spatial trend using penalized splines in an individual-tree mixed model. Can. J. For. Res. [Internet]. 2007;37:2677–88. Available from: http://www.scopus.com/inward/record.url?eid=2-s2.0-38849165334&amp;partnerID=40&amp;md5=595ec0deebe7eb7aef9f8bb9e0e7b3e1   未考虑空间变异性导致估计遗传参数和预测来自森林遗传试验的育种值的偏差。先前尝试解释大规模连续空间变化的尝试采用在行（或列）的方向上的空间坐标。在这项研究中，我们使用单树混合模型和B样条基础的张量积与适当的协方差结构的随机结效应来解释空间变异性。使用贝叶斯技术通过Gibbs采样估计分散参数。该程序用来自桉属（Eucalyptus globulus subsp。）的子代试验的数据说明。 globulus Labill。续篇中使用了四种不同的模型。第一个模型包括区组效应，另外三个模型包括8 x 8，12 x 12或18 x 18节的网格上的表面。具有B样条的三个模型显示出比具有区组的模型更大的偏离信息标准值。此外，拟合表面的混合模型显示σ2e的后验均值的一致减少，σ2A和h2DBH的后验平均值的增加，以及对于亲本的增加66％（对于父母）或60％（对于后代）育种值的准确性。
-与其他栽培植物相比，森林遗传试验易产生高度的环境异质性（Libby and Cockerham 1980）：树木是大型活生物体，比大多数栽培植物物种占据更多的空间。此外，树木通常种植在具有高生育力，湿度，土壤深度或坡度的地方。尽管空间异质性在森林遗传评价中是一种滋扰效应，其主要目的是预测育种值，忽略这种来源可能导致遗传参数的估计和个体加性遗传效应的预测中的偏差（育种值：Mag- Nussen 1993，1994）。为了解释环境梯度，树种繁殖者使用随机完全区块或不完全区块设计设计了森林试验。然而，设置块的固定限制使得难以解释不断变化的环境因素。此外，建立一个适当地考虑环境异质性的所有来源的设计可能是一个无希望的任务，因为“环境变化在建立之前是未知的”（Fu等人1999a）。或者，空间变化可以在评价模型内的后验考虑。在这些所谓的“空间模式”中，连续变异性有两个主要来源：“局部趋势”或小规模变化，“全球趋势”或大规模变异，跨越空间梯度。这两个来源在森林遗传试验中是可观察到的：任一组分单独或彼此组合（例如，Fu等人1999b; Costa e Silva等人2001; Dutkowski等人2002）。 说明大规模连续空间变化的模型包括表示为分类变量或协变量的空间坐标。后者是非随机函数，例如多项式（Federer 1998）或平滑样条（Verbyla et al。1999）。 Costa e Silva et al。 （2001）和Dutkowski et al。 （2002）通过拟合行和列的一阶自回归（AR（1））协方差结构的克罗内克（Kronecker）乘积来考虑连续空间趋势（Gilmour等人，1997）。为了解释大规模变化，Costa e Silva et al。 （2001）提出使用固定或随机分类变量，Dutkowski et al。 （2002）包括空间坐标的固定效应作为二次多项式或三次平滑样条（Verbyla et al。1999）。然而，Dutkowski et al。 （2002）发现，五个试验中的两个的变异性不是静态的，这意味着大规模协方差仍然存在于空间误差中。注意，在具有行和列效应的加性模型中或在具有相互作用的模型中的拟合分类变量不以连续方式处理信息，使得表面不能被拟合。另一方面，具有多项式或样条函数的加性模型只使用行和列效应的边缘化估计，以致网格内部点的信息丢失。因此，在连续空间变异发生在二维的森林遗传试验中，使用分类变量，协方差，多项式或一维样条，或加性模型或具有分类变量相互作用的模型的分析可能不能完全考虑空间协方差。 Thomson和El-Kassaby（1988）通过最小二乘法在二维中拟合了六次多项式，以比较道格拉斯冷杉（Pseudotsuga menziesii（Mirb。）Franco）的不同品质。在Liu和Burkhart（1994）和Saenz-Romero等人的工作中也可以找到森林遗传数据的两个维度（“趋势分析”）中多项式的分析。 （2001）。然而，多项式拟合存在一些缺点（Green和Silverman 1994，第2页）。首先，拟合是全局的而不是局部的，这意味着（i）该方法不能够考虑数据中存在的局部变化，（ii）很少有影响的观察可能对结果拟合产生大的影响， （iii）边缘的配合通常较差。多项式的另一个严重缺点是随着多项式阶数的增加，它们的数值不稳定性。 样条是使用多边形的更有效的方法。它们是局部拟合的分段多项式函数，使得得到的函数在段（“节”）的接点处是可微分的，直到拟合的顺序。样条能够捕获数据中存在的大多数正弦，并且不会遭受数值不稳定性。 Eilers和Marx（1996）使用具有等间距结的基本样条（B样条）和线性模型方法在一维中引入了“惩罚样条”（P样条），粗糙度惩罚由参数之间的差异组成，即结的效果。 T.
-                  <a href="../../../post/%E7%A9%BA%E9%97%B4/cappa-2007-p-spline/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
               <a href="../../../post/%E7%AB%9E%E4%BA%89/cappa-2008-%E7%AB%9E%E4%BA%89/">
                 <h2 class="post-title">Cappa-2008-竞争</h2>
 
@@ -455,6 +433,33 @@
                 
                   library(Rcpp) library(ggplot2) library(dplyr) opt = theme(legend.position = &quot;none&quot;, panel.background = element_rect(fill=&quot;white&quot;), axis.ticks = element_blank(), panel.grid = element_blank(), axis.title = element_blank(), axis.text = element_blank()) cppFunction('DataFrame createTrajectory(int n, double x0, double y0, double a, double b, double c, double d) { // create the columns NumericVector x(n); NumericVector y(n); x[0]=x0; y[0]=y0; for(int i = 1; i &lt; n; ++i) { x[i] = sin(a*y[i-1])+c*cos(a*x[i-1]); y[i] = sin(b*x[i-1])+d*cos(b*y[i-1]); } // return a new data frame return DataFrame::create(_[&quot;x&quot;]= x, _[&quot;y&quot;]= y); } ') a=-1.
                   <a href="../../../post/rcodes/clifford-attractors/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/diallel/cockerham-1984%E6%98%BE%E6%80%A7%E5%AF%BC%E8%87%B4%E8%BF%91%E4%BA%A4%E8%A1%B0%E9%80%80-/">
+                <h2 class="post-title">Cockerham-1984显性导致近交衰退-</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <blockquote>
+<ol>
+<li>Cockerham CC, Weir BS. Covariances of relatives stemming from a population undergoing mixed self and random mating. Biometrics. 1984;40:157–64.</li>
+</ol>
+</blockquote>
+
+<p>我们考虑所有亲本和第一代亲戚的协方差在异交或自交的亲本群体中，这些过程是平衡的。 对于具有加性和显性效应的任何数目的等位基因和基因座的结果，用六个二次遗传分量表示，其系数由平衡群体的下降量度给出。 由于该交配系统的近交系数的变化，表达式包括基因座对亲属的方差和协方差的联合贡献。 通过包括全部的亲属，可以估计所有的二次分量。 在更一般的模型方面分析了Ghai（1982，Biometrics 38,87-92）对于在单个基因座处具有两个等位基因的协方差的复合函数的发现。</p>
+
                 
               </div>
 

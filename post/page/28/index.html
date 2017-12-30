@@ -180,31 +180,6 @@
         <div class="posts-list">
           
             <article class="post-preview">
-              <a href="../../../post/%E5%88%86%E5%AD%90%E7%94%9F%E7%89%A9/rommens1989-%E9%80%9A%E8%BF%87%E6%9F%93%E8%89%B2%E4%BD%93%E6%AD%A5%E7%A7%BB%E7%A1%AE%E8%AE%A4%E5%9F%BA%E5%9B%A0/">
-                <h2 class="post-title">Rommens1989-通过染色体步移确认基因</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  <blockquote>
-<p>Rommens JM, Iannuzzi MC, Kerem B, et al (1989) Identification of the cystic fibrosis gene: chromosome walking and jumping. Science 245:1059–65. doi: 10.1126/science.2772657</p>
-</blockquote>
-
-<p>了解遗传性疾病囊性纤维化的基本缺陷需要克隆囊性纤维化基因并其定义蛋白质产物。 <strong>在没有直接功能信息的情况下，染色体图位置是定位基因的指南</strong>。 使用染色体步移和跳跃和互补DNA杂交从人染色体7的长臂上的囊性纤维化区域分离包含超过500,000个碱基对的DNA序列。在该克隆区域中鉴定了几个转录序列和保守区段。 这些中的一个对应于囊性纤维化基因并且跨越大约250,000个碱基对的基因组DNA。</p>
-
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
               <a href="../../../post/%E8%82%B2%E7%A7%8D/ruotsalainen1998-%E5%90%91%E5%90%8E-%E5%90%91%E5%89%8D%E9%80%89%E6%8B%A9/">
                 <h2 class="post-title">Ruotsalainen1998-向后-向前选择</h2>
 
@@ -499,6 +474,54 @@ fwrite(db, &quot;./result/sent.txt&quot;, quote = F, row.names= F)
 <strong>独立性</strong>的验证是最重要的，因为它能使一些重要的检验如<em>F</em>-test和<em>t</em>-test无效。不独立是指X处的Y值受到另一个X变量的影响​。
 在相信获得的<em>F</em>-statistic​并利用5%拒绝水平前，需要确信所有的模型假设都是有效的。标准的模型验证图有<strong>（1）残差vs拟合值验证同质性，（2）QQ或直方图验证正态性，（3）残差vs每个自变量检验独立性</strong>。
 <img src="http://upload-images.jianshu.io/upload_images/3289684-2fb1816bb8bbe1da?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../../post/stat/s5--%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1ml%E5%92%8Creml/">
+                <h2 class="post-title">S5--最大似然估计（ML）和REML</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 1, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>A.F. Zuur et al., <em>Mixed Effects Models and Extensions in Ecology with R</em>, p116-119, chr 5.6</p>
+</blockquote>
+
+<p>当利用混合效应建模时，你会遇到诸如<strong>REML</strong>和<strong>ML</strong>这样的词汇。不像线性回归模型，就算你不知道背后的数学理论也可以照样使用。但是在混合效应建模中，你必须懂得一些相关的数学知识。所以REML是什么意思？它能干什么？
+第一个问题比较简单，REML限制性最大似然估计英文首字母的缩写。但是对于第二个问题，大多数教材在这点上就变得相当专业，或者解释得比较粗略，只是提到它是矫正自由度的一个神秘方法。而我们则选择尝试更为详细地解释它，所以需要利用矩阵代数的知识。但是为了理解REML，首先需要理解最大似然估计的原理，我们从这儿开始。如果你不熟悉矩阵代数，或者如果这一部分对数学水平的要求太高，我们仍建议你跳过这一部分。
+我们首先回顾用于线性回归的最大似然，然后给出REML是如何用于矫正方差估计子的。
+假设有一个线性回归模型<img src="http://upload-images.jianshu.io/upload_images/3289684-0db7e3ae6226351d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+模型中有3个未知参数α, β, and σ。为了简便，θ = (α, β, σ ) 。普通最小二乘是估计θ的一个方法。给出θ中每一个元素的表达式。利用线性回归获取方差估计的表达式是：
+<img src="http://upload-images.jianshu.io/upload_images/3289684-d9edcfc5add18482.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /><strong>（5.14）</strong>
+我们给参数加了一个帽子^，表示它是估计值，n是观测值的个数。可以证明σ^是σ的无偏估计，意味着E（σ^）=σ。现在让我们看一看最大似然估计方法。假设Y_i服从正态分布，其密度函数为
+<img src="http://upload-images.jianshu.io/upload_images/3289684-4c2a5bb931bedfb9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+因为我们也假设了Y_i是独立的，可以将Y1,Y2,&hellip;,Yn的联合密度函数写成单个密度曲线f1,f2,&hellip;,fn乘积的形式。这个乘积就叫做<strong>似然函数*L</strong>*。它是数据和θ的一个函数。问题是如何选择θ使L最高。为了简化，对L取自然对数，得到如下的log-似然方程式：</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-9563527fc24fa83f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+我们需要最大化这个式子，问题就变成了对每一个参数偏导，令偏导数=0并求解。因为我们很容易计算，这些偏导数=0的式子称之为<strong>封闭解</strong>。对于线性混合模型我们将会看到<strong>开放解</strong>，意思是参数没有直接的解。
+这里没有给出α和β估计子的式子，但对于方差我们得到：
+<img src="http://upload-images.jianshu.io/upload_images/3289684-61cabd3ef71b1ba5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+注意这个式子与我们利用普通最小二乘得到的式子（5.14）非常相似。实际上，受到因子（n-2）/n的影响，利用最大似然得到的方差估计子是有偏的（<a href="http://www.jianshu.com/p/66c643f89f32">S6. 回归分析为什么误差方差中自由度是n-2？</a>）。如果线性回归模型含有*p*个解释变量，那么偏度是（n-p）/n。<strong>最大似然是有偏的的原因是它忽略了截距和斜率也被估计的事实。所以我们需要更好的ML估计子，而这正是REML所做的事情</strong>。
+REML的工作如下：线性回归模型<img src="http://upload-images.jianshu.io/upload_images/3289684-0db7e3ae6226351d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />可以写成
+<img src="http://upload-images.jianshu.io/upload_images/3289684-b1604dff3a0237be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />，这是简单的矩阵形式，Xi=（1 Xi），β的第一个元素是截距，第二个元素是原始的β。正态性假设意味着
+<img src="http://upload-images.jianshu.io/upload_images/3289684-6c04857f17d78adc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /><strong>（5.18）</strong>。
+用ML估计子的问题是我们不得不估计式子（5.18）中β中的截距和斜率。显然，如果没有β，就能解决问题。为了消除β，可以找到一个维度n × (n – 2) 的特殊矩阵<strong>A</strong>，特殊指的是“与<strong>X&rsquo;</strong>正交”，然后用这个矩阵乘以<strong>Y</strong>=（*Y1*，&hellip;，*Yn*）&rsquo;之后再用ML估计。正交指的是如果A与X相乘，结果是0.因此，我们得到A&rsquo;×Y=A&rsquo;×X×β+A&rsquo;×ε =0+A&rsquo;×ε =A&rsquo;×ε 。现在A&rsquo;×Y的分布是
+<img src="http://upload-images.jianshu.io/upload_images/3289684-a9d2b5af1f90993a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />，而不再依赖β。那么对A&rsquo;×Y进行似然估计就会得到σ 2的无偏估计子（5.14）。现在我们讨论REML如何应用到混合线性模型。我们的起点是边际模型
+<img src="http://upload-images.jianshu.io/upload_images/3289684-2b54a43157f60659.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />。故事又重新开始，如之前，我们可以写一个略微不同的log似然式子。未知参数是β和D及Σ中的元素，依然用θ 表示。似然函数：
+<img src="http://upload-images.jianshu.io/upload_images/3289684-da4a52b1a18d6f0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+|Vi| 是Vi的行列式。对β求偏导并=0解方程。如之前讨论的例子，得到的参数是有偏的，因此我们需要REML。
+总之，<strong>REML，就是用一个特殊的矩阵乘以Y，这样X×β就消去。然后用ML估计得到的参数估计子就是无偏的，并且与特定的矩阵相乘无关</strong>。因此，β的REML估计子与ML的估计子不同。<strong>如果相对于观测值的个数，固定协变量的个数很少，就没有太大的不同，相反有许多的固定协变量，情况就大不相同。</strong></p>
 
                 
               </div>

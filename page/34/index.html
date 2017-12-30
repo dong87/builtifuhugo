@@ -212,43 +212,6 @@
           
           
             <article class="post-preview">
-              <a href="../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/wolak2012-nadiv-%E9%9D%9E%E5%8A%A0%E6%80%A7%E5%85%B3%E8%81%94%E7%9F%A9%E9%98%B5-%E5%8A%A8%E7%89%A9%E6%A8%A1%E5%9E%8B/">
-                <h2 class="post-title">Wolak2012-Nadiv-非加性关联矩阵-动物模型</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (105 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  <blockquote>
-<p>Wolak ME (2012) Nadiv: An R package to create relatedness matrices for estimating non-additive genetic variances in animal models. Methods Ecol Evol 3:792–796. doi: 10.1111/j.2041-210X.2012.00213.x</p>
-</blockquote>
-
-<p>通过采用<strong>“动物模型”</strong>，在动物育种科学中具有长期和久经考验的历史的混合效应模型，提出了野生种群数量性状进化研究的重大进展 （Henderson 1984; Lynch＆Walsh 1998; Kruuk 2004）。<em>动物模型的优点</em> ** 使用亲戚之间的相似性来阐明在种群水平上的表型变异的基本遗传基础，该方法（1）使研究人员能够控制（或研究自己）混杂因素，因为环境或其他不可遗传 （2）在遗传参数的估计中同时利用超过亲代或后代或半同胞和完全同源的额外关系，从而增加能够研究的群体和生物体的类型，和（3）群体内无偏选择 （Lynch＆Walsh 1998; Kruuk 2004）**。
-<strong>数量性状的表型方差可以分解为加性遗传，非加性遗传和环境变异来源。 非加性遗传方差可以进一步细分为优势和上位方差。 加性，显性和上位性遗传变异与个体通过在相同基因座有后裔相同的等位基因，在相同基因座的两个等位基因或不同基因座的等位基因相同的概率成比例。 如果人们知道群体中的所有关系（即谱系），则可以在动物模型中估计上述遗传变异。</strong>
-非加性遗传变异在生态和进化分析中很少被评估（但见Crnokrak＆Roff 1995; Waldmann 2001），尽管动物和植物育种领域已经估计了这些遗传变异超过二十年（例如， Hoeschele 1991; Tempelman＆Burn-side 1991）。 这可能是，部分是因为非加性遗传效应被认为在预测中等大小野生种群的进化轨迹（Fisher 1958）没有什么重要性。 此外，对野生生物的研究通常在群体中具有低数量的个体，特别是与在动物育种中经常处理的数量相比。 这是有问题的，<strong>因为具有太少个体的数据集不包括在动物模型中包括太多随机效应（Kruuk 2004），并且已经显示对于优势方差的估计是有问题的（Misztal 1997）</strong>。然而，<strong>如果存在优势遗传效应，但不包括在动物模型中，则它们可能偏向于加性遗传效应的预测以及加性遗传方差的估计</strong>（Lynch＆Walsh 1998; Ovaskainen，Cano＆Merila 2008; Waldmann等人2008;但参见Misztal，Lawlor＆Fernando 1997）。另外，<strong>非加性效应对于许多进化假说是中心关注的</strong>，例如：优势和上位性预期对健身的变化有实质性贡献（Wright 1929; Haldane 1932; Fisher 1958; Crnokrak＆Roff 1995;Merila¨＆Sheldon 1999）;非加性方差可以确定加性遗传方差在瓶颈后增加的程度（Cockerham＆Tachida 1988; Goodnight 1988; Willis＆Orr 1993; Barton＆Turelli 2004）;上位性可以在过程中形成累加的遗传效应和变异，例如突变和选择（Gavrilets 1993; Hermisson，Hansen＆Wagner 2003; Carter，Hermisson＆Hansen 2005），其具有对性别和重组进展的影响（Charles-worth 1990）;上位性通过Dobzhansky-Muller不兼容性的演化在物种形成中是不可或缺的一部分（Crow＆Kimura 1970; Orr 1995; Welch 2004）;健身相关性状之间的遗传相关性的符号可能取决于优势方差的量（Curtsinger，Service＆Prout 1994; Roff 1997;Merila¨＆Sheldon 1999）;支配地位可能导致近亲繁殖抑制或杂种优势（Roff 1997），特别是在保护关注的小群体中（Waldmann等人2008）;和性联合优势效应可能在性二倍性性状的演变中发挥作用（Fairb-airn＆Roff 2006）。
-除了由于总体大小的结果不能获得非加性方差的有意义的估计（参见下面的“抽样协方差和置信区间”），<strong>在动物模型中包括优势和上位性的下一个挑战是构建非加性遗传关系矩阵（即优势矩阵D和三个上位上位性矩阵：通过加性AA的加性，通过优势AD的加性和通过优势DD-的优势，其中加性遗传关系矩阵由A和黑体字表示，大写字母表示矩阵）。另一个挑战是获得这些矩阵的逆，这是解决动物模型中的方程组所需要的</strong>。虽然构建必要的矩阵逆过程已经制定出来（例如Hoeschele＆VanRaden 1991），只有添加的逆矩阵的创建已经被并入大多数生态学家和进化生物学家使用的软件：ASReml（Gilmour et al。2009） ，MCMCglmm（Hadfield 2010）和WOMBAT（Meyer 2007）。本研究给出了在广泛使用的统计程序R（R Development Core Team，2011）中实现的软件包nadiv（Non-Additive InVerses）的概述，其可以用于构建优势和上位性遗传相关矩阵及其逆矩阵。倒位随后可用于各种动物模型软件程序中用于数量性状的单变量或多变量分析。下面，示例简要地演示了使用nadiv的模拟数据setwarcolak的主要功能。</p>
-
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
               <a href="../../post/gs/wolc2016-%E5%A4%A7%E6%95%88%E5%BA%94qtl-bayesb%E5%92%8Cbayesc%E4%BC%98%E4%BA%8Egblup%E6%A3%80%E6%B5%8B/">
                 <h2 class="post-title">Wolc2016-大效应QTL-BayesB和BayesC优于GBLUP检测</h2>
                 
@@ -574,6 +537,39 @@ Diallel分析虽然很受欢迎，但也提出了关键问题：（i）来自具
 与Gardner和Eberhart分析II（G＆EII）和分析III（G＆EIII）相关的Dialle1交配模型是用于配合力分析的另外的主要模型。尽管开发了G＆EI和改进的方法（Gardner和Eberhart，1966）以获得其他信息（例如，关于近交衰退，杂种优势，附加基因作用，显性和上位性），但这些方法没有被广泛采用，因为需要额外的资源来实施。由于更少的资源限制、在杂种优势评价中有优势，使得G＆EII和G＆EIII的在许多研究中得到应用（Wright，1985; Hallauer和Miranda，1988; Murray，2003; Segovia- Lerma等，2004; Farshadfar等，2012） 。 Mahgoub（2011）最近表明，当某系分别用作母本和父本时，GCA效应可以分为母本GCA效应（F_ GCA）和父本GCA效应（M_GCA）。他发现GCA代表F_GCA和M_GCA的平均值，而F_GCA和M_GCA之间的差异的平均值正好等于该系的母本（MAT）效应。 Mahgoub（2011）还表明，当将某系作为母本和父本分别使用时，SCA作用可以分为母本SCA（F_SCA）和父本SCA（M_SCA），并且F_SCA和M_SCA之间的差异的平均值等于REC。 SCA效应的这种划分提供了对于交配和它们的反交的SCA效应的精确估计。<strong>一些研究人员已经讨论了不同的diallel方法的优缺点（Chaudary等人，1977年; Baker，1978年; Singh和Paroda，1984年; Farshadfar等人，2012年）。 Chaudhary et al。 （1977）比较了全双列和部分双列的相对效率，并发现对于GCA和SCA效应的估计，半双列与全双列一样有效。</strong> Baker（1978）提供了公式，将从方法2和4，G＆EII和Hayman&rsquo;s diallel设计获得的各种类型的遗传统计量与G＆EIII生成的遗传统计量相关联。 Singh和Paroda（1984）的结论是G＆EII和G＆EIII提供了关于加性效应以及GCA和SCA对杂交杂种优势的平均和个体贡献的额外信息。 Farshadfar et al。 （2012）使用方法2和4，G＆EII，G＆EIII和Morley-Jones（1965）的方法，得出类似于Singh和Paroda（1984）的结论。
 双列交配设计是用于杂种优势群分类，近交系选择和杂种开发的非常有用的方法（Crossa等人，1990; Vasal等人，1992; Fan等人，2003a，2003b，2008; Chen等人， 2011）。 REC和MAT效应已经被证明对育种价值评估具有重大影响（Mahgoub，2011）。普通种群想要获得从方法1至4，G＆EII和G＆EIII获得的遗传统计的比较信息。遗传统计信息，如REC和MAT效应，应允许育种者设计适当的育种策略，从而提高其育种计划的效率。育种者还想知道当没有REC和MAT效应时，它们的育种程序的效率如何受到影响;例如，在方法2和4，G＆EII和G＆EIII中。本研究旨在回答这些问题。该研究使用涉及12,10,8,6和4父母的双列交配来估计GCA，SCA，REC和MAT效应，并在双列交配方法内和双列交配方法方法间进行比较。本研究的具体目标是（i）确定从方法1至4，G＆EII和G＆EIII获得的遗传统计量对于一个双列交配的特定数目的亲本系是否相同，相似或不同（ii）确定如果从玉米育种计划中具有不同数目的近交系的diallel实验的子集中获得的遗传统计数据是否类似，并且可以用作其他玉米育种程序中的参考; （iii）确定使用没有提供REC和MAT估计值的diallel方法是否可能对玉米或其他育种计划造成风险;和（iv）六种diallel相关方法中的哪一种应当是优选的以及原因。</p>
 
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="../../post/%E7%A9%BA%E9%97%B4/ye2008%E5%A4%9A%E7%82%B9-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90-%E8%8A%B1%E6%97%97%E6%9D%BEar1/">
+                <h2 class="post-title">Ye2008多点-空间分析-花旗松AR1</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (186 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Ye TZ, Jayawickrama KJS. Efficiency of using spatial analysis in first-generation coastal Douglas-fir progeny tests in the US Pacific Northwest. Tree Genet. Genomes. 2008;4:677–92.   基于来自美国太平洋西北45个第一代繁殖区的275道格拉斯冷杉[Pseudotsuga menziesii（Mirb。）Franco]后代试验的1,146个数据集，使用自回归误差结构对生长性状进行了单试验和跨试验空间分析。繁殖区域包括宽范围的纬度，经度和海拔。在不同的实验设计，性状，评估年龄和树间距之间比较了使用空间分析在减少由于地点异质性导致的变化、估计遗传参数和增加预测准确性方面的效率。利用空间分析有超过97％的数据集显示显着的模型改进，高度显示比直径或体积更多的改进。由于空间异质性，空间分析平均去除了14-34％的残差方差，导致育种值预测精度提高20％。由于空间调整，变异系数显着降低。空间分析前后的预测增益之间的秩相关性约为0.96，空间分析对前20％父母的平均预测增益几乎没有影响。由于空间调整，我们没有观察到改善的实质性地理趋势。跨地点空间分析对基因型与环境的相互作用几乎没有影响，但倾向于增加残差的试验异质性。比较和讨论了两种不同的跨试验空间分析方法。
+长期以来人们认识到，环境梯度或斑块（例如土壤肥力，土壤水分或地形）经常严重阻碍对林业田间试验的处理效果的可靠估计。试验通常用多个区组进行，其中实验单元组被排列，使得小区尽可能均匀。因此，它们的效率取决于每个重复区组具有均匀生长条件的程度。森林遗传测试通常涉及大量遗传条目，区组大小通常较大，难以确保块内均一性。田间试验中的地点变异性通常是空间连续的。许多研究已经证明，在相邻小区上进行的观测比随机观测更相近（Cliff和Ord 1981; Costa e Silva等人2001; Cullis和Gleeson 1989; Dutkowski等人2002,2006; Magnussen 1990， 1994; Smith 1938; Upton和Fingleton 1985）。例如，Fu et al。 （1999）显示道格拉斯杉木后代测试中的90％的位点显示出大的空间变异。
+区组内变异可能是由于竞争（Kempton 1982; Magnussen 1994），土壤肥力和水分的异质性（Pearce 1980），杂草或灌木，昆虫或疾病以及造林方面。这种空间异质性削弱了我们使用标准统计推断技术的能力，这些技术主要是针对从独立和相同分布的随机变量中提取的观察集。结果，当存在大的空间异质性时，识别遗传变异的能力和遗传值预测的准确度可能大大降低。
+空间分析已广泛用于农业田间测试，以估计和解释空间变异。已经提出并采用了许多方法来建模空间变化，例如最近邻域调整nearest neighbor adjustment（Bartlett 1978; Papadakis 1937; Wilkinson et al.1983; Zimmerman和Harville 1991），最小二乘平滑least squares smoothing（Green等人1985; Smith和Casler 2004; Yang等人2004），kriging（Bresler等人1981; Lopez和Arrue 1995）和post blocking（Dutkowski等人2002; Fu等人1999）。在这些方法中，通过可分离自回归（AR1⊗AR1）误差结构的空间自相关建模已经变得具有吸引力，并且通常用于农业品种试验分析（Braysher等人2001; Cullis和Gleeson 1991; Gilmour等人1997; Singh等人2003; Yang et al.
+                  <a href="../../post/%E7%A9%BA%E9%97%B4/ye2008%E5%A4%9A%E7%82%B9-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90-%E8%8A%B1%E6%97%97%E6%9D%BEar1/" class="post-read-more">[Read More]</a>
                 
               </div>
 
