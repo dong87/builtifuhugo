@@ -22,7 +22,7 @@
 rmarkdown非常好用，帮助我输出R结果到pdf或者word。之前用过yihui开发的bookdown，用来转电子书的格式，也听说过他开发的blogdown，但并没有用过。有天栾生老师推荐了一下![]()
 正文 首先要感谢大鹏志给的中文教程用Rblogdown 搭建个人博客或科研网站。最难的一步出现在netlify与GitHub的关联上。按照netlify的要求，指定了public文件夹，但在打开博客网址时总是报错无法打开网页。最后还是从栾老师的GitHub里发现他只同步了public文件夹而非整个建站文件夹，然后就大功告成了。
 简略步骤如下：
- 安装blogdown，在Rstudio里直接安装也可以。  if(!require(devtools)) install.packages(&#39;devtools&#39;) devtools::install_github(&#39;rstudio/blogdown&#39;)  建一个空文件夹，然后使用模板gcushen/hugo-academic建立建站文件。还有其他一些模板，见这里，每个点进去，选择喜欢的样式，替换这里的就行。  setwd(&amp;quot;D:/blogdown_default&amp;quot;) blogdown::new_site(theme=&#39;gcushen/hugo-academic&#39;)  待更  </description>
+ 安装blogdown，在Rstudio里直接安装也可以。  if(!require(devtools)) install.packages(&#39;devtools&#39;) devtools::install_github(&#39;rstudio/blogdown&#39;)   建一个空文件夹，然后使用模板gcushen/hugo-academic建立建站文件。还有其他一些模板，见这里，每个点进去，选择喜欢的样式，替换这里的就行。  setwd(&amp;quot;D:/blogdown_default&amp;quot;) blogdown::new_site(theme=&#39;gcushen/hugo-academic&#39;)   待更  </description>
     </item>
     
   </channel>

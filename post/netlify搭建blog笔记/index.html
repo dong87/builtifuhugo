@@ -12,12 +12,12 @@
 rmarkdown非常好用，帮助我输出R结果到pdf或者word。之前用过yihui开发的bookdown，用来转电子书的格式，也听说过他开发的blogdown，但并没有用过。有天栾生老师推荐了一下![]()
 正文 首先要感谢大鹏志给的中文教程用Rblogdown 搭建个人博客或科研网站。最难的一步出现在netlify与GitHub的关联上。按照netlify的要求，指定了public文件夹，但在打开博客网址时总是报错无法打开网页。最后还是从栾老师的GitHub里发现他只同步了public文件夹而非整个建站文件夹，然后就大功告成了。
 简略步骤如下：
- 安装blogdown，在Rstudio里直接安装也可以。  if(!require(devtools)) install.packages(&#39;devtools&#39;) devtools::install_github(&#39;rstudio/blogdown&#39;)  建一个空文件夹，然后使用模板gcushen/hugo-academic建立建站文件。还有其他一些模板，见这里，每个点进去，选择喜欢的样式，替换这里的就行。  setwd(&quot;D:/blogdown_default&quot;) blogdown::new_site(theme=&#39;gcushen/hugo-academic&#39;)  待更  ">
+ 安装blogdown，在Rstudio里直接安装也可以。  if(!require(devtools)) install.packages(&#39;devtools&#39;) devtools::install_github(&#39;rstudio/blogdown&#39;)   建一个空文件夹，然后使用模板gcushen/hugo-academic建立建站文件。还有其他一些模板，见这里，每个点进去，选择喜欢的样式，替换这里的就行。  setwd(&quot;D:/blogdown_default&quot;) blogdown::new_site(theme=&#39;gcushen/hugo-academic&#39;)   待更  ">
   <meta property="og:description" content=" 前言 开博客的主要目的是当做一个笔记本，把一些要紧的知识点、代码和流程等做个梳理和记录，方便下次使用时的查找。其实很早就有博客，只是不认为那就是，比如QQ空间和校内网。以前记笔记使用过网易产品一段时间，后来就转到博客上，例如新浪，不支持markdown。后来转到简书，但这家伙不支持公式。CSDN用过两天，支持公式编辑，但不及简书简便。GitHub支持个人博客，但模板很折腾，一直不理想，用了两天就不更新了。
 rmarkdown非常好用，帮助我输出R结果到pdf或者word。之前用过yihui开发的bookdown，用来转电子书的格式，也听说过他开发的blogdown，但并没有用过。有天栾生老师推荐了一下![]()
 正文 首先要感谢大鹏志给的中文教程用Rblogdown 搭建个人博客或科研网站。最难的一步出现在netlify与GitHub的关联上。按照netlify的要求，指定了public文件夹，但在打开博客网址时总是报错无法打开网页。最后还是从栾老师的GitHub里发现他只同步了public文件夹而非整个建站文件夹，然后就大功告成了。
 简略步骤如下：
- 安装blogdown，在Rstudio里直接安装也可以。  if(!require(devtools)) install.packages(&#39;devtools&#39;) devtools::install_github(&#39;rstudio/blogdown&#39;)  建一个空文件夹，然后使用模板gcushen/hugo-academic建立建站文件。还有其他一些模板，见这里，每个点进去，选择喜欢的样式，替换这里的就行。  setwd(&quot;D:/blogdown_default&quot;) blogdown::new_site(theme=&#39;gcushen/hugo-academic&#39;)  待更  ">
+ 安装blogdown，在Rstudio里直接安装也可以。  if(!require(devtools)) install.packages(&#39;devtools&#39;) devtools::install_github(&#39;rstudio/blogdown&#39;)   建一个空文件夹，然后使用模板gcushen/hugo-academic建立建站文件。还有其他一些模板，见这里，每个点进去，选择喜欢的样式，替换这里的就行。  setwd(&quot;D:/blogdown_default&quot;) blogdown::new_site(theme=&#39;gcushen/hugo-academic&#39;)   待更  ">
   <meta name="twitter:description" content=" 前言 开博客的主要目的是当做一个笔记本，把一些要紧的知识点、代码和流程等做个梳理和记录，方便下次使用时的查找。其实很早就有博客，只是不认为那就是，比如QQ空间和校内网。以前记笔记使用过网易产品一段时间，后来就转到博客上，例如新浪，不支持markdown。后来转到简书，但这家伙不支持公式。CSDN用过两天，支持公式编辑，但不及简书简便。GitHub支持个人博客，但模板很折腾，一直不理想，用了两天就 …">
   <meta name="author" content="Leiming Dong"/>
   <link href='../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
@@ -230,16 +230,22 @@ rmarkdown非常好用，帮助我输出R结果到pdf或者word。之前用过yih
 <p>简略步骤如下：</p>
 
 <ul>
-<li>安装<code>blogdown</code>，在<code>Rstudio</code>里直接安装也可以。
-<code>
-if(!require(devtools)) install.packages('devtools')
+<li>安装<code>blogdown</code>，在<code>Rstudio</code>里直接安装也可以。</li>
+</ul>
+
+<pre><code>if(!require(devtools)) install.packages('devtools')
 devtools::install_github('rstudio/blogdown')
-</code></li>
-<li>建一个空文件夹，然后使用模板<code>gcushen/hugo-academic</code>建立建站文件。还有其他一些模板，见<a href="https://github.com/gohugoio/hugoThemes">这里</a>，每个点进去，选择喜欢的样式，替换这里的就行。
-<code>
-setwd(&quot;D:/blogdown_default&quot;)
+</code></pre>
+
+<ul>
+<li>建一个空文件夹，然后使用模板<code>gcushen/hugo-academic</code>建立建站文件。还有其他一些模板，见<a href="https://github.com/gohugoio/hugoThemes">这里</a>，每个点进去，选择喜欢的样式，替换这里的就行。</li>
+</ul>
+
+<pre><code>setwd(&quot;D:/blogdown_default&quot;)
 blogdown::new_site(theme='gcushen/hugo-academic')
-</code></li>
+</code></pre>
+
+<ul>
 <li>待更</li>
 </ul>
 

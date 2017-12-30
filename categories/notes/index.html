@@ -206,16 +206,22 @@
 <p>简略步骤如下：</p>
 
 <ul>
-<li>安装<code>blogdown</code>，在<code>Rstudio</code>里直接安装也可以。
-<code>
-if(!require(devtools)) install.packages('devtools')
+<li>安装<code>blogdown</code>，在<code>Rstudio</code>里直接安装也可以。</li>
+</ul>
+
+<pre><code>if(!require(devtools)) install.packages('devtools')
 devtools::install_github('rstudio/blogdown')
-</code></li>
-<li>建一个空文件夹，然后使用模板<code>gcushen/hugo-academic</code>建立建站文件。还有其他一些模板，见<a href="https://github.com/gohugoio/hugoThemes">这里</a>，每个点进去，选择喜欢的样式，替换这里的就行。
-<code>
-setwd(&quot;D:/blogdown_default&quot;)
+</code></pre>
+
+<ul>
+<li>建一个空文件夹，然后使用模板<code>gcushen/hugo-academic</code>建立建站文件。还有其他一些模板，见<a href="https://github.com/gohugoio/hugoThemes">这里</a>，每个点进去，选择喜欢的样式，替换这里的就行。</li>
+</ul>
+
+<pre><code>setwd(&quot;D:/blogdown_default&quot;)
 blogdown::new_site(theme='gcushen/hugo-academic')
-</code></li>
+</code></pre>
+
+<ul>
 <li>待更</li>
 </ul>
 
