@@ -5,8 +5,8 @@
     <link>/tags/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/</link>
     <description>Recent content in 统计模型 on Dong&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>youremail@domain.com (Leiming Dong)</managingEditor>
-    <webMaster>youremail@domain.com (Leiming Dong)</webMaster>
+    <managingEditor>dongleiming2008@126.com (Leiming Dong)</managingEditor>
+    <webMaster>dongleiming2008@126.com (Leiming Dong)</webMaster>
     <lastBuildDate>Sun, 01 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
@@ -16,7 +16,7 @@
       <title>Freimer-2004-使用谱系、同胞对和关联分析常见疾病的遗传作图</title>
       <link>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/freimer-2004-%E4%BD%BF%E7%94%A8%E8%B0%B1%E7%B3%BB%E5%90%8C%E8%83%9E%E5%AF%B9%E5%92%8C%E5%85%B3%E8%81%94%E5%88%86%E6%9E%90%E5%B8%B8%E8%A7%81%E7%96%BE%E7%97%85%E7%9A%84%E9%81%97%E4%BC%A0%E4%BD%9C%E5%9B%BE/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/freimer-2004-%E4%BD%BF%E7%94%A8%E8%B0%B1%E7%B3%BB%E5%90%8C%E8%83%9E%E5%AF%B9%E5%92%8C%E5%85%B3%E8%81%94%E5%88%86%E6%9E%90%E5%B8%B8%E8%A7%81%E7%96%BE%E7%97%85%E7%9A%84%E9%81%97%E4%BC%A0%E4%BD%9C%E5%9B%BE/</guid>
       <description>Freimer N, Sabatti C (2004) The use of pedigree, sib-pair and association studies of common diseases for genetic mapping and epidemiology. Nat Genet 36:1045–1051. doi: 10.1038/ng1433
  鉴定与常见疾病易感性相关的基因变体的努力使用三种方法：谱系和受影响的同胞对连锁研究和群体样品的关联研究。这些研究设计的不同目的反映了它们源于生物学与流行病学传统。然而，关于确定考虑结果具有统计学意义所需的证据水平的类似原理适用于连锁和关联研究。这种确定需要明确注意特定发现的先验概率，以及对多重比较的适当校正。对于大多数常见的疾病，在研究中增加样本大小是实现统计学显着的遗传作图结果的关键步骤。最近的研究表明，技术和统计方法将很快可用于使用任何这些方法使得良好的研究可行。
@@ -31,7 +31,7 @@
       <title>Kruuk2004-动物模型-天然群体-遗传参数</title>
       <link>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/kruuk2004-%E5%8A%A8%E7%89%A9%E6%A8%A1%E5%9E%8B-%E5%A4%A9%E7%84%B6%E7%BE%A4%E4%BD%93-%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/kruuk2004-%E5%8A%A8%E7%89%A9%E6%A8%A1%E5%9E%8B-%E5%A4%A9%E7%84%B6%E7%BE%A4%E4%BD%93-%E9%81%97%E4%BC%A0%E5%8F%82%E6%95%B0/</guid>
       <description>Kruuk LEB (2004) Estimating genetic parameters in natural populations using the “animal model.” Philos Trans R Soc London 359(1446):873–890. 使用动物模型估计自然种群中的遗传参数 Loeske E. B. Kruuk 爱丁堡大学细胞，动物和人口生物学研究所，爱丁堡EH9 3JT，英国 （loeske.kruuk@ed.ac.uk）   估计数量性状的遗传基础对于自然环境中的野生种群可能是棘手的，因为环境变异常常掩盖潜在的进化模式。我回顾了最近应用限制最大似然模糊模型到来自天然群体的多代数据，并显示如何使用这些方法的方差分量的估计和育种值的预测提供了一个强大的手段来解决环境中的潜在混杂效应 - 以及产生大量新的调查领域。 关键词：动物模型;限制最大似然; BLUP育种值;遗传性; 微观演化
 ##1.引言
@@ -42,7 +42,7 @@
       <title>LMM-的简要历史（理论和软件）</title>
       <link>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/lmm-%E7%9A%84%E7%AE%80%E8%A6%81%E5%8E%86%E5%8F%B2%E7%90%86%E8%AE%BA%E5%92%8C%E8%BD%AF%E4%BB%B6/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/lmm-%E7%9A%84%E7%AE%80%E8%A6%81%E5%8E%86%E5%8F%B2%E7%90%86%E8%AE%BA%E5%92%8C%E8%BD%AF%E4%BB%B6/</guid>
       <description> 1.2 LMM的简要历史 关于这个主题的一些历史视角是有用的。至少，虽然LMM可能似乎很难掌握起初，令人安慰的是，知道，几十人花了一百多年来整理出来。以下小节突出了导致LMM广泛使用的许多（但不是几乎所有）重要的历史发展。我们将关键的历史发展分为两类：理论和软件。本时间表中介绍的一些术语和概念将在本书后面更详细地讨论。对于其他历史视角，我们将读者引用到Brown＆Prescott（2006）。
 1.2.1关键理论发展以下时间线展示了LMM的理论基础的演变：  1861：单向随机效应模型（具有一个随机因子，没有固定因子的LMM）的第一个已知公式是Airy的，由Scheff&amp;rsquo;ein 1956进一步澄清.Airy在同一天晚上做了几次望远镜观察（聚类数据）的几个不同的夜晚，并分析数据分离的随机夜间效应的方差随机的夜间残差。 1863：Chauvenet在一个简单的随机效应模型中计算随机效应的方差。 1925：Fisher&amp;rsquo;s book*研究工作的统计方法*概述了用于平衡数据的估计方差分量或将随机变化划分为来自不同来源的分量的一般方法。 1927：Yule假设在建立纯串行相关模型中，当前残差在有限数量的前述残差上的显式依赖性。 1931：Tippett将Fisher的工作扩展到线模框架中，将数量建模为由多个随机因素导致的随机变量的线性函数。他还阐明了一种估计随机效应方差的ANOVA方法。 1935：Neyman，Iwaszkiewicz和Kolodziejczyk检查了随机区块和拉丁方块设计的比较效率，并在其工作中广泛使用LMM。 1938年：费雪1925年第七版的工作讨论了类内相关系数（ICC）的估计。 1939：Jackson在一个随机因子和一个固定因子的LMM描述中假定随机效应和残差的正态性。这项工作在LMM的上下文中介绍了术语效应。 Cochran提出了一个用于不平衡数据的单向随机效应模型。 1940：Winsor和Clarke以及Yates，着重于在不平衡数据的情况下估计随机效应的方差.Wald考虑方差分量比率的置信区间。在这一点上，方差分量的估计仍然不是唯一的。 1941：Ganguli应用与随机效应相关的方差分量的ANOVA估计与嵌套混合模型。 1946：Crump将ANOVA估计应用于具有相互作用的混合模型。 Ganguli和Crump是第一个提到ANOVA估计可以产生与随机效应相关的方差分量的负估计的问题。 Satterthwaite使用方差分量估计的近似抽样分布，并定义了用于计算混合模型中近似F统计的近似自由度的过程。 1947：Eisenhart介绍了“混合模型”术语，并正式区分固定和随机效应模型。 1950：Henderson提供了随机效应和固定效应的BLUP是解的方程，称为混合模型方程（MME）。 1952：Anderson和Bancroft发表了“统计理论研究”一书，它提供了对平衡数据的方差分量估计的全面覆盖，并引入了嵌套随机效应模型中不平衡数据的分析。 1953：Henderson在生物统计学中产生了开创性的论文“估计方差和协方差分量”，重点是使用三个平方和方法之一来估计混合模型中不平衡数据的方差分量（常用III型方法，基于线性模型，但所有类型都可用于统计软件包）。各种其他论文在20世纪50年代末和60年代建立在这三种方法为不同的混合模型。 1965：Rao负责系统开发的增长曲线模型，一个具有共同的线性时间趋势的所有单位和单位特异性随机截距和随机斜率的模型。 1967：Hartley和Rao表明，使用最大似然法，使用从混合模型的矩阵表示得到的方程可以获得方差分量的独特估计（Searle等，1992）。然而，方差分量的估计向下偏移，因为该方法假定固定效应是已知的，而不是从数据估计。 1968：Townsend是第一个寻找方差分量的最小方差二次无偏估计量的人。 1971：Patterson＆Thompson（1971）引入限制最大似然（REML）估计作为在具有不平衡数据的一般线性模型中估计方差分量（不假设固定效应是已知的）的方法。基于似然的方法发展缓慢，因为它们是计算密集型的。 Searle描述了具有一个随机因子的LMM中的估计方差分量的置信区间。 1972：Gabriel开发了阶数p的先前依赖的术语来描述一个模型，其中当前残差的条件分布，假定其前身，仅取决于其前辈。这导致一阶自回归AR（1）过程的发展（适用于个体随时间的等间隔测量），其中当前残余随机地取决于先前的残差。 Rao完成了最小范数二次无偏方程（MINQUE）估计的工作，该方法不需要随机效应或剩余项的分布形式（Rao，1972）。 Lindley和Smith介绍了HLM。 1976：Albert表明，没有任何分布假设，ANOVA估计是LMM中方差分量的最佳二次无偏估计量，以及在正态假设下的最佳无偏估计量。 20世纪70年代中期：LMMs经常应用于农业环境，特别是分裂地块设计（Brown＆Prescott，2006）。 1982：Laird和Ware描述了在单个阶段拟合随机系数模型的理论（Laird＆Ware，1982）。随机系数模型先前在两个阶段中处理：估计时间斜率，然后对个体的时间斜率执行分析。 1985年：Khuri和Sahai提供了估计方差分量的置信区间工作的全面调查。 1986：Jennrich和Schluchter描述了使用不同的协方差模型模型来分析重复测量数据以及如何在它们之间进行选择（Jennrich＆Schluchter，1986）。 Smith和Murray将方差分量作为协方差，并使用基于二次形式的ANOVA程序从平衡数据估计它们.Green将完成对不平衡数据的该公式.Goldstein引入迭代重新加权的一般化最小二乘法。 1987：Self＆Liang（1987）和后来的Stram＆Lee（1994）的结果使得方差分量的显着性可行。 1990：Verbyla和Cullis在纵向数据设置中应用REML。 1994：Diggle，Liang和Zeger在三种类型的随机方差分量之间进行区分：随机效应和随机系数，串行相关（在时间上彼此接近的残差更接近于相距更远的残差）和随机测量误差（Diggle等，2002）。 20世纪90年代以后：LMM在医学中越来越流行（Brown＆Prescott，2006）和社会科学（Raudenbush＆Bryk，2002），他们也被称为多层模型或层级线性模型。
@@ -59,7 +59,7 @@
       <title>Morota2014</title>
       <link>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/morota2014/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/morota2014/</guid>
       <description>Morota G, Boddhireddy P, Vukasinovic N, et al (2014) Kernel-based variance component estimation and whole-genome prediction of pre-corrected phenotypes and progeny tests for dairy cow health traits. Front Genet. doi: 10.3389/fgene.2014.00056 基于内核的方差分量估计和预校正表型的全基因组预测和奶牛健康特性的后代测试
  在未知基因作用的存在下的复杂性状表型的预测是动物，植物和人类中的持续挑战。期望开发不考虑遗传和环境架构而执行良好的灵活预测模型。可以以非显式方式解决非加性变化的方法正在为此目的而获得关注，并且特别地，半参数的基于内核的方法已经应用于各种数据集，大多提供令人鼓舞的结果。另一方面，当诸如估计育种值（EBV）的平滑值已被用作响应变量时，从这些方法获得的增益较小。然而，较少强调选择表型以用于基于核的全基因组预测。本研究旨在评估半参数和参数方法之间的差异，使用两种类型的反应变量和分子标记作为输入。用于乳牛健康性状的预校正的表型（PCP）和EBV用于该比较。我们观察到非加性遗传变异是PCP总遗传变异的主要贡献者，而加性是预期的EBV变异性的最大贡献者。在评估的内核中，非参数方法相对于其加性对应物产生了跨越性状的稍好的预测性能，而与所使用的响应变量的类型无关。这加强了这样的观点，即旨在捕获一组SNP和表型之间的非线性关系的非参数内核对复杂性状预测是吸引人的。然而，像过去的研究，PCP或EBV的预测相关性的增益不大。我们的结论是，在交叉验证框架中捕获非加性遗传变异，尤其是上位性变异仍然是一个重要的挑战，即使当它是重要的，似乎是奶牛的健康性状的情况。 介绍 在动物育种中，主要目标是在后代中获得经济上重要性状的遗传获益。在基因组时代，跨越整个基因组传播的密集分子遗传标记可以与现存信息（例如谱系）组合，以获得候选动物的遗传值的更准确的预测并做出选择决定。为此目的已经提出了整合所有可用的DNA标记信息的全基因组预测方法（Meuwissen等人，2001 ; Gianola等人，2003），并且这些现在广泛用于动物育种（例如de los Campos等人人，2013a。 ），并视为植物育种（一个行之有效的手段如矢和矶部，2012），预防医学和临床决策（例如，德洛斯坎波斯等人，2010年a。 ; 。巴斯克斯等，2012） 。 全基因组方法背后的主要理由是通过标记捕获信号，而不考虑单个标记的统计学显着性。越来越多的证据表明，复杂性状是基因组内大量遗传多态性所产生的协同作用力的产物（例如，Huang et al。，2012）。这重申了遗传相互作用是重要的，并且基因型和表型可以以非线性方式连接的观点，其可能不适于参数建模。这个问题与动物和植物育种领域特别相关，自20世纪初以来科学地处理复杂性状遗传学（Fisher，1918 ; Wright，2010）。虽然育种利用附加遗传，开发灵活的表型预测机器，表现良好，而不管基础遗传构成是理想的。此外，在模型中包含非加性效应可以增强育种值的预测能力。 Gianola等人 （2006） ; Gianola和van Kaam（2008年） ; Gianola等人（2010）为解决非加性变异的半参数全基因组回归方法奠定了基础，尽管以非显式的方式。贝叶斯核脊回归（一种形式的再现核Hilbert空间（RKHS）回归]和贝叶斯神经网络是迄今为止使用的两个主要平滑器。半参数方法比实际数据中的线性加法平滑剂提供了更大的预测能力，包括泽西牛（Gianola等人，2011），异种小鼠（Okut等人，2011），肉鸡。冈萨雷斯-雷西奥等，2008，2009 ; 龙等，2010）和小麦（Long等，2011A。 ; 。佩雷斯-罗德里格斯等人，2011）。在RKHS中，通常使用高斯内核作为基函数，以估计条件期望。其本质是通过在某一度量空间上的“空间”距离方面创建遗传相关性，将数十万个遗传标记聚集成n × n阶的正（半）确定核矩阵（n是表型的数目）。尽管系谱和基因组关系矩阵A和G分别是RKHS中的有效内核，但是通过A和G传达的相关性的进一步平滑可以在复杂基因作用下实现更好的预测。 另一方面，当使用预测传播能力（PTA）或估计育种值（EBV）作为响应变量时，从半参数方法获得的增益更小（Long等人，2011a ; Morota等人，2013）。因此，需要进一步研究以充分利用半参数全基因组回归的理论优势。目标表型的选择已在常规遗传评价方案（VanRaden和Wiggans，1991），基因组使能选择（Garrick等人，2009 ; Guo等人，2010 ;Ostersen等人，2011 ; Boddhireddy等人。）和数量性状基因座（QTL）作图（Thomsen等，2001），但主要是在加性遗传效应的背景下。这与牛奶的奶牛养殖特别相关，其中公牛不具有奶记录，并且大量使用人工授精和后代测试。例如，牛的EBV是来自所有可用亲属的记录的平滑加权平均值，假设附加遗传（传递规则在矩阵A中编码），并且子代产量偏差（DYD）是公牛的女儿性能的平均值，系统效应，以及女儿大坝的遗传效应。去回归证明（DRP）类似于DYD并且可以从EBV导出; 它消除父平均效应，并消除EBV固有的收缩。 可以想象，用于在内核上回归的响应变量的类型影响预测性能。例如，EBV主要编码添加的遗传效应，并且取决于目标性状的狭义遗传性。EBV的变化，特别是如果它具有高可靠性，预期主要反映添加的遗传组分，而预校正的表型（PCP）可能受到环境和遗传的其它变异来源的影响。 一个关注点是通过在进行基因组使能的预测之前拟合线性混合模型来预处理表型可能会破坏潜在的基因型 - 表型图。可能是，当应用于PCP时，内核方法相比于使用EBV作为响应变量时它们的参数对应物相对更好。毕竟，预测平均值（例如EBV）比预测表型更容易，因此当应用于PCP时，预测机器可能期望更大的差异。这项研究的目的是量化复杂性状遗传方差的类型和数量，并调查在应用于两种类型的反应变量：PCP和EBV，都源自原始表型的非参数和参数内核的预测性能之间的差异。 材料和方法 数据 全数据集包括在Illumina BovineSNP50 BeadChip上基因分型为54,609个全基因组SNP的4482头奶牛。EBV和PCP可用于六种健康性状：酮病（KET），移位皱胃（DA），保留胎盘（RP），跛行（LAME），子宫炎（METR）和临床乳腺炎（CM）。我们选择EBV是因为最近的一项研究（Boddhireddy等，2014）发现使用EBV获得的预测相关性始终大于使用解除EBV所获得的预测相关性。同样的研究表明，当估计EBV的准确度低时，预测相关性下降得更多，这是我们在本文中分析的健康性状的情况。此外，Guo et al。（2010）报告，解除EBV产生的可靠性略低于模拟数据。通过使用奇偶，群，年和季节效应作为解释变量将最小二乘模型拟合到原始二进制表型（存在或不存在）来获得PCP。类似地，通过使用A矩阵的最佳线性无偏预测（BLUP）预测EBV，考虑14,685只动物，平均追溯10代。具有两种基因型和表型的动物的数量在性状之间变化。所有动物对于每个性状具有EBV，而仅有2886,4227和3622个具有PCP的动物分别可用于KET，DA和RP。对于KET，DA，RP，LAME，METR和CM，这些EBV相关的可靠性的平均值分别为0.</description>
@@ -69,7 +69,7 @@
       <title>Oakey2006-单点-加性和非加-联合建模</title>
       <link>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/oakey2006-%E5%8D%95%E7%82%B9-%E5%8A%A0%E6%80%A7%E5%92%8C%E9%9D%9E%E5%8A%A0-%E8%81%94%E5%90%88%E5%BB%BA%E6%A8%A1/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/oakey2006-%E5%8D%95%E7%82%B9-%E5%8A%A0%E6%80%A7%E5%92%8C%E9%9D%9E%E5%8A%A0-%E8%81%94%E5%90%88%E5%BB%BA%E6%A8%A1/</guid>
       <description>Oakey H, Verbyla A, Pitchford W, Cullis B (2006) Joint modeling of additive and non-additive genetic line effects in single field trials. Theor Appl 113:809–819.
  提出了一种统计方法，用于从标准农艺试验中为未来育种计划选择商业释放的最佳表现品系和最佳家长。该方法涉及使用基于谱系的系间关系，以与用于动物育种中类似的方式将系的遗传效应分配为加和效应和非加性效应。差异是估计非加性效应的能力。系性能可以通过总体遗传系效应评估，具有比忽略谱系信息更高的准确度，并且加性效应是预测的育种值。开发遗传力的一般化定义以解释所呈现的复杂模型。
@@ -80,7 +80,7 @@
       <title>Piepho2013-随机化</title>
       <link>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/piepho2013-%E9%9A%8F%E6%9C%BA%E5%8C%96/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/piepho2013-%E9%9A%8F%E6%9C%BA%E5%8C%96/</guid>
       <description>Piepho HP, Möhring J, Williams ER (2013) Why randomize agricultural experiments? J Agron Crop Sci 199:374–383. doi: 10.1111/jac.12026
  这项研究说明了使用两个假设场试验的随机化的重要性，一个具有标记的系统趋势，另一个具有更不稳定的空间模式。 这两个例子的见解通过均匀性试验和小型模拟研究的分析得到加强。 结果表明，假设独立误差的基于模型的空间分析和基于随机化的分析在完全随机化时有效，但是当缺乏随机化时可能无效。 结论是随机化提供了针对不同形式的空间趋势的保护。 在研究中给出的例子作为一般提醒，农业实验应该尽可能随机。
@@ -97,7 +97,7 @@
       <title>TGG-一篇关于G-by-E的综述</title>
       <link>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/tgg-%E4%B8%80%E7%AF%87%E5%85%B3%E4%BA%8Eg-by-e%E7%9A%84%E7%BB%BC%E8%BF%B0/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/tgg-%E4%B8%80%E7%AF%87%E5%85%B3%E4%BA%8Eg-by-e%E7%9A%84%E7%BB%BC%E8%BF%B0/</guid>
       <description>Li Y, Suontama M, Burdon R D, et al. 2017. Genotype by environment interactions in forest tree breeding: review of methodology and perspectives on research and application. Tree Genetics &amp;amp; Genomes, in press.
  摘要 环境相互作用的基因型（G×E）是指不同环境之间不同基因型的比较性，代表基因型排名差异或环境遗传差异表达水平的差异。 G×E可以减少遗传力和整体遗传增益，除非育种计划的结构可以解决不同类别的环境。了解G×E的影响，环境在产生G×E中的作用以及问题和机遇对于有效的育种程序设计和部署遗传物质至关重要。我们回顾了目前用于识别G×E：因子分析模型，双标图分析和反应规范的主要分析方法。我们还回顾了G×E对全球经济重要性的森林物种的生长，形态和木材性质的生物学和统计学证据，包括一些松树，桉树，道格拉斯冷杉，云杉和一些杨树。在这些物种中，高水平的G×E倾向于报告生长性状，对于形态特征和木材性质，G×E含量低。最后，我们讨论了利用G×E可以最大限度地发现森林树种育种中的遗传增益。表征环境在产生互动中的作用被视为基本平台，允许有效测试候选基因型。我们讨论相对于等级交互的表达式互动的重要性，比以前的许多报告更为重要，尤其是部署决策。我们研究了G×E对树木育种的影响，一些导致G×E的环境因素和G×E处理树种育种的策略，以及基因组学的未来作用。 关键词环境相互作用的基因型。分析方法G×E司机。影响。探索策略。森林树种育种。基因型筛选。基因型部署
@@ -108,7 +108,7 @@
       <title>Wang2005-gwas理论与实践上的一些担心</title>
       <link>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/wang2005-gwas%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8B%85%E5%BF%83/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/wang2005-gwas%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8B%85%E5%BF%83/</guid>
       <description>Wang WYS, Barratt BJ, Clayton DG, Todd JA (2005) Genome-wide association studies: theoretical and practical concerns. Nat Rev Genet 6:109–118. doi: 10.1038/nrg1522
 摘要|为了完全了解常见疾病基础的等位基因变异，需要对具有和不具有疾病的许多个体进行完全的基因组测序。这在技术上仍然不可行。然而，最近已经可能通过在全基因组关联研究中对大量常见SNP进行基因分型来进行基因组的部分调查。在这里，我们概述了需要考虑的主要因素 - 包括常见疾病的等位基因结构，样本大小，地图密度和样本收集偏差的模型，以便优化识别真正的疾病易感性位点的成本效率。
@@ -120,7 +120,7 @@
       <title>Xavier2016a-植物育种中的统计黑箱</title>
       <link>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/xavier2016a-%E6%A4%8D%E7%89%A9%E8%82%B2%E7%A7%8D%E4%B8%AD%E7%9A%84%E7%BB%9F%E8%AE%A1%E9%BB%91%E7%AE%B1/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/xavier2016a-%E6%A4%8D%E7%89%A9%E8%82%B2%E7%A7%8D%E4%B8%AD%E7%9A%84%E7%BB%9F%E8%AE%A1%E9%BB%91%E7%AE%B1/</guid>
       <description>Xavier A, Muir WM, Craig B, Rainey KM (2016) Walking through the statistical black boxes of plant breeding. Theor Appl Genet 129:1933–1949. doi: 10.1007/s00122-016-2750-y
  #抽象 关键信息 植物育种的主要统计程序是基于高斯过程，可以通过混合线性模型计算。 摘要智能决策依赖于我们从数据中提取有用信息的能力，以帮助我们更有效地实现我们的目标。许多植物育种者和遗传学家在不理解方法的基本假设或它们的优势和缺陷的情况下进行统计分析。换句话说，他们将这些统计方法（软件和程序）视为黑盒子。黑盒表示具有用户不完全理解的内容的机械的复杂件。用户在不知道如何产生输出的情况下看到输入和输出。通过提供统计方法的一般背景，本评论旨在（1）介绍机器学习的基本概念及其在植物育种中的应用; （2）将经典选择理论与当前的统计方法联系起来; （3）展示如何解决混合模型并将其应用扩展到基于谱系和基于基因组的预测;和（4）阐明全基因组关联研究的算法如何工作，包括他们的假设和限制。 #介绍
@@ -132,7 +132,7 @@
       <title>Yu2006-关联作图的统一混合模型方法</title>
       <link>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/yu2006-%E5%85%B3%E8%81%94%E4%BD%9C%E5%9B%BE%E7%9A%84%E7%BB%9F%E4%B8%80%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8B%E6%96%B9%E6%B3%95/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/yu2006-%E5%85%B3%E8%81%94%E4%BD%9C%E5%9B%BE%E7%9A%84%E7%BB%9F%E4%B8%80%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8B%E6%96%B9%E6%B3%95/</guid>
       <description>Yu JM, Pressoir G, Briggs WH, et al (2006) A unified mixed-model method for association mapping that accounts for multiple levels of relatedness. Nat Genet 38:203–208.
  由于人口结构可能导致假结合，它限制了在人类和植物遗传学中使用关联研究。然而，如果功能关联的真实信号可以与由群体结构1,2产生的大量假信号分离，则关联映射具有很大的前景。我们开发了一个统一的混合模型方法来解释多个相关性水平同时检测的随机遗传标记。我们将这种新方法应用于两个样品：14个人类家族的基于家族的样品，用于定量基因表达切割，以及具有复杂家族关系和群体结构的277个不同玉米自交系的样品，用于数量性状解剖。我们的方法证明改进的对I型和II型错误率的控制超过其他方法。由于这种新方法跨越了基于家庭和结构化关联样本之间的边界，它为当前可用的关联映射方法提供了有力的补充。
@@ -143,7 +143,7 @@
       <title>Zamudio2008-克隆-重复测量-LMM-空间</title>
       <link>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/zamudio2008-%E5%85%8B%E9%9A%86-%E9%87%8D%E5%A4%8D%E6%B5%8B%E9%87%8F-lmm-%E7%A9%BA%E9%97%B4/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/zamudio2008-%E5%85%8B%E9%9A%86-%E9%87%8D%E5%A4%8D%E6%B5%8B%E9%87%8F-lmm-%E7%A9%BA%E9%97%B4/</guid>
       <description>Zamudio F, Wolfinger R, Stanton B, Guerra F (2008) The use of linear mixed model theory for the genetic analysis of repeated measures from clonal tests of forest trees. I. A focus on spatially repeated data. Tree Genet Genomes 4:299–313. doi: 10.1007/s11295-007-0110-4
  ##摘要 本文综述了线性混合模型（LMM）方法，适用于从克隆子代测试收集的空间重复测量的统计和遗传分析。例如，我们考虑了杨树克隆试验，其中不同家系的后代通过插枝繁殖，并且在每个块上每个克隆仅种植一个分株。基于LMM理论建模协方差结构允许基于克隆测试改进遗传参数估计。除了方差分量，我们还获得了残差之间的协方差（在两个不同块中的克隆效应内）的估计。这种协方差是由于在同一试验中从相同基因型种植多个分株，其产生来自不同块的相关残留效应。其估计可显着改善克隆中后代测试或克隆测试网络中的测试之间的比较。结果表明协方差也是遗传方差估计的一个组成部分，并在评估特定（微）环境影响的方差中发挥重要作用。正协方差意味着分布在多于一个块中表现出类似的性能。因此，更大和更积极的协方差意味着控制地方环境中的性状表达的更强的遗传效应和更小的特定环境影响的变化。相反，负协方差意味着个别分株的性能受到对一个或多个嵌段特异性的强微环境效应的影响，这也可以直接增加克隆内变异性。
@@ -155,7 +155,7 @@
       <title>随机效应的推断</title>
       <link>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/%E9%9A%8F%E6%9C%BA%E6%95%88%E5%BA%94%E7%9A%84%E6%8E%A8%E6%96%AD/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B/%E9%9A%8F%E6%9C%BA%E6%95%88%E5%BA%94%E7%9A%84%E6%8E%A8%E6%96%AD/</guid>
       <description>Butler D, Cullis BR, Gilmour a R, Gogel BJ (2009) Mixed models for S language environments.
  2.5随机效应的推断 2.5.1假设的测试 关于线性混合效应模型的方差参数的推论通常取决于从渐近结果导出的（RE）ML估计的近似分布。

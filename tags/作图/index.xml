@@ -5,8 +5,8 @@
     <link>/tags/%E4%BD%9C%E5%9B%BE/</link>
     <description>Recent content in 作图 on Dong&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>youremail@domain.com (Leiming Dong)</managingEditor>
-    <webMaster>youremail@domain.com (Leiming Dong)</webMaster>
+    <managingEditor>dongleiming2008@126.com (Leiming Dong)</managingEditor>
+    <webMaster>dongleiming2008@126.com (Leiming Dong)</webMaster>
     <lastBuildDate>Sun, 01 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/%E4%BD%9C%E5%9B%BE/index.xml" rel="self" type="application/rss+xml" />
@@ -16,7 +16,7 @@
       <title>Hall2016-林木QTL</title>
       <link>/post/%E4%BD%9C%E5%9B%BE/hall2016-%E6%9E%97%E6%9C%A8qtl/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E4%BD%9C%E5%9B%BE/hall2016-%E6%9E%97%E6%9C%A8qtl/</guid>
       <description>Hall D, Hallingbäck HR, Wu HX (2016) Estimation of number and size of QTL effects in forest tree traits. Tree Genet Genomes 12:110. doi: 10.1007/s11295-016-1073-0
  映射森林树木性状的遗传结构是重要的，以了解塑造这些性状的进化力量，并促进基于基因组的育种策略的发展。我们使用30个发布的映射研究（链接和关联映射）在林木中检查影响八种类型性状的等位基因影响的数量，大小和分布。等位基因效应的大小，作为解释的表型方差测量，通常显示严重右偏态分布。我们通过改进以前由Otto和Jones开发的方法（遗传学156：2093-2107,2000），估计不同性状类别的潜在因果效应（nqtl）的数量。基于关联作图研究的nqt1的估计通常比基于连锁作图（中值为33）的那些高（中值在643）。与模拟连锁和关联映射数据的比较表明，连锁图谱研究的较低nqtl估计可以部分地解释为通常使用的全同胞家族群体内较少的因果基因座分离，但也由于有限重组的因果基因座的群体分离。基于连锁图谱研究的疾病抗性估计具有四种潜在效应的最低中值，而基于关联作图的生长性状具有约580种效应。理论上，50％的遗传变异的捕获因此将需要约200的种群大小用于连锁作图中的抗病性，而在缔合作图中的生长性状将需要约25,000。改进方法的充分性和可靠性通过应用于模拟数据成功验证。
@@ -27,7 +27,7 @@
       <title>Wu-2004发育性状遗传组成的分析</title>
       <link>/post/%E4%BD%9C%E5%9B%BE/wu-2004%E5%8F%91%E8%82%B2%E6%80%A7%E7%8A%B6%E9%81%97%E4%BC%A0%E7%BB%84%E6%88%90%E7%9A%84%E5%88%86%E6%9E%90/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E4%BD%9C%E5%9B%BE/wu-2004%E5%8F%91%E8%82%B2%E6%80%A7%E7%8A%B6%E9%81%97%E4%BC%A0%E7%BB%84%E6%88%90%E7%9A%84%E5%88%86%E6%9E%90/</guid>
       <description>Wu R, Ma CX, Lin M, Casella G (2004) A General Framework for Analyzing the Genetic Architecture of Developmental Characteristics. Genetics 166:1541–1551. doi: 10.1534/genetics.166.3.1541
  生长性状的遗传结构在形成生物的生长，发育和进化中起着中心作用。虽然有限数量的模型被设计来估计对复杂表型的遗传效应，没有模型可用于检查基因行为和相互作用如何改变生物的本体发育，并将改变的个体发育转化为后代。在本文中，我们提出一个新的统计模型，用于定位数量性状基因位点（QTL）确定复杂性状的发育过程。我们的模型是在用EM算法实现的传统最大似然框架内构建的。我们采用生物有意义的生长曲线方程来建模时间特异性预期遗传值和AR（1）模型，以构造不同时间点之间的残差方差 - 协方差矩阵。由于估计参数的数量减少和生物学原理的并入，新模型显示增加的统计功效以检测QTL对个体发育生长和发育的形状产生影响。该模型允许对关于上位在确定生物生长，形式和形状以及解决与进化界面处的发育问题的作用的许多生物假设的测试。使用我们新开发的模型，我们已经成功地检测到显着的添加剂×添加上位性效应对茎高度生长轨迹在林木中。

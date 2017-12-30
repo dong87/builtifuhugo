@@ -5,8 +5,8 @@
     <link>/tags/%E8%82%B2%E7%A7%8D/</link>
     <description>Recent content in 育种 on Dong&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>youremail@domain.com (Leiming Dong)</managingEditor>
-    <webMaster>youremail@domain.com (Leiming Dong)</webMaster>
+    <managingEditor>dongleiming2008@126.com (Leiming Dong)</managingEditor>
+    <webMaster>dongleiming2008@126.com (Leiming Dong)</webMaster>
     <lastBuildDate>Sun, 01 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/%E8%82%B2%E7%A7%8D/index.xml" rel="self" type="application/rss+xml" />
@@ -16,7 +16,7 @@
       <title>Acquaah2012-配合力的概念</title>
       <link>/post/%E8%82%B2%E7%A7%8D/acquaah2012-%E9%85%8D%E5%90%88%E5%8A%9B%E7%9A%84%E6%A6%82%E5%BF%B5/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/acquaah2012-%E9%85%8D%E5%90%88%E5%8A%9B%E7%9A%84%E6%A6%82%E5%BF%B5/</guid>
       <description>Acquaah G. 2012. Principles of Plant Genetics and Breeding. Second. Wiley-Blackwell.
  4.2.17 配合力的概念 多年来，植物育种者寻求通过有效选择父母的途径促进植物育种，以便在隔离群体中进行交配，有效和有效的选择，预测对选择的反应等。定量评估遗传学在植物育种中的作用需要使用统计学遗传学方法来估计方差并将其分为组分。由于方差估计既不健壮也不准确，统计遗传学对育种者的直接益处受到限制。在1942年，Sprague和Tatum提出了一种评估玉米杂种生产中使用的自交系的方法，该方法没有伴随方差估计的遗传假设。称为配合力，该过程需要评估选定父母之间的一组杂交，以确定杂交之间的差异可归因于父母的统计学加性特征的程度，以及残留相互作用的影响。穿过每条线与几条其他系在所有组合上的每条系的平均性能上产生一个额外的措施。这意味着一条系的表现，当表示为与所有交配的平均值的偏差时，给出了Sprague和Tatum所称的系的一般配合力（GCA）。 GCA计算为具有该特定行作为一个父母的所有F1的平均值，该值表示为与总体平均值的偏差。每个交配都有一个预期值（它的两个父母行的GCAs的总和）。然而，每个交配可能或多或少地偏离预期值，偏差是两行组合的特定配合力（SCA）。 GCA的差异是由于基础组合物中的加性和加性x加性相互作用。 SCA的差异归因于非加性遗传变异。此外，预计SCA的差异将更加迅速，因为近亲繁殖在高水平。 GCA是一个工厂在不同测试系的交配点的平均性能，而SCA与其他交配组合相比，以特定组合测量工厂的性能。每个组合的关系的数学表示如下： 其中X是一般均值，GA和GB是父母的综合联合能力估计，SAB是残差或特异性配合力（SCA）的统计学上未知的。可以获得的互动类型取决于用于产生组合的配对方案，最常见的是双列配对设计（全部或部分双列）。植物育种者可以使用各种方法来估计配合力，包括多交配和顶交方法。但是，1956年由Griffing开发的diallel组合（每条系与每隔一行交配）也许是最常用的方法。每行的GCA计算如下： 其中x表示特定的行。使用表4.3中的数据。 GA可以计算为：
@@ -27,7 +27,7 @@
       <title>Ahlinder2014-解决克隆种子园基因型不等问题的方法</title>
       <link>/post/%E8%82%B2%E7%A7%8D/ahlinder2014-%E8%A7%A3%E5%86%B3%E5%85%8B%E9%9A%86%E7%A7%8D%E5%AD%90%E5%9B%AD%E5%9F%BA%E5%9B%A0%E5%9E%8B%E4%B8%8D%E7%AD%89%E9%97%AE%E9%A2%98%E7%9A%84%E6%96%B9%E6%B3%95/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/ahlinder2014-%E8%A7%A3%E5%86%B3%E5%85%8B%E9%9A%86%E7%A7%8D%E5%AD%90%E5%9B%AD%E5%9F%BA%E5%9B%A0%E5%9E%8B%E4%B8%8D%E7%AD%89%E9%97%AE%E9%A2%98%E7%9A%84%E6%96%B9%E6%B3%95/</guid>
       <description>Ahlinder, J., Mullin, T.J., and Yamashita, M. 2014. Using semidefinite programming to optimize unequal deployment of genotypes to a clonal seed orchard. Tree Genet. Genomes 10(1): 27–34. doi:10.1007/s11295-013-0659-z.
  摘要 树木育种者必须经常考虑遗传多样性的保存，同时最大限度地提高对选择的响应。在种子园的情况下，种子购买者希望得到最大的表现，同时对森林的多样性进行限制，有时是立法的。最佳选择并不能完全避免亲属关系，而是最大化收益，同时对平均相关性施加约束。在这里，我们介绍半定规划（SDP）的应用作为一种灵活的方法来优化克隆种子园的基因型部署。我们将选择问题制定为SDP，其中平均育种值将被最大化，同时对相关性以及每个候选人的最大和最小贡献施加约束。一个开源的解决方案，SDPA，被嵌入到一个工具，旨在使SDP优化种子果园简单灵活。优化苏格兰松和火炬松种子园的案例研究说明了如何利用这种灵活性对来自某些候选基因型的接穗材料施加附加限制，并优化选择，即使相关候选人之间有不同程度的协同。讨论可以使用SDP的其他情况。 关键词半定规划优化。遗传获得。相关性。克隆种子果园。最佳贡献。选择。果园管理。樟子松。松属taeda
@@ -38,7 +38,7 @@
       <title>Brisbane1995-平衡近亲繁殖与遗传增益</title>
       <link>/post/%E8%82%B2%E7%A7%8D/brisbane1995-%E5%B9%B3%E8%A1%A1%E8%BF%91%E4%BA%B2%E7%B9%81%E6%AE%96%E4%B8%8E%E9%81%97%E4%BC%A0%E5%A2%9E%E7%9B%8A/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/brisbane1995-%E5%B9%B3%E8%A1%A1%E8%BF%91%E4%BA%B2%E7%B9%81%E6%AE%96%E4%B8%8E%E9%81%97%E4%BC%A0%E5%A2%9E%E7%9B%8A/</guid>
       <description>Brisbane J R, Gibson J P. 1995. Balancing selection response and rate of inbreeding by including genetic relationships in selection decisions. TAG. Theoretical and applied genetics. Theoretische und angewandte Genetik, 91(3): 421–31.
  摘要 - 调查选择策略，应改进先前通过在选择决策中包含遗传关系来减少近亲繁殖的方法。新策略包括对选择决策中父母对后代稳定遗传贡献的预测。假定选择的父母的选择和随机交配的离散代选择加性无穷小遗传模型。使用随机模拟来比较使用与使用预测遗传贡献的策略的关系的策略中近亲繁殖和遗传增益的比率。后一种策略在给定的累积近亲繁殖水平上提供了较高的遗传增益，但其优点是小，计算更复杂，难以在实践中应用，因此以前使用关系的策略对于实际应用更有用。近亲繁殖/遗传增益
@@ -49,7 +49,7 @@
       <title>Chen2016-毕业论文</title>
       <link>/post/%E8%82%B2%E7%A7%8D/chen2016-%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/chen2016-%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/</guid>
       <description>Chen Z (2016) Quantitative Genetics of Norway Spruce in Sweden.
  实木和纸浆和纸制品的遗传改良相关的木材质量性状对于提高瑞典挪威云杉种植园的生产力和价值很重要。为了将木材质量性状纳入挪威云杉树育种计划，在大的挪威云杉种群中研究了实木和纤维性状的遗传参数。选择在瑞典南部测试的两个试验的524个半同胞家族来表征木材密度，微纤维角（MFA），弹性模量（MOE），径向纤维宽度（RFW），切向纤维宽度（TFW）的遗传变异，纤维壁厚度（FWT），纤维粗度（FC）和纤维长度（FL）。为了快速测量站立树的刚度（MOE）并且从增量芯精确地测量FL，开发了用于量化刚度的新的非破坏性方法和用于计算FL的新算法。 Pilodyn和声学Hitman测量的组合被发现准确地预测立​​树的刚度，并且使用预期最大化的新算法可以准确地估计FL。 为了改进挪威云杉的遗传参数估计和环境（G×E）相互作用的基因型，空间分析应用于145个子代试验，因子分析方法应用于20个半同胞子代试验。空间分析显着提高遗传力和育种价值预测的准确性。霜冻伤害可能是挪威云杉在南部和中部瑞典的树高的G×E相互作用的主要驱动力。木质性状表现出比生长性状更高的遗传性。然而，生长性状具有非常不利的与实木质量性状（0.54-0.75）的遗传相关性和与纤维性状性状（0.11-0.49）的弱到中度不利的遗传相关性。总之，基于直径的选择将对木材质量性状具有相当大的负面影响，对FL的负面影响可忽略或小，并且对FWT仅具有适度的影响。云杉育种推荐结合直径和刚度的选择指数，对FL的影响最小。应为挪威云杉育种计划确定适当的经济增长和僵硬性状的权重，以使挪威云杉的经济收益最大化。
@@ -69,7 +69,7 @@
       <title>Funda2009-种子园多样性和增益的优化</title>
       <link>/post/%E8%82%B2%E7%A7%8D/funda2009-%E7%A7%8D%E5%AD%90%E5%9B%AD%E5%A4%9A%E6%A0%B7%E6%80%A7%E5%92%8C%E5%A2%9E%E7%9B%8A%E7%9A%84%E4%BC%98%E5%8C%96/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/funda2009-%E7%A7%8D%E5%AD%90%E5%9B%AD%E5%A4%9A%E6%A0%B7%E6%80%A7%E5%92%8C%E5%A2%9E%E7%9B%8A%E7%9A%84%E4%BC%98%E5%8C%96/</guid>
       <description>Funda T, Lstibůrek M, Lachout P, Klápště J, El-Kassaby YA (2009) Optimization of combined genetic gain and diversity for collection and deployment of seed orchard crops. Tree Genet Genomes 5(4):583–593.   种子园作物的遗传收获和多样性取决于父母数量，育种价值和相关性，园内授粉效率和花粉污染程度。这些参数可以通过改变克隆表现（例如，线性展开），在通过遗传变薄的果园发育过程中或通过选择性收获在操作中进行操作。由于已知克隆繁殖力在年内和年内都有变化，所以每种种子作物都具有独特的遗传组成，因此每年应对作物进行处理。在这里，我们提出一个优化协议，通过选择满足两个参数的作物子集，使作物在任何所需遗传多样性方面的遗传增益最大化。遗传增益在每个克隆的种子锥生产设置的生物学极限内最大化，有效种群大小用作遗传多样性的代理，因此考虑克隆之间的任何关系。使用第一代西部落叶松种子果园的3年生殖产量数据进行了优化，并在各种情景下进行了测试，包括实际的雄性和雌性生殖产量，男性生殖产量假设等于雌性或女性的功能克隆代表此外，在补充模拟中，将各种级别的共同分配给果园的克隆。优化后，所有解决方案都有效地创建了具有不同增益和多样性水平的定制种苗，并提供了估计多年来剩余的“未使用”种子的复合种苗遗传特性的方法。
 介绍 种子果园是针叶树种的基本改良方案的主要运输工具，其中平衡增益和多样性是一个主要问题。种子果园作物的遗传增益（遗传价值）主要取决于所选择的亲本的遗传优势，其对所得种子作物的实际配子贡献以及来自外来花粉源（花粉）的基因流量水平污染）和它们各自的遗传质量（Stoehr等人1998; Lindgren等人2004; Slavov等人2005）。种子作物的遗传多样性受到父母生殖力变化的程度（对所得种子作物的父母不平等贡献）的影响很大的影响（谢等人1994; Kjar 1996; Burczyk和Chalupka 1997）以及亲缘关系的水平在果园家长中（Lindgren和Mullin，1998）。理论上，对于一定数量的无关和非近交基因型的最大遗传多样性在所有对种子作物贡献同等的同时获得，取决于高育种值父母的比例贡献（注意，最大增益只能是从最好的克隆获得;然而，这不是种子果园的目标）。生殖编排“果园生殖活动的时间，持续时间和程度”，因为它影响了种子园内的父母间的排卵模式，以及花粉污染，最终导致遗传所得种子作物的组成（El-Kassaby等人1984; El-Kassaby和Ritland 1986; Matziris 1994，Burczyk和Chalupka 1997）。在果园中的配子贡献的变化可能导致最有生产力的基因型（Kjar 1996），共同祖先的积累，以及最终对遗传多样性的侵蚀（Lindgren等，1996）的过度表达。因此，在估计遗传增益和多样性时，应考虑果园家长之间的繁殖力变异（Kang and El-Kassaby，2002）。实际上，种子果园的繁殖力变化非常普遍，是由以下原因造成的：（1）在果园建立过程中不平等的父母代表（例如，线性部署，其中父母在果园种群中线性代表与育种成比例价值观）（Lindgren和Matheson，1986），（2）果园发育过程中的死亡率（El-Kassaby和Cook 1994）和（3）父母繁殖产量的简单差异（Sitka云杉：El-Kassaby和Reynolds（1990）;道格拉斯冷杉：El-Kassaby和Askew（1991）和El-Kassaby等人（1990）; loblolly pine：Askew（1988）; radiata pine：Griffin（1982）; Japanese red pine：Kang（2000）松：康等（2004））。可以使用从低成本/低精度到相对高成本/高准确度的不同方法估计家长配子贡献。前者包括对生殖频繁产量变异性和种子生产的非典型评估（Woods 2005），而后者利用在同功酶或DNA标记物上显示的变异（Roberds等人1991; Xie和Knowles 1992; Moriguchi等人2004; Slavov et al。2005; Funda et al。2008）。在现有果园遗传变薄的情况下，可以通过在线性部署后不同父母代表（Lindgren和Matheson，1986）在果园建立种植园果实的遗传增益（响应）和多样性（即反向比例去除低繁殖 - 价值父母; Bondesson和Lindgren 1993），或通过实践选择种子锥收获（即从具有较高育种价值的父母收集种子锥; Lindgren和El-Kassaby 1989; Kang等人2001）。假设无关和非近亲的父母，种子作物的遗传多样性在同等的亲本配子产量下是最大的;然而，女性和男性生育率变化的大小以及其相关性的方向以及强度都强烈地影响了这些做法（Kang and El-Kassaby，2002）。大多数种子果园的变异研究表明，男性和女性的生殖产量与弱相关（Nikkanen和Velling 1987; Caron and Powell 1989; Kjar 1996; Kang 2000）或独立性（Savolainen等1993; Kang and Lindgren 1998,1999; Kang等人2004）。因此，基于单一性别（如种子生产）估计遗传多样性的常见做法往往不准确（Kang和Lindgren，1999）。上述审查意味着种子果园作物的遗传增益和多样性在任何一年内都是独一无二的，因此果园的生殖产量评估及其操作能够每年更好地进行。这项研究的目的是通过优化父母的贡献来开发一种最大化现有果园作物选定部分的遗传价值的模型。它旨在说明父母之间的相关性，这是随着先进的种子果树建立而变得越来越重要的问题。在动物育种中已经证明了相关性的必要性（例如，Meuwissen 1997），并且在从森林生产种群部署生殖材料时也应谨慎考虑。西兰落叶松（Larix occidentalis Nutt）种子园的生殖产量数据用于说明拟议方法，并对三种不同情景进行了测试：（a）雄性和雌性繁殖力相等（即女性与男性之间存在完全相关性， （参见Lindgren等人2004; Prescher等人2006））; （b）男性与父母代表成比例（每个克隆的分株数）成比例; （c）实际的男女生殖生产数据（Stoehr等，2004）。在目前的研究中，提出了在单一优化步骤中组合上述要素的新方法。优化导致在考虑实际的男性和女性生殖产出，亲本育种价值，共同祖先和所需遗传多样性水平后，确定最佳克隆繁殖产出比例。</description>
@@ -79,7 +79,7 @@
       <title>Funda2011-利用系谱重建确定亲本生殖投资和成功是否一致</title>
       <link>/post/%E8%82%B2%E7%A7%8D/funda2011-%E5%88%A9%E7%94%A8%E7%B3%BB%E8%B0%B1%E9%87%8D%E5%BB%BA%E7%A1%AE%E5%AE%9A%E4%BA%B2%E6%9C%AC%E7%94%9F%E6%AE%96%E6%8A%95%E8%B5%84%E5%92%8C%E6%88%90%E5%8A%9F%E6%98%AF%E5%90%A6%E4%B8%80%E8%87%B4/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/funda2011-%E5%88%A9%E7%94%A8%E7%B3%BB%E8%B0%B1%E9%87%8D%E5%BB%BA%E7%A1%AE%E5%AE%9A%E4%BA%B2%E6%9C%AC%E7%94%9F%E6%AE%96%E6%8A%95%E8%B5%84%E5%92%8C%E6%88%90%E5%8A%9F%E6%98%AF%E5%90%A6%E4%B8%80%E8%87%B4/</guid>
       <description>Funda T, et al. (2011) Congruence between parental reproductive investment and success determined by DNA-based pedigree reconstruction in conifer seed orchards. Can J For Res Can Rech For 41(2):380–389.   种子果园的父母繁殖成功通常通过对种子和花粉锥生产（生殖投资）的调查进行评估。虽然这种方法的可靠性受到质疑，但其速度和轻松度使其成为为种子果园作物的遗传质量和数量提供近似估计值的首选方法。在本研究中，来自三个种子果园（大麦松（Pinus contorta Dougl。ex。Loud。var。latifolia Engelm。），Douglas-fir（Pseudotsuga menziesii（Mirb。）Franco）的各种女性和男性表型评估方法的生殖投资数据， ，西部落叶松（Larix occidentalis Nutt。））与基于DNA指纹图谱和亲本分析的繁殖成功估算进行比较。评估了使用生殖投资作为估算种子作物体积遗传价值和多样性（由有效父母数量衡量）的生殖成功的代表。回归分析表明，表型评估方法反映了真正的父母繁殖成功，并且种子和花粉锥体积生产的估计分别似乎是女性和男性生殖成功的最适当指标。虽然女性男性调查方法的最佳组合产生了父母有效数量的估计，遗传价值估计与基于DNA的遗传价值估计相似，突显了其对生育力变异评估的鲁棒性。
 简介 森林经常性选择计划通过两个独特的流程实现目标，即育种和生产。通过古典三个步骤，杂交，测试和选择育种，导致鉴定精英个体进一步繁殖或建立生产种群（种子果园）（Namkoong等人，1988）。种子果园专门用于包装饲养所获得的遗传收益，保持可接受的遗传多样性水平，并为未来森林提供增益和多样性（El-Kassaby 2000）。随着育种计划的进步，获得了更高的收益，更多的重点是管理遗传多样性，以平衡不可避免的共同繁殖和与驯化过程相关的遗传多样性的不可避免的减少（El-Kassaby 2000）。预计种子果园可以作为封闭，完美的人口达到Hardy -Weinberg预期的效果，因此种子作物的等位基因和基因型频率代表其亲本种群（Eriksson等，1973）。这种理想条件很少遇到;然而，种子果园种群已经被证明是强大的，并且即使在这些偏差的情况下也获得了实质性的增益（El-Kassaby 1989; Xiang et al。2003）。估计种子果园的生殖成功率（男性和男性），花粉污染的比率和遗传质量，并且在实践时补充大量授粉的有效性（El-Kassaby等，1993）对于计算作物遗传参数，即增益和多样性（Stoehr et al。2004）。女性生殖成功的评估通常使用各种强度的视觉调查来进行，其应用于单个克隆基础，包括种子锥的数量，体积或质量和（或）每个锥体的种子数量或填充种子数量Griffin 1982; Byram等人1986; El-Kassaby 1989; Kang和El-Kassaby 2002; Stoehr等人2004）。另一方面，基于视觉调查的男性生殖成功也更难评估（Schmidtling 1983; Schoen and Stewart，1986,1987; Schoen等，1986; Denti and Schoen 1988; Roberds et al.</description>
@@ -89,7 +89,7 @@
       <title>Funda2012-种子园遗传</title>
       <link>/post/%E8%82%B2%E7%A7%8D/funda2012-%E7%A7%8D%E5%AD%90%E5%9B%AD%E9%81%97%E4%BC%A0/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/funda2012-%E7%A7%8D%E5%AD%90%E5%9B%AD%E9%81%97%E4%BC%A0/</guid>
       <description>Funda T, El-Kassaby YA (2012) Seed orchard genetics. CAB Rev Perspect Agric Vet Sci Nutr Nat Resour 7(JUNE 2012):1–23.   种子果园代表了树木育种与造林活动之间的联系。它们的遗传效率至关重要，因为它决定了未来林木种植园的遗传增益和多样性的程度。鉴于其重要性，种子果园遗传学已经得到了更多的科学和管理审查。事实上，影响种子果园遗传效率的所有方面已经进行了深入的调查，包括其生物学模型，为改善作物遗传质量而制定和实施的基础假设和管理方法。在这次审查中，我们从树种改良周期中的种子果园位置，群体遗传模型和影响该模型的生物因素开始，系统地解决这些问题。即生殖投入和成功，生殖物候，近亲繁殖，基因流动，最后是种子的生物学。审查管理实践，包括在成立阶段（果园规模，设计，父母数量及其代表）实施的管理措施，以及为加强作物管理（皇冠管理，补充大规模授粉，开花延迟，选择性种子收获和设计师生产）作物）。讨论了这些问题的遗传后果。本文的目的是对每个树木改良提供系统的这一重要组成部分进行最先进的审查，并促进和鼓励目前和将来的种子果园进一步研究和开发。
 森林树木改良 有必要提供森林树木改良的概况，使种子果园及其功能的作用放在正确的上下文中。森林树木改良是通常和经常应用于林木种群现有天然遗传变异的繁殖和造林活动的结合，以增加人工再生林及其产品的经济价值[1]。与我们今天所知道的现代化的有意思和有组织的树木改良不同，农业作物和动物的养殖和驯化（至少在其非结构形式）已经在地球上发生了几千年，直到20世纪50年代才开始[2]。这种重大的延误有两个主要后果：第一，遗传操纵使得大多数森林树木种群大部分不受影响，其次，允许树木种植者利用其他领域积累的丰富的知识和经验[3]。大力发展树木改良活动，目的是立即满足高品质木材产品的需求，无需对未来的生产进行规划。在应用非常严格的选择（即只选择最小的一小部分）的情况下，可以迅速有效地实现合理的收益;然而，这种短期思维最终被放弃，因为它将为未来的改进留下太浅的遗传基础，特别是当短期计划被转换为长期的工作时[4]。 大多数长期的树木改良计划可以使用循环选择育种周期[5]的框架进行描述，其中包括两个独立但不相互排斥的育种和生产阶段[1]。这些阶段紧密相连，其主要目标是获得和保留广泛的遗传基础，同时将所需特征与合适的高品质，适应力强的树相结合，这对未来的世代来说将是有价值的[1]。前一阶段包括：根据具体标准，在天然林林场，人工种植园或先进的遗传改良中选择最理想的个体，以确保满足定义的育种目标，育种，其中涉及到在这些中产生受控杂交选择的个体允许提取执行第二轮育种所需的遗传参数，以及（iii）测试，通过测试其后代或后代本身（即向后和向前选择）来评估所选树的遗传质量。在后期阶段，育种工作被包装在种子作物中，并被交付用于生产新的，经遗传改良的林分或种植园。树木改良方案极为依赖资源和长期努力;因此，探索能够提供可接受和令人满意的收益的较不需要的替代方法（例如[6]）至关重要。
@@ -107,7 +107,7 @@
       <title>Gezan的毕业论文</title>
       <link>/post/%E8%82%B2%E7%A7%8D/gezan%E7%9A%84%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/gezan%E7%9A%84%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/</guid>
       <description>Gezan SA (2005) Optimal design and analysis of clonal forestry trials using simulated data. University of Florida
  使用模拟数据的克隆森林实验设计的比较 介绍 森林树木的遗传现场测试对树木改良至关重要，用于估计遗传参数和评估原产地，家庭和个人。森林树木的遗传测试是一个耗时的过程，通常是改进计划中最昂贵的活动（Zobel和Talbert 1984，第232页）。因此，主要关心的是通过有效地分配资源来最大化利益（Namkoong，1979，第117页）。在林业试验中常见的是研究大量遗传项目（例如家族或克隆）的性能，这意味着需要相对大的测试位点或每个位点使用更少的重复。因为用于田间实验的森林场所通常是固有可变的，所以难以找到最佳场所。这种环境异质性的存在使得由于树木对树木变化与其他更大规模环境影响的混杂而导致的残余方差膨胀;并因此降低了使用简单实验设计的益处（Grondona等人1996）。
@@ -121,7 +121,7 @@
       <title>Grattapaglia2009-林木生长性状的基因组学</title>
       <link>/post/%E8%82%B2%E7%A7%8D/grattapaglia2009-%E6%9E%97%E6%9C%A8%E7%94%9F%E9%95%BF%E6%80%A7%E7%8A%B6%E7%9A%84%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%AD%A6/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/grattapaglia2009-%E6%9E%97%E6%9C%A8%E7%94%9F%E9%95%BF%E6%80%A7%E7%8A%B6%E7%9A%84%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%AD%A6/</guid>
       <description>Grattapaglia D, Plomion C, Kirst M, Sederoff RR (2009) Genomics of growth traits in forest trees. Curr Opin Plant Biol 12:148–156. doi: 10.1016/j.pbi.2008.12.008
  树木的生长特征是森林生态系统适应和人造林生产力的基本要素。许多过程决定了树木生长，这些生长受到几个世纪以来对环境信号动态响应的遗传和表观遗传因子的控制。基因组学的进步使得对树木生长和适应的复杂机制的理解更加了解。然而，基因组学在提高森林生产力和可持续性方面的应用仍然需要捕获控制组分特征的总遗传变异的很大比例。然而，遗传学和基因组学是统一的学科，将有助于解剖树木生长发育的变数和机制。
@@ -138,7 +138,7 @@ QTL定位：了解复杂生长相关性状的第一步 QTL定位是解剖复杂�
       <title>Lindgren2008-家系平衡选择</title>
       <link>/post/%E8%82%B2%E7%A7%8D/lindgren2008-%E5%AE%B6%E7%B3%BB%E5%B9%B3%E8%A1%A1%E9%80%89%E6%8B%A9/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/lindgren2008-%E5%AE%B6%E7%B3%BB%E5%B9%B3%E8%A1%A1%E9%80%89%E6%8B%A9/</guid>
       <description>Lindgren, D., Danusevicius, D., and Rosvall, O. 2008. Balanced forest tree improvement can be enhanced by selecting among many parents but maintaining balance among grandparents. Can. J. For. Res. 38(11): 2797–2803. doi:10.2307&amp;frasl;2529714
  摘要：一个考虑遗传增益和成本的均衡树木育种计划的模型被用来评估增加育种群体的好处，以便在祖父母之间保持平等的贡献的同时，允许在父母之间进行选择，而不是在内部继承家庭选择与平等的家长代表。在这项研究中使用的情景具有类似于在瑞典的苏格兰松（松属樟子松）的表型选择策略的特征。结果显示，投入更多的父母和家庭以允许父母选择导致显着更高的遗传获得。在预算较高，无家族创造成本的情况下，父母之间的选择组件增加了高达70％的遗传增益，在低预算和高家庭创造成本的情况下，高达20％。
@@ -149,7 +149,7 @@ QTL定位：了解复杂生长相关性状的第一步 QTL定位是解剖复杂�
       <title>Mohring2015-区组间信息</title>
       <link>/post/%E8%82%B2%E7%A7%8D/mohring2015-%E5%8C%BA%E7%BB%84%E9%97%B4%E4%BF%A1%E6%81%AF/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/mohring2015-%E5%8C%BA%E7%BB%84%E9%97%B4%E4%BF%A1%E6%81%AF/</guid>
       <description>Möhring, J., Williams, E., and Piepho, H.P. 2015. Inter-block information: to recover or not to recover it? Theor. Appl. Genet. 128(8): 1541–1554. Springer Berlin Heidelberg. doi:10.1007/s00122-015-2530-0.
  ##摘要 关键信息：比较使用固定或随机块效应处理差异的标准误差与Kackar和Harville的近似值有助于在现场实验分析中选择块的最佳假设。摘要：区组设计在植物育种田间试验中很常见。根据方差估计的精度，通过随机块效应恢复块间信息可能是值得的。实践中的一个挑战是决定何时应该追回信息。为了研究这个问题，我们分析了一系列甜菜试验，设计为固定或随机块效应。另外，假定为设计或部分复制设计的小型试验是假设固定或随机块效应而被模拟和分析的。九个决策规则，包括Kackar？Harville调整，被用来选择关于块效应的更好的假设。一般来说，使用Kackar-arville调节效果很好，推荐用于部分复制的设计。对于设计，对于具有四个或更多块的设计，使用块间信息是优选的。
@@ -160,7 +160,7 @@ QTL定位：了解复杂生长相关性状的第一步 QTL定位是解剖复杂�
       <title>N8--北卡Isik教授编的教材《动植物育种遗传数据分析》读书笔记</title>
       <link>/post/%E8%82%B2%E7%A7%8D/n8--%E5%8C%97%E5%8D%A1isik%E6%95%99%E6%8E%88%E7%BC%96%E7%9A%84%E6%95%99%E6%9D%90%E5%8A%A8%E6%A4%8D%E7%89%A9%E8%82%B2%E7%A7%8D%E9%81%97%E4%BC%A0%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/n8--%E5%8C%97%E5%8D%A1isik%E6%95%99%E6%8E%88%E7%BC%96%E7%9A%84%E6%95%99%E6%9D%90%E5%8A%A8%E6%A4%8D%E7%89%A9%E8%82%B2%E7%A7%8D%E9%81%97%E4%BC%A0%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
       <description>Genetic Data Analysis for Plant and Animal Breeding
   p.12 !I (整数变量) !A (字母编码变量) 树高等性状是响应变量，什么也不加
@@ -173,7 +173,7 @@ QTL定位：了解复杂生长相关性状的第一步 QTL定位是解剖复杂�
       <title>Plomion2016-林木基因组前后10年（一）</title>
       <link>/post/%E8%82%B2%E7%A7%8D/plomion2016-%E6%9E%97%E6%9C%A8%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%89%8D%E5%90%8E10%E5%B9%B4%E4%B8%80/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/plomion2016-%E6%9E%97%E6%9C%A8%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%89%8D%E5%90%8E10%E5%B9%B4%E4%B8%80/</guid>
       <description>Plomion C, Bastien C, Bogeat-Triboulot M-B, et al (2016) Forest tree genomics: 10 achievements from the past 10 years and future prospects. Ann For Sci 73:77–103. doi: 10.1007/s13595-015-0488-3
  摘要 [主要信息]本评论着重介绍过去10年来由“omics”技术实现的一些发现和应用，并为先驱研究提供了观点，以增加对树木生物学的了解。[背景] 在第一个森林树基因组序列发布到公有领域十年之后，迅速发展的基因组学和生物信息学工具箱提高了我们对森林树木基因组结构，功能和进化的认识。与目标和方法本综述着重介绍了过去10年来，“omics”技术在森林中所取得的一些发现和应用。 [结果]在这篇综述中，我们从目前对基因组进化和基因调控复杂性的生物和非生物胁迫的繁殖，发育和应答的理解开始。然后，我们分析了交互成分分析和表观基因组学的进展，物种内部和物种之间的遗传变异程度的知识，揭示了微观和宏观进化过程和物种历史，以及数量性状的复杂结构。我们终于在遗传资源保护和育种中得到应用。[结论]通过使用这些技术获得的知识对于适应森林面临的主要挑战具有巨大的潜在影响，即面临的主要挑战：生态系统服务的需求不断变化，保护和利用以及气候变化潜在的冲突战略和相关的威胁。基因组学无疑将在未来十年及以后发挥重要作用，不仅要进一步了解适应与演变的机制，还要制定和实施创新的管理和政策行动，以保护天然林和集约化管理种植园的适应性。 关键词基因组学。森林树。发育生物学。表观遗传学。互动微观进化。育种与保育
@@ -185,7 +185,7 @@ QTL定位：了解复杂生长相关性状的第一步 QTL定位是解剖复杂�
       <title>Plomion2016-林木基因组前后10年（二）</title>
       <link>/post/%E8%82%B2%E7%A7%8D/plomion2016-%E6%9E%97%E6%9C%A8%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%89%8D%E5%90%8E10%E5%B9%B4%E4%BA%8C/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/plomion2016-%E6%9E%97%E6%9C%A8%E5%9F%BA%E5%9B%A0%E7%BB%84%E5%89%8D%E5%90%8E10%E5%B9%B4%E4%BA%8C/</guid>
       <description>Plomion C, Bastien C, Bogeat-Triboulot M-B, et al (2016) Forest tree genomics: 10 achievements from the past 10 years and future prospects. Ann For Sci 73:77–103. doi: 10.1007/s13595-015-0488-3
  2.7将基因组学整合到系统学和系统发育中 物种之间的系统发育关系，密切相关物种的划分以及物种内遗传结构为保护和可持续利用森林种质资源提供决策的关键信息。关于同功酶或质体DNA的早期遗传研究揭示了温带树中过去范围动态的主要足迹（例如Petit等，2003），其发现在森林繁殖材料的遗传来源鉴定中的应用。质体DNA标记也用于树木中的物种划分（Kress和Erickson，2008）;然而，由于生殖障碍较弱，树木中种间基因流动频繁，其功力仍然有限（Petit和Hampe，2006）。在过去十年中，越来越多地使用多种核遗传标记和高通量基因组学，使得有可能提供关于过去人口历史，更有效的物种划分以及它们之间的系统发育关系的推断和表征适应性进化的更准确的信息在森林中的分子水平。遗传标记中的这一革命伴随着数据分析的重大转变，特别是从描述性到假设检验方法的转变，为森林遗传资源的管理提供了有价值的信息。 在过去十年中，系统地理学研究越来越多地使用多个不连接的核基因与使用聚结理论的群体遗传模型结合使用（Nielsen和Beaumont 2009）。这允许区分种群和密切相关物种中种群遗传历史的替代方案（Heuertz et al。2006; Gao et al。2012; Cornille et al。2013），并允许对群体遗传参数进行可靠的估计，如谱系之间的分歧时间（Budde et al。2013; Couvreur et al。2008; Morris et al。2008; Scotti-Saintagne et al。2013a; Scotti-Saintagne et al。2013b）。推测的人口统计学历史已经被用作鲁棒的基线信息来检测适应性进化中的基因位点（Grivet et al。2011;K鋖lmanet al。，2014）。比较系统地理学方法已经深入了解了人类历史在物种间的一致性，首先是温带树种（例如，Jaramillo-Correa et al。2010; Petit et al。2003），最近在热带物种（Dauby et al。 2014; Heuertz et al。2014; Jones et al。2013; van der Merwe et al。，2014）。通过在不同时间段内通过空间插值气候数据整合物种分布建模，在系统地理学中获得了重要的预测能力（Carstens和Richards 2007; Cornille et al。2013）。来自诸如“地质学”等新学科的系统地理学进展将进一步发展，其中涉及到使用大规模遗传数据来约束地质假说（Baker等，2014）。 近年来出现了大规模并行高通量测序（HTS）的应用，促进了成本效益的标记开发（McPherson等，2013; Micheneau等人2011; Slavov等，2012）。 HTS技术对复杂组织中进化关系的解脱有很大的希望，特别是在植物学知识依然有限而且隐性物种很常见的热带树分类单元（Heuertz et al。2014; Turchetto-Zolet等，2013）中。第一个HTS研究重建了树分类群的完整的细胞器基因组，导致了系统地理学中更高的分辨率（McPherson et al。2013; van der Merwe et al。，2014），分类学和系统发育学，特别是热带分类群（Chrysobalanacae， Mal？et al。，2014; Malpighiales，Xi et al。2012）。核基因组的HTS研究在树木的系统发育和系统地理学中仍然很少（但参见Carstens等人，2013; St？ling等，2013）。它们需要对数百个个体进行数百或数千个同源DNA区域的成本效益的并行测序，使用适用于目标系统发育深度的技术。涉及酶消化的基因组还原方法在物种内水平是适合的（例如，St？ling et al。2013），而对于保守核区的序列捕获被推荐用于系统发育（McCormack等，2013）。 在系统发育学中，新的贝叶斯方法使得可以从多位核数据推断系统发育关系，同时考虑到种内多态性和不完全谱系分类（Heled and Drummond 2010）。此外，包含进化速率变化的不确定性和基于化石的时间限制的贝叶斯测年方法有望改善约会（Dos Reis等，2012）。 当生殖障碍不完整时，密切相关物种之间遗传边界的表征仍然具有挑战性。种间基因流可能具有重要的进化后果，如有益变异体的快速渗透（Morjan and Rieseberg，2004）。这有助于适应遗传变异，这在快速扩张过程中尤为重要（Keller等，2010; Lascoux和Petit 2010）。贝叶斯聚类算法（Fran鏾和Durand 2010综述）已被证明对于树种划界是有用的（Duminil等人，2012; Guichoux等，2013）。然而，人口抽样必须通过包括进化上重要的领域（如次级接触区域或混合区域）来解释基因流的存在（Eckert et al。2008; Scotti-Saintagne et al。2013a）。 最后，系统地理学和生态遗传学研究无疑将在未来更加一体化。历史推论不仅对于了解特定物种或生态社区的进化过程非常重要，而且也是测试序列数据选择的先决条件（Carstens等人，2013;K鋖lman等，2014）和分析不同种群的表型演化（Keir et al。2011; Stone et al。2011）。</description>
@@ -195,7 +195,7 @@ QTL定位：了解复杂生长相关性状的第一步 QTL定位是解剖复杂�
       <title>Ruotsalainen1998-向后-向前选择</title>
       <link>/post/%E8%82%B2%E7%A7%8D/ruotsalainen1998-%E5%90%91%E5%90%8E-%E5%90%91%E5%89%8D%E9%80%89%E6%8B%A9/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/ruotsalainen1998-%E5%90%91%E5%90%8E-%E5%90%91%E5%89%8D%E9%80%89%E6%8B%A9/</guid>
       <description>Ruotsalainen S, Lindgren D (1998) Predicting genetic gain of backward and forward selection in forest tree breeding. Silvae Genet 47(1):42–50.   抽象 在几个林木繁殖操作中，使用向后或向前选择，尽管两者的适当组合可能更有利。使用基于定量遗传理论的计算，比较了各个家庭的后向和前向选择的相对优点。在落后选择中，母亲是以她的后代为依据，在选择中，最好的后代是从母亲和孩子的家庭中选出的。比较了天然林和后代试验（后者是后代大小的函数）的一系列遗传力和选择强度。 选择更高的母亲队伍是更有利的。根据参数值的组合，在1％至57％的顶级家庭中，后向选择优于开放授粉后代的正向选择。森林中高度的选择，低的生殖力和小的后代大小有利于落后选择。具有加树父亲的家庭的向后选择对于超过百分之几的家庭通常不利。只有当遗传力很低时，可能会选择10％的顶级母亲。 计算结果表明，对于最优秀的家庭应用向后选择和并排排列较低的家庭的前向选择往往是最佳的。然而，差异往往很小，其​​他的考虑也可能更为重要。 关键词：向后选择，前向选择，育种策略，选择强度，后代大小，遗传力，遗传增益。 介绍 针对父母排名的后代检测是动物和植物育种中常用的方法。后代测试可以用于几个目的，该术语可以有不同的含义。在这项研究中，它被用作父母排名的同义词（LINDGREN，1991）。在森林树种育种中，后代测试通常被认为是整个过程的基本部分（ZOBEL和TALBERT，1984）。用于通过种植果园获得额外的遗传增益，并建立具有顶级克隆的种子果园。后代检测也被认为是先进生殖繁殖的必要条件，因为最佳加树的后代是下一代育种的基础材料（正向选择）。根据其后代（落后选择）的表现，对父母进行排名对于具有低遗传度的人物（FALCONER和MACKEY，1996）尤为重要，林木繁殖中许多重要人物的情况（WRIGHT，1976， CORNELIUS，1994）。森林树种长期以来一直意识到后向选择和前进选择的选择;对于不同的替代方案（FALCONER和MACKEY，1996），增益可能会有很大差异。然而，育种者认为它是一种“或”或“决定”，并没有意识到他们可以为不同的家庭使用不同的选择。 许多树种育种计划中的原始想法是使用表型选择的加树的后代测试仅用于家长排名。第二代育种的基础材料是通过交叉最佳排名加上树木（WERNER等人，1981; Pitkantahtayksen metsanjalos-tusohjelma，1989）创造的。这项计划也已经实施，例如英国的Sitka云杉（LEE，1993）。然而，出现的问题是在长期的育种中是否使用测试后代的树木或其后代。在某些情况下，来自加树的后代中的表型选择实际上可能是有利的选择（SPANOS等，1997）。 LINDGREN（1986）指出，作为一般原则，最好的后代测试的基因型应该向后选择，而另一些则是前进的。这是由于大多数森林树种育种病例中最好的基因型与被认为具有相当低的育种价值的个体相配。因此，后代平均比最好的父母本身具有较低的育种价值。差异随父母遗传价值的增加而增加，而家庭内选择增益则与父母的价值无关。因此，通过选择后代中最好的个体获得的收益变得越来越难以与母体育种价值一致增加的差异平衡。因此，落后选择是排名最高的父母最有利的方法。一个原因是选择向后并不意味着引入新的遗传关系，而是保持最佳创始人的基因质量完好无损。 本研究的目的是开发一种比较反向选择和个体基因型前向选择作为其等级的函数的方法，并为这些选择方案之间的比较创造更坚实的理论依据。该研究还对前后选择增益差异的大小进行了评估，并确定哪些因素影响后向选择和前向选择的平衡。
 ##方法 2.1。选择替代品进行比较 2.1.1。向后选择（BACKW） 反向选择（即重选）意味着接受最佳加树作为下一代繁殖群体（种子果园中的分株）或繁殖种群的父母（从而创建一个新的后代，作为资源，进一步选择），基于后代测试的结果。只要方法健全，并对正加树的育种价值进行准确预测，那么已经用于子代测试的材料或实验布局是没有意义的。用于排列加树的后代不用于创造下一代繁殖种群，而是基于作为最高等级和树之间的杂交的后代。 2.1.2。开放授粉后代的前向选择（FORW0） 开放授粉的种子被广泛使用，便宜且经常迅速可用的材料用于森林的后代测试。它可以从原始的加树或其移植物收集（ZOBEL和TALBERT，1984）。一个开放的花粉家族的成员被认为是真正的半同胞。然而，这个假设的微小偏差可能不会对模型产生任何明显的影响。而不是通过排名最好的树木，而是选择其公开授粉后代的最佳个体。降低获得的遗传增益的未经改进的花粉是使用开放授粉材料进行正向选择的主要缺点。对于一种风花授粉的普通树种，如苏格兰松，即使在成熟的种子果园，高度的背景授粉似乎也不可避免（HARJU，1995）。 2.1.3。来自多边形后代的前向选择（FORW +） 在某些情况下，使用从正树（polycross）收集的花粉的混合物创建的材料进行后代测试。在这种情况下，假设花粉亲本平均具有与种子母体一样高的遗传价值。因此，多交叉后代中的前向选择将导致比开放授粉后代中的选择更高的遗传增益。种子果园的开放授粉材料有时可以在遗传上与多交叉材料相同。如果所讨论的物种是异国情调的，或者背景授粉可以忽略不计的这样低的丰度，这是真实的（例如，SHELBOURNE，1992）。有时可以通过使用位于温室中的种子果园来防止背景授粉。由于自交被排除并且不同的花粉混合以获得相等的贡献，因此对于后代测试来说，受控多交叉仍然更可靠。然而，父亲是未知的，因此几个选择可能具有相同的父亲，并且不知道父亲的亲属的表型（例如，选择的半同胞）不能用于增加选择的育种值的准确性。来自多交叉后代的选择的遗传获益给出了与已知父母的受控杂交将获得的增益的显着迹象。</description>
@@ -205,7 +205,7 @@ QTL定位：了解复杂生长相关性状的第一步 QTL定位是解剖复杂�
       <title>Ruotsalainen1998-正向和反向选择</title>
       <link>/post/%E8%82%B2%E7%A7%8D/ruotsalainen1998-%E6%AD%A3%E5%90%91%E5%92%8C%E5%8F%8D%E5%90%91%E9%80%89%E6%8B%A9/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/ruotsalainen1998-%E6%AD%A3%E5%90%91%E5%92%8C%E5%8F%8D%E5%90%91%E9%80%89%E6%8B%A9/</guid>
       <description>Ruotsalainen S, Lindgren D. 1998. Predicting genetic gain of backward and forward selection in forest tree breeding. Silvae Genetica, 47(1): 42–50.
  摘要 在几个林木繁殖操作中，使用向后或向前选择，尽管两者的适当组合可能更有利。使用基于定量遗传理论的计算，比较了各个家庭的后向和前向选择的相对优点。在反向选择中，母亲是根据她的后代选择的，而在正向选择中，最好的后代是从母亲和她的孩子组成的家庭中选出来的。比较了天然林和后代测试中的一系列遗传力和选择强度（后者是子代大小的函数）。 选择落后的母亲队伍越高越好。根据参数值的组合，在1％至57％的顶级家庭中，向后选择优于开放授粉后代的正向选择。森林中高度选择，遗传力低，后代小，有利于落后选择。对父亲父亲的家庭的向后选择对于超过百分之几的家庭通常是不利的。只有遗​​传力低下，才能选择10％的高级母亲。 计算结果表明，对于最优秀的家庭应用向后选择和并排排列较低的家庭的前向选择往往是最佳的。然而，差异往往很小，其​​他的考虑也可能更为重要。 关键词：向后选择，前向选择，育种策略，选择强度，后代规模，遗传力，遗传增益。 FDC：165.3; 165.6。
@@ -216,7 +216,7 @@ QTL定位：了解复杂生长相关性状的第一步 QTL定位是解剖复杂�
       <title>Ruotsalainen2000a-分层-亚系-避免近交</title>
       <link>/post/%E8%82%B2%E7%A7%8D/ruotsalainen2000a-%E5%88%86%E5%B1%82-%E4%BA%9A%E7%B3%BB-%E9%81%BF%E5%85%8D%E8%BF%91%E4%BA%A4/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/ruotsalainen2000a-%E5%88%86%E5%B1%82-%E4%BA%9A%E7%B3%BB-%E9%81%BF%E5%85%8D%E8%BF%91%E4%BA%A4/</guid>
       <description>Ruotsalainen S, Lindgren D (2000) Stratified sublining: a new option for structuring breeding populations. Can J For Res 30(4):596–604.   当将繁殖种群构建成子系统时，常规方法是将父母随机分配给子系，以使每个子系具有大致相同的遗传价值。通过使用确定性无穷小模型，我们研究了一种替代的分层次序系统，其中，根据其育种值，最初由父母的正分类分组形成子系。通过评估每种方法可以提供的种子果园的遗传质量来比较分类和随机分配到子系统。通过从每个子系中首先选出最佳个体，然后从它们给出最佳比例来建立种子果园。分层次序中亚组间差异越大，导致种子果实的遗传增益高于随机亚基。对于所研究的案例，分层次数比随机次数更多地获得了遗传增益，超过15％以上，成为值得进一步考虑和研究的有意思的替代方案。
 引言 在先进的树种育种中，育种人口中的树木之间的相关性不可避免地会增加。如果种植的树木受到近亲繁殖的抑制（Lundkvist et al。，1987; Williams and Savolainen，1996），这可能导致种植园的增长损失。自交通常不是一个严重的问题，因为隐性基因的更高的纯合子导致合子的死亡率;然而，这种相同的机制不能有效地防止由较少相关的交配引起的近亲繁殖。这在未来的种子园有可能成为一个严重的问题。将繁殖种群（感染条件）划分为繁殖分化的亚系是避免育种的有害影响的方法（例如McKeand和Beineke 1980; van Buijtenen 1984; Zobel和Talbert 1984; White 1992）。繁殖种群中的所有交配都严格地在子系统内，使得子系统保持不相关。这导致繁殖群体中近亲繁殖的积累更快，如果它作为一个单一的交错群体保持。即使果园的父母本身是高度近亲的，用任何一个子系的单一（顶级）类型建立的种子果园将产生完全非近交种子（没有自交）。因此，繁殖种群中的子系数可能取决于种子果园所需的不相关克隆的数量。建议的分支线数通常在15到30之间，但只有两个可能就足够了，如果通过控制授粉进行种子生产（Burdon 1986; White 1992）。子系的大小取决于近亲繁殖抑制的程度和繁殖计划的时间范围。通常，子系由1540基因型组成（Burdon et al。，1977; White 1992）;然而，还有使用更小的子系统的建议，例如McKeand和Bridgwater（1998）提出的四个。通常通过将选定的树木随机分配给育种群体中的子系统来完成针对某一生态生态区域的某些生态系统区域或某些其他特定育种对象的森林树种育种。目标是不同的分公司在遗传上处于同一水平。事实上，有时候这已经被包括在子系统的定义中（Burdon和Namkoong 1983）。如果对群体的划分旨在导致群体的不同遗传价值，则可以将其视为更多的是高等级养殖种群结构的问题（Cotterill等人1989; Cramer和Kannenberg 1992; White et al.1993 ），或更一般地，在繁殖周期中对群体层次进行微调。 可以使用正分类交配（PAM）来增加群体的变异，从而使选择更有效（Falconer和Mackay 1996; Rosvall 1999）。如果用单对交配完成，也可以将其视为根据树木的繁殖价值将群体划分为大小二的子系统。然而，在继续的PAM中，每一代的分割线都被破坏了。一个有趣的问题是，当PAM和亚精细化相结合时，遗传增益受到影响，从而根据遗传价值进行修整，并将子系列保留几代？〃在本研究中，我们评估分层的后果育种人口根据育种价值观，使亚系代表不同的遗传水平。在我们的层次化方法中，子系统彼此间完全不相关，其主要目的是通过提供无关的种子果树父母来防止繁殖种群中的近亲繁殖。这是一个基线特征（Burdon和Namkoong 1983; White 1992）。 这项研究的目的是提出一种基于分层次序的育种策略，并将其与通过其支持的种子果园的遗传价值的传统平行次序策略进行比较</description>
@@ -226,7 +226,7 @@ QTL定位：了解复杂生长相关性状的第一步 QTL定位是解剖复杂�
       <title>Ruotsalainen2001-育种群体中亲本的个数</title>
       <link>/post/%E8%82%B2%E7%A7%8D/ruotsalainen2001-%E8%82%B2%E7%A7%8D%E7%BE%A4%E4%BD%93%E4%B8%AD%E4%BA%B2%E6%9C%AC%E7%9A%84%E4%B8%AA%E6%95%B0/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/ruotsalainen2001-%E8%82%B2%E7%A7%8D%E7%BE%A4%E4%BD%93%E4%B8%AD%E4%BA%B2%E6%9C%AC%E7%9A%84%E4%B8%AA%E6%95%B0/</guid>
       <description>Ruotsalainen S, Lindgren D (2001) Number of founders for a breeding population using variable parental contribution. For Genet 8(1):57–67.   这项研究考虑了一个可以获得大量后代测试加上树木的情况，其中最好的排名被用作下一代繁殖种群的创始人。问题是如何获得具有给定水平的遗传多样性的最大遗传增益。遗传多样性水平固定为同等贡献的家庭内选择所获得的水平，资源通过保持全部同胞家庭数量和规模不变而得以确定。通过确定性建模，建立育种群体的家庭间遗传收益最大化。这是通过选择更多的创始人而不是在同等的贡献的情况下进行的，并允许他们在下一代由一个，两个或三个后代取决于他们的育种价值。通过改变两个参数来研究可变贡献的影响：选择强度（测试加树数）和所得第二代繁殖群体的遗传多样性（状态数）。创造者人数相对于同等贡献增加20％至23％，当遗传多样性保持不变时，遗传增益最大。最佳创始人人数随测试加树数和状态数量的增加而增加。创始人贡献率最高的规模随测试加树木数量的增加和状态数量的减少而增加。通过可变贡献获得的额外遗传增益的数量越大，选择强度越小，状态数越少。在典型的情况下，家庭间遗传收益可以增加7％，创始人的数量增加22％，并允许他们对下一代作出不平等的贡献。大多数额外的遗传增益是在最初的几位创始人加入之后获得的。
 介绍 林木育种计划通常是通过选择一些父母 - 加上树木 - 从森林中进行测试和交配，然后从其后代中选出的。创始人的数量可以基于预测，以便将近亲繁殖和相关性保持在未来的可接受的低水平，遗传变异在如此高的水平上，未来的收益没有严重降低（WHITE 1992）。经济妥协和其他考虑也适用（LINDGREN 1991）。保留大型遗传多样性的重要性取决于育种计划的时间范围（WRAY＆GODDARD 1994）。针对几代人不断改进的育种计划，必须考虑遗传多样性，而不是短时间的计划。以最大化遗传多样性的方式利用预定数量的创始人的一种方式是使用家庭内部选择，并允许每个创始人对下一代作出同样的贡献。这种平衡的家庭内部选择程序可能最大限度地延长选择的长期限制（DEMPFLE 1975）。然而，这个结论最近被挑战（VILLANUEVA＆WOOLLIAMS 1997）。目前的瑞典森林树种育种计划可以描述为（主要）平衡的家庭内部选择程序（DANELL 1995，ROWALL et al。1998）。因此，基于家庭内部选择的平衡程序作为参考是有趣的。已经表明，为了在遗传多样性和遗传增益之间做出最佳的妥协，优选让最佳选择的基因型比下级更有贡献（LNDGREN1974，TORO＆NIETO 1984，LINDGREN1986， LINDGREN＆MATHESON1986，TORO＆PEREZ-ENCISO 1990）。处理遗传增益和多样性之间的权衡有几种可能性。一些方法就相关性的遗传增益确定成本，从而将两者的数量转换为相同的量表（LNDGREN1986，LINDGREN＆MATHESON1986，WKAY＆GODDARD 1994）。问题是找到进行转型所需的正确成本因素。 TORO和NIETO（1984）提出了一种选择创始人数量及其可变性的方法，使得有效的群体大小（因而遗传多样性）被最大化，具有给定的遗传增益。另一种解决方案是利用给定的遗传多样性来最大化遗传增益（LINDGREN等，1989，MEUWISSEN 1997）。种子果园中克隆的最佳比例与其育种价值呈线性关系（LINDGREN＆MATHESON，1986）。同样的关系也约有一个繁殖种群：每个家庭的最高排名表型应从家庭平均线性比例中选出，以便在给定的有效人口数量上获得最大收益（LINDGREN 1986，WEI＆LINDGREN 1995） 。在一些林木育种计划中，繁殖种群被分为几个遗传上不同的分数，对下一代来说，它们的遗传价值越高（例如WHITE等人，1993）。一个例子是开核培育策略，其中较高等级的树形成了比主要群体更密集的核（COTTERILL等人，1989）。本研究着重于一些可以进行交配的测试加树的情况，并且已经修复了所需的下一代育种种群规模和多样性。这项研究的目的是开发和分析一种明确的方法，用于决定在为第二代选择产生招聘人数时测试的加树应该做哪些贡献。在这种可变贡献方法中，搜索创始人的数量及其贡献的组合，使其具有给定的遗传多样性使遗传增益最大化</description>
@@ -236,7 +236,7 @@ QTL定位：了解复杂生长相关性状的第一步 QTL定位是解剖复杂�
       <title>Tim-&amp;-Mullin-2013林木育种的新工具和新技术</title>
       <link>/post/%E8%82%B2%E7%A7%8D/tim--mullin-2013%E6%9E%97%E6%9C%A8%E8%82%B2%E7%A7%8D%E7%9A%84%E6%96%B0%E5%B7%A5%E5%85%B7%E5%92%8C%E6%96%B0%E6%8A%80%E6%9C%AF/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/tim--mullin-2013%E6%9E%97%E6%9C%A8%E8%82%B2%E7%A7%8D%E7%9A%84%E6%96%B0%E5%B7%A5%E5%85%B7%E5%92%8C%E6%96%B0%E6%8A%80%E6%9C%AF/</guid>
       <description>Tim M, Lee S, Mullin T J, et al. 2013. Best Practice for Tree Breeding in Europe.
  ##林木育种的新工具和新技术 - 发现新的选择标准 - 育种中开发并整合基因组信息 - 开发新的或改良育种策略并证明其效率 ##理解可塑性（稳定性） 表型可塑性及其遗传背景是育种策略开发的重要成分，尤其是考虑环境条件的变化。 - 干旱指数对木材密度的影响bouffier2010 - 影响年生长节律的候选基因 lagercrantz2012 ##改进遗传价值的评估 - 结合遗传参数，相关对指数选择的开发和育种优化是至关重要的 - 现实关系矩阵代替系谱矩阵 - 系谱重建 - MAS的理论和实践操作间有缺口。在大规模应用前需验证标记和标记间的关系并考虑实际环境 - 表型测定不够准确 ##未来的研究方向 - 父本分析，花粉污染率 - 标记推断进化过程及人类对森林的影响 - 关联分析或GS需要大量验证才能使用 - 最好的方法还是遗传修饰，但需要转化体系，体胚发生是最常用的方法</description>
@@ -246,7 +246,7 @@ QTL定位：了解复杂生长相关性状的第一步 QTL定位是解剖复杂�
       <title>Tuberosa2014遗传多样性研究的几种多元统计方法</title>
       <link>/post/%E8%82%B2%E7%A7%8D/tuberosa2014%E9%81%97%E4%BC%A0%E5%A4%9A%E6%A0%B7%E6%80%A7%E7%A0%94%E7%A9%B6%E7%9A%84%E5%87%A0%E7%A7%8D%E5%A4%9A%E5%85%83%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/tuberosa2014%E9%81%97%E4%BC%A0%E5%A4%9A%E6%A0%B7%E6%80%A7%E7%A0%94%E7%A9%B6%E7%9A%84%E5%87%A0%E7%A7%8D%E5%A4%9A%E5%85%83%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95/</guid>
       <description>Tuberosa R, Graner A, Frison E. 2014. Genomics of Plant Genetic Resources: Volume 2. Crop productivity, food security and nutritional quality. 1st ed. Springer Netherlands.
  多变量技术已广泛用于研究（可视化）育种种群内遗传多样性的模式。最常用的技术包括k-means聚类分析，主成分分析（PCA），主要坐标分析（PCoA）和多维缩放（MDS）（Melchinger 1993; Johns等人1997; Thompson和Nelson 1998; Brown-Guedira et al 2000）。广泛地来说，聚类分析力求将个体分组以最小化组内的多变量距离。使用算术平均值（UPGMA）和k均值聚类的未加权配对组方法被广泛用作聚类算法（Mohammadi和Prasanna 2003; Saatchi et al。2011）。主成分分析减少数据，以澄清两个或多个性状和个体之间的关系，以检查差异并形成可能的组。主要坐标分析使用一组个体之间的相似性和不相似性矩阵。多维缩放通过使用相似度/不相似距离矩阵来表示几维中的一组个体。主成分分析，PCoA和MDS是相似的，但MDS是优选的，当个人数量非常多，需要很少的维度来找出基因型之间的关系。 通过所有这些方法，人们对遗传多样性估计的准确性仍然存在疑问。例如，什么样本大小将正确地表示总遗传多样性，在获得少量进一步信息之前需要多少标记，以及应使用哪种距离度量聚类方法。然而，随着标记系统变得更加强大，包括数千个标记，标记的数量不再是一个问题。
@@ -257,7 +257,7 @@ QTL定位：了解复杂生长相关性状的第一步 QTL定位是解剖复杂�
       <title>Weigel2017-奶牛育种百年回顾：方法和基因组选择——从母女比较到深度学习</title>
       <link>/post/%E8%82%B2%E7%A7%8D/weigel2017-%E5%A5%B6%E7%89%9B%E8%82%B2%E7%A7%8D%E7%99%BE%E5%B9%B4%E5%9B%9E%E9%A1%BE%E6%96%B9%E6%B3%95%E5%92%8C%E5%9F%BA%E5%9B%A0%E7%BB%84%E9%80%89%E6%8B%A9%E4%BB%8E%E6%AF%8D%E5%A5%B3%E6%AF%94%E8%BE%83%E5%88%B0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/weigel2017-%E5%A5%B6%E7%89%9B%E8%82%B2%E7%A7%8D%E7%99%BE%E5%B9%B4%E5%9B%9E%E9%A1%BE%E6%96%B9%E6%B3%95%E5%92%8C%E5%9F%BA%E5%9B%A0%E7%BB%84%E9%80%89%E6%8B%A9%E4%BB%8E%E6%AF%8D%E5%A5%B3%E6%AF%94%E8%BE%83%E5%88%B0%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</guid>
       <description>Weigel, K.A., VanRaden, P.M., Norman, H.D., and Grosu, H. 2017. A 100-Year Review: Methods and impact of genetic selection in dairy cattle—From daughter–dam comparisons to deep learning algorithms. J. Dairy Sci. 100(12): 10234–10250. doi:10.3168/JDS.2017-12954. Translated by Google &amp;amp; revised by Dong
  摘要 20世纪初期，育种协会的家畜血统簿已经建立起来，而产奶记录仪方案还处于起步阶段。农民想提高他们牛的生产力，但是群体遗传学、数量遗传学和动物育种的基础还没有奠定。早期的动物育种人员利用受当地环境条件和畜群特定管理措施影响的表现记录，努力确定遗传优良的家系。母-女比较使用了30多年，虽然遗传进展微乎其微，但对表现记录、遗传理论和统计方法的关注在未来几年得到了回报。当时（同群）比较方法允许更准确地考虑环境因素，当这些方法与人工授精和后代测试相结合时，遗传进展开始加快。计算能力的进步促进了混合线性模型的实现，该模型以最佳的方式使用谱系数据和表现数据，并实现了精确的选择决策。牛基因组的测序引发奶牛育种的革命，科学发现和遗传进展的步伐得以加快。基于谱系的模型已经让位给全基因组预测，贝叶斯回归模型和机器学习算法已经在现代动物育种者的工具箱中加入了混合线性模型。未来的发展将包括阐明关键生物途径中的遗传遗传和表观遗传修饰的机制，基因组数据将与来自农场传感器的数据一起使用，以促进现代奶牛场的精确管理。
@@ -270,7 +270,7 @@ QTL定位：了解复杂生长相关性状的第一步 QTL定位是解剖复杂�
       <title>Yousry-&amp;-Fikret-2014当代林木育种的进展</title>
       <link>/post/%E8%82%B2%E7%A7%8D/yousry--fikret-2014%E5%BD%93%E4%BB%A3%E6%9E%97%E6%9C%A8%E8%82%B2%E7%A7%8D%E7%9A%84%E8%BF%9B%E5%B1%95/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/yousry--fikret-2014%E5%BD%93%E4%BB%A3%E6%9E%97%E6%9C%A8%E8%82%B2%E7%A7%8D%E7%9A%84%E8%BF%9B%E5%B1%95/</guid>
       <description>Yousry A. El-Kassaby, Fikret Isik, and Ross W. Whetten. Modern Advances in Tree Breeding. Trevor Fenning (auth.) T F (eds. . 2014. Challenges and Opportunities for the World’s Forests in the 21st Century. 1st ed. Springer Netherlands.
  #摘要 传统的树木改良方案是需要广泛资源的长期努力。他们需要建立交配设计，在多个地点安装后代测试，以评估父母及其在大地理区域的后代，长时间监测这些测试，并最终分析测量结果以评估经济特征。大多数树种育种计划都遵循经典的经常选择方案，从而产生多种繁殖和生产群体。这个过程虽然取得了明显的成效，但在长期以来一直保持不变。丰富的，可靠的和大多数越来越多的负担得起的遗传标记的可用性为日前的育种方法带来了巨大的变化。在本章中，我们重点关注四个重要的遗传标记依赖方法，具有直接或间接改变当代树种育种方法的潜力。这些包括谱系重建，无谱系模型，关联遗传学和基因组选择。
@@ -281,7 +281,7 @@ QTL定位：了解复杂生长相关性状的第一步 QTL定位是解剖复杂�
       <title>funda2013种子园遗传学</title>
       <link>/post/%E8%82%B2%E7%A7%8D/funda2013%E7%A7%8D%E5%AD%90%E5%9B%AD%E9%81%97%E4%BC%A0%E5%AD%A6/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/funda2013%E7%A7%8D%E5%AD%90%E5%9B%AD%E9%81%97%E4%BC%A0%E5%AD%A6/</guid>
       <description>Funda T, El-Kassaby Y A. 2013. Seed orchard genetics. p. 21–43. In Plant Sci Rev.
  抽象 种子园代表了树木育种与造林活动之间的联系。它们的遗传效率至关重要，因为它决定了未来林木种植园的遗传增益和多样性的程度。鉴于其重要性，种子园遗传学已经得到了更多的科学和管理综述。事实上，影响种子园遗传效率的所有方面已经进行了深入的调查，包括其生物学模型、基础假设、为改善作物遗传质量而制定和实施的管理方法。在这次综述中，我们从树种改良周期中的种子园位置，群体遗传模型和影响该模型的生物因素开始，系统地解决这些问题。即生殖投入和成功，生殖物候，近亲繁殖，基因流动，最后是种子的生物学。综述管理实践，包括在成立阶段（种子园规模，设计，父母数量及其代表性）实施的管理措施，以及为加强作物管理（树冠管理，补充大规模授粉，开花延迟，选择性种子收获和设计师生产）作物）。讨论了这些问题的遗传后果。本文的目的是对每个树木改良提供系统的这一重要组成部分进行最先进的综述，并促进和鼓励目前和将来的种子园进一步研究和开发。
@@ -299,7 +299,7 @@ QTL定位：了解复杂生长相关性状的第一步 QTL定位是解剖复杂�
       <title>数据转换与标准化</title>
       <link>/post/%E8%82%B2%E7%A7%8D/%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2%E4%B8%8E%E6%A0%87%E5%87%86%E5%8C%96/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2%E4%B8%8E%E6%A0%87%E5%87%86%E5%8C%96/</guid>
       <description>Forest genetics
  数据转换与标准化 一些类型的变量在分析之前经常被转换。例如，反正弦和逻辑变换通常用于二项数据，而对数变换有时被推荐用于增长变量（Snedecor and Cochran，1967; Anderson and McLean，1974）。然而，重要的是要记住，这些转换的理论和实际价值已经在固定效应模型（稍后描述）中得到证明，其中目标是比较处理手段。其中目标是随机育种值预测的MM分析转化的价值（参见本章中的线性统计模型）不太确定。 例如，对于二项式数据，上述推荐的转换不能针对单独的树进行，而是必须应用于单元格或绘图方式。单个树木育种值不能通过转化的方法预测;所以转换二项式数据的价值是值得怀疑的。此外，有一些信息表明，在一些情况下，未转换的0,1二项数据的MM分析可能是合适的（Foulley和Im，1989; Mantysaari等，1991; Lopes等，2000）。对于连续变量，当对数转换回原始单位时，对数转换会产生偏倚。出于这些原因，所有转换的价值和理由应在使用前仔细考虑。很多时候，在MM分析中使用未转换的数据是合适的。 一个例外是有时称为标准化的特殊转换，在MM分析之前，应该在许多情况下使用标准化，这有三个原因（Hill，1984; Visscher等，1991; Jarvis等，1995）：（1）在线性模型中的一个单一效应内跨水平汇集在一起​​; （2）为了消除仅由于尺度效应（与排名变化相反，第6章）的基因型x环境相互作用的统计显着交互作用; （3）促进简单，无偏倚的反向转换，以预测各种环境下的计量单位的遗传获益。关于第一点，许多转换的目标是在测试位置上的块之间以及跨越不同测试位置的块差异内均化。如果这些方差汇总在一个方差（例如方差）中，则效应（例如，线性模型中的块项）内的所有级别（例如，所有位置内的所有块）的均匀方差是分析的基本假设。由于块差异汇集在所有站点中，因此跨站点进行标准化非常重要。在块和位置级别的标准化会影响估计的所有差异，并消除基因型x环境交互的scaleeffect。 在块和位置级别上进行标准化的一种有效方法是，通过以下方式标准化每个变量的所有树木测量值：（1）计算每个块的表型标准偏差（使用块中的所有数据计算的方差的平方根）特征）; （2）将每个树的测量结果除以该块的标准偏差。有时候，这种转换是应用在每个测试位置而不是块级（Jarvis et al。，1995）。 在E. grandis病例研究（表15.1）的茎体积中，估计的总表型方差（o2P）在六个测试点之间存在较大的差异，范围从0.18到8.66（m3）2的50倍，这些差异是与整个场地大的平均茎体积差异正相关。通过将每棵树的体积测量值除以包含该树的块计算的表型标准差来进行标准化。每棵树的标准化体积是所有分析中使用的变量，这些分析结合了测试地点的数据。茎形态的表型变异（表15.1）在测试位点（0.43-1.02）中仅为2.5倍，这种变异与茎形态的位点均值无关。因此，所有随后的表格分析都使用原始的，非标准化的数据值。 请注意，在标准化之后，每个块（因此每个测试点）的表型方差和标准偏差都是1：Var（y / yy）= Var（y）/ o2y = o2y / o2y = 1（White和Hodge，1989 ，第46页）。这确保了块和测试站点的测量的规模是相同的，并且消除了由于规模效应导致的相互作用（例如基因型x环境相互作用）的数据。然而，由于一个区块内的所有测量值都被相同的数字相除，所以基因型和治疗手段之间的相对比较不会改变。 当使用标准化值预测育种值时，预测值以表型标准偏差为单位。因此，为了以绝对值表示育种值，有必要将预测的育种值重新标定回原始测量单位，方法是将它们乘以适当的表型标准偏差（例如，通过跨所有测试点的汇总标准偏差，或者当在特定目标环境中的表现最感兴趣时，由单个测试场地的标准偏差）。另一种方法不是重新缩放到原来的计量单位，而是以高于或低于变量标准化均值的百分比表示育种值。这产生了与第一次重新缩放相同的结果，然后将育种值表示为高于或低于非标准化平均值的百分比。</description>
@@ -309,7 +309,7 @@ QTL定位：了解复杂生长相关性状的第一步 QTL定位是解剖复杂�
       <title>杨树育种</title>
       <link>/post/%E8%82%B2%E7%A7%8D/%E6%9D%A8%E6%A0%91%E8%82%B2%E7%A7%8D/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/%E6%9D%A8%E6%A0%91%E8%82%B2%E7%A7%8D/</guid>
       <description>Hidalgo E, González-martínez SC, Lexer C, Heinze B (2010) Genetics and Genomics of Populus.
  3控制繁殖  生殖生物学 杨树种是雌雄异株的，尽管已经针对三个主要部分中的每一个提交了雌雄同体性的报告（图3）。性似乎由染色体XIX上的单个基因座或一组紧密连锁的基因决定（Yin等人，2008）。双性恋状态可以由抑制该基因座处的重组的机制的松弛产生，否则在还原分裂期间保持性别决定多基因完整。在北半球的毛茛中的男性和女性生殖结构是在前一年的4月至6月形成的（Boes和Strauss，1994）。繁殖涉及花序的花粉授粉，其包含约60个花朵或35个雌花（Boes和Strauss，1994）（图3）。控制繁殖的过程是很好理解的，但需要针对每个主要部分的不同技术和方法（Stanton和Villar，1996，图4）。人工杂交在温室中使用从在水培养中保持的雄性选择的花插条提取的花粉制备（Seitz，1958）。西蒙白杨（P. simonii）的花粉母细胞在72小时内开始在温室中被减数分裂，并在从芽出现四分之一长度的staminate花序的时候完成该过程（Wang等人， 2009）。冬虫夏草的Megagametophytes发展到两个四核阶段，并在温室条件下春天授粉后18小时移动到八核阶段（Fechner，1972）。种子是在设置在水中，移植到盆栽的底层（Farmer and Nance，1968）或植根于土壤中的雌蕊切片上产生的（Joennoz和Vallee，1974）。在中国，使用脚手架或部分脱落和碾压树种的种子果园树的控制育种技术超过了基于温室的技术，以节省成本和容易生产果实（Zhou等人，2008）。种子在一个生长季节成熟，不经历生理休眠，并且在适当的温度和湿度条件下容易发芽而没有分层。育种群体通常达到足以在10年内开始选择育种的开花水平。无性繁殖在属内相当先进;这是利用1年的硬木扦插或2年杆（Aigeiros和Tacamahaca部分）的不定根据生根，或在雾传播（杨杨部分）多汁芽的温室根。 从其开始以来，特异性杂交在白杨育种中占据显着地位。 Aigeiros和Tacamahaca之间的跨部门交叉大部分兼容，虽然相互交叉效应有时可能是有问题的。例如，三角叶蛾和毛癣菌交叉组合的产量远远高于其中使用塔卡马哈母体作为母本的杂交（Stanton，2005; Zsuffa等，1999） 。在繁殖区段内P.canadensis分类群中遇到相同的效果：斑鸠草黑质杂交是高度能育的，但是当试图逆转时，该杂交完全无效，P.nigra P. deltoides方向（Melchior和Seitz，1968）。对于所有实际的育种目的，由于花粉 - 柱头识别过程中的不相容性，杨杨叶是繁殖性分离自Aigeiros和Tacamahaca的（Gaget等人，1984; Villar等人，1987）。然而，作为雌性亲本的杨杨（例如P. canescens [P.alba P. grandidentata]）的复杂杂种的使用已经显示出有希望在与Aigeiros和Tacamahaca部分（Ronald，1982）的区间交叉。然而，在人工条件下，杨属中的物种可自由交叉。 虽然有争议，大多数应用育种工作集中在七个物种，基于控制杂交的投资，使用的商业栽培品种的数量和生产种植园管理的面积。这些是斑节of的部分Aigeiros，P. maximowiczii和P. trichocarpa的P. deltoides和P.nigra和P.permula，P. tremuloides和P.alba的部分杨。全世界的白杨种群已经使用它们开发以下商业分类群：（1）P.wurtsteinii，P.tmarula和 P. tremuloides，（2）P.canadensis，P. deltoides和 黑曲霉，（3）P. generosa的P. deltoides和 毛茛，（4）中国白杨（P. tomentosa），银白杨和黄ula的内部组合。 davidiana 2，和（5）特异的P.totoides的杂交体（表1）。两个其他类群缺乏指定的混合二项式-P。 黑曲霉和米曲霉，目前没有像其他五种流行，但很可能很快在繁殖，品种发育及其对杨属栽培的贡献的意义上达到平衡。
@@ -321,7 +321,7 @@ QTL定位：了解复杂生长相关性状的第一步 QTL定位是解剖复杂�
       <title>欧洲——落叶松改良2013（一）</title>
       <link>/post/%E8%82%B2%E7%A7%8D/%E6%AC%A7%E6%B4%B2%E8%90%BD%E5%8F%B6%E6%9D%BE%E6%94%B9%E8%89%AF2013%E4%B8%80/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/%E6%AC%A7%E6%B4%B2%E8%90%BD%E5%8F%B6%E6%9D%BE%E6%94%B9%E8%89%AF2013%E4%B8%80/</guid>
       <description>Pâques LE (2013) Forest Tree Breeding in Europe: Current State-of-the-Art and Perspectives, 1st edn. Springer Netherlands
  第1章 引言 Luc E. Paues
@@ -340,7 +340,7 @@ QTL定位：了解复杂生长相关性状的第一步 QTL定位是解剖复杂�
       <title>欧洲——落叶松改良（三）</title>
       <link>/post/%E8%82%B2%E7%A7%8D/%E6%AC%A7%E6%B4%B2%E8%90%BD%E5%8F%B6%E6%9D%BE%E6%94%B9%E8%89%AF%E4%B8%89/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/%E6%AC%A7%E6%B4%B2%E8%90%BD%E5%8F%B6%E6%9D%BE%E6%94%B9%E8%89%AF%E4%B8%89/</guid>
       <description>Pâques LE (2013) Forest Tree Breeding in Europe: Current State-of-the-Art and Perspectives, 1st edn. Springer Netherlands
  2.3今日落叶松繁殖 2.3.1介绍 落叶松的遗传改良近50年前在欧洲开始，比较原产地试验的第一个成果可用。然后，在几乎所有欧洲国家的国家层面开展了育种计划，但范围和强度不同。 虽然几乎所有的国家计划都参与并积极从事原产地测试，总是提出种子来源建议，并且在种子采购种子选择方面，他们对繁殖感染的投资在国家和国家之间也是不同的。这样做的一些原因可能是存在其他优先事项，如保护自然遗传资源或种植物种的下降或缺乏兴趣。 大致来说，在欧洲落叶松最好的基因库的核心位置的东欧国家（PL，SK，CZ，RO，AT）中，本地资源的保护计划被视为优先事项。在这些国家，欧洲落叶松是最受欢迎的物种，对其他物种如日落落叶松或杂交种没有什么兴趣。在一些国家，如斯洛伐克，国家公园和自然保护区禁止非本地物种的传播，其他地方的使用受到限制或沮丧。以前引进的这些分类单位甚至可能被视为有害生物，污染自然资源（例如Sindel？1973,1981,1992）。 在西北欧洲国家，落叶松属于非本土（BE，DK，GB，IRL，NL）或其原生植物，但也被用作异国情调（DE，FR），繁殖已经或仍然活跃：在这些欧洲落叶松或日本落叶松或两者都与其杂种一起使用（图2.10）。 在其他一些国家，如奥地利，意大利和斯堪的纳维亚，落叶松种植非常微弱，不认为育种是必要的。然而，瑞典的兴趣在日益增加，其中包括南部的欧洲？日本杂种，北方的西伯利亚长颈鹿（L. sukaczewi，L. sibirica）（Martinsson和Lesinski 2007）。除冰岛以外，西伯利亚长颈鹿是目标物种，特别是东部地区。 无论如何，在大多数国家达成的共同目标是除了不改进的本地或人工选择的种子来源之外，还为合成品种的种子采购创造了基础材料。如下所述，现在欧洲各地都有第一代种子果园。仅在特殊情况下才设想多发育种。 育种进展最终取决于生产足够量的全种子。与其他针叶树相比，欧洲落叶松比例较大（Messer 1956; Nilsson 1959; Dieckert 1964; Hall and Brown 1977; Kosiski 1981），在波兰这样的一些国家，落叶松繁殖的进程实际上取决于有限的数量的声音种子。例如，在波兰K髍nik（欧洲落叶松）的实验种子园中，即使花粉分散和雌花接受度之间的同步足够，全种子的平均产量约为27％（Kosiski，1986a）。在特定冠水平和克隆群体之间，异交率和全种子百分比之间也没有相关性（Burczyk等人，1991）。关于这一问题的详细研究显示，由于缺乏授粉（17％），异孢子发生紊乱（9％），花粉失败（17％）和胚胎退化，主要在亲本期间产生了70％以上的空白种子胚胎和早期胚胎发育（30％）（Kosiski 1986a，b，1987）。 图2.10欧洲落叶松物种的实验遗传田间试验（资料来源：Treebreedex遗传资源数据库） 胚胎流产主要有遗传原因。然而，如Kosiski（1981）发现的，相当低的胚胎次数（计算为4.8）不足以解释落叶松中空白种子的这么大比例。这只能在高频率的群体中存在少数胚胎激素的情况下解释。在这种情况下，即使在不相关个体交配之后，它们也可能进行纯合。这与欧洲落叶松的低遗传多态性（Kosiski，1986a）一致。 由于观察到全种子产量的广泛的克隆间变化（Hall 1985; Kosiski 1986a）和胚胎衰竭的遗传原因，所产生的全种子的比例始终较高的克隆的选择似乎是增加有效量的唯一有用的方法在落叶松种子果园生产全种子（Hall和Brown 1977）。
@@ -351,7 +351,7 @@ QTL定位：了解复杂生长相关性状的第一步 QTL定位是解剖复杂�
       <title>欧洲——落叶松改良（二）</title>
       <link>/post/%E8%82%B2%E7%A7%8D/%E6%AC%A7%E6%B4%B2%E8%90%BD%E5%8F%B6%E6%9D%BE%E6%94%B9%E8%89%AF%E4%BA%8C/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/%E6%AC%A7%E6%B4%B2%E8%90%BD%E5%8F%B6%E6%9D%BE%E6%94%B9%E8%89%AF%E4%BA%8C/</guid>
       <description>Pâques LE (2013) Forest Tree Breeding in Europe: Current State-of-the-Art and Perspectives, 1st edn. Springer Netherlands
  第2章 Larches（Larix sp。） Luc E. Paues，Elena Foffov？ Berthold Heinze，Marie-Anne Lelu-Walter，Mirko Liesebach和Gwenael Philippe
@@ -367,7 +367,7 @@ QTL定位：了解复杂生长相关性状的第一步 QTL定位是解剖复杂�
       <title>欧洲——落叶松改良（四）</title>
       <link>/post/%E8%82%B2%E7%A7%8D/%E6%AC%A7%E6%B4%B2%E8%90%BD%E5%8F%B6%E6%9D%BE%E6%94%B9%E8%89%AF%E5%9B%9B/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E8%82%B2%E7%A7%8D/%E6%AC%A7%E6%B4%B2%E8%90%BD%E5%8F%B6%E6%9D%BE%E6%94%B9%E8%89%AF%E5%9B%9B/</guid>
       <description>Pâques LE (2013) Forest Tree Breeding in Europe: Current State-of-the-Art and Perspectives, 1st edn. Springer Netherlands
  2.3.3.3主要成就和结果 杂种纯种亲本优势杂交种优于纯种亲本育种已被欧洲众多作者证实，由Paues（1989）首次总结并列于表2.13。 如表2.13所示，根据所使用的亲本对照，现场特征和年龄，杂种优势可以大于欧洲落叶松或日本落叶松。如许多作者所证明的，在欧洲落叶松种类或日本落叶松种类的对比生态条件下，可以观察到这种优势。下面的图2.22中提供了一个例子。 在英国试验中测试的几乎所有混合家庭，在欧洲或日本落叶松种子控制下的增长率都是优越的。在这种情况下，真正的混合活力之间的收益将与高度选择的父母加树的选择差异混淆。在丹麦的试验中也缺少Diallel十字架，以记录混合动力。然而，不同的跨界和跨特定的交叉点之间的增长比表示混合活力（Keiding 1980）。 对于其他性状，杂种仍然可以优于欧洲和日本落叶松之间，如表2.14所示。 如Paues（1989）已经讨论的，这些结果通常基于少量的杂交后代，因此隐藏了杂交后代中存在的广泛变异性。虽然某些后代在很大程度上超过纯父母种类的表现，但另一方面的另一方则表现不佳。 实验场地 图2.22在法国各种场地条件下，欧洲和日本的杂种落叶松对高度（10岁）的优越性 第二个批评是上面显示的优势通常不符合所谓的杂交活力或杂种优势，因为缺乏适当的父母参考。显示杂种优势感染需要特殊的交配设计，如diallel，其中相关的特定于和特定的后代可用。很少有结果证明这一点实际上是可用的。 Paues（2002）第一次提出了全球杂种优势的早期结果：每个站点的生存值范围为+4至+22％ -2至-17％用于冲洗; +14至+16％的高度;直径为20〜4％，体积为62〜0％对于茎形，其长度为-5至-10％，弯曲为-3至-7％，直茎的比例为-12至-23％。他还表明，无论性状如何，在具有正值和负值的家庭中存在广泛的特异性杂种优势。 正在进行研究工作，以更好地了解杂种优势的遗传和生理学基础以及每个亲本物种的作用。 遗传参数知识 父母选择的重要性 几位作者已经显示了混合组合中使用的基因型的强烈影响，首先是在人口层面上，而且在个体层面。 a 18个场地的平均值，适合日本落叶松b的11个场地，适合欧洲落叶松的条件 例如，Franke（1995）发现，与落叶松的混合组合比20岁时与高山落叶松组合更为活跃。 Schneck和Langner（2000）指出，与高山落叶松作为母亲的杂种具有比其他种类更好的茎形式。 Hering和Braun（1992）强烈建议选择具有良好的一般组合能力（通常来自sudetica起源）和茎形式（主要来自Wienerwald和High Tatras）的综合能力。 Paues（2004）的综合研究说明了不同亲本物种在杂种遗传控制中的作用。他指出，欧洲落叶松对木材物业（但并非全部都是教育部）有很大的影响，而日本的落叶松父母对建筑特征的影响更大。在增长特征方面，两者均有贡献。 来自丹麦的结果并不表明种间生长和GCA之间的一般结合能力（GCA）与特异性交叉过程中特异性结合能力（SCA）之间的相关性。然而，对于茎形式，物种内的GCA和物种之间的GCA之间存在明显的相关性（Keiding 1980）。 此外，Arcade et al。 （1996）发现通过AFLP标记估计的亲本克隆之间的遗传距离与杂交性能之间存在显着的正相关性：对于活力性状而言较高，而对于茎形式则更为适度。遗传距离也可能是预测杂种活力的有用工具。 遗传控制性状 再次，由于缺乏适当的配对设计，很少公布的结果是可用的。在一个实验中，Paues（2004）表明，某些性状受到木材密度的严格加性控制，而其他一些性状处于强控制之下（例如MOE，茎形式）。他还注意到，随着时间的推移，特征受到控制的方式也可能会改变，如高度增长所示。 相比之下，遗传资源的大量估计已经公布。它们对于估计收益有用，但对于了解性状如何真正进行遗传控制无关。实际上，它们是用（强）隐含的假设来计算的，即欧洲和日本的种子是相同的物种，并且基因的重组以与给定物种（群体）内的特异性杂交类似的方式操作。表2.15总结了文献中收集的关于主要经济性状的遗传。 如图2.23所示，木材属性总体上是具有超过0.5的狭义遗传的最可遗传的特征;茎形与生长性状和分枝特征呈现为最不可遗传的同一水平。如上所述，由于相同的原因，这些值仅代表趋势，因为它们取决于许多变异来源（遗传物质，位点，年龄，评估方式等）：这反映在围绕中值的大范围。 性格之间的联系和收益的观点 性状遗传相关性的文献综述总结在表2.16中。即使一些数字看起来是对立的，可以观察到一些趋势。例如，茎形式（或有时可能是不利的而是脆弱的）与增长相关联：选择具有优越生长速度和茎干质量的快速增长的父母和混合家族相对容易。木材密度通常与生长呈负相关，中度相关。另一方面，心材含量与增长呈正相关，积极关联：树木越活跃，心材数量和比例越大。木材密度越高，杂交落叶松木材的机械性能越高。

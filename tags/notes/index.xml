@@ -5,8 +5,8 @@
     <link>/tags/notes/</link>
     <description>Recent content in Notes on Dong&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>youremail@domain.com (Leiming Dong)</managingEditor>
-    <webMaster>youremail@domain.com (Leiming Dong)</webMaster>
+    <managingEditor>dongleiming2008@126.com (Leiming Dong)</managingEditor>
+    <webMaster>dongleiming2008@126.com (Leiming Dong)</webMaster>
     <lastBuildDate>Fri, 29 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/notes/index.xml" rel="self" type="application/rss+xml" />
@@ -16,7 +16,7 @@
       <title>netlify搭建blog笔记</title>
       <link>/post/netlify%E6%90%AD%E5%BB%BAblog%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Fri, 29 Dec 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/netlify%E6%90%AD%E5%BB%BAblog%E7%AC%94%E8%AE%B0/</guid>
       <description>前言 开博客的主要目的是当做一个笔记本，把一些要紧的知识点、代码和流程等做个梳理和记录，方便下次使用时的查找。其实很早就有博客，只是不认为那就是，比如QQ空间和校内网。以前记笔记使用过网易产品一段时间，后来就转到博客上，例如新浪，不支持markdown。后来转到简书，但这家伙不支持公式。CSDN用过两天，支持公式编辑，但不及简书简便。GitHub支持个人博客，但模板很折腾，一直不理想，用了两天就不更新了。
 rmarkdown非常好用，帮助我输出R结果到pdf或者word。之前用过yihui开发的bookdown，用来转电子书的格式，也听说过他开发的blogdown，但并没有用过。有天栾生老师推荐了一下![]()

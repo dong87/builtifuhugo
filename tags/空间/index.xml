@@ -5,8 +5,8 @@
     <link>/tags/%E7%A9%BA%E9%97%B4/</link>
     <description>Recent content in 空间 on Dong&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>youremail@domain.com (Leiming Dong)</managingEditor>
-    <webMaster>youremail@domain.com (Leiming Dong)</webMaster>
+    <managingEditor>dongleiming2008@126.com (Leiming Dong)</managingEditor>
+    <webMaster>dongleiming2008@126.com (Leiming Dong)</webMaster>
     <lastBuildDate>Sun, 01 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/%E7%A9%BA%E9%97%B4/index.xml" rel="self" type="application/rss+xml" />
@@ -16,7 +16,7 @@
       <title>Anekonda-1996-NNA</title>
       <link>/post/%E7%A9%BA%E9%97%B4/anekonda-1996-nna/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/anekonda-1996-nna/</guid>
       <description>Anekonda TS, Libby WJ. Effectiveness of nearest-neighbor data adjustment in a clonal test of redwood. Silvae Genet. 1996;45:46–51.   在用海岸红木（Sequoia sempervirens（D.DON）ENDL。）的克隆实验中评估了各种性状的树对树环境相关性。进行最近邻调整以减少对测试位点内环境梯度和斑块的个别树数据的影响。环境相关性的大小证明是可靠的，作为邻居调整的有用性的预测。邻居调整的一些结果是：（a）克隆手段和公制性状的排名改变，在某些情况下改变; （b）对于邻近树相关性大于0.15的性状，方差的克隆内组分的估计显着降低; （c）方差的克隆成分的估计中度但一致地增加; （d）广义遗传力和预测的遗传增益因而增加。方差分量的估计变化很小。
 介绍 异质环境变化在用于林木的田间测试的场所通常是显着的。这种变化可以是随机的，斑块状的，或在种植地点产生梯度。在所有三种情况下，估计进入方式和遗传参数的精度以及对它们进行的统计测试的能力都受到测试位点内大量环境变化的不利影响。基于其邻居的性能对个体树数据的调整可以提高“补丁”或“梯度”情况下的实验的准确性。 WRIGHT（1978）建议的一种这样的程序被称为“移动平均”方法。已经提出了若干其它方法来通过分析并且然后利用邻居中的协方差来解释并统计地去除环境异质性的影响（由MAGNUS-SEN，1990综述）。当补丁的大小或梯度的范围大于条目占据的绘图时，这些方法是有效的。 LOO-DINKINS（1992）建议对数据进行初步分析，即计算邻近和相邻树木之间的平均环境相关性（r）。注意，如果字段布局中的遗传条目是随机的，则相邻条目之间的相关性是环境相关性。作为建议的经验法则，如果估计的环境相关性大于0.15，则其指示存在足够大的补片或梯度以用于有效地采用相邻调整以减少这种变化。
@@ -33,7 +33,7 @@
       <title>Banerjee2010</title>
       <link>/post/%E7%A9%BA%E9%97%B4/banerjee2010/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/banerjee2010/</guid>
       <description>Banerjee S, Finley AO, Waldmann P, Ericsson T (2010) Hierarchical Spatial Process Models for Multiple Traits in Large Genetic Trials. J Am Stat Assoc 105:506–521. doi: 10.1198/jasa.2009.ap09068
  本文通过在感兴趣的多个性状的大的空间参考试验数据集的背景下发展用于推断加性和优势遗传方差的空间过程模型，扩展了对贝叶斯分级模型在定量遗传学中的最近兴趣。将这种多元模型直接应用于大空间数据集通常是计算上不可行的，因为涉及估计的三次矩阵算法。在马尔科夫链蒙特卡罗（MCMC）上下文中情况甚至更糟，其中这样的计算被执行几千次迭代。在这里，我们讨论方法，有助于消除这些障碍，而不牺牲建模的丰富性。对于遗传效应，我们演示了关系矩阵的初始谱分解如何消除了以前提出的MCMC方法中所需的昂贵的矩阵反演。对于空间效应，我们讨论了一个多元预测过程，通过将原始过程投影到由指定的一组位置（或节点）处的原始过程的实现产生的子空间来减少计算负担。我们说明所提出的方法使用具有多变量加性和显性遗传效应和各向异性空间残差的合成数据集，以及来自在瑞典北部进行的苏格兰松（Pinus sylvestris L.）后代研究的大数据集。我们的方法使我们能够对这个大型试验提供一个全面的分析，充分证明，除了违反线性模型的基本假设，忽略空间效应可导致向下偏倚的遗传力测量。
@@ -44,7 +44,7 @@
       <title>Bian-2016杉木-空间分析</title>
       <link>/post/%E7%A9%BA%E9%97%B4/bian-2016%E6%9D%89%E6%9C%A8-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/bian-2016%E6%9D%89%E6%9C%A8-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/</guid>
       <description>Bian L, Zheng R, Su S, Lin H, Xiao H, Wu HX, et al. Spatial analysis increases efficiency of progeny testing of Chinese fir. J. For. Res. [Internet]. Springer Berlin Heidelberg; 2016; Available from: http://link.springer.com/10.1007/s11676-016-0341-z   空间分析提高了杉木后代测试的效率 我们使用空间，全球趋势和阻塞后分析来检查子代试验在杉木（Cunninghamia lanceolata（Lamb。）Hook）的树种育种程序中的有效性，该丘陵位点具有从山顶到底部的环境梯度。乳房直径（DBH）和树高数据在行和列之间有显着的空间自相关。添加一阶可分离自回归项比用于实验设计的不完全块（IB）模型更有效地建模空间变化。空间模型也考虑了实验设计因素的影响，并大大减少了残差方差。相对于IB分析的空间分析改善了遗传参数的估计，残留方差分别减少了13％和19％的DBH和树高;遗传力分别增加35和51％，DBH和树高;遗传增益提高3-5％。拟合全球趋势和后阻塞没有改善IB模型下的分析。推荐使用空间模型或与设计模型相结合进行森林遗传试验，特别是全球趋势和丘陵地区的局部空间变异。
 在育种计划中精确预测育种值和估计遗传参数取决于精心设计的后代试验。森林树种的后代试验通常以大田大小，异质全球和微环境变化和长期观察为特征。提出了各种实验设计以尽可能多地将站内微环境变化与处理变化分离（Cochran和Cox 1957）。最初在林业田间试验中使用了随机完全区块（RCB），区块设置和非连续图。随后，引入包括行列设计的不完全块设计以减小复制块的大小（Libby和Cockerham 1980; Williams等人2002; Patterson和Thompson 1971）。为了进一步分离微环境变异与处理变异，建议在通常的多树行图上进行单树图（Loo-Dinkins 1992）。
@@ -55,7 +55,7 @@
       <title>Cappa-2007-p-spline</title>
       <link>/post/%E7%A9%BA%E9%97%B4/cappa-2007-p-spline/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/cappa-2007-p-spline/</guid>
       <description>Cappa EP, Cantet RJC. Bayesian estimation of a surface to account for a spatial trend using penalized splines in an individual-tree mixed model. Can. J. For. Res. [Internet]. 2007;37:2677–88. Available from: http://www.scopus.com/inward/record.url?eid=2-s2.0-38849165334&amp;amp;partnerID=40&amp;amp;md5=595ec0deebe7eb7aef9f8bb9e0e7b3e1   未考虑空间变异性导致估计遗传参数和预测来自森林遗传试验的育种值的偏差。先前尝试解释大规模连续空间变化的尝试采用在行（或列）的方向上的空间坐标。在这项研究中，我们使用单树混合模型和B样条基础的张量积与适当的协方差结构的随机结效应来解释空间变异性。使用贝叶斯技术通过Gibbs采样估计分散参数。该程序用来自桉属（Eucalyptus globulus subsp。）的子代试验的数据说明。 globulus Labill。续篇中使用了四种不同的模型。第一个模型包括区组效应，另外三个模型包括8 x 8，12 x 12或18 x 18节的网格上的表面。具有B样条的三个模型显示出比具有区组的模型更大的偏离信息标准值。此外，拟合表面的混合模型显示σ2e的后验均值的一致减少，σ2A和h2DBH的后验平均值的增加，以及对于亲本的增加66％（对于父母）或60％（对于后代）育种值的准确性。
 与其他栽培植物相比，森林遗传试验易产生高度的环境异质性（Libby and Cockerham 1980）：树木是大型活生物体，比大多数栽培植物物种占据更多的空间。此外，树木通常种植在具有高生育力，湿度，土壤深度或坡度的地方。尽管空间异质性在森林遗传评价中是一种滋扰效应，其主要目的是预测育种值，忽略这种来源可能导致遗传参数的估计和个体加性遗传效应的预测中的偏差（育种值：Mag- Nussen 1993，1994）。为了解释环境梯度，树种繁殖者使用随机完全区块或不完全区块设计设计了森林试验。然而，设置块的固定限制使得难以解释不断变化的环境因素。此外，建立一个适当地考虑环境异质性的所有来源的设计可能是一个无希望的任务，因为“环境变化在建立之前是未知的”（Fu等人1999a）。或者，空间变化可以在评价模型内的后验考虑。在这些所谓的“空间模式”中，连续变异性有两个主要来源：“局部趋势”或小规模变化，“全球趋势”或大规模变异，跨越空间梯度。这两个来源在森林遗传试验中是可观察到的：任一组分单独或彼此组合（例如，Fu等人1999b; Costa e Silva等人2001; Dutkowski等人2002）。 说明大规模连续空间变化的模型包括表示为分类变量或协变量的空间坐标。后者是非随机函数，例如多项式（Federer 1998）或平滑样条（Verbyla et al。1999）。 Costa e Silva et al。 （2001）和Dutkowski et al。 （2002）通过拟合行和列的一阶自回归（AR（1））协方差结构的克罗内克（Kronecker）乘积来考虑连续空间趋势（Gilmour等人，1997）。为了解释大规模变化，Costa e Silva et al。 （2001）提出使用固定或随机分类变量，Dutkowski et al。 （2002）包括空间坐标的固定效应作为二次多项式或三次平滑样条（Verbyla et al。1999）。然而，Dutkowski et al。 （2002）发现，五个试验中的两个的变异性不是静态的，这意味着大规模协方差仍然存在于空间误差中。注意，在具有行和列效应的加性模型中或在具有相互作用的模型中的拟合分类变量不以连续方式处理信息，使得表面不能被拟合。另一方面，具有多项式或样条函数的加性模型只使用行和列效应的边缘化估计，以致网格内部点的信息丢失。因此，在连续空间变异发生在二维的森林遗传试验中，使用分类变量，协方差，多项式或一维样条，或加性模型或具有分类变量相互作用的模型的分析可能不能完全考虑空间协方差。 Thomson和El-Kassaby（1988）通过最小二乘法在二维中拟合了六次多项式，以比较道格拉斯冷杉（Pseudotsuga menziesii（Mirb。）Franco）的不同品质。在Liu和Burkhart（1994）和Saenz-Romero等人的工作中也可以找到森林遗传数据的两个维度（“趋势分析”）中多项式的分析。 （2001）。然而，多项式拟合存在一些缺点（Green和Silverman 1994，第2页）。首先，拟合是全局的而不是局部的，这意味着（i）该方法不能够考虑数据中存在的局部变化，（ii）很少有影响的观察可能对结果拟合产生大的影响， （iii）边缘的配合通常较差。多项式的另一个严重缺点是随着多项式阶数的增加，它们的数值不稳定性。 样条是使用多边形的更有效的方法。它们是局部拟合的分段多项式函数，使得得到的函数在段（“节”）的接点处是可微分的，直到拟合的顺序。样条能够捕获数据中存在的大多数正弦，并且不会遭受数值不稳定性。 Eilers和Marx（1996）使用具有等间距结的基本样条（B样条）和线性模型方法在一维中引入了“惩罚样条”（P样条），粗糙度惩罚由参数之间的差异组成，即结的效果。 T.</description>
@@ -65,7 +65,7 @@
       <title>Costa-Silva-2001-空间分析</title>
       <link>/post/%E7%A9%BA%E9%97%B4/costa-silva-2001-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/costa-silva-2001-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/</guid>
       <description>Costa e Silva J, Dutkowski GW, Gilmour AR. Analysis of early tree height in forest genetic trials is enhanced by including a spatially correlated residual. Can. J. For. Res. [Internet]. 2001;31:1887–93. Available from: http://www.ingentaconnect.com/content/nrc/cjfr/2001/00000031/00000011/art00004   本研究探讨了12个森林遗传试验中除了传统的随机完全区块（RCB）分析之外，包括空间相关残差的混合线性模型的使用。来自三种物种（云杉（Ponga sitchensis（Bong。）Carr。，Pinus pinaster Ait。和Pinus radiata D.Don）的后代和克隆测试的早期高度数据的分析显示，在所有试验中存在显着的空间变异。添加基本​​的一阶可分离自回归误差项比RCB模型更有效地建模空间变化，并大大减少了块和图的方差。没有证据表明需要扩展空间建模。空间分析大大提高了遗传价值估计在一些试验的准确性，并伴随着遗传条目的排名的大变化和相对于RCB分析的选择的更大的收益。
 树木改良计划依靠复制的田间测试来估计遗传参数和评估证据，家庭和个人。在许多这样的试验中，条目的数量很大，并且种植场所是可变的。这限制了测试区分遗传它们的环境影响的能力。场地变异性反映了土壤属性（如土壤肥力，水分，质地和深度）等因素的空间性质。气候，地形和风暴。环境异质性可以表现为随机微位点差异，斑块和梯度在站点域。通常这些类型的变异性看起来似乎 - 虽然可能是主导的。最近。在6至12年的66道格拉斯 - 冷杉子代试验中测量的树高的研究中，翅片等。 （1999）显示90％的网站展示大的空间变化与梯度和斑块。因此。选择合适的试验地点和使用有效的实验设计和分析，以适应林木遗传评价的环境变异性（Loo-Dinkins 1992; Magnussen 1993）。 通常用于森林遗传试验的田间试验设计包括随机完全区块（RCB）分裂图和不完全块设计（Loo-Dinkins 1992; Williams和Matheson 1994）。当块体内的环境相当均匀时，RCB设计是有效的，块之间的变化解释了现场测试的协同变异性。然而，在林地步道，其中块通常很大。环境变异性可能很大，降低了这些分析识别遗传变异和降低遗传价值估计的准确性的能力。条目的数量大，并且环境是高度异质的，在不完全块设计中减小块大小可以增加RCB设计的精度（Cochran和Cos 1957; Patterson等人1978; Williams and Matheson 1994; Fu等人， 1998）。 空间或相邻模型已经在农业田间试验的分析中变得流行（Lilt等人1988; Cullis和Gleeson 1989,1991; Zimmemian和Harville 1991：Brownie ct at 1993; Grondona等人1996，Brownie和Gumpertz 1997; t3ilmour ct at.</description>
@@ -75,7 +75,7 @@
       <title>De2013-毕业论文-时空变化</title>
       <link>/post/%E7%A9%BA%E9%97%B4/de2013-%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87-%E6%97%B6%E7%A9%BA%E5%8F%98%E5%8C%96/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/de2013-%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87-%E6%97%B6%E7%A9%BA%E5%8F%98%E5%8C%96/</guid>
       <description>De Faveri J (2013) Spatial and temporal modelling for perennial crop variety selection trials.
  1.3.1现场试验的空间分析 品种选择领域试验通常涉及在潜在的大和可变试验区域评价许多品种。在分析来自这些现场试验的数据时，需要对空间变异进行建模，以便估计准确的品种效应。空间变异长期以来一直被认为是一个重要的问题。经典的Fisherian方法（Brien＆Bailey，2006及其中的参考文献）试图通过仔细选择试验地点，应用随机化地块到品种以及包括变化来源来最小化该领域中空间变化的影响在试验设计中进行分析。这种随机化方法通常不足以建模所有空间变异源，并且常常有必要在随机化模型上建立包括设计组件之上和之上的术语。已经提出了许多方法来解释空间变化，包括最早的方法，其中在分析中使用相邻地图产量作为协变量（参见Bartlett，1978）。 Wilkinson et al。 （1983）提出了一个显着的改进，具有平滑趋势加独立误差模型，通过减少数据消除趋势。 Green等人也使用通过邻近地块去除趋势。 （1985）和Besag＆Kempton（1986）。已经有许多其他方法来进行空间分析，包括Gleeson＆Cullis（1987）的一维模型，其中使用时间序列模型对趋势进行建模，并且由Cullis和Gleeson（1991）使用可分离的相关结构。 Gilmour et al。 （1997）扩展了Cullis和Gleeson（1991）的方法，通过确定要建模的空间变化的三个主要组成部分，即局部和全局平滑空间趋势和外部变化。局部平滑趋势的产生是因为来自接近的地块的数据更加类似于那些区域，并且可能反映例如土壤水分，生育力或深度的变化。全局趋势反映了字段中的非平稳趋势，并且通常与字段的行或列对齐。外部变异经常由管理实践或实验程序产生，例如蛇形收获。为了模拟全球趋势和外部变量Gilmour et al。 （1997）将多项式或样条函数（Verbyla等人，1999）映射到行或列坐标。他们使用残差的协方差结构建模局部趋势。正是这种全球趋势和局部趋势的分离，这是先前的空间分析方法的重要延伸。 Gilmour et al。 （1997）提出了一个混合模型的数据y（一个n×1矢量）从一个单独的eld试验组成的r列，c列（数据排列为列中的行）数组中的n绘图如下 全局和外部变化的来源可以包括在u和/或τ中（1.3.1）。为了确定适当的空间相关结构并识别全局和外部变化，Gilmour et al。 （1997）使用诊断工具，如样品变异图和残差图（残差对行（或列）数）。变差图显示给定距离间隔的图对的残差的半方差（将在后续章节中进一步详细讨论）。尽管Gilmour等人（1997）包括由于管理过程，外部和局部变化或相关性而发生的基于模型的变化组件，它们省略了现场试验设计中固有的变量。随机化和基于模型的组件的组合现在被认为是优选的并且适合于分析（Beeck等人，2010）。而Gilmour等人的空间分析方法（1997）现在常规用于年度田间作物的分析，它们在分析多年生作物的数据中的使用并不那么普遍。一般来说，已经尝试了更简单的方法来解释多年生作物的空间变化，例如在Smith＆Casler（2004）和Smith＆Kearney（2002）中，其中使用的方法基于由Papadakis引入的最近邻分析在1937年（见Bartlett，1978年的审查）。例外包括Stringer＆Cullis（2002）和Smith et al。 （2007）其中Gilmour等人的空间分析技术（1997）适用于甘蔗选择试验，Costa e Silva et al。 （2001），Dutkowski et al。 （2002）和Hardner et al。 （2010），其中上述空间分析方法已被用于森林遗传试验。 1.3.2多环境试验（METs） 通常植物品种改良计划涉及在一些试验地点的老化试验中评价新品种。这些试验称为MET。已经提出了许多方法用于分析一年生作物中的MET。早期方法基于ANOVA方法，其不能通过环境（GxE）相互作用来了解基因型（或品种）。其他允许调查GxE的早期方法包括对环境变量使用基于回归的方法（例如Knight，1970），并且使用品种产量对每个环境中所有品种的平均产量的回归（例如Finlay和Wilkinson，1963） 。混合模型方法已经变得流行，因为它们可以容易地处理不完整的数据（其中并非所有品种在所有环境中都生长），并且它们可以在试验变化内适当地建模。 Smith等人（2005）提供了对这种分析多环境试验（METs）的方法的综述。两阶段方法经常用于分析MET数据。这涉及首先对每个试验分别估计多样性方法，然后将它们组合起来进行总体分析。整体分析可以使用例如混合模型方法（Cullis等人，1996a，Cullis等人，1996b，Frensham等人，1997）或混合模型，例如AMMI（Additive Mainects and Multiplicative Interaction ）模型（1992）。这两个阶段方法是对来自所有试验的单个图谱数据的总体分析的近似，并且如果试验中存在空间变化或试验之间的误差方差的异质性，则可能不提供良好的近似。 Cullis et al。 （1998）提出了一个更全面的综合空间MET分析，其中分析单个地块数据，并为每个试验的单独的空间建模和单独的误差方差做出了补偿。 一些作者建议使用因子分析（fa）模型来建模GxE效应（例如Smith等人，2001，Piepho，1997，Thompson等人，2003）。 Smith等人（2001）扩展了Cullis等人的空间MET分析方法。 （1998）包括因子分析模型，以将不同环境中的变量效应建模为一系列乘法项，并提供对完全非结构化方差协方差矩阵的简约近似。 Smith等人（2001）提出了一个混合模型，用于使用以下符号对来自一系列MET试验的观察结果进行建模。他们考虑了m个品种生长的t试验的数据。 立方平滑样条 立方平滑样条提供了建模纵向数据的灵活方法。将三次平滑样条作为线性混合模型（Verbyla等人，1999）的能力意味着它们是随时间从多个收获建模品种选择数据的理想方法。 Green＆Silverman（1994）讨论了三次平滑样条的性质。总之，假设有实数t 1，。 。 。 ，tn在区间[a，b]上，其中a &amp;lt;t1 &amp;lt;t2。 。 。 &amp;lt;tn &amp;lt;b。如果f sat是以下条件，则函数f在间隔[a，b]上被定义为三次样条。首先，f是每个间隔[a，t1），[t1，t2），&amp;hellip;的三次多项式。 。 。 ，（tn，b），其次，三次多项式截面在点ti处连接在一起，使得函数f，它的rst和二阶导数在每个ti和整个间隔[a，b] on [a，b]是一个三次样条，具有加性质，它的二阶和三阶导数在端点a和b为零，这意味着当样条通过端点时样条是线性的，如果自然三次样条f被定义在设计点t1，&amp;hellip;，tn（称为节），使得fi = f（ti），并且在结点的样条的二阶导数由下式给出：γi= f“ ＆Silverman（1994）表明，给定矢量f =（f1 &amp;hellip; fn）T和γ=（γ2&amp;hellip;γn-1），可以在除ti之外的点处计算样条。</description>
@@ -85,7 +85,7 @@
       <title>Dutilleul-1993讲解空间异质性</title>
       <link>/post/%E7%A9%BA%E9%97%B4/dutilleul-1993%E8%AE%B2%E8%A7%A3%E7%A9%BA%E9%97%B4%E5%BC%82%E8%B4%A8%E6%80%A7/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/dutilleul-1993%E8%AE%B2%E8%A7%A3%E7%A9%BA%E9%97%B4%E5%BC%82%E8%B4%A8%E6%80%A7/</guid>
       <description>Dutilleul P, Sep N. Spatial Heterogeneity and the Design of Ecological Field Experiments. Ecology. 1993;74:1646–58.   抽象。实验设计应该适应于自然界以及室内的空间异质性，无论它是一种滋扰还是感兴趣的特征，结合或不结合处理效果的评估。以下空间异质性量化方差分析方法是基于生态场实验的充分设计，根据关注的异质性的类型和规模（小规模，斑块，一维或二维梯度） 。没有这样做的食谱，必须每次都行使判断;实验者对实验材料的了解，再加上预处理或控制，提供了一个有用的先决条件。对于斑块和环境梯度，在处理分配的存在下，推荐的设计需要分组类似实验单元的区组原理，这允许避免假处理效应和充气误差均方。完全随机设计只应在大规模的空间同质性的特殊情况下使用。给出并讨论了生态场实验中的插图
 引言 从地方到地方以系统方式变化的空间模式称为异质。 （Ripley 1981）“直观地，异质性的概念是清楚的，但是当我们审查它，我们的初始印象分裂成复杂性”（Kolasa和Rollo 1991）。事实上，异质性可以从各种各样的角度看待;其中一些对生态学和进化有重要的影响。在空间语境中，对“异质性”一词的接受主要取​​决于所关注的空间模式的类型。对于点模式，它涉及通过空间分布的个体生物或生态实体的物理位置;在这种情况下，空间异质性意味着点的密度变化（例如，森林中的树木或社区中的植物），与随机散布的生物体所预期的变化相比。对于表面图案，该概念涉及由空间上连续的定性或定量变量（例如，属于地质组或湖面温度的土壤）所取的值;空间异质性指的是子区域之间的那些值的可变性，或者它们在空间中的分布的参数的可变性。在下文中，我将集中于空间异质性的表面图案方面，参考Dutilleul和Legendre（1993）对这两个方面的完整讨论和比较。在接下来的文章中，Legendre（1993）将空间异质性纳入关于生态数据的空间结构的一般性讨论。事实上，空间异质性可能与生态信息相关。特别地，它通过其与遗传多样性的相互作用（Bell和Lechowicz 1991），人口动态（Cantrell和Cosner 1991）和社区内的栖息地分配（Weider 1984）是功能性的。高异质性干扰竞争（Powell和Rucherson 1985），因此允许保持更高的物种多样性（Pringle 1990）;它还影响捕食（Gilinsky 1984）和寄生（Nachman 1981）的影响，增加种群稳定性（Lodge等1988），并有助于保持种内遗传多态性（Lecho- wicz和Bell 1991）。与生态异质性相关的其他问题包括在Kolasa和Pickett（1991）。空间异质性不局限于户外。在生长室实验中，变异性的潜在来源是腔内条件随时间的波动，腔之间的差异以及这些因素之间的相互作用（Potvin和Tardif 1988）。尽管现代生长室的复杂性，在植被科学的实验中，生长条件不能总是被统一控制，时间和空间异质性的影响可能随物种和测量变量而变化（Potvin等人，1990a）。除了它涉及空间中的一个点和时间上的许多点之外，形式上的时间异质性与空间异质性非常相似。每当两个相邻位置在它们的时间变化上不同时，它们将导致空间异质性;然而，这种关系不对称（Kolasa和Rollo 1991）。空间异质性可能损害我们使用标准统计推理技术的能力，这些技术主要是针对从独立和相同分布的随机变量得到的一组观测结果，并且可以影响在没有适当允许的情况下进行的生态研究中的统计分析的结论。例如，在作物实验中，损伤的鸟类，水分测试或疾病可能在地块之间不均匀，并且产量然后可能与斑块损伤密切相关;以相同的方式，鱼类捕食的不存在或存在可能具有显着的影响，另一方面，在运动减少单位的实验中，产量变化的趋势可能源于生育力，温度或光梯度，特别是在玻璃房实验中;处理效果可能被混淆在空间中具有更多或更少的特权位置。在所有这些情况下，实验设计应适应空间异质性。显然没有这样做的食谱，我们将看到，必须根据所关注的空间异质性的类型每次都行使判断。虽然自然界显然是异质的，但空间异质性表现的规模本身也有很大的不同。例如，在水生生态系统的研究中，可观察到可溶性营养物中心表面的大规模水平梯度，以及营养物的局部斑块垂直（表面到底部）梯度的温度溶解氧在小到中等尺度（Neilson和Stevens1987，Frostetal.1988）。尺度的变化可以产生从异质性的同质性，并且反之亦然，并且包含在一个分辨率级别的形式在另一个级别看起来像噪声。森林火灾间隔的空间分布（Baker1989）的分析说明特征;分布在空间上变化，并且根据所考虑的空间尺度通过聚类分析来识别均匀的火区域。为了尽可能有效地实现研究，生态学家必须成年地选择尺度;即，它们必须识别可能发生规律性或异常性的特征尺度以及控制陆地景观或社区的过程所操作的优势尺度。如本文所使用的尺度是指由地图表示的区域，而不是地理学家的系统，其中该数字描述了地图缩减的程度;因此，分辨率对应于标尺的细度。空间异质性已在微观到宏观尺度，在淡水，咸水和海洋环境以及植物学和林业以及社区和陆地生态学研究中观察到（例如，Soriano等人，1987，Le gendreand Trousselier 1988， Mader 1988，Pinel-Al loul等人1988，Urabe 1989，Washitaniet al.1989，Matlack and Good 1990，Perez and Canteras 1990）。首先，我将简要回顾良好设计和最常用的实验设计的特征：完全随机，简单和多重区组设计;第二，我将解释生态场实验的设计如何适应小规模和片状空间异质性，以及环境梯度，或者作为感兴趣的特征的噪声。</description>
@@ -95,7 +95,7 @@
       <title>Dutkowski-2002-空间分析</title>
       <link>/post/%E7%A9%BA%E9%97%B4/dutkowski-2002-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/dutkowski-2002-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/</guid>
       <description>Dutkowski GW, Silva JC e, Gilmour AR, Lopez GA. Spatial analysis methods for forest genetic trials. Can. J. For. Res. 2002;32:2201–14.   摘要：空间分析，使用残差的可分离自回归过程，越来越多地用于农业品种产量试验分析。variogram的解释已成为检测与试验行和列对准的全局趋势和“外部”变化的工具。我们将这种方法应用于使用单株加性遗传模型的五个选定的森林遗传试验。我们比较基本设计模型包含后阻塞post-blocking，残差的一阶自回归模型（AR1），具有独立误差项（AR1ÿ）的模型，组合的基础和自回归模型，仅在重复内的自回归模型和应用的自回归模型在小区水平。后封锁Post-blocking使对数似然相对于基本模型有显着的改善，但AR1ÿ模型更好。独立误差项对于单株加性遗传模型是必要的，以避免在AR1模型中的加性遗传方差的估计中的显着正偏差和模糊的变化模式。使用组合模型，消除了设计效果，或者它们的意义significance大大降低。将AR1ÿ模型应用于单株比它在小区水平或者在逐个重复的基础上应用它更好。在选择的遗传反应中实现的相对改善不超过6％。检查残差的空间分布和残差的变差图允许识别存在的空间模式。虽然附加的重要术语可以拟合一些空间模式的模型，并且在一些情况下获得稳定变异函数，但这导致遗传增益仅有微小的增加。推荐使用组合模型以实现对实验数据的改进分析。
 在森林遗传和农业品种试验中处理遗传变异性的通常方法是通过实验设计和相应的线性模型。传统的随机完全区区组（RCB）设计在很大程度上被更复杂sophisticated的循环和计算机生成的设计（Nguyen和Williams 1993）所取代，在重复和模型中使用不完全区组，使用区组间信息恢复的模型（Williams和Matheson 1994）。然而，即使使用复杂的设计，在设计单元边界和位置变化的实际模式之间可能存在不匹配。现场试验中的场地变异性可以是空间连续的，反映了基底土壤和微气候效应中的类似模式;不连续，反映栽培或测量效应;或随机的，因为微环境的异质性。空间连续变化可能在整个站点上显示为局部趋势local trend（斑块）或全局趋势global trend（梯度）。
@@ -108,7 +108,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Dutkowski2006-空间分析</title>
       <link>/post/%E7%A9%BA%E9%97%B4/dutkowski2006-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/dutkowski2006-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/</guid>
       <description>Dutkowski GW, Costa e Silva J, Gilmour AR, et al (2006) Spatial analysis enhances modelling of a wide variety of traits in forest genetic trials. Can J For Res 36:1851–1870. doi: 10.1139/x06-059
  后代试验数据的空间分析改进了预测的遗传反应超过10％，在所测试的216个变量中的大约20个，尽管一般来说，增益更温和。空间方法将残差方差分为独立分量和二维空间自相关分量，并使用REML进行拟合。可能性的最大改进是高度。表现出很小空间结构（茎数，形态和分支）的性状没有经常响应。空间分量占总残留方差的50％，通常包括基于设计的阻塞效应。自相关趋向于高生长，表明光滑的环境表面，它倾向于小的健康的措施，指示斑块，否则自相关是中间的。负的自相关，指示竞争，仅存在于最大直径正方形种植试验的直径测量的10％中，以及在具有较小直径的直角植物的最近的树之间。双峰似然表面表明，在其他情况下，竞争可能存在，但不是主导的。外部效应的建模仅在具有严重不对称自相关的少数试验中产生额外的遗传增益。可分辨的不完全块或行列设计的块分析优于随机完全块分析，但空间分析甚至更好。
@@ -119,7 +119,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Eilers1996-P-spline</title>
       <link>/post/%E7%A9%BA%E9%97%B4/eilers1996-p-spline/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/eilers1996-p-spline/</guid>
       <description>Eilers PHC, Marx BD. Flexible smoothing with B -splines and penalties. Stat. Sci. 1996;11:89–121.   B样条对于非参数建模是有吸引力的，但是选择最佳数量和位置的结是一个复杂的任务。可以使用等距结，但是它们的小和离散数目仅对平滑度和拟合的有限控制。我们建议对相邻B样条的系数使用相对大数量的结和差异罚分。我们显示了对平方二阶导数的积分的熟悉的样条罚分的连接。提供了B样条，其构造和惩罚似然的简要概述。我们讨论惩罚B样条的属性，并提出了选择最佳惩罚参数的各种标准。非参数逻辑回归，密度估计和散点图平滑用作实例。提出了计算的一些细节
 1.引言 毫无疑问，平滑在今天的统计中具有可观的地位。许多论文和一些书出现（Silverman，1986; Eubank，1988; Hastie和Tibshirani，1990; Hardardle，1990; Wahba，1990; Wand和Jones，1993; Green和Silverman，1994）。这种流行有几个原因：许多数据集太“丰富”，无法用参数模型完全建模;图形显示变得越来越重要，更易于使用;并且数据的探索性分析已经变得更加普遍。实际上，非参数名称并不总是很好地选择。它可能适用于内核平滑器和运行统计，但样条平滑器由参数描述，虽然它们的数量可能很大。最好谈论“过度原则”技术或“匿名”模型;参数没有科学解释。
@@ -130,7 +130,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Ericsson-1997-后区组</title>
       <link>/post/%E7%A9%BA%E9%97%B4/ericsson-1997-%E5%90%8E%E5%8C%BA%E7%BB%84/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/ericsson-1997-%E5%90%8E%E5%8C%BA%E7%BB%84/</guid>
       <description>Ericsson T. Enhanced heritabilities and best linear unbiased predictors through appropriate blocking of progeny trials. Can. J. For. Res. 1999;29:1635–6.   为了消除环境变化，重复地评估了在瑞典北部林地上的11年龄的松柏（Pinus contorta Dougl.ex Loud.varifolia Engelm。）半同胞的子代试验实验，并进行了不同的细分。对所研究的单树试验实验每个种植了来自约140个家庭的1600棵树，间距为1×2.2m。使用限制最大似然（REML）方差估计和最佳线性无偏预测器（BLUP）评估进行分析。结果表明，细分为10块，每块约160棵树可能是最佳的。有多达80块每个只有20棵树，一些遗传信息明显混淆和失去了与环境变化，被消除。建议在分析时尝试最佳区组单树小区实验，而不管实验最初是否是用块设计和建立的。
 介绍 林木遗传评价实验经常用单树小区进行排列。使用具有完全随机化的单树小区而没有初始区组的11岁的瑞典小叶松（Pinus contorta Dougl.ex Loud.varifolia Engelm。）后代测试来研究将该区域细分为块以用于评估的重要性。目的是消除尽可能多的不适当的环境变异，以增加遗传力并改善最佳线性无偏预测因子（BLUP; Searle et al。1992）。
@@ -143,7 +143,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Finley-2009-加性显性-空间分析-分层贝叶斯</title>
       <link>/post/%E7%A9%BA%E9%97%B4/finley-2009-%E5%8A%A0%E6%80%A7%E6%98%BE%E6%80%A7-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90-%E5%88%86%E5%B1%82%E8%B4%9D%E5%8F%B6%E6%96%AF/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/finley-2009-%E5%8A%A0%E6%80%A7%E6%98%BE%E6%80%A7-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90-%E5%88%86%E5%B1%82%E8%B4%9D%E5%8F%B6%E6%96%AF/</guid>
       <description>Finley AO, Banerjee S, Waldmann P, Ericsson T. Hierarchical spatial modeling of additive and dominance genetic variance for large spatial trial datasets. Biometrics. 2009;65:441–51.   摘要：本文通过在大空间参考试验数据集的背景下开发用于推断加性和显性遗传方差的空间过程模型，扩展了在数量遗传学中最近感兴趣的贝叶斯分级模型。然而，这种模型到大空间数据集的直接应用在计算上是不可行的，因为涉及估计的三次矩阵算法。在马尔可夫链蒙特卡罗（MCMC）背景中情况甚至更糟，其中这样的计算被执行几次迭代。在这里，我们讨论有助于消除这些障碍而不牺牲建模的丰富性的方法。对于遗传效应，我们演示了关系矩阵的初始谱分解如何消除在先前提出的MCMC方法中所需的昂贵的矩阵逆转。对于空间效应，我们概述了避开昂贵的矩阵分解的两种方法：第一个利用从Ornstein-Uhlenbeck过程的分析结果，产生计算上有效的三角形结构，而第二个通过投影其实现从原始模型导出修改的预测过程模型到较低维子空间，从而减少计算负担。我们阐述了使用具有加性，显性，遗传效应和各向异性空间残差的合成数据集以及来自在瑞典北部进行的苏格兰松（Pinus sylvestris L.）后代研究的大数据集的所提出的方法。我们的方法使我们能够对这个大型试验提供一个全面的分析，充分证明，除了有违线性模型的基本假设，忽略空间效应可导致向下偏倚的遗传力测量。
 通过马尔可夫链蒙特卡罗（MCMC）方法实现的分层随机效应模型最近在数量遗传学中获得普及（参见例如Sorensen和Gianola，2002; Waldmann和Ericsson，2006，以及其中的参考文献）。已经提出了单组分single-component和阻塞吉布斯取样器blocked Gibbs samplers。然而，单分量采样器受到缓慢混合的困扰，并且阻塞采样器通常涉及矩阵分解，其复杂度随着MCMC算法每次迭代的观测值数目n（n）的增加而增加。这些计算密集型矩阵计算限制对小样本大小的推断，这可能导致不可靠的结果和不确定的证据。
@@ -155,7 +155,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Fu1999-不完全区组</title>
       <link>/post/%E7%A9%BA%E9%97%B4/fu1999-%E4%B8%8D%E5%AE%8C%E5%85%A8%E5%8C%BA%E7%BB%84/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/fu1999-%E4%B8%8D%E5%AE%8C%E5%85%A8%E5%8C%BA%E7%BB%84/</guid>
       <description>Fu Y-B, Yanchuk AD, Namkoong G (1999) Incomplete block designs for genetic testing: some practical considerations. Can J For Res 29:1871–1878. doi: 10.1139/x99-176
  在具有各种环境变化模式的测试位点上模拟用于评估家族和克隆性能的全同胞子代和克隆试验，以检查在不同设计参数（恒定区块大小，可变区段大小）下随机化不完全区段设计（ICB）块形状和取向，以及族尺寸）。模拟显示固定大小5-20的块在移除大多数位点变异在每个家庭三个幼苗的120个全同胞家庭的测试中是有效的。当块被认为是随机的时，块大小的轻微变化不会影响平均估计的精度。在消除一个方向上的斑块变化和梯度时，方块比列或行块更有效。固定大小的块10，家庭规模从3增加到12（以家庭人数为代价，从120下降到30）将家庭平均对比的平均方差降低了75％;大多数这种减少（&amp;gt; 50％）是在每个家庭6棵幼苗实现。在全同胞子代和克隆试验之间的平均估计精度的差异相对于设计参数和所检测的位点变异的模式是小的
@@ -166,7 +166,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Gezan-2006-Post-hoc-blocking-一种后验区组设计</title>
       <link>/post/%E7%A9%BA%E9%97%B4/gezan-2006-post-hoc-blocking-%E4%B8%80%E7%A7%8D%E5%90%8E%E9%AA%8C%E5%8C%BA%E7%BB%84%E8%AE%BE%E8%AE%A1/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/gezan-2006-post-hoc-blocking-%E4%B8%80%E7%A7%8D%E5%90%8E%E9%AA%8C%E5%8C%BA%E7%BB%84%E8%AE%BE%E8%AE%A1/</guid>
       <description>Gezan SA, Huber DA, White TL. Post hoc blocking to improve heritability and precision of best linear unbiased genetic predictions. Can. J. For. Res. [Internet]. 2006;36:2141–7. Available from: http://www.scopus.com/inward/record.url?eid=2-s2.0-33845624230&amp;amp;partnerID=40&amp;amp;md5=6bce3998c32880cd3b835c9e958863f3   在具有三种不同环境模式的单树小区中总共256个“种植的”克隆模拟单个位点克隆试验：仅补丁（PATCH），仅梯度（GRAD）和两个组分（ALL）。分析了几个模拟实验设计（随机完全区组设计;具有4,8,16和32个不完整区组的不完全区组设计;以及行 - 列设计），并且与随机化完全区组相同的设计的事后阻塞进行比较。此外，在事实之后叠加了两个不完整的块设计（64和128块）以检查极小的块。为了选择最佳拟合，研究了对数似然性和差异的平均标准误差（SED）的性能，并与平均个体广义遗传率进行比较。使用事后阻塞，使用很少的努力获得统计效率（或精确度）的改善。事后阻塞的结果是有希望的，与预设的局部控制相比可以忽略不计。事后最佳设计是行列（对于ALL和PATCH）和不完全区组具有八个块（对于GRAD）。此外，真实值和预测值（CORR）之间的平均相关性显示极小块的效率降低，但是随着块大小减小，没有观察到遗传方差的降低。模型选择的两个标准（对数似然性和SED）显示与平均CORR相似的趋势，并且推荐使用它们的使用。 ©2006 NRC。
 引言 &amp;gt; - 随机完全区组RCB 传统上，在森林试验中，随机完全区组（RCB）设计受到青睐。当重复（或块）变异性相对较小时，RCB设计是有效的，这种情况在森林地区很少发生，或者仅在相对较小的重复中发生（Costa e Silva et al。2001）。 - 不完全区组设计（IB） 其将完整的复制物细分为更趋向于更均匀的较小隔室（即，不完全区组）。对于这些设计，几个作者报告了与RCB相比更高的效率（Fu等人1998,1999; Gezan等人2006a）。 - 行列设计（R-C） R-C设计由John和Williams（1995）详细描述，并且通常比IB设计产生更高的效率（Lin等人1993; Qiao等人2000; Gezan等人2006a）。
@@ -177,7 +177,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Gilmour-2000-不建议用高次多项式拟合空间模型</title>
       <link>/post/%E7%A9%BA%E9%97%B4/gilmour-2000-%E4%B8%8D%E5%BB%BA%E8%AE%AE%E7%94%A8%E9%AB%98%E6%AC%A1%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%8B%9F%E5%90%88%E7%A9%BA%E9%97%B4%E6%A8%A1%E5%9E%8B/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/gilmour-2000-%E4%B8%8D%E5%BB%BA%E8%AE%AE%E7%94%A8%E9%AB%98%E6%AC%A1%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%8B%9F%E5%90%88%E7%A9%BA%E9%97%B4%E6%A8%A1%E5%9E%8B/</guid>
       <description>Gilmour a R. Post blocking gone too far! Recovery of information and spatial analysis in field experiments. Biometrics [Internet]. 2000;56:944–6. Available from: http://www.ncbi.nlm.nih.gov/pubmed/10985241   1.介绍 Federer（1998）回顾了与设计和分析设计的现场实验相关的各种问题，强调了恢复块间，行间，列间，梯度间和回归间interregression信息的重要性。他拟合高次多项式以消除他的两个例子中的空间变化。本文重新回顾了他的公理的例子和评论“在实验过程中发生的任何事件，不是由实验中的处理引起的或不是实验中的处理的反应，是通过后阻滞或协方差去除的候选物。 棉花象鼻病实验 试验被布置为具有五次重复的4×4格子正方形。数据和标准不完全块分析与块间信息的恢复来自Cochran和Cox（1957）的第12.22节。该分析现在可以通过拟合重复轻松实现。行和复制。列作为随机效应，并且在混合模型中使用限制最大似然估计（REML）来复制和处理作为固定效应来估计方差分量。数据是每100个检测的感染棉铃的三次计数的平均值，总体平均值为10.我们在使用平方根变换时遵循Federer（1998）。费德勒（1998）首先符合标准模型，没有块间信息的恢复，并获得处理的方差比为0.472 / 0.576 = 0.819。然后他报告，适合行（R），列（C），R2，R的正交多项式效应。 C，R。 C2和R2。每个重复中的C2使用相同的自由度，但产生0.709 / 0.358 = 1.98的处理方差比。我的第一个问题是，虽然费德勒说他正在恢复interblock信息，他提出了忽略interblock信息的模型。恢复块间信息将处理变异率分别提高到1.43和2.45。我的第二个关注在他的空间分析是缺乏边缘性所选（C2和R2。C省略）。包括特定术语的唯一理由是它们的大小，没有任何解释为什么每个重复中的二次空间交互可能是预期的（例如，如果我们有均匀性数据）。第三，似然比测试表明，只有线性R和C回归是显着的（P&amp;gt; 0.05）。此外，关于行，对重复I和I1中的行1有效果的模型以及对重复111，IV和V中的行4的效果更好。如果我们知道字段中的复制的排列，并且行效应对应于例如边缘效应，则该最后模型可以通过公理来证明。我们的结论是，标准不完全块分析可能不是最佳的，但费德勒（1998）已经走得太远了。 增强行 - 列设计 该试验用两种检查基因型测试120种新基因型的产量潜力。新的基因型是未复制的，并且检查基因型在对角图案中每三个图中插入设计中。将图形排列在中心5.5×1.6m的15行×12列网格中，给出83×20μm的实验面积。土地向东南倾斜向河。费德勒拟合随机测试基因型，固定检查基因型和空间多项式协变量R1，Rz，Rq，Rs，Rlo，C1，Cz， q，ctj，c8， c4， R1。 C1，R1。 C2和R1。 C3。再次，空间协变量被报告为固定效应，虽然费德勒说他将他们拟合为随机的，边际性被忽略。由于具有自己方差的随机分量，C1，R2和R1&amp;rsquo;C3对对数似然贡献了0.15。这个空间模型不能帮助我们的理解。空间限制排除了给出我们的替代分析的正当性，但它可从作者获得。分析基于Gilmour，Cullis和Ver-byla（1997）的方法。我们更喜欢将所有基因型作为随机效应，但这没有什么影响，因为检查基因型的高复制。我们包括空间自相关误差，其中列的自相关为0.27，行为0.52，随机行（P  0.05）效应，以及我们的建模中的低阶趋势。低阶回归项R1，C1和R1 。 C1具有分别为3.8,4.0和7.8的增加的F1,54值。进一步的建模显示了一个重要的随机列。 R1相互作用，列1,2和11具有比其相邻列跨行更低的斜率。来自最终分析的前15个基因型是45,82,21,11,46,91,60,111,2,99,118,58,90,13和95.基因型45（这里首先）没有发生在排名前15的费德勒列出，而基因型60，他的第一，被严重降级。实验者将低角落（最靠近河流）的相对高的产量归因于高水位表。整个试验期间产量较低的条带归因于高盐度。塔1和塔2之间以及塔11和塔12之间的塔顶灌溉系统可能造​​成塔1,2和11中的产率降低，特别是在高的行数。实验者不能解释为什么行8,11和13产生比它们的邻居小约10％。 4.讨论和结论 通过使用与残差中存在的方差结构相匹配的变量模型来实现田间试验的有效分析。方差结构通常被充分建模为可分离自回归结构（Gilmour et al。，1997）。它可以包括行和列效应，块效应，随机回归和三次平滑样条。这些外来效应应当作为随机拟合，使得它们将是误差协方差结构的一部分，因此恢复处理信息，并且因此提供一些防止过拟合的保护：随机效应被回归到零，收缩程度取决于它们的方差。后封锁公理需要识别事件或原因。我们发现，实验者可以经常识别外来变异的原因，然后证明其在模型中的包含。原因的识别也允许它们在未来的实验中被更好地控制。包括强线性趋势和显性协变量在内的非常规过程应作为固定效应进行拟合。基于纯粹基于任意对比的统计学意义的postblocking没有一个合理的解释是没有道理的。</description>
     </item>
@@ -186,7 +186,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Gilmour1997-AR1</title>
       <link>/post/%E7%A9%BA%E9%97%B4/gilmour1997-ar1/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/gilmour1997-ar1/</guid>
       <description>Gilmour AR, Cullis BR, Verbyla AP (1997) Accounting for natural and extraneuous variation in the analysis of field experiments. J Agric Biol Environ Stat 2:269–273.
  我们确定了来自实地实验的小区误差的空间变化的三个主要组成部分，并扩展Cullis和Gleeson（1991）的二维空间程序以解释它们。组件是整个领域的非平稳，大规模（全球）变化，试验中的固定变化（自然变化或局部趋势），以及通常由实验程序诱导的外部变化，主要与行和列。我们提出了一个策略，用于识别使用残差的网格小区，样本变异小区的透视小区和可能的似然比测试以确定哪些组件存在的小区错误的模型。我们使用两个说明性的例子来演示策略。我们得出结论，虽然没有一个模型充分适合所有现场实验，可分离自回归模型是主导的。然而，经常存在额外的可识别的变化。
@@ -197,7 +197,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Gleeson-1987-AR1</title>
       <link>/post/%E7%A9%BA%E9%97%B4/gleeson-1987-ar1/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/gleeson-1987-ar1/</guid>
       <description>Gleeson AC, Cullis BR. Residual Maximum Likelihood ( REML ) Estimation of a Neighbour Model for Field Experiments. Biometrics. 1987;43:277–87.   提出了考虑相邻小区之间的关联的场实验的空间分析。 Patterson和Thompson（1971，Biometrika 58,545-554）的剩余最大似然（REML）方法用于估计一般相邻模型的参数，其可以表示为自回归移动平均（ARMA）模型。分析三个数据集，以（i）突出显示对模型选择过程的需要，（ii）说明不完全区组和邻域分析之间的不同结果以及在设计中包括处理的边界小区的效果，以及（iii）使用趋势预测的实验内的变化。
 1.介绍 大多数农业田间实验的主要目的是无偏见和有效地估计处理对比。实验设计文献包含了对这一目标的许多重要贡献，主要使用随机化的处理，以绘小区，使分析，而不模拟小区效应。长期以来一直认识到相邻地区组之间可能的联系; Fisher（1937）写到关于布置田间试验，“选择该区域后，我们通常没有超出可广泛验证的事实的指导，附近的补丁通常更相似，根据作物的产量判断，比那些进一步分开“。考虑到相邻小区之间的这种关联的最常用的方法是使用完整的区组设计（Cochran和Cox，1957）。其他方法包括使用相邻的小区值作为协变量（Papadakis，1937），并将小区的误差结构建模为固定过程[参见例如Kiefer和Wynn（1981）和Martin（1982,1986）]。最近，对场分析的“相邻”或“空间”方法感兴趣，其中尝试估计和消除相邻小区与处理对比的关联的影响。这项工作的例子出现在McGilchrist和Knudsen（1983），Wilkinson et al。 （1983），Patterson和Hunter（1983），Green，Jennison和Seheult（1985），Green（1985），Williams（1986）和Besag和Kempton（1986）。在所有这些方法之间存在相似性，因为每个方法至少隐式地采用某些形式的相邻小区的差分以近似地去除假设的趋势。所提出的分析采用了许多不同的估计技术，特别是对于方差参数，这导致了方法之间的一些不一致或模糊性。尽管有各种各样的估计技术，目前在文献中的所有分析可以被认为是基于“趋势和误差”或等效地，“变量误差”模式（Besag，1977）。在本文中，我们建议在现场试验中的“趋势”可以被认为是随机的，并表示为低阶自回归积分移动平均（ARIMA）过程。 “误差”是白噪声的另一假设导致一般的相邻模型，其偏差可以由自回归移动平均（ARMA）模型表示。为了估计这些模型，我们使用残差最大似然（REML）估计（不同地称为修正的，限制的或一般化的最大似然）的Cooper和Thompson（1977）实现，他们已经在模拟研究中表明，移动平均模型。 REML，假设正态性，已经广泛用于方差分量估计。包括Harville（1977），Swallow和Monahan（1984）和Green（1985）的一些研究已经评估或比较REML与其他估计技术，例如最大似然，最小方差二次无偏估计，交叉验证和广义交叉验证。给出了一个例子，表明替代模型可以拟合相同的数据，因此需要测试模型充分性或模型选择过程。第二个例子说明了结果与“经典”不完全区组和“邻近”分析的差异，以及Wilkinson等人提倡的在设计中包括处理的边界小区的效果。 （1983）以减少处理之间的差异的标准误差的范围。第三个例子显示如何使用“趋势”的预测来估计实验地点上的地区组的环境变化</description>
@@ -207,7 +207,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Goncalves-2007-混合空间模型</title>
       <link>/post/%E7%A9%BA%E9%97%B4/goncalves-2007-%E6%B7%B7%E5%90%88%E7%A9%BA%E9%97%B4%E6%A8%A1%E5%9E%8B/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/goncalves-2007-%E6%B7%B7%E5%90%88%E7%A9%BA%E9%97%B4%E6%A8%A1%E5%9E%8B/</guid>
       <description>Gonçalves E, St. Aubyn A, Martins A. Mixed spatial models for data analysis of yield on large grapevine selection field trials. Theor. Appl. Genet. 2007;115:653–63.   在大田试验中，由于土壤肥力和其他环境因素的变化，可能需要调整空间相关性。田间试验中的空间相关性可以掩盖克隆的基因型值的差异，从而降低鉴定优良基因型的可能性。本文介绍了一种通过使用混合空间模型提高葡萄藤选择试验的统计数据分析精度的策略。混合空间模型的效率与经典随机化完全块模型（具有独立和相同分布的误差）的效率进行比较。比较基于来自Arinto，Aragonez（Tempranillo）和Viosinho葡萄品种的三个大实验群体的产量数据。应用于产量数据的空间混合模型的拟合显着优于经典方法，导致对选择决定和提高遗传增益预测的准确性的积极影响。
 介绍 目前使用的大多数葡萄品种起源于数百或数千年前，可能是遗传上同源的克隆。随着突变的积累，这些古老的品种变得异质。它们现在由具有不同农学和质量性状的遗传上不同的克隆（基因型）的混合物组成（Rives 1961）。 古代品种中变异性的定量是非常有用的，不仅因为它提供了选择的原材料，而且因为它允许了解品种的古代以及为遗传资源的保存提供良好的策略。因此，在过去25年中，在葡萄牙开发了葡萄藤选择的创新方法（Martins等人，1987,1990），涉及对来自品种内的基因型的遗传变异性和质量选择的定量。对古代品种中遗传变异性的有效研究需要对代表该变异性的母本植物进行取样，并将其移植到大田试验中，提供克隆的实验群体，优选具有均质环境条件。然而，在葡萄牙，葡萄园显着小，几何不规则，土壤异质性高。为了克服这些困难并有效地量化遗传变异性并选择优异的克隆，我们应该使用适当的实验设计，如alpha设计和可分辨的行列设计（在实验过程的开始），以及适当的数据统计模型分析，如混合空间模型（在结束时）。植物育种研究人员已经面对这些实际现场实验问题多年，并且已经做出巨大努力来开发理论工具来克服它们，包括用于数据分析的实验设计和模型。自从Fisher（1935）引入随机完全区段（RCB）设计以来，已经开发了许多替代实验设计，特别是在植物育种初始试验领域。其中包括不完全块设计的类别（Yates 1936; Patterson和Williams 1976; Patterson等人1978），行列设计（Nguyen和Williams 1993）和增强设计augmented（Federer 1961,2002; Federer和Raghavarao 1975）。在统计模型领域，基于邻居分析或空间分析的原理，在文献中出现了新的解决方案。这些是利用假设相邻个体将共享类似环境的模型，即考虑邻居观测之间的空间相关性的模型（Papadakis 1937,1984; Bartlett 1978; Wil- kinson等人1983; Besag和Kempton 1986; Cullis和Gleeson 1991; Zimmerman和Harville 1991; Grondona和Cressie 1991）。空间分析现在广泛用于一年生作物的育种计划（Stroup等人1994; Grondona等人1996; Cullis等人1998; Smith等人2001,2005）和森林物种（Kusnandar和Galwey 2000; Costa e Silva等人2001; Dutkowski等人2002; Joyce等人2002），但是没有关于其在葡萄选择中的用途的公开报道。目前的工作目的是通过以下步骤来证明混合空间模型的效用：（1）在大田野种群的葡萄树克隆中，在产量的空间相关性的表征，（2）使用混合空间模型的产量数据分析葡萄克隆的实验群体，最后，（3）选择在模型中包含和不包含空间自相关的克隆。</description>
@@ -217,7 +217,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Grondona1996-2维AR</title>
       <link>/post/%E7%A9%BA%E9%97%B4/grondona1996-2%E7%BB%B4ar/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/grondona1996-2%E7%BB%B4ar/</guid>
       <description>Grondona MO, Crossa J, Fox PN, Pfeiffer WH (1996) Analysis of Variety Yield Trials Using Two-Dimensional Separable ARIMA Processes. Biometrics 52:763–770. doi: 10.2307&amp;frasl;2532916
  基于可分离ARIMA过程的二维空间分析程序（由Cullis和Gleeson（1991 Biometrics 47,1449-1460）提出）用于分析具有不完全块设计的35个谷物产量试验。 比较了具有不同的大规模变化分量和不同的小规模变化过程的模型作为一维和二维（可分离）ARIMA过程。 考虑了19个空间模型，并且使用两个标准来评估空间模型充分性：（a）基于交叉验证的成对品种差异（SED）的平均标准误差和（b）预测的均方误差（MSE） 方法。 空间分析在比不完全块分析更有效地减少残余变化。 虽然没有一个模型最适合所有的试验，二维一阶自回归模型是最有效的SED和MSE标准（分别在21和14试验）。
@@ -229,7 +229,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Hamann-2002-kriging</title>
       <link>/post/%E7%A9%BA%E9%97%B4/hamann-2002-kriging/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/hamann-2002-kriging/</guid>
       <description>Hamann A, Namkoong G, Koshy MP. Improving precision of breeding values by removing spatially autocorrelated variation in forestry field experiments. Silvae Genet. Sauerl{ä}nder; 2002;51:210–5.   在不充分区组的田间实验中微环境异质性的调整是希望改善遗传参数的估计和最大化从选择的遗传增益。在三个红al木（Alnus rubra Bong。）的林业田间试验中，我们使用克里金法去除了空间自相关变异，并且与标准分析相比，评估了对处理手段和可能性的估计的影响。克里金消除块效应和减少家庭x块相互作用在所有性状。由于相互作用的变化在简单家族或起源方差分量中恢复，其在一些性状中增加高达40％。遗传力估计和选择的预期收益相应增加，而家庭和出生的估计的标准误差降低。改进在实验中是最大的，其中区组显然不足以捕获位点变异，当块尺寸大时，以及对于可能受土壤性质变化影响的性状。假定与土壤变化无关的芽断裂和叶脱落在空间上是独立的。根据不完全块设计的实验估计的遗传力，每块有9棵树只能最小化改进。我们建议在林业田间试验的分析中常规地构建变异函数。测试来自标准模型的残差是否是空间自相关的。如果它们是，克里金被建议作为ANOVA在树木育种实验和其他林业田间试验中的有用补充。
 介绍 由于环境梯度，例如土壤肥力，水分或以前的土地利用，从林业田间实验收集的数据通常在重复的区组内变化。仔细布置区组和集中场地准备可以减少现场实验中的这种残余误差，但是在评估时经常发现不确定性阻塞。改善位置变化效应的最有效手段之一是使用具有小区组的不完全区组设计。 **Alpha设计，一类广义网格设计，已经变得流行用于管理林业实验中的环境梯度（CORRELL和CELLIER，1987; KLEIN，1989; WILLIAMS和MATHESON，1994; JOHN，1995）。尽管如此，仍然使用完整的区组设计，并且长期林业实验中的许多后代试验的设计严重阻碍了对遗传参数和育种值的精确估计。 ERICSSON（1997）建议，不管实验是如何初始设计的，在评价时应该对试验施加不完全区组，并且确定最佳区组尺寸作为产生最高遗传力的区组。然而，由于遗传力或其他遗传参数估计有误差，通过试验和误差选择实验设计可能导致遗传力的过度估计。 一种替代方法是将位置变化建模为平滑表面，这是吸引人的，因为具有不同边界的区组在概念上不适于模拟连续位置变化。已经提出了许多方法来模拟空间变化，例如趋势面分析（THOMSON和EL-KASSABY，1988），最小二乘平滑（GREEN等人，1985; CLARKE等人，1994,1996），可分离ARIMA过程CULLIS和CLEESON，1991），最近邻法（WIL-KINSON等，1983; STROUP和MULITZE，1991）或克里金法（BRESLER等，1981; SAMBRA等，1989; LOPEZ和ARRUE，1995）。一些作者比较了这些和其他方法在农业田间试验中的应用（SAMBRA等，1990; BROWNIE等，1993; STROUP等，1994; CLARKE和BAKER，1996）。虽然很少使用，克里金证明是适合于消除农业实验中的微环境异质性，而一些其他方法已被证明偶尔会增加处理估计的误差。此外，土壤科学中有大量文献表明土壤性质，如土壤水分，营养，淤泥和粘土含量在空间上是依赖的，并且最好用克里金法建模（例如BURGESS和WEBSTER，1980a，1980b; BURROUGH， 1993）。由于树木生长的变化通常是由土壤特性的变化引起的，因此将相同的方法应用于林业田间实验的空间变异是显而易见的。 本研究的目的是研究克里金法是否适合回收由于林业田间试验中环境区组内变化引起的家系×区组间相互作用，以及是否能提高育种值的精度。此外，为了遗传资源管理的目的，我们提供红der种群遗传参数的估计。这样的信息提供了性状遗传变异性的度量，并且必须预测树改进程序中的选择的获得。
@@ -240,7 +240,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Joyce-2002-NN-黑云杉</title>
       <link>/post/%E7%A9%BA%E9%97%B4/joyce-2002-nn-%E9%BB%91%E4%BA%91%E6%9D%89/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/joyce-2002-nn-%E9%BB%91%E4%BA%91%E6%9D%89/</guid>
       <description>Joyce D, Ford R, Fu YB. Spatial patterns of tree height variations in a black spruce farm-field progeny test and neighbors-adjusted estimations of genetic parameters. Silvae Genet. 2002;51:13–8.   使用空间技术和最近邻居调整来分析具有随机非连续单树图的黑云杉后代的农田试验，以评价在控制遗传参数的估计的位点异质性中使用的区组和邻居调整的有效性。在3-10岁的树高变化的空间分析显示，行和列在6岁后显示不同形状的梯度（分别为大致V和N形状），这些梯度一起解释了10岁时的9.7％的位点变异此外，发现的斑块状结构遵循指数协方差模型，具有12个地块（即7-11m）的估计范围，并且占据了10岁时的站点变化的19.8％。应用的区组有效地去除了22.7％的可移动位点变异，但是4,8和12最近邻的后验数据调整分别去除了57.6,77.6和83.1％。邻居调整也对与家庭排名和家庭，个人和早期选择的遗传增益相关的遗传参数的估计显示出相当大的影响。家庭平均估计值和所有家庭平均值的估计方差之间的标准误差分别降低到10.2和19.3％。家庭和个体遗传的估计以及早期选择的估计效率分别增加到6.7％，16.4％和16.6％。这些发现鼓舞了未来在森林遗传试验分析中使用空间技术和后相邻调整。
 介绍 黑云杉（Picea marianna [MILL。] B.S.P）是加拿大安大略省北部一年种植6500万棵树的最重要的重新造林物种之一。安大略省的黑云杉的遗传改良在20世纪80年代初开始，选择大约8000棵树。这些加上树木后来被分配到27个育种计划。后代测试的后续测量已经用于相关联的秧苗种子园的增量卷积。近年来，工业和省政府都启动了第二代育种计划，以减少由于作为公园和保护区的土地数量的增加而导致的木材供应缺口。 1990年，安大略省东北部一个育种计划的黑云杉后代的两次田间试验被注销，因为在试验地点内存活率差和出乎意料的高异质性。因此，1992年建立了一个农田试验，目的是产生一些遗传信息，用于垄断相关的第一代幼苗种子园。农田测试可以通过广泛的现场准备，近距离和几乎完全的杂草控制在年轻时产生高质量的遗传信息。在过去十年中，在加拿大使用农田测试已经大大增加（CARL-SON，1990），但很少有关于农田实地测试在业务计划中的有效性的研究（WOODS等，1995） 。需要有关控制遗传异质性，遗传参数估计的质量以及早期选择生长潜力的相对效率的信息与常规田间试验中的相比，以支持关于先进一代育种计划的决定的信息。 在本研究中，我们对黑云杉后代的Aidie Creek农田试验进行了详细分析，希望了解（1）测试地点通过广泛的现场管理是如何均匀的; （2）应用区组在控制位点变化方面的有效性;和（3）后验数据调整的应用是否可以增强对场址变化的控制以实现其测试目标。具体来说，首先应用空间技术来描述位点变异，并估计斑块大小和实验上可移除的位点变异（FU等人，1999）。这些估计使我们能够推导出适用于邻居调整的最大邻域，并分别评估应用区组和邻居调整在控制站点变化方面的有效性。然后，在对各种遗传参数进行估计之前，对测试数据进行导出的最近邻近调整，以评估邻居调整的影响。
@@ -253,7 +253,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Lambert2004-空间回归模型</title>
       <link>/post/%E7%A9%BA%E9%97%B4/lambert2004-%E7%A9%BA%E9%97%B4%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/lambert2004-%E7%A9%BA%E9%97%B4%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/</guid>
       <description>Lambert DM, Lowenberg-Deboer J, Bongiovanni R (2004) A comparison of four spatial regression models for yield monitor data: A case study from Argentina. Precis Agric 5:579–600. doi: 10.1007/s11119-004-6344-3
  数据分析和具体地点的建议之间的差距被认为是广泛采用精密农业技术的主要制约因素之一。这种差异部分是由于可用于理解作物GIS层的分析技术落后于数据收集和存储技术的发展的事实。产量监测，传感器和其他空间密集的农艺数据通常是自相关的，并且邻近观测之间的这种依赖违反了经典统计分析的假设。因此，估计的可靠性可能受到损害。空间回归分析是更充分地利用空间密集数据中包含的信息的一种方式。空间回归技术还可以调整由空间自相关引起的偏差和无效率。本文的目的是比较四个空间回归方法，在可变率技术的经济分析中明确纳入空间相关性：（1）从空间计量经济学文献中采用的回归方法; （2）多项式趋势回归法; （3）经典最近邻分析;和（4）地统计方法。分析中使用的数据来自1999年阿根廷科尔多瓦省的可变速率氮试验。空间回归方法提供了比普通最小二乘法更强的对氮的玉米产量响应的空间异质性的统计学证据。空间计量经济学分析可以在相对较小的数据集上实施，这些数据集没有足够的观测值来估计地统计学所需的半变异函数。最近邻和多项式趋势分析可以使用GIS软件中可用的普通最小二乘法来实现。这项研究的主要结果是，从这个可变速率氮试验的边际分析得出的结论是相似的每个空间回归模型，虽然每个模型中的空间过程的假设是完全不同的。
@@ -269,7 +269,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Liu1994-趋势面</title>
       <link>/post/%E7%A9%BA%E9%97%B4/liu1994-%E8%B6%8B%E5%8A%BF%E9%9D%A2/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/liu1994-%E8%B6%8B%E5%8A%BF%E9%9D%A2/</guid>
       <description>Liu J, Burkhart HE (1994) Spatial characteristics of diameter and total height in juvenile Loblolly Pine (Pinus taeda L.) pantations. For Sci 40:744–786.
  使用从一组放置有火炬松的间隔试验收集的数据分析乳房高度和总高度的直径的空间特性。这些间距试验在1983年在弗吉尼亚州和北卡罗来纳州的皮埃蒙特和海岸平原地区的四个地点建立。趋势表面分析用于将系统微网站变化与树间竞争所引起的变化分开，并且进行模拟研究导出从回归残差计算的Moran统计的经验分布。在苗圃发育的幼苗期，系统环境梯度对dbh的空间模式和总高度有显着影响; 然而，环境梯度的影响随着发展而减弱。树间竞争在自相关测量中显而易见，即Moran和Geary指数，随密度和年龄的增加而下降。当竞争严重时，Moran指数具有统计学意义。混杂的竞争和微网站变化效应使观察的空间模式非常复杂，难以用数学方法描述。自相关主要是积极的总高度，但大多数是不显着或负的dbh在青少年期的火炬松站，这表明总高度对竞争不太敏感。
@@ -280,7 +280,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Lu2011-高度直径-空间自回归模型</title>
       <link>/post/%E7%A9%BA%E9%97%B4/lu2011-%E9%AB%98%E5%BA%A6%E7%9B%B4%E5%BE%84-%E7%A9%BA%E9%97%B4%E8%87%AA%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/lu2011-%E9%AB%98%E5%BA%A6%E7%9B%B4%E5%BE%84-%E7%A9%BA%E9%97%B4%E8%87%AA%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B/</guid>
       <description>Lu JF, Zhang LJ (2011) Modeling and Prediction of Tree Height Diameter Relationships Using Spatial Autoregressive Models. For Sci 57:252–264.
  应用三个空间自回归模型模拟树高直径关系，包括空间滞后模型spatial lag model（SLM），空间误差模型（SEM）和空间Durbin模型（SDM），以普通最小二乘法（OLS）使用五个空间权重矩阵来评估不同加权方案对模型拟合的影响。显然，在这些空间自回归模型中，不同的空间权重矩阵方案强烈影响模型拟合和参数估计。我们发现变差函数或地质统计权重矩阵优于其他空间权重矩阵，如邻接，逆距离和局部G（i）*统计。此外，空间自回归模型用于预测未取样位置的树高。结果表明，三个空间自回归模型超过OLS模型不仅在模型拟合和减少空间依赖，而且在模型预测。一般来说，SDM和SEM执行显着优于SLM，而在模型拟合和预测的每个方面，SDM略好于SEM。然而，如果模型结构的复杂性是一个问题，具有地质统计权重矩阵的SEM是对SDM的合理选择，因为SEM提供接近OLS模型的模型系数估计，这使得对模型的解释和理解更多更轻松。
@@ -291,7 +291,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Magnussen-1990空间模型-比较-</title>
       <link>/post/%E7%A9%BA%E9%97%B4/magnussen-1990%E7%A9%BA%E9%97%B4%E6%A8%A1%E5%9E%8B-%E6%AF%94%E8%BE%83-/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/magnussen-1990%E7%A9%BA%E9%97%B4%E6%A8%A1%E5%9E%8B-%E6%AF%94%E8%BE%83-/</guid>
       <description>Magnussen S. Application and Comparison of Spatial Models in Analyzing Tree Genetics Field Trials. Can. J. For. Res. 1990;20:536–46.   采用1个经典模型和11个最近邻空间过程模型分析了三个亲本源的所有可能的组合和三个站点上生长的杰克松[Pinus banksiana]全同胞家系的树高。考虑到在三个位置中的两个上的无效观察（残差）之间的显着的邻域相关性，认为具有空间相互作用项的经典线性模型的扩展是必要的。空间和时间相关性的强度和程度以视觉和表格形式显示。在全同胞家系树高的两个估计之间的显着差异中，11个空间模型中只有4个提供了显着的减少（5-20​​％）。在家庭层面，空间调整平均为1-3％，少数家庭调整超过10％。空间协方差的累积（时间）效应在调整和观察家庭均值之间的秩相关性中得到证明。当调整方差分量和遗传力与未调整对应物进行比较时，没有获得简单的趋势，但大多数模型倾向于减少遗传效应和降低遗传力。结论是，虽然空间分析为实验者提供了一个有吸引力的工具，森林遗传试验缺乏一个因果关系假说需要模型搜索，而不保证真正的处理效果。空间分析为需要收集额外的站点信息以提供更强大的分析提供了很好的指标。仔细的规划和集中的场地准备可以大大减少空间协方差和空间分析的需要。
 在重复区组内的环境梯度（物理因素，地形等）和相邻处理单元之间的竞争对大多数田间试验中处理效果的可靠（精确）估计造成严重的障碍（Binns1987; Correll和Cellier1987; H位hn1973; Loo一DinkinsandTauer1987;改善这种效应的最有效的对策之一是使用不完全区组设计（Cochran和Cox 1957），或者是减少小区大小以及由此的区组大小（Cochran和Cox 1957; Cotterill和James1984; Lambeth和Gladstone1983; Libbyand Cockerham 1980; Loo一DinkinsandTauer1987; Wrightand Freeland1960）。然而，**减少小区大小不可避免地增加了接受不同处理的植物之间的相互作用，以及在植物间竞争的情况下，对于效率较低的设计（CochranandCox1957; H让hn1974; Magnussen1989a）。林木的遗传测定尤其要面对有这种性质的问题。森林50115中的区块微环境模式和大量遗传项目entries具有复杂的实验设计。
@@ -302,7 +302,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Magnussen-1993-ARI-NN-</title>
       <link>/post/%E7%A9%BA%E9%97%B4/magnussen-1993-ari-nn-/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/magnussen-1993-ari-nn-/</guid>
       <description>Magnussen S. Bias in genetic variance estimates due to spatial autocorrelation. Theor. Appl. Genet. 1993;86:349–55.   遗传田间试验分析的一个中心问题是“遗传”和“环境”效应的二分法，因为一个不能被定义为没有另一个。来自768,000个完全随机区组设计的模拟家族试验的结果表明，当表型观察与一级自回归（AR1）过程相容时，来自多单位小区设计的家族方差分量的估计中存在严重向上偏差。家族方差的膨胀，因此，加性遗传方差和狭义的个体遗传性在AR1过程中随着最近邻相关性（ρ）的增加而指数地进行。通货膨胀率的显着差异在各种小区配置中持续存在。在ρ= 0.2时，家庭差异的通货膨胀率达到48-73％。通货膨胀率与遗传性水平无关。修改的Papadakis最近邻（NN）调整程序测试他们消除家庭方差偏差的能力。基于Mead的植物间相互作用系数的NN-调整和来自Bartlett的同时自回归方案的NN-调整去除了由表型相关性引入的高达97％的偏差。 NN调整的估计比未调整的估计略高（5-8％）的相对误差。
 介绍 在田间试验中的最近邻（NN）共享一个共同的微环境，它倾向于使非竞争邻居的观察结果与随机选择的试验观察结果更相似（Cliff和Ord 1981; Upton和Fingleton 1985）。已知相邻实验单元之间缺乏独立性导致估计处理效果和处理对比的标准误差的偏差（Binns 1987; Kempton和Howes 1981; Magnussen 1990; Wilkinson等人1983）;它也膨胀了点间方差（Magnussen 1989a; Smitth 1938; Snedecor和Cochran 1971）。今天，田间试验的分析者喜欢大量的空间方法和[NN调整技术，可以提高现场实验的精度和精度（例如，Corllll和Anderson 1983; Cullis和Gleeson 1989; Ord 1975 ; Stein和Corsten 1991; Zimmerman和Harville 1991）。尽管这种进展和怀疑遗传学试验中空间相关观察的常规分析可能是灾难性的（Stroup和Mulitze 1991），但是很少有系统地量化NN相关观察对估计的影响的遗传变异。在这一领域取得进展的主要障碍是植根于任何试验中遗传和环境影响的混杂（Gregorius和Namkoong 1987）。估计的“遗传效应”以参考群体和参考环境为条件，反之亦然（Monserud和Rehfeldt 1990）。面对田间试验中一阶近邻之间的正相关，如何将表型观察分解成正交和无偏的“遗传”和“环境”效应的问题变得复杂。这里提出的研究旨在通过模拟建立表型一级自回归（ARI）过程对完全随机区组设计中家族方差分量估计的影响。经验相关模式似乎与这种类型的过程兼容（Besag和Kempton 1986; Binns 1987; Magnussen 1990）。模拟中包括的设计是在森林遗传学试验中最常遇到的那些，其中空间依赖性的问题是特别麻烦的，因为大量条目，斑块状微网格马赛克和测试的长时间允许出现明显的空间相互关系（Correll和Cellier 1987; Libby和Cockerham 1980; Stern 1965）。将引入可行的（不一定是最优的）NN调整程序的选择，并评估其消除由表型值的相关性引起的家族方差分量中的偏差的能力。</description>
@@ -312,7 +312,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Meng2009-高度直径-空间自回归</title>
       <link>/post/%E7%A9%BA%E9%97%B4/meng2009-%E9%AB%98%E5%BA%A6%E7%9B%B4%E5%BE%84-%E7%A9%BA%E9%97%B4%E8%87%AA%E5%9B%9E%E5%BD%92/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/meng2009-%E9%AB%98%E5%BA%A6%E7%9B%B4%E5%BE%84-%E7%A9%BA%E9%97%B4%E8%87%AA%E5%9B%9E%E5%BD%92/</guid>
       <description>Meng Q, Cieszewski CJ, Strub MR, Borders BE (2009) Spatial regression modeling of tree height–diameter relationships. Can J For Res 39:2283–2293. doi: 10.1139/X09-136
  树高 - 直径关系通常使用线性或非线性模型进行研究，但是外部变量，特别是空间自相关和树直径或高度的因变量，在高度 - 直径建模中通常不被考虑。本研究探讨了三种类型的空间回归模型 - 空间滞后模型，空间误差模型和空间Durbin过程模型。使用空间回归模型来模拟高度 - 直径关系，以研究空间依赖性和空间自相关性的影响以及由相邻树生成的外生变量的作用。案例研究1显示，空间滞后模型应用于分析高度 - 直径关系，其中作为外生变量的相邻树木的高度和内源性变量DBH显着影响高度生长。案例研究2显示空间误差模型表现得比其他模型更好，高度增长不仅受到其内生变量直径的影响，而且受到空间变化并导致残差空间自相关的未观测变量的影响。空间回归模型是高度 - 直径模型的一种方法，其提供对内生变量直径，外生变量高度和（或）相邻树木的直径以及局部变化但未观察到的环境或生态变量如何促进高度增长的了解。
@@ -323,7 +323,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Mucina1991-趋势面与样条法的区别</title>
       <link>/post/%E7%A9%BA%E9%97%B4/mucina1991-%E8%B6%8B%E5%8A%BF%E9%9D%A2%E4%B8%8E%E6%A0%B7%E6%9D%A1%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/mucina1991-%E8%B6%8B%E5%8A%BF%E9%9D%A2%E4%B8%8E%E6%A0%B7%E6%9D%A1%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
       <description>Mucina L, Čik V, Slavkovský P (1991) Trend surface analysis and splines for pattern determination in plant communities.
  提出了一些用于在表面上绘制生态和植被变量的近似和插值方法。在这方面，基于多项式回归的趋势表面分析被证明是一种有前途的技术。它被审查和典型的应用程序。 讨论了双三次和三角样条的数学背景的基本特征。 “Splines”是一个强大的内插技术家族，用于映射规则和不规则网格上的生态和植被变量。
@@ -334,7 +334,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Muller-2010-几种空间模型的比较-LV模型</title>
       <link>/post/%E7%A9%BA%E9%97%B4/muller-2010-%E5%87%A0%E7%A7%8D%E7%A9%BA%E9%97%B4%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%AF%94%E8%BE%83-lv%E6%A8%A1%E5%9E%8B/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/muller-2010-%E5%87%A0%E7%A7%8D%E7%A9%BA%E9%97%B4%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%AF%94%E8%BE%83-lv%E6%A8%A1%E5%9E%8B/</guid>
       <description>Müller BU, Kleinknecht K, Möhring J, Piepho HP. Comparison of spatial models for sugar beet and barley trials. Crop Sci. 2010;50:794–802.   存在用于在一个维度上调整局部趋势的几种空间方法。本研究的目的是评估和比较不同空间方法的精度。为此，使用基线模型分析了两个德国植物育种公司的293个甜菜（Beta vulgaris）和64个多环境大麦（Hordeum vulgare）试验，其包括块和复制效应，以及不同的一维空间模型，基线模型。使用Akaike信息准则（AIC），两个环境之间调整的基因型均值的表型相关性和相对效率评估模型拟合。对于甜菜和大麦试验，基线模型在大多数情况下优于空间模型，而在一些情况下，添加空间组分证明是有益的。基于这些结果，我们提出了一种从基线模型开始的保守的空间建模方法，然后检查添加空间分量是否改善拟合。在研究的替代模型中，线性方差和一阶自回归模型是最有希望的候选人。
 植物育种和作物品种测试中的田间试验的主要目的是比较不同的基因型。土壤异质性，天气，农业实践和一些其他因素影响每个基因型的产量，并有助于空间趋势（Arnold和Kempton，1979; Gilmour等，1997）。为了更好地预测基因型值和估计空间趋势，在上世纪开发了不同的方法，如使用控制图，阻断和随机化（Fisher，1925; Edmondson，2005）。除了先进的实验设计，提出了许多空间方法来调整空间趋势（最近邻调整法:Bartlett，1978; Wilkinson等，1983; Schwarzbach，1984; 线性方差模型：Williams，1986; AR模型：Gilmour等，1997; Gleeson，1997）。这些方法的共同特征是，假定更接近的曲线具有比更远离的曲线更高的相关性。基因型值估计的精度可以通过阻止和在一维或二维中调整空间趋势来改善。我们在这项研究中的重点是一维分析，因为对于长而细的图，更高的空间相关性通常发现在那些维度，其中地图距离更短。另外，在所研究的试验中通常有许多行，但只有很少的列。在一些情况下，试验的地块没有布置在矩形网格中，因此二维建模的范围有限。本文的一部分动机是一些合作植物育种公司表示希望从传统的迭代最近邻方法迁移到更强大的完全边缘线性混合模型分析与空间分量的局部趋势。对于适合于常规分析的空间方法，重要的是其是稳健的，即不仅在理想条件下良好地执行（Martin等人，1993; Cullis等人，2006; Martin等人， 2006; Piepho等，2008）。在空间方法可以用于常规分析之前，应该对其精度进行测试，并与不同的空间模型进行比较，例如，使用大量的经验数据。本研究的重点是比较不同的空间模型。我们开始与基线模型的比较，然后检查是否可以通过添加空间组件来改善。基线模型包括块和复制效应，但不涉及空间趋势。这种方法与将空间分析视为替代方案而不是经典块分析的附加物的其他研究不同。本研究的另一个重点是具体包括线性方差模型。这个模型在我们的经验中表现相对较好，自第一次提出以来就一直被忽略了（Williams，1986）。使用空间模拟进行大麦试验的研究是Kempton和Howes（1981），Clarke和Baker（1996）和Cullis等人（1998）。对于甜菜，空间建模由Kempton（1982），Besag和Kempton（1986），Durban等人（2001），和Piepho et al。 （2008）。只有少数空间模型研究集中在欧洲的甜菜和大麦田试验。因此，本研究的目的是比较这两种作物的不同空间方法。本文使用来自德国两个商业植物育种计划的甜菜和大麦的数据集。</description>
@@ -344,7 +344,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Piepho-2008-NNA</title>
       <link>/post/%E7%A9%BA%E9%97%B4/piepho-2008-nna/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/piepho-2008-nna/</guid>
       <description>Piepho HP, Richter C, Williams E. Nearest neighbour adjustment and linear variance models in plant breeding trials. Biometrical J. 2008;50:164–89.   本文综述了最近邻分析的方法，适用于一维的局部趋势。这样的方法通常用于植物育种和品种测试。重点是简单的差分方法，包括第一个差异和Papadakis方法。我们讨论这些方法的混合模型表示观察数据的规模。与差异相比，建模观察数据具有许多实际优点，例如方便地计算调整的品种平均值的设施。大多数模型考虑涉及线性方差协方差结构，可以表示为状态空间模型。使用三个数据集来例示所审查的方法和模型。
 新作物品种和育种品系的评价需要在跨多个环境重复的田间试验中进行测试。通常，测试的品种数量很大，通常达到超过100个条目。在早期生成试验中，植物材料可能是如此有限，以至于难以完全重复，因此经常使用具有重复检查例如增强设计的设计（Federer，1961,2002; Williams和John，2003）。在后代和用于释放的品种中，具有两到四个重复的重复试验是常规。由于大量条目，某种形式的不完全区组在两种情况下都是常见的，优选使用诸如a-designs的可分辨设计（John和Williams，1995）。最近，对用于分析产量试验的地质统计方法的兴趣增加，并且可以考虑这样的分析选项来优化设计（Williams等人，2006; Cullis等人，2006）。本文涉及最近邻居调整（NNA），一种特殊类型的地球物理分析现场试验。假设根据某种区组设计布置了试验，并且每个块执行空间调整。我们的重点是一维调整，假设空间趋势主要是在一个方向，这将是这样的情况，当块已经被定向为与任何主要趋势正交，并且由等间隔的小区的单个阵列组成，如许多重要作物，最着名的是谷物，其中地块长而薄。一维分析类似于具有对应于小区的空间位置的时间点的时间序列分析。我们的基本模型可以写为vj =lþbðjÞþtjþej; ð1，其中绘小区（j = 1,2，&amp;hellip;，n）按照场次序索引，vj是第j个小区上观察到的产量，l是截距，bjjjj是测试的品种对j的影响第i个品种生长在第j个小区上，tj是局部趋势，ej是测量误差。本文考虑的模型在tj和ej的假设不同。虽然我们最初通过相关联的计算分析方法来激励一些模型，但是应当理解，模型选择优先于特定计算方法的选择。自从Papadakis（1937）的开创性工作以来，NNA的想法已经引起了相当大的关注，例如在Bartlett（1978）和Wilkinson et al。 （1983）。已经提出了许多扩展和修改。基本思想是通过从相邻小区中减去一些观测值的函数来调整绘小区值，假设该操作至少大致消除了局部趋势。对于Papadakis方法，第j个小区的调整采用形式
@@ -355,7 +355,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Piepho-2010-LV-模型</title>
       <link>/post/%E7%A9%BA%E9%97%B4/piepho-2010-lv-%E6%A8%A1%E5%9E%8B/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/piepho-2010-lv-%E6%A8%A1%E5%9E%8B/</guid>
       <description>Piepho HP, Williams ER. Linear variance models for plant breeding trials. Plant Breed. 2010;129:1–8.   大多数植物育种试验涉及在行和列中的图的布局。可解析的行列设计已经证明在获得处理效果的有效估计中是有效的。通过后封锁或通过包括空间模型分量，进一步改进是可能的。本研究回顾了通过添加空间分量来增强基线行列模型的选项。所考虑的模型是一维和二维中的线性方差模型的不同变体。通过分析来自植物育种和品种测试的许多田间试验来评估这些选项的有用性。
 田间试验的空间模型在过去已经受到相当大的关注（Wilkinson等人1983，Green等人1985，Besag和Kempton 1986，Kempton等人1994，Besag和Higdon 1999，Watson 2000，Edmondson 2005，McCullagh和Clifford 2006，Campbell和Bauer 2007，Piepho等人2008），随着强大的统计软件包的出现，具有空间协方差结构的完全基于REML的混合模型分析可以方便地用于作物品种试验和植物育种试验（Smith et al.2005）。已经为现场试验数据提出了大量空间模型，因此空间分析需要做出多种选择。因此，模型选择和防止过度拟合成为一个主要问题。过拟合的危险随着对数据尝试的候选模型的数量而增加，因此在设计阶段限制模型选择的数量是可取的。在用于现场试验的空间建模的一些应用中，空间模型已经被视为使用阻塞和经典设计原理的替代方案。最近，在考虑特定空间分析的情况下寻找最佳设计的兴趣增加（Cullis等人2006，Martin等人2006，Butler等人2008）。采取有点中间立场，威廉姆斯等。 （2006）提出了基于线性方差（LV）模型的可分辨的空间行列设计，当空间分量不导致改进的拟合时，通过选择对行列设计的经典分析，提供随机化保护。因此，分析可以通过用行和列效应拟合基线模型并检查空间分量的添加是否值得来进行。这种方法虽然允许利用空间相关性，但仅使用非常有限的一组候选模型。此外，如果特定数据集需要复杂的方差 - 协方差结构，而同时只有几个空间方差 - 协方差参数变得相对较小，则以降低的精度支付少量额外费用，空间列设计的用户就受到保护。本研究描述了可分辨行列设计的二维LV模型。它研究了Williams等人提出的模型。 （2006），并提出一个满足可分离性条件的新模型（Martin 1979）。为了激励模型，我们首先考虑Williams提出的一维LV结构（1986）。随后，我们在两个维度探索扩展的选项。使用来自均匀性试验和设计实验的数据集来比较模型。本文中考虑的所有模型使用标准混合模型包（如SAS，GENSTAT或ASREML）很容易拟合。</description>
@@ -365,7 +365,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Piepho-2015-AR(1)模型中的问题-</title>
       <link>/post/%E7%A9%BA%E9%97%B4/piepho-2015-ar1%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98-/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/piepho-2015-ar1%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98-/</guid>
       <description>Piepho H, Möhring J, Pflugfelder M, Hermann W, Williams ER. Problems in parameter estimation for power and AR (1) models of spatial correlation in designed field experiments. Commun. biometry Crop Sci. 2015;10:3–16.   AR（1）和空间相关的功率模型在现场试验数据的分析中是流行的。当自相关参数ρ倾向于为零或一致时，可能发生这些模型的估计和解释的数值困难。这里使用三个不同的示例来考虑这些问题。第一个例子是基于部分复制设计的模拟数据，其中真实的底层方差协方差结构是已知的。其他两个例子涉及来自精确农业试验和植物育种试验的真实数据。我们建议四个选项来处理观察到的数值问题，并说明它们与示例的使用。在示例中示出，AR（1）模型的空间坐标的重新缩放或重新参数化作为指数模型可以有助于模型收敛。我们得出结论，AR（1）模型的个别参数估计应仔细解释，特别是当自相关估计接近零或单位时。
 引言 在混合模型框架中嵌入的空间方差 - 协方差结构在现场试验的分析中已经变得流行（Gilmour等人1997，Piepho等人2008，Gonçalves等人2010）。最常见的空间模型假设与距离的空间相关性的非线性衰减。在每个图的单次观察的随机化实验中，可以在同一块中的图之间假定空间相关性（Williams 1986）。类似地，在具有大图的农场试验中，可以获得每个图的许多空间参考测量（即记录空间坐标的测量），以及相关的协变量信息。对这些试验的全面分析需要考虑同一地块重复测量之间的空间变化（Piepho et al。2011）。用于具有等间隔图的场试验的非常流行的非线性空间模型是一阶自回归AR（1）模型。该模型暗示与空间距离​​的相关性的指数衰减，根据图之间的滞后距离测量，等于间歇图的数量加1。模型也可以扩展到两个维度，最流行的变量是可分离的AR（1）⊗AR（1）模型（Gilmour等人，1997）。当对每个地块进行重复观测时，正如在精确农业实验中常见的情况，观测通常是不规则的间隔，而不是形成一个精确的矩形网格（Piepho et al。2011）。 AR（1）模型不适用于这种实验，因为它需要相等的间距。然而，AR（1）模型可以容易地扩展到不等间隔测量，如所谓的功率模型或指数模型（Gotway和Schabenberger 2004）。这两个模型是基本上相同模型的不同参数化（参见下文）。通常，当试图使用提供混合模型分析的各种统计包来基于残差最大似然（REML）将非线性空间模型拟合到现场试验数据时遇到数值问题。例如，REML算法可能无法收敛，或者最终的Hessian矩阵可能不是非正定的。在本文中，我们考虑AR（1）和功率模型的这些问题，并看看可能的补救措施，以实现收敛到一个正确的解决方案。还考虑参数估计的解释。使用三个不同的示例来说明在实践中遇到的典型问题，并且讨论可能的解决方案。第一个例子是基于部分复制（p-rep）设计的模拟数据（Cullis等人2006，Williams等人2011,2014），而其他两个例子涉及精确农业试验和植物的真实数据育种试验。 本文组织如下。首先我们介绍三个例子。接下来，我们描述空间模型。随后简要介绍尝试适合这些模型时的潜在问题，在收敛问题的情况下解决故障的可能措施以及这三个示例的应用。本文最后简要讨论和我们的建议。
@@ -376,7 +376,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Sarker2015-小扁豆-</title>
       <link>/post/%E7%A9%BA%E9%97%B4/sarker2015-%E5%B0%8F%E6%89%81%E8%B1%86-/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/sarker2015-%E5%B0%8F%E6%89%81%E8%B1%86-/</guid>
       <description>Sarker A, Singh M (2015) Improving breeding efficiency through application of appropriate experimental designs and analysis models: A case of lentil (Lens culinaris Medikus subsp. culinaris) yield trials. F Crop Res 179:26–34. doi: 10.1016/j.fcr.2015.04.007 通过应用适当的实验设计和分析模型来提高育种效率：小扁豆（Lens culinaris Medikus subsp.culinaris）产量试验
  Lentil（。Culinaris Medikus subsp.culinaris）是一个重要的主要脉冲和丰富的蛋白质来源，特别是对发展中国家的经济资源贫乏的消费者。需要实验和分析技术和统计工具来增强扁豆养殖进程。现场实验的关注点之一是在合适的块设计中设计实验，并对数据进行建模，以考虑现场布局中的任何剩余趋势以及绘图误差中的相关性。通过常规育种方法在ICARDA开发的扁豆的精英育种系在1999 - 2005年期间在叙利亚北部和黎巴嫩的三个对比环境中进行了评估。这项研究检查种子和秸秆产量的数据，从随机完全块（RCB）和正方形网格设计中进行的226项试验。将包含阻塞结构，线性趋势和空间相关图误差的合适模型拟合到各个数据集。结果表明，空间分析模型，解释了场的空间模式，比常用的RCB设计模型更好。空间分析使得基因型的预测均值的精确度显着增加。成对基因型的平均效率意味着在不完全块中进行的试验中RCB的比较为种子产量的141％和秸秆产量的158％，并且其中发现优于RCB。它还增强了基于平均值的广义遗传力的估计，在优良模型下，种子平均为72％，而秸秆产量为70％，而RCB模型分别为62％和55％。基于这些模型，由于在10％强度下的选择，种子的遗传增益百分比为26％，稻草产量为20％，比RCB模型的2-3％高。一般来说，建议继续使用不完全块设计用于扁豆的品种试验，并使用最合适的空间模式进行统计分析，以协助田间作物育种者提高所需基因型的选择精度。这些结果与小扁豆中许多其他品种试验的结果一致。
@@ -389,7 +389,7 @@ Cullis和Gleeson（1991）通过在行和列中假设可分离的AR1过程（AR1
       <title>Stefanova-2009-半变异函数诊断空间变异</title>
       <link>/post/%E7%A9%BA%E9%97%B4/stefanova-2009-%E5%8D%8A%E5%8F%98%E5%BC%82%E5%87%BD%E6%95%B0%E8%AF%8A%E6%96%AD%E7%A9%BA%E9%97%B4%E5%8F%98%E5%BC%82/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/stefanova-2009-%E5%8D%8A%E5%8F%98%E5%BC%82%E5%87%BD%E6%95%B0%E8%AF%8A%E6%96%AD%E7%A9%BA%E9%97%B4%E5%8F%98%E5%BC%82/</guid>
       <description>Stefanova KT, Smith AB, Cullis BR (2009) Enhanced Diagnostics for the Spatial Analysis of Field Trials. J Agric Biol Environ Stat 14:392–410. doi: 10.1198/jabes.2009.07098 增强的现场试验空间分析诊断
  我们报告了使用Gilmour，Cullis和Verbyla提出的技术的一系列均匀性场试验的分析。特别是，我们澄清样本变差函数的作用，并提出一系列增强的图形诊断以帮助空间建模过程。我们强调与常见的农艺实践相关的外来变异的存在，例如蛇纹石收获。 关键词：农艺实践;覆盖间隔;混合模型;残余最大似然;空间模型;变异图。
@@ -404,7 +404,7 @@ Gilmour，Cullis和Verbyla（1997）提出了扩展Cullis和Gleeson（1991）二
       <title>Stejskal2016-fir-杂交-空间模型</title>
       <link>/post/%E7%A9%BA%E9%97%B4/stejskal2016-fir-%E6%9D%82%E4%BA%A4-%E7%A9%BA%E9%97%B4%E6%A8%A1%E5%9E%8B/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/stejskal2016-fir-%E6%9D%82%E4%BA%A4-%E7%A9%BA%E9%97%B4%E6%A8%A1%E5%9E%8B/</guid>
       <description> Stejskal, J., Horák, J., and Typta, J. 2016. Effect of hybridization in the firs: artificial hybridization may lead to higher survival rate. Eur. J. For. Res. 135(6): 1097–1105. doi:10.1007/s10342-016-0996-1.
  </description>
@@ -414,7 +414,7 @@ Gilmour，Cullis和Verbyla（1997）提出了扩展Cullis和Gleeson（1991）二
       <title>Thomson1988-趋势面-花旗松</title>
       <link>/post/%E7%A9%BA%E9%97%B4/thomson1988-%E8%B6%8B%E5%8A%BF%E9%9D%A2-%E8%8A%B1%E6%97%97%E6%9D%BE/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/thomson1988-%E8%B6%8B%E5%8A%BF%E9%9D%A2-%E8%8A%B1%E6%97%97%E6%9D%BE/</guid>
       <description>Thomson A, El-Kassaby Y (1988) Trend surface analysis of a Douglas-fir provenance-progeny transfer test. Can J For … 18:515–520.
  使用趋势表面分析来分析IUFRO起源 - 后代转移试验中8年龄道格拉斯冷杉的高度的空间变异性，以区分遗传和环境对树高的影响。测试安装位于不列颠哥伦比亚大学研究森林大学，是一个随机的不完全块设计，三次重复。仅使用在每个块中复制的25个来源，并且具有平衡的数据集（8个家庭，每个家族5棵树）。趋势被拟合到每个来源的每个重复的平均高度，以及每个重复的最大和最小家族的平均大小。解释基于以下假设：微网站（主要是一个块的草侵入）的影响由趋势表面定义，而遗传效应由趋势的残差表示。数据先前已通过ANOVA方法分析，并且这些结果与使用趋势表面分析的结果形成对比。趋势表面分析通常给出类似于方差分析的结果，但在一些情况下导致不同的结论。获得了对基因型和环境的相互作用的另外的见解。趋势面分析被建议作为一个有用的补充来分析来源转移研究的方差。讨论了使用该方法的潜在问题。
@@ -425,7 +425,7 @@ Gilmour，Cullis和Verbyla（1997）提出了扩展Cullis和Gleeson（1991）二
       <title>Velazco2017-SpATS</title>
       <link>/post/%E7%A9%BA%E9%97%B4/velazco2017-spats/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/velazco2017-spats/</guid>
       <description>Velazco JG, et al. (2017) Modelling spatial trends in sorghum breeding field trials using a two-dimensional P-spline mixed model. Theor Appl Genet 0(0):0.   摘要 关键信息 一种灵活和用户友好的空间方法称为SpATS，与一系列高粱繁殖试验中的更详细和特定于试验的空间模型相比较。抽象调整植物育种田间试验的空间趋势对基因型的有效评估和选择至关重要。当前混合模型的空间分析方法是基于多步建模过程，其中在尝试了几个候选空间模型之后拟合了全局和局部趋势。本文报告了一种新颖的空间方法的应用，其通过拟合平滑表面来考虑单个建模步骤中的所有类型的连续场变化。该方法在混合模型框架中使用了具有各向异性平滑度的二维P样条，称为SpATS模型。 我们将这种方法应用于一系列大型和部分复制的高粱繁殖试验。与使用残差自回归相关性的更精细的标准空间模型进行比较，评估了新模型。由SpATS模型产生的精度和基因型值预测的改进等同于使用每个试验的最佳拟合标准空间模型获得的精确度和预测值。 SpATS方法的一个优点是，通过拟合单个模型，可以同时模拟所有模式的空间趋势和遗传效应。此外，我们使用灵活的模型来适应现场趋势。该策略降低了潜在的参数识别问题，简化了模型选择过程。因此，新方法应被视为对植物育种试验的常规分析的有效且易于使用的替代方法。
 介绍 植物育种计划中有效的表型和基因组选择方案依赖于对现场实验中基因型表型性能的准确评估（Qiao et al。2004; Lado et al。2013; Bernal-Vasquez et al。，2014; Sarker and Singh，2015）。植物育种试验通常涉及大量的测试条目，涵盖了大面积的空间变异可能成为遗传价值可靠预测的障碍。在使用有限的遗传物质复制的条件下，这在早期的一代品种试验中特别有挑战性。一些复杂的实验设计，例如能够恢复块体间信息的那些（Yates 1940; Patterson等人，1978; John和Williams 1995）或部分复制的设计（Cullis等人2006; Williams et al。 2014），已经开发出来纠正部分现场趋势。然而，考虑到更复杂的环境变化的有效方法需要用适当的分析模型来补充实验设计（Basford等人1996; Qiao等人2000; Smith等人2002）。已经提出了几种空间方法来提高表型的精确度。最常用的空间模型考虑相邻地块的残差之间的相关性来调整局部趋势或小尺度变化。这些空间方法包括最近邻分析（Bartlett 1978; Wilkin-son et al.1983），以及使用一阶自回归（AR1）函数（Cullis和Gleeson 1991）或其他空间协方差结构（例如Zimmanman）的混合模型分析和Harville 1991; Piepho和Williams 2010）。多项式也被用于实验设计特征之上，以考虑沿行和列方向的添加和非添加趋势（Edmondson 1993; Federer 1998）。早期生物多样性试验的生育趋势已经通过在块内拟合一维立方平滑样条来建模（Durban等，2001）。杜邦等人（2003）应用半参数模型进行现场实验的空间分析，并提出了图形和分析模型选择标准。
@@ -436,7 +436,7 @@ Gilmour，Cullis和Verbyla（1997）提出了扩展Cullis和Gleeson（1991）二
       <title>Verbyla-1999-平滑样条</title>
       <link>/post/%E7%A9%BA%E9%97%B4/verbyla-1999-%E5%B9%B3%E6%BB%91%E6%A0%B7%E6%9D%A1/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/verbyla-1999-%E5%B9%B3%E6%BB%91%E6%A0%B7%E6%9D%A1/</guid>
       <description>Verbyla AP, Cullis BR, Kenward MG, Welham SJ (1999) The analysis of designed experiments and longitudinal data by using smoothing splines. J R Stat Soc Ser C-Applied Stat 48:269–300. doi: 10.1111&amp;frasl;1467-9876.00154
  ##概要 平滑样条和其他非参数平滑方法被广泛接受用于探索性数据分析。这些方法已用于回归，重复测量或纵向数据分析，以及广义线性模型。然而，一个主要的缺点是缺乏正式的推理框架。没有被充分利用的例外是三次平滑样条。三次平滑样条允许混合模型公式，其将该非参数更稳定地平滑在参数设置中。本文提出的公式提供了在模型中包括三次平滑样条用于设计实验和纵向数据分析的机制。因此，非线性曲线可以包括随机效应和随机系数，这导致在线性混合模型框架内非常灵活和信息性建模。也可以适应差异异质性。在纵向数据的情况下使用三次平滑样条的优点是特别明显的，因为对于随机系数模型隐含地实现协方差建模。几个例子被认为是说明的想法。 关键词：方差分析;最佳线性无偏预测;立方平滑样条;纵向数据;混合模型;随机系数模型;重复措施;残差最大似然。 1简介
@@ -447,7 +447,7 @@ Gilmour，Cullis和Verbyla（1997）提出了扩展Cullis和Gleeson（1991）二
       <title>Wilkinson--1983-Papadakis的NN</title>
       <link>/post/%E7%A9%BA%E9%97%B4/wilkinson--1983-papadakis%E7%9A%84nn/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/wilkinson--1983-papadakis%E7%9A%84nn/</guid>
       <description>Wilkinson GN, Eckert SR, Hancock TW, Mayo O. Nearest Neighbour (NN) analysis of field experiments. J. R. Stat. Soc. B [Internet]. 1983 [cited 2016 Dec 21];45:G1–25. Available from: http://sci-hub.cc/http://www.jstor.org/stable/2345523   概要 论文分为两部分。第一部分介绍了蒙特卡罗随机研究的Papadakis的NN分析的协方差方法的结果，显示（i）非迭代的Papadakis分析倾向于保守地偏向; （ii）Bartlett（1978）建议的分析的迭代导致治疗F比的显着正偏差; （iii）当在数据中存在显着的趋势效应时，该方法是非常低效的。给出这些结果的理论解释。第二部分描述了由第一作者发现并与合作者合作开发的NN分析的新方法。该方法本质上是用于“固定”块（或行，列）的经典形式的分析的“移动块”模拟。它避免了Papadakis的方法的缺陷，并导致大约无偏见的分析。与完全或不完全块实验的经典分析相比，其平均几乎总是并且经常显着更有效，并且如果在数据中存在可观的行x列相互作用，则比拉丁或格子正方形设计的标准分析更有效。描述了NN平衡的新设计标准。随机化下的新方法的有效性用蒙特卡罗研究经验证明。
 介绍 45年前由Papadakis（1937）提出并随后由Bartlett（1938）讨论的，通过协方差分析调整相邻地块的处理校正产量的局部趋势效应的场试验的产量的想法。遗憾的是，这个重要的想法遭受了长时间的忽视，直到阿特金森（1969）恢复了它的兴趣，也参见耶茨（1970，第148页）。 Pearce和Moore（1976）提请注意在实际应用Papadakis方法时可能的处理估计准确性的实质性提高，Bartlett（1978）在向皇家统计学会的一篇论文中重新审查了其理论性质参考对称自回归形式的最近邻模型。 Bartlett还建议该方法的迭代，使用来自先前迭代的处理估计来重新定义电流的最近相关协变量。 Pearce（1980）和Kempton和Howes（1981）提出了关于该方法的实际价值的额外的经验证据。 Papadakis方法的许多理论讨论集中在固定模型上。我们认为这是在田野实验的上下文中的错误，其中非稳态趋势效应通常是主要考虑因素。事实上，最近邻近调整在我们称为场近似实验的最近邻（或NN）分析的主要作用可以被描述为提供连续形式的局部去趋势，与经典方法的逐步块解除分析。本文从这个角度重新考虑了Papadakis方法，并且还描述了一种更有效的替代方法。本文按照这两种方法分为两部分。第一部分首先描述了具有均匀性数据的Papadakis方法的广泛的Monte Carlo随机化研究的结果。结果显示，尽管非迭代的Papadakis分析在随机化（略微倾向于保守偏差）下是合理有效的，但是Bartlett（1978）建议的分析的迭代导致治疗F比的严重向上偏差。然而，该方法的最严重的缺陷被发现是当趋势效应可感知时其固有的低效率。在1.3节中，根据平滑趋势+独立误差模型推导了无效率的理论解释。还给出了来自迭代的偏差的简单解释。 Papadakis方法中的低效率的来源被发现是形成最近相邻协变量时治疗效果的产率的先前校正。这导致第一作者发现一种替代的，更有效的NN分析方法，其可以合适地称为在Rothamsted实验站开发的经典“固定块”分析方法的“移动块”类似物。新的方法将在第二部分中描述，我们将其进一步讨论推迟到第11.1节。
@@ -458,7 +458,7 @@ Gilmour，Cullis和Verbyla（1997）提出了扩展Cullis和Gleeson（1991）二
       <title>Yang2004-NNA-LSS-AR1豌豆</title>
       <link>/post/%E7%A9%BA%E9%97%B4/yang2004-nna-lss-ar1%E8%B1%8C%E8%B1%86/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/yang2004-nna-lss-ar1%E8%B1%8C%E8%B1%86/</guid>
       <description>Yang RC, Ye TZ, Blade SF, Bandara M. Efficiency of Spatial Analyses of Field Pea Variety Trials. Crop Sci. 2004;44:49–55.   现在可以对邻近地块进行若干空间分析以提高品种试验的精度。这项研究的目的是评估三个常用的空间分析的效率，最近邻域调整（NNA），最小二乘平滑（LSS）和一阶自回归模型（AR1），从157 1997年至2001年在加拿大阿尔伯塔省不同生长地区进行的豌豆豌豆（豌豆豌豆）品种试验。所有试验均采用随机化完全区块（RCB）设计进行，三次或四次重复。完整的复制（块）种植在单个字段层中。来自157个试验的每一个的产量数据进行常规RCB分析和三个空间分析。与RCB分析相比，LSS，NNA和AR1分析分别去除了平均22％，16％和7％的残留变化，但是三个分析的去除量在试验中有很大不同。每个空间分析在1997年和1998年实现了更多的误差减少，其中试验包含比1999至2001年更大的块大小，其中试验包含更小的块大小。在涉及大量品种的大块尺寸中，空间变异去除的效率是巨大的。此外，LSS和NAN分析在这样的移除比AR1分析更有效。
 品种试验评价作物改良计划中不同种类的性能，并测试大量选择作为新品种的可能释放。随着目前北美和其他地区作物多样化的趋势（Blade等，2002），一些品种试验开始在新环境中测试非传统作物的注册品种。在任何情况下，对品种均值或品种差异的准确估计需要通过使用适当的实验设计或通过统计分析来控制由品种效应所忽略的误差变化。 RCB设计，由于其简单性，继续成为许多品种试验的流行选择。 RCB分析的有效性和效率取决于每个块内的地块是否具有相对均匀的生长条件（例如，土壤肥力和水分）。然而，在大于8到12个地块的块内的空间同质性很少发生在田间试验中（Stroup等人，1994）。因此，在涉及大量条目的多样化试验中，RCB设计的效率通常较差。不完全的块设计，例如格子或σ-设计可以具有更小的块，但是空间异质性可以持续在小块中。显然，这种基于设计的误差变化控制可能不足以消除品种试验中的所有空间趋势。 开发了利用绘图位置信息的不同的基于模型的分析，并应用于估计和校正块内和块之间的空间变化。这些空间分析包括NNA（Bartlett，1978; Wilkinson等，1983; Zimmerman和Harville，1991），LSS（Green等，1985）和空间自相关建模如AR1模型（Glee- son和Cullis，1987 ; Gilmour等人，1997）。经常评估相对于块设计的分析的不同空间分析的效率（Ball等人，1993; Brownie等人，1993; Clarke等人，1994; Stroup等人，1994; Grondona等人， ，1996; Wu et al。，1998; Helms et al。，1999），但是这种评价通常基于有限数目的田间试验。另一方面，其他研究（例如，Kempton和Howes，1981; Cullis和Gleeson，1989; Kempton等，1994）已经使用了大量的试验，但是集中在一个空间分析与常规RCB的比较分析。品种试验通常在多年的大量试验地点进行。空间变异性的模式和程度可能在不同环境之间变化很大，表明不同的空间分析在不同环境中消除空间异质性的能力可能不同。期望在包含不同环境的大量试验中评价不同空间分析的效率。 本文报告了相对于常规RCB分析的三个空间分析（NNA，LSS和AR1）的效率的评估，基于1997年至2001年在加拿大艾伯塔省不同生长区测试的157个豌豆品种试验。这些试验是1987年成立的阿尔伯塔田豌豆区域品种测试计划的一部分，该计划是为了向全省的当地豌豆生产者推荐注册品种进行多年和多地点测试（Park and Lopetinsky，1999）。
@@ -470,7 +470,7 @@ LSS 对于LSS分析（Green等人，1985），趋势效应Tij是在其第二差�
       <title>Ye2008多点-空间分析-花旗松AR1</title>
       <link>/post/%E7%A9%BA%E9%97%B4/ye2008%E5%A4%9A%E7%82%B9-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90-%E8%8A%B1%E6%97%97%E6%9D%BEar1/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/ye2008%E5%A4%9A%E7%82%B9-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90-%E8%8A%B1%E6%97%97%E6%9D%BEar1/</guid>
       <description>Ye TZ, Jayawickrama KJS. Efficiency of using spatial analysis in first-generation coastal Douglas-fir progeny tests in the US Pacific Northwest. Tree Genet. Genomes. 2008;4:677–92.   基于来自美国太平洋西北45个第一代繁殖区的275道格拉斯冷杉[Pseudotsuga menziesii（Mirb。）Franco]后代试验的1,146个数据集，使用自回归误差结构对生长性状进行了单试验和跨试验空间分析。繁殖区域包括宽范围的纬度，经度和海拔。在不同的实验设计，性状，评估年龄和树间距之间比较了使用空间分析在减少由于地点异质性导致的变化、估计遗传参数和增加预测准确性方面的效率。利用空间分析有超过97％的数据集显示显着的模型改进，高度显示比直径或体积更多的改进。由于空间异质性，空间分析平均去除了14-34％的残差方差，导致育种值预测精度提高20％。由于空间调整，变异系数显着降低。空间分析前后的预测增益之间的秩相关性约为0.96，空间分析对前20％父母的平均预测增益几乎没有影响。由于空间调整，我们没有观察到改善的实质性地理趋势。跨地点空间分析对基因型与环境的相互作用几乎没有影响，但倾向于增加残差的试验异质性。比较和讨论了两种不同的跨试验空间分析方法。
 长期以来人们认识到，环境梯度或斑块（例如土壤肥力，土壤水分或地形）经常严重阻碍对林业田间试验的处理效果的可靠估计。试验通常用多个区组进行，其中实验单元组被排列，使得小区尽可能均匀。因此，它们的效率取决于每个重复区组具有均匀生长条件的程度。森林遗传测试通常涉及大量遗传条目，区组大小通常较大，难以确保块内均一性。田间试验中的地点变异性通常是空间连续的。许多研究已经证明，在相邻小区上进行的观测比随机观测更相近（Cliff和Ord 1981; Costa e Silva等人2001; Cullis和Gleeson 1989; Dutkowski等人2002,2006; Magnussen 1990， 1994; Smith 1938; Upton和Fingleton 1985）。例如，Fu et al。 （1999）显示道格拉斯杉木后代测试中的90％的位点显示出大的空间变异。
@@ -482,7 +482,7 @@ LSS 对于LSS分析（Green等人，1985），趋势效应Tij是在其第二差�
       <title>Zas2006-Kriging</title>
       <link>/post/%E7%A9%BA%E9%97%B4/zas2006-kriging/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/zas2006-kriging/</guid>
       <description>Zas R. Iterative kriging for removing spatial autocorrelation in analysis of forest genetic trials. Tree Genet. Genomes. 2006;2:177–85.   在未充分阻断的田间基因试验中空间相关数据的常规分析可能会产生严重影响育种决定的错误结果。森林基因试验通常非常大且非常不均匀，因此微环境异质性的调整变得不可或缺。本研究探讨使用地统计学来解释四个松属松果Ait的空间自相关。后代试验建立在丘陵和不规则的地形，随机完全块设计和大块。使用基于半变异函数和克里金法的迭代方法调整在8岁时评估的5种不同性状的数据，并且与常规分析相比评价对方差分量，遗传力和家庭效应的估计的影响。几乎所有研究的性状显示非随机空间结构。因此，在对空间自相关进行调整之后，在常规分析中非常高的块和族x块方差分量几乎消失。相互作用方差的减少通过家族方差分量恢复，导致更高的遗传力估计。空间自相关的消除也影响家庭效应的估计，导致在空间调整后家庭等级的重要变化。由于家庭效应估计的更高的准确性，家族之间的比较也大大改善。生长性状的分析改善较大，其显示出最强的空间异质性，但对于其它性状如直线性或螺旋数也是明显的。本文演示如何空间自相关可以大幅度影响森林遗传试验与大块的分析。本文提出的迭代克里金程序是解决这种空间异质性的有前途的工具。
 介绍 森林遗传试验（FGT）通常是非常大的，因为遗传条目的数量很大并且个体植物需要大的空间。此外，FGT通常建立在丘陵和不规则地形上，导致复制块内的空间异质性，这可能限制测试的效率。事实上，空间梯度和斑块性已经显示为FGT中的规范（Costa-Silva等人2001; Dutkowski等人2002; Fu等人1999; Hamann等人2002; Magnussen 1990），甚至在表观上（Joyce等人，2002年）。当存在空间异质性时，近邻相比远离近邻更相似，即，数据是自相关的，并且违反了在标准参数统计中的数据独立性的要求（Legendre 1993）。尽管已经表明遗传试验中空间相关观察的常规分析可能是灾难性的（Magnussen 1993a），但是在数据分析中并入空间相关性正在慢慢地出现。具有小块的几个复杂的不完全块（IB）设计可以成功地解释这种空间异质性的大部分（Fu等人1998）。这些实验设计中的一些，如alpha设计（Whitaker等人，1999），在最近的森林遗传试验中已经变得流行，但是随机化完全区块设计（RCB）仍然在使用，并且是几十年前建立的FGT中的典型设计（Loo-Dinkins 1992; Magnussen 1993b）。由于FGT的评估必须延迟，以实现对成熟性能的可靠预测，仍然有许多森林测试需要RCB和大块，仍然需要评估。然而，IB设计的使用可能无法解释短距离上的完全空间异质性（Magnussen 1990），并且块边界和位置变化的实际模式之间的失配将会发生，而不管采用何种设计，因为环境变化倾向于连续和平滑（Dutilleul 1993; Dutkowski等人2002; Ettema和Wardle 2002）。植物间竞争可能是老年森林试验的另一个特殊性，影响邻居之间的相关性（Magnussen 1994）。为了最小化不同遗传项之间的竞争，FGT通常与多树连续地块建立（Magnussen 1993b）。在多树连续图中，基本环境协方差与给定图中的遗传协方差混淆，导致偏倚的遗传参数估计和大块进入块间相互作用方差，这可能大大降低现场测试的精度（Loo -Dinkins 1992）。除了IB设计，​​已经提出了几种分析方法来解释环境变化并且提高现场遗传试验的分析的效率。空间分析，如趋势分析，邻居分析或最近邻分析，已显示加强农业田间试验的分析，并在农艺学中变得相当普遍（例如，Gilmour等人1997; Grondona等人1996年;乔et al.2000，2004）。虽然没有如此常用，空间分析方法在森林试验中也给出了成功的结果（Anekonda和Libby 1996; Costa-Silva等人2001; Dutkowski等人2002; Hamann等人2002; Joyce等人2002; Magnussen 1993a，1994）。 在不同的方法中，地统计学已被证明是一种优秀的工具来模拟土壤性质的空间变化（Gallardo 2003; Gallardo和Covelo 2005;López和Arrúe1995年），并且还去除了遗传试验中的微环境异质性（Hamann et al.2002）。加利西亚（NW西班牙）是一个多山和异质区域与酸性和不育森林土壤。该地区森林种植的生产力高度依赖于土壤性质（Merino等人2003;Sánchez-Rodríguez等人2002; Zas和Serrada 2003），其已知具有小规模空间异质性（Gallardo 2003; Gallardo和Covelo 2005）。在四个RCB松属pinaster Ait。在加利西亚的后代测试，这种空间异质性反映了总方差的大比例解释块之间的差异和一个大的家庭由块相互作用（Zas et al。2004a）。空间自相关在这些试验中似乎是非常重要的，所选择的材料显示出极端和不协调的环境敏感性，应该进一步研究。本研究的目的是1）分析这些后代试验中不同变量的空间结构，以及2）评估空间异质性对RCB试验常规统计分析效率的影响。空间变异使用半变异函数和克里金法建模。提出了基于这些技术的迭代方法以从数据中去除空间异质性。
@@ -493,7 +493,7 @@ LSS 对于LSS分析（Green等人，1985），趋势效应Tij是在其第二差�
       <title>breedR</title>
       <link>/post/%E7%A9%BA%E9%97%B4/breedr/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/breedr/</guid>
       <description>概述 FacundoMu oz编辑本页 on 3 Dec 2015
 BreedR功能映射 
@@ -508,7 +508,7 @@ BreedR功能映射
       <title>cappa-2011-b-spline-</title>
       <link>/post/%E7%A9%BA%E9%97%B4/cappa-2011-b-spline-/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/cappa-2011-b-spline-/</guid>
       <description>Cappa EP, Lstiburek M, Yanchuk AD, El-Kassaby YA. Two-dimensional penalized splines via Gibbs sampling to account for spatial variability in forest genetic trials with small amount of information available. Silvae Genet. 2011;60:25–35.   空间环境异质性是现场森林遗传试验的公知特征，即使在似乎均匀的条件和密集的场所管理下建立的小实验（&amp;lt;1ha）中。在这样的试验中，通常假设任何简单类型的基于随机化理论的实验场设计作为完全随机设计（CRD），应该考虑任何小的位点变异性。然而，大多数已公布的结果表明，在这些类型的试验中存在通常存在于误差项中的空间变化的大分量。在这里我们应用二维平滑表面在单树混合模型中，使用线性，二次和三次B样条基数与行和列的不同和相等数目的结的张量积，以说明环境空间变异性两个相对较小（即576平方米和5,705平方米）森林遗传试验，具有大型多树连续地块构造。一般来说，考虑具有二维表面的位点变异性的模型显示偏离信息标准的值比经典RCD低。当相对少量的信息可用时，线性B样条基可以产生对环境变异性的合理描述。拟合平滑表面的混合模型导致误差方差（ƒƒ2e）的后验均值的减少，加性遗传方差（χ2a）和遗传力（h2HT）的后验均值的增加，增加了16.05％ 46.03％（对于亲本）或11.86％和44.68％（对于后代）的育种值的精确性。
 ##介绍 空间环境异质性是现场森林遗传试验的公知特征（例如，DUTKOWSKI等人，2006; ZAS，2006; CAPPA和CANTET，2007; YE和JAYAWICKRAMA，2008; FINLEY等人，2009）。即使在似乎均匀的条件和强烈的场地管理下建立的小实验（&amp;lt;1ha）也是如此（WOODS等，1995; SAENZ-ROMERO等，2001; JOYCE等，2002）。在这样的试验中，通常假定位点变异性的量（幅度和方向）最小，在实验单元（即，地块，树木或植物）中仅存在小的随机微位点变化。虽然完全随机设计（CRD）通常被认为足以揭示研究的变异来源之间的重要差异（LOO-DINKINS 1992），但在大多数情况下，存在于“误差项”中的变异量可能相当高EL-KASSABY和PARK，1993; REHFELDT，1995; KRAKOWSKI等，2005; ST.COLIR，2006）。虽然CRD的主要优点是更容易建立，但其分析的简单性，这种简单的实验设计不太可能解释大多数环境变化。为了减少环境变率的影响，统计学家，作物和树种育种者设计或采用了更有效的实验布局。随机完全块（RCB）或不完全块设计，试图先验地将站点的异质性分为均匀块。然而，设置这样的假设通常是不现实的或弱的，因为在同一块内进行的两个最远距离测量应当在理论上共享相同的方差，而两个块的边界上的相邻树的两个近距离测量被假定为随不同的幅度变化。这种差异的大小随着实验的大小的增加而增加。解决这个问题的一个策略是通过考虑实验的期望功率并将大小限制到最小来最小化实验的大小。不幸的是，在大多数情况下，即使在最有效的实验布局下，空间异质性在建立阶段是未知的，并且仅在评估阶段显露。因此，有必要在评价模型内对这种变异性进行后验建模。 空间模型允许通过包括两个主要部分来建模场地异质性;即“局部趋势”或小规模和“全球趋势”或大规模变化（GRONDONA等，1996）。已经开发了若干前后方法并应用于森林遗传试验以更准确地说明位点异质性。小规模空间异质性的影响通常通过将随机空间相关结构包括在模型中来解释。这样的残差矩阵被表示为行和列的一阶自回归残差的Kro-necker积（GILMOUR等人，1997）。此外，在森林遗传和其他试验中，小尺度空间变异性已用最近邻技术建模（MAGNUSSEN，1990; ANEKONDA和LIBBY，1996; JOYCE等，2002; KROON等，2008 ）或克里金（HAMANN等人，2002; ZAS，2006）。解释了大规模连续空间变化的一些方法已经通过后阻塞来建模（ERICSSON，1997; LOPEZ等，2002; GEZAN等，2006; KROON等，2008） （THOMSON和EL-KASSABY，1988; FEDERER，1998; SAENZ-ROMERO等，2001）或协变量或平滑样条函数（GILMOUR等人，1997; VERBY- LA等人，1999）。 GILMOUR at al。 （1997），在农业三年，和COSTA eSILVA等。 （2001）和DUTKOWSKI et al。 （2002）在林木场实验中，推荐通过固定或随机分类变量拟合可分离的二维自回归残差和一维的大规模变化（全局）来建模小规模变化（COSTA e SILVA et al。 2001），或包括空间坐标的固定效应作为多项式或三次平滑样条（DUTKOWSKI等人，2002）。然而，全球趋势加自回归残差的拟合没有成功或产生很少或没有改善，因此DUTKOWSKI等人（2006）建议保留空间模型中的设计项。此外，全局趋势的大部分通常存在于二维中，并且在一维中存在非随机函数，例如多项式（FEDER-ER，1998）或三次平滑样条（VERBYLA等，1999）解释空间协方差。此外，极其罕见的是，仅在行或列的方向上发现大规模连续空间变异性，并且必须考虑行和列之间的某种相互作用以考虑这种变化性（FEDERER， 1998）。为此，FEDERER（1998）提出了在行和列的多项式之间拟合相互作用。然而，当在极端拟合观察时，多项式做的不好;即极端观测在估计的参数中具有大的影响，并且对于更高次的多项式尤其如此。 花样作为多项式的替代方法，也被用于处理环境异质性（CAPPA和CANTET，2007）。样条是来自较低次多项式的段的分段多项式函数（GREEN和SILVERMAN，1994）。段连接的位置称为节点。样条能够以复杂的变化模式捕获数据中存在的大部分蜿蜒，而不会受到数值不稳定性的影响。特定类型的样条是“基本样条”（B样条），其是局部基函数，由通常为线性，二次或立方的度为d的多项式段组成，在连接点处具有d-1个连续导数，或结。 EILERS和MARX（1996）提出了在一个维度上具有等间距结的惩罚样条（P样条），引入影响B样条参数的第一或第二差异的惩罚。罚分控制拟合函数时的平滑度。 EILERS和MARX（2003）扩展了它们的方法，使用B样条的张量积来估计二维表面。应用于一个或两个维度（EILERS和MARX，1996; 2003），B样条函数的参数被视为固定效应;然而，样条与混合模型密切相关（RUPPERT et al。，2003; WAND，2003）。在最近的一项研究中，CAPPA和CANTET（2007）提出使用基于混合模型框架的三次B样条的张量积，将B样条函数参数作为随机变量进行处理（即，使用协方差结构随机结效应）在二维网格中。他们表明，该方法可以解释大规模连续空间变化的个别试验的森林遗传评价，使用贝叶斯技术通过吉布斯抽样，以推断模型的所有色散参数。 CAPPA等人（未出版）扩展了CAPPA和CANTET（2007）的方法，证明其在适应西方铁杉（Tsuga heterophylla（Raf。）Sarg。）的几个大型森林遗传学试验的空间异质性的复杂模式中的应用，树图设计。他们建模了不同的空间变异模式，包括：a）小规模变化，b）小规模变化以及一维（即横跨行或列）的大规模变化，以及c）小规模变化，两个维度（即，横跨行和列）的大规模变化。新的二维表面与“重复组”和不完全块“先验”设计相比，将十个位点的后验均值减少了3.</description>
@@ -518,7 +518,7 @@ BreedR功能映射
       <title>fu-2008-树高的空间变异模式</title>
       <link>/post/%E7%A9%BA%E9%97%B4/fu-2008-%E6%A0%91%E9%AB%98%E7%9A%84%E7%A9%BA%E9%97%B4%E5%8F%98%E5%BC%82%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/fu-2008-%E6%A0%91%E9%AB%98%E7%9A%84%E7%A9%BA%E9%97%B4%E5%8F%98%E5%BC%82%E6%A8%A1%E5%BC%8F/</guid>
       <description>Fu Y-B, Yanchuk AD, Namkoong G. Spatial patterns of tree height variations in a series of Douglas-fir progeny trials: implications for genetic testing. Can. J. For. Res. 1999;29:714–23.   摘要：利用传统的统计和地理统计技术检查了在不列颠哥伦比亚省南部沿海地区66个试验地点进行的一系列道格拉斯冷杉（Pseudotsuga menziesii（Mirb。）Franco）后代6至12年龄树高的空间变异模式。发现在66个测试位点内和之间的年间树高的变异很大。由家族，行，列，斑块和小区内解释的地点内方差的估计比例分别平均为11％，7％，5％，12％和47％，加上由于未知因素的7％，应用的阻断applied blocking除去了约5％的地点内变异。在超过44个测试位点观察到在行和列方向的显着梯度，并且估计的斜率平均在0.33至1.52cm /小区的范围内。斑块大小在测试位置上有很大变化，平均从5.21到6.47（小区），表明这些试验的平均斑块大小为18m。时间变化对于家族方差很大，但对于由行，列，斑块和小区内解释的那些方差比例不是很大。在老树上发现更多的渐变和更大的补丁大小。讨论了这些结果对森林遗传测试的启示。
 在森林树木中的后代试验已经进行了proceeded几十年，并将继续在林木育种中发挥重要作用，因为这些田间试验提供了有价值的手段来评估和选择期望的个体和种群用于各种育种目标（Namkoong等人1988; Fu et al.1998）。然而，对以前的后代试验的分析（Magnussen 1993a）表明，林木的遗传田间试验没有免于技术和实践问题，如数据丢失，损害，异常值，微观遗传，竞争和基因型通过环境相互作用。这些问题使得最初提出的数据分析更加复杂，并且所采用的田间设计比之前认为的效率低。许多树种繁殖者对实现当前或未来后代试验的有效性产生了担忧。在过去几十年，探索和（或）开发具有小区组的田间设计（例如McCutchan等人1985; Loo-Dinkins和Tauer 1987; Williams和Matheson 1994），并在数据分析中引入空间相关性，Magnussen 1990）慢慢地出现。
@@ -531,7 +531,7 @@ BreedR功能映射
       <title>isik2016-breeding-空间分析</title>
       <link>/post/%E7%A9%BA%E9%97%B4/isik2016-breeding-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/isik2016-breeding-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/</guid>
       <description>Isik FT, Holland J, Maltecca C (2016) Genetic Data Analysis for Plant and Animal Breeding.
  第7章：空间分析 概要
@@ -549,7 +549,7 @@ BreedR功能映射
       <title>rodriguez2016-SpATS</title>
       <link>/post/%E7%A9%BA%E9%97%B4/rodriguez2016-spats/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/rodriguez2016-spats/</guid>
       <description>Rodr’\iguez-Álvarez MX, Boer MP, van Eeuwijk FA, Eilers PHC (2016) Spatial Models for Field Trials. arXiv Prepr arXiv160708255.   抽象 农业田间试验分析的一个重要目标是通过对空间效应进行修正来获得对基因型性能的良好预测。在实践中，这些校正结果是复杂的，因为可以有不同类型的空间效应;那些由于管理干预而应用于田野地块和由于各种不稳定的空间趋势而引起的。本文提出了现场试验的模型，其中随机空间分量由张量积惩罚样条（P-splines）组成。一种特殊的方差分析重新形成导致五个平滑的添加空间分量，构成了具有五个未知方差分量的混合模型的基础。在这个空间领域之上，通过标准方式的混合模型来描述基因型，块，重复和/或其他空间变异来源的影响。我们展示遗传力的几个定义与有关维度或与遗传成分相关的有效自由度之间的关系。该方法通过大规模现场试验实验进行了说明。提供R包装。 1介绍 农业现场试验中空间变化很常见。许多因素结合起来产生了不同于情节与情节的微观环境，强烈影响产量和其他特征。估计基因型效应时需要对其进行校正。空间变异的一部分可归因于由播种或播种之前和播种过程中准备的方式引起的系统效应。一个熟悉的例子是行和列效应，这是由于在耕作，耕种和其他程序中机器的移动引起的。将统计模型的因素添加到它们中来比较容易。随机空间变化，例如生育率趋势更难模拟。没有协变量（如行号）与之相关联，因此需要为随机字段包含模型组件。粗略地说，空间趋势模型有两种主要方法：一种是基于空间方差协方差结构的方法;另一个基于平滑技术。在第一种情况下，空间相关的随机分量被包括在空间模型中。然而，这是不平凡的，因为沿着字段的行和列的两个方向的相关性必须被建模。为了保持努力的可控性，需要做出若干假设，考虑到可分离性和稳定性（参见例如Zimmerman和Harville，1991）已成为标准。在这一领域的重要贡献是Cullis和Gleeson（1991）提出并提出于Gilmour等人的可分离自回归模型。 （1997），Piepho和Willians（2010）中讨论的可分离线性方差模型，或Besag和Hidgon（1999）给出的行和列中的贝叶斯第一差分模型。作为补充方法，平滑方法明确地模拟空间趋势变化。在农业环境中使用平滑技术可以追溯到Green等人。 （1985），并已被Durban等人进一步描述和扩展。 （2003）和Verbyla等人（1999）。据我们所知，这种建模技术主要在一维情况下在统计学文献中接近，即通过沿着该领域的行和列的单独的（或附加的）平滑趋势效应。然而，虽然这些方法已被证明对大规模依赖（或全球趋势）的建模是有用的，但它们受到的限制并不总是能够捕获小规模依赖（局部趋势）。由于这种限制，可能仍然需要包含空间相关的成分（Gilmour et al。，1997; Verbyla et al。，1999）。作为替代，本文探讨了二维光滑表面的使用。我们提出使用张量产品惩罚样条（P-splines，Eilers和Marx，2003）来明确地模拟两个空间依赖的来源。 E-Sullivan（1986）提出的P-splines由Eilers和Marx（1996）引入。 P样条曲线平滑作为惩罚回归：丰富的B样条基与B样条系数的（高阶）差异相结合以避免过拟合，并且基于惩罚的普通最小二乘法进行估计。可以看出，P-样条的混合模型表示（Currie和Durban，2002; Wand，2003）为我们提供了一个现场试验分析的总体框架。它允许包含额外的固定和随机组件，例如基因型效应或行和列的校正。此外，使用嵌套的B-样条基（Lee et al。，2013），我们称之为SpATS的方法的计算量是适度的，即使是大面积试验。我们的SpATS模型有许多其他有吸引力的属性：（1）获得了该领域空间趋势的明确估计; （2）估计稳定快速; （3）遗漏的地块，甚至很大一部分，容易处理;和（4）沿着广义线性模型的方向延伸到非正常响应是直接的。我们应该提到，我们的做法在农业文献中并不是全新的。 在Taye和Njuho（2008）和Robbins等人（2012），作者在实地实验的背景下讨论了类似的方法，在森林研究中，Cappa和Cantet（2008）已经介绍了该主题。本文通过提出在混合效应模型上下文中构建的完全各向异性的惩罚方法进一步。使用Lee等人提出的P-样条ANOVA型（PS-ANOVA）方法。 （2013），其产生了具有五个平滑空间分量的模型，每个具有明确的解释。我们还显示了Cullis等人提出的遗传性广义定义之间的联系。 （2006）和Oakey等人（2006）和模型组件的有效维度的概念，这是平滑语境中一个众所周知的复杂度测度（Hastie和Tibshirani，1990）。最后，我们提供了一个软件，用于实际应用我们的建议，在一个免费且易于使用的R-package（R Core Team，2016），称为SpATS。本文的其余部分的结构如下。我们从第2节开始激励我们的方法。第3节介绍了一维和二维的B-和P-样条的背景，包括它们作为混合模型的表示。它们构成空间模型的基础，这在第4节中给出。比较我们的SpATS模型和Gilmour等人的模拟。 （1997）可以在第5节中找到，第6节介绍了大规模现场试验的几种应用。讨论区关闭文章。一些技术细节已经作为附录添加，我们也在这里介绍随附的R-package。</description>
     </item>
@@ -558,7 +558,7 @@ BreedR功能映射
       <title>半变异函数variogram</title>
       <link>/post/%E7%A9%BA%E9%97%B4/%E5%8D%8A%E5%8F%98%E5%BC%82%E5%87%BD%E6%95%B0variogram/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/%E5%8D%8A%E5%8F%98%E5%BC%82%E5%87%BD%E6%95%B0variogram/</guid>
       <description> Lu JF, Zhang LJ (2011) Modeling and Prediction of Tree Height Diameter Relationships Using Spatial Autoregressive Models. For Sci 57:252–264.
  我们发现变差函数或地质统计权重矩阵优于其他空间权重矩阵，如邻接，逆距离和局部G（i）*统计
@@ -569,7 +569,7 @@ BreedR功能映射
       <title>无标题文章</title>
       <link>/post/%E7%A9%BA%E9%97%B4/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/%E6%97%A0%E6%A0%87%E9%A2%98%E6%96%87%E7%AB%A0/</guid>
       <description>摘要 本文以1988年建造的由94个自由授粉家系和来自12×12全双列交配的55个全同胞家系组成的日本落叶松子代测定林为对象，利用全同胞材料研究开展经济性状（生长、材性）的配合力分析、遗传参数估计、杂种优势和自交衰退分析以及利用基于分子标记的亲本遗传距离预测杂种优势；利用全部子代材料和单株混合线性模型了解测定林中的环境变异趋势，并采用空间模型1阶自回归（AR）和3次B样条（Spline）解析这些变异从而提高育种效率；加入部分利用分子标记重建是系谱信息，研究其对遗传参数估计的影响和对育种的意义；利用19a生生长数据研究测定林内的竞争效应强度，以及竞争效应在育种值估计中起到的作用。旨在为日本落叶松遗传改良策略的制定和二代优树的选择奠定基础。主要研究结果如下： 一般配合力（GCA）和特殊配合力（SCA）效应对各生长性状有显著作用，SCA在19a生时起主导地位，28a生时其重要性有所下降，最佳育种策略是优良亲本种子园结合杂优组合中优良个体无性系。小区和残差方差占比很大，狭义和广义遗传力均较低（0.01-0.08, 0.04-0.14）。正反交效应只对28a生树高作用显著，交配设计中不含反交导致GCA、SCA方差和遗传力估计偏高，但对育种值排名影响不大，半双列交配设计即能满足遗传测定的需要。 部分组合表现出较高的杂种优势是后续理想的育种材料。75%亲本无显著自交衰退，且自交子代存活率与其它类型无显著差异，短期内无需顾虑近交衰退。基于17个EST-SSR的亲本遗传距离与SCA和杂种优势无显著的相关关系，该方法没有成功预测杂种优势。 生长性状存在明显的空间异质性，在只含试验设计的基础模型和空间模型中AR模型表现最好。对于多数性状从AR模型估计的加性遗传方差相对于基础模型略有下降，残差方差也均有减少，小区方差则减少了80%之多。AR模型给出的狭义遗传力最高，H19、H28、DBH28和V28分别增加了18.9%、26.9%、41.7%和17.6%。空间模型中的亲本和子代育种值精度略高于（28a生时）或近等于基础模型；AR模型中的生长性状亲本育种值精度变幅为0.52-0.59，略高于子代的0.50-0.54；材性性状的亲本和子代育种值精度分别约0.73和0.85，均高于生长性状。材性则受环境变异影响较小，空间效应多不显著，采用常规分析即可。 系谱重建对拟合模型的AIC（Akaike information criterion）值没有影响，对遗传参数估计和育种值精度的影响因性状而异。补充更多系谱信息后，材性性状的遗传力和遗传增益有显著提升；生长性状H28遗传力增加，而DBH19和V19的遗传力下降但育种值精度升高，对遗传增益无明显作用。建议将对自由授粉材料的系谱重建纳入常规遗传测定分析中。 竞争分析发现，19a生时试验林内个体间高生长呈协作关系，但胸径和材积则表现出显著的竞争效应。对于3个性状，竞争模型得到的直接加性遗传方差（σ_Ad^2）均高于基础模型，分别高出73%、205%和93%；胸径和材积的残差方差（σ_e^2）相对于基础模型的分别下降了8%和6%，但相反树高则增加了11%。在竞争模型中加入AR空间效应后，胸径和材积的σ_Ad^2和σ_e^2的差异进一步加大，σ_Ad^2比竞争模型分别增加了6%和27%，σ_e^2分别下降了5%和9%；直接竞争遗传方差（σ_Ac^2）分别增加了23%和4%。因此不考虑竞争效应的模型给出的方差估计有较大偏差。尽管来自基础模型和含有竞争效应的模型胸径的育种值之间显著正相关，但相关系数不高（0.50和0.38）；按照5%的强度选优时，基础模型与竞争模型和竞争空间联合中的共有个体的比例分别只有39.1%和24.7%，表明竞争与空间效应对选优有极大影响，从而影响遗传改良进程。 关键词：落叶松；遗传改良；双列交配；杂种优势；系谱重建；空间分析；竞争分析</description>
     </item>
@@ -578,7 +578,7 @@ BreedR功能映射
       <title>野生红鹿-空间</title>
       <link>/post/%E7%A9%BA%E9%97%B4/%E9%87%8E%E7%94%9F%E7%BA%A2%E9%B9%BF-%E7%A9%BA%E9%97%B4/</link>
       <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Leiming Dong)</author>
+      <author>dongleiming2008@126.com (Leiming Dong)</author>
       <guid>/post/%E7%A9%BA%E9%97%B4/%E9%87%8E%E7%94%9F%E7%BA%A2%E9%B9%BF-%E7%A9%BA%E9%97%B4/</guid>
       <description>Stopher K V., Walling CA, Morris A, Guinness FE, Clutton-Brock TH, Pemberton JM, et al. SHARED SPATIAL EFFECTS ON QUANTITATIVE GENETIC PARAMETERS: ACCOUNTING FOR SPATIAL AUTOCORRELATION AND HOME RANGE OVERLAP REDUCES ESTIMATES OF HERITABILITY IN WILD RED DEER. Evolution (N. Y). [Internet]. Blackwell Publishing Inc; 2012 [cited 2016 Dec 6];66:2411–26. Available from: http://doi.wiley.com/10.1111/j.1558-5646.2012.01620.x   对空间遗传参数的共享空间效应：考虑空间自相关和家庭范围重叠减少了野生红鹿的遗传力估计 抽象
 社会结构，有限的分散和资源的空间异质性在野生脊椎动物群体中是普遍存在的。结果，亲属共享环境以及基因，并且个体之间的相似性的环境和遗传来源可能被混淆。因此，野生动物中的数量遗传研究通常说明容易获得的共同环境影响（例如，亲本，巢或区域）。精细尺度的空间效应可能在野生脊椎动物中同样重要，但已被很大程度上忽略。我们使用来自野生红鹿的数据建立“动物模型”，以估计四个女性性状（春季和芸薹属家庭范围大小，后代出生体重和终生繁殖成功）中的加性遗传方差和遗传力。然后，我们分开地纳入空间自相关和归纳范围重叠的矩阵到这些模型中，以估计位置或共享栖息地对表型变化的影响。这些术语解释了所有性状的大量变化，并且它们的包含导致遗传力估计的降低，高达家庭范围大小的数量级。我们的研究结果突出了多个协方差矩阵的潜力解剖环境，社会和遗传贡献表型变异，以及考虑精细尺度空间过程在数量遗传研究的重要性。 加性遗传方差（VA）和遗传力（h2，遗传与表型方差的比率）是我们理解自然中的性状进化潜力和动力学的基本参数（Lande 1982; Houle 1992）。数量遗传模型依赖于亲缘之间的表型相似性来估计它们（Falconer和Mackay 1996; Lynch和Walsh 1998）。 “动物模型”的应用是一种混合效应模型，其中使用来自多代系谱的遗传相关矩阵（Lynch和Walsh 1998）在野生种群中估计VA，提高了我们对进化遗传学的理解自然（Ellegren和Sheldon 2008; Kruuk等人2008）。然而，野生种群的特征在于高水平的环境异质性，并且亲缘经常共享环境。有人认为，“动物模型”的多代方法估计遗传力减少偏差从环境相似性，因为模型使用近亲和更远的亲戚之间的表型相似，他们不太可能生活在相似的环境条件Postma和Charmantier 2007）。尽管如此，未能适当地考虑这种共同的环境影响已知偏倚来自“动物模型”的参数的估计（Kruuk和Hadfield 2007），并且已经成为常见的做法来解释某些种类的共享环境影响（例如，父母（例如，Kruuk等人2001; MacColl和Hatchwell 2003; Charmantier等人2004; Wilson等人2005; Kruuk等人2005），通过将这些模型结合到模型中作为固定或随机效应（例如， Hadfield 2007）。</description>
