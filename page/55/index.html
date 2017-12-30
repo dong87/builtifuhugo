@@ -212,6 +212,36 @@
           
           
             <article class="post-preview">
+              <a href="../../post/rcodes/%E8%A1%A5%E5%85%85cf29%E8%87%AA%E7%94%B1%E6%8E%88%E7%B2%89%E5%AD%90%E4%BB%A3-%E5%B9%B6plot/">
+                <h2 class="post-title">补充CF29自由授粉子代-并plot</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (119 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  source(&quot;D:/Sync/R/rcodes/generate_label_df.r&quot;) com&lt;-unique(df$com) # here must be df not df.rm.self com&lt;-as.character(com) com&lt;-unique(df$com) # here must be df not df.rm.self com&lt;-as.character(com) com comcom&lt;-read.csv(&quot;comcom.growth.csv&quot;) setwd(&quot;D:/Sync/R/8801/fullsib/160620&quot;) comcom&lt;-read.csv(&quot;comcom.growth.csv&quot;) comcom&lt;-as.matrix(comcom) pdf(&quot;grow.performance.1205.pdf&quot;,paper=&quot;a4&quot;, width = 0, height = 9,family=&quot;Times&quot;,pointsize = 10) par(mfrow=c(3,3),mar = c(6, 4, .5, .5),las=2) for (i in 1:nrow(comcom)){ df.com&lt;-df[df$com %in% com[comcom[i,]],] df.com$com&lt;-factor(df.com$com) X&lt;-names(df.com) for (j in 12:length(X)){ data.i&lt;-df.com[, X[j]] model=lm(data.i ~ df.com$com ) ANOVA=aov(model) TUKEY &lt;- TukeyHSD(x=ANOVA, 'df.com$com', conf.level=0.99) # a&lt;-TUKEY$`df.com$com`[,c(1,4)] # colnames(a)&lt;-c(paste(X[j],&quot;diff&quot;,sep = &quot;_&quot;),&quot;p adj&quot;) # write.
+                  <a href="../../post/rcodes/%E8%A1%A5%E5%85%85cf29%E8%87%AA%E7%94%B1%E6%8E%88%E7%B2%89%E5%AD%90%E4%BB%A3-%E5%B9%B6plot/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="../../post/%E9%9A%8F%E7%AC%94/%E8%A1%A8%E5%9E%8Badjustment/">
                 <h2 class="post-title">表型adjustment</h2>
                 
@@ -490,37 +520,6 @@
                   因为要去掉数据中的自交，所以之前画的boxplot需要重新做，代码如下：
  setwd(&quot;D:/Sync/R/8801/fullsib/160620&quot;) Myfile&lt;-c(&quot;8801fs_05_14.csv&quot;) df&lt;-read.csv(Myfile) str(df) # 'data.frame':	2226 obs. of 20 variables: # $ TreeId : int 3141 3142 3143 3144 3145 3146 3147 3148 3149 3150 ... # $ Mum : Factor w/ 23 levels &quot;CF29&quot;,&quot;R1&quot;,&quot;R1_OP&quot;,..: 18 18 18 18 18 18 18 18 18 18 ... # $ Dad : Factor w/ 13 levels &quot;&quot;,&quot;CF29&quot;,&quot;R1&quot;,..: 8 8 8 8 8 8 8 8 8 8 ... # $ Com : Factor w/ 66 levels &quot;CF29RC402&quot;,&quot;CF29Y11&quot;,.
                   <a href="../../post/rcodes/%E9%87%8D%E7%94%BBboxplot%E5%8E%BB%E6%8E%89%E8%87%AA%E4%BA%A4-_2016-10-20-22-14-09-cst_/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/%E7%A9%BA%E9%97%B4/%E9%87%8E%E7%94%9F%E7%BA%A2%E9%B9%BF-%E7%A9%BA%E9%97%B4/">
-                <h2 class="post-title">野生红鹿-空间</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (138 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  Stopher K V., Walling CA, Morris A, Guinness FE, Clutton-Brock TH, Pemberton JM, et al. SHARED SPATIAL EFFECTS ON QUANTITATIVE GENETIC PARAMETERS: ACCOUNTING FOR SPATIAL AUTOCORRELATION AND HOME RANGE OVERLAP REDUCES ESTIMATES OF HERITABILITY IN WILD RED DEER. Evolution (N. Y). [Internet]. Blackwell Publishing Inc; 2012 [cited 2016 Dec 6];66:2411–26. Available from: http://doi.wiley.com/10.1111/j.1558-5646.2012.01620.x   对空间遗传参数的共享空间效应：考虑空间自相关和家庭范围重叠减少了野生红鹿的遗传力估计 抽象
-社会结构，有限的分散和资源的空间异质性在野生脊椎动物群体中是普遍存在的。结果，亲属共享环境以及基因，并且个体之间的相似性的环境和遗传来源可能被混淆。因此，野生动物中的数量遗传研究通常说明容易获得的共同环境影响（例如，亲本，巢或区域）。精细尺度的空间效应可能在野生脊椎动物中同样重要，但已被很大程度上忽略。我们使用来自野生红鹿的数据建立“动物模型”，以估计四个女性性状（春季和芸薹属家庭范围大小，后代出生体重和终生繁殖成功）中的加性遗传方差和遗传力。然后，我们分开地纳入空间自相关和归纳范围重叠的矩阵到这些模型中，以估计位置或共享栖息地对表型变化的影响。这些术语解释了所有性状的大量变化，并且它们的包含导致遗传力估计的降低，高达家庭范围大小的数量级。我们的研究结果突出了多个协方差矩阵的潜力解剖环境，社会和遗传贡献表型变异，以及考虑精细尺度空间过程在数量遗传研究的重要性。 加性遗传方差（VA）和遗传力（h2，遗传与表型方差的比率）是我们理解自然中的性状进化潜力和动力学的基本参数（Lande 1982; Houle 1992）。数量遗传模型依赖于亲缘之间的表型相似性来估计它们（Falconer和Mackay 1996; Lynch和Walsh 1998）。 “动物模型”的应用是一种混合效应模型，其中使用来自多代系谱的遗传相关矩阵（Lynch和Walsh 1998）在野生种群中估计VA，提高了我们对进化遗传学的理解自然（Ellegren和Sheldon 2008; Kruuk等人2008）。然而，野生种群的特征在于高水平的环境异质性，并且亲缘经常共享环境。有人认为，“动物模型”的多代方法估计遗传力减少偏差从环境相似性，因为模型使用近亲和更远的亲戚之间的表型相似，他们不太可能生活在相似的环境条件Postma和Charmantier 2007）。尽管如此，未能适当地考虑这种共同的环境影响已知偏倚来自“动物模型”的参数的估计（Kruuk和Hadfield 2007），并且已经成为常见的做法来解释某些种类的共享环境影响（例如，父母（例如，Kruuk等人2001; MacColl和Hatchwell 2003; Charmantier等人2004; Wilson等人2005; Kruuk等人2005），通过将这些模型结合到模型中作为固定或随机效应（例如， Hadfield 2007）。
-                  <a href="../../post/%E7%A9%BA%E9%97%B4/%E9%87%8E%E7%94%9F%E7%BA%A2%E9%B9%BF-%E7%A9%BA%E9%97%B4/" class="post-read-more">[Read More]</a>
                 
               </div>
 

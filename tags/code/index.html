@@ -180,6 +180,34 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/%E6%89%B9%E9%87%8F%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9-%E6%89%B9%E9%87%8F%E6%8A%8A%E7%AE%80%E4%B9%A6%E5%AF%BC%E5%87%BA%E7%9A%84md%E6%96%87%E4%BB%B6%E5%8A%A0%E4%B8%8Ayaml/">
+                <h2 class="post-title">批量生成多个文件夹；批量把简书导出的md文件加上yaml</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on December 30, 2017
+              </p>
+              <div class="post-entry">
+                
+                  简书里有一些博客，能导出成md格式，但缺少抬头yaml。借用大鹏志的代码，把我的所有文件也都加上抬头。
+ # 设置工作路径&amp;加载包 setwd(&quot;D:/R&quot;) library(tidyverse) # 生成新的分类文件夹（简书导出是有分类的） for (i in dir(&quot;jianshu&quot;)) { dir.create(paste0(&quot;./jianshunew/&quot;, i)) } # 逐个文件夹中逐个文件添加 for (i in dir(&quot;jianshu&quot;)) { ## i循环文件夹，subdir是第i个文件夹中全部文件的名字 subdir &lt;- paste0(&quot;jianshu/&quot;, i) %&gt;% list.files(full.names = T) for (j in 1:length(subdir)) { ## j循环每个文件夹中的文件，txt是第j个文件的内容 txt &lt;- readLines(subdir[j], encoding = &quot;UTF-8&quot;) ## header是抬头yaml，用的是blogdown的样例 header &lt;- readLines(&quot;header.txt&quot;) # categories是子文件夹的名字 categories &lt;- str_split(subdir[j], &quot;/&quot;) %&gt;% unlist %&gt;% .[2] ## startn是提取文件名字的位置 startn &lt;- 8 + nchar(categories) + 2 # title title &lt;- substr(subdir[j], startn, nchar(subdir[j]) - 3) ## header中第2和7个元素分别是题目和分类，把相应的值赋予 header[2] &lt;- title %&gt;% paste0(header[2], .
+                  <a href="../../post/%E9%9A%8F%E7%AC%94/%E6%89%B9%E9%87%8F%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9-%E6%89%B9%E9%87%8F%E6%8A%8A%E7%AE%80%E4%B9%A6%E5%AF%BC%E5%87%BA%E7%9A%84md%E6%96%87%E4%BB%B6%E5%8A%A0%E4%B8%8Ayaml/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/code/">code</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="../../post/2016-03-08-code-sample/">
                 <h2 class="post-title">Code Sample</h2>
 

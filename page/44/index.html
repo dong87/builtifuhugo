@@ -212,6 +212,38 @@
           
           
             <article class="post-preview">
+              <a href="../../post/rcodes/nei-dist-tree-/">
+                <h2 class="post-title">nei-dist-tree-</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (89 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  在R中计算Nei's遗传距离，并利用UPGMA获取聚类树的具体流程如下： 1. 在Excel中整理marker数据并用Genalex生成需要的格式后再在R中转成需要的“genind”对象类型。 1. 按照Genalex要求​准备好原始数据（C4） 2. Genalex自动生成格式并保存成.csv Parameters&gt;All for Codom （这是共显性标记，显性标记不是这个，是loci？） 注意！第二列要加上群体的代号，如果不分群体就编码一致就可以。这里是共显性标记，对于显性标记也一样。缺失的条带用NA表示。然后需要处理缺失数据时可以用missingno {poppr}函数，可选方案有&quot;ignore&quot;, &quot;zero&quot;, &quot;mean&quot;, &quot;loci&quot;, or &quot;geno&quot;。位点的名字中不要有点.。 3. 读取
+# 加载包 library(poppr) library(phangorn) # upgma # 读取标记数据 dataset&lt;-read.genalex(&quot;name.csv&quot;,genclone = F,ploidy = 2) # nei距离 nei.dis&lt;-nei.dist(dataset,warning = T) # 需要的话可以保存下来 write.csv(as.matrix(nei.dis),&quot;name.csv&quot;)   制作树
+# 先写了一个生成图片的函数 # 声明包含上一步得到的距离对象，要保存pdf的名字，图片的宽和高 make.tree &lt;- function(nei.dis, filename, width, height) { tr &lt;- upgma(nei.dis) # 需要的话也可以把树文件保存下来用其他软件处理 write.tree(tr, paste0(filename,&quot;.tree&quot;)) pdf(paste0(filename, &quot;.tree.pdf&quot;), family = &quot;serif&quot;, width = width, height = height) par(mar = c(1, 1, .
+                  <a href="../../post/rcodes/nei-dist-tree-/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="../../post/%E9%9A%8F%E7%AC%94/notepad&#43;&#43;%E6%80%8E%E4%B9%88%E5%90%8C%E6%97%B6%E5%9C%A8%E4%B8%80%E4%B8%AA%E7%AA%97%E5%8F%A3%E4%B8%AD%E6%98%BE%E7%A4%BA2%E4%B8%AA%E6%96%87%E6%A1%A3/">
                 <h2 class="post-title">notepad&#43;&#43;怎么同时在一个窗口中显示2个文档？</h2>
                 
@@ -480,40 +512,6 @@
 <li>She&rsquo;s proficient in two languages.   她精通两种语言。</li>
 <li>One who is highly proficient at shooting. | 殂击手：一个对射击高度熟练的人</li>
 <li>Finally, once you become proficient at R you can contribute to it. (Zelterman, 2015)</li>
-</ul>
-
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pro-mulg-ate-%E5%8F%91%E5%B8%83%E4%BC%A0%E6%92%AD/">
-                <h2 class="post-title">pro-mulg-ate-发布，传播</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (58 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  <ul>
-<li>In many poor countries the ability to assess action on climate change and <strong>promulgate</strong> effective adaptation is inadequate; it must be nurtured. (Economist)</li>
-<li>Two maj or hypotheses have been <strong>promulgated</strong> to explain heterosis (Crow 1952): the dominance hypothesis and the overdominance hypothesis. (Li, Wu, 1996)</li>
-<li>&ldquo;It defines an alternative path forward for <strong>promulgating</strong> life on earth. (Scientific American)</li>
 </ul>
 
                 

@@ -212,6 +212,39 @@
           
           
             <article class="post-preview">
+              <a href="../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/instrumental-helpful%E6%9C%89%E5%B8%AE%E5%8A%A9%E7%9A%84/">
+                <h2 class="post-title">instrumental-helpful有帮助的</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (53 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <ul>
+<li>These studies were <strong>instrumental</strong> to an understanding of the importance of wood quality traits in radiata pine improvement. (Wu et al., 2007)</li>
+<li>We would like to acknowledge the present and former co-workers at SkogForsk who have been <strong>instrumental</strong> in establishing, maintaining and measuring the progeny trials in this investigation. (Andersson et al., 2003)</li>
+</ul>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="../../post/%E7%A9%BA%E9%97%B4/isik2016-breeding-%E7%A9%BA%E9%97%B4%E5%88%86%E6%9E%90/">
                 <h2 class="post-title">isik2016-breeding-空间分析</h2>
                 
@@ -565,38 +598,6 @@ typora的安装 # add Typora's repository sudo add-apt-repository 'deb https://t
 <li>Natural epigenetic variation abounds, and detailed and refined descriptions of this variation are likely to <strong>mount</strong> quickly as higher throughput epigenetic profiling methods are applied. (Richards, 2008)</li>
 </ul>
 
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/rcodes/nei-dist-tree-/">
-                <h2 class="post-title">nei-dist-tree-</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (89 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  在R中计算Nei's遗传距离，并利用UPGMA获取聚类树的具体流程如下： 1. 在Excel中整理marker数据并用Genalex生成需要的格式后再在R中转成需要的“genind”对象类型。 1. 按照Genalex要求​准备好原始数据（C4） 2. Genalex自动生成格式并保存成.csv Parameters&gt;All for Codom （这是共显性标记，显性标记不是这个，是loci？） 注意！第二列要加上群体的代号，如果不分群体就编码一致就可以。这里是共显性标记，对于显性标记也一样。缺失的条带用NA表示。然后需要处理缺失数据时可以用missingno {poppr}函数，可选方案有&quot;ignore&quot;, &quot;zero&quot;, &quot;mean&quot;, &quot;loci&quot;, or &quot;geno&quot;。位点的名字中不要有点.。 3. 读取
-# 加载包 library(poppr) library(phangorn) # upgma # 读取标记数据 dataset&lt;-read.genalex(&quot;name.csv&quot;,genclone = F,ploidy = 2) # nei距离 nei.dis&lt;-nei.dist(dataset,warning = T) # 需要的话可以保存下来 write.csv(as.matrix(nei.dis),&quot;name.csv&quot;)   制作树
-# 先写了一个生成图片的函数 # 声明包含上一步得到的距离对象，要保存pdf的名字，图片的宽和高 make.tree &lt;- function(nei.dis, filename, width, height) { tr &lt;- upgma(nei.dis) # 需要的话也可以把树文件保存下来用其他软件处理 write.tree(tr, paste0(filename,&quot;.tree&quot;)) pdf(paste0(filename, &quot;.tree.pdf&quot;), family = &quot;serif&quot;, width = width, height = height) par(mar = c(1, 1, .
-                  <a href="../../post/rcodes/nei-dist-tree-/" class="post-read-more">[Read More]</a>
                 
               </div>
 

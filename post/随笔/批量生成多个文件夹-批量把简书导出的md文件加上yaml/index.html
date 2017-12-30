@@ -5,9 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Posts</title>
-  <meta property="og:title" content="Posts" />
-  <meta name="twitter:title" content="Posts" />
+  <title>批量生成多个文件夹；批量把简书导出的md文件加上yaml</title>
+  <meta property="og:title" content="批量生成多个文件夹；批量把简书导出的md文件加上yaml" />
+  <meta name="twitter:title" content="批量生成多个文件夹；批量把简书导出的md文件加上yaml" />
+  <meta name="description" content="简书里有一些博客，能导出成md格式，但缺少抬头yaml。借用大鹏志的代码，把我的所有文件也都加上抬头。
+ # 设置工作路径&amp;加载包 setwd(&quot;D:/R&quot;) library(tidyverse) # 生成新的分类文件夹（简书导出是有分类的） for (i in dir(&quot;jianshu&quot;)) { dir.create(paste0(&quot;./jianshunew/&quot;, i)) } # 逐个文件夹中逐个文件添加 for (i in dir(&quot;jianshu&quot;)) { ## i循环文件夹，subdir是第i个文件夹中全部文件的名字 subdir &lt;- paste0(&quot;jianshu/&quot;, i) %&gt;% list.files(full.names = T) for (j in 1:length(subdir)) { ## j循环每个文件夹中的文件，txt是第j个文件的内容 txt &lt;- readLines(subdir[j], encoding = &quot;UTF-8&quot;) ## header是抬头yaml，用的是blogdown的样例 header &lt;- readLines(&quot;header.txt&quot;) # categories是子文件夹的名字 categories &lt;- str_split(subdir[j], &quot;/&quot;) %&gt;% unlist %&gt;% .[2] ## startn是提取文件名字的位置 startn &lt;- 8 &#43; nchar(categories) &#43; 2 # title title &lt;- substr(subdir[j], startn, nchar(subdir[j]) - 3) ## header中第2和7个元素分别是题目和分类，把相应的值赋予 header[2] &lt;- title %&gt;% paste0(header[2], .">
+  <meta property="og:description" content="简书里有一些博客，能导出成md格式，但缺少抬头yaml。借用大鹏志的代码，把我的所有文件也都加上抬头。
+ # 设置工作路径&amp;加载包 setwd(&quot;D:/R&quot;) library(tidyverse) # 生成新的分类文件夹（简书导出是有分类的） for (i in dir(&quot;jianshu&quot;)) { dir.create(paste0(&quot;./jianshunew/&quot;, i)) } # 逐个文件夹中逐个文件添加 for (i in dir(&quot;jianshu&quot;)) { ## i循环文件夹，subdir是第i个文件夹中全部文件的名字 subdir &lt;- paste0(&quot;jianshu/&quot;, i) %&gt;% list.files(full.names = T) for (j in 1:length(subdir)) { ## j循环每个文件夹中的文件，txt是第j个文件的内容 txt &lt;- readLines(subdir[j], encoding = &quot;UTF-8&quot;) ## header是抬头yaml，用的是blogdown的样例 header &lt;- readLines(&quot;header.txt&quot;) # categories是子文件夹的名字 categories &lt;- str_split(subdir[j], &quot;/&quot;) %&gt;% unlist %&gt;% .[2] ## startn是提取文件名字的位置 startn &lt;- 8 &#43; nchar(categories) &#43; 2 # title title &lt;- substr(subdir[j], startn, nchar(subdir[j]) - 3) ## header中第2和7个元素分别是题目和分类，把相应的值赋予 header[2] &lt;- title %&gt;% paste0(header[2], .">
+  <meta name="twitter:description" content="简书里有一些博客，能导出成md格式，但缺少抬头yaml。借用大鹏志的代码，把我的所有文件也都加上抬头。
+ # 设置工作路径&amp;加载包 setwd(&quot;D:/R&quot;) library(tidyverse) # 生成新的分类文件夹（简书导出是有分类的） for (i in dir(&quot;jianshu&quot;)) { …">
   <meta name="author" content="Leiming Dong"/>
   <link href='../../../img/red-paint.jpg' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="/img/red-paint.jpg" />
@@ -15,13 +21,13 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@username" />
   <meta name="twitter:creator" content="@username" />
-  <meta property="og:url" content="/post/" />
+  <meta property="og:url" content="/post/%E9%9A%8F%E7%AC%94/%E6%89%B9%E9%87%8F%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9-%E6%89%B9%E9%87%8F%E6%8A%8A%E7%AE%80%E4%B9%A6%E5%AF%BC%E5%87%BA%E7%9A%84md%E6%96%87%E4%BB%B6%E5%8A%A0%E4%B8%8Ayaml/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Dong&#39;s blog" />
 
   <meta name="generator" content="Hugo 0.31.1" />
-  <link rel="canonical" href="../../../post/" />
-  <link rel="alternate" href="../../../post/index.xml" type="application/rss+xml" title="Dong&#39;s blog">
+  <link rel="canonical" href="../../../post/%E9%9A%8F%E7%AC%94/%E6%89%B9%E9%87%8F%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9-%E6%89%B9%E9%87%8F%E6%8A%8A%E7%AE%80%E4%B9%A6%E5%AF%BC%E5%87%BA%E7%9A%84md%E6%96%87%E4%BB%B6%E5%8A%A0%E4%B8%8Ayaml/" />
+  <link rel="alternate" href="../../../index.xml" type="application/rss+xml" title="Dong&#39;s blog">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -157,14 +163,40 @@
 
 
     
+  
+  
+  
+
+
+
+
+  
+
   <header class="header-section ">
+    
     <div class="intro-header no-img">
+      
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="page-heading">
-              <h1>Posts</h1>
-              <hr class="small">
+            <div class="post-heading">
+              <h1>批量生成多个文件夹；批量把简书导出的md文件加上yaml</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on December 30, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (108 words)
+  
+  
+</span>
+
+
+                
             </div>
           </div>
         </div>
@@ -172,250 +204,75 @@
     </div>
   </header>
 
+
     
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <blockquote>
+<p><a href="https://www.jianshu.com/u/c7b1f5e71e92">简书</a>里有一些博客，能导出成<code>md</code>格式，但缺少抬头<code>yaml</code>。借用<a href="http://www.pzhao.org/zh/post/migrated-to-hugo/">大鹏志</a>的代码，把我的所有文件也都加上抬头。</p>
+</blockquote>
+
+<pre><code># 设置工作路径&amp;加载包
+setwd(&quot;D:/R&quot;)
+library(tidyverse)
+
+# 生成新的分类文件夹（简书导出是有分类的）
+for (i in dir(&quot;jianshu&quot;)) {
+  dir.create(paste0(&quot;./jianshunew/&quot;, i))
+}
+
+# 逐个文件夹中逐个文件添加
+for (i in dir(&quot;jianshu&quot;)) {
+  ## i循环文件夹，subdir是第i个文件夹中全部文件的名字
+  subdir &lt;- paste0(&quot;jianshu/&quot;, i) %&gt;% list.files(full.names = T)
+  for (j in 1:length(subdir)) {
+    ## j循环每个文件夹中的文件，txt是第j个文件的内容
+    txt &lt;- readLines(subdir[j], encoding = &quot;UTF-8&quot;)
+    ## header是抬头yaml，用的是blogdown的样例
+    header &lt;- readLines(&quot;header.txt&quot;)
+    
+    # categories是子文件夹的名字
+    categories &lt;- str_split(subdir[j], &quot;/&quot;) %&gt;% unlist %&gt;% .[2]
+    ## startn是提取文件名字的位置
+    startn &lt;- 8 + nchar(categories) + 2
+    # title
+    title &lt;- substr(subdir[j], startn, nchar(subdir[j]) - 3)
+    ## header中第2和7个元素分别是题目和分类，把相应的值赋予
+    header[2] &lt;- title %&gt;% paste0(header[2], .)
+    header[7] &lt;- categories %&gt;% paste0(header[7], .)
+    ## 合并新的header和内容
+    txtnew &lt;- c(header, txt)
+    ## 保存到新的文件夹中（最上边建的），这个文件夹jianshunew不能放在原始文件所在的文件夹中
+    write_lines(txtnew, paste0(&quot;./jianshunew/&quot;, i, &quot;/&quot;, title, &quot;.md&quot;))
+  }
+}
+
+</code></pre>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="../../../post/netlify%E6%90%AD%E5%BB%BAblog%E7%AC%94%E8%AE%B0/" data-toggle="tooltip" data-placement="top" title="netlify搭建blog笔记">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
         
-        <div class="posts-list">
-          
-            <article class="post-preview">
-              <a href="../../../post/rcodes/nei-dist-tree-/">
-                <h2 class="post-title">nei-dist-tree-</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  在R中计算Nei's遗传距离，并利用UPGMA获取聚类树的具体流程如下： 1. 在Excel中整理marker数据并用Genalex生成需要的格式后再在R中转成需要的“genind”对象类型。 1. 按照Genalex要求​准备好原始数据（C4） 2. Genalex自动生成格式并保存成.csv Parameters&gt;All for Codom （这是共显性标记，显性标记不是这个，是loci？） 注意！第二列要加上群体的代号，如果不分群体就编码一致就可以。这里是共显性标记，对于显性标记也一样。缺失的条带用NA表示。然后需要处理缺失数据时可以用missingno {poppr}函数，可选方案有&quot;ignore&quot;, &quot;zero&quot;, &quot;mean&quot;, &quot;loci&quot;, or &quot;geno&quot;。位点的名字中不要有点.。 3. 读取
-# 加载包 library(poppr) library(phangorn) # upgma # 读取标记数据 dataset&lt;-read.genalex(&quot;name.csv&quot;,genclone = F,ploidy = 2) # nei距离 nei.dis&lt;-nei.dist(dataset,warning = T) # 需要的话可以保存下来 write.csv(as.matrix(nei.dis),&quot;name.csv&quot;)   制作树
-# 先写了一个生成图片的函数 # 声明包含上一步得到的距离对象，要保存pdf的名字，图片的宽和高 make.tree &lt;- function(nei.dis, filename, width, height) { tr &lt;- upgma(nei.dis) # 需要的话也可以把树文件保存下来用其他软件处理 write.tree(tr, paste0(filename,&quot;.tree&quot;)) pdf(paste0(filename, &quot;.tree.pdf&quot;), family = &quot;serif&quot;, width = width, height = height) par(mar = c(1, 1, .
-                  <a href="../../../post/rcodes/nei-dist-tree-/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../post/%E9%9A%8F%E7%AC%94/notepad&#43;&#43;%E6%80%8E%E4%B9%88%E5%90%8C%E6%97%B6%E5%9C%A8%E4%B8%80%E4%B8%AA%E7%AA%97%E5%8F%A3%E4%B8%AD%E6%98%BE%E7%A4%BA2%E4%B8%AA%E6%96%87%E6%A1%A3/">
-                <h2 class="post-title">notepad&#43;&#43;怎么同时在一个窗口中显示2个文档？</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  <p>拖着页头，复制到另一视图。</p>
-
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/obscure-%E6%8E%A9%E7%9B%96%E6%A8%A1%E7%B3%8A%E7%9A%84/">
-                <h2 class="post-title">obscure-掩盖，模糊的</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  <ul>
-<li>Ignoring IGEs on trait values may also <strong>obscure</strong> the mechanisms underlying the fitness effects of competition and cooperation among individuals. (Bijma, 2014)</li>
-<li>The nature of the corresponding varieties remained <strong>obscure</strong> until the advent of DNA genotyping. (Tuberosa, Graner, Frison, 2014)</li>
-</ul>
-
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/per-me-ate-me-to-go-%E6%B8%97%E9%80%8F%E8%BF%87%E5%8E%BB/">
-                <h2 class="post-title">per-me-ate-me-=to-go-渗透过去</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  In this way the less fertile stocks, having the social advantage, will gradually permeate the upper classes of society, and there cause the peculiar situation in which the more fortunate and successful of mankind have the smallest birth-rate. (Fisher, 1930) Although most of the results reviewed here are very old, they have not yet permeated the practice of covariance structure analysis. (Bentler, Dudgeon, 1996) His alarm about foreign competition, and his suspicion of trade deals, runs deep in his rhetoric, permeating his stump speeches.
-                  <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/per-me-ate-me-to-go-%E6%B8%97%E9%80%8F%E8%BF%87%E5%8E%BB/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/per-vad-e-vad-go%E5%85%A8%E9%83%A8%E8%B5%B0%E9%81%8D%E8%94%93%E5%BB%B6%E9%81%8D%E5%8F%8A%E6%B5%81%E8%A1%8C/">
-                <h2 class="post-title">per-vad-e-vad-=go全部走遍，蔓延，遍及，流行</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  The 20th century has seen an enormous output of different phylogenetic schemes and the persistence of grades has pervaded the methods of ``evolutionary systematics.&rdquo; (Levin, 2013) Propelled by the genome projects and their spinoff technologies, QTL analyses have pervaded all fields of biology and form the backbone for the recent explosion of studies tying specific alleles to human disease. (Rik Kooke Erik Wijnker, 2012) Along with those discontinuous phase changes during development, there are continuous patterns of developmental transitions that pervade every aspect of growth and development at a wide range of organizational levels from cells to organs to the whole organisms (Poethig, 2003).
-                  <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/per-vad-e-vad-go%E5%85%A8%E9%83%A8%E8%B5%B0%E9%81%8D%E8%94%93%E5%BB%B6%E9%81%8D%E5%8F%8A%E6%B5%81%E8%A1%8C/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/plumm-et-plumb-lead%E9%93%85%E9%93%85%E5%AF%86%E5%BA%A6%E5%A4%A7%E6%89%80%E4%BB%A5%E6%9C%89%E5%BF%AB%E9%80%9F%E9%99%8D%E4%BD%8E%E8%B7%B3%E6%B0%B4plunge%E5%9C%86%E8%83%96plump%E9%87%8D%E7%9A%84%E6%84%8F%E6%80%9D%E8%BF%87%E5%8E%BB%E7%AE%A1/">
-                <h2 class="post-title">plumm-et-plumb-=lead铅，铅密度大，所以有快速降低、跳水（plunge）、圆胖（plump重）的意思；过去管</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  When ungulate populations plummeted, populations of carnivores such as the lion (Panthera leo) crashed as well. (Levin, 2013) However, given the plummeting cost of NGS, in BOX 2 we consider when these methods, and perhaps genetic markers in general, might be superseded by whole-genome sequencing, and discuss the trade-offs between the two approaches for immediate projects. (Davey et al., 2011) The window around position 200-300 showed a relatively normal level of Ka (relative to the rest of the gene), while Ks plummeted dramatically, especially in the human-dog comparison.
-                  <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/plumm-et-plumb-lead%E9%93%85%E9%93%85%E5%AF%86%E5%BA%A6%E5%A4%A7%E6%89%80%E4%BB%A5%E6%9C%89%E5%BF%AB%E9%80%9F%E9%99%8D%E4%BD%8E%E8%B7%B3%E6%B0%B4plunge%E5%9C%86%E8%83%96plump%E9%87%8D%E7%9A%84%E6%84%8F%E6%80%9D%E8%BF%87%E5%8E%BB%E7%AE%A1/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pre-mis-e-mis-send-%E5%89%8D%E6%8F%90/">
-                <h2 class="post-title">pre-mis-e-mis-=send-前提</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  On the premise that many genes and the environment act and interact to determine the trait, founders recognized that it would be difficult if not impossible to determine the action of individual trait genes. Under this general premise, even the previous models of asynchrony of sexual maturity (section 7.1) and individual self-mating (chapter 5) can be conceived of as special cases of the present concept of mating predisposition. The premise behind these models is that environmental conditions are the primary determinant of realized species niches, and that the future preferred range distribution of species can be predicted by transferring the environmental parameters associated with the present distribution onto maps representing future climate scenarios (Pearson and Dawson 2003).
-                  <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pre-mis-e-mis-send-%E5%89%8D%E6%8F%90/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pre-scrib-e-scrib-write%E6%8F%90%E5%89%8D%E5%86%99%E8%A7%84%E5%AE%9A/">
-                <h2 class="post-title">pre-scrib-e-scrib-=write提前写，规定</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  Also, in some large factorial or disconnected half-diallel experiments, there are always some prescribed crosses that cannot be made or are very difficult to make owing to unavailability of mature ramets, insufficient flowers, poor pollen viability or poor mating success. (Wu, Matheson, 2001) Classical theory does not give a procedure for modifying the type1 error as a function of sample size, and the probability of this error is prescribed arbitrarily.
-                  <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pre-scrib-e-scrib-write%E6%8F%90%E5%89%8D%E5%86%99%E8%A7%84%E5%AE%9A/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/prior-to-%E5%9C%A8%E4%B9%8B%E5%89%8D/">
-                <h2 class="post-title">prior-to-在……之前</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  This is due to the fact that the flowers were not emasculated prior to crosspollination (Gan and Sim 1987). (Carron, Aken, 1992) It was concluded that besides other operational advantages which are discussed, the Rigidimeter is a valuable tool for breeders to routinely evaluate and rank genotypes for stiffness prior to further selection. (Paques, Rozenberg, 2009) Although pollen production prior to 1976 was very sparse, 41% of the ramets used had by then initiated some seed cones.
-                  <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/prior-to-%E5%9C%A8%E4%B9%8B%E5%89%8D/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../../post/%E6%AF%8F%E6%97%A5%E4%B8%80%E8%AF%8D/pro-fic-i-ent-%E5%90%91%E5%89%8D&#43;%E5%81%9A&#43;---%E4%BA%BA%E5%81%9A%E5%9C%A8%E5%88%AB%E4%BA%BA%E5%89%8D%E9%9D%A2%E7%B2%BE%E9%80%9A/">
-                <h2 class="post-title">pro-fic-i-ent-向前&#43;做&#43;---人→做在别人前面→精通</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  <ul>
-<li>She&rsquo;s proficient in two languages.   她精通两种语言。</li>
-<li>One who is highly proficient at shooting. | 殂击手：一个对射击高度熟练的人</li>
-<li>Finally, once you become proficient at R you can contribute to it. (Zelterman, 2015)</li>
-</ul>
-
-                
-              </div>
-
-              
-
-            </article>
-          
-        </div>
         
-          <ul class="pager main-pager">
-            
-              <li class="previous">
-                <a href="../../../post/page/43/">&larr; Newer Posts</a>
-              </li>
-            
-            
-              <li class="next">
-                <a href="../../../post/page/45/">Older Posts &rarr;</a>
-              </li>
-            
-          </ul>
-        
-      </div>
+      
+
     </div>
   </div>
+</div>
 
     <footer>
   <div class="container">
@@ -586,7 +443,7 @@
           
           <li>
             
-            <a href="../../../post/index.xml" title="RSS">
+            <a href="../../../index.xml" title="RSS">
             
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>

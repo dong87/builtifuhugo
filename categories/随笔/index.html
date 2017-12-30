@@ -180,6 +180,34 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="../../post/%E9%9A%8F%E7%AC%94/%E6%89%B9%E9%87%8F%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9-%E6%89%B9%E9%87%8F%E6%8A%8A%E7%AE%80%E4%B9%A6%E5%AF%BC%E5%87%BA%E7%9A%84md%E6%96%87%E4%BB%B6%E5%8A%A0%E4%B8%8Ayaml/">
+                <h2 class="post-title">批量生成多个文件夹；批量把简书导出的md文件加上yaml</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on December 30, 2017
+              </p>
+              <div class="post-entry">
+                
+                  简书里有一些博客，能导出成md格式，但缺少抬头yaml。借用大鹏志的代码，把我的所有文件也都加上抬头。
+ # 设置工作路径&amp;加载包 setwd(&quot;D:/R&quot;) library(tidyverse) # 生成新的分类文件夹（简书导出是有分类的） for (i in dir(&quot;jianshu&quot;)) { dir.create(paste0(&quot;./jianshunew/&quot;, i)) } # 逐个文件夹中逐个文件添加 for (i in dir(&quot;jianshu&quot;)) { ## i循环文件夹，subdir是第i个文件夹中全部文件的名字 subdir &lt;- paste0(&quot;jianshu/&quot;, i) %&gt;% list.files(full.names = T) for (j in 1:length(subdir)) { ## j循环每个文件夹中的文件，txt是第j个文件的内容 txt &lt;- readLines(subdir[j], encoding = &quot;UTF-8&quot;) ## header是抬头yaml，用的是blogdown的样例 header &lt;- readLines(&quot;header.txt&quot;) # categories是子文件夹的名字 categories &lt;- str_split(subdir[j], &quot;/&quot;) %&gt;% unlist %&gt;% .[2] ## startn是提取文件名字的位置 startn &lt;- 8 + nchar(categories) + 2 # title title &lt;- substr(subdir[j], startn, nchar(subdir[j]) - 3) ## header中第2和7个元素分别是题目和分类，把相应的值赋予 header[2] &lt;- title %&gt;% paste0(header[2], .
+                  <a href="../../post/%E9%9A%8F%E7%AC%94/%E6%89%B9%E9%87%8F%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9-%E6%89%B9%E9%87%8F%E6%8A%8A%E7%AE%80%E4%B9%A6%E5%AF%BC%E5%87%BA%E7%9A%84md%E6%96%87%E4%BB%B6%E5%8A%A0%E4%B8%8Ayaml/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="../../tags/code/">code</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="../../post/%E9%9A%8F%E7%AC%94/busco%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">
                 <h2 class="post-title">BUSCO使用笔记</h2>
 
@@ -493,31 +521,6 @@ CLASSPATH 配置类库文件的位置
 
 <p>点击确定</p>
 
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/%E9%9A%8F%E7%AC%94/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-                <h2 class="post-title">linux常用命令</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 1, 2017
-              </p>
-              <div class="post-entry">
-                
-                  foxit的安装 终端取得root权限后，cd到安装文件所在文件夹，./FoxitReader.enu.setup.2.4.1.0609\(r08f07f8\).x64.run
-Ubuntu 文件夹右小角有锁的问题解决 有锁，普通用户就不能操作该文件夹。 解决办法： sudo chmod -R 777 路径(文件夹或文件)
-typora的安装 # add Typora's repository sudo add-apt-repository 'deb https://typora.io ./linux/' sudo apt-get update # install typora sudo apt-get install typora   ubuntu 14.04 软件中心闪退解决方案 sudo apt-get update sudo apt-get dist-upgrade sudo apt-get install &ndash;reinstall software-center
- 无法获得锁 /var/lib/apt/lists/lock - open (11 资源临时不可用) 方法二（亲测可以用）：sudo rm /var/lib/apt/lists/lock
-   df -hl 删除文件夹 rm -r myfolder rm -r ./genome/run_Beauveria_bassiana_genome/ 移动文件夹 mv .
-                  <a href="../../post/%E9%9A%8F%E7%AC%94/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="post-read-more">[Read More]</a>
                 
               </div>
 

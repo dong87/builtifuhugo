@@ -212,6 +212,63 @@
           
           
             <article class="post-preview">
+              <a href="../../post/stat/s5--%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1ml%E5%92%8Creml/">
+                <h2 class="post-title">S5--最大似然估计（ML）和REML</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (56 words)
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>A.F. Zuur et al., <em>Mixed Effects Models and Extensions in Ecology with R</em>, p116-119, chr 5.6</p>
+</blockquote>
+
+<p>当利用混合效应建模时，你会遇到诸如<strong>REML</strong>和<strong>ML</strong>这样的词汇。不像线性回归模型，就算你不知道背后的数学理论也可以照样使用。但是在混合效应建模中，你必须懂得一些相关的数学知识。所以REML是什么意思？它能干什么？
+第一个问题比较简单，REML限制性最大似然估计英文首字母的缩写。但是对于第二个问题，大多数教材在这点上就变得相当专业，或者解释得比较粗略，只是提到它是矫正自由度的一个神秘方法。而我们则选择尝试更为详细地解释它，所以需要利用矩阵代数的知识。但是为了理解REML，首先需要理解最大似然估计的原理，我们从这儿开始。如果你不熟悉矩阵代数，或者如果这一部分对数学水平的要求太高，我们仍建议你跳过这一部分。
+我们首先回顾用于线性回归的最大似然，然后给出REML是如何用于矫正方差估计子的。
+假设有一个线性回归模型<img src="http://upload-images.jianshu.io/upload_images/3289684-0db7e3ae6226351d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+模型中有3个未知参数α, β, and σ。为了简便，θ = (α, β, σ ) 。普通最小二乘是估计θ的一个方法。给出θ中每一个元素的表达式。利用线性回归获取方差估计的表达式是：
+<img src="http://upload-images.jianshu.io/upload_images/3289684-d9edcfc5add18482.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /><strong>（5.14）</strong>
+我们给参数加了一个帽子^，表示它是估计值，n是观测值的个数。可以证明σ^是σ的无偏估计，意味着E（σ^）=σ。现在让我们看一看最大似然估计方法。假设Y_i服从正态分布，其密度函数为
+<img src="http://upload-images.jianshu.io/upload_images/3289684-4c2a5bb931bedfb9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+因为我们也假设了Y_i是独立的，可以将Y1,Y2,&hellip;,Yn的联合密度函数写成单个密度曲线f1,f2,&hellip;,fn乘积的形式。这个乘积就叫做<strong>似然函数*L</strong>*。它是数据和θ的一个函数。问题是如何选择θ使L最高。为了简化，对L取自然对数，得到如下的log-似然方程式：</p>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/3289684-9563527fc24fa83f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+我们需要最大化这个式子，问题就变成了对每一个参数偏导，令偏导数=0并求解。因为我们很容易计算，这些偏导数=0的式子称之为<strong>封闭解</strong>。对于线性混合模型我们将会看到<strong>开放解</strong>，意思是参数没有直接的解。
+这里没有给出α和β估计子的式子，但对于方差我们得到：
+<img src="http://upload-images.jianshu.io/upload_images/3289684-61cabd3ef71b1ba5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+注意这个式子与我们利用普通最小二乘得到的式子（5.14）非常相似。实际上，受到因子（n-2）/n的影响，利用最大似然得到的方差估计子是有偏的（<a href="http://www.jianshu.com/p/66c643f89f32">S6. 回归分析为什么误差方差中自由度是n-2？</a>）。如果线性回归模型含有*p*个解释变量，那么偏度是（n-p）/n。<strong>最大似然是有偏的的原因是它忽略了截距和斜率也被估计的事实。所以我们需要更好的ML估计子，而这正是REML所做的事情</strong>。
+REML的工作如下：线性回归模型<img src="http://upload-images.jianshu.io/upload_images/3289684-0db7e3ae6226351d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />可以写成
+<img src="http://upload-images.jianshu.io/upload_images/3289684-b1604dff3a0237be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />，这是简单的矩阵形式，Xi=（1 Xi），β的第一个元素是截距，第二个元素是原始的β。正态性假设意味着
+<img src="http://upload-images.jianshu.io/upload_images/3289684-6c04857f17d78adc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /><strong>（5.18）</strong>。
+用ML估计子的问题是我们不得不估计式子（5.18）中β中的截距和斜率。显然，如果没有β，就能解决问题。为了消除β，可以找到一个维度n × (n – 2) 的特殊矩阵<strong>A</strong>，特殊指的是“与<strong>X&rsquo;</strong>正交”，然后用这个矩阵乘以<strong>Y</strong>=（*Y1*，&hellip;，*Yn*）&rsquo;之后再用ML估计。正交指的是如果A与X相乘，结果是0.因此，我们得到A&rsquo;×Y=A&rsquo;×X×β+A&rsquo;×ε =0+A&rsquo;×ε =A&rsquo;×ε 。现在A&rsquo;×Y的分布是
+<img src="http://upload-images.jianshu.io/upload_images/3289684-a9d2b5af1f90993a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />，而不再依赖β。那么对A&rsquo;×Y进行似然估计就会得到σ 2的无偏估计子（5.14）。现在我们讨论REML如何应用到混合线性模型。我们的起点是边际模型
+<img src="http://upload-images.jianshu.io/upload_images/3289684-2b54a43157f60659.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />。故事又重新开始，如之前，我们可以写一个略微不同的log似然式子。未知参数是β和D及Σ中的元素，依然用θ 表示。似然函数：
+<img src="http://upload-images.jianshu.io/upload_images/3289684-da4a52b1a18d6f0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" />
+|Vi| 是Vi的行列式。对β求偏导并=0解方程。如之前讨论的例子，得到的参数是有偏的，因此我们需要REML。
+总之，<strong>REML，就是用一个特殊的矩阵乘以Y，这样X×β就消去。然后用ML估计得到的参数估计子就是无偏的，并且与特定的矩阵相乘无关</strong>。因此，β的REML估计子与ML的估计子不同。<strong>如果相对于观测值的个数，固定协变量的个数很少，就没有太大的不同，相反有许多的固定协变量，情况就大不相同。</strong></p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="../../post/stat/s6--%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%AF%E5%B7%AE%E6%96%B9%E5%B7%AE%E4%B8%AD%E8%87%AA%E7%94%B1%E5%BA%A6%E6%98%AFn-2/">
                 <h2 class="post-title">S6--回归分析为什么误差方差中自由度是n-2？</h2>
                 
@@ -593,38 +650,6 @@ SRA元数据
 目前可获得的组织培养方法和诱变技术可显着缩短育种过程，克服一些重大的农艺和环境问题。在大多数情况下，胚胎来源的水稻愈伤组织再生仅由几个细胞产生。因此，<strong>可以直接筛选来自突变愈伤组织的再生M1小植株，而无需等待自花授粉的M2群体</strong>。已经报道了在未来的胚胎，来自成熟种子的愈伤组织或最近受精的小穗中的单个合子细胞的水稻诱变育种的尝试很少，已报道[44-47]。最近报道了<strong>用于突变体表型检测的悬浮培养的水稻细胞的诱变</strong>[48]。然而，迄今为止，已经报道了为了获得TILLING的突变种群，在成熟种子来源的水稻愈伤组织中没有化学诱变的研究。
 这项工作的目的是实施一个新的TILLING策略，基于来自EMS诱变的胚胎来源的愈伤组织的植物突变种群的生产，然后在再生植物上进行突变筛选。这种突变筛选集中在与衰老有关的两个基因上，因为每年谷物作物的发育过程与繁殖期重叠，并且可能在不利的环境条件下过早诱导时可以降低作物产量。</p>
 
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/slavov2005-%E8%8A%B1%E7%B2%89%E6%B1%A1%E6%9F%93/">
-                <h2 class="post-title">Slavov2005-花粉污染</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on October 1, 2017
-  
-  
-  &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (130 words)
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  Slavov G T, Howe G T, Adams W T. 2005. Pollen contamination and mating patterns in a Douglas fir seed orchard as measured by simple sequence repeat markers. Canadian Journal of Forest Research, 35(7): 1592–1603.
- 摘要：花粉污染对种子园作物的遗传品质有害。高度可变的简单序列重复（SSR）标记使得可以通过直接鉴定果园中生产的每种种子的雄性和雌性亲本来准确测量花粉污染和表征果园内交配的模式。我们使用九个SSR标记来测量花粉污染，并根据从一块非孤立的，公开授粉的道格拉斯冷杉的克隆种子园（Pseudotsuga menziesii）收集的3年（1999,2000和2003）中收集的种子样本来表征交配模式（Mirb。）Franco）在俄勒冈州西部。花粉污染在3年内一直很高（平均值= 35.3％，范围= 31.0 {％} - 41.3 {％}），并且似乎主要是由于果园块之间的异花授粉。花粉污染程度在克隆中差异很大，在早期女性接受度（平均值= 55.5 {％}）的克隆中，中位数（平均值= 36.4 {％}）或晚期（平均值= 28.3 {％}）接受。我们检测到自花授粉率低（每个克隆的平均值为1.8 {％）），克隆的相对父系贡献差异超过10倍。在花卉物候学方面有一个明确的分类交配模式。这项研究表明，SSR标记是用于表征种子批次的强大工具，并改进了道格拉斯冷杉种子园的设计和管理。
-引言 测量和管理花粉污染（即非种子园个体对种子园父母的授粉）和种子园内交配模式的方法对于树种育种是重要的（Squillace和Long 1981; Webber和Painter 1996）。 花粉污染预计会降低遗传价值，并对种子园作物的适应性产生不利影响（Squillace和Long 1981; Friedman and Adams 1985; Adams和Burczyk 2000）。 父母对种子作物的自我授粉和不平等的贡献也降低了种子园的遗传效率（即种子作物代表了克隆的遗传优势和多样性的程度; Friedman和Adams，1982）。 一种简单，间接的方法来估计风花授粉物种的花粉污染，是用花粉捕获来比较种子园内外花粉的丰度。使用这种方法的早期研究表明，非隔离、开放授粉的种子园中产生的种子高达88％是由种子园外来花粉进行受精（Greenwood和Rucker 1985; Wheeler和Jech 1986）。 更直接的方法是确定在种子园中生产的种子中外来父本所占的比例。这可以通过使用遗传标记来比较所有种子园父母的多位点基因型与其种子样品的基因型，一种称为父亲分析的方法（Adams 1992; Jones和Ardren 2003）。基于单萜和同种异体酶标记的亲子鉴定证实，非隔离，公开授粉的针叶树种子园的花粉污染通常超过40％（Squillace和Long 1981; Friedman and Adams 1985; Adams和Burczyk 2000）。此外，这种方法允许花粉污染估计（m）被划分成不同的来源，即相同种子园综合体内的种子园块与非种子园花粉授粉之间的异花授粉（Smith和Adams 1983; Wheeler和Jech 1986）。 因为同种异体酶具有低等位基因多样性（即，每个基因座的等位基因有效数量少; Hamrick和Godt 1989），所以不可能直接检测所有被非花粉花粉受精的种子。这是因为这些种子中的一些将具有标记基因型，这些基因型可以从种子园内的雄性可能产生的基因型中看出来。此外，通过明确地分配由种子园父母之间的杂交引起的种子的父亲身份，使用异源酶来表征种子园内交配模式通常是不可靠的（Adams 1992）。代替完整的亲子鉴定，已经开发了概率和最大似然模型来估计未检测到的污染物的比例和各种因素对男性生殖成功的影响（Smith和Adams 1983; Adams和Birkes 1991; Burczyk等人1996 ）。将这些模型应用于几种针叶树种子的种子园和天然植物的实验数据的结果表明，花粉污染（或基因流）是主要的，自体受精率通常较低。此外，这些模型显示，树木之间的距离和花卉同步是交配频率的最佳预测因子，交配成功在男性之间变化了数量级（Erickson和Adams 1989; Adams和Birkes 1991; Burczyk等1996）。尽管如此，在每个种子园和天然植物中，与每个雌性交配的雄性有效数量似乎很大（&gt; 10）（Adams 1992; Burczyk等人1996; Burczyk和Prat 1997）。 花粉污染估计的标准误差与检测概率（即，移民父系单体型与种子园中可能产生的所有父系单倍型不同的概率）是负相关的; Smith和Adams 1983）。由于异源酶（即0.
-                  <a href="../../post/%E6%A0%87%E8%AE%B0%E8%B0%B1%E7%B3%BB/slavov2005-%E8%8A%B1%E7%B2%89%E6%B1%A1%E6%9F%93/" class="post-read-more">[Read More]</a>
                 
               </div>
 

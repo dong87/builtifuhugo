@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>youremail@domain.com (Leiming Dong)</managingEditor>
     <webMaster>youremail@domain.com (Leiming Dong)</webMaster>
-    <lastBuildDate>Fri, 29 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>批量生成多个文件夹；批量把简书导出的md文件加上yaml</title>
+      <link>/post/%E9%9A%8F%E7%AC%94/%E6%89%B9%E9%87%8F%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9-%E6%89%B9%E9%87%8F%E6%8A%8A%E7%AE%80%E4%B9%A6%E5%AF%BC%E5%87%BA%E7%9A%84md%E6%96%87%E4%BB%B6%E5%8A%A0%E4%B8%8Ayaml/</link>
+      <pubDate>Sat, 30 Dec 2017 00:00:00 +0000</pubDate>
+      <author>youremail@domain.com (Leiming Dong)</author>
+      <guid>/post/%E9%9A%8F%E7%AC%94/%E6%89%B9%E9%87%8F%E7%94%9F%E6%88%90%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9-%E6%89%B9%E9%87%8F%E6%8A%8A%E7%AE%80%E4%B9%A6%E5%AF%BC%E5%87%BA%E7%9A%84md%E6%96%87%E4%BB%B6%E5%8A%A0%E4%B8%8Ayaml/</guid>
+      <description>简书里有一些博客，能导出成md格式，但缺少抬头yaml。借用大鹏志的代码，把我的所有文件也都加上抬头。
+ # 设置工作路径&amp;amp;加载包 setwd(&amp;quot;D:/R&amp;quot;) library(tidyverse) # 生成新的分类文件夹（简书导出是有分类的） for (i in dir(&amp;quot;jianshu&amp;quot;)) { dir.create(paste0(&amp;quot;./jianshunew/&amp;quot;, i)) } # 逐个文件夹中逐个文件添加 for (i in dir(&amp;quot;jianshu&amp;quot;)) { ## i循环文件夹，subdir是第i个文件夹中全部文件的名字 subdir &amp;lt;- paste0(&amp;quot;jianshu/&amp;quot;, i) %&amp;gt;% list.files(full.names = T) for (j in 1:length(subdir)) { ## j循环每个文件夹中的文件，txt是第j个文件的内容 txt &amp;lt;- readLines(subdir[j], encoding = &amp;quot;UTF-8&amp;quot;) ## header是抬头yaml，用的是blogdown的样例 header &amp;lt;- readLines(&amp;quot;header.txt&amp;quot;) # categories是子文件夹的名字 categories &amp;lt;- str_split(subdir[j], &amp;quot;/&amp;quot;) %&amp;gt;% unlist %&amp;gt;% .[2] ## startn是提取文件名字的位置 startn &amp;lt;- 8 + nchar(categories) + 2 # title title &amp;lt;- substr(subdir[j], startn, nchar(subdir[j]) - 3) ## header中第2和7个元素分别是题目和分类，把相应的值赋予 header[2] &amp;lt;- title %&amp;gt;% paste0(header[2], .</description>
+    </item>
     
     <item>
       <title>netlify搭建blog笔记</title>
